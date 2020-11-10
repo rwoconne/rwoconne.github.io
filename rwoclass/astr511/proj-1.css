@@ -1,0 +1,27 @@
+/*  CSS for projected format-- light text on dark bckgnd */
+
+/* Colors from UColorado Phys 200 site:  salmon linked header: #ff8e6f   */
+/*  pale violet subhead links: #a8a8ff     greyish other links: #a5c5aa      */
+
+body        { color: #FFFFFF; background: #0000000;
+              font-family: Arial,Helvetica,Verdana; font-weight: bold }
+
+a:link      { color: cyan }
+
+a: visited   { color: cyan }
+
+a:active    { color: lime }
+
+H1          { font-size: xx-large; color: #bb11dd; font-weight: bold}
+
+H2          { font-size: x-large; color: blue; font-weight:bold}
+
+H3          { font-size: large; color: blue }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana }
+
+pre         { font-family: Courier, CourierNew }
+

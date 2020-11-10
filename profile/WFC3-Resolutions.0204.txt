@@ -1,0 +1,226 @@
+
+From rwo Thu Feb 19 13:21:37 2004
+To: Eric.P.Smith@hq.nasa.gov, Michael.Dopita@anu.edu.au,
+    Mike.Disney@astro.cf.ac.uk, Rogier.Windhorst@asu.edu, awalker@noao.edu,
+    balick@astro.washington.edu, blades@stsci.edu, bond@stsci.edu,
+    calzetti@stsci.edu, dleckrone@hst.nasa.gov, ec@cobi.gsfc.nasa.gov,
+    eyoung@as.arizona.edu, fparesce@eso.org, ger@hokupa.ifa.hawaii.edu,
+    hall@ifa.hawaii.edu, hartig@stsci.edu, hill@buckeyball.gsfc.nasa.gov,
+    holtz@nmsu.edu, inr@stsci.edu, j.silk1@physics.ox.ac.uk,
+    jennifer.wiseman-1@nasa.gov, jfrogel@hq.nasa.gov, jtt@bb4.jpl.nasa.gov,
+    kimble@ccd.gsfc.nasa.gov, lupie@stsci.edu, macchetto@stsci.edu,
+    mackenty@stsci.edu, marcella@phys.ethz.ch, mauro@stsci.edu,
+    mmoore3@hq.nasa.gov, mstiavel@stsci.edu, pbenvenu@eso.org, pmc2@ociw.edu,
+    robberto@stsci.edu, saha@noao.edu, svwb@stsci.edu, tpham@hst.nasa.gov,
+    whitmore@stsci.edu
+Subject: WFC3 SOC RESOLUTIONS Feb 04
+Content-Length: 10033
+
+
+19 February 2004
+
+
+        RESOLUTIONS FROM WFC3 SOC FEBRUARY 2004 MEETING
+        ===============================================
+
+The meeting took place three weeks after Administrator O'Keefe
+announced the cancellation of HST Servicing Mission 4 by the Space
+Shuttle.  In the absence of servicing, it is expected that critical
+components within HST will fail such that science operations will have
+to cease within about 30 months (50% probability).  The project and
+STScI are exploring techniques for extending operations using fewer
+than the nominal complement of 3 gyros.  Before HST's orbit decays, a
+robot propulsion module will be sent to attach to HST and accomplish a
+safe de-orbit.  
+
+Integration and test activities for WFC3 continue at GSFC and Ball.
+The instrument performs beautifully and meets or exceeds
+specifications in almost all areas tested to date.  SOC is very
+impressed by the performance of the instrument and congratulates the
+project team for its exemplary work.
+
+It is planned to bring engineering activities to a conclusion within
+about 6 months.  Its engineering status and performance will be fully
+documented, and the instrument will be placed in safe storage.  SOC
+was asked by the project and by NASA Headquarters for its views on
+priorities for the close-out period and on possible uses of WFC3 in
+missions other than HST.  
+
+
+1)  PRIORITIES FOR WFC3 CLOSEOUT ACTIVITIES
+
+SOC strongly endorses the project's plan ("Fast Track to Thermal-Vac")
+for the WFC3 close-out process.  The main guidelines are these:  (i)
+taking no short cuts which would preclude deployment on a reasonable
+schedule if SM4 is resurrected; (ii) completing all critical science
+characterizations, including the IR channel; (iii) retiring the major known
+development risks which are not specific to HST deployment; and
+(iv) maximizing the value of WFC3 as an asset potentially available for
+other NASA missions within a reasonable cost.  
+
+SOC believes it is imperative to carry this plan to completion.
+
+Two specific performance issues arose during testing of the UVIS
+channel: 
+
+   (a) Reflection ghosts appeared at greater than the 0.5% level in 10
+       of the 63 filters, including the high priority filters F218W,
+       225W, 275W, 300X, 658N.  Fainter ghosts appeared in F606W.
+       However, these were starlike, and that would be very
+       undesirable in what would be one of the most heavily
+       used filters.
+
+       In view of the importance of these filters to the core
+       performance of WFC3 in HST or any other likely imaging mission,
+       SOC believes it is essential to resolve the ghost problem
+       before closeout, presumably by securing and verifying new
+       filter designs.
+  
+   (b) Low-level (a few DN) crosstalk appears in the UVIS data,
+       similar, though more pronounced, to effects which have been
+       observed in ACS.  Several inexpensive methods to mitigate the
+       crosstalk are being explored and will benefit ACS as well as
+       WFC3.  
+
+       Again, SOC believes it is essential to resolve the crosstalk
+       problem before closeout
+
+
+2) DEPLOYMENT OF WFC3
+
+The Hubble Space Telescope has been NASA's most prominent and
+successful scientific endeavor, second only to Apollo as NASA's
+signature mission.  The investments made in HST, including the
+servicing missions, have been repaid many times over in both
+scientific return and public interest in and support for space
+science.  A key to HST's success has been its simultaneous access to
+the crucial ultraviolet, optical, and near-infrared spectral bands.
+These bands contain the most information about the physics of the
+universe, and HST is unique in its access to and performance in them.
+
+No existing or planned telescope, on the ground or in space, will
+supersede HST's high resolution, wide field imaging capabilities in
+the 0.12-1.0 micron band in the foreseeable future. 
+
+WFC3 was specifically designed to exploit HST's unique capabilities.
+It is intended for panchromatic (0.2-1.7 micron), wide-field, high
+resolution imaging with an unusually large filter complement. Among
+the key scientific problems to which WFC3 would have made major
+contributions when deployed on HST are these:
+
+    o Tracing the evolution of dark energy in the universe by
+      obtaining high precision light curves for distant supernovae
+      at redshifts over 1.  The nature of dark energy is widely
+      considered to be the most important problem facing contemporary
+      physics. 
+
+    o Establishing the history of star formation in the local
+      universe through panchromatic mid-UV to IR imaging of
+      nearby galaxies and clusters of galaxies. 
+
+    o Exploiting discoveries from the ongoing GALEX and Spitzer Space
+      Telescope missions.  These offer unprecedented sensitivity in UV
+      surveys and the mid-far IR domain, respectively.  But WFC3, with
+      an optical-UV areal resolution that is thousands of times better
+      than either of these, would be essential in many cases to
+      capitalizing on the results of these missions.  Chandra is now
+      predicted to outlive HST by several years and will not have the
+      benefit of coordinated observations even with existing HST
+      instruments. 
+
+    o Exploring formation mechanisms for brown dwarfs through a census
+      of low mass star populations in nearby star formation regions.
+
+    o Using Lyman dropouts to identify galaxies and proto-galaxies
+      during the reionization epoch in the early universe, which is now
+      thought to be at redshifts of ~6-8.  WFC3 was specifically
+      intended for detection of such systems in the 0.8-1.2 micron
+      region, where ground-based observations are difficult due to
+      atmospheric spectral features. 
+
+    o Synoptic observations of planetary atmospheres and surfaces at
+      high resolution.  
+
+    o Laying the scientific groundwork for the JWST mission by undertaking
+      observations of the brighter targets of interest to JWST which
+      are below the observing threshold from the ground. 
+
+It is inevitable that deployment of WFC3 on a platform smaller than
+HST would involve a significant descope in scientific productivity.
+
+Based on long discussions, and consultations concerning alternative
+uses of WFC3, here is our list of deployment options in priority order:
+
+   (1)  SM4.  Since NASA has now commissioned an independent study of
+	the safety issues surrounding a servicing mission, it is
+	possible that SM4 will be resurrected.  This is obviously by
+	far the highest priority option.  As long as SM4 remains a
+	possibility, it is essential that no steps be taken that would
+	compromise the specified performance of WFC3 or the schedule
+	on which it could be made ready for SM4.  Compared to other
+	options, the costs and technical feasibility of SM4 are well
+	established, and this is now probably the cheapest way of
+	deploying WFC3.  
+
+   (2)  Non-Shuttle servicing of HST.  The most interesting possibility
+	here is robot servicing using an enhanced version of the
+	deorbiting propulsion unit (about $300M) which NASA is already
+	developing.  This could carry gyros and batteries which,
+	operated from the attached external unit, could extend HST
+	science operations for a number of years.  It should be
+	feasible to remove WFPC2 and install WFC3 with such a robot
+	unit because only two bolts must be loosened and retightened.
+	Internal rails and latches insure optical alignment.  A single
+	mating connector links in power and communications.  There are
+	no obvious serious technical obstacles, and add-on costs might
+	not exceed those of a MIDEX mission yet would provide much
+	greater scientific return.  
+
+        If Shuttle servicing is found not to be possible, SOC strongly
+	recommends that NASA urgently explore all possible avenues for
+	placing WFC3 on HST by other means.  Robot servicing is a
+	capability that must be of interest to the Moon-Mars initiative.
+
+    (3) 2-m class fast-track telescope:  As recommended by the Bahcall
+	Committee (the "HST/JWST Transition Panel"), the best
+	alternative to deployment on HST is to place WFC3 in a
+	dedicated, 2-m class telescope on a schedule such that the
+	"gap" between HST and JWST operations is filled.  This would
+	permit recovery of much of the WFC3 science, though the Design
+	Reference Mission would have to be scrutinized for detailed
+	compromises.  This is likely technically feasible, but
+	differential costs would probably exceed those of items (1)
+	and (2).  
+
+
+NASA has the option of making the fully characterized WFC3 hardware
+and documentation available for use in PI-class missions as
+"government furnished equipment."  There is a broad spectrum of these,
+ranging from MIDEX-class ($150-200M) to Probe-class ($600M).  These
+encompass areas where SOC has very limited expertise (e.g. planetary
+science, high energy astrophysics).  PI-class science is typically
+very focussed, and these missions devote long observing periods to a
+narrow range of objectives. 
+
+We concluded that a decrease in aperture to 1.0-1.5m in a PI-class
+mission would not support most of the unique science programs planned
+for HST/WFC3.
+
+We could not reach a consensus on a recommendation concerning PI-class
+missions.  Some felt that SOC should not consider any option where the
+original prime science goals for the instrument could not be reached.
+Others argued that PI teams could well find good uses for WFC3, either
+as a finished unit or in the form of its qualified parts (i.e. flight
+components and spares).  In particular, the mid-UV capability of WFC3
+will remain valuable and unique through the end of the decade.  All
+agreed that the value of WFC3 would depend on how quickly such
+alternate programs could be implemented. 
+
+
+Because of these various potential channels for deployment of
+WFC3, we reiterate that it is imperative to complete the project's
+current plan for testing and documentation of the instrument.  
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<< END  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+

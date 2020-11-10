@@ -1,0 +1,33 @@
+/*  class-4.css  2/3/2016 */
+/*  Compared to "class-1.css": */
+/*    Main test changed to normal from bold */
+/*    Main text changed to large from normal */
+/*    H3 made bold */
+/*    Within HTML pages: capitalize only first letters of H2 headings; */ 
+/*                     : replace underlines with bold for emphasis;   */
+/*                     : use bold plus italics for new terms;   */ 
+/*  class-4: blue "td" fonts        */
+
+
+body        { font-size: large; color: #000000; background: #FFFFdd;
+              font-family: Arial,Helvetica,Verdana; font-weight:normal  }
+
+a:link      { color: #DC143C }
+
+a:visited   { color: #DC143C }
+
+a:active    { color: lime }
+
+H1          { font-size: xx-large; color: #bb11dd; font-weight: bold}
+
+H2          { font-size: x-large; color: blue; font-weight:bold}
+
+H3          { font-size: large; color: blue; font-weight:bold }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana;  color: blue}
+
+pre         { font-family: Courier, CourierNew }
+

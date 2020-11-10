@@ -1,0 +1,22 @@
+body        { color: #000000; background: #FFFFdd;
+              font-family: Arial,Helvetica,Verdana; font-weight: bold }
+
+a:link      { color: #DC143C }
+
+a:visited   { color: #DC143C }
+
+a:active    { color: lime }
+
+H1          { font-size: xx-large; color: #bb11dd; font-weight: bold}
+
+H2          { font-size: x-large; color: blue; font-weight:bold}
+
+H3          { font-size: large; color: blue }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana }
+
+pre         { font-family: Courier, CourierNew }
+

@@ -1,0 +1,26 @@
+body        { color: #FFFFCC; background: #000000;
+              font-family: Arial,Helvetica,Verdana; }
+
+a:link      { color: cyan }
+
+a:visited   { color: cyan }
+
+a:active    { color: lime }
+
+H1          { font-size: xx-large; color: #dd33ff; font-weight: bold}
+
+H2          { font-size: x-large; color: white; font-weight:bold}
+
+H3          { font-size: x-large; color: #bb11cc font-weight:bold}
+
+H4          { font-size: large; color: #bb11cc }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana }
+
+pre         { font-family: Courier, CourierNew }
+
+kbd         { font: normal bold 100% monospace;  color:red  }
+	   

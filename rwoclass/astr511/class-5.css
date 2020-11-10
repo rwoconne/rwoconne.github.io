@@ -1,0 +1,30 @@
+/*  class-5.css  11/6/19 */
+/*  Compared to "class-3.css": */
+/*    Main text changed to x-large from normal -- boost one step */
+/*    H2 made xx-large */
+/*    Within HTML pages: capitalize only first letters of H2 headings; */ 
+/*                     : replace underlines with bold for emphasis;   */
+/*                     : use bold plus italics for new terms;   */ 
+
+body        { font-size: x-large; color: #000000; background: #FFFFdd;
+              font-family: Arial,Helvetica,Verdana; font-weight:normal  }
+
+a:link      { color: #DC143C }
+
+a:visited   { color: #DC143C }
+
+a:active    { color: lime }
+
+H1          { font-size: xx-large; color: #bb11dd; font-weight: bold}
+
+H2          { font-size: xx-large; color: blue; font-weight:bold}
+
+H3          { font-size: large; color: blue; font-weight:bold }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana }
+
+pre         { font-family: Courier, CourierNew }
+

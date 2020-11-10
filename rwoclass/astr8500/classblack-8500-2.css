@@ -1,0 +1,25 @@
+body        { color: #FFFFFF; background: #000000;
+              font-family: Arial,Helvetica,Verdana; }
+
+a:link      { color: #9999ff; font-style: italic}
+
+a:visited   { color: #9999ff; font-type: italic }
+
+a:active    { color: red }
+
+H1          { font-size: xx-large; color: #dd33ff; font-weight: bold}
+
+H2          { font-size: x-large; color: white; font-weight:bold}
+
+H3          { font-size: large; color: #9999ff;  font-weight:bold}
+
+H4          { font-size: large; color: LightSteelBlue; font-weight: bold }
+
+th          { font-family: Arial,Helvetica,Verdana; font-weight: bold; font-size: x-large;
+               color: LightSteelBlue }
+
+td          { font-family: Arial,Helvetica,Verdana; font-weight: bold; font-size: large;
+                color: #9999ff }
+
+pre         { font-family: Courier, CourierNew }
+

@@ -1,0 +1,35 @@
+/*  classblack-6.css  1/11/20 */
+/*  Compared to "classblack-3.css": */
+/*    Main text changed to normal from bold */
+/*    Main text changed to large from normal */
+/*    H3 made bold */
+/*    Within HTML pages: capitalize only first letters of H2 headings; */ 
+/*                     : replace underlines with bold for emphasis;   */
+/*                     : use bold plus italics for new terms;   */ 
+/*    Lighter tone for links */
+
+
+body        { font-size: large; color: #FFFFFF; background: #000000;
+              font-family: Arial,Helvetica,Verdana; font-weight:normal }
+
+a:link      { color: #bbbbff }
+
+a:visited   { color: #9999ff }
+
+a:active    { color: red }
+
+H1          { font-size: xx-large; color: #dd33ff; font-weight: bold}
+
+H2          { font-size: x-large; color: white; font-weight:bold}
+
+H3          { font-size: x-large; color: #bb11cc font-weight:bold}
+
+H4          { font-size: large; color: #bb11cc }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana }
+
+pre         { font-family: Courier, CourierNew }
+
