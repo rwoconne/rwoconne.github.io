@@ -1,0 +1,550 @@
+
+
+
+
+<html>
+<head>
+<title>The Miami Herald | 02/10/2002 | Asteroid Nearly Destroys Earth.</title>
+<link rel='stylesheet' type='text/css' href='/css/palette/blue_complement/en/global.css'/><script type="text/javascript" language="javascript" src="/js/global.js"></script>
+<script type="text/javascript" language="javascript">
+var navReady = false;
+var toolsReady = false;
+
+
+
+
+
+
+
+
+
+main_nav_news_on = new Image();
+main_nav_news_off = new Image();
+main_nav_business_on = new Image();
+main_nav_business_off = new Image();
+main_nav_sports_on = new Image();
+main_nav_sports_off = new Image();
+main_nav_entertainment_on = new Image();
+main_nav_entertainment_off = new Image();
+main_nav_living_on = new Image();
+main_nav_living_off = new Image();
+main_nav_classifieds_on = new Image();
+main_nav_classifieds_off = new Image();
+if (document.images) {
+var main_nav_path = "/images/palette/blue_complement/navigation/en/";
+main_nav_news_on.src = main_nav_path + "main_nav_news_on.gif";
+main_nav_news_off.src = main_nav_path + "main_nav_news.gif";
+main_nav_business_on.src = main_nav_path + "main_nav_business_on.gif";
+main_nav_business_off.src = main_nav_path + "main_nav_business.gif";
+main_nav_sports_on.src = main_nav_path + "main_nav_sports_on.gif";
+main_nav_sports_off.src = main_nav_path + "main_nav_sports.gif";
+main_nav_entertainment_on.src = main_nav_path + "main_nav_entertainment_on.gif";
+main_nav_entertainment_off.src = main_nav_path + "main_nav_entertainment.gif";
+main_nav_living_on.src = main_nav_path + "main_nav_living_on.gif";
+main_nav_living_off.src = main_nav_path + "main_nav_living.gif";
+main_nav_classifieds_on.src = main_nav_path + "main_nav_classifieds_on.gif";
+main_nav_classifieds_off.src = main_nav_path + "main_nav_classifieds.gif";
+
+}
+
+
+var over = -1;
+var overTrigger = -1;var mNames = null;
+var menus = null;
+var menuTriggers = null;
+var numberOfMenus = 0;function mouseMoveHandler(e){
+if (navReady) {
+var scrollOffsetX = (is.ie)?(document.body.scrollLeft):0;
+var scrollOffsetY = (is.ie)?(document.body.scrollTop):0;
+var mouseX = (is.ns)?e.pageX:event.x + scrollOffsetX;
+var mouseY = (is.ns)?e.pageY:event.y + scrollOffsetY;
+if ((over !=-1 )&& ( overTrigger == -1) ) {
+var overAnyMenu = false;
+if ( (mouseX<menus[over].x) || (mouseX>menus[over].x + menus[over].width) || (mouseY<menus[over].y) || (mouseY>menus[over].y + menus[over].height)) {
+menus[over].hide();
+navRoll(mNames[over],"off");
+}
+else overAnyMenu = true;
+if (!overAnyMenu) over=-1;
+}
+}
+}
+
+function menuOver(which) {
+if (navReady) {
+overTrigger = which;
+over = which;
+for (i=0;i<numberOfMenus;i++) {
+if (i!=which) menus[i].hide();
+else menus[i].show();
+}
+navRoll(mNames[which],"on");
+}
+}
+
+function menuOut() {
+if (navReady) {
+navRoll(mNames[overTrigger],"off");
+overTrigger = -1;
+}
+}
+
+function navRoll(name, suffix) {
+if (is.ns4) {
+var imgObject = eval("document." + name + "trigger.document.images['main_nav_"+name +"']");
+imgObject.src = eval("main_nav_" + name + "_" + suffix + ".src");
+}
+else document.images["main_nav_"+name].src = eval("main_nav_" + name + "_" + suffix + ".src");
+}
+
+function mn_initPositions() {
+for (i=0; i<numberOfMenus; i++) {
+menuTriggers[i].x = menuTriggers[i].getInlineLeft();
+menuTriggers[i].y = menuTriggers[i].getInlineTop();
+menuTriggers[i].width = menuTriggers[i].getWidth();
+menuTriggers[i].height = menuTriggers[i].getHeight();
+menus[i].x = menuTriggers[i].x;
+menus[i].y = menuTriggers[i].y + menuTriggers[i].getHeight();
+menus[i].width = menus[i].getWidth();
+menus[i].height= menus[i].getHeight();
+menus[i].updateLayer();
+}
+}
+
+function initMenus()
+{
+if (is.ns4) document.captureEvents(Event.MOUSEMOVE)
+document.onmousemove= mouseMoveHandler;
+mNames = new Array();
+menus = new Array();
+menuTriggers = new Array();mNames[0] = "news";
+mNames[1] = "business";
+mNames[2] = "sports";
+mNames[3] = "entertainment";
+mNames[4] = "living";
+mNames[5] = "classifieds";
+numberOfMenus = mNames.length;
+for (i=0; i<numberOfMenus; i++ )
+{
+menuTriggers[i] = new LayerObject(mNames[i] + "trigger");
+menus[i] = new LayerObject(mNames[i]);
+}
+
+mn_initPositions();
+navReady = true;
+}
+
+
+onLoadScript+=";navReady=false;initMenus();";
+function showResults(siteSurveyKey) {
+var url="/mld/templates/contentModules/poll-results-popup.jsp"+ "?siteSurveyKey=" + siteSurveyKey;
+window.open(url, 'Title');
+}
+
+function openWin(URL) {
+aWindow = window.open(URL,
+'thewindow','width=500,height=400,resizable=yes,scrollbars=yes');
+}
+
+
+
+
+
+
+
+
+
+function init() {
+initMenus();
+}
+</script>
+</head>
+<body bgcolor="#000000" onload="init();" topmargin="2" leftmargin="2" marginwidth="2" marginheight="2">
+
+
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#666666" width="100%">
+<tr><td width="28"><a href="http://www.realcities.com" target="_blank"><img src="/images/common/realcities_logo.gif" width="28" height="29" alt="RealCities" border="0"/></a></td><td class="greytext"><nobr><strong><a href="http://www.realcities.com" target="_blank">Click here to visit other RealCities sites</a></strong></nobr></td><td align="right">
+<IFRAME WIDTH=425 HEIGHT=25 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=ribbon&pos=h1&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=ribbon&pos=h1&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</td></tr></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" width="100%">
+<tr>
+<td bgcolor="#000000" colspan="2"><img src="/images/common/spacer.gif" width="1" height="3" alt="" /></td>
+</tr>
+<tr>
+<td background="/images/common/bg_dashed_dark_grey.gif"><a href="http://www.miami.com"><img src="/images/logos/site/miami/miamiherald/site_logo.gif" width="239" height="61" alt="miamiherald.com - The miamiherald home page" border="0" /></a></td>
+
+<!-- Remove from here before we go in production-->
+<!-- Remove upto this line -->
+
+<td background="/images/common/bg_dashed_dark_grey.gif" align="right"><img src="/images/logos/site/miami/miamiherald/photobar/spacer.gif" width="540" height="61" alt="Miami Photos" border="0" /></td>
+</tr>
+<tr>
+<td bgcolor="#000000" colspan="2"><img src="/images/common/spacer.gif" width="1" height="3" alt=""/></td>
+</tr>
+</table>
+
+<!-- END OF PHOTOBAR -->
+
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" bgcolor="#2b4e9d" background="/images/palette/blue_complement/main_nav_bg.gif" border=0>
+<tbody><tr><td><img height="23" src="/images/palette/blue_complement/navigation/en/main_nav_our_local_channels.gif" width="155" border="0"/></td><td><div class="menutrigger" id="newstrigger"><a onmouseover="menuOver(0)" onmouseout="menuOut();" name="3110" href="/mld/miami/news"><img alt="news" src="/images/palette/blue_complement/navigation/en/main_nav_news.gif" border="0" name="main_nav_news"  /></a></div></td><td><div class="menutrigger" id="businesstrigger"><a onmouseover="menuOver(1)" onmouseout="menuOut();" name="10" href="/mld/miami/business"><img alt="business" src="/images/palette/blue_complement/navigation/en/main_nav_business.gif" border="0" name="main_nav_business"  /></a></div></td><td><div class="menutrigger" id="sportstrigger"><a onmouseover="menuOver(2)" onmouseout="menuOut();" name="4270" href="/mld/miami/sports"><img alt="sports" src="/images/palette/blue_complement/navigation/en/main_nav_sports.gif" border="0" name="main_nav_sports"  /></a></div></td><td><div class="menutrigger" id="entertainmenttrigger"><a onmouseover="menuOver(3)" onmouseout="menuOut();" name="655" href="/mld/miami/entertainment"><img alt="entertainment" src="/images/palette/blue_complement/navigation/en/main_nav_entertainment.gif" border="0" name="main_nav_entertainment"  /></a></div></td><td><div class="menutrigger" id="livingtrigger"><a onmouseover="menuOver(4)" onmouseout="menuOut();" name="1025" href="/mld/miami/living"><img alt="living" src="/images/palette/blue_complement/navigation/en/main_nav_living.gif" border="0" name="main_nav_living"  /></a></div></td><td><div class="menutrigger" id="classifiedstrigger"><a onmouseover="menuOver(5)" onmouseout="menuOut();" name="640" href="/mld/miami/classifieds"><img alt="classifieds" src="/images/palette/blue_complement/navigation/en/main_nav_classifieds.gif" border="0" name="main_nav_classifieds"  /></a></div></td><td width="100%">&nbsp;</td></tr></tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" width="100%" background="/images/common/bg_dashed_grey.gif">
+<tr><td bgcolor="#000000"><img src="/images/common/spacer.gif" width="762" height="1"/></td></tr><tr><td valign="middle" align="right" class="greytext"><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="/mld/miami/contact_us/help "> Help</a><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="/mld/miami/contact_us "> Contact Us</a><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="/mld/miami/contact_us/site_index "> Site Index</a><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="/mld/miami/archives "> Archives</a><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="/mld/miami/contact_us/advertise/ "> Place an Ad</a><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="/mld/miami/contact_us/subscriptions_np1 "> Newspaper Subscriptions</a><img src="/images/component/vertical_divider_grey.gif" width="20" border="0" height="14"/><a href="http://www.miami.com/edc/servlet/edcSubscriber?action=Q_REDIRECT&NEXT=EDIT_DISPATCH "> Email Dispatches</a>
+&nbsp;&nbsp;</td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="#000000" width="155"><img src="/images/common/spacer.gif" width="155" height="1"></td>
+<td bgcolor="#000000" width="1"><img src="/images/common/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#000000" width="100%"><img src="/images/common/spacer.gif" width="450" height="1"></td>
+<td bgcolor="#000000" width="1"><img src="/images/common/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#000000" width="155"><img src="/images/common/spacer.gif" width="155" height="1"></td>
+</tr>
+<tr>
+
+<td valign="top" bgcolor="#E9E9E9">
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155" bgcolor="#e9e9e9">
+<tr><td rowspan="3"><img src="/images/common/spacer.gif" width="10" height="1"/></td><td><img src="/images/common/spacer.gif" width="130" height="10"/></td></tr><tr> <td align><a href="/mld/miamiherald/">
+<img src="/images/logos/site/miami/miamiherald/news_nav_header.gif" border="0" /></a>
+<table border="0" cellpadding="0" cellspacing="0" width="140">
+<tr><td colspan="3" align="center"><img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/local" name="321057" class="npnav">Local/State</a></b>
+</td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/news/state" name="321066" class="npnav">Florida</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/community/states/florida/counties/monroe_county/cities_neighborhoods/florida_keys" name="321067" class="npnav">Florida Keys</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/community/states/florida/counties/broward_county" name="1000720" class="npnav">Broward</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/community/states/florida/counties/miami-dade" name="322271" class="npnav">Neighbors</a></b></td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news" name="321075" class="npnav">Nation</a></b>
+</td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/world" name="321082" class="npnav">World</a></b>
+</td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/world/americas" name="321076" class="npnav">Americas</a></b>
+</td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/news/world/canada" name="321077" class="npnav">Canada</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/news/world/cuba" name="321078" class="npnav">Cuba</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/news/world/haiti" name="321079" class="npnav">Haiti</a></b></td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/business" name="321000" class="npnav">Business</a></b>
+</td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/consumer" name="321016" class="npnav">Action Line</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/special_packages/business_monday" name="321002" class="npnav">Business Monday</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/classifieds/employment" name="321003" class="npnav">Careers</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/columnists/michele_chandler" name="1000545" class="npnav">Consumer Watch</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/international" name="321017" class="npnav">International</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/international/latin_america" name="321018" class="npnav">Latin America</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/local" name="321019" class="npnav">Local/State</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/personal_finance" name="321020" class="npnav">Making Money</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/financial_markets" name="321021" class="npnav">Money Makeovers</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/national" name="321022" class="npnav">National</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/industries/real_estate" name="321023" class="npnav">Real Estate</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/business/technology" name="321024" class="npnav">Technology</a></b></td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/entertainment" name="321026" class="npnav">Living & Arts</a></b>
+</td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/entertainment/visual_arts" name="321028" class="npnav">Arts</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/entertainment/books" name="321029" class="npnav">Books</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/home/food" name="321044" class="npnav">Food</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/home/gardening" name="321045" class="npnav">Gardening</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/health" name="321046" class="npnav">Health</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/home" name="321047" class="npnav">Home</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/people/family/parenting" name="321048" class="npnav">Parenting</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/people" name="321049" class="npnav">People</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/classifieds/real_estate" name="321050" class="npnav">Real Estate</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/entertainment/television" name="321053" class="npnav">TV</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living/travel" name="321051" class="npnav">Travel</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/living" name="1001408" class="npnav">Tropical Life</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/entertainment/weekend" name="321027" class="npnav">Weekend</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/classifieds/automotive" name="321054" class="npnav">Wheels & Waves</a></b></td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/sports" name="321089" class="npnav">Sports</a></b>
+</td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/baseball" name="321091" class="npnav">Baseball</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/basketball" name="321094" class="npnav">Basketball</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/boxing" name="321096" class="npnav">Boxing</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/colleges" name="321097" class="npnav">Colleges</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/football" name="321107" class="npnav">Football</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/golf" name="321108" class="npnav">Golf</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/high_school" name="321109" class="npnav">High Schools</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/hockey" name="321110" class="npnav">Hockey</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/horse_racing" name="321112" class="npnav">Horse Racing</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/motorsports" name="321090" class="npnav">Motor Sports</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/outdoors" name="321113" class="npnav">Outdoors</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/soccer" name="321115" class="npnav">Soccer</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/tennis" name="321116" class="npnav">Tennis</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/sports/wrestling" name="321117" class="npnav">Wrestling</a></b></td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/special_packages/focus" name="1001410" class="npnav">Focus</a></b>
+</td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/opinion" name="321084" class="npnav">Opinion</a></b>
+</td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/news/editorial" name="321087" class="npnav">Editorials</a></b></td></tr><tr><td></td><td valign="top" align="right"><img src="/images/palette/blue_complement/panel_arrow_0.gif" width="12" height="9" border="0"  vspace="5" align="right"/></td><td><b><a href="/mld/miamiherald/news/editorial/letters" name="321088" class="npnav">Letters to the Editor</a></b></td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/columnists" name="321800" class="npnav">Columnists</a></b>
+</td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/local/corrections" name="322195" class="npnav">Corrections</a></b>
+</td></tr><tr><td colspan="3" align="center">
+<img src="/images/component/hr_grey_dots_125w.gif" width="125" height="1" border="0"  vspace="2"/></td></tr><tr><td colspan="3">
+<b><a href="/mld/miamiherald/news/obituaries" name="321083" class="npnav">Obituaries</a></b>
+</td></tr></table>
+</td></tr><tr><td valign="top"><img src="/images/common/spacer.gif" width="145" height="15"/></td></tr><tr><td colspan="3"><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" /></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td><img src="/images/component/divider_rail_top.gif" width="155" height="1" ></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td align="center">
+<IFRAME WIDTH=120 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=left1&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=left1&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" ></td></tr></table>
+
+
+
+
+
+</td>
+
+<td bgcolor="#000000" rowspan="2"><img src="/images/common/spacer.gif" width="1" height="1"></td>
+<TD ROWSPAN="2" VALIGN="top" BGCOLOR="#FFFFFF">
+
+
+
+
+
+
+
+
+
+
+
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="2" width="97%">
+<tr><td valign="middle" class="bcrumb"><a href="/mld/miami/" class="related">Back to Home</a>&nbsp;&gt;&nbsp;
+<a href="/mld/miamiherald/" class="related">The Miami Herald</a>&nbsp;&gt;&nbsp;
+<a href="/mld/miamiherald/news/columnists"> Columnists </a> &gt;
+</td><td align="right" class="byline">Wednesday, Apr 17, 2002</td></tr><tr><td colspan="2" align="center" bgcolor="#ffffff"> <img src="/images/common/spacer.gif" width="1" height="1" /><br></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="97%">
+<tr valign="bottom"> <td class="pagetitle"><img src="/images/logos/site/miami/miamiherald/section_header.gif" border="0" alt="Dave Barry"/></td><td width="1" valign="top"><img src="/images/common/spacer.gif" width="1" height="30" /></td><td align="right" class="npheadline1">Dave Barry</td></tr></table><table border="0" cellpadding="0" cellspacing="0" width="97%" align="center">
+<tr><td align="center" bgcolor="#bbbbbb">
+<img src="/images/common/spacer.gif" width="1" height="1" /><br></td></tr><tr><td align="center">
+<img src="/images/common/spacer.gif" width="1" height="2" /><br></td></tr><tr><td align="center" bgcolor="#2B4E9D">
+<img src="/images/common/spacer.gif" width="1" height="3" /><br></td></tr></table><img src="/images/common/spacer.gif" width="100%" height="5" /><br></div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="10" rowspan="7"><img src="/images/common/spacer.gif" width="10" height="1" /></td><td class="byline" align="right">
+<img src="/images/common/spacer.gif" width="100%" height="1" /><br>Select&nbsp;a&nbsp;day:&nbsp;
+<a href="/mld/miamiherald/mon/living/columnists/dave_barry/archive.htm" class="relatedbold">M</a>&nbsp;
+|
+&nbsp;<a href="/mld/miamiherald/tue/living/columnists/dave_barry/archive.htm" class="relatedbold">T</a>&nbsp;
+|
+&nbsp;<a href="/mld/miamiherald/wed/living/columnists/dave_barry/archive.htm" class="relatedbold">W</a>&nbsp;
+|
+&nbsp;<a href="/mld/miamiherald/thu/living/columnists/dave_barry/archive.htm" class="relatedbold">Th</a>&nbsp;
+|
+&nbsp;<a href="/mld/miamiherald/fri/living/columnists/dave_barry/archive.htm" class="relatedbold">F</a>&nbsp;
+|
+&nbsp;<a href="/mld/miamiherald/sat/living/columnists/dave_barry/archive.htm" class="relatedbold">S</a>&nbsp;
+|
+&nbsp;<a href="/mld/miamiherald/sun/living/columnists/dave_barry/archive.htm" class="relatedbold">Su</a></td><td width="10" rowspan="7"><img src="/images/common/spacer.gif" width="10" height="1" /></td></tr></table>
+
+<div align="center"><br><IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=banner&pos=center7&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=banner&pos=center7&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</div><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td colspan="4"><hr size="1" color="#cccccc" width="97%"/></td></tr><tr><td width="15" rowspan="7"><img src=/images/common/spacer.gif width="15" height="1" /></td><td>Posted on Sun, Feb. 10, 2002</td><td align="right" valign="top">
+<img src=/images/component/topstory_fromthe_txt.gif width="46" height="13"  border="0"/><img src="/images/logos/site/miami/miamiherald/archives_title.gif" alt="story:PUB_DESC" border="0"/></td><td width="15" rowspan="7"><img src=/images/common/spacer.gif width="15" height="1" /></td></tr><tr><td colspan="2"><img src=/images/common/spacer.gif width="1" height="10" /></td></tr><tr><td colspan="2">
+<div class="body-head">
+
+
+
+<span class="headline">Asteroid Nearly Destroys Earth.</span><br>
+
+
+
+</div>
+<table border="0" width = "100" cellpadding="0" cellspacing="5" align="right">
+
+
+</table>
+<div>
+<span class="body-content">
+<!-- begin body-content -->
+<div class="body-content">
+<p>See Page 64A.</p>
+<p>You can skip this column. I'm sure you have more important things to do. You don't need to waste your valuable time reading about how MILLIONS OF PEOPLE, POSSIBLY INCLUDING YOU, RECENTLY WERE ALMOST KILLED BY A GIANT SPACE ROCK AND THERE ARE MORE COMING AND NOBODY IS DOING ANYTHING ABOUT IT.</p>
+<p>Excuse me for going into CAPS LOCK mode, but I am a little upset here. In case you didn't hear about it, which you probably didn't: On Jan. 7, an asteroid 1,000 feet across -- nearly <i>three times </i>the current diameter of Marlon Brando -- barely missed the Earth, which is most likely your planet of residence.</p>
+<p>What do I mean by ''barely''? I mean that this asteroid, traveling at 68,000 miles per hour, came within 400,000 miles. In astronomical terms, that is nothing. To get an idea how close this thing came, imagine that your head is the Earth. Now hold your right hand, representing the sun, at arm's length. Now take your left forefinger, representing the asteroid, and move it toward the Earth at 68,000 miles per hour until your pinkie is up to the knuckle in your left nostril. Now try to type a sentence. THAT is what I mean by ``barely.''</p>
+<p>What if this asteroid had hit the Earth? According British asteroid expert Benny Peiser, as quoted in the National Post of Canada, ''Such an object could literally wipe out a medium-sized country.'' So if you live in a <i>large </i>country, you have nothing to worry about!</p>
+<p>No, really, if this thing had hit anywhere on Earth, it would have been seriously tragic. And don't think you're safe just because this one missed. There are plenty more asteroids and asterettes (which are your female asteroids) whizzing through space, and eventually one will hit us. Some already have. Astronomers believe that 65 million years ago, a large asteroid struck Earth and wiped out the dinosaurs; in 1985, a smaller one obliterated the career of Henry ''The Fonz'' Winkler. It is only a matter of time before disaster strikes again.</p>
+<p>I'm sure this information raises some troubling questions in your mind, the main one being: There's a British asteroid expert named ''Benny?'' But also you're wondering: What is the astronomy community doing about this?</p>
+<p>Good question. As it happens, the American Astronomical Society was holding a conference in Washington AT THE VERY SAME TIME as the asteroid nearly hit the Earth. I know this because The New York Times covered the heck out of the conference. Here's the scary part: The Times did not print ONE WORD about the asteroid. Instead, as this thing whizzed past, The Times printed the following exciting astronomy news:</p>
+<p>JAN. 8 -- Astronomers have discovered that certain gamma rays, which they USED to think came from billions of light-years away, in fact came from only a few hundred million light-years away!</p>
+<p>JAN. 9 -- Having studied the far edges of the universe with the Hubble telescope, astronomers now believe that roughly 14 billion years ago, stars formed more quickly than was previously thought!</p>
+<p>JAN. 10 -- Astronomers ''peering deep into the heart of the Milky Way'' have discovered more than 1,000 sources of ''powerful X-rays,'' far more than were previously known!</p>
+<p>So there you have it: While the Giant Space Rock of Death was coming THIS CLOSE to turning our planet into a cosmic Whack-a-Mole game, the astronomy community was squinting at the far edges of the universe. This is like two police officers standing in the park, and a screaming woman runs past, chased by muggers, and one officer says to the other: ``Look over there! An albino squirrel!''</p>
+<p>No, the astronomers aren't going to save us. Humanity must take matters into its own hands. Step One, of course, is for everybody to lay in at LEAST a two-week supply of margarita ingredients. Step Two is to mount a massive international project, based on the movie <i>Armageddon</i>, to watch for an incoming asteroid, and then send up a rocket, commanded by Bruce Willis, to blow it up with a hydrogen bomb. Except of course we can't really use Bruce, because he'd want $20 million, plus a percentage of the asteroid. So we need someone else -- someone with courage, skill and a proven ability to perform in the face of grave danger. One name comes immediately to my mind, as I'm sure it does to yours. Geraldo, your planet needs you.</p>
+</div>
+<!-- end body-content -->
+</span>
+</div>
+</td></tr></table>
+<table border="0" cellpadding="10" cellspacing="0" width="100%">
+<tr><td align="right">
+<table border="0" cellpadding="1" cellspacing="0">
+<tr align="center">
+<td></td><td><a href="2633774.htm?template=contentModules/emailstory.jsp"><img src="/images/common/button_email_this.gif" width="22" height="15" border="0" /></a></td><td><a href="2633774.htm?template=contentModules/printstory.jsp"><img src="/images/common/button_print_this.gif" width="22" height="15" border="0" /></a>
+</td></tr><tr>
+
+
+<td></td>
+<td nowrap><a href="2633774.htm?template=contentModules/emailstory.jsp" class="related">&nbsp;email this</a> |</td><td nowrap><a href="2633774.htm?template=contentModules/printstory.jsp" class="related">&nbsp;print this</a></td></tr></table>
+</td></tr></table>
+<br><div align="center">
+
+
+
+
+<img src="/images/common/spacer.gif" width="100" height="25" /><br></div>
+</td><td bgcolor="#000000" rowspan="2"><img src="/images/common/spacer.gif" width="1" height="1"></td><td valign="top" bgcolor="#E9E9E9">
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155" bgcolor="#2b4e9d">
+<tr><td rowspan="2" bgcolor="#2b4e9d"><img src="/images/common/spacer.gif" width="5" height="1" /></td><td class="mainarea">
+<img src="/images/common/spacer.gif" width="1" height="6" /><br><a href="/mld/miami/shopping"><b>Shopping/Services</b></a><br><img src="/images/common/spacer.gif" width="1" height="5" /></td><td rowspan="2" bgcolor="#2b4e9d"><img src="/images/common/spacer.gif" width="5" height="1" /></td></tr><tr><td valign="top" bgcolor="#fef7d7" align="center"><a href="http://www.miami.com/mld/miami/classifieds/employment"><img name="find_a_job" src="/images/palette/blue_complement/navigation/en/shopping_find_a_job.gif" width="141" height="59" border="0" /></a><br><img src="/images/palette/blue_complement/hr_2px_light.gif" width="141" height="2" /><br><a href="/mld/miami/classifieds/automotive"><img name="find_a_car" src="/images/palette/blue_complement/navigation/en/shopping_find_a_car.gif" width="141" height="56" border="0" /></a><br><img src="/images/palette/blue_complement/hr_2px_light.gif" width="141" height="2" /><br><a href="/mld/miami/classifieds/real_estate"><img name="find_a_home" src="/images/palette/blue_complement/navigation/en/shopping_find_a_home.gif" width="141" height="60" border="0" /></a><br><img src="/images/palette/blue_complement/hr_2px_light.gif" width="141" height="2" /><br><a href="http://www.apartments.com/herald"><img name="find_a_home" src="/images/palette/blue_complement/navigation/en/shopping_find_apt.gif" width="141" height="60" border="0" /></a><br><img src="/images/palette/blue_complement/hr_2px_light.gif" width="141" height="2" /><br><table border="0" cellpadding="3" cellspacing="0" width="142">
+<tr><td><b><a href="/mld/miami/classifieds">Classifieds:</a></b> <br><span class="mediumarea">Search our online <b><a href="/mld/miami/classifieds">Newspaper Classifieds</a></b></span></td></tr></table>
+<img src="/images/palette/blue_complement/hr_2px_light.gif" width="141" height="2" /><br><table border="0" cellpadding="3" cellspacing="0" width="142">
+<tr><td><b><a href="/mld/miami/shopping">Shop Nearby:</a></b> <br><span class="mediumarea">Your online source for <br><b><a href="/mld/miami/shopping">Local Shopping</a></b></span></td></tr></table>
+</td></tr><tr><td colspan="3" bgcolor="#2b4e9d"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td><img src="/images/component/divider_rail_top.gif" width="155" height="1" ></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td align="center">
+<IFRAME WIDTH=120 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=right1&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=right1&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" ></td></tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td><img src="/images/component/divider_rail_top.gif" width="155" height="1" ></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td align="center">
+<IFRAME WIDTH=120 HEIGHT=600 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=tower&pos=right2&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=tower&pos=right2&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" ></td></tr></table><table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td><img src="/images/component/divider_rail_top.gif" width="155" height="1" ></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td align="center">
+<IFRAME WIDTH=120 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=right3&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=right3&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" ></td></tr></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td bgcolor="#fef7d7" colspan="7"><img src="/images/component/divider_rail_top.gif" width="155" height="1" /></td></tr><tr><td bgcolor="#fef7d7"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td bgcolor="#d4cdaf" colspan="5">&nbsp;</td><td bgcolor="#aba695" rowspan="5"><img src="/images/common/spacer.gif" width="1" height="1" /></td></tr><tr><td bgcolor="#fef7d7" rowspan="4"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td bgcolor="#d4cdaf" rowspan="4"><img src="/images/common/spacer.gif" width="2" height="1" /></td><td colspan="3" bgcolor="#aba695"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td bgcolor="#d4cdaf" rowspan="4"><img src="/images/common/spacer.gif" width="2" height="1" /></td></tr><tr><td bgcolor="#aba695"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td valign="top" bgcolor="#fef7d7">
+<table border="0" cellpadding="0" cellspacing="0" width="147">
+<tr><td><table border="0" cellpadding="0" cellspacing="0" width="147" bgcolor="#fef7d7">
+<tr><td align=center><img src="/images/common/spacer.gif" width="140" height="5" /><br><b>HERALD FRONT PAGE IMAGE</b><br></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="4" /></td></tr><tr><td><img src="/images/component/hr_grey_dots_147w.gif"  width="147" height="1"/></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="147" bgcolor="#fef7d7">
+<tr valign="top">
+<td><img src="/images/common/spacer.gif" width="7" height="1" /></td><td class="mediumarea" width="100%"><b>Updated Wednesday, April 17, 2002</b></td><td><img src="/images/common/spacer.gif" width="7" height="1" /></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="147" bgcolor="#fef7d7">
+<tr><td><img src="/images/common/spacer.gif" width="1" height="4" /></td></tr><tr><td><img src="/images/component/hr_grey_dots_147w.gif"  width="147" height="1"/></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="5" /></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="147" bgcolor="#fef7d7">
+
+
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479786.htm">
+SUNDAY'S FRONT PAGE</a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479230.htm">
+MONDAY'S FRONT PAGE </a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479287.htm">
+TUESDAY'S FRONT PAGE   </a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479300.htm">
+WEDNESDAY'S FRONT PAGE</a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479342.htm ">
+THURSDAY'S FRONT PAGE</a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479751.htm  ">
+FRIDAY'S FRONT PAGE</a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+<tr valign="top">
+<td><img src="/images/palette/blue_complement/panel_arrow.gif" width="15" height="9"  hspace="2"/></td><td class="mediumarea" width="100%">
+<a href="2479767.htm ">
+SATURDAY'S FRONT PAGE</a></td><td><img src="/images/common/spacer.gif" width="4" height="1" /></td></tr><tr><td colspan="3"><img src="/images/common/spacer.gif" width="1" height="6" /></td></tr>
+
+</table></td></tr></table>
+</td><td bgcolor="#aba695"><img src="/images/common/spacer.gif" width="1" height="1" /></td></tr><tr><td bgcolor="#aba695" colspan="3"><img src="/images/common/spacer.gif" width="1" height="1" /></td></tr><tr><td bgcolor="#d4cdaf" colspan="3"><img src="/images/common/spacer.gif" width="1" height="4" /></td></tr><tr><td bgcolor="#aba695" colspan="7"><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" /></td></tr></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td><img src="/images/component/divider_rail_top.gif" width="155" height="1" ></td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td align="center">
+<IFRAME WIDTH=120 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=right4&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=button&pos=right4&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+</td></tr><tr><td><img src="/images/common/spacer.gif" width="1" height="10" /></td></tr><tr><td><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" ></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="155">
+<tr><td bgcolor="#fef7d7"><img src="/images/component/divider_rail_top.gif" width="155" height="1" /></td></tr><tr><td bgcolor="#fef7d7">
+<table border="0" cellpadding="5" cellspacing="0" width="155">
+<tr><td><b>Stocks</b><br><div align="center"><img src="/images/palette/blue_complement/hr_2px_light.gif" width="145" height="2" border="0" vspace="2" /></div></td></tr><tr><td class="mediumarea">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="3" class="mediumarea">Enter symbol/company name</td></tr><tr><form action="http://www.miami.com/mld/miamiherald/stock_result.htm" method="post">
+<td><input class="smallformelement" type="text" name="symbol" size="10"/></td><td>&nbsp;</td><td><input type="image" src="/images/palette/blue_complement/navigation/en/button_go.gif" border="0"/></td><input TYPE="hidden" NAME="pageStatus" VALUE="submitted">
+</form>
+</tr></table><br><div align="center"><img src="/images/palette/blue_complement/hr_2px_light.gif" width="145" height="2" border="0" vspace="2" /></div>
+</td></tr></table></td></tr><tr><td bgcolor="#fef7d7"><img src="/images/component/divider_rail_bottom.gif" width="155" height="2" /></td></tr></table>
+</td></tr><tr><td valign="bottom" bgcolor="#e9e9e9"><br><img src="/images/component/divider_rail_bottom.gif" width="155" height="2"></td><td valign="bottom" bgcolor="#e9e9e9"><img src="/images/component/divider_rail_bottom.gif" width="155" height="2"></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td bgcolor="#000000"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td bgcolor="#3399cc"><img src="/images/common/spacer.gif" width="760" height="1"/></td><td bgcolor="#000000"><img src="/images/common/spacer.gif" width="1" height="1" /></td></tr><tr><td bgcolor="#3399cc"><img src="/images/common/spacer.gif" width="1" height="21"/></td><td bgcolor="#2b4e9d" align="center" class="mainarea"><strong><a href="/mld/miami/news/">News</a> | <a href="/mld/miami/business/">Business</a> | <a href="/mld/miami/sports/">Sports</a> | <a href="/mld/miami/entertainment/">Entertainment</a> | <a href="/mld/miami/living/">Living</a> | <a href="/mld/miami/classifieds/">Classifieds</a> </strong> </td><td bgcolor="#003366"><img src="/images/common/spacer.gif" width="1" height="1" /></td></tr><tr><td bgcolor="#000000"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td bgcolor="#003366"><img src="/images/common/spacer.gif" width="1" height="1" /></td><td bgcolor="#000000"><img src="/images/common/spacer.gif" width="1" height="1" /></td></tr></table><table border="0" cellpadding="5" cellspacing="0" width="100%"><tr><td align="center" class="lightgreylinks"><a href="/mld/miami/contact_us/help">Help |</a> <a href="/mld/miami/contact_us">Contact Us |</a> <a href="/mld/miami/contact_us/site_index">Site Index |</a> <a href="/mld/miami/archives">Archives |</a> <a href="/mld/miami/contact_us/advertise/">Place an Ad |</a> <a href="/mld/miami/contact_us/subscriptions_np1">Newspaper Subscriptions |</a> <a href="http://www.miami.com/edc/servlet/edcSubscriber?action=Q_REDIRECT&NEXT=EDIT_DISPATCH">Email Dispatches  </a></td></tr><tr><td align="center" class="lightgreylinks"><a href="/mld/miami/contact_us/about">About Miami.com |</a> <a href="http://www.knightridderdigital.com/about/about.htm">About Realcities Network |</a> <a href="/mld/miami/contact_us/terms_of_use">Terms of Use |</a> <a href="http://www.knightridderdigital.com/press/index.html">Press Center |</a> <a href="/mld/miami/contact_us/copyright">Copyright  </a></td></tr><tr><td><img src="/images/common/spacer.gif" width="760" height="1"/></td></tr></table>
+<IFRAME WIDTH=0 HEIGHT=0 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="000000" SRC=http://krd.realcities.com/html.ng/site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=sponsor&pos=popup&c1=living&c2=columnists&c3=dave_barry&c4=none>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC=http://krd.realcities.com/js.ng/Params.richmedia=yes&site=krsouth&proptype=krd_np&webprop=miami&product=mld&subproduct=miamiherald&size=sponsor&pos=popup&c1=living&c2=columnists&c3=dave_barry&c4=none>
+</SCRIPT>
+</IFRAME>
+
+<div class=menu id="news">
+<table cellspacing="0" cellpadding="4" width="130" bgcolor="#d4cdaf" border="0">
+<tbody><tr><td class=pulldown>
+<a href="/mld/miami/news/breaking_news/" name="3115">Breaking News</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/columnists/" name="3125">Columnists</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/local/" name="4160">Local</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/nation/" name="4175">Nation</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/politics/" name="4185">Politics</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/weather/" name="4215">Weather</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/weird_news/" name="4230">Weird News</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/news/world/" name="4235">World</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br>
+</td></tr></tbody></table>
+</div><div class=menu id="business">
+<table cellspacing="0" cellpadding="4" width="130" bgcolor="#d4cdaf" border="0">
+<tbody><tr><td class=pulldown>
+<a href="/mld/miami/business/columnists/" name="20">Columnists</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/companies/" name="335">Companies</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/financial_markets/" name="395">Financial Markets</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/industries/" name="400">Industries</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/international/" name="520">International</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/local/" name="570">People & Events</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/personal_finance/" name="585">Personal Finance</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/regional_indicators/" name="610">Regional Indicators</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/business/technology/" name="630">Technology</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br>
+</td></tr></tbody></table>
+</div><div class=menu id="sports">
+<table cellspacing="0" cellpadding="4" width="130" bgcolor="#d4cdaf" border="0">
+<tbody><tr><td class=pulldown>
+<a href="/mld/miami/sports/baseball/" name="4275">Baseball</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/basketball/" name="4380">Basketball</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/colleges/" name="4465">Colleges</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/columnists/" name="4710">Columnists</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/football/" name="5400">Football</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/golf/" name="5475">Golf</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/high_school/" name="5490">High School</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/hockey/" name="5495">Hockey</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/motorsports/" name="5615">Motorsports</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/other_sports/" name="5646">Other Sports</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/sports/womens/" name="5716">Women</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br>
+</td></tr></tbody></table>
+</div><div class=menu id="entertainment">
+<table cellspacing="0" cellpadding="4" width="130" bgcolor="#d4cdaf" border="0">
+<tbody><tr><td class=pulldown>
+<a href="/mld/miami/entertainment/attractions/" name="660">Attractions</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/books/" name="665">Books</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/gossip/" name="1000542">Celebrities</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/columnists/" name="671">Columnists</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/comics/" name="1000482">Comics & Games</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/dining/" name="970">Dining</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/events/" name="975">Events</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/horoscopes/" name="985">Horoscopes</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/movies/" name="990">Movies</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/music/" name="995">Music</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/television/" name="1015">Television</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/entertainment/visual_arts/" name="1020">Visual Arts</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br>
+</td></tr></tbody></table>
+</div><div class=menu id="living">
+<table cellspacing="0" cellpadding="4" width="130" bgcolor="#d4cdaf" border="0">
+<tbody><tr><td class=pulldown>
+<a href="/mld/miami/living/columnists/" name="1030">Columnists</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/living/community/" name="1770">Community</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/living/education/" name="1775">Education</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/living/health/" name="2815">Health</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/living/home/" name="2975">Home</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/living/travel/" name="3105">Travel</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br>
+</td></tr></tbody></table>
+</div><div class=menu id="classifieds">
+<table cellspacing="0" cellpadding="4" width="130" bgcolor="#d4cdaf" border="0">
+<tbody><tr><td class=pulldown>
+<a href="/mld/miami/classifieds/automotive/" name="645">Automotive</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/classifieds/employment/" name="15">Employment</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/classifieds/personals/" name="1001238">Personals</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br><a href="/mld/miami/classifieds/real_estate/" name="650">Real Estate</a><br><img height="2" src="/images/palette/blue_complement/hr_2px_medium.gif" width="120" vspace="3" border="0"><br>
+</td></tr></tbody></table>
+</div>
+
+</body>
+</html>
+

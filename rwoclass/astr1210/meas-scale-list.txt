@@ -1,0 +1,901 @@
+
+
+
+ ---------------------------------
+ Scales of Measurement Version 1.7
+ ---------------------------------
+
+ This is a copy of the scales of measurement list that I have been
+ making. Thanks to the many people who gave me suggestions about earlier
+ versions.
+
+ I would be grateful for factual and grammar corrections. I
+ would also like to know if people have specific objects that they think
+ should be included in these scales. I am interested in objects which do
+ the following things:
+
+   A. Illustrate a physical principle (for example, the Compton length as
+      a basic quantum "fuzziness" length)
+
+   B. Are particularly fantastic (for example, the LIGO project wants to
+      look for length fluctuations smaller than a nuclear diameter)
+
+   C. Fill in holes in my order-of-magnitude scale
+
+   D. Are especially interesting for some other reason
+
+ I would be grateful for suggestions as to how to better word specific
+ entries so as to make them maximally illuminating in the available space.
+ Please send any comments/suggestions/corrections to me via email.
+
+ An XMOSAIC page has been created for my timelines and scales of measurement
+ list. The URL is the following:
+
+       http://xalph.ast.cam.ac.uk/niel/scales.html
+
+ If you are not able to obtain one of my lists via XMOSAIC or usenet, please
+ send me an email request and I will email you the list you want. Please 
+ specify desired format (ASCII or TEX). 
+
+                                          Thank you,
+
+                                          Niel Brandt
+                                          niel@ast.cam.ac.uk
+
+ This document is copyright Niel Brandt 1994. You are allowed to copy,
+ distribute, and edit this document at will without any obligation as long
+ as you do not remove the above header. Reproduction and distribution for
+ personal profit is not permitted.
+
+---------------------------------------------------------------------
+
+SCALES OF MEASUREMENT VERSION 1.7
+
+William Nielsen Brandt --- niel@ast.cam.ac.uk
+
+3 x 10^{-6}  arcseconds  Angular size of a 10^8 solar mass Schwarzschild 
+                         black hole in M31
+0.0002       arcseconds  Typical VLBA resolution at 43 GHz
+0.0005       arcseconds  Person on the Moon
+0.001        arcseconds  Typical VLBI resolution
+0.0015       arcseconds  Hipparcos satellite astrometric positional 
+                         accuracy
+0.04         arcseconds  Hubble Space Telescope FOC optical angular resolution
+0.1          arcseconds  VLA largest configuration resolution at 23 GHz
+0.1          arcseconds  Hubble Space Telescope WFC optical angular resolution
+0.15         arcseconds  1 meter optical reflector yellow light diffraction 
+                         limit
+0.5          arcseconds  WHT MARTINI guide star system resolution
+0.6          arcseconds  Rough optical telescope atmospheric seeing limit
+0.8          arcseconds  Angular diameter of Europa
+1            arcseconds  AXAF X-ray satellite angular resolution goal
+1.32         arcseconds  Yearly proper motion of Sirius
+1.75         arcseconds  Gravitational deflection of a light ray which grazes 
+                         the Sun
+2.9          arcseconds  Angular diameter of a M31 sized galaxy at z=0.5 in 
+                         optical light
+5            arcseconds  ROSAT X-ray satellite HRI angular resolution
+8            arcseconds  Angular separation of the gravitationally lensed 
+                         quasar 0957+561
+25           arcseconds  ROSAT X-ray satellite PSPC angular resolution
+36           arcseconds  Angular diameter of Jupiter
+120          arcseconds  Human eye resolution
+120          arcseconds  Typical optical telescope field of view
+150          arcseconds  Rough Crab Nebula radius
+210          arcseconds  Rough Cir X-1 radio nebula radius
+400          arcseconds  Cluster imprint on the cosmic microwave background 
+                         radiation
+480          arcseconds  OVRO 5.5 meter 32 GHz telescope resolution
+700          arcseconds  Jodrell bank 250 foot 1420.4 MHz telescope resolution
+1200         arcseconds  ROSAT X-ray satellite HRI field of view radius
+1500         arcseconds  ASCA X-ray satellite GIS field of view radius
+1865         arcseconds  Angular diameter of the Moon at its mean distance
+1800         arcseconds  100 Mpc structure imprint on the cosmic microwave 
+                         background radiation
+1922         arcseconds  Angular diameter of the Sun at its mean distance
+3100         arcseconds  Maximum angular scale of causal connection on the 
+                         cosmic microwave background radiation
+3600         arcseconds  ROSAT X-ray satellite PSPC field of view radius
+7500         arcseconds  Angular diameter of W50
+10800        arcseconds  Angular diameter of the LMC
+14400        arcseconds  Angular diameter of M31 in optical light
+19800        arcseconds  Palomar Optical Sky Survey plate field of view
+25200        arcseconds  COBE DMR resolution limit
+
+
+5 x 10^{-44}      seconds  Planck-Wheeler time
+4 x 10^{-24}      seconds  Typical lifetime of strong interaction resonance
+8 x 10^{-21}      seconds  Electron light crossing time
+1 x 10^{-13}      seconds  Typical period of vibration of an atom in a solid
+1 x 10^{-13}      seconds  Typical X-ray line electric dipole radiative 
+                           transition time
+1.6 x 10^{-9}     seconds  Typical hydrogen 2p ---> 1s radiative 
+                           transition time (electric dipole one photon process)
+8 x 10^{-4}       seconds  Mass shedding minimum spin period for a neutron star
+1.6 x 10^{-3}     seconds  Spin period of PSR 1957+20
+0.12              seconds  Typical hydrogen 2s ---> 1s radiative transition 
+                           time (strictly forbidden two photon process)
+10                seconds  Median duration of a classical gamma-ray burst
+2 000             seconds  Sun dynamic time scale
+8.6 x 10^{4}      seconds  Earth rotation time
+3.2 x 10^{7}      seconds  Earth orbit time around the Sun
+1.6 x 10^{9}      seconds  Typical time between Milky Way supernovae
+1.9 x 10^{11}     seconds  Carbon-14 half-life
+3 x 10^{12}       seconds  Rough lifetime of a supernova remnant
+1.5 x 10^{13}     seconds  Typical HMXB evolution time
+3 x 10^{13}       seconds  Rough time for evolution of a biological species
+1.6 x 10^{14}     seconds  Main sequence lifetime for a 30 solar mass star
+3 x 10^{14}       seconds  Hydrogen 21 cm spin flip time
+3 x 10^{14}       seconds  Rough Lyapunov time of the solar system
+6.3 x 10^{14}     seconds  Sun thermal time scale
+1.3 x 10^{15}     seconds  E-folding time for a black hole accreting at the 
+                           Eddington rate with an efficiency of 0.1
+1.9 x 10^{15}     seconds  Main sequence lifetime for a 5 solar mass star
+2 x 10^{15}       seconds  Timescale for Los Angeles to pass San Francisco via
+                           continental drift
+2.4 x 10^{15}     seconds  Typical LMXB evolution time
+7.3 x 10^{15}     seconds  Orbit time for sun around galaxy center
+1.1 x 10^{16}     seconds  PSR 1913+16 orbital gravitational radiation 
+                           coalescence timescale
+2 x 10^{16}       seconds  Rough supernova biological extinction time
+6 x 10^{16}       seconds  Minimum age of PSR J0437-4715
+6 x 10^{16}       seconds  Time for galaxy to cross a cluster
+1.1 x 10^{17}     seconds  Primeval slime to man time
+1.5 x 10^{17}     seconds  Age of Earth and Sun
+1.5 x 10^{17}     seconds  Uranium-238 half-life
+2.7 x 10^{17}     seconds  Look back time to z=1
+3 x 10^{17}       seconds  Main sequence lifetime for a 1 solar mass star
+3.3 x 10^{17}     seconds  Look back time to z=2
+3.3 x 10^{17}     seconds  Sun nuclear time scale
+3.7 x 10^{17}     seconds  Look back time to z=4
+3.8 x 10^{17}     seconds  Rough age of the Milky Way
+3.8 x 10^{17}     seconds  Look back time to the z=4.897 quasar PC 1247+3406
+4 x 10^{17}       seconds  Rough age of 47 Tucanae (an old globular cluster)
+4.1 x 10^{17}     seconds  Age of the universe
+2.5 x 10^{18}     seconds  Globular cluster evaporation time
+3 x 10^{25}       seconds  Galaxy dynamical relaxation timescale
+3 x 10^{27}       seconds  Earth/Sun orbital gravitational radiation 
+                           coalescence timescale
+1 x 10^{39}       seconds  Lower limit on the proton lifetime
+4.7 x 10^{73}     seconds  1 solar mass black hole Hawking evaporation time
+
+
+1.6 x 10^{-35}     meters  Planck-Wheeler length
+2 x 10^{-35}       meters  Rough postulated superstring size
+1 x 10^{-24}       meters  Effective 1 MeV neutrino radius
+1.6 x 10^{-22}     meters  Radius of a 10 solar mass star squeezed down to the 
+                           Planck-Wheeler density
+1.5 x 10^{-18}     meters  Classical proton radius
+1.6 x 10^{-17}     meters  W +/- Compton wavelength = rough weak force length
+4 x 10^{-17}       meters  LIGO 4 km gravity-wave detector needed sensitivity
+1.3 x 10^{-15}     meters  Proton Compton wavelength = rough proton fuzziness 
+                           length
+1.44 x 10^{-15}    meters  Rough nuclear radius
+2.8 x 10^{-15}     meters  Classical electron radius
+8.8 x 10^{-15}     meters  Pi-meson Compton wavelength = attractive strong 
+                           force length
+1.2 x 10^{-12}     meters  1 MeV gamma-ray wavelength
+2.4 x 10^{-12}     meters  Electron Compton wavelength = rough electron 
+                           fuzziness length
+5.3 x 10^{-11}     meters  Bohr radius
+2.6 x 10^{-10}     meters  Copper atom spacing in solid copper
+3.5 x 10^{-10}     meters  H2O molecular diameter
+4 x 10^{-10}       meters  ROSAT X-ray satellite mirror rms surface error
+1.2 x 10^{-9}      meters  1 keV X-ray wavelength
+3 x 10^{-9}        meters  Typical mean nucleon spacing during primordial 
+                           nucleosynthesis
+3.4 x 10^{-9}      meters  DNA double helix turn length
+6 x 10^{-8}        meters  Typical rms surface error of a Keck telescope mirror
+7.0 x 10^{-8}      meters  Molecular mean free path in the atmosphere
+1 x 10^{-7}        meters  Typical size of a virus
+3 x 10^{-7}        meters  Interstellar dust grain size
+5 x 10^{-7}        meters  Optical photon wavelength
+4 x 10^{-6}        meters  Typical size of a cell
+2 x 10^{-4}        meters  Small dust particle size
+0.03               meters  Lunar laser ranging accuracy (Science 265, 482)
+0.068              meters  Unraveled human DNA strand length
+1.8                meters  Man
+30                 meters  Blue Whale
+3700               meters  Mean ocean depth
+4000               meters  Error in our knowledge of the distance to Jupiter
+5500               meters  Rough radius of Halley's comet
+8847               meters  Height of Mount Everest
+10000              meters  Neutron star radius
+10000              meters  Typical asteroid radius
+10000              meters  Typical comet radius
+11032              meters  Depth of the Mariana  Trench
+12000              meters  Height of troposphere
+12000              meters  Typical airliner cruising altitute
+30000              meters  Typical thickness of the Earth's crust
+5.5 x 10^{5}       meters  Height of the ASCA X-ray satellite orbit
+9 x 10^{5}         meters  Height of the COBE satellite orbit
+3.2 x 10^{6}       meters  Length of the Great Wall of China
+6.3 x 10^{6}       meters  Radius of the Earth
+4.2 x 10^{7}       meters  Geostationary satellite orbit height
+7.1 x 10^{7}       meters  Radius of Jupiter
+9 x 10^{7}         meters  Distance to the Earth's solar wind bow shock
+3.8 x 10^{8}       meters  Distance to the Moon
+7.0 x 10^{8}       meters  Radius of the Sun
+1 x 10^{9}         meters  Typical X-ray binary accretion disk circularization
+                           radius
+1.7 x 10^{9}       meters  5 solar mass star main sequence radius
+7 x 10^{9}         meters  Typical standoff radius of Jupiter's solar wind bow
+                           shock
+1.47 x 10^{11}     meters  Event horizon radius for a 10^8 solar mass maximally
+                           rotating Kerr black hole
+1.50 x 10^{11}     meters  Earth/Sun mean distance
+1.5 x 10^{11}      meters  Radius of the red giant Mira at minimum light
+3 x 10^{11}        meters  Radius of the red giant Mira at maximum light
+5 x 10^{11}        meters  Radius of the 20 solar mass red supergiant 
+                           Betelgeuse at maximum light
+5.91 x 10^{12}     meters  Pluto/Sun mean distance
+1.5 x 10^{13}      meters  Expected distance to the solar wind termination 
+                           shock
+2 x 10^{14}        meters  Rough stellar separation in the central parsec of 
+                           the Milky Way
+4 x 10^{14}        meters  Rough stellar separation in a globular cluster
+2 x 10^{15}        meters  Rough Oort Cloud/Sun distance
+3 x 10^{15}        meters  Seyfert galaxy characteristic broad line region 
+                           radius
+9.46 x 10^{15}     meters  1 light-year
+3.08 x 10^{16}     meters  1 parsec
+4 x 10^{16}        meters  Nearest nonsolar star to Earth
+4.5 x 10^{16}      meters  Rough Crab Nebula radius
+3 x 10^{17}        meters  Rough Cir X-1 radio nebula radius
+3 x 10^{17}        meters  Rough supernova biological extinction distance
+5 x 10^{17}        meters  Typical interstellar medium cloud size
+1.4 x 10^{18}      meters  Hyades open cluster distance
+1.5 x 10^{18}      meters  Trigonometric parallax distance determination limit
+1.5 x 10^{18}      meters  Typical globular cluster radius
+2 x 10^{18}        meters  Rough radius of the local interstellar hot gas 
+                           bubble
+5 x 10^{18}        meters  Seyfert galaxy characteristic narrow line region 
+                           radius
+5 x 10^{18}        meters  Diameter of W50
+5.2 x 10^{18}      meters  Distance to the 20 solar mass red supergiant 
+                           Betelgeuse (will go supernova within 10000 years)
+6 x 10^{19}        meters  Typical dwarf galaxy radius
+6.6 x 10^{19}      meters  Distance to the Crab Nebula
+1.2 x 10^{20}      meters  Milky Way characteristic thickness
+2 x 10^{20}        meters  Estimated distance to Cir X-1
+2.4 x 10^{20}      meters  Distance from Sun to galactic center
+3.9 x 10^{20}      meters  Milky Way disk radius
+1.5 x 10^{21}      meters  Distance to the LMC
+2 x 10^{21}        meters  Rough Milky Way dark matter halo radius
+1 x 10^{22}        meters  Typical active galaxy jet length
+1 x 10^{22}        meters  Length of the ``superantennae'' of IRAS 19254-7245
+1.9 x 10^{22}      meters  Distance to M31
+3 x 10^{22}        meters  Radius of the core of the Virgo cluster of galaxies
+4 x 10^{22}        meters  Rough Local Group radius
+9.2 x 10^{22}      meters  Cepheid variable distance determination limit (via 
+                           ground observations)
+1.2 x 10^{23}      meters  Distance to the Circinus galaxy
+5 x 10^{23}        meters  Rough boundary between the nonlinear and linear 
+                           gravitational collapse regimes
+7 x 10^{23}        meters  Distance to NGC 1068
+7 x 10^{23}        meters  Distance to the center of the Virgo cluster of 
+                           galaxies
+2.3 x 10^{24}      meters  Shapley supercluster radius
+3 x 10^{24}        meters  Typical length scale probed by the 
+                           Harvard/Smithsonian CfA redshift survey
+4.1 x 10^{24}      meters  Luminosity distance to the z=0.022 Coma cluster of 
+                           galaxies
+1.5 x 10^{25}      meters  Typical length scale probed by the Lick survey
+3.0 x 10^{25}      meters  Luminosity distance to the z=0.158 quasar 3C273
+3 x 10^{25}        meters  Typical length scale probed by the 4C radio galaxy 
+                           survey
+3 x 10^{25}        meters  Schwarzschild radius of a singularity with the 
+                           mass of a critical density universe
+5.5 x 10^{26}      meters  Luminosity distance to the z=2.286 ultraluminous 
+                           IRAS galaxy IRAS F10214+4724
+1.3 x 10^{27}      meters  Luminosity distance to the z=4.897 quasar 
+                           PC 1247+3406
+                    
+                    
+1 x 10^{-9}      m s^{-1}  Sea floor spreading rate
+1.6 x 10^{-9}    m s^{-1}  Average slip rate of the San Andreas fault
+1 x 10^{-8}      m s^{-1}  Typical rainfall rate in a semi-arid climate
+2 x 10^{-8}      m s^{-1}  Grass growth rate
+3 x 10^{-6}      m s^{-1}  Typical glacial advance rate
+1 x 10^{-3}      m s^{-1}  Equivalent radial velocity resolution of pulsar 
+                           pulse arrival time analysis
+1.3              m s^{-1}  Human walking speed
+10               m s^{-1}  Speed of the motion induced on the Sun by Jupiter
+10               m s^{-1}  Radial velocity resolution of high precision 
+                           Doppler spectroscopy
+25               m s^{-1}  Car speed
+100              m s^{-1}  Typical speed of an electric pulse in the nervous 
+                           system
+330              m s^{-1}  Sound speed in air
+480              m s^{-1}  Earth's atmosphere molecular rms velocity
+600              m s^{-1}  Fighter jet speed
+2380             m s^{-1}  Escape velocity from Moon's surface
+10000            m s^{-1}  Typical longitudinal seismic wave velocity in the 
+                           Earth's mantle
+11000            m s^{-1}  Escape velocity from the Earth's surface
+20000            m s^{-1}  Globular cluster stellar velocity dispersion
+29000            m s^{-1}  Earth's motion around the Sun
+40000            m s^{-1}  Globular cluster stellar escape velocity
+1 x 10^{5}       m s^{-1}  Typical Galactic pulsar vertical velocity component
+1 x 10^{5}       m s^{-1}  Average speed of the initial stroke of a lightning 
+                           flash
+2.2 x 10^{5}     m s^{-1}  Rotational velocity of the Sun around the Milky 
+                           Way's center
+3 x 10^{5}       m s^{-1}  Orbital speed of PSR 1913+16
+3 x 10^{5}       m s^{-1}  Rough velocity of Geminga's proper motion
+3.1 x 10^{5}     m s^{-1}  Escape velocity from the Milky Way for objects in 
+                           the solar neighborhood
+3.65 x 10^{5}    m s^{-1}  Motion of the solar system barycenter relative to 
+                           the cosmic microwave background
+4.1 x 10^{5}     m s^{-1}  Orbital speed of Cen X-3
+6.2 x 10^{5}     m s^{-1}  Escape velocity from the Sun's surface
+6.22 x 10^{5}    m s^{-1}  Motion of the Local Group relative to the cosmic 
+                           microwave background
+8 x 10^{5}       m s^{-1}  Typical galaxy cluster galaxy velocity dispersion
+2 x 10^{6}       m s^{-1}  Speed of n=1 hydrogen electron 
+5 x 10^{6}       m s^{-1}  Young (months old) supernova ejecta
+1.2 x 10^{7}     m s^{-1}  Velocity of the wind streaming out from H1413+117 
+                           ``Cloverleaf'' (Nature 371, 559)
+7.8 x 10^{7}     m s^{-1}  SS433 jet speed
+1.4 x 10^{8}     m s^{-1}  Keplerian orbital velocity at the surface of a 
+                           neutron star
+2 x 10^{8}       m s^{-1}  Escape velocity from neutron star surface
+2.998 x 10^{8}   m s^{-1}  Light in a vacuum
+
+
+4.2 x 10^{-36}      kilograms  Mass equivalent of a green light photon
+1.4 x 10^{-35}      kilograms  Electron antineutrino upper mass limit
+4.4 x 10^{-31}      kilograms  Muon neutrino upper mass limit
+9.11 x 10^{-31}     kilograms  Electron mass
+6.2 x 10^{-29}      kilograms  Tauon neutrino upper mass limit
+1.67 x 10^{-27}     kilograms  Proton mass
+9 x 10^{-27}        kilograms  Bottom quark mass
+4.8 x 10^{-26}      kilograms  Mean mass of atmosphere molecule
+1.4 x 10^{-25}      kilograms  W +/- mass (82 GeV)
+1.6 x 10^{-25}      kilograms  Z^0 mass (93 GeV)
+2 x 10^{-25}        kilograms  Favored Higgs boson mass
+3 x 10^{-25}        kilograms  Most probable top quark mass
+4 x 10^{-25}        kilograms  DNA nucleotide
+1 x 10^{-22}        kilograms  Typical protein molecule mass
+5 x 10^{-21}        kilograms  E. Coli ribosome
+1 x 10^{-16}        kilograms  Interstellar dust grain mass
+8 x 10^{-15}        kilograms  Rough mass of a human DNA molecule
+7 x 10^{-13}        kilograms  Typical mass of a cell
+2.2 x 10^{-8}       kilograms  Planck-Wheeler mass
+1 x 10^{-5}         kilograms  Typical mosquito mass
+0.02                kilograms  Typical goldfish mass
+70                  kilograms  Typical human mass
+70                  kilograms  Lower limit to the allowed mass for a Sumo 
+                               wrestler
+100                 kilograms  Meteorite mass before entry into Earth's 
+                               atmosphere
+420                 kilograms  ASCA X-ray satellite mass
+900                 kilograms  Compton Gamma-Ray Observatory satellite mass
+1000                kilograms  Car
+2200                kilograms  ISO infrared satellite mass at launch
+10000               kilograms  Tyrannosaurus Rex
+5 x 10^{11}         kilograms  Initial mass of a primordial black hole with 
+                               evaporation time equal to the universe's age
+1 x 10^{13}         kilograms  Typical comet mass
+3 x 10^{14}         kilograms  Typical mountain mass
+1.1 x 10^{16}       kilograms  Superterranean biomass of Earth (ocean 
+                               organisms are included)
+5.3 x 10^{18}       kilograms  Total mass of Earth's atmosphere
+3 x 10^{19}         kilograms  Typical asteroid mass
+1.4 x 10^{21}       kilograms  Total mass of Earth's oceans
+4.8 x 10^{22}       kilograms  Mass of Europa
+7.3 x 10^{22}       kilograms  Mass of the Moon
+2 x 10^{24}         kilograms  Rough Oort cloud mass
+5.98 x 10^{24}      kilograms  Mass of the Earth
+1.9 x 10^{27}       kilograms  Mass of Jupiter
+1.6 x 10^{29}       kilograms  Minimum mass to fusion burn hydrogen
+4 x 10^{29}         kilograms  Rough mass of MACHO and EROS microlensing 
+                               objects
+1.99 x 10^{30}      kilograms  Mass of the Sun
+2.8 x 10^{30}       kilograms  Chandrasekhar mass (maximum mass for a white 
+                               dwarf)
+6.0 x 10^{30}       kilograms  Oppenheimer-Volkoff mass (maximum mass for a 
+                               neutron star)
+1.2 x 10^{31}       kilograms  Minimum mass of the unseen object in 
+                               GS2023+338/V404 Cygni
+4 x 10^{31}         kilograms  Rough stellar mass above which the evolutionary
+                               endpoint is a black hole
+1.0 x 10^{32}       kilograms  Mass of the most massive member of Plaskett's 
+                               star
+1.2 x 10^{32}       kilograms  Rough mass at which a star becomes unstable to 
+                               pulsations
+2 x 10^{33}         kilograms  Typical interstellar cloud mass
+1 x 10^{36}         kilograms  Typical mass of a globular cluster
+6 x 10^{36}         kilograms  Best guess for the mass of a possible Milky Way
+                               central black hole
+1 x 10^{37}         kilograms  Rough baryonic Jeans mass immediately after 
+                               decoupling
+4 x 10^{39}         kilograms  Rough mass of the SMC
+2 x 10^{40}         kilograms  Rough mass of the LMC
+7 x 10^{41}         kilograms  Rough mass of the Milky Way (visible and dark 
+                               matter)
+1.3 x 10^{44}       kilograms  Rough mass of the stars in the Coma galaxy 
+                               cluster
+6.4 x 10^{44}       kilograms  Rough mass of the X-ray gas in the Coma galaxy 
+                               cluster
+2.7 x 10^{45}       kilograms  Rough virial mass of the Coma galaxy cluster
+6 x 10^{45}         kilograms  Rough virial mass of the Abell 2163 galaxy 
+                               cluster
+2 x 10^{48}         kilograms  Rough baryonic Jeans mass immediately before 
+                               decoupling
+1.4 x 10^{49}       kilograms  Rough total mass in spiral galaxies
+2 x 10^{49}         kilograms  Rough total (baryonic and nonbaryonic) mass in 
+                               galaxy clusters
+3 x 10^{49}         kilograms  Rough total mass in elliptical and spheroidal 
+                               galaxies
+8 x 10^{49}         kilograms  Rough total mass of visible matter in the 
+                               universe
+1 x 10^{51}         kilograms  Rough total baryon mass predicted by primordial
+                               nucleosynthesis
+2 x 10^{52}         kilograms  Rough total mass of a critical density universe
+                        
+
+2 x 10^{-38}     kg m^{-3}  Effective density of the 100-300 MHz radio 
+                            background
+1 x 10^{-35}     kg m^{-3}  Effective density of the 1--10 MeV gamma-ray 
+                            background
+8 x 10^{-35}     kg m^{-3}  Effective density of the 2--100 keV X-ray 
+                            background
+1.1 x 10^{-33}   kg m^{-3}  Upper limit to the effective density of the 
+                            gravitational wave background
+1 x 10^{-32}     kg m^{-3}  Effective density of the starlight released in a 
+                            Hubble time
+4.6 x 10^{-31}   kg m^{-3}  Effective density of the cosmic microwave 
+                            background radiation
+2 x 10^{-29}     kg m^{-3}  Smoothed density of visible galactic material 
+                            throughout universe
+2 x 10^{-28}     kg m^{-3}  Smoothed baryon density predicted by primordial 
+                            nucleosynthesis
+4.7 x 10^{-27}   kg m^{-3}  Critical density of the universe 
+2 x 10^{-24}     kg m^{-3}  Typical gas in a cluster of galaxies
+3 x 10^{-21}     kg m^{-3}  Typical gas in the interstellar medium of the 
+                            Milky Way
+7 x 10^{-21}     kg m^{-3}  Dynamically inferred Milky Way disk density
+5 x 10^{-20}     kg m^{-3}  Typical density of the gas in the central 
+                            kiloparsec of an interacting or starburst galaxy
+1 x 10^{-9}      kg m^{-3}  Best room temperature vacuum achieved on Earth
+1.7 x 10^{-4}    kg m^{-3}  Mean density of Antares (19 solar masses)
+1.3              kg m^{-3}  Density of air
+700              kg m^{-3}  Mean density of Saturn
+1000             kg m^{-3}  Density of water
+1300             kg m^{-3}  Mean density of Jupiter
+1400             kg m^{-3}  Mean density of the Sun
+3300             kg m^{-3}  Mean density of the Moon
+5500             kg m^{-3}  Mean density of the Earth
+7860             kg m^{-3}  Density of iron
+19300            kg m^{-3}  Density of gold
+5 x 10^{7}       kg m^{-3}  Typical white dwarf mean density
+3 x 10^{10}      kg m^{-3}  Typical white dwarf central density
+1.1 x 10^{12}    kg m^{-3}  Inverse beta decay threshold
+4.3 x 10^{14}    kg m^{-3}  Neutron drip density
+6 x 10^{17}      kg m^{-3}  Nuclear density
+1 x 10^{18}      kg m^{-3}  Typical neutron star central density
+5 x 10^{96}      kg m^{-3}  Planck-Wheeler density, at which quantum 
+                            gravitational effects become important
+                                   
+                                   
+6 x 10^{-25}               joules  Lamb-Retherford shift
+9.5 x 10^{-25}             joules  21.049 cm photon---hyperfine shift
+4 x 10^{-22}               joules  Molecular rotation transition
+4 x 10^{-21}               joules  kT_room = translational kinetic energy of 
+                                   atmosphere gas molecule
+7 x 10^{-21}               joules  Donor level/conduction band gap in a doped 
+                                   semiconductor
+3 x 10^{-20}               joules  Molecular vibration transition
+1.6 x 10^{-19}             joules  Valence band/conduction band gap in a 
+                                   semiconductor
+2.2 x 10^{-19}             joules  Bond energy of an organic substance with 
+                                   half-life 30000 years
+3.8 x 10^{-19}             joules  Green light photon
+9 x 10^{-19}               joules  Valence band/conduction band gap in an 
+                                   insulator
+1.1 x 10^{-18}             joules  Fermi energy in copper = depth of Fermi sea
+1.1 x 10^{-18}             joules  Positronium ionization energy
+2.2 x 10^{-18}             joules  Hydrogen n=1 binding energy
+1.6 x 10^{-16}             joules  1 keV X-ray
+1.5 x 10^{-15}             joules  Hydrogenic iron n=1 binding energy
+8.18 x 10^{-14}            joules  Electron rest mass
+1.6 x 10^{-13}             joules  1 MeV gamma-ray
+1.6 x 10^{-13} (Z_1 x Z_2) joules  Coulomb barrier height
+1.3 x 10^{-12}             joules  Nucleon binding energy
+4.3 x 10^{-12}             joules  Energy from 4 x ^1 H ---> ^4 He
+1.50 x 10^{-10}            joules  Proton rest mass
+1.6 x 10^{-7}              joules  Particle kinetic energy in a 1 TeV 
+                                   accelerator
+10                         joules  Well hit tennis ball
+51                         joules  Fly's Eye most energetic cosmic ray event
+2 x 10^{5}                 joules  Energy from a light bulb burning for 1 hour
+4.2 x 10^{9}               joules  Explosion energy of 1 ton of TNT
+2 x 10^{10}                joules  Rough energy of a lightning flash
+2 x 10^{11}                joules  Rough human total energy output in a 
+                                   lifetime
+1.5 x 10^{14}              joules  Typical atomic bomb explosion energy
+6 x 10^{16}                joules  Tunguska 50 m diameter meteorite impact 
+                                   energy
+1 x 10^{17}                joules  Powerful H-bomb explosion energy
+3 x 10^{17}                joules  Elastic wave energy release from a 
+                                   large (M=8.5) earthquake
+5 x 10^{17}                joules  Explosion energy of Krakatoa
+3 x 10^{18}                joules  Superman flying at 70 per cent of light 
+                                   speed
+9 x 10^{18}                joules  USA electricity usage in 1986
+5 x 10^{19}                joules  Rough explosion energy of the Lake Toba 
+                                   eruption in Sumatra
+4 x 10^{23}                joules  K-T 10 km diameter meteorite impact energy
+2.5 x 10^{22}              joules  Energy from the comet Shoemaker-Levy 9 
+                                   fragment G impact on Jupiter
+1 x 10^{24}                joules  Power released by an evaporating black 
+                                   hole during the last second of its life
+2.1 x 10^{29}              joules  The Earth's rotational energy
+3 x 10^{31}                joules  The Earth's total heat content
+7 x 10^{34}                joules  Total rotational energy of the planets
+2.5 x 10^{35}              joules  Rotational energy of the Sun
+3 x 10^{36}                joules  Gravitational internal binding energy of 
+                                   Jupiter
+6 x 10^{37}                joules  Nova Persei outburst
+3 x 10^{41}                joules  A 450 km s^{-1} neutron star kick
+3 x 10^{43}                joules  Energy needed to make the local superbubble
+1.3 x 10^{44}              joules  Total radiant energy from the Sun 
+3 x 10^{44}                joules  Energy in photons from a type II supernova 
+                                   explosion
+3 x 10^{46}                joules  Energy in neutrinos from a type II 
+                                   supernova explosion
+2 x 10^{53}                joules  Typical gravitational binding energy of a 
+                                   galaxy
+2 x 10^{54}                joules  Typical magnetic and kinetic energy in a 
+                                   large radio lobe (Shu 311)
+5.2 x 10^{54}              joules  Rotational energy of a 10^8 solar mass 
+                                   maximal Kerr black hole 
+5 x 10^{57}                joules  Typical gravitational binding energy of 
+                                   a cluster of galaxies
+
+
+2 x 10^{7}      joules kg^{-1}  Efficiency of the metabolism of food
+1.3 x 10^{13}   joules kg^{-1}  Efficiency of dropping matter onto a white 
+                                dwarf
+6.3 x 10^{14}   joules kg^{-1}  Efficiency of fusion burning hydrogen
+5.1 x 10^{15}   joules kg^{-1}  Slowly spiraling accretion onto a 
+                                Schwarzschild black hole
+7.5 x 10^{15}   joules kg^{-1}  Shakura-Sunyaev efficiency for accretion onto
+                                a Newtonian ``black hole''
+8 x 10^{15}     joules kg^{-1}  Efficiency of dropping matter onto a neutron 
+                                star
+2.6 x 10^{16}   joules kg^{-1}  Slowly spiraling prograde accretion onto a 
+                                realistically maximally rotating Kerr black 
+                                hole
+3.8 x 10^{16}   joules kg^{-1}  Slowly spiraling prograde accretion onto a 
+                                theoretically maximally rotating Kerr black 
+                                hole
+8.99 x 10^{16}  joules kg^{-1}  Efficiency of matter-antimatter annihilation
+                        
+                        
+4 x 10^{-6}       watts  Average energy output from 1 kilogram of the Milky Way
+1 x 10^{-3}       watts  Optical disc player laser
+6                 watts  Amateur short wave radio transmitter
+60                watts  Light bulb
+100               watts  Gravitational wave power from the Earth-Sun system
+150               watts  Human being under normal conditions
+750               watts  Maximum long duration horse output
+1500              watts  Typical fireplace fire
+20000             watts  Car
+1 x 10^{5}        watts  Running Tyrannosaurus Rex
+3 x 10^{8}        watts  Nuclear power reactor
+3 x 10^{8}        watts  Moderate thunderstorm electrical power generation rate
+1.3 x 10^{9}      watts  Hoover dam
+3 x 10^{11}       watts  USA average electricity usage rate in 1986
+1 x 10^{13}       watts  Solar radio luminosity
+8 x 10^{13}       watts  Powerful nanosecond pulse laser
+1.7 x 10^{17}     watts  Insolation of Earth
+1 x 10^{23}       watts  Typical white dwarf luminosity
+8 x 10^{24}       watts  Gravitational wave radiation from PSR 1913+16
+3.9 x 10^{26}     watts  Solar luminosity
+5 x 10^{26}       watts  The 2--10 keV flux of the cataclysmic variable 
+                         FO Aquarii
+1 x 10^{28}       watts  Typical X-ray luminosity of an X-ray pulsar
+1 x 10^{28}       watts  X-ray luminosity associated with Sgr A*
+3.5 x 10^{28}     watts  Rotational energy loss rate from the Geminga pulsar
+2.4 x 10^{29}     watts  5 solar mass star on main sequence
+4 x 10^{30}       watts  Cygnus X-1 X-ray luminosity
+5.5 x 10^{30}     watts  Luminosity of the 20 solar mass red supergiant 
+                         Betelgeuse at maximum light
+1 x 10^{31}       watts  Crab Nebula energy output
+2 x 10^{31}       watts  Eddington limit for a 1.4 solar mass neutron star
+3 x 10^{31}       watts  Typical luminosity of Cir X-1 in zero phase
+1 x 10^{33}       watts  Rough luminosity of Eta Carinae in April 1843
+5 x 10^{35}       watts  Type II supernova peak photon luminosity
+3 x 10^{36}       watts  Milky Way
+1.5 x 10^{38}     watts  Coma cluster X-ray gas luminosity
+1 x 10^{39}       watts  10^8 solar mass black hole accreting at 1/10 of the 
+                         Eddington limit
+1 x 10^{39}       watts  Typical quasar luminosity
+1 x 10^{40}       watts  Rough luminosity of the quasar 3C273
+2 x 10^{41}       watts  Rough luminosity of the z=2.286 ultraluminous IRAS 
+                         galaxy IRAS F10214+4724
+1 x 10^{42}       watts  Rough luminosity of a cosmological gamma-ray burst
+
+
+7 x 10^{-7}       kelvins  Laser cooling of cesium atoms
+1.3 x 10^{-5}     kelvins  Cosmic microwave background quadrupole anisotropy
+5 x 10^{-4}       kelvins  Typical Sunyaev-Zel'dovich cosmic microwave 
+                           background decrement
+3.3 x 10^{-3}     kelvins  Cosmic microwave background dipole anisotropy
+0.01              kelvins  Typical limit of liquid helium dilution cooling
+0.3               kelvins  Typical limit of liquid helium evaporation cooling
+2.17              kelvins  Liquid ^4 He superfluid transition temperature
+2.726             kelvins  Cosmic microwave background temperature today
+3.20              kelvins  Liquid  ^3 He boiling point
+4                 kelvins  Typical limit of Joule-Thomson effect cooling
+4.18              kelvins  Liquid ^4 He boiling point
+6                 kelvins  Typical noise temperature of a HEMT receiver at 
+                           30 GHz
+12                kelvins  Lanthanum (under pressure) superconductivity 
+                           critical temperature (highest for a pure element)
+20                kelvins  Liquid H_2 boiling temperature
+77                kelvins  Liquid N_2 boiling temperature
+133               kelvins  Mercury-barium-calcium-copper oxide compound 
+                           superconductivity critical temperature
+273               kelvins  Water freezing temperature
+311               kelvins  Human surface temperature
+373               kelvins  Water boiling temperature
+388               kelvins  Brimstone melting temperature---upper limit to the 
+                           temperature of Hell
+506               kelvins  Paper burning temperature
+740               kelvins  Typical surface temperature of Venus
+1811              kelvins  Melting temperature of iron
+3000              kelvins  Cosmic microwave background temperature at 
+                           decoupling
+5770              kelvins  Solar effective temperature
+5 x 10^{5}        kelvins  Surface temperature of the Geminga pulsar
+3 x 10^{6}        kelvins  Polar cap temperature of the Geminga pulsar
+3 x 10^{6}        kelvins  Typical fusion experiment
+1.4 x 10^{7}      kelvins  Center of the Sun
+1.5 x 10^{7}      kelvins  Changeover temperature from the proton-proton 
+                           chain to the CNO cycle
+2.7 x 10^{7}      kelvins  Center of a 5 solar mass star
+5 x 10^{7}        kelvins  Typical gas temperature in a cluster of galaxies
+1 x 10^{8}        kelvins  Typical cataclysmic variable accretion column shock
+                           temperature
+3 x 10^{8}        kelvins  Center of a supernova
+4 x 10^{8}        kelvins  Characteristic temperature for electron-positron 
+                           pair production
+4 x 10^{8}        kelvins  Minimum primordial nucleosynthesis temperature
+5 x 10^{8}        kelvins  Inner accretion disc temperature of Cyg X-1
+7 x 10^{8}        kelvins  Thermal electrons become relativistic 
+1 x 10^{9}        kelvins  Maximum primordial nucleosynthesis temperature
+1 x 10^{9}        kelvins  Rough superconductivity critical temperature in a 
+                           neutron star
+1 x 10^{10}       kelvins  Rough plasma pair catastrophe temperature
+3 x 10^{15}       kelvins  Rough electroweak unification temperature
+
+
+7 x 10^{-13}     N m^{-2}  Typical gas pressure in a cluster of galaxies
+5 x 10^{-12}     N m^{-2}  Pressure in the best vacuum achieved on Earth
+5 x 10^{-6}      N m^{-2}  Solar radiation pressure at the Earth
+1 x 10^{-5}      N m^{-2}  Pressure of a sound wave at the human threshold of 
+                           hearing
+0.2              N m^{-2}  Solar radiation pressure at the surface of the Sun
+30               N m^{-2}  Pressure of a sound wave at the human threshold of 
+                           pain
+1 x 10^{4}       N m^{-2}  Mean human arterial blood overpressure
+1.5 x 10^{4}     N m^{-2}  Standing person
+1 x 10^{5}       N m^{-2}  Typical atmospheric pressure
+1.5 x 10^{6}     N m^{-2}  High pressure bicycle tire
+2 x 10^{7}       N m^{-2}  Typical scuba tank pressure
+9 x 10^{7}       N m^{-2}  Peak pressure of a fist on concrete during a karate
+                           strike
+1.1 x 10^{8}     N m^{-2}  Pressure at the bottom of the Marianas trench
+6 x 10^{9}       N m^{-2}  Pressure needed for the natural crystalization of 
+                           diamonds
+1 x 10^{10}      N m^{-2}  Conventional high pressure laboratory press
+2 x 10^{11}      N m^{-2}  Peak pressure from a diamond anvil pressure cell
+5 x 10^{11}      N m^{-2}  Central pressure of the Earth
+4 x 10^{12}      N m^{-2}  Central pressure of Jupiter
+2 x 10^{13}      N m^{-2}  Radiation pressure at the center of the Sun
+2.7 x 10^{16}    N m^{-2}  Central pressure of the Sun
+1 x 10^{23}      N m^{-2}  Typical central pressure of a white dwarf
+1 x 10^{34}      N m^{-2}  Typical central pressure of a neutron star
+
+
+1 x 10^{-12}   W m^{-2}  Threshold of hearing (0 dB)     
+1 x 10^{-11}   W m^{-2}  Rustle of leaves (10 dB)                      
+1 x 10^{-10}   W m^{-2}  Quiet whisper (20 dB)          
+1 x 10^{-9}    W m^{-2}  Soft music (30 dB)             
+3 x 10^{-8}    W m^{-2}  Average residence (45 dB)      
+1 x 10^{-6}    W m^{-2}  Background music (60 dB)       
+3 x 10^{-6}    W m^{-2}  Ordinary conversation at 0.5 meters (65 dB)          
+1 x 10^{-5}    W m^{-2}  Busy street traffic (70 dB)                 
+3 x 10^{-5}    W m^{-2}  Typical factory (75 dB)        
+1 x 10^{-3}    W m^{-2}  Rough boundary of unsafe sound levels (90 dB) 
+1 x 10^{-2}    W m^{-2}  Lawn mower (100 dB)                
+1              W m^{-2}  Loud rock music concert (120 dB)                   
+10             W m^{-2}  Threshold of pain (130 dB)         
+100            W m^{-2}  Jet plane at 30 meters (140 dB)             
+
+
+9.128 x 10^{-35}     kg m^2 s^{-1}  Magnitude of the electron spin angular 
+                                    momentum 
+1.054 x 10^{-34}     kg m^2 s^{-1}  Planck angular momentum 
+3 x 10^{12}          kg m^2 s^{-1}  Rough angular momentum of an artificial 
+                                    satellite
+5.9 x 10^{33}        kg m^2 s^{-1}  Earth rotational angular momentum
+1.7 x 10^{41}        kg m^2 s^{-1}  Sun rotational angular momentum
+3.1 x 10^{43}        kg m^2 s^{-1}  Total angular momentum of our solar system
+2 x 10^{55}          kg m^2 s^{-1}  Angular momentum of the Sun around the 
+                                    center of the Milky Way
+4 x 10^{66}          kg m^2 s^{-1}  Rough total angular momentum of the Milky 
+                                    Way
+
+
+1 x 10^{-12}    tesla  Typical magnetic field needed for good radio reception 
+5 x 10^{-10}    tesla  Typical magnetic field strength in the local
+                       interstellar medium
+1 x 10^{-9}     tesla  Typical magnetic field strength in a radio lobe
+1 x 10^{-8}     tesla  Typical magnetic field strength in the central 300 
+                       parsecs of the Milky Way
+5 x 10^{-8}     tesla  Magnetic field in the Crab Nebula
+1 x 10^{-7}     tesla  Magnetic field in The Arc at the Milky Way center
+1 x 10^{-6}     tesla  Typical magnetic field from a hand held cordless phone
+3 x 10^{-5}     tesla  Magnetic field at Earth's surface
+1 x 10^{-4}     tesla  Magnetic field near Sun's pole
+4 x 10^{-4}     tesla  Magnetic field at Jupiter's cloud tops
+0.1             tesla  Ap star magnetic field
+0.2             tesla  Sunspot magnetic field
+1               tesla  Typical medical NMR magnetic field
+2               tesla  Magnetic field felt by the electron in a n=1 hydrogen 
+                       atom
+12              tesla  Typical magnetic field used in high resolution NMR 
+                       spectroscopy
+25              tesla  Powerful superconducting/normal hybrid magnet
+1 x 10^{8}      tesla  Typical single pulsar dipole magnetic field strength
+
+
+1 x 10^{4}    amperes  Peak lightning bolt current
+5 x 10^{6}    amperes  Current along Io's flux tube
+
+
+3 x 10^{8}    volts  Typical potential difference across a lightning bolt
+
+3 x 10^{6}    volts m^{-1}  Electrical discharge field in air with ions
+1 x 10^{12}   volts m^{-1}  Typical electric field at the surface of a pulsar
+1 x 10^{19}   volts m^{-1}  QED pair production electric field limit
+
+
+440              bits  Spiegelman monster genome
+18000            bits  Q_beta virus genome
+32000            bits  Single spaced typed page
+6.6 x 10^{5}     bits  Uncompressed ASCII version of _Lysistrata_
+4.36 x 10^{6}    bits  C. elegans nematode chromosome III --- longest 
+                       contiguous piece of DNA sequenced
+6 x 10^{6}       bits  E. Coli genome
+6.3 x 10^{6}     bits  Uncompressed ASCII version of _A Tale of Two Cities_
+1 x 10^{9}       bits  Microcomputer hard drive
+2.5 x 10^{9}     bits  Twenty volume edition of the Oxford English Dictionary 
+                       on CD-ROM
+7 x 10^{9}       bits  MACHO project data intake per night         
+9 x 10^{9}       bits  Human genome
+8 x 10^{10}      bits  Sloan Digital Sky Survey spectral database
+2 x 10^{11}      bits  International Halley watch database
+5 x 10^{11}      bits  VCR tape
+1 x 10^{12}      bits  Speed reading for 80 years with perfect memory
+8.8 x 10^{12}    bits  HST archive size in mid-1994
+9 x 10^{12}      bits  VLA FIRST Survey data set
+2 x 10^{13}      bits  Digitized new Palomar sky survey
+5 x 10^{13}      bits  Sloan Digital Sky Survey 0.4 arcsecond pixel map
+8 x 10^{13}      bits  NSF backbone traffic in March 1994
+3 x 10^{16}      bits  HDTV for 80 years with perfect memory
+
+
+200           bits s^{-1}  Typical reading and talking rate
+500           bits s^{-1}  Fast speed reading rate
+24 000        bits s^{-1}  Hipparcos satellite data acquisition rate
+56 000        bits s^{-1}  Typical Internet link
+1 x 10^{5}    bits s^{-1}  High quality audio
+1.4 x 10^{5}  bits s^{-1}  HST archive mean growth rate
+1 x 10^{7}    bits s^{-1}  Xerox Ethernet
+1 x 10^{7}    bits s^{-1}  HDTV bit rate after compression
+4.5 x 10^{7}  bits s^{-1}  Internet backbone T3 link
+6 x 10^{7}    bits s^{-1}  Sloan Digital Sky Survey data acquisition rate
+3 x 10^{10}   bits s^{-1}  Soliton optical fiber information transmission rate
+2 x 10^{15}   bits s^{-1}  Sexual reproduction genetic information 
+                           transmission rate
+
+
+2 x 10^{5}      1994 USA dollars  Vancouver liquid mercury mirror telescope
+1.5 x 10^{7}    1994 USA dollars  Development and construction cost of the 
+                                  Giant Meterwave Radio Telescope near
+                                  Pune, India
+2.9 x 10^{7}    1994 USA dollars  Total predicted cost of the Sloan Digital 
+                                  Sky Survey
+5.5 x 10^{7}    1994 USA dollars  Development, construction, and launch cost 
+                                  of the Clementine I spacecraft
+8.5 x 10^{7}    1994 USA dollars  VLBA development and construction cost
+9 x 10^{7}      1994 USA dollars  Development and construction cost of the 
+                                  Keck telescope
+1 x 10^{8}      1994 USA dollars  Development and construction cost of the 
+                                  ASCA X-ray satellite
+1.5 x 10^{8}    1994 USA dollars  Rough cost of a European Ariane rocket launch
+2 x 10^{8}      1994 USA dollars  Development and construction cost of the 
+                                  VLA                    
+9 x 10^{8}      1994 USA dollars  Development, construction, and launch cost 
+                                  of the Magellan probe
+9.8 x 10^{8}    1994 USA dollars  Development, construction, and launch cost 
+                                  of the Mars Observer spacecraft
+1.5 x 10^{9}    1994 USA dollars  Planned total cost of the AXAF X-ray mission
+1.8 x 10^{9}    1994 USA dollars  Amount of food stamp fraud in the USA in 1993
+3.5 x 10^{9}    1994 USA dollars  Planned total cost of the Cassini spacecraft
+3.8 x 10^{9}    1994 USA dollars  Microsoft revenue in 1993
+1.3 x 10^{10}   1994 USA dollars  Lockheed revenue in 1993
+1.4 x 10^{10}   1994 USA dollars  NASA planned 1995 budget
+2.8 x 10^{10}   1994 USA dollars  Planned cost for the space station
+2.6 x 10^{11}   1994 USA dollars  United States 1994 military spending
+2.6 x 10^{11}   1994 USA dollars  United States 1994 predicted defecit
+1.3 x 10^{12}   1994 USA dollars  United States 1994 tax receipts
+1.5 x 10^{12}   1994 USA dollars  United States 1994 federal government 
+                                  spending
+4.4 x 10^{12}   1994 USA dollars  United States 1994 national debt
+
+
+0.004   Black velvet optical light albedo
+0.012   Black cloth optical light albedo
+0.04    Halley's comet optical light albedo
+0.068   Moon optical light albedo
+0.14    Mars optical light albedo
+0.40    Earth optical light albedo
+0.80    White paper optical light albedo
+0.85    Venus optical light albedo
+
+
+1 x 10^{-10}  pc^{-3}  Space density of X-ray binaries in the Milky Way
+5 x 10^{-7}   pc^{-3}  Space density of pulsars in the solar neighborhood
+3 x 10^{-6}   pc^{-3}  Space density of cataclysmic variables in the solar 
+                       neighborhood
+0.1           pc^{-3}  Space density of main sequence stars in the solar 
+                       neighborhood
+
+
+1 x 10^{-9}    Mpc^{-3}  Ultraluminous IRAS galaxies
+1 x 10^{-9}    Mpc^{-3}  Quasars
+1 x 10^{-7}    Mpc^{-3}  QSOs
+1 x 10^{-7}    Mpc^{-3}  FR II radio galaxies (edge-brightened)
+5 x 10^{-6}    Mpc^{-3}  FR I radio galaxies (not edge-brightened)
+1 x 10^{-4}    Mpc^{-3}  Seyfert galaxies
+0.1            Mpc^{-3}  Field galaxies
+0.6            Mpc^{-3}  Group galaxies
+
+
+-26.8     V apparent magnitude of the Sun
+-12.5     V apparent magnitude of the full Moon
+-1.5      V apparent magnitude of Sirius
+0.1       V apparent magnitude of the LMC
+0.5       V apparent magnitude of Betelgeuse
+3.4       V apparent magnitude of M31
+10.5      V apparent magnitude of the z=0.00363 Seyfert 2 NGC 1068
+11.6      V apparent magnitude of the z=0.00170 H II region galaxy NGC 5408
+12.8      V apparent magnitude of the z=0.158 quasar 3C273  
+13.6      V apparent magnitude of the z=0.0167 Seyfert 1 NGC 7469  
+15.3      V apparent magnitude of the z=0.239 quasar PG 0953+414 (ApJ 435, L12) 
+19.55     V apparent magnitude of the z=3.67 quasar DHM 0054-284   
+25.5      V apparent magnitude of a typical Cepheid in M100 (ApJ 435, L33)
+
+
+-27.5  M_V of the z=0.158 quasar 3C273
+-24.1  M_V of the z=0.239 quasar PG 0953+414 (ApJ 435, L12) 
+-21.1  M_V of M31
+-21.0  M_V of a typical Seyfert host galaxy
+-19.5  M_V limit on the host galaxy of the z=0.239 quasar 
+       PG 0953+414 (ApJ 435, L12)
+-18.5  M_V of the LMC
+-6.0   M_V of Betelgeuse 
+4.4    M_V of the most luminous star in Alpha Centauri
+4.79   M_V of the Sun
+
+Note:  I assume an inflationary Omega_0=1.0 dust-filled 
+       Friedmann-Robertson-Walker universe with H_0=50 km s^{-1} Mpc^{-1} = 
+       1.62 x 10^{-18} s^{-1} for all calculations. Space densities
+       are given for ``here and now.''
+

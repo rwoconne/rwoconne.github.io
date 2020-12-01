@@ -1,0 +1,741 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2012-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr8500 -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr8500  -->
+<!-- -->
+
+<!-- CREATED: 2/26/2012: original text elements extracted from ASTR
+  511 "Tips for Success"; 2/27; 2/28 posted; 3/6; 12/14/15: new
+  domain, update links; 2/6/2016: new format; 2/7; 2/8; 2/9; 2/11;
+  2/12; 2/15; 2/19; 2/22; 3/8: add link to "perfect prop"; 5/10; 
+  8/23; 1/26/2017; 7/6: convert for dept wiki - make links absolute,
+  new material; 7/7; 7/11; 1/22/2018; 2/26; 3/11; 3/12; 3/15; 3/28; 
+  4/12; 1/8/2020; add viewport def, update CSS link; 2/18; 3/2; 3/5; 
+-->
+
+
+<html>
+<head>
+
+<link rel=stylesheet href="class-3.css" type="text/css">
+
+<TITLE> ASTR 8500: Writing Proposals [O'Connell]</TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Advice on writing proposals
+for funding or observing time in professional astronomy.  Based
+on ASTR 8500, a seminar on professional and career development in astronomy
+at the University of Virginia.  Robert W. O'Connell."  >
+
+<meta name="keywords" content="astronomy, science, technology, 
+research, NSF, NASA, federal budget, proposal writing.">
+
+</head>
+
+<body>
+
+<h2 align="center">ASTR 8500 (O'Connell, January 2020)</h2>
+
+<p></p>
+<hr noshade>
+
+<h1 align="center">TIPS ON WRITING PROPOSALS IN ASTRONOMY </h1>
+
+<p><br></p>
+
+<center><img src="http://www.faculty.virginia.edu/rwoclass/astr8500/3panel-obs-prop.jpg" align="top" width=75%>
+</center>
+
+<p><br></p>
+
+Most resources (money, observing time, and computing facilities) in
+astronomy are <b>competitively awarded</b>.  This means that all
+astronomers must become adept at writing proposals to secure those
+resources.</p>
+
+The current national budget to support research in astronomy is over
+$400K per astronomer per year (see
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/rom-natl-budget-for-astronomy-v2.jpg">this
+table</a>), which sounds more than ample.  But individual
+investigators can acquire direct control over only a small portion of
+that amount in the form of grants.  Most of the funding supports the
+design, implementation, and operation of a set of <b>large, shared
+facilities</b> (e.g. the Keck telescopes, ALMA, HST), and access to
+these is awarded almost exclusively through a competitive proposal process.</p>
+
+Most of the following tips apply to all kinds of proposal writing, but
+they are specifically aimed toward university personnel proposing to
+obtain <b>research grants</b> from federal agencies or access to major
+<b>national facilities</b> (telescopes, computers).  </p>
+
+
+<h2>Probabilities</h2>
+
+Success rates for proposals in astronomy currently are
+generally <b>small</b>: rarely better than 30% and in the more
+competitive cases, only about 10%.</p>
+For NSF research grants,
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500//NSF-grant-success-90-19.png">success rates</a> are
+currently in the 15-20% range.</p>
+
+Since a success rate more in the range of 30-50% would be much more
+healthy for the field, this is <b>not a good situation</b> and has
+gotten worse over the last 30 years.  It is a consequence of the large
+number of people who have been attracted to astronomy over that time
+coupled with small inflation-adjusted growth in the federal budget for
+astronomy.</p>
+
+For intra-department observing proposals for time on our guaranteed-access
+facilities, the success rate is typically 80%.
+</p>
+
+
+<h2>Effort</h2>
+
+Writing a good proposal is time consuming, and (obviously)
+the effort increases in proportion to the scale of the project involved.
+Some rules of thumb: </p>
+
+<ul>
+
+<li> NOAO or NRAO/JVLA observing proposals (2 opportunities per year) might
+require 2-4 person-days.</p>
+
+<li> Moderate-scale HST (say 25 orbits) or NRAO/ALMA observing proposals (1
+opportunity per year) might require 4-8 person-days.</p>
+
+<li> Large-scale personal research grant from NSF (>$200K; 1
+opportunity per year): 10-20 person-days.</p>
+
+<li> Large-scale projects (e.g. NASA spacecraft), with budgets up to
+hundreds of $M, require over a hundred person-days of effort,
+usually involving private contractors.  Simply organizing such
+proposals is a major undertaking in its own right, and institutions
+must commit significant funds just to mount a proposal effort.  Most
+such proposals will fail, of course.</p>
+
+</ul>
+
+A recent survey of effort versus success was
+published by Ted and Courtney von Hippel
+(<a href="http://adsabs.harvard.edu/abs/2015PLoSO..1018494V">2015</a>),
+who found that the average research grant proposal takes 116 PI hours and 55 Co-I
+hours to write and that the primary predictor of success is having had
+previous success.  </p>
+
+
+<h2>Advance planning</h2>
+
+<ul>
+
+<li> <b>TIMING:</b> "Unsolicited" proposals can be submitted at any
+time, but the vast majority of proposal opportunities are "solicited."
+That is, a "Request for Proposals" (RFP) or an "Announcement of
+Opportunity" (AO) is circulated, and there is a specific submission
+date after which proposals will not be accepted.  Major programs
+operate on a fairly predictable cycle, typically with 1-2
+opportunities per year.</p>
+
+
+<li> <b>ALLOCATION DELAYS:</b>  For most ground-based facilities,
+observing time is awarded starting about 3 months after the proposal
+deadline.  For space missions, the delay might be 6-18 months.  NSF
+and NASA budget flows cannot be counted on for at least 6 months after
+the proposal deadline and possibly significantly longer.</p>
+
+<ul>
+All this implies that <b>you must plan ahead</b>.  That is particularly true
+if your project depends on hiring new personnel or paying existing
+personnel.  Note that the proposal/award cycle is usually <b>not in
+phase</b> with the national hiring cycle (which begins in the fall), and
+this can result in serious practical complications. </p>
+
+The <b>duration</b> of grant awards normally runs from one to three
+years in astronomy.  A few opportunities are for five years.  In most
+cases, you can obtain a <b>"no cost extension"</b> of an existing award,
+which allows spending past the originally intended end of the project
+but with no additional funds.  In a small percentage of cases, it may
+be possible to extend a grant with a modest amount of supplementary
+funds.  For major projects, such as space missions, there
+are formal reviews regarding continuation or supplementation of
+funds.</p>
+
+</ul>
+
+<li> <b>CO-INVESTIGATORS:</b> Almost all contemporary projects involve
+a team: anywhere from 3 to 100+ people.  You must <b>organize</b>
+your team before you start to write the proposal.  Team meetings
+with members outside your institution are normally held by teleconference.</p>
+
+<ul>
+
+Each Co-I should bring a well-defined strength to the project.  Do not
+add people who will not contribute their share. Many projects require
+special technical expertise (e.g. reducing grism data or analyzing
+molecular excitation levels), for which experienced Co-I's are needed.
+Your project's perceived viability may depend on your choice of
+Co-I's.</p>
+
+Be sure you have a consensus among Co-I's concerning overall goals
+and strategy for developing the proposal <b>before</b> beginning to
+write.  Leverage Co-I expertise to best advantage by farming
+out relevant parts of proposal preparation.</p>
+
+Note that there can
+be only <b>one</b> "Principal Investigator" (PI), who becomes the
+single point of legal/financial contact with the sponsor if the
+proposal is successful and who normally has prime reponsibility
+for writing and submitting the proposal.  </p>
+</ul>
+
+<li> <b>LETTERS OF INTENT:</b> some programs expect you to submit a
+Letter of Intent several months before the proposal is due.  This is
+simply a statement that you, and your listed Co-I's, intend to submit
+a proposal.  The LOI normally carries no legal obligation.  It is
+mainly used by the agencies to assemble panels of independent
+reviewers well ahead of the proposal deadlines.
+</p>
+
+<li> <b>ELECTRONIC SUBMISSION AND INFORMATION SYSTEMS:</b> Most
+opportunities now require electronic submission of proposals through
+special systems such as
+<a href="http://nspires.nasaprs.com/external/">NSPIRES</a> (NASA) or
+<a href="https://www.fastlane.nsf.gov/">Fastlane</a> (NSF).  It's very
+important to become familiar with the idiosyncracies of these well in
+advance of deadlines and to make <b>trial submissions</b>, assuming this is
+allowed.  </p>
+
+<ul>
+For the major observatories, there are extensive <b>online
+resources</b> to help you plan your proposal (e.g. instrument
+handbooks and observation simulators).  These are often dense, and you
+will find it advisable to set aside a week of time well ahead of the
+proposal deadline to become comfortable with the material and
+software. </p>
+</ul>
+
+<li> <b>BOILERPLATE:</b> A burden. Apart from the stuff that matters,
+you must normally provide brief CV's of all investigators, lists of
+previous successful proposals and resulting publications, a statement
+of existing grant support, investigator addresses, a list of cognizant
+university officials, your institution ID numbers, and so forth.  Less
+reasonable demands can include lists of all your recent
+collaborators(!), drug-free certifications, data management plans,
+outreach plans, and more.  Most of this material has little to no
+effect on the actual evaluation of the proposal, but it can't be
+ignored; and the problem is getting worse.  A major time-sink: beware!
+</p>
+
+<ul>
+One expected element that might appear to be "boilerplate" in NSF
+proposals --- but is not --- is the <b>"Broader Impacts"</b> section.
+This is mandated because of Congressional pressure on NSF to support
+only "relevant" research.  Specifically: "The statement on broader
+impacts should describe the potential of the proposed activity to
+benefit society and contribute to the achievement of specific, desired
+societal outcomes."  Details are given in the
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-proposal-policies-feb19.pdf">NSF
+proposal policies manual</a>.  This is taken seriously in proposal
+reviews, and a thoughtful effort here is strongly recommended.  Ask
+for advice from colleagues.</p>
+
+</ul>
+
+
+
+<li> <b>BUDGET PREPARATION DETAILS:</b> Preparation is significantly
+more complicated if a budget is involved.  If that's the case, your
+first step should be to acquire a good grasp of the details of your
+institution's policies on budgets: salaries, benefits, travel,
+F&A costs, restrictions on purchases, etc.  There can be a steep
+learning curve here.  On your first attempt, it is strongly
+recommended that you ask colleagues to see <b>examples</b> of budgets on
+successful proposals of similar scale from your institution.  </p>
+
+<ul>
+For UVa Astronomy Department budgeting guidelines on the department
+Wiki/Collab site, click
+<a href="https://collab.its.virginia.edu/portal/site/dc22b48c-f894-43a6-b680-0f203a7fd490/tool/e5ce4046-7376-49da-8788-f8bad383815d?pageName=%2Fsite%2Fdc22b48c-f894-43a6-b680-0f203a7fd490%2Fuseful+information+for+preparing+grants&action=view&panel=Main&realm=%2Fsite%2Fdc22b48c-f894-43a6-b680-0f203a7fd490">here</a>..</p>
+</ul>
+</ul>
+
+
+<h2>Budgets</h2>
+
+<ul>
+
+<li> <b>AVAILABILITY:</b> Not all opportunities involve funding.
+Awards of observing time on most ground-based facilities (supported
+mainly by NSF) do <b>not</b> carry associated funding awards, even for
+travel to the observatories.  This is true for NOAO, Gemini, and most
+NRAO facilities.  In order to obtain research funds to support work at
+those observatories, you must make a <b>separate</b> scientific
+program proposal to NSF.  This is a <b>bad system</b> and has an
+unpleasant "double jeopardy" character.  </p>
+
+<ul>
+One exception is for student observing projects at NRAO.  Research
+supervisors are entitled to apply
+for <a href="https://science.nrao.edu/opportunities/student-programs/sos">"Student
+Observing Support Program"</a> funds, which provide capped support for
+stipends, travel, and computer equipment during data acquisition and
+analysis.</p>
+
+Note that most of the leading astronomical journals require the author
+to provide <b>"page charges"</b> before papers can be published, so the
+general lack of funding support for ground-based observational
+programs is a serious impediment.</p>
+
+</ul>
+
+By contrast, observing time on most NASA facilities <b>does</b> carry
+associated research funding.</p>
+
+
+<li> <b>PRIORITY:</b> In most cases, budgets are of <b>secondary</b>
+importance in the success of a proposal.  The <b>scientific
+justification is normally much more important</b>.
+Exceptions include the case of a very ambitious program
+where the budget is a key feasibility criterion.
+ </p>
+
+<li> <b>ESTIMATING:</b> Nonetheless, the budget is of primary
+importance in actually <b>doing the research</b>. You should ask for
+what you need.  Don't skimp to impress an agency (because you won't)
+and don't assume your department will pick up any slack (because it
+won't, unless you have negotiated shared support in advance).  Be sure
+that what you ask for is reasonable and well justified.  A list of
+typical budget items is given below.</p>
+
+<ul> It's better to slightly <b>over</b>-estimate than the converse.
+If the agency believes you have requested too much, it will negotiate
+a lower level with you; but you will never get more than you ask
+for.  </p>
+</ul>
+
+<ul>It's a good idea early in your career to become facile with
+using <b>spreadsheet programs</b>.  Even simple budgeting can involve
+an array of possible configurations that you will want to explore
+within some outer envelope, and spreadsheets make that much easier.
+They cushion unanticipated last-minute iteration, too. </p>
+</ul>
+
+<li> <b>GOOD SENSE:</b> In cases where budget guidelines have been set in
+advance by the agency, you clearly have to abide by these and <b>adjust
+the amount of work planned</b> accordingly. It is foolish to submit a
+proposal that seriously violates a funding limit or time scale which
+is explicitly stated in the RFP.</p>
+
+<ul>  If your budget comes in just
+slightly below a stated cap, you risk the impression that you have
+unrealistically cut corners and that you will not be able to produce
+what you claim.  </p>
+</ul>
+
+<li> <b>UNIVERSITY APPROVAL:</b> Any submitted budget requires approval by
+your university.  This takes time, and for inexperienced proposal
+writers it may require iteration.  <b>Allow at least an additional
+week</b> for this.  Normally, but not always, you can continue
+spiffing up the science justification while the budget is processed,
+as long as there are no changes to the budget requirements.</p>
+
+<li><b>CO-I SUPPORT:</b> Primary funding for a successful project will
+usually flow through the PI's institution.  External Co-I support may
+be passed through the PI institution, or it may be sent directly from
+the sponsor to Co-I institutions after separate sub-budgets are
+submitted by them.  In many cases, the PI is expected to submit a
+consolidated funding proposal including all the details of Co-I
+support.  </p>
+
+<li> <b>TWO-PHASE PROPOSALS:</b> Because of the hassle involved in
+preparing budgets and the low probability of success, it is
+(thankfully) more common now for agencies (e.g. STScI) to break the
+proposal process into two parts and to request budget submissions only
+from successful proposers.  NASA missions may also separate the
+requirement for detailed targeting information and observing sequences
+into a "Phase II" submission.  To minimize pain, some programs use a
+simple, non-negotiable funding allocation, based, for instance, on the
+number of observing hours you are awarded.</p>
+
+<li> <b>F&A WARNING:</b> Your institution will charge "facilities and
+administration" (F&A) costs to cover its general support expenditures
+on all external grants.  (These used to be called "overhead" or
+<b>"indirect" costs</b> and can cover a broad array of items including office
+& lab space, utilities, support staff, Internet services, central
+administrative services, and so forth.  They are re-negotiated by
+universities with government agencies on a regular basis.)  F&A
+costs are charged as a <b>specific fraction</b> of the "direct" costs of a
+proposal and must be
+<b>explicitly included</b> (by you) as part of your budget.  Since the total
+amount of grant funds available is capped, F&A charges
+effectively <b>reduce</b> the amount of money that can be used for
+actual research and over which you will have direct control.</p>
+
+<ul>  
+
+At UVa, F&A charges have recently been in the range 50-60%
+of the direct costs in the grant.  At private universities, they may
+range up to 80-100%; in industry, yet higher.  Some agencies restrict
+the size of F&A awards, in which case you will have to negotiate with
+your institution to be sure your budget is approved.</p>
+
+When you include benefits, travel, publications, and other incidental
+costs, and then apply the F&A multiplier for suppporting a postdoc,
+for instance, the amount you would have to request could easily
+be <b>double</b> the postdoc's salary.</p>
+</ul>
+
+<li><b> TYPICAL BUDGET ITEMS</b>:
+Agency and institutional expectations regarding budget formatting vary
+widely, so only general guidelines are given here.  Budgets are
+normally broken out by year.</p>
+
+<ul>
+
+BUDGET NARRATIVE: a general description/justification for the budget.
+For larger projects, you may have to supply a "work breakdown structure" --
+i.e. a full list of task assignments for all personnel.</p>
+
+PERSONNEL: (list by category: PI, Co-I, student, postdoc, data tech,
+lab tech,  clerical, etc.). </p>
+
+<ul> 
+
+Number people, person-months of effort, salary per month for each
+category</p>
+
+Benefits: (health, Social Security, retirement, etc).  Usually
+quoted as a percentage of salary, but depends
+on category of personnel.</p>
+
+</ul>
+
+TRAVEL: sometimes justification is required in nightmarish detail,
+especially for foreign travel. </p>
+
+STUDENT TUITION</p>
+
+COMPUTING EQUIPMENT AND SERVICES</p>
+
+LAB EQUIPMENT AND SERVICES</p>
+
+SUPPLIES (technical, lab, office) </p>
+
+TELECOMMUNICATIONS SERVICES (phone, Internet, etc.) </p>
+
+SUBCONTRACTS for special services; in some cases this could
+cover external Co-I's </p>
+
+PUBLICATIONS: estimated number of pages, publication charges per page,
+special preparation costs, etc.</p>
+
+F&A CHARGES: entered as a percentage of total costs in all but
+a few excluded categories.</p>
+
+<ul>
+Note also that any item ostensibly covered
+by your institution's F&A charge cannot be included as a direct
+cost in your budget.  This can complicate your life unnecessarily, e.g.
+when the F&A charge is claimed to cover computer hardware.</p>
+ 
+</ul>
+</ul>
+</ul>  
+
+
+<h2>Proposal Review</h2></p>
+
+<ul>
+
+<li> <b>PEER REVIEW:</b>  essentially all proposal review in NSF and NASA is by 
+anonymous peer review, not by agency officials.  The old "sweetheart"
+system, where a single agency grants officer decided on the award of
+funds, sometimes without any peer input, has faded away, except for
+a few corners of the government and private sectors. </p>
+
+<li> <b>COMPETITIVE REVIEWS:</b> Major solicited proposal programs,
+which can yield over 1000 proposals, now usually hold competitive
+reviews, where groups of 5-10 referees read each of, say, 50
+proposals.  Two reviewers are chosen to be "prime" or "secondary"
+reviewers on each proposal; they look more carefully at their
+proposals, write summaries, and record comments from the group.  The
+whole committee meets and systematically compares the proposals to
+each other and to the available budget and produces a rank-ordered
+list of proposals to support. This system works surprisingly well, and
+produces the closest thing possible to an objective review (though you
+will not always think so). </p>
+
+<ul>
+<b>TRIAGE:</b> the proposal burden is so large in many programs
+(e.g. HST), that "triage" is performed.  Before the meeting, all
+reviewers skim each proposal and determine whether it is
+above the 30th percentile.  Votes are collected remotely.  Proposals
+below this cut are not considered further.  Proposal titles,
+abstracts, Co-I lists, and illustrations are the most influential
+elements affecting the triage outcome.</p>
+
+The burden on reviewers is now large enough that NSF, for instance, is
+considering whether to restrict the number of proposals that
+individual scientists can submit over a given period of time or
+concerning a given subject.</p>
+
+</ul>
+
+<li> <b>FEEDBACK:</b> Most, but not all, programs will give you feedback
+concerning the reviewers' opinions of the strengths and weaknesses of
+your proposal.  This can be very useful in making improvements for the
+next round.  Sometimes only small changes can produce success on the
+next iteration.  Unfortunately, with a little experience, you will
+begin to detect a significant <b>random component</b> in proposal
+evaluation.  This is human nature; grit your teeth and try
+again.  </p>
+
+<li> <b>STRATEGIC IMPLICATION:</b> Given this atmosphere, you must
+design your proposal to impress harried reviewers who have only
+a <b>few minutes</b> to read each proposal and who are looking
+for <b>reasons to reject</b>.  </p>
+
+
+</ul>
+
+<h2>Writing the Proposal</h2>
+
+<ul>
+
+<li> <b>Never violate stated limits</b> on length, font sizes, number
+of figures, and so forth.  Not complying with guidelines will not only
+annoy the more finicky reviewers, but in some cases it will result
+in <b>mandatory rejection</b>.  If you can't present your case in the
+expected space, reviewers will think you don't know what you're doing.
+Likewise, never omit some piece of information or boilerplate you are
+asked to supply.
+</p>
+
+<li> A compelling proposal must be <b>clearly, persuasively, and concisely
+written</b> and must demonstrate:</p>
+
+<ol>
+
+  <li> That the questions you are asking are <b>important and
+  interesting</b>; <br>
+
+  <li> That the program is technically <b>feasible</b>;<br>
+
+  <li> That you are <b>competent</b> to execute it; and <br>
+
+  <li> That it will provide a <b>definitive answer</b> to the
+  questions posed.</p>
+
+</ol>
+
+
+<li> Write for people who are generally well informed but who
+are <b>not specialists</b> in the field.  Clearly explain the main
+issues.  Be sure to define all acronyms and abbreviations.  Place in
+the larger context.  Make sure claims for importance or uniqueness are
+defensible; don't exaggerate. </p>
+
+<li> Keep it <b>short and clear, clean and uncluttered</b>: </p>
+
+<ul>
+
+Remember that it is not easy to be simultaneously informative and
+terse.  <font color="green"><em>"...Writing briefly takes far more
+time than writing at length."</em></font>  (Carl Friedrich Gauss).</p>
+
+Use subheadings, short paragraphs, topic sentences, large fonts.</p>
+
+Don't present barely digestible blocks of text.  Don't crowd
+text.  </p>
+
+Minimize use of multiple font types, but do use bold face (sparingly)
+to highlight key points.  </p>
+
+It's normal and unobjectionable to adopt a compressed style for
+literature citations in a proposal to save space.  But be sure to
+include the important literature, because its authors could easily be
+on your review panel!  </p>
+
+</ul>
+
+<li> <b>Put key points up front</b>.  Don't make the reviewer read to the
+10th paragraph before you state what you're planning to do.  </p>
+
+<li> Work hard to be sure the <b>abstract captures all
+the key points</b> clearly and succinctly and in good prose style.  The
+reviewers' first (and in some cases, only) impression will come
+from the abstract. </p>   
+
+<li> Be sure you have considered all the possible <b>weaknesses</b> in the
+proposed work and have implicitly responded to those issues and to
+common misapprehensions about your subject.  Your Co-I's are a good
+resource here.</p>
+
+<li> <b>Don't waffle</b>: where ambiguities exist, state clearcut choices and
+how you intend to resolve the issues involved.</p>
+
+<li> <b>Illustrations</b> (images, plots) can quickly clarify issues
+for the reader.  They add interest and "tangibility" to the project.
+They can represent nice summaries of your earlier work on the topic.
+They can substitute for lengthy text.  <b>Strongly
+recommended.</b></p>
+
+<ul>
+Note that figure captions can use smaller fonts---a good way to squeeze
+in a little extra information.  </p>
+
+You can include color figures in proposals if your RFP allows it.
+Many reviewers will read your proposal electronically from a PDF file
+and will see the color versions. But some prefer to read from a hardcopy
+and may not care to use a color printer.  It's best if you adjust
+figures so they will be easily interpretable if viewed in greyscale.
+Be sure figures are reproduced at an easily viewed scale. </p>
+
+</ul>
+
+<li> Especially for your earlier efforts, ask colleagues
+to <b>review</b> the proposal and offer suggestions for improvement.
+Do this far enough in advance of the deadline to accommodate major
+changes, if needed.  In larger teams, assign a couple of Co-I's to be
+responsible for a full, critical review of the writeup, but be
+sure to circulate drafts to the whole team.</p>
+
+<li> Essential: <b>proofread line by line from paper</b>, not a
+computer screen.  Try to put yourself in the mind of a
+skeptical/harried reviewer as you read.
+Always <b>spell-check</b>.</p>
+
+<li> Leave yourself sufficient reserve to be sure you can submit
+comfortably ahead of the <b>deadline</b>.  Beware last minute computer
+glitches.  Competition is so heavy for the large programs that the
+submission deadline is usually a hard (electronic) cutoff.</p>
+
+</ul>
+
+<h2>Advice for Graduate Students</h2>
+
+<ul>
+<b>Practice!</b>  Get experience writing proposals before you leave
+the shelter of grad school.  Write the observing proposals for your
+thesis research in collaboration with your advisors. Volunteer to help
+with their larger grant proposals as appropriate.  The more exposure
+you get to the process, the better.</p>
+</ul>
+
+<p><br></p>
+
+<hr>
+
+<h2>Web links</h2>
+
+<ul>
+
+<!-- 
+<a href="s16-proposal-assignment.html"><b>Assignment</b>: Writing a Trial Proposal
+to the Virginia Space Grant Consortium</a></p>
+-->
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/rom-natl-budget-for-astronomy-v2.jpg">ROM 
+National Budget for Astronomy, 2016</a></p>
+
+<a href="https://collab.its.virginia.edu/portal/site/dc22b48c-f894-43a6-b680-0f203a7fd490/tool/e5ce4046-7376-49da-8788-f8bad383815d?pageName=%2Fsite%2Fdc22b48c-f894-43a6-b680-0f203a7fd490%2Fuseful+information+for+preparing+grants&action=view&panel=Main&realm=%2Fsite%2Fdc22b48c-f894-43a6-b680-0f203a7fd490&sakai.tool.placement.id=e5ce4046-7376-49da-8788-f8bad383815d&sakai.tool.placement.id=e5ce4046-7376-49da-8788-f8bad383815d
+89ca-d82279eb6dbb">UVa Astronomy Department Info on Grant Preparation</a> (Collab login required)</p>
+
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/s20-funding-opps-grads.html">Funding
+Opportunities for Graduate Students</a></p>
+
+
+<!--  Stale information on NSF
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-AST-bud-categories-95-16.jpg">NSF 1995-2016 Budget Breakout</a><br> 
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-AST-bud-scenarios-10-19.jpg">NSF Projected Budgets (to 2019)</a><br>
+-->
+
+
+<a href= "http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-AST-bud-breakout-2011.jpg">NSF AST Budget Breakout</a> (for 2011 but still indicative)<br>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-grant-success-90-19.png">NSF AST Individual Investigator Grants & Success Rate</a><br>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-bud-runout-to-2024-jan18.jpg">NSF AST Budget Projection (Jan 2018)</a><br>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NSF-proposal-policies-feb19.pdf">NSF
+Proposal Policies Manual</a></p>
+
+
+<!-- Stale
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NASA-2016-budget-request.jpg">NASA 2016 Budget Request & Projections</a></p>
+-->
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/nasa-Ap-bud-FY04-30-dec17-v2.jpg">NASA 
+Astrophysics Budget Projection to FY30 (Jan 2018)</a><br>
+
+<!-- <a href="http://www.faculty.virginia.edu/rwoclass/astr8500/NASA-FY19-budget-request-feb18.jpg">NASA FY19 White House Budget Request (Feb 2018)</a></p>
+-->
+
+<a href="NASA-FY2015-20-appropriations-CRS.png">NASA FY15-FY20 Appropriations</a></p>
+
+<!-- 
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/2018-approved-Astron-budget-AAS.jpg">Approved FY18 Federal Budget for Astronomy (Mar 2018)</a></p>
+-->
+
+<a href="https://www.fastlane.nsf.gov/">FastLane</a> (NSF proposal submission/info site)<br>
+
+<a href="http://nspires.nasaprs.com/external/">NSPIRES</a> (NASA
+proposal submission/info site)</p>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/tips-for-success.html">O'Connell's Tips for Success in Observational Astronomy</a><br> 
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/writing-CVs-RWO-A8500.html">O'Connell's Tips on Writing CVs</a><br>
+
+<a href="http://www.cs.cmu.edu/~sfinger/advice/advice.html">Susan Finger advice on
+writing proposals for NSF</a><br>
+
+<a href=
+"http://blogs.discovermagazine.com/cosmicvariance/2012/01/24/unsolicited-advice-xiii-how-to-craft-a-well-argued-proposal/"> Julianne Dalcanton advice on writing observing proposals</a><br>
+
+<a href="PhysicsToday_A_Perfect_Proposal.pdf">A "perfect" 2-page
+proposal that inaugurated an entire field of astronomy</a> (from <em>Physics
+Today)</em></p>
+
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr8500/index.html">ASTR 8500:
+a course on professional development for graduate students</a></p>
+
+</ul>
+
+
+<!-- START FOOTER -->
+
+<!-- 
+
+<hr size=2>
+<center>
+<a href="index.html">
+<img src="bent-yel-arrw01a.gif"><b> Return to home page</b></a>
+</center> 
+<hr size=2>
+
+-->
+
+<hr size=2>
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>March 2020</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<center><small> Text copyright &copy 2012-2020 Robert W. O'Connell.  All
+rights reserved. 
+</small></center>
+
+<!-- END FOOTER -->
+
+</body>
+</html>
+				  
+
+
+
