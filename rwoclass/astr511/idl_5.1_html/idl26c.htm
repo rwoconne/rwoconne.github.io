@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DF24_NIMAGES</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl26d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl26b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997077">
+ </A>
+<A NAME="83049">
+ </A>
+HDF_DF24_NIMAGES</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997080">
+ </A>
+The <A NAME="marker=997079">
+ </A>
+HDF_DF24_NIMAGES function returns the number of 24-bit images in an HDF file. A -1 is returned if the specified file is invalid or damaged. </P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997081">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997082">
+ </A>
+Result = HDF_DF24_NIMAGES(<I CLASS="Italics">
+Filename</I>
+) </P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997083">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997084">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997085">
+ </A>
+A string containing the name of the file to be searched.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997086">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997087">
+ </A>
+h = HDF_OPEN('myhdf.hdf')	<EM CLASS="Comment">;
+Open an HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997088">
+ </A>
+number = HDF_DF24_NIMAGES('myhdf.hdf')	<EM CLASS="Comment">;
+Return the number of 24-bit images in the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997089">
+ </A>
+HELP, number	<EM CLASS="Comment">;
+Print information about the returned value. If there were five images in the file, IDL would print:<BR>
+NUMBER LONG = 5</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997090">
+ </A>
+HDF_CLOSE, h	<EM CLASS="Comment">;
+Close the HDF File.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997091">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997101">
+ </A>
+<A HREF="idl269.htm#28927" CLASS="XRef">
+HDF_DF24_GETIMAGE</A>
+, <A HREF="idl26a.htm#39506" CLASS="XRef">
+HDF_DF24_GETINFO</A>
+, <A HREF="idl26d.htm#24088" CLASS="XRef">
+HDF_DF24_READREF</A>
+, <A HREF="idl26e.htm#28643" CLASS="XRef">
+HDF_DF24_RESTART</A>
+, <A HREF="idl285.htm#97758" CLASS="XRef">
+HDF_DFR8_NIMAGES</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

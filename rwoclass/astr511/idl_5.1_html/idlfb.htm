@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LJLCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlfc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlfa.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=841882">
+ </A>
+<A NAME="37970">
+ </A>
+LJLCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=840894">
+ </A>
+The <A NAME="marker=840892">
+ </A>
+LJLCT procedure <A NAME="marker=840893">
+ </A>
+loads standard color tables for LJ-250/252 printer. The color tables are modified on ly if the device is currently set to &quot;LJ&quot;.</P>
+<P CLASS="Body">
+<A NAME="pgfId=43047">
+ </A>
+The default color maps used are for the 90 dpi color palette. There are only 8 colors available at 180 dpi.</P>
+<P CLASS="Body">
+<A NAME="pgfId=865984">
+ </A>
+If the current device is `LJ', the !D.N_COLORS system variable is used to determine how many bit planes are in use (1 to 4). The standard color map for that number of planes is loaded. These maps are described in Chapter 7 of the <I CLASS="Italics">
+LJ250/LJ252 Companion Color Printer Programmer Reference Manual</I>
+, Table 7-5. That manual gives the values scaled from 1 to 100, LJLCT scales them from 0 to 255.</P>
+<P CLASS="Body">
+<A NAME="pgfId=865985">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ljlct.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=865986">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=865987">
+ </A>
+LJLCT</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43052">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=43053">
+ </A>
+SET_PLOT, 'LJ'	<EM CLASS="Comment">;
+Set plotting to the LJ device.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=43054">
+ </A>
+LJLCT	<EM CLASS="Comment">;
+Load the LJ color tables.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43055">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=43056">
+ </A>
+<A HREF="idl191.htm#16964" CLASS="XRef">
+SET_PLOT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

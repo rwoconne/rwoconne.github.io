@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DIALOG_MESSAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl79.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl77.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862968">
+ </A>
+<A NAME="53519">
+ </A>
+DIALOG_MESSAGE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862974">
+ </A>
+The <A NAME="marker=862970">
+ </A>
+DIALOG_MESSAGE function <A NAME="marker=862971">
+ </A>
+creates a <A NAME="marker=862972">
+ </A>
+modal (blocking) <A NAME="marker=862973">
+ </A>
+dialog box that can be used to display information for the user. The dialog must be dismissed, by clicking on one of its option buttons, before execution of the widget program can continue.</P>
+<P CLASS="Body">
+<A NAME="pgfId=862976">
+ </A>
+This function differs from widgets in a number of ways. The DIALOG_MESSAGE dialog does not exist as part of a widget tree, has no children, does not exist in an unrealized state, and generates no events. Instead, the dialog is displayed whenever this function is called. While the DIALOG_MESSAGE dialog is displayed, widget activity is limited because the dialog is modal. The function does not return to its caller until the user selects one of the dialog's buttons. Once a button has been selected, the dialog disappears.</P>
+<P CLASS="Body">
+<A NAME="pgfId=862977">
+ </A>
+DIALOG_MESSAGE returns a string containing the text of the label that the user selected.</P>
+<P CLASS="Body">
+<A NAME="pgfId=862978">
+ </A>
+There are four basic dialogs that can be displayed. The default type is &quot;Warning&quot;. Other types can be selected by setting one of the keywords described below. Each dialog type displays different buttons. Additionally any dialog can be made to show a &quot;Cancel&quot; button by setting the CANCEL keyword. The four types of dialogs are described in the table below:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=863002">
+ </A>
+<A NAME="85548">
+ </A>
+Types of DIALOG_MESSAGE Dialogs</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=862981">
+ </A>
+Dialog Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=862983">
+ </A>
+Default Buttons</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862985">
+ </A>
+Error</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862987">
+ </A>
+OK</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862989">
+ </A>
+Warning</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862991">
+ </A>
+OK</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862993">
+ </A>
+Question</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862995">
+ </A>
+Yes, No</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862997">
+ </A>
+Information</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862999">
+ </A>
+OK</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863005">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863006">
+ </A>
+Result = DIALOG_MESSAGE(<I CLASS="Italic">
+Message_Text</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863007">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863008">
+ </A>
+Message_Text</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863009">
+ </A>
+A scalar string or string array that contains the text of the message to be displayed. If this argument is set to an array of strings, each array element is displayed as a separate line of text.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863010">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863012">
+ </A>
+<A NAME="marker=863011">
+ </A>
+CANCEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863013">
+ </A>
+Set this keyword to add a &quot;Cancel&quot; button to the dialog.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863015">
+ </A>
+<A NAME="marker=863014">
+ </A>
+DEFAULT_CANCEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863016">
+ </A>
+Set this keyword to make the &quot;Cancel&quot; button the default selection for the dialog. The default selection is the button that is selected when the user presses the default keystroke (usually Space or Return depending on the platform). Setting DEFAULT_CANCEL implies that the CANCEL keyword is also set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863018">
+ </A>
+<A NAME="marker=863017">
+ </A>
+DEFAULT_NO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863019">
+ </A>
+Set this keyword to make the &quot;No&quot; button the default selection for &quot;Question&quot; dialogs. Normally, the default is &quot;Yes&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863021">
+ </A>
+<A NAME="marker=863020">
+ </A>
+DIALOG_PARENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863022">
+ </A>
+Set this keyword to the widget ID of a widget over which the message dialog should be positioned. When displayed, the DIALOG_MESSAGE dialog will be positioned over the specified widget. Dialogs are often related to a non-dialog widget tree. The ID of the widget in that tree to which the dialog is most closely related should be specified.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=876933">
+ </A>
+In <EM CLASS="Emphasis">
+IDL for Windows</EM>
+ the message dialog is centered on the screen rather than positioned over the specified widget.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=863023">
+ </A>
+This keyword is ignored on Macintosh platforms.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871724">
+ </A>
+<A NAME="marker=871723">
+ </A>
+DISPLAY_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871725">
+ </A>
+Set this keyword equal to a string indicating the name of the X Windows display on which the dialog is to appear. This keyword is ignored if the DIALOG_PARENT keyword is specified. This keyword is also ignored on Microsoft Windows and Macintosh platforms.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863025">
+ </A>
+<A NAME="marker=863024">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863026">
+ </A>
+Set this keyword to create an &quot;Error&quot; dialog. The default dialog type is &quot;Warning&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863028">
+ </A>
+<A NAME="marker=863027">
+ </A>
+INFORMATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863029">
+ </A>
+Set this keyword to create an &quot;Information&quot; dialog. The default dialog type is &quot;Warning&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863031">
+ </A>
+<A NAME="marker=863030">
+ </A>
+QUESTION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863032">
+ </A>
+Set this keyword to create a &quot;Question&quot; dialog. The default dialog type is &quot;Warning&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863035">
+ </A>
+<A NAME="marker=863033">
+ </A>
+<A NAME="52374">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863036">
+ </A>
+A string containing an X Window System resource name to be applied to the dialog. See <A HREF="idl200.htm#71756" CLASS="XRef">
+RESOURCE_NAME</A>
+ for a complete discussion of this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863041">
+ </A>
+<A NAME="marker=863040">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863042">
+ </A>
+Set this keyword to a scalar string that contains the text of a title to be displayed in the dialog frame. If this keyword is not specified, the dialog has the dialog type as its title as shown in <A HREF="idl78.htm#85548" CLASS="XRef">
+Types of DIALOG_MESSAGE Dialogs</A>
+. This keyword is ignored on Macintosh platforms.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863044">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863048">
+ </A>
+<A HREF="idl21d.htm#58439" CLASS="XRef">
+XDISPLAYFILE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

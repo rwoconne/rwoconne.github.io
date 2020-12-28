@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARNUM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl25d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997970">
+ </A>
+<A NAME="47192">
+ </A>
+CDF_VARNUM</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997974">
+ </A>
+The <A NAME="marker=997972">
+ </A>
+CDF_VARNUM function returns the <A NAME="marker=997973">
+ </A>
+variable number associated with a given <A NAME="marker=997975">
+ </A>
+variable name in a Common Data Format file. If the specified variable cannot be found in the CDF file, CDF_VARNUM returns the scalar -1.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997976">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997977">
+ </A>
+Result = CDF_VARNUM(<I CLASS="Italics">
+Id, VarName</I>
+ <I CLASS="Italics">
+[, IsZVar]</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997978">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997979">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997980">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997981">
+ </A>
+VarName</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997982">
+ </A>
+A string containing the name of the variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997983">
+ </A>
+IsZVar</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997984">
+ </A>
+A named variable into which CDF_VARNUM will place a 1 to indicate that the referenced variable is a zVariable or a 0 to indicate that it is an rVariable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999210">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999214">
+ </A>
+See the example for <A HREF="idl25b.htm#10909" CLASS="XRef">
+CDF_VARGET</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

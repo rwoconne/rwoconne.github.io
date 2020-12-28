@@ -1,0 +1,527 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The PCL Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl237.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl235.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144443">
+ </A>
+<A NAME="54861">
+ </A>
+The <A NAME="marker=142840">
+ </A>
+PCL Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=487688">
+ </A>
+Device Keywords Accepted by the PCL Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=487710">
+ </A>
+<A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#14091" CLASS="XRef">
+COLOR</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#51831" CLASS="XRef">
+FLOYD</A>
+, <A HREF="idl22e.htm#41095" CLASS="XRef">
+INCHES</A>
+, <A HREF="idl22e.htm#10843" CLASS="XRef">
+LANDSCAPE</A>
+, <A HREF="idl22e.htm#14011" CLASS="XRef">
+OPTIMIZE</A>
+, <A HREF="idl22e.htm#17648" CLASS="XRef">
+ORDERED</A>
+, <A HREF="idl22e.htm#56239" CLASS="XRef">
+PIXELS</A>
+, <A HREF="idl22e.htm#29147" CLASS="XRef">
+PORTRAIT</A>
+, <A HREF="idl22e.htm#75184" CLASS="XRef">
+RESOLUTION</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#94171" CLASS="XRef">
+SET_COLORMAP</A>
+, <A HREF="idl22e.htm#72570" CLASS="XRef">
+THRESHOLD</A>
+, <A HREF="idl22e.htm#37651" CLASS="XRef">
+XOFFSET</A>
+, <A HREF="idl22e.htm#19057" CLASS="XRef">
+XSIZE</A>
+, <A HREF="idl22e.htm#89972" CLASS="XRef">
+YOFFSET</A>
+, <A HREF="idl22e.htm#60607" CLASS="XRef">
+YSIZE</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144444">
+ </A>
+PCL (<A NAME="marker=142841">
+ </A>
+Printer Control Language) is used by Hewlett-Packard laser and ink jet printers to produce graphics output. To direct graphics output to a PCL file, issue the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144445">
+ </A>
+SET_PLOT,'PCL'</P>
+<P CLASS="Body">
+<A NAME="pgfId=498892">
+ </A>
+This causes IDL to use the PCL driver for producing graphical output. Once the PCL driver is enabled via SET_PLOT, the DEVICE procedure is used to control its actions, as described below. The default settings for the PCL driver are given in <A HREF="idl236.htm#54074" CLASS="XRef">
+Default PCL Driver Settings</A>
+. The PCL device draws into a memory buffer of the specified size (or the default size, if the XSIZE and YSIZE keywords to DEVICE are not specified). Anything drawn outside this buffer will be silently discarded.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=498886">
+ </A>
+Unlike monitors where white is the most visible color, PCL writes black on white paper. Setting the output color index to 0, the default when PCL output is selected, writes in black. A color index of 255 writes white which is invisible on white paper. </LI>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=436147">
+ </A>
+<A NAME="54074">
+ </A>
+Default PCL Driver Settings</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=436106">
+ </A>
+Feature</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=436108">
+ </A>
+Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436110">
+ </A>
+File</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436112">
+ </A>
+idl.pcl</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436114">
+ </A>
+Mode</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436116">
+ </A>
+Portrait</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436118">
+ </A>
+Optimization level</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436120">
+ </A>
+0 (None)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436122">
+ </A>
+Dither method</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436124">
+ </A>
+Floyd-Steinberg</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436126">
+ </A>
+Resolution</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436128">
+ </A>
+300 dpi</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436130">
+ </A>
+Horizontal offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436132">
+ </A>
+1/2 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436134">
+ </A>
+Vertical offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436136">
+ </A>
+1 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436138">
+ </A>
+Width</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436140">
+ </A>
+7 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436142">
+ </A>
+Height</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=436144">
+ </A>
+5 in.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=171055">
+ </A>
+Color tables are not used with PCL unless the color mode has been enabled using the <A HREF="idl22e.htm#14091" CLASS="XRef">
+COLOR</A>
+ keyword to the DEVICE procedure. For images, color dithering produces realistic color image output even though PCL printers only produce eight output colors. In most cases, simply choosing an appropriate color table (using <A HREF="idl101.htm#61192" CLASS="XRef">
+LOADCT</A>
+ or <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+), or creating a color table from an image (via <A HREF="idl1ec.htm#77837" CLASS="XRef">
+TVLCT</A>
+) will work fine. If you need finer control over the colors used, see the <A HREF="idl22e.htm#94171" CLASS="XRef">
+SET_COLORMAP</A>
+ keyword for additional information. For vector graphics, only eight colors are supported--no line dithering is implemented. Any RGB component that is not zero is treated as 255. The correct RGB definitions for each color are shown in <A HREF="idl236.htm#95742" CLASS="XRef">
+PCL RGB Color Definitions</A>
+. Use the <EM CLASS="tt">
+HELP,&nbsp;/DEVICE</EM>
+ command to view the current options for PCL output. </P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=171147">
+ </A>
+<A NAME="95742">
+ </A>
+PCL RGB Color Definitions</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=171074">
+ </A>
+Color</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=171076">
+ </A>
+Red Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=171078">
+ </A>
+Green Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=171080">
+ </A>
+Blue Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171082">
+ </A>
+Red</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171084">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171086">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171088">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171090">
+ </A>
+Green</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171092">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171094">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171096">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171098">
+ </A>
+Blue</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171100">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171102">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171104">
+ </A>
+255</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171106">
+ </A>
+Cyan</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171108">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171110">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171112">
+ </A>
+255</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171114">
+ </A>
+Magenta</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171116">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171118">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171120">
+ </A>
+255</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171122">
+ </A>
+Yellow</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171124">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171126">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171128">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171130">
+ </A>
+Black</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171132">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171134">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171136">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171138">
+ </A>
+White</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171140">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171142">
+ </A>
+255</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171144">
+ </A>
+255</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</BODY>
+</HTML>

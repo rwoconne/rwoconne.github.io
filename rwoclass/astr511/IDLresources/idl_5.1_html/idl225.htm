@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XREGISTERED</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl226.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl224.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762885">
+ </A>
+<A NAME="86032">
+ </A>
+XREGISTERED</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762888">
+ </A>
+The <A NAME="marker=762886">
+ </A>
+XREGISTERED function returns <A NAME="marker=762887">
+ </A>
+True if the widget named as its argument is currently registered with the XMANAGER as an exclusive widget. Otherwise the routine returns false.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762889">
+ </A>
+If the named widget is registered, XREGISTERED returns the number of instances of that name in the list maintained by XMANAGER. The registered widget is brought to the front of the desktop unless the NOSHOW keyword is set.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762890">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xregistered.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762891">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762892">
+ </A>
+Result = XREGISTERED(<I CLASS="Italic">
+Name</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762893">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762894">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762895">
+ </A>
+A string containing the name of the widget in question.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=927173">
+ </A>
+XREGISTERED checks for <EM CLASS="Emphasis">
+Name</EM>
+ in a COMMON block created by <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+. The stored name is case-sensitive.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762896">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762898">
+ </A>
+<A NAME="marker=762897">
+ </A>
+NOSHOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762899">
+ </A>
+If the widget in question is registered, it is brought to the front of all the other windows by default. Set this keyword to keep the widget from being brought to the front.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796028">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796029">
+ </A>
+Suppose that you have a widget program that registers itself with the XMANAGER with the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=796030">
+ </A>
+XMANAGER, 'mywidget', base</P>
+<P CLASS="Body">
+<A NAME="pgfId=796032">
+ </A>
+You could limit this widget to one instantiation by adding the following line as the first line (after the procedure definition statement) of the widget creation routine:</P>
+<P CLASS="Code">
+<A NAME="pgfId=796034">
+ </A>
+IF XREGISTERED('mywidget') THEN RETURN</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796041">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796042">
+ </A>
+<A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

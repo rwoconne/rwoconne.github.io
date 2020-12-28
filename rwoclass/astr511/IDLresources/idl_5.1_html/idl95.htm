@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXPAND</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl96.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl94.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757235">
+ </A>
+<A NAME="37812">
+ </A>
+EXPAND</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757238">
+ </A>
+The <A NAME="marker=757236">
+ </A>
+EXPAND procedure shrinks or expands a two-dimensional <A NAME="marker=757237">
+ </A>
+array, using bilinear interpolation. It is similar to the CONGRID and REBIN routines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757239">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+expand.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757240">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757241">
+ </A>
+EXPAND, <EM CLASS="Emphasis">
+A, Nx, Ny, Result</EM>
+ </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757242">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757243">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757244">
+ </A>
+A two-dimensional array to be magnified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757245">
+ </A>
+Nx</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757246">
+ </A>
+Desired size of the X dimension, in pixels.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757247">
+ </A>
+Ny</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757248">
+ </A>
+Desired size of the Y dimension, in pixels.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757249">
+ </A>
+Result</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757250">
+ </A>
+A named variable that will contain the magnified array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757251">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757253">
+ </A>
+<A NAME="marker=757252">
+ </A>
+MAXVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757254">
+ </A>
+Set this keyword equal to the largest good value. Elements greater than this value are set equal to the value of the FILLVAL keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757256">
+ </A>
+<A NAME="marker=757255">
+ </A>
+FILLVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757257">
+ </A>
+Set this keyword equal to the value to use when elements larger than MAXVAL are encountered. The default is -1. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757258">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757259">
+ </A>
+<A HREF="idl3e.htm#73623" CLASS="XRef">
+CONGRID</A>
+, <A HREF="idl172.htm#24539" CLASS="XRef">
+REBIN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

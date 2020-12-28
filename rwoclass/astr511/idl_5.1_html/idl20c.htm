@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WINDOW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl20d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl20b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680608">
+ </A>
+<A NAME="29793">
+ </A>
+WINDOW</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680609">
+ </A>
+The <A NAME="marker=675015">
+ </A>
+WINDOW procedure creates a window for the display of graphics or text. It is only necessary to use WINDOW if more than one simultaneous window or a special size window is desired because a window is created automatically the first time any display procedure attempts to access the window system. The newly-created window becomes the current window, and the <A NAME="marker=675016">
+ </A>
+system variable !D.WINDOW is set to that window's window index. (See the description of the <A HREF="idl219.htm#42522" CLASS="XRef">
+WSET</A>
+ procedure for a discussion of the current IDL window.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=680610">
+ </A>
+The behavior of WINDOW varies slightly depending on the window system in effect. See the discussion of IDL graphics devices in <A HREF="idl22d.htm#56982" CLASS="XRef">
+IDL Graphics Devices</A>
+ for additional details.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680611">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680612">
+ </A>
+WINDOW <I CLASS="Italic">
+[, Window_Index]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680613">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680614">
+ </A>
+Window_Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680615">
+ </A>
+The window index for the newly-created window. A window index is an integer value between 0 and 31 that is used to refer to the window. If this parameter is omitted, window index 0 is used. If the value of <I CLASS="Italic">
+Window_Index</I>
+ specifies an existing window, the existing window is deleted and a new one is created. If you need to create more than 32 windows, use the FREE keyword described below.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680616">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896410">
+ </A>
+<A NAME="marker=675026">
+ </A>
+COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680618">
+ </A>
+The maximum number of <A NAME="marker=675027">
+ </A>
+color table indices to be used when drawing. This parameter has an effect only if supplied when the first window is created. If COLORS is not present when the first window is created, all or most of the available color indices are allocated depending upon the window system in use.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680619">
+ </A>
+To use monochrome windows on a color display use COLORS = 2, when creating the first window. One color table is maintained for all windows. A negative value for COLORS specifies that all but the given number of colors from the shared color table should be allocated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680620">
+ </A>
+<A NAME="marker=675028">
+ </A>
+FREE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680621">
+ </A>
+Set this keyword to create a window using the smallest unused window index above 32. If this keyword is present, the <I CLASS="Italic">
+Window_Index</I>
+ argument can be omitted. The default position of the new window is opposite that of the current window. Using the FREE keyword allows the creation of a large number of windows. The system variable !D.WINDOW is set to the index of the newly-created window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680622">
+ </A>
+<A NAME="marker=675029">
+ </A>
+PIXMAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680623">
+ </A>
+Set the PIXMAP keyword to specify that the window being created is actually an invisible portion of the display memory called a pixmap.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680624">
+ </A>
+<A NAME="marker=675030">
+ </A>
+RETAIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=132546">
+ </A>
+<A NAME="marker=132555">
+ </A>
+Set this keyword to zero, one, or two to specify how backing store should be handled for the window. RETAIN=0 specifies no backing store. RETAIN=1 requests that the server or window system provide backing store. RETAIN=2 specifies that IDL provide backing store directly. See <A HREF="idl22f.htm#83595" CLASS="XRef">
+Backing Store</A>
+<EM CLASS="Emphasis">
+ </EM>
+for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680625">
+ </A>
+<A NAME="marker=675034">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680626">
+ </A>
+A scalar string that contains the window's label. If not specified, the window is given a label of the form &quot;IDL <I CLASS="Italic">
+n</I>
+&quot;, where <I CLASS="Italic">
+n</I>
+ is the index number of the window. For example, to create a window with the label &quot;IDL Graphics&quot;, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680627">
+ </A>
+WINDOW, TITLE='IDL Graphics'</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680628">
+ </A>
+<A NAME="marker=675045">
+ </A>
+XPOS </H4>
+<P CLASS="Body">
+<A NAME="pgfId=933190">
+ </A>
+The X <A NAME="marker=675046">
+ </A>
+position of the <A NAME="marker=675047">
+ </A>
+window, specified in device coordinates. On Motif platforms, XPOS specifies the X position of the <EM CLASS="Emphasis">
+lower</EM>
+ left corner and is measured from the lower left corner of the screen. On Windows and Macintosh platforms, XPOS specifies the X position of the <EM CLASS="Emphasis">
+upper</EM>
+ left corner and is measured from the upper left corner of the screen. That is, specifying</P>
+<P CLASS="Code">
+<A NAME="pgfId=933210">
+ </A>
+WINDOW, XPOS = 0, YPOS = 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=933211">
+ </A>
+will create a window in the lower left corner on Motif machines and in the upper left corner on Windows and Macintosh machines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=933209">
+ </A>
+If no position is specified, the position of the window is determined from the value of Window Index using the following rules:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680630">
+ </A>
+Window 0 is placed in the upper right hand corner.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680631">
+ </A>
+Even numbered windows are placed on the top half of the screen and odd numbered windows are placed on the bottom half.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680632">
+ </A>
+Windows 0,1,4,5,8, and 9 are placed on the right side of the screen and windows 2,3,6, and 7 are placed on the left.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680633">
+ </A>
+<A NAME="marker=675048">
+ </A>
+YPOS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680634">
+ </A>
+The Y position of the window, specified in device coordinates. See the description of XPOS for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680635">
+ </A>
+<A NAME="marker=675049">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680636">
+ </A>
+The width of the<A NAME="marker=675050">
+ </A>
+ window in pixels.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680637">
+ </A>
+<A NAME="marker=675051">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680638">
+ </A>
+The <A NAME="marker=675052">
+ </A>
+height of the window in pixels. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680639">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680640">
+ </A>
+Create graphics window number 0 with a size of 400 by 400 pixels and a title that reads &quot;Square Window&quot; by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680641">
+ </A>
+WINDOW, 0, XSIZE=400, YSIZE=400, TITLE='Square Window'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796058">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796059">
+ </A>
+<A HREF="idl1fc.htm#13948" CLASS="XRef">
+WDELETE</A>
+, <A HREF="idl219.htm#42522" CLASS="XRef">
+WSET</A>
+, <A HREF="idl21a.htm#14449" CLASS="XRef">
+WSHOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

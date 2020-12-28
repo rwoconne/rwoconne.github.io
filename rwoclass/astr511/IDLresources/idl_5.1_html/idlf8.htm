@@ -1,0 +1,1675 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LIVE_STYLE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlf9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlf7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=857975">
+ </A>
+<A NAME="41593">
+ </A>
+LIVE_STYLE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=857978">
+ </A>
+The <A NAME="marker=857977">
+ </A>
+LIVE_STYLE procedure allows the user to create a style.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857996">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=857997">
+ </A>
+Style = LIVE_STYLE (Type)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857998">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857999">
+ </A>
+Type</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858000">
+ </A>
+A string (case-insensitive) specifying the visualization style type. Available types include: plot, contour, image, and surface</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858001">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870318">
+ </A>
+<A NAME="marker=870317">
+ </A>
+BASE_STYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=874427">
+ </A>
+Set this keyword equal to a string (case-insensitive) containing the name of a previously saved style held in the Insight template file. It will be used for defaulting unspecified properties. If not specified, only those properties you provide will be put into the style. Choices for this keyword string are:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=874450">
+ </A>
+Base Style Strings</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=874430">
+ </A>
+Visualization</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=874432">
+ </A>
+String</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874434">
+ </A>
+plot</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874436">
+ </A>
+`Basic Plot'</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874438">
+ </A>
+contour</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874440">
+ </A>
+`Basic Contour'</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874442">
+ </A>
+image</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874444">
+ </A>
+`Basic Image'</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874446">
+ </A>
+surface</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874448">
+ </A>
+`Basic Surface'</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=874454">
+ </A>
+<A NAME="marker=874453">
+ </A>
+COLORBAR_PROPERTIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=874733">
+ </A>
+The table below lists the structure of the COLORBAR_PROPERTIES keyword.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=874716">
+ </A>
+Colorbar Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=874720">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=874722">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874632">
+ </A>
+title_FontSize</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874634">
+ </A>
+9 to 72 points</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874636">
+ </A>
+title_Fontname</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874638">
+ </A>
+Helvetica, Courier, Times, Symbol, and Other (where Other is a valid name of a font on the local system)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874640">
+ </A>
+title_Color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874642">
+ </A>
+see color table</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874644">
+ </A>
+tick_FontSize</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874646">
+ </A>
+see fontsize</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874648">
+ </A>
+tick_Fontname</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874650">
+ </A>
+see fontname</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874652">
+ </A>
+tick_FontColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874654">
+ </A>
+see color table</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874656">
+ </A>
+color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874658">
+ </A>
+see color table</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874660">
+ </A>
+thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874662">
+ </A>
+1 to 10 pixels</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874664">
+ </A>
+location</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874666">
+ </A>
+[x, y] normal units</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874668">
+ </A>
+minor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874670">
+ </A>
+number of minor ticks (minimum 0)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874672">
+ </A>
+major</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874674">
+ </A>
+number of major ticks (minimum 0)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874676">
+ </A>
+default_minor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874678">
+ </A>
+set to compute default number of minor ticks</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874680">
+ </A>
+default_major</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874682">
+ </A>
+set to compute default number of major ticks</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874684">
+ </A>
+tickLen</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874686">
+ </A>
+normal units * 100 = percent of visualization dimensions</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874688">
+ </A>
+subticklen</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874690">
+ </A>
+normal units * 100 = percent of ticklen</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874692">
+ </A>
+tickFormat</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874694">
+ </A>
+see format</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874696">
+ </A>
+show_axis</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874698">
+ </A>
+set to display the colorbar axis</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874700">
+ </A>
+show_outline</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874702">
+ </A>
+set to display the colorbar outline</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874704">
+ </A>
+axis_thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874706">
+ </A>
+see thick</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874708">
+ </A>
+dimensions</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874710">
+ </A>
+[width, height] normal units</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874712">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874714">
+ </A>
+1=hidden, 0=visible</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870655">
+ </A>
+<A NAME="marker=858078">
+ </A>
+GRAPHIC_PROPERTIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858080">
+ </A>
+Set this keyword equal to a scalar or vector of structures defining the graphic properties to use in creating the style. (Use a vector if you want successive graphics to have different properties, e.g., different colored lines in a line plot. The structures are used in a round-robin fashion.) Not all properties need be specified (see BASE_STYLE). The complete structure definitions are listed in the following tables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=880016">
+ </A>
+Plots</H4>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=871091">
+ </A>
+Plot Graphic Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=871059">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=871061">
+ </A>
+Data Type/Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871063">
+ </A>
+color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871065">
+ </A>
+string (see color table)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871067">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871069">
+ </A>
+boolean (1=hidden, 0=visible)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871071">
+ </A>
+linestyle</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871073">
+ </A>
+integer (0 to 5 : solid, dotted, dashed, dash dot, dash dot dot dot, long dash)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871075">
+ </A>
+nSum</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871077">
+ </A>
+integer (1 to number of elements to average over)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871079">
+ </A>
+symbol_size</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871081">
+ </A>
+[x,y] normalized units relative to the visualization</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871083">
+ </A>
+symbol_type</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871085">
+ </A>
+integer (1-7)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871087">
+ </A>
+thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871089">
+ </A>
+integer (1 to 10 pixels)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=880015">
+ </A>
+Images</H4>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=871112">
+ </A>
+Image Graphic Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=871096">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=871098">
+ </A>
+Data Type/Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871100">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871102">
+ </A>
+boolean (1=hidden, 0=visible)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871104">
+ </A>
+order</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871106">
+ </A>
+boolean (set to draw from top to bottom)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871108">
+ </A>
+sizing_constraint</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=871110">
+ </A>
+integer (0=natural, 1=aspect, 2=unrestricted)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=858181">
+ </A>
+Contours.</H4>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=858178">
+ </A>
+Contour Graphic Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=858142">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=858144">
+ </A>
+Data Type/Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858154">
+ </A>
+downhill</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858156">
+ </A>
+boolean (set to display downhill tick marks)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858158">
+ </A>
+fill</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858160">
+ </A>
+boolean (set to display contour levels as filled)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858162">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858164">
+ </A>
+boolean (1=hidden, 0=visible)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858170">
+ </A>
+n_levels</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=858172">
+ </A>
+integer (number of levels)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874762">
+ </A>
+c_thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874764">
+ </A>
+vector of thickness values</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874758">
+ </A>
+c_linestyle</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874760">
+ </A>
+vector of linestyle values</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874754">
+ </A>
+c_color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874756">
+ </A>
+vector of color names</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874750">
+ </A>
+default_n_levels</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874752">
+ </A>
+integer (set to default number of levels)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=870982">
+ </A>
+Surfaces</H4>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=870979">
+ </A>
+Surface Graphic Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870935">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870937">
+ </A>
+Data Type/Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870939">
+ </A>
+bottom</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870941">
+ </A>
+string (see color table)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870943">
+ </A>
+color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870945">
+ </A>
+string (see color table)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870947">
+ </A>
+hidden_lines</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870949">
+ </A>
+boolean (1=show, 0=don't show)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870951">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870953">
+ </A>
+boolean (1=hidden, 0=visible)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870955">
+ </A>
+lineStyle</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=876028">
+ </A>
+integer (0 to 5 : solid, dotted, dashed, dash dot, dash dot dot dot, long dash)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870959">
+ </A>
+shading</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870961">
+ </A>
+boolean (0=flat, 1=Gouraud)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870963">
+ </A>
+show_skirt</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870965">
+ </A>
+boolean (1=show, 0=don't show)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870967">
+ </A>
+skirt</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870969">
+ </A>
+float (z value at which skirt is drawn [data units])</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870971">
+ </A>
+style</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870973">
+ </A>
+integer (0=point, 1=wire, 2=solid, 3=ruledXZ, 4=ruledYZ, 5=lego (wire), 6=lego (solid)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870975">
+ </A>
+thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870977">
+ </A>
+integer (1 to 10 pixels)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870985">
+ </A>
+<A NAME="marker=870984">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858234">
+ </A>
+Set this keyword to the widget ID of the group leader for error message display. This keyword is used only when the ERROR keyword is not set. If only one LIVE tool or Insight window is present in the IDL session, it will default to that.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858236">
+ </A>
+<A NAME="marker=858235">
+ </A>
+LEGEND_PROPERTIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870461">
+ </A>
+Set this keyword equal to a structure defining the legend properties to use in creating the style. Not all properties need be specified (see BASE_STYLE). The complete structure definitions for different types of styles are listed in the following tables.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=875006">
+ </A>
+Legend Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=874938">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=874940">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=875010">
+ </A>
+title_FontSize</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=875012">
+ </A>
+9 to 72 points</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874942">
+ </A>
+title_Fontname</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=875036">
+ </A>
+Helvetica, Courier, Times, Symbol, and Other (where Other is a valid name of a font on the local system)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874946">
+ </A>
+title_Color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874948">
+ </A>
+see color table</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874950">
+ </A>
+item_fontSize</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874952">
+ </A>
+see fontsize</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874954">
+ </A>
+item_fontName</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874956">
+ </A>
+see fontname</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874958">
+ </A>
+text_color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874960">
+ </A>
+see color</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874962">
+ </A>
+border_gap</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874964">
+ </A>
+normal units * 100 = percent of item text height</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874966">
+ </A>
+columns</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874968">
+ </A>
+number of columns to display the items in (minimum 0)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874970">
+ </A>
+gap</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874972">
+ </A>
+normal units * 100 = percent of item text height</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874974">
+ </A>
+glyph_Width</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874976">
+ </A>
+normal units * 100 = percent of item text height</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874978">
+ </A>
+fill_color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874980">
+ </A>
+see color table</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874982">
+ </A>
+outline_color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874984">
+ </A>
+see color table</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874986">
+ </A>
+outline_thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874988">
+ </A>
+see thick</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874990">
+ </A>
+location</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874992">
+ </A>
+[x, y] normal units</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874994">
+ </A>
+show_fill</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874996">
+ </A>
+set to display the fill color</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=874998">
+ </A>
+show_outline</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=875000">
+ </A>
+set to display the legend outline</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=875002">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=875004">
+ </A>
+1=hidden, 0=visible</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=875121">
+ </A>
+<A NAME="marker=870898">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870897">
+ </A>
+Set this keyword to a string containing a name for the returned style. If the SAVE keyword is set, the name must be unique in the Insight template file. If not specified, a name will be automatically generated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870893">
+ </A>
+<A NAME="marker=870892">
+ </A>
+SAVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858479">
+ </A>
+Set this keyword to save the style in the Insight style template file. The supplied Name must not already exist in the template file or an error will be returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858488">
+ </A>
+<A NAME="marker=858487">
+ </A>
+VISUALIZATION_PROPERTIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870193">
+ </A>
+Set this keyword equal to a structure defining the visualization properties to use in creating the style. Not all properties need be specified (see BASE_STYLE). The complete structure definition is in the following table.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=870212">
+ </A>
+Visualization Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870196">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870198">
+ </A>
+Data Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870200">
+ </A>
+color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870202">
+ </A>
+string (see color table) for background</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870204">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870206">
+ </A>
+boolean</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870208">
+ </A>
+transparent</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870210">
+ </A>
+boolean</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870222">
+ </A>
+<A NAME="marker=870300">
+ </A>
+[XYZ]AXIS_PROPERTIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870297">
+ </A>
+Set these keywords equal to a scalar or vector of structures defining the axis properties to use in creating the style. (Use a vector to specify property structures for successive axes of the same direction have different properties. The structures are used in a round-robin fashion.) Not all properties need be specified (see BASE_STYLE). The user need only define the fields of the structure they wish to be different from the BASE style. The complete structure definition is shown in the following table.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=870290">
+ </A>
+Axis Properties Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870226">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870228">
+ </A>
+Data Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870230">
+ </A>
+color</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870232">
+ </A>
+string (see color table)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870234">
+ </A>
+default_major</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870236">
+ </A>
+integer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870238">
+ </A>
+default_minor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870240">
+ </A>
+integer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870246">
+ </A>
+exact</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870248">
+ </A>
+boolean</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870250">
+ </A>
+gridstyle</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870252">
+ </A>
+integer (0-5) (linestyle)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870254">
+ </A>
+hide</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870256">
+ </A>
+boolean</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870258">
+ </A>
+location</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870260">
+ </A>
+3-element floating vector (normalized units)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870262">
+ </A>
+major</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870264">
+ </A>
+integer (default=-1, computed by IDL)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870266">
+ </A>
+minor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870268">
+ </A>
+integer (default=-1, computed by IDL)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870270">
+ </A>
+thick</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870272">
+ </A>
+integer (1-10)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870274">
+ </A>
+tickDir</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870276">
+ </A>
+integer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870278">
+ </A>
+tickLen</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870280">
+ </A>
+float (normalized units)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870282">
+ </A>
+tick_fontname</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870284">
+ </A>
+string</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870286">
+ </A>
+tick_fontsize</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870288">
+ </A>
+integer</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=870219">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=870216">
+ </A>
+Style=LIVE_STYLE('plot',BASE_STYLE='basic plot', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=870923">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;GRAPHIC_PROPERTIES={color:'red'})</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858513">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=858514">
+ </A>
+<EM CLASS="Emphasis">
+<A HREF="idlf2.htm#29557" CLASS="XRef">
+LIVE_INFO</A>
+, <A HREF="idlee.htm#17947" CLASS="XRef">
+LIVE_CONTROL</A>
+, Using IDL Insight</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

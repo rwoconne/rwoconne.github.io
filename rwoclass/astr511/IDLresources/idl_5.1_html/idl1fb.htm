@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WARP_TRI</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1fc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1fa.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758712">
+ </A>
+<A NAME="49133">
+ </A>
+WARP_TRI</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758714">
+ </A>
+The <A NAME="marker=758713">
+ </A>
+WARP_TRI function returns an image array with a specified geometric correction applied. Images are warped using control (tie) points such that locations (<EM CLASS="Emphasis">
+Xi, Yi</EM>
+) are shifted to (<EM CLASS="Emphasis">
+Xo, Yo</EM>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=758715">
+ </A>
+The irregular grid defined by (<EM CLASS="Emphasis">
+Xo, Yo</EM>
+) is triangulated using TRIANGULATE. Then the surfaces defined by (<EM CLASS="Emphasis">
+Xo, Yo, Xi</EM>
+) and (<EM CLASS="Emphasis">
+Xo, Yo, Yi</EM>
+) are interpolated using TRIGRID to get the locations in the input image of each pixel in the output image. Finally, INTERPOLATE is called to obtain the result. Linear interpolation is used by default. Smooth quintic interpolation is used if the QUINTIC keyword is set.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758716">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+warp_tri.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758717">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758718">
+ </A>
+Result = WARP_TRI(<EM CLASS="Emphasis">
+Xo, Yo, Xi, Yi, Image</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758719">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758720">
+ </A>
+Xo, Yo</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758721">
+ </A>
+Vectors containing the locations of the control (tie) points in the output image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758722">
+ </A>
+Xi, Yi</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758723">
+ </A>
+Vectors containing the location of the control (tie) points in the input image. <EM CLASS="Emphasis">
+Xi</EM>
+ and <EM CLASS="Emphasis">
+Yi</EM>
+ must be the same length as <EM CLASS="Emphasis">
+Xo</EM>
+ and <EM CLASS="Emphasis">
+Yo</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758724">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758725">
+ </A>
+The image to be warped. May be any type of data.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758726">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758728">
+ </A>
+<A NAME="marker=758727">
+ </A>
+OUTPUT_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758729">
+ </A>
+Set this keyword equal to a 2-element vector containing the size of the output image. If omitted, the output image is the same size as <EM CLASS="Emphasis">
+Image</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758731">
+ </A>
+<A NAME="marker=758730">
+ </A>
+QUINTIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758732">
+ </A>
+Set this keyword to use smooth quintic interpolation. Quintic interpolation is slower but the derivatives are continuous across triangles, giving a more pleasing result than the default linear interpolation. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758734">
+ </A>
+<A NAME="marker=758733">
+ </A>
+EXTRAPOLATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758735">
+ </A>
+Set this keyword to extrapolate outside the convex hull of the tie points. Setting this keyword implies the use of QUINTIC interpolation.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758737">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=894494">
+ </A>
+<A HREF="idld9.htm#72496" CLASS="XRef">
+INTERPOLATE</A>
+, <A HREF="idl1e0.htm#55512" CLASS="XRef">
+TRIANGULATE</A>
+, <A HREF="idl1e1.htm#16540" CLASS="XRef">
+TRIGRID</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

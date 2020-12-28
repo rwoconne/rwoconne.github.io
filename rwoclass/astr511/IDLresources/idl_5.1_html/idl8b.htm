@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ELMHES</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl8c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl8a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50586">
+ </A>
+<A NAME="12703">
+ </A>
+ELMHES</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50590">
+ </A>
+The <A NAME="marker=50588">
+ </A>
+ELMHES <A NAME="marker=50589">
+ </A>
+function reduces a real, nonsymmetric <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ array <I CLASS="Italics">
+A</I>
+ to upper Hessenberg form. The result is an upper Hessenberg array with <A NAME="marker=50591">
+ </A>
+eigenvalues that are identical to those of the original array <I CLASS="Italics">
+A</I>
+. The <A NAME="marker=50592">
+ </A>
+Hessenberg array is stored in elements (<I CLASS="Italics">
+j, i</I>
+) with <EM CLASS="Emphasis">
+i</EM>
+&nbsp;<EM CLASS="MathSymbol">
+&lt;=</EM>
+&nbsp;<EM CLASS="Emphasis">
+j</EM>
+&nbsp;+&nbsp;1. Elements with <EM CLASS="Emphasis">
+i</EM>
+ &gt; <EM CLASS="Emphasis">
+j</EM>
+ + 1 are to be thought of as zero, but are returned with random values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50593">
+ </A>
+ELMHES is based on the routine <CODE CLASS="Code">
+elmhes</CODE>
+ described in section 11.5 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50594">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50595">
+ </A>
+Result = ELMHES(<I CLASS="Italics">
+A</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50596">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50597">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50598">
+ </A>
+An <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ real, nonsymmetric array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50599">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50601">
+ </A>
+<A NAME="marker=50600">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50602">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58701">
+ </A>
+<A NAME="marker=58703">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58702">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50604">
+ </A>
+<A NAME="marker=50603">
+ </A>
+NO_BALANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50605">
+ </A>
+Set this keyword to disable balancing. By default, a balancing algorithm is applied to <I CLASS="Italics">
+A</I>
+. Balancing a nonsymmetric array is recommended to reduce the sensitivity of eigenvalues to rounding errors.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50606">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50607">
+ </A>
+See the description of HQR for an example using this function.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50608">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50618">
+ </A>
+<A HREF="idl8a.htm#90610" CLASS="XRef">
+EIGENVEC</A>
+, <A HREF="idlcb.htm#43596" CLASS="XRef">
+HQR</A>
+, <A HREF="idl1e2.htm#52845" CLASS="XRef">
+TRIQL</A>
+, <A HREF="idl1e3.htm#25832" CLASS="XRef">
+TRIRED</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50619">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

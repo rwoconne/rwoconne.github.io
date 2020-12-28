@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CHOLDC</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl30.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50336">
+ </A>
+<A NAME="46702">
+ </A>
+CHOLDC</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50340">
+ </A>
+Given a positive-definite symmetric <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ array <I CLASS="Italics">
+A</I>
+, the <A NAME="marker=50338">
+ </A>
+CHOLDC <A NAME="marker=50339">
+ </A>
+procedure constructs its <A NAME="marker=50341">
+ </A>
+Cholesky decomposition A = LL<SUP CLASS="Superscript">
+T</SUP>
+, where <I CLASS="Italics">
+L</I>
+ is a lower triangular array and L<SUP CLASS="Superscript">
+T</SUP>
+ is the transpose of <I CLASS="Italics">
+L</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50342">
+ </A>
+CHOLDC is based on the routine <CODE CLASS="Code">
+choldc</CODE>
+ described in section 2.9 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50343">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50344">
+ </A>
+CHOLDC, <I CLASS="Italics">
+A, P</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50345">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50346">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50347">
+ </A>
+An <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ array. On input, only the upper triangle of <I CLASS="Italics">
+A</I>
+ need be given. On output, <I CLASS="Italics">
+L</I>
+ is returned in the lower triangle of <I CLASS="Italics">
+A</I>
+, except for the diagonal elements, which are returned in the vector <I CLASS="Italics">
+P</I>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50348">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50349">
+ </A>
+An <I CLASS="Italics">
+n</I>
+-element vector containing the diagonal elements of <I CLASS="Italics">
+L</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50350">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50352">
+ </A>
+<A NAME="marker=50351">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50353">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50354">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50355">
+ </A>
+See the description of CHOLSOL for an example using this function.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50356">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50360">
+ </A>
+<A HREF="idl30.htm#21199" CLASS="XRef">
+CHOLSOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

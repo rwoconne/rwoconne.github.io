@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> REGRESS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl178.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl176.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=753932">
+ </A>
+<A NAME="59666">
+ </A>
+REGRESS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=753936">
+ </A>
+The <A NAME="marker=753933">
+ </A>
+REGRESS function performs a multiple <A NAME="marker=753934">
+ </A>
+linear <A NAME="marker=753935">
+ </A>
+regression <A NAME="marker=50109">
+ </A>
+fit and returns an <EM CLASS="definition">
+Nterm</EM>
+-element column vector of coefficients.</P>
+<P CLASS="Body">
+<A NAME="pgfId=753940">
+ </A>
+REGRESS fits the function:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=797994">
+ </A>
+<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;<EM CLASS="Emphasis">
+const</EM>
+ + <EM CLASS="Emphasis">
+a</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0, </SUB>
+<EM CLASS="Emphasis">
+i </EM>
++ <EM CLASS="Emphasis">
+a</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1, </SUB>
+<EM CLASS="Emphasis">
+i</EM>
+ + ... + <EM CLASS="Emphasis">
+a</EM>
+<SUB CLASS="Subscript">
+Nterms-1</SUB>
+<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+Nterms-1, i</SUB>
+ </P>
+<P CLASS="Body">
+<A NAME="pgfId=754812">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+regress.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753944">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=753945">
+ </A>
+Result = REGRESS(<EM CLASS="Emphasis">
+X, Y, Weights [, Yfit, Const, Sigma, Ftest, R, Rmul, Chisq, Status]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753946">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753947">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753948">
+ </A>
+An <EM CLASS="Emphasis">
+Nterms</EM>
+ by <EM CLASS="Emphasis">
+Npoints</EM>
+ array of independent variable data, where <EM CLASS="Emphasis">
+Nterms</EM>
+ is the number of coefficients (independent variables) and <EM CLASS="Emphasis">
+Npoints</EM>
+ is the number of samples.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753949">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753950">
+ </A>
+An <EM CLASS="Emphasis">
+Npoints</EM>
+-element vector of dependent variable points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753951">
+ </A>
+Weights</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810881">
+ </A>
+An <EM CLASS="Emphasis">
+Npoints</EM>
+-element vector of weights for each equation. For instrumental (Gaussian) weighting, set <EM CLASS="Emphasis">
+Weights</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0/standard_deviation(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+)<SUP CLASS="Superscript">
+2</SUP>
+. For statistical (Poisson) weighting, <EM CLASS="Emphasis">
+Weights</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0/<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+. For no weighting, set <EM CLASS="Emphasis">
+Weights</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0, and set the RELATIVE_WEIGHT keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753953">
+ </A>
+Yfit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753954">
+ </A>
+A named variable that will contain an <EM CLASS="Emphasis">
+Npoints</EM>
+-elements vector of calculated values of <EM CLASS="Emphasis">
+Y</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753955">
+ </A>
+Const</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753956">
+ </A>
+A named variable that will contain the constant term.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753957">
+ </A>
+Sigma</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753958">
+ </A>
+A named variable that will contain the vector of standard deviations for the returned coefficients.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753959">
+ </A>
+Ftest</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753960">
+ </A>
+A named variable that will contain the value of F for test of fit.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753961">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753962">
+ </A>
+A named variable that will contain the vector of linear correlation coefficients.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753963">
+ </A>
+Rmul</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753964">
+ </A>
+A named variable that will contain the multiple linear correlation coefficient.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753965">
+ </A>
+Chisq</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753966">
+ </A>
+A named variable that will contain a reduced, weighted chi-squared.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862161">
+ </A>
+Status</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862162">
+ </A>
+A named variable that will contain the status of the internal array inversion computation. <EM CLASS="Emphasis">
+Status</EM>
+ will contain 0 (zero) if the array was successfully inverted. <EM CLASS="Emphasis">
+Status</EM>
+ will contain the integer 1 (one) if the array was not successfully inverted because it is singular. <EM CLASS="Emphasis">
+Status</EM>
+ will contain the integer 2 (two) if there is a possibility that the result of the inversion--and the resulting coefficients returned by REGRESS--is inaccurate due to the use of a small pivot element.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753967">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753968">
+ </A>
+RELATIVE_WEIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753969">
+ </A>
+If this keyword is set, the input weights (the <EM CLASS="Emphasis">
+W</EM>
+ vector) are assumed to be relative values, and not based on known uncertainties in the <EM CLASS="Emphasis">
+Y</EM>
+ vector. Set this keyword in the case of no weighting.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753970">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=862181">
+ </A>
+X&nbsp;=&nbsp;[[0.0, 0.0], $	<EM CLASS="Comment">;
+Create a two by six array of independent variable data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=862182">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.0, 1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862183">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.5, 2.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=753975">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.0, 3.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=753976">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.0, 6.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=753977">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.0, 2.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=753980">
+ </A>
+Y = [5.0, 10.0, 9.0, 0.0, 3.0, 27.0]	<EM CLASS="Comment">;
+Create an Npoints-element vector of dependent variable data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753982">
+ </A>
+weights = REPLICATE(1.0, N_ELEMENTS(Y))	<EM CLASS="Comment">;
+Create an Npoints-element vector of uniform weights.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753984">
+ </A>
+result = REGRESS(X, Y, weights, yfit, const, /RELATIVE_WEIGHT)<BR>
+<EM CLASS="Comment">;
+Compute the fit using multiple linear regression</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753986">
+ </A>
+PRINT, const, result[0], result[1]	<EM CLASS="Comment">;
+Print the coefficients of the regression model.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=825974">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=753988">
+ </A>
+5.00000      4.00000     -3.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34851">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=851588">
+ </A>
+<A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idlfd.htm#38447" CLASS="XRef">
+LMFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SETUP_KEYS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl197.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl195.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=43192">
+ </A>
+<A NAME="77114">
+ </A>
+SETUP_KEYS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=43194">
+ </A>
+The <A NAME="marker=43193">
+ </A>
+SETUP_KEYS procedure sets <A NAME="marker=43233">
+ </A>
+function keys for use with Unix versions of IDL when used with the standard tty command interface. </P>
+<P CLASS="Body">
+<A NAME="pgfId=885385">
+ </A>
+Under Unix, the number of function keys, their names, and the escape sequences they send to the host computer vary enough between various keyboards that IDL cannot be written to understand all keyboards.  Therefore, IDL provides a very general routine named DEFINE_KEY that allows the user to specify the names and escape sequences of function keys.</P>
+<P CLASS="Body">
+<A NAME="pgfId=885392">
+ </A>
+SETUP_KEYS provides a convenient interface to DEFINE_KEY, using user input (via the keywords described below), the TERM environment variable and the type of machine the current IDL is running on to determine what kind of keyboard you are using, and then uses DEFINE_KEY to enter the proper definitions for the function keys.</P>
+<P CLASS="Body">
+<A NAME="pgfId=885397">
+ </A>
+The new mappings for the keys can be viewed using the command</P>
+<P CLASS="Body">
+<A NAME="pgfId=885398">
+ </A>
+HELP, /KEYS.</P>
+<P CLASS="Body">
+<A NAME="pgfId=885399">
+ </A>
+The need for SETUP_KEYS has diminished in recent years because most Unix terminal emulators have adopted the ANSI standard for function keys, as represented by VT100 terminals and their many derivatives, as well as xterm and the newer CDE based dtterm.</P>
+<P CLASS="Body">
+<A NAME="pgfId=885554">
+ </A>
+The current version of IDL already knows the function keys of such terminals, so SETUP_KEYS is not required. However, SETUP_KEYS is still needed to define keys on non-ANSI terminals such as the Sun shelltool, SGI Iris-ansi terminal emulator, or IBM's aixterm.</P>
+<P CLASS="Body">
+<A NAME="pgfId=885559">
+ </A>
+IDL does not support the function keys from the hpterm terminal emulator supplied on HP systems. Hpterm uses non ANSI-standard escape sequences which IDL cannot parse. Research Systems recommends the use of the xterm or dtterm terminal emulators instead.</P>
+<P CLASS="Body">
+<A NAME="pgfId=885683">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+setup_keys.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43199">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=43200">
+ </A>
+SETUP_KEYS</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43201">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=43202">
+ </A>
+NOTE: If no keyword is specified, SETUP_KEYS uses !VERSION to determine the type of machine running IDL. It assumes that the keyboard involved is of the same type (this assumption is correct).</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43203">
+ </A>
+<A NAME="marker=43252">
+ </A>
+EIGHTBIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43204">
+ </A>
+Set this keyword to use the 8-bit versions of the escape codes (instead of the default 7-bit) when establishing VT200 function key definitions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43205">
+ </A>
+<A NAME="marker=43253">
+ </A>
+SUN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43206">
+ </A>
+Set this keyword to establish function key definitions for a Sun3 keyboard.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43207">
+ </A>
+<A NAME="marker=43254">
+ </A>
+VT200</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43208">
+ </A>
+Set this keyword to establish function key definitions for a DEC VT200 keyboard.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43209">
+ </A>
+<A NAME="marker=43255">
+ </A>
+HP9000</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43210">
+ </A>
+Set this keyword to establish function key definitions for an HP 9000 series 300 keyboard. Although the HP 9000 series 300 supports both xterm and hpterm windows, IDL supports only user-definable key definitions in xterm windows--hpterm windows use non-standard escape sequences which IDL does not attempt to handle.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43211">
+ </A>
+<A NAME="marker=43251">
+ </A>
+MIPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43212">
+ </A>
+Set this keyword to establish function key definitions for a Mips RS series keyboard.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43213">
+ </A>
+<A NAME="marker=43246">
+ </A>
+PSTERM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43214">
+ </A>
+Set this keyword to establish function key definitions for <A NAME="marker=43245">
+ </A>
+PSTERMS such as those found on the Sun SPARC workstations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43215">
+ </A>
+<A NAME="marker=43247">
+ </A>
+SGI</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43216">
+ </A>
+Set this keyword to establish function key definitions for SGI keyboards.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43217">
+ </A>
+<A NAME="marker=43248">
+ </A>
+APP_KEYPAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43218">
+ </A>
+<A NAME="marker=43250">
+ </A>
+Set this keyword to define escape sequences for the group of keys in the numeric keypad, enabling these keys to be programmed within IDL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43219">
+ </A>
+<A NAME="marker=43249">
+ </A>
+NUM_KEYPAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43220">
+ </A>
+Set this keyword to disable programmability of the numeric keypad.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43221">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=43222">
+ </A>
+<A HREF="idl6c.htm#78848" CLASS="XRef">
+DEFINE_KEY</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TVCRS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ec.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ea.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679718">
+ </A>
+<A NAME="99624">
+ </A>
+TVCRS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679719">
+ </A>
+The <A NAME="marker=674230">
+ </A>
+TVCRS procedure manipulates the <A NAME="marker=113850">
+ </A>
+display device cursor. The initial state of the cursor is device dependent. Call TVCRS with one argument to enable or disable the cursor. Call TVCRS with two parameters to enable the cursor and place it on pixel location <I CLASS="Italic">
+(X, Y)</I>
+.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=862260">
+ </A>
+Under Macintosh, the cursor cannot be positioned from an IDL program using the TVCRS procedure. The Macintosh interface does not allow the cursor to be positioned by any device except the mouse.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679720">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679721">
+ </A>
+TVCRS <I CLASS="Italic">
+[, ON_OFF]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679722">
+ </A>
+or</P>
+<P CLASS="Body">
+<A NAME="pgfId=679723">
+ </A>
+TVCRS <I CLASS="Italic">
+[, X, Y]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679724">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679725">
+ </A>
+ON_OFF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679726">
+ </A>
+This argument specifies whether the cursor should be on or off. If this argument is present and nonzero, the cursor is enabled. If <I CLASS="Italic">
+ON_OFF</I>
+ is zero or no parameters are specified, the cursor is turned off.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679727">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679728">
+ </A>
+The column to which the cursor is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679729">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679730">
+ </A>
+The row to which the cursor is set.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679731">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679732">
+ </A>
+<A NAME="marker=817848">
+ </A>
+CENTIMETERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=817847">
+ </A>
+Set this keyword to cause X and Y to be interpreted as centimeters, based on the current device resolution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=817861">
+ </A>
+<A NAME="marker=817863">
+ </A>
+INCHES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=817862">
+ </A>
+Set this keyword to cause X and Y to be interpreted as inches, based on the current device resolution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=817846">
+ </A>
+<A NAME="marker=674231">
+ </A>
+HIDE_CURSOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679733">
+ </A>
+<A NAME="marker=674232">
+ </A>
+By default, disabling the cursor works differently for window systems than for other devices. For window systems, the cursor is restored to the standard cursor used for non-IDL windows (and remains visible), while for other devices it is completely blanked out. If the HIDE keyword is set, disabling the cursor causes it to always be blanked out.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679734">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679735">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#82516" CLASS="XRef">
+DATA</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679736">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679737">
+ </A>
+To enable the graphics cursor and position it at device coordinate (100, 100), enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679738">
+ </A>
+TVCRS, 100, 100</P>
+<P CLASS="Body">
+<A NAME="pgfId=679739">
+ </A>
+To position the cursor at data coordinate (0.5, 3.2), enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679740">
+ </A>
+TVCRS, 0.5, 3.2, /DATA</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795986">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795987">
+ </A>
+<A HREF="idl4f.htm#58964" CLASS="XRef">
+CURSOR</A>
+, <A HREF="idl160.htm#87088" CLASS="XRef">
+RDPIX</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

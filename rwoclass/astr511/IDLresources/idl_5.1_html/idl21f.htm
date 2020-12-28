@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XINTERANIMATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl220.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl21e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=894318">
+ </A>
+<A NAME="64099">
+ </A>
+XINTERANIMATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=894323">
+ </A>
+The <A NAME="marker=894321">
+ </A>
+XINTERANIMATE procedure displays an <A NAME="marker=894322">
+ </A>
+animated sequence of images using off-screen pixmaps or memory buffers. The speed and direction of the display can be adjusted using the widget interface. </P>
+<P CLASS="Body">
+<A NAME="pgfId=934069">
+ </A>
+MPEG animation files can be created either programmatically using keywords to open and save a file, or interactively using the widget interface.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=894324">
+ </A>
+Only a single copy of XINTERANIMATE can run at a time. If you need to run multiple instances of the animation widget concurrently, use the CW_ANIMATE compound widget.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=894325">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xinteranimate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894326">
+ </A>
+Using XINTERANIMATE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=894327">
+ </A>
+Displaying an animated series of images using XINTERANIMATE requires at least three calls to the routine: one to initialize the animation widget, one to load images, and one to display the images. When initialized using the SET keyword, XINTERANIMATE creates an approximately square pixmap or memory buffer, large enough to contain the requested number of frames of the requested size. Images are loaded using the IMAGE and FRAME keywords. Finally, images are displayed by copying them from the pixmap or memory buffer to the visible draw widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=934072">
+ </A>
+See <A HREF="idl53.htm#95424" CLASS="XRef">
+CW_ANIMATE</A>
+ for a description of the widget interface controls used by XINTERANIMATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894328">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=894329">
+ </A>
+XINTERANIMATE <EM CLASS="Emphasis">
+[, Rate]</EM>
+ </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894330">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894331">
+ </A>
+Rate</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894332">
+ </A>
+A value between 0 and 100 that represents the speed of the animation as a percentage of the maximum display rate. The fastest animation is with a value of 100 and the slowest is with a value of 0. The default animation rate is 100. The animation must be initialized using the SET keyword before calling XINTERANIMATE with a rate value.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894333">
+ </A>
+Keywords--Initialization</H3>
+<P CLASS="Body">
+<A NAME="pgfId=894334">
+ </A>
+The following keywords are used to initialize the animation display. The SET keyword <EM CLASS="Emphasis">
+must</EM>
+ be provided. Other keywords described in this section are optional; note that they work only when SET is specified.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894336">
+ </A>
+<A NAME="marker=894335">
+ </A>
+SET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894337">
+ </A>
+Set this keyword to a three-element vector [<EM CLASS="Emphasis">
+Sizex</EM>
+, <EM CLASS="Emphasis">
+Sizey</EM>
+, <EM CLASS="Emphasis">
+Nframes</EM>
+] to initialize XINTERANIMATE. <EM CLASS="Emphasis">
+Sizex</EM>
+ and <EM CLASS="Emphasis">
+Sizey</EM>
+ represent the width and height of the images to be displayed, in pixels. <EM CLASS="Emphasis">
+Nframes</EM>
+ is the number of frames in the animation sequence. Note that <EM CLASS="Emphasis">
+Nframes</EM>
+ must be at least 2 frames.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894339">
+ </A>
+<A NAME="marker=894338">
+ </A>
+CYCLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934260">
+ </A>
+Normally, frames are displayed going either forward or backwards. If the CYCLE keyword is set, the animation reverses direction after the last frame in either direction is displayed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934000">
+ </A>
+<A NAME="marker=934058">
+ </A>
+MPEG_FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934017">
+ </A>
+Set this keyword equal to a string specifying the name of the MPEG file.  If no file name is specified, the default value (<CODE CLASS="Code">
+idl.mpg</CODE>
+) is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934051">
+ </A>
+<A NAME="marker=934059">
+ </A>
+MPEG_OPEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934052">
+ </A>
+Set this keyword to open an MPEG file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934268">
+ </A>
+<A NAME="marker=934267">
+ </A>
+NO_BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934269">
+ </A>
+Set this keyword equal to zero to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, NO_BLOCK is set equal to one, providing access to the command line if active command line processing is available. Note that setting NO_BLOCK=0 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894342">
+ </A>
+<A NAME="marker=894341">
+ </A>
+SHOWLOAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894343">
+ </A>
+Set this keyword to display each frame and update the frame slider as frames are loaded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894345">
+ </A>
+<A NAME="marker=894344">
+ </A>
+TRACK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894346">
+ </A>
+Set this keyword to cause the frame slider to track the current frame when the animation is in progress. The default is not to track.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894348">
+ </A>
+<A NAME="marker=894347">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894349">
+ </A>
+Use this keyword to specify a string to be used as the title of the animation widget. If TITLE is not specified, the title is set to &quot;XInterAnimate.&quot;</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894350">
+ </A>
+Keywords--Loading Images</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894351">
+ </A>
+The following keywords are used to load images into the animation display. They have no effect when initializing or running animations.</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894353">
+ </A>
+<A NAME="marker=894352">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894354">
+ </A>
+Use this keyword to specify the frame number when loading frames. FRAME must be set to a number in the range 0 to <EM CLASS="Emphasis">
+Nframes</EM>
+-1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894356">
+ </A>
+<A NAME="marker=894355">
+ </A>
+IMAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894357">
+ </A>
+Use this keyword to specify a single image to be loaded at the animation position specified by the FRAME keyword. (FRAME <EM CLASS="Emphasis">
+must</EM>
+ also be specified.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894359">
+ </A>
+<A NAME="marker=894358">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894360">
+ </A>
+Set this keyword to display images from the top down instead of the default bottom up.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894362">
+ </A>
+<A NAME="marker=894361">
+ </A>
+WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894363">
+ </A>
+When this keyword is specified, an image is copied from an existing window to the animation pixmap or memory buffer. (When using some windowing systems, using this keyword is much faster than reading from the display and then calling XINTERANIMATE with a 2D array.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=894364">
+ </A>
+The value of this parameter is either an IDL window number (in which case the entire window is copied), or a vector containing the window index and the rectangular bounds of the area to be copied. For example: </P>
+<P CLASS="Code">
+<A NAME="pgfId=894365">
+ </A>
+WINDOW = [Window_Number, X0, Y0, Sx, Sy]</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894366">
+ </A>
+Keywords--Running Animations</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894367">
+ </A>
+The following keywords are used to when running the animation. They have no effect when initializing the animation or loading images.</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894369">
+ </A>
+<A NAME="marker=894368">
+ </A>
+CLOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894370">
+ </A>
+Set this keyword to delete the offscreen pixmaps or buffers and the animation widget itself. This also takes place automatically when the user presses the &quot;Done With Animation&quot; button or closes the window with the window manager.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894372">
+ </A>
+<A NAME="marker=894371">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894373">
+ </A>
+Set this keyword to the widget ID of the widget that calls XINTERANIMATE. When GROUP is specified, the death of the calling widget results in the death of XINTERANIMATE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894375">
+ </A>
+<A NAME="marker=894374">
+ </A>
+KEEP_PIXMAPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894376">
+ </A>
+If this keyword is set, XINTERANIMATE will not destroy the animation pixmaps or buffers when it is killed. Calling XINTERANIMATE again without going through the SET and LOAD steps will play the same animation without the overhead of creating the pixmaps.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=941497">
+ </A>
+<A NAME="marker=941496">
+ </A>
+MPEG_CLOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=941498">
+ </A>
+Set this keyword to close and save the MPEG file. This keyword has no effect if MPEG_OPEN was not used during initialization.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894378">
+ </A>
+<A NAME="marker=894377">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894379">
+ </A>
+Use this keyword to specify the horizontal offset, in pixels from the left of the frame, of the image in the destination window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894381">
+ </A>
+<A NAME="marker=894380">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894382">
+ </A>
+Use this keyword to specify the vertical offset, in pixels from the bottom of the frame, of the image in the destination window.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894383">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=894384">
+ </A>
+Enter the following commands to open the file <CODE CLASS="Code">
+ABNORM.DAT</CODE>
+ (a series of images of a human heart) and animate the images it contains using XINTERANIMATE. For a more detailed example of using XINTERANIMATE, see the example in the &quot;Using IDL Widgets&quot; chapter of <I CLASS="Italic">
+IDL Basics</I>
+. </P>
+<P CLASS="Code">
+<A NAME="pgfId=894385">
+ </A>
+OPENR, unit, FILEPATH('abnorm.dat', SUBDIR=['examples','data']), $</P>
+<P CLASS="Code">
+<A NAME="pgfId=917361">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/GET_LUN</P>
+<P CLASS="Code">
+<A NAME="pgfId=894386">
+ </A>
+H = BYTARR(64, 64, 16) </P>
+<P CLASS="Code">
+<A NAME="pgfId=894387">
+ </A>
+READU, unit, H </P>
+<P CLASS="Code">
+<A NAME="pgfId=894388">
+ </A>
+CLOSE, unit </P>
+<P CLASS="Code">
+<A NAME="pgfId=894389">
+ </A>
+H = REBIN(H, 128, 128, 16)	<EM CLASS="Comment">;
+Read the images into variable H.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=894390">
+ </A>
+XINTERANIMATE, SET=[128, 128, 16], /SHOWLOAD<BR>
+<EM CLASS="Comment">;
+Initialize XINTERANIMATE.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=894391">
+ </A>
+FOR I=0,15 DO XINTERANIMATE, FRAME = I, IMAGE = H[*,*,I]<BR>
+<EM CLASS="Comment">;
+Load the images into XINTERANIMATE</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=894392">
+ </A>
+XINTERANIMATE, /KEEP_PIXMAPS	<EM CLASS="Comment">;
+Play the animation.</EM>
+</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=894393">
+ </A>
+Since the KEEP_PIXMAPS keyword was supplied, the same animation can be replayed (after the animation widget has been destroyed) with the single command:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=894394">
+ </A>
+XINTERANIMATE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=894395">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=894396">
+ </A>
+CW_ANIMATE</P>
+</DIV>
+</BODY>
+</HTML>

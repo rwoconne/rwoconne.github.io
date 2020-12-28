@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFSD_DIMSET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl28d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl28b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997883">
+ </A>
+<A NAME="27787">
+ </A>
+HDF_DFSD_DIMSET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997887">
+ </A>
+The <A NAME="marker=997885">
+ </A>
+HDF_DFSD_DIMSET procedure sets the label, unit, format, or scale of <A NAME="marker=997886">
+ </A>
+dimensions in a Hierarchical Data Format file. Note that the label, unit, and format of a dataset must be set simultaneously.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997888">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997889">
+ </A>
+HDF_DFSD_DIMSET, <I CLASS="Italics">
+Dimension</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997890">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997891">
+ </A>
+Dimension</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997892">
+ </A>
+The dimension number that the label, unit, format or scale apply to.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997893">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997895">
+ </A>
+<A NAME="marker=997894">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997899">
+ </A>
+A string for the dimension format. This string should be a standard IDL formatting string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997901">
+ </A>
+<A NAME="marker=997900">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997902">
+ </A>
+A string for the dimension label.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997904">
+ </A>
+<A NAME="marker=997903">
+ </A>
+SCALE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997905">
+ </A>
+A vector of values used to set the dimension scale.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997907">
+ </A>
+<A NAME="marker=997906">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997908">
+ </A>
+A string for the dimension units.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997909">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997910">
+ </A>
+Suppose that a stored dataset is a 20 by 100 by 50 element floating-point array of values representing water content within the volume of a cloud. Assume further that each element in the 100-element dimension (the &quot;Y&quot; dimension) was sampled at 1/10 mile increments. Appropriate labeling, formatting, unit, and scaling information for the Y dimension can be set with the following command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997911">
+ </A>
+HDF_DFSD_DIMSET, 1, LABEL = 'Y Position', FORMAT = 'F8.2', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997912">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UNIT = 'Miles', SCALE = 0.1*FINDGEN(100)</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SYSTIME</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1cd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1cb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762665">
+ </A>
+<A NAME="42147">
+ </A>
+SYSTIME</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679339">
+ </A>
+The <A NAME="marker=674111">
+ </A>
+SYSTIME function returns the current system time as either a string that contains the current day, date and time, or as the number of seconds elapsed since January 1, 1970.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679340">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679341">
+ </A>
+Result = SYSTIME(<I CLASS="Italic">
+Arg</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679342">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679343">
+ </A>
+Arg</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868083">
+ </A>
+If <I CLASS="Italic">
+Arg</I>
+ is present and nonzero, the number of seconds elapsed since January 1, 1970 is returned as a double-precision, floating-point value. The elapsed time is computed from January 1, 1970, GMT.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679345">
+ </A>
+Otherwise, if <I CLASS="Italic">
+Arg</I>
+ is zero, a scalar string containing the current local date/time in standard 24-character system format is returned. This format is:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679346">
+ </A>
+DOW MON DD HH:MM:SS YEAR</P>
+<P CLASS="Body">
+<A NAME="pgfId=868059">
+ </A>
+where DOW is the day of the week, MON is the month, DD is the day of the month, HH is the hour, MM is the minute, SS is the second, and YEAR is the year.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=868060">
+ </A>
+Examples</H3>
+<P CLASS="Code">
+<A NAME="pgfId=679350">
+ </A>
+PRINT, STRMID(SYSTIME(0), 0, 3)	<EM CLASS="Comment">;
+Print the day of the week.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679351">
+ </A>
+The following program fragment could be used to determine the time required by a 16,384 point FFT:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679352">
+ </A>
+T = SYSTIME(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=679353">
+ </A>
+A = FFT(FINDGEN(16384), -1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=679354">
+ </A>
+PRINT, SYSTIME(1) - T, ' Seconds'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795959">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795960">
+ </A>
+<A HREF="idl22.htm#69711" CLASS="XRef">
+CALDAT</A>
+, <A HREF="idl23.htm#83646" CLASS="XRef">
+CALENDAR</A>
+, <A HREF="idldf.htm#52189" CLASS="XRef">
+JULDAY</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CATCH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl29.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl27.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=770198">
+ </A>
+<A NAME="70268">
+ </A>
+CATCH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=770201">
+ </A>
+The <A NAME="marker=770199">
+ </A>
+CATCH procedure provides a generalized mechanism for the <A NAME="marker=770200">
+ </A>
+handling of exceptions and errors within IDL. Calling CATCH establishes an error handler for the current procedure that intercepts all errors that can be handled by IDL, excluding non-fatal warnings such as math errors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=732796">
+ </A>
+When an error occurs, each active procedure, beginning with the offending procedure and proceeding up the call stack to the main program level, is examined for an error handler. If an error handler is found, control resumes at the statement after the call to CATCH. The index of the error is returned in the argument to CATCH. The !ERROR (or !SYSERROR) and !ERR_STRING (or !SYSERR_STRING) system variables are also set. If no error handlers are found, program execution stops, an error message is issued, and control reverts to the interactive mode. A call to ON_IOERROR in the procedure that causes an I/O error supersedes CATCH, and takes the branch to the label defined by ON_IOERROR. </P>
+<P CLASS="Body">
+<A NAME="pgfId=884068">
+ </A>
+This mechanism is similar, but not identical to, the <CODE CLASS="Code">
+setjmp/longjmp</CODE>
+<A NAME="marker=884066">
+ </A>
+<A NAME="marker=884067">
+ </A>
+ facilities in C and the <A NAME="marker=884069">
+ </A>
+<CODE CLASS="Code">
+catch/throw</CODE>
+ facilities in C++.</P>
+<P CLASS="Body">
+<A NAME="pgfId=884072">
+ </A>
+Error handling is discussed in more detail in <A HREF="..html#21070" CLASS="XRef">
+Controlling Errors</A>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=884074">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=716952">
+ </A>
+CATCH, <EM CLASS="Emphasis">
+Variable</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=716953">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=716956">
+ </A>
+Variable</H4>
+<P CLASS="Body">
+<A NAME="pgfId=716996">
+ </A>
+A named variable in which the error index is returned. When an error handler is established by a call to CATCH, <EM CLASS="Emphasis">
+Variable</EM>
+ is set to zero. If an error occurs, <EM CLASS="Emphasis">
+Variable</EM>
+ is set to the error index, and control is transferred to the statement after the call to CATCH.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=716963">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=716974">
+ </A>
+<A NAME="marker=717077">
+ </A>
+CANCEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=716994">
+ </A>
+Set this keyword to cancel the error handler for the current procedure. This cancellation does not affect other error handlers that may be established in other active procedures.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=716997">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=725404">
+ </A>
+The following procedure illustrates the use of CATCH:</P>
+<P CLASS="Code">
+<A NAME="pgfId=725405">
+ </A>
+PRO ABC</P>
+<P CLASS="Code">
+<A NAME="pgfId=725406">
+ </A>
+A = FLTARR(10)	<EM CLASS="Comment">;
+Define variable A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=725407">
+ </A>
+CATCH, Error_status	<EM CLASS="Comment">;
+Establish error handler. When errors occur, the index of the error is returned in the variable Error_status.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=725408">
+ </A>
+IF Error_status NE 0 THEN BEGIN	<EM CLASS="Comment">;
+This statement begins the error handler.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=725409">
+ </A>
+        PRINT, 'Error index: ', Error_status</P>
+<P CLASS="Code">
+<A NAME="pgfId=725410">
+ </A>
+        PRINT, 'Error message:', !ERR_STRING</P>
+<P CLASS="Code">
+<A NAME="pgfId=725411">
+ </A>
+        A=FLTARR(12)	<EM CLASS="Comment">;
+Handle the error by extending A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=725412">
+ </A>
+        ENDIF</P>
+<P CLASS="Code">
+<A NAME="pgfId=725413">
+ </A>
+A[11]=12	<EM CLASS="Comment">;
+Cause an error.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=725414">
+ </A>
+HELP, A	<EM CLASS="Comment">;
+Even though an error occurs in the line above, program execution continues to this point because the event handler extended the definition of A so that the statement can be re-executed.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=725415">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=725416">
+ </A>
+Running the ABC procedure causes IDL to produce the following output and control returns to the interactive prompt:</P>
+<P CLASS="Code">
+<A NAME="pgfId=725417">
+ </A>
+Error index:         -101</P>
+<P CLASS="Code">
+<A NAME="pgfId=725418">
+ </A>
+Error message:</P>
+<P CLASS="Code">
+<A NAME="pgfId=725419">
+ </A>
+Attempt to subscript A with &lt;INT (      11)&gt; is out of range.</P>
+<P CLASS="Code">
+<A NAME="pgfId=725420">
+ </A>
+A               FLOAT     = Array[12]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796024">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821850">
+ </A>
+<A HREF="idl12d.htm#17797" CLASS="XRef">
+ON_ERROR</A>
+, <A HREF="idl12e.htm#27107" CLASS="XRef">
+ON_IOERROR</A>
+, <A HREF="..html#21070" CLASS="XRef">
+Controlling Errors</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,765 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises  -->
+<!-- -->
+
+<html>
+
+<head>
+<title>IDL TUTORIAL</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+
+</head>
+
+<body bgcolor="white" text="black"  link="#FF0000" alink="#00FF00" vlink="#FF0000">
+
+<!-- HISTORY:  v.4 posted to web 8/28/00; v.5 5/15/01; v.6 5/28/01;
+   5/29; 7/3; 7/4; 7/9; 7/19; 7/21; 7/24; 7/29; 8/1; 8/8; 8/9; 8/10;
+   8/14; 8/17; 8/20; 8/21; 9/17; 10/03; 12/30; 6/10/2002; 1/14/2003;
+   3/18; 3/20; 3/25; 6/17; 9/21; 9/22; 7/11/2012: begin update; 7/16; 
+   7/20; 9/2; 2/2/2013; 6/25; 7/20; 7/31; 8/9; 1/28/2015 - add link
+   to French translation; 9/21: new domain; 
+
+   GHP version: 12/15/2020: links updated; 
+
+ -->
+
+<b>
+
+<h3 align="right">R. W. O'CONNELL<br>
+January 2015</h3>
+
+<p><br></p>
+
+<center>
+<h2>      IDL EXERCISES I: <br>SCALARS, VECTORS, PLOTTING  </h2>
+</center>
+
+<hr size=2>
+
+<p><br></p>
+
+<pre>
+
+NOTE: commands intended to be typed into your terminal during your IDL
+session are given in CAPITAL letters below so they will stand out.
+However, IDL itself is case-insensitive (except for file names), so
+you needn't follow this convention.
+
+
+0)  From a UNIX shell, start X-windows if it is not already running. 
+
+    From a shell in the X-window, "cd" into your "IDL" directory.
+    Normally that would be named "~/idl".
+
+    Start IDL. 
+
+    [On most UNIX systems, just type "idl". 
+
+     This will start IDL running in the command-line mode using the
+     window from which you called it.  In IDL V.5+ you can use
+     GUI-based "Development Environment" or "Workbench" versions of
+     IDL.  These offer convenience features to the experienced user
+     but are correspondingly more complicated and not recommended for
+     learning the basics.]
+
+    Before starting the exercises, give the IDL command:
+
+                 ON_ERROR,1
+
+       This will return control to the main program level if
+       an error occurs in a called routine.
+
+
+1)   PRACTICE WITH SCALARS
+
+     Define X and Y to be two different integers
+
+	 Print their sum and difference to the terminal screen
+
+     Repeat, all on one IDL command line, using the "&" character
+
+     Repeat all of the above, using the recall buffer ("up" arrow)
+
+     Print the result of adding 3 times X to 2 times Y 
+
+     Print the product of (X-Y) and (X+Y)
+
+     Print the common logarithm of the absolute value of X+Y (use
+        the ABS and ALOG10 functions)
+
+         Confirm this result by raising 10.0 to the power
+         you just obtained
+
+     What is the difference between X = 5/2 and Y = 5./2 ?
+
+         Between  X = FLOAT(5/2) and Y = FLOAT(5)/2 ?
+
+     Set C equal to the numerical value of the speed of light in
+         cgs units
+
+         Successively print powers of C until you locate the point
+         at which the result becomes "Inf".  What power yields this
+         result?  [The answer is non-integer.]
+
+         Now define C to be the speed of light in double precision.
+         Repeat the exercise above.
+
+         [Hint: you should accelerate all such exercises by making
+         liberal use of the recall buffer and line editing.]
+
+     String example:  define a string variable for each word in the
+         sentence: "This is a concatenation"; then concatenate them
+         and print the result.  
+
+
+2)   PRACTICE WITH VECTORS
+
+     Create X = INDGEN(100).
+
+         [NOTE on IDL syntax:
+
+         INDGEN is a function.  In IDL the arguments of a function are
+	 enclosed in parentheses.  In IDL versions 1 through 4, the
+	 indices of vector or array variables were also enclosed in
+	 parentheses, as in X(10).  Obviously, this introduced
+	 possible ambiguities between function and array notation.
+	 Therefore, starting with IDL version 5, array indices are
+	 expected to be enclosed by brackets, as in X[10].  You should
+	 use this syntax when referring to array elements.  This
+	 notation for array elements is not compatible with IDL V.4
+	 and earlier.  However, IDL versions 5 and later do accept the
+	 parenthesis syntax for array elements, so are compatible with
+	 earlier IDL code in this regard.]
+
+     Use built-in IDL functions N_ELEMENTS, MIN, MAX, and TOTAL to 
+         answer the following: 
+
+         How many elements does X contain?  
+         What is the minimum value in X?  
+         What is the maximum value in X?  
+         What is the sum of all the elements in X? 
+
+     Use the IDL HyperHelp facility to obtain information on 
+         the built-in TOTAL routine you just used:  ?TOTAL. 
+
+         Experiment on X or other vectors you create with some of the
+         special keywords available for TOTAL.
+
+     Print X to your terminal window
+
+         How are values in X related to the corresponding subscripts?
+
+         Is X a floating-point array?  Compare the output you
+         just got with the result of PRINT,FINDGEN(100). 
+
+     Print the fifteenth entry in X to your terminal
+
+         Then print the entry containing the number 15
+
+     Is X a row-vector or a column-vector?  
+
+         The default configuration of the printed data on your screen
+  	 will tell you.  To confirm this, try the following:
+
+               PRINT,TRANSPOSE(X)
+
+     Try the following one-line command and inspect its output:
+
+         FOR I=0,99 DO PRINT,I,X[I]
+
+         Now try: FOR I=1,100 DO PRINT,I,X[I]           
+
+     Using the WHERE function:
+
+         Define Q=2*X, then type FIND = WHERE(Q LE 40, COUNT)
+
+         FIND will be a vector.  Examine the contents of FIND and
+         COUNT so that you understand how the WHERE function operates.
+
+         Predict and confirm the response if you type PRINT,Q(FIND)
+
+     Print to your terminal the values of the vector X/10 
+
+         Then print the values of X/10.0 and compare the results.
+
+         Do the same for FLOAT(X)/10
+
+         Do the same for FIX(X/10.0)
+
+     What is the difference between Z = X*0.0 and Z = 0? 
+
+     Print the 11 elements centered on X = 10  
+
+          First do this using a FOR loop (on a single line)
+
+          Then do this using the standard IDL subscript range
+             notation, e.g. X[2:6].  No FOR loop is needed.
+
+          Compare to the following: K=5 & PRINT,X[10-K:10+K]          
+
+     Define Y to be the subarray consisting of those 11 elements, using
+	  subscript range notation; print Y to your window as a
+	  check.  
+
+     Using information utilities:
+ 
+         Verify lengths of X,Y using the N_ELEMENTS utility
+
+         Use the SIZE utility to find the sizes of X and Y; what
+             other info does it supply?
+
+         What information does the command HELP,X,Y provide?
+
+
+     Define Q = Y+3 --  Note the values that Q contains
+
+     Define Q = Y*3 --  Note the values that Q contains
+
+     Define Q = Y^3 --  Note the values that Q contains
+
+     Define Q = Y^4 --  Note the values that Q contains; why
+                        are they not monotonic?
+
+     Define Q = FLOAT(Y)^4 --  Note the change.
+
+
+     Print the vector which results from Q = X*Y
+
+          What did IDL actually do to arrive at this result?
+
+     Using the built-in functions TOTAL and N_ELEMENTS:
+
+          Find and print the mean values of X and Y; 
+          Find and print the variances of the two arrays
+
+     Do the same using the built-in functions MEAN and VARIANCE.
+
+     Do the same using the built-in function MOMENT
+
+
+     Determine the nature of the vector which results when you
+          write Q = X & Q[2] = Y.  What will happen if you
+          write Q[98] = Y?  Try it.
+
+     Predict, then verify, the outcome of the following operations:
+
+          Q = [Y,Y]
+
+          Q = [Q,Y]
+
+     Create a 16-element vector [1.01, 1.02, 1.03...] using
+            a simple one-line command employing FINDGEN.  Verify.
+
+     Create a 16-element vector: [1,2,4,8,16....] using a simple
+    	    one-line command employing FINDGEN.  Verify.
+
+     Create the 100-element vector Z = 10*X - 0.1*X^2, where 
+            X contains the integers between 0 and 99.
+
+            Use MAX to determine the maximum value of Z.
+            Use WHERE to locate the X value for which this maximum
+                occurs.
+            X was an integer vector but Z is not.  Why?
+
+     Using the SHIFT function, shift the elements of Z three entries
+	  to the left.  Verify that the maximum is now in the expected
+	  location.
+
+     Create, using a simple one-line command employing FINDGEN, a
+          1001-element vector containing the base-10 logarithms
+          of the integers between 0 and 1000.  Name this "ILOG".
+          Verify its contents. 
+
+          Now create a five element vector, Y, containing the
+          integers 2, 100, 500, 20, and 999.  
+
+          Explain the vector resulting when you type
+          NEW = ILOG[Y].  Why did we include an entry for 0
+          in defining ILOG? 
+
+      Optional problem:  ILOG in the previous exercise is called a
+	  "lookup table."  It can be used to accelerate computations
+	  in problems where a large number of time-consuming
+	  transformations such as logarithms are needed.  You can
+	  estimate the time savings for this example as follows:
+
+          Write a simple one-line IDL command script using "&" as a 
+          link between individual commands.  Use the SYSTIME(1)
+          function to determine the start time.  Then, use a FOR
+          loop to compute the logarithm of an integer 40000 times
+          using the standard ALOG10 function.  Then use SYSTIME(1)
+          again to determine the end time.  Print the elapsed time.
+          Repeat, now using the "ILOG" lookup table instead
+          of ALOG10.  
+          
+
+3)  JOURNAL FILES AND SCRIPT FILES
+
+   Use the JOURNAL function to start a journal file & record your
+   session for posterity.  Test starting & stopping a journal file.
+   Inspect the file to see what kinds of communications between you &
+   the IDL session are actually recorded.  [Note that journal files
+   are actually written to disk by IDL only at long intervals or after
+   another JOURNAL command or EXIT.]
+
+   Practice cut-and-pasting commands from a saved journal file listing
+   into an active IDL window.  
+
+   Practice generating a "script" file from edited parts of an IDL
+   journal file.  Save it, rename it, and use it to re-create the
+   original session by using the "@" command.  
+
+   Note that comments can be added at any time to the journal by
+   prefacing remarks with a semicolon.
+
+
+4)  BASIC PLOTTING
+
+     Type "WINDOW,0" to bring up a plotting window.  Move the cursor
+     into the window.  
+
+     Troubleshooting: If the other parts of your terminal screen blink
+         out or change color, then you are using an 8-bit (rather than
+         24-bit) color monitor for which the X-windows system is not
+         properly configured.  To ameliorate the problem, try this:
+
+               Exit IDL
+               Restart IDL
+               As the very first two commands, type:
+
+                    DEVICE,PSEUDO_COLOR=8 
+                    WINDOW,0,COLORS=200
+
+         If this does not remedy the blinking, then other X-windows
+	 applications have "reserved" too many display colors.  You
+	 may be able to reduce the color hogging using various
+	 "Preference" or other settings on your applications.  Exit
+	 other applications (e.g. browsers) before starting IDL.  If
+	 this doesn't work, for the moment the best approach is just
+	 to live with the blinking and try later to reconfigure.
+
+     For reference, you may want to call up the on-line help
+     documentation for the plotting keywords by typing: ?PLOT
+
+     Create the 100-element vector Z = 10*X - 0.1*X^2, where 
+            X is the vector containing the integers between 0 and 99.
+
+     Type PLOT,X,Z.  Examine the plot, noting the abscissa, ordinate,
+            and default scaling adopted. 
+
+            Do the same for PLOT,X,2*Z.  Note the change.
+
+                Type OPLOT,X,Z and note what happens
+
+            Do the same for PLOT,X,Z^2
+
+            Do the same for PLOT,Z^2,X
+
+            Use the optional plotting parameters XRANGE and YRANGE with
+		PLOT,X,Z^2 to enlarge various parts of the plot of the
+		Z^2 function.
+
+            Using the XLOG or YLOG keywords, plot log_10(X) vs. Z and
+                X vs. log_10(Z).  (Note: you'll have to limit the X,Y
+                scales using the RANGE parameters to avoid infinities
+                and plot compression.  Keep the variable on the log
+                axis greater than or equal to 1.0.)
+
+            Label any of these plots, using the !P.TITLE, !X.TITLE,
+		and !Y.TITLE system variable strings.
+
+     All of the plots should have appeared in Window 0.  Try alternating
+            successive plots between Window 0 and Window 1.
+
+            [NOTE: The intrinsic IDL routines for manipulating windows
+             are as follows: To create a new window, use WINDOW,N.  To
+             expose an existing window, use WSHOW,N.  To make a given
+             window "active"--- i.e. ready for I/O---use WSET,N.
+
+             The MOUSSE routine CHAN,N combines these three functions
+             and is more convenient.]
+
+     Create the 1000-element vector x, where x contains the
+	    FLOATING-POINT conversion of integer values between -500
+	    and +499.  Create Z = 10*X - 0.1*X^2 .
+
+            Explore plotting features using PLOT,X,Z as in the previous 
+            exercise.  
+
+            Type PLOT,Z.  How does the resulting plot differ from that
+            for PLOT,X,Z?
+
+     Create the 1000-element vector X, where x contains the INTEGER
+	    values between -500 and +499. Create Y = 10*X - 0.1*X^2.
+
+            Type PLOT,X,Y.  Why does the Y function differ from Z?
+
+     Now define X to contain the integers in the range 0 to 100.  Then
+	     compute Z = SIN(X)/X.  Is Z a floating point variable?
+
+     Print the value of Z at X = 0.  If you weren't sure how IDL would
+	  respond there, how would you manually insert a value Z = 1.0
+	  at X = 0?  Do so.  Confirm that the Z vector is now defined
+	  everywhere.  
+
+     Using the PSYM and LINESTYLE keywords, plot Z vs. X for integer
+     values of X in the range 0 to 100:
+
+            with a solid line
+            then with plus signs
+            then with open triangles
+            then with a dashed line
+
+       [Hint: for help with the keywords, open the online IDL HyperHelp
+       system by typing "?" as the first element of the command line.
+       Then enter "GRAPHICS KEYWORDS" in the search box.]
+
+     Plot Z vs. X for the X range [0:10] with open triangles.  Then, using
+          OPLOT, add a solid line overplot.  
+
+          You can achieve the same result with a single PLOT command
+	  for your choice of plotting symbol, K, by using PSYM=-K
+	  rather than PSYM=K.
+
+     Calculate Z = SIN(X)/X at intervals of 0.01 for X in the range 0
+	  to 10.  Plot Z vs X.  
+
+     Using the WHERE function, find all the locations where Z has an
+	 absolute value smaller than 0.05.  How many are there?  Print
+	 Z for all those locations (but only those locations) to your
+         terminal.  Print X for all those locations (but only those
+         locations) to your terminal. 
+
+     Plot Z vs X using a solid line.  Now overplot open triangles at
+	 those points you found where Z has an absolute value smaller
+	 than 0.05.  You can verify graphically that these fall in
+         the expected positions by plotting horizontal lines at
+         Z = 0.05 and -0.05 (hint: define and plot two new vector
+         functions of X). 
+
+
+5)  EXPLORING PARAMETER SPACE
+
+    Copy the program <a href="data/bio.pro">bio.pro</a> from the
+    IDLexercises/data directory to your local directory.
+
+    This routine computes and displays a well-known simple function
+    exhibiting "chaotic" behavior for certain choices of input
+    parameters.  To see the code and the header, type .RUN -T BIO .
+    To see just the header section, type MAN,'BIO .  [Note: MAN is a
+    MOUSSE routine.]  Run the program as suggested in its header to
+    explore the behavior of this function as you change the two input
+    parameters.  Note the effects of small changes in these around the
+    critical values.
+    
+
+6)  ITERATED PLOTTING
+
+      Graphically solve the transcendental equation
+   
+                    X + 6.0*EXP(-X/2) = 5.0 
+
+      using iterated plots on the screen.  Use successively finer
+      scale numerical grids to improve your estimate to 3
+      significant digits.  Verify the solution numerically.  
+
+      Optional: It can be faster to solve the problem using the
+      WHERE function.  Do so.    
+
+
+7)  MAKING PLOT HARDCOPIES
+
+     Make a hardcopy of any one of your plots using a PostScript
+     intermediary 
+
+         To send plots to a PostScript file instead of your terminal,
+	 type SET_PLOT,'PS.  Then repeat the same plotting commands you
+	 gave to put the plot on your terminal (easiest to use the
+	 recall buffer).  Close the file using the command
+	 DEVICE,/CLOSE.  The name of the file will be "idl.ps".  Print
+	 the file from within IDL by putting $ as a preface to the
+	 appropriate UNIX command as the first entry on the command
+	 line.  Return to using your terminal as your output device by
+	 giving SET_PLOT,'X .
+
+     Repeat, checking the status of your output device by using the
+         HELP,/DEV command.  
+
+
+8)  USING HISTOGRAMS AND "SAVE" FILES
+
+     I recommend you use the IDL Astronomy Users Library procedure
+     PLOTHIST for these exercises.  
+  
+         You can accomplish the same thing with the IDL built-in
+	 HISTOGRAM routine and separate plotting commands, but this is
+	 awkward.  PLOTHIST is simply an accelerator program which
+	 combines several built-in commands for convenience.  
+
+         To check that PLOTHIST is in your IDL path, simply type
+         PLOTHIST.  If present, the procedure responds by printing the
+         syntax for the command to your terminal screen.  If not present,
+         you'll get an error message.  [Note that this technique for
+         checking syntax does not work for IDL built-in functions, but
+         you can use the HELP,/ROU procedure or the HyperHelp facility
+         (type ?) instead there.]
+
+         The latest version of PLOTHIST requires software from the
+         "Coyote" library of graphics programs, written by David
+         Fanning.  If your IDL installation does not include those,
+         download them from <a href="https://idlastro.gsfc.nasa.gov/homepage.html">this site</a>.  Put the downloaded tar file in a 
+         directory in your IDL path, then unzip and untar the file.
+         The programs will be automatically compiled when you request
+         them.
+
+     Assuming PLOTHIST is in your path, then type:  MAN,'PLOTHIST to
+     see the header of the program; type .RUN -T PLOTHIST to see the whole
+     program. 
+
+     Copy the file <a href="data/grades.sav">"grades.sav"</a> from the
+     IDLexercises/data directory to your local directory.  This is a
+     specially-formatted file that contains data from an earlier IDL
+     session preserved by a "SAVE" command.
+
+     Using the RESTORE command, "restore" the dataset to your IDL
+     session.
+
+     The save file contained the variable "GRADELIST".  This
+     is a set of actual final point scores for a UVa course.
+
+         How many students were in the class?
+
+         Determine the MEAN, MEDIAN, MAXIMUM, MINIMUM, and standard
+	 deviation (using VARIANCE) for the set of scores.  
+
+     Use PLOTHIST to produce a histogram of the scores
+
+         The default bin size in PLOTHIST is always 1.0, regardless of
+	 the range of the variable being plotted.  Using the BIN
+	 keyword, experiment with different bin sizes in the range 1
+	 to 15.
+
+         Graphically determine the mode of the scores and note how
+         it changes with binsize.  What is the mode for a binsize of
+         5?
+
+     Plot the score histogram for a binsize of 5 with labels
+         for the axes and the plot.  
+
+         Overplot a vertical line at the location of the median
+         value.  (Hint: use the PLOTS command)
+
+         Make a hardcopy of the final plot via a PostScript file.
+
+
+9)  SORTING & PRINTING LISTS; WRITING AN ASCII FILE
+
+     Continue using the "GRADELIST" vector of part (8)
+
+     Using the SORT function, define a new list (call it "SCOREORDER")
+         of scores in order from lowest to highest value.  Verify.
+
+         Now define and verify a new list (call it "RANKSCORE") of
+	 scores in order from highest to lowest value.  (Hint: use
+	 REVERSE)
+
+     Now define an auxiliary vector ("RANK") which gives the
+         rank of each student in the class (assigning 1 to the
+         student with the highest grade)
+
+     Using a (one-line) FOR loop, an appropriately defined format
+	 string, and the PRINT command, print on your terminal the
+	 rank and score of the students in order from highest to
+	 lowest.  
+
+         Hint:  the definition for an IDL format string might look like
+	    the following.  (IDL format statements are similar, but not
+            identical, to those in FORTRAN). 
+
+               FORMOUT='(A12,3X,I3,3X,F8.3,3X,E10.3)' 
+
+            and the command to print would look like this:
+
+               FOR I=0,MAXI DO PRINT,FORMAT=FORMOUT,VAR1[I],VAR2[I]....
+
+     Then, use the AstUseLib utility FORPRINT to do the same thing
+
+     Use your rank-listing capability to determine the median of
+         the grade distribution.  Does it agree with the value
+         returned by MEDIAN?
+
+     Now assign letter grades to the students.  
+
+         Assume you are a tough grader and use a strict curve where
+	 the top 10% of the class gets an "A", the next 10% gets a "B"
+	 and so on.  The lower 60% of the class will get an F in this
+	 scheme (appropriate, e.g., for a pre-Med class). 
+
+         Using STRARR, define a string array named "LETTER" to hold
+	 the letter grades for the students.  Fill it with blanks
+	 initially.
+
+         Consult the ranked list of scores from your terminal
+	 printouts and determine the letter grade break points.
+
+         Then assign values to the "LETTER" array using those break
+	 points.  [Hint: use the WHERE function.]  "LETTER" should be
+	 in the order of the original "GRADELIST"
+
+     Verify the assignments by using a FOR statement and a new format
+	 definition to print on your terminal a list of rankings,
+	 numerical scores, and letter grades in ranked order.
+
+WRITE AND VERIFY AN ASCII FILE
+
+     Now create an output ASCII file on your disk and output to it, in
+	 the original (not ranked) order: the numerical grade, the
+	 class rank, and the final letter grade for each student.
+         
+         [Hint: You already have defined an appropriate format
+	 string.  The other commands you will need are GET_LUN, OPENW,
+	 PRINTF, and CLOSE.]
+
+         Verify your results (e.g. use $MORE).
+
+     Now reverse the process and read the disk file back into your IDL
+         session, using variables with different names. [Hint: You
+         will need GET_LUN, OPENR, READF, and CLOSE.]  Verify the
+         results by comparing the variables.  
+      
+
+10) ASTROPHYSICS PLOTTING PROBLEM #1 
+
+     Make a plot of the energy distribution functions B_nu, B_lam, and
+     N_lam, which are the flux per unit frequency, the flux per unit
+     wavelength, and the number of photons per unit wavelength,
+     respectively, for a black body (Planck law) at a temperature of
+     10000 K.  
+
+     All three functions should be displayed on a convenient scale on
+     the same plot; each function should be normalized to its
+     maximum.  Plot against wavelength in Angstroms, covering the
+     range 1000 to 10000 A.  Label the plot properly.  Make
+     a hardcopy of the plot and save the resulting PostScript file.  
+
+     If you want to see a sample solution (J. Oishi, Fall 2001;
+     PostScript file), <a href="data/oishi-planckfcn-plots-PS2.ps">click here</a>.
+
+     Optional: write an IDL "procedure" which will compute any of the
+     three versions of the Planck function listed above for a given
+     wavelength vector and temperature.  Put it in your IDL directory
+     (and give it a unique name, like "plot_a_planck.pro"). Use a
+     "keyword" input parameter to select between the three functions.
+     To verify performance and documentation, let someone else try to
+     use your procedure.
+
+     You might want to compare your program to "planck.pro" in the
+     Astronomy User's Library. 
+
+
+11) ASTROPHYSICS PLOTTING PROBLEM #2
+
+     Explore the sensitivity of optical band "colors" to the
+     temperature of a black body as follows.  Compute the Planck
+     function B_lam for selected temperatures in the range 1000 K to
+     100000 K for wavelengths of 1500, 3600, 4400, 5500, 10000, and
+     22000 Angstroms.  (It's up to you to choose appropriate intervals
+     for the T grid.)   Compute "colors" with respect to 5500 A
+     in the form 
+
+                     ALOG10( B_LAM[I] / B_LAM[3] )
+
+     for each T.  Plot these against T or LOG T on the same plot.
+     Label the axes.  Label each curve (see the XYOUTS procedure).
+     Make a hardcopy of the plot and save the resulting PostScript
+     file.  Consider the usefulness of the various combinations.  Which
+     is most sensitive over the T range 3000-30000K appropriate for
+     normal stars? 
+
+
+12)  INTEGRATION
+
+     IDL supports numerical integration of analytic or tabular
+     functions in one, two and three dimensions.  Intrinsic IDL
+     routines performing integration of analytic functions of a single
+     variable include QROMB and QSIMP.  The latter uses Simpson's Rule.
+
+     These routines all use the same, somewhat awkward, method for
+     defining the integrand.  The user must place the name (i.e. an
+     IDL string) of an IDL function defining the integrand in the
+     calling sequence of the integration routine.  
+
+     In this example, we illustrate integration of a simple power
+     law.  We use an updated version of the intrinsic QSIMP routine
+     that is included in the Astronomy User's Library.  Although its
+     Library name is also QSIMP, to avoid confusion we have renamed it
+     NEWSIMP and placed a copy in the IDL Exercises directory.
+
+     NEWSIMP uses the same basic algorithm as QSIMP, but it is faster
+     than intrinsic QSIMP because it takes a vector, rather than
+     scalar, argument.  Also, it takes advantage of "keyword
+     inheritance" to provide additional arguments for the integrand
+     function.  This eliminates the need to make up a new integrand
+     file for each change in the functional form of the integrand.
+
+     Copy the following programs to your local directory: 
+
+     <a href="data/newsimp.pro">newsimp.pro</a>
+     <a href="data/xpwr.pro">xpwr.pro</a>.
+
+     To see the coding and instructions for use of NEWSIMP, type:
+
+           .run -t newsimp
+
+     To see the integrand function for a power law, f(x) = x^p,
+     type:
+
+           .run -t xpwr
+
+     To perform an integration with power law index 3 between the
+     bounds 0 and 10, type:
+
+           newsimp,'xpwr',0,10,answer,pwr=3 & print,answer
+
+     Experiment with other values for the range and power law index,
+     and verify that the integrations are correct.  
+
+     [Note that since you are dealing with filenames here, you must
+     give them exactly as they appear in the UNIX directories.]
+
+<hr>
+
+<center>
+  END OF IDL EXERCISES PART I 
+
+  <a href="IDL-Exercises-II.html">Part II</a> covers 2D arrays and image displays.
+
+<a href="IDL-Exercises-III.html">Part III</a> covers image processing.
+
+  <a href="index.html">IDL Tutorial Home Page</a>
+</center>
+
+<hr size=2>
+
+Translations of this page:
+
+       <a href="http://www.teilestore.de/edu/?p=8031">French</a>
+
+<hr size=2>
+
+<center>
+Copyright &copy 2000-2015 Robert W. O'Connell.  All rights reserved. 
+</center>
+
+<center> Content last modified by RWO, January 2015 </center>
+
+</pre>
+
+</b>
+
+</body>
+</html>

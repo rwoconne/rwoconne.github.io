@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FILEPATH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl9d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762273">
+ </A>
+<A NAME="97064">
+ </A>
+FILEPATH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=835650">
+ </A>
+The <A NAME="marker=762274">
+ </A>
+FILEPATH function returns the <A NAME="marker=762275">
+ </A>
+fully-qualified path to a file found in the IDL distribution. Operating system dependencies are taken into consideration. This routine is used by Research Systems to make the library routines portable. This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+filepath.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762278">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762279">
+ </A>
+Result = FILEPATH(<I CLASS="Italics">
+Filename</I>
+) </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762280">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762281">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762282">
+ </A>
+A string containing the name of the file to be found. The file should be specified in all lowercase characters. No device or directory information should be included.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762283">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762284">
+ </A>
+<A NAME="marker=843569">
+ </A>
+ROOT_DIR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762285">
+ </A>
+A string containing the name of the directory from which the resulting path should be based. If not present, the value of !DIR is used. This keyword is ignored if TERMINAL or TMP are specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762286">
+ </A>
+<A NAME="marker=843570">
+ </A>
+SUBDIRECTORY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762287">
+ </A>
+The name of the subdirectory in which the file should be found. If this keyword is omitted, the main IDL directory is used. This variable can be either a scalar string or a string array with the name of each level of subdirectory depth represented as an element of the array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762288">
+ </A>
+For example, to get a path to the file <CODE CLASS="Code">
+filepath.pro</CODE>
+ in IDL's <CODE CLASS="Code">
+lib</CODE>
+ subdirectory, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=762289">
+ </A>
+path = FILEPATH('filepath.pro',SUBDIR=['lib'])</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762290">
+ </A>
+<A NAME="marker=835722">
+ </A>
+TERMINAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762291">
+ </A>
+Set this keyword to return the filename of the user's terminal.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762292">
+ </A>
+<A NAME="marker=835720">
+ </A>
+TMP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=835656">
+ </A>
+Set this keyword to indicate that the specified file is a scratch file. Returns a path to the proper place for temporary files under the current operating system.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=835715">
+ </A>
+On the Macintosh, use of this keyword returns the directory name <EM CLASS="Emphasis">
+IDL_DIR</EM>
+<CODE CLASS="Code">
+:IDL Temp File</CODE>
+. </LI>
+</UL>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=835745">
+ </A>
+Under Microsoft Windows, FILEPATH checks to see if the following environment variables are set--TMP, TEMP, WINDIR--and uses the value of the first one it finds. If none of these environment variables exists, \TMP is used as the temporary directory.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762294">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762295">
+ </A>
+Open the IDL distribution file <CODE CLASS="Code">
+people.dat</CODE>
+, found in the <CODE CLASS="Code">
+images</CODE>
+ subdirectory:</P>
+<P CLASS="Code">
+<A NAME="pgfId=762296">
+ </A>
+OPENR, 1, FILEPATH('people.dat', SUBDIRECTORY='images')</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795848">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795849">
+ </A>
+<A HREF="idl9f.htm#82292" CLASS="XRef">
+FINDFILE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

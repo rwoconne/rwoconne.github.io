@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRETCH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1bc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ba.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=759518">
+ </A>
+<A NAME="89083">
+ </A>
+STRETCH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=759521">
+ </A>
+The <A NAME="marker=759519">
+ </A>
+STRETCH procedure stretches the image display <A NAME="marker=759520">
+ </A>
+color tables so the full range runs from one color index to another. The modified colortable is loaded, but the COLORS common block is not changed. The original colortable can be restored by calling STRETCH with no arguments. A colortable must be loaded before STRETCH can be called.</P>
+<P CLASS="Body">
+<A NAME="pgfId=759522">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+stretch.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759523">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759524">
+ </A>
+STRETCH <I CLASS="Italic">
+[, Low, High [, Gamma]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759525">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759526">
+ </A>
+Low</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759527">
+ </A>
+The lowest pixel value to use. If this parameter is omitted, 0 is assumed. Appropriate values range from 0 to the number of available colors-1. If no parameters are supplied, the original color tables are restored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759528">
+ </A>
+High</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759529">
+ </A>
+The highest pixel value to use. If this parameter is omitted, the number of colors-1 is assumed. Appropriate values range from 0 to the number of available colors-1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759530">
+ </A>
+Gamma</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759531">
+ </A>
+An optional Gamma correction factor. If this value is omitted, 1.0 is assumed. Gamma correction works by raising the color indices to the <I CLASS="Italic">
+Gamma</I>
+ power, assuming they are scaled into the range 0 to 1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759532">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759533">
+ </A>
+CHOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759534">
+ </A>
+Set this keyword to set color indices above the upper threshold to color index 0. Normally, values above the upper threshold are set to the maximum color index.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759535">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759536">
+ </A>
+Load the STD GAMMA-II color table by entering: </P>
+<P CLASS="Code">
+<A NAME="pgfId=759537">
+ </A>
+LOADCT, 5</P>
+<P CLASS="Body">
+<A NAME="pgfId=759538">
+ </A>
+Create and display and image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=759539">
+ </A>
+TVSCL, DIST(300)</P>
+<P CLASS="Body">
+<A NAME="pgfId=759540">
+ </A>
+Now adjust the color table with STRETCH. Make the entire color table fit in the range 0 to 70 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=759541">
+ </A>
+STRETCH, 0, 70</P>
+<P CLASS="Body">
+<A NAME="pgfId=759542">
+ </A>
+Notice that pixel values above 70 are now colored white. Restore the original color table by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=759543">
+ </A>
+STRETCH</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820855">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820856">
+ </A>
+<A HREF="idlb2.htm#85521" CLASS="XRef">
+GAMMA_CT</A>
+, <A HREF="idlbf.htm#52883" CLASS="XRef">
+H_EQ_CT</A>
+, <A HREF="idl121.htm#25922" CLASS="XRef">
+MULTI</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

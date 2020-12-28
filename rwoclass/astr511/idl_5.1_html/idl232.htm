@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The HP-GL Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl233.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl231.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144328">
+ </A>
+<A NAME="92072">
+ </A>
+The <A NAME="marker=142713">
+ </A>
+HP-GL Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=487419">
+ </A>
+Device Keywords Accepted by the HP-GL Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=487438">
+ </A>
+<A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#61030" CLASS="XRef">
+EJECT</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#41095" CLASS="XRef">
+INCHES</A>
+, <A HREF="idl22e.htm#10843" CLASS="XRef">
+LANDSCAPE</A>
+, <A HREF="idl22e.htm#47101" CLASS="XRef">
+OUTPUT</A>
+, <A HREF="idl22e.htm#28324" CLASS="XRef">
+PLOTTER_ON_OFF</A>
+, <A HREF="idl22e.htm#90310" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl22e.htm#29147" CLASS="XRef">
+PORTRAIT</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#37651" CLASS="XRef">
+XOFFSET</A>
+, <A HREF="idl22e.htm#89416" CLASS="XRef">
+XON_XOFF</A>
+, <A HREF="idl22e.htm#19057" CLASS="XRef">
+XSIZE</A>
+, <A HREF="idl22e.htm#89972" CLASS="XRef">
+YOFFSET</A>
+, <A HREF="idl22e.htm#60607" CLASS="XRef">
+YSIZE</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144329">
+ </A>
+HP-GL (<A NAME="marker=142714">
+ </A>
+Hewlett-Packard Graphics Language) is a plotter control language used to produce graphics on a wide family of pen plotters. To use HP-GL as the current graphics device, issue the IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144330">
+ </A>
+SET_PLOT,'HP'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144331">
+ </A>
+This causes IDL to use HP-GL for producing graphical output. Once the HP-GL driver is enabled via SET_PLOT, the DEVICE procedure is used to control its actions, as described below. The default settings for the HP-GL driver are shown in <A HREF="idl232.htm#76170" CLASS="XRef">
+Default HP-GL Driver Settings</A>
+. Use the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144332">
+ </A>
+HELP, /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=144333">
+ </A>
+to view the current state of the HP-GL driver.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=144017">
+ </A>
+<A NAME="76170">
+ </A>
+Default HP-GL Driver Settings</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143995">
+ </A>
+Feature</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143990">
+ </A>
+Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143997">
+ </A>
+File</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143994">
+ </A>
+idl.hp</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143999">
+ </A>
+Orientation</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143996">
+ </A>
+Portrait</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144001">
+ </A>
+Erase</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143998">
+ </A>
+No action</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144003">
+ </A>
+Polygon filling</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144000">
+ </A>
+Software</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144005">
+ </A>
+Turn plotter logically on/off</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144002">
+ </A>
+No</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144007">
+ </A>
+Specify xon/xoff flow control</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144004">
+ </A>
+Yes</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144009">
+ </A>
+Horizontal offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144006">
+ </A>
+3/4 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144011">
+ </A>
+Vertical offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144008">
+ </A>
+5 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144013">
+ </A>
+Width</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144010">
+ </A>
+7 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144015">
+ </A>
+Height</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144012">
+ </A>
+5 in.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144334">
+ </A>
+Abilities And Limitations</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144335">
+ </A>
+IDL is able to produce a wide variety of graphical output using HP-GL. The following is a list of what is and is not supported:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144336">
+ </A>
+All types of vector graphics can be generated, including line plots, contours, surfaces, etc.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144337">
+ </A>
+HP-GL plotters can draw lines in different colors selected from the pen carousel. It should be noted that color tables are not used with HP-GL. Instead, each color index refers directly to one of the pens in the carousel.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144338">
+ </A>
+Some HP-GL plotters can do polygon filling in hardware. Others can rely on the software polygon filling provided by IDL.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144339">
+ </A>
+It is possible to generate graphics using the hardware generated text characters, although such characters do not give much improvement over the standard vector fonts. To use hardware characters, set the !P.FONT system variable to zero, or set the FONT keyword to the plotting routines to zero.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144340">
+ </A>
+Since HP-GL is designed to drive pen plotters, it does not support the output of raster images. Therefore the TV and TVSCL procedures do not work with HP-GL.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144341">
+ </A>
+Since pen plotters are not interactive devices, they cannot support such operations as cursors and windows.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=143725">
+ </A>
+HP-GL Linestyles</H3>
+<P CLASS="Body">
+<A NAME="pgfId=143726">
+ </A>
+The LINESTYLE graphics keyword allows specifying any of 6 linestyles. These linestyles are documented in Chapter <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+. HP-GL does not support all of these linestyles, and styles 3 and 4 differ from the definition in Chapter <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+. <A HREF="idl232.htm#22477" CLASS="XRef">
+Linestyles for the HP-GL Device</A>
+ summarizes the differences:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=144383">
+ </A>
+<A NAME="22477">
+ </A>
+Linestyles for the HP-GL Device</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143727">
+ </A>
+Index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143728">
+ </A>
+Normal Line Style</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143729">
+ </A>
+HP-GL Line Style</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143730">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143731">
+ </A>
+Solid</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143732">
+ </A>
+same</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143733">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143734">
+ </A>
+Dotted</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143735">
+ </A>
+same</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143736">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143737">
+ </A>
+Dashed</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143738">
+ </A>
+same</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143740">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143741">
+ </A>
+Dash Dot</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143742">
+ </A>
+Relative size of dash and dot are different.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143743">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143952">
+ </A>
+Dash Dot Dot Dot</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143955">
+ </A>
+Dash Dot Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144165">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144342">
+ </A>
+Long Dashes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144374">
+ </A>
+same</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</BODY>
+</HTML>

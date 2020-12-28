@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_VARINQ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ee.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2ec.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997584">
+ </A>
+<A NAME="68704">
+ </A>
+NCDF_VARINQ</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997587">
+ </A>
+The <A NAME="marker=997586">
+ </A>
+NCDF_VARINQ function returns a structure that contains information about a netCDF <A NAME="marker=997588">
+ </A>
+variable, given its ID. This structure has the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997589">
+ </A>
+{ NAME:&quot;&quot;, DATATYPE:&quot;&quot;, NDIMS:0L, NATTS:0L, DIM:LONARR(NDIMS) }</P>
+<P CLASS="Body">
+<A NAME="pgfId=997590">
+ </A>
+This structure is described below.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997591">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997592">
+ </A>
+Result = NCDF_VARINQ(<I CLASS="Italics">
+Cdfid, Varid</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997593">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997594">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997595">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997596">
+ </A>
+Varid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997597">
+ </A>
+The netCDF variable ID, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997598">
+ </A>
+Explanation of the Structure Tags</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997599">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997600">
+ </A>
+The name of the variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997601">
+ </A>
+DataType</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997602">
+ </A>
+A string describing the data type of the variable. The string will be one of the following: <CODE CLASS="Code">
+'BYTE'</CODE>
+, <CODE CLASS="Code">
+'CHAR'</CODE>
+, <CODE CLASS="Code">
+'INT'</CODE>
+, <CODE CLASS="Code">
+'LONG'</CODE>
+, <CODE CLASS="Code">
+'FLOAT'</CODE>
+, or <CODE CLASS="Code">
+'DOUBLE'</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997603">
+ </A>
+Ndims</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997604">
+ </A>
+The number of dimensions.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997605">
+ </A>
+Natts</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997606">
+ </A>
+The number of attributes assigned to this variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997607">
+ </A>
+Dim</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997608">
+ </A>
+A vector of the dimension IDs for the variable dimensions.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000641">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1000645">
+ </A>
+See <A HREF="idl2e9.htm#10272" CLASS="XRef">
+NCDF_VARDEF</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

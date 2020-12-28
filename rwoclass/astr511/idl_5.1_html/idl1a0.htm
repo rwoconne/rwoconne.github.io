@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SINH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl19f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678870">
+ </A>
+<A NAME="70304">
+ </A>
+SINH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678871">
+ </A>
+The <A NAME="marker=673885">
+ </A>
+SINH function returns the hyperbolic sine of X.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678872">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678873">
+ </A>
+Result = SINH(<I CLASS="Italic">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678874">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678875">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=277215">
+ </A>
+The angle for which the hyperbolic sine is desired, specified in radians. If <I CLASS="Italic">
+X</I>
+ is double-precision floating-point, the result is also double-precision. Complex values are not allowed. All other types are converted to single-precision floating-point and yield floating-point results. SINH is defined as:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=798096">
+ </A>
+sinh x = (<EM CLASS="Emphasis">
+e</EM>
+<SUP CLASS="Superscript">
+u</SUP>
+ - <EM CLASS="Emphasis">
+e</EM>
+<SUP CLASS="Superscript">
+-u</SUP>
+) / 2</P>
+<P CLASS="Body">
+<A NAME="pgfId=678877">
+ </A>
+If <I CLASS="Italic">
+X</I>
+ is an array, the result has the same structure, with each element containing the hyperbolic sine of the corresponding element of <I CLASS="Italic">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678878">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678879">
+ </A>
+To find the hyperbolic sine of each element in the array [.5, .2, .4] and print the result, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=810338">
+ </A>
+PRINT, SINH([.5, .2, .4])</P>
+<P CLASS="Body">
+<A NAME="pgfId=810339">
+ </A>
+To plot the SINH function between 0 and 2<EM CLASS="Symbol">
+p</EM>
+ with 100 intervals, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=810340">
+ </A>
+X = 2*!PI/100 * FINDGEN(100)</P>
+<P CLASS="Code">
+<A NAME="pgfId=678883">
+ </A>
+PLOT, X, SINH(X)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678884">
+ </A>
+Note: !PI is a read-only system variable that contains the single-precision value of <EM CLASS="Symbol">
+p</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821034">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821035">
+ </A>
+<A HREF="idlb.htm#27947" CLASS="XRef">
+ASIN</A>
+, <A HREF="idl19e.htm#91988" CLASS="XRef">
+SIN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

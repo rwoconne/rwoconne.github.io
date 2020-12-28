@@ -1,0 +1,579 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_SLIDER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl20a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl208.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680478">
+ </A>
+<A NAME="65490">
+ </A>
+WIDGET_SLIDER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680479">
+ </A>
+The <A NAME="marker=674858">
+ </A>
+WIDGET_SLIDER function is used to create <A NAME="marker=674859">
+ </A>
+slider widgets. Slider widgets are used to indicate an integer value from a range of possible values. They consist of a rectangular region which represents the possible range of values. Inside this region is a sliding pointer that displays the current value. This pointer can be manipulated by the user via the mouse, or from within IDL via the WIDGET_CONTROL procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=910883">
+ </A>
+To indicated floating-point values, see <A HREF="idl5f.htm#36057" CLASS="XRef">
+CW_FSLIDER</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680480">
+ </A>
+The returned value of this function is the widget ID of the newly-created slider widget.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680481">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680482">
+ </A>
+Result = WIDGET_SLIDER(<I CLASS="Italic">
+Parent</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680483">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680484">
+ </A>
+Parent </H4>
+<P CLASS="Body">
+<A NAME="pgfId=680485">
+ </A>
+The widget ID of the parent for the new slider widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680486">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680487">
+ </A>
+<A NAME="marker=674863">
+ </A>
+DRAG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680488">
+ </A>
+Set this keyword to cause events to be generated continuously while the <A NAME="marker=674864">
+ </A>
+slider is being dragged by the user. Normally, slider widgets generate position events only when the slider comes to rest at its final position and the mouse button is released.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680489">
+ </A>
+When a slider widget is set to return drag events, a large number of events can be generated. On slower machines, poor performance can result. Therefore, this option should only be used when detailed or truly interactive control is required.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=911055">
+ </A>
+Under Microsoft Windows, sliders do not generate DRAG events. Sliders created with the DRAG keyword behave just like regular sliders.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680490">
+ </A>
+<A NAME="marker=109012">
+ </A>
+EVENT_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680491">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680492">
+ </A>
+<A NAME="marker=109013">
+ </A>
+EVENT_PRO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680493">
+ </A>
+A string containing the name of a procedure to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680494">
+ </A>
+<A NAME="marker=109014">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934156">
+ </A>
+The name of the font to be used by the widget. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=923710">
+ </A>
+On Microsoft Windows platforms, if FONT is not specified, IDL uses the system default font. Different versions of Windows use different system default fonts; in general, the system default font is the font appropriate for the version of Windows in question.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680496">
+ </A>
+<A NAME="marker=674883">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680497">
+ </A>
+The value of this keyword specifies the width of a frame in units specified by the UNITS keyword (pixels are the default) to be drawn around the borders of the widget. Note that this keyword is only a &quot;hint&quot; to the toolkit, and may be ignored in some instances.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680498">
+ </A>
+<A NAME="marker=109015">
+ </A>
+FUNC_GET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680499">
+ </A>
+A string containing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680500">
+ </A>
+<A NAME="marker=109016">
+ </A>
+GROUP_LEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680501">
+ </A>
+The widget ID of an existing widget that serves as &quot;group leader&quot; for the newly-created widget. When a group leader is killed, for any reason, all widgets in the group are also destroyed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680502">
+ </A>
+A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680503">
+ </A>
+<A NAME="marker=109017">
+ </A>
+KILL_NOTIFY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680504">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget dies. Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). Note that the procedure specified is used only if you are not using the XMANAGER procedure to manage your widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680505">
+ </A>
+The callback routine is called with the widget identifier as its only argument. At that point, the widget identifier can only be used with the WIDGET_CONTROL procedure to get or set the user value. All other requests that require a widget ID are disallowed for the target widget. The callback is not issued until the WIDGET_EVENT function is called.</P>
+<P CLASS="Body">
+<A NAME="pgfId=158853">
+ </A>
+If you use the XMANAGER procedure to manage your widgets, the value of this keyword is overwritten. Use the CLEANUP keyword to XMANAGER to specify a procedure to be called when a managed widget dies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680506">
+ </A>
+<A NAME="marker=674908">
+ </A>
+MAXIMUM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680507">
+ </A>
+The <A NAME="marker=674909">
+ </A>
+maximum value of the range encompassed by the slider. If this keyword is not supplied, a default of 100 is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680508">
+ </A>
+<A NAME="marker=674910">
+ </A>
+MINIMUM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680509">
+ </A>
+The <A NAME="marker=674911">
+ </A>
+minimum value of the range encompassed by the slider. If this keyword is not supplied, a default of 0 is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680510">
+ </A>
+<A NAME="marker=109018">
+ </A>
+NO_COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914006">
+ </A>
+Usually, when setting or getting widget user values, either at widget creation or using the SET_UVALUE and GET_UVALUE keywords to WIDGET_CONTROL, IDL makes a second copy of the data being transferred. Although this technique is fine for small data, it can have a significant memory cost when the data being copied is large.</P>
+<P CLASS="Body">
+<A NAME="pgfId=914007">
+ </A>
+If the NO_COPY keyword is set, IDL handles these operations differently. Rather than copy the source data, it takes the data away from the source and attaches it directly to the destination. This feature can be used by compound widgets to obtain state information from a UVALUE without all the memory copying that would otherwise occur. However, it has the side effect of causing the source variable to become undefined. On a &quot;set&quot; operation (using the UVALUE keyword to WIDGET_SLIDER or the SET_UVALUE keyword to WIDGET_CONTROL), the variable passed as value becomes undefined. On a &quot;get&quot; operation (GET_UVALUE keyword to WIDGET_CONTROL), the user value of the widget in question becomes undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67656">
+ </A>
+<A NAME="marker=109019">
+ </A>
+NOTIFY_REALIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67659">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget is realized. This callback occurs just once (because widgets are realized only once). Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). The callback routine is called with the widget ID as its only argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680512">
+ </A>
+<A NAME="marker=109020">
+ </A>
+PRO_SET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680513">
+ </A>
+A string containing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to designate a routine that sets the value for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=724067">
+ </A>
+<A NAME="marker=724065">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=734137">
+ </A>
+A string containing an X Window System resource name to be applied to the widget. See <A HREF="idl200.htm#71756" CLASS="XRef">
+RESOURCE_NAME</A>
+ for a complete discussion of this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67331">
+ </A>
+<A NAME="marker=67330">
+ </A>
+SCR_XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67332">
+ </A>
+Set this keyword to the desired &quot;screen&quot; width of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the XSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67334">
+ </A>
+<A NAME="marker=67333">
+ </A>
+SCR_YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67335">
+ </A>
+Set this keyword to the desired &quot;screen&quot; height of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the YSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680514">
+ </A>
+<A NAME="marker=674924">
+ </A>
+SCROLL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=277939">
+ </A>
+Under the Motif window manager, the value provided for SCROLL specifies how many units the scroll bar should move when the user clicks the left mouse button inside the slider area, but not on the slider itself. This keyword has no effect under other window systems.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680516">
+ </A>
+<A NAME="marker=674925">
+ </A>
+SUPPRESS_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680517">
+ </A>
+Set this keyword to inhibit the display of the current slider value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680518">
+ </A>
+Sliders work only with integer units. This keyword can be used to suppress the actual value of a slider so that a program can present the user with a slider that seems to work in other units (such as floating-point) or with a non-linear scale.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67418">
+ </A>
+<A NAME="marker=109021">
+ </A>
+<A NAME="52067">
+ </A>
+TRACKING_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67419">
+ </A>
+Set this keyword to cause widget tracking events to be issued for the widget whenever the mouse pointer enters or leaves the region covered by that widget. For the structure of tracking events, see <A HREF="idl200.htm#72083" CLASS="XRef">
+TRACKING_EVENTS</A>
+ in the documentation for WIDGET_BASE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=910787">
+ </A>
+<A NAME="marker=910786">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=910788">
+ </A>
+A string containing the title to be used for the slider widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895638">
+ </A>
+<A NAME="marker=895637">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895640">
+ </A>
+Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680519">
+ </A>
+<A NAME="marker=674926">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680520">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680521">
+ </A>
+Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680522">
+ </A>
+If UVALUE is not present, the widget's initial user value is undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680523">
+ </A>
+<A NAME="marker=674930">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680524">
+ </A>
+The initial value setting of the widget. The value of a widget slider is the current position of the slider.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680527">
+ </A>
+<A NAME="marker=674932">
+ </A>
+VERTICAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680528">
+ </A>
+Set this keyword to crate a vertical slider. If this keyword is omitted, the slider is horizontal.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680529">
+ </A>
+<A NAME="marker=674933">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680530">
+ </A>
+The horizontal offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680531">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget programming.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680532">
+ </A>
+<A NAME="marker=674934">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680533">
+ </A>
+The width of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680535">
+ </A>
+<A NAME="marker=674935">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680536">
+ </A>
+The vertical offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent. This offset is specified relative to the <I CLASS="Italic">
+upper left</I>
+ corner of the parent widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680537">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget programming.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680538">
+ </A>
+<A NAME="marker=674936">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680539">
+ </A>
+The height of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888943">
+ </A>
+Keywords to WIDGET_CONTROL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888944">
+ </A>
+A number of keywords to the <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ procedure affect the behavior of slider widgets. In addition to those keywords that affect all widgets, the following are particularly useful: <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+, <A HREF="idl202.htm#15489" CLASS="XRef">
+SET_SLIDER_MAX</A>
+, <A HREF="idl202.htm#56314" CLASS="XRef">
+SET_SLIDER_MIN</A>
+, <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889863">
+ </A>
+Keywords to WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889867">
+ </A>
+Some keywords to the <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+ function return information that applies specifically to slider widgets. In addition to those keywords that apply to all widgets, the following are particularly useful: <A HREF="idl206.htm#64690" CLASS="XRef">
+SLIDER_MIN_MAX</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680541">
+ </A>
+Slider Widget Events</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680542">
+ </A>
+<A NAME="marker=674937">
+ </A>
+Slider widgets generate events when the mouse is used to change their value. The event structure returned by the WIDGET_EVENT function is defined by the following statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680543">
+ </A>
+{WIDGET_SLIDER, ID:0L, TOP:0L, HANDLER:0L, VALUE:0L, DRAG:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=680544">
+ </A>
+ID is the widget ID of the button generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. VALUE returns the new value of the slider. DRAG returns integer 1 if the slider event was generated as part of a drag operation, or zero if the event was generated when the user had finished positioning the slider. Note that the slider widget only generates events during the drag operation if the DRAG keyword is set. When the DRAG keyword is set, <A NAME="marker=163538">
+ </A>
+the DRAG field can be used to avoid computationally expensive operations until the user releases the slider.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680545">
+ </A>
+Known Implementation Problems</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680546">
+ </A>
+Under Motif 1.0, vertical sliders with a title organized in row bases get horizontally truncated and the slider doesn't show (the title does). Use the XSIZE keyword to work around this.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820492">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820493">
+ </A>
+<A HREF="idl5f.htm#36057" CLASS="XRef">
+CW_FSLIDER</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

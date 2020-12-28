@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ALOG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675705">
+ </A>
+<A NAME="36897">
+ </A>
+ALOG</H2>
+<P CLASS="Body">
+<A NAME="pgfId=675706">
+ </A>
+The <A NAME="marker=672444">
+ </A>
+ALOG function returns the <A NAME="marker=672445">
+ </A>
+natural logarithm of <I CLASS="Italics">
+X</I>
+. The result has the same structure as <I CLASS="Italics">
+X</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675707">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675708">
+ </A>
+Result = ALOG(<I CLASS="Italics">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675709">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675710">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=804931">
+ </A>
+The value for which the natural log is desired. The result of ALOG is double-precision floating if <I CLASS="Italics">
+X</I>
+ is double-precision, and complex if <I CLASS="Italics">
+X</I>
+ is complex. All other types are converted to single-precision floating-point and yield floating-point results. When applied to complex numbers, the definition of the ALOG function is:</P>
+<P CLASS="Body">
+<A NAME="pgfId=796431">
+ </A>
+<EM CLASS="Emphasis">
+ALOG</EM>
+(<EM CLASS="Emphasis">
+x</EM>
+) = <EM CLASS="Emphasis">
+COMPLEX</EM>
+(log |<EM CLASS="Emphasis">
+x</EM>
+|, atan <EM CLASS="Emphasis">
+x</EM>
+)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675712">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675713">
+ </A>
+To print the natural logarithm of 5, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675714">
+ </A>
+PRINT, ALOG(5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=675715">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=675716">
+ </A>
+1.60944</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769707">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=769708">
+ </A>
+<A HREF="idl5.htm#33118" CLASS="XRef">
+ALOG10</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

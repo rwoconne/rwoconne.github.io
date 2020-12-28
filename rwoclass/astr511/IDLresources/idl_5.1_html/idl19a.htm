@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SHADE_VOLUME</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl199.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678785">
+ </A>
+<A NAME="78379">
+ </A>
+SHADE_VOLUME</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678786">
+ </A>
+Given a 3D volume and a <A NAME="marker=673861">
+ </A>
+contour <A NAME="marker=673862">
+ </A>
+value, <A NAME="marker=673863">
+ </A>
+SHADE_VOLUME produces a list of vertices and polygons describing the contour surface. This surface can then be displayed as a shaded surface by the POLYSHADE procedure. Shading is obtained from either a single light-source model or from user-specified values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678787">
+ </A>
+SHADE_VOLUME computes the polygons that describe a three dimensional contour surface. Each volume element (voxel) is visited to find the polygons formed by the intersections of the contour surface and the voxel edges. The method used by SHADE VOLUME is that of Klemp, McIrvin and Boyd, 1990: &quot;PolyPaint--A Three-Dimensional Rendering Package,&quot; <I CLASS="Italic">
+American Meteorology Society Proceedings, Sixth International Conference on Interactive Information and Processing Systems</I>
+. This method is similar to the marching cubes algorithm described by Lorenson and Cline, 1987: &quot;Marching Cubes: A High Resolution 3D Surface Construction Algorithm,&quot; <I CLASS="Italic">
+Computer Graphics 21</I>
+, 163-169.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678788">
+ </A>
+This routine is limited to processing datasets that will fit in memory.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678789">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678790">
+ </A>
+SHADE_VOLUME, <I CLASS="Italic">
+Volume, Value, Vertex, Poly</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678791">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678792">
+ </A>
+Volume</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678793">
+ </A>
+A three-dimensional array that contains the dataset to be contoured. If the <I CLASS="Italic">
+Volume</I>
+ array is dimensioned <I CLASS="Italic">
+(D</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+, D</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, D</I>
+<SUB CLASS="Subscript">
+2</SUB>
+<I CLASS="Italic">
+)</I>
+, the resulting vertex coordinates are as follows: <BR>
+0&nbsp;&lt;&nbsp;X&nbsp;&lt;&nbsp;<I CLASS="Italic">
+D</I>
+<SUB CLASS="Subscript">
+0</SUB>
+&nbsp;-&nbsp;1; 0&nbsp;&lt;&nbsp;Y&nbsp;&lt;&nbsp;<I CLASS="Italic">
+D</I>
+<SUB CLASS="Subscript">
+1</SUB>
+&nbsp;-&nbsp;1; 0&nbsp;&lt;&nbsp;Z&nbsp;&lt;&nbsp;<I CLASS="Italic">
+D</I>
+<SUB CLASS="Subscript">
+2</SUB>
+&nbsp;-&nbsp;1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678794">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678795">
+ </A>
+The scalar contour value. This value specifies the constant-density surface (also called an isosurface) to be rendered.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678796">
+ </A>
+Vertex</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678797">
+ </A>
+The name of a variable to receive the vertex array. On output, this variable is set to a (3, <I CLASS="Italic">
+n</I>
+) floating-point array, suitable for input to POLYSHADE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678798">
+ </A>
+Poly</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678799">
+ </A>
+A named variable to receive the polygon list, an <I CLASS="Italic">
+m</I>
+-element, longword array. This list describes the vertices of each polygon and is suitable for input to POLYSHADE. The vertices of each polygon are listed in counterclockwise order when observed from outside the surface. The vertex description of each polygon is a vector of the form: [<EM CLASS="Emphasis">
+n</EM>
+, <EM CLASS="Emphasis">
+i</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+i</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, ..., <EM CLASS="Emphasis">
+i</EM>
+<SUB CLASS="Subscript">
+n-1</SUB>
+] and the <I CLASS="Italic">
+Poly</I>
+ array is the concatenation of the lists of each polygon. For example, when rendering a pyramid consisting of four triangles, <I CLASS="Italic">
+Poly</I>
+ would contain 16 elements, made by concatenating four, four-element vectors of the form [3, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+]. <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+ are the indices of the vertices describing each triangle.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678800">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678801">
+ </A>
+<A NAME="marker=673864">
+ </A>
+LOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678802">
+ </A>
+Set this keyword to display the low side of the contour surface (i.e., the contour surfaces enclose high data values). If this keyword is omitted or is 0, the high side of the contour surface is displayed and the contour encloses low data values. If this parameter is incorrectly specified, errors in shading will result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678803">
+ </A>
+<A NAME="marker=673865">
+ </A>
+SHADES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678804">
+ </A>
+An optional array, converted to byte type before use, that contains the user-specified shading color index for each voxel. This array must have the same dimensions as <I CLASS="Italic">
+Volume</I>
+. On exit, this array is replaced by another array, that contains the shading value for each vertex, contained in <I CLASS="Italic">
+Vertex</I>
+.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=948872">
+ </A>
+When using the SHADES keyword on True Color devices, we recommend that decomposed color support be turned off, by setting DECOMPOSED=0 for <BR>
+<A HREF="idl76.htm#17188" CLASS="XRef">
+DEVICE</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678805">
+ </A>
+<A NAME="marker=673866">
+ </A>
+VERBOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678806">
+ </A>
+Set this keyword to print a message indicating the number of polygons and vertices that are produced.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678807">
+ </A>
+<A NAME="marker=673867">
+ </A>
+XRANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678808">
+ </A>
+An optional two-element vector that contains the limits, over the first dimension, of the sub-volume to be considered.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678809">
+ </A>
+<A NAME="marker=673868">
+ </A>
+YRANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678810">
+ </A>
+An optional two-element vector that contains the limits, over the second dimension, of the sub-volume to be considered.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678811">
+ </A>
+<A NAME="marker=673869">
+ </A>
+ZRANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678812">
+ </A>
+An optional two-element vector containing the limits, over the third dimension, of the sub-volume to be considered.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678813">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678814">
+ </A>
+The following procedure shades a volume passed as a parameter. It uses the SCALE3 procedure to establish the viewing transformation. It then calls SHADE_VOLUME to produce the vertex and polygon lists, and POLYSHADE to draw the contour surface.</P>
+<P CLASS="Code">
+<A NAME="pgfId=678815">
+ </A>
+Pro SHOWVOLUME, vol, thresh, LOW = low	<EM CLASS="Comment">;
+Display the contour surface of a volume.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678816">
+ </A>
+s = SIZE(vol)	<EM CLASS="Comment">;
+Get the dimensions of the volume.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678817">
+ </A>
+IF s[0] NE 3 THEN ... ...	<EM CLASS="Comment">;
+Error, must be a 3D array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678818">
+ </A>
+SCALE3, XRANGE=[0, S[1]], YRANGE=[0, S[2]], ZRANGE=[0, S[3]]<BR>
+<EM CLASS="Comment">;
+Use SCALE3 to establish the 3D transformation and coordinate ranges.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680921">
+ </A>
+IF N_ELEMENTS(low) EQ 0 THEN low = 0	<EM CLASS="Comment">;
+Default = view high side of contour surface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678821">
+ </A>
+SHADE_VOLUME, vol, thresh, v, p, LOW = low	<EM CLASS="Comment">;
+Produce vertices and polygons.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678822">
+ </A>
+TV, POLYSHADE(v,p,/T3D)	<EM CLASS="Comment">;
+Produce image of surface and display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678823">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795776">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795777">
+ </A>
+<A HREF="idl145.htm#45438" CLASS="XRef">
+POLYSHADE</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

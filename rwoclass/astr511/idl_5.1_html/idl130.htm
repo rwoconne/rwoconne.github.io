@@ -1,0 +1,974 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> OPEN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl131.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl12f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889675">
+ </A>
+<A NAME="59773">
+ </A>
+OPEN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889680">
+ </A>
+The three <A NAME="marker=889678">
+ </A>
+OPEN procedures open a specified <A NAME="marker=889679">
+ </A>
+file for input and/or output.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889682">
+ </A>
+<A NAME="marker=889681">
+ </A>
+OPENR (OPEN Read) opens an existing file for input only.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889684">
+ </A>
+<A NAME="marker=889683">
+ </A>
+OPENW (OPEN Write) opens a new file for input and output. When creating a new file under VMS, a new file with the same name and a higher version number is created. Under other operating systems, if the file exists, it is truncated and its old contents are destroyed. </LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889686">
+ </A>
+<A NAME="marker=889685">
+ </A>
+OPENU (OPEN Update) opens an existing file for input and output.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=889687">
+ </A>
+Note that under Microsoft Windows, these procedures open files in text mode by default. Opening files in text mode preserves carriage-return, line-feed (CR/LF) paris, which are expected by DOS and Windows text editors. Also by default, certain other routines in IDL for Windows (PRINTF, for example) will change the mode of a file from binary to text. The Windows-only keywords BINARY and NOAUTOMODE help control these behaviors.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889688">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889689">
+ </A>
+There are three forms of the OPEN procedure:</P>
+<P CLASS="Body">
+<A NAME="pgfId=889690">
+ </A>
+OPENR, <I CLASS="Italics">
+Unit, File [, Record_Length]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=889691">
+ </A>
+OPENW, <I CLASS="Italics">
+Unit, File [, Record_Length]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=889692">
+ </A>
+OPENU, <I CLASS="Italics">
+Unit, File [, Record_Length]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889693">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889694">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889695">
+ </A>
+The unit number to be associated with the opened file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889696">
+ </A>
+File</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889697">
+ </A>
+A string containing the name of the file to be opened. Note the following platform-specific behaviors:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889698">
+ </A>
+Under Unix, the filename can contain any wildcard characters recognized by the shell specified by the SHELL environment variable. However, it is faster not to use wildcards because IDL doesn't use the shell to expand file names unless it has to. No wildcard characters are allowed under VMS.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889702">
+ </A>
+Under VMS, filenames that do not have a file extension are assumed to have the .DAT extension. No such processing of file names occurs under Unix.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889703">
+ </A>
+Record_Length</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889704">
+ </A>
+The <I CLASS="Italics">
+Record_Length</I>
+ argument has meaning only under VMS. It specifies the file record size in bytes. This argument is required when creating new, fixed-length files, and is optional when opening existing files. If this argument is present when creating variable-length record files, it specifies the maximum allowed record size. If this argument is present and no file organization keyword is specified, fixed-length records are implied.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889705">
+ </A>
+Due to limitations in RMS (the VMS Record Management System), the length of records must always be an even number of bytes. Odd record lengths are therefore automatically rounded up to the nearest even boundary.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889706">
+ </A>
+Keywords</H3>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=889707">
+ </A>
+Platform-specific keywords are listed at the end of this section.</LI>
+</UL>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889709">
+ </A>
+<A NAME="marker=889708">
+ </A>
+APPEND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889710">
+ </A>
+Set this keyword to open the file with the file pointer at the end of the file, ready for data to be appended. Normally, the file is opened with the file pointer at the beginning of the file. Under Unix, use of APPEND prevents OPENW from truncating existing file contents.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889712">
+ </A>
+<A NAME="marker=889711">
+ </A>
+BUFSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889713">
+ </A>
+Set this keyword to a value greater than 512 to specify the size of the I/O buffer (in bytes) used when reading and writing files. Setting BUFSIZE=1 (or any other value less than 512) sets the buffer to the default size, which is platform-specific. Set BUFSIZE=0 to disable I/O buffering.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889714">
+ </A>
+Note that the buffer size is only changeable when reading and writing stream files. Under Unix, the NOSTDIO keyword must not be set. Also not that the system stdio may choose to ignore the buffer size setting.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889716">
+ </A>
+<A NAME="marker=889715">
+ </A>
+DELETE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889717">
+ </A>
+Set this keyword to delete the file when it is closed.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=889718">
+ </A>
+Setting the DELETE keyword <I CLASS="Italics">
+causes the file to be deleted</I>
+ even if it was opened for read-only access. In addition, once a file is opened with this keyword, there is no way to cancel its operation.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889720">
+ </A>
+<A NAME="marker=889719">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889721">
+ </A>
+A named variable to place the error status in. If an error occurs in the attempt to open <I CLASS="Italics">
+File</I>
+, IDL normally takes the error handling action defined by the ON_ERROR and/or ON_IOERROR procedures. OPEN always returns to the caller without generating an error message when ERROR is present. A nonzero error status indicates that an error occurred. The error message can then be found in the system variable !ERR_STRING.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889725">
+ </A>
+For example, statements similar to the following can be used to detect errors:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889726">
+ </A>
+OPENR, 1, 'demo.dat', ERROR = err	<EM CLASS="Comment">;
+Try to open the file demo.dat.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889727">
+ </A>
+IF (err NE 0) then PRINTF, -2, !ERR_STRING<EM CLASS="Comment">;
+	<BR>
+If err is nonzero, something happened. Print the error message to the standard error file (logical unit -2).</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889729">
+ </A>
+<A NAME="marker=889728">
+ </A>
+F77_UNFORMATTED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889730">
+ </A>
+Unformatted variable-length record files produced by Unix FORTRAN programs contain extra information along with the data in order to allow the data to be properly recovered. This method is necessary because FORTRAN input/output is based on record-oriented files, while Unix files are simple byte streams that do not impose any record structure. Set the F77_UNFORMATTED keyword to read and write this extra information in the same manner as <CODE CLASS="Code">
+f77(1)</CODE>
+, so that data to be processed by both IDL and FORTRAN. See <A HREF="..html#10602" CLASS="XRef">
+UNIX-Specific Information</A>
+ for further details.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=889737">
+ </A>
+Do not confused this keyword with the VMS-only keyword FORTRAN.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889739">
+ </A>
+<A NAME="marker=889738">
+ </A>
+GET_LUN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889741">
+ </A>
+Set this keyword to <A NAME="marker=889740">
+ </A>
+use the GET_LUN procedure to set the value of <I CLASS="Italics">
+Unit</I>
+ before the file is opened. Instead of using the two statements:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889742">
+ </A>
+GET_LUN, Unit</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889743">
+ </A>
+OPENR, Unit, 'data.dat'</P>
+<P CLASS="Body">
+<A NAME="pgfId=889744">
+ </A>
+you can use the single statement:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889745">
+ </A>
+OPENR, Unit, 'data.dat', /GET LUN</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889747">
+ </A>
+<A NAME="marker=889746">
+ </A>
+MORE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889748">
+ </A>
+If MORE is set, and the specified <I CLASS="Italics">
+File</I>
+ is a terminal, then all output to this unit is formatted in a manner similar to the Unix <CODE CLASS="Code">
+more(1)</CODE>
+ command and sent to the standard output stream. Output pauses at the bottom of each screen, at which point the user can press one of the following keys:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889749">
+ </A>
+Space: Display the next page of text.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889750">
+ </A>
+Return: Display the next line of text.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889751">
+ </A>
+`q' or `Q': Suppress all remaining output.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889752">
+ </A>
+`h' or `H': Display this list of options.</LI>
+<LI CLASS="Example">
+<A NAME="pgfId=889753">
+ </A>
+The following statements show how to output a file named <CODE CLASS="Code">
+text.dat</CODE>
+ to the terminal:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889754">
+ </A>
+OPENR, inunit, 'text.dat', /GET_LUN<EM CLASS="Comment">;
+	Open the text file.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889755">
+ </A>
+OPENW, outunit, '/dev/tty', /GET_LUN, /MORE<BR>
+<EM CLASS="Comment">;
+Open the terminal as a file.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889756">
+ </A>
+line = '' &amp; READF, inunit, line	<EM CLASS="Comment">;
+Read the first line.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889757">
+ </A>
+WHILE NOT EOF(inunit) DO BEGIN	<EM CLASS="Comment">;
+While there is text left, output it.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889758">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINTF, outunit, line</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889759">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;READF, inunit, line</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889760">
+ </A>
+ENDWHILE</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889761">
+ </A>
+FREE_LUN, inunit &amp; FREE_LUN, outunit	<EM CLASS="Comment">;
+Close the files and deallocate the units.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=889762">
+ </A>
+Under VMS, the MORE keyword is only allowed for stream mode files.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889764">
+ </A>
+<A NAME="marker=889763">
+ </A>
+SWAP_ENDIAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889765">
+ </A>
+When performing binary I/O on the specified file, all multi-byte data has its byte ordering swapped. This is useful when accessing files also used by another system with byte ordering different than that of the current host.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889767">
+ </A>
+<A NAME="marker=889766">
+ </A>
+SWAP_IF_BIG_ENDIAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889768">
+ </A>
+Equivalent to SWAP_ENDIAN, but only takes effect if the current system has big endian byte ordering. Note that this keyword does not refer to the byte ordering of the input data, but to the computer hardware.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889770">
+ </A>
+<A NAME="marker=889769">
+ </A>
+SWAP_IF_LITTLE_ENDIAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889771">
+ </A>
+Equivalent to SWAP_ENDIAN, but only takes effect if the current system has little endian byte ordering. Note that this keyword does not refer to the byte ordering of the input data, but to the computer hardware.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889773">
+ </A>
+<A NAME="marker=889772">
+ </A>
+VAX_FLOAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889774">
+ </A>
+The opened file contains VAX format floating point values. This keyword implies little endian byte ordering for all data contained in the file, and superceeds any setting of the SWAP_ENDIAN, SWAP_IF_BIG_ENDIAN, or SWAP_IF_LITTLE_ENDIAN keywords.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889775">
+ </A>
+The default setting for this keyword is FALSE. Under VMS, starting the VAX_FLOAT option to the IDL command at startup has the effect of changing this default and making it TRUE. See <A HREF="..html#25040" CLASS="XRef">
+Command Line Options</A>
+ for details on this qualifier. You can change this setting at runtime using the <A HREF="idl1f3.htm#19939" CLASS="XRef">
+VAX_FLOAT</A>
+ function.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=889785">
+ </A>
+Please read <A HREF="idl130.htm#34856" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+ before using this feature.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889787">
+ </A>
+<A NAME="marker=889786">
+ </A>
+WIDTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889791">
+ </A>
+The desired output width. When using the defaults for formatted output, IDL uses the following rules to determine where to break lines:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889792">
+ </A>
+If the output file is a terminal, the terminal width is used. Under VMS, if the file has fixed-length records or a maximum record length, the record length is used.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889793">
+ </A>
+Otherwise, a default of 80 columns is used.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=889794">
+ </A>
+The WIDTH keyword allows the user to override this default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889796">
+ </A>
+<A NAME="marker=889795">
+ </A>
+XDR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889797">
+ </A>
+Set this keyword to open the file for unformatted XDR (eXternal Data Representation) I/O via the READU and WRITEU procedures. Use XDR to make binary data portable between different machine architectures by reading and writing all data in a standard format. When a file is open for XDR access, the only I/O data transfer procedures that can be used with it are READU and WRITEU. XDR is described in <A HREF="..html#92361" CLASS="XRef">
+Portable Unformatted Input/Output</A>
+&quot;.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889801">
+ </A>
+Under VMS, the XDR keyword can only be used with stream files.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889802">
+ </A>
+Macintosh-Only Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889804">
+ </A>
+<A NAME="marker=889803">
+ </A>
+MACCREATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889805">
+ </A>
+Use this keyword to specify a four-character scalar string identifying the Macintosh file creator code of the file being created. For example, set</P>
+<P CLASS="Code">
+<A NAME="pgfId=889806">
+ </A>
+MACCREATOR = 'MSWD'</P>
+<P CLASS="Body">
+<A NAME="pgfId=889807">
+ </A>
+to create a file with the creator code <CODE CLASS="Code">
+MSWD</CODE>
+. The default creator code is <CODE CLASS="Code">
+MIDL</CODE>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889809">
+ </A>
+<A NAME="marker=889808">
+ </A>
+MACTYPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889810">
+ </A>
+Use this keyword to specify a four-character scalar string identifying the Macintosh file type of the file being created. For example, set</P>
+<P CLASS="Code">
+<A NAME="pgfId=889811">
+ </A>
+MACTYPE = 'PICT' </P>
+<P CLASS="Body">
+<A NAME="pgfId=889812">
+ </A>
+to create a file of type <CODE CLASS="Code">
+PICT</CODE>
+. The default file type is <CODE CLASS="Code">
+TEXT</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889813">
+ </A>
+Windows-Only Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889815">
+ </A>
+<A NAME="marker=889814">
+ </A>
+BINARY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889816">
+ </A>
+Set this keyword to treat opened files as binary files. When writing text to a binary file, CR/LF pairs are written as LF only. Note that setting the BINARY keyword alone does not ensure that a routine that writes to the file will not change the mode to text.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889818">
+ </A>
+<A NAME="marker=889817">
+ </A>
+NOAUTOMODE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889819">
+ </A>
+Set this keyword to prevent IDL routines such as PRINTF from automatically changing the mode from binary to text, or vice versa.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889820">
+ </A>
+Unix-Only Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889822">
+ </A>
+<A NAME="marker=889821">
+ </A>
+NOSTDIO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889823">
+ </A>
+Set this keyword to disable all use of the standard Unix I/O for the file, in favor of direct calls to the operating system. This allows direct access to devices, such as tape drives, that are difficult or impossible to use effectively through the standard I/O. Using this keyword has the following implications:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889824">
+ </A>
+No formatted or associated (ASSOC) I/O is allowed on the file. Only READU and WRITEU are allowed.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889825">
+ </A>
+Normally, attempting to read more data than is available from a file causes the unfilled space to be set to zero and an error to be issued. This does not happen with files opened with NOSTDIO. When using NOSTDIO, the programmer must check the transfer count, either via the TRANSFER_COUNT keywords to READU and WRITEU, or the FSTAT function.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889826">
+ </A>
+The EOF and POINT_LUN functions cannot be used with a file opened with NOSTDIO.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889827">
+ </A>
+Each call to READU or WRITEU maps directly to Unix read(2) and write(2) system calls. The programmer must read the Unix system documentation for these calls and documentation on the target device to determine if there are any special rules for I/O to that device. For example, the size of data that can be transferred to many cartridge tape drives is often forced to be a multiple of 512 bytes.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889828">
+ </A>
+VMS-Only Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889830">
+ </A>
+<A NAME="marker=889829">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889832">
+ </A>
+Set this keyword to process the file using <A NAME="marker=889831">
+ </A>
+RMS block mode. In this mode, most RMS processing is bypassed and IDL reads and writes to the file in disk block units. Such files can only be accessed via unformatted I/O commands. Block mode files are treated as an uninterpreted stream of bytes in a manner similar to Unix stream files.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889836">
+ </A>
+For best performance, by default IDL uses RMS block mode for fixed length record files. However, when the SHARED keyword is present, IDL uses standard RMS mode. Do not specify both BLOCK and SHARED.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889837">
+ </A>
+This keyword is ignored when used with stream files.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=889838">
+ </A>
+With some controller/disk combinations, RMS does not allow transfer of an odd number of bytes.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889840">
+ </A>
+<A NAME="marker=889839">
+ </A>
+DEFAULT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889841">
+ </A>
+A scalar string that provides a default file specification from which missing parts of the File argument are taken. For example, to make .LOG be the default file extension when opening a new file, use the command:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889842">
+ </A>
+OPENW, 'DATA', DEFAULT='.LOG'</P>
+<P CLASS="Body">
+<A NAME="pgfId=889843">
+ </A>
+This statement will open the file DATA.LOG.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889845">
+ </A>
+<A NAME="marker=889844">
+ </A>
+EXTENDSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889846">
+ </A>
+File extension is a relatively slow operation, and it is desirable to minimize the number of times it is done. In order to avoid the unacceptable performance that would result from extending a file a single block at a time, VMS extends its size by a default number of blocks in an attempt to trade a small amount of wasted disk space for better performance. The EXTENDSIZE keyword overrides the default, and specifies the number of disk blocks by which the file should be extended. This keyword is often used in conjunction with the INITIALSIZE and TRUNCATE_ON_CLOSE keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889848">
+ </A>
+<A NAME="marker=889847">
+ </A>
+FIXED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889849">
+ </A>
+Set this keyword to indicate that the file has fixed-length records. The <I CLASS="Italics">
+Record_Length</I>
+ argument is required when opening new, fixed-length files.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889851">
+ </A>
+<A NAME="marker=889850">
+ </A>
+FORTRAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889852">
+ </A>
+Set this keyword to use FORTRAN-style carriage control when creating a new file. The first byte of each record controls the formatting.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889854">
+ </A>
+<A NAME="marker=889853">
+ </A>
+INITIALSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889855">
+ </A>
+The initial size of the file allocation in blocks. This keyword is often used in conjunction with the EXTENDSIZE and TRUNCATE_ON_CLOSE keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889857">
+ </A>
+<A NAME="marker=889856">
+ </A>
+KEYED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889858">
+ </A>
+Set this keyword to indicate that the file has indexed organization. Indexed files are discussed in &quot;<A HREF="..html#84755" CLASS="XRef">
+VMS-Specific Information</A>
+&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889863">
+ </A>
+<A NAME="marker=889862">
+ </A>
+LIST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889864">
+ </A>
+Set this keyword to specify carriage-return carriage control when creating a new file. If no carriage-control keyword is specified, LIST is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889866">
+ </A>
+<A NAME="marker=889865">
+ </A>
+NONE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889867">
+ </A>
+Set this keyword to specify explicit carriage control when creating a new file. When using explicit carriage control, VMS does not add any carriage control information to the file, and the user must explicitly add any desired carriage control to the data being written to the file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889869">
+ </A>
+<A NAME="marker=889868">
+ </A>
+PRINT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889870">
+ </A>
+Set this keyword to send the file to SYS$PRINT, the default system printer, when it is closed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889872">
+ </A>
+<A NAME="marker=889871">
+ </A>
+SEGMENTED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889873">
+ </A>
+Set this keyword to indicate that the file has VMS FORTRAN-style segmented records. Segmented records are a method by which FORTRAN allows logical records to exist with record sizes that exceed the maximum possible physical record sizes supported by VMS. Segmented record files are useful primarily for passing data between FORTRAN and IDL programs.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889878">
+ </A>
+<A NAME="marker=889877">
+ </A>
+SHARED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889879">
+ </A>
+Set this keyword to allow other processes read and write access to the file in parallel with IDL. If SHARED is not set, read-only files are opened for read sharing and read/write files are not shared. The SHARED keyword cannot be used with STREAM files.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=889883">
+ </A>
+It is not a good idea to allow shared write access to files open in RMS block mode. In block mode, VMS cannot perform the usual record locking that prevents file corruption. It is therefore possible for multiple writers to corrupt a block mode file. This warning also applies to fixed-length record disk files, which are also processed in block mode. When using SHARED, do not specify either BLOCK or UDF_BLOCK.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889885">
+ </A>
+<A NAME="marker=889884">
+ </A>
+STREAM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889886">
+ </A>
+Set this keyword to open the file in stream mode using the Standard C Library (stdio).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889888">
+ </A>
+<A NAME="marker=889887">
+ </A>
+SUBMIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889889">
+ </A>
+Set this keyword to submit the file to SYS$BATCH, the default system batch queue, when it is closed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889891">
+ </A>
+<A NAME="marker=889890">
+ </A>
+SUPERSEDE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889892">
+ </A>
+Set this keyword to allow an existing file to be superseded by a new file of the same name, type, and version.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889894">
+ </A>
+<A NAME="marker=889893">
+ </A>
+TRUNCATE_ON_CLOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889895">
+ </A>
+Set this keyword to free any unused disk space allocated to the file when the file is closed. This keyword can be used to get rid of excess allocations caused by the EXTENDSIZE and INITIALSIZE keywords. If the SHARED keyword is set, or the file is open for read-only access, TRUNCATE_ON_CLOSE has no effect.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889897">
+ </A>
+<A NAME="marker=889896">
+ </A>
+UDF_BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889898">
+ </A>
+Set this keyword to create a file similar to those created with the BLOCK keyword except that new files are created with the RMS undefined record type. Files created in this way can only be accessed by IDL in block mode, and cannot be processed by many VMS utilities. Do not specify both UDF_BLOCK and SHARED.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889903">
+ </A>
+<A NAME="marker=889902">
+ </A>
+VARIABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889904">
+ </A>
+Set this keyword to indicate that the file has variable-length records. If the <I CLASS="Italics">
+Record_Length</I>
+ argument is present, it specifies the maximum record size. Otherwise, the only limit is that imposed by RMS (32767 bytes). If no file organization is specified, variable-length records are the default.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=889905">
+ </A>
+VMS variable length records have a 2-byte record-length descriptor at the beginning of each record. Because the FSTAT function returns the length of the data file <EM CLASS="Emphasis">
+including</EM>
+ the record descriptors, reading a file with VMS variable length records into a byte array of the size returned by FSTAT will result in an RMS EOF error.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=889907">
+ </A>
+<A NAME="34856">
+ </A>
+Note On IEEE to VAX Format Conversion</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889908">
+ </A>
+Translation of floating-point values from the IDL's native (IEEE) format to the VAX format and back (IEEE to VAX to IEEE) is not a completely reversable operation, and should be avoided when possible. There are many cases where the recovered values will differ from the original, including:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889909">
+ </A>
+The VAX floating point format lacks support for the IEEE special values (NaN, Infinity). Hence, their special meaning is lost when they are converted to VAX format and cannot be recovered.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889910">
+ </A>
+Differences in precision and range can also cause information to be lost in both directions.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=889911">
+ </A>
+Research Systems recommends using IEEE/VAX conversions only to read existing VAX format data, and strongly recommends that all new files be created using the IEEE format.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889915">
+ </A>
+See <A HREF="ieee.html#37815" CLASS="XRef">
+</A>
+ for more information.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889916">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889920">
+ </A>
+The following example opens the IDL distribution file <CODE CLASS="Code">
+people.dat</CODE>
+ and reads an image from that file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889922">
+ </A>
+OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])<BR>
+<EM CLASS="Comment">;
+Open &quot;people.dat&quot; on file unit number 1. The FILEPATH function is used to return the full path name to this distribution file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889923">
+ </A>
+image=BYTARR(192, 192, /NOZERO)	<EM CLASS="Comment">;
+Define a variable into which the image will be read.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889924">
+ </A>
+READU, 1, image	<EM CLASS="Comment">;
+Read the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889925">
+ </A>
+TV, image	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889926">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889945">
+ </A>
+<A HREF="idl33.htm#57858" CLASS="XRef">
+CLOSE</A>
+, <A HREF="idlb9.htm#59784" CLASS="XRef">
+GET_LUN</A>
+, <A HREF="idl13b.htm#15658" CLASS="XRef">
+POINT_LUN</A>
+, <A HREF="idl14a.htm#89996" CLASS="XRef">
+PRINT/PRINTF</A>
+, <A HREF="idl161.htm#26845" CLASS="XRef">
+READ/READF</A>
+, <A HREF="idl171.htm#52434" CLASS="XRef">
+READU</A>
+, <A HREF="idl1f3.htm#19939" CLASS="XRef">
+VAX_FLOAT</A>
+, <A HREF="idl218.htm#93251" CLASS="XRef">
+WRITEU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

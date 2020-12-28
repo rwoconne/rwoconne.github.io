@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_SRF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl215.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl213.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756539">
+ </A>
+<A NAME="20886">
+ </A>
+WRITE_SRF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756542">
+ </A>
+The <A NAME="marker=756540">
+ </A>
+WRITE_SRF procedure writes an image and its color table vectors to a <A NAME="marker=756541">
+ </A>
+Sun Raster File (SRF).</P>
+<P CLASS="Body">
+<A NAME="pgfId=756543">
+ </A>
+WRITE_SRF only writes 32-, 24-, and 8-bit-deep rasterfiles of type RT_STANDARD. Use the UNIX command <CODE CLASS="Code">
+rasfilter8to1</CODE>
+ to convert these files to 1-bit deep files. See the file <CODE CLASS="Code">
+/usr/include/rasterfile.h</CODE>
+ for the structure of Sun rasterfiles.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756544">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_srf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756545">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756546">
+ </A>
+WRITE_SRF, <EM CLASS="Emphasis">
+Filename [, Image, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756547">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756548">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756549">
+ </A>
+A scalar string containing the full pathname of the SRF to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756550">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756551">
+ </A>
+The array to be written to the SRF. If <EM CLASS="Emphasis">
+Image</EM>
+ has dimensions (3,<EM CLASS="Emphasis">
+n,m</EM>
+), a 24-bit SRF is written. If <EM CLASS="Emphasis">
+Image</EM>
+ is omitted, the entire current graphics window is read into an array and written to the SRF file. <EM CLASS="Emphasis">
+Image</EM>
+ should be of byte type, and in top to bottom scan line order.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756552">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756553">
+ </A>
+The Red, Green, and Blue color vectors to be written to the file. If <EM CLASS="Emphasis">
+R</EM>
+, <EM CLASS="Emphasis">
+G</EM>
+, <EM CLASS="Emphasis">
+B</EM>
+ values are not provided, the last color table established using LOADCT is included. If no color table has been established, WRITE_SRF calls LOADCT to load the grayscale entry (table 0).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756554">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756556">
+ </A>
+<A NAME="marker=756555">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756557">
+ </A>
+Set this keyword to write the image from the top down instead of from the bottom up. This setting is only necessary when writing a file from the current IDL graphics window; it is ignored when writing a file from a data array passed as a parameter.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756559">
+ </A>
+<A NAME="marker=756558">
+ </A>
+WRITE_32</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756560">
+ </A>
+Set this keyword to write a 32-bit file. If the input image is a true color image, dimensioned (3, <EM CLASS="Emphasis">
+n, m</EM>
+), it is normally written as a 24-bit raster file. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756561">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756562">
+ </A>
+Create a pseudo screen dump from the current window:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756563">
+ </A>
+WRITE_SRF, 'test.srf', TVRD()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756564">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756565">
+ </A>
+<A HREF="idl16a.htm#41759" CLASS="XRef">
+READ_SRF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

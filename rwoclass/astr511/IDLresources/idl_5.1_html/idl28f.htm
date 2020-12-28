@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFSD_GETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl290.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl28e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997967">
+ </A>
+<A NAME="18154">
+ </A>
+HDF_DFSD_GETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997971">
+ </A>
+The <A NAME="marker=997969">
+ </A>
+HDF_DFSD_GETINFO procedure <A NAME="marker=997970">
+ </A>
+retrieves information about the current Hierarchical Data Format file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997972">
+ </A>
+Note that calling HDF_DFSD_GETINFO with the DIMS or TYPE keywords may alter which dataset is current. See &quot;Reading an Entire Scientific Dataset&quot; and &quot;Getting Other Information About SDSs&quot; in the <I CLASS="Italics">
+NCSA HDF Calling Interfaces and Utilities</I>
+ documentation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997973">
+ </A>
+Note that reading a label, unit, format, or coordinate system string that has more than 256 characters can have unpredictable results.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997974">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997975">
+ </A>
+HDF_DFSD_GETINFO, <I CLASS="Italics">
+Filename</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997976">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997977">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997978">
+ </A>
+A scalar string containing the name of the file to be read. A filename is only needed to determine SDS dimensions and/or the number of SDSs in a file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997979">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997981">
+ </A>
+<A NAME="marker=997980">
+ </A>
+CALDATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997982">
+ </A>
+Set this keyword to a named variable which will contain the calibration data associated with an SDS data set. The data will be returned in a structure of the form:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=997983">
+ </A>
+{&nbsp;CAL: 0d, CAL_ERR: 0d, OFFSET: 0d, $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=997984">
+ </A>
+&nbsp;&nbsp;OFFSET_ERR: 0d,NUM_TYPE: 0L }</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997986">
+ </A>
+<A NAME="marker=997985">
+ </A>
+COORDSYS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997987">
+ </A>
+Set this keyword to return the data coordinate system description string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997989">
+ </A>
+<A NAME="marker=997988">
+ </A>
+DIMS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997990">
+ </A>
+Set this keyword to a named variable in which the dimensions of the current SDS are returned in a longword array.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997992">
+ </A>
+<A NAME="marker=997991">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997993">
+ </A>
+Set this keyword to return the data format description string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997995">
+ </A>
+<A NAME="marker=997994">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997996">
+ </A>
+Set this keyword to return the data label description string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997998">
+ </A>
+<A NAME="marker=997997">
+ </A>
+LASTREF</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997999">
+ </A>
+Set this keyword to return the last reference number written or read for an SDS.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998001">
+ </A>
+<A NAME="marker=998000">
+ </A>
+NSDS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998002">
+ </A>
+Set this keyword to return the number of SDSs in the file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998004">
+ </A>
+<A NAME="marker=998003">
+ </A>
+RANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998005">
+ </A>
+Set this keyword to return the valid max/min values for the current SDS.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998007">
+ </A>
+<A NAME="marker=998006">
+ </A>
+TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998008">
+ </A>
+Set this keyword to a named variable which returns a string describing the type of the current SDS (e.g., <CODE CLASS="Code">
+'BYTE'</CODE>
+, <CODE CLASS="Code">
+'FLOAT'</CODE>
+, etc.).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998010">
+ </A>
+<A NAME="marker=998009">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998011">
+ </A>
+Set this keyword to return the data unit description string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998012">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998013">
+ </A>
+The following commands read an SDS, including information about its dimensions but not its annotations:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998014">
+ </A>
+HDF_DFSD_GETINFO, filename, DIMS=d, TYPE=t, RANGE=r, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998015">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LABEL=l, UNIT=u, FORMAT=f, COORDSYS=c </P>
+<P CLASS="Code">
+<A NAME="pgfId=998016">
+ </A>
+...</P>
+<P CLASS="Code">
+<A NAME="pgfId=998017">
+ </A>
+FOR i = 0, N_ELEMENTS(d)-1 DO BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=998018">
+ </A>
+HDF_DFSD_DIMGET, i, LABEL=dl, UNIT=du, FORMAT=df, SCALE=ds</P>
+<P CLASS="Code">
+<A NAME="pgfId=998019">
+ </A>
+...</P>
+<P CLASS="Code">
+<A NAME="pgfId=998020">
+ </A>
+ENDFOR</P>
+<P CLASS="Code">
+<A NAME="pgfId=998021">
+ </A>
+HDF_DFSD_GETDATA, filename, data</P>
+</DIV>
+</BODY>
+</HTML>

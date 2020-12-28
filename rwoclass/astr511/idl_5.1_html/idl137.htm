@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PLOT_FIELD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl138.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl136.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=137662">
+ </A>
+<A NAME="86526">
+ </A>
+PLOT_FIELD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=137667">
+ </A>
+The <A NAME="marker=137664">
+ </A>
+PLOT_FIELD procedure <A NAME="marker=137665">
+ </A>
+plots a 2D <A NAME="marker=137666">
+ </A>
+field. <EM CLASS="Emphasis">
+N</EM>
+ random points are picked, and from each point a path is traced along the field. The length of the path is proportional to the field vector magnitude.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757594">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+plot_field.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757595">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757596">
+ </A>
+PLOT_FIELD, <EM CLASS="Emphasis">
+U, V</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757597">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757598">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757599">
+ </A>
+A 2D array giving the field vector at each point in the U(X) direction.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757600">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757601">
+ </A>
+A 2D array giving the field vector at each point in the V(Y) direction.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757602">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757604">
+ </A>
+<A NAME="marker=757603">
+ </A>
+ASPECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757605">
+ </A>
+Set this keyword to the aspect ratio of the plot (i.e., the ratio of the X size to Y size). The default is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757607">
+ </A>
+<A NAME="marker=757606">
+ </A>
+LENGTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757608">
+ </A>
+Set this keyword to the length of the longest field vector expressed as a fraction of the plotting area. The default is 0.1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757610">
+ </A>
+<A NAME="marker=757609">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757611">
+ </A>
+Set this keyword to the number of arrows to draw. The default is 200.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757613">
+ </A>
+<A NAME="marker=757612">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757614">
+ </A>
+Set this keyword to the title of plot. The default is &quot;Velocity Field&quot;.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757615">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=757616">
+ </A>
+X = FINDGEN(20, 20)	<EM CLASS="Comment">;
+Create array X.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=876070">
+ </A>
+Y = FINDGEN(20, 20)*3	<EM CLASS="Comment">;
+Create array Y.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757618">
+ </A>
+PLOT_FIELD, X, Y	<EM CLASS="Comment">;
+Create plot.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757619">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757620">
+ </A>
+<A HREF="idla6.htm#62250" CLASS="XRef">
+FLOW3</A>
+, <A HREF="idl1f4.htm#16476" CLASS="XRef">
+VEL</A>
+, <A HREF="idl1f5.htm#51661" CLASS="XRef">
+VELOVECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

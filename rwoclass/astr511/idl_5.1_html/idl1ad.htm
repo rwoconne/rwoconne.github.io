@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPL_INTERP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ae.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ac.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51839">
+ </A>
+<A NAME="65579">
+ </A>
+SPL_INTERP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51841">
+ </A>
+Given the arrays <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+, which tabulate a function (with the <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+<I CLASS="Italic">
+</I>
+ in ascending order), and given the array <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, which is the output from SPL_INIT, and given an input value of <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, the <A NAME="marker=51842">
+ </A>
+SPL_INTERP <A NAME="marker=51843">
+ </A>
+function returns a <A NAME="marker=51844">
+ </A>
+cubic-spline interpolated value for the given value of <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+I</SUB>
+. The result has the same structure as <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and is either single- or double-precision floating, based on the input type.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51845">
+ </A>
+SPL_INTERP is based on the routine <CODE CLASS="Code">
+splint</CODE>
+ described in section 3.3 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51846">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51847">
+ </A>
+Result = SPL_INTERP(<I CLASS="Italic">
+X, Y, Y2, X2</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51848">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51849">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51850">
+ </A>
+An input array that specifies the tabulated points in ascending order.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51851">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51852">
+ </A>
+An input array that specifies the values of the tabulate function corresponding to <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51853">
+ </A>
+Y2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51854">
+ </A>
+The output from SPL_INIT for the specified <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51855">
+ </A>
+X2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51856">
+ </A>
+The input value for which an interpolated value is desired. <I CLASS="Italic">
+X</I>
+ can be scalar or an array of values. The result of SPL_INIT will have the same structure.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51857">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51859">
+ </A>
+<A NAME="marker=51858">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51860">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51861">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51862">
+ </A>
+To create a spline interpolation over a tabulated set of data, [<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+i</SUB>
+], first create the tabulated data. In this example, <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ will be in the range [0.0, 2p] and <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ in the range [sin(0.0), sin(2p)].</P>
+<P CLASS="Code">
+<A NAME="pgfId=51863">
+ </A>
+X = (FINDGEN(21)/20.0) * 2.0 * !PI</P>
+<P CLASS="Code">
+<A NAME="pgfId=51864">
+ </A>
+Y = SIN(X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=51865">
+ </A>
+Y<SUB CLASS="Subscript">
+2</SUB>
+ = SPL_INIT(X, Y)	<EM CLASS="Comment">;
+Calculate interpolating cubic spline.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=826035">
+ </A>
+X<SUB CLASS="Subscript">
+2</SUB>
+= FINDGEN(11)/11.0 * !PI	<EM CLASS="Comment">;
+Define the X values P at which we desire interpolated Y values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=826037">
+ </A>
+result = SPL_INTERP(X, Y, Y<SUB CLASS="Subscript">
+2</SUB>
+, X<SUB CLASS="Subscript">
+2</SUB>
+)	<EM CLASS="Comment">;
+Calculate the interpolated Y values corresponding to X</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+<EM CLASS="Comment">;
+[i].</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51870">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=51871">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51872">
+ </A>
+&nbsp;0.00000&nbsp;&nbsp;0.281733&nbsp;&nbsp;0.540638&nbsp;&nbsp;0.755739&nbsp;&nbsp;0.909613&nbsp;&nbsp;0.989796</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51873">
+ </A>
+&nbsp;0.989796&nbsp;&nbsp;0.909613&nbsp;&nbsp;0.755739&nbsp;&nbsp;0.540638&nbsp;&nbsp;0.281733</P>
+<P CLASS="Body">
+<A NAME="pgfId=51874">
+ </A>
+The exact solution vector is sin(X<SUB CLASS="Subscript">
+2</SUB>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=51875">
+ </A>
+To interpolate a line in the XY plane, see SPLINE_P.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51876">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51886">
+ </A>
+<A HREF="idl1ac.htm#34901" CLASS="XRef">
+SPL_INIT</A>
+, <A HREF="idl1ae.htm#46341" CLASS="XRef">
+SPLINE</A>
+, <A HREF="idl1af.htm#27408" CLASS="XRef">
+SPLINE_P</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

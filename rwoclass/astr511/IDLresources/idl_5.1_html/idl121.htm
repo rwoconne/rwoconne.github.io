@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MULTI</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl122.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl120.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889173">
+ </A>
+<A NAME="25922">
+ </A>
+MULTI</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889178">
+ </A>
+The <A NAME="marker=889176">
+ </A>
+MULTI procedure expands the current <A NAME="marker=889177">
+ </A>
+color table to &quot;wrap around&quot; some number of times.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889179">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+multi.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889180">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889181">
+ </A>
+MULTI, <I CLASS="Italics">
+N</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889182">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889183">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889184">
+ </A>
+The number of times the color table will wrap. This parameter does not have to be an integer.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889185">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889186">
+ </A>
+Display an image, load color table 1, and make that color table &quot;wrap around&quot; 3 times. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889187">
+ </A>
+TVSCL, DIST(256) 	<EM CLASS="Comment">;
+Display a simple image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889188">
+ </A>
+LOADCT, 1 	<EM CLASS="Comment">;
+Load color table 1.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889189">
+ </A>
+MULTI, 3	<EM CLASS="Comment">;
+See how the new color table affects the image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889190">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889197">
+ </A>
+<A HREF="idl1bb.htm#89083" CLASS="XRef">
+STRETCH</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

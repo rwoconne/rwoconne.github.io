@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VORONOI</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758676">
+ </A>
+<A NAME="19060">
+ </A>
+VORONOI</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758678">
+ </A>
+The <A NAME="marker=758677">
+ </A>
+VORONOI procedure computes the Voronoi polygon of a point within an irregular grid of points, given the Delaunay triangulation. The Voronoi polygon of a point contains the region closer to that point than to any other point.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758679">
+ </A>
+For interior points, the polygon is constructed by connecting the midpoints of the lines connecting the point with its Delaunay neighbors. Polygons are traversed in a counterclockwise direction.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758680">
+ </A>
+For exterior points, the set is described by the midpoints of the connecting lines, plus the circumcenters of the two triangles that connect the point to the two adjacent exterior points.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758681">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+voronoi.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758682">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758683">
+ </A>
+VORONOI, <EM CLASS="Emphasis">
+X, Y, I0, C, Xp, Yp</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758684">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758685">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758686">
+ </A>
+An array containing the X locations of the points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758687">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758688">
+ </A>
+An array containing the Y locations of the points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758689">
+ </A>
+I0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758690">
+ </A>
+An array containing the indices of the points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758691">
+ </A>
+C</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758692">
+ </A>
+A connectivity list from the Delaunay triangulation. This list is produced with the CONNECTIVITY keyword of the TRIANGULATE procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758693">
+ </A>
+Xp, Yp</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758694">
+ </A>
+Named variables that will contain the X and Y vertices of Voronoi polygon.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758695">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758696">
+ </A>
+To draw the Voronoi polygons of each point of an irregular grid:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758697">
+ </A>
+N = 20</P>
+<P CLASS="Code">
+<A NAME="pgfId=933183">
+ </A>
+X = RANDOMU(seed, N)	<EM CLASS="Comment">;
+Create a random grid of N points</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758698">
+ </A>
+Y = RANDOMU(seed, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758699">
+ </A>
+TRIANGULATE, X, Y, tr, CONN=C	<EM CLASS="Comment">;
+Triangulate it</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758700">
+ </A>
+FOR I=0, N-1 DO BEGIN &amp; $</P>
+<P CLASS="Code">
+<A NAME="pgfId=70642">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;VORONOI, X, Y, I, C, Xp, Yp &amp; $	<EM CLASS="Comment">;
+Get the ith polygon</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=70643">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;POLYFILL, Xp, Yp, COLOR = (I MOD 10) + 2 &amp; $<BR>
+<EM CLASS="Comment">;
+Draw it</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=70644">
+ </A>
+ENDFOR</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758704">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758705">
+ </A>
+<A HREF="idl1e0.htm#55512" CLASS="XRef">
+TRIANGULATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

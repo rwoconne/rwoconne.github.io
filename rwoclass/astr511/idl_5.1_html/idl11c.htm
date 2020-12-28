@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MOMENT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl11d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl11b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888917">
+ </A>
+<A NAME="59358">
+ </A>
+MOMENT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888925">
+ </A>
+The <A NAME="marker=888920">
+ </A>
+MOMENT function computes the <A NAME="marker=888921">
+ </A>
+mean, <A NAME="marker=888922">
+ </A>
+variance, <A NAME="marker=888923">
+ </A>
+skewness, and <A NAME="marker=888924">
+ </A>
+kurtosis of a sample <A NAME="marker=888926">
+ </A>
+population contained in an <EM CLASS="Emphasis">
+n</EM>
+-element vector <EM CLASS="Emphasis">
+X</EM>
+. If the vector contains <CODE CLASS="EquationVariables">
+n</CODE>
+ identical elements, MOMENT computes the mean and variance, and returns the IEEE value NaN for the skewness 5and kurtosis, which are not defined. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888948">
+ </A>
+When <EM CLASS="Emphasis">
+x</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ..., <EM CLASS="Emphasis">
+xn</EM>
+<SUB CLASS="Subscript">
+-1</SUB>
+), the various moments are defined as follows:     </P>
+<DIV>
+<CENTER><IMG SRC="idl_70.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_71.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_72.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_73.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_74.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_75.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=888951">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+moment.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888952">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888953">
+ </A>
+Result = MOMENT(<EM CLASS="Emphasis">
+X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888954">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888955">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888956">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888957">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888958">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888959">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888961">
+ </A>
+<A NAME="marker=888960">
+ </A>
+MDEV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888962">
+ </A>
+Set this keyword to a named variable that will contain the mean absolute deviation of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888964">
+ </A>
+<A NAME="marker=888963">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888965">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888970">
+ </A>
+<A NAME="marker=888969">
+ </A>
+SDEV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888971">
+ </A>
+Set this keyword to a named variable that will contain the standard deviation of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888972">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888973">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element sample population.</P>
+<P CLASS="Code">
+<A NAME="pgfId=888974">
+ </A>
+X = [65, 63, 67, 64, 68, 62, 70, 66, 68, 67, 69, 71, 66, 65, 70]</P>
+<P CLASS="Body">
+<A NAME="pgfId=888975">
+ </A>
+Compute the mean, variance, skewness and kurtosis.</P>
+<P CLASS="Code">
+<A NAME="pgfId=888976">
+ </A>
+result = MOMENT(X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=888977">
+ </A>
+PRINT, 'Mean: ', result[0] &amp; PRINT, 'Variance: ', result[1] &amp; $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888978">
+ </A>
+&nbsp;&nbsp;PRINT, 'Skewness: ', result[2] &amp; PRINT, 'Kurtosis: ', result[3]</P>
+<P CLASS="Body">
+<A NAME="pgfId=888979">
+ </A>
+IDL prints: </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888980">
+ </A>
+Mean:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;66.7333</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888981">
+ </A>
+Variance:&nbsp;&nbsp;&nbsp;&nbsp;7.06667</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888982">
+ </A>
+Skewness:&nbsp;&nbsp;&nbsp;-0.0942851</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888983">
+ </A>
+Kurtosis:&nbsp;&nbsp;&nbsp;-1.18258</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888984">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889006">
+ </A>
+<A HREF="routinesK-L.html#36156" CLASS="XRef">
+</A>
+, <A HREF="idlc9.htm#31792" CLASS="XRef">
+HISTOGRAM</A>
+, <A HREF="idl111.htm#18475" CLASS="XRef">
+MAX</A>
+, <A HREF="idl113.htm#18025" CLASS="XRef">
+MEAN</A>
+, <A HREF="idl114.htm#22002" CLASS="XRef">
+MEANABSDEV</A>
+, <A HREF="idl115.htm#23439" CLASS="XRef">
+MEDIAN</A>
+, <A HREF="idl118.htm#39440" CLASS="XRef">
+MIN</A>
+, <A HREF="idl11c.htm#59358" CLASS="XRef">
+MOMENT</A>
+, <A HREF="idl1b5.htm#11350" CLASS="XRef">
+STDDEV</A>
+, <A HREF="idl1a2.htm#38157" CLASS="XRef">
+SKEWNESS</A>
+, <A HREF="idl1f2.htm#16071" CLASS="XRef">
+VARIANCE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

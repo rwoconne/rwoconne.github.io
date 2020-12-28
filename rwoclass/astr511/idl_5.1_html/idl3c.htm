@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COMPUTE_MESH_NORMALS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl3d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl3b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=917905">
+ </A>
+<A NAME="31037">
+ </A>
+COMPUTE_MESH_NORMALS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=917908">
+ </A>
+The <A NAME="marker=917907">
+ </A>
+COMPUTE_MESH_NORMALS function computes normal vectors for a set of polygons described by the input array. The return value is a 3 x <I CLASS="Italic">
+M</I>
+ array containing a unit normal for each vertex in the input array.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917909">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=917910">
+ </A>
+Result = COMPUTE_MESH_NORMALS( <EM CLASS="Emphasis">
+fVerts [, iConn]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917911">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917912">
+ </A>
+fVerts</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917913">
+ </A>
+A 3 x <EM CLASS="Emphasis">
+M</EM>
+ array of vertices.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917914">
+ </A>
+iConn</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917915">
+ </A>
+A connectivity array (see the POLYGONS keyword to IDLgrPolygon::Init).  If no <I CLASS="Italic">
+iConn</I>
+ array is provided, it is assumed that the verticies in <I CLASS="Italic">
+fVerts</I>
+ constitute a single polygon.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917916">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=917917">
+ </A>
+None.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPH_SCAT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ac.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1aa.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=126787">
+ </A>
+<A NAME="50877">
+ </A>
+SPH_SCAT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=126788">
+ </A>
+The <A NAME="marker=126796">
+ </A>
+SPH_SCAT function performs <A NAME="marker=126797">
+ </A>
+spherical gridding. Scattered samples on the surface of a sphere are interpolated to a regular grid. This routine is a convenient interface to the spherical gridding and interpolation provided by TRIANGULATE and TRIGRID. The returned value of the function is a regularly-interpolated grid.</P>
+<P CLASS="Body">
+<A NAME="pgfId=126800">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+sph_scat.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=126801">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=126802">
+ </A>
+Result = SPH_SCAT(<I CLASS="Italic">
+Lon, Lat, F</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=126803">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126798">
+ </A>
+Lon</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126810">
+ </A>
+A vector of sample longitudes, in degrees. Note that <I CLASS="Italic">
+Lon, Lat,</I>
+ and <I CLASS="Italic">
+F</I>
+ must all have the same number of points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126811">
+ </A>
+Lat</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126812">
+ </A>
+A vector of sample latitudes, in degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126813">
+ </A>
+F</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126814">
+ </A>
+A vector of data values which are functions of Lon and Lat. <I CLASS="Italic">
+F</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ represents a value at (<I CLASS="Italic">
+Lon</I>
+<SUB CLASS="Subscript">
+i</SUB>
+<I CLASS="Italic">
+, Lat</I>
+<SUB CLASS="Subscript">
+i</SUB>
+).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=126850">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126851">
+ </A>
+<A NAME="marker=126863">
+ </A>
+BOUNDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126864">
+ </A>
+Set this keyword to a four-element vector containing the grid limits in longitude and latitude of the output grid. The four elements are: [<I CLASS="Italic">
+Lon</I>
+<SUB CLASS="Subscript">
+min</SUB>
+<I CLASS="Italic">
+, Lat</I>
+<SUB CLASS="Subscript">
+min</SUB>
+<I CLASS="Italic">
+, Lon</I>
+<SUB CLASS="Subscript">
+max</SUB>
+<I CLASS="Italic">
+, Lat</I>
+<SUB CLASS="Subscript">
+max</SUB>
+]. If this keyword is not set, the grid limits are set to the extent of <I CLASS="Italic">
+Lon</I>
+ and <I CLASS="Italic">
+Lat</I>
+. Note that, to cover all longitudes, you must explicitly specify the values for the BOUNDS keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126868">
+ </A>
+<A NAME="marker=126869">
+ </A>
+BOUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126870">
+ </A>
+Set this keyword to a named variable that, on return, contains a four-element vector (similar to BOUNDS) that describes the actual extent of the regular grid.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126871">
+ </A>
+<A NAME="marker=126872">
+ </A>
+GOUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126873">
+ </A>
+Set this keyword to a named variable that, on return, contains a two-element vector (similar to GS) that describes the actual grid spacing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126862">
+ </A>
+<A NAME="marker=126861">
+ </A>
+GS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126857">
+ </A>
+Set this keyword to a two-element vector that specifies the spacing between grid points in longitude (the first element) and latitude (the second element).</P>
+<P CLASS="Body">
+<A NAME="pgfId=126859">
+ </A>
+If this keyword is not set, the default value is based on the extents of <I CLASS="Italic">
+Lon</I>
+ and <I CLASS="Italic">
+Lat</I>
+. The default longitude spacing is (<I CLASS="Italic">
+Lon</I>
+<SUB CLASS="Subscript">
+max</SUB>
+ - <I CLASS="Italic">
+Lon</I>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(NX-1). The default latitude spacing is (<I CLASS="Italic">
+Lat</I>
+<SUB CLASS="Subscript">
+max</SUB>
+ - <I CLASS="Italic">
+Lat</I>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(NY-1). If NX and NY are not set, the default grid size of 26 by 26 is used for NX and NY.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126858">
+ </A>
+<A NAME="marker=126877">
+ </A>
+NLON</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126874">
+ </A>
+The output grid size in the longitude direction. The default value is 26. Note that NLON need not be specified if the size can be inferred from GS and BOUNDS.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126875">
+ </A>
+<A NAME="marker=126878">
+ </A>
+NLAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126898">
+ </A>
+The output grid size in the latitude direction. The default value is 26. Note that NLAT need not be specified if the size can be inferred from GS and BOUNDS.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=126899">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=828861">
+ </A>
+lon = RANDOMU(seed, 50) * 360. -180.	<EM CLASS="Comment">;
+Create some random longitude points.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=828862">
+ </A>
+lat = RANDOMU(seed, 50) * 180. -90.	<EM CLASS="Comment">;
+Create some random latitude points.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=828865">
+ </A>
+z = SIN(lat*!DTOR)	<EM CLASS="Comment">;
+Make a function to fit.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=126892">
+ </A>
+c = COS(lat*!DTOR)</P>
+<P CLASS="Code">
+<A NAME="pgfId=126894">
+ </A>
+x = COS(lon*!DTOR) * c</P>
+<P CLASS="Code">
+<A NAME="pgfId=126896">
+ </A>
+y = SIN(lon*!DTOR) * c</P>
+<P CLASS="Code">
+<A NAME="pgfId=126909">
+ </A>
+f = SIN(x+y) * SIN(x*z)	<EM CLASS="Comment">;
+The finished dependent variable.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=126910">
+ </A>
+r = SPH_SCAT(lon, lat, f, BOUNDS=[0, -90, 350, 85], GS=[10,5])<BR>
+<EM CLASS="Comment">;
+Interpolate the data and return the result in variable </EM>
+r<EM CLASS="Comment">;
+.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=126917">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=126918">
+ </A>
+<A HREF="idl1e0.htm#55512" CLASS="XRef">
+TRIANGULATE</A>
+, <A HREF="idl1e1.htm#16540" CLASS="XRef">
+TRIGRID</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

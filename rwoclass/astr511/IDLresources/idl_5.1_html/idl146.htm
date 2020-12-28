@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLYWARP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl147.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl145.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758408">
+ </A>
+<A NAME="37175">
+ </A>
+POLYWARP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758410">
+ </A>
+The <A NAME="marker=758409">
+ </A>
+POLYWARP procedure performs polynomial spatial warping.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758411">
+ </A>
+Using least squares estimation, POLYWARP determines the coefficients <EM CLASS="Emphasis">
+Kx</EM>
+(<EM CLASS="Emphasis">
+i,j</EM>
+) and <EM CLASS="Emphasis">
+Ky</EM>
+(<EM CLASS="Emphasis">
+i,j</EM>
+) of the polynomial functions:</P>
+<DIV>
+<CENTER><IMG SRC="idl_77.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835090">
+ </A>
+<EM CLASS="Emphasis">
+Kx</EM>
+ and <EM CLASS="Emphasis">
+Ky</EM>
+ can be used as inputs P and Q to the built-in function POLY_2D. This coordinate transformation may be then used to map from <EM CLASS="Emphasis">
+Xo, Yo</EM>
+ coordinates into <EM CLASS="Emphasis">
+Xi, Yi</EM>
+ coordinates.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758418">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+polywarp.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758419">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758420">
+ </A>
+POLYWARP, <EM CLASS="Emphasis">
+Xi, Yi, Xo, Yo, Degree, Kx, Ky</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758421">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758422">
+ </A>
+Xi, Yi</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758423">
+ </A>
+Vectors of X and Y coordinates to be fit as a function of Xo and Yo.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758424">
+ </A>
+Xo, Yo</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758425">
+ </A>
+Vectors of X and Y independent coordinates. These vectors must have the same number of elements as <EM CLASS="Emphasis">
+Xi</EM>
+ and <EM CLASS="Emphasis">
+Yi</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758426">
+ </A>
+Degree</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758427">
+ </A>
+The degree of the fit. The number of coordinate pairs must be greater than or equal to (<EM CLASS="Emphasis">
+Degree</EM>
++1)<SUP CLASS="Superscript">
+2</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758428">
+ </A>
+Kx</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758429">
+ </A>
+A named variable that will contain the array of coefficients for <EM CLASS="Emphasis">
+Xi</EM>
+ as a function of (<EM CLASS="Emphasis">
+Xo, Y</EM>
+o). This parameter is returned as a (<EM CLASS="Emphasis">
+Degree</EM>
++1) by (<EM CLASS="Emphasis">
+Degree</EM>
++1) element array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758430">
+ </A>
+Ky</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758431">
+ </A>
+A named variable that will contain the array of coefficients for <EM CLASS="Emphasis">
+Yi</EM>
+. This parameter is returned as a (<EM CLASS="Emphasis">
+Degree</EM>
++1) by (<EM CLASS="Emphasis">
+Degree</EM>
++1) element array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758432">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758433">
+ </A>
+The following example shows how to display an image and warp it using the POLYWARP and POLY_2D routines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758434">
+ </A>
+Create and display the original image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758435">
+ </A>
+A = BYTSCL(SIN(DIST(250)))</P>
+<P CLASS="Code">
+<A NAME="pgfId=758436">
+ </A>
+TVSCL, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=758437">
+ </A>
+Now set up the Xi's and Yi's. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758438">
+ </A>
+XI = [24, 35, 102, 92]</P>
+<P CLASS="Code">
+<A NAME="pgfId=758439">
+ </A>
+YI = [81, 24, 25, 92]</P>
+<P CLASS="Body">
+<A NAME="pgfId=758440">
+ </A>
+Enter the Xo's and Yo's:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758441">
+ </A>
+XO = [61, 62, 143, 133]</P>
+<P CLASS="Code">
+<A NAME="pgfId=758442">
+ </A>
+YO = [89, 34, 38, 105]</P>
+<P CLASS="Body">
+<A NAME="pgfId=758443">
+ </A>
+Run POLYWARP to obtain a Kx and Ky:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758444">
+ </A>
+POLYWARP, XI, YI, XO, YO, 1, KX, KY</P>
+<P CLASS="Body">
+<A NAME="pgfId=758445">
+ </A>
+Create a warped image based on Kx and Ky with POLY_2D:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758446">
+ </A>
+B = POLY_2D(A, KX, KY)</P>
+<P CLASS="Body">
+<A NAME="pgfId=758447">
+ </A>
+Display the new image:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758448">
+ </A>
+TV, B</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758449">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758450">
+ </A>
+<A HREF="idl13f.htm#17887" CLASS="XRef">
+POLY_2D</A>
+, <A HREF="idl1fb.htm#49133" CLASS="XRef">
+WARP_TRI</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFR8_LASTREF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl285.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl283.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997688">
+ </A>
+<A NAME="70933">
+ </A>
+HDF_DFR8_LASTREF</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997691">
+ </A>
+The <A NAME="marker=997690">
+ </A>
+HDF_DFR8_LASTREF function returns the reference number of the most recently read or written 8-bit <A NAME="marker=997692">
+ </A>
+image in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997693">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997694">
+ </A>
+Result = HDF_DFR8_LASTREF()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997695">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997696">
+ </A>
+h = HDF_OPEN('myhdf.hdf')	<EM CLASS="Comment">;
+Open an hdf file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997697">
+ </A>
+PRINT, HDF_DFR8_LASTREF()	<EM CLASS="Comment">;
+IDL prints &quot;0&quot;, meaning that the call was successful, but no reference number was available.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997698">
+ </A>
+a = BINDGEN(100,100)	<EM CLASS="Comment">;
+Create a 2D array representing an 8-bit image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997699">
+ </A>
+HDF_DFR8_ADDIMAGE, 'myhdf.hdf', a	<EM CLASS="Comment">;
+Write the image to the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997700">
+ </A>
+PRINT, HDF_DFR8_LASTREF()	<EM CLASS="Comment">;
+IDL prints the reference number for the last 8-bit image operation (for example, &quot;2&quot;). Note the reference number is not simply a 1-based `image number'--it could easily be &quot;2&quot; or &quot;3&quot; for the first operation on the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997701">
+ </A>
+HDF_DFR8_ADDIMAGE, 'myhdf.hdf', a	<EM CLASS="Comment">;
+Add another image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997702">
+ </A>
+PRINT, HDF_DFR8_NIMAGES('myhdf.hdf')	<EM CLASS="Comment">;
+IDL prints &quot;2&quot;, because we've put two 8-bit images in the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997703">
+ </A>
+HDF_CLOSE, h	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997704">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997714">
+ </A>
+<A HREF="idl281.htm#84363" CLASS="XRef">
+HDF_DFR8_ADDIMAGE</A>
+, <A HREF="idl282.htm#16489" CLASS="XRef">
+HDF_DFR8_GETIMAGE</A>
+, <A HREF="idl283.htm#93354" CLASS="XRef">
+HDF_DFR8_GETINFO</A>
+, <A HREF="idl284.htm#70933" CLASS="XRef">
+HDF_DFR8_LASTREF</A>
+, <A HREF="idl285.htm#97758" CLASS="XRef">
+HDF_DFR8_NIMAGES</A>
+, <A HREF="idl287.htm#63170" CLASS="XRef">
+HDF_DFR8_READREF</A>
+, <A HREF="idl288.htm#50184" CLASS="XRef">
+HDF_DFR8_RESTART</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

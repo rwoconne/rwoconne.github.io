@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PROFILES</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl14f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl14d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=900144">
+ </A>
+<A NAME="87460">
+ </A>
+PROFILES</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757708">
+ </A>
+The <A NAME="marker=757706">
+ </A>
+PROFILES procedure interactively draws row or column profiles of an <A NAME="marker=757707">
+ </A>
+image in a separate window. A new window is created and the mouse location in the original window is used to plot profiles in the new window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757709">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+profiles.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757710">
+ </A>
+Using PROFILES</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757711">
+ </A>
+Move the mouse within the original image interactively creates profile plots in the newly-created profile window. Pressing the left mouse button toggles between row and column profiles. The right mouse button exits</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757712">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757713">
+ </A>
+PROFILES, <EM CLASS="Emphasis">
+Image</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757714">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757715">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757716">
+ </A>
+The variable that represents the image displayed in current window. This data need not be scaled into bytes. The profile graphs are made from this array, even if it is not currently displayed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757717">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757719">
+ </A>
+<A NAME="marker=757718">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757720">
+ </A>
+Set this keyword to 1 for images written top down or 0 for bottom up. Default is the current value of !ORDER.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757722">
+ </A>
+<A NAME="marker=757721">
+ </A>
+SX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757723">
+ </A>
+Starting X position of the image in the window. If this keyword is omitted, 0 is assumed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757725">
+ </A>
+<A NAME="marker=757724">
+ </A>
+SY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757726">
+ </A>
+Starting Y position of the image in the window. If this keyword is omitted, 0 is assumed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757728">
+ </A>
+<A NAME="marker=757727">
+ </A>
+WSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757729">
+ </A>
+The size of the PROFILES window as a fraction or multiple of 640 by 512.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757730">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757731">
+ </A>
+Create and display an image and use the PROFILES routine on it. </P>
+<P CLASS="Code">
+<A NAME="pgfId=757733">
+ </A>
+A = BYTSCL(DIST(256))	<EM CLASS="Comment">;
+Create an image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757734">
+ </A>
+TV, A	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757736">
+ </A>
+PROFILES, A, WSIZE = .5	<EM CLASS="Comment">;
+Run the PROFILES routine.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=757737">
+ </A>
+A 320 x 256 pixel PROFILES window should appear. Move the cursor over the original image to see the profile at the cursor position. Press the left mouse button to toggle between row and column profiles. Press the right mouse button (with the cursor over the original image) to exit the routine.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757738">
+ </A>
+See Also</H3>
+<P CLASS="Code">
+<A NAME="pgfId=757664">
+ </A>
+<A HREF="idl14c.htm#97667" CLASS="XRef">
+PROFILE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

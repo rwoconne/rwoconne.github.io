@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RK4</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl183.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl181.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51742">
+ </A>
+<A NAME="86011">
+ </A>
+RK4</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51747">
+ </A>
+The <A NAME="marker=51744">
+ </A>
+RK4<A NAME="marker=51745">
+ </A>
+ function uses the fourth-order <A NAME="marker=51746">
+ </A>
+Runge-Kutta method to advance a solution to a system of <A NAME="marker=51748">
+ </A>
+ordinary differential equations one time-step <EM CLASS="Emphasis">
+H</EM>
+, given values for the variables <I CLASS="Italic">
+Y</I>
+ and their derivatives <I CLASS="Italic">
+Dydx</I>
+ known at <I CLASS="Italic">
+X</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51749">
+ </A>
+RK4 is based on the routine <CODE CLASS="Code">
+rk4</CODE>
+ described in section 16.1 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51750">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51751">
+ </A>
+Result = RK4(<I CLASS="Italic">
+Y, Dydx, X, H, Derivs</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51752">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51753">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51754">
+ </A>
+A vector of values for <I CLASS="Italic">
+Y</I>
+ at <I CLASS="Italic">
+X</I>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51755">
+ </A>
+Dydx</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51756">
+ </A>
+A vector of derivatives for <I CLASS="Italic">
+Y</I>
+ at <I CLASS="Italic">
+X</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51757">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51758">
+ </A>
+A scalar value for the initial condition.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51759">
+ </A>
+H</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51760">
+ </A>
+A scalar value giving interval length or step size.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51761">
+ </A>
+Derivs</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51762">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that calculates the values of the derivatives <I CLASS="Italic">
+Dydx</I>
+ at <I CLASS="Italic">
+X</I>
+. This function must accept two arguments: A scalar floating value <I CLASS="Italic">
+X</I>
+, and one <I CLASS="Italic">
+n</I>
+-element vector <I CLASS="Italic">
+Y</I>
+. It must return an <EM CLASS="Emphasis">
+n</EM>
+-element vector result.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51763">
+ </A>
+For example, suppose the values of the derivatives are defined by the following relations:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=51764">
+ </A>
+<EM CLASS="Emphasis">
+dy</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ / <EM CLASS="Emphasis">
+dx</EM>
+ = -0.5<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SUB>
+<EM CLASS="Emphasis">
+dy</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ / <EM CLASS="Emphasis">
+dx</EM>
+ = 4.0 - 0.3<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ - 0.1<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51765">
+ </A>
+We can write a function DIFFERENTIAL to express these relationships in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51766">
+ </A>
+FUNCTION differential, X, Y</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51767">
+ </A>
+<EM CLASS="Kern-Code--2%">
+&nbsp;&nbsp;&nbsp;&nbsp;RETURN, [-0.5 * Y[0], 4.0 - 0.3 * Y[1] - 0.1 * Y[0]]</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51768">
+ </A>
+END</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51769">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51771">
+ </A>
+<A NAME="marker=51770">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51772">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51773">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51774">
+ </A>
+To integrate the example system of differential equations for one time step, H:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51775">
+ </A>
+H = 0.5	<EM CLASS="Comment">;
+Define the step size.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51776">
+ </A>
+X = 0.0	<EM CLASS="Comment">;
+Define an initial X value.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51777">
+ </A>
+Y = [4.0, 6.0]	<EM CLASS="Comment">;
+Define initial Y values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51778">
+ </A>
+dydx = DIFFERENTIAL(X,Y)	<EM CLASS="Comment">;
+Calculate the initial derivative values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51779">
+ </A>
+result = RK4(Y, dydx, X, H, 'differential')<BR>
+<EM CLASS="Comment">;
+Integrate over the interval (0, 0.5).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51781">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51782">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51783">
+ </A>
+&nbsp;3.11523&nbsp;&nbsp;6.85767</P>
+<P CLASS="Body">
+<A NAME="pgfId=51784">
+ </A>
+This is the exact solution vector to five-decimal precision.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51785">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51792">
+ </A>
+<A HREF="idl1c.htm#62043" CLASS="XRef">
+BROYDEN</A>
+, <A HREF="idl125.htm#50918" CLASS="XRef">
+NEWTON</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

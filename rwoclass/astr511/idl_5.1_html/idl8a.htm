@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EIGENVEC</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl8b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl89.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=47274">
+ </A>
+<A NAME="90610">
+ </A>
+EIGENVEC</H2>
+<P CLASS="Body">
+<A NAME="pgfId=47280">
+ </A>
+The <A NAME="marker=47610">
+ </A>
+EIGENVEC function <A NAME="marker=47612">
+ </A>
+computes the <A NAME="marker=47621">
+ </A>
+eigenvectors of an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ real, non-symmetric array using <A NAME="marker=47617">
+ </A>
+Inverse Subspace Iteration. The result is a complex array with a column dimension equal to <EM CLASS="Emphasis">
+n</EM>
+ and a row dimension equal to the number of <A NAME="marker=47622">
+ </A>
+eigenvalues. Use ELMHES and HQR to find the eigenvalues of an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ real, nonsymmetric array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=47337">
+ </A>
+This routine is <A NAME="marker=52610">
+ </A>
+written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+eigenvec.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=47317">
+ </A>
+Calling Sequence </H3>
+<P CLASS="Body">
+<A NAME="pgfId=47318">
+ </A>
+Result = EIGENVEC(<EM CLASS="Emphasis">
+A, Eval</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=47319">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47312">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47322">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ nonsymmetric, single- or double-precision floating-point array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47283">
+ </A>
+EVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47323">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element complex vector of eigenvalues.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=47284">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47356">
+ </A>
+<A NAME="marker=47627">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47357">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47358">
+ </A>
+<A NAME="marker=47628">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47359">
+ </A>
+The maximum number of iterations allowed in the computation of each eigenvector. The default value is 4.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47286">
+ </A>
+<A NAME="marker=47629">
+ </A>
+RESIDUAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47326">
+ </A>
+Use this keyword to specify a named variable that will contain the residuals for each eigenvalue/eigenvector (<EM CLASS="MathSymbol">
+l</EM>
+/<EM CLASS="Emphasis">
+x</EM>
+) pair. The residual is based on the definition A<EM CLASS="Emphasis">
+x</EM>
+ - <EM CLASS="MathSymbol">
+l</EM>
+<EM CLASS="Emphasis">
+x</EM>
+ = 0 and is an array of the same size and type as that returned by the function. The rows of this array correspond to the residuals for each eigenvalue/eigenvector pair. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=47371">
+ </A>
+This keyword must be initialized to a non-zero value before calling EIGENVEC if the residuals are desired.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=47287">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=47314">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ real, nonsymmetric array.</P>
+<P CLASS="Code">
+<A NAME="pgfId=47288">
+ </A>
+A = [[1.0, -2.0, -4.0, &nbsp;1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=47289">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.0, -2.0, &nbsp;3.0, &nbsp;4.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=47290">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.0, -6.0, -1.0, &nbsp;4.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=47291">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.0, -3.0, &nbsp;1.0, -2.0]]</P>
+<P CLASS="Body">
+<A NAME="pgfId=47292">
+ </A>
+Compute the eigenvalues of A using double-precision complex arithmetic and print the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=47293">
+ </A>
+eval = HQR(ELMHES(A), /DOUBLE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=47381">
+ </A>
+PRINT, eval</P>
+<P CLASS="Body">
+<A NAME="pgfId=47382">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47383">
+ </A>
+(&nbsp;&nbsp;0.26366255,&nbsp;-6.1925899)(&nbsp;&nbsp;0.26366255,&nbsp;6.1925899)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47385">
+ </A>
+(&nbsp;&nbsp;-4.9384492,&nbsp;&nbsp;0.0000000)(&nbsp;&nbsp;0.41112406,&nbsp;0.0000000)</P>
+<P CLASS="Body">
+<A NAME="pgfId=47297">
+ </A>
+Compute the eigenvectors of A. The eigenvectors are returned in the rows of the resulting array.</P>
+<P CLASS="Code">
+<A NAME="pgfId=47298">
+ </A>
+residual = 1	<EM CLASS="Comment">;
+Note that the RESIDUAL array must be initialized to a nonzero value.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=47299">
+ </A>
+evec = EIGENVEC(A, eval, RESIDUAL = residual)</P>
+<P CLASS="Body">
+<A NAME="pgfId=47300">
+ </A>
+Print the eigenvectors.</P>
+<P CLASS="Code">
+<A NAME="pgfId=47430">
+ </A>
+PRINT, evec[*,0], evec[*,1], evec[*,2], evec[*,3]</P>
+<P CLASS="Body">
+<A NAME="pgfId=47431">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47432">
+ </A>
+(&nbsp;0.0076733129,&nbsp;&nbsp;-0.42912489)(&nbsp;&nbsp;0.40651652,&nbsp;&nbsp;0.32973069)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47436">
+ </A>
+(&nbsp;&nbsp;&nbsp;0.54537624,&nbsp;&nbsp;-0.28856257)(&nbsp;&nbsp;0.33149359,&nbsp;-0.22632585)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47437">
+ </A>
+(&nbsp;&nbsp;-0.42145884,&nbsp;-0.081113711)(&nbsp;&nbsp;0.23867007,&nbsp;&nbsp;0.46584824)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47438">
+ </A>
+(&nbsp;&nbsp;-0.39497143,&nbsp;&nbsp;&nbsp;0.47402647)(&nbsp;-0.28990600,&nbsp;&nbsp;0.27760747)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47439">
+ </A>
+(&nbsp;&nbsp;-0.54965842,&nbsp;&nbsp;&nbsp;&nbsp;0.0000000)(&nbsp;-0.18401243,&nbsp;&nbsp;&nbsp;0.0000000)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47440">
+ </A>
+(&nbsp;&nbsp;-0.58124548,&nbsp;&nbsp;&nbsp;&nbsp;0.0000000)(&nbsp;&nbsp;0.57111192,&nbsp;&nbsp;&nbsp;0.0000000)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47441">
+ </A>
+(&nbsp;&nbsp;&nbsp;0.79297048,&nbsp;&nbsp;&nbsp;&nbsp;0.0000000)(&nbsp;&nbsp;0.50289130,&nbsp;&nbsp;&nbsp;0.0000000)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=47442">
+ </A>
+(&nbsp;-0.049618509,&nbsp;&nbsp;&nbsp;&nbsp;0.0000000)(&nbsp;&nbsp;0.34034720,&nbsp;&nbsp;&nbsp;0.0000000)</P>
+<P CLASS="Body">
+<A NAME="pgfId=47302">
+ </A>
+You can check the accuracy of each eigenvalue/eigenvector (<EM CLASS="MathSymbol">
+l</EM>
+/<EM CLASS="Emphasis">
+x</EM>
+) pair by printing the residual array. All residual values should be floating-point zeros.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=47304">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=47305">
+ </A>
+<A HREF="idl8b.htm#12703" CLASS="XRef">
+ELMHES</A>
+, <A HREF="idlcb.htm#43596" CLASS="XRef">
+HQR</A>
+, <A HREF="idl1e2.htm#52845" CLASS="XRef">
+TRIQL</A>
+, <A HREF="idl1e3.htm#25832" CLASS="XRef">
+TRIRED</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

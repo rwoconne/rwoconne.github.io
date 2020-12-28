@@ -1,0 +1,597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_BGROUP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl59.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl57.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755132">
+ </A>
+<A NAME="73565">
+ </A>
+CW_BGROUP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755136">
+ </A>
+The <A NAME="marker=755133">
+ </A>
+CW_BGROUP function creates a <A NAME="marker=66682">
+ </A>
+widget base of <A NAME="marker=755135">
+ </A>
+buttons. It handles the details of creating the proper base (standard, exclusive, or non-exclusive) and filling in the desired buttons. Events for the individual buttons are handled transparently, and a CW_BGROUP event returned. This event can return any one of the following:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755137">
+ </A>
+the index of the button within the base,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755138">
+ </A>
+the widget ID of the button,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755139">
+ </A>
+the name of the button,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755140">
+ </A>
+an arbitrary value taken from an array of user values.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=755141">
+ </A>
+Only buttons with textual names are handled by this widget. Bitmaps are not understood.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796086">
+ </A>
+The returned value of this function is the widget ID of the newly-created button group widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755142">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_bgroup.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=147542">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755167">
+ </A>
+Result = CW_BGROUP(<EM CLASS="Emphasis">
+Parent, Names</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755168">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755169">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755170">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755171">
+ </A>
+Names</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755172">
+ </A>
+A string array, one string per button, giving the name of each button.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755173">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755175">
+ </A>
+<A NAME="marker=755174">
+ </A>
+BUTTON_UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755176">
+ </A>
+An array of user values to be associated with each button and returned in the event structure. If this keyword is set, the user values are always returned, even if the any of the RETURN_ID, RETURN_INDEX, or RETURN_NAME keywords are set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755178">
+ </A>
+<A NAME="marker=755177">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755179">
+ </A>
+Buttons will be arranged in the number of columns specified by this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755181">
+ </A>
+<A NAME="marker=755180">
+ </A>
+EVENT_FUNCT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755182">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget. This function is called with the return value structure whenever a button is pressed, and follows the conventions for user-written event functions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755184">
+ </A>
+<A NAME="marker=755183">
+ </A>
+EXCLUSIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755185">
+ </A>
+Set this keyword to cause buttons to be placed in an exclusive base, in which only one button can be selected at a time.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755187">
+ </A>
+<A NAME="marker=755186">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755188">
+ </A>
+The name of the font to be used for the button titles. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755190">
+ </A>
+<A NAME="marker=755189">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755191">
+ </A>
+Specifies the width of the frame to be drawn around the base.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755193">
+ </A>
+<A NAME="marker=755192">
+ </A>
+IDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755194">
+ </A>
+A named variable in which the button IDs will be stored, as a longword vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755196">
+ </A>
+<A NAME="marker=755195">
+ </A>
+LABEL_LEFT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755197">
+ </A>
+Creates a text label to the left of the buttons.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755199">
+ </A>
+<A NAME="marker=755198">
+ </A>
+LABEL_TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755200">
+ </A>
+Creates a text label above the buttons.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755202">
+ </A>
+<A NAME="marker=755201">
+ </A>
+MAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755203">
+ </A>
+Set this keyword to cause the base to be mapped when the widget is realized (the default).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755205">
+ </A>
+<A NAME="marker=755204">
+ </A>
+NONEXCLUSIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755206">
+ </A>
+Set this keyword to cause buttons to be placed in an non-exclusive base, in which any number of buttons can be selected at once.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755208">
+ </A>
+<A NAME="marker=755207">
+ </A>
+NO_RELEASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755209">
+ </A>
+If set, button release events will not be returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755211">
+ </A>
+<A NAME="marker=755210">
+ </A>
+RETURN_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755212">
+ </A>
+Set this keyword to return the widget ID of the button in the VALUE field of returned events. This keyword is ignored if the BUTTON_UVALUE keyword is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755214">
+ </A>
+<A NAME="marker=755213">
+ </A>
+RETURN_INDEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755215">
+ </A>
+Set this keyword to return the zero-based index of the button within the base in the VALUE field of returned events. This keyword is ignored if the BUTTON_UVALUE keyword is set. THIS IS THE DEFAULT.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755217">
+ </A>
+<A NAME="marker=755216">
+ </A>
+RETURN_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755218">
+ </A>
+Set this keyword to return the name of the button within the base in the VALUE field of returned events. This keyword is ignored if the BUTTON_UVALUE keyword is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755220">
+ </A>
+<A NAME="marker=755219">
+ </A>
+ROW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755221">
+ </A>
+Buttons will be arranged in the number of rows specified by this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755223">
+ </A>
+<A NAME="marker=755222">
+ </A>
+SCROLL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755224">
+ </A>
+If set, the base will include scroll bars to allow viewing a large base through a smaller viewport.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755226">
+ </A>
+<A NAME="marker=755225">
+ </A>
+SET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755227">
+ </A>
+The initial value of the buttons. This is equivalent to the later statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755228">
+ </A>
+WIDGET_CONTROL, widget, SET_VALUE = value</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755230">
+ </A>
+<A NAME="marker=755229">
+ </A>
+SPACE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755231">
+ </A>
+The space, in pixels, to be left around the edges of a row or column major base. This keyword is ignored if EXCLUSIVE or NONEXCLUSIVE are specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755233">
+ </A>
+<A NAME="marker=755232">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755234">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755236">
+ </A>
+<A NAME="marker=755235">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755237">
+ </A>
+The X offset of the widget relative to its parent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755239">
+ </A>
+<A NAME="marker=755238">
+ </A>
+XPAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755240">
+ </A>
+The horizontal space, in pixels, between children of a row or column major base. This keyword is ignored if EXCLUSIVE or NONEXCLUSIVE are specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755242">
+ </A>
+<A NAME="marker=755241">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755243">
+ </A>
+The width of the base. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755245">
+ </A>
+<A NAME="marker=755244">
+ </A>
+X_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755246">
+ </A>
+The width of the viewport if SCROLL is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755248">
+ </A>
+<A NAME="marker=755247">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755249">
+ </A>
+The Y offset of the widget relative to its parent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755251">
+ </A>
+<A NAME="marker=755250">
+ </A>
+YPAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755252">
+ </A>
+The vertical space, in pixels, between children of a row or column major base. This keyword is ignored if EXCLUSIVE or NONEXCLUSIVE are specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755254">
+ </A>
+<A NAME="marker=755253">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755255">
+ </A>
+The height of the base. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755257">
+ </A>
+<A NAME="marker=755256">
+ </A>
+Y_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755258">
+ </A>
+The height of the viewport if SCROLL is specified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837205">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837206">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837258">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the value of the button group. The values for different types of CW_BGROUP widgets is shown in the table below:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=837278">
+ </A>
+Button Group Values.</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=837262">
+ </A>
+Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=837264">
+ </A>
+Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=837266">
+ </A>
+normal</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=837268">
+ </A>
+None</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=837270">
+ </A>
+exclusive</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=837272">
+ </A>
+Index of currently set button</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=837274">
+ </A>
+non-exclusive</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=837276">
+ </A>
+Vector indicating the position of each button (1-set, 0-unset)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=837217">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755259">
+ </A>
+Widget Events Returned by the CW_BGROUP Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755260">
+ </A>
+Button Group widgets generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755261">
+ </A>
+event = {ID:0L, TOP:0L, HANDLER:0L, SELECT:0, VALUE:0 }</P>
+<P CLASS="Body">
+<A NAME="pgfId=755262">
+ </A>
+The SELECT field is passed through from the button event. VALUE is either the INDEX, ID, NAME, or BUTTON_UVALUE of the button, depending on how the widget was created.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755264">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823403">
+ </A>
+<A HREF="idl61.htm#62114" CLASS="XRef">
+CW_PDMENU</A>
+, <A HREF="idl201.htm#63640" CLASS="XRef">
+WIDGET_BUTTON</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

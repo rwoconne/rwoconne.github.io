@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DERIV</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl74.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl72.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757886">
+ </A>
+<A NAME="75359">
+ </A>
+DERIV</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757888">
+ </A>
+The <A NAME="marker=757887">
+ </A>
+DERIV function performs numerical differentiation using 3-point, Lagrangian interpolation and returns the derivative.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757889">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757890">
+ </A>
+Result = DERIV(<EM CLASS="Emphasis">
+[X,] Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757891">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757892">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757893">
+ </A>
+The variable to differentiate with respect to. If omitted, unit spacing for Y (i.e., X<EM CLASS="Emphasis">
+i</EM>
+ = <EM CLASS="Emphasis">
+i</EM>
+) is assumed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757894">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757895">
+ </A>
+The variable to be differentiated.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757896">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=757897">
+ </A>
+X = [ 0.1, 0.3, 0.4, 0.7, 0.9]</P>
+<P CLASS="Code">
+<A NAME="pgfId=757898">
+ </A>
+Y = [ 1.2, 2.3, 3.2, 4.4, 6.6]</P>
+<P CLASS="Code">
+<A NAME="pgfId=757899">
+ </A>
+PRINT, DERIV(Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=757900">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=757901">
+ </A>
+1.20000   1.00000   1.05000   1.70000   2.70000</P>
+<P CLASS="Code">
+<A NAME="pgfId=757902">
+ </A>
+PRINT, DERIV(X,Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=757903">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=757904">
+ </A>
+8.00000   6.66667   5.25000   6.80000   10.800</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757905">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757906">
+ </A>
+<A HREF="idl74.htm#22668" CLASS="XRef">
+DERIVSIG</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

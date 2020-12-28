@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_ATTDELETE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl246.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl244.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=996947">
+ </A>
+<A NAME="95843">
+ </A>
+CDF_ATTDELETE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=996951">
+ </A>
+The <A NAME="marker=996949">
+ </A>
+CDF_ATTDELETE procedure <A NAME="marker=996950">
+ </A>
+deletes an attribute from the specified CDF file. Note that the attribute's entries are also deleted, and that the attributes which numerically follow the deleted attribute within the CDF file are automatically renumbered.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996952">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=996953">
+ </A>
+CDF_ATTDELETE, <EM CLASS="Emphasis">
+Id</EM>
+, <EM CLASS="Emphasis">
+Attribute [, EntryNum]</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996954">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996955">
+ </A>
+ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996956">
+ </A>
+The CDF ID of the file containing the <EM CLASS="Emphasis">
+Attribute</EM>
+ to be deleted, returned from a previoius call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996957">
+ </A>
+Attribute</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996958">
+ </A>
+A string containing the name or zero-based attribute number of the attribute to be deleted.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1002404">
+ </A>
+EntryNum</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1002405">
+ </A>
+The entry number to delete. If <EM CLASS="Emphasis">
+EntryNum</EM>
+ is not specified, the entire attribute is deleted. If the attribute is variable in scope, this is either the name or number of the variable the attribute is to be associated with. If the attribute is global in scope, this is the actual gEntry. It is the user's responsibility to keep track of valid gEntry numbers. Normally gEntry numbers will begin with 0 or 1 and will increase up to MAXGENTRY (as reported in the GET_ATTR_INFO structure returned by <A HREF="idl24d.htm#97922" CLASS="XRef">
+CDF_CONTROL</A>
+), but this is not required.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1002452">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1002456">
+ </A>
+<A NAME="marker=1002455">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1002457">
+ </A>
+If <I CLASS="Italics">
+EntryNum</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+EntryNum</I>
+ is an rVariable ID. Note: the attribute must have a scope of VARIABLE_SCOPE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996959">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=996960">
+ </A>
+cid = CDF_CREATE('DEMOattdelete')</P>
+<P CLASS="Code">
+<A NAME="pgfId=996961">
+ </A>
+attr1_id = CDF_ATTCREATE(cid, 'GLOBAL_ATTR1', /GLOBAL_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=996962">
+ </A>
+attr2_id = CDF_ATTCREATE(cid, 'GLOBAL_ATTR2', /GLOBAL_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=996963">
+ </A>
+attr3_id = CDF_ATTCREATE(cid, 'VAR_ATTR1', /VARIABLE_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=996964">
+ </A>
+attr4_id = CDF_ATTCREATE(cid, 'VAR_ATTR2', /VARIABLE_SCOPE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=996965">
+ </A>
+Check the number of attributes:</P>
+<P CLASS="Code">
+<A NAME="pgfId=996966">
+ </A>
+info = CDF_INQUIRE(cid)</P>
+<P CLASS="Code">
+<A NAME="pgfId=996967">
+ </A>
+HELP, info.natts</P>
+<P CLASS="Body">
+<A NAME="pgfId=996968">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=996969">
+ </A>
+&lt;Expression&gt;    LONG      =            4</P>
+<P CLASS="Body">
+<A NAME="pgfId=996970">
+ </A>
+Delete the first and third attributes:</P>
+<P CLASS="Code">
+<A NAME="pgfId=996971">
+ </A>
+CDF_ATTDELETE, cid, 'GLOBAL_ATTR1'</P>
+<P CLASS="Code">
+<A NAME="pgfId=996972">
+ </A>
+CDF_ATTDELETE, cid, 1	<EM CLASS="Comment">;
+The attribute numbers are zero-based and automatically renumbered</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=996973">
+ </A>
+Select the new first attribute:</P>
+<P CLASS="Code">
+<A NAME="pgfId=996974">
+ </A>
+CDF_ATTINQ, cid, 0, name, scope, MaxEntry, MaxZentry</P>
+<P CLASS="Code">
+<A NAME="pgfId=996975">
+ </A>
+HELP, name, scope</P>
+<P CLASS="Body">
+<A NAME="pgfId=996976">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=996977">
+ </A>
+NAME            STRING    = 'GLOBAL_ATTR2'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=996978">
+ </A>
+SCOPE           STRING    = 'GLOBAL_SCOPE'</P>
+<P CLASS="Code">
+<A NAME="pgfId=996979">
+ </A>
+CDF_DELETE, cid</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996980">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=996996">
+ </A>
+<A HREF="idl244.htm#43582" CLASS="XRef">
+CDF_ATTCREATE</A>
+, <A HREF="idl247.htm#73906" CLASS="XRef">
+CDF_ATTGET</A>
+, <A HREF="idl246.htm#61501" CLASS="XRef">
+CDF_ATTEXISTS</A>
+, <A HREF="idl248.htm#28162" CLASS="XRef">
+CDF_ATTINQ</A>
+, <A HREF="idl24a.htm#34381" CLASS="XRef">
+CDF_ATTPUT</A>
+, <A HREF="idl24b.htm#39211" CLASS="XRef">
+CDF_ATTRENAME</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

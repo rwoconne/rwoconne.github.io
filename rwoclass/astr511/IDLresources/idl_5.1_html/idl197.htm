@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl198.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl196.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=36073">
+ </A>
+<A NAME="31264">
+ </A>
+SFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=754083">
+ </A>
+The <A NAME="marker=754081">
+ </A>
+SFIT function determines a polynomial fit to a <A NAME="marker=754082">
+ </A>
+surface and returns a fitted array. The function fitted is:</P>
+<DIV>
+<CENTER><IMG SRC="idl_89.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835172">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+sfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754089">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=754090">
+ </A>
+Result = SFIT(<EM CLASS="Emphasis">
+Data, Degree</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754091">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754092">
+ </A>
+Data</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754093">
+ </A>
+The two-dimensional array of data to fit. The sizes of the dimensions may be unequal.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754094">
+ </A>
+Degree</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754095">
+ </A>
+The maximum degree of fit (in one dimension).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754096">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754097">
+ </A>
+<A NAME="marker=43274">
+ </A>
+KX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754098">
+ </A>
+Set this keyword to a named variable that will contain the array of coefficients for a polynomial function of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ to fit data. This parameter is returned as a <EM CLASS="Emphasis">
+Degree</EM>
++1 by <EM CLASS="Emphasis">
+Degree</EM>
++1 array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754099">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=754100">
+ </A>
+Create a grid from zero to six radians in the X and Y directions:</P>
+<P CLASS="Code">
+<A NAME="pgfId=754101">
+ </A>
+X = (FINDGEN(61)/10) # REPLICATE(1,61)</P>
+<P CLASS="Code">
+<A NAME="pgfId=754102">
+ </A>
+Y = TRANSPOSE(X)</P>
+<P CLASS="Body">
+<A NAME="pgfId=754103">
+ </A>
+Evaluate a function at each point:</P>
+<P CLASS="Code">
+<A NAME="pgfId=754104">
+ </A>
+F = -SIN(2*X) + COS(Y/2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=754105">
+ </A>
+Compute a sixth-degree polynomial fit to the function data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=754106">
+ </A>
+result = SFIT(F, 6)</P>
+<P CLASS="Body">
+<A NAME="pgfId=754107">
+ </A>
+Display the original function on the left and the fitted function on the right, using </P>
+<DIV>
+<MAP NAME="idl-90">
+</MAP>
+<CENTER><IMG SRC="idl_90.gif" USEMAP="#idl-90" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835182">
+ </A>
+identical axis scaling:</P>
+<P CLASS="Code">
+<A NAME="pgfId=754108">
+ </A>
+WINDOW, XSIZE = 800, YSIZE = 400</P>
+<P CLASS="Code">
+<A NAME="pgfId=754109">
+ </A>
+!P.MULTI = [0, 2, 1]	<EM CLASS="Comment">;
+Set up side-by-side plots.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=754110">
+ </A>
+!P.BACKGROUND = 255	<EM CLASS="Comment">;
+Set background color to white.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=754111">
+ </A>
+!P.COLOR = 0	<EM CLASS="Comment">;
+Set plot color to black.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=754112">
+ </A>
+SURFACE, F, X, Y, ZRANGE = [-3, 3], ZSTYLE = 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=754113">
+ </A>
+SURFACE, result, X, Y</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34885">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34909">
+ </A>
+<A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=34886">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

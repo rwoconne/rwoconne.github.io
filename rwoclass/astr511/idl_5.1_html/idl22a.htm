@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ZOOM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl22b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl229.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787866">
+ </A>
+<A NAME="20984">
+ </A>
+ZOOM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787870">
+ </A>
+The <A NAME="marker=787868">
+ </A>
+ZOOM procedure displays part of an <A NAME="marker=787869">
+ </A>
+image from the current window enlarged in a new (&quot;zoom&quot;) window. The cursor is used to mark the center of the zoom area, and different zoom factors can be specified interactively.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=787871">
+ </A>
+ZOOM only works with color systems.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=787872">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+zoom.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787873">
+ </A>
+Using ZOOM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787874">
+ </A>
+After calling ZOOM, place the mouse cursor over an image in an IDL graphics window. Click the left mouse button to display a magnified version of the image in a new window. The zoomed image is centered around the pixel selected in the original window. Click the middle mouse button to display a menu of zoom factors. Click the right mouse button to exit the procedure.</P>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=932488">
+ </A>
+Using ZOOM with Draw Widgets</H4>
+<P CLASS="Body">
+<A NAME="pgfId=932489">
+ </A>
+Note that the ZOOM procedure is only for use with IDL graphics windows. It should not be used with draw widgets. To obtain a zooming effect in a draw widget, use the CW_ZOOM function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787875">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787876">
+ </A>
+ZOOM</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787877">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787879">
+ </A>
+<A NAME="marker=787878">
+ </A>
+CONTINUOUS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787880">
+ </A>
+Set this keyword to make the zoom window track the mouse without requiring the user to press the left mouse button. This feature only works well on fast computers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787882">
+ </A>
+<A NAME="marker=787881">
+ </A>
+FACT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787883">
+ </A>
+Use this keyword to specify the zoom factor, which must be an integer. The default zoom factor is 4.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787885">
+ </A>
+<A NAME="marker=787884">
+ </A>
+INTERP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787886">
+ </A>
+Set this keyword to use bilinear interpolation. The default is to use pixel replication.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787888">
+ </A>
+<A NAME="marker=787887">
+ </A>
+KEEP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787889">
+ </A>
+Set this keyword to keep the zoom window after exiting the procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787891">
+ </A>
+<A NAME="marker=787890">
+ </A>
+NEW_WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787892">
+ </A>
+Normally, if ZOOM is called with KEEP and then called again, it will use the same window to display the new zoomed image. Set the NEW_WINDOW keyword to force ZOOM to create a new window for this purpose.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787894">
+ </A>
+<A NAME="marker=787893">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787895">
+ </A>
+Use this keyword to specify the X size of the zoom window. The default is 512.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787897">
+ </A>
+<A NAME="marker=787896">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787898">
+ </A>
+Use this keyword to specify the Y size of the zoom window. The default is 512.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787900">
+ </A>
+<A NAME="marker=787899">
+ </A>
+ZOOM_WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787901">
+ </A>
+Set this keyword to a named variable that will contain the index of the zoom window. KEEP must also be set. If KEEP is not set, ZOOM_WINDOW will contain the integer -1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787903">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787904">
+ </A>
+<A HREF="idl64.htm#46430" CLASS="XRef">
+CW_ZOOM</A>
+, <A HREF="idl22b.htm#89698" CLASS="XRef">
+ZOOM_24</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

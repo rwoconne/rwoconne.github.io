@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WSET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl21a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl218.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680685">
+ </A>
+<A NAME="42522">
+ </A>
+WSET</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680686">
+ </A>
+The <A NAME="marker=675072">
+ </A>
+WSET procedure selects the current window. Most IDL graphics routines do not explicitly require the IDL window to be specified. Instead, they use the window known as the current window. The window index number of the current window is contained in the read-only system variable <A NAME="marker=675079">
+ </A>
+!D.WINDOW. WSET only works with devices that have windowing systems.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680687">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680688">
+ </A>
+WSET <I CLASS="Italic">
+[, Window_Index]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680689">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680690">
+ </A>
+Window_Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680691">
+ </A>
+This argument specifies the window index of the window to be made current. If this argument is not specified, a default of 0 is used.</P>
+<P CLASS="Body">
+<A NAME="pgfId=921168">
+ </A>
+If you set <EM CLASS="Emphasis">
+Window_Index</EM>
+ equal to -1, IDL will try to locate an existing window to make current, ignoring any managed draw widgets that may exist. If there is no window to make current, WSET changes the value of the WINDOW field of the !D system variable to -1, indicating that there are no current windows.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680692">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680693">
+ </A>
+Create IDL windows 1 and 2 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680694">
+ </A>
+WINDOW, 1 &amp; WINDOW, 2</P>
+<P CLASS="Body">
+<A NAME="pgfId=680695">
+ </A>
+Set the current window to window 1 and display an image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680696">
+ </A>
+WSET, 1 &amp; TVSCL, DIST(100)</P>
+<P CLASS="Body">
+<A NAME="pgfId=680697">
+ </A>
+Set the current window to window 2 and display an image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680698">
+ </A>
+WSET, 2 &amp; TVSCL, DIST(100)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796047">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796048">
+ </A>
+<A HREF="idl1fc.htm#13948" CLASS="XRef">
+WDELETE</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+, <A HREF="idl21a.htm#14449" CLASS="XRef">
+WSHOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

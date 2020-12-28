@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLDT__DEFINE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlce.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=853594">
+ </A>
+<A NAME="13169">
+ </A>
+IDLDT__DEFINE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=853597">
+ </A>
+The IDLDT__DEFINE<A NAME="marker=853596">
+ </A>
+ procedure (note the double underscore) is invoked automatically by IDL when one of the date/time routines--listed below in &quot;<A HREF="idlcf.htm#24374" CLASS="XRef">
+See Also</A>
+&quot;--references the named structure, IDLDT. IDLDT__DEFINE also automatically creates a number of related system variables, initializing them to their default values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=853995">
+ </A>
+Generally speaking, you should have no reason to explicitly set the IDLDT structure by calling IDLDT__DEFINE. This routine is included in the documentation mainly for reference.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=854000">
+ </A>
+The IDLDT structure includes the following fields:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853604">
+ </A>
+** Structure IDLDT, 8 tags, length=32:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853605">
+ </A>
+   YEAR            INT              0</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853606">
+ </A>
+   MONTH           BYTE         &nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853607">
+ </A>
+   DAY             BYTE         &nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853608">
+ </A>
+   HOUR            BYTE         &nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853609">
+ </A>
+   MINUTE          BYTE         &nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853610">
+ </A>
+   SECOND          FLOAT           &nbsp;0.00000</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853611">
+ </A>
+   JULIAN          DOUBLE           0.0000000</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=853612">
+ </A>
+   RECALC          BYTE         &nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853613">
+ </A>
+YEAR: An integer value indicating the number of years from the start of the Julian calendar <BR>
+(1 January 4713 BC, 12 noon). The default is 0.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853614">
+ </A>
+MONTH: A byte value indicating the month of the year. The default is 0B.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853615">
+ </A>
+DAY: A byte value indicating the day of the month. The default is 0B.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853616">
+ </A>
+HOUR: A byte value indicating the hour of the day. The default is 0B.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853617">
+ </A>
+MINUTE: A byte value indicating the minute of the hour. The default is 0B.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853618">
+ </A>
+SECOND: A float value indicating the seconds of the minute. The default is 0.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853619">
+ </A>
+JULIAN: A double precision variable indicating the number of days since the start of the Julian calendar. See also the RECALC field. The default is 0.D.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=853620">
+ </A>
+RECALC: A byte variable indicating that the JULIAN field must be recalculated. Set RECALC to 1B if you change any of the following fields: YEAR, MONTH, DAY, HOUR, MINUTE , or SECOND. The default is 0B.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=853623">
+ </A>
+For more information, see <A HREF="..html#46561" CLASS="XRef">
+Automatic Structure Definition</A>
+.</P>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=853625">
+ </A>
+System Variables set by IDLDT__DEFINE</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853627">
+ </A>
+<A NAME="marker=853626">
+ </A>
+!DT_BASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853628">
+ </A>
+The base date for calculations. !DT_BASE is an IDLDT structure initially set to <BR>
+{IDLDT, -4713, 1, 1, 12, 0, 0, 0.d, 0}.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853630">
+ </A>
+<A NAME="marker=853629">
+ </A>
+!DATE_SEPARATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853631">
+ </A>
+A character used as a separator for string dates. The default value is &quot; / &quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853633">
+ </A>
+<A NAME="marker=853632">
+ </A>
+!TIME_SEPARATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853634">
+ </A>
+A character used as a separator for string clock times. The default value is &quot; : &quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853636">
+ </A>
+<A NAME="marker=853635">
+ </A>
+!HOLIDAYS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853637">
+ </A>
+A 50 element array indicating holidays, for exclusion from certain calculations.  No holidays are installed by default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853639">
+ </A>
+<A NAME="marker=853638">
+ </A>
+!WEEKEND_LIST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853640">
+ </A>
+A byte array indicating which days of the week are weekend days, to be excluded from certain calculations. No weekends are defined by default, <BR>
+e.g. !WEEKEND_LIST = byte([0, 0, 0, 0, 0, 0, 0])</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=853641">
+ </A>
+Sunday is the first element, Saturday is the last.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853643">
+ </A>
+<A NAME="marker=853642">
+ </A>
+!DAY_NAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853644">
+ </A>
+An array of strings, giving the names of the days of the week: <BR>
+[&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;]</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853646">
+ </A>
+<A NAME="marker=853645">
+ </A>
+!MONTH_NAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853647">
+ </A>
+An array of strings, giving the names of the months:<BR>
+[&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, $<BR>
+&nbsp;&nbsp;&quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, $<BR>
+&nbsp;&nbsp;&quot;October&quot;, &quot;November&quot;, &quot;December&quot; ]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853648">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853649">
+ </A>
+IDLDT__DEFINE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853650">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853651">
+ </A>
+The IDLDT structure is created and initialized by calling IDLDT__DEFINE. Many of the date and time routines automatically invoke IDLDT__DEFINE when you call them.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853655">
+ </A>
+For more information about structures, see <A HREF="..html#66613" CLASS="XRef">
+Structures</A>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=853656">
+ </A>
+day = TODAY()	<EM CLASS="Comment">;
+Return the current date and time (using the TODAY function) in an IDLDT structure named </EM>
+<CODE CLASS="Code">
+day</CODE>
+<EM CLASS="Comment">;
+.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=853657">
+ </A>
+print, day</P>
+<P CLASS="Body">
+<A NAME="pgfId=853658">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853659">
+ </A>
+{    1998   3   6  15   6      27.0000       2450879.6   0}</P>
+<P CLASS="Code">
+<A NAME="pgfId=853660">
+ </A>
+HELP, day, /STRUCTURE	<EM CLASS="Comment">;
+;Show how each field of the variable </EM>
+day<EM CLASS="Comment">;
+ is defined.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=853661">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853662">
+ </A>
+** Structure IDLDT, 8 tags, length=32:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853663">
+ </A>
+   YEAR            INT           &nbsp;&nbsp;1998</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853664">
+ </A>
+   MONTH           BYTE         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853665">
+ </A>
+   DAY             BYTE         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853666">
+ </A>
+   HOUR            BYTE        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853667">
+ </A>
+   MINUTE          BYTE         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853668">
+ </A>
+   SECOND          FLOAT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853669">
+ </A>
+   JULIAN          DOUBLE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2450879.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853670">
+ </A>
+   RECALC          BYTE         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code">
+<A NAME="pgfId=853671">
+ </A>
+HELP, {IDLDT}, /STRUCTURE	<EM CLASS="Comment">;
+Show how each field of IDLDT is initialized.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=853672">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853673">
+ </A>
+** Structure IDLDT, 8 tags, length=32:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853674">
+ </A>
+   YEAR            INT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853675">
+ </A>
+   MONTH           BYTE         0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853676">
+ </A>
+   DAY             BYTE         0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853677">
+ </A>
+   HOUR            BYTE         0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853678">
+ </A>
+   MINUTE          BYTE         0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853679">
+ </A>
+   SECOND          FLOAT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853680">
+ </A>
+   JULIAN          DOUBLE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0000000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853681">
+ </A>
+   RECALC          BYTE         0</P>
+<P CLASS="Code">
+<A NAME="pgfId=853682">
+ </A>
+empty = {IDLDT}	<EM CLASS="Comment">;
+Create an empty date variable. </EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=853683">
+ </A>
+print, empty</P>
+<P CLASS="Body">
+<A NAME="pgfId=853684">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=853685">
+ </A>
+{       0   0   0   0   0      0.00000       0.0000000   0}</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853687">
+ </A>
+<A NAME="24374">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853703">
+ </A>
+<A HREF="idl65.htm#40163" CLASS="XRef">
+DAY_NAME</A>
+, <A HREF="idl66.htm#20799" CLASS="XRef">
+DAY_OF_WEEK</A>
+, <A HREF="idl67.htm#41116" CLASS="XRef">
+DAY_OF_YEAR</A>
+, <A HREF="idl84.htm#37454" CLASS="XRef">
+DT_ADD</A>
+, <A HREF="idl85.htm#35310" CLASS="XRef">
+DT_SUBTRACT</A>
+, <A HREF="idl86.htm#28793" CLASS="XRef">
+DT_TO_VAR</A>
+, <A HREF="idlde.htm#18354" CLASS="XRef">
+JUL_TO_DT</A>
+, <A HREF="idl190.htm#39683" CLASS="XRef">
+SEC_TO_DT</A>
+, <A HREF="idl1b8.htm#28381" CLASS="XRef">
+STR_TO_DT</A>
+, <A HREF="idl1db.htm#10605" CLASS="XRef">
+TODAY</A>
+, <A HREF="idl1f1.htm#18182" CLASS="XRef">
+VAR_TO_DT</A>
+. </P>
+</DIV>
+</BODY>
+</HTML>

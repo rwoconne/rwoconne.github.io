@@ -1,0 +1,469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFSD_SETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl294.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl292.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998121">
+ </A>
+<A NAME="56658">
+ </A>
+HDF_DFSD_SETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998125">
+ </A>
+The <A NAME="marker=998123">
+ </A>
+HDF_DFSD_SETINFO procedure <A NAME="marker=998124">
+ </A>
+controls information associated with a Hierarchical Data Format file. Because of the manner in which the underlying HDF library was written, it is necessary to set the dimensions and data type of a scientific data set the first time that HDF_DFSD_SETINFO is called. </P>
+<P CLASS="Body">
+<A NAME="pgfId=998126">
+ </A>
+This procedure has many options, controlled by keywords. The order in which the keywords are specified is unimportant as the routine insures the order of operation for any given call to it. CLEAR and RESTART requests are performed first, followed by type and dimension setting, followed by length setting, followed by the remaining keyword requests.</P>
+<P CLASS="Body">
+<A NAME="pgfId=998127">
+ </A>
+If you are not writing any ancillary information, you can call HDF_DFSD_ADDDATA with the SET_TYPE and/or SET_DIMS keywords.</P>
+<P CLASS="Body">
+<A NAME="pgfId=998128">
+ </A>
+Data string lengths should be set before, or at the same time as, writing the corresponding data string. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998129">
+ </A>
+HDF_DFSD_SETINFO, LEN_FORMAT=10, FORMAT='12.3F'</P>
+<P CLASS="Body">
+<A NAME="pgfId=998130">
+ </A>
+or</P>
+<P CLASS="Code">
+<A NAME="pgfId=998131">
+ </A>
+HDF_DFSD_SETINFO, LEN_FORMAT=10</P>
+<P CLASS="Code">
+<A NAME="pgfId=998132">
+ </A>
+HDF_DFSD_SETINFO, FORMAT='12.3F'</P>
+<P CLASS="Body">
+<A NAME="pgfId=998133">
+ </A>
+Due to the underlying C routines, it is necessary to set all four data strings at the same time, or the unspecified strings are treated as `' (null strings). For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998134">
+ </A>
+HDF_DFSD_SETINFO, LABEL = 'hi'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998135">
+ </A>
+HDF_DFSD_SETINFO, UNIT = 'ergs'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998136">
+ </A>
+is the same as:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998137">
+ </A>
+HDF_DFSD_SETINFO, LABEL='hi', UNIT='', FORMAT='', COORDSYS=''</P>
+<P CLASS="Code">
+<A NAME="pgfId=998138">
+ </A>
+HDF_DFSD_SETINFO, LABEL='', UNIT='ergs', FORMAT='', COORDSYS=''</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998139">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998140">
+ </A>
+HDF_DFSD_SETINFO</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998141">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998142">
+ </A>
+None.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998143">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998145">
+ </A>
+<A NAME="marker=998144">
+ </A>
+BYTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998146">
+ </A>
+Set this keyword to make the SDS data type DFNT_UINT8 (1-byte unsigned integer).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998148">
+ </A>
+<A NAME="marker=998147">
+ </A>
+CALDATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998149">
+ </A>
+Set this keyword to a structure containing calibration information. The structure should contain five tags, the first four of which are double-precision floating-point, and fifth of which should be long integer. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998150">
+ </A>
+caldata&nbsp;=&nbsp;{&nbsp;Cal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0d $	<EM CLASS="Comment">;
+Calibration factor.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998151">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cal_Err:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1d $	<EM CLASS="Comment">;
+Calibration error.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998152">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offset:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.5d $	<EM CLASS="Comment">;
+Uncalibrated offset.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998153">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offset_Err:&nbsp;&nbsp;&nbsp;0.1d $	<EM CLASS="Comment">;
+Uncalibrated offset error.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998154">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num_Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5L &nbsp;&nbsp;$	<EM CLASS="Comment">;
+Number type of uncalibrated</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998155">
+ </A>
+}		<EM CLASS="Comment">;
+data.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998156">
+ </A>
+Some typical values for the <CODE CLASS="Code">
+Num_Type</CODE>
+ field include:</P>
+<P CLASS="Body">
+<A NAME="pgfId=998157">
+ </A>
+For byte data:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998158">
+ </A>
+3L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(DFNT_UCHAR8)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998159">
+ </A>
+21L&nbsp;&nbsp;&nbsp;&nbsp;(DFNT_UINT8)</P>
+<P CLASS="Body">
+<A NAME="pgfId=998160">
+ </A>
+For integer data:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998161">
+ </A>
+22L&nbsp;&nbsp;&nbsp;&nbsp;(DNFT_INT16)</P>
+<P CLASS="Body">
+<A NAME="pgfId=998162">
+ </A>
+For long-integer data:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998163">
+ </A>
+24L&nbsp;&nbsp;&nbsp;&nbsp;(DFNT_INT32)</P>
+<P CLASS="Body">
+<A NAME="pgfId=998164">
+ </A>
+For floating-point data:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998165">
+ </A>
+5L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(DFNT_FLOAT32)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998166">
+ </A>
+6L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(DFNT_FLOAT64)</P>
+<P CLASS="Body">
+<A NAME="pgfId=998167">
+ </A>
+There are other types, but they are not native to IDL. They can be found in the <CODE CLASS="Code">
+hdf.h</CODE>
+ header file for the HDF library.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998169">
+ </A>
+<A NAME="marker=998168">
+ </A>
+CLEAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998170">
+ </A>
+Set this keyword to reset all possible set values to their default value.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998172">
+ </A>
+<A NAME="marker=998171">
+ </A>
+COORDSYS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998173">
+ </A>
+A string for the data coordinate system description.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998175">
+ </A>
+<A NAME="marker=998174">
+ </A>
+DIMS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998176">
+ </A>
+Set this keyword to a vector of dimensions to be used in writing the next SDS. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998177">
+ </A>
+HDF_DFSD_SETINFO, DIMS = [10, 20, 30]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998179">
+ </A>
+<A NAME="marker=998178">
+ </A>
+DOUBLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998180">
+ </A>
+Set this keyword to make the SDS data type DFNT_FLOAT64 (8-byte floating point).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998182">
+ </A>
+<A NAME="marker=998181">
+ </A>
+FLOAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998183">
+ </A>
+Set this keyword to make the SDS data type DFNT_FLOAT32 (4-byte floating point).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998185">
+ </A>
+<A NAME="marker=998184">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998186">
+ </A>
+A string for the data format description.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998188">
+ </A>
+<A NAME="marker=998187">
+ </A>
+INT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998189">
+ </A>
+Set this keyword to make the SDS data type DFNT_INT16 (2-byte signed integer).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998191">
+ </A>
+<A NAME="marker=998190">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998192">
+ </A>
+A string for the data label description.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998194">
+ </A>
+<A NAME="marker=998193">
+ </A>
+LEN_LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998195">
+ </A>
+The label string length (default is 255).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998197">
+ </A>
+<A NAME="marker=998196">
+ </A>
+LEN_UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998198">
+ </A>
+The unit string length (default is 255).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998200">
+ </A>
+<A NAME="marker=998199">
+ </A>
+LEN_FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998201">
+ </A>
+The format string length (default is 255).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998203">
+ </A>
+<A NAME="marker=998202">
+ </A>
+LEN_COORDSYS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998204">
+ </A>
+The format coordinate system string length (default is 255).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998206">
+ </A>
+<A NAME="marker=998205">
+ </A>
+LONG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998207">
+ </A>
+Set this keyword to make the SDS data type DFNT_INT32 (4-byte signed integer).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998209">
+ </A>
+<A NAME="marker=998208">
+ </A>
+RANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998210">
+ </A>
+The minimum and maximum range, represented as a 2-element vector of the same data type as the data to be written. The first element is the maximum, the second is the minimum. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998211">
+ </A>
+HDF_DFSD_SETINFO, RANGE = [10,0]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998213">
+ </A>
+<A NAME="marker=998212">
+ </A>
+RESTART</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998214">
+ </A>
+Set this keyword to make the get (HDF_DFSD_GETSLICE) routine read from the first SDS in the file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998216">
+ </A>
+<A NAME="marker=998215">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998217">
+ </A>
+A string for the data unit description.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998218">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998219">
+ </A>
+Write a 100x50 array of longs:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998220">
+ </A>
+data = LONARR(100, 50)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998221">
+ </A>
+HDF_DFSD_SETINFO, /CLEAR, /LONG, DIMS=[100,50], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998222">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RANGE=[MAX(data), MIN(data)], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998223">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LABEL='pressure', UNIT='pascals', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998224">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FORMAT='F10.0'</P>
+</DIV>
+</BODY>
+</HTML>

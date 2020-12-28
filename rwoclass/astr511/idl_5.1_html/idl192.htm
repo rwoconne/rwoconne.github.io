@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SET_SHADING</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl193.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl191.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678675">
+ </A>
+<A NAME="14374">
+ </A>
+SET_SHADING</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678676">
+ </A>
+The <A NAME="marker=673824">
+ </A>
+SET_SHADING procedure modifies the <A NAME="marker=673825">
+ </A>
+light source <A NAME="marker=673826">
+ </A>
+shading parameters that affect the output of SHADE_SURF and POLYSHADE. Parameters can be changed to control the light-source direction, shading method, and the rejection of hidden surfaces. SET_SHADING first resets the shading parameters to their default values. The parameter values specified in the call then overwrite the default values. To reset all parameters to their default values, simply call this procedure with no parameters.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678677">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678678">
+ </A>
+SET_SHADING</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678679">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678680">
+ </A>
+None.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678681">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678682">
+ </A>
+<A NAME="marker=673827">
+ </A>
+GOURAUD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678683">
+ </A>
+This keyword controls the method of shading the surface polygons by the POLYSHADE procedure. The SHADE_SURF procedure always uses the Gouraud method. Set this keyword to a nonzero value (the default), to use <A NAME="marker=673828">
+ </A>
+Gouraud shading. Set this keyword to zero to shade each polygon with a constant intensity.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678684">
+ </A>
+Gouraud shading interpolates intensities from each vertex along each edge. Then, when scan converting the polygons, the shading is interpolated along each scan line from the edge intensities. Gouraud shading is slower than constant shading but usually results in a more realistic appearance.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678685">
+ </A>
+<A NAME="marker=673829">
+ </A>
+LIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678686">
+ </A>
+A three-element vector that specifies the <A NAME="marker=673830">
+ </A>
+direction of the light source. The default light source vector is [0,0,1], with the light rays parallel to the Z axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678687">
+ </A>
+<A NAME="marker=673831">
+ </A>
+REJECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678688">
+ </A>
+Set this keyword (the default) to reject polygons as being hidden if their vertices are ordered in a clockwise direction as seen by the viewer. This keyword should always be set when rendering enclosed solids whose original vertex lists are in counterclockwise order. When rendering surfaces that are not closed or are not in counterclockwise order this keyword can be set to zero although shading anomalies at boundaries between visible and hidden surfaces may occur.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678689">
+ </A>
+<A NAME="marker=673832">
+ </A>
+VALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678690">
+ </A>
+A two-element array that specifies the range of pixel values (color indices) to use. The first element is the color index for the darkest pixel. The second element is the color index for the brightest pixel. For example, to render a shaded surface with the darkest shade set to pixel value 100 and the brightest value set to 150, use the commands:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678691">
+ </A>
+SET_SHADING, VALUES=[100, 150]</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678692">
+ </A>
+SHADE_SURF, dataset</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678693">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678694">
+ </A>
+Change the light source so that the light rays are parallel to the X axis:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678695">
+ </A>
+SET_SHADING, LIGHT = [1, 0, 0]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795766">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795767">
+ </A>
+<A HREF="idl145.htm#45438" CLASS="XRef">
+POLYSHADE</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

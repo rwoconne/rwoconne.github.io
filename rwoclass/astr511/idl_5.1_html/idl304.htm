@@ -1,0 +1,754 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrScene</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl305.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl303.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1032096">
+ </A>
+<A NAME="25953">
+ </A>
+IDLgrScene</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1032099">
+ </A>
+A <A NAME="marker=1032098">
+ </A>
+scene object represents the entire scene to be drawn and serves as a container of <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ or <A HREF="idl30a.htm#27087" CLASS="XRef">
+IDLgrViewgroup</A>
+ objects. </P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1038566">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1038567">
+ </A>
+This class is a subclass of <A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1032105">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1032106">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032107">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032111">
+ </A>
+See <A HREF="idl304.htm#18283" CLASS="XRef">
+IDLgrScene::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032112">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1032113">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1032114">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032118">
+ </A>
+<A HREF="idl304.htm#39238" CLASS="XRef">
+IDLgrScene::Add</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032122">
+ </A>
+<A HREF="idl304.htm#26033" CLASS="XRef">
+IDLgrScene::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1040221">
+ </A>
+<A HREF="idl304.htm#20531" CLASS="XRef">
+IDLgrScene::GetByName</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032130">
+ </A>
+<A HREF="idl304.htm#26030" CLASS="XRef">
+IDLgrScene::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032134">
+ </A>
+<A HREF="idl304.htm#18283" CLASS="XRef">
+IDLgrScene::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1040245">
+ </A>
+<A HREF="idl304.htm#34220" CLASS="XRef">
+IDLgrScene::Remove</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032138">
+ </A>
+<A HREF="idl304.htm#28897" CLASS="XRef">
+IDLgrScene::SetProperty</A>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156472">
+ </A>
+Inherited Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156473">
+ </A>
+This class inherits the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156480">
+ </A>
+<A HREF="idl2f2.htm#27771" CLASS="XRef">
+IDL_Container::Count</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156487">
+ </A>
+<A HREF="idl2f2.htm#33593" CLASS="XRef">
+IDL_Container::Get</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156494">
+ </A>
+<A HREF="idl2f2.htm#22803" CLASS="XRef">
+IDL_Container::IsContained</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156501">
+ </A>
+<A HREF="idl2f2.htm#21346" CLASS="XRef">
+IDL_Container::Move</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1032170">
+ </A>
+<A NAME="39238">
+ </A>
+IDLgrScene::Add</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032173">
+ </A>
+The IDLgrScene::Add function<A NAME="marker=1183346">
+ </A>
+ method verifies that the added item is an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ or IDLgrViewgroup object. If it is, IDLgrScene:Add adds the view or viewgroup to the specified scene. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032177">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032178">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+Add, <I CLASS="Italic">
+View</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032179">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1032180">
+ </A>
+View</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1050280">
+ </A>
+An instance of the <STRONG CLASS="Stone-Semibold">
+<A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+</STRONG>
+ or <STRONG CLASS="Stone-Semibold">
+IDLgrViewgroup</STRONG>
+ object class.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032181">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069120">
+ </A>
+<A NAME="marker=1069119">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069121">
+ </A>
+Set this keyword equal to the zero-based index of the position within the container at which the new object should be placed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1032185">
+ </A>
+<A NAME="26033">
+ </A>
+IDLgrScene::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032188">
+ </A>
+The IDLgrScene::<A NAME="marker=1052336">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041838">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032192">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051212">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051213">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1032193">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032194">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032195">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032196">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032197">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1040198">
+ </A>
+<A NAME="20531">
+ </A>
+IDLgrScene::GetByName</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040201">
+ </A>
+The IDLgrScene::<A NAME="marker=1052339">
+ </A>
+GetByName function method finds contained objects by name and returns the object reference to the named object. If the named object is not found, the GetByName function returns a null object reference.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1060612">
+ </A>
+The GetByName function does <EM CLASS="Emphasis">
+not</EM>
+ perform a recursive search through the object hierarchy. If a fully qualified object name is not specified, only the contents of the current container object are inspected for the named object.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1060609">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040205">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040206">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+GetByName(<I CLASS="Italic">
+Name</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040207">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1040208">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1050294">
+ </A>
+A string containing the name of the object to be returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060636">
+ </A>
+Object naming syntax is very much like the syntax of a Unix filesystem. Objects contained by other objects can include the name of their parent object; this allows you to create a fully qualified name specification. For example, if <CODE CLASS="Code">
+object1</CODE>
+ contains <CODE CLASS="Code">
+object2</CODE>
+, which in turn contains <CODE CLASS="Code">
+object3</CODE>
+, the string specifying the fully qualified object name of object3 would be <CODE CLASS="Code">
+'object1/object2/object3'</CODE>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060637">
+ </A>
+Object names are specified relative to the object on which the GetByName method is called. If used at the beginning of the name string, the <CODE CLASS="Code">
+/</CODE>
+ character represents the top of an object hierarchy. The string <CODE CLASS="Code">
+'..'</CODE>
+ represents the object one level &quot;up&quot; in the hierarchy.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040209">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040210">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1032230">
+ </A>
+<A NAME="20674">
+ </A>
+<A NAME="26030">
+ </A>
+IDLgrScene::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032233">
+ </A>
+The IDLgrScene::<A NAME="marker=1052342">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the contour. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032237">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032238">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032239">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032639">
+ </A>
+Any keyword to <A HREF="idl304.htm#18283" CLASS="XRef">
+IDLgrScene::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1032255">
+ </A>
+<A NAME="marker=1032254">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093624">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093625">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1032260">
+ </A>
+<A NAME="18283">
+ </A>
+IDLgrScene::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032263">
+ </A>
+The IDLgrScene::<A NAME="marker=1052346">
+ </A>
+Init function method initializes the scene object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041734">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032267">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032268">
+ </A>
+Obj = OBJ_NEW('IDLgrScene')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041986">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041987">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032271">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032272">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032645">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032666">
+ </A>
+Properties retrievable via <A HREF="idl304.htm#26030" CLASS="XRef">
+IDLgrScene::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1032700">
+ </A>
+<A NAME="marker=1032699">
+ </A>
+COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1050303">
+ </A>
+Set this keyword to the color to which the scene should be erased before drawing. The color may be specified as a color lookup table index or an RGB vector.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143235">
+ </A>
+<A NAME="marker=1143241">
+ </A>
+TRANSPARENT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143236">
+ </A>
+Set this keyword to disable window clearing. If this keyword is not set, the destination object in use by the scene is automatically erased when the scene is initialized.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049074">
+ </A>
+<A NAME="marker=1049073">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058398">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1040226">
+ </A>
+<A NAME="34220">
+ </A>
+IDLgrScene::Remove</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040229">
+ </A>
+The IDLgrScene::<A NAME="marker=1052349">
+ </A>
+Remove procedure method removes a view from the scene object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040233">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040234">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+Remove, <I CLASS="Italic">
+View</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040235">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1040236">
+ </A>
+View</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1050308">
+ </A>
+A reference to the <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object to be removed from the scene.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040237">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069158">
+ </A>
+<A NAME="marker=1069157">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069159">
+ </A>
+Set this keyword to remove all object from the container. If this keyword is set, the <EM CLASS="Emphasis">
+View</EM>
+ argument is not required.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069161">
+ </A>
+<A NAME="marker=1069160">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069162">
+ </A>
+Set this keyword equal to the zero-based index of the object to be removed. If the <EM CLASS="Emphasis">
+View</EM>
+ argument is supplied, this keyword is ignored.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1032289">
+ </A>
+<A NAME="28897">
+ </A>
+IDLgrScene::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032718">
+ </A>
+The IDLgrScene::<A NAME="marker=1052352">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the buffer.<STRONG CLASS="Stone-Semibold">
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032722">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032297">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrScene::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032298">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032299">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1032300">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1032304">
+ </A>
+Any keyword to <A HREF="idl304.htm#18283" CLASS="XRef">
+IDLgrScene::Init</A>
+</DIV>
+</BODY>
+</HTML>

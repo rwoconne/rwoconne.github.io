@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EOF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl8e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl8c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676684">
+ </A>
+<A NAME="46802">
+ </A>
+EOF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676685">
+ </A>
+The <A NAME="marker=672932">
+ </A>
+EOF function tests the specified file unit for the <A NAME="marker=672933">
+ </A>
+end-of-file condition. If the file pointer is positioned at the end of the file, EOF returns true (1), otherwise false (0) is returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676686">
+ </A>
+Note that the EOF function cannot be used with files opened with the NOSTDIO keyword to the OPEN routines. Many of the devices commonly used with NOSTDIO signal their end-of-file by returning a zero transfer count to the I/O operation that encounters the end-of-file.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676687">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676688">
+ </A>
+Result = EOF(<I CLASS="Italics">
+Unit</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676689">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676690">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676691">
+ </A>
+The file unit to test for end-of-file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676692">
+ </A>
+Using EOF with <A NAME="VMS files">
+ </A>
+VMS Files</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676693">
+ </A>
+Under VMS, the EOF function does not work with files accessed via DECNET or that do not have sequential organization (i.e., relative or indexed). The EOF procedure cannot be used with such files as it will always return &quot;false&quot;. Instead, use the ON_IOERROR procedure to detect when the end-of-file occurs.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676694">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676695">
+ </A>
+If file unit number 1 is open, the end-of-file condition can be checked by examining the value of the expression EOF(1). For example, the following IDL code reads and prints a text file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676696">
+ </A>
+OPENR, 1, 'test.lis'	<EM CLASS="Comment">;
+Open the file test.lis.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676697">
+ </A>
+A = ''	<EM CLASS="Comment">;
+Define a string variable.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676698">
+ </A>
+WHILE NOT EOF(1) DO BEGIN	<EM CLASS="Comment">;
+Loop until EOF is found.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676699">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;READF, 1, A	<EM CLASS="Comment">;
+Read a line of text.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676700">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 	<EM CLASS="Comment">;
+Print the line.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676701">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;ENDWHILE	</P>
+<P CLASS="Code">
+<A NAME="pgfId=676702">
+ </A>
+CLOSE, 1	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823189">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823190">
+ </A>
+<A HREF="idl13b.htm#15658" CLASS="XRef">
+POINT_LUN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

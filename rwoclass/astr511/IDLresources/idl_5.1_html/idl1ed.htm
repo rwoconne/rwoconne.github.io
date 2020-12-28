@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TVRD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ee.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ec.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679774">
+ </A>
+<A NAME="15540">
+ </A>
+TVRD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679775">
+ </A>
+The <A NAME="marker=674250">
+ </A>
+TVRD function returns the contents of the specified rectangular portion of the <A NAME="marker=113852">
+ </A>
+current graphics window or device. (<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+) is the coordinate of the lower left corner of the area to be read and <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+x</SUB>
+<I CLASS="Italic">
+, N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+ is the size of the rectangle in columns and rows. The result is a byte array of dimensions <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+x</SUB>
+ by <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+. All parameters are optional. If no arguments are supplied, the entire display device area is read.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=132569">
+ </A>
+<A NAME="69282">
+ </A>
+Important Note about TVRD and Backing Store</H3>
+<P CLASS="Body">
+<A NAME="pgfId=193153">
+ </A>
+On some systems, when backing store is provided by the window system (the RETAIN keyword to DEVICE or WINDOW is set to 1), reading data from a window using TVRD may cause unexpected results. For example, data may be improperly read from the window even when the image displayed on screen is correct. Having IDL provide the backing store (set the RETAIN keyword to 2) ensures that the window contents will be read properly. More detailed notes about TVRD and the X Window system can be found below in <A HREF="idl1ed.htm#92228" CLASS="XRef">
+Unexpected Results Using TVRD with X Windows</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679776">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679777">
+ </A>
+Result = TVRD(<I CLASS="Italic">
+[X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+ [, Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+ [, N</I>
+<SUB CLASS="Subscript">
+x</SUB>
+<I CLASS="Italic">
+ [, N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+<I CLASS="Italic">
+ [, Channel]]]]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679778">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679779">
+ </A>
+X<SUB CLASS="Subscript">
+0</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679780">
+ </A>
+The starting column of data to read. The default is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679781">
+ </A>
+Y<SUB CLASS="Subscript">
+0</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679782">
+ </A>
+The starting row of data to read. The default is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679783">
+ </A>
+N<SUB CLASS="Subscript">
+x</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679784">
+ </A>
+The number of columns to read. The default is the width of the display device or window less <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679785">
+ </A>
+N<SUB CLASS="Subscript">
+y</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679786">
+ </A>
+The number of rows to read. The default is the height of the display device or window less <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679787">
+ </A>
+Channel</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679788">
+ </A>
+The memory channel to be read. If not specified, this argument is assumed to be zero. This parameter is ignored on display systems that have only one memory channel.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679789">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679790">
+ </A>
+<A NAME="marker=674251">
+ </A>
+CHANNEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679791">
+ </A>
+The memory channel to be read. The CHANNEL keyword is identical to the optional <I CLASS="Italic">
+Channel</I>
+ argument.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679792">
+ </A>
+Note: if the display is a 24-bit display, and both the CHANNEL and TRUE parameters are absent, the maximum RGB value in each pixel is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679793">
+ </A>
+<A NAME="marker=674252">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679794">
+ </A>
+Set this keyword to override the current setting of the <A NAME="marker=674253">
+ </A>
+!ORDER system variable for the current image only. If set, it causes the image to be read from the top down instead of the normal bottom up.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679795">
+ </A>
+<A NAME="marker=674254">
+ </A>
+TRUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=875641">
+ </A>
+<A NAME="marker=875640">
+ </A>
+If this keyword is present, it indicates that a true-color image is to be read, if the display is capable. The value assigned to TRUE specifies the index of the dimension over which color is interleaved. The result is an (3, <I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+x</SUB>
+, <I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+y</SUB>
+) pixel-interleaved array if TRUE is 1; or an (<I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+x</SUB>
+, 3, <I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+y</SUB>
+) line-interleaved array if TRUE is 2; or an (<I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+x</SUB>
+, <I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+y</SUB>
+, 3) image-interleaved array if TRUE is 3.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679797">
+ </A>
+<A NAME="marker=674256">
+ </A>
+WORDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679798">
+ </A>
+Set this keyword to indicate that words are to be transferred from the device. This keyword is valid only when using devices that can transfer 16-bit pixels. The normal transfer uses 8-bit pixels. If this keyword is set, the function result is an integer array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679799">
+ </A>
+<A NAME="92228">
+ </A>
+Unexpected Results Using TVRD with X Windows</H3>
+<P CLASS="Body">
+<A NAME="pgfId=193155">
+ </A>
+When using TVRD with the X Windows graphics device, there are two unexpected behaviors that can be confusing to users:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=193161">
+ </A>
+When reading from a window that is obscured by another window (i.e., the target window has another window &quot;on top&quot; or &quot;in front&quot; of it), TVRD may return the contents of the window in front as part of the image contained in the target window.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=193162">
+ </A>
+When reading from an iconified window, the X server may return a stream of &quot;BadMatch&quot; protocol events.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=193163">
+ </A>
+IDL uses the Xlib function <CODE CLASS="Code">
+XGetSubImage()</CODE>
+ to implement TVRD. The following quote is from the documentation for XGetSubImage() found in <I CLASS="Italic">
+The X Window System</I>
+ by Robert W. Scheifler and James Gettys, Second Edition, page 174. It explains the reasons for the behaviors described above:</P>
+<P CLASS="Body">
+<A NAME="pgfId=193167">
+ </A>
+&quot;If the drawable is a window, the window must be viewable, and it must be the case that if there were no... overlapping windows, the specified rectangle of the window would be fully visible on the screen, ... or a BadMatch error results. If the window has backing-store, then the backing-store contents are returned for regions of the window that are obscured... If the window does not have backing-store, the returned contents of such obscured regions are undefined.&quot;</P>
+<P CLASS="Body">
+<A NAME="pgfId=193168">
+ </A>
+Hence, the first behavior is caused by attempting to use TVRD on an obscured window that does not have backing store provided by the X server. The result in this case is undefined, meaning that the different servers can produce entirely different results. Many servers simply return the image of the obscuring window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=193169">
+ </A>
+The second behavior is caused by attempting to read from a non-viewable (i.e., unmapped) window. Although IDL could refuse to allow TVRD to work with unmapped windows, some X servers return valid and useful results. Therefore, TVRD is allowed to attempt to read from unmapped windows.</P>
+<P CLASS="Body">
+<A NAME="pgfId=193170">
+ </A>
+Both of these behavior problems can be solved by using one of the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=193171">
+ </A>
+Always make sure that your target window is mapped and is not obscured before using TVRD on it. The following IDL command can be used:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=193172">
+ </A>
+WSHOW, Window_Index, ICONIC=0</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=193173">
+ </A>
+Make IDL provide backing store (rather than the window system) by setting the RETAIN keyword to DEVICE or WINDOW equal to 2.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=861878">
+ </A>
+For a full description of backing store, See <A HREF="idl22f.htm#83595" CLASS="XRef">
+Backing Store</A>
+. Note that under X Windows, backing store is a request that may or may not be honored by the X server. Many servers will honor backing store for 8-bit visuals but ignore them for 24-bit visuals because they require three times as much memory. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=193154">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=679801">
+ </A>
+T = TVRD()	<EM CLASS="Comment">;
+Read the entire contents of the current display device into the variable T.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795990">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795991">
+ </A>
+<A HREF="idl160.htm#87088" CLASS="XRef">
+RDPIX</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

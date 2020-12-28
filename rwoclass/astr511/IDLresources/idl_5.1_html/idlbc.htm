@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GETENV</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlbd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlbb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677069">
+ </A>
+<A NAME="28024">
+ </A>
+GETENV</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677070">
+ </A>
+The <A NAME="marker=673092">
+ </A>
+GETENV function returns the equivalence string for <I CLASS="Italics">
+Name</I>
+ from the <A NAME="marker=673093">
+ </A>
+environment of the IDL process. If <I CLASS="Italics">
+Name</I>
+ does not exist in the environment, a null string is returned.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677071">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677072">
+ </A>
+Result = GETENV(<I CLASS="Italics">
+Name</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677073">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677074">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677075">
+ </A>
+The scalar string for which an equivalence string from the environment is desired.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677076">
+ </A>
+Environment Variables Under VMS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677077">
+ </A>
+VMS does not directly support the concept of environment variables. Instead, it is emulated (by using the standard C getenv() function) as described below, enabling you to use GETENV portably between Unix and VMS:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=677078">
+ </A>
+If <I CLASS="Italics">
+Name</I>
+ is one of HOME, TERM, PATH, or USER, an appropriate response is generated. This mimics the most common Unix environment variables.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=677079">
+ </A>
+An attempt is made to translate <I CLASS="Italics">
+Name</I>
+ as a logical name. All four logical name tables are searched in the standard order.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=677080">
+ </A>
+An attempt is made to translate <I CLASS="Italics">
+Name</I>
+ as a command-language interpreter symbol.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677081">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677082">
+ </A>
+To print the name of the current Unix shell, enter the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677083">
+ </A>
+PRINT, 'The current shell is: ', GETENV('SHELL')</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822897">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822898">
+ </A>
+<A HREF="idlbb.htm#33839" CLASS="XRef">
+GET_SYMBOL (VMS Only)</A>
+, <A HREF="idl194.htm#55234" CLASS="XRef">
+SETENV (Unix and Windows Only)</A>
+, <A HREF="idl1e5.htm#79758" CLASS="XRef">
+TRNLOG</A>
+</P>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=856777">
+ </A>
+The Unix E<A NAME="marker=856776">
+ </A>
+nvironment</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856778">
+ </A>
+Every Unix process has an &quot;environment.&quot; The environment consists of &quot;environment variables,&quot; each of which has a string value associated with it. Some environment variables always exist, such as PATH that tells the shell where to look for programs or TERM that specifies the kind of terminal being used. Others can be added by the user, usually from an interactive shell and often from the <EM CLASS="tt">
+.login</EM>
+ file that is executed when you log in.</P>
+<P CLASS="Body">
+<A NAME="pgfId=856779">
+ </A>
+When a process is created, it is given a copy of the environment from its parent process. IDL is no exception to this; when started, it inherits a copy of its parent's environment. The parent process to IDL is usually the interactive shell from which it was started. In turn, any child process created by IDL (such as those from the SPAWN procedure) inherits a copy of IDL's current environment.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=856795">
+ </A>
+It is important to realize that environment variables are not an IDL feature; they are part of every Unix process. Although they can serve as a form of global memory, it is best to avoid using them in that way. Instead, IDL heap variables (pointers or object references), IDL system variables, or common blocks should be used in that role. This will make your IDL code portable to non-Unix-based IDL systems. Environment variables should be used for communicating with child processes. One example is setting the value of the SHELL environment variable prior to calling SPAWN to change the shell executed by SPAWN.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=856808">
+ </A>
+IDL provides two routines for manipulating the environment: </P>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=856810">
+ </A>
+<A NAME="marker=856809">
+ </A>
+GETENV</H6>
+<P CLASS="Body">
+<A NAME="pgfId=856812">
+ </A>
+The GETENV function returns the equivalence string from the environment of the IDL process. It has the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856816">
+ </A>
+GETENV(<EM CLASS="Comment">;
+Name</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=856817">
+ </A>
+where <I CLASS="Italics">
+Name</I>
+ is the name of the environment variable for which the translation is desired. If <I CLASS="Italics">
+Name </I>
+does not exist in the environment, a null string is returned. For example, to determine the type of terminal being used, you can enter the IDL statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856821">
+ </A>
+PRINT, 'The terminal type is:  ', GETENV('TERM')</P>
+<P CLASS="Body">
+<A NAME="pgfId=856822">
+ </A>
+Executing this statement on a Sun workstation give the following result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856823">
+ </A>
+The terminal type is: sun</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=856825">
+ </A>
+<A NAME="marker=856824">
+ </A>
+SETENV</H6>
+<P CLASS="Body">
+<A NAME="pgfId=856827">
+ </A>
+The SETENV function adds a new environment variable or changes the value of an existing environment variable in the IDL process. It has the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856831">
+ </A>
+SETENV, <EM CLASS="Comment">;
+Environment_Expression </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=856832">
+ </A>
+where <I CLASS="Italics">
+Environment_Expression </I>
+is a scalar string containing an environment expression to be added to the environment. </P>
+<P CLASS="Body">
+<A NAME="pgfId=856833">
+ </A>
+For example, you can change the shell used by SPAWN by changing the value of the SHELL environment variable. An IDL statement to change to using the Bourne shell <EM CLASS="tt">
+/bin/sh</EM>
+ would be:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856837">
+ </A>
+SETENV, 'shell=/bin/sh'</P>
+<P CLASS="Body">
+<A NAME="pgfId=856774">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

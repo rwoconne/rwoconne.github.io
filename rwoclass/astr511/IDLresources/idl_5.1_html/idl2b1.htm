@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_START</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2b2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2b0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999427">
+ </A>
+<A NAME="92639">
+ </A>
+HDF_SD_START</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999430">
+ </A>
+The <A NAME="marker=999429">
+ </A>
+HDF_SD_START function opens or creates an HDF file and initializes the SD interface. The returned value of this function is the SD ID of the HDF file. If no keywords are present, the file is opened in read-only mode.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999431">
+ </A>
+Note that every file opened with HDF_SD_START should eventually be closed with a call to HDF_SD_END.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999432">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999433">
+ </A>
+Result = HDF_SD_START(<I CLASS="Italics">
+Filename</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999434">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999435">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999436">
+ </A>
+A scalar string containing the name of the file to be opened or created. HDF_SD_START can open the following file types: XDR-based NetCDF files, &quot;old-style&quot; DFSD files, or &quot;new-style&quot; SD files. New files are created as &quot;new-style&quot; SD files.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999437">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999438">
+ </A>
+READ</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999439">
+ </A>
+Set this keyword to open the SD interface in read-only mode. If no keywords are specified, this is the default behavior.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999440">
+ </A>
+RDWR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999441">
+ </A>
+Set this keyword to open the SD interface in read and write mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999442">
+ </A>
+CREATE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999443">
+ </A>
+Set this keyword to create a new SD file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999444">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999445">
+ </A>
+sd_id = HDF_SD_START('test.hdf', /CREATE)<BR>
+<EM CLASS="Comment">;
+Open a new HDF file. The file is ready to be accessed.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999446">
+ </A>
+HDF_SD_END, sd_id	<EM CLASS="Comment">;
+When finished with the file, close it with a call to HDF_SD_END.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999447">
+ </A>
+For a more complicated example, see the documentation for HDF_SD_ATTRSET.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999448">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999461">
+ </A>
+<A HREF="idl266.htm#50345" CLASS="XRef">
+HDF_CLOSE</A>
+, <A HREF="idl29b.htm#27462" CLASS="XRef">
+HDF_OPEN</A>
+, <A HREF="idl29e.htm#85081" CLASS="XRef">
+HDF_SD_ATTRFIND</A>
+, <A HREF="idl29f.htm#65416" CLASS="XRef">
+HDF_SD_ATTRINFO</A>
+, <A HREF="idl2a0.htm#60488" CLASS="XRef">
+HDF_SD_ATTRSET</A>
+, <A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2a5.htm#18397" CLASS="XRef">
+HDF_SD_END</A>
+, <A HREF="idl2a7.htm#64575" CLASS="XRef">
+HDF_SD_FILEINFO</A>
+, <A HREF="idl2ac.htm#56518" CLASS="XRef">
+HDF_SD_NAMETOINDEX</A>
+, <A HREF="idl2ad.htm#14254" CLASS="XRef">
+HDF_SD_REFTOINDEX</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+, <A HREF="idl2af.htm#48072" CLASS="XRef">
+HDF_SD_SETEXTFILE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

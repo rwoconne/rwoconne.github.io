@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> REVERSE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl180.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl17e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758865">
+ </A>
+<A NAME="82341">
+ </A>
+REVERSE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758866">
+ </A>
+The <A NAME="marker=203228">
+ </A>
+REVERSE function <A NAME="marker=203229">
+ </A>
+reverses the order of rows or columns in a one-, two-, or three-dimensional array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758867">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+reverse.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758868">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758869">
+ </A>
+Result = REVERSE(<I CLASS="Italic">
+Array [, Subscript_Index]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758870">
+ </A>
+Arguments </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758871">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758872">
+ </A>
+The array containing the original data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758873">
+ </A>
+Subscript_Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758874">
+ </A>
+If this parameter is omitted or 1, the first subscript is reversed (i.e., columns are reversed). Set this parameter to 2 to reverse rows. Set this parameter to 3 to reverse around the third dimension of the array. This argument <I CLASS="Italic">
+must</I>
+ be present if <I CLASS="Italic">
+Array</I>
+ is three dimensional.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758875">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758876">
+ </A>
+Reverse the order of an array where each element is set to the value of its subscript:</P>
+<P CLASS="Code">
+<A NAME="pgfId=72336">
+ </A>
+A = [[0,1,2],[3,4,5],[6,7,8]]	<EM CLASS="Comment">;
+Create an array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=72337">
+ </A>
+PRINT, A	<EM CLASS="Comment">;
+Print the array.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=72343">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72344">
+ </A>
+0       1       2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72353">
+ </A>
+3       4       5</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72354">
+ </A>
+6       7       8</P>
+<P CLASS="Code">
+<A NAME="pgfId=72338">
+ </A>
+PRINT, REVERSE(A)	<EM CLASS="Comment">;
+Reverse the columns of A.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=72345">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72349">
+ </A>
+2       1       0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72386">
+ </A>
+5       4       3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72387">
+ </A>
+8       7       6</P>
+<P CLASS="Code">
+<A NAME="pgfId=72346">
+ </A>
+PRINT, REVERSE(A, 2)	<EM CLASS="Comment">;
+Reverse the rows of A.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=72350">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72351">
+ </A>
+6       7       8</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72409">
+ </A>
+3       4       5</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=72428">
+ </A>
+0       1       2</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795749">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795750">
+ </A>
+<A HREF="idlda.htm#99308" CLASS="XRef">
+INVERT</A>
+, <A HREF="idl176.htm#40629" CLASS="XRef">
+REFORM</A>
+, <A HREF="idl184.htm#79661" CLASS="XRef">
+ROT</A>
+, <A HREF="idl185.htm#94278" CLASS="XRef">
+ROTATE</A>
+, <A HREF="idl19b.htm#56933" CLASS="XRef">
+SHIFT</A>
+, <A HREF="idl1de.htm#70508" CLASS="XRef">
+TRANSPOSE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

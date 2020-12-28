@@ -1,0 +1,1593 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrVolume</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl30c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl30a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=998565">
+ </A>
+<A NAME="97522">
+ </A>
+IDLgrVolume</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1009231">
+ </A>
+A <A NAME="marker=1022456">
+ </A>
+volume object represents a mapping from a three-dimensional array of data to a three-dimensional array of voxel colors, which, when drawn, are projected to two dimensions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1040119">
+ </A>
+An IDLgrVolume object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1183137">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1038587">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1009533">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1009534">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009535">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009536">
+ </A>
+See <A HREF="idl30b.htm#23689" CLASS="XRef">
+IDLgrVolume::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009548">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1009549">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1009550">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1014622">
+ </A>
+<A HREF="idl30b.htm#41284" CLASS="XRef">
+IDLgrVolume::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1034056">
+ </A>
+<A HREF="idl30b.htm#29356" CLASS="XRef">
+IDLgrVolume::ComputeBounds</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1039004">
+ </A>
+<A HREF="idl30b.htm#32515" CLASS="XRef">
+IDLgrVolume::GetCTM</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1019348">
+ </A>
+<A HREF="idl30b.htm#49549" CLASS="XRef">
+IDLgrVolume::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1009554">
+ </A>
+<A HREF="idl30b.htm#23689" CLASS="XRef">
+IDLgrVolume::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1019353">
+ </A>
+<A HREF="idl30b.htm#24159" CLASS="XRef">
+IDLgrVolume::PickVoxel</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1009562">
+ </A>
+<A HREF="idl30b.htm#37253" CLASS="XRef">
+IDLgrVolume::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031544">
+ </A>
+<A NAME="41284">
+ </A>
+IDLgrVolume::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031547">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052444">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041866">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031551">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051147">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051148">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031552">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031553">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031554">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031555">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031556">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1019298">
+ </A>
+<A NAME="29356">
+ </A>
+IDLgrVolume::ComputeBounds</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019299">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052447">
+ </A>
+ComputeBounds procedure method computes the smallest bounding box that contains all voxels whose opacity lookup is greater than a given opacity value. The BOUNDS property is updated to the computed bounding box. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1019303">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019304">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+ComputeBounds</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1019305">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019330">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1019310">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019319">
+ </A>
+<A NAME="marker=1023297">
+ </A>
+OPACITY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019340">
+ </A>
+Set this keyword to the opacity value to be used to determine which voxels are included within the bounding box. All voxels whose opacity lookup is greater than this value will be included. The default value is zero.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019346">
+ </A>
+<A NAME="marker=1023298">
+ </A>
+RESET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1038964">
+ </A>
+Set this keyword to cause the BOUNDS keyword of IDLgrVolume::Init to be reset to contain the entire volume.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143333">
+ </A>
+<A NAME="marker=1143332">
+ </A>
+VOLUMES</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143334">
+ </A>
+Set this keyword to an array of integers which select which volumes to consider when computing the bounding box. A non-zero value selects a volume to be searched. The default is to search all loaded volumes. For example: VOLUMES=[0,1] will cause ComputeBounds to search only the volume loaded in DATA1. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1044301">
+ </A>
+<A NAME="32515">
+ </A>
+IDLgrVolume::GetCTM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1044304">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052451">
+ </A>
+GetCTM function method returns the 4 x 4 graphics transform matrix from the current object upward through the graphics tree. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038985">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038986">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+GetCTM()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038987">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038988">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038989">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1038991">
+ </A>
+<A NAME="marker=1038990">
+ </A>
+DESTINATION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058063">
+ </A>
+Set this keyword to the object reference of a destination object to specify that the projection matrix for the View object in the current tree be included in the returned transformation matrix. The resulting matrix will transform a point in the data space of the object on which the GetCTM method is called into a normalized coordinate system (-1 to +1 in X, Y, and Z), relative to the View object that contains the volume object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1047345">
+ </A>
+<A NAME="marker=1047344">
+ </A>
+TOP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059543">
+ </A>
+Set this keyword equal to the object reference to an <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ object to specify that the returned matrix accumulate from the object on which the GetCTM method is called up to and including the specified model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1038967">
+ </A>
+<A NAME="49549">
+ </A>
+IDLgrVolume::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038970">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052454">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the volume. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014632">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014633">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014634">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014635">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014636">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016828">
+ </A>
+Any keyword to <A HREF="idl30b.htm#23689" CLASS="XRef">
+IDLgrVolume::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014641">
+ </A>
+<A NAME="marker=1022619">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093664">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093665">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1048982">
+ </A>
+<A NAME="marker=1048981">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068365">
+ </A>
+Set this keyword equal to a named variable that will contain an object reference to the object that contains this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143339">
+ </A>
+<A NAME="marker=1143338">
+ </A>
+VALID_DATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143340">
+ </A>
+Set his keyword equal to a named variable that will contain an array of integers (one per volume, DATA0, DATA1, etc.) which have the value 1 if volume data has been loaded for that volume and 0 if that volume data is currently undefined.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039183">
+ </A>
+<A NAME="marker=1039181">
+ </A>
+XRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068397">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+xmin</EM>
+, <EM CLASS="Emphasis">
+xmax</EM>
+] that specifies the range of <EM CLASS="Emphasis">
+x</EM>
+ data coordinates covered by the graphic object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039187">
+ </A>
+<A NAME="marker=1039185">
+ </A>
+YRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068422">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+] that specifies the range of <EM CLASS="Emphasis">
+y </EM>
+data coordinates covered by the graphic object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039191">
+ </A>
+<A NAME="marker=1039189">
+ </A>
+ZRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068451">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+] that specifies the range of <EM CLASS="Emphasis">
+z </EM>
+data coordinates covered by the graphic object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1023320">
+ </A>
+<A NAME="23689">
+ </A>
+IDLgrVolume::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1018834">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052458">
+ </A>
+Init function method initializes the volume object. At least one volume method must be specified, via arguments or keywords. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041767">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1018838">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019855">
+ </A>
+Obj = OBJ_NEW('IDLgrVolume' <EM CLASS="Emphasis">
+[, vol</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+<EM CLASS="Emphasis">
+, vol</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+<EM CLASS="Emphasis">
+]</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1042010">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1042011">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+Init(<EM CLASS="Emphasis">
+[vol</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+,<EM CLASS="Emphasis">
+vol</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+<EM CLASS="Emphasis">
+] </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998572">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998573">
+ </A>
+vol<SUB CLASS="Subscript">
+0</SUB>
+</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059138">
+ </A>
+A three-element array (<EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+x</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+), which specifies a data volume.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1176522">
+ </A>
+vol<SUB CLASS="Subscript">
+1</SUB>
+</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1176523">
+ </A>
+A three-element array (<EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+x</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+), which specifies a data volume.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1176530">
+ </A>
+If both of the above arguments are specified, they must have matching dimensions.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998575">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020341">
+ </A>
+Properties retrievable via <A HREF="idl30b.htm#49549" CLASS="XRef">
+IDLgrVolume::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998577">
+ </A>
+<A NAME="marker=1023551">
+ </A>
+AMBIENT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1018889">
+ </A>
+Use this keyword to set the color and intensity of the volume's base ambient lighting. Color is specified as an RGB vector. The default is [255, 255, 255]. AMBIENT is applicable only when LIGHTING_MODEL is set.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1018886">
+ </A>
+<A NAME="marker=1023552">
+ </A>
+<A NAME="39378">
+ </A>
+BOUNDS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1018903">
+ </A>
+Set this keyword to a six-element vector of the form [<EM CLASS="Emphasis">
+xmin</EM>
+, <EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+xmax</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+], which represents the sub-volume to be rendered. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019037">
+ </A>
+<A NAME="marker=1023553">
+ </A>
+<A NAME="21011">
+ </A>
+COMPOSITE_FUNCTION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019038">
+ </A>
+The composite function determines the value of a pixel on the viewing plane by analyzing the voxels falling along the corresponding ray, according to one of the following compositing functions:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030470">
+ </A>
+0 = Alpha (default): <BR>
+Alpha-blending. The recursive equation<BR>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;&nbsp;dest' = src * srcalpha + dest * (1 - srcalpha)<BR>
+</CODE>
+is used to compute the final pixel color.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1019039">
+ </A>
+1 = MIP: <BR>
+Maximum intensity projection. The value of each pixel on the viewing plane is set to the brightest voxel, as determined by its opacity. The most opaque voxel's color appropriation is then reflected by the pixel on the viewing plane.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1018927">
+ </A>
+2 = Alpha sum: <BR>
+Alpha-blending. The recursive equation<BR>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;&nbsp;dest' = src + dest * ( 1 - srcalpha)<BR>
+</CODE>
+is used to compute the final pixel color. This equation assumes that the color tables have been pre-multiplied by the opacity tables. The accumulated values can be no greater than 255.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1018930">
+ </A>
+3 = Average: <BR>
+Average-intensity projection. The resulting image is the average of all voxels along the corresponding ray.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019070">
+ </A>
+<A NAME="marker=1023554">
+ </A>
+CUTTING_PLANES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019071">
+ </A>
+Set this keyword to a floating point array with dimensions (4, <EM CLASS="Emphasis">
+n</EM>
+) specifying the coefficients of <EM CLASS="Emphasis">
+n</EM>
+ cutting planes. The cutting plane coefficients are in the form {{<EM CLASS="Emphasis">
+n</EM>
+<SUB CLASS="Subscript">
+x</SUB>
+<EM CLASS="Emphasis">
+</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+<EM CLASS="Emphasis">
+</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+<EM CLASS="Emphasis">
+</EM>
+, <EM CLASS="Emphasis">
+D</EM>
+}, ...} where (<EM CLASS="Emphasis">
+n</EM>
+<SUB CLASS="Subscript">
+x</SUB>
+<EM CLASS="Emphasis">
+</EM>
+)<EM CLASS="Emphasis">
+X</EM>
++(<EM CLASS="Emphasis">
+n</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+<EM CLASS="Emphasis">
+</EM>
+)<EM CLASS="Emphasis">
+Y</EM>
++(<EM CLASS="Emphasis">
+n</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+<EM CLASS="Emphasis">
+</EM>
+)<EM CLASS="Emphasis">
+Z</EM>
++ <EM CLASS="Emphasis">
+D</EM>
+ &gt; 0, and (<EM CLASS="Emphasis">
+X</EM>
+,<EM CLASS="Emphasis">
+ Y</EM>
+,<EM CLASS="Emphasis">
+ Z</EM>
+) are the voxel coordinates. To clear the cutting planes, set this property to any scalar value (e.g. CUTTING_PLANES = 0). By default, no cutting planes are defined.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1018964">
+ </A>
+<A NAME="marker=1023555">
+ </A>
+DATA0 (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1018971">
+ </A>
+Set this keyword to a three-element array of the format (<EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+x</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+), which specifies a data volume. Setting this property is the same as including the <EM CLASS="Emphasis">
+vol0</EM>
+ argument at creation time. If the data volume dimensions do not match those of any pre-existing data in DATA1, the data in DATA1 will be removed from the object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143320">
+ </A>
+<A NAME="marker=1143319">
+ </A>
+DATA1 (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143321">
+ </A>
+Set this keyword to a three-element array of the format (<EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+x</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+, <EM CLASS="Emphasis">
+d</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+), which specifies a data volume. Setting this property is the same as including the <EM CLASS="Emphasis">
+vol1</EM>
+ argument at creation time. If the data volume dimensions do not match those of any pre-existing data in DATA0, the data in DATA0 will be removed from the object.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1183486">
+ </A>
+DATA0 and DATA1` sizes are dynamic.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1018965">
+ </A>
+<A NAME="marker=1023556">
+ </A>
+DEPTH_CUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069084">
+ </A>
+Set this keyword to a two-element floating point array [<I CLASS="Italic">
+zbright</I>
+, <I CLASS="Italic">
+zdim</I>
+] specifying the near and far Z planes between which depth cueing is in effect. Depth cueing is only honored when drawing to a destination object that uses the RGB color model.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060200">
+ </A>
+Depth cuing causes an object to appear to fade into the background color of the view object with changes in depth. If the depth of an object is further than <EM CLASS="Emphasis">
+zdim</EM>
+ (that is, if the object's location in the Z direction is farther from the origin than the value specified by <EM CLASS="Emphasis">
+zdim</EM>
+), the object will be painted in the background color. Similarly, if the object is closer than the value of <EM CLASS="Emphasis">
+zbright</EM>
+, the object will appear in its &quot;normal&quot; color. Anywhere in-between, the object will be a blend of the background color and the object color. For example, if the DEPTH_CUE property is set to [-1,1], an object at the depth of 0.0 will appear as a 50% blend of the object color and the view color.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060205">
+ </A>
+The relationship between <EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+bright</SUB>
+<EM CLASS="Emphasis">
+ </EM>
+and<EM CLASS="Emphasis">
+ Z</EM>
+<SUB CLASS="Subscript">
+dim</SUB>
+<EM CLASS="Emphasis">
+</EM>
+ determines the result of the rendering:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060206">
+ </A>
+<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+bright</SUB>
+<EM CLASS="Emphasis">
+&nbsp;&lt;&nbsp;Z</EM>
+<SUB CLASS="Subscript">
+dim</SUB>
+<EM CLASS="Emphasis">
+</EM>
+: Rendering darkens with depth.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060207">
+ </A>
+<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+bright</SUB>
+<EM CLASS="Emphasis">
+&nbsp;&gt;&nbsp;Z</EM>
+<SUB CLASS="Subscript">
+dim</SUB>
+<EM CLASS="Emphasis">
+</EM>
+: Rendering brightens with depth.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060208">
+ </A>
+<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+bright</SUB>
+<EM CLASS="Emphasis">
+</EM>
+ = <EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+dim</SUB>
+<EM CLASS="Emphasis">
+</EM>
+: Disables depth queuing.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1060201">
+ </A>
+You can disable depth cueing by setting <I CLASS="Italic">
+zbright</I>
+ = <I CLASS="Italic">
+zdim</I>
+. The default is [0.0, 0.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049218">
+ </A>
+<A NAME="marker=1049217">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049219">
+ </A>
+Set this keyword to a boolean value indicating whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068513">
+ </A>
+0 = Draw graphic (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068514">
+ </A>
+1 = Do not draw graphic</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1018977">
+ </A>
+<A NAME="marker=1023557">
+ </A>
+INTERPOLATE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998580">
+ </A>
+Set this keyword to indicate that Trilinear interpolation is to be used to determine the data value for each step on a ray. Setting this keyword improves the quality of images produced, at the cost of more computing time. especially when the volume has low resolution with respect to the size of the viewing plane. Nearest neighbor sampling is used by default.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998581">
+ </A>
+<A NAME="marker=1023562">
+ </A>
+LIGHTING_MODEL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019147">
+ </A>
+Set this keyword to use the current lighting model during rendering in conjunction with a local gradient evaluation.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1183358">
+ </A>
+Only DIRECTIONAL light sources are honored by the volume object. Because normals must be computed for all voxels in a lighted view, enabling light sources increases the rendering time.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049064">
+ </A>
+<A NAME="marker=1049063">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058324">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019143">
+ </A>
+<A NAME="marker=1023563">
+ </A>
+NO_COPY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019154">
+ </A>
+Set this keyword to relocate volume data from the input variables to the volume object, leaving the input variables undefined. Only the DATA0 keyword and the <EM CLASS="Emphasis">
+vol0</EM>
+ argument are affected. If this keyword is omitted, the input volume data will be duplicated and a copy will be stored in the object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019150">
+ </A>
+<A NAME="marker=1023571">
+ </A>
+OPACITY_TABLE0 (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998582">
+ </A>
+Set this keyword to a 256-element byte array to specify an opacity table for DATA0. The default table is the linear ramp.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143326">
+ </A>
+<A NAME="marker=1143325">
+ </A>
+OPACITY_TABLE1 (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143327">
+ </A>
+Set this keyword to a 256-element byte array to specify an opacity table for DATA1. The default table is the linear ramp. This table is used only when VOLUME_SELECT is set equal to 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998583">
+ </A>
+<A NAME="marker=1023572">
+ </A>
+RENDER_STEP (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019169">
+ </A>
+Set this keyword to a three element vector of the form [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+] to specify the stepping factor through the voxel matrix.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019175">
+ </A>
+<A NAME="marker=1023573">
+ </A>
+RGB_TABLE0 (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019176">
+ </A>
+Set this keyword to a 256 x 3-element byte array to specify an RGB color table for DATA0. The default table is the linear ramp. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1183194">
+ </A>
+<A NAME="marker=1183193">
+ </A>
+RGB_TABLE1 (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1183195">
+ </A>
+Set this keyword to a 256 x 3-element byte array to specify an RGB color table for DATA1. The default table is the linear ramp. This table is used only when VOLUME_SELECT is set equal to 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019165">
+ </A>
+<A NAME="marker=1023574">
+ </A>
+TWO_SIDED (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019191">
+ </A>
+Set this keyword to force the lighting model to use a two-sided voxel gradient. The two-sided gradient is different from the one-sided gradient (default) in that the absolute value of the inner product of the light direction and the surface gradient is used instead of clamping to 0.0 for negative values. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049119">
+ </A>
+<A NAME="marker=1049118">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058374">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143312">
+ </A>
+<A NAME="marker=1143311">
+ </A>
+VOLUME_SELECT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143313">
+ </A>
+Set this keyword to an integer value to select the form of the volume to be rendered. The VOLUME_SELECT keyword is used to modify the <CODE CLASS="Code">
+src</CODE>
+ and <CODE CLASS="Code">
+srcalpha</CODE>
+ parameters for the COMPOSITE_FUNCTION keyword (on page <A HREF="idl30b.htm#21011" CLASS="XRef">
+COMPOSITE_FUNCTION (Get, Set)</A>
+).</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143314">
+ </A>
+0 = render voxels from the 8bit DATA0 volume (the default)<BR>
+<CODE CLASS="Code">
+src = RGB_TABLE0[DATA0], <BR>
+srcalpha = OPACITY_TABLE0[DATA0]</CODE>
+</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143315">
+ </A>
+1 = render voxels formed by modulating the RGBA components from DATA0 and DATA1 (after RGB and OPACITY table lookups).<BR>
+<CODE CLASS="Code">
+src = (RGB_TABLE0[DATA0]*RGB_TABLE1[DATA1])/256, <BR>
+srcalpha=(OPACITY_TABLE0[DATA0]*OPACITY_TABLE1[DATA1])/256</CODE>
+</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039970">
+ </A>
+<A NAME="marker=1039969">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039971">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039972">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039973">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039974">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039975">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039977">
+ </A>
+<A NAME="marker=1039976">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039978">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039979">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039980">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039981">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039982">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1040040">
+ </A>
+<A NAME="marker=1040039">
+ </A>
+ZBUFFER (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1040041">
+ </A>
+Set this keyword to clip the rendering to the current Z-buffer and then update the buffer. The default is to not modify the current Z-buffer.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039984">
+ </A>
+<A NAME="marker=1039983">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039985">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039986">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039987">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039988">
+ </A>
+[(-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039989">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1040034">
+ </A>
+<A NAME="marker=1040033">
+ </A>
+ZERO_OPACITY_SKIP (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1040035">
+ </A>
+Set this keyword to skip voxels with an opacity of 0. This keyword can increase the output contrast of MIP (MAXIMUM_INTENSITY) projections by allowing the background to show through. If this keyword is set, voxels with an opacity of zero will not modify the Z-buffer. The default (not setting the keyword) continues to render voxels with an opacity of zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1019241">
+ </A>
+<A NAME="24159">
+ </A>
+IDLgrVolume::PickVoxel</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019242">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052461">
+ </A>
+PickVoxel function method computes the coordinates of the voxel projected to a location specified by the 2D device coordinates point, [<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+<EM CLASS="Emphasis">
+</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+<EM CLASS="Emphasis">
+</EM>
+], and the current Z-buffer. The function returns the volume indices as a a vector of three long integers. If the selected point is not within the volume, this function returns [-1,-1,-1]. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1019246">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019247">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+PickVoxel (<EM CLASS="Emphasis">
+Win</EM>
+, <EM CLASS="Emphasis">
+View, Point</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1019248">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019249">
+ </A>
+Win</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019282">
+ </A>
+The <A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ object from which the Z-buffer is to be used.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1110748">
+ </A>
+View</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1110749">
+ </A>
+The IDLgrView object that contains the volume.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1019280">
+ </A>
+Point</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019283">
+ </A>
+The [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] viewport coordinates of the point chosen.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1019250">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019287">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=998597">
+ </A>
+<A NAME="37253">
+ </A>
+IDLgrVolume::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009704">
+ </A>
+The IDLgrVolume::<A NAME="marker=1052466">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the volume. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30b.htm#97522" CLASS="XRef">
+IDLgrVolume</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009705">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009706">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVolume::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009707">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009708">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009709">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016836">
+ </A>
+Any keyword to <A HREF="idl30b.htm#23689" CLASS="XRef">
+IDLgrVolume::Init</A>
+</DIV>
+</BODY>
+</HTML>

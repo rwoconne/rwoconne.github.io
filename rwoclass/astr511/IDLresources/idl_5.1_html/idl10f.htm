@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAP_PATCH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl110.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl10e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887813">
+ </A>
+<A NAME="32545">
+ </A>
+MAP_PATCH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887818">
+ </A>
+The <A NAME="marker=887816">
+ </A>
+MAP_PATCH function returns an <A NAME="marker=887817">
+ </A>
+image (or other dataset) warped to fit the current map projection. Mapping coordinates should be setup via a call to MAP_SET before using MAP_PATCH.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887819">
+ </A>
+MAP_PATCH works in object (data) space. It divides the input data set, <EM CLASS="Emphasis">
+Image_Orig</EM>
+, into triangular patches, either directly from the implicit rectangular grid, or by triangulating the data points on the surface of the sphere using the TRIANGULATE procedure. These triangular patches are then projected to the map plane in the image space of the destination array and then interpolated. The time required by MAP_PATCH depends mainly on the number of elements in the input array. </P>
+<P CLASS="Body">
+<A NAME="pgfId=887820">
+ </A>
+MAP_PATCH is more efficient than MAP_IMAGE when the destination area is large compared to the input data set.  If the converse is true, MAP_IMAGE is more efficient.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887821">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+map_patch.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887822">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887823">
+ </A>
+Result = MAP_PATCH(<I CLASS="Italics">
+Image_Orig [, Lons, Lats]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887824">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887825">
+ </A>
+Image_Orig</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887826">
+ </A>
+A one- or two-dimensional array that contains the data to be overlaid on the map. If the TRIANGULATE keyword is not set, <EM CLASS="Emphasis">
+Image_Orig</EM>
+ must be a two-dimensional array. Rows and columns must be arranged in increasing longitude and latitude order. Also, the corner points of each cell must be contiguous. This means that the seam of a map must lie on a cell boundary, not in its interior, splitting the cell.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887827">
+ </A>
+Lons</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887828">
+ </A>
+An optional vector that contains the longitude value for each column in <I CLASS="Italics">
+Image_Orig</I>
+. If <EM CLASS="Emphasis">
+Lons</EM>
+ is a one-dimensional vector, longitude<EM CLASS="Emphasis">
+ </EM>
+(<EM CLASS="Emphasis">
+Image_Orig</EM>
+[i,j]) = <EM CLASS="Emphasis">
+Lons</EM>
+[i]; if <EM CLASS="Emphasis">
+Lons</EM>
+ is a two-dimensional vector, longitude<EM CLASS="Emphasis">
+ </EM>
+(<EM CLASS="Emphasis">
+Image_Orig</EM>
+[i,j]) = <EM CLASS="Emphasis">
+Lons</EM>
+[i,j].</P>
+<P CLASS="Body">
+<A NAME="pgfId=887829">
+ </A>
+This argument can be omitted if the longitudes are equally-spaced and the beginning and ending longitudes are specified with the LON0 and LON1 keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887830">
+ </A>
+Lats</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887831">
+ </A>
+An optional vector that contains the latitude value for each row in <I CLASS="Italics">
+Image_Orig</I>
+. If <EM CLASS="Emphasis">
+Lats</EM>
+ is a one-dimensional vector, latitude<EM CLASS="Emphasis">
+ </EM>
+(<EM CLASS="Emphasis">
+Image_Orig</EM>
+[i,j]) = <EM CLASS="Emphasis">
+Lats</EM>
+[i]; if <EM CLASS="Emphasis">
+Lats</EM>
+ is a two-dimensional vector, latitude<EM CLASS="Emphasis">
+ </EM>
+(<EM CLASS="Emphasis">
+Image_Orig</EM>
+[i,j]) = <EM CLASS="Emphasis">
+Lats</EM>
+[i,j].</P>
+<P CLASS="Body">
+<A NAME="pgfId=887832">
+ </A>
+This argument can be omitted if the latitudes are equally-spaced and the beginning and ending latitudes are specified with the LAT0 and LAT1 keywords.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887833">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887835">
+ </A>
+<A NAME="marker=887834">
+ </A>
+LAT0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887836">
+ </A>
+The latitude of the first row of data. The default is -90.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887838">
+ </A>
+<A NAME="marker=887837">
+ </A>
+LAT1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887839">
+ </A>
+The latitude of the last row of data. The default is +90.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887841">
+ </A>
+<A NAME="marker=887840">
+ </A>
+LON0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887842">
+ </A>
+The longitude of the first column of data. The default is -180.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887844">
+ </A>
+<A NAME="marker=887843">
+ </A>
+LON1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887845">
+ </A>
+The longitude of the last column of data. The default is 180 - (360/Number-of-Rows)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887847">
+ </A>
+<A NAME="marker=887846">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887848">
+ </A>
+Set this keyword to a value to be used for areas outside the valid map coordinates (i.e., the &quot;background color&quot;). If the current plotting device is PostScript, the default is 255 (white). Otherwise, the default is 0 (usually black).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887850">
+ </A>
+<A NAME="marker=887849">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887851">
+ </A>
+The largest data value to be warped. Values in <I CLASS="Italics">
+Image_Orig</I>
+ greater than this value are considered missing. Pixels in the output image that correspond to these missing values are set to the value specified by the MISSING keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887853">
+ </A>
+<A NAME="marker=887852">
+ </A>
+TRIANGULATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887854">
+ </A>
+Set this keyword to convert the input data to device space and triangulate them. This keyword must be specified if the connectivity of the data points is not rectangular and monotonic in device space.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887856">
+ </A>
+<A NAME="marker=887855">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887857">
+ </A>
+Set this keyword to a named variable in which the width of the output image is returned, in graphic coordinate units. If the current graphics device has scalable pixels (e.g., PostScript), the values returned by XSIZE and YSIZE should be passed to the TV procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887859">
+ </A>
+<A NAME="marker=887858">
+ </A>
+XSTART</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887860">
+ </A>
+Set this keyword to a named variable in which the X coordinate where the left edge of the image should be placed on the screen is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887862">
+ </A>
+<A NAME="marker=887861">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887863">
+ </A>
+Set this keyword to a named variable in which the height of the output image is returned, in graphic coordinate units. If the current graphics device has scalable pixels (e.g., PostScript), the values returned by XSIZE and YSIZE should be passed to the TV procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887865">
+ </A>
+<A NAME="marker=887864">
+ </A>
+YSTART</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887866">
+ </A>
+Set this keyword to a named variable in which the Y coordinate where the bottom edge of the image should be placed on the screen is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887867">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=887868">
+ </A>
+n = 24	<EM CLASS="Comment">;
+Form a 24 x 24 dataset on a sphere.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887869">
+ </A>
+lat = replicate(180./(n-1),n) # findgen(n) - 90<BR>
+<EM CLASS="Comment">;
+Specify equally gridded latitudes.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887870">
+ </A>
+lon = findgen(n) # replicate(360./(n-1), n)<BR>
+<EM CLASS="Comment">;
+Specify equally gridded longitudes.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887871">
+ </A>
+x = cos(lon * !dtor) * cos(lat * !dtor)</P>
+<P CLASS="Code">
+<A NAME="pgfId=887872">
+ </A>
+y = sin(lon * !dtor) * cos(lat * !dtor)</P>
+<P CLASS="Code">
+<A NAME="pgfId=887873">
+ </A>
+z = sin(lat * !dtor)	<EM CLASS="Comment">;
+Convert to Cartesian coordinates.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887874">
+ </A>
+f = BYTSCL((x-1)^2 + (y-1)^2 + z^2)	<EM CLASS="Comment">;
+Set interpolation function to scaled distance squared from (1,1,0).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887875">
+ </A>
+MAP_SET, 90, 0, /STEREO, /ISOTROPIC, /HORIZ<BR>
+<EM CLASS="Comment">;
+Set up projection.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887876">
+ </A>
+TV, MAP_PATCH(f, XSTART=x0, YSTART=y0), x0, y0<BR>
+<EM CLASS="Comment">;
+Grid and display the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887877">
+ </A>
+MAP_GRID	<EM CLASS="Comment">;
+Draw gridlines over the map and image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887878">
+ </A>
+MAP_CONTINENTS	<EM CLASS="Comment">;
+Draw continent outlines.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887879">
+ </A>
+MAP_HORIZON	<EM CLASS="Comment">;
+Draw a horizon line.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887880">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887893">
+ </A>
+<A HREF="idl10c.htm#95626" CLASS="XRef">
+MAP_CONTINENTS</A>
+, <A HREF="idl10d.htm#30282" CLASS="XRef">
+MAP_GRID</A>
+, <A HREF="idl10e.htm#12714" CLASS="XRef">
+MAP_IMAGE</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

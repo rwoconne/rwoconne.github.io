@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SET_PLOT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl192.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl190.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862561">
+ </A>
+<A NAME="16964">
+ </A>
+SET_PLOT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862569">
+ </A>
+The <A NAME="marker=862563">
+ </A>
+<A NAME="marker=862564">
+ </A>
+<A NAME="marker=862565">
+ </A>
+SET_PLOT procedure sets the output device used by the IDL graphics procedures. Keyword parameters control how the color tables are transferred to the newly selected graphics device. SET_PLOT performs the following actions:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=862570">
+ </A>
+It sets the read-only system variable !D to reflect the configuration of the new device.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=862571">
+ </A>
+It sets the default color !P.COLOR to the maximum color index minus one or, in the case of devices with white backgrounds, such as PostScript, to 0 (black).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=862575">
+ </A>
+If the COPY keyword is set, the device color tables are copied directly from IDL's internal color tables. If the new device's color tables contain more indices than those of the old device, the new device's tables are not completely filled.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=862576">
+ </A>
+If the INTERPOLATE keyword is set, the internal color tables are interpolated to fill the range of the new device.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=862577">
+ </A>
+It sets the clipping rectangle to the entire device surface.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=862578">
+ </A>
+Warnings: After calling SET_PLOT to change graphics devices, the scaling contained in the axis structures !X, !Y, and !Z is invalid. Any routines that rely on data coordinates should not be called until a new data coordinate system has been established. Be careful when switching devices as the number of color indices frequently differs between devices. When in doubt, reload the color table of the new device explicitly.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862579">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862580">
+ </A>
+SET_PLOT, <I CLASS="Italic">
+Device</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862581">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862582">
+ </A>
+Device</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862583">
+ </A>
+A scalar string containing the name of the device to use. The case of <I CLASS="Italic">
+Device</I>
+ is ignored by IDL. See <A HREF="idl22d.htm#56982" CLASS="XRef">
+IDL Graphics Devices</A>
+ for a list of device names.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862590">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862592">
+ </A>
+<A NAME="marker=862591">
+ </A>
+COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862593">
+ </A>
+Set this keyword to copy the device's color table from the internal color table, preserving the current color mapping. The default is not to load the color table upon selection.</P>
+<P CLASS="Body">
+<A NAME="pgfId=862597">
+ </A>
+Warning: Unless this keyword is set, IDL's internal color tables will incorrectly reflect the state of the device's color tables until they are reloaded by TVLCT or the LOADCT procedure. Assuming that the previously-selected device's color table contains <I CLASS="Italic">
+M</I>
+ elements, and the new device's color table contains <I CLASS="Italic">
+N</I>
+ elements, then the minimum of <I CLASS="Italic">
+M</I>
+ and <I CLASS="Italic">
+N</I>
+ elements are loaded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862599">
+ </A>
+<A NAME="marker=862598">
+ </A>
+INTERPOLATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862600">
+ </A>
+Set this keyword to indicate that the current contents of the internal color table should be interpolated to cover the range of the newly-selected device. Otherwise, the internal color tables are not changed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862601">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862605">
+ </A>
+Change the IDL graphics device to PostScript by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=862606">
+ </A>
+SET_PLOT, 'PS'</P>
+<P CLASS="Body">
+<A NAME="pgfId=862607">
+ </A>
+After changing the plotting device, all graphics commands are sent to that device until changed again by another use of the SET_PLOT routine.</P>
+</DIV>
+</BODY>
+</HTML>

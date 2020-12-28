@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LEEFILT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758191">
+ </A>
+<A NAME="62710">
+ </A>
+LEEFILT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758193">
+ </A>
+The <A NAME="marker=758192">
+ </A>
+LEEFILT function performs the Lee <A NAME="marker=788422">
+ </A>
+filter algorithm on an image array using a box of size 2<EM CLASS="Emphasis">
+N</EM>
++1. This function can also be used on vectors. The Lee technique smooths additive image noise by generating statistics in a local neighborhood and comparing them to the expected values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758194">
+ </A>
+This routine is written in the IDL language. It is based upon the algorithm published by Lee (<EM CLASS="Emphasis">
+Optical Engineering</EM>
+ 25(5), 636-646, May 1986). Its source code can be found in the file <CODE CLASS="Code">
+leefilt.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758195">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758196">
+ </A>
+Result = LEEFILT(<EM CLASS="Emphasis">
+A [, N [, Sig]]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758197">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758198">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758199">
+ </A>
+The input image array or one-dimensional vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758200">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758201">
+ </A>
+The size of the filter box is 2<EM CLASS="Emphasis">
+N</EM>
++1. The default value is 5.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758202">
+ </A>
+Sig</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758203">
+ </A>
+Estimate of the standard deviation. The default is 5. If <EM CLASS="Emphasis">
+Sig</EM>
+ is negative, IDL interactively prompts for a value of <CODE CLASS="Code">
+sigma</CODE>
+, and displays the resulting image using TVSCL (for arrays) or PLOT (for vectors). To end this cycle, enter a value of 0 (zero) for <CODE CLASS="Code">
+sigma</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=833684">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=833703">
+ </A>
+<A NAME="marker=833711">
+ </A>
+EXACT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=833704">
+ </A>
+Set this keyword to apply a more accurate (but slower) implementation of the Lee filter.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758205">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822342">
+ </A>
+<A HREF="idl7c.htm#25464" CLASS="XRef">
+DIGITAL_FILTER</A>
+, <A HREF="routinesM-O.html#23439" CLASS="XRef">
+</A>
+, <A HREF="idl1a6.htm#43465" CLASS="XRef">
+SMOOTH</A>
+, <A HREF="idl1f7.htm#47165" CLASS="XRef">
+VOIGT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

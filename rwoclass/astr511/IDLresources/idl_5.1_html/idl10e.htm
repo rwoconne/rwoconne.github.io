@@ -1,0 +1,411 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAP_IMAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl10f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl10d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887718">
+ </A>
+<A NAME="12714">
+ </A>
+MAP_IMAGE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887723">
+ </A>
+The <A NAME="marker=887721">
+ </A>
+MAP_IMAGE function returns an <A NAME="marker=887722">
+ </A>
+image (or other dataset) warped to fit the current map projection. This function provides an easy method for displaying geographical data as an image on a map. The MAP_SET procedure should be called prior to calling MAP_IMAGE.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887724">
+ </A>
+MAP_IMAGE works in image (graphic) space.  For each destination pixel (when COMPRESS is set to one) MAP_IMAGE calculates the latitude and longitude by applying the inverse map projection.  This latitude and longitude are then used to index and interpolate the <I CLASS="Italic">
+Image</I>
+ argument, obtaining an interpolated value for the destination pixel. The time required by MAP_IMAGE depends mainly on the number of pixels in the destination and the setting of the COMPRESS parameter.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887725">
+ </A>
+MAP_IMAGE is more efficient than MAP_PATCH when the input data set is large compared to the destination area.  If the converse is true, MAP_PATCH is more efficient. </P>
+<P CLASS="Body">
+<A NAME="pgfId=887729">
+ </A>
+For more information, see <A HREF="..html#72897" CLASS="XRef">
+Image Display</A>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887730">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887731">
+ </A>
+Result = MAP_IMAGE(<I CLASS="Italics">
+Image [, Startx, Starty [, Xsize, Ysize]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887732">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887733">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887734">
+ </A>
+A two-dimensional array containing the image to be overlaid on the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887735">
+ </A>
+Startx</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887736">
+ </A>
+A named variable that, upon return, contains the X coordinate position where the left edge of the image should be placed on the screen.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887737">
+ </A>
+Starty</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887738">
+ </A>
+A named variable that, upon return, contains the Y coordinate position where the left edge of the image should be placed on the screen.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887739">
+ </A>
+Xsize</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887740">
+ </A>
+A named variable that, upon return, contains the width of the image expressed in graphic coordinate units. If the current graphics device uses scalable pixels, the values of <EM CLASS="Emphasis">
+Xsize</EM>
+ and <EM CLASS="Emphasis">
+Ysize</EM>
+ should be passed to the TV procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887741">
+ </A>
+Ysize</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887742">
+ </A>
+A named variable that, upon return, contains the height of the image expressed in graphic coordinate units. If the current graphics device uses scalable pixels, the values of <EM CLASS="Emphasis">
+Xsize</EM>
+ and <EM CLASS="Emphasis">
+Ysize</EM>
+ should be passed to the TV procedure.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887743">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887745">
+ </A>
+<A NAME="marker=887744">
+ </A>
+LATMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887746">
+ </A>
+The latitude corresponding to the first row of <I CLASS="Italics">
+Image</I>
+. The default is -90 degrees. Note also that -90<EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ LATMIN &lt; LATMAX <EM CLASS="MathSymbol">
+&lt;=</EM>
+ 90<EM CLASS="MathSymbol">
+</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887748">
+ </A>
+<A NAME="marker=887747">
+ </A>
+LATMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887749">
+ </A>
+The latitude corresponding to the last row of <I CLASS="Italics">
+Image</I>
+. The default value is 90 degrees. Note also that -90<EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ LATMIN &lt; LATMAX <EM CLASS="MathSymbol">
+&lt;=</EM>
+ 90<EM CLASS="MathSymbol">
+</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887751">
+ </A>
+<A NAME="marker=887750">
+ </A>
+LONMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887752">
+ </A>
+The longitude corresponding to the first [left] column of Image_Orig. The default value is -180.  Lonmin must be in the range of -180 to +180 degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887754">
+ </A>
+<A NAME="marker=887753">
+ </A>
+LONMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887755">
+ </A>
+The longitude corresponding to the last column of Image_Orig. Lonmax must be larger than Lonmin. If the longitude of the last column is equal to (lonmin - (360. /Nx)) MODULO 360, it is assumed that the image covers all longitudes. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887757">
+ </A>
+<A NAME="marker=887756">
+ </A>
+BILINEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887758">
+ </A>
+Set this flag to use bilinear interpolation to soften edges in the returned image, otherwise, nearest neighbor sampling is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887760">
+ </A>
+<A NAME="marker=887759">
+ </A>
+COMPRESS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887761">
+ </A>
+This keyword, the interpolation compression flag, controls the accuracy of the results from MAP_IMAGE. The default is 4 for output devices with fixed pixel sizes. The inverse projection transformation is applied to each <I CLASS="Italic">
+i</I>
+th row and column. Setting this keyword to a higher number saves time while lower numbers produce more accurate results. Setting this keyword to 1 solves the inverse map transformation for every pixel of the output image. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887763">
+ </A>
+<A NAME="marker=887762">
+ </A>
+SCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887764">
+ </A>
+Set this keyword to the pixel/graphics scale factor for devices with scalable pixels (e.g., PostScript). The default is 0.02 pixels/graphic coordinate. This setting yields an approximate output image size of 350 x 250. Make this number larger for more resolution (and larger PostScript files and images), or smaller for faster, smaller, and less accurate images.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887766">
+ </A>
+<A NAME="marker=887765">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887768">
+ </A>
+Data points with values equal to or greater than this value will be treated as <A NAME="marker=887767">
+ </A>
+missing data, and will be set to the value specified by the MISSING keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887770">
+ </A>
+<A NAME="marker=887769">
+ </A>
+MIN_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887772">
+ </A>
+Data points with values equal to or less than this value will be treated as <A NAME="marker=887771">
+ </A>
+missing data, and will be set to the value specified by the MISSING keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887774">
+ </A>
+<A NAME="marker=887773">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887775">
+ </A>
+The pixel value to set areas outside the valid map coordinates. If this keyword is omitted, areas outside the map are set to 255 (white) if the current graphics device is PostScript, otherwise they are set to 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887776">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887777">
+ </A>
+The following lines of code set up an orthographic map projection and warp a simple image to it.</P>
+<P CLASS="Code">
+<A NAME="pgfId=887778">
+ </A>
+IMAGE = BYTSCL(SIN(DIST(400)/10))	<EM CLASS="Comment">;
+Create a simple image to be warped.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887779">
+ </A>
+TV, IMAGE	<EM CLASS="Comment">;
+Display the image so we can see what it looks like before warping.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887780">
+ </A>
+Minlat=-65</P>
+<P CLASS="Code">
+<A NAME="pgfId=887781">
+ </A>
+Maxlat=65</P>
+<P CLASS="Code">
+<A NAME="pgfId=887782">
+ </A>
+Minlon = 160 	<EM CLASS="Comment">;
+Left edge is 160 East</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887783">
+ </A>
+Maxlon = -70 + 360	<EM CLASS="Comment">;
+Right edge is 70 West = +290.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887784">
+ </A>
+limit1 = [minlat, minlon, maxlat, maxlon]</P>
+<P CLASS="Code">
+<A NAME="pgfId=887785">
+ </A>
+loncenter= -140</P>
+<P CLASS="Code">
+<A NAME="pgfId=887786">
+ </A>
+idata = replicate(100, 50, 50)</P>
+<P CLASS="Code">
+<A NAME="pgfId=887787">
+ </A>
+MAP_SET, 0, loncenter, 0, /ORTHO, limit=limit1</P>
+<P CLASS="Code">
+<A NAME="pgfId=887788">
+ </A>
+result=MAP_IMAGE(idata,startx,starty,xsize,ysize,$</P>
+<P CLASS="Code">
+<A NAME="pgfId=887789">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;latmin=limit1(0),latmax=limit1(2),$</P>
+<P CLASS="Code">
+<A NAME="pgfId=887790">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;lonmin=limit1(1),lonmax=limit1(3),$</P>
+<P CLASS="Code">
+<A NAME="pgfId=887791">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/whole_map,compress=4)</P>
+<P CLASS="Code">
+<A NAME="pgfId=887792">
+ </A>
+tv,result,startx,starty	<EM CLASS="Comment">;
+Display the warped image on the map at the proper position.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887793">
+ </A>
+MAP_CONTINENTS, /coasts	<EM CLASS="Comment">;
+Draw gridlines over the map and image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887794">
+ </A>
+MAP_GRID,latdel=10,londel=10, /LABEL,&nbsp;&nbsp;&nbsp;&nbsp; $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887795">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;lonlab=limit1(0)+.5, latlab=limit1(1),$</P>
+<P CLASS="Code">
+<A NAME="pgfId=887796">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;glinestyle=0	<EM CLASS="Comment">;
+Draw continent outlines.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887797">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887810">
+ </A>
+<A HREF="idl10c.htm#95626" CLASS="XRef">
+MAP_CONTINENTS</A>
+, <A HREF="idl10d.htm#30282" CLASS="XRef">
+MAP_GRID</A>
+, <A HREF="idl10f.htm#32545" CLASS="XRef">
+MAP_PATCH</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

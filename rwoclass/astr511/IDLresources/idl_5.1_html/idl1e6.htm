@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TS_COEF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54718">
+ </A>
+<A NAME="74783">
+ </A>
+TS_COEF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54721">
+ </A>
+The <A NAME="marker=54720">
+ </A>
+TS_COEF function computes the coefficients <EM CLASS="Symbol">
+f</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Symbol">
+f</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ... , <EM CLASS="Symbol">
+f</EM>
+<SUB CLASS="Subscript">
+P</SUB>
+ used in a <EM CLASS="Emphasis">
+P</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ order <A NAME="marker=54722">
+ </A>
+autoregressive <A NAME="marker=54723">
+ </A>
+time-series forecasting model. The result is a <EM CLASS="Emphasis">
+P</EM>
+-element vector whose type is identical to <EM CLASS="Emphasis">
+X</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54724">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ts_coef.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54725">
+ </A>
+Calling Sequence </H3>
+<P CLASS="Body">
+<A NAME="pgfId=54726">
+ </A>
+Result = TS_COEF(<EM CLASS="Emphasis">
+X, P</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54727">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54728">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54729">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element single- or double-precision floating-point vector containing time-series samples.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54730">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54731">
+ </A>
+An integer or long integer scalar that specifies the number of coefficients to be computed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54732">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54734">
+ </A>
+<A NAME="marker=54733">
+ </A>
+MSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54735">
+ </A>
+Use this keyword to specify a named variable that will contain the mean square error of the <EM CLASS="Emphasis">
+P</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ order autoregressive model.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54736">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54737">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element vector of time-series samples.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54738">
+ </A>
+X&nbsp;=&nbsp;[6.63,&nbsp;6.59,&nbsp;6.46,&nbsp;6.49,&nbsp;6.45,&nbsp;6.41,&nbsp;6.38,&nbsp;6.26,&nbsp;6.09,&nbsp;5.99,&nbsp;$</P>
+<P CLASS="Code">
+<A NAME="pgfId=54739">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.92,&nbsp;5.93,&nbsp;5.83,&nbsp;5.82,&nbsp;5.95,&nbsp;5.91,&nbsp;5.81,&nbsp;5.64,&nbsp;5.51,&nbsp;5.31,&nbsp;$</P>
+<P CLASS="Code">
+<A NAME="pgfId=54740">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.36,&nbsp;5.17,&nbsp;5.07,&nbsp;4.97,&nbsp;5.00,&nbsp;5.01,&nbsp;4.85,&nbsp;4.79,&nbsp;4.73,&nbsp;4.76]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54742">
+ </A>
+result = TS_COEF(X, 5)	<EM CLASS="Comment">;
+Compute the coefficients of a 5th order autoregressive model.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=54743">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54744">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54745">
+ </A>
+1.30168    -0.111783    -0.224527     0.267629    -0.233363</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54746">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54747">
+ </A>
+<A HREF="idl1e8.htm#74523" CLASS="XRef">
+TS_FCAST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

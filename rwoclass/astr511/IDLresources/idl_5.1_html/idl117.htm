@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MESSAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl118.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl116.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888647">
+ </A>
+<A NAME="14106">
+ </A>
+MESSAGE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888652">
+ </A>
+The <A NAME="marker=888650">
+ </A>
+MESSAGE procedure issues <A NAME="marker=888651">
+ </A>
+error and informational messages using the same mechanism employed by built-in IDL routines. By default, the message is issued as an error, the message is output, and IDL takes the action specified by the <A NAME="marker=888659">
+ </A>
+ON_ERROR procedure. As a side-effect of issuing the error, the system variable <A NAME="marker=888660">
+ </A>
+!ERROR_STATE is set and the text of the error message is placed in !ERROR_STATE.MSG or in !ERROR_STATE.SYS_MSG for the operating system's component of the error message.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888661">
+ </A>
+If the call to the MESSAGE procedure causes execution to halt, traceback information is displayed automatically.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888662">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888663">
+ </A>
+MESSAGE, [<EM CLASS="Emphasis">
+T</EM>
+<I CLASS="Italics">
+ext </I>
+]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888664">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888665">
+ </A>
+Text</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888666">
+ </A>
+The text of the message to be issued. If <EM CLASS="Emphasis">
+Text</EM>
+ is not supplied, MESSAGE returns quietly.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888667">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888669">
+ </A>
+<A NAME="marker=888668">
+ </A>
+CONTINUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888670">
+ </A>
+Set this keyword to return after issuing the error instead of taking the action specified by ON_ERROR. Use this option when it is desirable to report an error and then continue processing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888672">
+ </A>
+<A NAME="marker=888671">
+ </A>
+INFORMATIONAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888673">
+ </A>
+Set this keyword to issue informational text instead of an error. In this case, !ERR, !ERROR, and !ERR_STRING are not set. The <A NAME="marker=888674">
+ </A>
+!QUIET system variable controls the printing of informational messages.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888676">
+ </A>
+<A NAME="marker=888675">
+ </A>
+IOERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888677">
+ </A>
+Set this keyword to indicates that the error occurred while performing I/O. The action specified by the ON_IOERROR procedure is executed instead of ON_ERROR.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888679">
+ </A>
+<A NAME="marker=888678">
+ </A>
+NONAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888680">
+ </A>
+Set this keyword to suppress printing of the issuing routine's name at the beginning of the error message.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888682">
+ </A>
+<A NAME="marker=888681">
+ </A>
+NOPREFIX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888683">
+ </A>
+Usually, the message includes the message prefix string (as specified by the MSG_PREFIX field of the <A NAME="marker=888684">
+ </A>
+!ERROR_STATE system variable) at the beginning. Set this keyword to omit the prefix.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888686">
+ </A>
+<A NAME="marker=888685">
+ </A>
+NOPRINT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888687">
+ </A>
+Set this keyword to prevent the message from printing to the screen and cause the other actions to proceed quietly. The error system variables are updated as usual.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888689">
+ </A>
+<A NAME="marker=888688">
+ </A>
+RESET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888693">
+ </A>
+Set this keyword to set the <A HREF="sysvars.html#36182" CLASS="XRef">
+</A>
+ system variable back to the &quot;success&quot; state and clear any internal traceback information being saved for use by the LAST_ERROR keyword to the <A HREF="idlc5.htm#54264" CLASS="XRef">
+HELP</A>
+ procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888698">
+ </A>
+<A NAME="marker=888697">
+ </A>
+TRACEBACK </H4>
+<P CLASS="Body">
+<A NAME="pgfId=888699">
+ </A>
+<I CLASS="Italic">
+This keyword is obsolete and is included for compatibility with existing code only. Traceback information is provided by default.</I>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888700">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888701">
+ </A>
+As an example, assume the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888702">
+ </A>
+message, 'Unexpected value encountered.'</P>
+<P CLASS="Body">
+<A NAME="pgfId=888703">
+ </A>
+is executed in a procedure named CALC. If an error occurs, the following message would be printed:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888704">
+ </A>
+% CALC: Unexpected value encountered.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888705">
+ </A>
+and execution would halt.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888706">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888719">
+ </A>
+<A HREF="idl28.htm#70268" CLASS="XRef">
+CATCH</A>
+, <A HREF="idl12d.htm#17797" CLASS="XRef">
+ON_ERROR</A>
+, <A HREF="idl12e.htm#27107" CLASS="XRef">
+ON_IOERROR</A>
+, <A HREF="idl1bf.htm#35359" CLASS="XRef">
+STRMESSAGE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

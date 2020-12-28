@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PRIMES</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl14a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl148.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54633">
+ </A>
+<A NAME="81243">
+ </A>
+PRIMES</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54637">
+ </A>
+The <A NAME="marker=54635">
+ </A>
+PRIMES function computes the first <EM CLASS="Emphasis">
+K</EM>
+ <A NAME="marker=54636">
+ </A>
+prime numbers. The result is a <EM CLASS="Emphasis">
+K</EM>
+-element long integer vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54638">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+primes.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54639">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54640">
+ </A>
+Result = PRIMES(<EM CLASS="Emphasis">
+K</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54641">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54642">
+ </A>
+K</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54643">
+ </A>
+An integer or long integer scalar that specifies the number of primes to be computed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54644">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54645">
+ </A>
+Compute the first 25 prime numbers. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54646">
+ </A>
+PRINT, PRIMES(25)</P>
+<P CLASS="Body">
+<A NAME="pgfId=54647">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54648">
+ </A>
+&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;13</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54649">
+ </A>
+17&nbsp;&nbsp;&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;29&nbsp;&nbsp;&nbsp;&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;37</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54650">
+ </A>
+41&nbsp;&nbsp;&nbsp;&nbsp;43&nbsp;&nbsp;&nbsp;&nbsp;47&nbsp;&nbsp;&nbsp;&nbsp;53&nbsp;&nbsp;&nbsp;&nbsp;59&nbsp;&nbsp;&nbsp;&nbsp;61</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54651">
+ </A>
+67&nbsp;&nbsp;&nbsp;&nbsp;71&nbsp;&nbsp;&nbsp;&nbsp;73&nbsp;&nbsp;&nbsp;&nbsp;79&nbsp;&nbsp;&nbsp;&nbsp;83&nbsp;&nbsp;&nbsp;&nbsp;89</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54652">
+ </A>
+97</P>
+</DIV>
+</BODY>
+</HTML>

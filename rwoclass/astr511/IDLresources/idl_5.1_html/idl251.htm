@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_ENCODE_EPOCH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl252.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl250.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997439">
+ </A>
+<A NAME="49209">
+ </A>
+CDF_ENCODE_EPOCH</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997441">
+ </A>
+The CDF_ENCODE_EPOCH function encodes a CDF_EPOCH variable into a string.  Four different string formats are available. The default (EPOCH=0) is the standard CDF format, which may be parsed by the CDF_PARSED_EPOCH function or broken down with the CDF_EPOCH procedure.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997442">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997443">
+ </A>
+Result = CDF_ENCODE_EPOCH(<EM CLASS="Emphasis">
+Epoch</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997444">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997445">
+ </A>
+Epoch</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997446">
+ </A>
+The double-precision CDF_EPOCH value to be encoded. For more information about CDF_EPOCH values, see section 2.2.10 (&quot;Data Types&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997447">
+ </A>
+Keyword</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997448">
+ </A>
+EPOCH</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997449">
+ </A>
+Set this keyword to indicate the type of output desired,</P>
+<P CLASS="Body">
+<A NAME="pgfId=997450">
+ </A>
+Set EPOCH=0 to select output of the standard type, which is described in CDF_PARSE_EPOCH.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997451">
+ </A>
+Set EPOCH=1 to select output of the type <CODE CLASS="Code">
+yyyymodd.ttttttt</CODE>
+ where: <CODE CLASS="Code">
+yyyy</CODE>
+ is the year, <CODE CLASS="Code">
+mo</CODE>
+ is the month (1-12), <CODE CLASS="Code">
+dd</CODE>
+ is the day of the month (1-31), and <CODE CLASS="Code">
+ttttttt</CODE>
+ is the fraction of the day (e.g. 2500000 at 6 am).</P>
+<P CLASS="Body">
+<A NAME="pgfId=997452">
+ </A>
+Set EPOCH=2 to select output of the type <CODE CLASS="Code">
+yyyymoddhhmmss</CODE>
+ where: <CODE CLASS="Code">
+yyyy</CODE>
+ is the year, <CODE CLASS="Code">
+mo</CODE>
+ is the month (1-12), <CODE CLASS="Code">
+dd</CODE>
+ is the day of the month (1-31), <CODE CLASS="Code">
+hh</CODE>
+ is the hour (0-23), <CODE CLASS="Code">
+mm</CODE>
+ is the minute (0-59), and <CODE CLASS="Code">
+ss</CODE>
+ is the second (0-59).</P>
+<P CLASS="Body">
+<A NAME="pgfId=997453">
+ </A>
+Set EPOCH=3 to select output of the type <CODE CLASS="Code">
+yyyy-mo-ddThh:mm:ss.cccZ</CODE>
+ where: <CODE CLASS="Code">
+yyyy</CODE>
+ is the year, <CODE CLASS="Code">
+mo</CODE>
+ is the month (1-12), <CODE CLASS="Code">
+dd</CODE>
+ is the day of the month (1-31), <CODE CLASS="Code">
+hh</CODE>
+ is the hour (0-23), <CODE CLASS="Code">
+mm</CODE>
+ is the minute (0-59), <CODE CLASS="Code">
+ss</CODE>
+ is the second (0-59), and <CODE CLASS="Code">
+ccc</CODE>
+ is the millisecond (0-999). The characters <CODE CLASS="Code">
+T</CODE>
+ and <CODE CLASS="Code">
+Z</CODE>
+ are the CDF_EPOCH type 3 place holders.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997454">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997455">
+ </A>
+epoch_string = '04-Dec-1995 20:19:18.176'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997456">
+ </A>
+epoch = CDF_PARSE_EPOCH(epoch_string)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997457">
+ </A>
+HELP, epoch_string, epoch</P>
+<P CLASS="Body">
+<A NAME="pgfId=997458">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997459">
+ </A>
+EPOCH_STRING &nbsp;&nbsp;&nbsp;STRING    = '04-Dec-1995 20:19:18.176'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997460">
+ </A>
+EPOCH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DOUBLE    =    6.2985328e+13</P>
+<P CLASS="Body">
+<A NAME="pgfId=997461">
+ </A>
+Create encode strings:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997462">
+ </A>
+encode0 = CDF_ENCODE_EPOCH(test_epoch, EPOCH=0)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997463">
+ </A>
+encode1 = CDF_ENCODE_EPOCH(test_epoch, EPOCH=1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997464">
+ </A>
+encode2 = CDF_ENCODE_EPOCH(test_epoch, EPOCH=2)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997465">
+ </A>
+encode3 = CDF_ENCODE_EPOCH(test_epoch, EPOCH=3)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997466">
+ </A>
+Compare encoding formats:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997467">
+ </A>
+HELP, encode0, encode1, encode2, encode3</P>
+<P CLASS="Body">
+<A NAME="pgfId=997468">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997469">
+ </A>
+ENCODE0       STRING    = '04-Dec-1995 20:19:18.176'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997470">
+ </A>
+ENCODE1       STRING    = '19951204.8467381'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997471">
+ </A>
+ENCODE2       STRING    = '19951204201918'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997472">
+ </A>
+ENCODE3       STRING    = '1995-12-04T20:19:18.176Z'</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997473">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997480">
+ </A>
+<A HREF="idl252.htm#64236" CLASS="XRef">
+CDF_EPOCH</A>
+, <A HREF="idl258.htm#40797" CLASS="XRef">
+CDF_PARSE_EPOCH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

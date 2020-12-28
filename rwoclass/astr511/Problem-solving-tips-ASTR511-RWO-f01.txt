@@ -1,0 +1,42 @@
+
+
+Often helps to draw a sketch of the physical system, even of trivial
+situations or where geometry has little importance.  Sketching may
+help remind you of important factors to consider.  When you begin to
+define parameters, key them to the sketch if possible.
+
+UG problem sets often emphasized situations where one can write down a
+few basic formulae or relations, and then solve the problem
+mathematically by formal manipulation.  Most "real" problems in this
+course emphasize physical reasoning instead.  Formal manipulation
+without physical insight will rarely get you the right answer.
+
+Many parameters enter problems in this course, even if in simple ways.
+Be careful in defining them---it helps to write out the definition of
+each.  Use clear, consistent, complete, and unambiguous notation.  
+
+Neatness, of a sort, actually counts, other things being equal.  The
+more carefully you write and organize your work, the more likely you
+are to do it right the first time or recognize where there may be
+problems (e.g. numerical errors) the second time.  
+
+Solve problems conceptually before starting to plug in numbers.  Break
+the problem down into its key steps.  Show the logic of the argument.
+Write out clear algebraic solutions, again by steps.  
+
+Rather than putting everything into one large and unwieldy expression
+(which lends itself to numerical errors when evaluated), define
+symbols for intermediary quantities and write out albegraic
+expressions for these.  Then, solve the expressions and give numerical
+values for important intermediaries.  Perform a reality check on each
+of these before proceeding.  
+
+Always give the units of any numerical answer and double check that
+they are as expected.  Being careful about units in intermediate steps
+often prevents confusion or error in getting the final answer.
+
+Despite the adoption of SI units in physics, astronomers nearly
+universally still use cgs-based units.  Don't fight this.  Convert to
+cgs/astro-units at the beginning of the calculation and use those
+units exclusively throughout.  Using mixed units or trying to
+convert at the end of a calculation can lead to dumb mistakes.

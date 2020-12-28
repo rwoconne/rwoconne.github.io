@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ROUTINE_INFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl188.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl186.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=845681">
+ </A>
+<A NAME="30902">
+ </A>
+ROUTINE_INFO</H2>
+<P CLASS="Body">
+<A NAME="pgfId=845684">
+ </A>
+The<A NAME="marker=845683">
+ </A>
+ ROUTINE_INFO function provides information about currently-compiled <A NAME="marker=845685">
+ </A>
+procedures and <A NAME="marker=845686">
+ </A>
+functions. It returns a string array consisting of the names of defined procedures or functions, or of parameters or variables used by a single procedure or function.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845181">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845182">
+ </A>
+Result = ROUTINE_INFO(<EM CLASS="Emphasis">
+[Routine]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845183">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845184">
+ </A>
+Routine</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845185">
+ </A>
+A scalar string containing the name of routine for which information will be returned. <EM CLASS="Emphasis">
+Routine</EM>
+ can be either a procedure or a function. If <EM CLASS="Emphasis">
+Routine</EM>
+ is not supplied, ROUTINE_INFO returns a list of all currently-compiled procedures.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845186">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845187">
+ </A>
+<A NAME="marker=845231">
+ </A>
+FUNCTIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845188">
+ </A>
+Set this keyword to return a string array containing currently-compiled functions. By default, ROUTINE_INFO returns a list of compiled procedures. If the SYSTEM keyword is also set, ROUTINE_INFO returns a list of all IDL built-in internal functions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845189">
+ </A>
+<A NAME="marker=845232">
+ </A>
+PARAMETERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845190">
+ </A>
+Set this keyword to return an anonymous structure with the following fields:</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=845191">
+ </A>
+NUM_ARGS</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=845192">
+ </A>
+An integer containing the number of positional parameters used in <EM CLASS="Emphasis">
+Routine</EM>
+.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=845193">
+ </A>
+NUM_KW_ARGS</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=845194">
+ </A>
+An integer containing the number of keyword parameters used in <EM CLASS="Emphasis">
+Routine</EM>
+.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=845195">
+ </A>
+ARGS</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=845196">
+ </A>
+A string array containing the names of the positional parameters used in <EM CLASS="Emphasis">
+Routine</EM>
+.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=845197">
+ </A>
+KW_ARGS</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=845198">
+ </A>
+A string array containing the names of the keyword parameters used in <EM CLASS="Emphasis">
+Routine</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845702">
+ </A>
+You must supply the <EM CLASS="Emphasis">
+Routine</EM>
+ argument when using this keyword. Note that specifying the SYSTEM keyword along with this keyword will generate an error. If <EM CLASS="Emphasis">
+Routine</EM>
+ does not take any arguments, the ARGS field is not included in the anonymous structure. Similarly, if <EM CLASS="Emphasis">
+Routine</EM>
+ does not take any keywords, the KW_ARGS field is not included.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845200">
+ </A>
+<A NAME="marker=845233">
+ </A>
+SOURCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845201">
+ </A>
+Set this keyword to return an array of anonymous structures with the following fields:</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=845202">
+ </A>
+NAME</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=845203">
+ </A>
+A string containing the name of the procedure or function.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=845204">
+ </A>
+PATH</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=845205">
+ </A>
+A string containing the full path specification of the file that contains the definition of the procedure or function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845206">
+ </A>
+If <EM CLASS="Emphasis">
+Routine</EM>
+ is specified, information for that one routine is returned. If <EM CLASS="Emphasis">
+Routine</EM>
+ is not specified, information for all compiled routines is returned. If a routine is unresolved or its path information is unavailable for any reason (if the routine has been SAVEd and then RESTOREd, for example), the PATH field will contain a null string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845693">
+ </A>
+Note that specifying the SYSTEM keyword along with this keyword will generate an error.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845207">
+ </A>
+<A NAME="marker=845234">
+ </A>
+SYSTEM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845208">
+ </A>
+Set this keyword to return a string array listing all IDL built-in internal procedures. Built-in internal procedures are part of the IDL executable, and are <EM CLASS="Emphasis">
+not</EM>
+ written in the IDL language. If the FUNCTIONS keyword is also set, ROUTINE_INFO returns a list of all IDL built-in internal functions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845209">
+ </A>
+<A NAME="marker=845235">
+ </A>
+UNRESOLVED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845210">
+ </A>
+Set this keyword to return a string array listing procedures that are referenced in any currently-compiled procedure or function, but which are themselves not yet compiled. If the FUNCTIONS keyword is also set, ROUTINE_INFO returns a list of functions that are referenced but not yet compiled.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845690">
+ </A>
+Note that specifying the SYSTEM keyword along with this keyword will generate an error.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845211">
+ </A>
+<A NAME="marker=845236">
+ </A>
+VARIABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845212">
+ </A>
+Set this keyword to return a string array listing variables defined in the procedure or function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845217">
+ </A>
+You must supply the <EM CLASS="Emphasis">
+Routine</EM>
+ argument when using this keyword. Note that specifying the SYSTEM keyword along with this keyword will generate an error.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845239">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845240">
+ </A>
+<A HREF="idl17a.htm#64718" CLASS="XRef">
+RESOLVE_ALL</A>
+, <A HREF="idl17b.htm#57784" CLASS="XRef">
+RESOLVE_ROUTINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

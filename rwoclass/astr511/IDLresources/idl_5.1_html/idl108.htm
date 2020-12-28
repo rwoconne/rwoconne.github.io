@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LUSOL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl109.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl107.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=106404">
+ </A>
+<A NAME="55550">
+ </A>
+LUSOL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=106408">
+ </A>
+The <A NAME="marker=106406">
+ </A>
+LUSOL <A NAME="marker=106407">
+ </A>
+function is used in conjunction with the LUDC procedure to solve a set of <I CLASS="Italics">
+n</I>
+ linear equations in <I CLASS="Italics">
+n</I>
+ unknowns <EM CLASS="Bold">
+Ax = b</EM>
+. The parameter <I CLASS="Italics">
+A</I>
+ is input not as the original array, but as its <A NAME="marker=106409">
+ </A>
+LU decomposition, created by the routine LUDC. The result is an <I CLASS="Italics">
+n</I>
+-element vector whose type is identical to <I CLASS="Italics">
+A</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50985">
+ </A>
+LUSOL is based on the routine <CODE CLASS="Code">
+lubksb</CODE>
+ described in section 2.3 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50986">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50987">
+ </A>
+Result = LUSOL(<I CLASS="Italics">
+A, Index, B</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50988">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50989">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50990">
+ </A>
+The <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ LU decomposition of an array created by the LUDC procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50991">
+ </A>
+Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50992">
+ </A>
+An input vector, created by the LUDC procedure, containing a record of the row permutations which occurred as a result of partial pivoting.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50993">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50994">
+ </A>
+An <I CLASS="Italics">
+n</I>
+-element vector containing the right-hand side of the linear system <BR>
+<EM CLASS="Bold">
+Ax = b</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50995">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58727">
+ </A>
+<A NAME="marker=58726">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58728">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50997">
+ </A>
+<A NAME="marker=50996">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50998">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50999">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51000">
+ </A>
+To solve the linear system <EM CLASS="Bold">
+Ax = b</EM>
+ using LU decomposition and back substitution:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51001">
+ </A>
+A = [[ 2.0, &nbsp;1.0, &nbsp;1.0], $	<EM CLASS="Comment">;
+Define array A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51002">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -6.0, &nbsp;0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51003">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2.0, &nbsp;7.0, &nbsp;2.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=51004">
+ </A>
+B = [3.0, -8.0, 10.0]	<EM CLASS="Comment">;
+Define right-hand side vector B.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51005">
+ </A>
+LUDC, A, INDEX	<EM CLASS="Comment">;
+Decompose A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51006">
+ </A>
+result = LUSOL(A, INDEX, B)	<EM CLASS="Comment">;
+Compute the solution using back<BR>
+substitution.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51007">
+ </A>
+PRINT, result<EM CLASS="Comment">;
+	Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51008">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51009">
+ </A>
+&nbsp;&nbsp;1.00000&nbsp;&nbsp;2.00000&nbsp;-1.00000</P>
+<P CLASS="Body">
+<A NAME="pgfId=51010">
+ </A>
+This is the exact solution vector.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51011">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51168">
+ </A>
+<A HREF="idl30.htm#21199" CLASS="XRef">
+CHOLSOL</A>
+, <A HREF="idl48.htm#10735" CLASS="XRef">
+CRAMER</A>
+, <A HREF="idlbe.htm#39130" CLASS="XRef">
+GS_ITER</A>
+, <A HREF="idl105.htm#65053" CLASS="XRef">
+LU_COMPLEX</A>
+, <A HREF="idl106.htm#56865" CLASS="XRef">
+LUDC</A>
+, <A HREF="idl1ca.htm#53821" CLASS="XRef">
+SVSOL</A>
+, <A HREF="idl1e4.htm#66905" CLASS="XRef">
+TRISOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

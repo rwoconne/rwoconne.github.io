@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EIGENQL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl8a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl88.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862888">
+ </A>
+<A NAME="18584">
+ </A>
+EIGENQL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862889">
+ </A>
+The<A NAME="marker=862937">
+ </A>
+ EIGENQL function computes the <A NAME="marker=862938">
+ </A>
+eigenvalues and eigenvectors of an <I CLASS="Italic">
+n</I>
+ by <I CLASS="Italic">
+n</I>
+ real, symmetric array using <A NAME="marker=862939">
+ </A>
+Householder reductions and the<A NAME="marker=862940">
+ </A>
+ QL method with implicit shifts. The result is an <EM CLASS="Emphasis">
+n</EM>
+-element vector containing the eigenvalues.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862891">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862892">
+ </A>
+Result = EIGENQL(<I CLASS="Italic">
+A</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862893">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862894">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862895">
+ </A>
+An <I CLASS="Italic">
+n</I>
+ by <I CLASS="Italic">
+n</I>
+ symmetric single- or double-precision floating-point array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862896">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870576">
+ </A>
+<A NAME="marker=870578">
+ </A>
+ABSOLUTE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870577">
+ </A>
+Set this keyword to sort the eigenvalues by their absolute value (their magnitude) rather than by their signed value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862897">
+ </A>
+<A NAME="marker=862941">
+ </A>
+ASCENDING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862898">
+ </A>
+Set this keyword to return eigenvalues in ascending order (smallest to largest). If not set or set to zero, eigenvalues are returned in descending order (largest to smallest). The eigenvectors are correspondingly reordered. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862899">
+ </A>
+<A NAME="marker=862942">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862900">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870583">
+ </A>
+<A NAME="marker=870587">
+ </A>
+EIGENVECTORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870584">
+ </A>
+Set this keyword equal to a named variable that will contain the computed eigenvectors in an <I CLASS="Italic">
+n</I>
+ by <I CLASS="Italic">
+n</I>
+ array. The <EM CLASS="Emphasis">
+i</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ row of the returned array contains the <EM CLASS="Emphasis">
+i</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ eigenvalue. This keyword must be initialized to a non- zero value before calling EIGENQL if the eigenvectors are desired. If no variable is supplied, the array will not be computed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862901">
+ </A>
+<A NAME="marker=862943">
+ </A>
+OVERWRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862902">
+ </A>
+Set this keyword to use the input array for internal storage and to overwrite its previous contents.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862903">
+ </A>
+<A NAME="marker=862944">
+ </A>
+RESIDUAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862904">
+ </A>
+Use this keyword to specify a named variable that will contain the residuals for each eigenvalue/eigenvector (<EM CLASS="Symbol">
+l</EM>
+/x) pair. The residual is based on the definition Ax - (<EM CLASS="Symbol">
+l</EM>
+)x = 0 and is an array of the same size as A and the same type as Result. The rows of this array correspond to the residuals for each eigenvalue/eigenvector pair. This keyword must be initialized to a non- zero value before calling EIGENQL if the residuals are desired.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=862905">
+ </A>
+If the OVERWRITE keyword is set, the RESIDUAL keyword has no effect.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862906">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862907">
+ </A>
+Define an <I CLASS="Italic">
+n</I>
+ by <I CLASS="Italic">
+n</I>
+ real, symmetric array:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862908">
+ </A>
+A = [[ 5.0,  4.0,  0.0, -3.0], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862909">
+ </A>
+[ 4.0,  5.0,  0.0, -3.0], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862910">
+ </A>
+[ 0.0,  0.0,  5.0, -3.0], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862911">
+ </A>
+[-3.0, -3.0, -3.0,  5.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=862912">
+ </A>
+residual = 1 &amp; evecs = 1	<EM CLASS="Comment">;
+The variables that will contain the residuals and eigenvectors must be initialized as nonzero values prior to calling EIGENQL.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=862913">
+ </A>
+eigenvalues = EIGENQL(A, EIGENVECTORS = evecs, RESIDUAL = residual)<BR>
+<EM CLASS="Comment">;
+Compute the eigenvalues and eigenvectors.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=862914">
+ </A>
+PRINT, eigenvalues	<EM CLASS="Comment">;
+Print the eigenvalues/.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=862915">
+ </A>
+IDL prints:</P>
+<P CLASS="Body">
+<A NAME="pgfId=870595">
+ </A>
+12.0915&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.18661&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.00000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.721870</P>
+<P CLASS="Body">
+<A NAME="pgfId=870596">
+ </A>
+Print the eigenvectors:</P>
+<P CLASS="Code">
+<A NAME="pgfId=870609">
+ </A>
+PRINT, evecs</P>
+<P CLASS="Body">
+<A NAME="pgfId=862916">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862917">
+ </A>
+-0.554531    -0.554531    -0.241745     0.571446</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862918">
+ </A>
+&nbsp;0.342981     0.342981    -0.813186     0.321646</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862919">
+ </A>
+&nbsp;0.707107    -0.707107 -2.58096e-08      0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862920">
+ </A>
+&nbsp;0.273605     0.273605     0.529422     0.754979</P>
+<P CLASS="Body">
+<A NAME="pgfId=862921">
+ </A>
+The accuracy of each eigenvalue/eigenvector (<EM CLASS="Symbol">
+l</EM>
+/x) pair may be checked by printing the residual array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=862922">
+ </A>
+PRINT, residual</P>
+<P CLASS="Body">
+<A NAME="pgfId=862923">
+ </A>
+The RESIDUAL array has the same dimensions as the input array and the same type as the result. The residuals are contained in the rows of the RESIDUAL array. All residual values should be floating-point zeros.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862924">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862945">
+ </A>
+<A HREF="idl8a.htm#90610" CLASS="XRef">
+EIGENVEC</A>
+, <A HREF="idl1e2.htm#52845" CLASS="XRef">
+TRIQL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

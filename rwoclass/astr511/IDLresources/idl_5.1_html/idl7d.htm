@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DILATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl7e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl7c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=747869">
+ </A>
+<A NAME="30529">
+ </A>
+DILATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676629">
+ </A>
+The <A NAME="marker=672899">
+ </A>
+DILATE function implements the <A NAME="marker=672900">
+ </A>
+morphologic <A NAME="marker=810985">
+ </A>
+dilation operator on both binary and grayscale images.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676630">
+ </A>
+Mathematical morphology is a method of processing digital images on the basis of shape. A discussion of this topic is beyond the scope of this manual. A suggested reference is: Haralick, Sternberg, and Zhuang, &quot;Image Analysis Using Mathematical Morphology,&quot; <I CLASS="Italics">
+IEEE Transactions on Pattern Analysis and Machine Intelligence</I>
+, Vol. PAMI-9, No. 4, July, 1987, pp. 532-550. Much of this discussion is taken from that article.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676631">
+ </A>
+Briefly, the DILATE function returns the dilation of <I CLASS="Italics">
+Image</I>
+ by the <A NAME="marker=672902">
+ </A>
+structuring element <I CLASS="Italics">
+Structure</I>
+. This operator is commonly known as &quot;fill&quot;, &quot;expand&quot;, or &quot;grow.&quot; It can be used to fill &quot;holes&quot; of a size equal to or smaller than the structuring element.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676632">
+ </A>
+Used with binary images, where each pixel is either 1 or 0, dilation is similar to convolution. Over each pixel of the image, the origin of the structuring element is overlaid. If the image pixel is nonzero, each pixel of the structuring element is added to the result using the &quot;or&quot; operator.</P>
+<P CLASS="Body">
+<A NAME="pgfId=72588">
+ </A>
+Letting <EM CLASS="Emphasis">
+A</EM>
+ <EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="Emphasis">
+B</EM>
+ represent the dilation of an image <I CLASS="Italics">
+A</I>
+ by structuring element <I CLASS="Italics">
+B</I>
+, dilation can be defined as: </P>
+<DIV>
+<CENTER><IMG SRC="idl_23.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839080">
+ </A>
+where <I CLASS="Italics">
+(A)</I>
+<SUB CLASS="subscript">
+b</SUB>
+ represents the translation of <I CLASS="Italics">
+A</I>
+ by <I CLASS="Italics">
+b</I>
+. Intuitively, for each nonzero element <I CLASS="Italics">
+b</I>
+<SUB CLASS="subscript">
+i,j</SUB>
+ of <I CLASS="Italics">
+B</I>
+, <I CLASS="Italics">
+A</I>
+ is translated by <I CLASS="Italics">
+i,j</I>
+ and summed into <I CLASS="Italics">
+C</I>
+ using the &quot;or&quot; operator. For example:</P>
+<DIV>
+<CENTER><IMG SRC="idl_24.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839088">
+ </A>
+In this example, the origin of the structuring element is at (0,0).</P>
+<P CLASS="Body">
+<A NAME="pgfId=883731">
+ </A>
+Used with grayscale images, which are always converted to byte type, the DILATE function is accomplished by taking the maximum of a set of sums. It can be used to conveniently implement the neighborhood maximum operator with the shape of the neighborhood given by the structuring element.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=883734">
+ </A>
+<A NAME="marker=883732">
+ </A>
+Openings and Closings</H3>
+<P CLASS="Body">
+<A NAME="pgfId=883735">
+ </A>
+The <I CLASS="Italics">
+opening</I>
+ of image <I CLASS="Italics">
+B</I>
+ by structuring element <I CLASS="Italics">
+K</I>
+ is defined as (<EM CLASS="Emphasis">
+B</EM>
+ <EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="Emphasis">
+K</EM>
+)<EM CLASS="MathSymbol">
+ </EM>
+ <EM CLASS="Emphasis">
+K</EM>
+. The <I CLASS="Italics">
+closing</I>
+ of image <I CLASS="Italics">
+B</I>
+ by <I CLASS="Italics">
+K</I>
+ is defined as (<EM CLASS="Emphasis">
+B</EM>
+ <EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="Emphasis">
+K</EM>
+)<EM CLASS="MathSymbol">
+ </EM>
+ <EM CLASS="Emphasis">
+K </EM>
+where the &quot;o times&quot; symbol represents the erosion operator implemented by the IDL ERODE function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=815069">
+ </A>
+As stated by Haralick <I CLASS="Italics">
+et al</I>
+, the result of iteratively applied dilations and erosions is an elimination of specific image detail smaller than the structuring element without the global geometric distortion of unsuppressed features. For example, opening an image with a disk structuring element smooths the contour, breaks narrow isthmuses, and eliminates small islands and sharp peaks or capes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=815071">
+ </A>
+<A NAME="marker=815070">
+ </A>
+Closing an image with a disk structuring element smooths the contours, fuses narrow breaks and long thin gulfs, eliminates small holes, and fills gaps on the contours.&quot;</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676635">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676636">
+ </A>
+Result = DILATE(<I CLASS="Italics">
+Image, Structure [, X</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+ [, Y</I>
+<SUB CLASS="subscript">
+0 </SUB>
+<I CLASS="Italics">
+[, Z</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+]]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676637">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676638">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676639">
+ </A>
+A one-, two-, or three-dimensional array upon which the dilation is to be performed. If the parameter is not of byte type, a temporary byte copy is obtained. If neither of the keywords GRAY or VALUES is present, the image is treated as a binary image with all nonzero pixels considered as 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676640">
+ </A>
+Structure</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676641">
+ </A>
+A one-, two-, or three-dimensional array that represents the structuring element. Elements are interpreted as binary: values are either zero or nonzero. This argument must have the same number of dimensions as <I CLASS="Italics">
+Image</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676642">
+ </A>
+X<SUB CLASS="subscript">
+0</SUB>
+, Y<SUB CLASS="subscript">
+0</SUB>
+, Z<SUB CLASS="subscript">
+0</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676643">
+ </A>
+Optional parameters specifying the one-, two-, or three-dimensional coordinate of the structuring element's origin. If omitted, the origin is set to the center, ([<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+/2], [<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+/2], [<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+/2]), where <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+ are the dimensions of the structuring element array. The origin need not be within the structuring element.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676644">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676645">
+ </A>
+<A NAME="marker=672916">
+ </A>
+GRAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676646">
+ </A>
+Set this keyword to perform grayscale, rather than binary, dilation. The nonzero elements of the Structure parameter determine the shape of the structuring element (neighborhood). If VALUES is not present, all elements of the structuring element are 0, yielding the neighborhood maximum operator.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676647">
+ </A>
+<A NAME="marker=672917">
+ </A>
+VALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676648">
+ </A>
+An array with the same dimensions as <I CLASS="Italics">
+Structure</I>
+ providing the values of the structuring element. The presence of this parameter implies grayscale dilation. Each pixel of the result is the maximum of the sum of the corresponding elements of VALUE overlaid with <I CLASS="Italics">
+Image</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676649">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676650">
+ </A>
+The following example thresholds a gray scale image at the value of 100, producing a binary image. The result is then &quot;opened&quot; with a 3 pixel by 3 pixel square shape operator, using the DILATE and ERODE operators. The effect is to remove holes, islands, and peninsula smaller than the shape operator:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676651">
+ </A>
+B = A GE 100	<EM CLASS="Comment">;
+Threshold and make binary image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676652">
+ </A>
+S = REPLICATE(1, 3, 3)	<EM CLASS="Comment">;
+Create the shape operator.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676653">
+ </A>
+C = DILATE(ERODE(B, S), S)	<EM CLASS="Comment">;
+&quot;Opening&quot; operator.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676654">
+ </A>
+TVSCL, C	<EM CLASS="Comment">;
+Show the result.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=819086">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=819087">
+ </A>
+<A HREF="idl8f.htm#36716" CLASS="XRef">
+ERODE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

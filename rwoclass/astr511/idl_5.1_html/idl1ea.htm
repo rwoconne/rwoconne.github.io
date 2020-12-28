@@ -1,0 +1,467 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TV</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1eb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679666">
+ </A>
+<A NAME="65425">
+ </A>
+TV</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679667">
+ </A>
+The <A NAME="marker=674205">
+ </A>
+TV procedure displays images on the image display without scaling the intensity. To display an image with scaling, use the TVSCL procedure.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=900132">
+ </A>
+To display a true-color image (an image with 16, 24, or 32 bits per pixel) you must specify the TRUE keyword.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=153739">
+ </A>
+While the TV procedure does not <EM CLASS="Emphasis">
+scale</EM>
+ the intensity of an image, it does convert the input image data to byte type. Values outside the range [0,255] are &quot;wrapped&quot; during the conversion. In addition, for displays with less than 256 colors, elements of the input image with values between !D.TABLE_SIZE and 255 will be displayed using the color index !D.TABLE_SIZE-1.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679668">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679669">
+ </A>
+TV, <I CLASS="Italic">
+Image [, Position]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679670">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679671">
+ </A>
+TV, <I CLASS="Italic">
+Image [, X, Y [, Channel]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679672">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679673">
+ </A>
+Image </H4>
+<P CLASS="Body">
+<A NAME="pgfId=679674">
+ </A>
+A vector or two-dimensional array to be displayed as an image. If this argument is not already of byte type, it is converted prior to use.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679675">
+ </A>
+X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679676">
+ </A>
+If <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ are present, they specify the lower-left coordinate of the displayed image, relative to the lower-left corner of the screen.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679677">
+ </A>
+Position</H4>
+<P CLASS="CellBody">
+<A NAME="pgfId=815503">
+ </A>
+An integer specifying the position for <I CLASS="Italic">
+Image</I>
+ within the graphics window. Image positions run from the top left of the screen to the bottom right. If a position number is used instead of <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+, the position of the image is calculated from the dimensions of the image as follows (integer arithmetic is used):</P>
+<DIV>
+<CENTER><IMG SRC="idl_112.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835024">
+ </A>
+For example, when displaying 128 by 128 images on a 512 by 512 display, the position numbers run from 0 to 15 as follows:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815510">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815512">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815514">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815516">
+ </A>
+3</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815518">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815520">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815522">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815524">
+ </A>
+7</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815526">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815528">
+ </A>
+9</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815530">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815532">
+ </A>
+11</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815534">
+ </A>
+12</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815536">
+ </A>
+13</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815538">
+ </A>
+14</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815540">
+ </A>
+15</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=861767">
+ </A>
+Note, when using a device with scalable pixels (e.g., PostScript), the XSIZE and YSIZE keywords should also be used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679679">
+ </A>
+Channel</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679680">
+ </A>
+The memory channel to be written. It is assumed to be zero if not specified. This parameter is ignored on display systems that have only one memory channel. When using a &quot;decomposed&quot; display system, the red channel is 1, the green channel is 2, and the blue channel is 3. Channel 0 indicates all channels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679681">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679682">
+ </A>
+<A NAME="marker=674208">
+ </A>
+CENTIMETERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679683">
+ </A>
+Set this keyword to indicate that the <I CLASS="Italic">
+X</I>
+, <I CLASS="Italic">
+Y</I>
+, <I CLASS="Italic">
+Xsize</I>
+, <I CLASS="Italic">
+Ysize</I>
+, and <I CLASS="Italic">
+Z</I>
+ arguments are given in centimeters from the origin. This system is useful when dealing with devices, such as PostScript printers, that do not provide a direct relationship between image pixels and the size of the resulting image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895079">
+ </A>
+<A NAME="marker=895085">
+ </A>
+CHANNEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895087">
+ </A>
+The memory channel to be written to . The CHANNEL keyword is identical to the optional <I CLASS="Italic">
+Channel</I>
+ argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679690">
+ </A>
+<A NAME="marker=674212">
+ </A>
+INCHES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679691">
+ </A>
+Set this keyword to indicate that all position and size values are given in inches from the origin. This system is useful when dealing with devices, such as PostScript printers, that do not provide a direct relationship between image pixels and the size of the resulting image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679694">
+ </A>
+<A NAME="marker=674214">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679695">
+ </A>
+If specified, ORDER overrides the current setting of the <A NAME="marker=674215">
+ </A>
+!ORDER system variable for the current image only. If set, the image is drawn from the top down instead of the normal bottom up.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679698">
+ </A>
+<A NAME="marker=674220">
+ </A>
+TRUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679699">
+ </A>
+<A NAME="marker=674221">
+ </A>
+Set this keyword to a nonzero value to indicate that a true-color (16-, 24-, or 32-bit) image is to be displayed. The value assigned to TRUE specifies the index of the dimension over which color is interleaved. The image parameter must have three dimensions, one of which must be equal to three. For example, set TRUE to 1 to display an image that is pixel interleaved and has dimensions of (3, <I CLASS="Italic">
+m, n</I>
+). Specify 2 for row-interleaved images, of size (<I CLASS="Italic">
+m</I>
+, 3, <I CLASS="Italic">
+n</I>
+), and 3 for band-interleaved images of the form (<I CLASS="Italic">
+m</I>
+, <I CLASS="Italic">
+n</I>
+, 3).</P>
+<P CLASS="Body">
+<A NAME="pgfId=679700">
+ </A>
+See <A HREF="idl238.htm#73829" CLASS="XRef">
+True-Color Images</A>
+<EM CLASS="Emphasis">
+ </EM>
+for an example using this keyword to write 24-bit images to the <A NAME="marker=900138">
+ </A>
+PostScript device.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679701">
+ </A>
+<A NAME="marker=674226">
+ </A>
+WORDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679702">
+ </A>
+Set this keyword to indicate that words (short integers) instead of 8-bit bytes are to be transferred to the device. This keyword is valid only when using devices that can transfer 16-bit pixels. The normal transfer uses 8-bit pixels. If this keyword is set, the <I CLASS="Italic">
+Image</I>
+ parameter is converted to short integer type, if necessary, and then written to the display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679703">
+ </A>
+<A NAME="marker=674227">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679704">
+ </A>
+The width of the resulting image. On devices with scalable pixel size (such as PostScript), if XSIZE is specified the image will be scaled to fit the specified width. If neither XSIZE nor YSIZE is specified, the image will be scaled to fill the plotting area, while preserving the image's aspect ratio. This keyword is ignored by pixel-based devices that are unable to change the size of their pixels.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679705">
+ </A>
+<A NAME="marker=674228">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=196583">
+ </A>
+The height of the resulting image. On devices with scalable pixel size (such as PostScript), if YSIZE is specified the image will be scaled to fit the specified height. If neither XSIZE nor YSIZE is specified, the image will be scaled to fill the plotting area, while preserving the image's aspect ratio. This keyword is ignored by pixel-based devices that are unable to change the size of their pixels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=219013">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=219017">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#32605" CLASS="XRef">
+CHANNEL</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679709">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=679711">
+ </A>
+D = BYTSCL(DIST(256)) &amp; TV, D	<EM CLASS="Comment">;
+Create and display a simple image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679713">
+ </A>
+ERASE	<EM CLASS="Comment">;
+Erase the screen.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679714">
+ </A>
+Use the position parameter to display a number of images in the same window.</P>
+<P CLASS="Code">
+<A NAME="pgfId=833625">
+ </A>
+TV, D, 0	<EM CLASS="Comment">;
+Display the image in the upper left corner.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679717">
+ </A>
+TV, D, 1	<EM CLASS="Comment">;
+Display another copy of the image in the next position.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795984">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795985">
+ </A>
+<A HREF="idl8e.htm#22920" CLASS="XRef">
+ERASE</A>
+, <A HREF="idl1a5.htm#12925" CLASS="XRef">
+SLIDE_IMAGE</A>
+, <A HREF="idl1ed.htm#15540" CLASS="XRef">
+TVRD</A>
+, <A HREF="idl1ee.htm#90730" CLASS="XRef">
+TVSCL</A>
+, <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

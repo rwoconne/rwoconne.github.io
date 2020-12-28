@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CONJ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl40.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl3e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676241">
+ </A>
+<A NAME="81550">
+ </A>
+CONJ</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676242">
+ </A>
+The <A NAME="marker=672685">
+ </A>
+CONJ function returns the <A NAME="marker=672686">
+ </A>
+complex <A NAME="marker=672687">
+ </A>
+conjugate of <I CLASS="Italics">
+X</I>
+. The complex conjugate of the real-imaginary pair (<I CLASS="Italics">
+x, y</I>
+) is (<I CLASS="Italics">
+x, -y</I>
+). If <I CLASS="Italics">
+X</I>
+ is not complex, a complex-valued copy of <I CLASS="Italics">
+X</I>
+ is used.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676243">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676244">
+ </A>
+Result = CONJ(<I CLASS="Italics">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676245">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676246">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676247">
+ </A>
+The value for which the complex conjugate is desired. If <I CLASS="Italics">
+X</I>
+ is an array, the result has the same structure, with each element containing the complex conjugate of the corresponding element of <I CLASS="Italics">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676248">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676249">
+ </A>
+Print the conjugate of the complex pair (4.0, 5.0) by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676250">
+ </A>
+PRINT, CONJ(COMPLEX(4.0, 5.0))</P>
+<P CLASS="Body">
+<A NAME="pgfId=676251">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676252">
+ </A>
+( 4.00000, -5.00000)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34648">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34649">
+ </A>
+<A HREF="idl31.htm#62457" CLASS="XRef">
+CINDGEN</A>
+, <A HREF="idl39.htm#61718" CLASS="XRef">
+COMPLEX</A>
+, <A HREF="idl3a.htm#77245" CLASS="XRef">
+COMPLEXARR</A>
+, <A HREF="idl69.htm#51663" CLASS="XRef">
+DCINDGEN</A>
+, <A HREF="idl6a.htm#50604" CLASS="XRef">
+DCOMPLEX</A>
+, <A HREF="idl6b.htm#58439" CLASS="XRef">
+DCOMPLEXARR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

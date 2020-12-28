@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SCALE3</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl18d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl18b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=901833">
+ </A>
+<A NAME="24364">
+ </A>
+SCALE3</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787093">
+ </A>
+The <A NAME="marker=787091">
+ </A>
+SCALE3 procedure sets up transformation and scaling parameters for basic <A NAME="marker=788187">
+ </A>
+3D viewing. This procedure is similar to SURFR and SCALE3D, except that the data ranges must be specified and the scaling does not vary with rotation. Results are stored in the system variables <A NAME="marker=788107">
+ </A>
+!P.T, !X.S, !Y.S, and !Z.S.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787094">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+scale3.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787095">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787096">
+ </A>
+SCALE3</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787097">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787099">
+ </A>
+<A NAME="marker=787098">
+ </A>
+XRANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787100">
+ </A>
+A two-element vector containing the minimum and maximum X values. If omitted, the X-axis scaling remains unchanged.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787102">
+ </A>
+<A NAME="marker=787101">
+ </A>
+YRANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787103">
+ </A>
+A two-element vector containing the minimum and maximum Y values. If omitted, the Y-axis scaling remains unchanged.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787105">
+ </A>
+<A NAME="marker=787104">
+ </A>
+ZRANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787106">
+ </A>
+A two-element vector containing the minimum and maximum Z values. If omitted, the Z-axis scaling remains unchanged.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787108">
+ </A>
+<A NAME="marker=787107">
+ </A>
+AX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787109">
+ </A>
+Angle of rotation about the X axis. The default is 30 degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787111">
+ </A>
+<A NAME="marker=787110">
+ </A>
+AZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787112">
+ </A>
+Angle of rotation about the Z axis. The default is 30 degrees.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787113">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787114">
+ </A>
+Set up a 3D transformation where the data range is 0 to 20 for each of the 3 axes and the viewing area is rotated 20 degrees about the X axis and 55 degrees about the Z axis:</P>
+<P CLASS="Code">
+<A NAME="pgfId=787115">
+ </A>
+SCALE3, XRANGE=[0, 20], YRANGE=[0, 20], ZRANGE=[0, 20], AX=20, AZ=55</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787117">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821209">
+ </A>
+<A HREF="idl18d.htm#35062" CLASS="XRef">
+SCALE3D</A>
+, <A HREF="idl1c7.htm#31282" CLASS="XRef">
+SURFR</A>
+, <A HREF="idl1cf.htm#36880" CLASS="XRef">
+T3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

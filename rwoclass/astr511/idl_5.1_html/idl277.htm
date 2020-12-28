@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFAN_PUTDESC</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl278.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl276.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997426">
+ </A>
+<A NAME="72253">
+ </A>
+HDF_DFAN_PUTDESC</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997430">
+ </A>
+The <A NAME="marker=997428">
+ </A>
+HDF_DFAN_PUTDESC procedure writes a <A NAME="marker=997429">
+ </A>
+description for the given tag and reference number in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997431">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997432">
+ </A>
+HDF_DFAN_PUTDESC, <I CLASS="Italics">
+Filename, Tag, Ref, Description</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997433">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997434">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997435">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997436">
+ </A>
+Tag</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997437">
+ </A>
+The tag number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997438">
+ </A>
+Ref</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997439">
+ </A>
+The reference number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997440">
+ </A>
+Description</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997441">
+ </A>
+A string or array of bytes containing the information to be written.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997442">
+ </A>
+If a description does not exist, the <EM CLASS="Emphasis">
+Description</EM>
+ variable will contain either a 0L (long-integer zero) or a blank string, and a warning message will be printed. Warning messages can be suppressed by setting the !QUIET system variable to a non-zero value.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997443">
+ </A>
+Bugs</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997444">
+ </A>
+Attempting to overwrite an existing description with a longer one fails.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997445">
+ </A>
+Overwriting an existing description with a shorter description succeeds, but the description length is unchanged and garbage characters are left at the end of the description).</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1016480">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016481">
+ </A>
+See the example for <A HREF="idl271.htm#75461" CLASS="XRef">
+HDF_DFAN_GETDESC</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DEFROI</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl6e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl6c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757011">
+ </A>
+<A NAME="72309">
+ </A>
+DEFROI</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757015">
+ </A>
+The <A NAME="marker=757012">
+ </A>
+DEFROI function defines an irregular <A NAME="marker=757013">
+ </A>
+region of interest of an <A NAME="marker=757014">
+ </A>
+image using the image display system and the cursor and mouse. The result is a vector of subscripts of the pixels inside the region. The lowest bit in which the write mask is enabled is changed. </P>
+<P CLASS="Body">
+<A NAME="pgfId=757016">
+ </A>
+DEFROI only works for interactive, pixel oriented devices with a cursor and an exclusive or writing mode. Regions may have at most 1000 vertices.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=906044">
+ </A>
+DEFROI does not function correctly when used with draw widgets. See <A HREF="idl5b.htm#37165" CLASS="XRef">
+CW_DEFROI</A>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=757017">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+defroi.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757018">
+ </A>
+Using DEFROI</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757019">
+ </A>
+After calling DEFROI, click in the image with the left mouse button to mark points on the boundary of the region of interest. The points are connected in sequence. Alternatively, press and hold the left mouse button and drag to draw a curved region. Click the middle mouse button to erase points. The most recently-placed point is erased first. Click the right mouse button to close the region. The function returns after the region has been closed.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757020">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757021">
+ </A>
+Result = DEFROI(<EM CLASS="Emphasis">
+Sx, Sy [, Xverts, Yverts]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757022">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757023">
+ </A>
+Sx, Sy</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757024">
+ </A>
+Integers specifying the horizontal and vertical size of image, in pixels. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757025">
+ </A>
+Xverts, Yverts </H4>
+<P CLASS="Body">
+<A NAME="pgfId=757026">
+ </A>
+Named vectors that will contain the vertices of the enclosed region. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757027">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757029">
+ </A>
+<A NAME="marker=757028">
+ </A>
+NOREGION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757030">
+ </A>
+Set this keyword to inhibit the return of the pixel subscripts. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757032">
+ </A>
+<A NAME="marker=757031">
+ </A>
+NOFILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757033">
+ </A>
+Set this keyword to inhibit filling of the defined region on completion. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757035">
+ </A>
+<A NAME="marker=757034">
+ </A>
+RESTORE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757036">
+ </A>
+Set this keyword to restore the display to its original state upon completion.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757039">
+ </A>
+<A NAME="marker=757037">
+ </A>
+X0, <A NAME="marker=757038">
+ </A>
+Y0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757040">
+ </A>
+Set these keywords equal to the coordinates of the lower left corner of the displayed image (in device coordinates). If omitted, the default value (0,0) is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757042">
+ </A>
+<A NAME="marker=757041">
+ </A>
+ZOOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757043">
+ </A>
+Set this keyword equal to the zoom factor. If not specified, a value of 1 is assumed. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757044">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=757045">
+ </A>
+TVSCL, DIST(200,200)	<EM CLASS="Comment">;
+Create an image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757046">
+ </A>
+X = DEFROI(200, 200)	<EM CLASS="Comment">;
+Call DEFROI. The cursor becomes active in the graphics window. Define a region and click the right mouse button.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757047">
+ </A>
+PRINT, X	<EM CLASS="Comment">;
+Print subscripts of points included in the defined region.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757048">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=819059">
+ </A>
+<A HREF="idl5b.htm#37165" CLASS="XRef">
+CW_DEFROI</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

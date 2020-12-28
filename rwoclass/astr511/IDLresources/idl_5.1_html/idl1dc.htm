@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TOTAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1dd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1db.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679442">
+ </A>
+<A NAME="10747">
+ </A>
+TOTAL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679443">
+ </A>
+The <A NAME="marker=674134">
+ </A>
+TOTAL function returns the <A NAME="marker=50058">
+ </A>
+sum of the elements of <I CLASS="Italic">
+Array</I>
+. The sum of the array elements over a given dimension is returned if the <I CLASS="Italic">
+Dimension</I>
+ argument is present.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679444">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679445">
+ </A>
+Result = TOTAL(<I CLASS="Italic">
+Array [, Dimension]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679446">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679447">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679448">
+ </A>
+The array to be summed. This array can be of any basic type except string. If <I CLASS="Italic">
+Array</I>
+ is double-precision floating-point, complex, or double-precision complex, the result is of the same type. Otherwise, the result is single-precision floating-point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679449">
+ </A>
+Dimension</H4>
+<P CLASS="Body">
+<A NAME="pgfId=815485">
+ </A>
+The dimension over which to sum, starting at one. If this argument is not present or zero, the scalar sum of all the array elements is returned. If this argument is present, the result is an array with one less dimension than <I CLASS="Italic">
+Array</I>
+. For example, if the dimensions of <I CLASS="Italic">
+Array</I>
+ are <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+3</SUB>
+, and <I CLASS="Italic">
+Dimension</I>
+ is 2, the dimensions of the result are (<I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+3</SUB>
+), and element <I CLASS="Italic">
+(i,j)</I>
+ of the result contains the sum:</P>
+<DIV>
+<CENTER><IMG SRC="idl_109.gif" BORDER=0>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=835043">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680896">
+ </A>
+<A NAME="marker=675254">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679450">
+ </A>
+Set this keyword to perform the summation in double-precision floating-point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47220">
+ </A>
+<A NAME="marker=47219">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843311">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680888">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679451">
+ </A>
+Sum the elements of the array [20, 10, 5, 5, 3] and print the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679452">
+ </A>
+PRINT, TOTAL([20, 10, 5, 5, 3])</P>
+<P CLASS="Body">
+<A NAME="pgfId=679453">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=948791">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679454">
+ </A>
+&nbsp;&nbsp; 43.0000</P>
+<P CLASS="Body">
+<A NAME="pgfId=679455">
+ </A>
+When a multi-dimensional array is used, the results are different, as shown in the following example. Create a five-element by five-element array filled with floating-point values by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679456">
+ </A>
+A = FINDGEN(5,5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679457">
+ </A>
+Display the sums of each of the rows in A by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679458">
+ </A>
+PRINT, TOTAL(A, 1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679459">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679460">
+ </A>
+&nbsp;&nbsp; 10.0000 &nbsp;&nbsp;35.0000&nbsp;&nbsp; 60.0000&nbsp;&nbsp; 85.0000&nbsp;&nbsp; 110.000</P>
+<P CLASS="Body">
+<A NAME="pgfId=679461">
+ </A>
+Display the sums of each of the columns in A by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679462">
+ </A>
+PRINT, TOTAL(A, 2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679463">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679464">
+ </A>
+&nbsp;&nbsp; 50.0000 &nbsp;&nbsp;55.0000&nbsp;&nbsp; 60.0000&nbsp;&nbsp; 65.0000&nbsp;&nbsp; 70.0000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35965">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=35966">
+ </A>
+<A HREF="idl9c.htm#49328" CLASS="XRef">
+FACTORIAL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

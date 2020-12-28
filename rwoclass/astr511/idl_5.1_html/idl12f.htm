@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ONLINE_HELP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl130.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl12e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889628">
+ </A>
+<A NAME="75022">
+ </A>
+ONLINE_HELP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889632">
+ </A>
+The <A NAME="marker=889631">
+ </A>
+ONLINE_HELP procedure invokes the hypertext help viewer. If called with no arguments, it simply starts the help viewer with the default IDL help file displayed. Optionally, a different book, a <A NAME="marker=889633">
+ </A>
+keyword search string, or a context number can be specified. Note that this procedure is intended for use in user-written routines. To invoke IDL's online help from the command line, it is much simpler to use the <CODE CLASS="Code">
+?</CODE>
+ command.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889634">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889635">
+ </A>
+ONLINE_HELP <I CLASS="Italics">
+[, Topic]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889636">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889637">
+ </A>
+Topic</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889638">
+ </A>
+An optional string that contains text to be searched for using the viewer's &quot;keyword search&quot; (not full-text search) facility. If this argument is omitted, the specified or default book is displayed at its beginning.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889639">
+ </A>
+If the CONTEXT keyword is set, this argument should be an integer value (not a string) that represents the context number of the help topic to be displayed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889640">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889642">
+ </A>
+<A NAME="marker=889641">
+ </A>
+BOOK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889643">
+ </A>
+Set this keyword to a string containing the name of the online help &quot;book&quot; to be displayed. If this keyword is omitted, the default IDL help file is displayed. Any file specified by this keyword must be in the appropriate format for the viewer being invoked (e.g., on Windows, the file must be a Windows <CODE CLASS="Code">
+.hlp</CODE>
+ help file; on Unix, it must be a HyperHelp <CODE CLASS="Code">
+.hlp</CODE>
+ file).</P>
+<P CLASS="Body">
+<A NAME="pgfId=889644">
+ </A>
+By default, this string should be the name of a file found in the default location for IDL's online help files (i.e., wherever the file <CODE CLASS="Code">
+idl.hlp</CODE>
+ is installed), <I CLASS="Italics">
+without a path or file extension</I>
+. However, if the FULL_PATH keyword is set, this string should be a complete path and filename to the online help file you wish to display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889646">
+ </A>
+<A NAME="marker=889645">
+ </A>
+CONTEXT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889647">
+ </A>
+Set this keyword to indicate that the <I CLASS="Italics">
+Topic</I>
+ argument is an integer value that represents the context number of the help topic to be displayed. This keyword is intended for use with user-compiled help files that contain topics that have been mapped to specific context numbers when they were compiled (using the [MAP] section of the help project file). Specifying a non-existent context number causes the first topic of the requested help file to be displayed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889648">
+ </A>
+The help files shipped with IDL do not contain explicit context number mappings. Therefore, the context numbers of specific topics are undocumented, unknown, and subject to change between releases of the help system.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889650">
+ </A>
+<A NAME="marker=889649">
+ </A>
+FULL_PATH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889651">
+ </A>
+Set this keyword to indicate that the string specified by the BOOK keyword is the full path to the file, rather than the default &quot;shorthand&quot; file specification, as described above.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889653">
+ </A>
+<A NAME="marker=889652">
+ </A>
+QUIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889654">
+ </A>
+Set this keyword to close the online help viewer.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889655">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889656">
+ </A>
+Use the following command to launch the online help viewer and perform a keyword search on the subject &quot;handle&quot;:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889657">
+ </A>
+ONLINE_HELP, 'handle'</P>
+<P CLASS="Body">
+<A NAME="pgfId=889658">
+ </A>
+To open a help file named <CODE CLASS="Code">
+adg.hlp</CODE>
+, located in the default help file directory, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889659">
+ </A>
+ONLINE_HELP, BOOK='adg.hlp'</P>
+<P CLASS="Body">
+<A NAME="pgfId=889660">
+ </A>
+To open a help file named <CODE CLASS="Code">
+myhelp.hlp</CODE>
+, located in a directory named <CODE CLASS="Code">
+/usr/home/keith</CODE>
+, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889661">
+ </A>
+ONLINE_HELP, BOOK='/usr/home/keith/myfile.hlp', /FULL_PATH</P>
+<P CLASS="Body">
+<A NAME="pgfId=889662">
+ </A>
+To open the <CODE CLASS="Code">
+myhelp.hlp</CODE>
+ file from the previous example and display the topic corresponding to context number 100, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889663">
+ </A>
+ONLINE_HELP, 100, /CONTEXT, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=889664">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BOOK='/usr/home/keith/myfile.hlp', /FULL_PATH</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889665">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889672">
+ </A>
+<A HREF="idl11a.htm#95205" CLASS="XRef">
+MK_HTML_HELP</A>
+, <A HREF="..html#23590" CLASS="XRef">
+Getting Help with IDL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

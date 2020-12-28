@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TVSCL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ef.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ed.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679802">
+ </A>
+<A NAME="90730">
+ </A>
+TVSCL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=808342">
+ </A>
+The <A NAME="marker=674257">
+ </A>
+TVSCL procedure scales the intensity values of <I CLASS="Italic">
+Image</I>
+ into the range of the image <A NAME="marker=113853">
+ </A>
+display and outputs the data to the image display at the specified location. The array is scaled so the minimum data value becomes 0 and the maximum value becomes the maximum number of available colors (held in the system variable <A NAME="marker=674258">
+ </A>
+!D.TABLE_SIZE) as follows:</P>
+<DIV>
+<CENTER><IMG SRC="idl_113.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=834908">
+ </A>
+where the maximum and minimum are found by scanning the array. The parameters and keywords of the TVSCL procedure are identical to those accepted by the TV procedure. For additional information about each parameter, consult the description of TV.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679804">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679805">
+ </A>
+TVSCL, <I CLASS="Italic">
+Image [, Position]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679806">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=679807">
+ </A>
+TVSCL, <I CLASS="Italic">
+Image [, X, Y [, Channel]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679808">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679809">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679810">
+ </A>
+A two-dimensional array to be displayed as an image. If this argument is not already of byte type, it is converted prior to use.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679811">
+ </A>
+X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679812">
+ </A>
+If <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ are present, they specify the lower left coordinate of the displayed image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679813">
+ </A>
+Position</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679814">
+ </A>
+Image position. See the discussion of the TV procedure for a full description.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679815">
+ </A>
+Channel</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679816">
+ </A>
+The memory channel to be written. This argument is assumed to be zero if not specified. This parameter is ignored on display systems that have only one memory channel.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679817">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679818">
+ </A>
+TVSCL accepts all of the keywords accepted by the TV routine. See <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+. In addition, there are two unique keywords:</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=902069">
+ </A>
+<A NAME="marker=902071">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=902070">
+ </A>
+Set this keyword to cause TVSCL to treat elements of <I CLASS="Italic">
+Image</I>
+ that are not numbers (that is, elements that have the special floating-point values <I CLASS="Italic">
+Infinity</I>
+ or <I CLASS="Italic">
+NaN</I>
+) as missing data, and display them using color index 0 (zero). Note that color index 0 is also used to display elements that have the minimum value in the <I CLASS="Italic">
+Image</I>
+ array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=218988">
+ </A>
+<A NAME="marker=218987">
+ </A>
+TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=218989">
+ </A>
+The maximum value of the scaled result. If TOP is not specified, 255 is used. Note that the minimum value of the scaled result is always 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679819">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679820">
+ </A>
+Display a floating-point array as an image using the TV command. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679821">
+ </A>
+TV, DIST(200)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679822">
+ </A>
+Note that the image is not easily visible because the values in the array have not been scaled into the full range of display values. Now display the image with the TVSCL command by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679823">
+ </A>
+TVSCL, DIST(200)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679824">
+ </A>
+Notice how much brighter the image appears.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795992">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795993">
+ </A>
+<A HREF="idl8e.htm#22920" CLASS="XRef">
+ERASE</A>
+, <A HREF="idl1a5.htm#12925" CLASS="XRef">
+SLIDE_IMAGE</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=787933">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

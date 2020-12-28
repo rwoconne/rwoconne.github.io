@@ -1,0 +1,1205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrContour</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1144380">
+ </A>
+<A NAME="13682">
+ </A>
+IDLgrContour</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1144383">
+ </A>
+The <A NAME="marker=1144382">
+ </A>
+IDLgrContour object draws a contour plot from data stored in a rectangular array or from a set of unstructured points. Both line contours and filled contour plots can be created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144384">
+ </A>
+An IDLgrContour object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1144385">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144386">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1144387">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144388">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144389">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144396">
+ </A>
+See <A HREF="idl2f7.htm#40475" CLASS="XRef">
+IDLgrContour::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144397">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144398">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144399">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144406">
+ </A>
+<A HREF="idl2f7.htm#13145" CLASS="XRef">
+IDLgrContour::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144413">
+ </A>
+<A HREF="idl2f7.htm#40475" CLASS="XRef">
+IDLgrContour::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144420">
+ </A>
+<A HREF="idl2f7.htm#23624" CLASS="XRef">
+IDLgrContour::GetCTM</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144427">
+ </A>
+<A HREF="idl2f7.htm#16566" CLASS="XRef">
+IDLgrContour::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144434">
+ </A>
+<A HREF="idl2f7.htm#33674" CLASS="XRef">
+IDLgrContour::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144437">
+ </A>
+<A NAME="13145">
+ </A>
+IDLgrContour::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144440">
+ </A>
+The IDLgrContour::<A NAME="marker=1144439">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f7.htm#13682" CLASS="XRef">
+IDLgrContour</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144447">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144448">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144449">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144450">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144451">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrContour::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144452">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144453">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144454">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144455">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144458">
+ </A>
+<A NAME="23624">
+ </A>
+IDLgrContour::GetCTM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144461">
+ </A>
+The IDLgrContour::<A NAME="marker=1144460">
+ </A>
+GetCTM function method returns the 4 x 4 graphics transform matrix from the current object upward through the graphics tree. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f7.htm#13682" CLASS="XRef">
+IDLgrContour</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144468">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144469">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrContour::]</EM>
+GetCTM()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144470">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144471">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144472">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144474">
+ </A>
+<A NAME="marker=1144473">
+ </A>
+DESTINATION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144475">
+ </A>
+Set this keyword to the object reference of a destination object to specify that the projection matrix for the View object in the current tree be included in the returned transformation matrix. The resulting matrix will transform a point in the data space of the object on which the GetCTM method is called into a normalized coordinate system (-1 to +1 in X, Y, and Z), relative to the View object that contains the surface object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144477">
+ </A>
+<A NAME="marker=1144476">
+ </A>
+TOP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144481">
+ </A>
+Set this keyword equal to the object reference to an <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ object to specify that the returned matrix accumulate from the object on which the GetCTM method is called up to and including the specified model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144484">
+ </A>
+<A NAME="16566">
+ </A>
+IDLgrContour::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144487">
+ </A>
+The IDLgrContour::<A NAME="marker=1144486">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the contour. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f7.htm#13682" CLASS="XRef">
+IDLgrContour</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144494">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144495">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrContour::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144496">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144497">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144498">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144505">
+ </A>
+Any keyword to <A HREF="idl2f7.htm#40475" CLASS="XRef">
+IDLgrContour::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144507">
+ </A>
+<A NAME="marker=1144506">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144508">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the retrievable properties associated with this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144510">
+ </A>
+<A NAME="marker=1144509">
+ </A>
+GEOM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144511">
+ </A>
+Set this keyword to a named variable that will contain the geometry associated with this contour.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144513">
+ </A>
+<A NAME="marker=1144512">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144514">
+ </A>
+Set this keyword to a named variable that will contain an object reference to the object that contains this contour.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144516">
+ </A>
+<A NAME="marker=1144515">
+ </A>
+XRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144517">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<I CLASS="Italic">
+xmin</I>
+, <EM CLASS="Emphasis">
+xmax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+X</EM>
+ data coordinates covered by the contour.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144519">
+ </A>
+<A NAME="marker=1144518">
+ </A>
+YRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144520">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+Y</EM>
+ data coordinates covered by the contour.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144522">
+ </A>
+<A NAME="marker=1144521">
+ </A>
+ZRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144523">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+Z</EM>
+ data coordinates covered by the contour.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144526">
+ </A>
+<A NAME="40475">
+ </A>
+IDLgrContour::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144532">
+ </A>
+The IDLgrContour::<A NAME="marker=1144528">
+ </A>
+Init function method initializes the contour object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f7.htm#13682" CLASS="XRef">
+IDLgrContour</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144536">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144537">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144538">
+ </A>
+Obj = OBJ_NEW('IDLgrContour')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144539">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144540">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrContour::]</EM>
+Init(<EM CLASS="Emphasis">
+[Values]</EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144541">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144542">
+ </A>
+Values</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144543">
+ </A>
+A vector or two-dimensional array of values to be contoured. If no values are provided, the values will be derived from the GEOMZ keyword value (if set and the PLANAR keyword is not set). In this case, the values to be contoured will match the Z coordinates of the provided geometry.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144544">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144551">
+ </A>
+Properties retrievable via <A HREF="idl2f7.htm#16566" CLASS="XRef">
+IDLgrContour::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1166555">
+ </A>
+<A NAME="marker=1166554">
+ </A>
+ANISOTROPY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1166556">
+ </A>
+Set this keyword equal to a three-element vector [<I CLASS="Italic">
+x</I>
+, <I CLASS="Italic">
+y</I>
+, <I CLASS="Italic">
+z</I>
+] that represents the multipliers to be applied to the internally computed correction factors along each axis that account for anisotropic geometry. Correcting for anisotropy is particularly important for the appropriate representations of downhill tickmarks.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1166494">
+ </A>
+By default, IDL will automatically compute correction factors for anisotropy based on the [XYZ] range of the contour geometry. If the geometry (as provided via the GEOMX, GEOMY, and GEOMZ keywords) falls within the range [<I CLASS="Italic">
+xmin</I>
+, <I CLASS="Italic">
+ymin</I>
+, <I CLASS="Italic">
+zmin</I>
+] to [<I CLASS="Italic">
+xmax</I>
+, <I CLASS="Italic">
+ymax</I>
+, <I CLASS="Italic">
+zmax</I>
+], then the default correction factors are computed as follows:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166500">
+ </A>
+dx = xmax - xmin</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166501">
+ </A>
+dy = ymax - ymin</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166502">
+ </A>
+dz = zmax - zmin</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166503">
+ </A>
+maxRange = (dx &gt; dy) &gt; dz  ; Get the maximum of the ranges.</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166505">
+ </A>
+IF (dx EQ 0) THEN xcorrection = 1.0 ELSE xcorrection = maxRange / dx</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166506">
+ </A>
+IF (dy EQ 0) THEN ycorrection = 1.0 ELSE ycorrection = maxRange / dy</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=1166507">
+ </A>
+IF (dz EQ 0) THEN zcorrection = 1.0 ELSE zcorrection = maxRange / dz</P>
+<P CLASS="Body">
+<A NAME="pgfId=1166509">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1166559">
+ </A>
+This internally computed correction is then multiplied by the corresponding [<I CLASS="Italic">
+x</I>
+, <I CLASS="Italic">
+y</I>
+, <I CLASS="Italic">
+z</I>
+] values of the ANISOTROPY keyword. The default value for this keyword is [1,1,1].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144559">
+ </A>
+<A NAME="marker=1144558">
+ </A>
+C_COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144560">
+ </A>
+Set this keyword to a vector of colors representing the colors to be applied at each contour level. If there are more contour levels than elements in this vector, the colors will be cyclically repeated. If C_COLORS is set to 0, all contour levels will be drawn in the color specified by the COLOR keyword (this is the default).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144562">
+ </A>
+<A NAME="marker=1144561">
+ </A>
+C_FILL_PATTERN (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144563">
+ </A>
+Set this keyword to an array of IDLgrPattern objects representing the patterns to be applied at each contour level if the FILL keyword is non-zero. If there are more contour levels than fill patterns, the patterns will be cyclically repeated. If this keyword is set to 0, all contour levels are filled with a solid color (this is the default).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144565">
+ </A>
+<A NAME="marker=1144564">
+ </A>
+C_LINESTYLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144566">
+ </A>
+Set this keyword to an array of linestyles representing the linestyles to be applied at each contour level. The array may be either a vector of integers representing pre-defined linestyles, or an array of 2-element vectors representing a stippling pattern specification. If there are more contour levels than linestyles, the linestyles will be cyclically repeated. If this keyword is set to 0, all levels are drawn as solid lines (this is the default).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144568">
+ </A>
+<A NAME="marker=1144567">
+ </A>
+C_THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144569">
+ </A>
+Set this keyword to an array of line thicknesses representing the thickness to be applied at each contour level. If there are more contour levels than line thicknesses, the thicknesses will be cyclically repeated. If this keyword is set to 0, all contour levels are drawn with a line thickness of 1.0 (this is the default).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173666">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144571">
+ </A>
+<A NAME="marker=1144570">
+ </A>
+C_VALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144572">
+ </A>
+Set this keyword to a vector of values for which contour levels are to be drawn. If this keyword is set to 0, contour levels will be evenly sampled across the range of the DATA_VALUES, using the value of the N_LEVELS keyword to determine the number of samples.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144574">
+ </A>
+<A NAME="marker=1144573">
+ </A>
+COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144575">
+ </A>
+Set this keyword to the color to be used to draw the contours. The color may be specified as a color lookup table index or as an RGB vector. The default is [255,255,255]. This value will be ignored if the C_COLORS keyword is set to a vector.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144577">
+ </A>
+<A NAME="marker=1144576">
+ </A>
+DATA_VALUES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144578">
+ </A>
+Set this keyword to a vector or two-dimensional array specifying the values to be contoured. This keyword is the same as the <I CLASS="Italic">
+Values</I>
+ argument described in the Arguments section above.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144580">
+ </A>
+<A NAME="marker=1144579">
+ </A>
+DOWNHILL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144581">
+ </A>
+Set this keyword to indicate that downhill tick marks should be rendered as part of each contour level to indicate the downhill direction relative to the contour line.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144583">
+ </A>
+<A NAME="marker=1144582">
+ </A>
+FILL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144584">
+ </A>
+Set this keyword to indicate that the contours should be filled. The default is to draw the contour levels as lines without filling. Filling contour may produce less than satisfactory results if your data contains NaNs, or if the contours are not closed.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144586">
+ </A>
+<A NAME="marker=1144585">
+ </A>
+GEOMX (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144587">
+ </A>
+Set this keyword to a vector or two-dimensional array specifying the X coordinates of the geometry with which the contour values correspond. If X is a vector, it must match the number of elements in the <I CLASS="Italic">
+Values</I>
+ argument or DATA_VALUES keyword value, or it must match the first of the two dimensions of the <I CLASS="Italic">
+Values</I>
+ argument or DATA_VALUES keyword value (in which case, the X coordinates will be repeated for each row of data values). </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144589">
+ </A>
+<A NAME="marker=1144588">
+ </A>
+GEOMY (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144590">
+ </A>
+Set this keyword to a vector or two-dimensional array specifying the Y coordinates of the geometry with which the contour values correspond. If Y is a vector, it must match the number of elements in the <I CLASS="Italic">
+Values</I>
+ argument or DATA_VALUES keyword value, or it must match the second of the two dimensions of the <I CLASS="Italic">
+Values</I>
+ argument or DATA_VALUES keyword value (in which case, the Y coordinates will be repeated for each column of data values).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144592">
+ </A>
+<A NAME="marker=1144591">
+ </A>
+GEOMZ (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144593">
+ </A>
+Set this keyword to a scalar, a vector, or a two-dimensional array specifying the Z coordinates of the geometry with which the contour values correspond.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1144594">
+ </A>
+If GEOMZ is a scalar, and the PLANAR keyword is set, the resulting contour geometry will be projected onto the plane Z=GEOMZ. If GEOMZ is a scalar, and the PLANAR keyword is not set, any geometry associated with the contour will be freed.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1156126">
+ </A>
+If GEOMZ is a vector or an array, it must match the number of elements in the <I CLASS="Italic">
+Values</I>
+ argument or the DATA_VALUES keyword value.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1144598">
+ </A>
+If GEOMZ is not set, the geometry will be derived from the DATA_VALUES property (if it is set to a two-dimensional array). In this case, the connectivity is implied. The X and Y coordinates match the row and column indices of the array, and the Z coordinates match the data values.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144600">
+ </A>
+<A NAME="marker=1144599">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144601">
+ </A>
+Set this keyword to a boolean value to indicate whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144602">
+ </A>
+0 = Draw graphic (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144603">
+ </A>
+1 = Do not draw graphic</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144605">
+ </A>
+<A NAME="marker=1144604">
+ </A>
+MAX_VALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144606">
+ </A>
+Set this keyword to the maximum value to be plotted. Data values greater than this value are treated as missing data. The default is the maximum value of the input Z data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144608">
+ </A>
+<A NAME="marker=1144607">
+ </A>
+MIN_VALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144609">
+ </A>
+Set this keyword to the minimum value to be plotted. Data values less than this value are treated as missing data. The default is the minimum value of the input Z data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144611">
+ </A>
+<A NAME="marker=1144610">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144612">
+ </A>
+Set this keyword to a string representing the name to be associated with this object. The default is the null string, ''.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144614">
+ </A>
+<A NAME="marker=1144613">
+ </A>
+N_LEVELS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144615">
+ </A>
+Set this keyword to the number of contour levels to generate. This keyword is ignored if the C_VALUE keyword is set to a vector, in which case, the number of levels is derived from the number of elements in that vector. Set this keyword to zero to indicate that IDL should compute a default number of levels based on the range of data values. This is the default.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144617">
+ </A>
+<A NAME="marker=1144616">
+ </A>
+PLANAR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144618">
+ </A>
+Set this keyword to indicate that the contoured data is to be projected onto a plane. This keyword is ignored if GEOMZ is not a scalar. The default is non-planar (i.e., to display the contoured data at the Z locations provided by the GEOMZ keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144620">
+ </A>
+<A NAME="marker=1144619">
+ </A>
+POLYGONS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144621">
+ </A>
+Set this keyword to an array of polygon descriptions that represents the connectivity information for the data to be contoured (as specified in the <I CLASS="Italic">
+Values</I>
+ argument or the DATA_VALUES keyword). A polygon description is an integer or longword array of the form: [<I CLASS="Italic">
+n</I>
+, i<SUB CLASS="Subscript">
+0</SUB>
+, i<SUB CLASS="Subscript">
+1</SUB>
+, ..., i<SUB CLASS="Subscript">
+n-1</SUB>
+<I CLASS="Italic">
+</I>
+], where <I CLASS="Italic">
+n</I>
+ is the number of vertices that define the polygon, and i<SUB CLASS="Subscript">
+0</SUB>
+..i<I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+-1</SUB>
+<I CLASS="Italic">
+</I>
+ are indices into the <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+ arguments that represent the polygon vertices. To ignore an entry in the POLYGONS array, set the vertex count, <I CLASS="Italic">
+n</I>
+, to 0. To end the drawing list, even if additional array space is available, set <I CLASS="Italic">
+n</I>
+ to -1. If this keyword is not specified, a single polygon will be generated.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144622">
+ </A>
+The connectivity array described by POLYGONS allows an individual object to contain more than one polygon. Vertex, normal, and color information can be shared by the multiple polygons. Consequently, the polygon object can represent an entire mesh and compute reasonable normal estimates in most cases.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156129">
+ </A>
+<A NAME="marker=1156133">
+ </A>
+TICKINTERVAL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156130">
+ </A>
+Set this keyword equal to a number indicating the distance between downhill tickmarks, in data units. If TICKINTERVAL is not set, or if you explicitly set it equal to zero, IDL will compute the distance based on the geometry of the contour.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156131">
+ </A>
+<A NAME="marker=1156138">
+ </A>
+TICKLEN (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156140">
+ </A>
+Set this keyword equal to a number indicating the length of the downhill tickmarks, in data units. If TICKLEN is not set, or if you explicitly set it equal to zero, IDL will compute the length based on the geometry of the contour.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144624">
+ </A>
+<A NAME="marker=1144623">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144625">
+ </A>
+Set this keyword to a value of any type. Use this value to contain any information you wish.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144627">
+ </A>
+<A NAME="marker=1144626">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144628">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144629">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144630">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144631">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144632">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144634">
+ </A>
+<A NAME="marker=1144633">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144635">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144636">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144637">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144638">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144639">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144641">
+ </A>
+<A NAME="marker=1144640">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144642">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144643">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144644">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144645">
+ </A>
+[(-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144646">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144649">
+ </A>
+<A NAME="33674">
+ </A>
+IDLgrContour::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144652">
+ </A>
+The IDLgrContour::<A NAME="marker=1144651">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the contour. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f7.htm#13682" CLASS="XRef">
+IDLgrContour</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144659">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144660">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrContour::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144661">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144662">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144663">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144670">
+ </A>
+Any keyword to <A HREF="idl2f7.htm#40475" CLASS="XRef">
+IDLgrContour::Init</A>
+</DIV>
+</BODY>
+</HTML>

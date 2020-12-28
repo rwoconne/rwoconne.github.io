@@ -1,0 +1,555 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrSymbol</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl307.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl305.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=998442">
+ </A>
+<A NAME="66762">
+ </A>
+IDLgrSymbol</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998443">
+ </A>
+A <A NAME="marker=1022432">
+ </A>
+symbol object represents a graphical element that is plotted relative to a particular position. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1030383">
+ </A>
+Seven predefined symbols are provided by IDL.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1008970">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1008971">
+ </A>
+This class has no superclass.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1008972">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1008973">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1008974">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1008975">
+ </A>
+See <A HREF="idl306.htm#20432" CLASS="XRef">
+IDLgrSymbol::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1008987">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1008988">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1008989">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1014513">
+ </A>
+<A HREF="idl306.htm#17383" CLASS="XRef">
+IDLgrSymbol::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033880">
+ </A>
+<A HREF="idl306.htm#54234" CLASS="XRef">
+IDLgrSymbol::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1008993">
+ </A>
+<A HREF="idl306.htm#20432" CLASS="XRef">
+IDLgrSymbol::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1021253">
+ </A>
+<A HREF="idl306.htm#37912" CLASS="XRef">
+IDLgrSymbol::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031471">
+ </A>
+<A NAME="17383">
+ </A>
+IDLgrSymbol::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031474">
+ </A>
+The IDLgrSymbol::<A NAME="marker=1052373">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl306.htm#66762" CLASS="XRef">
+IDLgrSymbol</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041846">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031478">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051222">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051223">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031479">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrSymbol::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031480">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031481">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031482">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031483">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1021256">
+ </A>
+<A NAME="54234">
+ </A>
+IDLgrSymbol::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1021258">
+ </A>
+The IDLgrSymbol::<A NAME="marker=1052376">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the symbol. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl306.htm#66762" CLASS="XRef">
+IDLgrSymbol</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014523">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014524">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrSymbol::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014525">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014526">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014527">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016772">
+ </A>
+Any keyword to <A HREF="idl306.htm#20432" CLASS="XRef">
+IDLgrSymbol::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014532">
+ </A>
+<A NAME="marker=1022602">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093642">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093643">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=998447">
+ </A>
+<A NAME="20432">
+ </A>
+IDLgrSymbol::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009066">
+ </A>
+The IDLgrSymbol::<A NAME="marker=1052380">
+ </A>
+Init function method initializes the plot symbol. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl306.htm#66762" CLASS="XRef">
+IDLgrSymbol</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041744">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009067">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019799">
+ </A>
+Obj = OBJ_NEW('IDLgrSymbol' <EM CLASS="Emphasis">
+[Data]</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041994">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041995">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrSymbol::]</EM>
+Init(<EM CLASS="Emphasis">
+[Data] </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998449">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998450">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998451">
+ </A>
+Either an integer value from the list shown below, or an object reference to either an IDLgrModel object or atomic graphic object.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1030351">
+ </A>
+Use one of the following scalar-represented internal default symbols:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030352">
+ </A>
+0 = No symbol</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059905">
+ </A>
+1 = Plus sign, `+' (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030354">
+ </A>
+2 = Asterisk</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030355">
+ </A>
+3 = Period (Dot)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030356">
+ </A>
+4 = Diamond</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030357">
+ </A>
+5 = Triangle</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030358">
+ </A>
+6 = Square</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030359">
+ </A>
+7 = X</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1030362">
+ </A>
+If an instance of the IDLgrModel object class or an atomic graphic object is used, the object tree is used as the symbol. For best results, the object should fill the domain from -1 to +1 in all dimensions. The pre-defined symbols listed above are all defined in the domain -1 to +1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998452">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020307">
+ </A>
+Properties retrievable via <A HREF="idl306.htm#54234" CLASS="XRef">
+IDLgrSymbol::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998454">
+ </A>
+<A NAME="marker=1023236">
+ </A>
+COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059594">
+ </A>
+Set this keyword to the color used to draw the symbol. The color may be specified as a color lookup table index or as an RGB vector. The default color is the color of the object for which this symbol is being used.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998456">
+ </A>
+<A NAME="marker=1030395">
+ </A>
+DATA (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030370">
+ </A>
+Set this keyword to specify a symbol. This keyword is equivalent to the <EM CLASS="Emphasis">
+Data</EM>
+ argument.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1173747">
+ </A>
+<A NAME="marker=1173746">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173748">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998458">
+ </A>
+<A NAME="marker=1023238">
+ </A>
+SIZE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998459">
+ </A>
+Set this keyword to a one-, two-, or three-element vector describing the X, Y, and Z scaling factors to be applied to the symbol. The default is [1.0, 1.0, 1.0].</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146463">
+ </A>
+If SIZE is specified as a scalar, then the X, Y, and Z scale factors are all equal to the scalar value.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146467">
+ </A>
+If SIZE is specified as a 2-element vector, then the X and Y scale factors are as specified by the vector, and the Z scale factor is 1.0.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146470">
+ </A>
+If SIZE is specified as a 3-element vector, then the X, Y, and Z scale factors are as specified by the vector.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998462">
+ </A>
+<A NAME="marker=1023240">
+ </A>
+THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998463">
+ </A>
+Set this keyword to an integer value between 1 and 10, specifying the line thickness to used to draw any lines that make up the symbol, in pixels. The default is one pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049084">
+ </A>
+<A NAME="marker=1049083">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058390">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1009113">
+ </A>
+<A NAME="37912">
+ </A>
+IDLgrSymbol::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009118">
+ </A>
+The IDLgrSymbol::<A NAME="marker=1052383">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the symbol. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl306.htm#66762" CLASS="XRef">
+IDLgrSymbol</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009119">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009120">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrSymbol::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009121">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1009122">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1009123">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016780">
+ </A>
+Any keyword to <A HREF="idl306.htm#20432" CLASS="XRef">
+IDLgrSymbol::Init</A>
+</DIV>
+</BODY>
+</HTML>

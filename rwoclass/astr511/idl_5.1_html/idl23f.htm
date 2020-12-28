@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Variables and Attributes</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl240.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl23e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=999273">
+</A>
+<A NAME="16963">
+</A>
+Variables and Attributes</H2>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999258">
+</A>
+Information in a CDF file consists of attributes (metadata) and collections of data records (variables).</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=999262">
+ </A>
+Variables</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999264">
+ </A>
+IDL can create CDF files representing any data that can be stored in a zero- to eight-dimensional array. CDF supports two distinct types of variables, <EM CLASS="Emphasis">
+rVariables</EM>
+ and <EM CLASS="Emphasis">
+zVariables</EM>
+. For reasons of efficiency, CDF uses &quot;variances&quot; to indicate whether data is unique between records and dimensions. For example, consider a data set of simultaneous surface temperatures at a variety of locations, the IDL code for creating the CDF file is included at the end of this section. A variable representing &quot;GMT time&quot; will vary from record to record, but not dimension to dimension (since all data are taken simultaneously). On the other hand, a variable such as longitude may not vary from record to record, but will vary from dimension to dimension. Record variance is set using the REC_VARY and REC_NOVARY keywords to CDF_VARCREATE, while dimensional variance is set through the <EM CLASS="Emphasis">
+DimVary</EM>
+ argument to CDF_VARCREATE. In both cases, the default is varying data.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=999265">
+ </A>
+rVariables</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999267">
+ </A>
+<EM CLASS="Emphasis">
+rVariables</EM>
+<A NAME="marker=999266">
+ </A>
+ (or &quot;regular&quot; variables) are multidimensional arrays of values, each having the same dimensions. That is, all rVariables in a CDF must have the same number of dimensions and dimension sizes. In IDL, the rVariable dimension sizes are declared when the CDF file is first created with CDF_CREATE. In the above example at the end of this section, all variables except &quot;time&quot; are rVariables.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=999292">
+ </A>
+zVariables</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999294">
+ </A>
+<EM CLASS="Emphasis">
+zVariables</EM>
+<A NAME="marker=999293">
+ </A>
+ (The &quot;z&quot; doesn't stand for anything--the CDF people just like the letter &quot;z&quot;) are multidimensional arrays of values of the same data type. zVariables can have different dimensionality from other zVariables and rVariables. In general, zVariables are much more flexible, and therefore easier to use, than rVariables.</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999673">
+ </A>
+For more discussion on CDF variables, see section 1.5 (&quot;Organizing Your Data in CDF&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1000329">
+ </A>
+Attributes</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1000334">
+ </A>
+<A NAME="marker=1000330">
+ </A>
+Attributes can contain auxiliary information about an entire CDF file (<EM CLASS="Emphasis">
+global scope</EM>
+ attributes or gAttributes), or about particular CDF variables (<EM CLASS="Emphasis">
+variable scope</EM>
+ attributes or rAttributes/zAttributes depending on variable type). CDF attributes can be scalar or vector in nature, and of any valid datatype. In the case of vector, or multiple entry, attributes the user must keep track of the entry numbers ( in CDF terms these are the gEntry, rEntry, or zEntry numbers depending on attribute type). For example, every rVariable in a CDF file might have an rAttribute named &quot;Date&quot;. A vector zVariable might have a zAttribute named &quot;Location&quot; with values such as [&quot;Melbourne Beach&quot;, &quot;Crowley&quot;, ...]. A global attribute &quot;MODS&quot; might be used to keep track of the modification history of a CDF file (see <A HREF="idl24a.htm#34381" CLASS="XRef">
+CDF_ATTPUT</A>
+). Note however, that variables cannot have multiple attributes with the same names. In IDL, CDF attributes are created with CDF_ATTPUT and retrieved with CDF_ATTGET.</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1000332">
+ </A>
+For more discussion on CDF variables, see section 1.6 (&quot;Attributes&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+. Certain &quot;standard&quot; attributes are required for a file to conform to the NSSDC standard. For a description of these attributes see section 2.6.1 (&quot;Standard Attributes&quot;) of the Version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+</BODY>
+</HTML>

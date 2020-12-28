@@ -1,0 +1,911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrLight</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2fc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2fa.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=997346">
+ </A>
+<A NAME="25429">
+ </A>
+IDLgrLight</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1030842">
+ </A>
+A <A NAME="marker=1030841">
+ </A>
+light object represents a source of illumination for three-dimensional graphic objects. Lights may be either ambient, positional, directional, or spotlights. A maximum of 8 lights per view are allowed. Lights are not required for objects displayed in two dimensions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1040083">
+ </A>
+An IDLgrLight object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1038528">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1038529">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1004045">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1004046">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004047">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004048">
+ </A>
+See <A HREF="idl2fb.htm#25065" CLASS="XRef">
+IDLgrLight::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004060">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1004061">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1004062">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1004070">
+ </A>
+<A HREF="idl2fb.htm#16245" CLASS="XRef">
+IDLgrLight::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1038729">
+ </A>
+<A HREF="idl2fb.htm#22773" CLASS="XRef">
+IDLgrLight::GetCTM</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033736">
+ </A>
+<A HREF="idl2fb.htm#95773" CLASS="XRef">
+IDLgrLight::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1012807">
+ </A>
+<A HREF="idl2fb.htm#25065" CLASS="XRef">
+IDLgrLight::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1004074">
+ </A>
+<A HREF="idl2fb.htm#27794" CLASS="XRef">
+IDLgrLight::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031308">
+ </A>
+<A NAME="16245">
+ </A>
+IDLgrLight::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031311">
+ </A>
+The IDLgrLight::<A NAME="marker=1052167">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fb.htm#25429" CLASS="XRef">
+IDLgrLight</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041806">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031315">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051172">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051173">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031316">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLight::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031317">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031318">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031319">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031320">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1038699">
+ </A>
+<A NAME="22773">
+ </A>
+IDLgrLight::GetCTM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038702">
+ </A>
+The IDLgrLight::<A NAME="marker=1052170">
+ </A>
+GetCTM function method returns the 4 x 4 graphics transform matrix from the current object upward through the graphics tree. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fb.htm#25429" CLASS="XRef">
+IDLgrLight</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038706">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038707">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLight::]</EM>
+GetCTM()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038708">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038709">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038710">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1038712">
+ </A>
+<A NAME="marker=1038711">
+ </A>
+DESTINATION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058040">
+ </A>
+Set this keyword to the object reference of a destination object to specify that the projection matrix for the View object in the current tree be included in the returned transformation matrix. The resulting matrix will transform a point in the data space of the object on which the GetCTM method is called into a normalized coordinate system (-1 to +1 in X, Y, and Z), relative to the View object that contains the light object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1047282">
+ </A>
+<A NAME="marker=1047281">
+ </A>
+TOP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059506">
+ </A>
+Set this keyword equal to the object reference to an <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ object to specify that the returned matrix accumulate from the object on which the GetCTM method is called up to and including the specified model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997376">
+ </A>
+<A NAME="95773">
+ </A>
+IDLgrLight::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004154">
+ </A>
+The IDLgrLight::<A NAME="marker=1052173">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the light. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fb.htm#25429" CLASS="XRef">
+IDLgrLight</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004158">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004159">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLight::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004160">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004161">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997378">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016618">
+ </A>
+Any keyword to <A HREF="idl2fb.htm#25065" CLASS="XRef">
+IDLgrLight::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997380">
+ </A>
+<A NAME="marker=1022527">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093544">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093545">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1048865">
+ </A>
+<A NAME="marker=1048864">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068334">
+ </A>
+Set this keyword equal to a named variable that will contain an object reference to the object that contains this object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1012812">
+ </A>
+<A NAME="25065">
+ </A>
+IDLgrLight::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1012813">
+ </A>
+The IDLgrLight::<A NAME="marker=1052177">
+ </A>
+Init function method initializes the light object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fb.htm#25429" CLASS="XRef">
+IDLgrLight</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041687">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012817">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019591">
+ </A>
+Obj = OBJ_NEW('IDLgrLight')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041944">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041945">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrLight::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012819">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1012820">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012821">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020203">
+ </A>
+Properties retrievable via <A HREF="idl2fb.htm#95773" CLASS="XRef">
+IDLgrLight::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012823">
+ </A>
+<A NAME="marker=1022884">
+ </A>
+ATTENUATION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012824">
+ </A>
+Set this keyword to a 3-element floating point vector of the form [constant, linear, quadratic] that describes the factor by which light intensity is to fall with respect to distance from the light source. ATTENTUATION applies only to Positional and Spot lights, as specified by the TYPE keyword. The overall attenuation factor is computed as follows:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1012825">
+ </A>
+attenuation = 1/(constant + linear*distance + quadratic*distance^2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1012826">
+ </A>
+By default, the values are [1, 0, 0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012827">
+ </A>
+<A NAME="marker=1022885">
+ </A>
+COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012828">
+ </A>
+Set this keyword to a three-element vector specifying the RGB color of the light. The default is [255, 255, 255], which is a white light. The color of a light is ignored when graphics are sent to graphics destinations using the Indexed color model, in which case light intensities are scaled into the range of colors available on the graphics destination.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012829">
+ </A>
+<A NAME="marker=1022886">
+ </A>
+CONEANGLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012830">
+ </A>
+Set this keyword to the angle (measured in degrees) of coverage for a spotlight. The default is 60.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012831">
+ </A>
+<A NAME="marker=1022644">
+ </A>
+DIRECTION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049617">
+ </A>
+Set this keyword to the three-element vector representing the direction in which a spotlight is to be pointed. The default is [0,0,-1].</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1049618">
+ </A>
+For directional lights, the light's parallel rays follow a vector beginning at the position specified by LOCATION and ending at [0, 0, 0].</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1058634">
+ </A>
+<A NAME="marker=1058633">
+ </A>
+FOCUS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058635">
+ </A>
+Set this keyword to a floating-point value that describes the attenuation of intensity for spotlights as the distance from the center of the cone of coverage increases. This factor is used as an exponent to the cosine of the angle between the direction of the spotlight and the direction from the light to the vertex being lighted. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049149">
+ </A>
+<A NAME="marker=1049148">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049150">
+ </A>
+Set this keyword to a boolean value indicating whether this light should be enabled:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068467">
+ </A>
+0 = Enable light (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068468">
+ </A>
+1 = Disable light</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1173710">
+ </A>
+If no lights are within a view, or if all the lights in the view are hidden, an ambient light will be provided by default. To hide a model in a view, the HIDE property for the model should be set accordingly.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012835">
+ </A>
+<A NAME="marker=1022888">
+ </A>
+INTENSITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012836">
+ </A>
+Set this keyword to a floating point value between 0.0 (darkest) and 1.0 (brightest) indicating the intensity of the light. The default is 1.0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012837">
+ </A>
+<A NAME="marker=1022674">
+ </A>
+LOCATION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025103">
+ </A>
+Set this keyword to a vector of the form [<I CLASS="Italic">
+x</I>
+, <I CLASS="Italic">
+y</I>
+, <I CLASS="Italic">
+z</I>
+] describing the position of the light. By default, the position is [0, 0, 0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049032">
+ </A>
+<A NAME="marker=1049031">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058302">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012839">
+ </A>
+<A NAME="marker=1022889">
+ </A>
+TYPE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012840">
+ </A>
+Set this keyword to one of the following values, indicating the type of light. Valid values are: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1054705">
+ </A>
+0 = Ambient light. An ambient light is a universal light source, which has no direction or position. An ambient light illuminates every surface in the scene equally, which means that no edges are made visible by contrast. Ambient lights control the overall brightness and color of the entire scene. If no value is specified for the TYPE property, an ambient light is created.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1054706">
+ </A>
+1 = Positional light. A positional light supplies divergent light rays, and will make the edges of surfaces visible by contrast if properly positioned. A positional light source can be located anywhere in the scene. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1054707">
+ </A>
+2 = Directional light. A directional light supplies parallel light rays. The effect is that of a positional light source located at an infinite distance from scene.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1054708">
+ </A>
+3 = Spot light. A spot light illuminates only a specific area defined by the light's position, direction, and the cone angle, or angle which the spotlight covers.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1173685">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049626">
+ </A>
+<A NAME="marker=1049625">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058418">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039449">
+ </A>
+<A NAME="marker=1039448">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039450">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039451">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039452">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039453">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039454">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039456">
+ </A>
+<A NAME="marker=1039455">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039457">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039458">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039459">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039460">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039461">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039463">
+ </A>
+<A NAME="marker=1039462">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039464">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039465">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039466">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039467">
+ </A>
+[(-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039468">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997383">
+ </A>
+<A NAME="27794">
+ </A>
+IDLgrLight::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004183">
+ </A>
+The IDLgrLight::<A NAME="marker=1052180">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the light. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fb.htm#25429" CLASS="XRef">
+IDLgrLight</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004184">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004185">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLight::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004186">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004187">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004188">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049932">
+ </A>
+Any keyword to <A HREF="idl2fb.htm#25065" CLASS="XRef">
+IDLgrLight::Init</A>
+</DIV>
+</BODY>
+</HTML>

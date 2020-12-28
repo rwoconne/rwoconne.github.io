@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_GETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ba.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2b8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999651">
+ </A>
+<A NAME="19174">
+ </A>
+HDF_VD_GETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999655">
+ </A>
+The <A NAME="marker=999653">
+ </A>
+HDF_VD_GETINFO procedure is a general <A NAME="marker=999654">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ inquiry routine. Set the various keywords to named variables to return information about each field of a <EM CLASS="Emphasis">
+VData </EM>
+in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999656">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999657">
+ </A>
+HDF_VD_GETINFO, <I CLASS="Italics">
+VData, Index</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999658">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999659">
+ </A>
+VData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999660">
+ </A>
+The VData handle returned by a previous call to HDF_VD_ATTACH.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999661">
+ </A>
+Index</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999662">
+ </A>
+A zero-based index specifying which field or the name of the field within the VData to inquire about. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999663">
+ </A>
+HDF_VD_GETINFO, Vdat, 'VEL', ORDER=order</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999664">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999666">
+ </A>
+<A NAME="marker=999665">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999667">
+ </A>
+Set this keyword to a named variable in which the name of the field is returned as a string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999669">
+ </A>
+<A NAME="marker=999668">
+ </A>
+ORDER</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999670">
+ </A>
+Set this keyword to a named variable in which the order of the field is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999672">
+ </A>
+<A NAME="marker=999671">
+ </A>
+SIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999673">
+ </A>
+Set this keyword to a named variable in which the size of a data value for the specified field in the VData is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999675">
+ </A>
+<A NAME="marker=999674">
+ </A>
+TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999676">
+ </A>
+Set this keyword to a named variable in which the type of the field is returned. One of the following strings is returned: <CODE CLASS="Code">
+'BYTE'</CODE>
+, <CODE CLASS="Code">
+'INT'</CODE>
+, <CODE CLASS="Code">
+'LONG'</CODE>
+, <CODE CLASS="Code">
+'FLOAT'</CODE>
+, <CODE CLASS="Code">
+'DOUBLE'</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999677">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999678">
+ </A>
+HDF_VD_GET, Vdat, NFIELDS=n</P>
+<P CLASS="Code">
+<A NAME="pgfId=999679">
+ </A>
+FOR index=0,n-1 DO BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=999680">
+ </A>
+&nbsp;&nbsp;HDF_VD_GETINFO, Vdat, index, NAME=n, TYPE=t, ORDER=o</P>
+<P CLASS="Code">
+<A NAME="pgfId=999681">
+ </A>
+&nbsp;&nbsp;PRINT, index, ':', n, 'TYPE=', t, 'ORDER=', o</P>
+<P CLASS="Code">
+<A NAME="pgfId=999682">
+ </A>
+ENDFOR</P>
+<P CLASS="Body">
+<A NAME="pgfId=999683">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

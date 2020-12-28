@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FZ_ROOTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlb1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlaf.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52509">
+ </A>
+<A NAME="61728">
+ </A>
+FZ_ROOTS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52515">
+ </A>
+The <A NAME="marker=52511">
+ </A>
+FZ_ROOTS <A NAME="marker=52512">
+ </A>
+function is used to find the <A NAME="marker=52513">
+ </A>
+roots of an <I CLASS="Italics">
+m</I>
+-degree <A NAME="marker=52514">
+ </A>
+complex polynomial, using <A NAME="marker=52516">
+ </A>
+Laguerre's method. The result is an <I CLASS="Italics">
+m</I>
+-element complex vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52517">
+ </A>
+FZ_ROOTS is based on the routine <CODE CLASS="Code">
+zroots</CODE>
+ described in section 9.5 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52518">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52519">
+ </A>
+Result = FZ_ROOTS(<I CLASS="Italics">
+C</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52520">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52521">
+ </A>
+C</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52522">
+ </A>
+A vector of length <I CLASS="Italics">
+m</I>
++1 containing the coefficients of the polynomial, in ascending order (see example). The type can be real or complex.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52523">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52525">
+ </A>
+<A NAME="marker=52524">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52526">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52528">
+ </A>
+<A NAME="marker=52527">
+ </A>
+EPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52529">
+ </A>
+The desired fractional accuracy. The default value is 2.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-6</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52531">
+ </A>
+<A NAME="marker=52530">
+ </A>
+NO_POLISH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52533">
+ </A>
+Set this keyword to suppress the usual <A NAME="marker=52532">
+ </A>
+polishing of the roots by Laguerre's method.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=827386">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=827396">
+ </A>
+EXAMPLE 1:&quot; Real coefficients yielding real roots. </P>
+<P CLASS="Code">
+<A NAME="pgfId=827397">
+ </A>
+<EM CLASS="Emphasis">
+P </EM>
+(<EM CLASS="Emphasis">
+x</EM>
+) = 6<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+3</SUP>
+ - 7<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+ - 9<EM CLASS="Emphasis">
+x</EM>
+ - 2 (The exact roots are -1/2, -1/3, 2.0)</P>
+<P CLASS="Code">
+<A NAME="pgfId=827398">
+ </A>
+coeffs = [-2.0, -9.0, -7.0, 6.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52538">
+ </A>
+roots = FZ_ROOTS(coeffs)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52539">
+ </A>
+PRINT, roots</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52540">
+ </A>
+( -0.500000, 0.00000)( -0.333333, 0.00000)( 2.00000, 0.00000)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=828260">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=52541">
+ </A>
+EXAMPLE 2: Real coefficients yielding complex roots.</P>
+<P CLASS="Code">
+<A NAME="pgfId=827368">
+ </A>
+<EM CLASS="Emphasis">
+P</EM>
+ (<EM CLASS="Emphasis">
+x</EM>
+) = <EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+4</SUP>
+ + 3<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+ + 2</P>
+<P CLASS="Code">
+<A NAME="pgfId=827369">
+ </A>
+(The exact roots are:</P>
+<P CLASS="Code">
+<A NAME="pgfId=860423">
+ </A>
+<CENTER><IMG SRC="idl_36.gif" ALIGN="BASELINE" BORDER=0>
+, <CENTER><IMG SRC="idl_37.gif" ALIGN="BASELINE" BORDER=0>
+, <CENTER><IMG SRC="idl_38.gif" ALIGN="BASELINE" BORDER=0>
+, <CENTER><IMG SRC="idl_39.gif" ALIGN="BASELINE" BORDER=0>
+ </P>
+<P CLASS="Code">
+<A NAME="pgfId=72766">
+ </A>
+coeffs = [2.0, 0.0, 3.0, 0.0, 1.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52561">
+ </A>
+roots = FZ_ROOTS(coeffs)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52562">
+ </A>
+PRINT, roots</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52563">
+ </A>
+<EM CLASS="Kern-in-3%">
+(0.00000, -1.41421)(0.00000, 1.41421)</EM>
+</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52564">
+ </A>
+<EM CLASS="Kern-in-3%">
+(0.00000, -1.00000)(0.00000, 1.00000)</EM>
+</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=828259">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=52565">
+ </A>
+EXAMPLE 3: Real and complex coefficients yielding real and complex roots.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52566">
+ </A>
+<EM CLASS="Emphasis">
+P</EM>
+ (<EM CLASS="Emphasis">
+x</EM>
+) = <EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+3</SUP>
+ + (-4 - <EM CLASS="Emphasis">
+i</EM>
+4)<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+ +s (-3 + <EM CLASS="Emphasis">
+i</EM>
+4)<EM CLASS="Emphasis">
+x</EM>
+ + (18 + <EM CLASS="Emphasis">
+i</EM>
+24)</P>
+<P CLASS="Body">
+<A NAME="pgfId=52567">
+ </A>
+(The exact roots are -2.0, 3.0, (3.0 + <EM CLASS="Emphasis">
+i</EM>
+4.0))</P>
+<P CLASS="Code">
+<A NAME="pgfId=52568">
+ </A>
+coeffs = [COMPLEX(18,24), COMPLEX(-3,4), COMPLEX(-4,-4), 1.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52569">
+ </A>
+roots = FZ_ROOTS(coeffs)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52570">
+ </A>
+PRINT, roots</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52571">
+ </A>
+( -2.00000, 0.00000) ( 3.00000, 0.00000) ( 3.00000, 4.00000)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52572">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52585">
+ </A>
+<A HREF="idlaf.htm#97846" CLASS="XRef">
+FX_ROOT</A>
+, <A HREF="idl1c.htm#62043" CLASS="XRef">
+BROYDEN</A>
+, <A HREF="idl125.htm#50918" CLASS="XRef">
+NEWTON</A>
+, <A HREF="idl13e.htm#74920" CLASS="XRef">
+POLY</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

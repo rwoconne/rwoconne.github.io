@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPRSAX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1b0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51970">
+ </A>
+<A NAME="31054">
+ </A>
+SPRSAX</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51974">
+ </A>
+The <A NAME="marker=51972">
+ </A>
+SPRSAX function takes a row-indexed <A NAME="marker=51973">
+ </A>
+sparse array created by the SPRSIN function and multiplies it by an <EM CLASS="Emphasis">
+n</EM>
+-element vector to its right. The result is a <EM CLASS="Emphasis">
+n</EM>
+-element vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51975">
+ </A>
+SPRSAX is based on the routine <CODE CLASS="Code">
+sprsax</CODE>
+ described in section 2.7 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51976">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51977">
+ </A>
+Result = SPRSAX(<EM CLASS="Emphasis">
+A, X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51978">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51979">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51980">
+ </A>
+A row-indexed sparse array created by the SPRSIN function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51981">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51982">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element right hand vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51983">
+ </A>
+Keywords </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51985">
+ </A>
+<A NAME="marker=51984">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51986">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51987">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51988">
+ </A>
+Begin by creating an array A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51989">
+ </A>
+A = [[ 5.0,  0.0, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51990">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, -2.0, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51991">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -1.0, 0.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=51992">
+ </A>
+X = [1.0, 2.0, -1.0]	<EM CLASS="Comment">;
+Define the right-hand vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51993">
+ </A>
+result = SPRSAX(SPRSIN(A),X)	<EM CLASS="Comment">;
+Convert to sparse format, then multiply by X.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51994">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51995">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51996">
+ </A>
+5.00000     -1.00000      2.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51997">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52778">
+ </A>
+<A HREF="idlac.htm#82247" CLASS="XRef">
+FULSTR</A>
+, <A HREF="idle8.htm#41659" CLASS="XRef">
+LINBCG</A>
+, <A HREF="idl1b0.htm#69406" CLASS="XRef">
+SPRSAB</A>
+, <A HREF="idl1b2.htm#41214" CLASS="XRef">
+SPRSIN</A>
+, <A HREF="idl169.htm#57482" CLASS="XRef">
+READ_SPR</A>
+, <A HREF="idl213.htm#23995" CLASS="XRef">
+WRITE_SPR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

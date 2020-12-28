@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CHISQR_PDF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53077">
+ </A>
+<A NAME="33316">
+ </A>
+CHISQR_PDF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53082">
+ </A>
+The <A NAME="marker=53079">
+ </A>
+CHISQR_PDF <A NAME="marker=53080">
+ </A>
+function computes the probability <EM CLASS="Emphasis">
+P</EM>
+ that, in a <A NAME="marker=53081">
+ </A>
+Chi-square distribution with <EM CLASS="Emphasis">
+Df</EM>
+ degrees of freedom, a random variable <EM CLASS="Emphasis">
+X</EM>
+ is less than or equal to a user-specified cutoff value <EM CLASS="Emphasis">
+V</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53083">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+chisqr_pdf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53084">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53085">
+ </A>
+Result = CHISQR_PDF(<EM CLASS="Emphasis">
+V, Df</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53086">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53087">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53088">
+ </A>
+An integer, single-, or double-precision floating-point scalar that specifies the cutoff value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53089">
+ </A>
+Df</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53090">
+ </A>
+A positive integer, single- or double-precision floating-point scalar that specifies the number of degrees of freedom of the Chi-square distribution.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53091">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53092">
+ </A>
+Use the following command to compute the probability that a random variable X, from the Chi-square distribution with three degrees of freedom, is less than or equal to 6.25. The result should be 0.899939.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53093">
+ </A>
+result = CHISQR_PDF(6.25, 3)</P>
+<P CLASS="Code">
+<A NAME="pgfId=53094">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=53095">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53096">
+ </A>
+0.899939</P>
+<P CLASS="Body">
+<A NAME="pgfId=53097">
+ </A>
+Compute the probability that a random variable X from the Chi-square distribution with three degrees of freedom, is greater than 6.25. The result should be 0.100061.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53098">
+ </A>
+PRINT, 1 - chisqr_pdf(6.25, 3)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53099">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53100">
+ </A>
+0.100061</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53101">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65532">
+ </A>
+<A HREF="idl17.htm#90297" CLASS="XRef">
+BINOMIAL</A>
+, <A HREF="idl2d.htm#11696" CLASS="XRef">
+CHISQR_CVF</A>
+, <A HREF="idl9b.htm#50751" CLASS="XRef">
+F_PDF</A>
+, <A HREF="idlb4.htm#29831" CLASS="XRef">
+GAUSS_PDF</A>
+, <A HREF="idl1ce.htm#52203" CLASS="XRef">
+T_PDF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

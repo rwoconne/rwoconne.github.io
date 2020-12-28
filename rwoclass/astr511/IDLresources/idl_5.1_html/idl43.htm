@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CONVOL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl44.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl42.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676395">
+ </A>
+<A NAME="17663">
+ </A>
+CONVOL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676396">
+ </A>
+The <A NAME="marker=672751">
+ </A>
+CONVOL function <A NAME="marker=672752">
+ </A>
+convolves an array with a <A NAME="marker=672753">
+ </A>
+kernel, and returns the result. Convolution is a general process that can be used for various types of <A NAME="marker=672754">
+ </A>
+smoothing, <A NAME="marker=672755">
+ </A>
+signal processing, shifting, <A NAME="marker=672756">
+ </A>
+differentiation, <A NAME="marker=672757">
+ </A>
+edge detection, etc. The CENTER keyword controls the alignment of the kernel with the array and the ordering of the kernel elements. If CENTER is explicitly set to 0, convolution is performed in the strict mathematical sense, otherwise the kernel is centered over each data point.</P>
+<P CLASS="Body">
+<A NAME="pgfId=815000">
+ </A>
+Assume R = CONVOL(A, K, S), where <I CLASS="Italics">
+A </I>
+is an <I CLASS="Italics">
+n</I>
+-element vector, <I CLASS="Italics">
+K</I>
+ is an <I CLASS="Italics">
+m</I>
+-element vector (<I CLASS="Italics">
+m</I>
+ &lt; <I CLASS="Italics">
+n</I>
+), and <I CLASS="Italics">
+S</I>
+ is the scale factor. If the CENTER keyword is omitted or set to 1:</P>
+<DIV>
+<CENTER><IMG SRC="idl_14.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=838985">
+ </A>
+where the value <I CLASS="Italic">
+m</I>
+/2 is determined by <I CLASS="Italic">
+integer division</I>
+. This means that the result of the division is the largest <I CLASS="Italic">
+integer</I>
+ value less than or equal to the fractional number.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907367">
+ </A>
+If CENTER is explicitly set to 0: </P>
+<DIV>
+<CENTER><IMG SRC="idl_15.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839000">
+ </A>
+In the two-dimensional, zero CENTER case where <I CLASS="Italics">
+A</I>
+ is an <I CLASS="Italics">
+m</I>
+ by <I CLASS="Italics">
+n</I>
+-element array, and <I CLASS="Italics">
+K</I>
+ is the <I CLASS="Italics">
+l</I>
+ by <I CLASS="Italics">
+l</I>
+ element kernel; the result <I CLASS="Italics">
+R</I>
+ is an <I CLASS="Italics">
+m</I>
+ by <I CLASS="Italics">
+n</I>
+-element array:</P>
+<DIV>
+<CENTER><IMG SRC="idl_16.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839008">
+ </A>
+The centered case is similar, except the <I CLASS="Italics">
+t-i</I>
+ and <I CLASS="Italics">
+u-j</I>
+ subscripts are replaced by <I CLASS="Italics">
+t+i-l</I>
+/2 and <I CLASS="Italics">
+u+j-l</I>
+/2.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=38872">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676399">
+ </A>
+Result = CONVOL(<I CLASS="Italics">
+Array, Kernel [, Scale_Factor]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676400">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676401">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676402">
+ </A>
+An array of any basic type except string. The result of CONVOL has the same type and dimensions as <I CLASS="Italics">
+Array</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676403">
+ </A>
+If the <I CLASS="Italics">
+Array</I>
+ parameter is of byte type, the result is clipped to the range of 0 to 255. Negative results are set to 0, and values greater than 255 are set to 255.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676404">
+ </A>
+Kernel</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676405">
+ </A>
+An array of any type except string. If the type of <I CLASS="Italics">
+Kernel</I>
+ is not the same as <I CLASS="Italics">
+Array</I>
+, a copy of <I CLASS="Italics">
+Kernel</I>
+ is made and converted to the appropriate type before use. The size of the kernel dimensions must be smaller than those of <I CLASS="Italics">
+Array</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676406">
+ </A>
+Scale_Factor</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676407">
+ </A>
+A scale factor, for use with integer and byte type data only, that is divided into each resulting value. This argument allows the use of fractional kernel values and avoids overflow with byte arguments. If omitted, a scale factor of 1 is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676408">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676409">
+ </A>
+<A NAME="marker=672762">
+ </A>
+CENTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=746316">
+ </A>
+Set or omit this keyword to center the kernel over each array point. If CENTER is explicitly set to zero, the CONVOL function works in the conventional mathematical sense. In many signal and image processing applications, it is useful to center a symmetric kernel over the data, thereby aligning the result with the original array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=228819">
+ </A>
+Note that for the kernel to be centered, it must be symmetric about the point K(FLOOR(<EM CLASS="Emphasis">
+m</EM>
+/2), where <EM CLASS="Emphasis">
+m</EM>
+ is the number of elements in the kernel.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=228821">
+ </A>
+<A NAME="marker=228820">
+ </A>
+EDGE_WRAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=815020">
+ </A>
+Set this keyword to make CONVOL compute the values of elements at the edge of <EM CLASS="Emphasis">
+Array</EM>
+ by &quot;wrapping&quot; the subscripts of <EM CLASS="Emphasis">
+Array</EM>
+ at the edge. For example, if CENTER is set to zero: </P>
+<DIV>
+<CENTER><IMG SRC="idl_17.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=815021">
+ </A>
+where <EM CLASS="Emphasis">
+na</EM>
+ is the number of elements in <EM CLASS="Emphasis">
+Array</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=746324">
+ </A>
+If neither EDGE_WRAP nor EDGE_TRUNCATE is set, CONVOL sets the values of elements at the edges of <EM CLASS="Emphasis">
+Array</EM>
+ to zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=746326">
+ </A>
+<A NAME="marker=746325">
+ </A>
+EDGE_TRUNCATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=815029">
+ </A>
+Set this keyword to make CONVOL compute the values of elements at the edge of <EM CLASS="Emphasis">
+Array</EM>
+ by repeating the subscripts of <EM CLASS="Emphasis">
+Array</EM>
+ at the edge. For example, if CENTER is set to zero: </P>
+<DIV>
+<CENTER><IMG SRC="idl_18.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839032">
+ </A>
+where <EM CLASS="Emphasis">
+na</EM>
+ is the number of elements in <EM CLASS="Emphasis">
+Array</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=746332">
+ </A>
+If neither EDGE_WRAP nor EDGE_TRUNCATE is set, CONVOL sets the values of elements at the edges of <EM CLASS="Emphasis">
+Array</EM>
+ to zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=746333">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676412">
+ </A>
+Convolve a vector of random noise and a one-dimensional triangular kernel and plot the result. Create a simple vector as the original dataset and plot it by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676413">
+ </A>
+A = RANDOMN(SEED, 100) &amp; PLOT, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=676414">
+ </A>
+Create a simple kernel by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676415">
+ </A>
+K = [1, 2, 3, 2, 1]</P>
+<P CLASS="Body">
+<A NAME="pgfId=676416">
+ </A>
+Convolve the two and overplot the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676417">
+ </A>
+OPLOT, CONVOL(A, K, TOTAL(K))</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34603">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34604">
+ </A>
+<A HREF="idl19.htm#43884" CLASS="XRef">
+BLK_CON</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

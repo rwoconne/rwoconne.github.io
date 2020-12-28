@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SEC_TO_DT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl191.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl18f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=924064">
+ </A>
+<A NAME="39683">
+ </A>
+SEC_TO_DT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=924067">
+ </A>
+The <A NAME="marker=924066">
+ </A>
+SEC_TO_DT function converts any number of seconds into IDLDT date/time values. The result is a date/time variable containing the converted values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=924068">
+ </A>
+This function is useful for converting time stamps that count seconds to date/time values. Most time stamps count seconds from an arbitrary base date. For example, the UNIX time stamp counts seconds from January 1, 1970.</P>
+<P CLASS="Body">
+<A NAME="pgfId=924069">
+ </A>
+See <CODE CLASS="Code">
+idldt__define.pro</CODE>
+ for data/time system variables.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=924070">
+ </A>
+Calling sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=924071">
+ </A>
+Result = SEC_TO_DT(<I CLASS="Italic">
+Secs</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=924072">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=924073">
+ </A>
+Secs</H4>
+<P CLASS="Body">
+<A NAME="pgfId=924074">
+ </A>
+A scalar representing the number of seconds elapsed from the date specified in the system variable !DT_BASE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=924075">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=924076">
+ </A>
+date = SEC_TO_DT(5000,00)	<EM CLASS="Comment">;
+Create a date 5000 seconds after the date contained in !DT.BASE.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=924077">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=924087">
+ </A>
+<A HREF="idl86.htm#28793" CLASS="XRef">
+DT_TO_VAR</A>
+, <A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+, <A HREF="idl1b8.htm#28381" CLASS="XRef">
+STR_TO_DT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

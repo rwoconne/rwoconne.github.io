@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Attributes, Dimensions, and Variables </TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=998546">
+</A>
+<A NAME="11446">
+</A>
+Attributes, Dimensions, and Variables </H2>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998547">
+</A>
+The three basic components of a netCDF file are described below.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=998548">
+ </A>
+Attributes</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998550">
+ </A>
+<A NAME="marker=998549">
+ </A>
+Attributes can contain auxiliary information about an entire netCDF file (<I CLASS="Italics">
+global</I>
+ attributes) or about a single netCDF variable. Every attribute has a name, data type, and length associated with it. It is common to repeat attribute names for each variable. For example, every variable in a netCDF file might have an attribute named &quot;Units&quot;. Note however, that variables cannot have multiple attributes with the same names.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=998551">
+ </A>
+Dimensions</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998553">
+ </A>
+<A NAME="marker=998552">
+ </A>
+Dimensions are named integers that are used to specify the size (or <I CLASS="Italics">
+dimensionality</I>
+) of one or more variables. Each dimension must have a unique name, but a variable and dimension can share a name. Each netCDF file is allowed to have one boundless (or <I CLASS="Italics">
+unlimited</I>
+) dimension. Most often the unlimited dimension is used as a temporal variable, allowing data to be appended to an existing netCDF file. An example of this use is shown later.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=998554">
+ </A>
+Variables</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998556">
+ </A>
+<A NAME="marker=998555">
+ </A>
+Variables are multidimensional arrays of values of the same data type. Each variable has a size, type, and name associated with it. Variables can also have <I CLASS="Italics">
+attributes</I>
+ that describe them.</P>
+</DIV>
+</BODY>
+</HTML>

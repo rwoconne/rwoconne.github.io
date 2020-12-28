@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DAY_NAME</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl66.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl64.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=920514">
+ </A>
+<A NAME="40163">
+ </A>
+DAY_NAME</H2>
+<P CLASS="Body">
+<A NAME="pgfId=920446">
+ </A>
+The DAY_NAME<A NAME="marker=920445">
+ </A>
+ function returns a string array containing the names of the days of the week. DAY_NAME uses the system variable !DAY_NAMES, which is stored in the IDLDT structure and can be user-modified. </P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920447">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920448">
+ </A>
+Result = DAY_NAME(<I CLASS="Italic">
+Dt_days</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920449">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920450">
+ </A>
+Dt_days</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920451">
+ </A>
+An array of IDLDT date/time structures.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920452">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=920998">
+ </A>
+PRINT, DAY_NAME(TODAY())	<EM CLASS="Comment">;
+Print the day name of the day this was written, using the <BR>
+TODAY function.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=920453">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=921001">
+ </A>
+% Compiled module: DAY_NAME.</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=921003">
+ </A>
+Friday</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=921006">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=921010">
+ </A>
+<A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+, <A HREF="idl66.htm#20799" CLASS="XRef">
+DAY_OF_WEEK</A>
+, <A HREF="idl67.htm#41116" CLASS="XRef">
+DAY_OF_YEAR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFP_PUTPAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl27e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl27c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997528">
+ </A>
+<A NAME="50818">
+ </A>
+HDF_DFP_PUTPAL</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997532">
+ </A>
+The <A NAME="marker=997530">
+ </A>
+HDF_DFP_PUTPAL procedure appends a <A NAME="marker=997531">
+ </A>
+palette to a Hierarchical Data Format file. </P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997533">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997534">
+ </A>
+HDF_DFP_PUTPAL, <I CLASS="Italics">
+Filename, Palette</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997535">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997536">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997537">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997538">
+ </A>
+Palette</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997539">
+ </A>
+A vector or array containing palette data.  Palettes must be either [3, 256] arrays or  786-element vectors.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997540">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1016492">
+ </A>
+<A NAME="marker=1016497">
+ </A>
+DELETE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1016496">
+ </A>
+Set this keyword to delete the HDF file (if it exists) and create a new HDF file with the specified palette as its first object.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1016509">
+ </A>
+The HDF file must be closed before the DELETE keyword is specified. Attempting to delete an open HDF file will result in an error.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997545">
+ </A>
+<A NAME="marker=997544">
+ </A>
+OVERWRITE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997546">
+ </A>
+Set this keyword to overwrite the previous palette with the one specified by <I CLASS="Italics">
+Palette</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1016512">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=1016608">
+ </A>
+id = HDF_OPEN('test.hdf', /CREATE, /RDWR)<BR>
+<EM CLASS="Comment">;
+Create an HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016609">
+ </A>
+HDF_DFP_PUTPAL,'test.hdf'', FINDGEN(3,256)<BR>
+<EM CLASS="Comment">;
+Add a palette.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016520">
+ </A>
+PRINT, HDF_DFP_NPALS('test.hdf')	<EM CLASS="Comment">;
+Print the number of palettes.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1016522">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1016559">
+ </A>
+1</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016524">
+ </A>
+HDF_DFP_PUTPAL,'test.hdf',findgen(3,256)<BR>
+<EM CLASS="Comment">;
+Append a palette.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016568">
+ </A>
+PRINT, HDF_DFP_NPALS('test.hdf')	<EM CLASS="Comment">;
+Print the number of palettes.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1016569">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1016570">
+ </A>
+2</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016529">
+ </A>
+HDF_DFP_PUTPAL, 'test.hdf', FINDGEN(3,256), /OVERWRITE<BR>
+<EM CLASS="Comment">;
+Overwrite the last palette.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016574">
+ </A>
+PRINT, HDF_DFP_NPALS('test.hdf')	<EM CLASS="Comment">;
+Print the number of palettes.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1016575">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1016576">
+ </A>
+2</P>
+<P CLASS="Body">
+<A NAME="pgfId=1016534">
+ </A>
+An attempt to delete a file and add a new palette without first closing the HDF file fails:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016579">
+ </A>
+HDF_DFP_PUTPAL, 'test.hdf', FINDGEN(3,256), /DELETE</P>
+<P CLASS="Body">
+<A NAME="pgfId=1016535">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1016580">
+ </A>
+% HDF_DFP_PUTPAL: Could not write palette</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1016536">
+ </A>
+% Execution halted at:  $MAIN$</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016542">
+ </A>
+HDF_CLOSE, id	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016589">
+ </A>
+HDF_DFP_PUTPAL, 'test.hdf', FINDGEN(3,256), /DELETE<BR>
+<EM CLASS="Comment">;
+Delete file and add a new palette.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1016592">
+ </A>
+PRINT, HDF_DFP_NPALS('test.hdf')	<EM CLASS="Comment">;
+Print the number of palettes.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1016593">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1016594">
+ </A>
+1</P>
+</DIV>
+</BODY>
+</HTML>

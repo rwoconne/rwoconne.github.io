@@ -1,0 +1,372 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2016.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511/IDLexercises  -->
+<!-- -->
+
+<html>
+
+<head>
+<title>IDL TUTORIAL</title>
+</head>
+
+<body bgcolor="white" text="black"  link="#FF0000" alink="#00FF00" vlink="#FF0000">
+
+<!-- HISTORY:  8/20/01: move last 2 parts of Exercises II to new file;
+9/26; 10/02; 10/03; 10/04; 12/30; 10/1/2008: minor misstatement corrected,
+revised link for ATV web page; 8/5/2013: begin upgrade; 8/9; 8/12; 8/15;
+8/21; 9/21/2015: new domain; 5/18/2016: add Latvian translation link;
+7/20: add Slovak translation link;       -->
+
+<b>
+
+
+<h3 align="right">R. W. O'CONNELL<br>
+August 2013</h3>
+
+<p><br></p>
+
+
+<center>
+<h2>   IDL EXERCISES III: <br>BASIC IMAGE PROCESSING </h2>
+</center>
+
+<hr size=2>
+
+<p><br></p>
+
+<pre>
+
+The test data files (*.fits) for Part III are in the 
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/data">IDL exercises data directory</a>.  Copy those to your local directory.  
+
+
+0) From a UNIX shell, start X-windows if it is not already running. 
+
+   From the shell in an X-window, "cd" into your "IDL" directory.  Normally 
+   that would be named "~/idl".  
+
+   Choose a graphics display method for images
+
+       For making image displays during these exercises, you can use
+       either the <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLguide.html#display">"direct graphics"</a> display techniques described
+       in <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/IDL-Exercises-II.html">Part II</a> or the GUI-based <a href="http://www.physics.uci.edu/~barth/atv/">ATV</a> program written by Aaron Barth.
+
+       If you plan to use direct graphics, first check whether your
+       computer display supports "true-color" graphics (for background,
+       see the section titled "Setting a Visual Display Mode on Your
+       Computer" in the <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLguide.html#display">IDL Guide</a>).
+
+              From the shell within an X-window, type: "xdpyinfo"
+        
+              If the response includes "TrueColor" or "24 planes" then your display
+              is a 24-bit, true-color device.  If not, it is an 8-bit, pseudo-color
+              device.  
+
+          After you start IDL, set the visual class of your display to
+          pseudo-color or emulated pseudo-color as follows: 
+
+              If you have an 8-bit display, type DEVICE,RETAIN=2,PSEUDO_COLOR=8
+
+              If you have a 24-bit display, type DEVICE,RETAIN=2,TRUE_COLOR=24,DECOMPOSED=0
+
+       If you plan to use ATV, check that it is in your IDL path.  
+       If not download the software from <a href="http://www.physics.uci.edu/~barth/atv/">this link</a> and place it 
+       in your IDL path.  ATV performance is independent of display
+       bit depth.  One limitation of ATV is that only one display
+       window can be opened at a time, although you can "blink"
+       between 2 or 3 pre-loaded images.
+
+       For plots, you should use the direct graphics techniques described
+       in the <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLguide.html#plots">IDL Guide</a> (basic plotting commands are unaffected by the bit depth 
+       of your display).
+
+   Start IDL from the X-window. 
+
+         On most UNIX systems, just type "idl".  This will start IDL
+         running in the command-line mode using the window from which
+         you called it.
+
+   Before starting the exercises, give the IDL command:
+
+                 ON_ERROR,1
+
+       This will return control to the main program level if
+       an error occurs in a called routine.
+
+
+1)  CRYPTO-IMAGE
+
+    The image file "mystery-image.fits" contains an encrypted,
+    low-contrast, 2-D message.  See if you can determine what it is by
+    using any of the tools you have tried so far: plotting, IMLIST,
+    contrast adjustment, interactive value inspection, different color
+    tables, histograms, flagging special values, and so forth. Once
+    you find the message, develop a method for making it stand out
+    (i.e. maximize the signal-to-noise) and make a hardcopy (from
+    TVLASER or the File/WriteImage menu of ATV).
+
+
+2)  IMAGE COMPARISONS
+
+    Read in the two images of M87 (courtesy of Brian McNamara).
+      These are roughly co-centered.  One was taken in the B band, the
+      other in the I band.  
+
+    Compare the general statistics for the two images: mean, min, max,
+      variance.  One image contains some flagged bad pixels; which is
+      it?
+
+    Load a black-on-white color table.  (See the <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLguide.html#dispcommands">IDL Guide</a>
+      for a sample direct graphics script.  In ATV, invert the default 
+      color table.) 
+
+    Using a 0.3 power law display to preserve the dynamic range,
+      display the images in two windows, with the [MIN,MAX] for each
+      adjusted to show as much of the range of scientifically
+      meaningful intensity values as possible.  The central density of
+      the two displays should be roughly the same.  What differences
+      between the two images are apparent?
+
+    Now use the AstUseLib BLINK command to blink between the two
+      windows (in ATV, use the BLINK menu).  Are differences easier to
+      see?  
+
+    In direct graphics, "roll" a color table using the ICROLL routine
+      from <a href="IDL-Exercises-II.html">Part II</a> in conjunction with one of the following standard
+      IDL color tables: 11, 25, 31, or 33. Note how different color
+      table settings affect the appearance of the images and highlight
+      different features.
+
+
+3)  UNSHARP MASKING
+
+    Reload the black-on-white color table.
+
+    M87 represents a modestly complicated scene with a diffuse
+      background, a structured extended source (the famous nonthermal
+      jet), and a system of unresolved globular star clusters, the
+      brightest of which can be seen in the outer parts of the image.
+      There are many image processing techniques available to extract
+      information on the structure of a scene like this by enhancing
+      lower contrast features.  Here, we'll illustrate two simple ones
+      which suppress low-frequency structure (the diffuse background).
+
+      Use the M87 I band image for these: 
+
+      i)  Edge detection:  this is fast, if crude.  Results also 
+          depend on the orientation of structures in the image.
+
+            Simply display IMAGE - SHIFT(IMAGE,K,K) , where K is a
+	    small integer (2 is a good starting value).  For best
+	    appearance, adjust the display to show a small range of
+	    values around zero (e.g. -3 to +3).  
+
+            When properly adjusted, your display should readily show
+	    both the jet (in the bright central parts of the galaxy)
+	    and the faint globular clusters scattered throughout the
+	    frame.  You can try various color tables to adjust the
+	    appearance, although B&W may actually be the most useful.
+
+     ii) Unsharp masking: this is a similar differencing technique,
+	    except that the subtracted image is a smoothed version of
+	    the original.  This removes low-frequency structure and is
+	    especially useful where there is a bright background, as
+	    in the case of M87.  The fastest approach with IDL is to
+	    use the SMOOTH(IMAGE,K) function.  However, the smoothed
+	    image would include the effects of compact structures
+	    (e.g. the jet here, or stars in the case of a star
+	    cluster).  A better, if somewhat slower, approach is to
+	    use the MEDIAN(IMAGE,K) function, which is resistant to a
+	    minority of bright pixels within the KxK smoothing box.
+
+            Make displays for several values of K.  Good trial values
+	    are in the range 9 to 21.  Displays are best for a small
+	    positive range of values, e.g. 0 to 2.  
+
+
+4)  SURFACE PHOTOMETRY
+
+    Use the SKY routine to obtain an estimate of the sky background on
+       the M87 I-band frame.  What is the result?  Does it agree with
+       the approximate sky value you can infer by, for example, sampling
+       blank regions of the frame with CURVAL or other techniques?
+       Refer to the SKY header for an explanation of how the program
+       works.  
+
+    Determine in which pixel the galaxy nucleus lies on the M87 I band
+       frame as follows.  Adjust the display until you can easily see
+       the starlike nucleus.  Measure an approximate location
+       interactively with the cursor.  In direct graphics, you can use
+       the AstUseLib CURVAL routine or the built-in CURSOR routine.
+       Then, take the [xx,yy] location of the nucleus and use it as
+       input to the AstUseLib CNTRD centroiding routine.  In ATV,
+       place the cursor near the center of the nucleus and press "p".
+       What are the centroid values for the nucleus?
+
+    Do aperture photometry on the M87 I-band frame as follows:
+
+       Read the information header for the AstUseLib routine DIST_CIRCLE,
+         and be sure you understand how it works.  You may want to try
+         using it on a small test array and plotting slices across the
+         array.  
+       
+       Devise a method, similar to that given as a sample script in the
+         DIST_CIRCLE header, to obtain the integrated flux of the M87 image
+         within a circular aperture (centered on the galaxy nucleus).
+
+       Measure the total fluxes within circular apertures of 10, 20,
+         30, and 40 pixel radii.
+
+    Make up a simple table (printed to your screen and your journal file) of
+       the aperture radius, total flux in aperture, and net flux in aperture
+       after an appropriate correction for the sky background is made.
+
+       By what percentage did the sky correction reduce the final flux in
+       the 40 pixel aperture?
+
+    To illustrate the general shape of the galaxy brightness profile
+       and emphasize any asymmetries, make a "pixel plot" of the
+       galaxy's surface brightness as follows:
+
+       Extract a subarray of 71x71 pixels centered on the nuclear pixel
+         you identified above.  Call this FLX.
+
+       Use DIST_CIRCLE to make a matching array containing the distance of
+         each pixel from the center.  Call this RAD.
+
+       Now open a plotting window and make a plot of the radius of
+	 each pixel in the subarray vs its flux by typing
+	 PLOT,RAD,FLX,PSYM=5.  (Setting PSYM = 5 plots points as open
+	 triangles; alternatively, use PSYM = 1 for plus signs.)  Most
+	 data points should fall in a compact distribution showing
+	 that the source is highly symmetrical.  Have you reached the
+	 sky background level at the edge of the subarray?  Is there
+	 evidence of an important asymmetry?  [A linear-log plot using
+	 PLOT_IO can also be useful, but use WHERE to exclude any
+	 negative flux points.]
+
+       Test the sensitivity of this technique to asymmetries by 
+         re-extracting the subarray but with the center offset by a
+         couple of pixels from the true nuclear cenrtroid.
+
+       In ATV, you can see a similar radial plot by using the "p"
+          function and pressing the "Show radial profile" button on
+          the pop-up menu.
+
+     Another way to visualize the source structure is to make a
+       surface plot with the SURFACE routine.  Open a plotting window
+       and give the command SURFACE,FLX.  You can explore the shape of
+       the surface by viewing it from other angles
+       (e.g. SURFACE,FLX,AX=15,AZ=70) or inverting it (SURFACE,-FLX).
+
+       In ATV, you can quickly make nice surface plots by pressing
+       the "s" key.  
+
+
+5)  POINT SOURCE PHOTOMETRY
+
+    Read in the image of the globular cluster M13 from the file
+       "m13-ex8.fits".  
+
+    Display the image.  The center of the cluster is very crowded but
+       is not saturated in this exposure.  Find a set of display
+       parameters which retains information in the center while still
+       showing the stars in the outer part of the cluster.  
+
+    Extract a 100x100 subarray of the image near the cluster center.
+       Open a plotting window, and make a SURFACE plot of the
+       subarray.  Explore several regions at different radii.  How
+       far from the center do you have to be to avoid blended point-spread
+       functions? 
+
+       The ATV "s" feature is more convenient for exploring the
+       overlap problem, since it automatically extracts a subarray
+       of the main image.  
+
+    Extract a 400x400 subarray of the image in its upper left hand
+       quadrant, and use this for the remainder of exercise (5).
+
+    The AstUseLib FIND routine is part of the DAOPHOT photometry package
+       written by Peter Stetson.  This version has been converted to IDL
+       from the original FORTRAN.  FIND locates stellar objects within
+       a given image.  It is efficient and employs only a few parameters,
+       the most important of which is HMIN, the minimum flux of a candidate
+       source above the background for a threshold detection.
+
+       Apply FIND to the subarray.  Use an HMIN value of 120 and a
+	 convolution FWHM of 4 pixels.  Leave other parameters at their
+	 default values.  In the initial call to FIND, be sure to
+	 specify output variables to store the [x,y] and flux values
+	 produced by the routine.
+
+       Display the subarray on your terminal and use the AstUseLib
+	 TVBOX (or ATVPLOT) routine to place small boxes around all
+	 the stars chosen by FIND. (11 pixels is a good boxsize; use
+         the /DEVICE keyword in TVBOX.
+
+    APER (in AstUseLib) is the next routine used in a standard DAOPHOT
+       reduction.  It obtains circular aperture photometry of stars
+       selected by FIND.  It uses a small inner aperture to measure
+       each star and a slightly larger annulus to measure the local
+       sky.  
+
+       Use APER to obtain brightnesses for the sources located in the
+	 FIND run above.  Reasonable values for this image are 5
+	 pixels for the "first" star aperture radius (press the return
+	 key when you are asked for "another aperture radius") and 6
+	 and 9 pixels for the sky aperture.  Set the number of "photons
+	 per ADU" equal to 1.  The output will be expressed in
+	 magnitudes with an arbitrary zero point.  Be sure to store
+	 the magnitude values.  [Note for non-astronomers: "magnitudes"
+         are related to fluxes measured in power per unit area by
+         m = -2.5*alog10(f) + const. ]
+
+       Make a histogram of the cluster luminosity function you obtained.
+
+       Note:  the standard procedure with DAOPHOT to use a measuring
+         aperture sufficient to include a significant portion but not
+         all of the light from the point spread function.  Extrapolation
+         to the "integrated" light of the source is then determined from
+         a PSF derived from well-exposed but isolated stellar images.
+             
+<hr>
+
+<center>
+END OF IDL EXERCISES Part III 
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/IDL-Exercises-II.html">Part II</a> 2D arrays and image displays.
+
+ <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/IDL-Exercises-I.html">Part I</a>  scalars, vectors, plotting.  
+
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/">IDL Tutorial Home Page</a>
+</center>
+
+<hr size=2>
+
+Translations of this page:
+
+
+  <a href="http://www.autonvaraosastore.fi/knowledge/2016/04/22/idl-vingrinajumi-iii-pamata-attela-apstrade">Latvian</a>
+
+  <a href="http://www.zoobio.de/wissen/2016/07/01/idl-cvicenie-iii-zakladna-spracovan
+ie-obrazu">Slovak</a>
+
+
+<hr size=2>
+
+<center>
+Copyright &copy 2000-2016 Robert W. O'Connell.  All rights reserved. 
+</center>
+
+<center> Last modified by RWO July 2016 </center>
+
+</pre>
+
+</b>
+
+</body>
+</html>
+

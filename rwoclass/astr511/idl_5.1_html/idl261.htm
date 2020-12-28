@@ -1,0 +1,571 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Hierarchical Data Format</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl262.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl260.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Chapter-Name">
+<A NAME="pgfId=1000790">
+ </A>
+<A NAME="63252">
+ </A>
+Hierarchical Data Format</H1>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032309">
+</A>
+The following topics are covered in this chapter:</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032310">
+</A>
+f</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032317">
+</A>
+<A HREF="idl262.htm" CLASS="XRef">
+HDF Interfaces</A>
+ 	 <A HREF="idl262.htm" CLASS="XRef">
+HDF Interfaces</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032324">
+</A>
+<A HREF="idl263.htm" CLASS="XRef">
+Creating an HDF File in IDL</A>
+ 	 <A HREF="idl263.htm" CLASS="XRef">
+Creating an HDF File in IDL</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032331">
+</A>
+<A HREF="idl264.htm" CLASS="XRef">
+HDF Scientific Dataset ID Numbers</A>
+ 	 <A HREF="idl264.htm" CLASS="XRef">
+HDF Scientific Dataset ID Numbers</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032335">
+</A>
+HDF Routines 	 <A HREF="idl266.htm" CLASS="XRef">
+HDF_CLOSE</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1032336">
+</A>
+&nbsp;</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1012492">
+ </A>
+This chapter details the interface routines for the Hierarchical Data Format. General notes about the interface are presented below, followed by individual descriptions of the routines.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1038512">
+ </A>
+The routines <A HREF="idl265.htm#22927" CLASS="XRef">
+HDF_BROWSER</A>
+ and <A HREF="idl29c.htm#13340" CLASS="XRef">
+HDF_READ</A>
+, introduced in IDL version 5.1, allow you to read HDF data files and import data into IDL using a graphical user interface. Using these two routines, you can avoid the need to use most of the rest of IDL's HDF interface.</LI>
+</UL>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1012560">
+ </A>
+This version of IDL supports HDF 4.0. However, features new to HDF 4.0 are not supported in this version of IDL. This features include, but are not limited to:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012561">
+ </A>
+The new Multi-file Annotation Interface (ANxxx).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012562">
+ </A>
+The new Multi-file Raster Image Interface (GRxxx).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012550">
+ </A>
+HDF reading of CDF files.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012551">
+ </A>
+Reading/Writing of compressed HDF scientific datasets (SDS).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012552">
+ </A>
+Reading/Writing of SDS using the new n-bit interface.</LI>
+</UL>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl262.htm#pgfId=1012493" CLASS="Hypertext">
+HDF Interfaces</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl263.htm#pgfId=1003219" CLASS="Hypertext">
+Creating an HDF File in IDL </A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl264.htm#pgfId=1003241" CLASS="Hypertext">
+HDF Scientific Dataset ID Numbers</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl265.htm#pgfId=1036460" CLASS="Hypertext">
+HDF_BROWSER</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl266.htm#pgfId=1036451" CLASS="Hypertext">
+HDF_CLOSE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl267.htm#pgfId=996935" CLASS="Hypertext">
+HDF_DELDD</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl268.htm#pgfId=996952" CLASS="Hypertext">
+HDF_DF24_ADDIMAGE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl269.htm#pgfId=996972" CLASS="Hypertext">
+HDF_DF24_GETIMAGE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl26a.htm#pgfId=996996" CLASS="Hypertext">
+HDF_DF24_GETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl26b.htm#pgfId=997036" CLASS="Hypertext">
+HDF_DF24_LASTREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl26c.htm#pgfId=997077" CLASS="Hypertext">
+HDF_DF24_NIMAGES</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl26d.htm#pgfId=997110" CLASS="Hypertext">
+HDF_DF24_READREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl26e.htm#pgfId=997124" CLASS="Hypertext">
+HDF_DF24_RESTART</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl26f.htm#pgfId=997133" CLASS="Hypertext">
+HDF_DFAN_ADDFDS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl270.htm#pgfId=997148" CLASS="Hypertext">
+HDF_DFAN_ADDFID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl271.htm#pgfId=997186" CLASS="Hypertext">
+HDF_DFAN_GETDESC</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl272.htm#pgfId=997236" CLASS="Hypertext">
+HDF_DFAN_GETFDS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl273.htm#pgfId=997291" CLASS="Hypertext">
+HDF_DFAN_GETFID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl274.htm#pgfId=997314" CLASS="Hypertext">
+HDF_DFAN_GETLABEL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl275.htm#pgfId=997356" CLASS="Hypertext">
+HDF_DFAN_LABLIST</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl276.htm#pgfId=997416" CLASS="Hypertext">
+HDF_DFAN_LASTREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl277.htm#pgfId=997426" CLASS="Hypertext">
+HDF_DFAN_PUTDESC</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl278.htm#pgfId=997448" CLASS="Hypertext">
+HDF_DFAN_PUTLABEL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl279.htm#pgfId=997479" CLASS="Hypertext">
+HDF_DFP_ADDPAL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl27a.htm#pgfId=997493" CLASS="Hypertext">
+HDF_DFP_GETPAL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl27b.htm#pgfId=997507" CLASS="Hypertext">
+HDF_DFP_LASTREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl27c.htm#pgfId=997516" CLASS="Hypertext">
+HDF_DFP_NPALS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl27d.htm#pgfId=997528" CLASS="Hypertext">
+HDF_DFP_PUTPAL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl27e.htm#pgfId=997549" CLASS="Hypertext">
+HDF_DFP_READREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl27f.htm#pgfId=997563" CLASS="Hypertext">
+HDF_DFP_RESTART</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl280.htm#pgfId=997572" CLASS="Hypertext">
+HDF_DFP_WRITEREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl281.htm#pgfId=997587" CLASS="Hypertext">
+HDF_DFR8_ADDIMAGE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl282.htm#pgfId=997631" CLASS="Hypertext">
+HDF_DFR8_GETIMAGE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl283.htm#pgfId=997647" CLASS="Hypertext">
+HDF_DFR8_GETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl284.htm#pgfId=997688" CLASS="Hypertext">
+HDF_DFR8_LASTREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl285.htm#pgfId=997729" CLASS="Hypertext">
+HDF_DFR8_NIMAGES</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl286.htm#pgfId=997760" CLASS="Hypertext">
+HDF_DFR8_PUTIMAGE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl287.htm#pgfId=997797" CLASS="Hypertext">
+HDF_DFR8_READREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl288.htm#pgfId=997811" CLASS="Hypertext">
+HDF_DFR8_RESTART</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl289.htm#pgfId=997820" CLASS="Hypertext">
+HDF_DFR8_SETPALETTE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl28a.htm#pgfId=997833" CLASS="Hypertext">
+HDF_DFSD_ADDDATA</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl28b.htm#pgfId=997858" CLASS="Hypertext">
+HDF_DFSD_DIMGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl28c.htm#pgfId=997883" CLASS="Hypertext">
+HDF_DFSD_DIMSET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl28d.htm#pgfId=997915" CLASS="Hypertext">
+HDF_DFSD_ENDSLICE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl28e.htm#pgfId=997946" CLASS="Hypertext">
+HDF_DFSD_GETDATA</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl28f.htm#pgfId=997967" CLASS="Hypertext">
+HDF_DFSD_GETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl290.htm#pgfId=998024" CLASS="Hypertext">
+HDF_DFSD_GETSLICE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl291.htm#pgfId=998068" CLASS="Hypertext">
+HDF_DFSD_PUTSLICE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl292.htm#pgfId=998107" CLASS="Hypertext">
+HDF_DFSD_READREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl293.htm#pgfId=998121" CLASS="Hypertext">
+HDF_DFSD_SETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl294.htm#pgfId=998227" CLASS="Hypertext">
+HDF_DFSD_STARTSLICE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl295.htm#pgfId=998292" CLASS="Hypertext">
+HDF_DUPDD</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl296.htm#pgfId=998312" CLASS="Hypertext">
+HDF_EXISTS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl297.htm#pgfId=998325" CLASS="Hypertext">
+HDF_ISHDF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl298.htm#pgfId=1031713" CLASS="Hypertext">
+HDF_LIB_INFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl299.htm#pgfId=998337" CLASS="Hypertext">
+HDF_NEWREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl29a.htm#pgfId=998349" CLASS="Hypertext">
+HDF_NUMBER</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl29b.htm#pgfId=998366" CLASS="Hypertext">
+HDF_OPEN</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl29c.htm#pgfId=1038405" CLASS="Hypertext">
+HDF_READ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl29d.htm#pgfId=998401" CLASS="Hypertext">
+HDF_SD_ADDDATA</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl29e.htm#pgfId=998459" CLASS="Hypertext">
+HDF_SD_ATTRFIND</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl29f.htm#pgfId=998495" CLASS="Hypertext">
+HDF_SD_ATTRINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a0.htm#pgfId=998562" CLASS="Hypertext">
+HDF_SD_ATTRSET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a1.htm#pgfId=998662" CLASS="Hypertext">
+HDF_SD_CREATE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a2.htm#pgfId=998741" CLASS="Hypertext">
+HDF_SD_DIMGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a3.htm#pgfId=998785" CLASS="Hypertext">
+HDF_SD_DIMGETID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a4.htm#pgfId=998814" CLASS="Hypertext">
+HDF_SD_DIMSET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a5.htm#pgfId=998870" CLASS="Hypertext">
+HDF_SD_END</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a6.htm#pgfId=998901" CLASS="Hypertext">
+HDF_SD_ENDACCESS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a7.htm#pgfId=998935" CLASS="Hypertext">
+HDF_SD_FILEINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a8.htm#pgfId=1009248" CLASS="Hypertext">
+HDF_SD_GETDATA</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2a9.htm#pgfId=999012" CLASS="Hypertext">
+HDF_SD_GETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2aa.htm#pgfId=999084" CLASS="Hypertext">
+HDF_SD_IDTOREF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ab.htm#pgfId=999148" CLASS="Hypertext">
+HDF_SD_ISCOORDVAR</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ac.htm#pgfId=999159" CLASS="Hypertext">
+HDF_SD_NAMETOINDEX</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ad.htm#pgfId=999189" CLASS="Hypertext">
+HDF_SD_REFTOINDEX</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ae.htm#pgfId=999214" CLASS="Hypertext">
+HDF_SD_SELECT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2af.htm#pgfId=999256" CLASS="Hypertext">
+HDF_SD_SETEXTFILE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b0.htm#pgfId=999304" CLASS="Hypertext">
+HDF_SD_SETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b1.htm#pgfId=999427" CLASS="Hypertext">
+HDF_SD_START</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b2.htm#pgfId=999488" CLASS="Hypertext">
+HDF_VD_ATTACH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b3.htm#pgfId=999510" CLASS="Hypertext">
+HDF_VD_DETACH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b4.htm#pgfId=999522" CLASS="Hypertext">
+HDF_VD_FDEFINE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b5.htm#pgfId=999557" CLASS="Hypertext">
+HDF_VD_FEXIST</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b6.htm#pgfId=999571" CLASS="Hypertext">
+HDF_VD_FIND</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b7.htm#pgfId=999585" CLASS="Hypertext">
+HDF_VD_GET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b8.htm#pgfId=999635" CLASS="Hypertext">
+HDF_VD_GETID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2b9.htm#pgfId=999651" CLASS="Hypertext">
+HDF_VD_GETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ba.htm#pgfId=999686" CLASS="Hypertext">
+HDF_VD_GETNEXT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2bb.htm#pgfId=999700" CLASS="Hypertext">
+HDF_VD_INSERT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2bc.htm#pgfId=999714" CLASS="Hypertext">
+HDF_VD_ISVD</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2bd.htm#pgfId=999732" CLASS="Hypertext">
+HDF_VD_ISVG</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2be.htm#pgfId=999750" CLASS="Hypertext">
+HDF_VD_LONE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2bf.htm#pgfId=999770" CLASS="Hypertext">
+HDF_VD_READ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c0.htm#pgfId=999808" CLASS="Hypertext">
+HDF_VD_SEEK</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c1.htm#pgfId=999822" CLASS="Hypertext">
+HDF_VD_SETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c2.htm#pgfId=999849" CLASS="Hypertext">
+HDF_VD_WRITE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c3.htm#pgfId=999892" CLASS="Hypertext">
+HDF_VG_ADDTR</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c4.htm#pgfId=999927" CLASS="Hypertext">
+HDF_VG_ATTACH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c5.htm#pgfId=999954" CLASS="Hypertext">
+HDF_VG_DETACH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c6.htm#pgfId=999971" CLASS="Hypertext">
+HDF_VG_GETID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c7.htm#pgfId=999990" CLASS="Hypertext">
+HDF_VG_GETINFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c8.htm#pgfId=1000015" CLASS="Hypertext">
+HDF_VG_GETNEXT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2c9.htm#pgfId=1000029" CLASS="Hypertext">
+HDF_VG_GETTR</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ca.htm#pgfId=1000048" CLASS="Hypertext">
+HDF_VG_GETTRS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2cb.htm#pgfId=1000068" CLASS="Hypertext">
+HDF_VG_INQTR</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2cc.htm#pgfId=1000089" CLASS="Hypertext">
+HDF_VG_INSERT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2cd.htm#pgfId=1000103" CLASS="Hypertext">
+HDF_VG_ISVD</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ce.htm#pgfId=1000121" CLASS="Hypertext">
+HDF_VG_ISVG</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2cf.htm#pgfId=1000138" CLASS="Hypertext">
+HDF_VG_LONE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2d0.htm#pgfId=1000159" CLASS="Hypertext">
+HDF_VG_NUMBER</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2d1.htm#pgfId=1000172" CLASS="Hypertext">
+HDF_VG_SETINFO</A>
+</H2>
+</BODY>
+</HTML>

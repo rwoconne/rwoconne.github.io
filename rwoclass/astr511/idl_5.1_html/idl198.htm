@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SHADE_SURF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl199.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl197.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678738">
+ </A>
+<A NAME="80802">
+ </A>
+SHADE_SURF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678739">
+ </A>
+The <A NAME="marker=673848">
+ </A>
+SHADE_SURF procedure creates a <A NAME="marker=673849">
+ </A>
+shaded-surface representation of a regular or nearly-regular gridded surface with shading from either a light source model or from a user-specified array of intensities. This procedure and its parameters are similar to SURFACE. Given a regular or near-regular grid of elevations it produces a shaded-surface representation of the data with hidden surfaces removed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=197882">
+ </A>
+The SET_SHADING procedure can be used to control the direction of the light source and other shading parameters.</P>
+<P CLASS="Body">
+<A NAME="pgfId=197886">
+ </A>
+If the graphics output device has scalable pixels (e.g., PostScript), the output image is scaled so that its largest dimension is less than or equal to 512 (unless the PIXELS keyword is set to some other value). This default resolution may not be high enough for some datasets. If your output looks jagged or &quot;stair-stepped&quot;, try specifying a larger value with the PIXELS keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=197885">
+ </A>
+When outputting to a device that prints black on a white background, (e.g., PostScript), pixels that contain the background color index of 0 are set to white.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678741">
+ </A>
+Restrictions</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678742">
+ </A>
+If the <I CLASS="Italic">
+(X, Y)</I>
+ grid is not regular or nearly regular, errors in hidden line removal will occur. If the T3D keyword is set, the 3D to 2D transformation matrix contained in !P.T must project the Z axis to a line parallel to the device Y axis, or errors will occur. The SHADE_SURF_IRR procedure can be used to render many datasets that do not meet these requirements. Irregularly-gridded data can also be made interpolated to a regular grid using the TRIGRID and TRIANGULATE routines.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678743">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678744">
+ </A>
+SHADE_SURF, <I CLASS="Italic">
+Z [, X, Y]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678745">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678746">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678747">
+ </A>
+A two-dimensional array that contains the values that make up the surface. For details, see <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678748">
+ </A>
+This argument is converted to single-precision floating-point before plotting. Plots created with SHADE_SURF are limited to the range and precision of single-precision floating-point values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678749">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678750">
+ </A>
+An optional vector or two-dimensional array that specifies the X coordinates of the grid. For details, see <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678751">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678752">
+ </A>
+An optional vector or two-dimensional array that specifies the Y coordinates of each elevation.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678753">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678754">
+ </A>
+<A NAME="marker=673850">
+ </A>
+AX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678755">
+ </A>
+This keyword specifies the angle of rotation, about the X axis, in degrees towards the viewer. This keyword is effective only if !P.T3D and the T3D keyword are not set. If !P.T3D is set, the three-dimensional to two-dimensional transformation used by SURFACE is contained in the 4 by 4 array !P.T.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678756">
+ </A>
+The surface represented by the two-dimensional array is first rotated, AZ (see below) degrees about the Z axis, then by AX degrees about the X axis, tilting the surface towards the viewer (AX &gt; 0), or away from the viewer.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678757">
+ </A>
+The AX and AZ keyword parameters default to +30 degrees if omitted.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678758">
+ </A>
+The three-dimensional to two-dimensional transformation represented by AX and AZ, can be saved in !P.T by including the SAVE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678759">
+ </A>
+<A NAME="marker=673851">
+ </A>
+AZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678760">
+ </A>
+This keyword specifies the counterclockwise angle of rotation about the Z axis. This keyword is effective only if !P.T3D is not set. The order of rotation is AZ first, then AX.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678761">
+ </A>
+<A NAME="marker=673852">
+ </A>
+IMAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678762">
+ </A>
+A named variable into which an image containing the shaded surface is stored. If this keyword is omitted, the image is displayed but not saved.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678763">
+ </A>
+<A NAME="marker=724112">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843195">
+ </A>
+The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as <A NAME="marker=47136">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47127">
+ </A>
+<A NAME="marker=47149">
+ </A>
+MIN_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843203">
+ </A>
+The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as <A NAME="marker=47128">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844042">
+ </A>
+<A NAME="marker=724114">
+ </A>
+PIXELS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=724115">
+ </A>
+Set this keyword to a scalar value that specifies the maximum size of the image dimensions, in pixels. PIXELS only applies when the output device uses scalable pixels (e.g., the PostScript device). Use this keyword to increase the resolution of the output image if the default looks jagged or &quot;stair-stepped&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678765">
+ </A>
+<A NAME="marker=673853">
+ </A>
+SAVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678766">
+ </A>
+Set this keyword to save the 3D to 2D transformation matrix established by SHADE_SURF in the system variable field !P.T. Use this keyword when combining the output of SHADE_SURF with the output of other routines in the same plot.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678767">
+ </A>
+<A NAME="marker=673854">
+ </A>
+SHADES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=948849">
+ </A>
+An array expression, of the same dimensions as <I CLASS="Italic">
+Z</I>
+, that contains the color index at each point. The shading of each pixel is interpolated from the surrounding SHADE values. If this parameter is omitted, light-source shading is used. For most displays, this parameter should be scaled into the range of bytes.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=948850">
+ </A>
+When using the SHADES keyword on True Color devices, we recommend that decomposed color support be turned off, by setting DECOMPOSED=0 for <BR>
+<A HREF="idl76.htm#17188" CLASS="XRef">
+DEVICE</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158361">
+ </A>
+<A NAME="marker=158359">
+ </A>
+XLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158391">
+ </A>
+Set this keyword to specify a <A NAME="marker=876411">
+ </A>
+logarithmic X <A NAME="marker=158390">
+ </A>
+axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158393">
+ </A>
+<A NAME="marker=158392">
+ </A>
+YLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158396">
+ </A>
+Set this keyword to specify a <A NAME="marker=876416">
+ </A>
+logarithmic Y<A NAME="marker=158395">
+ </A>
+ axis.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678773">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=817593">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#23414" CLASS="XRef">
+CHARSIZE</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678775">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678776">
+ </A>
+Create a simple dataset by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678777">
+ </A>
+D = DIST(40)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678778">
+ </A>
+Display the dataset as a light-source shaded surface by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678779">
+ </A>
+SHADE_SURF, D, TITLE = 'Shaded Surface'</P>
+<P CLASS="Body">
+<A NAME="pgfId=678780">
+ </A>
+Instead of light-source shading, an array of the same size as the elevation dataset can be used to color the surface. This technique creates four-dimensional displays. Create an array of shades to use by entering the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678781">
+ </A>
+S = SIN(D)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678782">
+ </A>
+Now create a new shaded surface that uses the array of shading values instead of the light source. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678783">
+ </A>
+SHADE_SURF, D, SHADES = BYTSCL(S)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678784">
+ </A>
+Note that the BYTSCL function is used to scale S into the range of bytes.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795769">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795770">
+ </A>
+<A HREF="idl145.htm#45438" CLASS="XRef">
+POLYSHADE</A>
+, <A HREF="idl192.htm#14374" CLASS="XRef">
+SET_SHADING</A>
+, <A HREF="idl19a.htm#78379" CLASS="XRef">
+SHADE_VOLUME</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

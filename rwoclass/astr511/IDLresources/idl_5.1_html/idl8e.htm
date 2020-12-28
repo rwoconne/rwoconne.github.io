@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ERASE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl8f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl8d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676703">
+ </A>
+<A NAME="22920">
+ </A>
+ERASE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676704">
+ </A>
+The <A NAME="marker=672938">
+ </A>
+ERASE procedure erases the screen of the currently selected <A NAME="marker=672939">
+ </A>
+graphics device (or starts a <A NAME="marker=672940">
+ </A>
+new page if the device is a printer). The device is reset to alphanumeric mode if it has such a mode (e.g., Tektronix terminals).</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676705">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676706">
+ </A>
+ERASE <I CLASS="Italics">
+[, Background_Color]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676707">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676708">
+ </A>
+Background_Color</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676709">
+ </A>
+The <A NAME="marker=672941">
+ </A>
+color index for the screen to be erased to. If this argument is omitted ERASE resets the screen to the default background color (normally 0), stored in the system variable !P.BACKGROUND. Providing a value for <I CLASS="Italics">
+Background_Color</I>
+ overrides the default.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676710">
+ </A>
+Warning: Not all devices support this feature.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676711">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676712">
+ </A>
+<A NAME="marker=672943">
+ </A>
+CHANNEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676713">
+ </A>
+The channel or channel mask for the erase operation. This parameter has meaning only when used with devices that support true-color or multiple-display channels. The default value is !P.CHANNEL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676714">
+ </A>
+<A NAME="marker=672944">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676715">
+ </A>
+Specifies the background color. Using this keyword is analogous to using the <I CLASS="Italics">
+Background_Color</I>
+ argument.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823169">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=823183">
+ </A>
+TV, DIST(255)	<EM CLASS="Comment">;
+Display a simple image in the current window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=823185">
+ </A>
+ERASE	<EM CLASS="Comment">;
+Erase the image from the window.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823184">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823173">
+ </A>
+<A HREF="idl191.htm#16964" CLASS="XRef">
+SET_PLOT</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+, <A HREF="idl219.htm#42522" CLASS="XRef">
+WSET</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

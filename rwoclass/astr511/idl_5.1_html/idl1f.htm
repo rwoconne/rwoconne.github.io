@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BYTEORDER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl20.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675897">
+ </A>
+<A NAME="64112">
+ </A>
+BYTEORDER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=675898">
+ </A>
+The <A NAME="marker=672524">
+ </A>
+BYTEORDER procedure <A NAME="marker=672525">
+ </A>
+converts integers between host and network byte ordering or floating-point values between the <A NAME="marker=672526">
+ </A>
+native format and <A NAME="marker=672527">
+ </A>
+XDR (IEEE) format. This routine can also be used to <A NAME="marker=672528">
+ </A>
+swap the order of bytes within both short and long integers. If the type of byte swapping is not specified via one of the keywords below, bytes within short integers are swapped (even and odd bytes are interchanged).</P>
+<P CLASS="Body">
+<A NAME="pgfId=675899">
+ </A>
+The size of the parameter, in bytes, must be evenly divisible by two for short integer swaps, and by four for long integer swaps. BYTEORDER operates on both scalars and arrays. The parameter must be a variable, not an expression or constant, and may not contain strings. The contents of <I CLASS="Italics">
+Variable</I>
+ are overwritten by the result.</P>
+<P CLASS="Body">
+<A NAME="pgfId=675900">
+ </A>
+Network byte ordering is &quot;<A NAME="marker=672529">
+ </A>
+big endian&quot;. That is, multiple byte integers are stored in memory beginning with the most significant byte.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675901">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675902">
+ </A>
+BYTEORDER, <I CLASS="Italics">
+Variable</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., Variable</I>
+<SUB CLASS="subscript">
+n</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675903">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675904">
+ </A>
+Variable<SUB CLASS="subscript">
+n</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675905">
+ </A>
+A named variable (not an expression or constant) that contains the data to be converted. The contents of <I CLASS="Italics">
+Variable</I>
+ are overwritten by the new values.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675906">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906658">
+ </A>
+<A NAME="marker=906664">
+ </A>
+DTOVAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906659">
+ </A>
+Set this keyword to convert native (IEEE) double-precision floating-point format to VAX D float format. See <A HREF="idl1f.htm#10503" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906876">
+ </A>
+<A NAME="marker=906875">
+ </A>
+DTOXDR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906877">
+ </A>
+Set this keyword to convert native double-precision floating-point format to XDR (IEEE) format. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675911">
+ </A>
+<A NAME="marker=906678">
+ </A>
+FTOVAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906670">
+ </A>
+Set this keyword to convert native (IEEE) single-precision floating-point format to VAX F float format. See <A HREF="idl1f.htm#10503" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906884">
+ </A>
+<A NAME="marker=906883">
+ </A>
+FTOXDR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906885">
+ </A>
+Set this keyword to convert native single-precision floating-point format to XDR (IEEE) format.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906665">
+ </A>
+<A NAME="marker=672532">
+ </A>
+HTONL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675912">
+ </A>
+Set this keyword to perform host to network conversion, longwords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675913">
+ </A>
+<A NAME="marker=672533">
+ </A>
+HTONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675914">
+ </A>
+Set this keyword to perform host to network conversion, short integers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675915">
+ </A>
+<A NAME="marker=672534">
+ </A>
+LSWAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675916">
+ </A>
+Set this keyword to perform a longword swap. Swap the order of the bytes within each longword. For example, the four bytes within a longword are changed from (B<SUB CLASS="subscript">
+0</SUB>
+, B<SUB CLASS="subscript">
+1</SUB>
+, B<SUB CLASS="subscript">
+2</SUB>
+, B<SUB CLASS="subscript">
+3</SUB>
+), to (B<SUB CLASS="subscript">
+3</SUB>
+, B<SUB CLASS="subscript">
+2</SUB>
+, B<SUB CLASS="subscript">
+1</SUB>
+, B<SUB CLASS="subscript">
+0</SUB>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675917">
+ </A>
+<A NAME="marker=672535">
+ </A>
+NTOHL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675918">
+ </A>
+Set this keyword to perform network to host conversion, longwords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675919">
+ </A>
+<A NAME="marker=672536">
+ </A>
+NTOHS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675920">
+ </A>
+Set this keyword to perform network to host conversion, short integers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675921">
+ </A>
+<A NAME="marker=672537">
+ </A>
+SSWAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675922">
+ </A>
+Set this keyword to perform a <A NAME="marker=672538">
+ </A>
+short word swap. Swap the bytes within short integers. The even and odd numbered bytes are interchanged. This is the default action, if no other keyword is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906711">
+ </A>
+<A NAME="marker=906868">
+ </A>
+SWAP_IF_BIG_ENDIAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906713">
+ </A>
+If this keyword is set, the BYTEORDER request will only be performed if the platform running IDL uses &quot;big endian&quot; byte ordering. On little endian machines, the BYTEORDER request quietly returns without doing anything. Note that this keyword does not refer to the byte ordering of the input data, but to the computer hardware.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906720">
+ </A>
+<A NAME="marker=906869">
+ </A>
+SWAP_IF_LITTLE_ENDIAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906721">
+ </A>
+If this keyword is set, the BYTEORDER request will only be performed if the platform running IDL uses &quot;little endian&quot; byte ordering. On little endian machines, the BYTEORDER request quietly returns without doing anything. Note that this keyword does not refer to the byte ordering of the input data, but to the computer hardware.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675923">
+ </A>
+<A NAME="marker=906692">
+ </A>
+VAXTOD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906684">
+ </A>
+Set this keyword to convert VAX D float format to native (IEEE) double-precision floating-point format. See <A HREF="idl1f.htm#10503" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=911765">
+ </A>
+If you have VAX G float format data, see the <A HREF="idl1f.htm#41920" CLASS="XRef">
+VMS-Only Keywords</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906693">
+ </A>
+<A NAME="marker=906706">
+ </A>
+VAXTOF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906696">
+ </A>
+Set this keyword to convert VAX F float format to native (IEEE) single-precision floating-point format. See <A HREF="idl1f.htm#10503" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=911774">
+ </A>
+If you have VAX G float format data, see the <A HREF="idl1f.htm#41920" CLASS="XRef">
+VMS-Only Keywords</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=906679">
+ </A>
+<A NAME="marker=672539">
+ </A>
+XDRTOD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675924">
+ </A>
+Set this keyword to convert XDR (IEEE) format to native double-precision floating-point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675925">
+ </A>
+<A NAME="marker=672540">
+ </A>
+XDRTOF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675926">
+ </A>
+Set this keyword to convert XDR (IEEE) format to native single-precision floating-point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=911726">
+ </A>
+<A NAME="41920">
+ </A>
+VMS-Only Keywords</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=911734">
+ </A>
+<A NAME="marker=911738">
+ </A>
+DTOGFLOAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911741">
+ </A>
+Set this keyword to convert native (IEEE) double-precision floating-point format to VAX G float format. Note that IDL does not support the VAX G float format via any other mechanism. See <A HREF="idl1f.htm#10503" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=911727">
+ </A>
+<A NAME="marker=911739">
+ </A>
+GFLOATTOD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911753">
+ </A>
+Set this keyword to convert VAX G float format to native (IEEE) double-precision floating-point format. Note that IDL does not support the VAX G float format via any other mechanism. See <A HREF="idl1f.htm#10503" CLASS="XRef">
+Note On IEEE to VAX Format Conversion</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=906342">
+ </A>
+<A NAME="10503">
+ </A>
+Note On IEEE to VAX Format Conversion</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906350">
+ </A>
+Translation of floating-point values from the IDL's native (IEEE) format to the VAX formats and back (IEEE to VAX to IEEE) is not a completely reversable operation, and should be avoided when possible. There are many cases where the recovered values will differ from the original, including:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=906355">
+ </A>
+The VAX floating point format lacks support for the IEEE special values (NaN, Infinity). Hence, their special meaning is lost when they are converted to VAX format and cannot be recovered.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=906360">
+ </A>
+Differences in precision and range can also cause information to be lost in both directions.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=906363">
+ </A>
+Research Systems recommends using IEEE/VAX conversions only to read existing VAX format data, and strongly recommends that all new files be created using the IEEE format.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=818590">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818594">
+ </A>
+<A HREF="idl1cb.htm#86774" CLASS="XRef">
+SWAP_ENDIAN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

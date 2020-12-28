@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_ATTRSET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl29f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998562">
+ </A>
+<A NAME="60488">
+ </A>
+HDF_SD_ATTRSET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998565">
+ </A>
+The <A NAME="marker=998564">
+ </A>
+HDF_SD_ATTRSET procedure writes attributes to an open HDF SD dataset. If no data type is specified, the data type is taken from the <I CLASS="Italics">
+Values</I>
+ argument.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998566">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998567">
+ </A>
+HDF_SD_ATTRSET, <I CLASS="Italics">
+S_ID, Attr_Name, Values [, Count]</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998568">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998569">
+ </A>
+S_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998570">
+ </A>
+An SD interface ID as returned by HDF_SD_START (i.e., a global attribute's &quot;<I CLASS="Italics">
+SD_ID</I>
+&quot;), or HDF_SD_SELECT/HDF_SD_CREATE (i.e., a dataset's &quot;<I CLASS="Italics">
+SDS_ID</I>
+&quot;).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998571">
+ </A>
+Attr_Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998572">
+ </A>
+A string containing the name of the attribute to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998573">
+ </A>
+Values</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998574">
+ </A>
+The attribute values to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998575">
+ </A>
+Count</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998576">
+ </A>
+An optional integer argument specifying how many items are to be written. <EM CLASS="Emphasis">
+Count</EM>
+ must be less than or equal to the number of elements in the <EM CLASS="Emphasis">
+Values</EM>
+ agrument.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998577">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998579">
+ </A>
+<A NAME="marker=998578">
+ </A>
+BYTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998580">
+ </A>
+Set this keyword to indicate that the attribute is composed of bytes. Data will be stored with the HDF DFNT_UINT8 data type. Setting this keyword is the same as setting the DFNT_UINT8 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998582">
+ </A>
+<A NAME="marker=998581">
+ </A>
+DFNT_CHAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998583">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_CHAR. Setting this keyword is the same as setting the STRING keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998585">
+ </A>
+<A NAME="marker=998584">
+ </A>
+DFNT_FLOAT32</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998586">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_FLOAT32. Setting this keyword is the same as setting the FLOAT keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998588">
+ </A>
+<A NAME="marker=998587">
+ </A>
+DFNT_FLOAT64</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998589">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_FLOAT64. Setting this keyword is the same as setting the DOUBLE keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998591">
+ </A>
+<A NAME="marker=998590">
+ </A>
+DFNT_INT8</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998592">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_INT8.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998594">
+ </A>
+<A NAME="marker=998593">
+ </A>
+DFNT_INT16</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998595">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_INT16. Setting this keyword is the same as setting either the INT keyword or the SHORT keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998597">
+ </A>
+<A NAME="marker=998596">
+ </A>
+DFNT_INT32</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998598">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_INT32. Setting this keyword is the same as setting the LONG keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998600">
+ </A>
+<A NAME="marker=998599">
+ </A>
+DFNT_UINT8</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998601">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_UINT8. Setting this keyword is the same as setting the BYTE keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998603">
+ </A>
+<A NAME="marker=998602">
+ </A>
+DFNT_UINT16</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998604">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_UINT16.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998606">
+ </A>
+<A NAME="marker=998605">
+ </A>
+DFNT_UINT32</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998607">
+ </A>
+Set this keyword to create an attribute of HDF type DFNT_UINT32.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998609">
+ </A>
+<A NAME="marker=998608">
+ </A>
+DOUBLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998610">
+ </A>
+Set this keyword to indicate that the attribute is composed of double-precision floating-point values. Data will be stored with the HDF DFNT_FLOAT64 data type. Setting this keyword is the same as setting the DFNT_FLOAT64 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998612">
+ </A>
+<A NAME="marker=998611">
+ </A>
+FLOAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998613">
+ </A>
+Set this keyword to indicate that the attribute is composed of single-precision floating-point values. Data will be stored with the HDF DFNT_FLOAT32 data type. Setting this keyword is the same as setting the DFNT_FLOAT32 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998615">
+ </A>
+<A NAME="marker=998614">
+ </A>
+INT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998616">
+ </A>
+Set this keyword to indicate that the attribute is composed of 2-byte integers. Data will be stored with the HDF DFNT_INT16 data type. Setting this keyword is the same as setting either the SHORT keyword or the DFNT_INT16 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998618">
+ </A>
+<A NAME="marker=998617">
+ </A>
+LONG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998619">
+ </A>
+Set this keyword to indicate that the attribute is composed of longword integers. Data will be stored with the HDF DFNT_INT32 data type. Setting this keyword is the same as setting the DFNT_INT32 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998621">
+ </A>
+<A NAME="marker=998620">
+ </A>
+SHORT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998622">
+ </A>
+Set this keyword to indicate that the attribute is composed of 2-byte integers. Data will be stored with the HDF DFNT_INT16 data type. Setting this keyword is the same as setting either the INT keyword or the DFNT_INT16 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998624">
+ </A>
+<A NAME="marker=998623">
+ </A>
+STRING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998625">
+ </A>
+Set this keyword to indicate that the attribute is composed of strings. Data will be stored with the HDF DFNT_CHAR data type. Setting this keyword is the same as setting the DFNT_CHAR keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998626">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998627">
+ </A>
+fid = HDF_OPEN('demo.hdf', /ALL)	<EM CLASS="Comment">;
+Create a new HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998628">
+ </A>
+sd_id = HDF_SD_START('demo.hdf', /RDWR)		<EM CLASS="Comment">;
+Start the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998629">
+ </A>
+HDF_SD_ATTRSET, sd_id, 'TITLE', 'MY TITLE GLOBAL', 16<BR>
+<EM CLASS="Comment">;
+Create a global attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998630">
+ </A>
+HDF_SD_ATTRSET, sd_id, 'RANGE', [-99.88,55544.2], /DOUBLE<BR>
+<EM CLASS="Comment">;
+Create another global attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998631">
+ </A>
+SDS_ID = HDF_SD_CREATE(sd_id, 'var1', [10,20], /FLOAT)<BR>
+<EM CLASS="Comment">;
+Create a dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998632">
+ </A>
+HDF_SD_ATTRSET, SDS_ID, 'TITLE', 'MY TITLE SD_ID', 15<BR>
+<EM CLASS="Comment">;
+Add a dataset attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998633">
+ </A>
+index=HDF_SD_ATTRFIND(sd_id, 'RANGE')	<EM CLASS="Comment">;
+Find the recently-created RANGE attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998634">
+ </A>
+HDF_SD_ATTRINFO,sd_id,index,NAME=atn,COUNT=atc,TYPE=att,DATA=d<BR>
+<EM CLASS="Comment">;
+Retrieve data from RANGE.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998635">
+ </A>
+HELP, atn, atc, att	<EM CLASS="Comment">;
+Print information about the returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998636">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998637">
+ </A>
+ATN STRING = 'RANGE'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998638">
+ </A>
+ATC LONG = 2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998639">
+ </A>
+ATT STRING = 'DOUBLE'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998640">
+ </A>
+PRINT, d, FORMAT='(F8.2,x,F8.2)'	<EM CLASS="Comment">;
+Print the data returned in variable d with the given format. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998641">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998642">
+ </A>
+-99.88 55544.20</P>
+<P CLASS="Code">
+<A NAME="pgfId=998643">
+ </A>
+HDF_SD_ENDACCESS, sds_id	<EM CLASS="Comment">;
+End access to the HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998644">
+ </A>
+HDF_SD_END, sd_id </P>
+<P CLASS="Code">
+<A NAME="pgfId=998645">
+ </A>
+HDF_CLOSE, fid</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998646">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998659">
+ </A>
+<A HREF="idl29e.htm#85081" CLASS="XRef">
+HDF_SD_ATTRFIND</A>
+, <A HREF="idl29f.htm#65416" CLASS="XRef">
+HDF_SD_ATTRINFO</A>
+, <A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LADFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=825372">
+ </A>
+<A NAME="94704">
+ </A>
+LADFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53718">
+ </A>
+The <A NAME="marker=53715">
+ </A>
+LADFIT <A NAME="marker=53716">
+ </A>
+function <A NAME="marker=53717">
+ </A>
+fits the paired data {<EM CLASS="Emphasis">
+xi</EM>
+, <EM CLASS="Emphasis">
+yi</EM>
+} to the linear model, y = A + Bx, using a &quot;robust&quot; <A NAME="marker=53719">
+ </A>
+least absolute deviation method. The result is a two-element vector containing the model parameters, <EM CLASS="Emphasis">
+A</EM>
+ and <EM CLASS="Emphasis">
+B</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53720">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ladfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53721">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53722">
+ </A>
+Result = LADFIT(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53723">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53724">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53725">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector. Note that the <EM CLASS="Emphasis">
+X</EM>
+ vector must be sorted into ascending order.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53726">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53727">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector. Note that the elements of the <EM CLASS="Emphasis">
+Y </EM>
+vector must be paired with the appropriate elements of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53728">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53730">
+ </A>
+<A NAME="marker=53729">
+ </A>
+ABSDEV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53731">
+ </A>
+Set this keyword to a named variable that will contain the mean absolute deviation for each data-point in the y-direction.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=837069">
+ </A>
+<A NAME="marker=837068">
+ </A>
+DOUBLE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=837070">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53732">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53733">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element vectors of paired data.</P>
+<P CLASS="Code">
+<A NAME="pgfId=225310">
+ </A>
+X = [-3.20, 4.49, -1.66, 0.64, -2.43, -0.89, -0.12, 1.41, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=225435">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.95, 2.18, 3.72, 5.26]</P>
+<P CLASS="Code">
+<A NAME="pgfId=225436">
+ </A>
+Y = [-7.14, -1.30, -4.26, -1.90, -6.19, -3.98, -2.87, -1.66, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=225438">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.78, -2.61, 0.31, 1.74]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53738">
+ </A>
+Sort the X values into ascending order, and sort the Y values to match the new order of the elements in X:</P>
+<P CLASS="Code">
+<A NAME="pgfId=225447">
+ </A>
+XX = X(SORT(X))</P>
+<P CLASS="Code">
+<A NAME="pgfId=225448">
+ </A>
+YY = Y(SORT(X))</P>
+<P CLASS="Body">
+<A NAME="pgfId=225446">
+ </A>
+Compute the model parameters, <EM CLASS="Emphasis">
+A</EM>
+ and <EM CLASS="Emphasis">
+B</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53739">
+ </A>
+PRINT, LADFIT(XX, YY)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53740">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=225463">
+ </A>
+-3.15301     0.930440</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53751">
+ </A>
+See Also</H3>
+<DIV>
+<MAP NAME="idl-64">
+</MAP>
+<CENTER><IMG SRC="idl_64.gif" USEMAP="#idl-64" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=65834">
+ </A>
+<A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlea.htm#74603" CLASS="XRef">
+LINFIT</A>
+, <A HREF="idl1a8.htm#59536" CLASS="XRef">
+SORT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

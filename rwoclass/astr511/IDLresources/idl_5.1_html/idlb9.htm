@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GET_LUN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlba.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlb8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677043">
+ </A>
+<A NAME="59784">
+ </A>
+GET_LUN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677044">
+ </A>
+The <A NAME="marker=673084">
+ </A>
+GET_LUN procedure allocates a <A NAME="marker=673085">
+ </A>
+file unit from a pool of free units. Instead of writing routines to assume the use of certain file units, IDL functions and procedures should use GET_LUN to reserve unit numbers in order to avoid conflicts with other routines. Use FREE_LUN to free the file units when finished.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677045">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677046">
+ </A>
+GET_LUN, <I CLASS="Italics">
+Unit</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677047">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677048">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677049">
+ </A>
+The named variable into which GET_LUN should place the file unit number. <I CLASS="Italics">
+Unit</I>
+ is converted into a longword integer in the process. The file unit number obtained is in the range 100 to 128.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677050">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677051">
+ </A>
+Instead of explicitly specifying a file unit number that may already be used, use GET_LUN to obtain a free one and store the result in the variable U by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677052">
+ </A>
+GET_LUN, U</P>
+<P CLASS="Body">
+<A NAME="pgfId=677053">
+ </A>
+Now U can be used in opening a file, for Example</P>
+<P CLASS="Code">
+<A NAME="pgfId=677054">
+ </A>
+OPENR, U, 'file.dat'</P>
+<P CLASS="Body">
+<A NAME="pgfId=677055">
+ </A>
+Once the data from &quot;file.dat&quot; has been read, the file can be closed and the file unit can be freed with the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677056">
+ </A>
+FREE_LUN, U</P>
+<P CLASS="Body">
+<A NAME="pgfId=677057">
+ </A>
+Note also that OPENR has a GET_LUN keyword that allows you to simultaneously obtain a free file unit and open a file. The following command performs the same tasks as the first two commands above:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677058">
+ </A>
+OPENR, U, 'file.dat', /GET_LUN</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822903">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822904">
+ </A>
+<A HREF="idlaa.htm#49944" CLASS="XRef">
+FREE_LUN</A>
+, <A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+ </P>
+</DIV>
+</BODY>
+</HTML>

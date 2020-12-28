@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_SETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2c2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2c0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999822">
+ </A>
+<A NAME="12665">
+ </A>
+HDF_VD_SETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999826">
+ </A>
+The <A NAME="marker=999824">
+ </A>
+HDF_VD_SETINFO procedure specifies general information about a <A NAME="marker=999825">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ in a Hierarchical Data Format file. Keywords can be used to establish the name, class, and interlace for the specified <EM CLASS="Emphasis">
+VData</EM>
+.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999827">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999828">
+ </A>
+HDF_VD_SETINFO, <I CLASS="Italics">
+VData</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999829">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999830">
+ </A>
+VData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999831">
+ </A>
+The VData handle returned by a previous call to HDF_VD_ATTACH.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999832">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999834">
+ </A>
+<A NAME="marker=999833">
+ </A>
+CLASS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999835">
+ </A>
+A string that sets the class name for the VData.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999837">
+ </A>
+<A NAME="marker=999836">
+ </A>
+FULL_INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999838">
+ </A>
+Set this keyword to store data in the file with full interlace (i.e., sequentially by record).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999840">
+ </A>
+<A NAME="marker=999839">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999841">
+ </A>
+A string that sets the name of the VData.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999843">
+ </A>
+<A NAME="marker=999842">
+ </A>
+NO_INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999844">
+ </A>
+Set this keyword to store data in the file with no interlace (i.e., sequentially by field).</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999845">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999846">
+ </A>
+HDF_VD_SETINFO, Vdat, NAME='My Favorite Data', /FULL</P>
+</DIV>
+</BODY>
+</HTML>

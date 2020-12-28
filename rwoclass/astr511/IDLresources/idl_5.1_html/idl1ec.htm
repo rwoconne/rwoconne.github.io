@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TVLCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ed.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1eb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679741">
+ </A>
+<A NAME="77837">
+ </A>
+TVLCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679742">
+ </A>
+The <A NAME="marker=674239">
+ </A>
+TVLCT procedure loads the <A NAME="marker=113851">
+ </A>
+display color translation tables from the specified variables. Although IDL uses the RGB color system internally, color tables can be specified to TVLCT using any of the following color systems: RGB (Red, Green, Blue), <A NAME="marker=674243">
+ </A>
+HLS (Hue, Lightness, Saturation), and <A NAME="marker=674244">
+ </A>
+HSV (Hue, Saturation, Value). Alpha values may also be used when using the second form of the command. The type and meaning of each argument is dependent upon the color system selected, as described below. Color arguments can be either scalar or vector expressions. If no color-system keywords are present, the <A NAME="marker=674245">
+ </A>
+RGB color system is used. See <A HREF="..html#69818" CLASS="XRef">
+Image Display Routines</A>
+ for a more complete explanation of color systems.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679743">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679744">
+ </A>
+TVLCT, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+<I CLASS="Italic">
+ [, Start]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=279966">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=279967">
+ </A>
+TVLCT, <EM CLASS="Emphasis">
+V [, Start]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679745">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864693">
+ </A>
+TVLCT will accept either three <EM CLASS="Emphasis">
+n</EM>
+-element vectors (<I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+) or a single <EM CLASS="Emphasis">
+n</EM>
+ by 3 array (<EM CLASS="Emphasis">
+V</EM>
+) as an argument. The vectors (or columns of the array) have different meanings depending on the color system chosen. If an array <EM CLASS="Emphasis">
+V</EM>
+ is specified, <EM CLASS="Emphasis">
+V</EM>
+[*,0] is the same as <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+V</EM>
+[*,1] is the same as <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, <EM CLASS="Emphasis">
+V</EM>
+[*,2] is the same as <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+. In the description below, we assume that three vectors, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ are specified. </P>
+<P CLASS="Body">
+<A NAME="pgfId=864696">
+ </A>
+The <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ arguments have different meanings depending upon which color system they represent.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679747">
+ </A>
+R, G, B Color System</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679748">
+ </A>
+The parameters <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ contain the Red, Green, and Blue values, respectively. Values are interpreted as integers in the range 0 (lowest intensity) to 255 (highest intensity). The parameters can be scalars or vectors of up to 256 elements. By default, the three arguments are assumed to be R, G, and B values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679749">
+ </A>
+H, L, S Color System</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679750">
+ </A>
+Parameters <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ contain the Hue, Lightness, and Saturation values respectively. All parameters are floating-point. Hue is expressed in degrees and is reduced modulo 360. <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+ (lightness) and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ (saturation) and can range from 0 to 1.0. Set the HLS keyword to have the arguments interpreted this way.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679751">
+ </A>
+H, S, V Color System</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679752">
+ </A>
+Parameters <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ contain values for Hue, Saturation, and Value (similar to intensity). All parameters are floating-point. Hue is in degrees. The Saturation and Value can range from 0 to 1.0. Set the HSV keyword to have the arguments interpreted this way.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844114">
+ </A>
+Start</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679754">
+ </A>
+An integer value that specifies the starting point in the color translation table into which the color intensities are loaded. If this argument is not specified, a value of zero is used, causing the tables to be loaded starting at the first element of the translation tables.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679755">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844142">
+ </A>
+<A NAME="marker=844139">
+ </A>
+GET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679757">
+ </A>
+<A NAME="marker=674249">
+ </A>
+Set this keyword to return the RGB values from the internal color tables into the <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+3</SUB>
+ parameters. For example, the statements:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679758">
+ </A>
+TVLCT, H, S, V, /HSV</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679759">
+ </A>
+TVLCT, R, G, B, /GET</P>
+<P CLASS="Body">
+<A NAME="pgfId=679760">
+ </A>
+load a color table based in the HSV system, and then read the equivalent RGB values into the variables R, G, and B.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679761">
+ </A>
+<A NAME="marker=844140">
+ </A>
+HLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679762">
+ </A>
+Set this keyword to indicate that the parameters specify color using the HLS color system.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679763">
+ </A>
+<A NAME="marker=844141">
+ </A>
+HSV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679764">
+ </A>
+Set this keyword to indicate that the parameters specify color using the HSV color system.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679765">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=679767">
+ </A>
+R = BYTSCL(SIN(FINDGEN(256)))	<EM CLASS="Comment">;
+Create a set of R, G, and B colormap vectors.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679768">
+ </A>
+G = BYTSCL(COS(FINDGEN(256)))</P>
+<P CLASS="Code">
+<A NAME="pgfId=679769">
+ </A>
+B = BINDGEN(256)</P>
+<P CLASS="Code">
+<A NAME="pgfId=679771">
+ </A>
+TVLCT, R, G, B	<EM CLASS="Comment">;
+Load these vectors into the color table.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679773">
+ </A>
+TVSCL, DIST(400)	<EM CLASS="Comment">;
+Display an image to see the effect of the new color table.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795988">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795989">
+ </A>
+<A HREF="idl101.htm#61192" CLASS="XRef">
+LOADCT</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+, <A HREF="idl224.htm#10360" CLASS="XRef">
+XPALETTE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

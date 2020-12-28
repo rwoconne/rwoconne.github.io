@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CURVEFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl51.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl4f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=749660">
+ </A>
+<A NAME="20568">
+ </A>
+CURVEFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=749662">
+ </A>
+The <A NAME="marker=749661">
+ </A>
+CURVEFIT function uses a gradient-expansion algorithm to compute a non-linear <A NAME="marker=749663">
+ </A>
+least squares <A NAME="marker=749664">
+ </A>
+fit to a user-supplied function with an arbitrary number of parameters. The user-supplied function may be any non-linear function where the partial derivatives are known or can be approximated. Iterations are performed until the chi square changes by a specified amount, or until a maximum number of iterations have been performed. The CURVEVIT function returns a vector of values for the dependent variables, as fitted by the function fit.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754663">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+curvefit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749666">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749667">
+ </A>
+Result = CURVEFIT(<EM CLASS="Emphasis">
+X, Y, Weights, A [, Sigma]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749668">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749669">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749670">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector of independent variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749671">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749672">
+ </A>
+A vector of dependent variables, the same length as <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749673">
+ </A>
+Weights</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864036">
+ </A>
+For instrumental (Gaussian) weighting, set <EM CLASS="Emphasis">
+Weights</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0/standard_deviation(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+)<SUP CLASS="Superscript">
+2</SUP>
+. For statistical (Poisson) weighting, <EM CLASS="Emphasis">
+Weights</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0/<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+. For no weighting, set <EM CLASS="Emphasis">
+Weights</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749675">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749676">
+ </A>
+A vector with as many elements as the number of terms in the user-supplied function, containing the initial estimate for each parameter. On return, the vector A contains the fitted model parameters. If <EM CLASS="Emphasis">
+A</EM>
+ is double-precision, calculations are performed in double-precision arithmetic, otherwise they are performed in single-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749677">
+ </A>
+Sigma</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749678">
+ </A>
+A named variable that will contain a vector of standard deviations for the elements of the output vector <EM CLASS="Emphasis">
+A</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749679">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=150192">
+ </A>
+CHISQ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=150193">
+ </A>
+Set this keyword equal to a named variable that will contain the value of chi-squared.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=148399">
+ </A>
+FUNCTION_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749681">
+ </A>
+Use this keyword to specify the name of the function to fit. If this keyword is omitted, CURVEFIT assumes that the IDL procedure <CODE CLASS="Code">
+FUNCT</CODE>
+ is to be used. If <CODE CLASS="Code">
+FUNCT</CODE>
+ is not already compiled, IDL compiles the function from the file <CODE CLASS="Code">
+funct.pro</CODE>
+, located in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution. <CODE CLASS="Code">
+FUNCT</CODE>
+ evaluates the sum of a Gaussian and a second-order polynomial.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796168">
+ </A>
+The function to be fit must be written as an IDL procedure and compiled prior to calling CURVEFIT. The procedure must accept values of <EM CLASS="Emphasis">
+X</EM>
+ (the independent variable), and <EM CLASS="Emphasis">
+A</EM>
+ (the fitted function's initial parameter values). It must return values for <EM CLASS="Emphasis">
+F</EM>
+ (the function's value at <EM CLASS="Emphasis">
+X</EM>
+), and optionally <EM CLASS="Emphasis">
+PDER</EM>
+ (a 2D array of partial derivatives).</P>
+<P CLASS="Body">
+<A NAME="pgfId=150232">
+ </A>
+See the <EM CLASS="Emphasis">
+Example</EM>
+ section below for an example function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=150209">
+ </A>
+ITER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=150210">
+ </A>
+Set this keyword equal to a named variable that will contain the actual number of iterations performed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=150211">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=150212">
+ </A>
+Set this keyword to specify the maximum number of iterations. The default value is 20.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=150222">
+ </A>
+NODERIVATIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=150223">
+ </A>
+If this keyword is set, the routine specified by the FUNCTION_NAME keyword will not be requested to provide partial derivatives. The partial derivatives will be estimated by CURVEFIT using forward differences. If analytical derivatives are available they should always be used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=150213">
+ </A>
+TOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=150214">
+ </A>
+Use this keyword to specify the desired convergence tolerance. The routine returns when the relative decrease in chi-squared is less than TOL in one iteration. The default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-3</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749695">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749696">
+ </A>
+Fit a function of the form <CODE CLASS="Code">
+F(x)&nbsp;=&nbsp;a&nbsp;*&nbsp;exp(b*x)&nbsp;+&nbsp;c</CODE>
+ to sample pairs contained in arrays <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+. The partial derivatives are easily computed symbolically:</P>
+<P CLASS="Code">
+<A NAME="pgfId=150241">
+ </A>
+df/da = exp(b*x)</P>
+<P CLASS="Code">
+<A NAME="pgfId=150433">
+ </A>
+df/db = a * x * exp(b*x)</P>
+<P CLASS="Code">
+<A NAME="pgfId=150436">
+ </A>
+df/dc = 1.0</P>
+<P CLASS="Body">
+<A NAME="pgfId=150243">
+ </A>
+First, define a procedure to return <CODE CLASS="Code">
+F(x)</CODE>
+ and the partial derivatives, given <EM CLASS="Emphasis">
+X</EM>
+. Note that A is an array containing the values <CODE CLASS="Code">
+a</CODE>
+, <CODE CLASS="Code">
+b</CODE>
+, and <CODE CLASS="Code">
+c</CODE>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=150451">
+ </A>
+PRO gfunct, X, A, F, pder</P>
+<P CLASS="Code">
+<A NAME="pgfId=150246">
+ </A>
+&nbsp;&nbsp;bx = EXP(A[1] * X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=150247">
+ </A>
+&nbsp;&nbsp;F = A[0] * bx + A[2]</P>
+<P CLASS="Code">
+<A NAME="pgfId=150248">
+ </A>
+&nbsp;&nbsp;IF N_PARAMS() GE 4 THEN $	<EM CLASS="Comment">;
+If the procedure is called with four parameters, calculate the partial derivatives.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=150427">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;pder= [[bx], [A[0] * X * bx], [replicate(1.0, N_ELEMENTS(X))]][</P>
+<P CLASS="Code">
+<A NAME="pgfId=150250">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=150251">
+ </A>
+Compute the fit to the function we have just defined. First, define the independent and dependent variables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=150252">
+ </A>
+X = FLOAT(INDGEN(10))</P>
+<P CLASS="Code">
+<A NAME="pgfId=150253">
+ </A>
+Y = [12.0, 11.0, 10.2, 9.4, 8.7, 8.1, 7.5, 6.9, 6.5, 6.1]</P>
+<P CLASS="Code">
+<A NAME="pgfId=150254">
+ </A>
+weights = 1.0/Y	<EM CLASS="Comment">;
+Define a vector of weights.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=150255">
+ </A>
+A = [10.0,-0.1,2.0]	<EM CLASS="Comment">;
+Provide an initial guess of the function's parameters.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=150256">
+ </A>
+yfit = CURVEFIT(X, Y, weights, A, SIGMA, FUNCTION_NAME='gfunct')<BR>
+<EM CLASS="Comment">;
+Compute the parameters.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=150257">
+ </A>
+PRINT, 'Function parameters: ', A	<EM CLASS="Comment">;
+Print the parameters returned in A.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=150500">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=150501">
+ </A>
+Function parameters:       9.91120    -0.100883      2.07773</P>
+<P CLASS="Body">
+<A NAME="pgfId=150506">
+ </A>
+Thus, the function that best fits the data is:</P>
+<P CLASS="Body">
+<A NAME="pgfId=938800">
+ </A>
+<CODE CLASS="Code">
+</CODE>
+<EM CLASS="Emphasis">
+f </EM>
+(<EM CLASS="Emphasis">
+x</EM>
+) = 9.91120(<EM CLASS="Emphasis">
+e</EM>
+<SUP CLASS="Superscript">
+-0.100883x</SUP>
+) + 2.07773</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34727">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864566">
+ </A>
+<A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idlb5.htm#23241" CLASS="XRef">
+GAUSS2DFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idlfd.htm#38447" CLASS="XRef">
+LMFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

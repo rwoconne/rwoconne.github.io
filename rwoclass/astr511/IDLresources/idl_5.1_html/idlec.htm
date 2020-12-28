@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LIVE_Tools</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idled.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idleb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=860825">
+ </A>
+<A NAME="15642">
+ </A>
+LIVE_Tools</H2>
+<P CLASS="Body">
+<A NAME="pgfId=860827">
+ </A>
+The LIVE tools are a subset of the IDL Insight application that allow you to create, modify, and export Insight-like visualizations directly from the IDL command line.</P>
+<P CLASS="Body">
+<A NAME="pgfId=860496">
+ </A>
+In many cases, you can modify your visualizations using the LIVE tools' graphical user interface directly without ever needing to return the IDL command line. In some cases, however, you may wish to alter your visualizations programmatically rather than using the graphical user interface. Several LIVE routines allow you to do this easily.</P>
+<P CLASS="Body">
+<A NAME="pgfId=860376">
+ </A>
+The process of using the LIVE tools begins with the creation of a LIVE window via one of the four main LIVE routines: <A HREF="idled.htm#19624" CLASS="XRef">
+LIVE_CONTOUR</A>
+, <A HREF="idlf1.htm#31766" CLASS="XRef">
+LIVE_IMAGE</A>
+, <A HREF="idlf5.htm#14114" CLASS="XRef">
+LIVE_PLOT</A>
+, and <A HREF="idlf9.htm#14731" CLASS="XRef">
+LIVE_SURFACE</A>
+. When you use one of these four routines at the IDL command line, you specify some data to be visualized and a LIVE window appears. You can modify many of the properties of the items in your visualization by double-clicking on the item to call up a Properties dialog.</P>
+<P CLASS="Body">
+<A NAME="pgfId=860389">
+ </A>
+If you find that the graphical user interface does not allow you to perform the operation you wish to perform -- saving your visualization as an image file, say -- you can use the auxiliary LIVE routines. These routines can be divided into two groups:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=860390">
+ </A>
+<I CLASS="Italic">
+Overplotting and Annotation Routines</I>
+ that allow you to add annotations to an existing LIVE window. These routines include <A HREF="idlf3.htm#28702" CLASS="XRef">
+LIVE_LINE</A>
+, <A HREF="idlf4.htm#26418" CLASS="XRef">
+LIVE_OPLOT</A>
+, <A HREF="idlf7.htm#14120" CLASS="XRef">
+LIVE_RECT</A>
+, and <A HREF="idlfa.htm#31927" CLASS="XRef">
+LIVE_TEXT</A>
+. (Lines, rectangles, and text can also be added to LIVE windows using the graphical user interface.)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=860403">
+ </A>
+<I CLASS="Italic">
+Information and Control Routines</I>
+ that allow you to get information about an existing LIVE window, alter its properties, or export visualizations. These routines include <A HREF="idlee.htm#17947" CLASS="XRef">
+LIVE_CONTROL</A>
+, <A HREF="idlef.htm#12456" CLASS="XRef">
+LIVE_DESTROY</A>
+, <A HREF="idlf0.htm#23903" CLASS="XRef">
+LIVE_EXPORT</A>
+, <A HREF="idlf2.htm#29557" CLASS="XRef">
+LIVE_INFO</A>
+, <A HREF="idlf6.htm#10563" CLASS="XRef">
+LIVE_PRINT</A>
+, and <A HREF="idlf8.htm#41593" CLASS="XRef">
+LIVE_STYLE</A>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=860422">
+ </A>
+To use the auxiliary routines, you will need to know the <I CLASS="Italic">
+Name</I>
+ of the LIVE window or item you wish to alter. To create an IDL variable containing the names of the elements of a LIVE window, set the REFERENCE_OUT keyword equal to a named variable when you first create your LIVE window. The returned variable will be a structure that contains the names of all of the elements in the visualization you have created. Use the contents of this structure to determine the value of the Name argument for the auxiliary LIVE tools, or to determine the name of the LIVE window you wish to alter.</P>
+<P CLASS="Body">
+<A NAME="pgfId=860423">
+ </A>
+If you find that the LIVE tools do not provide the level of control you need over your visualizations, consider using Insight itself. You can start the Insight application by entering <CODE CLASS="Code">
+insight</CODE>
+ at the IDL command prompt.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=869140">
+ </A>
+The LIVE tools do not utilize the !X, !Y, and !Z conventions. Setting these system variables will have no effect on LIVE tool display.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=869138">
+ </A>
+&nbsp;</P>
+</BODY>
+</HTML>

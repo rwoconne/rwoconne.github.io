@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> JUL_TO_DT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idldf.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idldd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=854014">
+ </A>
+<A NAME="18354">
+ </A>
+JUL_TO_DT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=854017">
+ </A>
+The <A NAME="marker=854016">
+ </A>
+JUL_TO_DT function converts the Julian Day Number to an IDLDT date/time structure.The result is an array of IDLDT date/time variables. JUL_TO_DT uses CALDAT and VAR_TO_DT.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854018">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854019">
+ </A>
+Result = JUL_TO_DT(<I CLASS="Italic">
+Julian</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854020">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854021">
+ </A>
+Julian</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854022">
+ </A>
+A scalar or array of Julian days.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854023">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=854024">
+ </A>
+PRINT, JUL_TO_DT(JULDAY(6,23,1971))	<EM CLASS="Comment">;
+Convert June 23, 1971 to the format defined by the IDLDT structure.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=854025">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=854026">
+ </A>
+{    1971   6  23   0   0      0.00000       2441126.0   0}</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854027">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=854034">
+ </A>
+<A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+, <A HREF="idldf.htm#52189" CLASS="XRef">
+JULDAY</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

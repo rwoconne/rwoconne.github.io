@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GET_KBRD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlb9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlb7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677026">
+ </A>
+<A NAME="65544">
+ </A>
+GET_KBRD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677027">
+ </A>
+The <A NAME="marker=673074">
+ </A>
+GET_KBRD function <A NAME="marker=673075">
+ </A>
+returns the next character available from the <A NAME="marker=673076">
+ </A>
+standard input (IDL file unit 0) as a one-character string.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677028">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677029">
+ </A>
+Result = GET_KBRD(<I CLASS="Italics">
+Wait</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677030">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677031">
+ </A>
+Wait</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677032">
+ </A>
+If <I CLASS="Italics">
+Wait</I>
+ is zero, GET_KBRD returns the null string if there are no characters in the terminal <A NAME="marker=673080">
+ </A>
+type-ahead buffer. If it is nonzero, the function waits for a character to be typed before returning.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677033">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677034">
+ </A>
+To wait for keyboard input and store one character in the variable R, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677035">
+ </A>
+R = GET_KBRD(1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677036">
+ </A>
+Press any key to return to the IDL prompt. To see the character that was typed, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677037">
+ </A>
+PRINT, R</P>
+<P CLASS="Body">
+<A NAME="pgfId=677038">
+ </A>
+The following code fragment reads one character at a time and echoes that character's numeric code. It quits when a &quot;q&quot; is entered:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677039">
+ </A>
+REPEAT BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=677040">
+ </A>
+&nbsp;&nbsp;A = GET_KBRD(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=677041">
+ </A>
+&nbsp;&nbsp;PRINT, BYTE(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=677042">
+ </A>
+ENDREP UNTIL A EQ 'q'</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=835686">
+ </A>
+The GET_KBRD function can be used to return Windows special characters (in addition to standard keyboard characters), created by holding down the Alt key and entering the character's ANSI equivalent.</LI>
+</UL>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=835687">
+ </A>
+For example, to return the paragraph marker (&#182;), ANSI number 0182, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=835688">
+ </A>
+C = GET_KBRD(1)</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=835669">
+ </A>
+While GET_KBRD is waiting, press and hold the Alt key and type 0182 on the numeric keypad. When the IDL prompt returns, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=835670">
+ </A>
+PRINT, C</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=835671">
+ </A>
+IDL should print the paragraph marker,&quot;&#182;&quot;.</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=835672">
+ </A>
+GET_KBRD cannot be used to return control characters, the Return key, or other editing keys (e.g., Delete, Backspace, etc.). These characters are used for keyboard shortcuts and command line editing only.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822908">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822909">
+ </A>
+<A HREF="idl161.htm#26845" CLASS="XRef">
+READ/READF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

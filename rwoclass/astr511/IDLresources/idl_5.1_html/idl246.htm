@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_ATTEXISTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl247.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl245.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997002">
+ </A>
+<A NAME="61501">
+ </A>
+CDF_ATTEXISTS</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997006">
+ </A>
+The <A NAME="marker=997004">
+ </A>
+CDF_ATTEXISTS function returns TRUE (1) if the specified <A NAME="marker=997005">
+ </A>
+attribute exists in the specified CDF file, or FALSE (0) if it does not exist. Attributes may be specified by name or number.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997007">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997008">
+ </A>
+Result = CDF_ATTEXISTS(<EM CLASS="Emphasis">
+Id</EM>
+, <EM CLASS="Emphasis">
+Attribute [, EntryNum]</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997009">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997010">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997011">
+ </A>
+The CDF ID of the file containing the <EM CLASS="Emphasis">
+Attribute</EM>
+ to be checked, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997012">
+ </A>
+Attribute</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997013">
+ </A>
+A string containing the name or zero-based attribute number of the attribute to be checked.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1002412">
+ </A>
+EntryNum</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1002413">
+ </A>
+The entry number to confirm. If <EM CLASS="Emphasis">
+EntryNum</EM>
+ is not specified, the entire file is searched for the specified attribute. If the attribute is variable in scope, this is either the name or number of the variable the attribute is to be associated with. If the attribute is global in scope, this is the actual gEntry. It is the user's responsibility to keep track of valid gEntry numbers. Normally gEntry numbers will begin with 0 or 1 and will increase up to MAXGENTRY (as reported in the GET_ATTR_INFO structure returned by <A HREF="idl24d.htm#97922" CLASS="XRef">
+CDF_CONTROL</A>
+), but this is not required.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1002419">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1002462">
+ </A>
+<A NAME="marker=1002461">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1002463">
+ </A>
+If <I CLASS="Italics">
+EntryNum</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+EntryNum</I>
+ is an rVariable ID. Note: the attribute must have a scope of VARIABLE_SCOPE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997014">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997015">
+ </A>
+Create a function to test an attribute's existance and return a string:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997016">
+ </A>
+FUNCTION exists, cdfid, attname_or_number</P>
+<P CLASS="Code">
+<A NAME="pgfId=997017">
+ </A>
+IF CDF_ATTEXISTS(cdfid, attname_or_number) THEN $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997018">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;RETURN,' Attribute Exists' ELSE $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997019">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;RETURN,' Attribute Does Not Exist'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997020">
+ </A>
+END</P>
+<P CLASS="Code">
+<A NAME="pgfId=997021">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=997022">
+ </A>
+Create a CDF with 2 attributes:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997023">
+ </A>
+cdfid = CDF_CREATE('DEMOattexists')</P>
+<P CLASS="Code">
+<A NAME="pgfId=997024">
+ </A>
+attr1_id = CDF_ATTCREATE(cdfid, 'GLOBAL_ATT' , /GLOBAL_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997025">
+ </A>
+attr2_id = CDF_ATTCREATE(cdfid, 'VARIABLE_ATT', /VARIABLE_SCOPE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997026">
+ </A>
+Check the existance of the two attributes, plus a third that does not exist:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997027">
+ </A>
+PRINT, EXISTS(cdfid, attr1_id)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997028">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997029">
+ </A>
+Attribute Exists</P>
+<P CLASS="Code">
+<A NAME="pgfId=997030">
+ </A>
+PRINT, EXISTS(cdfid, 1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997031">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997032">
+ </A>
+Attribute Exists</P>
+<P CLASS="Code">
+<A NAME="pgfId=997033">
+ </A>
+PRINT, EXISTS(cdfid, 'BAD ATTR')</P>
+<P CLASS="Body">
+<A NAME="pgfId=997034">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997035">
+ </A>
+Attribute Does Not Exist</P>
+<P CLASS="Code">
+<A NAME="pgfId=997036">
+ </A>
+CDF_DELETE, cdfid</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997037">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997050">
+ </A>
+<A HREF="idl244.htm#43582" CLASS="XRef">
+CDF_ATTCREATE</A>
+, <A HREF="idl247.htm#73906" CLASS="XRef">
+CDF_ATTGET</A>
+, <A HREF="idl245.htm#95843" CLASS="XRef">
+CDF_ATTDELETE</A>
+, <A HREF="idl248.htm#28162" CLASS="XRef">
+CDF_ATTINQ</A>
+, <A HREF="idl24a.htm#34381" CLASS="XRef">
+CDF_ATTPUT</A>
+, <A HREF="idl24b.htm#39211" CLASS="XRef">
+CDF_ATTRENAME</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997057">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

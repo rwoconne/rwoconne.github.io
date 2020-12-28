@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CREATE_VIEW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl4b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl49.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756862">
+ </A>
+<A NAME="67072">
+ </A>
+CREATE_VIEW</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756864">
+ </A>
+The <A NAME="marker=756863">
+ </A>
+CREATE_VIEW procedure sets the various system variables required to define a <A NAME="marker=756865">
+ </A>
+coordinate system and a <A NAME="marker=756866">
+ </A>
+3D view. This procedure builds the system viewing matrix (<A NAME="marker=788091">
+ </A>
+!P.T) in such a way that the correct aspect ratio of the data is maintained even if the display window is not square. CREATE_VIEW also sets the &quot;Data&quot; to &quot;Normal&quot; coordinate conversion factors (!X.S, !Y.S, and !Z.S) so that center of the unit cube will be located at the center of the display window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756867">
+ </A>
+CREATE_VIEW sets the following IDL system variables:</P>
+<P CLASS="Body">
+<A NAME="pgfId=756868">
+ </A>
+!P.T, <A NAME="marker=788094">
+ </A>
+!P.T3D, !P.Position, !P.Clip, !P.Region !X.S, !X.Style, !X.Range, !X.Margin !Y.S, !Y.Style, !Y.Range, !Y.Margin, !Z.S, !Z.Style, !Z.Range, !Z.Margin.</P>
+<P CLASS="Body">
+<A NAME="pgfId=927514">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+create_view.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=927515">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756871">
+ </A>
+CREATE_VIEW</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756872">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756873">
+ </A>
+This procedure has no required arguments.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756874">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756876">
+ </A>
+<A NAME="marker=756875">
+ </A>
+AX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756877">
+ </A>
+A floating-point value specifying the orientation (X rotation) of the view. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756879">
+ </A>
+<A NAME="marker=756878">
+ </A>
+AY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756880">
+ </A>
+A floating-point value specifying the orientation (Y rotation) of the view. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756882">
+ </A>
+<A NAME="marker=756881">
+ </A>
+AZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756883">
+ </A>
+A floating-point value specifying the orientation (Z rotation) of the view. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756885">
+ </A>
+<A NAME="marker=756884">
+ </A>
+PERSP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756886">
+ </A>
+A floating-point value specifying the perspective projection distance. A value of 0.0 indicates an isometric projection (NO perspective). The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756888">
+ </A>
+<A NAME="marker=756887">
+ </A>
+RADIANS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756889">
+ </A>
+Set this keyword if AX, AY, and AZ are specified in radians. The default is degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756891">
+ </A>
+<A NAME="marker=756890">
+ </A>
+WINX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756892">
+ </A>
+A long integer specifying the X size, in pixels, of the window that the view is being set up for. The default is 640.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756894">
+ </A>
+<A NAME="marker=756893">
+ </A>
+WINY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756895">
+ </A>
+A long integer specifying the Y size, in pixels, of the window that the view is being set up for. The default is 512.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756897">
+ </A>
+<A NAME="marker=756896">
+ </A>
+XMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756898">
+ </A>
+A scalar specifying the maximum data value on the X axis. The default is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756900">
+ </A>
+<A NAME="marker=756899">
+ </A>
+XMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756901">
+ </A>
+A scalar specifying the minimum data value on the X axis. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756903">
+ </A>
+<A NAME="marker=756902">
+ </A>
+YMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756904">
+ </A>
+A scalar specifying the maximum data value on the Y axis. The default is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756906">
+ </A>
+<A NAME="marker=756905">
+ </A>
+YMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756907">
+ </A>
+A scalar specifying the minimum data value on the Y axis. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756909">
+ </A>
+<A NAME="marker=756908">
+ </A>
+ZFAC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756910">
+ </A>
+Set this keyword to a floating-point value to expand or contract the view in the Z dimension. The default is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756912">
+ </A>
+<A NAME="marker=756911">
+ </A>
+ZMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756913">
+ </A>
+A scalar specifying the maximum data value on the Z axis. The default is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756915">
+ </A>
+<A NAME="marker=756914">
+ </A>
+ZMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756916">
+ </A>
+A scalar specifying the minimum data value on the Z axis. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756918">
+ </A>
+<A NAME="marker=756917">
+ </A>
+ZOOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756919">
+ </A>
+A floating-point number or 3-element vector specifying the view zoom factor. If zoom is a single value then the view will be zoomed equally in all 3 dimensions. If zoom is a 3-element vector then the view will be scaled zoom[0] in X, zoom[1] in Y, and zoom[2] in Z. The default is 1.0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756920">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756921">
+ </A>
+Set up a view to display an iso-surface from volumetric data. First, create some data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756922">
+ </A>
+vol = FLTARR(40, 50, 30)</P>
+<P CLASS="Code">
+<A NAME="pgfId=756923">
+ </A>
+vol(3:36, 3:46, 3:26) = RANDOMU(S, 34, 44, 24) </P>
+<P CLASS="Code">
+<A NAME="pgfId=756924">
+ </A>
+FOR I = 0, 10 DO vol = SMOOTH(vol, 3)</P>
+<P CLASS="Body">
+<A NAME="pgfId=756925">
+ </A>
+Generate the iso-surface. </P>
+<P CLASS="Code">
+<A NAME="pgfId=756926">
+ </A>
+SHADE_VOLUME, vol, 0.2, polygon_list, vertex_list, /LOW</P>
+<P CLASS="Body">
+<A NAME="pgfId=756927">
+ </A>
+Set up the view. Note that the subscripts into the Vol array range from 0 to 39 in X, 0 to 49 in Y, and 0 to 29 in Z. As such, the 3-D coordinates of the iso-surface (vertex_list) may have the same range. Set XMIN, YMIN, and ZMIN to zero (the default), and set XMAX=39, YMAX=49, and ZMAX=29. </P>
+<P CLASS="Code">
+<A NAME="pgfId=756928">
+ </A>
+WINDOW, XSIZE = 600, YSIZE = 400 </P>
+<P CLASS="Code">
+<A NAME="pgfId=756929">
+ </A>
+CREATE_VIEW, XMAX = 39, YMAX = 49, ZMAX = 29, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=756930">
+ </A>
+&nbsp;&nbsp;AX = (-60.0), AZ = (30.0), WINX = 600, WINY = 400, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=756931">
+ </A>
+&nbsp;&nbsp;ZOOM = (0.7), PERSP = (1.0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=756932">
+ </A>
+Display the iso-surface in the specified view. </P>
+<P CLASS="Code">
+<A NAME="pgfId=756933">
+ </A>
+img = POLYSHADE(polygon_list, vertex_list, /DATA, /T3D) </P>
+<P CLASS="Code">
+<A NAME="pgfId=756934">
+ </A>
+TVSCL, img</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756935">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756936">
+ </A>
+<A HREF="idl18c.htm#24364" CLASS="XRef">
+SCALE3</A>
+, <A HREF="idl1cf.htm#36880" CLASS="XRef">
+T3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

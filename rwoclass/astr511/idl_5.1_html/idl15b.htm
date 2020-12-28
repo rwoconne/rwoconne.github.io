@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> R_CORRELATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl15c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl15a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53987">
+ </A>
+<A NAME="46692">
+ </A>
+R_CORRELATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53993">
+ </A>
+The <A NAME="marker=53989">
+ </A>
+R_CORRELATE function computes <A NAME="marker=53990">
+ </A>
+Spearman's (rho) or <A NAME="marker=53991">
+ </A>
+Kendalls's (<A NAME="marker=53992">
+ </A>
+tau) rank <A NAME="marker=53994">
+ </A>
+correlation of two sample populations <EM CLASS="Emphasis">
+X </EM>
+and <EM CLASS="Emphasis">
+Y</EM>
+. The result is a two-element vector containing the <A NAME="marker=53995">
+ </A>
+rank correlation coefficient and the two-sided significance of its deviation from zero. The significance is a value in the interval [0.0, 1.0]; a small value indicates a significant correlation.<A NAME="marker=53996">
+ </A>
+ </P>
+<DIV>
+<CENTER><IMG SRC="idl_79.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835105">
+ </A>
+where <EM CLASS="Emphasis">
+Rx</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+ and <EM CLASS="Emphasis">
+Ry</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+ are the magnitude-based ranks among <EM CLASS="Emphasis">
+X </EM>
+and <EM CLASS="Emphasis">
+Y</EM>
+, respectively. Elements of identical magnitude are ranked using a rank equal to the mean of the ranks that would otherwise be assigned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54004">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+r_correlate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54005">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54006">
+ </A>
+Result = R_CORRELATE(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54007">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54008">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54009">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54010">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54011">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54012">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54014">
+ </A>
+<A NAME="marker=54013">
+ </A>
+D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54015">
+ </A>
+Set this keyword to a named variable that will contain the sum-squared difference of ranks. If the KENDALL keyword is set, this parameter is returned as zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54017">
+ </A>
+<A NAME="marker=54016">
+ </A>
+KENDALL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54018">
+ </A>
+Set this keyword to compute Kendalls's (tau) rank correlation. By default, Spearman's (rho) rank correlation is computed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54020">
+ </A>
+<A NAME="marker=54019">
+ </A>
+PROBD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54021">
+ </A>
+Set this keyword to a named variable that will contain the two-sided significance level of ZD. If the KENDALL keyword is set, this parameter is returned as zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54023">
+ </A>
+<A NAME="marker=54022">
+ </A>
+ZD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54024">
+ </A>
+Set this keyword to a named variable that will contain the number of standard deviations by which D deviates from its null-hypothesis expected value. If the KENDALL keyword is set, this parameter is returned as zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54025">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54026">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element sample populations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54027">
+ </A>
+X = [257, 208, 296, 324, 240, 246, 267, 311, 324, 323, 263, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54028">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;305, 270, 260, 251, 275, 288, 242, 304, 267]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54029">
+ </A>
+Y = [201, 56, 185, 221, 165, 161, 182, 239, 278, 243, 197, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54030">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;271, 214, 216, 175, 192, 208, 150, 281, 196]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54031">
+ </A>
+Compute Spearman's (rho) rank correlation of X and Y. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54032">
+ </A>
+result = R_CORRELATE(X, Y)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54033">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54034">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54035">
+ </A>
+[0.835967, 4.42899e-06]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54036">
+ </A>
+Compute Kendalls's (tau) rank correlation of X and Y.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54037">
+ </A>
+result = R_CORRELATE(X, Y, /KENDALL)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54038">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54039">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54040">
+ </A>
+[0.624347 0.000118732]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54041">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65497">
+ </A>
+<A HREF="idl1.htm#71421" CLASS="XRef">
+A_CORRELATE</A>
+, <A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl21.htm#28107" CLASS="XRef">
+C_CORRELATE</A>
+, <A HREF="idl109.htm#43333" CLASS="XRef">
+M_CORRELATE</A>
+, <A HREF="idl133.htm#76534" CLASS="XRef">
+P_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

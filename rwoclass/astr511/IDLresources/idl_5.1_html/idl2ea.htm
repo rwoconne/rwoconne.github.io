@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_VARGET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2eb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2e9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997477">
+ </A>
+<A NAME="44081">
+ </A>
+NCDF_VARGET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997482">
+ </A>
+The <A NAME="marker=997479">
+ </A>
+NCDF_VARGET procedure retrieves a <A NAME="marker=997480">
+ </A>
+hyperslab of values from a netCDF <A NAME="marker=997481">
+ </A>
+variable. The netCDF file must be in <I CLASS="Italics">
+data</I>
+ mode to use this procedure.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997483">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997484">
+ </A>
+NCDF_VARGET, <I CLASS="Italics">
+Cdfid, Varid, Value</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997485">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997486">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997487">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997488">
+ </A>
+Varid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997489">
+ </A>
+The netCDF variable ID, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997490">
+ </A>
+Value</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997491">
+ </A>
+A named variable in which the values are returned. NCDF_VARGET sets <I CLASS="Italics">
+Value</I>
+'s size and data type as appropriate.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997492">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997494">
+ </A>
+<A NAME="marker=997493">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997495">
+ </A>
+An optional vector containing the counts to be used in reading <I CLASS="Italics">
+Value</I>
+. The default count vector is that for a single read, [1, 1, ...], as in NCDF_VARGET1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997497">
+ </A>
+<A NAME="marker=997496">
+ </A>
+OFFSET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997498">
+ </A>
+An optional vector containing the starting position for the read. The default start position is [0, 0, ...].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997500">
+ </A>
+<A NAME="marker=997499">
+ </A>
+STRIDE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997501">
+ </A>
+An optional vector containing the strides, or sampling intervals, between accessed values of the netCDF variable. The default stride vector is that for a contiguous read, [1, 1, ...].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997502">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997503">
+ </A>
+Suppose that a 230 by 230 image is saved in the netCDF file <CODE CLASS="Code">
+dave.nc</CODE>
+. The following commands extract both the full image and a 70x70 sub-image starting at [80,20] sampling every other X pixel and every third Y pixel:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997504">
+ </A>
+offset = [80, 20]	<EM CLASS="Comment">;
+A variable that contains the offset for the sub-image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997505">
+ </A>
+count = [70, 70]	<EM CLASS="Comment">;
+The dimensions of the sub-image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997506">
+ </A>
+stride = [2, 3]	<EM CLASS="Comment">;
+Create a variable to be used as a value for the STRIDE keyword. Every other X element and every third Y element will be sampled.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997507">
+ </A>
+id = NCDF_OPEN('dave.nc')	<EM CLASS="Comment">;
+Open the NetCDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997508">
+ </A>
+image = NCDF_VARID(id, 'image')	<EM CLASS="Comment">;
+Get the variable ID for the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997509">
+ </A>
+NCDF_VARGET, id, image, fullimage	G<EM CLASS="Comment">;
+et the full image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997510">
+ </A>
+NCDF_VARGET, id, image, subimage, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997511">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COUNT=count, STRIDE=stride, OFFSET=offset<BR>
+<EM CLASS="Comment">;
+Extract the sub-sampled image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997512">
+ </A>
+NCDF_CLOSE, id	<EM CLASS="Comment">;
+Close the NetCDF file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997513">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997526">
+ </A>
+<A HREF="idl2eb.htm#60220" CLASS="XRef">
+NCDF_VARGET1</A>
+, <A HREF="idl2ec.htm#53135" CLASS="XRef">
+NCDF_VARID</A>
+, <A HREF="idl2ed.htm#68704" CLASS="XRef">
+NCDF_VARINQ</A>
+, <A HREF="idl2ee.htm#78210" CLASS="XRef">
+NCDF_VARPUT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

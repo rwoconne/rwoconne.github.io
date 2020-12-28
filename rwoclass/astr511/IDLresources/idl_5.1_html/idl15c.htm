@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> R_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl15d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl15b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54044">
+ </A>
+<A NAME="56098">
+ </A>
+R_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54050">
+ </A>
+The <A NAME="marker=54046">
+ </A>
+R_TEST <A NAME="marker=54047">
+ </A>
+function <A NAME="marker=54048">
+ </A>
+tests the <A NAME="marker=54049">
+ </A>
+hypothesis that a binary population (a sequence of 1s and 0s) represents a &quot;random sampling&quot;. The result is a two-element vector containing the nearly-normal test statistic Z and its associated probability. This two-tailed test is based on the &quot;theory of runs&quot; and is often referred to as the &quot;<A NAME="marker=54051">
+ </A>
+Runs Test for Randomness.&quot;</P>
+<P CLASS="Body">
+<A NAME="pgfId=54052">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+r_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54053">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54054">
+ </A>
+Result = R_TEST(<EM CLASS="Emphasis">
+X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54055">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54056">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54057">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector. Elements not equal to 0 or 1 are removed and the length of <EM CLASS="Emphasis">
+X</EM>
+ is correspondingly reduced.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54058">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54060">
+ </A>
+<A NAME="marker=54059">
+ </A>
+N0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54061">
+ </A>
+Set this keyword to a named variable that will contain the number of 0s in <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54063">
+ </A>
+<A NAME="marker=54062">
+ </A>
+N1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54064">
+ </A>
+Set this keyword to a named variable that will contain the number of 1s in <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54066">
+ </A>
+<A NAME="marker=54065">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54067">
+ </A>
+Set this keyword to a named variable that will contain the number of runs (clusters of 0s and 1s) in <EM CLASS="Emphasis">
+X</EM>
+. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54068">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54069">
+ </A>
+Define a binary population.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54070">
+ </A>
+X = [0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54071">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54072">
+ </A>
+Test the hypothesis that <EM CLASS="Emphasis">
+X</EM>
+ represents a random sampling against the hypothesis that it does not represent a random sampling at the 0.05 significance level.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54073">
+ </A>
+result = R_TEST(X, R = r, N0 = n0, N1 = n1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54074">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54075">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54076">
+ </A>
+[2.26487, 0.0117604]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54077">
+ </A>
+Print the values of the keyword parameters:</P>
+<P CLASS="Code">
+<A NAME="pgfId=948762">
+ </A>
+PRINT, 'Runs: ', r &amp; PRINT, 'Zeros: ', n0 &amp; PRINT, 'Ones: ', n1</P>
+<P CLASS="Code">
+<A NAME="pgfId=948763">
+ </A>
+Runs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22</P>
+<P CLASS="Code">
+<A NAME="pgfId=948764">
+ </A>
+Zeros:&nbsp;&nbsp;&nbsp;&nbsp;16</P>
+<P CLASS="Code">
+<A NAME="pgfId=948765">
+ </A>
+Ones:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14</P>
+<P CLASS="Body">
+<A NAME="pgfId=948766">
+ </A>
+The computed probability (0.0117604) is less than the 0.05 significance level and therefore we reject the hypothesis that <EM CLASS="Emphasis">
+X</EM>
+ represents a random sampling. The results show that there are too many runs, indicating a non-random cyclical pattern.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54083">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66478">
+ </A>
+<A HREF="idl4e.htm#28469" CLASS="XRef">
+CTI_TEST</A>
+, <A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="idle3.htm#95076" CLASS="XRef">
+KW_TEST</A>
+, <A HREF="idl100.htm#95316" CLASS="XRef">
+LNP_TEST</A>
+, <A HREF="idl112.htm#89505" CLASS="XRef">
+MD_TEST</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+, <A HREF="idl226.htm#50626" CLASS="XRef">
+XSQ_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

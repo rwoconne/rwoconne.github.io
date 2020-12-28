@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARGET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl25a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997831">
+ </A>
+<A NAME="10909">
+ </A>
+CDF_VARGET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997835">
+ </A>
+The <A NAME="marker=997833">
+ </A>
+CDF_VARGET procedure reads multiple values from a <A NAME="marker=997834">
+ </A>
+Common Data Format file variable. By default, all elements of a record are read. If INTERVAL, and/or OFFSET are specified but no COUNT is specified, CDF_VARGET attempts to get as many elements of each record as possible.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997836">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997837">
+ </A>
+CDF_VARGET, <I CLASS="Italics">
+Id, Variable, Value</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997838">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997839">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997840">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997841">
+ </A>
+Variable</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997842">
+ </A>
+A string containing the name of the variable <I CLASS="Italics">
+or</I>
+ the variable number being read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997843">
+ </A>
+Value</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997844">
+ </A>
+A named variable in which the values of the variable are returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997845">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997847">
+ </A>
+<A NAME="marker=997846">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997848">
+ </A>
+An optional vector containing the counts to be used in reading <I CLASS="Italics">
+Value</I>
+. The default is to read all elements in each record, taking into account INTERVAL and OFFSET.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997850">
+ </A>
+<A NAME="marker=997849">
+ </A>
+INTERVAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997851">
+ </A>
+A vector specifying the interval between values in each dimension. The default value is 1 for each dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997853">
+ </A>
+<A NAME="marker=997852">
+ </A>
+OFFSET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997854">
+ </A>
+A vector specifying the array indices within the specified record(s) at which to begin writing. OFFSET is a 1-dimensional array containing one element per CDF dimension. The default value is zero for each dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997856">
+ </A>
+<A NAME="marker=997855">
+ </A>
+REC_COUNT </H3>
+<P CLASS="Body">
+<A NAME="pgfId=997857">
+ </A>
+The number of records to read. The default is 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997859">
+ </A>
+<A NAME="marker=997858">
+ </A>
+REC_INTERVAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997860">
+ </A>
+The interval between records when reading multiple records. The default value is 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997862">
+ </A>
+<A NAME="marker=997861">
+ </A>
+REC_START</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997863">
+ </A>
+The record number at which to start reading. The default is 0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997865">
+ </A>
+<A NAME="marker=997864">
+ </A>
+STRING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997866">
+ </A>
+Set this keyword to return CDF_CHAR and CDF_UCHAR data from the CDF file into <EM CLASS="Emphasis">
+Value</EM>
+ as string data rather than byte data. This keyword is ignored if the data in the CDF file is not of type CDF_CHAR or CDF_UCHAR.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997868">
+ </A>
+<A NAME="marker=997867">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997869">
+ </A>
+If <I CLASS="Italics">
+Variable</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+Variable</I>
+ is an rVariable ID.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997870">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997871">
+ </A>
+Create a CDF file,  and make a few variables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997872">
+ </A>
+id = CDF_CREATE('DEMOvargets')</P>
+<P CLASS="Code">
+<A NAME="pgfId=997873">
+ </A>
+vid1 = CDF_VARCREATE(id, 'VAR1', /CDF_CHAR, NUMELEM=15)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997874">
+ </A>
+vid2=CDF_VARCREATE(id, 'VAR2', /CDF_UCHAR, NUMELEM=10)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997875">
+ </A>
+CDF_VARPUT, id, vid1, BINDGEN(15, 2)+55, COUNT=2</P>
+<P CLASS="Code">
+<A NAME="pgfId=997876">
+ </A>
+CDF_VARPUT, id, vid2, ['IDLandCDF ', 'AreWayCool']</P>
+<P CLASS="Body">
+<A NAME="pgfId=997877">
+ </A>
+Retreive the CDF_CHAR array as byte data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997878">
+ </A>
+CDF_VARGET, id, 'VAR1', var1_byte, REC_COUNT=2</P>
+<P CLASS="Body">
+<A NAME="pgfId=997879">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997880">
+ </A>
+% CDF_VARGET: Warning: converting data to unsigned bytes</P>
+<P CLASS="Body">
+<A NAME="pgfId=997881">
+ </A>
+This warning message indicates that the data was stored in the CDF file with type CDF_CHAR (signed 1-byte characters),  but was retreived by IDL with type BYTE (unsigned byte).  To turn this warning message off,  set !QUIET=1.</P>
+<P CLASS="Code">
+<A NAME="pgfId=997882">
+ </A>
+HELP, var1_byte</P>
+<P CLASS="Body">
+<A NAME="pgfId=997883">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997884">
+ </A>
+VAR1_BYTE       BYTE      = Array(15,  2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997885">
+ </A>
+Retreive the CDF_CHAR array as string data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997886">
+ </A>
+CDF_VARGET, id, 'VAR1', var1_string, REC_COUNT=2, /STRING</P>
+<P CLASS="Code">
+<A NAME="pgfId=997887">
+ </A>
+HELP, var1_string</P>
+<P CLASS="Body">
+<A NAME="pgfId=997888">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997889">
+ </A>
+VAR1_STRING     STRING    = Array(2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=999083">
+ </A>
+For demonstration purposes, use the &quot;VAR2&quot; variable number to access &quot;VAR2&quot; for the duration of this example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999088">
+ </A>
+var2num = CDF_VARNUM(id, 'VAR2&quot;)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999089">
+ </A>
+HELP, var2num</P>
+<P CLASS="Body">
+<A NAME="pgfId=999090">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999092">
+ </A>
+VAR2NUM         LONG      =            1</P>
+<P CLASS="Body">
+<A NAME="pgfId=999094">
+ </A>
+Rename &quot;VAR2&quot; to &quot;VAR_STRING_2&quot;:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999097">
+ </A>
+CDF_VARRENAME, id, var2num, 'VAR_STRING_2'</P>
+<P CLASS="Body">
+<A NAME="pgfId=999100">
+ </A>
+Examine VAR_STRING_2 with CDF_VARINQ:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999102">
+ </A>
+VAR2_INQ = CDF_VARINQ(id, var2num)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999103">
+ </A>
+HELP, VAR2_INQ, /STRUCTURE</P>
+<P CLASS="Body">
+<A NAME="pgfId=999104">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999105">
+ </A>
+** Structure &lt;400b1600&gt;, 6 tags, length=33, refs=1:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999106">
+ </A>
+   IS_ZVAR         INT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999107">
+ </A>
+   NAME            STRING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`VAR_STRING_2'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999108">
+ </A>
+   DATATYPE        STRING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`CDF_UCHAR'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999109">
+ </A>
+   NUMELEM         LONG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999110">
+ </A>
+   RECVAR          STRING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`VARY'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999111">
+ </A>
+   DIMVAR          BYTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Body">
+<A NAME="pgfId=999113">
+ </A>
+Read in and print out VAR_STRING_2:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999115">
+ </A>
+CDF_VARGET, id, var2num, var2_string, /STRING, REC_COUNT=2</P>
+<P CLASS="Code">
+<A NAME="pgfId=999116">
+ </A>
+PRINT, var2_string</P>
+<P CLASS="Body">
+<A NAME="pgfId=999117">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999118">
+ </A>
+IDLandCDF  AreWayCool</P>
+<P CLASS="Code">
+<A NAME="pgfId=999084">
+ </A>
+CDF_DELETE, id	<EM CLASS="Comment">;
+Delete the CDF file</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

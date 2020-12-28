@@ -1,0 +1,626 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrTessellator</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl308.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl306.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1033248">
+ </A>
+<A NAME="27071">
+ </A>
+IDLgrTessellator</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1033251">
+ </A>
+A <A NAME="marker=1033250">
+ </A>
+tessellator object converts a simple <A NAME="marker=1068712">
+ </A>
+concave polygon (or a simple polygon with &quot;holes&quot;) into a number of simple convex polygons (general triangles). A polygon is <EM CLASS="Emphasis">
+simple</EM>
+<A NAME="marker=1068713">
+ </A>
+ if it includes no duplicate vertices, if the edges intersect only at vertices, and exactly two edges meet at any vertex.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1033462">
+ </A>
+Each polygon can be marked as being either an interior or an exterior (default) polygon. Interior polygons are treated as holes in the exterior polygons. Multiple non-overlapping exterior polygons are allowed as well. All polygons should be specified in the same orientation (either clockwise or counter-clockwise). Once all the polygons have been passed into the tessellator object, the final triangulation is accomplished by the IDLgrTessellator::Tessellate method. A list of vertices and a connectivity array are returned. You may process these by hand, or pass them to an IDLgrPolygon object. The tessellator object will not create any vertices in the process, rather the output vertex list will include only those vertices passed into the object originally.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1033252">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033256">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1033257">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033258">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033259">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033263">
+ </A>
+See <A HREF="idl307.htm#11699" CLASS="XRef">
+IDLgrTessellator::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033264">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033265">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033266">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033270">
+ </A>
+<A HREF="idl307.htm#17420" CLASS="XRef">
+IDLgrTessellator::AddPolygon</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033940">
+ </A>
+<A HREF="idl307.htm#25689" CLASS="XRef">
+IDLgrTessellator::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033950">
+ </A>
+<A HREF="idl307.htm#11699" CLASS="XRef">
+IDLgrTessellator::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033955">
+ </A>
+<A HREF="idl307.htm#39432" CLASS="XRef">
+IDLgrTessellator::Reset</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033967">
+ </A>
+<A HREF="idl307.htm#31443" CLASS="XRef">
+IDLgrTessellator::Tessellate</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1033999">
+ </A>
+<A NAME="17420">
+ </A>
+IDLgrTessellator::AddPolygon</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033478">
+ </A>
+The IDLgrTessellator::<A NAME="marker=1052388">
+ </A>
+AddPolygon procedure method adds a polygon to the tessellator object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl307.htm#27071" CLASS="XRef">
+IDLgrTessellator</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033482">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033483">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrTessellator::]</EM>
+AddPolygon <EM CLASS="Emphasis">
+[, X[, Y[, Z]]</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033484">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033485">
+ </A>
+X</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033507">
+ </A>
+A 1 x <EM CLASS="Emphasis">
+n</EM>
+, 2<I CLASS="Italic">
+ x n</I>
+, or 3<I CLASS="Italic">
+ x n</I>
+ array of polygon vertices.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033513">
+ </A>
+Y</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033514">
+ </A>
+A vector of Y values. If <I CLASS="Italic">
+X</I>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are both specified, they must be one-dimensional vectors of the same length.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033516">
+ </A>
+Z</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033517">
+ </A>
+A vector of Z values. If <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+ are all specified, they must all three be one-dimensional vectors of the same length. If no <EM CLASS="Emphasis">
+Z</EM>
+ values are specified, the <EM CLASS="Emphasis">
+Z</EM>
+ value for the polygon is set to 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033486">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033528">
+ </A>
+<A NAME="marker=1033527">
+ </A>
+POLYGON (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033529">
+ </A>
+Set this keyword to an array of polygon descriptions. A polygon description is an integer or longword array of the form: [<I CLASS="Italic">
+n</I>
+, i<SUB CLASS="Subscript">
+0</SUB>
+, i<SUB CLASS="Subscript">
+1</SUB>
+, ..., i<SUB CLASS="Subscript">
+n-1</SUB>
+<I CLASS="Italic">
+</I>
+], where <I CLASS="Italic">
+n</I>
+ is the number of vertices that define the polygon, and i<SUB CLASS="Subscript">
+0</SUB>
+..i<I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+-1</SUB>
+<I CLASS="Italic">
+</I>
+ are indices into the <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+ arguments that represent the polygon vertices. To ignore an entry in the POLYGON array, set the vertex count, <I CLASS="Italic">
+n</I>
+, to 0. To end the drawing list, even if additional array space is available, set <I CLASS="Italic">
+n</I>
+ to -1. If this keyword is not specified, a single polygon will be generated.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1033530">
+ </A>
+The connectivity array described by POLYGONS allows you to add multiple polygons to the tessellator object with a single AddPolygon operation.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033500">
+ </A>
+<A NAME="marker=1033506">
+ </A>
+INTERIOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033501">
+ </A>
+Set this keyword to set a polygon to be an interior polygon, which is treated as a hole in the exterior polygons.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1033309">
+ </A>
+<A NAME="25689">
+ </A>
+IDLgrTessellator::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033312">
+ </A>
+The IDLgrTessellator::<A NAME="marker=1052391">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl307.htm#27071" CLASS="XRef">
+IDLgrTessellator</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041854">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1050164">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051044">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051045">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1050165">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrTessellator::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033318">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033319">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033320">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033321">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1033362">
+ </A>
+<A NAME="11699">
+ </A>
+IDLgrTessellator::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033365">
+ </A>
+The IDLgrTessellator::<A NAME="marker=1052394">
+ </A>
+Init function method initializes the tessellator object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl307.htm#27071" CLASS="XRef">
+IDLgrTessellator</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041749">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033369">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033370">
+ </A>
+Obj = OBJ_NEW('IDLgrTesselator')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041998">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041999">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrTessellator::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033373">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033377">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033378">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1067976">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1067979">
+ </A>
+<A NAME="39432">
+ </A>
+IDLgrTessellator::Reset</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1067983">
+ </A>
+The IDLgrTessellator::<A NAME="marker=1067982">
+ </A>
+Reset procedure method resets the object's internal state. All previously added polygons are removed from memory and the object is prepared for a new tessellation task. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl307.htm#27071" CLASS="XRef">
+IDLgrTessellator</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033560">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033561">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrTessellator::]</EM>
+Reset</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033562">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033563">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033564">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033569">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1033573">
+ </A>
+<A NAME="31443">
+ </A>
+IDLgrTessellator::Tessellate</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033576">
+ </A>
+The IDLgrTessellator::<A NAME="marker=1052400">
+ </A>
+Tessellate function method performs the actual tessellation. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl307.htm#27071" CLASS="XRef">
+IDLgrTessellator</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033580">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033581">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrTessellator::]</EM>
+Tessellate(<I CLASS="Italic">
+Vertices, Poly</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033582">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033583">
+ </A>
+If the tessellation succeeds, IDLgrTessellator::Tessellate returns 1 and the contents of Vertices and Poly are set to the results of the tessellation. If the tessellation fails, the function returns 0.</P>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033594">
+ </A>
+Vertices</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033593">
+ </A>
+A 2<EM CLASS="Emphasis">
+ x n</EM>
+ array if all the input polygons were 2D. A 3<EM CLASS="Emphasis">
+ x n</EM>
+ array if all the input polygons were 3D.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1033597">
+ </A>
+Poly</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1033615">
+ </A>
+An array of polygon descriptions. A polygon description is an integer or longword array of the form: [<I CLASS="Italic">
+n</I>
+, i<SUB CLASS="Subscript">
+0</SUB>
+, i<SUB CLASS="Subscript">
+1</SUB>
+, ..., i<SUB CLASS="Subscript">
+n-1</SUB>
+<I CLASS="Italic">
+</I>
+], where <I CLASS="Italic">
+n</I>
+ is the number of vertices that define the polygon, and i<SUB CLASS="Subscript">
+0</SUB>
+..i<I CLASS="Italic">
+n</I>
+<SUB CLASS="Subscript">
+-1</SUB>
+<I CLASS="Italic">
+</I>
+ are indices into the <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+ arguments that represent the polygon vertices. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1033601">
+ </A>
+On output, the <EM CLASS="Emphasis">
+Vertices</EM>
+ array can be used as the value of the DATA property, and the <EM CLASS="Emphasis">
+Poly</EM>
+ array can be used as the value of the POLYGON property, of a polygon object.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1033584">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033570">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+</BODY>
+</HTML>

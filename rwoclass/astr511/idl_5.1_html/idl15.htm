@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BIN_DATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl16.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl14.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762117">
+ </A>
+<A NAME="74370">
+ </A>
+BIN_DATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762120">
+ </A>
+The <A NAME="marker=762118">
+ </A>
+BIN_DATE function converts a standard form <A NAME="marker=762119">
+ </A>
+ASCII date/time string to a binary string. The function returns a six-element integer array where:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=762121">
+ </A>
+Element 0 is the year (e.g., 1994)</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=762122">
+ </A>
+Element 1 is the month (1-12)</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=762123">
+ </A>
+Element 2 is the day (1-31)</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=762124">
+ </A>
+Element 3 is the hour (0-23)</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=762125">
+ </A>
+Element 4 is minutes (0-59)</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=762126">
+ </A>
+Element 5 is seconds (0-59)</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=762127">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+bin_date.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762128">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762129">
+ </A>
+Result = BIN_DATE(<I CLASS="Italics">
+Ascii_Time</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762130">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762131">
+ </A>
+Ascii_Time</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762132">
+ </A>
+A string containing the date/time to convert in standard ASCII format. If this argument is omitted, the current date/time is used. Standard form is a 24 character string:</P>
+<P CLASS="Code">
+<A NAME="pgfId=762133">
+ </A>
+DOW MON DD HH:MM:SS YYYY</P>
+<P CLASS="Body">
+<A NAME="pgfId=762134">
+ </A>
+where DOW is the day of the week, MON is the month, DD is the day of month, HH:MM:SS is the time in hours, minutes, second, YYYY is the year.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762135">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762136">
+ </A>
+<A HREF="idl22.htm#69711" CLASS="XRef">
+CALDAT</A>
+, <A HREF="idldf.htm#52189" CLASS="XRef">
+JULDAY</A>
+, <A HREF="idl1cc.htm#42147" CLASS="XRef">
+SYSTIME</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

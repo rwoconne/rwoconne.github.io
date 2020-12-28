@@ -1,0 +1,507 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises  -->
+<!-- -->
+
+
+<html>
+
+<head>
+<title>IDL TUTORIAL</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="">
+
+
+</head>
+
+<body bgcolor="white" text="black"  link="#FF0000" alink="#00FF00" vlink="#FF0000">
+
+<!-- HISTORY:  7/16/01: HTML version of Exercises II started; 7/17; 7/21; 7/23;
+               7/27; 7/29; 8/2; 8/4; 8/7; 8/8; 8/9; 8/10; 8/11; 8/15; 8/20; 
+               9/7; 10/1; 10/3; 12/30; 11/2/03; 7/11/2012; 7/20; 7/31/2013; 
+               8/3; 8/4; 8/5; 8/6; 8/7; 8/12; 8/13; 5/10/2014; 4/13/2015; 
+               9/21: new domain; 
+
+               GHP version: 12/15/2020: links updated; 
+
+-->
+
+<b>
+
+
+<h3 align="right">R. W. O'CONNELL<br>
+April 2015</h3>
+
+<p><br></p>
+
+
+<center>
+<h2>   IDL EXERCISES II: <br> ARRAYS AND IMAGE DISPLAYS </h2>
+</center>
+
+<hr size=2>
+
+<p><br></p>
+
+<pre>
+
+Before starting these exercises, you should copy to your local
+directory all the test data files (*.FITS) from the <a
+href="data">
+IDL exercises data directory</a>.  
+
+NOTE: commands intended to be typed into your terminal during your IDL
+session are given in CAPITAL letters below so they will stand out.
+However, IDL itself is case-insensitive (except for file names), so
+you needn't follow this convention.
+
+
+
+0) From a UNIX shell, start X-windows if it is not already running. 
+
+   From the shell within an X-window, "cd" into your "IDL" directory.
+   Normally that would be named "~/idl".
+
+   Parts 3-7 of these exercises involve graphics displays.  If you
+   plan to do these, first check whether your computer display
+   supports "true-color" graphics (for background, see the section
+   titled "Setting a Visual Display Mode on Your Computer" in
+   the <a href="../IDLresources//IDLguide.html#display">IDL Guide</a>).
+
+        From the shell within an X-window, type: "xdpyinfo"
+        
+        If the response includes "TrueColor" or "24 planes" then your display
+        is a 24-bit, true-color device.  If not, it is an 8-bit, pseudo-color
+        device.  
+
+   Start IDL in the X-window. 
+
+        [On most UNIX systems, just type "idl". 
+
+        This will start IDL running in the command-line mode using the
+        window from which you called it.]
+
+   If you plan to do parts 3-7 of these exercises, set the visual
+   class of your display to pseudo-color or emulated pseudo-color:
+
+       If you have an 8-bit display, type DEVICE,RETAIN=2,PSEUDO_COLOR=8
+
+       If you have a 24-bit display, type DEVICE,RETAIN=2,TRUE_COLOR=24,DECOMPOSED=0
+
+   Before starting the exercises, give the IDL command:
+
+                 ON_ERROR,1
+
+       This will return control to the main program level if
+       an error occurs in a called routine.
+				    
+
+1)  SIMPLE ARRAY FUNCTIONS
+
+    Create a 2-D array, A, with 5 columns and 3 rows using the INDGEN
+       function
+
+       [NOTE: remember that the IDL subscripting convention for arrays
+       is reversed from standard matrix notation and that in computer
+       languages like FORTRAN: in IDL A[I,J] yields the value of the
+       I-th column and J-th row.]
+
+        Print the array to the screen and verify its structure and
+           contents
+
+        Print TRANSPOSE(A).  What are its characteristics?
+
+        Print REVERSE(A).  What are its characteristics?
+
+     Now let B=[0,1,2]
+
+         Predict, then verify, the outcome of the following operations:
+
+              C = A+1
+
+              C = A*0
+
+              C = A^2
+
+              C = A*(A+3)
+
+              C = A/A
+
+              C = EXP(A)
+
+              C = A+B
+
+              C = A*B
+
+              C = A[*,2]*B
+
+              C = A[4,2]*B
+
+              C = A#B
+
+              C = B#A
+
+              C = B##A
+
+    Now replace the element in A(3,1) with the value 100
+
+        Verify the result by printing
+
+        Type the following command and interpret the result:
+
+              PRINT, WHERE(A EQ 100)
+
+
+2) SIMPLE ARRAY CREATION 
+
+    Create Z, a 301x301 array, using the FINDGEN function.
+
+       What are the maximum and minimum values of Z?
+
+       Using internal subscript notation, print to the terminal:  
+
+           The first 50 elements of the first row of Z
+
+           The first 50 elements of the 99th column of Z
+
+           The last 10 elements of the 100th row of Z
+
+    Use the AstUseLib routine IMLIST to double-check the results of
+       the preceding exercise for the last 10 elements of the 100th
+       row of Z.  To get information on the IMLIST routine, type
+       MAN,'IMLIST.  [Note: you may have to use the optional WIDTH
+       keyword to increase the size of the printed display in order to
+       read all digits in the Z entries.]
+
+    Write an IDL expression which yields the contents of Z[I,J] as a
+       function of I and J.
+
+       Verify the expression against the actual contents 
+       of Z for selected locations.
+
+    Now define B = FLTARR(101,101)+20000.
+
+        What are the maximum and minimum values of B?
+
+        Using internal subscript notation, set the 51st column of B equal
+           to 100000.
+
+        Then set the 51st row of B equal to 100000.
+
+    Now insert the array B into the original array Z, with the lower
+	left-hand corner of the insert beginning at Z[100,100].
+
+        Confirm the placement of the insert using IMLIST 
+
+
+3)  GREYSCALE IMAGE DISPLAYS
+
+    Now open a graphics display window:  type "WINDOW,0" or
+      "CHAN,0". 
+
+      [NOTE: To open a new window, use WINDOW,N.  To expose or hide
+      an existing window, use WSHOW,N.  To make a given window
+      "active"--- i.e. ready for I/O---use WSET,N.  
+
+      The MOUSSE routine CHAN,N combines these three functions and is
+      preferred.]
+
+    If you are using an 8-bit display, move the cursor into the
+    window.  
+
+        If the other parts of your terminal screen blink out or change
+        color, then your X-windows system is not properly configured.
+        For troubleshooting the problem, see the
+        section on "Reserved Colors on 8-bit Monitors" in the 
+        <a href="../IDLresources/IDLguide.html#display">IDL Guide</a>
+
+    Load the default black and white color table with the command
+        LOADCT,0.  
+
+        On an 8-bit display, a change of color table takes effect
+        immediately.  On a 24-bit display, you must re-load the image
+        before the color table takes effect.
+
+    The system variable !D.N_COLORS contains the maximum number of discrete
+        color levels you can display on your screen.  How many are there?
+
+        On a 24-bit display, the answer should be 16M (even though
+        in emulated pseudocolor mode you will only be using 256
+        of those at a time).  On an 8-bit display, the answer should
+        be 256.  
+
+    Now use the MOUSSE routine CTVSCL to display Z in window 0 using
+        the following command: 
+
+                  CTVSCL,Z,MIN=0,MAX=100000.  
+
+	Inspect the display.  What values are displayed as full black?
+        What as full white?  Is the rest of the display what you expected?
+
+        Try loading Z into the display using several other values of
+	MAX.  Does it respond as expected?
+
+    Reload Z with the full [0,100000] range.  Use the AstUseLib
+        routine CURVAL,Z to check the values of Z at various locations
+        of interest using the cursor on the display window.  Note that
+        both the value of Z and the value at the corresponding
+        location on the window display ("Byte Inten") are shown;
+        compare these.  To exit, click the right hand mouse button
+        while on the window.
+
+        Try the AstUseLib routine TVLIST (an interactive version of
+	IMLIST) to print out selected areas of the image.  Do the
+        "crosshairs" intersect at the image center?
+        
+    With Z still displayed in window 0, open window 9 to make plots.  
+        
+        Plot extractions of Z along columns and rows and check that
+        they are what you expect from the displayed version.
+
+                   E.g.  PLOT,Z[200,*]  
+
+    Open window 1.  Load TRANSPOSE(Z) with the same scaling as for Z.
+        Is it what you expect?
+
+    Now define DIFF = Z - TRANSPOSE(Z).  Load DIFF into window 2,
+	scaling from a MIN of -50000. to a MAX of +50000.  
+
+        Examine the result visually, comparing with the other two
+	display windows, and with CURVAL or TVLIST.  Be sure you
+	understand the result.
+
+
+4)  IMAGE HARDCOPIES
+
+    The quickest way to generate a hardcopy of an image display 
+        on your screen is the use the AstUseLib utility TVLASER.
+    
+    TVLASER will dump a bitmap copy of any window to a PostScript file
+	and print it out.  It makes use of the intrinsic IDL routine
+	TVRD to copy a window buffer to an IDL variable.  The basic
+	steps in TVLASER are described in the
+        <a href="../IDLresources/IDLguide.html#hard">IDL Guide Graphics Hardcopies</a> section.  
+        
+        Make a hardcopy of any of the displays you have made so far
+        using TVLASER.
+
+    Optional: TVLASER can be used to make quick hardcopies of windows
+        containing line drawings produced by the PLOT commands.  However, 
+        these will NOT have the good resolution typical of the
+        SET_PLOT,'PS  process described in Exercises I.  Try comparing
+        the results of the two methods.  
+
+
+5)  FILE INPUT, GREYSCALE IMAGE DISPLAY ADJUSTMENT
+
+    Use the AstUseLib routine FITSDIR to obtain a quick listing of the
+       properties of FITS files you copied to your local directory.
+       Use FITS_INFO to obtain additional information on the
+       file "testpattern.fits".
+
+       [NOTE: your UNIX interface IS CASE SENSITIVE, even though IDL is
+       not.  Therefore, you must give file names exactly as they
+       appear in your directory.]
+
+    Now use the AstUseLib FITS_READ procedure to read the image file
+       "testpattern.fits" into RAM.  Transfer both the image data
+       and the header.  Give the saved image the name PATT.
+
+       Use HPRINT to print the image header to your screen.
+         Verify that the file contained a 2-D image.  What
+         are its dimensions?
+
+    Open Window 0; load color table 0. 
+
+    Now display the image with CTVSCL and MIN,MAX set to [0,240].
+
+    There are N different image values in PATT.  What is N?
+       Make a list of the values.  [Hint: use PLOTHIST and WHERE.]
+
+    Can your eye detect N distinct values on the screen?  If not, how
+       many?  
+
+       Try different MIN,MAX pairs to adjust the display.
+
+    Optional: explore displaying the image using the IDL intrinsic
+       TV routine.  How do TV and CTVSCL differ?  
+
+       Try the following exercise;  successively load scaled versions
+       of PATT using the command
+
+                TV,N*PATT,
+
+       where N is an integer.  You might try writing a simple IDL
+       procedure to do this where successive loads are delayed
+       slightly by using the WAIT,K function.  Set K = 0.1 or 0.2
+       (seconds).
+
+    Copy the program <a href="icontrast.pro">icontrast.pro</a> from
+    the IDLexercises/data directory to your local directory.  Choose
+    any window and reload PATT with the original [0,240] scaling.  Now
+    enter
+
+             ICONTRAST,PATT,MIN=0,MAX=240
+
+        ICONTRAST allows you to make interactive adjustment of the color
+        tables in the display.  It will start by placing the cursor at the
+        center of the image.  By moving the cursor up, you increase the
+        contrast (slope) of the color tables; by moving the cursor right,
+        you increase the Y-intercept of the color tables.  Exit by
+        clicking the right-hand mouse button.  You can check the effect on
+        the color tables by reading them with TVLCT,RR,GG,BB,/GET and then
+        plotting.
+
+    Reload color table 0 and PATT with its original scaling. 
+
+    Nonlinear transformations of images allow expansion/compression of
+       the dynamic range of displays:
+
+       A fractional power law is a quick way to improve discrimination
+       for fainter values in an image while holding the brighter
+       values.  Define NEW1=PATT^0.3.  Deterine the maximum and
+       minimum values of NEW1.  Open a new window and use CTVSCL to
+       display NEW1 between its minimum and maximum values.  Compare
+       it to the linear display.  How does the power-law display
+       differ?
+
+       Logarithmic displays have a similar effect.  Try displaying
+       NEW2=ALOG10(PATT > 1) between its minimum and maximum
+       values.
+
+
+6)  IMAGE STRUCTURE, ZOOMS, HISTOGRAMS, COLOR DISPLAYS
+
+    Now read in the file "noisytestpattern.fits".  This is the same
+       test array as before except that it has had Poisson (photon)
+       noise added corresponding to the mean photon count values at
+       each of the N levels.  [Where the photon count was zero, we
+       have substituted the noise for a count of 1.]
+    
+    Display this image in window 1 with the same [0,240] scaling.
+       How obvious is the photon noise in the display?
+
+       Try plotting (in a third window) cuts across the two images:
+          e.g.:  PLOT,PATT[*,150] & OPLOT,NOISY[*,150]
+
+       Use the ZOOM routine to enlarge the display of the noisy image.
+	  The default zoom factor is 4.  Change to a factor of 10 for
+	  a better look at pixel structure.  ZOOM allows you to
+          inspect different regions of the image by moving and 
+          clicking the mouse.  Alternatively, try using the /CONTINUOUS
+	  keyword in the call to ZOOM.  
+
+       Optional:  As an alternative to ZOOM, you could REBIN the image
+	  (or parts of it) to a larger size and redisplay.  Use the
+	  keyword /SAMPLE to preserve the pixel structure. 
+
+    Extract a 60x60 subarray from the part of NOISY which has a mean
+       value of 112 (refer to the original PATT and use CURVAL to
+       locate this region).  Histogram the pixel values (use
+       PLOTHIST).  Measure (by eye) the FWHM of the histogram.  Is it
+       consistent with Poisson noise?
+
+    Now experiment with loading any or all of the 40 built-in IDL color
+       tables using the LOADCT,N routine.  Explore how the different
+       tables emphasize different brightness levels in the images and
+       affect the contrast of the noise fluctuations.  (Remember that
+       on a 24-bit display you must reload the image after you change
+       the color table.) 
+
+       Optional: write a simple procedure that will sequentially load each
+       of the available 40 IDL color tables and the image, waiting (say)
+       0.2 seconds between tables.  
+    
+    The David Fanning (Coyote) program <a href="http://www.idlcoyote.com/programs/contrastzoom.pro">CONTRASTZOOM</a> combines the "contrast" 
+    and "zoom" functions in a single demonstration window.  It's worth
+    trying, but you will have to <a href="http://www.idlcoyote.com/documents/programs.php#COYOTE_LIBRARY_DOWNLOAD">download</a> the Coyote library 
+    to access all of the subsidiary routines.
+ 
+
+7)  CONTOUR PLOTS
+
+    Read in the file "gaussimage.fits".  This contains the image of
+      a 2-D circular Gaussian.
+
+    Using any of the tools you have tried so far:
+
+       Find the [X,Y] location of the maximum of the image and
+         its value.
+
+       Determine the full-width-half-maximum of the image (accuracy
+         of a few pixels OK).
+
+    Open a plotting window.  Use the SQUARE routine (from MOUSSE) to make
+       the axes of the next plot equal.
+
+    Now make a contour plot of the image using the CONTOUR built-in routine.
+       Select about 10 levels spanning the range of image values for the
+       contours.  Make a hardcopy (note: you will need to use the SQUARE
+       routine again after you give the SET_PLOT,'PS command). 
+
+    Optional: Copy the program <a href="data/icroll.pro">icroll.pro</a>
+      from the IDLexercises/data directory to your local directory and
+      try "rolling" the color table for the Gaussian image using the
+      following command...
+
+           ICROLL,G^0.3,MIN=0,MAX=4,CTNUM=31,CRATE=0.5
+
+      for a nice "Hashbury 1969" effect.  Here, G is the variable that
+      contains the Gaussian image.  Inspect the ICROLL program to see
+      how this effect was produced [e.g. use ".RUN -T ICROLL"].  Color
+      table 31 is specifically designed to produce an automatic
+      contour effect.
+
+
+8)  Using ATV
+
+    The GUI-based program ATV, written by Aaron Barth, provides a
+    convenient way of accessing most of the functionality we just
+    illustrated for the "direct graphics" mode of IDL.  If ATV is not
+    already in your IDL path, you can download it from
+    its <a href="http://www.physics.uci.edu/~barth/atv/">home page at UCI</a>.  In order to display an image in ATV,
+    simply give the command
+
+                          ATV,IM
+
+    Consult the <a href="http://www.physics.uci.edu/~barth/atv/instructions.html">ATV instructions</a> for help.   You can adjust 
+    contrast, change zoom level, apply different color tables (though 
+    limited in number), and so forth.  ATV offers a nice set of other fast
+    diagnostic tools in the "IMEXAM" mode that you should explore.
+
+
+<hr>
+<center>
+ END OF IDL EXERCISES PART II
+
+
+ <a href="IDL-Exercises-I.html">Part I</a> scalars, vectors, plotting.  
+
+ <a href="IDL-Exercises-III.html">Part III</a> image processing.
+
+ <a href="index.html">IDL Tutorial Home Page</a>
+</center>
+
+ <hr size=2>
+
+Translations of this page:
+
+   <a href="http://www.piecesdiscount24.fr/edu/?p=7315">French</a>
+
+<hr size=2>
+
+
+      <center>
+      Copyright &copy 2000-2015 Robert W. O'Connell.  All rights reserved. </center>
+      <center> Content last modified by RWO, April 2015 </center>
+
+ </pre>
+
+ </b>
+
+ </body>
+ </html>
+

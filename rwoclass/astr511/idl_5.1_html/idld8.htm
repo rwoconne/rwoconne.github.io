@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> INTERPOL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=750520">
+ </A>
+<A NAME="16834">
+ </A>
+INTERPOL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=750523">
+ </A>
+The <A NAME="marker=750521">
+ </A>
+INTERPOL function performs linear <A NAME="marker=750522">
+ </A>
+interpolation on vectors with a regular or irregular grid. The result is a single- or double-precision floating-point vector, or a complex vector if the input vector is complex.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754736">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+interpol.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750525">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750526">
+ </A>
+<EM CLASS="Comment">;
+For regular grids:</EM>
+ Result = INTERPOL(<EM CLASS="Emphasis">
+V, N</EM>
+)<EM CLASS="Comment">;
+</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=750527">
+ </A>
+<EM CLASS="Comment">;
+For irregular grids: </EM>
+Result = INTERPOL(<EM CLASS="Emphasis">
+V, X, U</EM>
+)<EM CLASS="Comment">;
+</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750528">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750529">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750530">
+ </A>
+An input vector of any type except string.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750531">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750532">
+ </A>
+The number of points in the result when both input and output grids are regular. The abscissa values for the output grid will contain the same endpoints as the input.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750533">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750534">
+ </A>
+The abscissa values for <EM CLASS="Emphasis">
+V</EM>
+, in the irregularly-gridded case. <EM CLASS="Emphasis">
+X</EM>
+ must have the same number of elements as <EM CLASS="Emphasis">
+V</EM>
+, and the values <EM CLASS="Emphasis">
+must</EM>
+ be monotonically ascending or descending.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750535">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750536">
+ </A>
+The abscissa values for the result. The result will have the same number of elements as <EM CLASS="Emphasis">
+U</EM>
+. <EM CLASS="Emphasis">
+U</EM>
+ does not need to be monotonic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750537">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750538">
+ </A>
+Create a floating-point vector of 61 elements in the range [-3, 3].</P>
+<P CLASS="Code">
+<A NAME="pgfId=750539">
+ </A>
+X = FINDGEN(61)/10 - 3</P>
+<P CLASS="Code">
+<A NAME="pgfId=750540">
+ </A>
+V = SIN(X)	<EM CLASS="Comment">;
+Evaluate V[x] at each point</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=750541">
+ </A>
+U = [-2.50, -2.25, -1.85, -1.55, -1.20, -0.85, -0.50, -0.10, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=750542">
+ </A>
+&nbsp;&nbsp;&nbsp;0.30, 0.40, 0.75, 0.85, 1.05, 1.45, 1.85, 2.00, 2.25, 2.75 ]<BR>
+<EM CLASS="Comment">;
+Define X-values where interpolates are desired.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=750543">
+ </A>
+result = INTERPOL(V, X, U)	<EM CLASS="Comment">;
+Interpolate.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=750544">
+ </A>
+PLOT, X, V	<EM CLASS="Comment">;
+Plot the function.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=750545">
+ </A>
+OPLOT, U, result	<EM CLASS="Comment">;
+Plot the interpolated values.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769774">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822436">
+ </A>
+<A HREF="idl14.htm#43479" CLASS="XRef">
+BILINEAR</A>
+, <A HREF="idld9.htm#72496" CLASS="XRef">
+INTERPOLATE</A>
+, <A HREF="idle1.htm#19008" CLASS="XRef">
+KRIG2D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

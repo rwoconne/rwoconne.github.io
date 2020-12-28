@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BETA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl14.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl12.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50222">
+ </A>
+<A NAME="73826">
+ </A>
+BETA</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50225">
+ </A>
+The <A NAME="marker=50224">
+ </A>
+BETA function returns the value of the beta function B(<I CLASS="Italics">
+Z, W</I>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=876129">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+beta.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50227">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50228">
+ </A>
+Result = BETA(<I CLASS="Italics">
+Z, W</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50229">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50230">
+ </A>
+Z, W</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50231">
+ </A>
+The point at which the beta function is to be evaluated. <I CLASS="Italics">
+Z</I>
+ and <I CLASS="Italics">
+W</I>
+ can be scalar or array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50232">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50234">
+ </A>
+<A NAME="marker=50233">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50235">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50236">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50237">
+ </A>
+To evaluate the beta function at the point (1.0, 1.1) and print the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50238">
+ </A>
+PRINT, BETA(1.0, 1.1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=50239">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50240">
+ </A>
+0.909091</P>
+<P CLASS="Body">
+<A NAME="pgfId=50241">
+ </A>
+The exact solution is:</P>
+<P CLASS="Body">
+<A NAME="pgfId=50242">
+ </A>
+((1.00 * .95135077) / (1.10 * .95135077)) = 0.909091.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50243">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66164">
+ </A>
+<A HREF="idlb1.htm#93572" CLASS="XRef">
+GAMMA</A>
+, <A HREF="idlcd.htm#61717" CLASS="XRef">
+IBETA</A>
+, <A HREF="idld0.htm#62754" CLASS="XRef">
+IGAMMA</A>
+, <A HREF="idlff.htm#16807" CLASS="XRef">
+LNGAMMA</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

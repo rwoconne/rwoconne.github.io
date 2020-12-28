@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CVTTOBM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl53.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl51.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=871497">
+ </A>
+<A NAME="14106">
+ </A>
+CVTTOBM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=871502">
+ </A>
+The <A NAME="marker=871582">
+ </A>
+CVTTOBM function converts a byte array in which each byte represents one pixel into a &quot;<A NAME="marker=871583">
+ </A>
+bitmap byte array&quot; in which each bit represents one pixel. This is useful when creating <A NAME="marker=871584">
+ </A>
+bitmap labels for buttons created with the WIDGET_BUTTON function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=871503">
+ </A>
+Bitmap byte arrays are monochrome; by default, CVTTOBM converts pixels that are darker than the median value to black and pixels that are lighter than the median value to white. You can supply a different threshold value via the THRESHOLD keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=871504">
+ </A>
+Most of IDL's image file format reading functions (READ_BMP, READ_PICT, etc.) return a byte array which must be converted before use as a button label. Note that there is one exception to this rule; the READ_X11_BITMAP routine returns a bitmap byte array that needs no conversion before use.</P>
+<P CLASS="Body">
+<A NAME="pgfId=871542">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cvttobm.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871505">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871506">
+ </A>
+Result = CVTTOBM(<EM CLASS="Emphasis">
+Array</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871507">
+ </A>
+Arguments </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871522">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871530">
+ </A>
+A 2-dimensional pixel array, one byte per pixel.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871508">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871509">
+ </A>
+<A NAME="marker=871571">
+ </A>
+THRESHOLD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871525">
+ </A>
+A byte value (or an integer value between 0 and 255) to be used as a threshold value when determining if a particular pixel is black or white. If THRESHOLD is not specified, the threshold is calculated to be the average of the input array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871512">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871513">
+ </A>
+The following example creates a bitmap button label from a byte array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=871564">
+ </A>
+image = BYTSCL(DIST(100))	<EM CLASS="Comment">;
+Create a byte array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=871545">
+ </A>
+base = WIDGET_BASE(/COLUMN)	<EM CLASS="Comment">;
+Create a widget base.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=871559">
+ </A>
+button = WIDGET_BUTTON(base, VALUE = CVTTOBM(image))<BR>
+<EM CLASS="Comment">;
+Use CVTTOBM to create a bitmap byte array for a button label.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=871560">
+ </A>
+WIDGET_CONTROL, base, /REALIZE	;<EM CLASS="Comment">;
+Realize the widget.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

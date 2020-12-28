@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_ATTINQ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl249.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl247.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997085">
+ </A>
+<A NAME="28162">
+ </A>
+CDF_ATTINQ</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997089">
+ </A>
+The <A NAME="marker=997087">
+ </A>
+CDF_ATTINQ procedure obtains information about a specified <A NAME="marker=997088">
+ </A>
+attribute in a Common Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997090">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997091">
+ </A>
+CDF_ATTINQ, <I CLASS="Italics">
+Id, Attribute, Name, Scope, MaxEntry, MaxZEntry</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997092">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997093">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997094">
+ </A>
+The CDF ID of the file containing the desired attribute, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997095">
+ </A>
+Attribute</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997096">
+ </A>
+Either a string containing the name of the attribute <I CLASS="Italics">
+or</I>
+ the attribute number to be inquired.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997097">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997098">
+ </A>
+A named variable in which the name of the attribute is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997099">
+ </A>
+Scope</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997100">
+ </A>
+A named variable in which a string, describing the scope of the attribute, is returned. This string will have one of the following values: &quot;GLOBAL_SCOPE&quot;, &quot;VARIABLE_SCOPE&quot;, &quot;GLOBAL_SCOPE_ASSUMED&quot;, or &quot;VARIABLE_SCOPE_ASSUMED&quot;.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997101">
+ </A>
+MaxEntry</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997102">
+ </A>
+A named variable in which the maximum rVariable entry number for this attribute is returned. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997103">
+ </A>
+MaxZEntry</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997104">
+ </A>
+A named variable in which the maximum zVariable entry number for this attribute is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997105">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997106">
+ </A>
+cdfid= CDF_OPEN('/cdrom/ozone.8.20.92')</P>
+<P CLASS="Code">
+<A NAME="pgfId=997107">
+ </A>
+CDF_ATTINQ, cdfid, 0, name, scope, maxentry, maxzentry</P>
+<P CLASS="Code">
+<A NAME="pgfId=997108">
+ </A>
+PRINT, name, scope, maxentry, maxzentry</P>
+</DIV>
+</BODY>
+</HTML>

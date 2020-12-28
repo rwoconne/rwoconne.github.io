@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COSH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl48.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl46.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676432">
+ </A>
+<A NAME="54480">
+ </A>
+COSH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676433">
+ </A>
+The <A NAME="marker=672770">
+ </A>
+COSH function returns the hyperbolic cosine of <I CLASS="Italics">
+X</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676434">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676435">
+ </A>
+Result = COSH(<I CLASS="Italics">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676436">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676437">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=720642">
+ </A>
+The value for which the hyperbolic cosine is desired, specified in radians. If <I CLASS="Italics">
+X</I>
+ is double-precision floating, the result is also double- precision. Complex values are not allowed. All other types are converted to single-precision floating-point and yield floating-point results. COSH is defined as:</P>
+<P CLASS="Body">
+<A NAME="pgfId=796626">
+ </A>
+COSH(<EM CLASS="Emphasis">
+u</EM>
+) = (<EM CLASS="Emphasis">
+eu</EM>
+ + <EM CLASS="Emphasis">
+e</EM>
+<SUP CLASS="Superscript">
+-</SUP>
+<EM CLASS="Emphasis">
+u</EM>
+) / 2</P>
+<P CLASS="Body">
+<A NAME="pgfId=676439">
+ </A>
+If <I CLASS="Italics">
+X</I>
+ is an array, the result has the same structure, with each element containing the hyperbolic cosine of the corresponding element of <I CLASS="Italics">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676440">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676441">
+ </A>
+Find the hyperbolic cosine of 0.5 radians and print the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676442">
+ </A>
+PRINT, COSH(.5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=676443">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676444">
+ </A>
+1.12763</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=818848">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818849">
+ </A>
+<A HREF="idl3.htm#70015" CLASS="XRef">
+ACOS</A>
+, <A HREF="idl46.htm#64259" CLASS="XRef">
+COS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

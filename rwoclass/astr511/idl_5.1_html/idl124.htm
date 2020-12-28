@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> N_TAGS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl125.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl123.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889254">
+ </A>
+<A NAME="49338">
+ </A>
+N_TAGS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889259">
+ </A>
+The <A NAME="marker=889257">
+ </A>
+N_TAGS function returns the number of <A NAME="marker=889258">
+ </A>
+structure tags contained in a structure expression. It optionally returns the size, in bytes, of the structure.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889260">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889261">
+ </A>
+Result = N_TAGS(<I CLASS="Italics">
+Expression</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889262">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889263">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889264">
+ </A>
+The expression for which the number of structure tags is to be returned. Expressions that are not of structure type are considered to have no tags. N_TAGS does not search for tags recursively, so if <I CLASS="Italics">
+Expression</I>
+ is a structure containing nested structures, only the number of tags in the outermost structure are counted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889265">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889267">
+ </A>
+<A NAME="marker=889266">
+ </A>
+LENGTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889269">
+ </A>
+Set this keyword to return the length of the <A NAME="marker=889268">
+ </A>
+structure, in bytes.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=889270">
+ </A>
+The length of a structure is machine dependent. The length of a given structure will vary depending upon the host machine. IDL pads and aligns structures in a manner consistent with the host machine's C compiler.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889274">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889275">
+ </A>
+Find the number of tags in the system variable !P and print the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889276">
+ </A>
+PRINT, N_TAGS(!P)</P>
+<P CLASS="Body">
+<A NAME="pgfId=889277">
+ </A>
+Find the length of !P, in bytes:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889278">
+ </A>
+PRINT, N_TAGS(!P, /LENGTH)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889279">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889291">
+ </A>
+<A HREF="idl49.htm#23746" CLASS="XRef">
+CREATE_STRUCT</A>
+, <A HREF="idl122.htm#23226" CLASS="XRef">
+N_ELEMENTS</A>
+, <A HREF="idl1d0.htm#98384" CLASS="XRef">
+TAG_NAMES</A>
+, <A HREF="..html#66613" CLASS="XRef">
+Structures</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

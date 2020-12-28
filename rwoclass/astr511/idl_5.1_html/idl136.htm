@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PLOT_3DBOX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl137.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl135.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=137523">
+ </A>
+<A NAME="47893">
+ </A>
+PLOT_3DBOX</H2>
+<P CLASS="Body">
+<A NAME="pgfId=137524">
+ </A>
+The <A NAME="marker=137536">
+ </A>
+PLOT_3DBOX procedure <A NAME="marker=137831">
+ </A>
+plots a function of two variables (e.g., <I CLASS="Italic">
+Z=f(X, Y)</I>
+) inside a 3D box. Optionally, the data can be projected onto the &quot;walls&quot; surrounding the plot area.</P>
+<P CLASS="Body">
+<A NAME="pgfId=218977">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+plot_3dbox.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137534">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=137537">
+ </A>
+PLOT_3DBOX, <I CLASS="Italic">
+X, Y, Z</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137538">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137539">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137542">
+ </A>
+A vector (i.e., a one-dimensional array) of X coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137540">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137543">
+ </A>
+A vector of Y coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137541">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137546">
+ </A>
+A vector of Z coordinates. <I CLASS="Italic">
+Z[i]</I>
+ is a function of <I CLASS="Italic">
+X[i]</I>
+ and <I CLASS="Italic">
+Y[i]</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137547">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137555">
+ </A>
+GRIDSTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137556">
+ </A>
+Set this keyword to the linestyle index for the type of line to be used when drawing the gridlines. Linestyles are described in <A HREF="idl136.htm#95087" CLASS="XRef">
+IDL Linestyles</A>
+:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=137594">
+ </A>
+<A NAME="95087">
+ </A>
+IDL Linestyles</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=137562">
+ </A>
+Index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=137564">
+ </A>
+Linestyle</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137566">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137568">
+ </A>
+Solid</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137570">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137572">
+ </A>
+Dotted</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137574">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137576">
+ </A>
+Dashed</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137578">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137580">
+ </A>
+Dash Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137582">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137584">
+ </A>
+Dash Dot Dot Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137586">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=137588">
+ </A>
+Long Dashes</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137608">
+ </A>
+PSYM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=835286">
+ </A>
+Set this keyword to an plotting symbol index to be used in plotting the data. For more information, see <A HREF="idl22c.htm#56421" CLASS="XRef">
+PSYM</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=835291">
+ </A>
+<A NAME="marker=835290">
+ </A>
+SOLID_WALLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137631">
+ </A>
+Set this keyword to cause the boundary &quot;walls&quot; of the plot to be filled with the color index specified by the COLOR keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137639">
+ </A>
+<A NAME="marker=137833">
+ </A>
+XY_PLANE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137678">
+ </A>
+Set this keyword to plot the <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ values on the Z=0 axis plane.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137642">
+ </A>
+<A NAME="marker=137834">
+ </A>
+XYSTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137684">
+ </A>
+Set this keyword to the linestyle used to draw the XY plane plot. See the table above for a list of linestyles.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137637">
+ </A>
+<A NAME="marker=137835">
+ </A>
+XZ_PLANE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137679">
+ </A>
+Set this keyword to plot the <I CLASS="Italic">
+Y</I>
+ and <I CLASS="Italic">
+Z</I>
+ values on the Y=MAX(<I CLASS="Italic">
+Y</I>
+) axis plane.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137638">
+ </A>
+<A NAME="marker=137836">
+ </A>
+XZSTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137685">
+ </A>
+Set this keyword to the linestyle used to draw the XZ plane plot. See the table above for a list of linestyles.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137640">
+ </A>
+<A NAME="marker=137837">
+ </A>
+YZ_PLANE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137680">
+ </A>
+Set this keyword to plot the <I CLASS="Italic">
+Y</I>
+ and <I CLASS="Italic">
+Z</I>
+ values on the X=MAX(<I CLASS="Italic">
+X</I>
+) axis plane.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137643">
+ </A>
+<A NAME="marker=137838">
+ </A>
+YZSTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137686">
+ </A>
+Set this keyword to the linestyle used to draw the YZ plane plot. See the table above for a list of linestyles.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137687">
+ </A>
+SURFACE Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=835265">
+ </A>
+In addition to the keywords described above, the <A HREF="idl1c6.htm#37074" CLASS="XRef">
+AX</A>
+, <A HREF="idl1c6.htm#27754" CLASS="XRef">
+AZ</A>
+, and <A HREF="idl1c6.htm#18896" CLASS="XRef">
+ZAXIS</A>
+ keywords to the SURFACE procedure are accepted by PLOT_3DBOX. See <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=867426">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=867433">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#57588" CLASS="XRef">
+BACKGROUND</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=835269">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=137694">
+ </A>
+X = REPLICATE(5., 10.)	<EM CLASS="Comment">;
+Create some data to be plotted.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=137695">
+ </A>
+X1 = COS(FINDGEN(36)*10.*!DTOR)*2.+5.</P>
+<P CLASS="Code">
+<A NAME="pgfId=137699">
+ </A>
+X = [X, X1, X]</P>
+<P CLASS="Code">
+<A NAME="pgfId=137700">
+ </A>
+Y = FINDGEN(56)</P>
+<P CLASS="Code">
+<A NAME="pgfId=137701">
+ </A>
+Z = REPLICATE(5., 10)</P>
+<P CLASS="Code">
+<A NAME="pgfId=137702">
+ </A>
+Z1 = SIN(FINDGEN(36)*10.*!DTOR)*2.+5.</P>
+<P CLASS="Code">
+<A NAME="pgfId=137703">
+ </A>
+Z = [Z, Z1, Z]</P>
+<P CLASS="Code">
+<A NAME="pgfId=137704">
+ </A>
+PLOT_3DBOX, X, Y, Z, /XY_PLANE, /YZ_PLANE, /XZ_PLANE, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=137731">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/SOLID_WALLS, GRIDSTYLE=1, XYSTYLE=3, XZSTYLE=4, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=137749">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YZSTYLE=5, AZ=40, TITLE='Example Plot Box', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=137708">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XTITLE='X Coordinate', YTITLE='Y Coodinate', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=137709">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZTITLE='Z Coordinate', SUBTITLE='Sub Title', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=137710">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/YSTYLE, ZRANGE=[0,10], XRANGE=[0,10], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=137814">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PSYM=-4, CHARSIZE=1.6	<EM CLASS="Comment">;
+Create the box plot with data projected on all of the walls. The PSYM value of -4 plots the data as diamonds connected by lines.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137711">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=137821">
+ </A>
+<A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

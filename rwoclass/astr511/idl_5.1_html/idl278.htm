@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFAN_PUTLABEL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl279.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl277.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997448">
+ </A>
+<A NAME="13293">
+ </A>
+HDF_DFAN_PUTLABEL</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997452">
+ </A>
+The <A NAME="marker=997450">
+ </A>
+HDF_DFAN_PUTLABEL procedure writes a <A NAME="marker=997451">
+ </A>
+label for the given tag and reference number in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997453">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997454">
+ </A>
+HDF_DFAN_PUTLABEL, <I CLASS="Italics">
+Filename, Tag, Ref, Label</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997455">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997456">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997457">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997458">
+ </A>
+Tag</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997459">
+ </A>
+The tag number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997460">
+ </A>
+Ref</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997461">
+ </A>
+The reference number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997462">
+ </A>
+Label</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997463">
+ </A>
+A string containing the description to write.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997464">
+ </A>
+Bugs</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997465">
+ </A>
+Due to a problem in the HDF version 4.0 library, attempting to rewrite a label fails. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997466">
+ </A>
+file = 'blah.hdf'		<EM CLASS="Comment">;
+Specify a file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997467">
+ </A>
+tag = 105 &amp; ref = 40		<EM CLASS="Comment">;
+Specify tag and ref numbers.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997468">
+ </A>
+HDF_DFAN_PUTLABEL, file, tag, ref, 'XXXX'		<EM CLASS="Comment">;
+Make label &quot;XXXX&quot;</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997469">
+ </A>
+HDF_DFAN_PUTLABEL, file, tag, ref, 'YY'		<EM CLASS="Comment">;
+Label now &quot;YY&quot;</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997470">
+ </A>
+The following command deletes the file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997471">
+ </A>
+OPENU, unit, file, /DELETE, /GET &amp; CLOSE, unit</P>
+<P CLASS="Body">
+<A NAME="pgfId=997472">
+ </A>
+Now try to re-use label &quot;XXXX&quot;:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997473">
+ </A>
+HDF_DFAN_PUTLABEL, file, tag, ref, 'XXXX'</P>
+<P CLASS="Body">
+<A NAME="pgfId=997474">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997475">
+ </A>
+% HDF_DFAN_PUTLABEL: Failed to write label</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997476">
+ </A>
+% Execution halted at:  $MAIN$ </P>
+</DIV>
+</BODY>
+</HTML>

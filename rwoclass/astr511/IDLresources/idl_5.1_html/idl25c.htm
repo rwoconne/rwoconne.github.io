@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARGET1</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl25b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997893">
+ </A>
+<A NAME="58318">
+ </A>
+CDF_VARGET1</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997896">
+ </A>
+The <A NAME="marker=997895">
+ </A>
+CDF_VARGET1 procedure reads one value from a Common Data Format file <A NAME="marker=997897">
+ </A>
+variable.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997898">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997899">
+ </A>
+CDF_VARGET1, <I CLASS="Italics">
+Id, Variable, Value</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997900">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997901">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997902">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997903">
+ </A>
+Variable</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997904">
+ </A>
+A string containing the name of the variable <I CLASS="Italics">
+or</I>
+ the variable number to be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997905">
+ </A>
+Value</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997906">
+ </A>
+A named variable in which the value of the variable is returned. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997907">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997909">
+ </A>
+<A NAME="marker=997908">
+ </A>
+OFFSET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997910">
+ </A>
+A vector specifying the array indices within the specified record(s) at which to begin reading. OFFSET is a 1-dimensional array containing one element per CDF dimension. The default value is 0 for each dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997912">
+ </A>
+<A NAME="marker=997911">
+ </A>
+REC_START</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997913">
+ </A>
+The record number at which to start reading. The default is 0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997915">
+ </A>
+<A NAME="marker=997914">
+ </A>
+STRING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997916">
+ </A>
+Set this keyword to return CDF_CHAR and CDF_UCHAR data from the CDF file into <EM CLASS="Emphasis">
+Value</EM>
+ as string data rather than byte data. This keyword is ignored if the data in the CDF file is not of type CDF_CHAR or CDF_UCHAR.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997918">
+ </A>
+<A NAME="marker=997917">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997919">
+ </A>
+If <I CLASS="Italics">
+Variable</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+Variable</I>
+ is an rVariable ID.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997920">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997924">
+ </A>
+See the example for <A HREF="idl259.htm#72205" CLASS="XRef">
+CDF_VARCREATE</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

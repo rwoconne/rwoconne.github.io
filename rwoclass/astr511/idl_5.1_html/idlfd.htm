@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LMFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlfe.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlfc.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=831031">
+ </A>
+<A NAME="38447">
+ </A>
+LMFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=831618">
+ </A>
+The <A NAME="marker=845551">
+ </A>
+LMFIT function does a non-linear least squares fit to a function with an arbitrary number of parameters. LMFIT uses the Levenberg-Marquardt algorithm, which combines the steepest descent and inverse-Hessian function fitting methods. The function may be any non-linear function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=831638">
+ </A>
+Iterations are performed until three consecutive iterations fail to change the chi square value by more than the specified tolerance amount, or until a maximum number of iterations have been performed. The LMFIT function returns a vector of calculated parameters, which are improvements upon the initial guesses.</P>
+<P CLASS="Body">
+<A NAME="pgfId=831630">
+ </A>
+The initial guess of the parameter values should be as close to the actual values as possible or the solution may not converge. Test the value of the variable specified by the CONVERGENCE keyword to determine whether the algorithm converged, failed to converge, or encountered a singular matrix.</P>
+<P CLASS="Body">
+<A NAME="pgfId=831377">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+lmfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution. LMFIT is based on the routine <CODE CLASS="Code">
+mrqmin</CODE>
+ described in section 15.5 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=831056">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=831057">
+ </A>
+Result = LMFIT(<EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, <EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=831060">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831247">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831384">
+ </A>
+A row vector of independent variables. LMFIT does not manipulate or use values in <EM CLASS="Emphasis">
+X</EM>
+, it simply passes <EM CLASS="Emphasis">
+X</EM>
+ to the user-written function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831065">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831385">
+ </A>
+A row vector containing the dependent variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831067">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831386">
+ </A>
+A vector that contains the initial estimate for each parameter. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=849261">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=849263">
+ </A>
+<A NAME="marker=849262">
+ </A>
+ALPHA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=849264">
+ </A>
+Set this keyword equal to a named variable that will contain the value of the curvature matrix.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831462">
+ </A>
+<A NAME="marker=831477">
+ </A>
+CHISQ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831463">
+ </A>
+Set this keyword equal to a named variable that will contain the value of chi-squared.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831464">
+ </A>
+<A NAME="marker=831694">
+ </A>
+CONVERGENCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831690">
+ </A>
+Set this keyword equal to a named variable that will indicate whether the LMFIT algorithm converged. The possible returned values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=831691">
+ </A>
+&nbsp;1&nbsp;&nbsp;The algorithm converged.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=831692">
+ </A>
+&nbsp;0&nbsp;&nbsp;The algorithm did not converge.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=831693">
+ </A>
+-1&nbsp;&nbsp;The algorithm encountered a singular matrix and did not converge.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831689">
+ </A>
+<A NAME="marker=831478">
+ </A>
+COVAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831465">
+ </A>
+Set this keyword equal to a named variable that will contain the value of the covariance matrix.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831466">
+ </A>
+<A NAME="marker=831479">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831467">
+ </A>
+Set this keyword to force the computations to be performed in double precision.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831077">
+ </A>
+<A NAME="marker=831480">
+ </A>
+FITA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831392">
+ </A>
+Set this keyword equal to a vector, with as many elements as <EM CLASS="Emphasis">
+A</EM>
+, which contains a zero for each fixed parameter, and a non-zero value for elements of <EM CLASS="Emphasis">
+A</EM>
+ to fit. If FITA is not specified, all parameters are taken to be non-fixed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831083">
+ </A>
+<A NAME="marker=831483">
+ </A>
+FUNCTION_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831495">
+ </A>
+Use this keyword to specify the name of the function to fit. If this keyword is omitted, LMFIT assumes that the IDL procedure <CODE CLASS="Code">
+LMFUNCT</CODE>
+ is to be used. If <CODE CLASS="Code">
+LMFUNCT</CODE>
+ is not already compiled, IDL compiles the function from the file <CODE CLASS="Code">
+lmfunct.pro</CODE>
+, located in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.<CODE CLASS="Code">
+ LMFUNCT</CODE>
+ is designed to fit a quadratic equation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=831530">
+ </A>
+The function to be fit must be written as an IDL procedure and compiled prior to calling LMFIT. The function must accept a vector <EM CLASS="Emphasis">
+X</EM>
+ (the independent variables) and a vector <EM CLASS="Emphasis">
+A</EM>
+ containing the fitted function's parameter values. It must return an <EM CLASS="Emphasis">
+A</EM>
++1-element vector in which the first (zeroth) element is the evaluated function value and the remaining elements are the partial derivatives with respect to each parameter in <EM CLASS="Emphasis">
+A</EM>
+.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=831531">
+ </A>
+The returned value must be of the same data type as the input <EM CLASS="Emphasis">
+X</EM>
+ value.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831471">
+ </A>
+<A NAME="marker=831484">
+ </A>
+ITER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831472">
+ </A>
+Set this keyword equal to a named variable that will contain the actual number of iterations which were performed</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831092">
+ </A>
+<A NAME="marker=831485">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831398">
+ </A>
+Set this keyword equal to the maximum number of iterations. The default is 20.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831094">
+ </A>
+<A NAME="marker=831486">
+ </A>
+SIGMA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831401">
+ </A>
+Set this keyword equal to a named variable that will contain a vector of standard deviations for the returned parameters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831095">
+ </A>
+<A NAME="marker=831487">
+ </A>
+TOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831404">
+ </A>
+The convergence tolerance. The routine returns when the relative decrease in chi-squared is less than TOL in an iteration. Default = 1.0 x10<SUP CLASS="Superscript">
+-6</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831455">
+ </A>
+<A NAME="marker=831488">
+ </A>
+WEIGHTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831456">
+ </A>
+Set this keyword equal to a vector of fitting weights for <EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+. This vector must be the same length as X and Y. For instrumental (Gaussian) weighting (when the measurement errors or standard deviations (s) of Y are known), set WEIGHTS to 1/(s<SUP CLASS="Superscript">
+2</SUP>
+). For statistical (Poisson) weighting, set WEIGHTS=1/Y. If WEIGHTS is not specified, WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+ is assumed to be 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=831098">
+ </A>
+<A NAME="marker=831489">
+ </A>
+YFIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=831406">
+ </A>
+Set this keyword equal to a named variable that will contain the fitted function evaluated at the input X values.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=831169">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=831170">
+ </A>
+Suppose we wish to fit a function of the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=831171">
+ </A>
+f(x)=a[0] * exp(a[1]*x) + a[2] + a[3] * sin(x)</P>
+<P CLASS="Body">
+<A NAME="pgfId=831173">
+ </A>
+First, define a return function for LMFIT:</P>
+<P CLASS="Code">
+<A NAME="pgfId=831175">
+ </A>
+FUNCTION myfunct, X, A</P>
+<P CLASS="Code">
+<A NAME="pgfId=831188">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;bx = A[0]*EXP(A[1]*X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=831189">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;RETURN,[ [bx+A[2]+A[3]*SIN(X)], [EXP(A[1]*X)], [bx*X], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=837057">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.0] ,[SIN(X)] ]</P>
+<P CLASS="Code">
+<A NAME="pgfId=831190">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=831591">
+ </A>
+Compute the fit to the function we have just defined. First, define the independent and dependent variables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=831193">
+ </A>
+X = FINDGEN(40)/20.0</P>
+<P CLASS="Code">
+<A NAME="pgfId=831597">
+ </A>
+Y = 8.8 * EXP(-9.9 * X) + 11.11 + 4.9 * SIN(X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=831195">
+ </A>
+sig = 0.05 * Y</P>
+<P CLASS="Code">
+<A NAME="pgfId=831196">
+ </A>
+A = [10.0, -0.1, 2.0, 4.0]	<EM CLASS="Comment">;
+Provide an initial guess for the function's parameters.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=831197">
+ </A>
+fita = [1,1,1,1]</P>
+<P CLASS="Code">
+<A NAME="pgfId=831198">
+ </A>
+PLOTERR, X, Y, sig	<EM CLASS="Comment">;
+Plot the initial data, with error bars.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=831199">
+ </A>
+coefs = LMFIT(X, Y, A, WEIGHTS = (1/sig^2.0), FITA = fita, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=837058">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FUNCTION_NAME = 'myfunct')</P>
+<P CLASS="Code">
+<A NAME="pgfId=831200">
+ </A>
+OPLOT, X, coefs	<EM CLASS="Comment">;
+Overplot the fitted data.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=831715">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=831743">
+ </A>
+<A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idlfd.htm#38447" CLASS="XRef">
+LMFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

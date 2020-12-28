@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HANNING</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlc2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758087">
+ </A>
+<A NAME="60367">
+ </A>
+HANNING</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758089">
+ </A>
+The <A NAME="marker=758088">
+ </A>
+HANNING function is used to create a &quot;window&quot; for Fourier Transform <A NAME="marker=788419">
+ </A>
+filtering. It can be used to create both Hanning and Hamming windows.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758090">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+hanning.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758091">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758092">
+ </A>
+Result = HANNING(<EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+<EM CLASS="Emphasis">
+ [, N</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+<EM CLASS="Emphasis">
+]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758093">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758094">
+ </A>
+N<SUB CLASS="Subscript">
+1</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758095">
+ </A>
+The number of columns in the resulting array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758096">
+ </A>
+N<SUB CLASS="Subscript">
+2</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758097">
+ </A>
+The number of rows in the resulting array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758098">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758100">
+ </A>
+<A NAME="marker=758099">
+ </A>
+ALPHA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758101">
+ </A>
+Set this keyword equal to the width parameter of a generalized Hamming window. ALPHA must be in the range of 0.5 to 1.0. If ALPHA = 0.5 (the default) the function is called a &quot;Hanning&quot; window. If ALPHA = 0.54, the result is called a &quot;Hamming&quot; window.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758103">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822711">
+ </A>
+<A HREF="idl9d.htm#24646" CLASS="XRef">
+FFT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

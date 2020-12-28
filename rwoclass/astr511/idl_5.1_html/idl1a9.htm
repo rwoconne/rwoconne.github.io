@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPAWN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1aa.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678957">
+ </A>
+<A NAME="35911">
+ </A>
+SPAWN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678958">
+ </A>
+The <A NAME="marker=673913">
+ </A>
+SPAWN procedure spawns a child process to execute a command or series of commands. Under Unix, the shell used (if any) is obtained from the SHELL environment variable. Under VMS, the DCL command language interpreter is used. Under Windows 3.1 and Windows 95, a DOS window is opened. Under Windows NT, a Command Shell is opened. On the Macintosh, SPAWN opens specified files or applications.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678959">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678960">
+ </A>
+SPAWN <I CLASS="Italic">
+[, Command(s) [, Result]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678961">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678962">
+ </A>
+Command</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678963">
+ </A>
+A string containing the command(s) to be executed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=862215">
+ </A>
+If <I CLASS="Italic">
+Command</I>
+ is not present, SPAWN starts an interactive command interpreter process. Under Unix, the default shell is used. IDL execution suspends until the new shell process terminates. Under Unix, shells that handle process suspension (e.g., <CODE CLASS="Code">
+/bin/csh</CODE>
+) offer a more efficient way to get the same effect.</P>
+<P CLASS="Body">
+<A NAME="pgfId=862237">
+ </A>
+If <I CLASS="Italic">
+Command</I>
+ is not present under Windows, SPAWN creates an interactive MS-DOS window or NT command shell window as a child process. Quit the shell session by entering &quot;EXIT&quot; at the prompt.Under Windows 3.1 and Windows 95 (but not under Windows NT), the SPAWN command calls a PIF file named idlspawn.pif. This file is installed automatically in the IDL binary directory (usually C:\rsi\idl50). You can change any options you wish in idlspawn.pif file, with the exception of the Program Filename (COMMAND.COM) and the Window Title (&quot;IDL Spawned Process&quot;). </P>
+<P CLASS="Body">
+<A NAME="pgfId=678965">
+ </A>
+<I CLASS="Italic">
+Command</I>
+ must be of type string. Under VMS, it is restricted to being a scalar. Under Unix, it can be a string array (each element is passed to the child process as a separate argument) if used in conjunction with the NOSHELL keyword. If a new Unix shell process is started (that is, if the NOSHELL keyword is <EM CLASS="Emphasis">
+not</EM>
+ specified), <EM CLASS="Emphasis">
+Command</EM>
+ must be a scalar string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=197908">
+ </A>
+On the Macintosh, <EM CLASS="Emphasis">
+Command</EM>
+ must consist of the names of files to be opened. Multiple filenames can be entered. If the first filename is an application, it is used to open the remaining files. Otherwise, each file is opened by the application that owns it. IDL execution resumes when the files have been opened.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=197909">
+ </A>
+Result</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678967">
+ </A>
+A named variable in which to place the output from the child process. Each line of output becomes a single array element. If <I CLASS="Italic">
+Result</I>
+ is not present, the output from the child shell process goes to the standard output.</P>
+<P CLASS="Body">
+<A NAME="pgfId=128540">
+ </A>
+Under Windows and the Macintosh OS, <EM CLASS="Emphasis">
+Result</EM>
+ has no effect.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678968">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678969">
+ </A>
+<A NAME="marker=673917">
+ </A>
+COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678970">
+ </A>
+If <I CLASS="Italic">
+Result</I>
+ is present and this keyword is also specified, COUNT specifies a named variable into which the number of lines of output is placed. This value gives the number of elements placed into <I CLASS="Italic">
+Result</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678971">
+ </A>
+<A NAME="marker=673918">
+ </A>
+PID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678972">
+ </A>
+A named variable into which the Process IDentification number of the child process is stored.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=128489">
+ </A>
+Macintosh Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=128491">
+ </A>
+<A NAME="marker=128490">
+ </A>
+MACCREATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=128492">
+ </A>
+Use this keyword to specify a four-character scalar string containing the Macintosh file creator code of the application to be used to open the specified files. In no files were specified, the application is launched without any files.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678973">
+ </A>
+Unix Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678974">
+ </A>
+<A NAME="marker=673919">
+ </A>
+NOSHELL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678975">
+ </A>
+Set this keyword to specify that <I CLASS="Italic">
+Command</I>
+ should execute directly as a child process without an intervening shell process. In this case, <I CLASS="Italic">
+Command</I>
+ should be specified as a string array in which the first element is the name of the command to execute and the following arguments are the arguments to be passed to the command (C programmers will recognize this as these are the elements of the argv argument that Unix passes to the child process main function). Since no shell is present, wildcard characters are not expanded, and other tasks normally performed by the shell do not occur. NOSHELL is useful when performing many SPAWNed operations from a program and speed is a primary concern.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678976">
+ </A>
+<A NAME="marker=673920">
+ </A>
+NOTTYRESET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678977">
+ </A>
+Some Unix systems drop characters when the tty mode is switched between normal and raw modes. IDL switches between these modes when reading command input and when using the GET_KBRD function. On such systems, IDL avoids losing characters by delaying the switch back to normal mode until it is truly needed. This method has the benefit of avoiding the large number of mode changes that would otherwise be necessary. Routines that cause output to be sent to the standard output (e.g., I/O operations, user interaction and SPAWN) ensure that the tty is in its normal mode before performing their operations.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678978">
+ </A>
+If the NOTTYRESET keyword is set, SPAWN does not switch the tty back to normal mode before launching the child process assuming instead that the child will not send output to the tty. Use this keyword to avoid characters being dropped in a loop of the form:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678979">
+ </A>
+WHILE (GET_KBRD(0) NE 'q') SPAWN, <I CLASS="Italic">
+command</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=678980">
+ </A>
+This keyword has no effect on systems that don't suffer from dropped characters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678981">
+ </A>
+<A NAME="marker=673921">
+ </A>
+SH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678982">
+ </A>
+Set this keyword to force the use of the <CODE CLASS="Code">
+/bin/sh</CODE>
+ shell. Usually, the shell used is determined by the SHELL environment variable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678983">
+ </A>
+<A NAME="marker=673922">
+ </A>
+UNIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678984">
+ </A>
+If UNIT is present, SPAWN creates a child process in the usual manner, but instead of waiting for the specified command to finish, it attaches a bidirectional pipe between the child process and IDL. From the IDL session, the pipe appears as a logical file unit. The other end of the pipe is attached to the child process standard input and output. The UNIT keyword specifies a named variable into which the number of the file unit is stored.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678985">
+ </A>
+Once the child process is started, the IDL session can communicate with it through the usual input/output facilities. After the child process has done its task, the CLOSE procedure can be used to kill the process and close the pipe. Since SPAWN uses GET_LUN to allocate the file unit, FREE_LUN should be used to free the unit.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678986">
+ </A>
+If UNIT is present, <I CLASS="Italic">
+Command</I>
+ must be present, and <I CLASS="Italic">
+Result</I>
+ is not allowed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678987">
+ </A>
+VMS Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678988">
+ </A>
+<A NAME="marker=673932">
+ </A>
+NOCLISYM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678989">
+ </A>
+If this keyword is set, the spawned subprocess does not inherit command language interpreter symbols from its parent process. You can specify this keyword to prevent commands redefined by symbol assignments from affecting the spawned commands, or to speed process startup.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678990">
+ </A>
+<A NAME="marker=673933">
+ </A>
+NOLOGNAM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678991">
+ </A>
+If this keyword is set, the spawned subprocess does not inherit process logical names from its parent process. You can specify this keyword to prevent commands redefined by logical name assignments from affecting the spawned commands, or to speed process startup.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678992">
+ </A>
+<A NAME="marker=673934">
+ </A>
+NOTIFY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678993">
+ </A>
+If this keyword is set, a message is broadcast to SYS$OUTPUT when the child process completes or aborts. NOTIFY should be set in conjunction with the NOWAIT keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678994">
+ </A>
+<A NAME="marker=673935">
+ </A>
+NOWAIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678995">
+ </A>
+If this keyword is set, the IDL process continues executing in parallel with the subprocess. Normally, the IDL process hibernates until the subprocess completes.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678996">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678997">
+ </A>
+To simply spawn a process from within IDL enter the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678998">
+ </A>
+SPAWN</P>
+<P CLASS="Body">
+<A NAME="pgfId=678999">
+ </A>
+To execute the UNIX <CODE CLASS="Code">
+ls</CODE>
+ command and return to the IDL prompt, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679000">
+ </A>
+SPAWN, 'ls'</P>
+<P CLASS="Body">
+<A NAME="pgfId=679001">
+ </A>
+To execute the UNIX <CODE CLASS="Code">
+ls</CODE>
+ command and store the result in the IDL string variable <CODE CLASS="Code">
+listing</CODE>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679002">
+ </A>
+SPAWN, 'ls', listing</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820975">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820976">
+ </A>
+<A HREF="special.html#48857" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

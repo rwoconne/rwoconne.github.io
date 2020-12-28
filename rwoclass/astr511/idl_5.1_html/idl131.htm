@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> OPLOT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl132.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl130.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889954">
+ </A>
+<A NAME="28954">
+ </A>
+OPLOT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889958">
+ </A>
+The <A NAME="marker=889957">
+ </A>
+OPLOT procedure plots vector data over a previously-drawn plot. It differs from PLOT only in that it does not generate a new axis. Instead, it uses the scaling established by the most recent call to PLOT and simply overlays a plot of the data on the existing axis.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889959">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889960">
+ </A>
+OPLOT, <I CLASS="Italics">
+[X,] Y</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889961">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889962">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889963">
+ </A>
+A vector argument. If X is not specified, <I CLASS="Italics">
+Y</I>
+ is plotted as a function of point number (starting at zero). If both arguments are provided, <I CLASS="Italics">
+Y</I>
+ is plotted as a function of <I CLASS="Italics">
+X</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889964">
+ </A>
+This argument is converted to single-precision floating-point before plotting. Plots created with OPLOT are limited to the range and precision of single-precision floating-point values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889965">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889966">
+ </A>
+The ordinate data to be plotted. This argument is converted to single-precision floating-point before plotting. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889967">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889969">
+ </A>
+<A NAME="marker=889968">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889970">
+ </A>
+The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as <A NAME="marker=889971">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889976">
+ </A>
+<A NAME="marker=889975">
+ </A>
+MIN_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889977">
+ </A>
+The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as <A NAME="marker=889978">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889983">
+ </A>
+<A NAME="marker=889982">
+ </A>
+NSUM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889984">
+ </A>
+The presence of this keyword indicates the number of data points to average when plotting. If NSUM is larger than 1, every group of NSUM points is averaged to produce one plotted point. If there are <I CLASS="Italics">
+m</I>
+ data points, then <I CLASS="Italics">
+m</I>
+/NSUM points are displayed. On logarithmic axes a geometric average is performed. </P>
+<P CLASS="Body">
+<A NAME="pgfId=889985">
+ </A>
+It is convenient to use NSUM when there is an extremely large number of data points to plot because it plots fewer points, the graph is less cluttered, and it is quicker.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889990">
+ </A>
+<A NAME="marker=889989">
+ </A>
+POLAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889991">
+ </A>
+Set this keyword to produce polar plots. The <I CLASS="Italics">
+X</I>
+ and <I CLASS="Italics">
+Y</I>
+ vector parameters, both of which must be present, are first converted from polar to Cartesian coordinates. The first parameter is the radius, and the second is expressed in radians.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=889992">
+ </A>
+To make a polar plot, use the command:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=889993">
+ </A>
+OPLOT, /POLAR, R, THETA</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889995">
+ </A>
+<A NAME="marker=889994">
+ </A>
+THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889996">
+ </A>
+Controls the thickness of the lines connecting the points. A thickness of 1.0 is normal, 2.0 is double wide, etc.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889997">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890004">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#36225" CLASS="XRef">
+CLIP</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=890032">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890033">
+ </A>
+Create a simple dataset by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=890034">
+ </A>
+D = SIN(FINDGEN(100)/EXP(FINDGEN(100)/50))</P>
+<P CLASS="Body">
+<A NAME="pgfId=890035">
+ </A>
+Create an X-Y plot of vector D by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=890036">
+ </A>
+PLOT, D</P>
+<P CLASS="Body">
+<A NAME="pgfId=890037">
+ </A>
+Overplot the sine of D as a thick, dashed line by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=890038">
+ </A>
+OPLOT, SIN(D), LINESTYLE = 5, THICK = 2</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=890039">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890046">
+ </A>
+<A HREF="idl132.htm#22978" CLASS="XRef">
+OPLOTERR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

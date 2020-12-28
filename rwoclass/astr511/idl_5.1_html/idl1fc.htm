@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WDELETE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1fd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1fb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=894497">
+ </A>
+<A NAME="13948">
+ </A>
+WDELETE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=894503">
+ </A>
+The <A NAME="marker=894499">
+ </A>
+WDELETE procedure deletes IDL windows.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679868">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679869">
+ </A>
+WDELETE <I CLASS="Italic">
+[, Window_Index [, ...]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679870">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679871">
+ </A>
+Window_Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679872">
+ </A>
+A list of one or more window indices to delete. If this argument is not specified, the current window (as specified by the <A NAME="marker=674286">
+ </A>
+system variable !D.WINDOW) is deleted. If the window being deleted is not the active window, the value of !D.WINDOW remains unchanged. If the window being deleted is the active window, !D.WINDOW is set to the highest numbered window index or to -1 if no windows remain open.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679873">
+ </A>
+If this window index is the widget ID of a draw widget, that widget is deleted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679874">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679875">
+ </A>
+Create IDL graphics window number 5 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679876">
+ </A>
+WINDOW, 5</P>
+<P CLASS="Body">
+<A NAME="pgfId=679877">
+ </A>
+Delete window 5 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679878">
+ </A>
+WDELETE, 5</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820376">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890644">
+ </A>
+<A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+, <A HREF="idl219.htm#42522" CLASS="XRef">
+WSET</A>
+, <A HREF="idl21a.htm#14449" CLASS="XRef">
+WSHOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

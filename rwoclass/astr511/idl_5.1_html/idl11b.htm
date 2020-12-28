@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MODIFYCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl11c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl11a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888881">
+ </A>
+<A NAME="53817">
+ </A>
+MODIFYCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888888">
+ </A>
+<A NAME="82091">
+ </A>
+The <A NAME="marker=888885">
+ </A>
+MODIFYCT procedure updates the distribution <A NAME="marker=888886">
+ </A>
+color table file <CODE CLASS="Code">
+colors1.tbl</CODE>
+<A NAME="marker=888887">
+ </A>
+, located in the <CODE CLASS="Code">
+colors</CODE>
+ subdirectory of the <CODE CLASS="Code">
+resource</CODE>
+ subdirectory of the main IDL directory, or a user-designated file with a new, or modified, colortable.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888889">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+modifyct.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888890">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888891">
+ </A>
+MODIFYCT, <I CLASS="Italics">
+Itab, Name, R, G, B</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888892">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888893">
+ </A>
+Itab</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888894">
+ </A>
+The index of the table to be updated, numbered from 0 to 255. If the specified entry is greater than the next available location in the table, the entry will be added to the table in the available location rather than the index specified by <I CLASS="Italics">
+Itab</I>
+. On return, <I CLASS="Italics">
+Itab</I>
+ contains the index for the location that was modified or extended. The modified table can be then be loaded with the IDL command: LOADCT, <I CLASS="Italics">
+Itab</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888895">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888896">
+ </A>
+A string, up to 32 characters long, that contains the name for the new color table.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888897">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888898">
+ </A>
+A 256-element vector that contains the values for the red colortable. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888899">
+ </A>
+G</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888900">
+ </A>
+A 256-element vector that contains the values for the green colortable. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888901">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888902">
+ </A>
+A 256-element vector that contains the values for the blue colortable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888903">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888905">
+ </A>
+<A NAME="marker=888904">
+ </A>
+FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888906">
+ </A>
+Set this keyword to the name of a colortable file to be modified instead of the file <CODE CLASS="Code">
+colors1.tbl</CODE>
+ in the IDL directory.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888907">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888914">
+ </A>
+<A HREF="routinesK-L.html#61192" CLASS="XRef">
+</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

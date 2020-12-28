@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CALDAT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl23.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl21.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762149">
+ </A>
+<A NAME="69711">
+ </A>
+CALDAT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762152">
+ </A>
+The <A NAME="marker=762150">
+ </A>
+CALDAT procedure computes <A NAME="marker=762151">
+ </A>
+the month, day, year, hour, minute, or second corresponding to a given Julian date. The inverse of this procedure is JULDAY.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=848677">
+ </A>
+The Julian calendar, established by Julius Caesar in the year 45 BCE, was corrected by Pope Gregory XIII in 1582, excising ten days from the calendar. The CALDAT procedure reflects the adjustment for dates after October 4, 1582. See the example below for an illustration. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=762153">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+caldat.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762154">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762155">
+ </A>
+CALDAT, <I CLASS="Italics">
+Julian, Month, Day, Yea</I>
+<I CLASS="Italic">
+r, Hour, Minute, Secon</I>
+d</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762156">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762157">
+ </A>
+Julian</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762158">
+ </A>
+A numeric value or array that specifies the Julian Day Number (which begins at noon) to be converted to a calendar date. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=927738">
+ </A>
+Although <I CLASS="Italic">
+Julian</I>
+ can be of any numeric value, CALDAT will convert all values to longword integer, retaining the same dimensionality.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762159">
+ </A>
+Month</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762160">
+ </A>
+A named variable that, on output, contains the number of the desired month (1 = January, ..., 12 = December).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762161">
+ </A>
+Day</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762162">
+ </A>
+A named variable that, on output, contains the number of the day of the month (1-31).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762163">
+ </A>
+Year</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762164">
+ </A>
+A named variable that, on output, contains the number of the desired year (e.g., 1994).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917871">
+ </A>
+Hour</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917872">
+ </A>
+A named variable that, on output, contains the number of the hour of the day (0-23).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917873">
+ </A>
+Minute</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917874">
+ </A>
+A named variable that, on output, contains the number of the minute of the day (0-1439).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917875">
+ </A>
+Second</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917876">
+ </A>
+A named variable that, on output, contains the number of the second of the day <BR>
+(0-86399).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762165">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=848685">
+ </A>
+In 1582, Pope Gregory XIII adjusted the Julian calendar to correct for its inaccuracy of slightly more than 11 minutes per year. As a result, the day following October 4, 1582 was October 15, 1582. CALDAT follows this convention, as illustrated by the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=848688">
+ </A>
+CALDAT, 2299160, Month, Day, Year</P>
+<P CLASS="Code">
+<A NAME="pgfId=848690">
+ </A>
+PRINT, Month, Day, Year</P>
+<P CLASS="Body">
+<A NAME="pgfId=848759">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=848760">
+ </A>
+10&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;1582</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=927804">
+ </A>
+You should be aware of this discrepancy between the original and revised Julian calendar reckonings if you calculate dates before October 15, 1582.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=848761">
+ </A>
+Be sure to distinguish between <I CLASS="Italic">
+Month</I>
+ and <I CLASS="Italic">
+Minute</I>
+ when assigning variable names:</P>
+<P CLASS="Code">
+<A NAME="pgfId=927956">
+ </A>
+CALDAT, 2529161.36, M, D, Y, H, M, S	<EM CLASS="Comment">;
+Find date corresponding to Julian day 2529161.36.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=927773">
+ </A>
+CALDAT, 2529161.36, Month, Day, Year, Hour, Minute, Second</P>
+<P CLASS="Code">
+<A NAME="pgfId=848699">
+ </A>
+PRINT, M, D, Y, H, M, S</P>
+<P CLASS="Code">
+<A NAME="pgfId=927791">
+ </A>
+PRINT, Month, Day, Year, Hour, Month, Second</P>
+<P CLASS="Body">
+<A NAME="pgfId=848700">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=848721">
+ </A>
+9          19        1938           6           0       0.0000000<BR>
+<EM CLASS="Comment">;
+This is the correct value, <BR>
+September 19, 1938.</EM>
+</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=928001">
+ </A>
+9          19        1938           6           9       0.0000000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=928031">
+ </A>
+<EM CLASS="Comment">;
+	The Minute value is incorrect; it is the same as the Month value.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=927954">
+ </A>
+You can use arrays for the <I CLASS="Italic">
+Julian</I>
+ argument:</P>
+<P CLASS="Code">
+<A NAME="pgfId=927858">
+ </A>
+CALDAT,FINDGEN(4)+2449587L, m, d, y </P>
+<P CLASS="Code">
+<A NAME="pgfId=927859">
+ </A>
+PRINT, m, d, y</P>
+<P CLASS="Body">
+<A NAME="pgfId=927945">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=927947">
+ </A>
+           8           8           8           8</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=927911">
+ </A>
+          22          23          24          25</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=927912">
+ </A>
+        1994        1994        1994        1994</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=927833">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=927829">
+ </A>
+<A HREF="idl15.htm#74370" CLASS="XRef">
+BIN_DATE</A>
+, <A HREF="idldf.htm#52189" CLASS="XRef">
+JULDAY</A>
+, <A HREF="idl1cc.htm#42147" CLASS="XRef">
+SYSTIME</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

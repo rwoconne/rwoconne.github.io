@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PLOT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl136.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl134.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678087">
+ </A>
+<A NAME="70398">
+ </A>
+PLOT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678088">
+ </A>
+The <A NAME="marker=673546">
+ </A>
+PLOT <A NAME="marker=673547">
+ </A>
+procedure draws graphs of vector arguments. If one parameter is used, the vector parameter is plotted on the ordinate versus the point number on the abscissa. To plot one vector as a function of another, use two parameters. PLOT can also be used to create polar plots by setting the POLAR keyword.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678089">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678090">
+ </A>
+PLOT, <I CLASS="Italic">
+[X,] Y</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678091">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678092">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678093">
+ </A>
+A vector argument. If X is not specified, <I CLASS="Italic">
+Y</I>
+ is plotted as a function of point number (starting at zero). If both arguments are provided, <I CLASS="Italic">
+Y</I>
+ is plotted as a function of <I CLASS="Italic">
+X</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678094">
+ </A>
+This argument is converted to single-precision floating-point before plotting. Plots created with PLOT are limited to the range and precision of single-precision floating-point values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678095">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678096">
+ </A>
+The ordinate data to be plotted. This argument is converted to single-precision floating-point before plotting.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678097">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=948898">
+ </A>
+<A NAME="marker=948897">
+ </A>
+ISOTROPIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=948899">
+ </A>
+Set this keyword to force the scaling of the X and Y axes to be equal.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=949129">
+ </A>
+The X and Y axes will be scaled isotropically and then fit within the rectangle defined by the POSITION keyword; one of the axes may be shortened. See <A HREF="idl22c.htm#54782" CLASS="XRef">
+POSITION</A>
+ for more information.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678098">
+ </A>
+<A NAME="marker=673548">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843114">
+ </A>
+The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as <A NAME="marker=673549">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47057">
+ </A>
+<A NAME="marker=47086">
+ </A>
+MIN_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843122">
+ </A>
+The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as <A NAME="marker=47074">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678100">
+ </A>
+<A NAME="marker=673550">
+ </A>
+NSUM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678101">
+ </A>
+The presence of this keyword indicates the number of data points to average when plotting. If NSUM is larger than 1, every group of NSUM points is averaged to produce one plotted point. If there are <I CLASS="Italic">
+m</I>
+ data points, then <I CLASS="Italic">
+m</I>
+/NSUM points are displayed. On logarithmic axes a geometric average is performed. </P>
+<P CLASS="Body">
+<A NAME="pgfId=678102">
+ </A>
+It is convenient to use NSUM when there is an extremely large number of data points to plot because it plots fewer points, the graph is less cluttered, and it is quicker.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678103">
+ </A>
+<A NAME="marker=673551">
+ </A>
+<A NAME="49336">
+ </A>
+POLAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678104">
+ </A>
+Set this keyword to produce polar plots. The <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ vector parameters, both of which must be present, are first converted from polar to Cartesian coordinates. The first parameter is the radius, and the second is the angle (expressed in radians). For example, to make a polar plot, you would use a command such as:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678105">
+ </A>
+PLOT, /POLAR, R, THETA</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678106">
+ </A>
+<A NAME="marker=673552">
+ </A>
+THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678107">
+ </A>
+Controls the thickness of the lines connecting the points. A thickness of 1.0 is normal, 2 is double wide, etc.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=810411">
+ </A>
+<A NAME="marker=810410">
+ </A>
+<A NAME="26864">
+ </A>
+XLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810413">
+ </A>
+Set this keyword to specify a <A NAME="marker=876395">
+ </A>
+logarithmic X <A NAME="marker=810418">
+ </A>
+axis, producing a log-linear plot. Set <A NAME="marker=66829">
+ </A>
+both XLOG and YLOG to <A NAME="marker=143172">
+ </A>
+produce a log-log plot. Note that logarithmic axes that have ranges of less than a decade are not labeled.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=810415">
+ </A>
+<A NAME="marker=810414">
+ </A>
+YNOZERO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678111">
+ </A>
+Set this keyword to inhibit setting the minimum Y axis value to zero when the <I CLASS="Italic">
+Y</I>
+ data are all positive and nonzero, and no explicit minimum Y value is specified (using YRANGE, or !Y.RANGE). By default, the Y axis spans the range of 0 to the maximum value of <I CLASS="Italic">
+Y</I>
+, in the case of positive Y data. Set bit 4 in !Y.STYLE to make this option the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=810463">
+ </A>
+<A NAME="marker=810461">
+ </A>
+<A NAME="39726">
+ </A>
+YLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810465">
+ </A>
+Set this keyword to specify a logarithmic Y <A NAME="marker=810464">
+ </A>
+axis, producing a linear-log plot. Set <A NAME="marker=66836">
+ </A>
+both XLOG and YLOG to produce a log-log plot. Note that logarithmic axes that have ranges of less than a decade are not labeled.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=810466">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=817012">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#57588" CLASS="XRef">
+BACKGROUND</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678116">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678117">
+ </A>
+The PLOT procedure has many keywords that allow you to create a vast variety of plots. Here are a few simple examples using the PLOT command.</P>
+<P CLASS="Code">
+<A NAME="pgfId=678118">
+ </A>
+D = FINDGEN(100)	<EM CLASS="Comment">;
+Create a simple dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=828543">
+ </A>
+PLOT, D, TITLE = 'Simple Plot'	<EM CLASS="Comment">;
+Create a simple plot with the title &quot;Simple Plot&quot;</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678122">
+ </A>
+PLOT, SIN(D/3), COS(D/6)	<EM CLASS="Comment">;
+Plot one argument versus another</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=833718">
+ </A>
+PLOT, D, D, /POLAR, TITLE = 'Polar Plot'	<EM CLASS="Comment">;
+Create a polar plot</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=833719">
+ </A>
+PLOT, SIN(D/10), PSYM=4, XTITLE='X Axis', YTITLE='Y Axis'<BR>
+<EM CLASS="Comment">;
+Use plotting symbols instead of connecting lines by including the PSYM keyword. Label the X and Y axes with XTITLE and YTITLE.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821689">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821699">
+ </A>
+<A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LMGR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlff.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlfd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=831720">
+ </A>
+<A NAME="12363">
+ </A>
+LMGR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=856030">
+ </A>
+The <A NAME="marker=856316">
+ </A>
+LMGR function tests whether a particular licensing mode is in effect. The function returns True (1) if the mode specified is in effect, or False (0) otherwise. Different licensing modes are specified by keyword; see the <I CLASS="Italic">
+Keywords</I>
+ section below for a description of each licensing mode.</P>
+<P CLASS="Body">
+<A NAME="pgfId=856042">
+ </A>
+The LMGR function can also force IDL into time demo mode or report the LMHostid number for the machine in use.</P>
+<P CLASS="Body">
+<A NAME="pgfId=856353">
+ </A>
+For more information on IDL's licensing methods, consult the <I CLASS="Italic">
+IDL License Management Guide</I>
+, which is included in Adobe Acrobat Portable Document Format on your IDL CD-ROM.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=856290">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=856291">
+ </A>
+Result = LMGR()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=856292">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=856159">
+ </A>
+None.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=856059">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=879327">
+ </A>
+<A NAME="marker=879329">
+ </A>
+CLIENTSERVER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=879328">
+ </A>
+Set this keyword to test whether the current IDL session is using Client/Server licensing (as opposed to Desktop licensing).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856060">
+ </A>
+<A NAME="marker=856382">
+ </A>
+DEMO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856238">
+ </A>
+Set this keyword to test whether the current IDL session is running in timed demo mode. Unlicensed copies of IDL and copies running directly from a CD-ROM run in timed demo mode.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856064">
+ </A>
+<A NAME="marker=856383">
+ </A>
+EMBEDDED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856249">
+ </A>
+Set this keyword to test whether the current IDL session is running in embedded mode. Embedded-mode applications contain a built-in version of the IDL license. Examples of applications running in embedded mode are the IDL demo and the IDL registration program.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856072">
+ </A>
+<A NAME="marker=856384">
+ </A>
+FORCE_DEMO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856254">
+ </A>
+Set this keyword to force the current session into timed demo mode. Forcing an IDL session into demo mode can be useful if you are testing an application that will be run with an unlicensed copy of IDL. Note that you must exit IDL and restart to return to normal licensed mode after forcing IDL into demo mode.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856081">
+ </A>
+<A NAME="marker=856385">
+ </A>
+LMHOSTID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856261">
+ </A>
+Set this keyword equal to a named variable that will contain a string value represeting the LMHostid for the machine in use. The LMHostid is used when creating client/server IDL licenses. This keyword returns the string &quot;0&quot; on machines which do not have a unique LMHostid (Macintoshes and some Windows machines that use Desktop licensing.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856085">
+ </A>
+<A NAME="marker=856386">
+ </A>
+RUNTIME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856269">
+ </A>
+Set this keyword to test whether the current IDL session is running in runtime mode. Runtime-mode applications do not provide access to the IDL command line. See the <I CLASS="Italic">
+IDL Runtime Guide</I>
+ for additional details on runtime applications.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856089">
+ </A>
+<A NAME="marker=856387">
+ </A>
+STUDENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856277">
+ </A>
+Set this keyword to test whether the current IDL session is running in student mode. The IDL Student version, which provides a subset of IDL's full functionality, is currently the only product that runs in student mode.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=856094">
+ </A>
+<A NAME="marker=856388">
+ </A>
+TRIAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=856279">
+ </A>
+Set this keyword to test whether the current IDL session is running in trial mode. Trial mode licenses allow IDL to operate for a limited time period (generally 30 days) but do not otherwise restrict functionality.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=856103">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=856104">
+ </A>
+Use the following commands to test whether the current IDL session is running in timed demo mode:</P>
+<P CLASS="Body">
+<A NAME="pgfId=856106">
+ </A>
+<CODE CLASS="Code">
+Result = LMGR(/DEMO)</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=856107">
+ </A>
+<CODE CLASS="Code">
+IF (Result GT 0) THEN PRINT, &quot;IDL is in Demo Mode&quot;</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=856109">
+ </A>
+Use the following commands to generate the LMHostid number for the machine in use:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856111">
+ </A>
+Result = LMGR(LMHOSTID = myId)</P>
+<P CLASS="Code">
+<A NAME="pgfId=856112">
+ </A>
+PRINT, &quot;LMHostid for this machine is: &quot;, myId</P>
+</DIV>
+</BODY>
+</HTML>

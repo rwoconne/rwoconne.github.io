@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFAN_GETLABEL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl275.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl273.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997314">
+ </A>
+<A NAME="56732">
+ </A>
+HDF_DFAN_GETLABEL</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997318">
+ </A>
+The <A NAME="marker=997316">
+ </A>
+HDF_DFAN_GETLABEL procedure reads the <A NAME="marker=997317">
+ </A>
+label for the given tag-reference pair in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997319">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997320">
+ </A>
+HDF_DFAN_GETLABEL, <I CLASS="Italics">
+Filename, Tag, Ref, Label</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997321">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997322">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997323">
+ </A>
+A scalar string that contains the name of the file to be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997324">
+ </A>
+Tag</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997325">
+ </A>
+The tag number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997326">
+ </A>
+Ref</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997327">
+ </A>
+The reference number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997328">
+ </A>
+Label</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997329">
+ </A>
+A named variable in which the label is returned as a string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997330">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997331">
+ </A>
+fid = HDF_OPEN('test.hdf', /ALL)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997332">
+ </A>
+label = 'TEST LABEL'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997333">
+ </A>
+tag = 105	<EM CLASS="Comment">;
+The annotation tag.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997334">
+ </A>
+ref = 2	<EM CLASS="Comment">;
+Choose a reference number.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997335">
+ </A>
+HDF_DFAN_PUTLABEL, 'test.hdf', tag, ref, label<BR>
+<EM CLASS="Comment">;
+Write the label.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997336">
+ </A>
+HDF_DFAN_GETLABEL, 'test.hdf', tag, ref, outl<BR>
+<EM CLASS="Comment">;
+Read the label back.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997337">
+ </A>
+HELP, outl	<EM CLASS="Comment">;
+They look the same...</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997338">
+ </A>
+OUTL            STRING    = 'TEST LABEL'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997339">
+ </A>
+HDF_CLOSE, fid	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997340">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997350">
+ </A>
+<A HREF="idl271.htm#75461" CLASS="XRef">
+HDF_DFAN_GETDESC</A>
+, <A HREF="idl275.htm#14991" CLASS="XRef">
+HDF_DFAN_LABLIST</A>
+, <A HREF="idl277.htm#72253" CLASS="XRef">
+HDF_DFAN_PUTDESC</A>
+, <A HREF="idl278.htm#13293" CLASS="XRef">
+HDF_DFAN_PUTLABEL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

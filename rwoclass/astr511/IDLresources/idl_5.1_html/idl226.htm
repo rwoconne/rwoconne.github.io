@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XSQ_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl227.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl225.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=137419">
+ </A>
+<A NAME="50626">
+ </A>
+XSQ_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=137425">
+ </A>
+The <A NAME="marker=137421">
+ </A>
+XSQ_TEST <A NAME="marker=137422">
+ </A>
+function computes the <A NAME="marker=137423">
+ </A>
+Chi-square goodness-of-fit <A NAME="marker=137424">
+ </A>
+test between observed frequencies and the expected frequencies of a theoretical distribution. The result is a two-element vector containing the Chi-square test statistic X2 and the one-tailed probability of obtaining a value of X2 or greater.</P>
+<P CLASS="Body">
+<A NAME="pgfId=137426">
+ </A>
+Expected frequencies of magnitude less than 5 are combined with adjacent elements resulting in a reduction of cells used to formulate the chi-squared test statistic. If the observed frequencies differ significantly from the expected frequencies, the Chi-square test statistic will be large and the fit is poor. This situation requires the rejection of the hypothesis that the given observed frequencies are an accurate approximation to the expected frequency distribution. </P>
+<P CLASS="Body">
+<A NAME="pgfId=137427">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xsq_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137428">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=137429">
+ </A>
+Result = XSQ_TEST(<EM CLASS="Emphasis">
+Obfreq, Exfreq</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137430">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137431">
+ </A>
+Obfreq</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137432">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector containing observed frequencies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137433">
+ </A>
+Exfreq</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137434">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector containing expected frequencies.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137435">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137437">
+ </A>
+<A NAME="marker=137436">
+ </A>
+EXCELL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137438">
+ </A>
+Set this keyword to a named variable that will contain a vector of expected frequencies used to formulate the Chi-square test statistic. If each of the expected frequencies contained in <EM CLASS="Emphasis">
+Exfreq</EM>
+, has a magnitude of 5 or greater, then this vector is identical to <EM CLASS="Emphasis">
+Exfreq</EM>
+. If <EM CLASS="Emphasis">
+Exfreq</EM>
+ contains elements of magnitude less than 5, adjacent expected frequencies are combined. The identical combinations are performed on the corresponding elements of <EM CLASS="Emphasis">
+Obfreq</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137440">
+ </A>
+<A NAME="marker=137439">
+ </A>
+OBCELL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137441">
+ </A>
+Set this keyword to a named variable that will contain a vector of observed frequencies used to formulate the Chi-square test statistic. The elements of this vector are often referred to as the &quot;cells&quot; of the observed frequencies. The length of this vector is determined by the length of EXCELL described below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=137443">
+ </A>
+<A NAME="marker=137442">
+ </A>
+RESIDUAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=137444">
+ </A>
+Set this keyword to a named variable that will contain a vector of signed differences between corresponding cells of observed frequencies and expected frequencies. </P>
+<P CLASS="Code">
+<A NAME="pgfId=137445">
+ </A>
+RESIDUAL[i] = OBCELL[i] - EXCELL[i].</P>
+<P CLASS="Body">
+<A NAME="pgfId=137446">
+ </A>
+The length of this vector is determined by the length of EXCELL described above. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137447">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=137448">
+ </A>
+Define the vectors of observed and expected frequencies.</P>
+<P CLASS="Code">
+<A NAME="pgfId=137449">
+ </A>
+obfreq = [2, 1, 4, 15, 10, 5, 3]</P>
+<P CLASS="Code">
+<A NAME="pgfId=137450">
+ </A>
+exfreq = [0.5, 2.1, 5.9, 10.3, 10.7, 7.0, 3.5]</P>
+<P CLASS="Body">
+<A NAME="pgfId=137451">
+ </A>
+Test the hypothesis that the given observed frequencies are an accurate approximation to the expected frequency distribution.</P>
+<P CLASS="Code">
+<A NAME="pgfId=137452">
+ </A>
+result = XSQ_TEST(obfreq, exfreq)</P>
+<P CLASS="Code">
+<A NAME="pgfId=137453">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=137454">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=137455">
+ </A>
+3.05040     0.383920</P>
+<P CLASS="Body">
+<A NAME="pgfId=137456">
+ </A>
+Since the vector of expected frequencies contains elements of magnitude less than 5, adjacent expected frequencies are combined resulting in fewer cells. The identical combinations are performed on the corresponding elements of observed frequencies. The computed value of 0.383920 indicates that there is no reason to reject the proposed hypothesis at the 0.05 significance level.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=137457">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=137461">
+ </A>
+<A HREF="idl4e.htm#28469" CLASS="XRef">
+CTI_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

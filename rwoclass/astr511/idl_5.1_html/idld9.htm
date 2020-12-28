@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> INTERPOLATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlda.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677258">
+ </A>
+<A NAME="72496">
+ </A>
+INTERPOLATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677259">
+ </A>
+The <A NAME="marker=673180">
+ </A>
+INTERPOLATE function returns an array of linear, bilinear or trilinear interpolates, depending on the dimensions of the input array <EM CLASS="Emphasis">
+P</EM>
+. Linear interpolates are returned in the one-dimensional case, bilinear in the two-dimensional case and trilinear interpolates in the three-dimensional case. The returned array has the same type as <I CLASS="Italics">
+P</I>
+ and its dimensions depend on those of the location parameters <I CLASS="Italics">
+X</I>
+, <I CLASS="Italics">
+Y</I>
+, and <I CLASS="Italics">
+Z</I>
+, as explained below.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677260">
+ </A>
+Interpolates outside the bounds of <I CLASS="Italics">
+P</I>
+ can be set to a user-specified value by using the MISSING keyword.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677261">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677262">
+ </A>
+Result = INTERPOLATE(<I CLASS="Italics">
+P, X [, Y [, Z]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677263">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677264">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677265">
+ </A>
+The array of data values. <I CLASS="Italics">
+P</I>
+ must be a one-, two-, or three-dimensional array of numeric type.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677266">
+ </A>
+X, Y, Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677267">
+ </A>
+Arrays of numeric type containing the locations for which interpolates are desired. For linear interpolation (<I CLASS="Italics">
+P</I>
+ is a vector), the result has the same dimensions as X. The <I CLASS="Italics">
+i</I>
+-th element of the result is <I CLASS="Italics">
+P</I>
+ interpolated at location <I CLASS="Italics">
+X</I>
+<SUB CLASS="subscript">
+i</SUB>
+. The <I CLASS="Italics">
+Y</I>
+ and <I CLASS="Italics">
+Z</I>
+ parameters should be omitted.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677268">
+ </A>
+For bilinear interpolation <I CLASS="Italics">
+Z</I>
+ should not be present.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=835819">
+ </A>
+INTERPOLATE considers location points with values between zero and <EM CLASS="Emphasis">
+n</EM>
+, where <EM CLASS="Emphasis">
+n</EM>
+ is the number of values in the input array <EM CLASS="Emphasis">
+P</EM>
+, to be valid. Location points outside this range are considered missing data. Location points <EM CLASS="Emphasis">
+x</EM>
+ in the range <EM CLASS="Emphasis">
+n</EM>
+-1 <EM CLASS="Symbol">
+&#163;</EM>
+ <EM CLASS="Emphasis">
+x</EM>
+ &lt; <EM CLASS="Emphasis">
+n</EM>
+ return the last data value in the array <EM CLASS="Emphasis">
+P</EM>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=677269">
+ </A>
+If the keyword GRID is not set, all location arrays must have the same number of elements. See the description of the GRID keyword below for more details on how interpolates are computed from <I CLASS="Italics">
+P</I>
+ and these arrays.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677270">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680782">
+ </A>
+<A NAME="marker=672439">
+ </A>
+CUBIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832086">
+ </A>
+Set this keyword to a value between -1 and 0 to use the cubic convolution interpolation method with the specified value as the interpolation parameter. Setting this keyword equal to a value greater than zero specifies a value of -1 for the interpolation parameter. Park and Schowengerdt (see reference below) suggest that a value of -0.5 significantly improves the reconstruction properties of this algorithm.</P>
+<P CLASS="Body">
+<A NAME="pgfId=809722">
+ </A>
+Cubic convolution is an interpolation method that closely approximates the theoretically optimum sinc interpolation function using cubic polynomials. According to sampling theory, details of which are beyond the scope of this document, if the original signal, <I CLASS="Italics">
+f</I>
+, is a band-limited signal, with no frequency component larger than <EM CLASS="MathSymbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, and <I CLASS="Italics">
+f</I>
+ is sampled with spacing less than or equal to 1/(2<EM CLASS="MathSymbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+), then <I CLASS="Italics">
+f</I>
+ can be reconstructed by convolving with a sinc function: sinc(<EM CLASS="Emphasis">
+x</EM>
+) = sin(<EM CLASS="MathSymbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+) / (<EM CLASS="MathSymbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=680785">
+ </A>
+In the one-dimensional case, four neighboring points are used, while in the two-dimensional case 16 points are used. Note that cubic convolution interpolation is significantly slower than bilinear interpolation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=832090">
+ </A>
+For further details see:</P>
+<P CLASS="Body">
+<A NAME="pgfId=832091">
+ </A>
+Rifman, S.S. and McKinnon, D.M., &quot;Evaluation of Digital Correction Techniques for ERTS Images; Final Report&quot;, Report 20634-6003-TU-00, TRW Systems, Redondo Beach, CA, July 1974.</P>
+<P CLASS="Body">
+<A NAME="pgfId=832092">
+ </A>
+S. Park and R. Schowengerdt, 1983 &quot;Image Reconstruction by Parametric Cubic Convolution&quot;, Computer Vision, Graphics &amp; Image Processing 23, 256.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680781">
+ </A>
+<A NAME="marker=673181">
+ </A>
+GRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677272">
+ </A>
+The GRID keyword controls how the location arrays specify where interpolates are desired. This keyword has no effect in the case of linear interpolation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677273">
+ </A>
+<EM CLASS="Bold">
+If GRID is not set:</EM>
+ The location arrays, <I CLASS="Italics">
+X</I>
+, <I CLASS="Italics">
+Y</I>
+, and, if present, <I CLASS="Italics">
+Z</I>
+ must have the same number of elements. The result has the same structure and number of elements as <I CLASS="Italics">
+X</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677274">
+ </A>
+In the case of bilinear interpolation, the result is obtained as follows: Let <EM CLASS="Emphasis">
+l</EM>
+&nbsp;=&nbsp;<EM CLASS="MathSymbol">
+&Icirc;</EM>
+<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+<EM CLASS="MathSymbol">
+&#176;</EM>
+  and <EM CLASS="Emphasis">
+k</EM>
+ = <EM CLASS="MathSymbol">
+&Icirc;</EM>
+<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+<EM CLASS="MathSymbol">
+&#176;</EM>
+ . Element <I CLASS="Italics">
+i</I>
+ of the result is computed by interpolating between <EM CLASS="Emphasis">
+P</EM>
+(<EM CLASS="Emphasis">
+l, k</EM>
+), <EM CLASS="Emphasis">
+P</EM>
+(<EM CLASS="Emphasis">
+l</EM>
++1, <EM CLASS="Emphasis">
+k</EM>
+), <EM CLASS="Emphasis">
+P</EM>
+(<EM CLASS="Emphasis">
+l</EM>
+, <EM CLASS="Emphasis">
+k</EM>
++1), and <EM CLASS="Emphasis">
+P</EM>
+(<EM CLASS="Emphasis">
+l</EM>
++1, <EM CLASS="Emphasis">
+k</EM>
++1). to obtain the estimated value at (<EM CLASS="Emphasis">
+Xi</EM>
+, <EM CLASS="Emphasis">
+Yi</EM>
+). Trilinear interpolation is a direct extension of the above.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677275">
+ </A>
+<EM CLASS="Bold">
+If GRID is set:</EM>
+ Let <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+ be the number of elements in <I CLASS="Italics">
+X</I>
+, let <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+ be the number of elements in <I CLASS="Italics">
+Y</I>
+, and <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+ be the number of elements in <I CLASS="Italics">
+Z</I>
+. The result has dimensions (<EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="subscript">
+x</SUB>
+, <EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+) for bilinear interpolation, and (<EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="subscript">
+x</SUB>
+, <EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="Subscript">
+y</SUB>
+, <EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="Subscript">
+z</SUB>
+) for trilinear interpolation. For bilinear interpolation, element (<EM CLASS="Emphasis">
+i</EM>
+,<EM CLASS="Emphasis">
+j</EM>
+) of the result contains the value of <I CLASS="Italics">
+P</I>
+ interpolated at position (<EM CLASS="Emphasis">
+Xi</EM>
+, <EM CLASS="Emphasis">
+Yi</EM>
+). For trilinear interpolation, element (<EM CLASS="Emphasis">
+i</EM>
+, <EM CLASS="Emphasis">
+j</EM>
+, <EM CLASS="Emphasis">
+k</EM>
+) of the result is <I CLASS="Italics">
+P</I>
+ interpolated at (<EM CLASS="Emphasis">
+Xi</EM>
+, <EM CLASS="Emphasis">
+Yi</EM>
+, <EM CLASS="Emphasis">
+Zi</EM>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677276">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677277">
+ </A>
+The value to return for elements outside the bounds of <I CLASS="Italics">
+P</I>
+. If this keyword is not specified, interpolated positions that fall outside the bounds of the array <EM CLASS="Emphasis">
+P</EM>
+--that is, elements of the <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, or <EM CLASS="Emphasis">
+Z</EM>
+ arguments that are either less than zero or greater than the largest subscript in the corresponding dimension of <EM CLASS="Emphasis">
+P</EM>
+--are set equal to the value of the nearest element of <EM CLASS="Emphasis">
+P</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677278">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677279">
+ </A>
+The example below computes bilinear interpolates with the keyword GRID set:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677280">
+ </A>
+<EM CLASS="Kern-in-1%">
+p = FINDGEN(4,4)</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677281">
+ </A>
+<EM CLASS="Kern-in-1%">
+PRINT, INTERPOLATE(p, [.5, 1.5, 2.5], [.5, 1.5, 2.5], /GRID)</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=677282">
+ </A>
+and prints the 3 by 3 array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677283">
+ </A>
+&nbsp;&nbsp;&nbsp;2.50000 &nbsp;&nbsp;3.50000&nbsp;&nbsp; 4.50000</P>
+<P CLASS="Code">
+<A NAME="pgfId=677284">
+ </A>
+&nbsp;&nbsp;&nbsp;6.50000 &nbsp;&nbsp;7.50000 &nbsp;&nbsp;8.50000</P>
+<P CLASS="Code">
+<A NAME="pgfId=677285">
+ </A>
+&nbsp;&nbsp;&nbsp;10.5000 &nbsp;&nbsp;11.5000 &nbsp;&nbsp;12.5000</P>
+<P CLASS="Body">
+<A NAME="pgfId=677286">
+ </A>
+corresponding to the locations:</P>
+<P CLASS="Body">
+<A NAME="pgfId=677287">
+ </A>
+(.5,.5), (1.5, .5), (2.5, .5), <BR>
+(.5,1.5), (1.5, 1.5), (2.5, 1.5),<BR>
+(.5,2.5), (1.5, 2.5), (2.5, 2.5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677288">
+ </A>
+Another example computes interpolates, with GRID not set and a parameter outside the bounds of <I CLASS="Italics">
+P</I>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677289">
+ </A>
+PRINT, INTERPOLATE(p, [.5, 1.5, 2.5, 3.1], [.5, 1.5, 2.5, 2])</P>
+<P CLASS="Body">
+<A NAME="pgfId=677290">
+ </A>
+prints the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677291">
+ </A>
+ &nbsp;&nbsp;2.50000&nbsp;&nbsp; 7.50000&nbsp;&nbsp; 12.5000&nbsp;&nbsp; 11.0000</P>
+<P CLASS="Body">
+<A NAME="pgfId=677292">
+ </A>
+corresponding to the locations (.5,.5), (1.5, 1.5), (2.5, 2.5) and (3.1, 2.0). Note that the last location is outside the bounds of <I CLASS="Italics">
+P</I>
+ and is set from the value of the last column. The following command uses the MISSING keyword to set such values to -1:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677293">
+ </A>
+PRINT, INTERPOLATE(p, [.5, 1.5, 2.5, 3.1], [.5, 1.5, 2.5, 2], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=677294">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MISSING = -1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677295">
+ </A>
+and gives the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677296">
+ </A>
+&nbsp;&nbsp; 2.50000&nbsp;&nbsp; 7.50000&nbsp;&nbsp; 12.5000&nbsp;&nbsp; -1.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769782">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=769783">
+ </A>
+<A HREF="idl14.htm#43479" CLASS="XRef">
+BILINEAR</A>
+, <A HREF="idld8.htm#16834" CLASS="XRef">
+INTERPOL</A>
+, <A HREF="idle1.htm#19008" CLASS="XRef">
+KRIG2D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

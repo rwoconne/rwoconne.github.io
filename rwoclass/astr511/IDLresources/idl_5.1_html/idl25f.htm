@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARPUT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl260.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl25e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997987">
+ </A>
+<A NAME="31460">
+ </A>
+CDF_VARPUT</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997991">
+ </A>
+The <A NAME="marker=997989">
+ </A>
+CDF_VARPUT procedure writes a value to a <A NAME="marker=997990">
+ </A>
+variable in a Common Data Format file. This function provides equivalent functionality to the C routines <A NAME="marker=997992">
+ </A>
+<CODE CLASS="Code">
+CDFvarPut</CODE>
+ and <A NAME="marker=997993">
+ </A>
+<CODE CLASS="Code">
+CDFvarHyperPut</CODE>
+.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997994">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997995">
+ </A>
+CDF_VARPUT, <I CLASS="Italics">
+Id, Variable, Value</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997996">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997997">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997998">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997999">
+ </A>
+Variable</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998000">
+ </A>
+A string containing the name of the variable <I CLASS="Italics">
+or</I>
+ the variable number being written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998001">
+ </A>
+Value</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998002">
+ </A>
+The value to write. If the value has 1 more dimension than the CDF, multiple records will be written. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998003">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998005">
+ </A>
+<A NAME="marker=998004">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998006">
+ </A>
+An optional vector containing the counts to be used in writing <I CLASS="Italics">
+Value</I>
+. Note that counts do not have to match the dimensions of <I CLASS="Italics">
+Value</I>
+. The default count is to use the dimensions of <I CLASS="Italics">
+Value</I>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998008">
+ </A>
+<A NAME="marker=998007">
+ </A>
+INTERVAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998009">
+ </A>
+A vector specifying the interval between values in each dimension. The default value is 1 in each dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998011">
+ </A>
+<A NAME="marker=998010">
+ </A>
+OFFSET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998012">
+ </A>
+A vector specifying the array indices within the specified record(s) at which to begin writing. OFFSET is a 1-dimensional array containing one element per CDF dimension. The default value is zero in each dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998014">
+ </A>
+<A NAME="marker=998013">
+ </A>
+REC_INTERVAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998015">
+ </A>
+The interval between records being written when writing multiple records. The default value is 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998017">
+ </A>
+<A NAME="marker=998016">
+ </A>
+REC_START</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998018">
+ </A>
+The record number at which to start writing. The default is 0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998020">
+ </A>
+<A NAME="marker=998019">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998021">
+ </A>
+If <I CLASS="Italics">
+Variable</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+Variable</I>
+ is an rVariable ID.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998022">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998023">
+ </A>
+id= CDF_CREATE('mycdf', [5,10], /NETWORK_ENCODING, /ROW_MAJOR)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998024">
+ </A>
+varid= CDF_VARCREATE(id, 'V1', [1,1], /CDF_FLOAT, /REC_VARY)</P>
+<P CLASS="Body">
+<A NAME="pgfId=998025">
+ </A>
+To write the value 42.0 into record 12, third row, fourth column:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998026">
+ </A>
+CDF_VARPUT, id, varid, 42, REC_START=12, OFFSET=[2,3]</P>
+<P CLASS="Body">
+<A NAME="pgfId=998027">
+ </A>
+To write 3 records, skipping every other record, starting at record 2, writing every other entry of each record. Note that in this example we write 25 values into each record written:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998028">
+ </A>
+CDF_VARPUT, id, varid, FINDGEN(5,5,3), INTERVAL=[2,1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998029">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REC_INTERVAL=2, REC_START=2</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001700">
+ </A>
+CDF_DELETE, id</P>
+</DIV>
+</BODY>
+</HTML>

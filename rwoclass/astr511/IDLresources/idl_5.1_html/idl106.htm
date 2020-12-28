@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LUDC</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl107.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl105.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50943">
+ </A>
+<A NAME="56865">
+ </A>
+LUDC</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50948">
+ </A>
+The <A NAME="marker=50945">
+ </A>
+LUDC <A NAME="marker=50946">
+ </A>
+procedure replaces an <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ array, <I CLASS="Italics">
+A</I>
+, with the <A NAME="marker=50947">
+ </A>
+LU decomposition of a row-wise permutation of itself. </P>
+<P CLASS="Body">
+<A NAME="pgfId=50949">
+ </A>
+LUDC is based on the routine <CODE CLASS="Code">
+ludcmp</CODE>
+ described in section 2.3 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50950">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50951">
+ </A>
+LUDC, <I CLASS="Italics">
+A, Index</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50952">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50953">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50954">
+ </A>
+An <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ array of any type except string. Upon output, <I CLASS="Italics">
+A</I>
+ is replaced with its LU decomposition.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50955">
+ </A>
+Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50956">
+ </A>
+An output vector that records the row permutations which occurred as a result of partial pivoting.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50957">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58718">
+ </A>
+<A NAME="marker=58717">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58719">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50959">
+ </A>
+<A NAME="marker=50958">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50960">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50962">
+ </A>
+<A NAME="marker=50961">
+ </A>
+INTERCHANGES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50963">
+ </A>
+An output variable that is set to positive 1 if the number of row interchanges was even, or to negative 1 if the number of interchanges was odd.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50964">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50965">
+ </A>
+See the description of LUSOL for an example using this function.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50966">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51181">
+ </A>
+<A HREF="idl108.htm#55550" CLASS="XRef">
+LUSOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,99 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <META NAME="author" CONTENT="D. Le Mignant (Hola!)"> 
+ <META NAME="editor" CONTENT="W. M. Keck AO Team">
+ <META NAME="maintainer" CONTENT="D. Le Mignant (dlemignant@keck.hawaii.edu)">
+ <META NAME="organisation" CONTENT="Californian Association for Research in Astronomy">
+ <META NAME="keywords" CONTENT="adaptive optics, Keck, technics">
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="emacs [en] (X11; I; Linux 2.2.14-15mdk i686)">
+   <title>Keck I AO Description Notes</title>
+</head>
+<body text="#00FFFF" bgcolor="#001836" link="#709FFF" vlink="#00FF00">
+
+<center><b><font size=+3> More about Adaptive Optics at W. M. Keck Observatory</font></b></center>
+
+<table border=0 align=center>
+<tr>
+<p>
+<td> <b>Optics Bench Overview: </b><br>
+<A HREF="http://www2.keck.hawaii.edu:3636/realpublic/inst/ao/about/slides/benchover.html"> 
+<img src="tn_inst-id.jpg">
+</A></td>
+<td>
+Like most AO system, the incoming light from the natural guide star
+is split in two parts by an IR transmissive dichroic (see 
+the Optics Bench Overview):<br> 
+the visible and the near infrared (NIR) channels.
+The wavefront distortion is the same at all wavelengths, but corresponds
+to a smaller fraction of a wave for the NIR domain compared to the 
+visible. For the same correction 
+applied to the light, the image quality will be better at longer wavelengths.
+As a consequence, the visible part of the light is used for wavefront sensing and the
+NIR part is sent towards the science instrument or the interferometric tunnel.<p>
+
+The analysis of the light is made using a wavefront sensor. A real time 
+computer gets the information from the wavefront sensor and given the telescope
+pupil geometry and other system parameters, sends the 
+voltages to apply to the actuators of the tip-tilt (TT) and deformable mirrors (DM).</td>
+</tr>
+</table>
+
+The three main modules of the AO system are the wavefront sensor, the real time 
+computer, the tip-tilt mirror and DM. We give below a short description of these 
+three modules :<br>
+<ul>
+<li>wavefront sensing :<br>
+The pupil image is used to retrieve the phase of the wavefront by mean of 
+a ``Shack-Hartmann wavefront sensor''. The telescope 
+pupil image is sampled into 20x20 sub-pupil elements using 
+a lenslet array of 20x20 elements. 
+The lenslet array creates an image of each wavefront element onto a 
+2x2 pixel area of a 64x64 pixel CCD. The CCD frame is read
+and transfered to the real time computer.<br>
+The maximum frame rate for the CCD is 672 Hz and the wavefront
+is analyzed every ~ 1.5 ms in that optimal case. 
+The frame rate can be decreased down to 55 Hz when observing faint targets (V magnitude of
+about 13.5).<br>
+Each sub-pupil image is always formed onto 4 CCD pixels. Note that 
+the size on the sky of each 
+individual pixel can be changed between 
+0.6, 1.0 and 2.4 arcsec by changing the lenslets to provide a 1.2, 2.0, or 4.8 arcsec diameter 
+field . Also, the field stop can be changed  and get any of these three values.
+
+<li>control software :<br> the real time computer is part of the WF controller. It
+gets the intensity for 
+every CCD pixel. It then computes the total intensity per sub-aperture and
+the image centroid position for every sub-aperture. Starting from the 
+centroid value for all sub-apertures, the phase of the total wavefront is retrieved.<br>
+The accuracy in determining the right wavefront phase at a given moment 
+will be given by the signal to noise in every sub-aperture.<br>
+Given the geometry of the telescope (remember that Keck telescope has a serrated hexagonal pupil) 
+and various calibration files for the
+wavefront sensor, the WFC computes a system matrix that compensates for pupil rotation and
+is used to transform the wavefront measurements from the WFS into voltage 
+commands for the tip-tilt and DM actuators. The amplitude of the 
+voltage applied to the tip-tilt and DM is constrained by the values of the system
+gains, namely TT gain and DM gain.
+
+<li>adaptive optics mirrors :<br> Tip-tilt mirror and deformable mirror 
+(DM) are driven by actuators. Each of the 3 tip-tilt mirror actuators and the
+349 DM actuators are receiving new position commands at a rate given by the WFS 
+frame rate. An interferogram of the DM gives a real time
+view of the DM shape and let the operator know how the system is performing.
+</UL>
+<p>&nbsp;
+<center><HR size=2 width=95%></P></CENTER>
+<p>
+<center>
+<br>[<a href="ao.html">Back</a>]</center>
+<p>
+<center><HR size=2 width=95%></P></CENTER>
+<table border=0 width="95%">
+<tr><td align=left><i> Last update : 01/25/2001 by Keck AO Team</i></td>
+<td align=right>&copy; W. M. Keck Observatory (2001)</TD>
+</TR>
+</table>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_SYLK</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl16c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl16a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=67820">
+ </A>
+<A NAME="95597">
+ </A>
+READ_SYLK</H2>
+<P CLASS="Body">
+<A NAME="pgfId=67825">
+ </A>
+The <A NAME="marker=67822">
+ </A>
+READ_SYLK function reads the contents of a <A NAME="marker=67823">
+ </A>
+SYLK (<A NAME="marker=67824">
+ </A>
+Symbolic Link) format <A NAME="marker=67826">
+ </A>
+spreadsheet data file and returns the contents of the file, or of a cell data range, in an IDL variable. READ_SYLK returns either a vector of structures or a 2D array containing the spreadsheet cell data.</P>
+<P CLASS="Body">
+<A NAME="pgfId=67827">
+ </A>
+By default, READ_SYLK returns a vector of structures, each of which contains the data from one <EM CLASS="Emphasis">
+row</EM>
+ of the table being read. In this case, the individual fields in the structures have the tag names &quot;Col0&quot;, &quot;Col1&quot;, ..., &quot;Col<EM CLASS="Emphasis">
+n</EM>
+&quot;. If the COLMAJOR keyword is specified, each of the structures returned contains data from one <EM CLASS="Emphasis">
+column</EM>
+ of the table, and the tag names are &quot;Row0&quot;, &quot;Row1&quot;, ..., &quot;Row<EM CLASS="Emphasis">
+n</EM>
+&quot;.</P>
+<P CLASS="Body">
+<A NAME="pgfId=67828">
+ </A>
+Note: This routine reads only numeric and string SYLK data. It ignores all spreadsheet and cell formatting information (cell width, text justification, font type, date, time, and monetary notations, etc). Note also that the data in a given cell range must be of the same data type (all integers, for example) in order for the read operation to succeed. See the example below for further information.</P>
+<P CLASS="Body">
+<A NAME="pgfId=67829">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_sylk.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67830">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=67831">
+ </A>
+Result = READ_SYLK(<EM CLASS="Emphasis">
+File</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67832">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67833">
+ </A>
+File</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67834">
+ </A>
+A scalar string specifying the full path name of the SYLK file to read.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67835">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67837">
+ </A>
+<A NAME="marker=67836">
+ </A>
+ARRAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67838">
+ </A>
+Set this keyword to return an IDL array rather than a vector of structures. Note that all the data in the cell range specified must be of the same data type to successfully return an array. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67840">
+ </A>
+<A NAME="marker=67839">
+ </A>
+COLMAJOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67841">
+ </A>
+Set this keyword to create a vector of structures each containing data from a single <EM CLASS="Emphasis">
+column</EM>
+ of the table being read. If you are creating an array rather than a vector of structures (the ARRAY keyword is set), setting COLMAJOR has the same effect as transposing the resulting array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=67842">
+ </A>
+This keyword should be set when importing spreadsheet data which has column major organization (data stored in columns rather than rows).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67844">
+ </A>
+<A NAME="marker=67843">
+ </A>
+NCOLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67845">
+ </A>
+Set this keyword to the number of spreadsheet columns to read. If not specified, all of the cell columns found in the file are read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67847">
+ </A>
+<A NAME="marker=67846">
+ </A>
+NROWS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67848">
+ </A>
+Set this keyword to the number of spreadsheet rows to read. If not specified, all of the cell rows found in the file are read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67850">
+ </A>
+<A NAME="marker=67849">
+ </A>
+STARTCOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67851">
+ </A>
+Set this keyword to the first column of spreadsheet cells to read. If not specified, the read operation begins with the first column found in the file (column 0).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67853">
+ </A>
+<A NAME="marker=67852">
+ </A>
+STARTROW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67854">
+ </A>
+Set this keyword to the first row of spreadsheet cells to read. If not specified, the read operation begins with the first row of cells found in the file (row 0).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67856">
+ </A>
+<A NAME="marker=67855">
+ </A>
+USEDOUBLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67857">
+ </A>
+Set this keyword to read any floating-point cell data as double-precision rather than the default single-precision.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67859">
+ </A>
+<A NAME="marker=67858">
+ </A>
+USELONGS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67860">
+ </A>
+Set this keyword to read any integer cell data as long integer type rather than the default integer type.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67861">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=67862">
+ </A>
+Suppose the following spreadsheet table, with the upper left cell (value = &quot;Index&quot;) at location (0, 0), has been saved as the SYLK file &quot;file.slk&quot;:</P>
+<P CLASS="Code">
+<A NAME="pgfId=67863">
+ </A>
+Index&nbsp;&nbsp;Name&nbsp;&nbsp;Gender&nbsp;&nbsp;Platform</P>
+<P CLASS="Code">
+<A NAME="pgfId=67864">
+ </A>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beth&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unix</P>
+<P CLASS="Code">
+<A NAME="pgfId=67865">
+ </A>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lubos&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VMS</P>
+<P CLASS="Code">
+<A NAME="pgfId=67866">
+ </A>
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Louis&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows</P>
+<P CLASS="Code">
+<A NAME="pgfId=67867">
+ </A>
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thierry&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Macintosh</P>
+<P CLASS="Body">
+<A NAME="pgfId=67868">
+ </A>
+Note that the data format of the title row (<EM CLASS="Emphasis">
+string</EM>
+, <EM CLASS="Emphasis">
+string</EM>
+, <EM CLASS="Emphasis">
+string</EM>
+, <EM CLASS="Emphasis">
+string</EM>
+) is inconsistent with the following four rows (<EM CLASS="Emphasis">
+int</EM>
+, <EM CLASS="Emphasis">
+string</EM>
+, <EM CLASS="Emphasis">
+string</EM>
+, <EM CLASS="Emphasis">
+string</EM>
+) in the table. Because of this, it is impossible to read all of the table into a single IDL variable. The following two commands, however, will read all of the data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=67869">
+ </A>
+title = READ_SYLK(&quot;file.slk&quot;, NROWS = 1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=67870">
+ </A>
+table = READ_SYLK(&quot;file.slk&quot;, STARTROW = 1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=67871">
+ </A>
+PRINT, title	<EM CLASS="Comment">;
+Display the top row of the table.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=67872">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67873">
+ </A>
+{ Index Name Gender Platform}</P>
+<P CLASS="Code">
+<A NAME="pgfId=67874">
+ </A>
+PRINT, table</P>
+<P CLASS="Body">
+<A NAME="pgfId=67875">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67876">
+ </A>
+{1 Beth F Unix}{2 Lubos M VMS}{3 Louis M Windows}{4 Thierry M Macintosh}</P>
+<P CLASS="Body">
+<A NAME="pgfId=67877">
+ </A>
+To retrieve only the &quot;Name&quot; column:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=67878">
+ </A>
+names = READ_SYLK(&quot;file.slk&quot;, /ARRAY, STARTROW = 1, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=837060">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;STARTCOL = 1, NCOLS = 1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=67879">
+ </A>
+PRINT, names</P>
+<P CLASS="Body">
+<A NAME="pgfId=67880">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67881">
+ </A>
+Beth Lubos Louis Thierry </P>
+<P CLASS="Body">
+<A NAME="pgfId=67882">
+ </A>
+To retrieve the &quot;Name&quot; column in column format:</P>
+<P CLASS="Code">
+<A NAME="pgfId=67883">
+ </A>
+namescol = READ_SYLK(&quot;file.slk&quot;, /ARRAY, /COLMAJOR, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=875891">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;STARTROW = 1, STARTCOL = 1, NCOLS = 1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=67884">
+ </A>
+PRINT, namescol</P>
+<P CLASS="Body">
+<A NAME="pgfId=67885">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67886">
+ </A>
+Beth </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67887">
+ </A>
+Lubos </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67888">
+ </A>
+Louis </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=67889">
+ </A>
+Thierry </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67890">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=67891">
+ </A>
+<A HREF="idl215.htm#85647" CLASS="XRef">
+WRITE_SYLK</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

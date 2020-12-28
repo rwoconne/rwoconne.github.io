@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_VARDEF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ea.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2e8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997441">
+ </A>
+<A NAME="10272">
+ </A>
+NCDF_VARDEF</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997445">
+ </A>
+The <A NAME="marker=997443">
+ </A>
+NCDF_VARDEF function adds a new <A NAME="marker=997444">
+ </A>
+variable to an open netCDF file in define mode. If successful, the variable ID is returned. If a new variable cannot be defined, NCDF_VARDEF returns -1.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997446">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997447">
+ </A>
+Result = NCDF_VARDEF(<I CLASS="Italics">
+Cdfid, Name [, Dim]</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997448">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997449">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997450">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997451">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997452">
+ </A>
+A scalar string containing the variable name.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997453">
+ </A>
+Dim</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997454">
+ </A>
+An optional vector containing the dimension IDs corresponding to the variable dimensions. If the ID of the unlimited dimension is included, it must be the rightmost element in the array. If <I CLASS="Italics">
+Dim</I>
+ is omitted, the variable is assumed to be a scalar.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997455">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997456">
+ </A>
+The following keywords specify the data type for the variable. Only one of these keywords can be used. If no data type keyword is specified, FLOAT is used by default.</P>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997458">
+ </A>
+<A NAME="marker=997457">
+ </A>
+BYTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997459">
+ </A>
+Set this keyword to indicate that the data is composed of bytes.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997461">
+ </A>
+<A NAME="marker=997460">
+ </A>
+CHAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997462">
+ </A>
+Set this keyword to indicate that the data is composed of bytes (assumed to be ASCII).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997464">
+ </A>
+<A NAME="marker=997463">
+ </A>
+DOUBLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997465">
+ </A>
+Set this keyword to indicate that the data is composed of double-precision floating-point numbers.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997467">
+ </A>
+<A NAME="marker=997466">
+ </A>
+FLOAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997468">
+ </A>
+Set this keyword to indicate that the data is composed of floating-point numbers.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997470">
+ </A>
+<A NAME="marker=997469">
+ </A>
+LONG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997471">
+ </A>
+Set this keyword to indicate that the data is composed of longword integers.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997473">
+ </A>
+<A NAME="marker=997472">
+ </A>
+SHORT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997474">
+ </A>
+Set this keyword to indicate that the data is composed of 2-byte integers.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000528">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=1000533">
+ </A>
+id = NCDF_CREATE('test.nc', /CLOBBER)	<EM CLASS="Comment">;
+Create the netCDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000536">
+ </A>
+NCDF_ATTPUT, id, 'TITLE', 'Incredibly Important Data', /GLOBAL</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000537">
+ </A>
+NCDF_ATTPUT, id, 'GALAXY', 'Milky Way', /GLOBAL</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000538">
+ </A>
+NCDF_ATTPUT, id, 'PLANET', 'Earth', /GLOBAL</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000539">
+ </A>
+xid = NCDF_DIMDEF(id, 'x', 100)	<EM CLASS="Comment">;
+Define the X dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000540">
+ </A>
+yid = NCDF_DIMDEF(id, 'y', 200)	<EM CLASS="Comment">;
+Define the Y dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000586">
+ </A>
+zid = NCDF_DIMDEF(id, 'z', /UNLIMITED)	<EM CLASS="Comment">;
+Define the Z dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000587">
+ </A>
+vid0 = NCDF_VARDEF(id, 'image0', [yid, xid], /FLOAT)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000588">
+ </A>
+vid1 = NCDF_VARDEF(id, 'image1', [yid, xid], /FLOAT)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000546">
+ </A>
+Rename <CODE CLASS="Code">
+image0</CODE>
+ to <CODE CLASS="Code">
+dist_image:</CODE>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000548">
+ </A>
+dist_id = NCDF_VARID(id, 'image0')	<EM CLASS="Comment">;
+Demonstrate usage of NCDF_VARID</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000549">
+ </A>
+NCDF_VARRENAME, id, vid0, 'dist_image'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000551">
+ </A>
+NCDF_ATTPUT, id, vid, 'TITLE', 'DIST_IMAGE'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000552">
+ </A>
+NCDF_CONTROL, id, /ENDEF  	<EM CLASS="Comment">;
+Put the file into data mode.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000554">
+ </A>
+image = CONGRID(DIST(200), 200, 100)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000555">
+ </A>
+NCDF_VARPUT, id, vid, image</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000557">
+ </A>
+INQ_VID = NCDF_VARINQ(id, 'dist_image')</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000558">
+ </A>
+HELP, INQ_VID, /STRUCTURE</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000559">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000560">
+ </A>
+** Structure &lt;400ec678&gt;, 5 tags, length=32, refs=1:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000561">
+ </A>
+   NAME            STRING    `dist_image'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000562">
+ </A>
+   DATATYPE        STRING    `FLOAT'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000563">
+ </A>
+   NDIMS           LONG                 2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000564">
+ </A>
+   NATTS           LONG                 1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000565">
+ </A>
+   DIM             LONG      Array(2)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000568">
+ </A>
+file_inq = NCDF_INQUIRE(id)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000569">
+ </A>
+HELP, file_inq, /STRUCTURE</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000606">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000570">
+ </A>
+** Structure &lt;400ebdf8&gt;, 4 tags, length=16, refs=1:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000571">
+ </A>
+   NDIMS           LONG                 3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000572">
+ </A>
+   NVARS           LONG                 2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000573">
+ </A>
+   NGATTS          LONG                 3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000574">
+ </A>
+   RECDIM          LONG                 2</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000576">
+ </A>
+NCDF_CLOSE, id	<EM CLASS="Comment">;
+Close the NetCDF file.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

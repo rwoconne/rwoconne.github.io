@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ON_IOERROR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl12f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl12d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889589">
+ </A>
+<A NAME="27107">
+ </A>
+ON_IOERROR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889595">
+ </A>
+The <A NAME="marker=889592">
+ </A>
+ON_IOERROR procedure specifies a <A NAME="marker=889593">
+ </A>
+statement to be jumped to if an <A NAME="marker=889594">
+ </A>
+I/O error occurs in the current procedure. Normally, when an I/O error occurs, an error message is printed and program execution is stopped. If ON_IOERROR is called and an I/O related error later occurs in the same procedure activation, control is transferred to the designated statement with the error code stored in the system variable <A NAME="marker=889596">
+ </A>
+!ERROR_STATE. The text of the error message is contained in !ERROR_STATE.MSG.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889597">
+ </A>
+The effect of ON_IOERROR can be canceled by using the label &quot;NULL&quot; in the call.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889598">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889599">
+ </A>
+ON_IOERROR, <I CLASS="Italics">
+Label</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889600">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889601">
+ </A>
+The following code segment reads an integer from the keyboard. If an invalid number is entered, the program re-prompts.</P>
+<P CLASS="Code">
+<A NAME="pgfId=889602">
+ </A>
+i = 0	<EM CLASS="Comment">;
+Number to read</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889603">
+ </A>
+valid = 0	<EM CLASS="Comment">;
+Valid flag</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889604">
+ </A>
+WHILE valid EQ 0 DO BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=889605">
+ </A>
+&nbsp;&nbsp;&nbsp;ON_IOERROR, bad_num</P>
+<P CLASS="Code">
+<A NAME="pgfId=889606">
+ </A>
+&nbsp;&nbsp;&nbsp;READ, 'Enter Number: ', i</P>
+<P CLASS="Code">
+<A NAME="pgfId=889607">
+ </A>
+&nbsp;&nbsp;&nbsp;VALID = 1	<EM CLASS="Comment">;
+If we get here, i is good.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889608">
+ </A>
+bad_num: IF NOT valid THEN $</P>
+<P CLASS="Code">
+<A NAME="pgfId=889609">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 'You entered an invalid number.'</P>
+<P CLASS="Code">
+<A NAME="pgfId=889610">
+ </A>
+ENDWHILE</P>
+<P CLASS="Code">
+<A NAME="pgfId=889611">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889612">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889624">
+ </A>
+<A HREF="idl28.htm#70268" CLASS="XRef">
+CATCH</A>
+, <A HREF="idl117.htm#14106" CLASS="XRef">
+MESSAGE</A>
+, <A HREF="idl12d.htm#17797" CLASS="XRef">
+ON_ERROR</A>
+, and <A HREF="..html#21070" CLASS="XRef">
+Controlling Errors</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

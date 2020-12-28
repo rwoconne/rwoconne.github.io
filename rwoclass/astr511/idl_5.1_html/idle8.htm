@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LINBCG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50862">
+ </A>
+<A NAME="41659">
+ </A>
+LINBCG</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50868">
+ </A>
+The <A NAME="marker=50864">
+ </A>
+<A NAME="marker=50865">
+ </A>
+LINBCG function is used in conjunction with <A NAME="marker=50866">
+ </A>
+SPRSIN to solve a set of <EM CLASS="Emphasis">
+n</EM>
+ <A NAME="marker=50867">
+ </A>
+linear equations with <EM CLASS="Emphasis">
+n</EM>
+ unknowns using the <A NAME="marker=50869">
+ </A>
+iterative biconjugate gradient method. The result is an <EM CLASS="Emphasis">
+n</EM>
+-element vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50870">
+ </A>
+LINBCG is based on the routine <CODE CLASS="Code">
+linbcg</CODE>
+ described in section 2.7 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50871">
+ </A>
+Note: <EM CLASS="Emphasis">
+Numerical Recipes</EM>
+ recommends using double-precision arithmetic to perform this computation.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50872">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50873">
+ </A>
+Result = LINBCG(<EM CLASS="Emphasis">
+A, B, X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50874">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50875">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50876">
+ </A>
+A row-indexed sparse array created by the SPRSIN function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50877">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50878">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector containing the right-hand side of the linear system <EM CLASS="Bold">
+Ax=b</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50879">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50880">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector containing the initial solution of the linear system.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50881">
+ </A>
+Keywords </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50883">
+ </A>
+<A NAME="marker=50882">
+ </A>
+DOUBLE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=50884">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50886">
+ </A>
+<A NAME="marker=50885">
+ </A>
+ITOL </H4>
+<P CLASS="Body">
+<A NAME="pgfId=50887">
+ </A>
+Use this keyword to specify which convergence test should be used. Set ITOL to one of the following:</P>
+<OL>
+<LI CLASS="Numbered-1-Indent">
+<A NAME="pgfId=50888">
+ </A>
+Iteration stops when <EM CLASS="MathSymbol">
+&Ugrave;</EM>
+<EM CLASS="Emphasis">
+A</EM>
+<EM CLASS="MathSymbol">
+  </EM>
+<EM CLASS="Emphasis">
+x </EM>
+- <EM CLASS="Emphasis">
+b</EM>
+<EM CLASS="MathSymbol">
+&Ugrave;</EM>
+/<EM CLASS="MathSymbol">
+&Ugrave;</EM>
+<EM CLASS="Emphasis">
+b</EM>
+<EM CLASS="MathSymbol">
+&Ugrave; </EM>
+is less than the value specified by TOL.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=50889">
+ </A>
+Iteration stops when <EM CLASS="MathSymbol">
+&Ugrave;</EM>
+&Atilde;<SUP CLASS="Superscript">
+-1</SUP>
+ <EM CLASS="MathSymbol">
+ (</EM>
+<EM CLASS="Emphasis">
+A</EM>
+<EM CLASS="MathSymbol">
+  </EM>
+<EM CLASS="Emphasis">
+x </EM>
+- <EM CLASS="Emphasis">
+b</EM>
+<EM CLASS="MathSymbol">
+)&Ugrave;</EM>
+/<EM CLASS="MathSymbol">
+&Ugrave;</EM>
+&Atilde;<SUP CLASS="Superscript">
+-1</SUP>
+ <EM CLASS="MathSymbol">
+ </EM>
+<EM CLASS="Emphasis">
+b</EM>
+<EM CLASS="MathSymbol">
+&Ugrave;</EM>
+ (where &Atilde; is a &quot;preconditioning&quot; matrix close to <EM CLASS="Emphasis">
+A</EM>
+) is less than the value specified by TOL.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=50890">
+ </A>
+The routine uses its own estimate of error in <EM CLASS="Emphasis">
+x</EM>
+. Iteration stops when the magnitude of the error divided by the magnitude of <EM CLASS="Emphasis">
+x</EM>
+ is less than the value specified by TOL. This is the default setting.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=50891">
+ </A>
+The same as 3, except that the routine uses the largest (in absolute value) component of the error and the largest component of <EM CLASS="Emphasis">
+x</EM>
+ rather than the vector magnitudes.</LI>
+</OL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50893">
+ </A>
+<A NAME="marker=50892">
+ </A>
+TOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50894">
+ </A>
+Use this keyword to specify the desired convergence tolerance. For single-precision calculations, the default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-7</SUP>
+. For double-precision values, the default is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-14</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50896">
+ </A>
+<A NAME="marker=50895">
+ </A>
+ITER </H4>
+<P CLASS="Body">
+<A NAME="pgfId=50897">
+ </A>
+Use this keyword to specify an output variable that will be set to the number of iterations performed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50899">
+ </A>
+<A NAME="marker=50898">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50900">
+ </A>
+The maximum allowed number of iterations. The default is <EM CLASS="Emphasis">
+n</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50901">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50902">
+ </A>
+Begin with an array A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50903">
+ </A>
+A = [[ 5.0,  0.0, 0.0,  1.0, -2.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50904">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, -2.0, 0.0,  1.0,  0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50905">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -1.0, 0.0,  2.0,  0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50906">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 0.0,  3.0, 3.0,  1.0,  0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50907">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2.0,  0.0, 0.0, -1.0,  2.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=50908">
+ </A>
+B = [7.0, 1.0, 3.0, 3.0, -4.0]	<EM CLASS="Comment">;
+Define a right-hand side vector B.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50909">
+ </A>
+X = REPLICATE(1.0, N_ELEMENTS(B))	<EM CLASS="Comment">;
+Start with an initial guess at the solution.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50910">
+ </A>
+result = LINBCG(SPRSIN(A), B, X)<BR>
+<EM CLASS="Comment">;
+Solve the linear system Ax=b.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50911">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50912">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50913">
+ </A>
+&nbsp;&nbsp;&nbsp;1.00000&nbsp;&nbsp;&nbsp;1.00000&nbsp;&nbsp;-5.53459e-08&nbsp;&nbsp;&nbsp;3.02525e-07&nbsp;&nbsp;-1.00000</P>
+<P CLASS="Body">
+<A NAME="pgfId=50914">
+ </A>
+The exact solution is [1, 1, 0, 0, -1].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50915">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=829895">
+ </A>
+<A HREF="idlac.htm#82247" CLASS="XRef">
+FULSTR</A>
+, <A HREF="idl169.htm#57482" CLASS="XRef">
+READ_SPR</A>
+, <A HREF="idl1b0.htm#69406" CLASS="XRef">
+SPRSAB</A>
+, <A HREF="idl1b1.htm#31054" CLASS="XRef">
+SPRSAX</A>
+, <A HREF="idl1b2.htm#41214" CLASS="XRef">
+SPRSIN</A>
+, <A HREF="idl213.htm#23995" CLASS="XRef">
+WRITE_SPR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WF_DRAW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ff.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1fd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787667">
+ </A>
+<A NAME="51796">
+ </A>
+WF_DRAW</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787672">
+ </A>
+The <A NAME="marker=787669">
+ </A>
+WF_DRAW procedure <A NAME="marker=787670">
+ </A>
+draws <A NAME="marker=787671">
+ </A>
+weather fronts of various types using parametric spline interpolation to smooth the lines. WF_DRAW uses the POLYFILL routine to make the annotations on the front lines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787673">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+wf_draw.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787674">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787675">
+ </A>
+WF_DRAW, <EM CLASS="Emphasis">
+X, Y</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787676">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787677">
+ </A>
+X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787678">
+ </A>
+Vectors of abcissae and ordinates defining the front to be drawn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787679">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787681">
+ </A>
+<A NAME="marker=787680">
+ </A>
+COLD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787682">
+ </A>
+Set this keyword to draw a cold front. The default is a plain line with no annotations. A cold front can also be specified by setting the keyword FRONT_TYPE = 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787684">
+ </A>
+<A NAME="marker=787683">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787685">
+ </A>
+Use this keyword to specify the color to use. The default = !P.COLOR. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787687">
+ </A>
+<A NAME="marker=787686">
+ </A>
+CONVERGENCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787688">
+ </A>
+Set this keyword to draw a convergence line. A convergence line can also be specified by setting the keyword FRONT_TYPE = 5.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787690">
+ </A>
+<A NAME="marker=787689">
+ </A>
+DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787691">
+ </A>
+Set this keyword if X and Y are specified in data coordinates. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787693">
+ </A>
+<A NAME="marker=787692">
+ </A>
+DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787694">
+ </A>
+Set this keyword if X and Y are specified in device coordinates. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787696">
+ </A>
+<A NAME="marker=787695">
+ </A>
+FRONT_TYPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787697">
+ </A>
+Set this keyword equal to the numeric index of type of front to draw. Front type indices are as follows: COLD=1, WARM=2, OCCLUDED=3, STATIONARY=4, CONVERGENCE = 5. Not required if plain line is desired or if an explicit front type keyword is specified. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787699">
+ </A>
+<A NAME="marker=787698">
+ </A>
+INTERVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787700">
+ </A>
+Use this keyword to specify the spline interpolation interval, in normalized units. The default = 0.01. Larger values give coarser approximations to curves, smaller values make more interpolated points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787702">
+ </A>
+<A NAME="marker=787701">
+ </A>
+NORM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787703">
+ </A>
+Set this keyword if X and Y are specified in normalized coordinates. This is the default. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787705">
+ </A>
+<A NAME="marker=787704">
+ </A>
+OCCLUDED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787706">
+ </A>
+Set this keyword to draw an occluded front. An occluded front can also be specified by setting the keyword FRONT_TYPE = 3.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787708">
+ </A>
+<A NAME="marker=787707">
+ </A>
+PSYM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787709">
+ </A>
+Set this keyword a standard PSYM value to draw a marker on each actual (<EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+) data point. See <A HREF="idl22c.htm#56421" CLASS="XRef">
+PSYM</A>
+ for a list of the symbol types.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787714">
+ </A>
+<A NAME="marker=787713">
+ </A>
+STATIONARY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787715">
+ </A>
+Set this keyword to draw a stationary front. A stationary front can also be specified by setting the keyword FRONT_TYPE = 4.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787717">
+ </A>
+<A NAME="marker=787716">
+ </A>
+SYM_HT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787718">
+ </A>
+Use this keyword to specify the height of front symbols, in normalized units. The default = 0.02.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787720">
+ </A>
+<A NAME="marker=787719">
+ </A>
+SYM_LEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787721">
+ </A>
+Use this keyword to specify the length and spacing factor for front symbols, in normalized units. The default = 0.15. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787723">
+ </A>
+<A NAME="marker=787722">
+ </A>
+THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787724">
+ </A>
+Use this keyword to specify the line thickness. The default = 1.0. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787726">
+ </A>
+<A NAME="marker=787725">
+ </A>
+WARM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787727">
+ </A>
+Set this keyword to draw a warm front. A warm front can also be specified by setting the keyword FRONT_TYPE = 2.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787728">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787729">
+ </A>
+Draw a front given 3 points: </P>
+<P CLASS="Code">
+<A NAME="pgfId=787730">
+ </A>
+WF_DRAW, [40, 20, 40], [30, 40, 25], /COLD</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787731">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820432">
+ </A>
+<A HREF="idl7.htm#64698" CLASS="XRef">
+ANNOTATE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

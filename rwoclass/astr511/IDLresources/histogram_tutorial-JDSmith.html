@@ -1,0 +1,696 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- ************** HEADER INFORMATION ************-->
+<HTML>
+<head>
+<META name="Description" content="Histogram Command in IDL">
+<META name="Author" content="David W. Fanning, Ph.D.">
+<META name="Keywords" content="IDL, J.D. Smith, Histogram, Reverse_Indices">
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<LINK rel="stylesheet" type="text/css" href="../style.css" >
+<LINK rel="stylesheet" type="text/css" href="../print.css" media="print" >
+<title>JD Smith's Histogram Tutorial: The Breathless Horror and Disgust</title>
+</head>
+<BODY>
+
+<!-- ************** CONSULTING BANNER ************-->
+
+<DIV ID="banner">
+<CENTER><IMG SRC="../images/banner.gif" WIDTH=443
+HEIGHT=111 ALT="Fanning Consulting Services (25K)"></CENTER>
+</DIV>
+
+
+
+<DIV ID="content">
+<h1>HISTOGRAM: The Breathless Horror and Disgust -- by JD Smith</h1>
+
+<blockquote><P><i>There is something at work in my soul which I do not
+understand . . . there is a love for the marvellous, a belief
+in the marvellous, intertwined in all my projects, which
+hurries me out of the common pathways of men, even to
+the wild sea and unvisited regions I am about to explore.
+&nbsp;&nbsp;&nbsp;&nbsp;--Mary Shelley, <i>FRANKENSTEIN</P></i></i></blockquote>
+
+<p><i><FONT COLOR="#964f4f">[Editor's Note: It would not be putting too fine a point on the subject
+to say that the following tutorial, written by JD Smith, is famous. And
+justifiably so. It is the only coherent and complete explanation of
+the <b>Histogram</b> command extant. Read it several times. You will
+learn more each time you do. And, maybe, if you read it enough, the
+secrets of the command will be revealed to you. Stranger things have
+happened.]</FONT></i></P>
+
+<p>You've seen it... scattered about old tomes of code like some
+forgotten incantation drawn from an ancient tongue, summoning unspoken
+forces.  Perhaps you felt a deep, visceral uneasiness in the presence of
+its occult construction, arcane invocation, and dark power.  Though it
+may turn your stomach, <tt>HISTOGRAM</tt> is a monster which, when tamed
+and brought into your service, can be a powerful ally in your quest to
+avoid the dreaded and oft-inefficient IDL <tt>for</tt> loop.  With it
+you can sort and select, trim and smooth, index and decimate: almost the
+full range of array manipulations, including many you probably didn't
+think could be done efficiently in IDL.</P>
+
+<p>Although a full account of <tt>HISTOGRAM</tt>'s many uses would
+occupy a large volume, here I'll try to build a foundation on which many
+novel variations can be built.</P>
+
+<h2>Remedial Review</h2>
+
+<p>A histogram, as we all know (at least those of us who didn't spend
+Algebra II passing notes and perfecting spitball ranging techniques)
+represents nothing more than a fancy way to count: a series of numbers
+in an input vector is divvied up into bins according to their value, and
+the (fixed) size of the histogram bin.  For each input value which falls
+into a given bin, a single "drop in the bucket" is added.  Let's start
+with a simple, familiar example:</P>
+
+<pre>
+  IDL>  print,histogram(indgen(10),BINSIZE=5)
+             5           5
+</pre>
+
+<p>Indeed, 5 values each fell in the two bins of size 5.  What about:
+</p>
+<pre>
+  IDL>  print,histogram(indgen(10))
+             1           1           1           1           1           1
+             1           1           1           1
+</pre>
+
+<p>Here you see the default is a binsize of 1 -- one drop fell into each
+bin.  You can of course also take histograms of floating point values:
+</p>
+<pre>
+  IDL> print,histogram(randomu(sd,100),BINSIZE=.2,MIN=0.)
+            20          20          20          18          22
+</pre>
+
+<p>Looks about right.  If this were all there was to <tt>HISTOGRAM</tt>,
+there wouldn't be much use in a tutorial.  You'll soon see this is far
+from the case.
+</p>
+<h2>We Can Build Him Faster</h2>
+
+<p>A surprising point worth mentioning about <tt>HISTOGRAM</tt> is that
+it's very fast: <em>much</em> faster than direct <tt>for</tt> loops, and
+usually noticeably faster than equivalent solutions using,
+e.g. <tt>WHERE</tt> (where they exist).  Sometimes these savings result
+from a more efficient algorithm, e.g. avoiding unnecessary repeated
+linear searches through an input vector.  But even when the number of
+operations (e.g. indexing) is equivalent, <tt>HISTOGRAM</tt> can
+outperform other IDL built-ins -- it's very well optimized.</P>
+
+<p>Another thing to remember: although the <tt>for</tt> loop is quite
+slow in IDL, if the number of iterations is kept small, and the work
+done per iteration is large, you won't feel the looping penalty.
+<tt>HISTOGRAM</tt> is often very helpful in this respect.  A typical
+rule of thumb: if you're looping over each data element individually,
+there's (probably) a faster way to do it.</P>
+
+<h2>Bins and Buckets</h2>
+
+<p>A slight detour brings us through the littered landscape strewn with
+various inputs to <tt>HISTOGRAM</tt> which work together to specify that
+all important ingredient: the size of the histogram bin.
+
+</p><dl>
+  <dt><tt>MAX</tt>
+  <dd>The maximum value of the array to consider.  <i>Can change from
+      the input</i> -- see <tt>NBINS</tt>.
+      
+  <dt><tt>MIN</tt>
+  <dd>The minimum value of the array to consider.
+
+  <dt><tt>BINSIZE</tt>
+  <dd>The size of the bin, which defaults to 1.  It's worth noting that
+      the binsize is constant throughout the histogram.
+
+  <dt><tt>NBINS</tt>
+  <dd>A relative of <tt>BINSIZE</tt>, <tt>NBINS</tt> is something of a
+      misnomer.  The relation <tt>HISTOGRAM</tt> uses to compute the bin
+      size if passed <tt>NBINS</tt> is:
+      <br><br>&nbsp;&nbsp;&nbsp;&nbsp;<tt>BINSIZE</tt>=<tt></tt>(<tt>MAX</tt>-<tt>MIN</tt>)/(<tt>NBINS</tt>-1)
+      <br><br>and if <tt>NBINS</tt> is specified, <tt>MAX</tt> is changed to
+      be (independent of any value passed as <tt>MAX</tt>):
+      <br><br>&nbsp;&nbsp;&nbsp;&nbsp;<tt>MAX</tt>=<tt>NBINS</tt>*<tt>BINSIZE</tt>+<tt>MIN</tt>
+      <br><br>As such, it's probably better to avoid <tt>NBINS</tt>, if you
+      care about the <tt>MAX</tt> value staying put.  A better relation
+      which would leave <tt>MAX</tt> as is and give you exactly
+      <tt>NBINS</tt> bins between <tt>MIN</tt> and <tt>MAX</tt>:
+      <br><br>&nbsp;&nbsp;&nbsp;&nbsp;<tt>BINSIZE</tt>=<tt></tt>(<tt>MAX</tt>-<tt>MIN</tt>)/<tt>NBINS</tt>
+  <dt><tt>OMIN|OMAX</tt>
+  <dd>These output keywords give you the min and max value used to
+      construct the histogram.  Useful if you don't specify them
+      directly.
+</dl>
+
+<p>Remember that <tt>MIN</tt> and <tt>MAX</tt> will default to the minimum
+and maximum of the array (except for byte data, which defaults to
+<tt>MIN</tt>=0).  It's very helpful to use <tt>OMIN</tt> if you don't
+specify the minimum, so you know what the first bin corresponds to.
+</p>
+<h2>When Good <tt>HISTOGRAM</tt>'s Go Bad</h2>
+
+<p>An important point to keep in mind is that <tt>HISTOGRAM</tt> creates
+one bin for each unit bin size between the minimum and maximum, even if
+no such data are present in the input!  This means that histograms of
+sparse arrays can be very wasteful:</P>
+
+<pre>
+   IDL> h=histogram(MIN=0,[100000000L])
+   IDL> print,n_elements(h) 
+      100000001
+</pre>
+
+<p>That's a lot of zeroes, just to tell us we have one data point in the
+100,000,000th bin!  In some cases, you can partially mitigate this
+problem by not specifying <tt>MIN</tt> directly, using the <tt>OMIN</tt>
+output instead:
+</p>
+<pre>
+   IDL> h=histogram(OMIN=om,[100000000L])
+   IDL> print,n_elements(h) 
+              1
+   IDL> print,om
+      100000000
+</pre>
+
+<p>But more often for sparsely populated data this won't help:
+</p>
+<pre>
+   IDL> h=histogram(OMIN=om,[0L,100000000L])
+   IDL> print,n_elements(h) 
+      100000001
+</pre>
+
+<p>You must always balance the speed gains of <tt>HISTOGRAM</tt> against
+its potentially large memory usage in the case of very sparse arrays.
+The sparseness of course depends on the size of your bin (e.g. if I had
+made a bin size of 100,000,001 above, there would have only been one
+bin), but for the typical case of integers with binsize=1, it's easy to
+understand the data sparseness as "what fraction of integers, on
+average, are present in the data between its min and max?"  Below you'll
+see how to compute this.
+</p>
+<h2>Reverse Indices</h2>
+
+<p>This little <tt>HISTOGRAM</tt> jewel, obtained by setting the
+<tt>REVERSE_INDICES</tt> keyword, is actually its most useful and least
+understood aspect.  It tells you, for each bin in the histogram, the
+actual indices of the data which fell into that bin.  The format of the
+reverse indices vector is sadly quite obtuse, turning many away from its
+use, but in fact it's really quite simple.  In a call like:
+</p>
+<pre>
+   IDL> data=fix(randomu(101,25)*12)
+   IDL> h=histogram(data,OMIN=om,REVERSE_INDICES=ri)
+</pre>
+
+<p>The <tt>ri</tt> vector is <em>actually</em> (and quite disturbingly) two
+vectors in one, concatenated together.  I call them the
+<tt>i</tt>-vector and the <tt>o</tt>-vector:
+</p>
+<pre>
+   =======================================================
+           The `i' vector          The `o' vector
+   ri = iiiiiiiiiiiiiiiiiiioooooooooooooooooooooooooooooo
+        |-----------------||----------------------------|
+        |0              nh||nh+1             nh+total(h)|
+   =======================================================
+</pre>
+
+<p>The last index of the <tt>i</tt>-vector, <tt>nh</tt>, is the number of
+elements in the histogram.  The <tt>i</tt>-vector is actually an index
+into the <tt>o</tt>-vector portion of the reverse indices list itself: a
+list which indexes itself!  Scary, yes, but that's just unusual
+bookkeeping.  It's much simpler than all that.  The easiest way to think
+of it is as follows: each bin of the histogram has a short list of zero
+or more indices associated with it -- picture each drop in the bucket
+painted with the index of the data to which it corresponds:
+</p>
+<pre>
+   |   |   |   |   |6  |   |   |   |   |   |   |   |
+   |   |5  |   |   |10 |   |   |   |   |   |   |3  |
+   |7  |12 |   |   |15 |   |   |   |   |   |   |9  |
+   |11 |20 |   |16 |19 |   |   |   |   |   |8  |17 |
+   |14 |21 |1  |24 |23 |0  |2  |4  |   |18 |13 |22 |
+   +---+---+---+---+---+---+---+---+---+---+---+---+    
+     0   1   2   3   4   5   6   7   8   9  10  11    
+</pre>
+
+<p>The <tt>o</tt>-vector contains these indices, in order, and the
+<tt>i</tt>-vector just shows us where to go to get them.  E.g., to get
+the indices from the first bin of the histogram, we use:
+</p>
+<pre>
+   IDL> print, ri[ri[0]:ri[1]-1]
+              7          11          14
+   IDL> print, data[ri[ri[0]:ri[1]-1]]
+          0       0       0       
+   IDL> print,ri[0],ri[1]-1
+             13          15
+</pre>
+
+<p>and from the 5th bin:
+</p>
+<pre>
+   IDL> print, ri[ri[4]:ri[5]-1]
+              6          10          15          19          23
+   IDL> print, data[ri[ri[4]:ri[5]-1]]
+          4       4       4       4       4
+</pre>
+
+<p>That is, adjacent values in the <tt>i</tt>-vector part of <tt>ri</tt>
+specify the <em>range</em> of elements in the <tt>o</tt>-vector part of
+<tt>ri</tt> which contain the indices of data present in that bin.  In
+the first example, there were 3 data elements which fell in the first
+bin (all, as you'd anticipate, with a value of 0).  What if no data fall
+in a given bin?
+</p>
+<pre>
+   IDL> print,where(h eq 0)
+              8
+   IDL> print,ri[8],ri[9]
+             31          31
+</pre>
+
+<p>In this case, you see that the two adjacent elements of the
+<tt>i</tt>-vector are the same: they don't span any elements of the
+<tt>o</tt>-vector.  Typically, you need to test for this to avoid a null
+index range. Something like this.
+</p>
+<pre>
+   IDL> if ri[4] ne ri[5] then print, data[ri[ri[4]:ri[5]-1]] else print, 'No data in bin 4'
+   IDL> if ri[8] ne ri[9] then print, data[ri[ri[8]:ri[8]-1]] else print, 'No data in bin 8'
+          4       4       4       4       4
+        No data in bin 8
+</pre>
+
+<p>Note that the smallest value in the <tt>i</tt>-vector is
+<tt>nh+1</tt>, i.e. the first index of the <tt>o</tt>-vector, one more
+than the number of elements in the histogram.  This is just because
+<tt>i</tt> and <tt>o</tt> are glued together like that -- had the
+<tt>i</tt>-vector and <tt>o</tt>-vector been kept separate, the former
+would have started at 0.  </P>
+
+<p>The main point to remember: <tt>HISTOGRAM</tt> actually has
+<em>three</em> very useful outputs, not one: the histogram itself,
+<tt>h</tt>, the reverse index self-index vector <tt>i</tt>, and the
+original index vector <tt>o</tt>.  Sometimes they're useful together,
+and sometimes only one of the three holds the key to solving a
+particular problem.</P>
+
+<h2>Flexing your <tt>HISTOGRAM</tt> Muscle</h2>
+
+<p>The best way to learn <tt>HISTOGRAM</tt> techniques is to dive right
+into a set of working examples.  Don't forget to come up for air!
+</p>
+<h3>Using the <tt>h</tt>-vector</h3>
+
+<p>Perhaps the most common set of operations in IDL is building,
+reformatting, dissecting, and applying lists of indices to arrays of
+various dimensionality (see, for instance the <a
+href="rebin_magic.html">dimensional juggling tutorial</a>).
+<tt>HISTOGRAM</tt> is no stranger to these index slinging operations.  A
+simple example taken from the manual:
+</p>
+<p><b>Problem</b>: Increment each element of a vector listed in a index
+vector by 1.</P>
+
+<pre>
+   IDL> inds=fix(randomu(sd,8)*3)
+   IDL> print,inds
+          2       2       0       1       2       0       1       2
+   IDL> vec=intarr(3)
+   IDL> vec=histogram(inds,INPUT=vec,MIN=0)
+   IDL> print,vec
+              2           2           4
+</pre>
+
+<p>This works even if individual indices are mentioned several times (in
+which case the explicit <tt>vec[inds]=vec[inds]+1</tt> does <em>not</em>
+work).  <tt>INPUT</tt> is a convenience, equivalent to
+<tt>vec=vec+histogram(...)</tt>.  You simply can't do this with normal
+indexing, without a <tt>for</tt> loop.  You needn't just increment by
+one either:
+</p>
+<p><b>Problem</b>: Increment all elements of vec with indices mentioned at
+least twice by PI.</P>
+
+<pre>
+   IDL> vec=vec+(histogram(inds,MIN=0,MAX=n_elements(vec)-1) ge 2)*!PI
+</pre>
+
+<p><b>Problem</b>: Find the value intersection of two vectors,
+a.k.a. which values are present in both <tt>a</tt> and <tt>b</tt>?</P>
+
+<pre>
+   IDL> a=fix(randomu(sd,8)*20)
+   IDL> b=fix(randomu(sd,8)*20)
+   IDL> print,a,b
+          6       7      16      13      15      13      19       7
+         16       5       8      17       7       7       4       7
+   IDL> print,where(histogram(a,OMIN=om) gt 0 AND histogram(b,MIN=om) gt 0)+om
+              7          16
+</pre>
+
+<p>I.e., we look for which buckets contain at least one drop for both
+vectors, using <tt>OMIN</tt> to save some work (since there can be no
+overlap below the minimum of either array).  You could also easily use
+this method to find values repeated exactly twice, or present in one but
+not another (the set <em>difference</em>).
+</p>
+<p><b>Problem</b>: Remove some elements, listed in random order, from a
+vector.</P>
+
+<pre>
+   IDL> vec=randomu(sd,10)
+   IDL> remove=[3,7,2,8]
+   IDL> keep=where(histogram(remove,MIN=0,MAX=n_elements(vec)-1) eq 0,cnt)
+   IDL> if cnt ne 0 then vec=vec[keep]
+   IDL> print,keep
+              0           1           4           5           6           9
+</pre>
+<p>
+We've used <tt>HISTOGRAM</tt> and <tt>WHERE</tt> to simply generate a
+list of kept indices.</p>
+
+<p><b>Problem</b>: Find a multi-dimensional histogram of a set of input
+coordinate tuples (e.g. <tt>(x,y,z)</tt>).</P>
+
+<p>This general class of problems (solved in 2D by RSI's
+<tt>HIST_2D</tt>, and in up to eight dimensions by <A HREF="../documents/programs.html#HIST_ND">HIST_ND</A>)
+also has other applications.  The key trick is to scale all data into
+integer bins yourself, e.g.:</P>
+
+<pre>
+    IDL> h=(data-min(data))/binsize
+</pre>
+
+<p>and to convert these multi-dimensional scaled "indices" into a single
+index (exactly analogous to converting a <tt>(column, row)</tt> index of
+an array into a single running index).  In 3D this looks like:</p>
+
+<pre>
+  IDL> h=h0+nbins[0]*(h1+nbins[1]*h2)
+  IDL> ret=histogram(h,MIN=0,MAX=total_bins-1)
+</pre>
+
+<p>where <tt>h0</tt>,<tt>h1</tt>, and <tt>h2</tt> are the scaled data
+"indices" from the first, second and third dimensions, and
+<tt>total_bins</tt> is the total number of bins in your grid (just the
+product of the bin sizes).  You can see how to generalize to higher
+dimensions, and how to apply the same technique to do other work with
+data sets of more than one dimension.</p>
+
+<p><b>Problem</b>: Determine how sparse a set of input data is.
+
+<pre>
+   IDL> data=fix(randomu(sd,1000)*10000)
+   IDL> h=histogram(data)
+   IDL> print,total(h ne 0)/n_elements(h) 
+       0.0953624
+</pre>
+
+<p>I.e., very close to 1 in 10 integers are present.  This works even if
+your data are very clustered and have a tendency towards repeated values.
+</p>
+
+<h3>Using the <tt>o</tt>-vector</h3>
+
+<p>The <tt>o</tt>-vector portion of the reverse indices vector is essential
+for its intended use: gathering together those elements of the input
+data vector which fall in an individual bin.  With it, you can easily
+perform operations on data which have been divided up into bins of any
+given size.  And unlike linear search methods, you can precompute the
+histogram with reverse indices, and subsequently perform many different
+operations on different data sub-groups using the same histogram, for a
+substantial speedup.
+</p>
+<p><b>Problem</b>: Find the individual median in each quartile of a data
+set. </P>
+
+<pre>
+   IDL> data=randomu(sd,100)*100
+   IDL> h=histogram(data,BINSIZE=25, REVERSE_INDICES=ri)
+   IDL> med=fltarr(4)
+   IDL> for j=0L,3L do if ri[j+1] gt ri[j] then $
+          med[j]=median(data[ri[ri[j]:ri[j+1]-1]])
+   IDL> print,med
+         13.3847      39.0525      68.0970      87.5475
+</pre>
+
+<p>This pattern forms the standard usage of the <tt>o</tt>-vector component
+of the reverse indices vector: loop over histogram bins, and, if
+non-empty, do something to the data which fell into that bin.</p>
+
+<p>The reverse indices don't have to be used to index the original
+array, much as an index list returned by <tt>SORT</tt> doesn't have to
+be used to sort the vector it was passed:</P>
+
+<P>Editor's Note: Please note that quartiles can only be calculated like this
+if you data is uniformly distributed. The proper definition of quartile would
+suggest that you are going to have four bins and the same number of points would
+be in each bin. That is, the median would separate the data set into two bins of
+equal number of points. Then, taking the median of those two sub-bins would result
+in the two quartiles (25% and 75%). In practice, say you wanted to draw a box and
+whisker plot, you might do something like this if you had a non-uniform distribution
+of points.
+
+<PRE>
+   data=randomu(sd,100)*100
+   minVal = min(data)
+   maxVal = max(data)
+   medianVal = median(data,/even)
+
+   ; Find the quartiles.
+   qtr_25th = Median(data[Where(data LE medianVal, countlowerhalf)])
+   qtr_75th = Median(data[Where(data GT medianVal, countupperhalf)])
+</PRE>
+
+<p><b>Problem</b>: Total data together according to a separate list of
+indices, e.g.:</P>
+
+<pre>
+   inds=[3 , 1, 0, 4, 2, 3, 3, 2, 4, 0]
+   data=[.1,.8,.6,.4,.2,.9,.7,.3,.5,.2]
+   vec[0]=data[2]+data[9]
+   vec[1]=data[1]
+   ....
+</pre>
+
+<p>This is easy, using the <tt>o</tt>-vector -- simply use the reverse
+index of the <tt>inds</tt> vector as an index to another vector --
+<tt>data</tt>:
+</p>
+<pre>
+   IDL> h=histogram(inds,reverse_indices=ri,OMIN=om)
+   IDL> for j=0L,n_elements(h)-1 do if ri[j+1] gt ri[j] then $
+          vec[j+om]=total(data[ri[ri[j]:ri[j+1]-1]])
+</pre>
+
+<p>For large histograms, there are even more efficient ways to do this with
+very short or no loops (e.g. using a histogram of the histogram). Additonal
+information on this topic can be found in the article 
+on <A HREF="../code_tips/drizzling.html">array decimation</A>.
+</p>
+
+<p><b>Problem</b>: Threshold a vector, setting all elements between 20 and 60,
+inclusive, to zero.</P>
+
+<pre>
+   IDL> data=fix(randomu(sd,100)*100)
+   IDL> h=histogram(data,OMIN=om,REVERSE_INDICES=ri)
+   IDL> data[ri[ri[20-om>0]:ri[61-om>0]-1]]=0.
+</pre>
+
+<P>What's this?  We've clearly violated the time honored
+<tt>r[i]:r[i+1]</tt> convention, and skipped right through 41 bins worth
+of <tt>o</tt>-vector indices in one go.  Since the <tt>o</tt>-vector
+contains adjacent groups of indices one right after another, this is
+perfectly legal.  You'll get into trouble if there are no elements
+between the limits (i.e. if <tt>ri[20-om>0] eq ri[61-om>0]</tt>), but
+you can test for that.</P>
+
+<p><b>Problem</b>: Throw away data with more than twice the median
+repeat count rate.</P>
+
+<pre>
+   data=fix(randomn(sd,100)*5)
+   h=histogram(data,REVERSE_INDICES=ri)
+   keep=where(h le 2*median(h))
+   num=h[keep]
+   for n=1,max(num) do begin 
+      wh=where(num ge n,cnt)
+      if cnt eq 0 then continue
+      if n_elements(k_inds) eq 0 then k_inds=ri[ri[keep[wh]]+n-1] else $
+         k_inds=[k_inds,ri[ri[keep[wh]]+n-1]]
+   endfor
+   data=data[k_inds]    
+</pre>
+
+<p>Here we've chosen to loop over bin count and not directly over the
+reverse indices, to reduce the size of the loop (with its costly
+concatenation).  The simpler form using the standard pattern is:
+</p>
+<pre>
+   for i=0,n_elements(keep)-1 do begin
+      k=keep[i]
+      if ri[k+1] gt ri[k] then $
+         if n_elements(k_inds) eq 0 then k_inds=ri[ri[k]:ri[k+1]-1] $
+         else k_inds=[k_inds,ri[ri[k]:ri[k+1]-1]]
+   endfor
+   data=data[k_inds]
+</pre>
+
+<p>If you need to preserve the ordering of the kept elements, accumulate a
+throw-away index list similarly (e.g. <tt>bad=where(h ge
+2*median(h))</tt>, and then use the method from the previous section to
+generate an ordered kept-index list from it.
+</p>
+<h3>Using the <tt>i</tt>-vector</h3>
+
+<p>The <tt>i</tt>-vector is the least used portion of <tt>HISTOGRAM</tt>'s
+output (aside from the trivial case when it's used to index the
+<tt>o</tt>-vector), but it can do some very neat things.
+</p>
+<p><b>Problem</b>: Construct a vector with values from one vector and a
+repeat count from another (so called chunk indexing).  E.g., turn:</P>
+
+<pre>
+  IDL> d=[4,5,6,8]
+  IDL> n=[2,1,3,4]
+</pre>
+
+<p>into</p>
+
+<pre>
+   new_d=[4,4,5,6,6,6,8,8,8,8]
+</pre>
+
+<p>This is easy with the <tt>i</tt>-vector:
+</p>
+<pre>
+   IDL> h=histogram(total(n,/CUMULATIVE)-1,/BINSIZE,MIN=0,REVERSE_INDICES=ri)
+   IDL> i=ri[0:n_elements(h)-1]-ri[0]
+   IDL> print,d[i]
+          4       4       5       6       6       6       8       8       8
+          8
+</pre>
+
+<p>What have we done here?  Well, we've taken the cumulative sum of
+<tt>n</tt>:
+</p>
+<pre>
+   IDL> print,total(n,/CUMULATIVE)-1
+         1.00000      2.00000      5.00000      9.00000
+</pre>
+
+<P>created a histogram from it, and used the fact that the
+<tt>i</tt>-vector contains multiple repeated indices for all the empty
+bins:</P>
+
+<pre>
+   IDL> print,i
+              0           0           1           2           2           2
+              3           3           3           3
+</pre>
+
+<p>Note that this subject is discussed in considerably more depth in a related
+article on <A HREF="../code_tips/drizzling.html">array decimation</A>.</P>
+
+<h2>Applying the Current</h2>
+
+<p>Don't worry if everything doesn't come together at once.  No monster
+was built in a day.  Just keep tinkering with the examples, examining
+the by-products along the way, and soon you'll be terrorizing
+unsuspecting villagers the world-round with your creations.</P>
+
+
+<!-- ************** HORIZONTAL RULE IMAGE ************-->
+<P><IMG SRC="../images/hruler.gif" WIDTH="100%" HEIGHT=3 ALT=""></P>
+
+<!-- SiteSearch Google -->
+<CENTER>
+<form method="get" action="http://www.google.com/custom" target="_top">
+<table border="0" bgcolor="#ffffff">
+<tr><td nowrap="nowrap" valign="top" align="left" height="32">
+<a href="http://www.google.com/">
+<img src="http://www.google.com/logos/Logo_25wht.gif"
+border="0" alt="Google"></a>
+</td>
+<td nowrap="nowrap">
+<input type="hidden" name="domains" value="www.dfanning.com">
+<input type="text" name="q" size="50" maxlength="255" value="">
+<input type="submit" name="sa" value="Search">
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input type="radio" name="sitesearch" value="" >
+<font size="-1" color="#000000">Web</font>
+</td>
+<td>
+<input type="radio" name="sitesearch" value="www.dfanning.com" checked="checked">
+<font size="-1" color="#000000">Coyote's Guide to IDL Programming</font>
+</td>
+</tr>
+</table>
+<input type="hidden" name="client" value="pub-4950613798455670">
+<input type="hidden" name="forid" value="1">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input type="hidden" name="oe" value="ISO-8859-1">
+<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;">
+<input type="hidden" name="hl" value="en">
+
+</td></tr></table>
+</form>
+</CENTER>
+<!-- SiteSearch Google -->
+
+<!-- ************** UPDATE NOTICE ************-->
+<DIV ID="copyright">
+<P><CENTER>
+[Return to <A HREF="../documents/tips.html#Contents">IDL Programming Tips</A>]<BR>
+Copyright &copy; 2002 JD Smith<BR>
+Last Updated Oct 14, 2002</CENTER>
+</DIV>
+
+</DIV> <!-- End of CONTENT Division -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=691464; 
+var sc_partition=5; 
+var sc_security="424a63ef"; 
+var sc_invisible=1; 
+</script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c6.statcounter.com/counter.php?sc_project=691464&amp;java=0&amp;security=424a63ef&amp;invisible=1" alt="cool hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Start of Goggle Ads -->
+<DIV ID="sidepanel">
+<script type="text/javascript"><!--
+google_ad_client = "pub-4950613798455670";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</DIV>
+<!-- End of Goggle Ads -->
+
+
+</body> </html>

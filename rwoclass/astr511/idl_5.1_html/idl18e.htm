@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SEARCH2D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl18f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl18d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758939">
+ </A>
+<A NAME="26448">
+ </A>
+SEARCH2D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758942">
+ </A>
+The <A NAME="marker=758940">
+ </A>
+SEARCH2D function finds &quot;objects&quot; or <A NAME="marker=758941">
+ </A>
+regions of similar data values within a two-dimensional array. Given a starting location and a range of values to search for, SEARCH2D finds all the cells within the array that are within the specified range and have some path of connectivity through these cells to the starting location. In addition to searching for cells within a global range of data values, SEARCH2D can also search for adjacent cells whose values deviate from their neighbors within specified tolerances.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758943">
+ </A>
+SEARCH2D returns a longword array that contains a list of the array subscripts that define the located object or region. The original X and Y indices of the array subscripts returned by SEARCH2D can be found with the following IDL code:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758944">
+ </A>
+index_y = <I CLASS="Italic">
+Result</I>
+ / (SIZE(<I CLASS="Italic">
+Array</I>
+))(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758945">
+ </A>
+index_x = <I CLASS="Italic">
+Result</I>
+ - (index_y * (SIZE(<I CLASS="Italic">
+Array</I>
+))(1))</P>
+<P CLASS="Body">
+<A NAME="pgfId=758946">
+ </A>
+where <I CLASS="Italic">
+Result</I>
+ is the array returned by SEARCH2D and <I CLASS="Italic">
+Array</I>
+ is the original input array. The object within <I CLASS="Italic">
+Array</I>
+ can be subscripted as <I CLASS="Italic">
+Array</I>
+<CODE CLASS="Code">
+(</CODE>
+<I CLASS="Italic">
+Region</I>
+<CODE CLASS="Code">
+)</CODE>
+ or <I CLASS="Italic">
+Array</I>
+<CODE CLASS="Code">
+(index_x, index_y)</CODE>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758947">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+search2d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758948">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758949">
+ </A>
+Result = SEARCH2D(<I CLASS="Italic">
+Array, Xpos, Ypos, Min_Val, Max_Val</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758950">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758951">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758952">
+ </A>
+A two-dimensional array, of any data type, to be searched.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758953">
+ </A>
+Xpos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758954">
+ </A>
+The X coordinate (dimension 0 of <I CLASS="Italic">
+Array</I>
+) of the starting location.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758955">
+ </A>
+Ypos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758956">
+ </A>
+The Y coordinate (dimension 1 of <I CLASS="Italic">
+Array</I>
+) of the starting location.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758957">
+ </A>
+Min_Val</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758958">
+ </A>
+The minimum data value for which to search. All array subscripts of all cells that are connected to the starting cell, and have a value between <I CLASS="Italic">
+Min_Val</I>
+ and <I CLASS="Italic">
+Max_Val</I>
+ (inclusive) are returned. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758959">
+ </A>
+Max_Val</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758960">
+ </A>
+The maximum data value for which to search.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758961">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758963">
+ </A>
+<A NAME="marker=758962">
+ </A>
+DECREASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758964">
+ </A>
+This keyword and the INCREASE keyword allow you to compensate for changing intensities of data values within an object. An edge-enhanced copy of <I CLASS="Italic">
+Array</I>
+ is made and compared to the orginal array if this keyword is set. When DECREASE or INCREASE is set, any adjacent cells are found if their corresponding data values in the edge enhanced array are greater than DECREASE and less than INCREASE. In any case, the adjacent cells will never be selected if their data values are not between <I CLASS="Italic">
+Min_Val</I>
+ and <I CLASS="Italic">
+Max_Val</I>
+. The default for this keyword is 0.0 if INCREASE is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758966">
+ </A>
+<A NAME="marker=758965">
+ </A>
+INCREASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758967">
+ </A>
+This keyword and the DECREASE keyword allow you to compensate for changing intensities of data values within an object. An edge-enhanced copy of <I CLASS="Italic">
+Array</I>
+ is made and compared to the orginal array if this keyword is set. When DECREASE or INCREASE is set, any adjacent cells are found if their corresponding data values in the edge enhanced array are greater than DECREASE and less than INCREASE. In any case, the adjacent cells will never be selected if their data values are not between <I CLASS="Italic">
+Min_Val</I>
+ and <I CLASS="Italic">
+Max_Val</I>
+. The default for this keyword is 0.0 if DECREASE is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758969">
+ </A>
+<A NAME="marker=758968">
+ </A>
+LPF_BAND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758970">
+ </A>
+Set this keyword to an integer value of 3 or greater to perform low-pass filtering on the edge-enhanced array. The value of LPF_BAND is used as the width of the smoothing window. This keyword is only effective when the DECREASE or INCREASE keywords are also specified. The default is no smoothing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758972">
+ </A>
+<A NAME="marker=758971">
+ </A>
+DIAGONAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758973">
+ </A>
+Set this keyword to cause SEARCH2D to find cells meeting the search criteria whose surrounding squares share a common corner. Normally, cells are considered adjacent only when squares surrounding the cells share a common edge. Setting this option requires more memory and execution time.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758974">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758975">
+ </A>
+Find all the indices corresponding to an object in an image:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758976">
+ </A>
+img = FLTARR(512, 512) 	<EM CLASS="Comment">;
+Create an image with different valued regions.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758977">
+ </A>
+img[3:503, 9:488] = 0.7</P>
+<P CLASS="Code">
+<A NAME="pgfId=758978">
+ </A>
+img[37:455, 18:438] = 0.5</P>
+<P CLASS="Code">
+<A NAME="pgfId=758979">
+ </A>
+img[144:388, 90:400] = 0.7</P>
+<P CLASS="Code">
+<A NAME="pgfId=758980">
+ </A>
+img[200:301, 1:255] = 1.0</P>
+<P CLASS="Code">
+<A NAME="pgfId=758981">
+ </A>
+img[155:193, 333:387] = 0.3</P>
+<P CLASS="Code">
+<A NAME="pgfId=758982">
+ </A>
+TVSCL, img	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758983">
+ </A>
+region = SEARCH2D(img, 175, 300, 0.6, 0.8, /DIAGONAL)<BR>
+<EM CLASS="Comment">;
+Search for an object starting at (175, 300) whose data values are between (0.6) and (0.8).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758984">
+ </A>
+img = BYTSCL(img, TOP=127B)	<EM CLASS="Comment">;
+Scale the background cells into the range 0 to 127.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758985">
+ </A>
+img[region] = 255B	<EM CLASS="Comment">;
+Highlight the object region by setting it to 255.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758986">
+ </A>
+TVSCL, img	<EM CLASS="Comment">;
+Display the array with the highlighted object in it.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758987">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758988">
+ </A>
+<A HREF="idl18f.htm#42474" CLASS="XRef">
+SEARCH3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

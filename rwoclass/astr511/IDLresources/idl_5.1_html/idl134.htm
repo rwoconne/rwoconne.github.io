@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PCOMP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl135.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl133.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=844757">
+ </A>
+<A NAME="40101">
+ </A>
+PCOMP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=844758">
+ </A>
+The<A NAME="marker=844871">
+ </A>
+ PCOMP function computes the <A NAME="marker=844872">
+ </A>
+principal components of an <I CLASS="Italic">
+m</I>
+-column, <I CLASS="Italic">
+n</I>
+-row array, where <I CLASS="Italic">
+m</I>
+ is the number of variables and <I CLASS="Italic">
+n</I>
+ is the number of observations or samples. The principal components of a multivariate data set may be used to restate the data in terms of derived variables or may be used to reduce the dimensionality of the data by reducing the number of variables (columns). The result is an <I CLASS="Italic">
+nvariables</I>
+-column (<I CLASS="Italic">
+nvariables</I>
+ <EM CLASS="Symbol">
+&#163;</EM>
+ <I CLASS="Italic">
+m</I>
+), <I CLASS="Italic">
+n</I>
+-row array of derived variables.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=844760">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=844761">
+ </A>
+Result = PCOMP(<EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=844762">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844763">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844764">
+ </A>
+An <I CLASS="Italic">
+m</I>
+-column, <I CLASS="Italic">
+n</I>
+-row, single- or double-precision floating-point array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=844765">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844766">
+ </A>
+<A NAME="marker=844873">
+ </A>
+COEFFICIENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844767">
+ </A>
+Use this keyword to specify a named variable that will contain the principal components used to compute the derived variables. The principal components are the coefficients of the derived variables and are returned in an <I CLASS="Italic">
+m</I>
+-column, <I CLASS="Italic">
+m</I>
+-row array. The rows of this array correspond to the coefficients of the derived variables. The coefficients are scaled so that the sums of their squares are equal to the eigenvalue from which they are computed. This keyword must be initialized to a nonzero value before calling PCOMP if the principal components are desired.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844768">
+ </A>
+<A NAME="marker=844874">
+ </A>
+COVARIANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844769">
+ </A>
+Set this keyword to compute the principal components using the covariances of the original data. The default is to use the correlations of the original data to compute the principal components.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844770">
+ </A>
+<A NAME="marker=844875">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844771">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844772">
+ </A>
+<A NAME="marker=844876">
+ </A>
+EIGENVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844773">
+ </A>
+Use this keyword to specify a named variable that will contain a one-column, <I CLASS="Italic">
+m</I>
+-row array of eigenvalues that correspond to the principal components. The eigenvalues are listed in descending order. This keyword must be initialized to a nonzero value before calling PCOMP if the eigenvalues are desired.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844774">
+ </A>
+<A NAME="marker=844877">
+ </A>
+NVARIABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844775">
+ </A>
+Use this keyword to specify the number of derived variables. A value of zero, negative values, and values in excess of the input array's column dimension result in a complete set (<I CLASS="Italic">
+m</I>
+-columns and <I CLASS="Italic">
+n</I>
+-rows) of derived variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844776">
+ </A>
+<A NAME="marker=844878">
+ </A>
+STANDARDIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844777">
+ </A>
+Set this keyword to convert the variables (the columns) of the input array to standardized variables (variables with a mean of zero and variance of one). </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=844778">
+ </A>
+<A NAME="marker=844879">
+ </A>
+VARIANCES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844779">
+ </A>
+Use this keyword to specify a named variable that will contain a one-column, <I CLASS="Italic">
+m</I>
+-row array of variances. The variances correspond to the percentage of the total variance for each derived variable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=844780">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=844781">
+ </A>
+Define an array with 4 variables and 20 observations.</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844782">
+ </A>
+array = $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844783">
+ </A>
+           [[19.5, 43.1, 29.1, 11.9], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844784">
+ </A>
+            [24.7, 49.8, 28.2, 22.8], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844785">
+ </A>
+            [30.7, 51.9, 37.0, 18.7], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844786">
+ </A>
+            [29.8, 54.3, 31.1, 20.1], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844787">
+ </A>
+            [19.1, 42.2, 30.9, 12.9], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844788">
+ </A>
+            [25.6, 53.9, 23.7, 21.7], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844789">
+ </A>
+            [31.4, 58.5, 27.6, 27.1], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844790">
+ </A>
+            [27.9, 52.1, 30.6, 25.4], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844791">
+ </A>
+            [22.1, 49.9, 23.2, 21.3], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844792">
+ </A>
+            [25.5, 53.5, 24.8, 19.3], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844793">
+ </A>
+            [31.1, 56.6, 30.0, 25.4], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844794">
+ </A>
+            [30.4, 56.7, 28.3, 27.2], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844795">
+ </A>
+            [18.7, 46.5, 23.0, 11.7], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844796">
+ </A>
+            [19.7, 44.2, 28.6, 17.8], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844797">
+ </A>
+            [14.6, 42.7, 21.3, 12.8], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844798">
+ </A>
+            [29.5, 54.4, 30.1, 23.9], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844799">
+ </A>
+            [27.7, 55.3, 25.7, 22.6], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844800">
+ </A>
+            [30.2, 58.6, 24.6, 25.4], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844801">
+ </A>
+            [22.7, 48.2, 27.1, 14.8], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=844802">
+ </A>
+            [25.2, 51.0, 27.5, 21.1]]</P>
+<P CLASS="Body">
+<A NAME="pgfId=844803">
+ </A>
+Compute the derived variables based upon the principal components. The COEFFICENTS, EIGENVALUES, and VARIANCES keywords must be initialized as nonzero values prior to calling PCOMP.</P>
+<P CLASS="Code">
+<A NAME="pgfId=844804">
+ </A>
+coefficients = 1 &amp; eigenvalues = 1 &amp; variances = 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=844805">
+ </A>
+result = PCOMP(array, COEFFICIENTS = coefficients, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=844806">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;EIGENVALUES = eigenvalues, VARIANCES = variances)</P>
+<P CLASS="Code">
+<A NAME="pgfId=844807">
+ </A>
+PRINT, result, FORMAT = '(4(f5.1, 2x))'</P>
+<P CLASS="Body">
+<A NAME="pgfId=844808">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844809">
+ </A>
+&nbsp;81.4   15.5   -5.5    0.5</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844810">
+ </A>
+102.7   11.1   -4.1    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844811">
+ </A>
+109.9   20.3   -6.2    0.5</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844812">
+ </A>
+110.5   13.8   -6.3    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844813">
+ </A>
+&nbsp;81.8   17.1   -4.9    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844814">
+ </A>
+104.8    6.2   -5.4    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844815">
+ </A>
+121.3    8.1   -5.2    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844816">
+ </A>
+111.3   12.6   -4.0    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844817">
+ </A>
+&nbsp;97.0    6.4   -4.4    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844818">
+ </A>
+102.5    7.8   -6.1    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844819">
+ </A>
+118.5   11.2   -5.3    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844820">
+ </A>
+118.9    9.1   -4.7    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844821">
+ </A>
+&nbsp;81.5    8.8   -6.3    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844822">
+ </A>
+&nbsp;88.0   13.4   -3.9    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844823">
+ </A>
+&nbsp;74.3    7.5   -4.8    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844824">
+ </A>
+113.4   12.0   -5.1    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844825">
+ </A>
+109.7    7.7   -5.6    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844826">
+ </A>
+117.5    5.5   -5.7    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844827">
+ </A>
+&nbsp;91.4   12.0   -6.1    0.6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844828">
+ </A>
+102.5   10.6   -4.9    0.6</P>
+<P CLASS="Code">
+<A NAME="pgfId=844829">
+ </A>
+PRINT, coefficients</P>
+<P CLASS="Body">
+<A NAME="pgfId=844830">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844831">
+ </A>
+0.983668     0.947119     0.358085     0.925647</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844832">
+ </A>
+0.118704    -0.265644     0.932897    -0.215227</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844833">
+ </A>
+-0.134015    -0.179266    0.0378060     0.311214</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844834">
+ </A>
+-0.0185792    0.0161747   0.00707525  0.000456858</P>
+<P CLASS="Code">
+<A NAME="pgfId=844835">
+ </A>
+PRINT, eigenvalues</P>
+<P CLASS="Body">
+<A NAME="pgfId=844836">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844837">
+ </A>
+2.84969</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844838">
+ </A>
+1.00128</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844839">
+ </A>
+0.148380</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844840">
+ </A>
+0.000657078</P>
+<P CLASS="Code">
+<A NAME="pgfId=844841">
+ </A>
+PRINT, variances</P>
+<P CLASS="Body">
+<A NAME="pgfId=844842">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844843">
+ </A>
+0.712422</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844844">
+ </A>
+0.250319</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844845">
+ </A>
+0.0370950</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=844846">
+ </A>
+0.000164269</P>
+<P CLASS="Body">
+<A NAME="pgfId=844847">
+ </A>
+The first two derived variables account for 96.3% of the total variance of the original data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=844848">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=844880">
+ </A>
+<A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl89.htm#18584" CLASS="XRef">
+EIGENQL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

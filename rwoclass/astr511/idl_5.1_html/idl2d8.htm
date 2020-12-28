@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_ATTCOPY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997836">
+ </A>
+<A NAME="55217">
+ </A>
+NCDF_ATTCOPY</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1000165">
+ </A>
+The <A NAME="marker=1000163">
+ </A>
+NCDF_ATTCOPY function copies an <A NAME="marker=1000164">
+ </A>
+attribute from one netCDF file to another. Note that <I CLASS="Italics">
+Incdf</I>
+ and <I CLASS="Italics">
+Outcdf</I>
+ can be the same netCDF ID. NCDF_ATTCOPY returns the attribute number of the copied attribute in the new file, or -1 if the copy was not successful.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000166">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=996924">
+ </A>
+Result = NCDF_ATTCOPY(<I CLASS="Italics">
+Incdf, [Invar,] Name, Outcdf, [Outvar]</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996925">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996926">
+ </A>
+Incdf</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996927">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996928">
+ </A>
+Invar</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996929">
+ </A>
+The netCDF variable ID to be read, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable. If the IN_GLOBAL keyword is set, this argument must be omitted.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996930">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996931">
+ </A>
+A scalar string containing the name of the attribute to be copied.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996932">
+ </A>
+Outcdf</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996933">
+ </A>
+The netCDF ID of a netCDF file opened for writing, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996934">
+ </A>
+Outvar</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996935">
+ </A>
+The netCDF variable ID to be written, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable. If the OUT_GLOBAL keyword is set, this argument must be omitted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996936">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996938">
+ </A>
+<A NAME="marker=996937">
+ </A>
+IN_GLOBAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996940">
+ </A>
+Set this keyword to read a <A NAME="marker=996939">
+ </A>
+global attribute.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996942">
+ </A>
+<A NAME="marker=996941">
+ </A>
+OUT_GLOBAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996943">
+ </A>
+Set this keyword to create a global attribute.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000295">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1000296">
+ </A>
+See example from <A HREF="idl2db.htm#96620" CLASS="XRef">
+NCDF_ATTINQ</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

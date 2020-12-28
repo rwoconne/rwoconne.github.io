@@ -1,0 +1,280 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original URL: http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises  -->
+<!-- -->
+
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<title>O'Connell IDL Tutorial </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Tutorial & exercises for
+the Interactive Data Language (IDL), from graduate course Astronomy
+511, Astronomical Techniques, at the University of
+Virginia.  Robert W. O'Connell; Fall 2003."  > 
+
+<meta name="keywords" content="IDL, data analysis, image processing">
+
+<style>
+     div.all {  max-width: 900px;}
+ </style>
+
+</head>
+
+<!-- HISTORY:  Directory page created 12/26/01, based on text
+in Fall 2001 versions of exercises; 12/27; 12/28; 12/30; 6/10/2002;
+6/17/2003; 9/22; 6/18/2004;  6/5/2007;   2/2/2013; 6/23: test updated
+format; 7/20; 8/8;  1/26/2015: add link to Danish translation; 1/28:
+add link to Polish translation; update text on incorporation
+of MOUSSE & ASTUSE programs;  9/21: new domain;
+
+GHP version:  12/15/2020; 
+
+ -->
+
+<body>
+
+<div class="all">
+
+<p><br></p>
+
+<table width=95% cellpadding=8>
+
+    <tr align=left>
+
+       <td align="center" width=33%><img alt="Gaussian"
+       src="gaussim-2.gif"  width=80%></td>   
+    
+       <td align="center" width=30%> <font size=+5 color="#dd33ff">
+       <b>IDL<br>TUTORIAL </b></font></td>
+
+       <td align="center" width = 33%><img alt="M13" 
+        src="m13im-1.gif"  width=80%></td>
+
+    </tr>
+</table>
+
+
+<p><br></p>
+
+This tutorial for the Interactive Data Language (IDL) was developed for
+graduate students in an introductory course on astronomical techniques
+at the University of Virginia.  It consists of a <b>guide</b> to the basic
+functions of IDL and a <b>set of exercises</b>, both oriented toward
+2-dimensional image processing:</p>
+
+<ul>
+
+<li> My <b><a
+href="IDLguide.html">
+Guide to IDL for Astronomers</a></b> provides background information on
+IDL and an overview of many of the commands used in the exercises.
+</p>
+
+<li> The <b>
+<a href="IDL-Exercises-I.html">
+exercises</a></b> illustrate the interactive computational environment of
+IDL and cover some of the basic IDL commands, utilities, and
+procedures, including: the use of scalars, vectors, and arrays;
+plotting; making graphics hardcopies; data I/O; 2-D image displays;
+and simple image processing and photometry techniques.  Sample <b><a
+href="data">
+data sets</a></b> are provided.  </p>
+
+<ul>
+
+The tutorial is intended to be self-guiding.  It is not specific to
+the UVa IDL installation.  Although the data sets are mostly astronomical,
+the exercises should be useful to the general audience of potential
+IDL users.   With one exception, answers to the exercises are not
+provided, but simple trial and error should quickly reveal the correct
+methods.  </p>
+
+</ul>
+</ul>
+
+<h3>Using the exercises</h3>
+
+<ul>
+
+You will need a <b>reference list of standard IDL commands</b> to consult as
+you go through the exercises.  Most convenient is the printed <b><em>"IDL
+HandiGuide"</em></b> (click 
+<a href="../IDLresources/IDL-handiguide-v5.4.pdf">here</a>
+for the v5.4 version).  Most thorough is the <b><em>"IDL Reference Guide"</em></b>
+(printed or PDF version).  Available during any IDL session is the <b>IDL
+HyperHelp system</b>, which you invoke by typing 
+<b><font color="green"><tt>?</tt></font></b>
+as the first element of a line.</p>
+
+All of these exercises could be completed using intrinsic IDL 
+routines and the Exelis-supplied User's Library.  However, in some
+instances the built-ins can be awkward, and I have <b>assumed
+you have access to routines from the <em>IDL Astronomy User's Library</em>
+(AstUseLib) and the <em>MOUSSE routines</em> from the UIT project.</b>  These are
+pre-installed on the UVa Astronomy Department server.  </p>
+
+<ul>
+
+Other users can obtain a gzipped UNIX tar file of the Astronomy User's
+Library from the <a
+href="http://idlastro.gsfc.nasa.gov/homepage.html">AstUseLib
+Homepage</a>.  </p>
+
+Selected MOUSSE routines are available individually or
+in the form of a tar file in the <a
+href="minimousse">
+minimousse directory</a>. </p>
+
+To execute the MOUSSE routines, you will also need a special "startup"
+file named <a
+href="../IDLresources/mousse_startup.pro">
+mousse_startup.pro,</a> which will be executed at the beginning of
+your IDL session if you point the UNIX environment variable
+$IDL_STARTUP to it.</p>
+
+In order to access any such external software during your IDL session,
+all you need to do is to place the individual *.pro program files in
+your IDL path.  The programs will be automatically compiled when you
+request them.</p>
+
+</ul>
+</ul>
+
+
+<h3>Other tips</h3>
+
+<ul>
+
+<li> <b>Help</b> on any intrinsic IDL routine is available
+through your browser during an IDL session if you
+type <b><font color="green"><tt>?[name]</tt></font></b>.</p>
+
+<li> Remember that the <b>source code</b> for any IDL program except the RSI intrinsic
+routines is available for you to inspect at any time.  To compile
+a program and simultaneously list it to your terminal, type <b><font color="green"><tt>
+.run -t [name]</tt></font></b>.</p>
+
+<li>  To see only the <b>informational header</b> of
+non-intrinsic routines, use the MOUSSE command <b><font
+color="green"><tt> man,'[name]</tt></font></b>.</p>
+
+<li> Most non-intrinsic
+routines are coded such that if you <b>simply type the name of the
+routine without parameters</b>, it will return a list of the expected
+parameters.</p>
+
+<li> For parameter lists of intrinsic routines, give the <b><font
+color="green"><tt>help,/rou</tt></font></b> command.</p>
+
+<li> Further information on
+getting help is available in the 
+<a href="../IDLresources/IDLguide.html#help">
+Guide to IDL</a>.</p>
+
+<li> In the exercises, most commands are given in CAPITAL letters, so
+they will stand out, but since IDL is case-insensitive, you needn't
+follow this convention (<b>except</b> for file names).</p>
+
+</ul>
+
+<p><br></p>
+
+The exercises were developed for Unix/Linux/MAC OS-X workstations.
+Most should work well in Microsoft Windows,
+though there may be occasional hangups with displays and such.</p>
+
+Please let me know of errors or difficulties you encounter with 
+the tutorial.  </p>
+
+<hr>
+
+<h3>Tutorial:</h3>
+
+<ul>
+<ul>
+
+<a href="IDL-Exercises-I.html">
+<li> IDL Exercises I</a> (scalars, vectors, plotting)</p>
+
+<a href="IDL-Exercises-II.html">
+<li> IDL Exercises II</a> (arrays and image displays)</p>
+
+<a href="IDL-Exercises-III.html">
+<li> IDL Exercises III</a> (image processing)</p>
+
+<p><br></p>
+
+<a href="data">
+<li> Test data sets and miscellaneous software</a></p>
+
+<a href="minimousse">
+<li> Selected MOUSSE software for exercises</a></p>
+
+</ul></ul>
+
+<hr>
+
+<h3>Useful Links:</h3>
+
+<ul><ul>
+
+<a href="../IDLresources/astro-dept-idlresources.html">
+<li> Index to general IDL resources</a></p>
+
+<a
+href="../IDLresources/IDLguide.html">
+<li> Guide to IDL for Astronomers</a></p>
+
+<a href="http://idlastro.gsfc.nasa.gov/homepage.html"> 
+<li> IDL Astronomy User's Library (GSFC)</a></p>
+
+</ul>
+</ul>
+
+<hr>
+
+<h3>Translations of this page:</h3>
+
+<ul><ul>
+
+<a href="http://www.autoteilexxl.de/edu/?p=1683">
+<li> Danish translation</a></p>
+
+<a href="http://www.pkwteile.de/wissen/idl-samouczek">
+<li> Polish translation</a></p>
+
+</ul></ul>
+
+
+<!-- START FOOTER -->
+
+<hr size=3 >
+
+<center> 
+<small>
+
+<i>Last modified <b>December 2020</b> by <a
+href="mailto:rwo@virginia.edu">Robert W. O'Connell</a></i></p>
+
+All contents of this Tutorial are copyright &copy 2000-2020
+by Robert W. O'Connell. <br> All rights reserved.</p>
+
+Source URL: <br>
+https://rwoconne.github.io/rwoclass/astr511/IDLexercises/index.html</p>
+
+</small>
+</center></p>
+
+
+<!-- END FOOTER -->
+       
+</font>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ON_ERROR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl12e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl12c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889555">
+ </A>
+<A NAME="17797">
+ </A>
+ON_ERROR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889560">
+ </A>
+The <A NAME="marker=889558">
+ </A>
+ON_ERROR procedure <A NAME="marker=889559">
+ </A>
+determines the action taken when an error is detected inside an IDL user procedure or function by setting state information applying to the current routine and all nested routines. If an override exists within the nested routine, it takes precedence over the ON_ERROR call.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889564">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889565">
+ </A>
+ON_ERROR, <I CLASS="Italics">
+N</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889566">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889567">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889568">
+ </A>
+An integer that specifies the action to take. Valid values for <I CLASS="Italics">
+N</I>
+ are:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889569">
+ </A>
+0: Stop at the statement in the procedure that caused the error, the default action.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889570">
+ </A>
+1: Return all the way back to the main program level.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889571">
+ </A>
+2: Return to the caller of the program unit that established the ON_ERROR condition.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=889572">
+ </A>
+3: Return to the program unit that established the ON_ERROR condition.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889573">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889585">
+ </A>
+<A HREF="idl28.htm#70268" CLASS="XRef">
+CATCH</A>
+, <A HREF="idl117.htm#14106" CLASS="XRef">
+MESSAGE</A>
+, <A HREF="idl12e.htm#27107" CLASS="XRef">
+ON_IOERROR</A>
+, and <A HREF="..html#21070" CLASS="XRef">
+See Controlling Errors</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

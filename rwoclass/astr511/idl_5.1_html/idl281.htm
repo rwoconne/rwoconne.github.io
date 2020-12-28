@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFR8_ADDIMAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl282.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl280.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997587">
+ </A>
+<A NAME="84363">
+ </A>
+HDF_DFR8_ADDIMAGE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997591">
+ </A>
+The <A NAME="marker=997589">
+ </A>
+HDF_DFR8_ADDIMAGE procedure appends an 8-bit <A NAME="marker=997590">
+ </A>
+raster image to the specified Hierarchical Data Format file.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1025907">
+ </A>
+Input data is converted to bytes before being written to the file, as images in the DFR8 HDF model are necessarily byte images.</LI>
+</UL>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997592">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997593">
+ </A>
+HDF_DFR8_ADDIMAGE, <I CLASS="Italics">
+Filename, Image</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997594">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997595">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997596">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997597">
+ </A>
+Image</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997598">
+ </A>
+A two-dimensional array containing the image data. If this array is not byte-type data, it is converted to bytes before writing.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997599">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997601">
+ </A>
+<A NAME="marker=1025691">
+ </A>
+FORCE_BASELINE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025492">
+ </A>
+Set this keyword to force the JPEG quantization tables to be constrained to the range 1...255. This provides full baseline compatibility with external JPEG applications, but only makes a difference if the QUALITY keyword is set to a value less than 25. The default is TRUE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025496">
+ </A>
+<A NAME="marker=1025692">
+ </A>
+JPEG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025592">
+ </A>
+Set this keyword to compress the image being added using the JPEG (Joint Photographic Expert Group) method. Note that JPEG compression is <EM CLASS="Emphasis">
+lossy</EM>
+; see WRITE_JPEG in the <EM CLASS="Emphasis">
+IDL Reference Guide</EM>
+ for more information about when this method is appropriate. (In other words, using JPEG compression to reduce the size of an images changes the values of the pixels and hence may alter the meaning of the corresponding data.) Setting either the QUALITY or the FORCE_BASELINE keywords implies this method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025489">
+ </A>
+<A NAME="marker=997600">
+ </A>
+IMCOMP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997602">
+ </A>
+Set this keyword to store the image using imcomp data compression. Note that you <EM CLASS="Emphasis">
+must</EM>
+ specify a palette. Note also that the JPEG and RLE compression methods are far superior; imcomp data compression should only be used if the images will be viewed on monitors with a very small number of colors (monochrome or 16-color).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997604">
+ </A>
+<A NAME="marker=997603">
+ </A>
+PALETTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997605">
+ </A>
+Set this keyword to a vector or array containing valid palette data. Palettes must be either [3, 256] arrays or  786-element vectors. Set PALETTE equal to zero to specify that no palette be used. If the PALETTE keyword is not specified, the current palette (which may be no palette, if a palette has not been specified elsewhere or if the null palette has been explicitly specified with <A HREF="idl289.htm#53630" CLASS="XRef">
+HDF_DFR8_SETPALETTE</A>
+) will be used.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997609">
+ </A>
+Note that if a palette is specified, it becomes the current palette, even if a default palette has been specified with HDF_DFR8_SETPALETTE.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997610">
+ </A>
+Note also that if IMCOMP data reduction is used, you <EM CLASS="Emphasis">
+must</EM>
+ specify a valid palette with the PALETTE keyword. It is not sufficient to set the current palette via other means.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997612">
+ </A>
+<A NAME="marker=1025767">
+ </A>
+QUALITY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025766">
+ </A>
+Set this keyword equal to the JPEG &quot;quality&quot; desired. This value should be in range 0 (terrible image quality but excellent compression) to 100 (excellent image quality but minimum compression). The default is 75. Setting this keyword implies that the JPEG keyword is set. Lower values of QUALITY produce higher compression ratios and smaller files.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025510">
+ </A>
+<A NAME="marker=997611">
+ </A>
+RLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997613">
+ </A>
+Set this keyword to store the image using run length compression. RLE compression is lossless, and is recommended for images where data retention is critical.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997614">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997615">
+ </A>
+Assuming that we start with a file, <CODE CLASS="Code">
+new.hdf</CODE>
+, with no 8-bit raster images, images could be appended and overwritten, with the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997616">
+ </A>
+HDF_DFR8_ADDIMAGE, 'new.hdf', Image1	<EM CLASS="Comment">;
+Write the first image to the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997617">
+ </A>
+HDF_DFR8_ADDIMAGE, 'new.hdf', Image2	<EM CLASS="Comment">;
+Append 2nd image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997618">
+ </A>
+HDF_DFR8_ADDIMAGE, 'new.hdf', Image3	<EM CLASS="Comment">;
+Append 3rd image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997619">
+ </A>
+HDF_DFR8_PUTIMAGE, 'new.hdf', Image4	<EM CLASS="Comment">;
+Use HDF_DFR8_PUTIMAGE to erase all previous images and write a new image at the first position in the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997620">
+ </A>
+HDF_DFR8_ADDIMAGE, 'new.hdf', Image5	<EM CLASS="Comment">;
+Append 2nd image.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997621">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997628">
+ </A>
+<A HREF="idl282.htm#16489" CLASS="XRef">
+HDF_DFR8_GETIMAGE</A>
+, <A HREF="idl286.htm#43006" CLASS="XRef">
+HDF_DFR8_PUTIMAGE</A>
+, WRITE_JPEG in the <EM CLASS="Emphasis">
+IDL Reference Guide</EM>
+.</P>
+</DIV>
+</BODY>
+</HTML>

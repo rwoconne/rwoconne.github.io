@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RS_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl189.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl187.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54107">
+ </A>
+<A NAME="66399">
+ </A>
+RS_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54113">
+ </A>
+The <A NAME="marker=54109">
+ </A>
+RS_TEST <A NAME="marker=54110">
+ </A>
+function <A NAME="marker=54111">
+ </A>
+tests the <A NAME="marker=54112">
+ </A>
+hypothesis that two sample populations <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have the same mean of distribution against the hypothesis that they differ. <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ may be of different lengths. The result is a two-element vector containing the nearly-normal test statistic Z and the one-tailed probability of obtaining a value of Z or greater. This type of test is often referred to as the &quot;<A NAME="marker=54114">
+ </A>
+Wilcoxon <A NAME="marker=54115">
+ </A>
+Rank-Sum Test&quot; or the &quot;<A NAME="marker=54116">
+ </A>
+Mann-Whitney U-Test.&quot;</P>
+<P CLASS="Body">
+<A NAME="pgfId=54123">
+ </A>
+The Mann-Whitney statistics for <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are defined as follows:  </P>
+<DIV>
+<CENTER><IMG SRC="idl_86.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_87.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835160">
+ </A>
+where <EM CLASS="Emphasis">
+Nx</EM>
+ and <EM CLASS="Emphasis">
+Ny</EM>
+ are the number of elements in <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+, respectively, and <EM CLASS="Emphasis">
+Wx</EM>
+ and <EM CLASS="Emphasis">
+Wy</EM>
+ are the rank sums for <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+, respectively. The test statistic Z, which closely follows a normal distribution for sample sizes exceeding 10 elements, is defined as follows:</P>
+<DIV>
+<CENTER><IMG SRC="idl_88.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835164">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+rs_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54135">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54136">
+ </A>
+Result = RS_TEST(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54137">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54138">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54139">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54140">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54141">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54142">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54144">
+ </A>
+<A NAME="marker=54143">
+ </A>
+UX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54145">
+ </A>
+Set this keyword to a named variable that will contain the Mann-Whitney statistic for <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54147">
+ </A>
+<A NAME="marker=54146">
+ </A>
+UY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54148">
+ </A>
+Set this keyword to a named variable that will contain the Mann-Whitney statistic for <EM CLASS="Emphasis">
+Y</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54149">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54150">
+ </A>
+Define two sample populations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54151">
+ </A>
+X = [-14, 3, 1, -16, -21, 7, -7, -13, -22, -17, -14, -8, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54152">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7, -18, -13, -9, -22, -25, -24, -18, -13, -13, -18, -5]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54153">
+ </A>
+Y = [-18, -9, -16, -14, -3, -9, -16, 10, -11, -3, -13, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54154">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-21, -2, -11, -16, -12, -13, -6, -9, -7, -11, -9]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54155">
+ </A>
+Test the hypothesis that two sample populations, {<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+}, have the same mean of distribution against the hypothesis in that they differ at the 0.05 significance level.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54156">
+ </A>
+PRINT, RS_TEST(X, Y, UX = ux, UY = uy)</P>
+<P CLASS="Body">
+<A NAME="pgfId=54157">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54158">
+ </A>
+[1.45134, 0.0733429]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54159">
+ </A>
+Print the Mann-Whitney statistics:</P>
+<P CLASS="Code">
+<A NAME="pgfId=54160">
+ </A>
+PRINT, 'Mann-Whitney Statistics: Ux = ', ux, ', Uy = ', uy</P>
+<P CLASS="Body">
+<A NAME="pgfId=54161">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54162">
+ </A>
+Mann-Whitney Statistics: Ux = 330.000, Uy = 198.000</P>
+<P CLASS="Body">
+<A NAME="pgfId=54163">
+ </A>
+The computed probability (0.0733429) is greater than the 0.05 significance level and therefore we do not reject the hypothesis that X and Y have the same mean of distribution. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54164">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66012">
+ </A>
+<A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="idle3.htm#95076" CLASS="XRef">
+KW_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

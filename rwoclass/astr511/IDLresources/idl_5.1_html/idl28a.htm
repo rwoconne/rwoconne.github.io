@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFSD_ADDDATA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl28b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl289.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997833">
+ </A>
+<A NAME="97095">
+ </A>
+HDF_DFSD_ADDDATA</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997837">
+ </A>
+The <A NAME="marker=997835">
+ </A>
+HDF_DFSD_ADDDATA procedure <A NAME="marker=997836">
+ </A>
+writes data, as well as all other information set via calls to HDF_DFSD_SETINFO and HDF_DFSD_DIMSET, to a Hierarchical Data Format file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997838">
+ </A>
+The <I CLASS="Italics">
+Data</I>
+ array must have the same dimensions as the array in the file. The new SDS is appended to the file, unless the OVERWRITE keyword is set.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997839">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997840">
+ </A>
+HDF_DFSD_ADDDATA, <I CLASS="Italics">
+Filename, Data</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997841">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997842">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997843">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997844">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997845">
+ </A>
+An expression (typically an array) containing the data to write.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997846">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997848">
+ </A>
+<A NAME="marker=997847">
+ </A>
+OVERWRITE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997849">
+ </A>
+Set this keyword to write <I CLASS="Italics">
+Data</I>
+ as the first, and only, SDS in the file. All previously-written scientific data sets in the file are removed.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997851">
+ </A>
+<A NAME="marker=997850">
+ </A>
+SET_DIM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997852">
+ </A>
+Set this keyword to make the dimension information for the HDF file based upon the dimensions of <I CLASS="Italics">
+Data</I>
+. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1016502">
+ </A>
+You <EM CLASS="Emphasis">
+must</EM>
+ set the number of dimensions in the HDF file, either by setting the SET_DIM keyword or using the DIMS keyword to HDF_DFSD_SETINFO.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997854">
+ </A>
+<A NAME="marker=997853">
+ </A>
+SET_TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997855">
+ </A>
+Set this keyword to make the data type of the current SDS based on the data type of <I CLASS="Italics">
+Data</I>
+.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

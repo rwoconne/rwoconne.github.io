@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_ZOOM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl65.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl63.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755828">
+ </A>
+<A NAME="46430">
+ </A>
+CW_ZOOM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755832">
+ </A>
+The <A NAME="marker=755829">
+ </A>
+CW_ZOOM function creates a compound <A NAME="marker=755830">
+ </A>
+widget that displays two <A NAME="marker=755831">
+ </A>
+images: an original image in one window and a portion of the original image in another. The user can select the center of the <A NAME="marker=755833">
+ </A>
+zoom region, the zoom scale, the interpolation style, and the method of indicating the zoom center.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796161">
+ </A>
+The returned value of this function is the widget ID of the newly-created zoom widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=773093">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_zoom.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=773061">
+ </A>
+Using CW_ZOOM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796159">
+ </A>
+The value of the CW_ZOOM widget is the original, un-zoomed image to be displayed (a two-dimensional array). To change the contents of the CW_ZOOM widget, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=773066">
+ </A>
+WIDGET_CONTROL, id, SET_VALUE = array</P>
+<P CLASS="Body">
+<A NAME="pgfId=773067">
+ </A>
+where <CODE CLASS="Code">
+id</CODE>
+ is the widget ID of the CW_ZOOM widget and <CODE CLASS="Code">
+array</CODE>
+ is the image array. The value of CW_ZOOM cannot be set until the widget has been realized. Note that the size of the original window, set with the XSIZE and YSIZE keywords to CW_ZOOM, must be the size of the input array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=66728">
+ </A>
+To return the current zoomed image as displayed by CW_ZOOM in the variable <CODE CLASS="Code">
+array</CODE>
+, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=773069">
+ </A>
+WIDGET_CONTROL, id, GET_VALUE = array</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755841">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755842">
+ </A>
+Result = CW_ZOOM(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755843">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755844">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755845">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755846">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755848">
+ </A>
+<A NAME="marker=755847">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755849">
+ </A>
+If set, a frame will be drawn around the widget. The default is FRAME = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755851">
+ </A>
+<A NAME="marker=755850">
+ </A>
+MAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755852">
+ </A>
+The maximum zoom scale, which must be greater than or equal to 1. The default is 20.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755854">
+ </A>
+<A NAME="marker=755853">
+ </A>
+MIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755855">
+ </A>
+The minimum zoom scale, which must be greater than or equal to 1. The default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755857">
+ </A>
+<A NAME="marker=755856">
+ </A>
+RETAIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=132495">
+ </A>
+<A NAME="marker=132494">
+ </A>
+Set this keyword to zero, one, or two to specify how backing store should be handled for both windows. RETAIN=0 specifies no backing store. RETAIN=1 requests that the server or window system provide backing store. RETAIN=2 specifies that IDL provide backing store directly. See <A HREF="idl22f.htm#83595" CLASS="XRef">
+Backing Store</A>
+<EM CLASS="Emphasis">
+ </EM>
+for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755885">
+ </A>
+<A NAME="marker=755884">
+ </A>
+SAMPLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755886">
+ </A>
+Set to zero for bilinear interpolation, or to a non-zero value for nearest neighbor interpolation. Bilinear interpolation gives higher quality results, but requires more time. The default is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755888">
+ </A>
+<A NAME="marker=755887">
+ </A>
+SCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755889">
+ </A>
+The initial integer scale factor to use for the zoomed image. The default is SCALE = 4. The scale must be greater than or equal to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755891">
+ </A>
+<A NAME="marker=755890">
+ </A>
+TRACK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755892">
+ </A>
+Set this keyword and events will be generated continuously as the cursor is moved across the original image. If not set, events will only be generated when the mouse button is released. Note: On slow systems, /TRACK performance can be inadequate. The default is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755894">
+ </A>
+<A NAME="marker=755893">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755895">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755897">
+ </A>
+<A NAME="marker=755896">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755898">
+ </A>
+The width of the window (in pixels) for the original image. The default is XSIZE = 500. Note that XSIZE <EM CLASS="Emphasis">
+must</EM>
+ be set to the width of the original image array for the image to display properly.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755900">
+ </A>
+<A NAME="marker=755899">
+ </A>
+X_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755901">
+ </A>
+The width of the visible part of the original image. This may be smaller than the actual width controlled by the XSIZE keyword. The default is 0, for no scroll bar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755903">
+ </A>
+<A NAME="marker=755902">
+ </A>
+X_ZSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755904">
+ </A>
+The width of the window for the zoomed image. The default is 250.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755906">
+ </A>
+<A NAME="marker=755905">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755907">
+ </A>
+The height of the window (in pixels) for the original image. The default is 500. Note that YSIZE <EM CLASS="Emphasis">
+must</EM>
+ be set to the height of the original image array for the image to display properly.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755909">
+ </A>
+<A NAME="marker=755908">
+ </A>
+Y_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755910">
+ </A>
+The height of the visible part of the original image. This may be smaller than the actual height controlled by the YSIZE keyword. The default is 0, for no scroll bar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755912">
+ </A>
+<A NAME="marker=755911">
+ </A>
+Y_ZSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755913">
+ </A>
+The height of the window for the zoomed image. The default is 250.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837907">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837908">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837915">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the value of the zoom widget. The value of the CW_ZOOM widget is the original, un-zoomed image to be displayed (a two-dimensional array). To change the contents of the CW_ZOOM widget, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=837934">
+ </A>
+WIDGET_CONTROL, id, SET_VALUE = array</P>
+<P CLASS="Body">
+<A NAME="pgfId=837935">
+ </A>
+where <CODE CLASS="Code">
+id</CODE>
+ is the widget ID of the CW_ZOOM widget and <CODE CLASS="Code">
+array</CODE>
+ is the image array. The value of CW_ZOOM cannot be set until the widget has been realized. Note that the size of the original window, set with the XSIZE and YSIZE keywords to CW_ZOOM, must be the size of the input array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837936">
+ </A>
+To return the current zoomed image as displayed by CW_ZOOM in the variable <CODE CLASS="Code">
+array</CODE>
+, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=837937">
+ </A>
+WIDGET_CONTROL, id, GET_VALUE = array</P>
+<P CLASS="Body">
+<A NAME="pgfId=837922">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755914">
+ </A>
+Widget Events Returned by the CW_ZOOM Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755915">
+ </A>
+When the &quot;Report Zoom to Parent&quot; button is pressed, this widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=809046">
+ </A>
+event = {ZOOM_EVENT, ID:0L, TOP:0L, HANDLER:0L, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=809054">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XSIZE:0L, YSIZE:0L, X0:0L, Y0:0L, X1:0L, Y1:0L }</P>
+<P CLASS="Body">
+<A NAME="pgfId=809042">
+ </A>
+The XSIZE and YSIZE fields contain the dimensions of the zoomed image. The X0 and Y0 fields contain the coordinates of the lower left corner of the original image, and the X1 and Y1 fields contain the coordinates of the upper right corner of the original image.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755933">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66777">
+ </A>
+The following code samples illustrate a use of the CW_ZOOM widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=66779">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=66778">
+ </A>
+First, create an event-handler. Note that clicking on the widget's &quot;Zoom&quot; button displays IDL's help output on the console.</P>
+<P CLASS="Code">
+<A NAME="pgfId=66736">
+ </A>
+PRO widzoom_event, event</P>
+<P CLASS="Code">
+<A NAME="pgfId=66738">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=66739">
+ </A>
+WIDGET_CONTROL, event.id, GET_UVALUE=uvalue</P>
+<P CLASS="Code">
+<A NAME="pgfId=66740">
+ </A>
+CASE uvalue OF</P>
+<P CLASS="Code">
+<A NAME="pgfId=66741">
+ </A>
+&nbsp;&nbsp;&nbsp;'ZOOM': HELP, /STRUCT, event</P>
+<P CLASS="Code">
+<A NAME="pgfId=66742">
+ </A>
+&nbsp;&nbsp;&nbsp;'DONE': WIDGET_CONTROL, event.top, /DESTROY</P>
+<P CLASS="Code">
+<A NAME="pgfId=66743">
+ </A>
+ENDCASE</P>
+<P CLASS="Code">
+<A NAME="pgfId=66744">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=66745">
+ </A>
+END</P>
+<P CLASS="Code">
+<A NAME="pgfId=66746">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=66747">
+ </A>
+Next, create the widget program:</P>
+<P CLASS="Code">
+<A NAME="pgfId=66780">
+ </A>
+PRO widzoom</P>
+<P CLASS="Code">
+<A NAME="pgfId=66748">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=66749">
+ </A>
+OPENR, lun, FILEPATH('people.dat', SUBDIR = ['examples','data']), $</P>
+<P CLASS="Code">
+<A NAME="pgfId=871473">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/GET_LUN</P>
+<P CLASS="Code">
+<A NAME="pgfId=66750">
+ </A>
+image=BYTARR(192,192)</P>
+<P CLASS="Code">
+<A NAME="pgfId=66751">
+ </A>
+READU, lun, image</P>
+<P CLASS="Code">
+<A NAME="pgfId=66752">
+ </A>
+FREE_LUN, lun</P>
+<P CLASS="Code">
+<A NAME="pgfId=66753">
+ </A>
+sz = SIZE(image)</P>
+<P CLASS="Code">
+<A NAME="pgfId=66754">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=66755">
+ </A>
+base=WIDGET_BASE(/COLUMN)</P>
+<P CLASS="Code">
+<A NAME="pgfId=66756">
+ </A>
+zoom=CW_ZOOM(base, XSIZE=sz[1], YSIZE=sz[2], UVALUE='ZOOM')</P>
+<P CLASS="Code">
+<A NAME="pgfId=66758">
+ </A>
+done=WIDGET_BUTTON(base, VALUE='Done', UVALUE='DONE')</P>
+<P CLASS="Code">
+<A NAME="pgfId=66759">
+ </A>
+WIDGET_CONTROL, base, /REALIZE</P>
+<P CLASS="Code">
+<A NAME="pgfId=66760">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=66761">
+ </A>
+WIDGET_CONTROL, zoom, SET_VALUE=image</P>
+<P CLASS="Code">
+<A NAME="pgfId=66762">
+ </A>
+XMANAGER, 'widzoom', base</P>
+<P CLASS="Code">
+<A NAME="pgfId=66763">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=66764">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=66765">
+ </A>
+Once you have entered these programs, type &quot;widzoom&quot; at the IDL command prompt to run the widget application.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920521">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920528">
+ </A>
+<A HREF="idl22a.htm#20984" CLASS="XRef">
+ZOOM</A>
+, <A HREF="idl22b.htm#89698" CLASS="XRef">
+ZOOM_24</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

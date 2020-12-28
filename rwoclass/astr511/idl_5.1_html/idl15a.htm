@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> QSIMP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl15b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl159.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51645">
+ </A>
+<A NAME="21978">
+ </A>
+QSIMP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51650">
+ </A>
+The <A NAME="marker=51647">
+ </A>
+QSIMP <A NAME="marker=51648">
+ </A>
+function performs <A NAME="marker=51649">
+ </A>
+numerical integration of a function over the closed interval [<I CLASS="Italic">
+A, B</I>
+] using <A NAME="marker=51651">
+ </A>
+Simpson's rule. The result will have the same structure as the smaller of <I CLASS="Italic">
+A</I>
+ and <I CLASS="Italic">
+B</I>
+, and the resulting type will be single- or double-precision floating, depending on the input types.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51652">
+ </A>
+QSIMP is based on the routine <CODE CLASS="Code">
+qsimp</CODE>
+ described in section 4.2 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51653">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51654">
+ </A>
+Result = QSIMP(<I CLASS="Italic">
+Func, A, B</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51655">
+ </A>
+Arguments </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51656">
+ </A>
+Func</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51657">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function to be integrated. This function must accept a single scalar argument <I CLASS="Italic">
+X</I>
+ and return a scalar result. It must be defined over the closed interval [<I CLASS="Italic">
+A, B</I>
+]. </P>
+<P CLASS="Body">
+<A NAME="pgfId=51658">
+ </A>
+For example, if we wish to integrate the fourth-order polynomial</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=51659">
+ </A>
+<EM CLASS="Emphasis">
+y</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+4</SUP>
+ - 2<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+) sin(<EM CLASS="Emphasis">
+x</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=51660">
+ </A>
+we define a function SIMPSON to express this relationship in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51661">
+ </A>
+FUNCTION simpson, X</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51662">
+ </A>
+&nbsp;&nbsp;RETURN, (X^4 - 2.0 * X^2) * SIN(X)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51663">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51664">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51665">
+ </A>
+The lower limit of the integration. <I CLASS="Italic">
+A</I>
+ can be either a scalar or an array. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51666">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51667">
+ </A>
+The upper limit of the integration. <I CLASS="Italic">
+B</I>
+ can be either a scalar or an array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51668">
+ </A>
+Note: If arrays are specified for <I CLASS="Italic">
+A</I>
+ and <I CLASS="Italic">
+B</I>
+, then QSIMP integrates the user-supplied function over the interval [<I CLASS="Italic">
+A</I>
+<SUB CLASS="Subscript">
+i</SUB>
+, <I CLASS="Italic">
+B</I>
+<SUB CLASS="Subscript">
+i</SUB>
+] for each <I CLASS="Italic">
+i</I>
+. If either <I CLASS="Italic">
+A</I>
+ or <I CLASS="Italic">
+B</I>
+ is a scalar and the other an array, the scalar is paired with each array element in turn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51669">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51671">
+ </A>
+<A NAME="marker=51670">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51672">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51674">
+ </A>
+<A NAME="marker=51673">
+ </A>
+EPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51675">
+ </A>
+The desired fractional accuracy. For single-precision calculations, the default value is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-6</SUP>
+. For double-precision calculations, the default value is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-12</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51677">
+ </A>
+<A NAME="marker=51676">
+ </A>
+JMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51678">
+ </A>
+2<SUP CLASS="Superscript">
+(JMAX - 1)</SUP>
+ is the maximum allowed number of steps. If not specified, a default of 20 is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51679">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51680">
+ </A>
+To integrate the SIMPSON function (listed above) over the interval [0, <EM CLASS="Symbol">
+p</EM>
+/2] and print the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51681">
+ </A>
+A = 0.0	<EM CLASS="Comment">;
+Define lower limit of integration.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51682">
+ </A>
+B = !PI/2.0	<EM CLASS="Comment">;
+Define upper limit of integration.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51683">
+ </A>
+PRINT, QSIMP('simpson', A, B)</P>
+<P CLASS="Body">
+<A NAME="pgfId=51684">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51685">
+ </A>
+&nbsp;-0.479158</P>
+<P CLASS="Body">
+<A NAME="pgfId=51686">
+ </A>
+The exact solution can be found using the integration-by-parts formula:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51687">
+ </A>
+FB = 4.*B*(B^2-7.)*SIN(B) - (B^4-14.*B^2+28.)*COS(B)</P>
+<P CLASS="Code">
+<A NAME="pgfId=51688">
+ </A>
+FA = 4.*A*(A^2-7.)*SIN(A) - (A^4-14.*A^2+28.)*COS(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=51689">
+ </A>
+exact = FB - FA</P>
+<P CLASS="Code">
+<A NAME="pgfId=51690">
+ </A>
+PRINT, exact</P>
+<P CLASS="Body">
+<A NAME="pgfId=51691">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51692">
+ </A>
+&nbsp;-0.479156</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51693">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51709">
+ </A>
+<A HREF="idld4.htm#70083" CLASS="XRef">
+INT_2D</A>
+, <A HREF="idld5.htm#74581" CLASS="XRef">
+INT_3D</A>
+, <A HREF="idld6.htm#51833" CLASS="XRef">
+INT_TABULATED</A>
+, <A HREF="idl158.htm#72956" CLASS="XRef">
+QROMB</A>
+, <A HREF="idl159.htm#31379" CLASS="XRef">
+QROMO</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51710">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

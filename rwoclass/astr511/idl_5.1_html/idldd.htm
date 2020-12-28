@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> JOURNAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlde.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idldc.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677362">
+ </A>
+<A NAME="47579">
+ </A>
+JOURNAL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677363">
+ </A>
+The <A NAME="marker=673232">
+ </A>
+JOURNAL procedure provides a <A NAME="marker=673233">
+ </A>
+record of an interactive session by saving, in a file, all text entered from the terminal in response to the IDL prompt. The first call to JOURNAL starts the <A NAME="marker=673237">
+ </A>
+logging process. The read-only <A NAME="marker=673238">
+ </A>
+system variable !JOURNAL is set to the file unit used. To stop saving commands and close the file, call JOURNAL with no parameters. If logging is in effect and JOURNAL is called with a parameter, the parameter is simply written to the journal file.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677364">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677365">
+ </A>
+JOURNAL <I CLASS="Italics">
+[, Arg]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677366">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677367">
+ </A>
+Arg</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677368">
+ </A>
+A string containing the name of the journal file to be opened or text to be written to an open journal file. If <I CLASS="Italics">
+Arg</I>
+ is not supplied, and a journal file is not already open, the file <CODE CLASS="Code">
+idlsave.pro</CODE>
+ is used. Once journaling is enabled, a call to JOURNAL with <I CLASS="Italics">
+Arg</I>
+ supplied causes <I CLASS="Italics">
+Arg</I>
+ to be written into the journal file. Calling JOURNAL without <I CLASS="Italics">
+Arg</I>
+ while journaling is in progress closes the journal file and ends the logging process.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677369">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677370">
+ </A>
+To begin journaling to the file <CODE CLASS="Code">
+myjournal.pro</CODE>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677371">
+ </A>
+JOURNAL, 'myjournal.pro'</P>
+<P CLASS="Body">
+<A NAME="pgfId=677372">
+ </A>
+Any commands entered at the IDL prompt are recorded in the file until IDL is exited or the JOURNAL command is entered without an argument.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822386">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822387">
+ </A>
+<A HREF="idl17c.htm#85451" CLASS="XRef">
+RESTORE</A>
+, <A HREF="idl18b.htm#30525" CLASS="XRef">
+SAVE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

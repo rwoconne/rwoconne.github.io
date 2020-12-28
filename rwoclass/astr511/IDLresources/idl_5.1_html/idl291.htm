@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFSD_PUTSLICE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl292.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl290.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998068">
+ </A>
+<A NAME="19339">
+ </A>
+HDF_DFSD_PUTSLICE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998072">
+ </A>
+The <A NAME="marker=998070">
+ </A>
+HDF_DFSD_PUTSLICE procedure writes a data <A NAME="marker=998071">
+ </A>
+slice to the current Hierarchical Data Format file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=998073">
+ </A>
+Note: Before calling HDF_DFSD_PUTSLIDCE, call HDF_DFSD_SETINFO to set the dimensions and attributes of the slice and HDF_DFSD_STARTSLICE to initialize the slice interface.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998074">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998075">
+ </A>
+HDF_DFSD_PUTSLICE, <I CLASS="Italics">
+Data</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998076">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998077">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998078">
+ </A>
+An array containing the data to write. Dimensions used to write the data are taken from the dimensions of <I CLASS="Italics">
+Data</I>
+, unless the COUNT keyword is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998079">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998081">
+ </A>
+<A NAME="marker=998080">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998082">
+ </A>
+An optional vector containing the counts to be used in writing <I CLASS="Italics">
+Data</I>
+. The counts do have to match the dimensions (number or sizes), but the count cannot describe more elements than exist.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998083">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998087">
+ </A>
+See the example in the documentation for <A HREF="idl294.htm#49580" CLASS="XRef">
+HDF_DFSD_STARTSLICE</A>
+.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998088">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998098">
+ </A>
+<A HREF="idl28d.htm#65821" CLASS="XRef">
+HDF_DFSD_ENDSLICE</A>
+, <A HREF="idl28f.htm#18154" CLASS="XRef">
+HDF_DFSD_GETINFO</A>
+, <A HREF="idl290.htm#64800" CLASS="XRef">
+HDF_DFSD_GETSLICE</A>
+, <A HREF="idl293.htm#56658" CLASS="XRef">
+HDF_DFSD_SETINFO</A>
+, <A HREF="idl294.htm#49580" CLASS="XRef">
+HDF_DFSD_STARTSLICE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

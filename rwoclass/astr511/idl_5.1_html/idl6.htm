@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> AMOEBA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=864046">
+ </A>
+<A NAME="40822">
+ </A>
+AMOEBA</H2>
+<P CLASS="Body">
+<A NAME="pgfId=864055">
+ </A>
+The<A NAME="marker=864451">
+ </A>
+ AMOEBA function performs multidimensional minimization of a function <EM CLASS="Emphasis">
+Func</EM>
+(<EM CLASS="Emphasis">
+x</EM>
+), where <EM CLASS="Emphasis">
+x</EM>
+ is an <EM CLASS="Emphasis">
+n</EM>
+-dimensional vector, using the downhill simplex method of Nelder and Mead, 1965, <EM CLASS="Emphasis">
+Computer Journal</EM>
+, Vol 7, pp 308-313.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864365">
+ </A>
+The downhill simplex method is not as efficient as Powell's method, and usually requires more function evaluations. However, the simplex method requires only function evaluations--not derivatives--and may be more reliable than Powell's method.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864287">
+ </A>
+If the minimum is found, AMOEBA returns an <EM CLASS="Emphasis">
+n</EM>
+-element vector corresponding to the function's minimum value. If a minimum within the given tolerance is not found within the specified number of iterations, AMOEBA returns a scalar value of -1. Results are returned with the same precision (single- or double-precision floating-point) as is returned by the user-supplied function to be minimized.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864379">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+amoeba.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution. AMOEBA is based on the routine <CODE CLASS="Code">
+amoeba</CODE>
+ described in section 10.4 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=864066">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864068">
+ </A>
+Result = AMOEBA(<EM CLASS="Emphasis">
+Ftol</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=864070">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864072">
+ </A>
+Ftol</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864216">
+ </A>
+The fractional tolerance to be achieved in the function value--that is, the fractional decrease in the function value in the terminating step. If the function you supply returns a single-precision result, <EM CLASS="Emphasis">
+Ftol</EM>
+ should never be less than your machine's floating-point precision--the value contained in the EPS field of the structure returned by the MACHAR function. If the function you supply returns a double-precision floating-point value, Ftol should not be less than your machine' double-precision floating-point precision. See <A HREF="idl10a.htm#91584" CLASS="XRef">
+MACHAR</A>
+ for details.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=864077">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864079">
+ </A>
+<A NAME="marker=864438">
+ </A>
+FUNCTION_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864348">
+ </A>
+Set this keyword equal to a string containing the name of the function to be minimized. If this keyword is omitted, AMOEBA assumes that an IDL function named &quot;FUNC&quot; is to be used.</P>
+<P CLASS="Body">
+<A NAME="pgfId=868841">
+ </A>
+The function to be minimized must be written as an IDL function and compiled prior to calling AMOEBA. This function must accept an <EM CLASS="Emphasis">
+n</EM>
+-element vector as its only parameter and return a scalar single- or double precision floating-point value as its result.</P>
+<P CLASS="Body">
+<A NAME="pgfId=868839">
+ </A>
+See the <EM CLASS="Emphasis">
+Example</EM>
+ section below for an example function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864085">
+ </A>
+<A NAME="marker=864439">
+ </A>
+FUNCTION_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864349">
+ </A>
+Set this keyword equal to a named variable that will contain an (<EM CLASS="Emphasis">
+n</EM>
++1)-element vector of the function values at the simplex points. The first element contains the function minimum. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864089">
+ </A>
+<A NAME="marker=864440">
+ </A>
+NCALLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864350">
+ </A>
+Set this keyword equal to a named variable that will contain a count of the number of times the function was evaluated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864091">
+ </A>
+<A NAME="marker=864441">
+ </A>
+NMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864351">
+ </A>
+Set this keyword equal to a scalar value specifying the maximum number of function evaluations allowed before terminating. The default is 5000.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864094">
+ </A>
+<A NAME="marker=864442">
+ </A>
+P0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864352">
+ </A>
+Set this keyword equal to an <EM CLASS="Emphasis">
+n</EM>
+-element single- or double-precision floating-point vector specifying the initial starting point. Note that if you specify P0, you must also specify SCALE.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864097">
+ </A>
+For example, in a 3-dimensional problem, if the initial guess is the point [0,0,0], and you know that the function's minimum value occurs in the interval: </P>
+<P CLASS="Code">
+<A NAME="pgfId=864411">
+ </A>
+-10 &lt; X[0] &lt; 10, -100 &lt; X[1] &lt; 100, -200 &lt; X[(2] &lt; 200, </P>
+<P CLASS="Body">
+<A NAME="pgfId=864412">
+ </A>
+specify: <CODE CLASS="Code">
+P0=[0,0,0]</CODE>
+ and <CODE CLASS="Code">
+SCALE=[10, 100, 200]</CODE>
+. </P>
+<P CLASS="Body">
+<A NAME="pgfId=864407">
+ </A>
+Alternately, you can omit P0 and SCALE and specify SIMPLEX.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864103">
+ </A>
+<A NAME="marker=864443">
+ </A>
+SCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864423">
+ </A>
+Set this keyword equal to a scalar or <EM CLASS="Emphasis">
+n</EM>
+-element vector containing the problem's characteristic length scale for each dimension. SCALE is used with P0 to form an initial (<EM CLASS="Emphasis">
+n</EM>
++1) point simplex. If all dimensions have the same scale, set SCALE equal to a scalar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864424">
+ </A>
+<A NAME="marker=864444">
+ </A>
+SIMPLEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864354">
+ </A>
+Set this keyword equal to an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
++1 single- or double-precision floating-point array containing the starting simplex. After AMOEBA has returned, the SIMPLEX array contains the simplex enclosing the function minimum. The first point in the array, SIMPLEX[*,0], corresponds to the function's minimum. This keyword is ignored if the P0 and SCALE keywords are set.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=864143">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864144">
+ </A>
+Use AMOEBA to find the slope and intercept of a straight line that fits a given set of points, minimizing the maximum error. The function to be minimized (FUNC, in this case) returns the maximum error, given p[0] = intercept, and p[1] = slope. First define the function FUNC:</P>
+<P CLASS="Code">
+<A NAME="pgfId=864149">
+ </A>
+FUNCTION FUNC, P</P>
+<P CLASS="Code">
+<A NAME="pgfId=864150">
+ </A>
+COMMON FUNC_XY, X, Y</P>
+<P CLASS="Code">
+<A NAME="pgfId=864151">
+ </A>
+RETURN, MAX(ABS(Y - (P[0] + P[1] * X)))</P>
+<P CLASS="Code">
+<A NAME="pgfId=864152">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=864154">
+ </A>
+Put the data points into a common block so they are accessible to the function: </P>
+<P CLASS="Code">
+<A NAME="pgfId=864156">
+ </A>
+COMMON FUNC_XY, X, Y</P>
+<P CLASS="Body">
+<A NAME="pgfId=864322">
+ </A>
+Define the data points:</P>
+<P CLASS="Code">
+<A NAME="pgfId=864323">
+ </A>
+X = FINDGEN(17)*5</P>
+<P CLASS="Code">
+<A NAME="pgfId=864324">
+ </A>
+Y = [ 12.0,  24.3,  39.6,  51.0,  66.5,  78.4,  92.7, 107.8, 120.0, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=864325">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;135.5, 147.5, 161.0, 175.4, 187.4, 202.5, 215.4, 229.9]</P>
+<P CLASS="Body">
+<A NAME="pgfId=864162">
+ </A>
+Call the function. Set the fractional tolerance to 1 part in 10<SUP CLASS="Superscript">
+5</SUP>
+, the initial guess to [0,0], and specify that the minimum should be found within a distance of 100 of that point: </P>
+<P CLASS="Code">
+<A NAME="pgfId=864165">
+ </A>
+R = AMOEBA(1.0e-5, SCALE=1.0e2, P0 = [0, 0], FUNCTION_VALUE=fval)</P>
+<P CLASS="Body">
+<A NAME="pgfId=864167">
+ </A>
+Check for convergence:</P>
+<P CLASS="Code">
+<A NAME="pgfId=864168">
+ </A>
+IF N_ELEMENTS(R) EQ 1 THEN MESSAGE, 'AMOEBA failed to converge'</P>
+<P CLASS="Body">
+<A NAME="pgfId=864337">
+ </A>
+Print results.</P>
+<P CLASS="Code">
+<A NAME="pgfId=864338">
+ </A>
+PRINT, 'Intercept, Slope:', r, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=864473">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Function value (max error): ', fval[0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=864343">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=864344">
+ </A>
+Intercept, Slope:      11.4100      2.72800</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=864345">
+ </A>
+Function value:       1.33000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=864346">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864347">
+ </A>
+<A HREF="idl148.htm#27298" CLASS="XRef">
+POWELL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_VARPUT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ef.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2ed.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997611">
+ </A>
+<A NAME="78210">
+ </A>
+NCDF_VARPUT</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997614">
+ </A>
+The <A NAME="marker=997613">
+ </A>
+NCDF_VARPUT procedure writes a hyperslab of values to a netCDF <A NAME="marker=997615">
+ </A>
+variable. The netCDF file must be in <I CLASS="Italics">
+data</I>
+ mode to use this procedure.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997616">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997617">
+ </A>
+NCDF_VARPUT, <I CLASS="Italics">
+Cdfid, Varid, Value</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997618">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997619">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997620">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997621">
+ </A>
+Varid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997622">
+ </A>
+The netCDF variable ID, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997623">
+ </A>
+Value</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997624">
+ </A>
+Data values to be written to the netCDF file. If the data type of <I CLASS="Italics">
+Value</I>
+ does not match that of the netCDF variable, it is converted to the correct data type before writing. <I CLASS="Italics">
+Value</I>
+ must have a dimensionality less than or equal to that of the variable being written.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997625">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997627">
+ </A>
+<A NAME="marker=997626">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997628">
+ </A>
+An optional vector containing the counts to be used in writing <I CLASS="Italics">
+Value</I>
+. Note that counts do not have to match the dimensions of <I CLASS="Italics">
+Value</I>
+. The default count vector is the dimensionality of <I CLASS="Italics">
+Value</I>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997630">
+ </A>
+<A NAME="marker=997629">
+ </A>
+OFFSET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997631">
+ </A>
+An optional vector containing the starting position to write. The default start position is [0, 0, ...].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997633">
+ </A>
+<A NAME="marker=997632">
+ </A>
+STRIDE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997634">
+ </A>
+An optional vector containing the strides, or writing intervals, between written values of the netCDF variable. The default stride vector is that for a contiguous write, [1, 1, ...].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997635">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997636">
+ </A>
+Suppose that you wish to create a 100x100 byte (0 &amp; 1) checker board. In this case:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997637">
+ </A>
+offset_even = [0,0] &amp; offset_odd = [1,1]<BR>
+<EM CLASS="Comment">;
+Create offsets for even and odd rows.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997638">
+ </A>
+count = [50,50] &amp; stride = [2,2]	<EM CLASS="Comment">;
+Create count and stride values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997639">
+ </A>
+black = BYTARR(50,50) &gt; 1B	<EM CLASS="Comment">;
+Make the &quot;black&quot; spaces of the checker board.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997640">
+ </A>
+id = NCDF_CREATE('checker.nc', /CLOBBER)<BR>
+<EM CLASS="Comment">;
+Create the netCDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997641">
+ </A>
+NCDF_CONTROL, id, /FILL	<EM CLASS="Comment">;
+Fill the file with BYTE zeros.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997642">
+ </A>
+xid = NCDF_DIMDEF(id, 'x', 100)	<EM CLASS="Comment">;
+Define the X dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997643">
+ </A>
+yid = NCDF_DIMDEF(id, 'y', 100)	<EM CLASS="Comment">;
+Define the Y dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000351">
+ </A>
+zid = NCDF_DIMDEF(id, 'yy', /UNLIMITED)	<EM CLASS="Comment">;
+Define the Z dimension, UNLIMITED.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000422">
+ </A>
+vid = NCDF_VARDEF(id, 'board', [yid, xid], /BYTE)<BR>
+<EM CLASS="Comment">;
+Define a variable with the name &quot;board&quot;.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000397">
+ </A>
+NCDF_DIMRENAME, id, zid, 'z'	<EM CLASS="Comment">;
+Rename 'yy' to 'z' as the zid dimension name.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000389">
+ </A>
+NCDF_CONTROL, id, /ENDEF	<EM CLASS="Comment">;
+Put the file into data mode.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000440">
+ </A>
+Use NCDF_DIMID and NCDF_DIMINQ to verify the name and size of the zid dimension:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000444">
+ </A>
+check_id = NCDF_DIMID(id,'z')</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000445">
+ </A>
+NCDF_DIMINQ, id, check_id, dim_name, dim_size</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000446">
+ </A>
+HELP, check_id, dim_name, dim_size</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000448">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000474">
+ </A>
+CHECK_ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LONG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000475">
+ </A>
+DIM_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;'z'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000476">
+ </A>
+DIM_SIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LONG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000454">
+ </A>
+Note that the DIM_SIZE is 0 because no records have been written yet for this dimension.</P>
+<P CLASS="Code">
+<A NAME="pgfId=997646">
+ </A>
+NCDF_VARPUT, id, vid, black, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997647">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COUNT=count, STRIDE=stride, OFFSET=offset_even</P>
+<P CLASS="Code">
+<A NAME="pgfId=997648">
+ </A>
+NCDF_VARPUT, id, vid, black, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997649">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COUNT=count, STRIDE=stride, OFFSET=offset_odd</P>
+<P CLASS="Code">
+<A NAME="pgfId=997650">
+ </A>
+NCDF_VARGET, id, vid, output	<EM CLASS="Comment">;
+Get the full image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997651">
+ </A>
+WINDOW, XSIZE=100, YSIZE=100	<EM CLASS="Comment">;
+Create a window for displaying the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997652">
+ </A>
+TVSCL, output	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997653">
+ </A>
+stride = [2,3]	<EM CLASS="Comment">;
+Make stride larger than possible.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997654">
+ </A>
+NCDF_VARPUT, id, vid, black, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997655">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COUNT=count, STRIDE=stride, OFFSET=offset_odd<BR>
+<EM CLASS="Comment">;
+As an experiment, attempt to write to an array larger than the one we previously allocated with NCDF_VARDEF.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997656">
+ </A>
+IDL prints::</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997657">
+ </A>
+% NCDF_VARPUT: Requested write is larger than the available data area.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997658">
+ </A>
+You will need to change the OFFSET/COUNT/STRIDE, or redefine the variable dimensions. You attempted to access 150 elements in a 100 array.</P>
+<P CLASS="Code">
+<A NAME="pgfId=997659">
+ </A>
+NCDF_CLOSE, id	<EM CLASS="Comment">;
+Close the netCDF file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997660">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997673">
+ </A>
+<A HREF="idl2ea.htm#44081" CLASS="XRef">
+NCDF_VARGET</A>
+, <A HREF="idl2eb.htm#60220" CLASS="XRef">
+NCDF_VARGET1</A>
+, <A HREF="idl2ec.htm#53135" CLASS="XRef">
+NCDF_VARID</A>
+, <A HREF="idl2ed.htm#68704" CLASS="XRef">
+NCDF_VARINQ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

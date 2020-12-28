@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DO_APPLE_SCRIPT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl82.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl80.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=129462">
+ </A>
+<A NAME="78572">
+ </A>
+DO_APPLE_SCRIPT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=129466">
+ </A>
+The <A NAME="marker=129464">
+ </A>
+DO_APPLE_SCRIPT procedure compiles and executes an <A NAME="marker=129614">
+ </A>
+AppleScript script, possibly returning a result. DO_APPLE_SCRIPT is only available in <EM CLASS="Emphasis">
+IDL for Macintosh</EM>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=129475">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=129492">
+ </A>
+DO_APPLE_SCRIPT, <EM CLASS="Emphasis">
+Script</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=129493">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=129494">
+ </A>
+Script</H4>
+<P CLASS="Body">
+<A NAME="pgfId=129609">
+ </A>
+A string or array of strings to be compiled and executed by AppleScript.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=129496">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=129484">
+ </A>
+<A NAME="marker=129628">
+ </A>
+AS_STRING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=129610">
+ </A>
+Set this keyword to cause the result to be returned as a decompiled string. Decompiled strings have the same format as the &quot;The Result&quot; window of Apple's Script Editor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=129604">
+ </A>
+<A NAME="marker=129629">
+ </A>
+RESULT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=129611">
+ </A>
+Set this keyword equal to a named variable that will contain the results of the script.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=129488">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=129489">
+ </A>
+Suppose you wish to retrieve a range of cell data from a Microsoft Excel spreadsheet. The following AppleScript script and command retrieve the first through fifth rows of the first two columns of a spreadsheet titled &quot;Worksheet 1&quot;, storing the result in the IDL variable A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=135551">
+ </A>
+script = [ 'tell application &quot;Microsoft Excel&quot;', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=135514">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'get Value of Range &quot;R1C1:R5C2&quot; of Worksheet 1', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=135546">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'end tell' ]</P>
+<P CLASS="Code">
+<A NAME="pgfId=135517">
+ </A>
+DO_APPLE_SCRIPT, script, RESULT = a</P>
+<P CLASS="Body">
+<A NAME="pgfId=158431">
+ </A>
+Similarly, the following lines would copy the contents of the IDL variable A to a range within the spreadsheet:</P>
+<P CLASS="Code">
+<A NAME="pgfId=158432">
+ </A>
+A = [ 1, 2, 3, 4, 5 ]</P>
+<P CLASS="Code">
+<A NAME="pgfId=158434">
+ </A>
+script = [ 'tell application &quot;IDL&quot; to copy variable &quot;A&quot;', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=158465">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'into aVariable', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=158435">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'tell application &quot;Excel&quot; to copy aVariable to', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=158466">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'value of range &quot;R1C1:R5C1&quot; of worksheet 1' ]</P>
+<P CLASS="Code">
+<A NAME="pgfId=158437">
+ </A>
+DO_APPLE_SCRIPT, script</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=129641">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=129642">
+ </A>
+Chapter 2, &quot;Operating System Access&quot; in the IDL <EM CLASS="Emphasis">
+Advanced Development Guide</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855402">
+ </A>
+&quot;Macintosh-Specific OS Abilities&quot; on page&nbsp;1-35 of the <EM CLASS="Emphasis">
+IDL User's Guide</EM>
+.</P>
+</DIV>
+</BODY>
+</HTML>

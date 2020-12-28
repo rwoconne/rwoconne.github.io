@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPRSAB</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1af.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51904">
+ </A>
+<A NAME="69406">
+ </A>
+SPRSAB</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51908">
+ </A>
+The <A NAME="marker=51906">
+ </A>
+SPRSAB function performs matrix multiplication on two row-indexed <A NAME="marker=51907">
+ </A>
+sparse arrays created by SPRSIN. The routine computes all components of the matrix products, but only stores those values whose absolute magnitude exceeds the threshold value. The result is a row-indexed sparse array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51909">
+ </A>
+SPRSAB is based on the routine <CODE CLASS="Code">
+sprstm</CODE>
+ described in section 2.7 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission. The difference between the two routines is that SPRSAB performs the matrix multiplication A.B rather than A.B<SUP CLASS="Superscript">
+T</SUP>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51910">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51911">
+ </A>
+Result = SPRSAB(<EM CLASS="Emphasis">
+A, B</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51912">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51913">
+ </A>
+A, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51914">
+ </A>
+Row-indexed sparse arrays created by the SPRSIN function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51915">
+ </A>
+Keywords </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51917">
+ </A>
+<A NAME="marker=51916">
+ </A>
+DOUBLE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=51918">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51920">
+ </A>
+<A NAME="marker=51919">
+ </A>
+THRESH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51921">
+ </A>
+Use this keyword to set the criterion for deciding the absolute magnitude of the elements to be retained in sparse storage mode. For single-precision calculations, the default value is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-7</SUP>
+. For double-precision calculations, the default is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-14</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51922">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51923">
+ </A>
+Begin by creating two arrays:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51924">
+ </A>
+A = [[ 5.0,  0.0, 0.0,  1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51925">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, -2.0, 0.0,  1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51926">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -1.0, 0.0,  2.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51927">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 0.0,  3.0, 3.0,  1.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=51928">
+ </A>
+B = [[ 1.0,  2.0, 3.0,  1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51929">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, -3.0, 0.0,  1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51930">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1.0,  3.0, 1.0,  2.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51931">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 0.0,  3.0, 3.0,  1.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=51932">
+ </A>
+sparse&nbsp;=&nbsp;SPRSAB(SPRSIN(A), SPRSIN(B))	<EM CLASS="Comment">;
+Convert the arrays to sparse array format before multiplying. The variable SPARSE holds the result in sparse array form.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51933">
+ </A>
+result = FULSTR(sparse)	<EM CLASS="Comment">;
+Restore the sparse array structure to full storage mode.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51934">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51935">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51936">
+ </A>
+&nbsp;5.00000      13.0000      18.0000      &nbsp;&nbsp;6.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51937">
+ </A>
+-3.00000      15.0000      12.0000      &nbsp;&nbsp;2.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=826069">
+ </A>
+&nbsp;1.00000      17.0000      18.0000      &nbsp;&nbsp;5.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=826070">
+ </A>
+&nbsp;6.00000      &nbsp;3.00000      6.00000      10.0000</P>
+<P CLASS="Body">
+<A NAME="pgfId=826071">
+ </A>
+We can check this result by multiplying the original arrays:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51941">
+ </A>
+exact = B # A</P>
+<P CLASS="Code">
+<A NAME="pgfId=51942">
+ </A>
+PRINT, exact</P>
+<P CLASS="Body">
+<A NAME="pgfId=51943">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51944">
+ </A>
+&nbsp;5.00000      13.0000      18.0000      &nbsp;&nbsp;6.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51945">
+ </A>
+-3.00000      15.0000      12.0000      &nbsp;&nbsp;2.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51946">
+ </A>
+&nbsp;1.00000      17.0000      18.0000      &nbsp;&nbsp;5.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51947">
+ </A>
+&nbsp;6.00000      &nbsp;3.00000      6.00000      10.0000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51948">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51967">
+ </A>
+<A HREF="idlac.htm#82247" CLASS="XRef">
+FULSTR</A>
+, <A HREF="idle8.htm#41659" CLASS="XRef">
+LINBCG</A>
+, <A HREF="idl1b1.htm#31054" CLASS="XRef">
+SPRSAX</A>
+, <A HREF="idl1b2.htm#41214" CLASS="XRef">
+SPRSIN</A>
+, <A HREF="idl169.htm#57482" CLASS="XRef">
+READ_SPR</A>
+, <A HREF="idl213.htm#23995" CLASS="XRef">
+WRITE_SPR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

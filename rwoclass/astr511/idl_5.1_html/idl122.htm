@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> N_ELEMENTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl123.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl121.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889200">
+ </A>
+<A NAME="23226">
+ </A>
+N_ELEMENTS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889204">
+ </A>
+The <A NAME="marker=889203">
+ </A>
+N_ELEMENTS function returns the number of elements contained in an expression or variable.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889205">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889206">
+ </A>
+Result = N_ELEMENTS(<I CLASS="Italics">
+Expression</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889207">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889208">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889209">
+ </A>
+The expression for which the number of elements is to be returned. Scalar expressions always have one element. The <A NAME="marker=889210">
+ </A>
+number of elements in an array is equal to the product of its dimensions. If <I CLASS="Italics">
+Expression</I>
+ is an undefined variable, N_ELEMENTS returns zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889211">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889212">
+ </A>
+Create an integer array, I by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889213">
+ </A>
+I = INTARR(4, 5, 3, 6)</P>
+<P CLASS="Body">
+<A NAME="pgfId=889214">
+ </A>
+Find the number of elements in I and print the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889215">
+ </A>
+PRINT, N_ELEMENTS(I)</P>
+<P CLASS="Body">
+<A NAME="pgfId=889216">
+ </A>
+To test if the variable Q is defined and, if not, set its value to 1, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889217">
+ </A>
+IF N_ELEMENTS(Q) EQ 0 THEN Q=1</P>
+<P CLASS="Body">
+<A NAME="pgfId=889218">
+ </A>
+A typical use of N_ELEMENTS is to check if an optional input is defined, and if not, set it to a default value:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889219">
+ </A>
+IF (N_ELEMENTS(roo) EQ 0) THEN roo=rooDefault</P>
+<P CLASS="Body">
+<A NAME="pgfId=889220">
+ </A>
+The original value of <CODE CLASS="Code">
+roo</CODE>
+ may be altered by a called routine, passing a different value back to the caller. Unless you intend for the routine to behave in this manner, you should prevent it by differentiating N_ELEMENTS' parameter from your routine's variable:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889221">
+ </A>
+IF (N_ELEMENTS(roo) EQ 0) THEN rooUse=roo $</P>
+<P CLASS="Code">
+<A NAME="pgfId=889222">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ELSE rooUse=rooDefault</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889223">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889227">
+ </A>
+<A HREF="idl124.htm#49338" CLASS="XRef">
+N_TAGS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

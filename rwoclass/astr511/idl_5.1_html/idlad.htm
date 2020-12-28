@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FUNCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlae.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlac.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758013">
+ </A>
+<A NAME="69782">
+ </A>
+FUNCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758015">
+ </A>
+The <A NAME="marker=758014">
+ </A>
+FUNCT procedure evaluates the sum of a Gaussian and a 2nd-order polynomial and optionally returns the value of its partial derivatives. Normally, this function is used by CURVEFIT to fit the sum of a line and a varying background to actual data.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758016">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+funct.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758017">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758018">
+ </A>
+FUNCT, <EM CLASS="Emphasis">
+X, A, F [, Pder]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758019">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758020">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758021">
+ </A>
+A vector of values for the independent variable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758022">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758026">
+ </A>
+A vector of coefficients for the equations:</P>
+<DIV>
+<CENTER><IMG SRC="idl_33.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=810671">
+ </A>
+<EM CLASS="Emphasis">
+</EM>
+F</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810672">
+ </A>
+A named variable that will contain the value of the function at each <EM CLASS="Emphasis">
+Xi</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=810673">
+ </A>
+Pder</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810674">
+ </A>
+A named variable that will contain an array of the size (N_ELEMENTS(<EM CLASS="Emphasis">
+X</EM>
+),6) that contains the partial derivatives. <EM CLASS="Emphasis">
+Pder(i,j)</EM>
+ represents the derivative at the <EM CLASS="Emphasis">
+i</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ point with respect to <EM CLASS="Emphasis">
+j</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ parameter.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758034">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758035">
+ </A>
+<A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

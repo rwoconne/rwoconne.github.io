@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ/READF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl162.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl160.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=863816">
+ </A>
+<A NAME="26845">
+ </A>
+READ/READF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=863819">
+ </A>
+The <A NAME="marker=863818">
+ </A>
+READ procedures perform formatted input into variables.</P>
+<P CLASS="Body">
+<A NAME="pgfId=863824">
+ </A>
+READ <A NAME="marker=863820">
+ </A>
+performs input from the standard input stream (IDL file unit 0), while READF requires a file unit to be explicitly specified.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863825">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863826">
+ </A>
+READ, <I CLASS="Italic">
+[Prompt,] Var</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Var</I>
+<SUB CLASS="Subscript">
+n</SUB>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=863827">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=863828">
+ </A>
+READF, <I CLASS="Italic">
+[Prompt,] Unit, Var</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Var</I>
+<SUB CLASS="Subscript">
+n</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863829">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863830">
+ </A>
+Prompt</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863831">
+ </A>
+Note that the PROMPT keyword should be used instead of the <I CLASS="Italic">
+Prompt</I>
+ argument for compatibility with window-based versions of IDL.</P>
+<P CLASS="Body">
+<A NAME="pgfId=863835">
+ </A>
+A string or explicit expression (i.e, not a named variable) to be used as a prompt. This argument should not be included if the FORMAT keyword is specified. Also, if this argument begins with the characters &quot;$(&quot;, it is taken to be a format specification as described below under &quot;Format Compatibility&quot;.</P>
+<P CLASS="Body">
+<A NAME="pgfId=863836">
+ </A>
+Using the <I CLASS="Italic">
+Prompt</I>
+ argument does not work well with <I CLASS="Italic">
+IDL for Windows</I>
+ and <I CLASS="Italic">
+IDL for Macintosh</I>
+. The desired prompt string is written to the log window instead of the command input window. To create custom prompts compatible with these versions of IDL, use the PROMPT keyword, described below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863840">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863841">
+ </A>
+For READF, Unit specifies the file unit from which the input is taken.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863842">
+ </A>
+Var<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863843">
+ </A>
+The named variables to receive the input.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863844">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863846">
+ </A>
+<A NAME="marker=863845">
+ </A>
+FORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863850">
+ </A>
+If FORMAT is not specified, IDL uses its default rules for formatting the input. FORMAT allows the format of the input to be specified in precise detail, using a FORTRAN-style specification. See <A HREF="..html#50524" CLASS="XRef">
+Using Explicitly Formatted Input/Output</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863855">
+ </A>
+<A NAME="marker=863854">
+ </A>
+PROMPT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863856">
+ </A>
+Set this keyword to a scalar string to be used as a customized prompt for the READ command. If the PROMPT keyword or <I CLASS="Italic">
+Prompt</I>
+ argument is not supplied, IDL uses a colon followed by a space (&quot;:&nbsp;&quot;) as the input prompt.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863860">
+ </A>
+VMS Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863862">
+ </A>
+Note also that the obsolete VMS-only routine <A NAME="marker=863861">
+ </A>
+READ_KEY has been replaced by the keywords below.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863864">
+ </A>
+<A NAME="marker=863863">
+ </A>
+KEY_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863865">
+ </A>
+The index key to be used (primary = 0, first alternate key = 1, etc...) when accessing data from a file with indexed organization. If this keyword is omitted, the primary key is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863867">
+ </A>
+<A NAME="marker=863866">
+ </A>
+KEY_MATCH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863868">
+ </A>
+The relation to be used when matching the supplied key with key field values (EQ = 0, GE = 1, GT = 2) when accessing data from a <A NAME="marker=863869">
+ </A>
+file with indexed organization. If this keyword is omitted, the equality relation (0) is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863871">
+ </A>
+<A NAME="marker=863870">
+ </A>
+KEY_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863872">
+ </A>
+The value of a key to be found when accessing data from a file with indexed organization. This value must match the key definition that is determined when the file was created in terms of type and size--no conversions are performed. If this keyword is omitted, the next sequential record is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863873">
+ </A>
+Format Compatibility</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863874">
+ </A>
+If the FORMAT keyword is not present and READ is called with more than one argument, and the first argument is a scalar string starting with the characters &quot;$(&quot;, this initial argument is taken to be the format specification, just as if it had been specified via the FORMAT keyword. This feature is maintained for compatibility with version 1 of VMS IDL.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863878">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863879">
+ </A>
+To read a string value into the variable B from the keyboard, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=863880">
+ </A>
+B = ''	<EM CLASS="Comment">;
+Define B as a string before reading.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=863881">
+ </A>
+READ, B, PROMPT='Enter Name: '	<EM CLASS="Comment">;
+Read input from the terminal.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=863882">
+ </A>
+To read formatted data from the previously-opened file associated with logical unit number 7 into variable C, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=863883">
+ </A>
+READF, 7, C</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863884">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=956698">
+ </A>
+<A HREF="idl170.htm#45159" CLASS="XRef">
+READS</A>
+, <A HREF="idl171.htm#52434" CLASS="XRef">
+READU</A>
+, <A HREF="idl218.htm#93251" CLASS="XRef">
+WRITEU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

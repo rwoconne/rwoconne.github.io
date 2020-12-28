@@ -1,0 +1,1765 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrWindow</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl30e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl30c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=998603">
+ </A>
+<A NAME="72835">
+ </A>
+IDLgrWindow</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998604">
+ </A>
+A <A NAME="marker=1022462">
+ </A>
+window object is a representation of an on-screen area on a display device that serves as a graphics destination.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1030567">
+ </A>
+Objects or subclasses of this type can not be saved or restored.</LI>
+</UL>
+<DIV>
+<H5 CLASS="Heading-3R">
+<A NAME="pgfId=1090536">
+ </A>
+<A NAME="41104">
+ </A>
+Note on Window Size Limits</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1090537">
+ </A>
+The OpenGL libraries IDL uses impose limits on the <A NAME="marker=1090540">
+ </A>
+maximum size of a drawable area. The limits are device-dependent -- they depend both on your graphics hardware and the setting of the RENDERER property. Currently, the smallest maximum drawable area on any IDL platform is 1280 x 1024 pixels; the limit on your system may be larger.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1010237">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1010238">
+ </A>
+This class has no superclass.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1010239">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1010240">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1010241">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1010242">
+ </A>
+See <A HREF="idl30d.htm#14899" CLASS="XRef">
+IDLgrWindow::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1010254">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1010255">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1010256">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1014657">
+ </A>
+<A HREF="idl30d.htm#10605" CLASS="XRef">
+IDLgrWindow::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1014664">
+ </A>
+<A HREF="idl30d.htm#76121" CLASS="XRef">
+IDLgrWindow::Draw</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1050947">
+ </A>
+<A HREF="idl30d.htm#24988" CLASS="XRef">
+IDLgrWindow::Erase</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1050968">
+ </A>
+<A HREF="idl30d.htm#17522" CLASS="XRef">
+IDLgrWindow::GetContiguousPixels</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165348">
+ </A>
+<A HREF="idl30d.htm#39251" CLASS="XRef">
+IDLgrWindow::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1009742">
+ </A>
+<A HREF="idl30d.htm#29726" CLASS="XRef">
+IDLgrWindow::GetTextDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059241">
+ </A>
+<A HREF="idl30d.htm#18474" CLASS="XRef">
+IDLgrWindow::Iconify</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1050973">
+ </A>
+<A HREF="idl30d.htm#14899" CLASS="XRef">
+IDLgrWindow::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1009726">
+ </A>
+<A HREF="idl30d.htm#38238" CLASS="XRef">
+IDLgrWindow::Pickdata</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1050978">
+ </A>
+<A HREF="idl30d.htm#61434" CLASS="XRef">
+IDLgrWindow::Read</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1009762">
+ </A>
+<A HREF="idl30d.htm#97164" CLASS="XRef">
+IDLgrWindow::Select</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1014715">
+ </A>
+<A HREF="idl30d.htm#22093" CLASS="XRef">
+IDLgrWindow::SetCurrentCursor</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1050988">
+ </A>
+<A HREF="idl30d.htm#85911" CLASS="XRef">
+IDLgrWindow::SetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1162402">
+ </A>
+<A HREF="idl30d.htm#37787" CLASS="XRef">
+IDLgrWindow::Show</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031559">
+ </A>
+<A NAME="10605">
+ </A>
+IDLgrWindow::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031562">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052470">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041870">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031566">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051152">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051153">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031567">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031568">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031569">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031570">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031571">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1014950">
+ </A>
+<A NAME="76121">
+ </A>
+IDLgrWindow::Draw</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014951">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052473">
+ </A>
+Draw procedure method draws the specified scene or view object to this graphics destination. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155930">
+ </A>
+Objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014955">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014956">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Draw, <EM CLASS="Emphasis">
+Picture</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014957">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014958">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1142907">
+ </A>
+The view (an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object), viewgroup (an instance of an IDLgrViewgroup object), or scene (an instance of an <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ object) to be drawn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014963">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143359">
+ </A>
+<A NAME="marker=1143358">
+ </A>
+CREATE_INSTANCE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143360">
+ </A>
+Set this keyword equal to one specify that this scene or view is the unchanging part of a drawing. Some destinations can make an instance from the current window contents without having to perform a complete redraw. If the view or scene to be drawn is identical to the previously dawn view or scene, this keyword can be set equal to 2 to hint the destination to create the instance from the current window contents if it can.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1030595">
+ </A>
+<A NAME="marker=1030604">
+ </A>
+DRAW_INSTANCE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030607">
+ </A>
+Set this keyword to specify that this scene or view is the changing part of a drawing. It is overlaid on the result of the most recent CREATE_INSTANCE draw.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1025718">
+ </A>
+<A NAME="24988">
+ </A>
+IDLgrWindow::Erase</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025721">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052476">
+ </A>
+Erase procedure method erases the entire contents of the window. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025725">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025726">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Erase</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025727">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025732">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025733">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025735">
+ </A>
+<A NAME="marker=1025734">
+ </A>
+COLOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059612">
+ </A>
+Set this keyword to the color to be used for the erase. The color may be specified as a color lookup table index or as an RGB vector. The default erase color is white.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1165099">
+ </A>
+<A NAME="17522">
+ </A>
+IDLgrWindow::GetContiguousPixels</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165103">
+ </A>
+The IDLgrWindow::<A NAME="marker=1165102">
+ </A>
+GetContiguousPixels function method returns an array of long integers whose length is equal to the number of colors available in the index color mode (that is, the value of the N_COLORS property).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165206">
+ </A>
+The returned array marks contiguous pixels with the ranking of the range's size. This means that within the array, the elements in the largest available range are set to zero, the elements in the second-largest range are set to one, etc. Use this range to set an appropriate colormap for use with the SHADE_RANGE property of the <A HREF="idl305.htm#83847" CLASS="XRef">
+IDLgrSurface</A>
+ and <A HREF="idl301.htm#46829" CLASS="XRef">
+IDLgrPolygon</A>
+ object classes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165279">
+ </A>
+To get the largest contiguous range, you could use the following IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165258">
+ </A>
+result = <I CLASS="Italic">
+obj</I>
+ -&gt; GetContiguousPixels()</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165314">
+ </A>
+Range0 = WHERE(result EQ 0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165262">
+ </A>
+A contiguous region in the colormap can be increasing or decreasing in values. The following would be considered contiguous:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165266">
+ </A>
+<CODE CLASS="Code">
+[0,1,2,3,4]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165267">
+ </A>
+<CODE CLASS="Code">
+[4,3,2,1,0]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165115">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165214">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165215">
+ </A>
+Return = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+GetContiguousPixels()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165216">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165217">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165218">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165224">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1025948">
+ </A>
+<A NAME="39251">
+ </A>
+IDLgrWindow::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1015034">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052485">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the window. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1015038">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1015039">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1015040">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1015041">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1015042">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016846">
+ </A>
+Any keyword to <A HREF="idl30d.htm#14899" CLASS="XRef">
+IDLgrWindow::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1015047">
+ </A>
+<A NAME="marker=1022625">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093670">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093671">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1015169">
+ </A>
+<A NAME="marker=1030632">
+ </A>
+IMAGE_DATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030635">
+ </A>
+Set this keyword to a named variable that will contain a byte array representing the image that is currently displayed in the window. If the window object uses an RGB color model, the returned array will have dimensions (3, <I CLASS="Italic">
+winXSize</I>
+, <I CLASS="Italic">
+winYSize</I>
+), or (4, <I CLASS="Italic">
+winXSize</I>
+, <I CLASS="Italic">
+winYSize</I>
+) if an alpha channel is included. If the window object uses an Indexed color model, the returned array will have dimensions (<I CLASS="Italic">
+winXSize</I>
+, <I CLASS="Italic">
+winYSize</I>
+). See <A HREF="idl30d.htm#61434" CLASS="XRef">
+IDLgrWindow::Read</A>
+ for more information.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1030634">
+ </A>
+<A NAME="marker=1030633">
+ </A>
+<A NAME="marker=1023601">
+ </A>
+RESOLUTION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1015170">
+ </A>
+Set this keyword to a named variable that will contain a vector of the form [<EM CLASS="Emphasis">
+xres</EM>
+, <EM CLASS="Emphasis">
+yres</EM>
+] reporting the pixel resolution, measured in centimeters per pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1015171">
+ </A>
+<A NAME="marker=1023602">
+ </A>
+SCREEN_DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025791">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+width</EM>
+, <EM CLASS="Emphasis">
+height</EM>
+] specifying the dimensions of the overall screen dimensions for the screen with which this window is associated. The screen dimensions are measured in device units.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1059205">
+ </A>
+<A NAME="29726">
+ </A>
+IDLgrWindow::GetTextDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1059209">
+ </A>
+The IDLgrWindow::<A NAME="marker=1059208">
+ </A>
+GetTextDimensions function method retrieves the dimensions of a text object that will be rendered in the window. The result is a 3-element floating-point vector [<EM CLASS="Emphasis">
+xDim</EM>
+, <EM CLASS="Emphasis">
+yDim</EM>
+, <EM CLASS="Emphasis">
+zDim</EM>
+] representing the dimensions of the text object, measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1059213">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1059214">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+GetTextDimensions(<EM CLASS="Emphasis">
+TextObj</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1059215">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155970">
+ </A>
+TextObj</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155971">
+ </A>
+The object reference to a text or axis object for which the text dimensions are requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1059218">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143244">
+ </A>
+<A NAME="marker=1143254">
+ </A>
+DESCENT </H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143245">
+ </A>
+Set this keyword equal to a named variable that will contain an array of floating- point values (one for each string in the IDLgrText object). The values are the distance to travel (parallel to the UPDIR direction) from the baseline to reach the bottom of all the descenders for the string; the values will be negative or 0. This keyword is only valid if <I CLASS="Italic">
+TextObj</I>
+ is of the class IDLgrText. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1025792">
+ </A>
+<A NAME="18474">
+ </A>
+IDLgrWindow::Iconify</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025802">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052489">
+ </A>
+Iconify procedure method iconifies or de-iconifies the window. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1025818">
+ </A>
+Iconification under window systems is solely handled by the window manager; client applications, such as IDL, do not have the capability to manage icons. The Iconify method provides a hint to the window manager, which applies the information as it sees fit. (On the Macintosh, for example, iconfication is not a standard option; the Iconify method is ignored on the Mac.)</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025826">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1027827">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Iconify,<EM CLASS="Emphasis">
+ IconFlag</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025830">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025831">
+ </A>
+IconFlag</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025849">
+ </A>
+Set <EM CLASS="Emphasis">
+IconFlag</EM>
+ to 1 (one) to iconify the window or to 0 (zero) to restore the window. If the window is already restored, it is brought to the front of the window stack.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025832">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025842">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1025795">
+ </A>
+<A NAME="14899">
+ </A>
+IDLgrWindow::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014805">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052492">
+ </A>
+Init function method initializes the window object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041774">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014809">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019871">
+ </A>
+Obj = OBJ_NEW('IDLgrWindow')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1042016">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1042017">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014811">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014812">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014813">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020354">
+ </A>
+Properties retrievable via <A HREF="idl30d.htm#39251" CLASS="XRef">
+IDLgrWindow::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014819">
+ </A>
+<A NAME="marker=1023604">
+ </A>
+COLOR_MODEL (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030794">
+ </A>
+Set this keyword to the color model to be used for the window:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030795">
+ </A>
+0 = RGB (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030796">
+ </A>
+1 = Color Index</LI>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=1173707">
+ </A>
+For some X11 display situations, IDL may not be able to support a color index model destination object in object graphics. We do, however, guarantee that an RGB color model destination will be available for all display situations. </LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014826">
+ </A>
+<A NAME="marker=1023606">
+ </A>
+DIMENSIONS (Get, Set) </H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014827">
+ </A>
+Set this keyword to a two-element vector of the form [<EM CLASS="Emphasis">
+width</EM>
+, <EM CLASS="Emphasis">
+height</EM>
+] to specify the dimensions of the window in units specified by the UNITS property. By default, if no value is specified for DIMENSIONS, IDL uses the value of the &quot;Default Window Width&quot; and &quot;Default Window Height&quot; preferences set in the IDL Development Environment's (IDLDE) Preferences dialog. If there is no preference file for the IDLDE, the DIMENSIONS property is set equal to one quarter of the screen size. There are limits on the maximum size of an IDLgrWindow object; see <A HREF="idl30d.htm#41104" CLASS="XRef">
+Note on Window Size Limits</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014828">
+ </A>
+<A NAME="marker=1023607">
+ </A>
+DISPLAY_NAME (Get) [X Only]</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014829">
+ </A>
+Set this keyword to the name of the X Windows display on which the window is to appear.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143259">
+ </A>
+<A NAME="marker=1143265">
+ </A>
+GRAPHICS_TREE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143260">
+ </A>
+Set this keyword to an object reference of type IDLgrScene, IDLgrViewgroup, or IDLgrView. If this property is set to a valid object reference, calling the Draw method on the destination object with no arguments will cause the object reference associated with this property to be drawn. If this object is valid and the destination object is destroyed, this object reference will be destroyed as well. By default the GRAPHICS_TREE property is set equal to the null-object. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014836">
+ </A>
+<A NAME="marker=1023608">
+ </A>
+LOCATION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014837">
+ </A>
+Set this keyword to a two-element vector of the form [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] to specify the location of the upper lefthand corner of the window relative to the display screen, in units specified by the UNITS property. By default, the window is positioned at one of four quadrants on the display screen, and the location is measured in device units.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1183497">
+ </A>
+The LOCATION property to IDLgrWindow is only a request and may be ignored.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014838">
+ </A>
+<A NAME="marker=1023618">
+ </A>
+N_COLORS (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014839">
+ </A>
+Set this keyword to the number of colors (between 2 and 256) to be used if COLOR_MODEL is set to Indexed (1). This keyword is ignored if COLOR_MODEL is set to RGB (0).</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=1173718">
+ </A>
+If COLOR_MODEL is set to Color Index (1), setting N_COLORS is treated as a request to your operating system. You should always check the actual number of available colors for any Color Indexed destination with the IDLgrWindow::GetProperty method (on page <A HREF="idl30d.htm#39251" CLASS="XRef">
+IDLgrWindow::GetProperty</A>
+). The actual number of available colors depends on your system and also on how you have used IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014883">
+ </A>
+<A NAME="marker=1023625">
+ </A>
+PALETTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014887">
+ </A>
+Set this keyword to the object reference of a palette object (an instance of the <A HREF="idl2fe.htm#45361" CLASS="XRef">
+IDLgrPalette</A>
+ object class) to specify the red, green, and blue values that are to be loaded into the graphics destination's color lookup table, applicable if the Indexed color model is used.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1030805">
+ </A>
+<A NAME="marker=1030804">
+ </A>
+QUALITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030806">
+ </A>
+Set this keyword to an integer indicating the rendering quality at which graphics are to be drawn to this destination. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030807">
+ </A>
+0 = Low</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030808">
+ </A>
+1 = Medium</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030809">
+ </A>
+2 = High (default).</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1060550">
+ </A>
+<A NAME="marker=1060554">
+ </A>
+RENDERER (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1060553">
+ </A>
+Set this keyword to an integer value indicating which graphics renderer to use when drawing objects within the window. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060563">
+ </A>
+0 = Platform native OpenGL</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060564">
+ </A>
+1 = IDL's software implementation</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1060561">
+ </A>
+By default, your platform's native OpenGL implementation is used. If your platform does not have a native OpenGL implementation, IDL's software implementation is used regardless of the value of this property. See <A HREF="obj_dest.html#34873" CLASS="XRef">
+</A>
+ for details. Your choice of renderer may also affect the maximum size of an IDLgrWindow object; see <A HREF="idl30d.htm#41104" CLASS="XRef">
+Note on Window Size Limits</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014890">
+ </A>
+<A NAME="marker=1023628">
+ </A>
+RETAIN (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1018515">
+ </A>
+Set this keyword to 0, 1, or 2 to specify how backing store should be handled for the window. By default, if no value is specified for RETAIN, IDL uses the value of the &quot;Backing Store&quot; preference set in the IDL Development Environment's (IDLDE) Preferences dialog. If there is no preference file for the IDLDE (that is, if you always use IDL in plain tty mode), the RETAIN property is set equal to 0 by default.</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1018574">
+ </A>
+0 = No backing store.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1018575">
+ </A>
+1 = The server or window system is requested to provide the backing store. Note that requesting backing store from the server is only a request; backing store may not be provided in all situations.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1183435">
+ </A>
+2 = Requests that IDL provide the backing store directly. In some situations, IDL can not provide this backing store in Object Graphics. To see if IDL provided backing store, query the RETAIN keyword of <A HREF="idl30d.htm#39251" CLASS="XRef">
+IDLgrWindow::GetProperty</A>
+. IDL may also alter the RENDERER keyword while attempting to provide backing store.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1183437">
+ </A>
+In IDL Object Graphics, it is almost always best to disable backing store (that is, set the RETAIN property equal to zero). This is because drawing to an off-screen pixmap (which is what happens when backing store is enabled) almost always bypasses any hardware graphics acceleration that may be available, causing all rendering to be done in software. To ensure that windows are redrawn properly, enable the generation of expose events on the WIDGET_DRAW window and redraw the window explicitly when an expose event is received.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1018482">
+ </A>
+<A NAME="marker=1023629">
+ </A>
+TITLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1018566">
+ </A>
+Set this keyword equal to a string that represents the title of the window.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1051014">
+ </A>
+<A NAME="marker=1051013">
+ </A>
+UNITS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1051015">
+ </A>
+Set this keyword to indicate the units of measure for the LOCATION and DIMENSIONS properties. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051016">
+ </A>
+0 = Device (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051017">
+ </A>
+1 = Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051018">
+ </A>
+2 = Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051019">
+ </A>
+3 = Normalized: relative to the dimensions of the screen.</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1077949">
+ </A>
+If you set the value of the UNITS property (using the SetProperty method) without also setting the value of the LOCATION and DIMENSIONS properties, IDL will convert the current size and location values into the new units.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025964">
+ </A>
+<A NAME="marker=1025963">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058370">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1030750">
+ </A>
+<A NAME="38238">
+ </A>
+IDLgrWindow::Pickdata</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030753">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052495">
+ </A>
+Pickdata function method maps a point in the two-dimensional device space of the window to a point in the three-dimensional data space of an object tree. The resulting 3D data space coordinates are returned in a user-specified variable. The Pickdata function returns one if the specified location in the window's device space &quot;hits&quot; a graphic object, or zero if no object was &quot;hit&quot;. Pickdata returns -1 if the point selected falls outside of the specified view or window. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1030760">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030761">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Pickdata(<EM CLASS="Emphasis">
+View</EM>
+, <EM CLASS="Emphasis">
+Object</EM>
+, <EM CLASS="Emphasis">
+Location</EM>
+, <EM CLASS="Emphasis">
+XYZLocation</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1030762">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1030763">
+ </A>
+View</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059298">
+ </A>
+The object reference of an IDLgrView object that contains the object being picked.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1059299">
+ </A>
+Object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059300">
+ </A>
+The object reference of a model or atomic graphic object from which the data space coordinates are being requested.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1059305">
+ </A>
+Location</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059306">
+ </A>
+A two-element vector [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] specifying the location in the window's device space of the point to pick data from.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1059307">
+ </A>
+XYZLocation</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059308">
+ </A>
+A named variable that will contain the three-dimensional data space coordinates of the picked point. Note that the value returned in this variable is a location, not a data value.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1173701">
+ </A>
+If the atomic graphic object specified as the target has been transformed using either the LOCATION or DIMENSIONS properties (this is only possible with IDLgrAxis, IDLgrImage, and IDLgrText objects), these transformations will <EM CLASS="Emphasis">
+not</EM>
+ be included in the data coordinates returned by the Pickdata function. This means that you may need to re-apply the transformation accomplished by specifying LOCATION or DIMENSIONS once you have retrieved the data coordinates with Pickdata. This situation does not occur if you transform the axis, text, or image object using the [XYZ]COORD_CONV properties.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1030764">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030765">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1030731">
+ </A>
+<A NAME="61434">
+ </A>
+IDLgrWindow::Read</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030734">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052498">
+ </A>
+Read function method reads an image from a window. The returned value is an instance of the <A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ object class. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1030741">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030742">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Read()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1030743">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030744">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1030745">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1030746">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1014760">
+ </A>
+<A NAME="97164">
+ </A>
+IDLgrWindow::Select</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014761">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052501">
+ </A>
+Select function method returns a list of objects selected at a specified location. If no objects are selected, the Select function returns -1. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014765">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014766">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Select(<I CLASS="Italic">
+Picture, XY</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014767">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014768">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014772">
+ </A>
+The view or scene (an instance of the <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+, IDLgrViewgroup, or <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ class) whose children are among the candidates for selection.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1030717">
+ </A>
+If the first argument is a scene, then the returned object list will contain one or more views. If the first argument is a view, the list will contain atomic graphic objects (or model objects which have their SELECT_TARGET property set). Objects are returned in order, according to their distance from the viewer. The closer an object is to the viewer, the lower its index in the returned object list. If multiple objects are at the same distance from the viewer (views in a scene or 2D geometry), the last object drawn will appear at a lower index in the list.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1030698">
+ </A>
+XY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030699">
+ </A>
+A two-element array defining the center of the selection box in device space. By default, the selection box is 3 pixels by 3 pixels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014773">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014776">
+ </A>
+<A NAME="marker=1030701">
+ </A>
+DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030705">
+ </A>
+Set this keyword to a two-element array [<I CLASS="Italic">
+w</I>
+, <I CLASS="Italic">
+h</I>
+] to specify that the selection box will have a width <I CLASS="Italic">
+w</I>
+ and a height <I CLASS="Italic">
+h</I>
+, and will be centered about the coordinates [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] specified in the <I CLASS="Italic">
+XY</I>
+ argument. The box occupies the rectangle defined by:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1110670">
+ </A>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;&nbsp;(x-(w/2), y-(h/2)) - (x+(w/1), y+(h/2))</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1110671">
+ </A>
+Any object which intersects this box is considered to be selected. By default, the selection box is 3 pixels by 3 pixels.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014780">
+ </A>
+<A NAME="marker=1023653">
+ </A>
+UNITS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1051267">
+ </A>
+Set this keyword to indicate the units of measure. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051268">
+ </A>
+0 = Device (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051269">
+ </A>
+1 = Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051270">
+ </A>
+2 = Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1051271">
+ </A>
+3 = Normalized: relative to the dimensions of the graphics destination.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1014722">
+ </A>
+<A NAME="22093">
+ </A>
+IDLgrWindow::SetCurrentCursor</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025985">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052504">
+ </A>
+SetCurrentCursor procedure method sets the current cursor image to be used while positioned over a drawing area. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025993">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025994">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+SetCurrentCursor, <EM CLASS="Emphasis">
+[,CursorName]</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025995">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025996">
+ </A>
+CursorName</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025997">
+ </A>
+A string which specifies which built-in cursor to use. This argument is ignored if one of the keywords to this routine is set. This string can be one of the following:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059331">
+ </A>
+ARROW	<EM CLASS="Symbol">
+</EM>
+	CROSSHAIR</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059332">
+ </A>
+ICON	<EM CLASS="Symbol">
+</EM>
+	IBEAM</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059333">
+ </A>
+MOVE	<EM CLASS="Symbol">
+</EM>
+	ORIGINAL</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059334">
+ </A>
+SIZE_NE	<EM CLASS="Symbol">
+</EM>
+	SIZE_NW</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059335">
+ </A>
+SIZE_SE	<EM CLASS="Symbol">
+</EM>
+	SIZE_SW</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059336">
+ </A>
+SIZE_NS	<EM CLASS="Symbol">
+</EM>
+	SIZE_EW</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059337">
+ </A>
+UP_ARROW</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1026000">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025981">
+ </A>
+<A NAME="marker=1026019">
+ </A>
+IMAGE [X and Macintosh Only]</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1026014">
+ </A>
+Set this keyword to a 16x16 column bitmap, contained in a 16-element short integer vector, specifying the cursor pattern. The offset from the upper-left pixel to the point that is considered the `hot spot' can be provided via the HOTSPOT keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1026018">
+ </A>
+<A NAME="marker=1026020">
+ </A>
+MASK [X and Macintosh Only]</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1026024">
+ </A>
+When the IMAGE keyword is set, the MASK keyword can be used to simultaneously specify the mask that should be used. In the mask, bits that are set indicate bits in the IMAGE that should be seen and bits that are not are &quot;masked&quot; out&quot;.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1026029">
+ </A>
+<A NAME="marker=1026030">
+ </A>
+HOTSPOT [X and Macintosh Only]</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1060383">
+ </A>
+Set this keyword to a two-element vector specifying the [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] pixel offset of the cursor &quot;hot spot&quot;, the point which is considered to be the mouse position, from the upper left corner of the cursor image. This parameter is only applicable if IMAGE is provided. The cursor image is displayed top-down (the first row is displayed at the top).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1060384">
+ </A>
+<A NAME="marker=1060386">
+ </A>
+STANDARD</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1060385">
+ </A>
+Set this keyword to change the appearance of the cursor in IDL graphics windows to a standard system cursor.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1025850">
+ </A>
+<A NAME="85911">
+ </A>
+IDLgrWindow::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014723">
+ </A>
+The IDLgrWindow::<A NAME="marker=1052510">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the window. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014727">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014728">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014729">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014730">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014731">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016854">
+ </A>
+Any keyword to <A HREF="idl30d.htm#14899" CLASS="XRef">
+IDLgrWindow::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1110572">
+ </A>
+<A NAME="37787">
+ </A>
+IDLgrWindow::Show</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1110575">
+ </A>
+The IDLgrWindow::<A NAME="marker=1110574">
+ </A>
+Show procedure method exposes or hides a window. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1110582">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1110583">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrWindow::]</EM>
+Show, <I CLASS="Italic">
+Position</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1110584">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1110604">
+ </A>
+Position</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1110585">
+ </A>
+Set the <I CLASS="Italic">
+Position</I>
+ argument equal to a non-zero value to expose the window. Set the <I CLASS="Italic">
+Position</I>
+ argument equal to 0 (zero) to hide the window.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1110586">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1110607">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+</BODY>
+</HTML>

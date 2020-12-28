@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLY_AREA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl141.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl13f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758386">
+ </A>
+<A NAME="94367">
+ </A>
+POLY_AREA</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758388">
+ </A>
+The <A NAME="marker=758387">
+ </A>
+POLY_AREA function returns the area of a polygon given the coordinates of its vertices. This value is always positive.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758389">
+ </A>
+It is assumed that the polygon has <EM CLASS="Emphasis">
+n</EM>
+ vertices with <EM CLASS="Emphasis">
+n</EM>
+ sides and the edges connect the vertices in the order:</P>
+<P CLASS="Body">
+<A NAME="pgfId=758390">
+ </A>
+[(x1,y1), (x2,y2), ... , (x<EM CLASS="Emphasis">
+n</EM>
+,y<EM CLASS="Emphasis">
+n</EM>
+), (x1,y1)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=758391">
+ </A>
+such that the last vertex is connected to the first vertex.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758392">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+poly_area.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758393">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758394">
+ </A>
+Result = POLY_AREA(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758395">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758396">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758397">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector of X coordinate locations for the vertices.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758398">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758399">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector of Y coordinate locations for the vertices.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758400">
+ </A>
+Example</H3>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758401">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821490">
+ </A>
+<A HREF="idl6d.htm#72309" CLASS="XRef">
+DEFROI</A>
+, <A HREF="idl143.htm#19180" CLASS="XRef">
+POLYFILLV</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

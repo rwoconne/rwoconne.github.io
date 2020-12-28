@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_DIMDEF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2e3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2e1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997317">
+ </A>
+<A NAME="54132">
+ </A>
+NCDF_DIMDEF</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997321">
+ </A>
+The <A NAME="marker=997319">
+ </A>
+NCDF_DIMDEF function defines a <A NAME="marker=997320">
+ </A>
+dimension in a netCDF file given its name and size. If successful, the dimension ID is returned.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997322">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997323">
+ </A>
+Result = NCDF_DIMDEF(<I CLASS="Italics">
+Cdfid, DimName, Size</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997324">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997325">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997326">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997327">
+ </A>
+DimName</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997328">
+ </A>
+A scalar string containing the name of the dimension being defined.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997329">
+ </A>
+Size</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997330">
+ </A>
+The size of the dimension. <I CLASS="Italics">
+Size</I>
+ can be any scalar expression. If the UNLIMITED keyword is used, the <I CLASS="Italics">
+Size</I>
+ parameter should be omitted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997331">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997333">
+ </A>
+<A NAME="marker=997332">
+ </A>
+UNLIMITED</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997334">
+ </A>
+Set this keyword to create a dimension of unlimited size. Note that only one dimension in a netCDF file can be unlimited.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000495">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1000496">
+ </A>
+See <A HREF="idl2ee.htm#78210" CLASS="XRef">
+NCDF_VARPUT</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

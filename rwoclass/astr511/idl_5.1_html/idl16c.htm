@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_TIFF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl16d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl16b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=843871">
+ </A>
+<A NAME="55282">
+ </A>
+READ_TIFF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=845339">
+ </A>
+The <A NAME="marker=845337">
+ </A>
+READ_TIFF function reads 8-bit, 16-bit, or 24-bit images in <A NAME="marker=845338">
+ </A>
+TIFF format files (classes G, P, and R) and returns the image and color table vectors in the form of IDL variables. READ_TIFF returns an 8, 16, or 32-bit array containing the image data. Only one image per file is read. READ_TIFF returns a byte array containing the image data. The dimensions of the result are the same as defined in the TIFF file (<EM CLASS="Emphasis">
+Columns, Rows</EM>
+). </P>
+<P CLASS="Body">
+<A NAME="pgfId=845340">
+ </A>
+For TIFF images that are RGB interleaved by pixel, the output dimensions are (<EM CLASS="Emphasis">
+3, Columns, Rows</EM>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=845341">
+ </A>
+For TIFF images that are RGB interleaved by image, READ_TIFF returns the integer value zero, sets the variable defined by the PLANARCONFIG keyword to 2, and returns three separate images in the variables defined by the R, G, and B arguments.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843946">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_tiff.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843878">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=843879">
+ </A>
+Result = READ_TIFF (<EM CLASS="Emphasis">
+Filename[, R, G, B]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843880">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843881">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843882">
+ </A>
+A scalar string specifying the full pathname of the TIFF file to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843885">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843886">
+ </A>
+Named variables that will contain the Red, Green, and Blue color vectors of the color table from the file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843887">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863569">
+ </A>
+<A NAME="marker=863568">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864660">
+ </A>
+Set this keyword to a named variable that will contain the order value from the TIFF file. This value is returned as 0 for images written bottom to top, and 1 for images written top to bottom. If an order value does not appear in the TIFF file, an order of 1 is returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=948925">
+ </A>
+The ORDER keyword can return any of the following additional values (depending on the source of the TIFF file):</P>
+<CENTER><TABLE>
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=948951">
+ </A>
+Values for the ORDER keyword</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=948955">
+ </A>
+Rows </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=948957">
+ </A>
+Columns</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948959">
+ </A>
+1 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948961">
+ </A>
+ top to bottom, left to right</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948963">
+ </A>
+2 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948965">
+ </A>
+ top to bottom, right to left</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948967">
+ </A>
+3 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948969">
+ </A>
+ bottom to top, right to left</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948971">
+ </A>
+4 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948973">
+ </A>
+ bottom to top, left to right</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948975">
+ </A>
+5 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948977">
+ </A>
+ top to bottom, left to right</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948979">
+ </A>
+6 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948981">
+ </A>
+ top to bottom, right to left</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948983">
+ </A>
+7 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948985">
+ </A>
+&nbsp;bottom to top, right to left</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948987">
+ </A>
+8 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=948989">
+ </A>
+ bottom to top, left to right</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=948939">
+ </A>
+<I CLASS="Italic">
+Reference:</I>
+ Aldus TIFF 6.0 spec (TIFF version 42).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=948922">
+ </A>
+<A NAME="marker=863571">
+ </A>
+PLANARCONFIG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863573">
+ </A>
+Set this keyword to a named variable that will contain the interleave parameter for the TIFF file. This parameter is returned as 1 for TIFF files that are GrayScale, Palette, or RGB color interleaved by pixel. This parameter is returned as 2 for RGB color TIFF files interleaved by image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863236">
+ </A>
+<A NAME="marker=863564">
+ </A>
+UNSIGNED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863556">
+ </A>
+Set this keyword to return TIFF files containing unsigned 16-bit integers as signed 32-bit longword arrays. If not set, return a signed 16-bit integer for these files. In this case, data values between 32768 and 65535 are returned as negative values between -32768 and -1. This keyword has no effect if the input file does not contain 16-bit integers.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843897">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845350">
+ </A>
+Read the file <CODE CLASS="Code">
+my.tif</CODE>
+ in the current directory into the variable <CODE CLASS="Code">
+image</CODE>
+, and save the color tables in the variables, <CODE CLASS="Code">
+R</CODE>
+, <CODE CLASS="Code">
+G</CODE>
+, and <CODE CLASS="Code">
+B</CODE>
+ by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=845351">
+ </A>
+image = READ_TIFF('my.tif', R, G, B)</P>
+<P CLASS="Body">
+<A NAME="pgfId=845352">
+ </A>
+To view the image, load the new color table and display the image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=845353">
+ </A>
+TVLCT, R, G, B</P>
+<P CLASS="Code">
+<A NAME="pgfId=845354">
+ </A>
+TV, image</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843950">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=843907">
+ </A>
+<A HREF="idl216.htm#37850" CLASS="XRef">
+WRITE_TIFF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_JPEG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl210.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl20e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680659">
+ </A>
+<A NAME="94631">
+ </A>
+WRITE_JPEG</H2>
+<P CLASS="Body">
+<A NAME="pgfId=279726">
+ </A>
+The <A NAME="marker=280206">
+ </A>
+WRITE_JPEG procedure writes compressed images to files. <A NAME="marker=923723">
+ </A>
+JPEG (Joint Photographic Experts Group) is a standardized compression method for full-color and gray-scale images. This procedure is based in part on the work of the &quot;Independent JPEG Group&quot;.</P>
+<P CLASS="Body">
+<A NAME="pgfId=279727">
+ </A>
+As the Independent JPEG Group states, JPEG is intended for &quot;real-world&quot; scenes (such as digitized photographs). Line art, such as drawings or IDL plots, and other &quot;unrealistic&quot; images are not its strong suit. Note also that JPEG is a &quot;lossy&quot; compression scheme. That is, the output image is <I CLASS="Italic">
+not</I>
+ identical to the input image. Hence you must not use JPEG if you have to have identical output bits. However, on typical images of real-world scenes, very good compression levels can be obtained with no visible change, and amazingly high compression levels are possible if you can tolerate a low-quality image. You can trade off output image quality against compressed file size by adjusting a compression parameter. Files are encoded in JFIF, the JPEG File Interchange Format (however, such files are usually simply called &quot;JPEG&quot; files).</P>
+<P CLASS="Body">
+<A NAME="pgfId=280180">
+ </A>
+If you need to store images in a compressed format that is not lossy, consider using the WRITE_GIF procedure. This procedure writes 8-bit (256 color) images in the Graphics Interchange Format. To store 8-bit or 24-bit images without compression, consider using the WRITE_BMP (for Microsoft Bitmap format files) or WRITE_TIFF (to write Tagged Image Format Files) procedures.</P>
+<P CLASS="Body">
+<A NAME="pgfId=279729">
+ </A>
+For a short technical introduction to the JPEG compression algorithm, see: Wallace, Gregory K. &quot;The JPEG Still Picture Compression Standard&quot;, <I CLASS="Italic">
+Communications of the ACM</I>
+, April 1991 (vol. 34, no. 4), pp. 30-44.</P>
+<P CLASS="Body">
+<A NAME="pgfId=280189">
+ </A>
+To read JPEG files, use the <A HREF="idl166.htm#14040" CLASS="XRef">
+READ_JPEG</A>
+ procedure (page <A HREF="idl166.htm#14040" CLASS="XRef">
+READ_JPEG</A>
+).</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=912022">
+ </A>
+All JPEG files consist of byte data. Input data is converted to bytes before being written to a JPEG file.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279764">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=917278">
+ </A>
+WRITE_JPEG[, <I CLASS="Italic">
+Filename], Image</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279783">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279784">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279789">
+ </A>
+A string containing the name of file to be written in JFIF (JPEG) format. If this parameter is not present, the UNIT keyword must be specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279733">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279805">
+ </A>
+A byte array of either two or three dimensions, containing the image to be written. Grayscale images must have two dimensions. True-color images must have three dimensions with the index of the dimension that contains the color specified with the TRUE keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279794">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279735">
+ </A>
+<A NAME="marker=896430">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279799">
+ </A>
+JPEG/JFIF images are normally written in top-to-bottom order. If the image array is in the standard IDL order (i.e., from bottom-to-top) set ORDER to 0, its default value. If the image array is in top-to-bottom order, ORDER must be set to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=912025">
+ </A>
+<A NAME="marker=912090">
+ </A>
+PROGRESSIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917653">
+ </A>
+Set this keyword to write the image as a series of scans of increasing quality. When used with a slow communications link, a decoder can generate a low-quality image very quickly, and then improve its quality as more scans are received.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=912028">
+ </A>
+Not all JPEG applications can handle &quot;progressive&quot; JPEG files, and it is up the JPEG reader to progressively display the JPEG image. For example, IDL's READ_JPEG routine will ignore the progressive readout request and read the entire image in at the first reading.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279736">
+ </A>
+<A NAME="marker=896431">
+ </A>
+QUALITY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279806">
+ </A>
+This keyword specifies the quality index, in the range of 0 (&quot;terrible&quot;) to 100 (&quot;excellent&quot;) for the JPEG file. The default value is 75, to obtain &quot;very good&quot; quality. Lower values of QUALITY produce higher compression ratios and smaller files.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279737">
+ </A>
+<A NAME="marker=896432">
+ </A>
+TRUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896436">
+ </A>
+This keyword specifies the index, starting at 1, of the dimension over which the color is interleaved. For example, for an image that is pixel interleaved and has dimensions of (3, <EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+), set TRUE to 1. Specify 2 for row-interleaved images (<EM CLASS="Emphasis">
+m</EM>
+, 3, <EM CLASS="Emphasis">
+n</EM>
+); and 3 for band-interleaved images (<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+, 3). If TRUE is not set, the image is assumed to have no interleaving (it is not a true-color image).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896438">
+ </A>
+<A NAME="marker=896437">
+ </A>
+UNIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279808">
+ </A>
+This keyword designates the logical unit number of an already open file to receive the output, allowing multiple JFIF images per file or the embedding of JFIF images in other data files. If this keyword is used, <I CLASS="Italic">
+Filename</I>
+ should not be specified. When using VMS, open the file with the /STREAM keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279740">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=279741">
+ </A>
+Write the image contained in the array A, using JPEG compression with a quality index of 25. The image is stored in bottom-to-top order:</P>
+<P CLASS="Code">
+<A NAME="pgfId=279742">
+ </A>
+WRITE_JPEG, 'test.dat', a, QUALITY=25</P>
+<P CLASS="Body">
+<A NAME="pgfId=279743">
+ </A>
+Write a true-color image to a JPEG file. The image is contained in the band-interleaved array A with dimensions (<I CLASS="Italic">
+m</I>
+,<I CLASS="Italic">
+n</I>
+,3). Assume it is stored in top-to-bottom order:</P>
+<P CLASS="Code">
+<A NAME="pgfId=279744">
+ </A>
+WRITE_JPEG, 'test1.dat', a, TRUE=3, /ORDER</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796053">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=891412">
+ </A>
+<A HREF="idl166.htm#14040" CLASS="XRef">
+READ_JPEG</A>
+, <A HREF="idl20e.htm#20502" CLASS="XRef">
+WRITE_GIF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

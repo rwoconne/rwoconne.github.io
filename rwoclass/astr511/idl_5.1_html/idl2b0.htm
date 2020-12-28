@@ -1,0 +1,514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_SETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2b1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2af.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999304">
+ </A>
+<A NAME="67028">
+ </A>
+HDF_SD_SETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999307">
+ </A>
+The <A NAME="marker=999306">
+ </A>
+HDF_SD_SETINFO procedure sets information about an SD dataset.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=999308">
+ </A>
+Setting a label, unit, format, or coordinate system string that has more than 256 characters can have unpredictable results. </LI>
+</UL>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999309">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999310">
+ </A>
+HDF_SD_SETINFO, <I CLASS="Italics">
+SDS_ID</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999311">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999312">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999313">
+ </A>
+An SD dataset ID as returned by HDF_SD _SELECT or HDF_SD_CREATE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999314">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999316">
+ </A>
+<A NAME="marker=999315">
+ </A>
+FILL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999317">
+ </A>
+Set this keyword to the fill value of the SD dataset.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999319">
+ </A>
+<A NAME="marker=999318">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999320">
+ </A>
+Set this keyword to a string to be used as the SD dataset format.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999322">
+ </A>
+<A NAME="marker=999321">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999323">
+ </A>
+Set this keyword to a string to be used as the SD dataset label.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999325">
+ </A>
+<A NAME="marker=999324">
+ </A>
+RANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999326">
+ </A>
+Set this keyword to a two dimensional array that contains the minimum and maximum values of the SD dataset.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999328">
+ </A>
+<A NAME="marker=999327">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999329">
+ </A>
+Set this keyword to a string to be used as the SD dataset units.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999331">
+ </A>
+<A NAME="marker=999330">
+ </A>
+COORDSYS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999332">
+ </A>
+Set this keyword to a string to be used as the SD dataset coordinate system.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999334">
+ </A>
+<A NAME="marker=999333">
+ </A>
+CALDATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999335">
+ </A>
+Set this keyword to a structure that contains the calibration data. This structure must contain five tags as shown below. The first four tags are of double-precision floating-point type. The fifth tag should be a long integer that specifies the HDF number type. The structure should have the following form:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999336">
+ </A>
+CALDATA={ Cal: 0.0D $	<EM CLASS="Comment">;
+Calibration Factor</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999337">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cal_Err: 0.0D $	<EM CLASS="Comment">;
+Calibration Error</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999338">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offset: 0.0D $	<EM CLASS="Comment">;
+Uncalibrated Offset</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999339">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offset_Err: 0.0D $	<EM CLASS="Comment">;
+Uncalibrated Offset Error</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999340">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num_Type: 0L }	<EM CLASS="Comment">;
+Number Type of Uncalibrated Data</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999341">
+ </A>
+The relationship between HDF and IDL number types is illustrated by the following table:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=999344">
+ </A>
+HDF Number Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=999346">
+ </A>
+IDL Data Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999348">
+ </A>
+0L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999350">
+ </A>
+UNDEFINED</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999352">
+ </A>
+3L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999354">
+ </A>
+STRING</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999356">
+ </A>
+21L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999358">
+ </A>
+BYTE</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999360">
+ </A>
+22L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999362">
+ </A>
+INTEGER</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999364">
+ </A>
+24L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999366">
+ </A>
+LONG INTEGER</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999368">
+ </A>
+5L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999370">
+ </A>
+FLOATING-POINT</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999372">
+ </A>
+6L</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=999374">
+ </A>
+DOUBLE-PRECISION</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=999375">
+ </A>
+The relationship between the calibrated data (CD) and the uncalibrated data (UD) is given by the equation:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=999376">
+ </A>
+CD = Cal * (UD - Offset)	<EM CLASS="Comment">;
+Cal and Offset are the values of the </EM>
+Cal<EM CLASS="Comment">;
+ and </EM>
+Offset<EM CLASS="Comment">;
+ structure fields described above.</EM>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999377">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999378">
+ </A>
+sd_id = HDF_SD_START('demo.hdf', /RDWR)<BR>
+<EM CLASS="Comment">;
+Open an HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999379">
+ </A>
+sds_id = HDF_SD_CREATE(sd_id, 'variable1', [10, 20], /DOUBLE)<BR>
+<EM CLASS="Comment">;
+Define a new dataset for the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999380">
+ </A>
+CAL={Cal:1.0D, Cal_Err:0.1D, Offset:2.5D, Offset_Err:0.1D, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999381">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num_Type:6L}	<EM CLASS="Comment">;
+Create a calibration data structure.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999382">
+ </A>
+HDF_SD_SETINFO, sds_id, LABEL='label1', unit='unit1', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999383">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format='format1', coordsys='coord1', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999384">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILL=999.991, RANGE=[99.99,-78], caldata=CAL<BR>
+<EM CLASS="Comment">;
+Set information about the dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999385">
+ </A>
+HDF_SD_GETINFO, sds_id, LABEL=l, UNIT=u, FORMAT=f, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999386">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COORDSYS=c, FILL=fill, RANGE=r, CALDATA=cd, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999387">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NDIMS=ndims, DIMS=dims, TYPE=ty<BR>
+<EM CLASS="Comment">;
+Retrieve the information.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999388">
+ </A>
+HELP, l, u, f, c, fill, r, cd, ndims, dims, ty<BR>
+<EM CLASS="Comment">;
+Print information about the returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999389">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999390">
+ </A>
+L STRING = `label1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999391">
+ </A>
+U STRING = `unit1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999392">
+ </A>
+F STRING = `format1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999393">
+ </A>
+C STRING = `coord1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999394">
+ </A>
+FILL DOUBLE = 999.99103</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999395">
+ </A>
+R DOUBLE = Array(2)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999396">
+ </A>
+CD STRUCT = -&gt; &lt; Anonymous &gt; Array(1)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999397">
+ </A>
+NDIMS LONG = 2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999398">
+ </A>
+DIMS LONG = Array(2)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999399">
+ </A>
+TY STRING = `DOUBLE' </P>
+<P CLASS="Code">
+<A NAME="pgfId=999400">
+ </A>
+PRINT, r	<EM CLASS="Comment">;
+Print the range.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999401">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999402">
+ </A>
+-78.000000 99.989998 </P>
+<P CLASS="Code">
+<A NAME="pgfId=999403">
+ </A>
+PRINT, cd	<EM CLASS="Comment">;
+Print the calibration data.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999404">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999405">
+ </A>
+{ 1.0000000 0.10000000 2.5000000 0.10000000 6} </P>
+<P CLASS="Code">
+<A NAME="pgfId=999406">
+ </A>
+PRINT, dims	<EM CLASS="Comment">;
+Print the dimensions.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999407">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999408">
+ </A>
+10 20</P>
+<P CLASS="Code">
+<A NAME="pgfId=999409">
+ </A>
+HDF_SD_ENDACCESS, sds_id	<EM CLASS="Comment">;
+Close the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999410">
+ </A>
+HDF_SD_END, sd_id</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999411">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999424">
+ </A>
+<A HREF="idl2a5.htm#18397" CLASS="XRef">
+HDF_SD_END</A>
+, <A HREF="idl2a6.htm#78622" CLASS="XRef">
+HDF_SD_ENDACCESS</A>
+, <A HREF="idl2a9.htm#72240" CLASS="XRef">
+HDF_SD_GETINFO</A>
+, <A HREF="idl2b1.htm#92639" CLASS="XRef">
+HDF_SD_START</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

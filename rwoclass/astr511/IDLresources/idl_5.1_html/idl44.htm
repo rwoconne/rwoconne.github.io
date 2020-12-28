@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COORD2TO3</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl45.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl43.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756832">
+ </A>
+<A NAME="67373">
+ </A>
+COORD2TO3</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756835">
+ </A>
+The <A NAME="marker=756833">
+ </A>
+COORD2TO3 function returns a three-element vector containing 3D data <A NAME="marker=756834">
+ </A>
+coordinates given the normalized X and Y screen coordinates and one of the three data coordinates. Note: A valid <A NAME="marker=788168">
+ </A>
+3D transform must exist in !P.T or be specified by the PTI keyword. The axis scaling variables, !X.S, !Y.S and !Z.S must be valid.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756837">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+coord2to3.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756838">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756839">
+ </A>
+Result = COORD2TO3(<EM CLASS="Emphasis">
+Mx, My, Dim, D0 [, PTI]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756840">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756841">
+ </A>
+Mx, My</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756842">
+ </A>
+The normalized X and Y screen coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756843">
+ </A>
+Dim</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756844">
+ </A>
+A parameter used to specify which data coordinate is fixed. Use 0 for a fixed X data coordinate, 1 for a fixed Y data coordinate, or 2 for a fixed Z data coordinate.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756845">
+ </A>
+D0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756846">
+ </A>
+The value of the fixed data coordinate.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756847">
+ </A>
+PTI</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756848">
+ </A>
+The inverse of !P.T. If this parameter is not supplied, or set to 0, COORD2TO3 computes the inverse. If this routine is to be used in a loop, the caller should supply PTI for highest efficiency.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756849">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756850">
+ </A>
+To return the data coordinates of the mouse, fixing the data Z value at 10, enter the commands: </P>
+<P CLASS="Code">
+<A NAME="pgfId=756851">
+ </A>
+CREATE_VIEW	<EM CLASS="Comment">;
+Make sure a transformation matrix exists.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756852">
+ </A>
+CURSOR, X, Y, /NORM	<EM CLASS="Comment">;
+Get the normalized mouse coords.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756853">
+ </A>
+PRINT, COORD2TO3(X, Y, 2, 10.0)	<EM CLASS="Comment">;
+Print the 3D coordinates.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756854">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756855">
+ </A>
+<A HREF="idl42.htm#98010" CLASS="XRef">
+CONVERT_COORD</A>
+, <A HREF="idl4a.htm#67072" CLASS="XRef">
+CREATE_VIEW</A>
+, <A HREF="idl51.htm#29538" CLASS="XRef">
+CV_COORD</A>
+, <A HREF="idl18c.htm#24364" CLASS="XRef">
+SCALE3</A>
+, <A HREF="idl1cf.htm#36880" CLASS="XRef">
+T3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

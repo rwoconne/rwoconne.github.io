@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LIVE_CONTROL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlef.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idled.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=869121">
+ </A>
+<A NAME="17947">
+ </A>
+LIVE_CONTROL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=869125">
+ </A>
+The <A NAME="marker=869124">
+ </A>
+LIVE_CONTROL procedure allows you to set the properties of (or elements within) a visualization in a LIVE tool from the IDL command line. See <A HREF="idlec.htm#15642" CLASS="XRef">
+LIVE_Tools</A>
+ for additional discussion of the routines that control the LIVE_ tools.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=857254">
+ </A>
+The LIVE tools do not utilize the !X, !Y, and !Z conventions. Setting these system variables will have no effect on LIVE tool display.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857255">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=857256">
+ </A>
+LIVE_CONTROL, [Name]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857257">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857258">
+ </A>
+Name </H4>
+<P CLASS="Body">
+<A NAME="pgfId=857259">
+ </A>
+If keywords DIALOG and/or PROPERTIES are used, <I CLASS="Italic">
+Name</I>
+ is a string (case-insensitive) containing the name of a window visualization or graphic to operate on. WINDOW_IN will default to the window or buffer, if only one is present in the IDL session. </P>
+<P CLASS="Body">
+<A NAME="pgfId=875585">
+ </A>
+If keyword UPDATE_DATA is used, <I CLASS="Italic">
+Name</I>
+ must be an IDL variable with the same name as one already used in the given window or buffer (WINDOW_IN). In this case there is no default. If UPDATE_DATA is not set, the parameter must be a name of a window, visualization or visualization element.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857260">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857262">
+ </A>
+<A NAME="marker=857261">
+ </A>
+DIALOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857263">
+ </A>
+Set this keyword to have the editable properties dialog of the visualization or graphic appear.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=866193">
+ </A>
+<A NAME="marker=866192">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=866194">
+ </A>
+Set this keyword to a named variable to contain the returned error message (string). An empty string is returned if no errors occurred during the operation. By default, errors are reported via a GUI.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=866725">
+ </A>
+If a named variable is passed in this keyword and an error occurs, the error GUI will not be displayed.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869227">
+ </A>
+<A NAME="marker=869226">
+ </A>
+NO_DRAW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869228">
+ </A>
+Set this keyword to inhibit the visualization window from drawing. This is useful if multiple visualizations and/or annotations are being created via calls to other LIVE_Tools in order to reduce unwanted draws and help speed the display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=866196">
+ </A>
+<A NAME="marker=866195">
+ </A>
+PROPERTIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869209">
+ </A>
+Set this keyword to a properties structure with which to modify the given visualization or graphic. The structure should contain one or more tags as returned from a <A HREF="idlf2.htm#29557" CLASS="XRef">
+LIVE_INFO</A>
+ call on the same type of item.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857271">
+ </A>
+<A NAME="marker=857270">
+ </A>
+UPDATE_DATA </H4>
+<P CLASS="Body">
+<A NAME="pgfId=857272">
+ </A>
+Set this keyword to force the window to update all of its visualizations that contain the given data passed in the parameter to LIVE_CONTROL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857273">
+ </A>
+WINDOW_IN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857274">
+ </A>
+Set this keyword equal to a name (string, case-sensitive) of a LIVE tool or Insight window, or a LIVE tool buffer. The WINDOW tag of the REFERENCE_OUT structure from the creation of the LIVE tool will provide the window or buffer name. Window names are also visible in visualization window titlebars. If only one LIVE tool or Insight window (or buffer) is present in the IDL session, this keyword will default to it.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857275">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=857276">
+ </A>
+X=indgen(10)	<EM CLASS="Comment">;
+Create a dataset to display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=857277">
+ </A>
+LIVE_PLOT, X	<EM CLASS="Comment">;
+Plot it.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=857278">
+ </A>
+X=X+2	<EM CLASS="Comment">;
+Modify the dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=857279">
+ </A>
+LIVE_CONTROL, X, /UPDATE_DATA	<EM CLASS="Comment">;
+Replace old values of X.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857293">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=857294">
+ </A>
+<EM CLASS="Emphasis">
+<A HREF="idlf2.htm#29557" CLASS="XRef">
+LIVE_INFO</A>
+, <A HREF="idlf8.htm#41593" CLASS="XRef">
+LIVE_STYLE</A>
+, Using IDL Insight</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

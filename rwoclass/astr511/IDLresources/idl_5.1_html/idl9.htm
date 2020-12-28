@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ARROW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idla.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=879036">
+ </A>
+<A NAME="37510">
+ </A>
+ARROW</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756653">
+ </A>
+The <A NAME="marker=756650">
+ </A>
+ARROW procedure <A NAME="marker=756651">
+ </A>
+draws one or more <A NAME="marker=756652">
+ </A>
+vectors with arrow heads.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756654">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+arrow.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756655">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756656">
+ </A>
+ARROW, <EM CLASS="Emphasis">
+X0, Y0, X1, Y1</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756657">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756658">
+ </A>
+X0, Y0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756659">
+ </A>
+Arrays or scalars containing the coordinates of the tail end of the vector or vectors. Coordinates are in DEVICE coordinates unless otherwise specified. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756660">
+ </A>
+X1,Y1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756661">
+ </A>
+Arrays or scalars containing the coordinates of the arrowhead end of the vector or vectors. <EM CLASS="Emphasis">
+X1</EM>
+ and <EM CLASS="Emphasis">
+Y1</EM>
+ must have the save number of elements as <EM CLASS="Emphasis">
+X0</EM>
+ and <EM CLASS="Emphasis">
+Y0</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756662">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756664">
+ </A>
+<A NAME="marker=756663">
+ </A>
+DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756665">
+ </A>
+Set this keyword if vector coordinates are DATA coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756667">
+ </A>
+<A NAME="marker=756666">
+ </A>
+NORMALIZED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756668">
+ </A>
+Set this keyword if vector coordinates are NORMALIZED coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756670">
+ </A>
+<A NAME="marker=756669">
+ </A>
+HSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756671">
+ </A>
+Use this keyword to set the length of the lines used to draw the arrowhead. The default is 1/64th the width of the display (!D.X_SIZE / 64.). If the HSIZE is positive, the value is assumed to be in device coordinate units. If HSIZE is negative, the arrowhead length is set to the vector length * ABS(HSIZE). The lines are separated by 60 degrees to make the arrowhead. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756673">
+ </A>
+<A NAME="marker=756672">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756674">
+ </A>
+The color of the arrow. The default is the highest color index. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756676">
+ </A>
+<A NAME="marker=756675">
+ </A>
+HTHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756677">
+ </A>
+The thickness of the arrowheads. The default is 1.0. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756679">
+ </A>
+<A NAME="marker=756678">
+ </A>
+SOLID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756680">
+ </A>
+Set this keyword to make a solid arrow, using polygon fills, looks better for thick arrows. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756682">
+ </A>
+<A NAME="marker=756681">
+ </A>
+THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756683">
+ </A>
+The thickness of the body. The default is 1.0. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756684">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756685">
+ </A>
+Draw an arrow from (100,150) to (300,350) in DEVICE units. </P>
+<P CLASS="Code">
+<A NAME="pgfId=756686">
+ </A>
+ARROW, 100, 150, 300, 350</P>
+<P CLASS="Body">
+<A NAME="pgfId=756687">
+ </A>
+Draw a sine wave with arrows from the line Y = 0 to SIN(X/4). </P>
+<P CLASS="Code">
+<A NAME="pgfId=756688">
+ </A>
+X = FINDGEN(50)</P>
+<P CLASS="Code">
+<A NAME="pgfId=756689">
+ </A>
+Y = SIN(x/4)</P>
+<P CLASS="Code">
+<A NAME="pgfId=756690">
+ </A>
+PLOT, X, Y</P>
+<P CLASS="Code">
+<A NAME="pgfId=756691">
+ </A>
+ARROW, X, REPLICATE(0,50), X, Y, /DATA</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756692">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871777">
+ </A>
+<A HREF="idl7.htm#64698" CLASS="XRef">
+ANNOTATE</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl1f5.htm#51661" CLASS="XRef">
+VELOVECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,895 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrVRML</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl30d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl30b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1145760">
+ </A>
+<A NAME="22785">
+ </A>
+IDLgrVRML</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1145763">
+ </A>
+The <A NAME="marker=1145762">
+ </A>
+IDLgrVRML object allows you to save the contents of an Object Graphics hierarchy into a VRML 2.0 format file. The graphics tree can only contain a single view due to limitations in the VRML specification. The resulting VRML file is interactive and allows you to explore the geometry interactively using a VRML browser.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155906">
+ </A>
+Objects or subclasses of this type can not be saved or restored.</LI>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=1145768">
+ </A>
+Several entities cannot be translated perfectly. These include:</LI>
+</UL>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145769">
+ </A>
+IDLgrImage objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145770">
+ </A>
+Rotation and Z buffer behavior are not completely supported. Image objects will be converted into texture mapped polygons. BLEND_FUNCTION is not completely supported (only binary srcAlpha,1-srcAlpha) This function is applied automatically if an Alpha channel is present. It is also very browser dependent. Channel masks are not supported. </P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145771">
+ </A>
+IDLgrPolygon and IDLgrSurface objects </H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145772">
+ </A>
+Hidden line/hidden point display, color and vertex color blending with texture colors, and bottom color are not supported. Shading may be browser dependent. Front face culling is not supported and back face culling is only supported at the browser's discretion.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145773">
+ </A>
+IDLgrLight objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145774">
+ </A>
+Lighting scope and intensity may be browser dependent.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145775">
+ </A>
+IDLgrText objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145776">
+ </A>
+Text using the ONGLASS property is only supported for the initial view.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145777">
+ </A>
+IDLgrViewgroup, IDLgrScene, IDLgrVolume objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145778">
+ </A>
+These objects are not supported.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145779">
+ </A>
+IDLgrPalette objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145780">
+ </A>
+Palette objects are simulated using an RGB color model.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145781">
+ </A>
+IDLgrPattern objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145782">
+ </A>
+Only solid or clear patterns are supported.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145783">
+ </A>
+IDLgrFont, IDLgrSymbol objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145784">
+ </A>
+The THICK property is not supported.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145785">
+ </A>
+IDLgrPolyline, IDLgrSymbol, IDLgrSurface, IDLgrPolygon and IDLgrPlot objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145786">
+ </A>
+Line attributes (thickness, linestyle) are not supported.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145787">
+ </A>
+IDLgrView objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145788">
+ </A>
+Z-clipping control, aspect ratio preservation, the LOCATION property, and orthographic projections are not supported.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=1145789">
+ </A>
+Destination objects</H5>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145790">
+ </A>
+The COLOR_MODEL property is not fully supported in Indexed Color mode, when using a SHADER_RANGE (an RGB model will be substituted instead). The QUALITY property is not supported.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145791">
+ </A>
+Aspect ratios are also difficult to duplicate as they can be browser dependent. The object is limited to the primitives supported by VRML. Texture maps (and images) will be inlined into the output file. While this will generate large VRML files, the files are fully self-contained.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1145792">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145793">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1145794">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145795">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145796">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145803">
+ </A>
+See <A HREF="idl30c.htm#16637" CLASS="XRef">
+IDLgrVRML::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145804">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145805">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145806">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145813">
+ </A>
+<A HREF="idl30c.htm#14012" CLASS="XRef">
+IDLgrVRML::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145820">
+ </A>
+<A HREF="idl30c.htm#35985" CLASS="XRef">
+IDLgrVRML::Draw</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145827">
+ </A>
+<A HREF="idl30c.htm#22552" CLASS="XRef">
+IDLgrVRML::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145834">
+ </A>
+<A HREF="idl30c.htm#35355" CLASS="XRef">
+IDLgrVRML::GetTextDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145841">
+ </A>
+<A HREF="idl30c.htm#16637" CLASS="XRef">
+IDLgrVRML::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145848">
+ </A>
+<A HREF="idl30c.htm#12588" CLASS="XRef">
+IDLgrVRML::SetProperty</A>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1173698">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1145851">
+ </A>
+<A NAME="14012">
+ </A>
+IDLgrVRML::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145853">
+ </A>
+The IDLgrVRML::Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30c.htm#22785" CLASS="XRef">
+IDLgrVRML</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1145860">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145861">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145862">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145863">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145864">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVRML::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145865">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145866">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145867">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145868">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1145871">
+ </A>
+<A NAME="35985">
+ </A>
+IDLgrVRML::Draw</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145874">
+ </A>
+The IDLgrVRML::<A NAME="marker=1145873">
+ </A>
+Draw procedure method draws the given picture to this graphics destination. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30c.htm#22785" CLASS="XRef">
+IDLgrVRML</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145881">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145882">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVRML::]</EM>
+Draw, <EM CLASS="Emphasis">
+Picture</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145883">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145884">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145888">
+ </A>
+The view (an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object) to be drawn. If the view has a LOCATION property, it is ignored.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145889">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145890">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1145893">
+ </A>
+<A NAME="22552">
+ </A>
+IDLgrVRML::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145896">
+ </A>
+The IDLgrVRML::<A NAME="marker=1145895">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the VRML object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30c.htm#22785" CLASS="XRef">
+IDLgrVRML</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145903">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145904">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVRML::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145905">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145906">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145907">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145914">
+ </A>
+Any keyword to <A HREF="idl30c.htm#16637" CLASS="XRef">
+IDLgrVRML::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145916">
+ </A>
+<A NAME="marker=1145915">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145917">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the retrievable properties associated with this object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1145920">
+ </A>
+<A NAME="35355">
+ </A>
+IDLgrVRML::GetTextDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145923">
+ </A>
+The IDLgrVRML::<A NAME="marker=1145922">
+ </A>
+GetTextDimensions function method retrieves the dimensions of a text object that will be rendered in the clipboard buffer. The result is a 3-element floating-point vector [<EM CLASS="Emphasis">
+xDim</EM>
+, <EM CLASS="Emphasis">
+yDim</EM>
+, <EM CLASS="Emphasis">
+zDim</EM>
+] representing the dimensions of the text object, measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30c.htm#22785" CLASS="XRef">
+IDLgrVRML</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145930">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145931">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVRML::]</EM>
+GetTextDimensions(<EM CLASS="Emphasis">
+TextObj</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145932">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155962">
+ </A>
+TextObj</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155963">
+ </A>
+The object reference to a text or axis object for which the text dimensions are requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145935">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156003">
+ </A>
+<A NAME="marker=1156002">
+ </A>
+DESCENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156004">
+ </A>
+Set this keyword equal to a named variable that will contain an array of floating-point values (one for each string in the IDLgrText object). The values represent the distance to travel (parallel to the UPDIR vector) from the text baseline to reach the bottom of the lowest descender in the string. All values will be negative numbers, or zero. This keyword is valid only if <I CLASS="Italic">
+TextObj</I>
+ is an IDLgrText object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1145939">
+ </A>
+<A NAME="16637">
+ </A>
+IDLgrVRML::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145945">
+ </A>
+The IDLgrVRML::<A NAME="marker=1145941">
+ </A>
+Init function method initializes the VRML object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30c.htm#22785" CLASS="XRef">
+IDLgrVRML</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1145949">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145950">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145951">
+ </A>
+Obj = OBJ_NEW('IDLgrVRML')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145952">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145953">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrVRML::]</EM>
+Init()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145954">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145955">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145956">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145963">
+ </A>
+Properties retrievable via <A HREF="idl30c.htm#22552" CLASS="XRef">
+IDLgrVRML::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145971">
+ </A>
+<A NAME="marker=1145970">
+ </A>
+COLOR_MODEL (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145972">
+ </A>
+Set this keyword to the color model to be used for the buffer: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145973">
+ </A>
+0=RGB (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145974">
+ </A>
+1=Color indexed.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145976">
+ </A>
+<A NAME="marker=1145975">
+ </A>
+DIMENSIONS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145977">
+ </A>
+Set this keyword to a two-element vector of the form [<EM CLASS="Emphasis">
+width</EM>
+, <EM CLASS="Emphasis">
+height</EM>
+] to specify the dimensions of the window in units specified by the UNITS property. The default is [640,480].</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1145978">
+ </A>
+The only use of this property is to support the use of normalized coordinates for the dimensions of the IDLgrView object passed to the IDLgrVRML::Draw method.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145980">
+ </A>
+<A NAME="marker=1145979">
+ </A>
+FILENAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145981">
+ </A>
+Set this keyword to the name of a file into which the vector data will be saved. The default is <CODE CLASS="Code">
+idl.wrl</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156018">
+ </A>
+<A NAME="marker=1156017">
+ </A>
+GRAPHICS_TREE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156019">
+ </A>
+Set this keyword to an object reference of type IDLgrView. If this property is set to a valid object reference, calling the Draw method on the destination object with no arguments will cause the object reference associated with this property to be drawn. If this object is valid and the destination object is destroyed, this object reference will be destroyed as well. By default the GRAPHICS_TREE property is set equal to the null-object. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145983">
+ </A>
+<A NAME="marker=1145982">
+ </A>
+N_COLORS (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145984">
+ </A>
+Set this keyword to the number of colors (between 2 and 256) to be used if COLOR_MODEL is set to indexed. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145986">
+ </A>
+<A NAME="marker=1145985">
+ </A>
+PALETTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145987">
+ </A>
+Set this keyword to the object reference of a palette object (an instance of the IDLgrPalette object class) to specify the red, green, and blue values that are to be loaded into the buffer's color lookup table.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145989">
+ </A>
+<A NAME="marker=1145988">
+ </A>
+QUALITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145990">
+ </A>
+Set this keyword to an integer indicating the rendering quality at which graphics are to be drawn to the buffer. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145991">
+ </A>
+0=Low</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145992">
+ </A>
+1=Medium</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145993">
+ </A>
+2=High (the default)</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145995">
+ </A>
+<A NAME="marker=1145994">
+ </A>
+RESOLUTION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145996">
+ </A>
+Set this keyword to a two-element vector of the form [<EM CLASS="Emphasis">
+xres</EM>
+, <EM CLASS="Emphasis">
+yres</EM>
+] specifying the device resolution in centimeters per pixel. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1145997">
+ </A>
+This keyword is used for text scaling and partial aspect ratio preservation only. The default value is [0.0352778, 0.0352778] (72 DPI).</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145999">
+ </A>
+<A NAME="marker=1145998">
+ </A>
+UNITS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1146000">
+ </A>
+Set this keyword to indicate the units of measure for the DIMENSIONS property. Valid values are: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146001">
+ </A>
+0=Device (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146002">
+ </A>
+1=Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146003">
+ </A>
+2=Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1146004">
+ </A>
+3=Normalized (relative to 1600 x 1200).</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1146006">
+ </A>
+<A NAME="marker=1146005">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1146007">
+ </A>
+Set this keyword to a value of any type. You can use this user value to contain any information you wish.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1146009">
+ </A>
+<A NAME="marker=1146008">
+ </A>
+WORLDINFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1146010">
+ </A>
+Set this keyword to a list of strings for the info field of the VRML WorldInfo node. The default is the null string, ''.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1146012">
+ </A>
+<A NAME="marker=1146011">
+ </A>
+WOLRDTITLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1146013">
+ </A>
+Set this keyword to a string containing the title for the VRML WorldInfo node, TITLE field. The default is '<CODE CLASS="Code">
+IDL VRML file'</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1146016">
+ </A>
+<A NAME="12588">
+ </A>
+IDLgrVRML::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1146019">
+ </A>
+The IDLgrVRML::<A NAME="marker=1146018">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the VRML world. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30c.htm#22785" CLASS="XRef">
+IDLgrVRML</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1146026">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1146027">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrVRML::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1146028">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1146029">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1146030">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1146037">
+ </A>
+Any keyword to <A HREF="idl30c.htm#16637" CLASS="XRef">
+IDLgrVRML::Init</A>
+</DIV>
+</BODY>
+</HTML>

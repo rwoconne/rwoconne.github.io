@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ABS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=854791">
+ </A>
+<A NAME="27476">
+ </A>
+ABS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=854796">
+ </A>
+<A NAME="43294">
+ </A>
+The <A NAME="marker=854794">
+ </A>
+ABS function returns the <A NAME="marker=854795">
+ </A>
+absolute value of its argument.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675684">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675685">
+ </A>
+Result = ABS(<I CLASS="Italics">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675686">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675687">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810629">
+ </A>
+<A NAME="20220">
+ </A>
+The value for which the absolute value is desired. If <I CLASS="Italics">
+X</I>
+ is of complex type, ABS returns the <A NAME="marker=810630">
+ </A>
+magnitude of the complex number:</P>
+<DIV>
+<CENTER><IMG SRC="idl_3.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=810635">
+ </A>
+If <I CLASS="Italics">
+X</I>
+ is of complex type, the result is returned as single-precision, floating-point type. For all other types, the result has the same type as <I CLASS="Italics">
+X</I>
+. If <I CLASS="Italics">
+X</I>
+ is an array, the result has the same structure, with each element containing the absolute value of the corresponding element of <I CLASS="Italics">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675690">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675691">
+ </A>
+<A NAME="82151">
+ </A>
+To print the absolute value of -25, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675692">
+ </A>
+PRINT, ABS(-25)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=861757">
+ </A>
+25</P>
+</DIV>
+</BODY>
+</HTML>

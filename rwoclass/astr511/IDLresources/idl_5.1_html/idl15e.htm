@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RANDOMU</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl15f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl15d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678392">
+ </A>
+<A NAME="39733">
+ </A>
+RANDOMU</H2>
+<P CLASS="Body">
+<A NAME="pgfId=950196">
+ </A>
+The <A NAME="marker=950195">
+ </A>
+RANDOMU function returns one or more uniformly-distributed, floating-point, <A NAME="marker=950197">
+ </A>
+pseudo-random numbers in the range 0 &lt; <EM CLASS="Emphasis">
+Y</EM>
+ &lt;1.0.</P>
+<P CLASS="Body">
+<A NAME="pgfId=950198">
+ </A>
+The random number generator is taken from: &quot;Random Number Generators: Good Ones are Hard to Find&quot;, Park and Miller, <I CLASS="Italic">
+Communications of the ACM</I>
+, Oct 1988, Vol 31, No. 10, p. 1192. To remove low-order serial correlations, a Bays-Durham shuffle is added, resulting in a random number generator similar to ran1() in Section 7.1 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678395">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678396">
+ </A>
+Result = RANDOMU(<I CLASS="Italic">
+Seed [, D</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., D</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<I CLASS="Italic">
+]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678397">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=950185">
+ </A>
+Seed</H4>
+<P CLASS="Body">
+<A NAME="pgfId=950186">
+ </A>
+A long integer used to initialize the IDL random number generator. Both of the random number generators, RANDOMN and RANDOMU, simulate random floating point numbers using a seqence of long integers. You can use <I CLASS="Italic">
+Seed</I>
+ to start the sequence. IDL saves the sequence for subsequent calls to RANDOMN and RANDOMU.  If <I CLASS="Italic">
+Seed</I>
+ is a named variable, RANDOMN and RANDOMU will update it to the next long integer in the sequence. To generate a random seed from the system time, set Seed equal to an undefined named variable.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=950187">
+ </A>
+RANDOMN and RANDOMU use the same sequence, so starting or restarting the sequence for one starts or restarts the sequence for the other.  Some IDL routines use the random number generator, so using them will initialize the seed sequence.  An example of such a routine is <A HREF="idl34.htm#11803" CLASS="XRef">
+CLUST_WTS</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=924003">
+ </A>
+D<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868184">
+ </A>
+The dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified. If no dimensions are specified, RANDOMU returns a scalar result.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=868185">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=868186">
+ </A>
+The formulas for the binomial, gamma, and Poisson distributions are from Section 7.3 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868252">
+ </A>
+<A NAME="marker=868251">
+ </A>
+BINOMIAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868253">
+ </A>
+<A NAME="marker=868256">
+ </A>
+Set this keyword to a 2-element array, [<I CLASS="Italic">
+n</I>
+, <I CLASS="Italic">
+p</I>
+], to generate random deviates from a binomial distribution. If an event occurs with probability <I CLASS="Italic">
+p</I>
+, with <I CLASS="Italic">
+n</I>
+ trials, then the number of times it occurs has a binomial distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868213">
+ </A>
+<A NAME="marker=868212">
+ </A>
+GAMMA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868215">
+ </A>
+<A NAME="marker=868214">
+ </A>
+Set this keyword to an integer order <I CLASS="Italic">
+i</I>
+ &gt; 0 to generate random deviates from a gamma distribution. The gamma distribution is the waiting time to the <I CLASS="Italic">
+i</I>
+th event in a Poisson random process of unit mean. A gamma distribution of order equal to 1 is the same as the exponential distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868216">
+ </A>
+<A NAME="marker=868266">
+ </A>
+NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868217">
+ </A>
+Set this keyword to generate random deviates from a normal distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868219">
+ </A>
+<A NAME="marker=868218">
+ </A>
+POISSON</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868221">
+ </A>
+<A NAME="marker=868220">
+ </A>
+Set this keyword to the mean number of events occurring during a unit of time. The POISSON keyword returns a random deviate drawn from a Poisson distribution with that mean.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868222">
+ </A>
+<A NAME="marker=868269">
+ </A>
+UNIFORM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868223">
+ </A>
+Set this keyword to generate random deviates from a uniform distribution.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=868203">
+ </A>
+Example </H3>
+<P CLASS="Body">
+<A NAME="pgfId=868204">
+ </A>
+This example simulates rolling two dice 10,000 times and plots the distribution of the total using RANDOMU. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678404">
+ </A>
+PLOT, HISTOGRAM(FIX(6 * RANDOMU(S, 10000)) + $</P>
+<P CLASS="Code">
+<A NAME="pgfId=678405">
+ </A>
+&nbsp;&nbsp;&nbsp;FIX(6 * RANDOMU(S, 10000)) + 2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678406">
+ </A>
+In the above statement, the expression RANDOMU(S, 10000) is a 10,000-element, floating-point array of random numbers greater than or equal to 0 and less than 1. Multiplying this array by 6 converts the range to 0 <EM CLASS="Symbol">
+&#163;</EM>
+ <EM CLASS="Emphasis">
+Y</EM>
+ &lt; 6.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678407">
+ </A>
+Applying the FIX function yields a 10,000-point integer vector with values from 0 to 5, one less than the numbers on one die. This computation is done twice, once for each die, then 2 is added to obtain a vector from 2 to 12, the total of two dice.</P>
+<P CLASS="Body">
+<A NAME="pgfId=786927">
+ </A>
+The HISTOGRAM function makes a vector in which each element contains the number of occurrences of dice rolls whose total is equal to the subscript of the element. Finally, this vector is plotted by the PLOT procedure.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795793">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795797">
+ </A>
+<A HREF="idl15d.htm#99750" CLASS="XRef">
+RANDOMN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

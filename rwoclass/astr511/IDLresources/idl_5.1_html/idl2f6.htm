@@ -1,0 +1,1138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrColorbar</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1144088">
+ </A>
+<A NAME="35296">
+ </A>
+IDLgrColorbar</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1144091">
+ </A>
+The <A NAME="marker=1144090">
+ </A>
+IDLgrColorbar object consists of a color-ramp with an optional framing box and annotation axis. The object can be horizontal or vertical.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1156698">
+ </A>
+An IDLgrColorbar object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1156086">
+ </A>
+This object class is implemented in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+idlgrcolorbar.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1144092">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144093">
+ </A>
+This class is a subclass of <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1144094">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144095">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144096">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144103">
+ </A>
+See <A HREF="idl2f6.htm#27319" CLASS="XRef">
+IDLgrColorbar::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144104">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144105">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144106">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144113">
+ </A>
+<A HREF="idl2f6.htm#23123" CLASS="XRef">
+IDLgrColorbar::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1166454">
+ </A>
+<A HREF="idl2f6.htm#29971" CLASS="XRef">
+IDLgrColorbar::ComputeDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144127">
+ </A>
+<A HREF="idl2f6.htm#33832" CLASS="XRef">
+IDLgrColorbar::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144134">
+ </A>
+<A HREF="idl2f6.htm#27319" CLASS="XRef">
+IDLgrColorbar::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144141">
+ </A>
+<A HREF="idl2f6.htm#10239" CLASS="XRef">
+IDLgrColorbar::SetProperty</A>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156085">
+ </A>
+Inherited Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156065">
+ </A>
+This class inherits the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1216662">
+ </A>
+<A HREF="idl2fc.htm#25790" CLASS="XRef">
+IDLgrModel::GetCTM</A>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1173664">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144144">
+ </A>
+<A NAME="23123">
+ </A>
+IDLgrColorbar::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144147">
+ </A>
+The IDLgrColorbar::<A NAME="marker=1144146">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f6.htm#35296" CLASS="XRef">
+IDLgrColorbar</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144154">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144155">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144156">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144157">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144158">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrColorbar::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144159">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144160">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144161">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144162">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1166384">
+ </A>
+<A NAME="29971">
+ </A>
+IDLgrColorbar::ComputeDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166442">
+ </A>
+The IDLgrColorbar::<A NAME="marker=1166386">
+ </A>
+ComputeDimensions function method retrieves the dimensions of a colorbar object for the given destination object. The result is a three-element floating-point vector [<I CLASS="Italic">
+xDim</I>
+, <I CLASS="Italic">
+yDim</I>
+, <I CLASS="Italic">
+zDim</I>
+] representing the dimensions of the colorbar object measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f6.htm#35296" CLASS="XRef">
+IDLgrColorbar</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166394">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166395">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrColorbar::]</EM>
+ComputeDimensions(<I CLASS="Italic">
+DestinationObj</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166396">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1166397">
+ </A>
+DestinationObject</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1166398">
+ </A>
+The object reference to a destination object (IDLgrBuffer, IDLgrClipboard, IDLgrPrinter, or IDLgrWindow) for which the dimensions of the colorbar are being requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166399">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166400">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144191">
+ </A>
+<A NAME="33832">
+ </A>
+IDLgrColorbar::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144194">
+ </A>
+The IDLgrColorbar::<A NAME="marker=1144193">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the colorbar. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f6.htm#35296" CLASS="XRef">
+IDLgrColorbar</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144201">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144202">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrColorbar::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144203">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144204">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144205">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144212">
+ </A>
+Any keyword to <A HREF="idl2f6.htm#27319" CLASS="XRef">
+IDLgrColorbar::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144214">
+ </A>
+<A NAME="marker=1144213">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144215">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the retrievable properties associated with this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144217">
+ </A>
+<A NAME="marker=1144216">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144218">
+ </A>
+Set this keyword to a named variable that will contain an object reference to the object that contains this colorbar.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144220">
+ </A>
+<A NAME="marker=1144219">
+ </A>
+XRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144221">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+xmin</EM>
+, <EM CLASS="Emphasis">
+xmax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+x</EM>
+ data coordinates covered by the colorbar.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144223">
+ </A>
+<A NAME="marker=1144222">
+ </A>
+YRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144224">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+Y</EM>
+ data coordinates covered by the colorbar.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144226">
+ </A>
+<A NAME="marker=1144225">
+ </A>
+ZRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144227">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+Z </EM>
+data coordinates covered by the colorbar.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1166418">
+ </A>
+Until the colorbar is drawn to the destination object, the [XYZ]RANGE properties will be zero. Use the ComputeDimensions method on the colorbar object to get the data dimensions of the colorbar prior to a draw operation.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144229">
+ </A>
+<A NAME="27319">
+ </A>
+IDLgrColorbar::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144235">
+ </A>
+The IDLgrColorbar::<A NAME="marker=1144231">
+ </A>
+Init function method initializes the colorbar object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f6.htm#35296" CLASS="XRef">
+IDLgrColorbar</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144239">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144240">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144241">
+ </A>
+Obj = OBJ_NEW('IDLgrColorbar')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144242">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144243">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrColorbar::]</EM>
+Init(<EM CLASS="Emphasis">
+[aRed, aGreen, aBlue]</EM>
+)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144244">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144245">
+ </A>
+aRed</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144246">
+ </A>
+A vector containing the red values for the color palette. These values should be within the range of 0 &lt; <EM CLASS="Emphasis">
+Value</EM>
+ &lt; 255. The number of elements comprising the <EM CLASS="Emphasis">
+aRed</EM>
+ vector must not exceed 256.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144247">
+ </A>
+aGreen</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144248">
+ </A>
+A vector containing the green values for the color palette. These values should be within the range of 0 &lt; <EM CLASS="Emphasis">
+Value</EM>
+ &lt; 255. The number of elements comprising the <EM CLASS="Emphasis">
+aGreen</EM>
+ vector must not exceed 256.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144249">
+ </A>
+aBlue</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144250">
+ </A>
+A vector containing the blue values for the color palette. These values should be within the range of 0 &lt; <EM CLASS="Emphasis">
+Value</EM>
+ &lt; 255. The number of elements comprising the <EM CLASS="Emphasis">
+aBlue</EM>
+ vector must not exceed 256.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144251">
+ </A>
+If <EM CLASS="Emphasis">
+aRed</EM>
+, <EM CLASS="Emphasis">
+aGreen</EM>
+, and <EM CLASS="Emphasis">
+aBlue</EM>
+ are not provided, the color palette will default to a 256 entry greyscale ramp.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144252">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144259">
+ </A>
+Properties retrievable via <A HREF="idl2f6.htm#33832" CLASS="XRef">
+IDLgrColorbar::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144267">
+ </A>
+<A NAME="marker=1144266">
+ </A>
+BLUE_VALUES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144268">
+ </A>
+A vector containing the blue values for the color palette. Setting this value is the same as specifying the aBlue argument to the IDLgrColorbar::Init method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144270">
+ </A>
+<A NAME="marker=1144269">
+ </A>
+COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144271">
+ </A>
+Set this keyword to the color to be used as the foreground color for the axis and outline box. The color may be specified as a color lookup table index or as an RGB vector. The default is [0, 0, 0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144273">
+ </A>
+<A NAME="marker=1144272">
+ </A>
+DIMENSIONS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144274">
+ </A>
+Set this keyword to a two element vector [<EM CLASS="Emphasis">
+dx</EM>
+, <EM CLASS="Emphasis">
+dy</EM>
+] that specifies the size of the ramp display (not the axis) in units. If <EM CLASS="Emphasis">
+dx</EM>
+ &gt; <EM CLASS="Emphasis">
+dy</EM>
+, the colorbar is drawn horizontally with the axis placed below or above the ramp box depending on the value of the SHOW_AXIS property. If <EM CLASS="Emphasis">
+dx</EM>
+ &lt; <EM CLASS="Emphasis">
+dy</EM>
+, the colorbar is drawn vertically with the axis placed to the right or left of the ramp box depending on the value of the SHOW_AXIS property. The default value is [16,256].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144276">
+ </A>
+<A NAME="marker=1144275">
+ </A>
+GREEN_VALUES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144277">
+ </A>
+A vector containing the green values for the color palette. Setting this value is the same as specifying the aGreen argument to the IDLgrColorbar::Init method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144282">
+ </A>
+<A NAME="marker=1144281">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144283">
+ </A>
+Set this keyword to a boolean value to indicate whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144284">
+ </A>
+0 = Draw graphic (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144285">
+ </A>
+1 = Do not draw graphic</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144287">
+ </A>
+<A NAME="marker=1144286">
+ </A>
+MAJOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144288">
+ </A>
+Set this keyword to an integer representing the number of major tick marks. The default is -1, specifying that IDL will compute the number of tickmarks. Setting MAJOR equal to zero suppresses major tickmarks entirely.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144290">
+ </A>
+<A NAME="marker=1144289">
+ </A>
+MINOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144291">
+ </A>
+Set this keyword to an integer representing the number of minor tick marks. The default is -1, specifying that IDL will compute the number of tickmarks. Setting MINOR equal to zero suppresses minor tickmarks entirely. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144293">
+ </A>
+<A NAME="marker=1144292">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144294">
+ </A>
+Set this keyword to a string representing the name to be associated with this object. The default is the null string, ''.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156095">
+ </A>
+<A NAME="marker=1156094">
+ </A>
+RED_VALUES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156096">
+ </A>
+A vector containing the red values for the color palette. Setting this value is the same as specifying the aRed argument to the IDLgrColorbar::Init method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144296">
+ </A>
+<A NAME="marker=1144295">
+ </A>
+SHOW_AXIS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144297">
+ </A>
+Set this keyword to an integer value indicating whether the axis should be drawn: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144298">
+ </A>
+0 = Do not display axis (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144299">
+ </A>
+1 = Display axis on left side or below the color ramp</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144300">
+ </A>
+2 = Display axis on right side or above the color ramp</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144302">
+ </A>
+<A NAME="marker=1144301">
+ </A>
+SHOW_OUTLINE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144303">
+ </A>
+Set this keyword to a boolean value indicating whether the colorbar bounds should be outlined: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144304">
+ </A>
+0 = Do not display outline (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144305">
+ </A>
+1 = Display outline</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144307">
+ </A>
+<A NAME="marker=1144306">
+ </A>
+SUBTICKLEN (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144308">
+ </A>
+Set this keyword to a scale ratio specifying the length of minor tick marks relative to the length of major tick marks. The default is 0.5, specifying that the minor tick mark is one-half the length of the major tick mark.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144310">
+ </A>
+<A NAME="marker=1144309">
+ </A>
+THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144311">
+ </A>
+Set this keyword to an integer value between 1 and 10, specifying the line thickness used to draw the axis and box outline, in pixels. The default is one pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144313">
+ </A>
+<A NAME="marker=1144312">
+ </A>
+TICKFORMAT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144314">
+ </A>
+Set this keyword to either a standard IDL format string (see chapter 11 of <I CLASS="Italic">
+Building IDL Applications </I>
+for details on format codes) or a string containing the name of a user-supplied function that returns a string to be used to format the axis tick mark labels. The function should accept integer arguments for the direction of the axis, the index of the tick mark, and the value of the tick mark, and should return a string to be used as the tick mark's label. The function may optionally accept a keyword called DATA, which will be automatically set to the TICKFRMTDATA value. The default TICKFORMAT is '', the null string, which indicates that IDL will determine the appropriate format for each value.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144316">
+ </A>
+<A NAME="marker=1144315">
+ </A>
+TICKFRMTDATA (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144317">
+ </A>
+Set this keyword to a value of any type. It will be passed via the DATA keyword to the user-supplied formatting function specified via the TICKFORMAT keyword, if any. By default, this value is 0, indicating that the DATA keyword will not be set (and furthermore, need not be supported by the user-supplied function). Note that TICKFRMTDATA will not be included in the structure returned via the ALL keyword to the IDLgrColorbar::GetProperty method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144319">
+ </A>
+<A NAME="marker=1144318">
+ </A>
+TICKLEN (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144320">
+ </A>
+Set this keyword to the length of each major tick mark, measured in dimension units. The default, tick mark length is 8.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144322">
+ </A>
+<A NAME="marker=1144321">
+ </A>
+TICKTEXT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144323">
+ </A>
+Set this keyword to either a single instance of the IDLgrText object class (with multiple strings) or to a vector of instances of the IDLgrText object class (each with a single string) to specify the annotations to be assigned to the tick marks. By default, TICKTEXT is set to the NULL object, which indicates that IDL will compute tick annotations based upon the major tick values. The positions and orientation of the provided text object(s) may be overwritten by the colorbar.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144325">
+ </A>
+<A NAME="marker=1144324">
+ </A>
+TICKVALUES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144326">
+ </A>
+Set this keyword to a vector of data values representing the values at each tick mark. If TICKVALUES set to 0, the default, IDL computes the tick values based on the number of elements in the RED_VALUES property and the number of major ticks. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144328">
+ </A>
+<A NAME="marker=1144327">
+ </A>
+TITLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144329">
+ </A>
+Set this keyword to an instance of the IDLgrText object class to specify the title for the axis. The default is the null object, specifying that no title is drawn. The title will be centered along the axis, even if the text object itself has an associated location.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144331">
+ </A>
+<A NAME="marker=1144330">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144332">
+ </A>
+Set this keyword to a value of any type. You may use this value to contain any information you wish.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144334">
+ </A>
+<A NAME="marker=1144333">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144335">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144336">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144337">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144338">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144339">
+ </A>
+The default is [0.0, 1.0].</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173665">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144341">
+ </A>
+<A NAME="marker=1144340">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144342">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144343">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144344">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144345">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144346">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144348">
+ </A>
+<A NAME="marker=1144347">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144349">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144350">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144351">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1144352">
+ </A>
+[(-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144353">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144356">
+ </A>
+<A NAME="10239">
+ </A>
+IDLgrColorbar::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144359">
+ </A>
+The IDLgrColorbar::<A NAME="marker=1144358">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the colorbar. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f6.htm#35296" CLASS="XRef">
+IDLgrColorbar</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144366">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144367">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrColorbar::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144368">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144369">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144370">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144377">
+ </A>
+Any keyword to <A HREF="idl2f6.htm#27319" CLASS="XRef">
+IDLgrColorbar::Init</A>
+</DIV>
+</BODY>
+</HTML>

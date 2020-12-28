@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAKE_ARRAY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl10c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl10a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887420">
+ </A>
+<A NAME="80497">
+ </A>
+MAKE_ARRAY</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887424">
+ </A>
+The <A NAME="marker=887423">
+ </A>
+MAKE_ARRAY function returns an array of the specified type, dimensions, and initialization. This function enables you to dynamically create an array whose characteristics are not known until run time.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887425">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887426">
+ </A>
+Result = MAKE_ARRAY(<I CLASS="Italics">
+[D</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., D</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<I CLASS="Italics">
+]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887427">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887428">
+ </A>
+D<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887429">
+ </A>
+The dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887430">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887432">
+ </A>
+<A NAME="marker=887431">
+ </A>
+BYTE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887433">
+ </A>
+Set this keyword to create a byte array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887435">
+ </A>
+<A NAME="marker=887434">
+ </A>
+COMPLEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887436">
+ </A>
+Set this keyword to create a complex, single-precision, floating-point array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887438">
+ </A>
+<A NAME="marker=887437">
+ </A>
+DCOMPLEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887439">
+ </A>
+Set this keyword to create a complex, double-precision, floating-point array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887441">
+ </A>
+<A NAME="marker=887440">
+ </A>
+DIMENSION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887442">
+ </A>
+A vector of 1 to 8 elements specifying the dimensions of the result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887444">
+ </A>
+<A NAME="marker=887443">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887445">
+ </A>
+Set this keyword to create a double-precision, floating-point array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887447">
+ </A>
+<A NAME="marker=887446">
+ </A>
+FLOAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887448">
+ </A>
+Set this keyword to create a single-precision, floating-point array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887450">
+ </A>
+<A NAME="marker=887449">
+ </A>
+INDEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887451">
+ </A>
+Set this keyword to initialize the array with each element set to the value of its one-dimensional subscript.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887453">
+ </A>
+<A NAME="marker=887452">
+ </A>
+INT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887454">
+ </A>
+Set this keyword to create an integer array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887456">
+ </A>
+<A NAME="marker=887455">
+ </A>
+LONG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887457">
+ </A>
+Set this keyword to create a longword integer array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887459">
+ </A>
+<A NAME="marker=887458">
+ </A>
+NOZERO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887460">
+ </A>
+Set this keyword to prevent the initialization of the array. Normally, each element of the resulting array is set to zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887462">
+ </A>
+<A NAME="marker=887461">
+ </A>
+OBJ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887463">
+ </A>
+Set this keyword to create an object reference array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887465">
+ </A>
+<A NAME="marker=887464">
+ </A>
+PTR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887466">
+ </A>
+Set this keyword to create a pointer array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887468">
+ </A>
+<A NAME="marker=887467">
+ </A>
+SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887469">
+ </A>
+A size vector specifying the type and dimensions of the result. The format of a size vector is given in the description of the SIZE function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887471">
+ </A>
+<A NAME="marker=887470">
+ </A>
+STRING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887472">
+ </A>
+Set this keyword to create a string array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887474">
+ </A>
+<A NAME="marker=887473">
+ </A>
+TYPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887475">
+ </A>
+The type code to set the type of the result. See the description of the SIZE function for a list of IDL type codes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887480">
+ </A>
+<A NAME="marker=887479">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887481">
+ </A>
+The value to initialize each element of the resulting array. VALUE can be a scalar of any type including structure types. The result type is taken from VALUE unless one of the other keywords that specify a type is also set. In that case, VALUE is converted to the type specified by the other keyword prior to initializing the resulting array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887482">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887483">
+ </A>
+To create M, a 3-element by 4-element, integer array with each element set to the value 5, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=887484">
+ </A>
+M = MAKE_ARRAY(3, 4, /INTEGER, VALUE = 5)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887485">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887507">
+ </A>
+<A HREF="idl1d.htm#61434" CLASS="XRef">
+BYTARR</A>
+, <A HREF="idl3a.htm#77245" CLASS="XRef">
+COMPLEXARR</A>
+, <A HREF="idl68.htm#70733" CLASS="XRef">
+DBLARR</A>
+, <A HREF="idl6b.htm#58439" CLASS="XRef">
+DCOMPLEXARR</A>
+, <A HREF="idla7.htm#77222" CLASS="XRef">
+FLTARR</A>
+, <A HREF="idld7.htm#87062" CLASS="XRef">
+INTARR</A>
+, <A HREF="routinesK-L.html#33860" CLASS="XRef">
+</A>
+, <A HREF="idl178.htm#97512" CLASS="XRef">
+REPLICATE</A>
+, <A HREF="idl1b9.htm#27748" CLASS="XRef">
+STRARR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

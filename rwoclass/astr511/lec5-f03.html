@@ -1,0 +1,744 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2015.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+<!-- INTERACTIVE COMPUTING WEB PAGES
+
+     HISTORY: RWO created 9/11/2003; 9/12; 9/13; 9/14; 9/15; 9/16;
+              9/17; 10/18; 12/29; 6/2/2004; 6/7; 8/9; 8/15; 2/25/2005;
+              9/27; 9/28; 10/11; 10/29; 6/5/2007; 7/9; 10/30/2008;
+              11/4; 7/31/2009; 8/2; 9/16/15: new domain; 10/24/17:
+              add link to Latvian transl; 
+ -->
+
+<!-- for next update:  Add NED  --> 
+
+<html>
+<head>
+<link rel=stylesheet href="classblack-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.  [Fall 2003]  Lecture Notes  </TITLE>
+</head>
+<body>
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="cyan" alink="red">
+ <body bgcolor="#FFFFF0" text="000000" link="#DC143C" vlink="#DC143C" alink="red"> 
+-->
+
+
+<basefont size=3>
+<font size=+0> 
+
+<b>
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<hr>
+
+<center>
+<font size="+4" color="cc22dd"><b>INTERACTIVE COMPUTING<br> AND IMAGE PROCESSING   </b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+<center> <a href="im/saturn-imcombine-STScI-ex.jpg"  target=show>
+     <img src="im/saturn-imcombine-STScI-ex.jpg"
+     alt="Saturn-3 Images "
+     align="top" border="2" vspace=10 hspace=10></a>  </center> 
+
+<!--  <p align="right"><small><b><em> OptCaption
+</em></b></small></p>  -->
+
+<p><br></p>
+
+<b>
+
+<!-- <font color="ffffcc">  -->
+
+<h2>I.  INTRODUCTION</h2>
+
+Everyone knows that the science that can be done at a given time is
+circumscribed by the available resources.  In astronomy, we often
+regard <u>telescopes</u> as the essential infrastructure.</p>
+
+But data taking and analysis resources are just as important, often
+more so, in determining what we can do. The development of astronomy
+over the last 50 years has been shaped by the capabilities of
+computers to a much larger extent than is often recognized.</p>
+
+<p><br></p>
+
+
+<h2>II. HISTORY OF COMPUTERS IN ASTRONOMY
+ </h2>
+
+<!-- 2 COL INSERT -->
+<table width=100%>
+<tr>
+<td width=70%>
+<b>
+<ul>
+
+<li> 1800-1920:  Women</p>
+
+<li> 1920's-50's: Mechanical calculators (arithmetic)</p>
+
+<li> 1960's: </p>
+
+<ul>
+
+Mainframe computers (e.g. IBM 704, 360;  CDC) <br>
+Batch processing only (i.e. no interactive control)<br>
+Hollerith punch card programming<br>
+Data storage: punch cards or magnetic tape<br>
+Fortran is dominant language<br>
+UNIX developed (1969)<br>
+First Internet experiments (1969)<br>
+VICAR: JPL planetary imaging reduction system<br>
+CITRAN (Caltech), JOSS (MIT)<br>
+<ul> (Experimental interactive time-sharing
+systems, running on mainframes; printer terminal I/O)</p>
+</ul>
+</ul>
+</ul>
+
+</b>
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+<center>   <!-- PIC   -->
+
+   <a href="computing-history-sidelight.html" target=show>
+   <img src="im/crick-n-watson-sm.jpg"  alt="">
+   </a>
+
+   <!--  PIC CAPTION  -->
+   <p><b><small><em>What is this picture?</em></small></b> </p>
+</center>
+
+</b></font>
+</td>
+</tr>
+</table>
+
+<ul>
+
+<li> 1970-75:</p>
+
+<ul> 
+
+Minicomputers (e.g. PDP) used in data acquisition<br>
+
+HP & TI hand calculators appear (full function/programmable)<br>
+
+Interactive data analysis using Tektronix graphics terminals<br>
+
+<ul>
+E.g. NRAO, KPNO spectroscopy packages<br>
+1-bit plots but no greyscale images</p>
+</ul>
+
+</ul>
+
+<li> 1975-80: </p>
+
+<ul> 
+
+Fortran 77<br>
+
+Internet protocols (TCP/IP) developed<br>
+
+PC's appear, but little used professionally<br>
+
+Early systems for interactive 2-D astronomical image processing:<br>
+
+<ul>
+IRAF (KPNO), AIPS (NRAO), IDL (NASA)<br>
+
+Use stand-alone greyscale (256 level) or multiframe (color) TV monitors</p>
+</ul>
+
+</ul>
+
+<li> 1980-85: </p>
+
+<ul>
+
+ DEC VAX Minicomputers widely used <br>
+
+<ul>
+Virtual memory allows processing of large images<br>
+VAX's offer multiple shared terminal access; cards eliminated<br>
+Greyscale/color terminals<br>
+</ul>
+
+UNIX versions proliferate (Berkeley BSD, Sun, other)<br>
+
+Standardized transportable astronomical data formats (FITS)<br>
+
+File exchange protocols (e.g. FTP) established<br>
+
+Email available on limited-access networks (government)<br>
+
+STScI develops STSDAS (IRAF-based) to reduce HST data<br>
+
+IBM PC's used as desktop terminals; limited graphics<br>
+
+X-windows software developed (MIT)<br>
+
+Supercomputers (e.g. Cray) are specialized, expensive systems</p>
+
+</ul>
+
+<li> 1985-90:</p>
+
+<ul>
+
+Mainframe computers/operating systems begin to fade <br>
+
+<ul>
+1988: UVa Cyber mainframe allows maximum of 64 files per user(!) in disk storage<br>
+</ul>
+
+SUN, Silicon Graphics microcomputers gain popularity<br>
+
+<ul>
+Desktop workstations include full graphics/image displays<br>
+High capacity disk drives begin to drop rapidly in price<br>
+
+</ul>
+
+VAX/VMS operating system cedes ground to UNIX<br>
+
+TeX typesetting software invented by Donald Knuth<br>
+
+DAOPHOT (stand-alone Fortran program for stellar photometry) </p>
+
+</ul>
+
+<li> 1990-99:  </p>
+
+<ul>
+
+UNIX systems dominate in astronomy<br>
+
+LINUX (PC-based UNIX) appears<br>
+
+Fortran 90/95 modernize the standard computational language<br>
+
+Networked workstations/PC's linked to form supercomputers<br>
+
+Microsoft Windows operating system appears and dominates non-scientific market
+<br>
+
+Portable laptop computers become popular<br>
+
+Graphical User Interfaces (GUI's) become widespread in applications software<br>
+
+C, C++ in wide use<br>
+<ul>
+(Note that the Baroque programming style of these languages is totally
+unsuited to the earlier punch-card environment.)<br>
+</ul>
+
+Internet transforms computer communications<br>
+
+<ul>
+
+Email becomes universal<br> 
+World Wide Web protocols established (led by physical scientists)<br>
+Efficient browsers, search engines 
+   (e.g. <a href="Google-contest.html" target=show>Google</a>)<br> 
+
+Astronomical public internet data centers established (e.g.  CDS, NED, ADC)<br> 
+
+Public literature databases established (e.g. ADS, astro-ph)<br>
+
+Internet data transfer rivals or replaces transfer by magnetic tape<br>
+
+Open source software proliferates<br>
+
+</ul>
+
+IRAF, STSDAS, AIPS, IDL become more sophisticated & robust<br>
+
+CIAO (Chandra X-ray data reduction)</p>
+
+<!--  SExtractor (stand-alone image detection/classification)<br>
+SuperMongo (interactive data plotting)<br>   -->
+
+</ul>
+
+<li>2000--&nbsp; : </p>
+
+<ul>
+
+Search engines & literature databases become essential to routine work<br> 
+
+Paper-based publications fade<br>
+<ul>
+Electronic publications become versions of record<br>
+</ul>
+
+Electronic presentations become standard (PowerPoint, PDF)<br>
+
+Laptops become ubiquitous<br>
+
+Lower cost LINUX/PC systems take lead over UNIX for research <br>
+
+Apple adopts UNIX for Macintosh OS-X and reaps ~75% of
+the astronomy laptop market <br> 
+
+<ul> 
+Outlook poor for Windows in research<br> 
+</ul> 
+
+Large databases established:<br>
+
+<ul>
+Sky surveys (e.g. SDSS, 2MASS, POSS, NVSS)<br> 
+Telescope archives (e.g. STScI/MAST, Chandra, NOAO, NRAO)<br>
+</ul>
+
+Plans for new facilities push envelope of computing
+power (e.g. ALMA, LSST)<br>
+
+International Virtual Observatory planned</p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+
+<h2>III. WIDELY-USED CURRENT SYSTEMS IN ASTRONOMY</h2>
+
+
+A.  Operating Systems </p>
+
+<ul> 
+UNIX<br>
+LINUX and Apple OS-X <br> 
+Windows<br>
+<ul>
+Mainly for communications, text, presentations<br>
+</ul></ul>
+
+<!-- Little used for data analysis<br>  -->
+
+B.  Languages</p>
+
+<ul>
+
+General purpose: Fortran, C, C++, IDL<br>
+Scripting:  Perl, Python   </p>
+
+</ul>
+
+
+C.  Multipurpose Interactive Astronomical Data Reduction Packages</p>
+
+<ul>
+
+UVOIR: IRAF, STSDAS, MIDAS<br>
+
+Radio:  AIPS, AIPS++<br>
+
+X-ray:  CIAO, TARA </p>
+
+</ul>
+
+D.  Special Purpose Software (interactive and not)</p>
+
+<ul>
+
+Image Display: SAOImage, DS9, ATV<br>
+Point Source Photometry: DAOPHOT, DOPHOT<br>
+Plotting: SuperMongo,  PGPLOT <br>
+Source ID/Classification: FOCAS, SExtractor<br>
+X-ray Model Spectra: XSPEC<br>
+Math/Statistics: Numerical Recipes (C, C++, Fortran)</p>
+
+</ul>
+
+E.  Interactive Mathematical Packages
+
+<ul>
+Mathematica, Maple, MATLAB </p>
+</ul>
+
+<p><br></p>
+
+<u>Recent evolution</u>:</p>
+
+<ul> Dramatic improvements in computer hardware and software 
+have made it possible to manipulate very large amounts of data rapidly
+and efficiently.  However, the critical qualitative change in the
+conduct of astronomy has come about through access to powerful
+<u>interactive computation and display</u>, which permits
+understanding of numerical data in ways that were possible only for
+analytic functions 20 years ago. </p>
+
+</ul>
+
+
+
+<center>
+<table bgcolor="333333" width="480" border=2 cellpadding=8>
+<tr><td><font  face="Arial,Helvetica,Verdata" color="yellow">
+<b>
+ ===> In the last 20 years, interactive computing has produced 
+a fundamental transformation in
+the conduct and scope of astronomical research.
+</b></font>
+</td></tr></table>
+</center>
+
+<p><br></p>
+
+<u>Choices</u>?
+<ul>
+
+If you become an observational astronomer, you have
+essentially <u>no choice</u> but to become familiar with IRAF/STSDAS (UVOIR),
+AIPS (radio), CIAO (X-ray), etc. because these provide the primary
+standardized data reduction procedures.  The main decision, therefore,
+is what <u>other</u> systems are most profitable to learn.  </p>
+</ul>
+
+<p><br></p>
+
+<h2>IV.  IDL </h2>
+
+The "Interactive Data Language" is distributed by <a
+href="http://www.rsinc.com/idl/index.asp" target=show>Research
+Systems, Inc.</a></p>
+
+Unique status as a fully interactive, high-level language with a large
+library of astronomer-written utilities.  </p>
+
+Nearest thing to a <u>"universal" astronomical data system</u>
+because:
+
+<ol>
+
+<li> It is currently <u>used across the entire EM spectrum from gamma
+ray to radio wavelengths</u>.  This is unlike most other astronomical
+software, which is usually confined to one wavelength regime.</p>
+
+<li> It potentially duplicates the functionality of almost any other
+astronomical software, from simple arithmetic computations and
+graphics to full-blown GUI-based data analysis packages.</p>
+
+<ul> Don't be misled: the capability is there, but <u>you</u> may have
+put in the effort to make it work, depending on the application.</p>
+</ul>
+
+</ol>
+
+Places to look for a quick introduction:</p>
+
+<ul>
+For introduction and 
+applications to astronomical image processing, see the <a
+href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources/IDLguide.html"
+target=show>Guide to IDL for Astronomers</a></p>
+
+<a href="http://idlastro.gsfc.nasa.gov/contents.html"
+target=show>Sample list of library software</a></p>
+
+</ul>
+
+Key advantages over Fortran, C, etc:</p>
+
+<ul>
+Fully interactive with embedded graphics and I/O device drivers<br>
+Dynamic memory allocation<br>
+Accelerated computation on arrays<br>
+Large number of built-in interactive functions & utilities<br>
+Large body of public, easily-implemented astronomical utilities<br>
+Writing code with interactive programming/iteration greatly<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  enhances efficiency & reliability<br>
+Pre-compilation not required</p>
+</ul>
+
+Key advantages over MATLAB, etc:</p>
+
+<ul>
+Full high-level programming features<br>
+Oriented toward image processing<br>
+Large suite of astronomical-oriented utilities (e.g. FITS file I/O,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; coordinate systems, astrometry, databasing, etc)</p>
+</ul>
+
+Key advantages over IRAF, etc:</p>
+
+<ul>
+Full high-level programming features; not simply a package of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  pre-defined, specialized programs<br>
+Intended for user customization, adaptation, extension<br>
+Active data stored in RAM, not as files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (minimizes use of cumbersome file names and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; greatly facilitates computations)<br>
+Greater versatility, transparency, and user control<br>
+Journaling, command recall/edit, & other convenience features<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for increased efficiency<br>
+Source code for applications routines available and modifiable on demand<br>
+Writing code with interactive programming/iteration greatly<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  enhances efficiency & reliability<br>
+Pre-compilation not required<br>
+</ul>
+
+Key disadvantages:<//p>
+
+<ul>
+IDL is an <u>interpreted</u> rather than <u>compiled</u> language:<br>
+<ul>
+Compiled languages execute more rapidly and use memory more efficiently.
+The differences will be invisible for most computations up to moderate
+scale.  But for large-scale computing, Fortran and C are a better choice.<br>
+</ul>
+No equation-solving capability (use Mathematica/Maple there). </p> 
+</ul>
+
+<p><br></p>
+
+
+<h2>V. THE ROLE OF IDL</h2>
+
+<ul>
+
+<li>  Data <u>analysis</u> and <u>visualization</u> (as opposed to reduction)</p>
+
+<ul>
+
+<li>IDL is <u>not</u> a recommended alternative for routine data reduction
+tasks (e.g. for CCD mosaics) where IRAF, AIPS, etc., offer powerful,
+reliable, and convenient packages.  These have gone through many
+iterations, and most user needs have been accommodated. </p>
+
+<li>But the multitude of specialized analysis procedures needed
+following data reduction requires versatility, extended capabilities,
+and customization not offered by standard packages.  IDL is
+optimized for this role.</p>
+
+</ul>
+
+<li> Bridging gaps in standard packages</p>
+
+<ul>
+<li>IDL is now being used to convert and analyze NRAO GBT data
+in ways not possible with AIPS++</p>
+
+<li>Convenience of IDL interface now recognized in effort to develop
+Python-based "PYRAF" in order to make IRAF "more like IDL"</p>
+
+</ul>
+
+<li> Any moderate-scale computation requiring file manipulation or
+generation of numerical tables, graphics displays, or images</p>
+
+<ul>
+
+<li> There might be dozens of such applications arising in a single
+project that would be more cumbersome to program in a compiled
+or scripting language, especially if graphics is required</p>
+
+<!--  FORTRAN, C, PERL, etc.  -->
+
+<li> Like a "super hand-calculator," IDL is instantly available for a
+wide range of such applications </p>
+
+
+</ul>
+
+
+<li> Enhancing scientist efficiency</p>
+
+<ul>
+
+The main concern of working scientists in approaching software should
+be how much of <u>their own time</u> elapses before they get a given
+result.  Speed of execution is secondary, whereas the speed of
+coding/configuring and testing software is primary.</p>
+
+Although we tend to think of computers in the context of large-scale
+"pipeline" computations and applications which are CPU/memory-bounded,
+these are really specialties.  Less than 10% of the overall computing
+effort in astronomy (measured in person-hours) involves such
+problems.</p>
+
+Instead, the software effort of most astronomers is devoted to
+moderate-scale computations, interactive data inspection and
+evaluation, special cases not supported by large applications
+packages, production of graphics for publications, and so forth.</p>
+
+This environment places a premium on software <u>convenience,
+transparency, modularity, portability, and versatility</u>---exactly
+where IDL excels.  </p>
+
+The intrinsic capabilities of IDL coupled with its interactive
+environment and extensive user code libraries greatly enhance scientist
+efficiency.  A given result can be reached using IDL in a small
+fraction of the time it would take to do the equivalent programming in
+other high level languages.</p>
+
+<!--  FORTRAN or C or by trying to work around deficiencies in IRAF, MATLAB,
+etc.  -->
+
+IDL supplants graphics-display software such as SuperMongo or PGPLOT.
+It duplicates much, though not all, of the mathematical functionality
+of MATLAB, Maple, and Mathematica.  It can do much of what can be
+done with PERL.  Finally, it duplicates all the functionality of
+Fortran or C and is to be preferred unless the speed of computation is
+<u>really</u> important. </p>
+
+</ul>
+
+
+<li> As an educational tool</p>
+
+</ul>
+
+
+<p><br></p>
+
+<h2>VI.  IDL DEMOS</h2>
+
+<ul>
+
+<li> A <a href="demorun_class_17-22sep03.jnl" target=show>demo</a> of
+interactive computing and image processing will be shown in class<br>
+
+<li>  A package of standard IDL demos is supplied by RSI.  Start from
+the UNIX prompt and type <kbd>idldemo</kbd>. <br>
+
+<li> An <a
+href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises"
+target=show>
+IDL Tutorial</a> designed for this class introduces IDL's basic features and its
+use in image processing.  Other sites offering IDL tutorials are
+linked to the <a
+href="http://idlastro.gsfc.nasa.gov/homepage.html" target=show>Astronomy User's
+Library</a>.</p>
+
+</ul>
+
+<p><br></p>
+
+<h2>VII. GENERAL TIPS FOR DEALING WITH COMPUTERS</h2>
+
+<ul>
+
+<li> Computers are tools, <u>not science</u> <br>
+
+<li> Despite appearances, computers have <u>not</u> increased the
+capacity of the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; human brain to absorb and
+process information<br>
+
+<li>  Don't trust and <u>always verify</u> <br>
+
+<li>  If it's important, read it from <u>paper</u> </p>
+
+<ul>
+[I have yet to meet anyone who can proof-read
+accurately<br> from a computer screen.  I am not sure why this is,<br> but
+it is not a comforting observation.]</p>
+</ul>
+
+</ul>
+
+<!-- END MAIN TEXT -->
+
+<hr size=2>
+
+Reading and lab assignments for this lecture</p>
+
+<ul>
+
+  <li><a
+href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources/IDLguide.html"
+target=show>Guide to IDL for Astronomers</a></p>
+
+<li>  <a href="lab2-03.pdf"
+target=show>Laboratory II: Interactive Computing & Image Processing</a></p>
+
+</ul>
+
+
+Web links:</p>
+
+<ul>
+
+<li>  <a href="https://www.autoteileprofi.de/science/2017/10/14/interaktivas-skaitlosanas-un-attela-apstrades">Latvian translation of this page</a></p>
+
+<li> <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources/astro-dept-idlresources.html">
+List of Local & Other IDL Resources</a></p>
+
+<li><a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises">
+  ASTR 511 IDL Tutorial</a></p>
+
+<p><br></p>
+
+
+</ul>
+
+</b>
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<table width="75%">
+<tr>
+<td>
+<b><a href="lec4-f03.pdf">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="lec6-f03.pdf">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>September 2015</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<b><small>
+Text copyright &copy 2000-2015 Robert W. O'Connell.
+All rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 511 at the
+University of Virginia.  </small></b>
+
+
+<!-- END FOOTER -->
+
+</body>
+</html>
+				  

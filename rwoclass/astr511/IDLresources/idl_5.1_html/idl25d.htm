@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARINQ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl25c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997927">
+ </A>
+<A NAME="91385">
+ </A>
+CDF_VARINQ</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997930">
+ </A>
+The <A NAME="marker=997929">
+ </A>
+CDF_VARINQ function returns a structure containing information about the specified <A NAME="marker=997931">
+ </A>
+variable in a Common Data Format file. This structure has the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997932">
+ </A>
+<EM CLASS="Kern-in-1%">
+{ IS_ZVAR:0, NAME:&quot;&quot;, DATATYPE:&quot;&quot;, NUMELEM:0L, $</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997933">
+ </A>
+<EM CLASS="Kern-in-1%">
+&nbsp;&nbsp;RECVAR:&quot;&quot;, DIMVAR:BYTARR(...) [, DIM:LONARR(...)]}</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997934">
+ </A>
+Note: the DIM field is included in the structure only if IS_ZVAR is one. This structure's tags are explained below.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997935">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997936">
+ </A>
+Result = CDF_VARINQ(<I CLASS="Italics">
+Id, Variable</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997937">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997938">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997939">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997940">
+ </A>
+Variable</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997941">
+ </A>
+A string containing the name of the variable <I CLASS="Italics">
+or</I>
+ the variable number being inquired.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997942">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997944">
+ </A>
+<A NAME="marker=997943">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997945">
+ </A>
+If <I CLASS="Italics">
+Variable</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+Variable</I>
+ is an rVariable ID.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997946">
+ </A>
+Explanation of the Structure Tags</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997948">
+ </A>
+<A NAME="marker=997947">
+ </A>
+IS_ZVAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997949">
+ </A>
+This field will contain a 1 if the variable is a zVariable or a 0 if it is an rVariable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997951">
+ </A>
+<A NAME="marker=997950">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997952">
+ </A>
+The name of the variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997954">
+ </A>
+<A NAME="marker=997953">
+ </A>
+DATATYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997955">
+ </A>
+A string describing the data type of the variable. The string has the form <CODE CLASS="Code">
+'CDF_XXX'</CODE>
+ where <I CLASS="Italics">
+XXX</I>
+ is FLOAT, DOUBLE, EPOCH, UCHAR, etc.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997957">
+ </A>
+<A NAME="marker=997956">
+ </A>
+NUMELEM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997958">
+ </A>
+The number of elements of the data type at each variable value. This is always 1 except in the case of string type variables (CDF_CHAR, CDF_UCHAR).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997960">
+ </A>
+<A NAME="marker=997959">
+ </A>
+RECVAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997961">
+ </A>
+A string describing the record variance of the variable. This is either the string <CODE CLASS="Code">
+'VARY'</CODE>
+ or <CODE CLASS="Code">
+'NOVARY'</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997963">
+ </A>
+<A NAME="marker=997962">
+ </A>
+DIMVAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997964">
+ </A>
+An array of bytes. The value of each element is zero if there is no variance with that dimension and one if there is variance. For zero-dimensional CDFs, DIMVAR will have one element whose value is zero.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997966">
+ </A>
+<A NAME="marker=997965">
+ </A>
+DIM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997967">
+ </A>
+An array of longs. The value of each element corresponds to the dimension of the variable. This field is only included in the structure if the variable is a zVariable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999203">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999204">
+ </A>
+See the example for <A HREF="idl25b.htm#10909" CLASS="XRef">
+CDF_VARGET</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

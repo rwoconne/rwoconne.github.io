@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRPOS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679132">
+ </A>
+<A NAME="37928">
+ </A>
+STRPOS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679133">
+ </A>
+The <A NAME="marker=674022">
+ </A>
+STRPOS function finds the first occurrence of a substring within an object string. If <I CLASS="Italic">
+Search_String</I>
+ occurs in <I CLASS="Italic">
+Expression</I>
+, STRPOS returns the character position of the match, otherwise it returns -1.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679134">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679135">
+ </A>
+Result = STRPOS(<I CLASS="Italic">
+Expression, Search String [, Pos]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679136">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679137">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679138">
+ </A>
+The expression in which to search for the substring. If this argument is not a string, it is converted using IDL's default formatting rules. If <I CLASS="Italic">
+Expression</I>
+ is an array, the result is an array with the same structure, where each element contains the position of the substring within the corresponding element <I CLASS="Italic">
+Expression</I>
+. If <I CLASS="Italic">
+Expression</I>
+ is the null string, STRPOS returns the value -1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679139">
+ </A>
+Search_String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679140">
+ </A>
+The substring to be searched for within <I CLASS="Italic">
+Expression</I>
+. If this argument is not a string, it is converted using IDL's default formatting rules. If <I CLASS="Italic">
+Search_String</I>
+ is the null string, STRPOS returns the smaller of <I CLASS="Italic">
+Pos</I>
+ or one less than the length of <I CLASS="Italic">
+Expression</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679141">
+ </A>
+Pos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679142">
+ </A>
+The character position at which the search is begun. If <I CLASS="Italic">
+Pos</I>
+ is omitted, the search begins at the first character (character position 0). If <I CLASS="Italic">
+Pos</I>
+ is less than zero, zero is used for the starting position.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679143">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679144">
+ </A>
+Find the position of the string &quot;fun&quot; within the string &quot;IDL is fun&quot; and print the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679145">
+ </A>
+PRINT, STRPOS('IDL is fun', 'fun')</P>
+<P CLASS="Body">
+<A NAME="pgfId=679146">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679147">
+ </A>
+&nbsp;&nbsp; 7</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795943">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795944">
+ </A>
+<A HREF="idl189.htm#13736" CLASS="XRef">
+RSTRPOS</A>
+, <A HREF="idl1c0.htm#64169" CLASS="XRef">
+STRMID</A>
+, <A HREF="idl1c2.htm#64894" CLASS="XRef">
+STRPUT</A>
+, <A HREF="idl1c3.htm#95224" CLASS="XRef">
+STRTRIM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

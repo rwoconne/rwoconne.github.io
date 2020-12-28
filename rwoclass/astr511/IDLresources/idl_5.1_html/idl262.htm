@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF Interfaces</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl263.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl261.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV>
+<P CLASS="ChapTOC"><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=1012493">
+</A>
+<A NAME="41807">
+</A>
+HDF Interfaces</H2>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1012495">
+</A>
+<A NAME="marker=1012494">
+</A>
+There are two basic interfaces to HDF files, the single-file application interface and the multiple-file application interface. These interfaces support eight different types (or &quot;models&quot;) of data access. <A HREF="idl262.htm" CLASS="XRef">
+Data Access Models and Routine Prefixes.</A>
+ lists the different models and the names of the IDL routines that access those models. Each model is described in more detail after the table.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=1012539">
+ </A>
+<A NAME="43460">
+ </A>
+Data Access Models and Routine Prefixes.</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1012502">
+ </A>
+Model</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1012504">
+ </A>
+IDL Routine Name Prefix</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012506">
+ </A>
+24-bit raster</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012508">
+ </A>
+HDF_DF24_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012510">
+ </A>
+annotation data</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012512">
+ </A>
+HDF_DFAN_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012514">
+ </A>
+palette data</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012516">
+ </A>
+HDF_DFP_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012518">
+ </A>
+8-bit raster</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012520">
+ </A>
+HDF_DFR8_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012522">
+ </A>
+scientific data</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012524">
+ </A>
+HDF_DFSD_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012526">
+ </A>
+multi-file scientific data</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012528">
+ </A>
+HDF_SD_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012530">
+ </A>
+VData</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012532">
+ </A>
+HDF_VD_</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012534">
+ </A>
+VGroup</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1012536">
+ </A>
+HDF_VG_</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1003207">
+ </A>
+Single File Application Interfaces</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1003208">
+ </A>
+In this mode, access is limited to one file at a time. This interface supports the 8-bit raster, 24-bit raster, palette, scientific data, and annotation models. The interfaces are described in more detail after the table.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003209">
+ </A>
+8-bit Raster Model: The HDF_DFR8_ routines access 8-bit images.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003210">
+ </A>
+Palette Model: The HDF_DFP_ routines are used to work with the HDF_DFR8_ routines to manipulate palettes associated with 8-bit HDF images.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003211">
+ </A>
+24-bit Raster Model: The HDF_DFR24_ routines access 24-bit images.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003212">
+ </A>
+Scientific Data Models (SDs): Used to manipulate arrays of arbitrary dimension and type. Under this model, an array accompanied by a record of its data type, dimensions and descriptors is called a Scientific Dataset (SD). HDF supports two kinds of SDs--the older single-file DFSD, and the new, NetCDF based, MFSD.</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1003213">
+ </A>
+To show preference to the new format, HDF and IDL refer to &quot;MFSD&quot; as simply &quot;SD&quot;. IDL calls to the SD model are distinguished by the prefix HDF_SD, while calls to the DFSD are distinguished by the HDF_DFSD prefix. Unfortunately, HDF4.0 uses the same tags for the two different scientific data models. Therefore, caution should be used when accessing the SDs through tags. IDL routines may seem to work, but may actually read incorrect information when tags, and not the standard HDF_SD_ routines, are used.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003214">
+ </A>
+Annotation Model: The annotation model is used to describe the contents of the file through such items as labels, data descriptors, and dimension scales.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003215">
+ </A>
+Vdata Model: This interface allows for the creation of customized tables. Each table consists of a series of Vdata records whose values are stored in fixed length fields. As described in more detail in the Vdata example below, a Vdata can contain three kinds of identifying information: a Vdata name, Vdata Class, and multiple Vdata field names. The Vdata model is accessed through the routines that begin with the HDF_VD_ prefix.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1003216">
+ </A>
+Vgroup Model: A collection of one or more data objects, Vdata sets, or Vgroups is known as a Vgroup. Each Vgroup can be given a Vgroup name and Vgroup class. The Vgroup model is accessed through the routines that begin with the HDF_VG_ prefix. </P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1003217">
+ </A>
+Multi-File Application Interface</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1003218">
+ </A>
+The HDF_SD_ routines allow operations on more than one file at a time. This multi-file interoperability is achieved through HDF's use of a modified version of the NetCDF library. IDL's interface to HDF's multi-file capability is the HDF_SD_SETEXTFILE routine.</P>
+</DIV>
+</BODY>
+</HTML>

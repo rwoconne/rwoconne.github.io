@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SHOW3</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl19b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787185">
+ </A>
+<A NAME="53864">
+ </A>
+SHOW3</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787190">
+ </A>
+The <A NAME="marker=787187">
+ </A>
+SHOW3 procedure combines an <A NAME="marker=787188">
+ </A>
+image, a <A NAME="marker=787189">
+ </A>
+surface plot of the image data, and a <A NAME="marker=787191">
+ </A>
+contour plot of the images data in a single tri-level display.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787192">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+show3.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787193">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787194">
+ </A>
+SHOW3, <EM CLASS="Emphasis">
+Image [, X, Y]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787195">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787196">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862961">
+ </A>
+The two-dimensional array to display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862965">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863016">
+ </A>
+A vector containing the X values of each column of <EM CLASS="Emphasis">
+Image</EM>
+. If the <EM CLASS="Emphasis">
+X</EM>
+ argument is omitted, columns have values 0, 1, ..., <EM CLASS="Emphasis">
+n</EM>
+columns-1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862968">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863023">
+ </A>
+A vector containing the Y values of each row of <EM CLASS="Emphasis">
+Image</EM>
+. If the <EM CLASS="Emphasis">
+Y</EM>
+ argument is omitted, rows have values 0, 1, ..., <EM CLASS="Emphasis">
+n</EM>
+rows-1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862962">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862964">
+ </A>
+<A NAME="marker=862963">
+ </A>
+INTERP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787201">
+ </A>
+Set this keyword to use bilinear interpolation on the pixel display. This technique is slightly slower, but for small images, it makes a better display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863032">
+ </A>
+<A NAME="marker=863128">
+ </A>
+E_CONTOUR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863122">
+ </A>
+Set this keyword equal to an anonymous structure containing additional keyword parameters that are passed to the CONTOUR procedure. Tag names in the structure should be valid keyword arguments to CONTOUR, and the values associated with each tag should be valid keyword values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863036">
+ </A>
+<A NAME="marker=863129">
+ </A>
+E_SURFACE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863131">
+ </A>
+Set this keyword equal to an anonymous structure containing additional keyword parameters that are passed to the SURFACE procedure. Tag names in the structure should be valid keyword arguments to SURFACE, and the values associated with each tag should be valid keyword values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787203">
+ </A>
+<A NAME="marker=787202">
+ </A>
+SSCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787204">
+ </A>
+Reduction scale for surface. The default is 1. If this keyword is set to a value other than 1, the array size is reduced by this factor for the surface display. That is, the number of points used to draw the wire-mesh surface is reduced. If the array dimensions are not an integral multiple of SSCALE, the image is reduced to the next smaller multiple.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863140">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=863141">
+ </A>
+A = BESELJ(SHIFT(DIST(30,20), 15, 10)/2.,0)<BR>
+<EM CLASS="Comment">;
+Create a dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=863145">
+ </A>
+SHOW3, A	<EM CLASS="Comment">;
+Show it with default display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=863146">
+ </A>
+SHOW3, A, SQRT(FINDGEN(30))	<EM CLASS="Comment">;
+Specify X axis proportional to square root of values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=863147">
+ </A>
+SHOW3, A, E_CONTOUR={C_CHARSIZE:2, DOWN:1}<BR>
+<EM CLASS="Comment">;
+Label CONTOUR lines with double size characters, and include downhill tick marks.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=863149">
+ </A>
+SHOW3, A, E_SURFACE={SKIRT:-1, ZRANGE:[-2,2]}<BR>
+<EM CLASS="Comment">;
+Draw a surface with a skirt and scale Z axis from -2 to 2.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787206">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787207">
+ </A>
+<A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

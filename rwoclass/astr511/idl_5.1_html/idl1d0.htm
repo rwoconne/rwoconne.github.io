@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TAG_NAMES</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1d1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1cf.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679355">
+ </A>
+<A NAME="98384">
+ </A>
+TAG_NAMES</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679356">
+ </A>
+The <A NAME="marker=674112">
+ </A>
+TAG_NAMES function returns a string array containing the names of the tags in a structure expression. It can also be used to determine the expression's structure name (if the structure has a name).</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679357">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679358">
+ </A>
+Result = TAG_NAMES(<I CLASS="Italic">
+Expression</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679359">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679360">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679361">
+ </A>
+The structure expression for which the tag names are returned. This argument must be of structure type. TAG_NAMES does not search for tags recursively, so if <I CLASS="Italic">
+Expression</I>
+ is a structure containing nested structures, only the names of tags in the outermost structure are returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679362">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679363">
+ </A>
+<A NAME="marker=674113">
+ </A>
+STRUCTURE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679364">
+ </A>
+Set this keyword to return a scalar string that contains the name of the structure instead of the names of the tags in the structure. If the structure is &quot;anonymous&quot;, a null string is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679365">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679366">
+ </A>
+Print the names of the tags in the system variable !P by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679367">
+ </A>
+PRINT, TAG_NAMES(!P)</P>
+<P CLASS="Body">
+<A NAME="pgfId=43276">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=43277">
+ </A>
+BACKGROUND CHARSIZE CHARTHICK CLIP COLOR FONT LINESTYLE MULTI</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=43282">
+ </A>
+NOCLIP NOERASE NSUM POSITION PSYM REGION SUBTITLE SYMSIZE T </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=43285">
+ </A>
+T3D THICK TITLE TICKLEN CHANNEL</P>
+<P CLASS="Body">
+<A NAME="pgfId=43280">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=43288">
+ </A>
+PRINT, TAG_NAMES(!P, /STRUCTURE_NAME)	<EM CLASS="Comment">;
+Print the name of the structure in the system variable !P.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=43286">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=876126">
+ </A>
+!PLT</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=876127">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=876134">
+ </A>
+<A HREF="idl49.htm#23746" CLASS="XRef">
+CREATE_STRUCT</A>
+, <A HREF="idl124.htm#49338" CLASS="XRef">
+N_TAGS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

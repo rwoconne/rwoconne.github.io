@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF File Options</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl241.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl23f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=999396">
+ </A>
+<A NAME="10687">
+ </A>
+CDF File Options</H2>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=999399">
+ </A>
+File Type</H3>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999397">
+ </A>
+The SINGLE_FILE and MULTI_FILE keywords to CDF_CREATE allow CDFs to be written as either:</P>
+<OL>
+<LI CLASS="Numbered">
+<A NAME="pgfId=999678">
+ </A>
+all data in a single file, or </LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=999679">
+ </A>
+a separate file for each variable, plus a master file for global information. </LI>
+</OL>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999680">
+ </A>
+The default is MULTI_FILE. For more discussion on CDF file format options, see section 1.4.1 of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=999398">
+ </A>
+Data Encodings/Decodings</H3>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999413">
+ </A>
+Keywords to CDF_CREATE allow files to be written in a variety of data encoding and decoding options. (For example, the /SUN_ENCODING keyword creates a file in the SUN native encoding scheme). The default encoding/decoding is network (XDR). All CDF encodings and decodings can be written or read on all platforms, but matching the encoding with the architecture used provides the best performance. If you work in a single-platform environment most of the time, select HOST_ENCODING for maximum performance. If you know that the CDF file will be transported to a computer using another architecture, specify the encoding for the target architecture or specify NETWORK_ENCODING (the default). Specifying the target architecture provides maximum performance on that architecture; specifying NETWORK_ENCODING provides maximum flexibility.</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999403">
+ </A>
+For more discussion on CDF encoding/decoding methods and combinations, see sections 2.2.7 (&quot;Encoding&quot;) and 2.2.8 (&quot;Decoding&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=999452">
+ </A>
+Creating CDF Files</H3>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999454">
+ </A>
+<A NAME="marker=999453">
+ </A>
+The following list details the basic IDL commands needed to create a new CDF file:</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999455">
+ </A>
+CDF_CREATE: Call this procedure to begin creating a new file. CDF_CREATE contains a number of keywords which affect the internal format of the new CDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999483">
+ </A>
+CDF_VARCREATE: Define the variables to be used in the file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999458">
+ </A>
+CDF_ATTPUT: Optionally, use attributes to describe the data.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999460">
+ </A>
+CDF_VARPUT: Write the appropriate data to the CDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999461">
+ </A>
+CDF_CLOSE: Close the file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=999462">
+ </A>
+Reading CDF Files</H3>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999464">
+ </A>
+<A NAME="marker=999463">
+ </A>
+The following commands are the basic commands needed to read data from a CDF file:</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999465">
+ </A>
+CDF_OPEN: Open an existing CDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999466">
+ </A>
+CDF_INQUIRE: Call this function to find the general information about the contents of the CDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999587">
+ </A>
+CDF_CONTROL: Call this function to obtain further information about the CDF file</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999468">
+ </A>
+CDF_VARINQ: Retrieve the names, types, sizes, and other information about the variables in the CDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=1000790">
+ </A>
+CDF_VARGET: Retrieve the variable values.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999470">
+ </A>
+CDF_ATTINQ: Optionally, retrieve the names, scope and other information about the CDFs attributes.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999471">
+ </A>
+CDF_ATTGET: Optionally, retrieve the attributes.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999473">
+ </A>
+CDF_CLOSE: Close the file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=999509">
+ </A>
+If the structure of the CDF file is already known, the inquiry routines do not need to be called--only CDF_OPEN, CDF_ATTGET, CDF_VARGET, and CDF_CLOSE would be needed.</P>
+</DIV>
+</BODY>
+</HTML>

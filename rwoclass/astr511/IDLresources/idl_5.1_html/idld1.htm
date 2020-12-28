@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IMAGE_CONT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757343">
+ </A>
+<A NAME="42513">
+ </A>
+IMAGE_CONT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757347">
+ </A>
+The <A NAME="marker=757344">
+ </A>
+IMAGE_CONT procedure overlays an image with a <A NAME="marker=757345">
+ </A>
+contour <A NAME="marker=757346">
+ </A>
+plot.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757348">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+image_cont.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757349">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757350">
+ </A>
+IMAGE_CONT, <EM CLASS="Emphasis">
+A</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757351">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757352">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757353">
+ </A>
+The two-dimensional array to display and overlay.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757354">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757356">
+ </A>
+<A NAME="marker=757355">
+ </A>
+ASPECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757357">
+ </A>
+Set this keyword to retain the image's aspect ratio. Square pixels are assumed. If WINDOW_SCALE is set, the aspect ratio is automatically retained.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757359">
+ </A>
+<A NAME="marker=757358">
+ </A>
+INTERP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757360">
+ </A>
+If this keyword is set, bilinear interpolation is used if the image is resized.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757362">
+ </A>
+<A NAME="marker=757361">
+ </A>
+WINDOW_SCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757363">
+ </A>
+Set this keyword to scale the window size to the image size. Otherwise, the image size is scaled to the window size. This keyword is ignored when outputting to devices with scalable pixels (e.g., PostScript).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757364">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=757365">
+ </A>
+A = BYTSCL(DIST(356))	<EM CLASS="Comment">;
+Create an image to display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757366">
+ </A>
+IMAGE_CONT, A, /WINDOW	<EM CLASS="Comment">;
+Display image and overplot contour lines.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757367">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757368">
+ </A>
+<A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

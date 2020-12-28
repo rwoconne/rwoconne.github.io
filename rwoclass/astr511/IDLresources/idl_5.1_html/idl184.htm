@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ROT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl185.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl183.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758889">
+ </A>
+<A NAME="79661">
+ </A>
+ROT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758892">
+ </A>
+The <A NAME="marker=758890">
+ </A>
+ROT function <A NAME="marker=758891">
+ </A>
+rotates an image by an arbitrary amount. At the same time, it can magnify, demagnify, and/or translate an image. Note that if you want to rotate an array by a multiple of 90 degrees, you should use the ROTATE function for faster results.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758893">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+rot.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758894">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758895">
+ </A>
+Result = ROT(<I CLASS="Italic">
+A, Angle, [Mag, X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+, Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<EM CLASS="Comment">;
+]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758896">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758897">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758898">
+ </A>
+The image array to be rotated. This array can be of any type, but must have two dimensions. The output image has the same dimensions and data type of the input image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758899">
+ </A>
+ANGLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758900">
+ </A>
+Angle of rotation in degrees <I CLASS="Italic">
+clockwise</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758901">
+ </A>
+MAG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758902">
+ </A>
+An optional magnification factor. A value of 1.0 results in no change. A value greater than one performs magnification and a value less than one performs demagnification.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758903">
+ </A>
+X<SUB CLASS="Subscript">
+0</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758904">
+ </A>
+X subscript for the center of rotation. If omitted, <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+ equals the number of columns in the image divided by 2.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758905">
+ </A>
+Y<SUB CLASS="Subscript">
+0</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758906">
+ </A>
+Y subscript for the center of rotation. If omitted, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+ equals the number of rows in the image divided by 2.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758907">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758909">
+ </A>
+<A NAME="marker=758908">
+ </A>
+INTERP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758910">
+ </A>
+Set this keyword to use bilinear interpolation. The default is to use nearest neighbor sampling.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758912">
+ </A>
+<A NAME="marker=758911">
+ </A>
+CUBIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843543">
+ </A>
+Set this keyword to a value between -1 and 0 to use the cubic convolution interpolation method with the specified value as the interpolation parameter. Setting this keyword equal to a value greater than zero specifies a value of -1 for the interpolation parameter. Park and Schowengerdt (see reference below) suggest that a value of -0.5 significantly improves the reconstruction properties of this algorithm.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843544">
+ </A>
+Cubic convolution is an interpolation method that closely approximates the theoretically optimum sinc interpolation function using cubic polynomials. According to sampling theory, details of which are beyond the scope of this document, if the original signal, <I CLASS="Italics">
+f</I>
+, is a band-limited signal, with no frequency component larger than <EM CLASS="MathSymbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, and <I CLASS="Italics">
+f</I>
+ is sampled with spacing less than or equal to 1/(2<EM CLASS="MathSymbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+), then <I CLASS="Italics">
+f</I>
+ can be reconstructed by convolving with a sinc function: sinc(<EM CLASS="Emphasis">
+x</EM>
+) = sin(<EM CLASS="MathSymbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+) / (<EM CLASS="MathSymbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=843545">
+ </A>
+In the one-dimensional case, four neighboring points are used, while in the two-dimensional case 16 points are used. Note that cubic convolution interpolation is significantly slower than bilinear interpolation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843546">
+ </A>
+For further details see:</P>
+<P CLASS="Body">
+<A NAME="pgfId=843547">
+ </A>
+Rifman, S.S. and McKinnon, D.M., &quot;Evaluation of Digital Correction Techniques for ERTS Images; Final Report&quot;, Report 20634-6003-TU-00, TRW Systems, Redondo Beach, CA, July 1974.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843548">
+ </A>
+S. Park and R. Schowengerdt, 1983 &quot;Image Reconstruction by Parametric Cubic Convolution&quot;, Computer Vision, Graphics &amp; Image Processing 23, 256.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758915">
+ </A>
+<A NAME="marker=758914">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758916">
+ </A>
+<A NAME="marker=788502">
+ </A>
+Set this keyword to a value to be substituted for pixels in the output image that map outside the input image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758918">
+ </A>
+<A NAME="marker=758917">
+ </A>
+PIVOT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758919">
+ </A>
+Set this keyword to cause the image to pivot around the point <I CLASS="Italic">
+(X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+)</I>
+ so that this point maps into the same point in the output image. By default, the point <I CLASS="Italic">
+(X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+ <I CLASS="Italic">
+)</I>
+ in the input image is mapped into the center of the output image.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758920">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=758921">
+ </A>
+A = BYTSCL(DIST(256))	<EM CLASS="Comment">;
+Create a byte image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758922">
+ </A>
+TV, A	<EM CLASS="Comment">;
+Display it.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758923">
+ </A>
+B = ROT(A, 33, 1.5, /INTERP)	<EM CLASS="Comment">;
+Rotate the image 33 degrees, magnify it 15 times, and use bilinear interpolation to make the output look nice.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758924">
+ </A>
+TV, B	<EM CLASS="Comment">;
+Display the rotated image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758925">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758926">
+ </A>
+<A HREF="idl185.htm#94278" CLASS="XRef">
+ROTATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

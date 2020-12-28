@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> KEYWORD_SET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idldf.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=895049">
+ </A>
+<A NAME="96477">
+ </A>
+KEYWORD_SET</H2>
+<P CLASS="Body">
+<A NAME="pgfId=895053">
+ </A>
+<A NAME="23670">
+ </A>
+The <A NAME="marker=895052">
+ </A>
+KEYWORD_SET function returns a nonzero value if <I CLASS="Italics">
+Expression</I>
+ is defined and nonzero or an array, otherwise zero is returned. This function is especially useful in user-written procedures and functions that process <A NAME="marker=895054">
+ </A>
+keywords that are interpreted as being either true (keyword is present and nonzero) or false (keyword was not used, or was set to zero).</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677375">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677376">
+ </A>
+Result = KEYWORD_SET(<I CLASS="Italics">
+Expression</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677377">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677378">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677379">
+ </A>
+The expression to be tested. <I CLASS="Italics">
+Expression</I>
+ is usually a named variable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677380">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677381">
+ </A>
+Suppose that you are writing an IDL procedure that has the following procedure definition line:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677382">
+ </A>
+PRO myproc, KEYW1 = keyw1, KEYW2 = keyw2</P>
+<P CLASS="Body">
+<A NAME="pgfId=677383">
+ </A>
+The following command could be used to execute a set of commands only if the keyword KEYW1 is set (i.e., it is present and nonzero):</P>
+<P CLASS="Code">
+<A NAME="pgfId=677384">
+ </A>
+IF KEYWORD_SET(keyw1) THEN BEGIN</P>
+<P CLASS="Body">
+<A NAME="pgfId=677385">
+ </A>
+The commands to be executed only if KEYW1 is set would follow.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822371">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822372">
+ </A>
+<A HREF="routinesM-O.html#23226" CLASS="XRef">
+</A>
+, <A HREF="routinesM-O.html#97632" CLASS="XRef">
+</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

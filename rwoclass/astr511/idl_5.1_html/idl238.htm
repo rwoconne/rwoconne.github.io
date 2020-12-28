@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The PostScript Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl239.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl237.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=451367">
+ </A>
+<A NAME="97555">
+ </A>
+The <A NAME="marker=142885">
+ </A>
+PostScript Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=487873">
+ </A>
+Device Keywords Accepted by the PS Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=487895">
+ </A>
+<A HREF="idl22e.htm#68917" CLASS="XRef">
+AVANTGARDE</A>
+, <A HREF="idl22e.htm#22650" CLASS="XRef">
+BITS_PER_PIXEL</A>
+, <A HREF="idl22e.htm#87785" CLASS="XRef">
+BKMAN</A>
+, <A HREF="idl22e.htm#34249" CLASS="XRef">
+BOLD</A>
+, <A HREF="idl22e.htm#86622" CLASS="XRef">
+BOOK</A>
+, <A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#14091" CLASS="XRef">
+COLOR</A>
+, <A HREF="idl22e.htm#25680" CLASS="XRef">
+COURIER</A>
+, <A HREF="idl22e.htm#12204" CLASS="XRef">
+DEMI</A>
+, <A HREF="idl22e.htm#38739" CLASS="XRef">
+ENCAPSULATED</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#41525" CLASS="XRef">
+FONT_INDEX</A>
+, <A HREF="idl22e.htm#53799" CLASS="XRef">
+FONT_SIZE</A>
+, <A HREF="idl22e.htm#14967" CLASS="XRef">
+HELVETICA</A>
+, <A HREF="idl22e.htm#41095" CLASS="XRef">
+INCHES</A>
+, <A HREF="idl22e.htm#61695" CLASS="XRef">
+ISOLATIN1</A>
+, <A HREF="idl22e.htm#98010" CLASS="XRef">
+ITALIC</A>
+, <A HREF="idl22e.htm#10843" CLASS="XRef">
+LANDSCAPE</A>
+, <A HREF="idl22e.htm#33991" CLASS="XRef">
+LIGHT</A>
+, <A HREF="idl22e.htm#84105" CLASS="XRef">
+MEDIUM</A>
+, <A HREF="idl22e.htm#72954" CLASS="XRef">
+NARROW</A>
+, <A HREF="idl22e.htm#50254" CLASS="XRef">
+OBLIQUE</A>
+, <A HREF="idl22e.htm#47101" CLASS="XRef">
+OUTPUT</A>
+, <A HREF="idl22e.htm#30232" CLASS="XRef">
+PALATINO</A>
+, <A HREF="idl22e.htm#29147" CLASS="XRef">
+PORTRAIT</A>
+, <A HREF="idl22e.htm#13498" CLASS="XRef">
+PREVIEW</A>
+, <A HREF="idl22e.htm#31237" CLASS="XRef">
+SCALE_FACTOR</A>
+, <A HREF="idl22e.htm#59101" CLASS="XRef">
+SCHOOLBOOK</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#25218" CLASS="XRef">
+SET_FONT</A>
+, <A HREF="idl22e.htm#69272" CLASS="XRef">
+SYMBOL</A>
+, <A HREF="idl22e.htm#31392" CLASS="XRef">
+TIMES</A>
+, <A HREF="idl22e.htm#40504" CLASS="XRef">
+TT_FONT</A>
+, <A HREF="idl22e.htm#37651" CLASS="XRef">
+XOFFSET</A>
+, <A HREF="idl22e.htm#19057" CLASS="XRef">
+XSIZE</A>
+, <A HREF="idl22e.htm#89972" CLASS="XRef">
+YOFFSET</A>
+, <A HREF="idl22e.htm#60607" CLASS="XRef">
+YSIZE</A>
+, <A HREF="idl22e.htm#33653" CLASS="XRef">
+ZAPFCHANCERY</A>
+, <A HREF="idl22e.htm#76838" CLASS="XRef">
+ZAPFDINGBATS</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144484">
+ </A>
+PostScript is a programming language designed to convey a description of a page containing text and graphics. Many <A NAME="marker=142886">
+ </A>
+laser printers and high-resolution, high-quality photo typesetters support PostScript. Color output or direct color separations can be produced with color PostScript. To direct graphics output to a PostScript file, issue the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144485">
+ </A>
+SET_PLOT, 'PS'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144486">
+ </A>
+This causes IDL to use the PostScript driver for producing graphical output. Once the PostScript driver is enabled via SET_PLOT, the DEVICE procedure is used to control its actions, as described below. The default settings are given in <A HREF="idl238.htm#80220" CLASS="XRef">
+Default PostScript Driver Settings</A>
+.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=144085">
+ </A>
+<A NAME="80220">
+ </A>
+Default PostScript Driver Settings</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=144063">
+ </A>
+Feature</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=144058">
+ </A>
+Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144065">
+ </A>
+File</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144062">
+ </A>
+idl.ps</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144067">
+ </A>
+Mode</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144064">
+ </A>
+Portrait, non-encapsulated, no color</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144069">
+ </A>
+Horizontal offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144066">
+ </A>
+3/4 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144071">
+ </A>
+Vertical offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144068">
+ </A>
+5 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144073">
+ </A>
+Width</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144070">
+ </A>
+7 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144075">
+ </A>
+Height</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144072">
+ </A>
+5 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144077">
+ </A>
+Scale factor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144074">
+ </A>
+1.0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144079">
+ </A>
+Font size</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144076">
+ </A>
+12 points</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144081">
+ </A>
+Font</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144078">
+ </A>
+Helvetica</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144083">
+ </A>
+# Bits / Image Pixel</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144080">
+ </A>
+4</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=144487">
+ </A>
+Unlike monitors where white is the most visible color, PostScript writes black on white paper. Setting the output color index to 0, the default when PostScript output is selected, writes black. A color index of 255 writes white which is invisible on white paper. Color tables are not used with PostScript unless the color mode has been enabled using the DEVICE procedure. <A HREF="idl238.htm#21239" CLASS="XRef">
+Color Images</A>
+</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144488">
+ </A>
+To obtain adequate resolution, the device coordinate system used for PostScript output is expressed in units of 0.001 centimeter (i.e., 1000 pixels/cm).</P>
+<P CLASS="Body">
+<A NAME="pgfId=144489">
+ </A>
+Use the <CODE CLASS="Code">
+HELP, /DEVICE</CODE>
+ call to view the current font, file, and other options set for PostScript output.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144577">
+ </A>
+<A NAME="64172">
+ </A>
+Using <A NAME="marker=142983">
+ </A>
+PostScript Fonts</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144578">
+ </A>
+Information necessary for rendering a set of 35 standard PostScript fonts are included with IDL. (The standard 35 fonts are the fonts found on the Apple Laserwriter II PostScript printer; the same fonts are found on almost any PostScript printer made in the time since the LaserWriter II appeared.) Use of PostScript fonts is discussed in detail in <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144605">
+ </A>
+<A NAME="16853">
+ </A>
+Color <A NAME="marker=143007">
+ </A>
+PostScript</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144606">
+ </A>
+If you have a color PostScript device you can enable the use of color with the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144607">
+ </A>
+DEVICE, /COLOR</P>
+<P CLASS="Body">
+<A NAME="pgfId=144608">
+ </A>
+Enabling color also enables the color tables. Text and graphic color indices are translated to RGB by dividing the red, green and blue color table values by 255. As with most display devices, color indices range from 0 to 255. Zero is normally black and white is normally represented by an index of 255. For example, to create and load a color table with four elements, black, red, green and blue:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144609">
+ </A>
+TVLCT, [0,255,0,0], [0,0,255,0], [0,0,0,255]</P>
+<P CLASS="Body">
+<A NAME="pgfId=144610">
+ </A>
+Drawing text or graphics with a color index of 0 results in black, 1 in red, 2 in green, and 3 in blue.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144611">
+ </A>
+<A NAME="21239">
+ </A>
+Color Images</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144612">
+ </A>
+As with black and white PostScript, images may be output with 1, 2, 4, or 8 bits, yielding 1, 2, 16, or 256 possible colors. In addition, images are either <A NAME="marker=143009">
+ </A>
+pseudo-color or <A NAME="marker=143010">
+ </A>
+true-color. A pseudo-color image is a two dimensional image, each pixel of which is used to index the color table, thereby obtaining an RGB value for each possible pixel value. Pseudo-color images are similar to those displayed using the workstation monitor.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144613">
+ </A>
+Note: in the case of pseudo-color images of fewer than 8 bits, the number of columns in the image should be an exact multiple of the number of pixels per byte (i.e., when displaying 4 bit images the number of columns should be even, and 2 bit images should have a column size that is a multiple of 4). If the image column size is not an exact multiple, extra pixels with a value of 255 are output at the end of each row. This causes no problems if the color white is loaded into the last color table entry, otherwise a stripe of the last (index number 255) color is drawn to the right of the image.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144614">
+ </A>
+<A NAME="marker=143011">
+ </A>
+<A NAME="73829">
+ </A>
+True-Color Images</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144615">
+ </A>
+A true-color image consists of an array with three dimensions, one of which has a size of three, containing the three color components. It may be considered as three two dimensional images, one each for the red, green and blue components. For example a true-color <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+m</I>
+ element image can be ordered in three ways: pixel interleaved (3, <I CLASS="Italics">
+n</I>
+, <I CLASS="Italics">
+m</I>
+), row interleaved (<I CLASS="Italics">
+n</I>
+, 3, <I CLASS="Italics">
+m</I>
+), or image interleaved (<I CLASS="Italics">
+n</I>
+, <I CLASS="Italics">
+m</I>
+, 3). By convention the first color is always red, the second green, and the last is blue.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144616">
+ </A>
+True-color images are also routed through the color tables. The red color table array contains the intensity translation table for the red image, and so forth. Assuming that the color tables have been loaded with the vectors <I CLASS="Italics">
+R</I>
+, <I CLASS="Italics">
+G</I>
+, and <I CLASS="Italics">
+B</I>
+, a pixel with a color value of (<I CLASS="Italics">
+r</I>
+, <I CLASS="Italics">
+g</I>
+, <I CLASS="Italics">
+b</I>
+) is displayed with a color of (<I CLASS="Italics">
+R</I>
+<SUB CLASS="Subscript">
+r</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="Subscript">
+g</SUB>
+, <I CLASS="Italics">
+B</I>
+<SUB CLASS="Subscript">
+b</SUB>
+). As with other devices, a color table value of 255 represents maximum intensity, while 0 indicates an absence of the color. To pass the RGB pixel values without change, load the red, green and blue color tables with a ramp with a slope of 1.0:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144617">
+ </A>
+TVLCT, INDGEN(256), INDGEN(256), INDGEN(256)</P>
+<P CLASS="Body">
+<A NAME="pgfId=144618">
+ </A>
+or with the LOADCT procedure:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144619">
+ </A>
+LOADCT, 0	<EM CLASS="Comment">;
+Load standard black/white table.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144620">
+ </A>
+<A NAME="marker=143492">
+ </A>
+Use the TRUE keyword to the TV and TVSCL procedures to indicate that the image is a true-color image and to specify the dimension over which color is interleaved. A value of 1 specifies pixel interleaving, 2 is row interleaving, and 3 is image interleaving. The following example writes a 24-bit image, interleaved over the 3rd dimension, to a PostScript file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144997">
+ </A>
+SET_PLOT, 'PS'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144999">
+ </A>
+;Set the PostScript device to *8* bits per color, not 24:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144998">
+ </A>
+DEVICE, FILE='24bit.ps', /COLOR, BITS=8</P>
+<P CLASS="Code">
+<A NAME="pgfId=145000">
+ </A>
+TV, [[[r]], [[g]], [[b]]], TRUE=3</P>
+<P CLASS="Code">
+<A NAME="pgfId=145001">
+ </A>
+DEVICE, /CLOSE</P>
+<P CLASS="Code">
+<A NAME="pgfId=439804">
+ </A>
+SET_PLOT, `mac'	<EM CLASS="Comment">;
+Return plotting to Macintosh windows.</EM>
+</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144621">
+ </A>
+Image Background Color</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144622">
+ </A>
+Images that are displayed with a black background on a monitor frequently look better if the background is changed to white when displayed with PostScript. This is easily done with the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144623">
+ </A>
+a(WHERE(a EQ 0B)) = 255B</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=143739">
+ </A>
+<A NAME="marker=142897">
+ </A>
+PostScript Positioning</H3>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=143744">
+ </A>
+Using the XOFFSET and YOFFSET Keywords</H5>
+<P CLASS="Body">
+<A NAME="pgfId=143745">
+ </A>
+Often, IDL users are confused by the use of the XOFFSET and YOFFSET keywords to the PostScript DEVICE routine. These keywords control the position of IDL plots on the page. XOFFSET specifies the &quot;X&quot; position of the lower left corner of the output generated by IDL. This offset is always taken relative to the lower left-hand corner of the page when viewed in portrait orientation. YOFFSET specifies the &quot;Y&quot; position of the lower left corner of the output generated by IDL. This offset is also taken relative to the lower left-hand corner of the page when viewed in portrait orientation.</P>
+<DIV>
+<MAP NAME="idl-120">
+</MAP>
+<CENTER><IMG SRC="idl_120.gif" USEMAP="#idl-120" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=144307">
+ </A>
+<A HREF="devices.html#82739" CLASS="XRef">
+This diagram shows how the XOFFSET and YOFFSET keywords are interpreted by the PostScript device in the Portrait (left) and Landscape (right) modes. Note that the landscape plot uses the same origin for determining the effect of the XOFFSET and YOFFSET keywords, but that the output is rotated 270 degrees clockwise.</A>
+ shows how the XOFFSET and YOFFSET keywords are interpreted. The page on the left shows an IDL plot printed in &quot;portrait&quot; orientation. Note that the X and Y offsets work just as we expect them to--increasing the XOFFSET moves the plot to the right and increasing the YOFFSET moves the plot up the page. The page on the right shows an IDL plot printed in &quot;landscape&quot; orientation. Here, the X and Y offsets are still taken relative to the same points even though the orientation of the plot has changed. This happens because IDL moves the origin of the plot <I CLASS="Italics">
+before</I>
+ rotating the PostScript coordinate system 270 degrees clockwise for the landscape plot. </P>
+<P CLASS="Body">
+<A NAME="pgfId=144320">
+ </A>
+Note also that the XOFFSET and YOFFSET keywords have no effect when you generate ENCAPSULATED PostScript output.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144321">
+ </A>
+Encapsulated PostScript Output</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144343">
+ </A>
+<A NAME="marker=143559">
+ </A>
+Another form of PostScript output is Encapsulated PostScript. This is the format used to import PostScript files into page layout and desktop publishing programs. An Encapsulated PostScript (EPS) file is similar to a regular PostScript file except that it contains only one page of PostScript output contained in a &quot;bounding box&quot; that is used to tell other programs about the size and aspect ratio of the encapsulated image.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144393">
+ </A>
+Most of the time, output from IDL to an EPS file is properly scaled into the EPS bounding box because commands such as PLOT take full advantage of the plotting area made available to them. Sometimes, however, the default bounding box is inappropriate for the image being displayed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144447">
+ </A>
+As an example, suppose you have an image that is narrow and tall that, when TV'ed to an IDL window, fills only a small portion of the plotting window. Similarly, when output to an EPS file, this image will only fill a small portion of the bounding box. When the resulting EPS file is brought into a desktop publishing program, it becomes very hard to properly scale the image since the aspect ratio of the bounding box bears no relation to the aspect ratio of the image itself.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144448">
+ </A>
+To solve this problem, use the XSIZE and YSIZE keywords to the DEVICE procedure to make the bounding box just large enough to contain the image. Since IDL uses a resolution of 1000 dots per centimeter with the PostScript device, the correct XSIZE and YSIZE (in centimeters) can be computed as:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144449">
+ </A>
+XSIZE = Width of image in pixels/1000.0 pixels per cm</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144490">
+ </A>
+YSIZE = Height of image in pixels/1000.0 pixels per cm</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144492">
+ </A>
+The following IDL procedure demonstrates this technique. This procedure reads an X Windows Dump file and writes it back out as a properly-sized, 8-bit-color Encapsulated PostScript file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144685">
+ </A>
+PRO XWDTOEPS, filename</P>
+<P CLASS="Code">
+<A NAME="pgfId=144686">
+ </A>
+array = READ_XWD(filename, r, g, b)<EM CLASS="Comment">;
+	Read the XWD file. Pixel intensity information is stored in the variable `array'. Values to reconstruct the color table are stored in `r', `g', and `b'.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144687">
+ </A>
+TVLCT, r,g,b	<EM CLASS="Comment">;
+Reconstruct the color table.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144691">
+ </A>
+TV, array	<EM CLASS="Comment">;
+Display the image in an IDL window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144692">
+ </A>
+s = SIZE(array)	<EM CLASS="Comment">;
+Find the size of the picture. The width of the picture (in pixels) is stored in s[1]. The height of the picture is stored in s[2]:</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144693">
+ </A>
+fl = STRLEN(filename)	<EM CLASS="Comment">;
+Take the `xwd' (for X Windows Dump) extension off of the old filename and replace it with `eps'.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144694">
+ </A>
+filename = STRMID(filename, 0, fl-4)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144695">
+ </A>
+filename = filename + '.eps'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144696">
+ </A>
+PRINT, 'Making file: ', filename</P>
+<P CLASS="Code">
+<A NAME="pgfId=144697">
+ </A>
+PRINT, s</P>
+<P CLASS="Code">
+<A NAME="pgfId=144698">
+ </A>
+SET_PLOT, 'ps'	<EM CLASS="Comment">;
+Set the plotting device to PostScript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144701">
+ </A>
+DEVICE, /ENCAPSUL, BITS_PER_PIXEL=8, /COLOR, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144702">
+ </A>
+&nbsp;&nbsp;&nbsp;FILENAME=filename, XSIZE=S[1]/1000., $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144705">
+ </A>
+&nbsp;&nbsp;&nbsp;YSIZE=S[2]/1000.	<EM CLASS="Comment">;
+Use the DEVICE procedure to make the output encapsulated, 8 bits, color, and only as wide and high as it needs to be to contain the XWD image:</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144713">
+ </A>
+TV, array	<EM CLASS="Comment">;
+Write the image to the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144714">
+ </A>
+DEVICE, /CLOSE	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144726">
+ </A>
+SET_PLOT, 'x'	<EM CLASS="Comment">;
+Return plotting to X Windows.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144727">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144728">
+ </A>
+<A NAME="marker=143560">
+ </A>
+Multiple Plots on the Same Page</H5>
+<P CLASS="Body">
+<A NAME="pgfId=447491">
+ </A>
+To put multiple plots on the same <A NAME="marker=447489">
+ </A>
+PostScript page, use the <A NAME="marker=447490">
+ </A>
+!P.MULTI system variable (described in more detail in <A HREF="sysvars.html#74842" CLASS="XRef">
+</A>
+). !P.MULTI is a 5-element integer array that controls the number of rows and columns of plots to make on a page or in a graphics window. </P>
+<P CLASS="Body">
+<A NAME="pgfId=447588">
+ </A>
+<A NAME="marker=447587">
+ </A>
+The first element of !P.MULTI is a counter that reports how many plots remain on the page. The second element of !P.MULTI is the number of columns per page. The third element is the number of rows per page.</P>
+<P CLASS="Body">
+<A NAME="pgfId=447595">
+ </A>
+For example, the following lines of code create a PostScript file, <EM CLASS="tt">
+multi.ps</EM>
+, with 6 different plots arranged as 2 columns and 3 rows:</P>
+<DIV>
+<MAP NAME="idl-121">
+</MAP>
+<CENTER><IMG SRC="idl_121.gif" USEMAP="#idl-121" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=144733">
+ </A>
+SET_PLOT, 'PS'	<EM CLASS="Comment">;
+Set plotting to PostScript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144734">
+ </A>
+DEVICE, FILENAME='multi.ps'	<EM CLASS="Comment">;
+Set the filename.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144735">
+ </A>
+!P.MULTI = [0, 2, 3]	<EM CLASS="Comment">;
+Make IDL's plotting area hold 2 columns and 3 rows of plots.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144736">
+ </A>
+A = FINDGEN(10)	<EM CLASS="Comment">;
+Create a simple dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144737">
+ </A>
+PLOT, A	<EM CLASS="Comment">;
+Make 6 different plots.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144738">
+ </A>
+PLOT, SIN(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144739">
+ </A>
+PLOT, COS(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144740">
+ </A>
+PLOT, TAN(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144741">
+ </A>
+PLOT, TANH(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144742">
+ </A>
+PLOT, SINH(A)</P>
+<P CLASS="Code">
+<A NAME="pgfId=439743">
+ </A>
+DEVICE, /CLOSE	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=439744">
+ </A>
+SET_PLOT, 'win'	<EM CLASS="Comment">;
+Return plotting to Windows.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=439745">
+ </A>
+!P.MULTI = 0	<EM CLASS="Comment">;
+Reset plotting to 1 plot per page.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144745">
+ </A>
+The resulting file produces a set of plots as shown in <A HREF="devices.html#27918" CLASS="XRef">
+Multiple plots on a single page produced by setting the !P.MULTI system variable.</A>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=143720">
+ </A>
+<A NAME="marker=143012">
+ </A>
+Importing IDL Plots into Other Documents</H3>
+<P CLASS="Body">
+<A NAME="pgfId=447341">
+ </A>
+This section shows how to generate IDL PostScript graphics so that they can be inserted into other documents. It also provides several examples of how the PostScript graphics device is used. Simply omit the ENCAPSULATED keyword from the calls to DEVICE if you wish to produce plots that can be printed directly. <A HREF="devices.html#13532" CLASS="XRef">
+Sample PostScript plot using Helvetica font.</A>
+ is an encapsulated PostScript file suitable for inclusion in other documents. It was produced with the following IDL statements:</P>
+<DIV>
+<MAP NAME="idl-122">
+</MAP>
+<CENTER><IMG SRC="idl_122.gif" USEMAP="#idl-122" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=447361">
+ </A>
+SET_PLOT, 'PS'	<EM CLASS="Comment">;
+Select the PostScript driver.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144629">
+ </A>
+DEVICE, /ENCAPSULATED, FILENAME = 'pic1.ps'<BR>
+<EM CLASS="Comment">;
+Note use of ENCAPSULATED keyword.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144630">
+ </A>
+x = FINDGEN(200)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144283">
+ </A>
+PLOT, 10000 * SIN(x/5) / EXP(x/100), $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144631">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;LINESTYLE = 2, TITLE = 'IDL PostScript Plot', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144632">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;XTITLE = 'Point Number', YTITLE='Y Axis Title', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144633">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;FONT = 0	<EM CLASS="Comment">;
+Plot the sine wave.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144634">
+ </A>
+OPLOT, 10000 * COS(x/5) / EXP(x/100), LINESTYLE = 4<BR>
+<EM CLASS="Comment">;
+Add the cosine.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144635">
+ </A>
+XYOUTS, 100, -6000, 'Sine', FONT = 0<BR>
+<EM CLASS="Comment">;
+Annotate the plot.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144636">
+ </A>
+OPLOT, [120, 180], [-6000, -6000], LINESTYLE = 2</P>
+<P CLASS="Code">
+<A NAME="pgfId=144637">
+ </A>
+XYOUTS, 100, -8000, 'Cosine', FONT = 0</P>
+<P CLASS="Code">
+<A NAME="pgfId=144638">
+ </A>
+OPLOT, [120, 180], [-8000, -8000], LINESTYLE = 4</P>
+<P CLASS="Body">
+<A NAME="pgfId=144639">
+ </A>
+Note the use of the ENCAPSULATED keyword in the call to DEVICE. <A HREF="devices.html#16339" CLASS="XRef">
+Three-Dimensional Plot with Vector-Drawn Characters</A>
+ is a more complicated plot. It demonstrates some of the three-dimensional plotting capabilities of IDL. It was produced with the following IDL statements: </P>
+<DIV>
+<MAP NAME="idl-123">
+</MAP>
+<CENTER><IMG SRC="idl_123.gif" USEMAP="#idl-123" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=144643">
+ </A>
+SET_PLOT, 'PS'	<EM CLASS="Comment">;
+Select the PostScript driver.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144644">
+ </A>
+DEVICE, /ENCAPSULATED, FILENAME = 'pic2.ps'<BR>
+<EM CLASS="Comment">;
+Note use of ENCAPSULATED keyword.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144645">
+ </A>
+OPENR, 1, !DIR+'/images/abnorm.dat'<BR>
+<EM CLASS="Comment">;
+Access the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144646">
+ </A>
+aa = ASSOC(1, BYTARR(64, 64))</P>
+<P CLASS="Code">
+<A NAME="pgfId=144647">
+ </A>
+a = SMOOTH(aa[0], 3)	<EM CLASS="Comment">;
+Get a smoothed version.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144648">
+ </A>
+SURFACE, a, /SAVE, ZAXIS = 1, XSTYLE = 1, YSTYLE = 1<BR>
+<EM CLASS="Comment">;
+Generate the surface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144649">
+ </A>
+CONTOUR, a, /T3D, /NOERASE, ZVALUE = 1, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144650">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XSTYLE = 1, YSTYLE = 1, C_LINESTYLE = [0,1,2], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144651">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TITLE = 'IDL PostScript Plot'<BR>
+<EM CLASS="Comment">;
+Add the contour.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144652">
+ </A>
+CLOSE, 1</P>
+<P CLASS="Body">
+<A NAME="pgfId=144653">
+ </A>
+<A HREF="devices.html#22706" CLASS="XRef">
+Polygon Filling Example</A>
+ illustrates polygon filling. It was produced with the following IDL statements: </P>
+<DIV>
+<MAP NAME="idl-124">
+</MAP>
+<CENTER><IMG SRC="idl_124.gif" USEMAP="#idl-124" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=144656">
+ </A>
+SET_PLOT, 'PS'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144657">
+ </A>
+DEVICE, /ENCAPSULATED, FILENAME = 'pic3.ps'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144658">
+ </A>
+x = FINDGEN(200)</P>
+<P CLASS="Code">
+<A NAME="pgfId=144659">
+ </A>
+a = 10000 * sin(x / 5) / exp(x / 100)<BR>
+<EM CLASS="Comment">;
+Upper sine wave.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=536783">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=144660">
+ </A>
+PLOT, a, /NODATA, TITLE = 'IDL PostScript Plot', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144661">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XTITLE='Point Number', YTITLE='Y Axis Title', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144662">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FONT = 0	<EM CLASS="Comment">;
+Make the axes and titles.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144663">
+ </A>
+C = [X, ROTATE(X, 2)]	<EM CLASS="Comment">;
+Vector of X vertices for polygon filling. Note that the ROTATE(V,2) function call returns the vector V in reverse order.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144664">
+ </A>
+D = [A, ROTATE(A-2000, 2)]	<EM CLASS="Comment">;
+Vector of Y vertices for polygon filling.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144665">
+ </A>
+POLYFILL, C, D, COLOR=192	<EM CLASS="Comment">;
+Fill the region using an intensity of about 75% white.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144666">
+ </A>
+<A HREF="devices.html#64905" CLASS="XRef">
+1, 2, 4, and 8-bit PostScript Images</A>
+ illustrates IDL PostScript images. In this case, the same image is reproduced four times. In each case, a different number of bits are used per image pixel. It was produced with the following IDL statements: </P>
+<DIV>
+<MAP NAME="idl-125">
+</MAP>
+<CENTER><IMG SRC="idl_125.gif" USEMAP="#idl-125" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=144670">
+ </A>
+SET_PLOT, 'PS'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144671">
+ </A>
+DEVICE, /ENCAPSULATED, FILENAME = 'pic4.ps'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144672">
+ </A>
+OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])<BR>
+<EM CLASS="Comment">;
+Open image file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144673">
+ </A>
+a = BYTARR(192, 192, /NOZERO)<BR>
+<EM CLASS="Comment">;
+Variable to hold image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144674">
+ </A>
+READU, 1, a	<EM CLASS="Comment">;
+Input the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144287">
+ </A>
+CLOSE, 1<EM CLASS="Comment">;
+	Done with the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144640">
+ </A>
+A[0,0] = BYTSCL(INDGEN(192))#REPLICATE(1,16)<BR>
+<EM CLASS="Comment">;
+Add a color table ramp to the bottom of the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144675">
+ </A>
+FOR i = 0,3 DO BEGIN	<EM CLASS="Comment">;
+Output the image four times.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144676">
+ </A>
+DEVICE, BITS_PER_PIXEL=2^i<EM CLASS="Comment">;
+	Use 1, 2, 4, and 8 bits per pixel.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144677">
+ </A>
+TV, a, i, XSIZE=2.5, YSIZE=2.5, /INCHES<BR>
+<EM CLASS="Comment">;
+Output using TV with position numbers 0, 1, 2, and 3.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144678">
+ </A>
+ENDFOR</P>
+</DIV>
+</BODY>
+</HTML>

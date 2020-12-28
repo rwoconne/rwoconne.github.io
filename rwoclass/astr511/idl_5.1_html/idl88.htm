@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EFONT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl89.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl87.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=920628">
+ </A>
+<A NAME="99388">
+ </A>
+EFONT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=761999">
+ </A>
+The <A NAME="marker=761997">
+ </A>
+EFONT procedure provides a simple <A NAME="marker=761998">
+ </A>
+widget-based vector font editor and display. Use this procedure to read and/or modify a local copy of the file <CODE CLASS="Code">
+hersh1.chr</CODE>
+, located in the main IDL directory, which contains the vector fonts used by IDL in plotting. This is a very rudimentary editor. Click the &quot;Help&quot; button on the EFONT main menu for more information.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762000">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+efont.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762001">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762002">
+ </A>
+EFONT, <I CLASS="Italics">
+Init_Font</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762003">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762004">
+ </A>
+Init_Font</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762005">
+ </A>
+The initial font index, from 3 to 29. The default is 3.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762006">
+ </A>
+Keyword</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=921048">
+ </A>
+<A NAME="marker=921047">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=921049">
+ </A>
+Set this keyword to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762008">
+ </A>
+<A NAME="marker=762007">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762009">
+ </A>
+The widget ID of the widget that calls EFONT. If GROUP is set, the death of the caller results in the death of EFONT.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823205">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823206">
+ </A>
+<A HREF="idl19d.htm#28117" CLASS="XRef">
+SHOWFONT</A>
+, <A HREF="idl21e.htm#78006" CLASS="XRef">
+XFONT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

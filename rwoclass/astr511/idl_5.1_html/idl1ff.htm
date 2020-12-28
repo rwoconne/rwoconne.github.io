@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WHERE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl200.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1fe.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679886">
+ </A>
+<A NAME="76802">
+ </A>
+WHERE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679887">
+ </A>
+The <A NAME="marker=674296">
+ </A>
+WHERE function returns a longword vector that contains the one-dimensional subscripts of the nonzero elements of <I CLASS="Italic">
+Array_Expression</I>
+. The length of the resulting vector is equal to the number of nonzero elements in the parameter. Frequently the result of WHERE is used as a vector subscript to select elements of an array using given criteria. If all elements of <I CLASS="Italic">
+Array_Expression</I>
+ are zero the result of WHERE is a scalar integer with the value -1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679888">
+ </A>
+The <A NAME="marker=674297">
+ </A>
+system variable <A NAME="marker=674298">
+ </A>
+!ERR is set to the number of nonzero elements. This effect is for compatibility with previous versions of IDL and should <I CLASS="Italic">
+not</I>
+ be used in new code. Use the COUNT argument to return this value instead.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679889">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679890">
+ </A>
+Result = WHERE(<I CLASS="Italic">
+Array_Expression [, Count]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679891">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679892">
+ </A>
+Array_Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679893">
+ </A>
+The array to be searched. This argument can be of any basic type except string. Both the real and imaginary parts of a complex number must be zero for the number to be considered zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679894">
+ </A>
+Count</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679895">
+ </A>
+A named variable that, on exit, is set to the number of nonzero elements found in <I CLASS="Italic">
+Array_Expression</I>
+. This value is returned as a longword integer.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679896">
+ </A>
+When WHERE Returns -1</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679897">
+ </A>
+If all the elements of <I CLASS="Italic">
+Array_Expression</I>
+ are zero, WHERE returns a scalar integer with a value of -1. Attempting to use this result as an index into another array results in a &quot;subscripts out of bounds&quot; error. In situations where this is possible, code similar to the following can be used to avoid errors:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679898">
+ </A>
+index = WHERE(array, count)	<EM CLASS="Comment">;
+Use Count to get the number of nonzero elements.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679899">
+ </A>
+IF count NE 0 THEN result = array[index]<BR>
+<EM CLASS="Comment">;
+Only subscript the array if it's safe.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679900">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=679902">
+ </A>
+array = FINDGEN(100)<CODE CLASS="Code">
+	</CODE>
+<EM CLASS="Comment">;
+Create a 100-element, floating-point array where each element is set to the value of its subscript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679904">
+ </A>
+B = WHERE(array GT 20, count)	<EM CLASS="Comment">;
+Find the subscripts of all the elements in the array that have values greater than 20.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679906">
+ </A>
+PRINT, count	<EM CLASS="Comment">;
+Print how many elements met the search criteria.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679908">
+ </A>
+PRINT, B	<EM CLASS="Comment">;
+Print the subscripts of found elements.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679910">
+ </A>
+values = array[B]	<EM CLASS="Comment">;
+Make an array containing the values of array referred to by B.</EM>
+</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934494">
+ </A>
+The WHERE function behaves differently with different kinds of array expressions.  For instance, if a relational operator is used to compare an array, A, with a scalar, B, then every element of A is searched for B. However, if a relational operator is used to compare two arrays, C and D, then a comparsion is made between each corresponding element (i.e. Ci &amp; Di, Ci+1 &amp; Di+1, etc) of the two arrays.  If the two arrays have different lengths then a comparison is only made up to the number of elements for the shorter array.</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=934495">
+ </A>
+a=[1,2,3,4,5,5,4,3,2,1]	<EM CLASS="Comment">;
+Compare array, a, and</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=934496">
+ </A>
+b=5	<EM CLASS="Comment">;
+scalar, b</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=934497">
+ </A>
+result=where(a eq b)</P>
+<P CLASS="Code">
+<A NAME="pgfId=934498">
+ </A>
+help,result &amp; print,result</P>
+<P CLASS="Code">
+<A NAME="pgfId=934499">
+ </A>
+RESULT          LONG      = Array[2]	<EM CLASS="Comment">;
+Result= 4,5 as expected</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=934500">
+ </A>
+           4           5</P>
+<P CLASS="Code">
+<A NAME="pgfId=934501">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=934502">
+ </A>
+c=[1,2,3,4,5,5,4,3,2,1]	<EM CLASS="Comment">;
+Now compare two arrays</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=934503">
+ </A>
+d=[0,2,4]	<EM CLASS="Comment">;
+of different lengths</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=934504">
+ </A>
+result=where(c eq d) 	</P>
+<P CLASS="Code">
+<A NAME="pgfId=934505">
+ </A>
+help,result &amp; print,result	</P>
+<P CLASS="Code">
+<A NAME="pgfId=934506">
+ </A>
+RESULT          LONG      = Array[1]	<EM CLASS="Comment">;
+Result = 1; not what</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=934507">
+ </A>
+1	<EM CLASS="Comment">;
+user would expect</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820439">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820440">
+ </A>
+<A HREF="idl1ef.htm#77828" CLASS="XRef">
+UNIQ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

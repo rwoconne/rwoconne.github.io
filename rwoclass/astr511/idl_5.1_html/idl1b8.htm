@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STR_TO_DT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1b7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=939557">
+ </A>
+<A NAME="28381">
+ </A>
+STR_TO_DT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=939560">
+ </A>
+The <A NAME="marker=939559">
+ </A>
+STR_TO_DT function converts date and time string data to date/time values. The result is a IDLDT date/time structure containing the converted IDLDT date/time data.</P>
+<P CLASS="Body">
+<A NAME="pgfId=939561">
+ </A>
+You can convert only date strings, only time strings, or both date and time strings. The date portion of the date/time structure defaults to the value in the system variable !DT_BASE. The time portion of the resulting date/time variable defaults to zero.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=939562">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=939563">
+ </A>
+Result = STR_TO_DT(<I CLASS="Italic">
+Dates [, Times]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=939564">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=939565">
+ </A>
+Dates</H4>
+<P CLASS="Body">
+<A NAME="pgfId=939566">
+ </A>
+A string constant or string array containing date strings.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=939567">
+ </A>
+Times</H4>
+<P CLASS="Body">
+<A NAME="pgfId=939568">
+ </A>
+A string constant or string array containing time strings.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=939569">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=939570">
+ </A>
+DATE_FMT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=939571">
+ </A>
+Set this keyword to specify the format of the date portion of the data in the input string variable. The possible date format values are:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=939610">
+ </A>
+Date Format Values for the STR_TO_DT function</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=939574">
+ </A>
+Value </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=939576">
+ </A>
+Format Description </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=939578">
+ </A>
+Examples for October 8, 1969</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939580">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939582">
+ </A>
+ MM*DD*[YY]YY </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939584">
+ </A>
+10/08/69</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939586">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939588">
+ </A>
+ DD*MM*[YY]YY </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939590">
+ </A>
+08-10-69</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939592">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939594">
+ </A>
+ ddd*[YY]YY </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939596">
+ </A>
+281,1969</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939598">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939600">
+ </A>
+ DD*mmm[mmmmmm]*[YY]YY</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939602">
+ </A>
+08/Oct/69</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939604">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939606">
+ </A>
+ [YY]YY*MM*DD </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939608">
+ </A>
+1969-10-08</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=939615">
+ </A>
+The asterisk, *, may represent any of the following separators: &quot; - &quot;, &quot; / &quot;, &quot; , &quot;, &quot; . &quot;, &quot; : &quot;. The default is Value 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=939616">
+ </A>
+TIME_FMT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=939617">
+ </A>
+Set this keyword to specify the format of the time portion of the data in the input variable. The possible time format values are:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=939638">
+ </A>
+Time Format Values for the STR_TO_DT function</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=939620">
+ </A>
+ Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=939622">
+ </A>
+Format Description </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=939624">
+ </A>
+Examples for 2:30 p.m.</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939626">
+ </A>
+             -1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939628">
+ </A>
+ HH*Mn*SS[.SSSS] </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939630">
+ </A>
+14:30:00.00</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939632">
+ </A>
+             -2 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939634">
+ </A>
+HHMn </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=939636">
+ </A>
+1430</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=939643">
+ </A>
+The asterisk, *, represents one of the following separators: &quot; - &quot;, &quot; / &quot;, &quot; , &quot;, &quot; : &quot;. <BR>
+No separators are allowed between hours and minutes for the -2 value. Both hours and minutes must occupy two spaces. The default is the -1 value.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=939742">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=939743">
+ </A>
+dates =['14-Dec-1948','18-May-1943','29/Dec/1970','14/July/1971']</P>
+<P CLASS="Code">
+<A NAME="pgfId=939744">
+ </A>
+times = ['9:00:00', '6:00:00', '10:00:00', '5:00:00']</P>
+<P CLASS="Code">
+<A NAME="pgfId=939725">
+ </A>
+date_dt = STR_TO_DT(dates, times, DATE_FMT = 4)	<BR>
+<EM CLASS="Comment">;
+Creates an array of three dates. By default, </EM>
+TIME_FMT = -1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=939761">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=939652">
+ </A>
+<A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

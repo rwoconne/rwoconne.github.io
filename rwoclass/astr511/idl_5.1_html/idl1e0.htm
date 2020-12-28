@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRIANGULATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1df.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679530">
+ </A>
+<A NAME="55512">
+ </A>
+TRIANGULATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679531">
+ </A>
+The <A NAME="marker=674159">
+ </A>
+TRIANGULATE procedure constructs a <A NAME="marker=674160">
+ </A>
+Delaunay triangulation of a planar set of points. Delaunay <A NAME="marker=674161">
+ </A>
+triangulations are very useful for the interpolation, analysis, and visual display of irregularly-gridded data. In most applications, after the irregularly gridded data points have been triangulated, the function TRIGRID is invoked to interpolate surface values to a regular grid.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679532">
+ </A>
+Since Delaunay triangulations have the property that the circumcircle of any triangle in the triangulation contains no other vertices in its interior, interpolated values are only computed from nearby points.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679533">
+ </A>
+TRIANGULATE can, optionally, return the <A NAME="marker=674162">
+ </A>
+adjacency list that describes, for each node, the adjacent nodes in the Delaunay triangulation. With this list, the Voronoi polygon (the polygon described by the set of points which are closer to that node than to any other node) can be computed for each node. This polygon contains the area influenced by its associated node. Tiling of the region in this manner is also called Dirichlet, Wigner-Seithz, or Thiessen <A NAME="marker=674163">
+ </A>
+tessellation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679534">
+ </A>
+The grid returned by the TRIGRID function can be input to various routines such as SURFACE, TV, and CONTOUR. See the description of TRIGRID for an example.</P>
+<P CLASS="Body">
+<A NAME="pgfId=950219">
+ </A>
+TRIANGULATE and TRIDGRID can also be used to perform <A NAME="marker=950218">
+ </A>
+gridding and interpolation over the surface of a sphere. The interpolation is <I CLASS="Italic">
+C</I>
+<SUB CLASS="Subscript">
+1</SUB>
+ continuous, meaning that the result is continuous over both the function value and its first derivative. This feature is ideal for interpolating an irregularly-sampled dataset over part or all of the surface of the <A NAME="marker=950220">
+ </A>
+earth (or other (spherical) celestial bodies). Extrapolation outside the convex hull of sample points is also supported. To perform spherical gridding, you must include the FVALUE and SPHERE keywords described below. The spherical gridding technique used in IDL is based on the paper &quot;Interpolation of Data on the Surface of a Sphere&quot;, R. Renka, <I CLASS="Italic">
+Oak Ridge National Laboratory Report ORNL/CSD-108</I>
+, 1982.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679535">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679536">
+ </A>
+TRIANGULATE, <I CLASS="Italic">
+X, Y, Triangles [, B]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679537">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679538">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679539">
+ </A>
+An array that contains the X coordinates of the points to be triangulated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679540">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679541">
+ </A>
+An array that contains the Y coordinates of the points to be triangulated. Parameters <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ must have the same number of elements.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679542">
+ </A>
+Triangles</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679543">
+ </A>
+A named variable that, on exit, contains the list of triangles in the Delaunay triangulation of the points specified by <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+. <I CLASS="Italic">
+Triangles</I>
+ is a longword array dimensioned (3, Number-of-Triangles), where <CODE CLASS="Code">
+Triangles[0, i]</CODE>
+, <CODE CLASS="Code">
+Triangles[1, i]</CODE>
+, and <CODE CLASS="Code">
+Triangles[2, i] </CODE>
+contain the indices of the vertices of the <I CLASS="Italic">
+i</I>
+-th triangle (i.e., <CODE CLASS="Code">
+X[Tr[*, i]]</CODE>
+ and <CODE CLASS="Code">
+Y[Triangles[*, i]]</CODE>
+ are the X and Y coordinates of the vertices of the <I CLASS="Italic">
+i-</I>
+th triangle).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679544">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679545">
+ </A>
+An optional, named variable that, upon return, contains a list of the indices of the boundary points in counterclockwise order.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679546">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679547">
+ </A>
+<A NAME="marker=674164">
+ </A>
+CONNECTIVITY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679548">
+ </A>
+Set this keyword to a named variable in which the adjacency list for each of the <I CLASS="Italic">
+N</I>
+ nodes (xy point) is returned. The list has the following form:</P>
+<P CLASS="Body">
+<A NAME="pgfId=679549">
+ </A>
+Each element <I CLASS="Italic">
+i, </I>
+<EM CLASS="Emphasis">
+i</EM>
+ <EM CLASS="Symbol">
+&#163;</EM>
+ 0 &lt; <EM CLASS="Emphasis">
+N</EM>
+, contains the starting index of the connectivity list for node <I CLASS="Italic">
+i</I>
+ within the list array. To obtain the adjacency list for node i, extract the list elements from LIST[<I CLASS="Italic">
+i</I>
+] to LIST[<I CLASS="Italic">
+i</I>
++1]-1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679550">
+ </A>
+The adjacency list is ordered in the counter-clockwise direction. The first item on the list of boundary nodes is the subscript of the node itself. For interior nodes, the list contains the subscripts of the adjacent nodes in counter-clockwise order.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679551">
+ </A>
+For example, the call:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679552">
+ </A>
+TRIANGULATE, X, Y, CONNECTIVITY = LIST</P>
+<P CLASS="Body">
+<A NAME="pgfId=679553">
+ </A>
+returns the adjacency list in the variable LIST. The subscripts of the nodes adjacent to X[i] and Y[i] are contained in the array:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679554">
+ </A>
+LIST[LIST[i] : LIST[i+1]-1]</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126686">
+ </A>
+<A NAME="marker=126687">
+ </A>
+DEGREES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126691">
+ </A>
+Set this keyword to indicate that the <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ arguments contain longitude and latitude coordinates specified in degrees. This keyword is only effective if the SPHERE keyword is also set. If DEGREES is not set, <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ are assumed to be specified in radians when a spherical triangulation is performed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126695">
+ </A>
+<A NAME="marker=126697">
+ </A>
+FVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126696">
+ </A>
+Set this keyword to a named variable that contains sample values for each longitude/latitude point in a spherical triangulation. On output, the elements of FVALUE are rearranged to correspond to the new ordering of <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ (as described in the SPHERE keyword, below). This reordered array can be passed to TRIGRID to complete the interpolation.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679555">
+ </A>
+<A NAME="marker=674166">
+ </A>
+REPEATS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679556">
+ </A>
+Set this keyword to a named variable to return a (2, <I CLASS="Italic">
+n</I>
+) list of the indices of duplicated points. That is, for each <I CLASS="Italic">
+i</I>
+,</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679557">
+ </A>
+X[REPEATS(0,<I CLASS="Italic">
+i</I>
+)] = X[REPEATS(1,<I CLASS="Italic">
+i</I>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=679558">
+ </A>
+and</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679559">
+ </A>
+Y[REPEATS(0,<I CLASS="Italic">
+i</I>
+)) = Y(REPEATS(1,<I CLASS="Italic">
+i</I>
+)]</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126681">
+ </A>
+<A NAME="marker=126683">
+ </A>
+SPHERE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=126682">
+ </A>
+Set this keyword to a named variable in which the results from a spherical triangulation are returned. This result is a structure that can be passed to TRIGRID to perform spherical gridding. The structure contains the 3D Cartesian locations sample points and the adjacency list that describes the triangulation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=126684">
+ </A>
+When spherical triangulation is performed, <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ are interpreted as longitude and latitude, in either degrees or radians (see the DEGREE keyword, above). Also, the order of the elements within the <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ parameters is rearranged (see the FVALUE keyword, above).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795978">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795979">
+ </A>
+For a examples using the TRIANGULATE routine, see the TRIGRID function.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795980">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795981">
+ </A>
+<A HREF="idl1ab.htm#50877" CLASS="XRef">
+SPH_SCAT</A>
+, <A HREF="idl1e1.htm#16540" CLASS="XRef">
+TRIGRID</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

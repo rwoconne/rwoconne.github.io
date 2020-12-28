@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_JPEG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl167.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl165.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678446">
+ </A>
+<A NAME="14040">
+ </A>
+READ_JPEG</H2>
+<P CLASS="Body">
+<A NAME="pgfId=279687">
+ </A>
+The <A NAME="marker=280220">
+ </A>
+READ_JPEG procedure reads <A NAME="marker=875783">
+ </A>
+JPEG (Joint Photographic Experts Group) format compressed images from files or memory. JPEG is a standardized compression method for full-color and gray-scale images. This procedure reads JFIF format files (often called &quot;JPEG&quot; files), including those produced by WRITE_JPEG.</P>
+<P CLASS="Body">
+<A NAME="pgfId=279688">
+ </A>
+READ_JPEG can optionally quantize true-color images contained in files to a pseudo-color palette with a specified number of colors, and with optional color dithering.</P>
+<P CLASS="Body">
+<A NAME="pgfId=280144">
+ </A>
+This procedure is based in part on the work of the &quot;Independent JPEG Group&quot;. For a brief explanation of JPEG, see <A HREF="idl20f.htm#94631" CLASS="XRef">
+WRITE_JPEG</A>
+.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=862678">
+ </A>
+All JPEG files consist of byte data. Input data is converted to bytes before being written to a JPEG file.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279829">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=279835">
+ </A>
+READ_JPEG, <I CLASS="Italic">
+[Filename,] Image [,Colortable]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279843">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279690">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279847">
+ </A>
+A scalar string specifying the full pathname of the JFIF format (JPEG) file to be read. If this parameter is not present, the UNIT and/or the BUFFER keywords must be specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279691">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279848">
+ </A>
+A named variable to contain the image data read from the file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279692">
+ </A>
+Colortable</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279849">
+ </A>
+A named variable to contain the colormap, when reading a true-color image that is to be quantized. On completion, this variable contains a byte array with dimensions (NCOLORS, 3). This argument is filled only if the image is color quantized (refer to the COLORS keyword).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843736">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279694">
+ </A>
+<A NAME="marker=843778">
+ </A>
+BUFFER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279850">
+ </A>
+Set this keyword to a named variable that is used for a buffer. A buffer variable need only be supplied when reading multiple images per file. Initialize the buffer variable to empty by setting it to 0.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=843739">
+ </A>
+&nbsp;</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279695">
+ </A>
+buff = 0	<EM CLASS="Comment">;
+Initialize buffer.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279851">
+ </A>
+OPENR, 1, 'images.jpg', /STREAM</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279852">
+ </A>
+FOR i=1, nimages DO BEGIN	<EM CLASS="Comment">;
+Process each image.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279853">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;READ_JPEG, UNIT=1, BUFFER=buff, a<BR>
+<EM CLASS="Comment">;
+Read next</EM>
+ <EM CLASS="Comment">;
+image.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279854">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;TV, a	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279856">
+ </A>
+ENDFOR</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=279857">
+ </A>
+CLOSE, 1	<EM CLASS="Comment">;
+Done.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279696">
+ </A>
+<A NAME="marker=843779">
+ </A>
+COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279858">
+ </A>
+If the image file contains a true-color image that is to be displayed on an indexed color destination, set COLORS to the desired number of colors to be quantized. COLORS can be set to a value from 8 to 256. The DITHER and TWO_PASS_QUANTIZE keywords affect the method, speed, and quality of the color quantization. These keywords have no effect if the file contains a grayscale image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279697">
+ </A>
+<A NAME="marker=843780">
+ </A>
+DITHER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279859">
+ </A>
+Set this keyword to use dithering with color quantization (i.e., if the COLORS keyword is in use). Dithering is a method that distributes the color quantization error to surrounding pixels, to achieve higher-quality results. Set the DITHER keyword to one of the following values:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=862702">
+ </A>
+0	No dithering. Images are read quickly, but with quality is low.</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=862703">
+ </A>
+1	Floyd-Steinberg dithering. This method relatively slow, but produces the highest quality results. This is the default behavior.</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=868278">
+ </A>
+2	Ordered dithering. This method is faster than Floyd-Steinberg dithering, but produces lower quality results.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868281">
+ </A>
+GRAYSCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868294">
+ </A>
+Set this keyword to return a monochrome (grayscale) image, regardless of whether the file contains an RGB or grayscale image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868283">
+ </A>
+<A NAME="marker=868280">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868282">
+ </A>
+JPEG/JFIF images are normally written in top-to-bottom order. If the image is to be stored into the <I CLASS="Italic">
+Image</I>
+ array in the standard IDL order (from bottom-to-top) set ORDER to 0. This is the default. If the image array is to be top-to-bottom order, set ORDER to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279699">
+ </A>
+<A NAME="marker=843784">
+ </A>
+TRUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279861">
+ </A>
+Use this keyword to specify the index of the dimension for color interleaving when reading a true-color image. The default is 1, for pixel interleaving, (3, <EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+). A value of 2 indicates line interleaving (<EM CLASS="Emphasis">
+m</EM>
+, 3, <EM CLASS="Emphasis">
+n</EM>
+), and 3 indicates band interleaving, (<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+, 3).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279700">
+ </A>
+<A NAME="marker=843785">
+ </A>
+TWO_PASS_QUANTIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279862">
+ </A>
+Set this keyword to use a two-pass color quantization method when quantization is in effect (i.e., the COLORS keyword is in use). This method requires more memory and time, but produces superior results to the default one-pass quantization method. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279701">
+ </A>
+<A NAME="marker=843786">
+ </A>
+UNIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279863">
+ </A>
+This keyword can be used to designate the logical unit number of an already open JFIF file, allowing the reading of multiple images per file or the embedding of JFIF images in other data files. When using this keyword, <I CLASS="Italic">
+Filename</I>
+ should not be specified.</P>
+<P CLASS="Body">
+<A NAME="pgfId=280158">
+ </A>
+READ_JPEG buffers its input data. To read multiple images per file, use the BUFFER keyword. When using VMS, open the file with the /STREAM keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279703">
+ </A>
+Examples</H3>
+<P CLASS="Code">
+<A NAME="pgfId=279866">
+ </A>
+READ_JPEG, 'test.jpg', a	<EM CLASS="Comment">;
+Read a JPEG grayscale image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=279923">
+ </A>
+TV, a	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=279930">
+ </A>
+READ_JPEG, 'test.jpg', a, TRUE=1	<EM CLASS="Comment">;
+Read and display a JPEG true-color image on a true-color display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=279931">
+ </A>
+TV, a, TRUE=1	<EM CLASS="Comment">;
+Display the image returned with pixel interleaving (i.e., with dimensions 3, m, n).</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=279706">
+ </A>
+Read the image, setting the number of colors to be quantized to the maximum number of available colors. </P>
+<P CLASS="Code">
+<A NAME="pgfId=279938">
+ </A>
+READ_JPEG, 'test.jpg', a, ctable, COLORS=!D.N_COLORS-1<BR>
+<EM CLASS="Comment">;
+Read a JPEG true-color image on an 8-bit pseudo-color display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=279939">
+ </A>
+TV, a	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=279941">
+ </A>
+TVLCT, ctable	<EM CLASS="Comment">;
+Load the quantized colortable.</EM>
+</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=828914">
+ </A>
+We could have also included the TWO_PASS_QUANTIZE and DITHER keywords to improve the image's appearance.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=798733">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=798734">
+ </A>
+<A HREF="idl20f.htm#94631" CLASS="XRef">
+WRITE_JPEG</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

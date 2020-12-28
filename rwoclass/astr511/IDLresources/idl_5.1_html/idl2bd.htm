@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_ISVG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2be.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2bc.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999732">
+ </A>
+<A NAME="62052">
+ </A>
+HDF_VD_ISVG</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999736">
+ </A>
+The <A NAME="marker=999734">
+ </A>
+HDF_VD_ISVG function returns True (1) if the <A NAME="marker=999735">
+ </A>
+object associated with <I CLASS="Italics">
+Id</I>
+ is a <EM CLASS="Emphasis">
+VGroup</EM>
+ in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999737">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999738">
+ </A>
+Result = HDF_VG_ISVG(<I CLASS="Italics">
+VGroup, Id</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999739">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999740">
+ </A>
+VGroup</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999741">
+ </A>
+The VGroup handle returned by a previous call to HDF_VG_ATTACH.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999742">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999743">
+ </A>
+The VGroup or VData reference number obtained by a previous call to HDF_VG_GETNEXT.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999744">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999745">
+ </A>
+Vid = HDF_VD_GETNEXT(Vgrp, -1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999746">
+ </A>
+PRINT, HDF_VD_ISVG(VGrp, Vid)</P>
+<P CLASS="Body">
+<A NAME="pgfId=999747">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

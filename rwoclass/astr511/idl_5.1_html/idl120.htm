@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MPEG_SAVE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl121.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl11f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889137">
+ </A>
+<A NAME="36346">
+ </A>
+MPEG_SAVE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889142">
+ </A>
+The <A NAME="marker=889140">
+ </A>
+MPEG_SAVE procedure encodes and saves an open <A NAME="marker=889141">
+ </A>
+MPEG sequence.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889143">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+mpeg_save.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889144">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889145">
+ </A>
+MPEG_SAVE, <EM CLASS="Emphasis">
+mpegID</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889146">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889147">
+ </A>
+mpegID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889148">
+ </A>
+The unique identifier of the MPEG sequence to be saved to a file. (MPEG sequence identifiers are returned by the MPEG_OPEN routine.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889149">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889150">
+ </A>
+FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889151">
+ </A>
+Set this keyword to a string representing the name of the file to which the encoded MPEG sequence is to be saved. The default is <CODE CLASS="Code">
+idl.mpg</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889152">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889156">
+ </A>
+See <A HREF="idl11e.htm#29348" CLASS="XRef">
+MPEG_OPEN</A>
+ for an example using this routine.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889157">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889170">
+ </A>
+<A HREF="idl11d.htm#17096" CLASS="XRef">
+MPEG_CLOSE</A>
+, <A HREF="idl11e.htm#29348" CLASS="XRef">
+MPEG_OPEN</A>
+, <A HREF="idl11f.htm#31350" CLASS="XRef">
+MPEG_PUT</A>
+, <A HREF="idl21f.htm#64099" CLASS="XRef">
+XINTERANIMATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

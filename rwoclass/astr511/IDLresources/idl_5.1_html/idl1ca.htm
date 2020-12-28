@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SVSOL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1cb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52130">
+ </A>
+<A NAME="53821">
+ </A>
+SVSOL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52135">
+ </A>
+The <A NAME="marker=52132">
+ </A>
+SVSOL <A NAME="marker=52133">
+ </A>
+function uses &quot;<A NAME="marker=143109">
+ </A>
+back-substitution&quot; to solve a set of simultaneous linear equations <EM CLASS="Bold">
+Ax = b</EM>
+, given the <I CLASS="Italic">
+U</I>
+, <I CLASS="Italic">
+W</I>
+, and <I CLASS="Italic">
+V</I>
+ arrays returned by the SVDC procedure. None of the input arguments are modified, making it possible to call SVSOL multiple times with different right hand vectors, <I CLASS="Italic">
+B</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52136">
+ </A>
+SVSOL is based on the routine <CODE CLASS="Code">
+svbksb</CODE>
+ described in section 2.6 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52137">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52138">
+ </A>
+Result = SVSOL(<I CLASS="Italic">
+U, W, V, B</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52139">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=63680">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=63681">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-column, <I CLASS="Italic">
+m</I>
+-row orthogonal array used in the decomposition of <I CLASS="Italic">
+A</I>
+. Normally, <EM CLASS="Emphasis">
+U</EM>
+ is returned from the SVDC procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=63669">
+ </A>
+W</H4>
+<P CLASS="Body">
+<A NAME="pgfId=63670">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector containing &quot;singular values.&quot; Normally, <EM CLASS="Emphasis">
+W</EM>
+ is returned from the SVDC procedure. Small values (close to machine floating-point precision) should be set to zero prior to calling SVSOL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=63673">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=63674">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-column, <I CLASS="Italic">
+n</I>
+-row orthogonal array used in the decomposition of <I CLASS="Italic">
+A</I>
+. Normally, <EM CLASS="Emphasis">
+V</EM>
+ is returned from the SVDC procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52146">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52147">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+-element vector containing the right hand side of the linear system <EM CLASS="Bold">
+Ax = b</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52148">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58776">
+ </A>
+<A NAME="marker=58775">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58777">
+ </A>
+Set this keyword if the input arrays <EM CLASS="Emphasis">
+U</EM>
+ and <EM CLASS="Emphasis">
+V</EM>
+ are in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52150">
+ </A>
+<A NAME="marker=52149">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52151">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52152">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52154">
+ </A>
+To solve the linear system <EM CLASS="Bold">
+Ax = b</EM>
+ using <A NAME="marker=52153">
+ </A>
+Singular-value decomposition and back substitution, begin with an array A which serves as the coefficient array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=63702">
+ </A>
+A&nbsp;=&nbsp;[[1.0, 2.0, -1.0, 2.5], $	<EM CLASS="Comment">;
+Define the array A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=63703">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.5, 3.3, -0.5, 2.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=63704">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1, 0.7, &nbsp;2.2, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=63705">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.0, 0.3, -2.0, 5.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=63706">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1, 1.0, &nbsp;4.3, 2.2], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=63707">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.0, 5.5, &nbsp;3.8, 0.2]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52158">
+ </A>
+B = [0.0, 1.0, 5.3, -2.0, 6.3, 3.8]	<EM CLASS="Comment">;
+Define the right-hand side vector B.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=52159">
+ </A>
+SVDC, A, W, U, V	<EM CLASS="Comment">;
+Decompose A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=52160">
+ </A>
+PRINT, SVSOL(U, W, V, B)	<EM CLASS="Comment">;
+Compute the solution and print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=63723">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=63724">
+ </A>
+1.00095   0.00881170     0.984176   -0.0100954</P>
+<P CLASS="Body">
+<A NAME="pgfId=63725">
+ </A>
+This is the correct solution.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52164">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52186">
+ </A>
+<A HREF="idl48.htm#10735" CLASS="XRef">
+CRAMER</A>
+, <A HREF="idlbe.htm#39130" CLASS="XRef">
+GS_ITER</A>
+, <A HREF="idl105.htm#65053" CLASS="XRef">
+LU_COMPLEX</A>
+, <A HREF="idl30.htm#21199" CLASS="XRef">
+CHOLSOL</A>
+, <A HREF="idl108.htm#55550" CLASS="XRef">
+LUSOL</A>
+, <A HREF="idl1c8.htm#67678" CLASS="XRef">
+SVDC</A>
+, <A HREF="idl1e4.htm#66905" CLASS="XRef">
+TRISOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

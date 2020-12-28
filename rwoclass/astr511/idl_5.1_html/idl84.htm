@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DT_ADD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl85.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl83.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=920874">
+ </A>
+<A NAME="37454">
+ </A>
+DT_ADD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=920877">
+ </A>
+The <A NAME="marker=920876">
+ </A>
+DT_ADD function increments an array of IDLDT date/time variables by a constant amount. The result is an array of IDLDT date/time structures, incremented by the desired amount. Each value is added to the corresponding component, then the result is renormalized with JUL_TO_DT.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920635">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920636">
+ </A>
+Result = DT_ADD(<I CLASS="Italic">
+Dt_var</I>
+ )</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920637">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920638">
+ </A>
+Dt_var</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920639">
+ </A>
+An array of IDLDT date/time structures.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920640">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920641">
+ </A>
+<A NAME="marker=927426">
+ </A>
+COMPRESS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920642">
+ </A>
+Eliminate holidays (see !HOLIDAYS).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920643">
+ </A>
+<A NAME="marker=927427">
+ </A>
+DAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920644">
+ </A>
+The offset in days.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920645">
+ </A>
+<A NAME="marker=927428">
+ </A>
+HOUR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920646">
+ </A>
+The offset in hours.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920647">
+ </A>
+<A NAME="marker=927429">
+ </A>
+MINUTE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920648">
+ </A>
+The offset in minutes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920649">
+ </A>
+<A NAME="marker=927430">
+ </A>
+SECOND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920650">
+ </A>
+The offset in seconds.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920651">
+ </A>
+<A NAME="marker=927431">
+ </A>
+YEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920652">
+ </A>
+The offset in years.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920653">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=920654">
+ </A>
+PRINT, DT_ADD( TODAY(), DAY=1, YEAR=3)	<EM CLASS="Comment">;
+Adds 1 to today's day and 3 to today's year.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920923">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=920927">
+ </A>
+<A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

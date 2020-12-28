@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRLOWCASE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1bf.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1bd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679096">
+ </A>
+<A NAME="84107">
+ </A>
+STRLOWCASE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679097">
+ </A>
+The <A NAME="marker=673996">
+ </A>
+STRLOWCASE function returns a copy of <I CLASS="Italic">
+String</I>
+ converted to lowercase characters. Only uppercase characters are modified--lowercase and non-alphabetic characters are copied without change.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679098">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679099">
+ </A>
+Result = STRLOWCASE(<I CLASS="Italic">
+String</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679100">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679101">
+ </A>
+String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679102">
+ </A>
+The string to be converted. If this argument is not a string, it is converted using IDL's default formatting rules. If <I CLASS="Italic">
+String</I>
+ is an array, the result is an array with the same structure--each element contains a lower case copy of the corresponding element of <I CLASS="Italic">
+String</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679103">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679104">
+ </A>
+To convert the string &quot;IDL is fun&quot; to all lowercase characters and print the result, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679105">
+ </A>
+PRINT, STRLOWCASE('IDL is fun')</P>
+<P CLASS="Body">
+<A NAME="pgfId=679106">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679107">
+ </A>
+idl is fun</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795937">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795938">
+ </A>
+<A HREF="idl1c5.htm#90047" CLASS="XRef">
+STRUPCASE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

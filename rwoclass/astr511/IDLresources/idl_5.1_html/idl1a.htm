@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BOX_CURSOR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl19.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756796">
+ </A>
+<A NAME="29073">
+ </A>
+BOX_CURSOR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756799">
+ </A>
+The <A NAME="marker=756797">
+ </A>
+BOX_CURSOR procedure emulates the operation of a variable-sized box <A NAME="marker=756798">
+ </A>
+cursor (also known as a &quot;<A NAME="marker=756800">
+ </A>
+marquee&quot; selector).</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=906054">
+ </A>
+BOX_CURSOR does not function properly when used within a draw widget. See the BUTTON_EVENTS and MOTION_EVENTS keywords in <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=756801">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+box_cursor.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756802">
+ </A>
+Using BOX_CURSOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756803">
+ </A>
+Once the box cursor has been realized, hold down the left mouse button to move the box by dragging. Hold down the middle mouse button to resize the box by dragging. (The corner nearest the initial mouse position is moved.) Press the right mouse button to exit the procedure and return the current box parameters.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756804">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756805">
+ </A>
+BOX_CURSOR, <EM CLASS="Emphasis">
+[ X0, Y0, NX, NY ]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756806">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756807">
+ </A>
+X0, Y0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756808">
+ </A>
+Named variables that will contain the coordinates of the lower left corner of the box cursor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756809">
+ </A>
+NX, NY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756810">
+ </A>
+Named variables that will contain the width and height of the cursor, in pixels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756811">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756813">
+ </A>
+<A NAME="marker=756812">
+ </A>
+INIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756814">
+ </A>
+If this keyword is set, the arguments <EM CLASS="Emphasis">
+X0</EM>
+, <EM CLASS="Emphasis">
+Y0</EM>
+, <EM CLASS="Emphasis">
+NX</EM>
+, and <EM CLASS="Emphasis">
+NY</EM>
+ contain the initial position and size of the box.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756816">
+ </A>
+<A NAME="marker=756815">
+ </A>
+FIXED_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756817">
+ </A>
+If this keyword is set, <EM CLASS="Emphasis">
+NX</EM>
+ and <EM CLASS="Emphasis">
+NY</EM>
+ contain the initial size of the box. This size may not be changed by the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756819">
+ </A>
+<A NAME="marker=756818">
+ </A>
+MESSAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756820">
+ </A>
+If this keyword is set, IDL prints a message describing operation of the cursor.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756821">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756822">
+ </A>
+<A HREF="idl4f.htm#58964" CLASS="XRef">
+CURSOR</A>
+, <A HREF="idl22e.htm#69514" CLASS="XRef">
+CURSOR_CROSSHAIR</A>
+ keyword, <A HREF="idl22e.htm#38723" CLASS="XRef">
+CURSOR_IMAGE</A>
+ keyword, <A HREF="idl22e.htm#23530" CLASS="XRef">
+CURSOR_STANDARD</A>
+ keyword, <A HREF="idl22e.htm#36139" CLASS="XRef">
+CURSOR_XY</A>
+ keyword</P>
+</DIV>
+</BODY>
+</HTML>

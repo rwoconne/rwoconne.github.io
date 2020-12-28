@@ -1,0 +1,574 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SURFACE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679201">
+ </A>
+<A NAME="11616">
+ </A>
+SURFACE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679202">
+ </A>
+The <A NAME="marker=674075">
+ </A>
+<A NAME="marker=674076">
+ </A>
+SURFACE procedure draws a wire-mesh representation of a two-dimensional array projected into two dimensions, with hidden lines removed.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679203">
+ </A>
+Restrictions</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679204">
+ </A>
+If the <I CLASS="Italic">
+(X, Y)</I>
+ grid is not regular or nearly regular, errors in hidden line removal occur. The TRIGRID and TRIANGULATE routines can be used to interpolate irregularly-gridded data points to a regular grid before plotting.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679205">
+ </A>
+If the T3D keyword is set, the 3D to 2D transformation matrix contained in !P.T must project the Z axis to a line parallel to the device Y axis, or errors will occur.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679206">
+ </A>
+The surface lines may blend together when drawing large arrays, especially on low or medium resolution displays. Use the REBIN or CONGRID procedure to resample the array to a lower resolution before plotting.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679207">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679208">
+ </A>
+SURFACE, <I CLASS="Italic">
+Z [, X, Y]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679209">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679210">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=844053">
+ </A>
+The two-dimensional array to be displayed. If <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ are provided, the surface is plotted as a function of the (<EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+) locations specified by their contents. Otherwise, the surface is generated as a function of the array index of each element of <I CLASS="Italic">
+Z</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679212">
+ </A>
+This argument is converted to single-precision floating-point before plotting. Plots created with SURFACE are limited to the range and precision of single-precision floating-point values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679213">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679214">
+ </A>
+A vector or two-dimensional array specifying the X coordinates of the grid. If this argument is a vector, each element of <I CLASS="Italic">
+X</I>
+ specifies the X coordinate for a column of <EM CLASS="Emphasis">
+Z</EM>
+ (e.g., <CODE CLASS="Code">
+X[0]</CODE>
+ specifies the X coordinate for <CODE CLASS="Code">
+Z[0,*]</CODE>
+). If <I CLASS="Italic">
+X</I>
+ is a two-dimensional array, each element of <I CLASS="Italic">
+X</I>
+ specifies the X coordinate of the corresponding point in <I CLASS="Italic">
+Z</I>
+ (<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+ij</SUB>
+ specifies the X coordinate for <I CLASS="Italic">
+Z</I>
+<SUB CLASS="Subscript">
+ij</SUB>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=679215">
+ </A>
+This argument is converted to single-precision floating-point before plotting.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679216">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679217">
+ </A>
+A vector or two-dimensional array specifying the Y coordinates of the grid. If this argument is a vector, each element of <I CLASS="Italic">
+Y</I>
+ specifies the Y coordinate for a row of <I CLASS="Italic">
+Z</I>
+ (e.g., <CODE CLASS="Code">
+Y[0]</CODE>
+ specifies the Y coordinate for <CODE CLASS="Code">
+Z[*,0]</CODE>
+). If <I CLASS="Italic">
+Y</I>
+ is a two-dimensional array, each element of <I CLASS="Italic">
+Y</I>
+ specifies the Y coordinate of the corresponding point in <I CLASS="Italic">
+Z</I>
+ (<I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+ij</SUB>
+ specifies the Y coordinate for <I CLASS="Italic">
+Z</I>
+<SUB CLASS="Subscript">
+ij</SUB>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=679218">
+ </A>
+This argument is converted to single-precision floating-point before plotting.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679219">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679220">
+ </A>
+<A NAME="marker=674078">
+ </A>
+<A NAME="37074">
+ </A>
+AX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679221">
+ </A>
+This keyword specifies the angle of rotation, about the X axis, in degrees towards the viewer. This keyword is effective only if !P.T3D is not set. If !P.T3D is set, the three-dimensional to two-dimensional transformation used by SURFACE is taken from the 4 by 4 array !P.T.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679222">
+ </A>
+The surface represented by the two-dimensional array is first rotated, AZ (see below) degrees about the Z axis, then by AX degrees about the X axis, tilting the surface towards the viewer (AX &gt; 0), or away from the viewer.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679223">
+ </A>
+The AX and AZ keyword parameters default to +30 degrees if omitted and !P.T3D is 0.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679224">
+ </A>
+The three-dimensional to two-dimensional transformation represented by AX and AZ, can be saved in !P.T by including the SAVE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679225">
+ </A>
+<A NAME="marker=674079">
+ </A>
+<A NAME="27754">
+ </A>
+AZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679226">
+ </A>
+This keyword specifies the counterclockwise angle of rotation about the Z axis. This keyword is effective only if !P.T3D is not set. The order of rotation is AZ first, then AX.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679227">
+ </A>
+<A NAME="marker=674080">
+ </A>
+BOTTOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679228">
+ </A>
+The color index used to draw the bottom surface. If not specified, the bottom is drawn with the same color as the top.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679229">
+ </A>
+<A NAME="marker=674081">
+ </A>
+HORIZONTAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679230">
+ </A>
+A keyword flag which if set causes SURFACE to only draw lines across the plot perpendicular to the line of sight. The default is for SURFACE to draw both across the plot and from front to back.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=716839">
+ </A>
+<A NAME="marker=716841">
+ </A>
+LEGO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=716840">
+ </A>
+Set this keyword to <A NAME="marker=796009">
+ </A>
+produce stacked histogram-style plots. Each data value is rendered as a box covering the XY extent of the cell and with a height proportional to the Z value. </P>
+<P CLASS="Body">
+<A NAME="pgfId=172978">
+ </A>
+If the <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ arguments are specified, only <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+x</SUB>
+-1 columns and <I CLASS="Italic">
+N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+-1 rows are drawn. (This means that the last row and column of array data are not displayed.) The rectangular area covered by <I CLASS="Italic">
+Z</I>
+[<I CLASS="Italic">
+i</I>
+, <I CLASS="Italic">
+j</I>
+] is given by <I CLASS="Italic">
+X</I>
+[<I CLASS="Italic">
+i</I>
+], <I CLASS="Italic">
+X</I>
+[<I CLASS="Italic">
+i</I>
++1], <I CLASS="Italic">
+Y</I>
+[<I CLASS="Italic">
+j</I>
+], and <I CLASS="Italic">
+Y</I>
+[<I CLASS="Italic">
+j</I>
++1].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679231">
+ </A>
+<A NAME="marker=674082">
+ </A>
+LOWER_ONLY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679232">
+ </A>
+Set this keyword to draw only the lower surface of the object. By default, both surfaces are drawn.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679233">
+ </A>
+<A NAME="marker=674083">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843265">
+ </A>
+The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as <A NAME="marker=47156">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47161">
+ </A>
+<A NAME="marker=47177">
+ </A>
+MIN_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843272">
+ </A>
+The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as <A NAME="marker=47162">
+ </A>
+missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679235">
+ </A>
+<A NAME="marker=674085">
+ </A>
+SAVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679236">
+ </A>
+Set this keyword to save the 3D to 2D transformation matrix established by SURFACE in the system variable field !P.T. Use this keyword when combining the output of SURFACE with additional output from other routines in the same plot.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679237">
+ </A>
+When used with AXIS, the SAVE keyword parameter saves the scaling parameters established by the call in the appropriate axis system variable, !X, !Y, or !Z. This causes subsequent overplots to be scaled to the new axis.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=679239">
+ </A>
+To display a two-dimensional array using SURFACE, and to then superimpose contours over the surface (this example assumes that !P.T3D is zero, its default value.), enter the following commands:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679240">
+ </A>
+SURFACE, Z, /SAVE	<EM CLASS="Comment">;
+Make a surface plot and save the transformation.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679241">
+ </A>
+CONTOUR, Z, /NOERASE, /T3D	<EM CLASS="Comment">;
+Make contours, don't erase, use the 3D to 2D transform placed in !P.T by SURFACE.</EM>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=679242">
+ </A>
+To display a surface and to then display a flat contour plot, registered above the surface:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679243">
+ </A>
+SURFACE, Z, /SAVE	<EM CLASS="Comment">;
+Make the surface, save transform.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679244">
+ </A>
+CONTOUR, Z, /NOERASE, /T3D, ZVALUE=1.0	<EM CLASS="Comment">;
+Now display a flat contour plot, at the maximum Z value (normalized coordinates).</EM>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=828872">
+ </A>
+You can display the contour plot below the surface with by using a ZVALUE of 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679245">
+ </A>
+<A NAME="marker=674086">
+ </A>
+SHADES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679246">
+ </A>
+This keyword allows user-specified coloring of the mesh surfaces. Set this keyword to an array that specifies the color index of the lines emanating from each data point toward the top and right.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=948881">
+ </A>
+When using the SHADES keyword on True Color devices, we recommend that decomposed color support be turned off, by setting DECOMPOSED=0 for <BR>
+<A HREF="idl76.htm#17188" CLASS="XRef">
+DEVICE</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679247">
+ </A>
+<A NAME="marker=674087">
+ </A>
+SKIRT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679248">
+ </A>
+This keyword represents a Z-value at which to draw a skirt around the array. The Z value is expressed in data units. The default is no skirt.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679249">
+ </A>
+If the skirt is drawn, each point on the four edges of the surface is connected to a point on the skirt which has the given Z value, and the same X and Y values as the edge point. In addition, each point on the skirt is connected to its neighbor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679250">
+ </A>
+<A NAME="marker=674088">
+ </A>
+UPPER_ONLY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679251">
+ </A>
+Set this keyword to draw only the upper surface of the object. By default, both surfaces are drawn.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158409">
+ </A>
+<A NAME="marker=158408">
+ </A>
+XLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158412">
+ </A>
+Set this keyword to specify a <A NAME="marker=876390">
+ </A>
+logarithmic X <A NAME="marker=158411">
+ </A>
+axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158414">
+ </A>
+<A NAME="marker=158413">
+ </A>
+YLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158417">
+ </A>
+Set this keyword to specify a <A NAME="marker=158415">
+ </A>
+logarithmic Y<A NAME="marker=158416">
+ </A>
+axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679256">
+ </A>
+<A NAME="marker=674092">
+ </A>
+<A NAME="18896">
+ </A>
+ZAXIS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679257">
+ </A>
+This keyword specifies the placement of the Z axis for the SURFACE plot. </P>
+<P CLASS="Body">
+<A NAME="pgfId=679258">
+ </A>
+By default, SURFACE draws the Z axis at the upper left corner of the axis box. To suppress the Z axis, use <CODE CLASS="Code">
+ZAXIS=-1</CODE>
+ in the call. The position of the Z axis is determined from the value of ZAXIS as follows: 1 = lower right, 2 = lower left, 3 = upper left, and 4 = upper right.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862016">
+ </A>
+<A NAME="marker=862015">
+ </A>
+ZLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862019">
+ </A>
+Set this keyword to specify a <A NAME="marker=862017">
+ </A>
+logarithmic Z<A NAME="marker=862018">
+ </A>
+axis.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679259">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=817718">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#57588" CLASS="XRef">
+BACKGROUND</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679261">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=679263">
+ </A>
+D = DIST(30)	<EM CLASS="Comment">;
+Create a simple dataset to display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679265">
+ </A>
+SURFACE, D	<EM CLASS="Comment">;
+Plot a simple wire-mesh surface representation of D.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=679267">
+ </A>
+SURFACE, D, SKIRT=0.0, TITLE = 'Surface Plot', CHARSIZE = 2<BR>
+<EM CLASS="Comment">;
+Create a wire-mesh plot of D with a title and a &quot;skirt&quot; around the edges of the dataset at Z=0.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795957">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795958">
+ </A>
+<A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

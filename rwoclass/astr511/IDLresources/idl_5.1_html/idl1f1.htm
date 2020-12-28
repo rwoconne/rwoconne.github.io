@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VAR_TO_DT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=937582">
+ </A>
+<A NAME="18182">
+ </A>
+VAR_TO_DT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=937585">
+ </A>
+The <A NAME="marker=937584">
+ </A>
+VAR_TO_DT function converts scalar or array values representing dates and times to date/time variables. The result is an IDLDT date/time variable containing the converted values. </P>
+<P CLASS="Body">
+<A NAME="pgfId=937586">
+ </A>
+Use this function to create date/time variables from time stamp data that do not conform to the format used by the <A HREF="idl1b8.htm#28381" CLASS="XRef">
+STR_TO_DT</A>
+ function. For example, you can read the date and time data into atomic variables representing each of the date and time elements (i.e., year, month, day, etc.). Then the variables can be converted to date/time variables using VAR_TO_DT.</P>
+<P CLASS="Body">
+<A NAME="pgfId=937590">
+ </A>
+If the year, month, and day values are all zero, then the value of the !DT_BASE system variable is used for the date portion of the resulting date/time variable. The parameters can be arrays of any numeric values, but all parameters must have the same dimension; that is, the parameters must be either all scalars or all arrays of the same size. You can only omit parameters from the end of the parameter list.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=937591">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=937592">
+ </A>
+Result = VAR_TO_DT(<I CLASS="Italic">
+Yyyy, Mm, Dd, Hh, Min, Ss</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=937593">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937594">
+ </A>
+Yyyy</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937595">
+ </A>
+A scalar or array containing years. The default is 4713 BC.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937596">
+ </A>
+Mm</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937597">
+ </A>
+A scalar or array containing months. The default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937598">
+ </A>
+Dd</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937599">
+ </A>
+A scalar or array containing days. The default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937600">
+ </A>
+Hh</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937601">
+ </A>
+A scalar or array containing hours. The default is zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937602">
+ </A>
+Min</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937603">
+ </A>
+A scalar or array containing minutes. The default is zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937604">
+ </A>
+Ss</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937605">
+ </A>
+A scalar or array containing seconds. The default is zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=937606">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=937607">
+ </A>
+This example illustrates how to convert a single date value into a date/time variable.</P>
+<P CLASS="Code">
+<A NAME="pgfId=937608">
+ </A>
+z = VAR_TO_DT(1977, 6, 18, 10, 42)	<EM CLASS="Comment">;
+Creates a date/time variable containing June 18, 1971 at 10:52. Note that seconds have been omitted.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=937609">
+ </A>
+PRINT, z</P>
+<P CLASS="Body">
+<A NAME="pgfId=937610">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=937611">
+ </A>
+{    1977   6  18  10  42      0.00000       2443313.4   0}</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=937612">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=938714">
+ </A>
+<A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

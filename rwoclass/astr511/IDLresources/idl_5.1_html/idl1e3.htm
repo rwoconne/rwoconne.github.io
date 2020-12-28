@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRIRED</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52262">
+ </A>
+<A NAME="25832">
+ </A>
+TRIRED</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52267">
+ </A>
+The <A NAME="marker=52264">
+ </A>
+TRIRED <A NAME="marker=52265">
+ </A>
+procedure uses <A NAME="marker=52266">
+ </A>
+Householder's method to reduce a real, symmetric array to <A NAME="marker=52268">
+ </A>
+<A NAME="marker=52269">
+ </A>
+tridiagonal form.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52270">
+ </A>
+TRIRED is based on the routine <CODE CLASS="Code">
+tred2</CODE>
+ described in section 11.2 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52271">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52272">
+ </A>
+TRIRED, <I CLASS="Italic">
+A, D, E</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52273">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52274">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52275">
+ </A>
+An <I CLASS="Italic">
+n</I>
+ by <I CLASS="Italic">
+n</I>
+ real, symmetric array that is replaced, on exit, by the orthogonal array <I CLASS="Italic">
+Q</I>
+ effecting the transformation. The routine TRIQL can use this result to find the eigenvectors of the array <I CLASS="Italic">
+A</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52276">
+ </A>
+D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52277">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element output vector containing the diagonal elements of the tridiagonal array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52278">
+ </A>
+E</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52279">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element output vector containing the off-diagonal elements.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52280">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52282">
+ </A>
+<A NAME="marker=52281">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52283">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52284">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52288">
+ </A>
+See the description of <A HREF="idl1e2.htm#52845" CLASS="XRef">
+TRIQL</A>
+ for an example using this function.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52289">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52305">
+ </A>
+<A HREF="idl8a.htm#90610" CLASS="XRef">
+EIGENVEC</A>
+, <A HREF="idl8b.htm#12703" CLASS="XRef">
+ELMHES</A>
+, <A HREF="idlcb.htm#43596" CLASS="XRef">
+HQR</A>
+, <A HREF="idl1e2.htm#52845" CLASS="XRef">
+TRIQL</A>
+, <A HREF="idl1e3.htm#25832" CLASS="XRef">
+TRIRED</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

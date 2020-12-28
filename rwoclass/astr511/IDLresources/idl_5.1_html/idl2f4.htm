@@ -1,0 +1,1301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrBuffer</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1143399">
+ </A>
+<A NAME="22886">
+ </A>
+IDLgrBuffer</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1143402">
+ </A>
+An <A NAME="marker=1143401">
+ </A>
+IDLgrBuffer object is an in-memory, off-screen destination object. Object trees can be drawn to instances of the IDLgrBuffer object and the resulting image can be retrieved from the buffer using the Read() method. The off-screen representation avoids dithering artifacts by providing a full-resolution buffer for objects using either the RGB or Color Index color models.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155888">
+ </A>
+Objects or subclasses of this type can not be saved or restored.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1143403">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143404">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1143405">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143406">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143407">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143414">
+ </A>
+See <A HREF="idl2f4.htm#10900" CLASS="XRef">
+IDLgrBuffer::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143415">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143416">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143417">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143424">
+ </A>
+<A HREF="idl2f4.htm#12318" CLASS="XRef">
+IDLgrBuffer::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143431">
+ </A>
+<A HREF="idl2f4.htm#15593" CLASS="XRef">
+IDLgrBuffer::Draw</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143438">
+ </A>
+<A HREF="idl2f4.htm#19202" CLASS="XRef">
+IDLgrBuffer::Erase</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165422">
+ </A>
+<A HREF="idl2f4.htm#25536" CLASS="XRef">
+IDLgrBuffer::GetContiguousPixels</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143445">
+ </A>
+<A HREF="idl2f4.htm#23826" CLASS="XRef">
+IDLgrBuffer::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143452">
+ </A>
+<A HREF="idl2f4.htm#40946" CLASS="XRef">
+IDLgrBuffer::GetTextDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143459">
+ </A>
+<A HREF="idl2f4.htm#10900" CLASS="XRef">
+IDLgrBuffer::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143466">
+ </A>
+<A HREF="idl2f4.htm#28126" CLASS="XRef">
+IDLgrBuffer::PickData</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143473">
+ </A>
+<A HREF="idl2f4.htm#29814" CLASS="XRef">
+IDLgrBuffer::Read</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143480">
+ </A>
+<A HREF="idl2f4.htm#15597" CLASS="XRef">
+IDLgrBuffer::Select</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143487">
+ </A>
+<A HREF="idl2f4.htm#36716" CLASS="XRef">
+IDLgrBuffer::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143490">
+ </A>
+<A NAME="12318">
+ </A>
+IDLgrBuffer::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143493">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143492">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143500">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143501">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143502">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143503">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143504">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143505">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143506">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143507">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143508">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143511">
+ </A>
+<A NAME="15593">
+ </A>
+IDLgrBuffer::Draw</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143514">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143513">
+ </A>
+Draw procedure method draws the given picture to this graphics destination. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143521">
+ </A>
+Objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143522">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143523">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Draw, <EM CLASS="Emphasis">
+Picture</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143524">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143525">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143529">
+ </A>
+The view (an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object), viewgroup (an instance of an IDLgrViewgroup object) or scene (an instance of an <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ object) to be drawn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143533">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143535">
+ </A>
+<A NAME="marker=1143534">
+ </A>
+CREATE_INSTANCE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143536">
+ </A>
+Set this keyword equal to one to specify that this scene or view is the unchanging part of a drawing. Some destinations can make an instance from the current window contents without having to perform a complete redraw. If the view or scene to be drawn is identical to the previously drawn view or scene, this keyword can be set equal to 2 to hint the destination to create the instance from the current window contents if it can.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143538">
+ </A>
+<A NAME="marker=1143537">
+ </A>
+DRAW_INSTANCE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143539">
+ </A>
+Set this keyword to specify that this scene, viewgroup, or view is the changing part of the drawing. It is overlaid on the result of the most recent CREATE_INSTANCE draw.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143542">
+ </A>
+<A NAME="19202">
+ </A>
+IDLgrBuffer::Erase</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143548">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143544">
+ </A>
+Erase procedure method erases this graphics destination. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143552">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143553">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Erase</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143554">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143555">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143556">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143558">
+ </A>
+<A NAME="marker=1143557">
+ </A>
+COLOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143559">
+ </A>
+Set this keyword to the color to be used for the erase. The color may be specified as a color lookup table index or as an RGB vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1165357">
+ </A>
+<A NAME="25536">
+ </A>
+IDLgrBuffer::GetContiguousPixels</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165360">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1165359">
+ </A>
+GetContiguousPixels function method returns an array of long integers whose length is equal to the number of colors available in the index color mode (that is, the value of the N_COLORS property).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165361">
+ </A>
+The returned array marks contiguous pixels with the ranking of the range's size. This means that within the array, the elements in the largest available range are set to zero, the elements in the second-largest range are set to one, etc. Use this range to set an appropriate colormap for use with the SHADE_RANGE property of the <A HREF="idl305.htm#83847" CLASS="XRef">
+IDLgrSurface</A>
+ and <A HREF="idl301.htm#46829" CLASS="XRef">
+IDLgrPolygon</A>
+ object classes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165368">
+ </A>
+To get the largest contiguous range, you could use the following IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165369">
+ </A>
+result = <I CLASS="Italic">
+obj</I>
+ -&gt; GetContiguousPixels()</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165370">
+ </A>
+Range0 = WHERE(result EQ 0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165371">
+ </A>
+A contiguous region in the colormap can be increasing or decreasing in values. The following would be considered contiguous:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165372">
+ </A>
+<CODE CLASS="Code">
+[0,1,2,3,4]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165373">
+ </A>
+<CODE CLASS="Code">
+[4,3,2,1,0]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165403">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165381">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165382">
+ </A>
+Return = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+GetContiguousPixels()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165383">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165384">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165385">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165386">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143562">
+ </A>
+<A NAME="23826">
+ </A>
+IDLgrBuffer::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143565">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143564">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the buffer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143572">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143573">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143574">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143581">
+ </A>
+Any keyword to <A HREF="idl2f4.htm#10900" CLASS="XRef">
+IDLgrBuffer::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143583">
+ </A>
+<A NAME="marker=1143582">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143584">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the retrievable properties associated with this object (except IMAGE_DATA and ZBUFFER_DATA).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143586">
+ </A>
+<A NAME="marker=1143585">
+ </A>
+IMAGE_DATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143587">
+ </A>
+Set this keyword to a named variable that will contain a byte array representing the image that is currently rendered within the buffer. If the buffer uses an RGB color model, the returned array will have dimensions (3, <I CLASS="Italic">
+xdim</I>
+, <I CLASS="Italic">
+ydim</I>
+). If the window object uses an indexed color model, the returned array will have dimensions (<I CLASS="Italic">
+xdim</I>
+, <I CLASS="Italic">
+ydim</I>
+).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155936">
+ </A>
+<A NAME="marker=1155941">
+ </A>
+SCREEN_DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155937">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<I CLASS="Italic">
+width</I>
+, <I CLASS="Italic">
+height</I>
+] specifying the maximum allowed dimensions (measured in device units) for the buffer object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143589">
+ </A>
+<A NAME="marker=1143588">
+ </A>
+ZBUFFER_DATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143590">
+ </A>
+Set this keyword to a named variable that will contain a float array representing the zbuffer that is currently within the buffer. The returned array will have dimensions (<I CLASS="Italic">
+xdim</I>
+, <I CLASS="Italic">
+ydim</I>
+).</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143593">
+ </A>
+<A NAME="40946">
+ </A>
+IDLgrBuffer::GetTextDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143596">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143595">
+ </A>
+GetTextDimensions function method retrieves the dimensions of a text object that will be rendered in the buffer. The result is a 3-element floating-point vector [<EM CLASS="Emphasis">
+xDim</EM>
+, <EM CLASS="Emphasis">
+yDim</EM>
+, <EM CLASS="Emphasis">
+zDim</EM>
+] representing the dimensions of the text object, measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143603">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143604">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+GetTextDimensions(<EM CLASS="Emphasis">
+TextObj</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143605">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143606">
+ </A>
+TextObj</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143607">
+ </A>
+The object reference to a text or axis object for which the text dimensions are requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143608">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143609">
+ </A>
+<A NAME="marker=1155981">
+ </A>
+DESCENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155980">
+ </A>
+Set this keyword equal to a named variable that will contain an array of floating-point values (one for each string in the IDLgrText object). The values represent the distance to travel (parallel to the UPDIR vector) from the text baseline to reach the bottom of the lowest descender in the string. All values will be negative numbers, or zero. This keyword is valid only if <I CLASS="Italic">
+TextObj</I>
+ is an IDLgrText object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143612">
+ </A>
+<A NAME="10900">
+ </A>
+IDLgrBuffer::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143618">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143614">
+ </A>
+Init function method initializes the buffer object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143622">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143623">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143624">
+ </A>
+Obj = OBJ_NEW('IDLgrBuffer')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143625">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143626">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143627">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143628">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143629">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143636">
+ </A>
+Properties retrievable via <A HREF="idl2f4.htm#23826" CLASS="XRef">
+IDLgrBuffer::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143644">
+ </A>
+<A NAME="marker=1143643">
+ </A>
+COLOR_MODEL (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143645">
+ </A>
+Set this keyword to the color model to be used for the buffer: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143646">
+ </A>
+0 = RGB (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143647">
+ </A>
+1 = Color Index</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143649">
+ </A>
+<A NAME="marker=1143648">
+ </A>
+DIMENSIONS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143650">
+ </A>
+Set this keyword to a two-element vector of the form [<I CLASS="Italic">
+width</I>
+, <I CLASS="Italic">
+height</I>
+] to specify the dimensions of the buffer in units specified by the UNITS property. The default is [640,480].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143652">
+ </A>
+<A NAME="marker=1143651">
+ </A>
+GRAPHICS_TREE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143653">
+ </A>
+Set this keyword to an object reference of type IDLgrScene, IDLgrViewgroup, or IDLgrView. If this property is set to a valid object reference, calling the Draw method on the destination object with no arguments will cause the object reference associated with this property to be drawn. If this object is valid and the destination object is destroyed, this object reference will be destroyed as well. By default the GRAPHICS_TREE property is set equal to the null-object. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143655">
+ </A>
+<A NAME="marker=1143654">
+ </A>
+N_COLORS (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143656">
+ </A>
+Set this keyword to the number of colors (between 2 and 256) to be used if COLOR_MODEL is set to Color Index. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143658">
+ </A>
+<A NAME="marker=1143657">
+ </A>
+PALETTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143659">
+ </A>
+Set this keyword to the object reference of a palette object (an instance of the IDLgrPalette object class) to specify the red, green, and blue values that are to be loaded into the buffer's color lookup table.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143661">
+ </A>
+<A NAME="marker=1143660">
+ </A>
+QUALITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143662">
+ </A>
+Set this keyword to an integer indicating the rendering quality at which graphics are to be drawn to the buffer. Valid values are: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143663">
+ </A>
+0 = Low</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143664">
+ </A>
+1 = Medium</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143665">
+ </A>
+2 = High (default)</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143667">
+ </A>
+<A NAME="marker=1143666">
+ </A>
+RESOLUTION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143668">
+ </A>
+Set this keyword to a two-element vector of the form [<I CLASS="Italic">
+xres</I>
+, <I CLASS="Italic">
+yres</I>
+] specifying the device resolution in centimeters per pixel. The default value is: [0.0352778, 0.0352778] (72 DPI).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1173600">
+ </A>
+<A NAME="marker=1173599">
+ </A>
+UNITS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173601">
+ </A>
+Set this keyword to indicate the units of measure for the DIMENSIONS property. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173602">
+ </A>
+0 = Device (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173603">
+ </A>
+1 = Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173604">
+ </A>
+2 = Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173605">
+ </A>
+3 = Normalized: relative to 1600 x 1200</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143678">
+ </A>
+<A NAME="marker=1143677">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143679">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143682">
+ </A>
+<A NAME="28126">
+ </A>
+IDLgrBuffer::PickData</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143685">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143684">
+ </A>
+Pickdata function method maps a point in the two-dimensional device space of the buffer to a point in the three-dimensional data space of an object tree. The resulting 3D data space coordinates are returned in a user-specified variable. The Pickdata function returns one if the specified location in the buffer's device space &quot;hits&quot; a graphic object, or zero otherwise. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143692">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143693">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Pickdata(<EM CLASS="Emphasis">
+View</EM>
+, <EM CLASS="Emphasis">
+Object</EM>
+, <EM CLASS="Emphasis">
+Location</EM>
+, <EM CLASS="Emphasis">
+XYZLocation</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143694">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143695">
+ </A>
+View</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143696">
+ </A>
+The object reference of an IDLgrView object that contains the object being picked.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143697">
+ </A>
+Object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143698">
+ </A>
+The object reference of a model or atomic graphic object from which the data space coordinates are being requested.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143699">
+ </A>
+Location</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143700">
+ </A>
+A two-element vector [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] specifying the location in the buffer's device space of the point to pick data from.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143701">
+ </A>
+XYZLocation</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143702">
+ </A>
+A named variable that will contain the three-dimensional data space coordinates of the picked point. Note that the value returned in this variable is a location, not a data value.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143703">
+ </A>
+If the atomic graphic object specified as the target has been transformed using either the LOCATION or DIMENSIONS properties (this is only possible with IDLgrAxis, IDLgrImage, and IDLgrText objects), these transformations will <EM CLASS="Emphasis">
+not</EM>
+ be included in the data coordinates returned by the Pickdata function. This means that you may need to re-apply the transformation accomplished by specifying LOCATION or DIMENSIONS once you have retrieved the data coordinates with Pickdata. This situation does not occur if you transform the axis, text, or image object using the [XYZ]COORD_CONV properties.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143704">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143705">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143708">
+ </A>
+<A NAME="29814">
+ </A>
+IDLgrBuffer::Read</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143711">
+ </A>
+The IDLgrWindow::<A NAME="marker=1143710">
+ </A>
+Read function method reads an image from a buffer. The returned value is an instance of the <A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ object class. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143721">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143722">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Read()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143723">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143724">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143725">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143726">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143729">
+ </A>
+<A NAME="15597">
+ </A>
+IDLgrBuffer::Select</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143732">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143731">
+ </A>
+Select function method returns a list of objects selected at a specified location. If no objects are selected, the Select function returns -1. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143739">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143740">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+Select(<I CLASS="Italic">
+Picture, XY</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143741">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143742">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143749">
+ </A>
+The view, viewgroup, or scene (an instance of the <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+, IDLgrViewgroup, or <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ class) whose children are among the candidates for selection.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143750">
+ </A>
+If the first argument is a scene or viewgroup, then the returned object list will contain one or more views. If the first argument is a view, the list will contain atomic graphic objects (or model objects which have their SELECT_TARGET property set). Objects are returned in order, according to their distance from the viewer. The closer an object is to the viewer, the lower its index in the returned object list. If multiple objects are at the same distance from the viewer (views in a scene or 2D geometry), the last object drawn will appear at a lower index in the list.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143751">
+ </A>
+XY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143752">
+ </A>
+A two-element array defining the center of the selection box in device space. By default, the selection box is 3 pixels by 3 pixels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143753">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143755">
+ </A>
+<A NAME="marker=1143754">
+ </A>
+DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143756">
+ </A>
+Set this keyword to a two-element array [<I CLASS="Italic">
+w</I>
+, <I CLASS="Italic">
+h</I>
+] to specify that the selection box will have a width <I CLASS="Italic">
+w</I>
+ and a height <I CLASS="Italic">
+h</I>
+, and will be centered about the coordinates [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] specified in the <I CLASS="Italic">
+XY</I>
+ argument. The box occupies the rectangle defined by:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1143757">
+ </A>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;&nbsp;(x-(w/2), y-(h/2)) - (x+(w/1), y+(h/2))</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143758">
+ </A>
+Any object which intersects this box is considered to be selected. By default, the selection box is 3 pixels by 3 pixels.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143760">
+ </A>
+<A NAME="marker=1143759">
+ </A>
+UNITS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143761">
+ </A>
+Set this keyword to indicate the units of measure. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143762">
+ </A>
+0 = Device (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143763">
+ </A>
+1 = Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143764">
+ </A>
+2 = Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143765">
+ </A>
+3 = Normalized: relative to the dimensions of the graphics destination.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143768">
+ </A>
+<A NAME="36716">
+ </A>
+IDLgrBuffer::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143771">
+ </A>
+The IDLgrBuffer::<A NAME="marker=1143770">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the buffer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143778">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143779">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrBuffer::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143780">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143781">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143782">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143789">
+ </A>
+Any keyword to <A HREF="idl2f4.htm#10900" CLASS="XRef">
+IDLgrBuffer::Init</A>
+</DIV>
+</BODY>
+</HTML>

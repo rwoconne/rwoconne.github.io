@@ -1,0 +1,2068 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Graphics Keywords</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl22d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl22b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Chapter-Name">
+<A NAME="pgfId=317209">
+ </A>
+<BR>
+<A NAME="49441">
+ </A>
+Graphics Keywords</H1>
+<P CLASS="Body">
+<A NAME="pgfId=269830">
+ </A>
+<A NAME="marker=317436">
+ </A>
+<A NAME="73616">
+ </A>
+The IDL Direct G<A NAME="marker=315643">
+ </A>
+raphics routines, CURSOR, ERASE, PLOTS, POLYFILL, TV (and TVSCL), TVCRS, TVRD, and XYOUTS, and the plotting procedures, AXIS, CONTOUR, PLOT, OPLOT, SHADE_SURF, and SURFACE, accept a number of common keywords. Therefore, instead of describing each keyword along with the description of each routine, this section contains a brief summary of each graphics keyword. Routine-specific keywords are documented in the description of the routine in <A HREF="routines-overview.html#87219" CLASS="XRef">
+</A>
+, &quot;<A HREF="routines-overview.html#84700" CLASS="XRef">
+</A>
+.&quot;</P>
+<P CLASS="Body">
+<A NAME="pgfId=315946">
+ </A>
+The graphics keywords are described below. Click on a keyword in the scrolling list at left. The name of the keyword appears followed by a list of routines that accept that keyword. Keywords that have a direct correspondence to fields in a system variable (usually !P) are also indicated.</P>
+<P CLASS="Body">
+<A NAME="pgfId=267074">
+ </A>
+The keywords that control the plot axes are prefixed with the character `X', `Y', or `Z' depending on the axis in question. These keywords correspond to fields in the axis system variables: !X, !Y, and !Z, and are described in more detail in <A HREF="sysvars.html#88658" CLASS="XRef">
+</A>
+ The axis keywords are shown in the form [XYZ]NAME. For example, [XYZ]CHARSIZE refers to the three keywords XCHARSIZE, YCHARSIZE, and ZCHARSIZE, which control the size of the characters annotating the three axes. </P>
+<P CLASS="Body">
+<A NAME="pgfId=320690">
+ </A>
+The system variable fields that control this are !X.CHARSIZE, !Y.CHARSIZE, and !Z.CHARSIZE.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315932">
+ </A>
+<A NAME="marker=315726">
+ </A>
+<A NAME="57588">
+ </A>
+BACKGROUND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267085">
+ </A>
+Accepted by: <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#15018" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315951">
+ </A>
+The background <A NAME="marker=315727">
+ </A>
+color index to which all pixels are set when erasing the screen or page. The default is 0 (black). Not all devices support erasing the background to a specified color index.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=315960">
+ </A>
+To produce a black plot with a white background on a color display:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=315966">
+ </A>
+PLOT, Y, BACKGROUND = 255, COLOR = 0</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315931">
+ </A>
+<A NAME="marker=315728">
+ </A>
+<A NAME="32605">
+ </A>
+CHANNEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267086">
+ </A>
+Accepted by: <A HREF="idl8e.htm#22920" CLASS="XRef">
+ERASE</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1ed.htm#15540" CLASS="XRef">
+TVRD</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#31865" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=266970">
+ </A>
+This keyword specifies the memory channel for the operation. This parameter is ignored on display systems that have only one memory channel. When using a &quot;decomposed&quot; display system, the red channel is 1, the green channel is 2, and the blue channel is 3. Channel 0 indicates all channels. If omitted, !P.CHANNEL contains the default channel value.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=269813">
+ </A>
+CONTOUR, PLOT, SHADE_SURF, and SURFACE also accept the CHANNEL keyword, but simply pass it to ERASE.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=266973">
+ </A>
+<A NAME="marker=266971">
+ </A>
+<A NAME="23414">
+ </A>
+CHARSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267087">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#37897" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315968">
+ </A>
+The overall character size for the annotation when Hershey fonts are selected. This keyword does not apply when hardware (i.e. PostScript) fonts are selected. A CHARSIZE of 1.0 is normal. The size of the annotation on the axes may be set, relative to CHARSIZE, with <I CLASS="Italics">
+x</I>
+CHARSIZE, where <I CLASS="Italics">
+x</I>
+ is X, Y, or Z. The main title is written with a character size of 1.25 times this parameter.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315969">
+ </A>
+<A NAME="98056">
+ </A>
+[<A NAME="marker=315732">
+ </A>
+XYZ]CHARSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267088">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalents: ![XYZ].<A HREF="sysvars.html#28211" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315971">
+ </A>
+The size of the <A NAME="marker=315734">
+ </A>
+characters used to annotate the axis and its title when Hershey fonts are selected. This keyword does not apply when hardware (i.e. PostScript) fonts are selected. This field is a scale factor applied to the global scale factor set by !P.CHARSIZE or the keyword CHARSIZE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315978">
+ </A>
+<A NAME="marker=315733">
+ </A>
+<A NAME="28189">
+ </A>
+CHARTHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267089">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#29711" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315980">
+ </A>
+An integer value specifying the line thickness of the vector drawn font characters.This keyword has no effect when used with the hardware drawn fonts. The default value is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315949">
+ </A>
+<A NAME="marker=315735">
+ </A>
+<A NAME="36225">
+ </A>
+CLIP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267090">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#30110" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315983">
+ </A>
+The <A NAME="marker=315739">
+ </A>
+coordinates of a rectangle used to clip the graphics output. The rectangle is specified as a vector of the form [<I CLASS="Italics">
+X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italics">
+Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italics">
+X</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italics">
+Y</I>
+<SUB CLASS="Subscript">
+1</SUB>
+], giving coordinates of the lower left and upper right corners, respectively. The default clipping rectangle is the plot window, the area enclosed within the axes of the most recent plot. Coordinates are specified in data units unless an overriding coordinate unit specification keyword is present (i.e., NORMAL or DEVICE).</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=274691">
+ </A>
+The default is not to clip the output of PLOTS and XYOUTS. To enable clipping include the keyword parameter NOCLIP = 0. With PLOTS, POLYFILL, and XYOUTS, this keyword controls the clipping of vectors and vector-drawn text.</LI>
+<LI CLASS="Example">
+<A NAME="pgfId=317216">
+ </A>
+To draw a vector using normalized coordinates with its contents clipped within a rectangle covering the upper left quadrant of the display:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=315955">
+ </A>
+PLOTS, X, Y, CLIP=[0.,.5,.5,1.0], /NORM, NOCLIP=0</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315952">
+ </A>
+<A NAME="marker=315736">
+ </A>
+<A NAME="28948">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267091">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl8e.htm#22920" CLASS="XRef">
+ERASE</A>
+, <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#23950" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316229">
+ </A>
+The color index of the data, text, line, or solid polygon fill to be drawn. If this keyword is omitted, !P.COLOR specifies the color index.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315988">
+ </A>
+When used with the PLOTS, POLYFILL, or XYOUTS procedure, this keyword parameter can be set to a vector to specify multiple color indices.</P>
+<P CLASS="Body">
+<A NAME="pgfId=315993">
+ </A>
+Gouraud shading of polygons is performed with the Z-buffer graphics output device and POLYFILL procedure when COLOR contains an array of color indices, one for each vertex.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315961">
+ </A>
+<A NAME="marker=315737">
+ </A>
+<A NAME="82516">
+ </A>
+DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267092">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl4f.htm#58964" CLASS="XRef">
+CURSOR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1eb.htm#99624" CLASS="XRef">
+TVCRS</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=320217">
+ </A>
+Set this keyword to indicate that the clipping and/or positioning coordinates supplied are specified in the data coordinate system. The default coordinate system is DATA if no other coordinate-system specifications are present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315977">
+ </A>
+<A NAME="marker=315740">
+ </A>
+<A NAME="60945">
+ </A>
+DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267093">
+ </A>
+<A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl4f.htm#58964" CLASS="XRef">
+CURSOR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1eb.htm#99624" CLASS="XRef">
+TVCRS</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=320221">
+ </A>
+Set this keyword to indicate that the clipping and/or positioning coordinates supplied are specified in the device coordinate system. The default coordinate system is DATA if no other coordinate-system specifications are present.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317219">
+ </A>
+The following code displays an image contained in the variable A and then draws a contour plot of pixels [100:499, 100:399] over the correct section of the image:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=315994">
+ </A>
+TV,A	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=315957">
+ </A>
+CONTOUR, A[100:499, 100:399], $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=315981">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;POS = [100,100, 499,399], /DEVICE, $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=319847">
+ </A>
+&nbsp;&nbsp;&nbsp;/NOERASE, XSTYLE=1, YSTYLE=1<EM CLASS="Comment">;
+	Draw the contour plot, specify the coordinates of the plot, in device coordinates, do not erase, set the X and Y axis styles to EXACT.</EM>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=315996">
+ </A>
+Note that in the above example, the keyword specification <EM CLASS="tt">
+/DEVICE</EM>
+ is equivalent to <EM CLASS="tt">
+DEVICE = 1</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315998">
+ </A>
+<A NAME="marker=315741">
+ </A>
+<A NAME="46043">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267094">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#39913" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=320277">
+ </A>
+An integer that specifies the graphics text font system to use. Set FONT equal to -1 to selects the Hershey character fonts, which are drawn using vectors. Set FONT equal to 0 (zero) to select the device font of the output device. Set FONT equal to 1 (one) to select the TrueType font system. See <A HREF="fonts.html#10765" CLASS="XRef">
+</A>
+ for a complete description of IDL's font systems.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315982">
+ </A>
+<A NAME="marker=315851">
+ </A>
+<A NAME="56490">
+ </A>
+[XYZ]GRIDSTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267095">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=316256">
+ </A>
+The index of the <A NAME="marker=315856">
+ </A>
+linestyle to be used for plot tickmarks and grids (i.e., when [XYZ]TICKLEN is set to 1.0). See <A HREF="idl22c.htm#95087" CLASS="XRef">
+IDL Linestyles</A>
+ for a list of linestyles.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316255">
+ </A>
+<A NAME="marker=315742">
+ </A>
+<A NAME="31560">
+ </A>
+LINESTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267096">
+ </A>
+Accepted by: <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#13618" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316296">
+ </A>
+<A NAME="marker=316930">
+ </A>
+This keyword indicates the line style used to draw lines; it indicates the line style of the lines used to connect the data points. This keyword should be set to the appropriate index for the desired linestyle as described in the following table.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=316294">
+ </A>
+<A NAME="95087">
+ </A>
+IDL Linestyles</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=266910">
+ </A>
+Index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=316281">
+ </A>
+Linestyle</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316282">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316283">
+ </A>
+Solid</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316284">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316285">
+ </A>
+Dotted</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316286">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316287">
+ </A>
+Dashed</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316288">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316289">
+ </A>
+Dash Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316290">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316291">
+ </A>
+Dash Dot Dot Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316292">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316293">
+ </A>
+Long Dashes</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315979">
+ </A>
+<A NAME="marker=315743">
+ </A>
+<A NAME="66290">
+ </A>
+[XYZ]MARGIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267099">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#40317" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316005">
+ </A>
+A 2-element array specifying the margin on the left (bottom) and right (top) sides of the plot window, in units of character size. Default margins are 10 and 3 for the X axis, and 4 and 2 for the Y axis. The ZMARGIN keyword is present for consistency and is currently ignored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316013">
+ </A>
+<A NAME="marker=315745">
+ </A>
+<A NAME="75108">
+ </A>
+[XYZ]MINOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267111">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#23839" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316014">
+ </A>
+The number of minor <A NAME="marker=315744">
+ </A>
+tick marks.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316015">
+ </A>
+<A NAME="marker=315746">
+ </A>
+<A NAME="82744">
+ </A>
+NOCLIP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267112">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#18792" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316016">
+ </A>
+Set this keyword to suppress clipping of the plot. The clipping rectangle is contained in !P.<A HREF="sysvars.html#30110" CLASS="XRef">
+</A>
+. By default, the plot is clipped within the plotting window.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=316017">
+ </A>
+The default value is clipping-disabled for PLOTS, POLYFILL, and XYOUTS. For all other routines, the default is to enable clipping.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=316232">
+ </A>
+With PLOTS, POLYFILL, and XYOUTS, this keyword controls the clipping of vectors and vector-drawn text. The default is to disable clipping, so to enable clipping include the parameter NOCLIP = 0. To explicitly disable clipping set this parameter to one.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316018">
+ </A>
+<A NAME="marker=315747">
+ </A>
+<A NAME="99409">
+ </A>
+NODATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267113">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316019">
+ </A>
+If this keyword is set, only the axes, titles, and annotation are drawn. No data points are plotted.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317222">
+ </A>
+To draw an empty set of axes between some given values:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316023">
+ </A>
+PLOT, [XMIN, XMAX],[YMIN, YMAX], /NODATA</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316024">
+ </A>
+<A NAME="marker=315748">
+ </A>
+<A NAME="14705">
+ </A>
+NOERASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267114">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#35548" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316025">
+ </A>
+Specifies that the screen or page is not to be erased. By default, the screen is erased, or a new page is begun, before a plot is produced.</P>
+<P CLASS="Body">
+<A NAME="pgfId=320709">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=320710">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315963">
+ </A>
+<A NAME="marker=315749">
+ </A>
+<A NAME="98425">
+ </A>
+NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267115">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl4f.htm#58964" CLASS="XRef">
+CURSOR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1eb.htm#99624" CLASS="XRef">
+TVCRS</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=320199">
+ </A>
+Set this keyword to indicate that the clipping and/or positioning coordinates supplied are specified in the normalized coordinate system, and range from 0.0 to 1.0. The default coordinate system is DATA if no other coordinate-system specifications are present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315964">
+ </A>
+<A NAME="marker=315750">
+ </A>
+<A NAME="53892">
+ </A>
+ORIENTATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267116">
+ </A>
+Accepted by: <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316234">
+ </A>
+Specifies the counterclockwise angle in degrees from horizontal of the text baseline and the lines used to fill polygons.When used with the POLYFILL procedure, this keyword forces the &quot;linestyle&quot; type of fill, rather than solid or patterned fill.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316026">
+ </A>
+<A NAME="marker=315751">
+ </A>
+<A NAME="54782">
+ </A>
+POSITION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267117">
+ </A>
+Accepted by: <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#42553" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316027">
+ </A>
+Allows direct specification of the plot window. POSITION is a 4-element vector giving, in order, the coordinates [(X<SUB CLASS="subscript">
+0</SUB>
+, Y<SUB CLASS="subscript">
+0</SUB>
+), (X<SUB CLASS="subscript">
+1</SUB>
+, Y<SUB CLASS="subscript">
+1</SUB>
+)], of the lower left and upper right corners of the data window. Coordinates are expressed in normalized units ranging from 0.0 to 1.0, unless the DEVICE keyword is present, in which case they are in actual device units. The value of POSITION is never specified in data units, even if the DATA keyword is present.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316030">
+ </A>
+When setting the position of the window, be sure to allow space for the annotation, which resides outside the window. IDL outputs the message &quot;% Warning: Plot truncated.&quot; if the plot region is larger than the screen or page size. The plot region is the rectangle enclosing the plot window and the annotation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316031">
+ </A>
+When plotting in three dimensions, the POSITION keyword is a 6-element vector with the first four elements describing, as above, the XY position, and with the last two elements giving the minimum and maximum Z coordinates. The Z specification is always in normalized coordinate units.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316032">
+ </A>
+When making more than one plot per page it is more convenient to set !P.<A HREF="sysvars.html#51830" CLASS="XRef">
+</A>
+ than to manipulate the position of the plot directly with the POSITION keyword.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317225">
+ </A>
+The following statement produces a contour plot with data plotted in only the upper left quarter of the screen:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316036">
+ </A>
+CONTOUR, Z, POS=[0., 0.5, 0.5, 1.0]</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=316037">
+ </A>
+Because no space on the left or top edges was allowed for the axes or their annotation, the above described warning message results.</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=320711">
+ </A>
+&nbsp;</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=320712">
+ </A>
+&nbsp;</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=320691">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316038">
+ </A>
+<A NAME="marker=315752">
+ </A>
+<A NAME="56421">
+ </A>
+PSYM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267118">
+ </A>
+Accepted by: <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#18579" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316321">
+ </A>
+The symbol used to mark each data point. Normally, PSYM is 0, data points are connected by lines, and no symbols are drawn to mark the points. Set this keyword, or the system variable !P.PSYM, to the symbol index as shown in the table below to mark data points with symbols. The keyword SYMSIZE is used to set the size of the symbols.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=316319">
+ </A>
+<A NAME="44478">
+ </A>
+Values for the PSYM Keyword</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=316297">
+ </A>
+PSYM Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=316298">
+ </A>
+Plotting Symbol</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316299">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316300">
+ </A>
+Plus sign (+)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316301">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316302">
+ </A>
+Asterisk (*)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316303">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316304">
+ </A>
+Period (.)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316305">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316306">
+ </A>
+Diamond</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316307">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316308">
+ </A>
+Triangle</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316309">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316310">
+ </A>
+Square</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316311">
+ </A>
+7</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316312">
+ </A>
+X</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316313">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316314">
+ </A>
+User-defined. See <A HREF="idl1f0.htm#29292" CLASS="XRef">
+USERSYM</A>
+ procedure.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316315">
+ </A>
+9</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316316">
+ </A>
+Undefined</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316317">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=316318">
+ </A>
+<A NAME="marker=315903">
+ </A>
+Histogram mode. Horizontal and vertical lines connect the plotted points, as opposed to the normal method of connecting points with straight lines.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=316039">
+ </A>
+Negative values of PSYM cause the symbol designated by PSYM to be plotted at each point with solid lines connecting the symbols. For example, a value of -5 plots triangles at each data point and connects the points with lines.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317228">
+ </A>
+The following IDL code plots an array using points, and then overplots the smoothed array, connecting the points with lines: </LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316043">
+ </A>
+PLOT, A, PSYM=3 	<EM CLASS="Comment">;
+Plot using points.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316044">
+ </A>
+OPLOT, SMOOTH(A,7)	<EM CLASS="Comment">;
+Overplot smoothed data.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315970">
+ </A>
+<A NAME="marker=315753">
+ </A>
+<A NAME="34440">
+ </A>
+[XYZ]RANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267123">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#16259" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316046">
+ </A>
+The desired data range of the axis, a 2-element vector. The first element is the axis minimum, and the second is the maximum. IDL will frequently round this range. This override can be defeated using the [XYZ]STYLE keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316047">
+ </A>
+<A NAME="marker=315754">
+ </A>
+<A NAME="65177">
+ </A>
+[XYZ]STYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267124">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#42460" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316343">
+ </A>
+This keyword allows specification of <A NAME="marker=315756">
+ </A>
+axis options such as rounding of tick values and selection of a box axis. Each option is described in <A HREF="idl22c.htm#23362" CLASS="XRef">
+Values for the [XYZ]STYLE Keyword</A>
+.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=267611">
+ </A>
+<A NAME="23362">
+ </A>
+Values for the [XYZ]STYLE Keyword</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=267587">
+ </A>
+Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=267589">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267591">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267593">
+ </A>
+Force exact axis range.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267595">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267597">
+ </A>
+Extend axis range.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267599">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267601">
+ </A>
+Suppress entire axis</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267603">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267605">
+ </A>
+Suppress box style axis (i.e., draw axis on only one side of plot)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267607">
+ </A>
+16</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=267609">
+ </A>
+Inhibit setting the Y axis minimum value to 0 (Y axis only)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=267583">
+ </A>
+Note that this keyword is set bitwise, so multiple effects can be set by adding values together. For example, to make an X axis that is both exact (value 1) and suppresses the box style (setting 8), set the XAXIS keyword to <EM CLASS="tt">
+1+8</EM>
+, or 9.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316057">
+ </A>
+<A NAME="marker=315757">
+ </A>
+<A NAME="77947">
+ </A>
+SUBTITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267127">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#33777" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316058">
+ </A>
+A text string to be used as a subtitle for the plot. Subtitles appear below the X axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316061">
+ </A>
+<A NAME="marker=315758">
+ </A>
+<A NAME="70395">
+ </A>
+SYMSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267128">
+ </A>
+Accepted by: <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316062">
+ </A>
+Specifies the size of the symbols drawn when PSYM is set. The default size of 1.0 produces symbols approximately the same size as a character.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315956">
+ </A>
+<A NAME="marker=315759">
+ </A>
+<A NAME="70539">
+ </A>
+T3D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267129">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+, <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1eb.htm#99624" CLASS="XRef">
+TVCRS</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#39846" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316235">
+ </A>
+Set this keyword to indicate that the generalized transformation matrix in <A NAME="marker=315760">
+ </A>
+!P.T is to be used. If not present, the user-supplied coordinates are simply scaled to screen coordinates. See the examples in the description of the SAVE keyword.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=315975">
+ </A>
+Since T3D uses the transformation matrix in !P.T, it is important that !P.T contain a valid transformation matrix. This can be achieved in several ways:</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=315976">
+ </A>
+Use the SAVE keyword to save the transformation matrix from an earlier graphics operation.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=315985">
+ </A>
+Establish a transformation matrix using the T3D, SURFR, or, SCALE3 procedures.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=315987">
+ </A>
+Set the value of !P.T directly.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316006">
+ </A>
+<A NAME="marker=315761">
+ </A>
+<A NAME="35017">
+ </A>
+THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267130">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#15414" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316236">
+ </A>
+Indicates the line thickness. THICK overrides the setting of !P.THICK.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316056">
+ </A>
+<A NAME="marker=315762">
+ </A>
+<A NAME="47308">
+ </A>
+[XYZ]THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267131">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#11266" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316069">
+ </A>
+This keyword controls the thickness of the lines forming the axis and tick marks. A value of 1.0 is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316075">
+ </A>
+<A NAME="67386">
+ </A>
+<A NAME="marker=315855">
+ </A>
+[XYZ]<A NAME="tick marks">
+ </A>
+TICKFORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267132">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#17912" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316063">
+ </A>
+Set this keyword to a format string or a string containing the name of a function that returns a string to be used to format the axis tick mark <I CLASS="Italics">
+labels</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316242">
+ </A>
+If the argument to the TICKFORMAT keyword does not begin with the an open parenthesis, &quot;(&quot;, the string is interpreted as the name of a function. The function is called with three parameters: <I CLASS="Italics">
+Axis</I>
+, <I CLASS="Italics">
+Index</I>
+, and <I CLASS="Italics">
+Value</I>
+ where:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=316243">
+ </A>
+<I CLASS="Italics">
+Axis</I>
+ is the axis number: 0 for X axis, 1 for Y axis, 2 for Z axis.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=316244">
+ </A>
+<I CLASS="Italics">
+Index</I>
+ is the tick mark index which starts at 0.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=316245">
+ </A>
+<I CLASS="Italics">
+Value</I>
+ is the default tick mark value (a floating-point number).</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=269779">
+ </A>
+Used with the LABEL_DATE function, this keyword can easily create axes with date labels. <A HREF="idle4.htm#71420" CLASS="XRef">
+LABEL_DATE</A>
+</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317231">
+ </A>
+For example, to display the X axis tick values using a format of F6.2 (six characters, with 2 places after the decimal point), use the XTICKFORMAT keyword as follows:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316064">
+ </A>
+PLOT, X, Y, XTICKFORMAT='(F6.2)'</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=316065">
+ </A>
+To display the Y tick values using the &quot;dollars and cents&quot; format $<I CLASS="Italics">
+dddd.dd</I>
+, use:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316066">
+ </A>
+PLOT, X, Y, YTICKFORMAT='(&quot;$&quot;, F7.2)'</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317239">
+ </A>
+For more complicated tick label formatting, labels can be created by a user-specified function that returns a string. For example, to annotate ticks along a time axis with the format HH:MM:SS, you could use the following function:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=319744">
+ </A>
+FUNCTION YTICKS, axis, index, value</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=319745">
+ </A>
+hour = LONG(value)/3600</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=319746">
+ </A>
+minute = LONG(value-3600 * hour) / 60</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316251">
+ </A>
+sec = value mod 60</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316252">
+ </A>
+RETURN, STRING(hour, minute, sec, $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316253">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FORMAT=&quot;(i2.2, ':', i2.2, ':', i2.2)&quot;)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316254">
+ </A>
+END</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=316247">
+ </A>
+Then use the call:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316248">
+ </A>
+PLOT, T, YTICKFORMAT='YTICKS'</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315984">
+ </A>
+<A NAME="marker=315763">
+ </A>
+<A NAME="78320">
+ </A>
+TICKLEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267133">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#30778" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316076">
+ </A>
+Controls the length of the axis tick marks, expressed as a fraction of the window size. The default value is 0.02. TICKLEN of 1.0 produces a grid, while a negative TICKLEN makes tick marks that extend outside the window, rather than inwards.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317242">
+ </A>
+To produce outward-going tick marks of the normal length:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316079">
+ </A>
+PLOT, X, Y, TICKLEN = -0.02</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=316080">
+ </A>
+To provide a new default tick length, set !P.TICKLEN.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316074">
+ </A>
+<A NAME="39707">
+ </A>
+[<A NAME="marker=315764">
+ </A>
+XYZ]TICKLEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267134">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#32012" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316072">
+ </A>
+This keyword controls the lengths of tick marks (expressed in normal coordinates) for the individual axes. This keyword, if nonzero, overrides the global tick length specified in !P.TICKLEN, and/or the TICKLEN keyword parameter, which is expressed in terms of the window size.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316070">
+ </A>
+<A NAME="31548">
+ </A>
+[<A NAME="marker=315765">
+ </A>
+XYZ]TICKNAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267163">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#40470" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316082">
+ </A>
+A string array of up to 30 elements that controls the annotation of each tick mark.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316085">
+ </A>
+<A NAME="79690">
+ </A>
+[<A NAME="marker=315766">
+ </A>
+XYZ]TICKS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267164">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#23915" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316086">
+ </A>
+The number of major tick <I CLASS="Italics">
+intervals</I>
+ to draw for the axis. If this keyword is omitted, IDL selects from three to six tick intervals. Setting this field to <I CLASS="Italics">
+n</I>
+, where <I CLASS="Italics">
+n</I>
+ &gt; 1, produces exactly <I CLASS="Italics">
+n</I>
+ tick intervals, and <I CLASS="Italics">
+n</I>
++1 tick marks. Setting this field equal to 1 suppresses <A NAME="marker=272439">
+ </A>
+tick marks.</P>
+<P CLASS="Body">
+<A NAME="pgfId=320702">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=320703">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=320704">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316087">
+ </A>
+<A NAME="95835">
+ </A>
+[<A NAME="marker=315767">
+ </A>
+XYZ]TICKV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267165">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#16597" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=274732">
+ </A>
+The data values for each tick mark, an array of up to 30 elements. Note: to specify the number of ticks and their values exactly, set [XYZ]TICKS&nbsp;=&nbsp;<EM CLASS="Emphasis">
+n</EM>
+ and [XYZ]TICKV&nbsp;=&nbsp;<EM CLASS="Emphasis">
+n&nbsp;</EM>
++&nbsp;1, where <EM CLASS="Emphasis">
+n</EM>
+&nbsp;&gt;&nbsp;1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=274736">
+ </A>
+<A NAME="38387">
+ </A>
+[<A NAME="marker=274735">
+ </A>
+XYZ]TICK_GET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267166">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316092">
+ </A>
+A named variable in which to return the values of the tick marks for the designated axis. The result is a floating-point array with the same number of elements as ticks.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=317245">
+ </A>
+To retrieve in the variable V the values of the tick marks selected by IDL for the Y axis:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=316096">
+ </A>
+PLOT, X, Y, YTICK_GET = V</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316097">
+ </A>
+<A NAME="marker=315769">
+ </A>
+<A NAME="13247">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267167">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: !P.<A HREF="sysvars.html#12953" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316098">
+ </A>
+Produces a main title centered above the plot window. The text size of this main title is larger than the other text by a factor of 1.25. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=316099">
+ </A>
+PLOT, X, Y, TITLE = 'Final Results'</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316100">
+ </A>
+<A NAME="marker=315770">
+ </A>
+<A NAME="20788">
+ </A>
+[XYZ]TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267168">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+. System variable equivalent: ![XYZ].<A HREF="sysvars.html#24796" CLASS="XRef">
+</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316101">
+ </A>
+A string that contains a title for the specified axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=316102">
+ </A>
+<A NAME="marker=315771">
+ </A>
+<A NAME="74064">
+ </A>
+ZVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267170">
+ </A>
+Accepted by: <A HREF="idle.htm#27219" CLASS="XRef">
+AXIS</A>
+, <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+, <A HREF="idl131.htm#28954" CLASS="XRef">
+OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=267171">
+ </A>
+Sets the Z coordinate, in normalized coordinates in the range of 0 to 1, of the axis and data output from PLOT, OPLOT, and CONTOUR.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316106">
+ </A>
+This keyword has effect only if !P.T3D is set and the three-dimensional to two- dimensional transformation is stored in !P.T. If ZVALUE is not specified, CONTOUR will output each contour at its Z coordinate, and the axes and title at a Z coordinate of 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=315972">
+ </A>
+<A NAME="marker=315772">
+ </A>
+<A NAME="96465">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=267174">
+ </A>
+Accepted by: <A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+, <A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1eb.htm#99624" CLASS="XRef">
+TVCRS</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=316237">
+ </A>
+Provides the Z coordinate if a Z parameter is not present in the call. This is of use only if the three-dimensional transformation is in effect (i.e., the T3D keyword is not set).</P>
+<P CLASS="Body">
+<A NAME="pgfId=270402">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_ATTGET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl248.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl246.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997060">
+ </A>
+<A NAME="73906">
+ </A>
+CDF_ATTGET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997064">
+ </A>
+The <A NAME="marker=997062">
+ </A>
+CDF_ATTGET procedure reads an <A NAME="marker=997063">
+ </A>
+attribute entry from a Common Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997065">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997066">
+ </A>
+CDF_ATTGET, <I CLASS="Italics">
+Id, Attribute, EntryNum, Value</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997067">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997068">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997069">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997070">
+ </A>
+Attribute</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997071">
+ </A>
+A string containing the name of the attribute <I CLASS="Italics">
+or</I>
+ the attribute number to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999637">
+ </A>
+EntryNum</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1000485">
+ </A>
+The entry number. If the attribute is variable in scope, this is either the name or number of the variable the attribute is to be associated with. If the attribute is global in scope, this is the actual gEntry. It is the user's responsibility to keep track of valid gEntry numbers. Normally gEntry numbers will begin with 0 or 1 and will increase up to MAXGENTRY (as reported in the GET_ATTR_INFO structure returned by <A HREF="idl24d.htm#97922" CLASS="XRef">
+CDF_CONTROL</A>
+), but this is not required.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997074">
+ </A>
+Value</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997075">
+ </A>
+A named variable in which the value of the attribute is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997076">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1003937">
+ </A>
+<A NAME="marker=1004016">
+ </A>
+CDF_TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1004020">
+ </A>
+Set this keyword equal to a named variable which will contain the CDF type of the attribute entry, returned as a scalar string. Possible returned values are: CDF_CHAR, CDF_UCHAR, CDF_INT1, CDF_BYTE, CDF_UINT1, CDF_UINT2, CDF_INT2, CDF_UINT4, CDF_INT4, CDF_REAL4, CDF_FLOAT, CDF_REAL8, CDF_DOUBLE, or CDF_EPOCH. If the type cannot be determined, &quot;UNKNOWN&quot; is returned. </P>
+<P CLASS="Body">
+<A NAME="pgfId=1004017">
+ </A>
+Note that, as is true with variable data, attribute  entries of type CDF_INT1, CDF_BYTE, CDF_UINT2, and CDF_UINT4 are  converted into IDL supported datatypes (for example, data of type CDF_UINT2, data of the C-type unsigned short, is converted into IDL's INT, a signed integer. (So, an attribute that is 65535 as a CDF_UINT2 will appear as INT = -1 in IDL). In these cases, pay special attention to the return values.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997078">
+ </A>
+<A NAME="marker=997077">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997079">
+ </A>
+If <I CLASS="Italics">
+EntryNum</I>
+ is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default is to assume that <I CLASS="Italics">
+EntryNum</I>
+ is an rVariable ID. Note: the attribute must have a scope of VARIABLE_SCOPE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997080">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997082">
+ </A>
+id = CDF_OPEN('foo')	<EM CLASS="Comment">;
+Open the CDF file created in the CDF_ATTPUT example</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001156">
+ </A>
+CDF_ATTGET, id, 'Att2', 'Var2', x</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001157">
+ </A>
+PRINT, X, FORMAT='(&quot;[&quot;,9(X,F3.1,&quot;,&quot;),X,F3.1,&quot;]&quot;)'</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001158">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001159">
+ </A>
+[ 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]<BR>
+<EM CLASS="Comment">;
+This is the expected output, since this attribute was created with a call to FINDGEN.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001161">
+ </A>
+CDF_CLOSE, id	<EM CLASS="Comment">;
+Close the CDF file.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

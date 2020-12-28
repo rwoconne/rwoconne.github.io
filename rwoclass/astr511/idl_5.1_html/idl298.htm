@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_LIB_INFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl299.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl297.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=1031713">
+ </A>
+<A NAME="29148">
+ </A>
+HDF_LIB_INFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1031720">
+ </A>
+The <A NAME="marker=1031910">
+ </A>
+HDF_LIB_INFO procedure returns information about the <A NAME="marker=1031911">
+ </A>
+HDF Library being used by this version of IDL, or information about the version of HDF used to create a particular HDF file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031727">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031729">
+ </A>
+HDF_LIB_INFO, <EM CLASS="Emphasis">
+[FileHandle]</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031732">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1031734">
+ </A>
+FileHandle</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1031735">
+ </A>
+The HDF filehandle returned from a previous call to <A HREF="idl29b.htm#27462" CLASS="XRef">
+HDF_OPEN</A>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031738">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1031740">
+ </A>
+<A NAME="marker=1031969">
+ </A>
+MAJOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1031741">
+ </A>
+Set this keyword equal to a named variable that will contain the major version number of the HDF library currently in use by IDL. If the <EM CLASS="Emphasis">
+FileHandle</EM>
+ argument is supplied, the variable will contain the major version number of the HDF library used by that particular HDF file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1031746">
+ </A>
+<A NAME="marker=1031970">
+ </A>
+MINOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1031949">
+ </A>
+Set this keyword equal to a named variable that will contain the minor version number of the HDF library currently in use by IDL. If the <EM CLASS="Emphasis">
+FileHandle</EM>
+ argument is supplied, the variable will contain the minor version number of the HDF library used by that particular HDF file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1031752">
+ </A>
+<A NAME="marker=1031971">
+ </A>
+RELEASE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1031959">
+ </A>
+Set this keyword equal to a named variable that will contain the release number of the HDF library currently in use by IDL. If the <EM CLASS="Emphasis">
+FileHandle</EM>
+ argument is supplied, the variable will contain the release number of the HDF library used by that particular HDF file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1031973">
+ </A>
+<A NAME="marker=1031982">
+ </A>
+VERSION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1031984">
+ </A>
+Set this keyword equal to a named variable that will contain the version number text string of the HDF library currently in use by IDL. If the <EM CLASS="Emphasis">
+FileHandle</EM>
+ argument is supplied, the variable will contain the version number text string of the HDF library used by that particular HDF file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1032056">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031783">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=1031785">
+ </A>
+HDF_LIB_INFO, MAJOR=MAJOR, MINOR=MINOR, VERSION=VER, RELEASE=REL</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031787">
+ </A>
+PRINT, 'IDL ', !version.release, ' uses HDF Library ', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031789">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;MAJOR, MINOR, REL, FORMAT='(A,A,A,I1,&quot;.&quot;,I1,&quot;r&quot;,I1,A)'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031791">
+ </A>
+PRINT, V</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031793">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031794">
+ </A>
+IDL 5.1 uses HDF Library 4.0r2</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031796">
+ </A>
+NCSA HDF Version 4.0 Release 2, July 19, 1996</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031798">
+ </A>
+The following example tests the version of HDF used to create a particular file. Note that the strings returned will depend solely upon the version of the HDF library used to create the file. In this example, it is the same as the library compiled into the current version of IDL since it is the current IDL that is creating the file.</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031805">
+ </A>
+file='example.hdf'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031806">
+ </A>
+id=HDF_OPEN(file, /CREATE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031807">
+ </A>
+HDF_LIB_INFO, id, VERSION=VER</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031808">
+ </A>
+PRINT, 'The file ', file,' was created with : ', VER</P>
+<P CLASS="Code">
+<A NAME="pgfId=1032013">
+ </A>
+HDF_CLOSE, id</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031810">
+ </A>
+For this example in IDL 5.1, IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1031811">
+ </A>
+The file example.hdf was created with : </P>
+<P CLASS="Code">
+<A NAME="pgfId=1032050">
+ </A>
+NCSA HDF Version 4.0 Release 2, July 19, 1996</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031813">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

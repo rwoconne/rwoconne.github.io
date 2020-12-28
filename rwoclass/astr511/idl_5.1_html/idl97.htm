@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXPINT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl98.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl96.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50628">
+ </A>
+<A NAME="65448">
+ </A>
+EXPINT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50632">
+ </A>
+The <A NAME="marker=50630">
+ </A>
+EXPINT function returns the value of the <A NAME="marker=50631">
+ </A>
+exponential integral E<SUB CLASS="Subscript">
+n</SUB>
+(<I CLASS="Italics">
+x</I>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=50633">
+ </A>
+EXPINT is based on the routine <CODE CLASS="Code">
+expint</CODE>
+ described in section 6.3 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50634">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50635">
+ </A>
+Result = EXPINT(<I CLASS="Italics">
+N, X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50636">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50637">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50638">
+ </A>
+An integer specifying the order of E<SUB CLASS="Subscript">
+n</SUB>
+(<I CLASS="Italics">
+x</I>
+). <I CLASS="Italics">
+N</I>
+ can be either a scalar or an array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50639">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50640">
+ </A>
+The value at which E<SUB CLASS="Subscript">
+n</SUB>
+(<I CLASS="Italics">
+x</I>
+) is evaluated. <I CLASS="Italics">
+X</I>
+ can be either a scalar or an array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50641">
+ </A>
+Note: If an array is specified for both <I CLASS="Italics">
+N</I>
+ and <I CLASS="Italics">
+X</I>
+, then EXPINT evaluates E<SUB CLASS="subscript">
+n</SUB>
+(<I CLASS="Italics">
+x</I>
+) for each <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+i</SUB>
+ and <I CLASS="Italics">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+. If either <I CLASS="Italics">
+N</I>
+ or <I CLASS="Italics">
+X</I>
+ is a scalar and the other an array, the scalar is paired with each array element in turn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50642">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50644">
+ </A>
+<A NAME="marker=50643">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50645">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50647">
+ </A>
+<A NAME="marker=50646">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50648">
+ </A>
+An input integer specifying the maximum allowed number of iterations. The default value is 100.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50650">
+ </A>
+<A NAME="marker=50649">
+ </A>
+EPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50651">
+ </A>
+Use this keyword to specify a number close to the desired relative error. For single-precision calculations, the default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-7</SUP>
+. For double-precision calculations, the default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-14</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50652">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50653">
+ </A>
+To compute the value of the exponential integral at the following X values:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50654">
+ </A>
+X = [1.00, 1.05, 1.27, 1.34, 1.38, 1.50]</P>
+<P CLASS="Code">
+<A NAME="pgfId=50655">
+ </A>
+<EM CLASS="Comment">;
+	Define the parametric X values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50656">
+ </A>
+result = EXPINT(1, X)	<EM CLASS="Comment">;
+Compute the exponential integral of order 1.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50657">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50658">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50659">
+ </A>
+&nbsp;&nbsp;0.219384 0.201873 0.141911 0.127354 0.119803 0.100020</P>
+<P CLASS="Body">
+<A NAME="pgfId=50660">
+ </A>
+This is the exact solution vector to six-decimal accuracy.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50661">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50665">
+ </A>
+<A HREF="idl90.htm#47104" CLASS="XRef">
+ERRORF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

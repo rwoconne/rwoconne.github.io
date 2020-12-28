@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PROJECT_VOL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl150.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl14e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=786843">
+ </A>
+<A NAME="31417">
+ </A>
+PROJECT_VOL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=786846">
+ </A>
+The <A NAME="marker=786845">
+ </A>
+PROJECT_VOL function returns a two-dimensional image that is the projection of a <A NAME="marker=786847">
+ </A>
+3D <A NAME="marker=786848">
+ </A>
+volume of data onto a plane (similar to an X-ray). The returned image is a translucent rendering of the <A NAME="marker=786849">
+ </A>
+volume (the highest data values within the volume show up as the brightest regions in the returned image). Depth queuing and opacity may be used to affect the image. The volume is <A NAME="marker=786850">
+ </A>
+projected using a 4x4 matrix, so any type of projection may be used including perspective. Typically the system viewing matrix (!P.T) is used as the 4x4 matrix.</P>
+<P CLASS="Body">
+<A NAME="pgfId=46991">
+ </A>
+Note that the <A HREF="idl1f9.htm#99427" CLASS="XRef">
+VOXEL_PROJ</A>
+ procedure performs many of the same functions as this routine, and is faster.</P>
+<P CLASS="Body">
+<A NAME="pgfId=786851">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+project_vol.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=786852">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=786853">
+ </A>
+Return = PROJECT_VOL(<EM CLASS="Emphasis">
+Vol, X_Sample, Y_Sample, Z_Sample</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=786854">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786855">
+ </A>
+Vol</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786856">
+ </A>
+A 3D array of any type except string or structure containing the three dimensional volume of data to project.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786857">
+ </A>
+X_Sample</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786858">
+ </A>
+A long integer specifying the number of rays to project along the X dimension of the image. The returned image will have the dimensions <EM CLASS="Emphasis">
+X_sample</EM>
+ by <EM CLASS="Emphasis">
+Y_sample</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786859">
+ </A>
+Y_Sample</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786860">
+ </A>
+A long integer specifying the number of rays to project along the Y dimension of the image. To preserve the correct aspect ratio of the data, <EM CLASS="Emphasis">
+Y_sample</EM>
+ should equal <EM CLASS="Emphasis">
+X_sample</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786861">
+ </A>
+Z_Sample</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786862">
+ </A>
+A long integer specifying the number of samples to take along each ray. Higher values for <EM CLASS="Emphasis">
+X_sample</EM>
+, <EM CLASS="Emphasis">
+Y_sample</EM>
+, and <EM CLASS="Emphasis">
+Z_sample</EM>
+ increase the image resolution as well as execution time.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=786863">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786865">
+ </A>
+<A NAME="marker=786864">
+ </A>
+DEPTH_Q</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786866">
+ </A>
+Set this keyword to indicate that the image should be created using depth queuing. The depth queuing should be a single floating-point value between 0.0 and 1.0. This value specifies the brightness of the farthest regions of the volume relative to the closest regions of the volume. A value of 0.0 will cause the back side of the volume to be completely blacked out, while a value of 1.0 indicates that the back side will show up just as bright as the front side. The default is 1.0 (indicating no depth queuing).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786868">
+ </A>
+<A NAME="marker=786867">
+ </A>
+OPAQUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786869">
+ </A>
+A 3D array of any type except string or structure, with the same size and dimensions as <EM CLASS="Emphasis">
+Vol</EM>
+. This array specifies the opacity of each cell in the volume. OPAQUE values of 0 allow all light to pass through. OPAQUE values are cumulative. For example, if a ray emanates from a data value of 50, and then passes through 10 opaque cells (each with a data value of 0 and an opacity value of 5) then that ray would be completely blocked out (the cell with the data value of 50 would be invisible on the returned image). The default is no opacity.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=786871">
+ </A>
+<A NAME="marker=786870">
+ </A>
+TRANS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=786872">
+ </A>
+A 4x4 floating-point array to use as the transformation matrix when projecting the volume. The default is to use the system viewing matrix (!P.T).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=786873">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=786874">
+ </A>
+Use the T3D routine to set up a viewing projection and render a volume of data using PROJECT_VOL. First, create some data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=786875">
+ </A>
+vol = RANDOMU(S, 40, 40, 40) </P>
+<P CLASS="Code">
+<A NAME="pgfId=786876">
+ </A>
+FOR I=0, 10 DO vol = SMOOTH(vol, 3) </P>
+<P CLASS="Code">
+<A NAME="pgfId=786877">
+ </A>
+vol = BYTSCL(vol(3:37, 3:37, 3:37)) </P>
+<P CLASS="Code">
+<A NAME="pgfId=786878">
+ </A>
+opaque = RANDOMU(S, 40, 40, 40) </P>
+<P CLASS="Code">
+<A NAME="pgfId=786879">
+ </A>
+FOR I=0, 10 DO opaque = SMOOTH(opaque, 3) </P>
+<P CLASS="Code">
+<A NAME="pgfId=786880">
+ </A>
+opaque = BYTSCL(opaque(3:37, 3:37, 3:37), TOP=25B)</P>
+<P CLASS="Body">
+<A NAME="pgfId=786881">
+ </A>
+Set up the view:</P>
+<P CLASS="Code">
+<A NAME="pgfId=786882">
+ </A>
+xmin = 0 &amp; ymin = 0 &amp; zmin = 0</P>
+<P CLASS="Code">
+<A NAME="pgfId=865270">
+ </A>
+xmax = 34 &amp; ymax = 34 &amp; zmax = 34</P>
+<P CLASS="Code">
+<A NAME="pgfId=865271">
+ </A>
+!X.S = [-xmin, 1.0] / (xmax - xmin)</P>
+<P CLASS="Code">
+<A NAME="pgfId=865272">
+ </A>
+!Y.S = [-ymin, 1.0] / (ymax - ymin)</P>
+<P CLASS="Code">
+<A NAME="pgfId=865273">
+ </A>
+!Z.S = [-zmin, 1.0] / (zmax - zmin)</P>
+<P CLASS="Code">
+<A NAME="pgfId=865274">
+ </A>
+T3D, /RESET </P>
+<P CLASS="Code">
+<A NAME="pgfId=786883">
+ </A>
+T3D, TRANSLATE=[-0.5, -0.5, -0.5] </P>
+<P CLASS="Code">
+<A NAME="pgfId=786884">
+ </A>
+T3D, SCALE=[0.7, 0.7, 0.7] </P>
+<P CLASS="Code">
+<A NAME="pgfId=786885">
+ </A>
+T3D, ROTATE=[30, -30, 60] </P>
+<P CLASS="Code">
+<A NAME="pgfId=786886">
+ </A>
+T3D, TRANSLATE=[0.5, 0.5, 0.5]</P>
+<P CLASS="Code">
+<A NAME="pgfId=865307">
+ </A>
+WINDOW, 0, XSIZE=512, YSIZE=512</P>
+<P CLASS="Body">
+<A NAME="pgfId=786887">
+ </A>
+Generate and display the image:</P>
+<P CLASS="Code">
+<A NAME="pgfId=786888">
+ </A>
+img = PROJECT_VOL(vol, 64, 64, 64, DEPTH_Q=0.7, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=786889">
+ </A>
+&nbsp;&nbsp;OPAQUE=opaque, TRANS=(!P.T)) </P>
+<P CLASS="Code">
+<A NAME="pgfId=786890">
+ </A>
+TVSCL, img</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=786891">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795787">
+ </A>
+<A HREF="idl145.htm#45438" CLASS="XRef">
+POLYSHADE</A>
+, <A HREF="idl1f9.htm#99427" CLASS="XRef">
+VOXEL_PROJ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

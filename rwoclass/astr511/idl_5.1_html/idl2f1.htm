@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Using this Chapter</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV>
+<P CLASS="ChapTOC"><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=1019905">
+</A>
+<A NAME="37622">
+</A>
+Using this Chapter</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019909">
+</A>
+The elements of IDL's graphics class library are documented alphabetically in this chapter. The page or pages describing each class include references to sub- and super-classes, and to the methods associated with the class. Class methods are documented alphabetically following the description of the class itself.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1020017">
+ </A>
+A description of each method follows its name. Beneath the general description of the method are a number of sections that describe the calling sequence for the method, its arguments (if any), its keywords (if any). These sections are described below.</P>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=1019911">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019912">
+ </A>
+The &quot;Calling Sequence&quot; section shows the proper syntax for calling the method.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1019913">
+ </A>
+Procedure Methods</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1019918">
+ </A>
+IDL <A NAME="marker=1019917">
+ </A>
+procedure methods have the calling sequence:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1019919">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ -&gt; PROCEDURE_NAME, <I CLASS="Italics">
+Argument [, Optional_Arguments]</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1019920">
+ </A>
+where <EM CLASS="Emphasis">
+Obj</EM>
+ is a valid object reference, PROCEDURE_NAME is the name of the procedure method, <I CLASS="Italics">
+Argument</I>
+ is a required parameter, and <I CLASS="Italics">
+Optional_Argument</I>
+ is an optional parameter to the procedure method. Note that the square brackets around optional arguments are not used in the actual call to the procedure, they are simply used to denote the optional nature of the arguments within this document.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1019921">
+ </A>
+Function Methods</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1019926">
+ </A>
+IDL <A NAME="marker=1019925">
+ </A>
+function methods have the calling sequence:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1019927">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ -&gt; FUNCTION_NAME(<I CLASS="Italics">
+Argument [, Optional_Arguments]</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1019928">
+ </A>
+where <EM CLASS="Emphasis">
+Obj</EM>
+ is a valid object reference, <I CLASS="Italics">
+Result</I>
+ is the returned value of the function method, FUNCTION_NAME is the name of the function method, <I CLASS="Italics">
+Argument</I>
+ is a required parameter, and <I CLASS="Italics">
+Optional_Argument</I>
+ is an optional parameter. Note that the square brackets around optional arguments are not used in the actual call to the function, they are simply used to denote the optional nature of the arguments within this document. Note also that all arguments and keyword arguments to functions should be supplied <I CLASS="Italics">
+within</I>
+ the parentheses that follow the function's name.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=1019935">
+ </A>
+<A NAME="marker=1019934">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019936">
+ </A>
+The &quot;Arguments&quot; section describes each valid argument to the method. Note that these arguments are <A NAME="marker=1019937">
+ </A>
+positional parameters that must be supplied in the order indicated by the method's calling sequence.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1019938">
+ </A>
+Named Variables</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1019939">
+ </A>
+Often, arguments that contain values upon return from the function or procedure method (&quot;output arguments&quot;) are described as accepting &quot;<A NAME="marker=1019940">
+ </A>
+named variables&quot;. A named variable is simply a valid IDL variable name. This variable <I CLASS="Italics">
+does not</I>
+ need to be defined before being used as an output argument. Note, however that when an argument calls for a named variable, only a named variable can be used--sending an expression causes an error.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=1019945">
+ </A>
+<A NAME="marker=1019944">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1019946">
+ </A>
+The &quot;Keywords&quot; section describes each valid keyword argument to the method. Note that keyword arguments are <A NAME="marker=1019947">
+ </A>
+formal parameters that can be supplied in any order.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1019951">
+ </A>
+Keyword arguments are supplied to IDL methods by including the keyword name followed by an equal sign (&quot;=&quot;) and the value to which the keyword should be set. Note that keywords can be abbreviated to their shortest unique length. For example, the XSTYLE keyword can be abbreviated to XST.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=1019954">
+ </A>
+Setting Keywords</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1019956">
+ </A>
+When the documentation for a <A NAME="marker=1019955">
+ </A>
+keyword says something similar to, &quot;Set this keyword to enable logarithmic plotting,&quot; the keyword is simply a switch that turns an option on and off. Usually, setting such keywords equal to 1 causes the option to be turned on. Explicitly setting the keyword to zero (or not including the keyword) turns the option off.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1019957">
+ </A>
+There is a &quot;shortcut&quot; that can be used to set a keyword equal to 1 without the usual syntax (i.e., <CODE CLASS="Code">
+KEYWORD=1</CODE>
+). To &quot;set&quot; a keyword, simply preface it with a <A NAME="marker=1019958">
+ </A>
+slash character (&quot;/&quot;). For example, to plot a wire mesh surface with a skirt around it, set the SKIRT keyword to the SURFACE routine as follows:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1019959">
+ </A>
+SURFACE, DIST(10), /SKIRT</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=1020098">
+ </A>
+Creating Objects from the Graphics Class Library</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1074325">
+ </A>
+To create an object from the IDL Graphics Class Library, use the OBJ_NEW function (see &quot;OBJ_NEW&quot; in the <I CLASS="Italic">
+IDL Reference Guide</I>
+). The <STRONG CLASS="Stone-Semibold">
+Init</STRONG>
+ method for each class describes the arguments and keywords available when you are creating a new graphics object. Note that in some cases, you can also use the <STRONG CLASS="Stone-Semibold">
+Init</STRONG>
+ method after the object has been created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1074329">
+ </A>
+For example, to create a new graphics object from the IDLgrAxis class, use the following call to OBJ_NEW along with the arguments and keywords accepted by the <STRONG CLASS="Stone-Semibold">
+IDLgrAxis::Init</STRONG>
+ method:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1020109">
+ </A>
+myAxis = OBJ_NEW(IDLgrAxis, DIRECTION=1, RANGE=[0.0,40.0])</P>
+<P CLASS="Code">
+<A NAME="pgfId=1020114">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

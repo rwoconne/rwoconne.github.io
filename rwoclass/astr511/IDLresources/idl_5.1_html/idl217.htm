@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_WAVE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl218.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl216.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756566">
+ </A>
+<A NAME="37464">
+ </A>
+WRITE_WAVE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756568">
+ </A>
+The <A NAME="marker=756567">
+ </A>
+WRITE_WAVE procedure writes a three dimensional IDL array to a <CODE CLASS="Code">
+.wave</CODE>
+ or <CODE CLASS="Code">
+.bwave</CODE>
+ file for use with the <A NAME="marker=756569">
+ </A>
+Wavefront Advanced Data Visualizer. Note that this routine only writes one scalar field for each Wavefront file that it creates.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756570">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_wave.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756571">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756572">
+ </A>
+WRITE_WAVE, <EM CLASS="Emphasis">
+File, Array</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756573">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756574">
+ </A>
+File</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756575">
+ </A>
+A scalar string containing the full path name of the Wavefront file to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756576">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756577">
+ </A>
+A 3D array to be written to the file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756578">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756580">
+ </A>
+<A NAME="marker=756579">
+ </A>
+BIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756581">
+ </A>
+Set this keyword to create a binary file. By default, text files are created.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756583">
+ </A>
+<A NAME="marker=756582">
+ </A>
+DATANAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756584">
+ </A>
+Set this keyword to the name of the data inside of the Wavefront file. If not specified, the name used is &quot;idldata&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756586">
+ </A>
+<A NAME="marker=756585">
+ </A>
+MESHNAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756587">
+ </A>
+Set this keyword to the name of the mesh used in the Wavefront file. If not specified, the name used is &quot;idlmesh&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756589">
+ </A>
+<A NAME="marker=756588">
+ </A>
+NOMESHDEF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756590">
+ </A>
+Set this keyword to <EM CLASS="Emphasis">
+omit</EM>
+ the mesh definition from the Wavefront file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756592">
+ </A>
+<A NAME="marker=756591">
+ </A>
+VECTOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756593">
+ </A>
+Set this keyword to write the variable as a vector. The data is written as an array of 3-space vectors. The array may contain any number of dimensions but must have a leading dimension of 3. If the leading array dimension is not 3, this keyword is ignored. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756594">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=279722">
+ </A>
+<A HREF="idl16d.htm#71596" CLASS="XRef">
+READ_WAVE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

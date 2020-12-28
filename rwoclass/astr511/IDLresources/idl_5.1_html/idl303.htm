@@ -1,0 +1,1067 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrPrinter</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl304.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl302.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=997967">
+ </A>
+<A NAME="80600">
+ </A>
+IDLgrPrinter</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1058965">
+ </A>
+A <A NAME="marker=1058964">
+ </A>
+printer object represents a hardcopy graphics destination. When a printer object is created, the printer device to which it refers is the default system printer. To change the printer, utilize the printer dialogs (see &quot;DIALOG_PRINTJOB&quot; and &quot;DIALOG_PRINTERSETUP&quot; in the <EM CLASS="Emphasis">
+IDL Reference Guide</EM>
+.)</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155899">
+ </A>
+Objects or subclasses of this type can not be saved or restored.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1008279">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1008280">
+ </A>
+This class has no superclass.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1008281">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1008282">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1008315">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1008316">
+ </A>
+See <A HREF="idl303.htm#63814" CLASS="XRef">
+IDLgrPrinter::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1008328">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1008329">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1008330">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1013383">
+ </A>
+<A HREF="idl303.htm#39409" CLASS="XRef">
+IDLgrPrinter::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033858">
+ </A>
+<A HREF="idl303.htm#32406" CLASS="XRef">
+IDLgrPrinter::Draw</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165938">
+ </A>
+<A HREF="idl303.htm#21210" CLASS="XRef">
+IDLgrPrinter::GetContiguousPixels</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1013440">
+ </A>
+<A HREF="idl303.htm#25891" CLASS="XRef">
+IDLgrPrinter::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1059200">
+ </A>
+<A HREF="idl303.htm#32946" CLASS="XRef">
+IDLgrPrinter::GetTextDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1013426">
+ </A>
+<A HREF="idl303.htm#63814" CLASS="XRef">
+IDLgrPrinter::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1025202">
+ </A>
+<A HREF="idl303.htm#31888" CLASS="XRef">
+IDLgrPrinter::NewDocument</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1186339">
+ </A>
+<A HREF="idl303.htm#53311" CLASS="XRef">
+IDLgrPrinter::NewPage</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1186346">
+ </A>
+<A HREF="idl303.htm#16817" CLASS="XRef">
+IDLgrPrinter::SetProperty</A>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1186347">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1033844">
+ </A>
+<A NAME="39409">
+ </A>
+IDLgrPrinter::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1033847">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052307">
+ </A>
+Cleanup procedure method performs all cleanup on the object. If a document is open (that is, if graphics have been draw to the printer), the document is closed and the pending graphics are sent to the current printer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041834">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031448">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051207">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051208">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031449">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031450">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031451">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031452">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031453">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1013811">
+ </A>
+<A NAME="32406">
+ </A>
+IDLgrPrinter::Draw</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1013812">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052310">
+ </A>
+Draw procedure method draws the given picture to this graphics destination. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155918">
+ </A>
+Objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013816">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1013817">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+Draw, <EM CLASS="Emphasis">
+Picture</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013818">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013819">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013823">
+ </A>
+The view (an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object), viewgroup (an instance of an IDLgrViewgroup object), or scene (an instance of an <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ object) to be drawn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013824">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1059857">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1165877">
+ </A>
+<A NAME="21210">
+ </A>
+IDLgrPrinter::GetContiguousPixels</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165880">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1165879">
+ </A>
+GetContiguousPixels function method returns an array of long integers whose length is equal to the number of colors available in the index color mode (that is, the value of the N_COLORS property).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165881">
+ </A>
+The returned array marks contiguous pixels with the ranking of the range's size. This means that within the array, the elements in the largest available range are set to zero, the elements in the second-largest range are set to one, etc. Use this range to set an appropriate colormap for use with the SHADE_RANGE property of the <A HREF="idl305.htm#83847" CLASS="XRef">
+IDLgrSurface</A>
+ and <A HREF="idl301.htm#46829" CLASS="XRef">
+IDLgrPolygon</A>
+ object classes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165888">
+ </A>
+To get the largest contiguous range, you could use the following IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165889">
+ </A>
+result = <I CLASS="Italic">
+obj</I>
+ -&gt; GetContiguousPixels()</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165890">
+ </A>
+Range0 = WHERE(result EQ 0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165891">
+ </A>
+A contiguous region in the colormap can be increasing or decreasing in values. The following would be considered contiguous:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165892">
+ </A>
+<CODE CLASS="Code">
+[0,1,2,3,4]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165893">
+ </A>
+<CODE CLASS="Code">
+[4,3,2,1,0]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165926">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165901">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165902">
+ </A>
+Return = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+GetContiguousPixels()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165903">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165904">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165905">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165906">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1014207">
+ </A>
+<A NAME="25891">
+ </A>
+IDLgrPrinter::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014208">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052316">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the printer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014212">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014213">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014214">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014215">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014216">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016734">
+ </A>
+Any keyword to <A HREF="idl303.htm#63814" CLASS="XRef">
+IDLgrPrinter::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014221">
+ </A>
+<A NAME="marker=1022582">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093603">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093604">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014225">
+ </A>
+<A NAME="marker=1023177">
+ </A>
+DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014226">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+width</EM>
+, <EM CLASS="Emphasis">
+height</EM>
+] specifying the overall `drawable' area that may be printed on a page. By default, the dimensions are measured in device units (refer to the UNITS keyword).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014344">
+ </A>
+<A NAME="marker=1023178">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014345">
+ </A>
+A string containing the operating system-specific name of the print stream. e.g. '\\BORG\HpJet'.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014350">
+ </A>
+<A NAME="marker=1023179">
+ </A>
+RESOLUTION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014351">
+ </A>
+Set this keyword to a named variable that will contain a vector of the form [<EM CLASS="Emphasis">
+xres</EM>
+, <EM CLASS="Emphasis">
+yres</EM>
+] defining the pixel resolution, measured in centimeters per pixel.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1058985">
+ </A>
+<A NAME="32946">
+ </A>
+IDLgrPrinter::GetTextDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1058989">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1058988">
+ </A>
+GetTextDimensions function method retrieves the dimensions of a text object that will be rendered on the printer. The result is a 3-element floating-point vector [<EM CLASS="Emphasis">
+xDim</EM>
+, <EM CLASS="Emphasis">
+yDim</EM>
+, <EM CLASS="Emphasis">
+zDim</EM>
+] representing the dimensions of the text object, measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1058993">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1058994">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+GetTextDimensions(<EM CLASS="Emphasis">
+TextObj</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1058995">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155954">
+ </A>
+TextObj</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155955">
+ </A>
+The object reference to a text or axis object for which the text dimensions are requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1058997">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155994">
+ </A>
+<A NAME="marker=1155993">
+ </A>
+DESCENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155995">
+ </A>
+Set this keyword equal to a named variable that will contain an array of floating-point values (one for each string in the IDLgrText object). The values represent the distance to travel (parallel to the UPDIR vector) from the text baseline to reach the bottom of the lowest descender in the string. All values will be negative numbers, or zero. This keyword is valid only if <I CLASS="Italic">
+TextObj</I>
+ is an IDLgrText object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1059053">
+ </A>
+<A NAME="63814">
+ </A>
+IDLgrPrinter::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014082">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052320">
+ </A>
+Init function method initializes the printer object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041728">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014086">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019759">
+ </A>
+Obj = OBJ_NEW('IDLgrPrinter')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041982">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041983">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014088">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014090">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014091">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020284">
+ </A>
+Properties retrievable via <A HREF="idl303.htm#25891" CLASS="XRef">
+IDLgrPrinter::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1030161">
+ </A>
+<A NAME="marker=1023181">
+ </A>
+COLOR_MODEL (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014095">
+ </A>
+Set this keyword to the color model to be used for the buffer:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030167">
+ </A>
+0 = RGB (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1050238">
+ </A>
+1 = Color Index</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143268">
+ </A>
+<A NAME="marker=1143272">
+ </A>
+GRAPHICS_TREE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143269">
+ </A>
+Set this keyword to an object reference of type IDLgrScene, IDLgrViewgroup, or IDLgrView. If this property is set to a valid object reference, calling the Draw method on the destination object with no arguments will cause the object reference associated with this property to be drawn. If this object is valid and the destination object is destroyed, this object reference will be destroyed as well. By default the GRAPHICS_TREE property is set equal to the null-object. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1060943">
+ </A>
+<A NAME="marker=1023186">
+ </A>
+LANDSCAPE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1018394">
+ </A>
+Set this keyword to produce hardcopy output in landscape mode. The default value of zero indicates Portrait mode. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1018407">
+ </A>
+The printer driver may not support the LANDSCAPE option; in general, it is best to use the printer dialogs to set orientation.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1018390">
+ </A>
+<A NAME="marker=1023189">
+ </A>
+N_COLORS (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014118">
+ </A>
+Set this keyword to the number of colors (between 2 and 256) to be used if the COLOR_MODEL is set to Indexed (1). This keyword is ignored if the COLOR_MODEL is set to RGB (0).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014162">
+ </A>
+<A NAME="marker=1023190">
+ </A>
+N_COPIES (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014163">
+ </A>
+Set this keyword equal to an integer that determines the number of copies of print data to be generated. The default is 1 copy. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1018408">
+ </A>
+Your specific printer driver may not support the N_COPIES option. You can also use the printer dialogs to set the number of copies.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014164">
+ </A>
+<A NAME="marker=1023191">
+ </A>
+PALETTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014168">
+ </A>
+Set this keyword equal to the object reference of a palette object (an instance of the <A HREF="idl2fe.htm#45361" CLASS="XRef">
+IDLgrPalette</A>
+ object class) to specify the red, green, and blue values that are to be loaded into the graphics destination's color lookup table if the Indexed color model is used.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1068743">
+ </A>
+<A NAME="marker=1068747">
+ </A>
+PRINT_QUALITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068744">
+ </A>
+Set this keyword to an integer value indicating the print quality at which graphics are to be drawn to the printer. Note that the print quality is independent of the rendering quality (as set by the QUALITY keyword). Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068808">
+ </A>
+0 = Low</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068809">
+ </A>
+1 = Normal (this is the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068810">
+ </A>
+2 = High</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1068806">
+ </A>
+Generally, setting the print quality to a lower value will increase the speed of the printing job, but decrease the resolution; setting it to a higher value will cause the printing job to take more time, but will increase the resolution.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1068813">
+ </A>
+Some printer drivers may not be able to support different printing qualities. In these cases, the setting of the PRINT_QUALITY property will be quietly ignored.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1014175">
+ </A>
+<A NAME="marker=1023192">
+ </A>
+QUALITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1014176">
+ </A>
+Set this keyword to an integer value indicating the rendering quality at which graphics are to be drawn to this destination. Note that the rendering quality is independent of the print quality (as set by the PRINT_QUALITY keyword). Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030183">
+ </A>
+0 = Low</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030188">
+ </A>
+1 = Medium</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1030194">
+ </A>
+2 = High (default)</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1173784">
+ </A>
+<A NAME="marker=1173783">
+ </A>
+UNITS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173785">
+ </A>
+Set this keyword to indicate the units of measure for the DIMENSIONS property. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173786">
+ </A>
+0 = Device (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173787">
+ </A>
+1 = Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173788">
+ </A>
+2 = Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173789">
+ </A>
+3 = Normalized: relative to the drawable area on a page.</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1173790">
+ </A>
+If you set the value of the UNITS property (using the SetProperty method) without also setting the value of the DIMENSIONS property, IDL will convert the current size value into the new units.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1050248">
+ </A>
+<A NAME="marker=1023193">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058402">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1025187">
+ </A>
+<A NAME="31888">
+ </A>
+IDLgrPrinter::NewDocument</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025190">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052323">
+ </A>
+NewDocument procedure method closes the current document (a page or group of pages), which causes any pending output to be sent to the printer, finishing the printer job. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025194">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025195">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+NewDocument</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025196">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025197">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025198">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025199">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1014358">
+ </A>
+<A NAME="53311">
+ </A>
+IDLgrPrinter::NewPage</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1022413">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052326">
+ </A>
+NewPage procedure method issues a new page command to the printer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014363">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014364">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+NewPage</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014365">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014366">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1014367">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014368">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1014024">
+ </A>
+<A NAME="16817">
+ </A>
+<A NAME="70900">
+ </A>
+IDLgrPrinter::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1014025">
+ </A>
+The IDLgrPrinter::<A NAME="marker=1052329">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the printer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1007770">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1007771">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPrinter::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1010426">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1010604">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1010605">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016744">
+ </A>
+Any keyword to <A HREF="idl303.htm#63814" CLASS="XRef">
+IDLgrPrinter::Init</A>
+</DIV>
+</BODY>
+</HTML>

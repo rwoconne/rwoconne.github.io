@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WTN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl21c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl21a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52399">
+ </A>
+<A NAME="14361">
+ </A>
+WTN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52403">
+ </A>
+The <A NAME="marker=52401">
+ </A>
+WTN function returns a multi-dimensional discrete <A NAME="marker=52402">
+ </A>
+wavelet transform of the input array A. The transform is based on a <A NAME="marker=52404">
+ </A>
+Daubechies wavelet filter.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52405">
+ </A>
+WTN is based on the routine <CODE CLASS="Code">
+wtn</CODE>
+ described in section 13.10 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52406">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52407">
+ </A>
+Result = WTN(<I CLASS="Italic">
+A, Coef</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52408">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52409">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52410">
+ </A>
+The input vector or array. The dimensions of <I CLASS="Italic">
+A</I>
+ must all be powers of 2.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52411">
+ </A>
+Coef</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52412">
+ </A>
+An integer that specifies the number of wavelet filter coefficients. The allowed values are 4, 12, or 20. When <I CLASS="Italic">
+Coef</I>
+ is 4, the <CODE CLASS="Code">
+daub4()</CODE>
+ function (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 13.10) is used. When <I CLASS="Italic">
+Coef</I>
+ is 12 or 20, <CODE CLASS="Code">
+pwt()</CODE>
+ is called, preceded by <CODE CLASS="Code">
+pwtset()</CODE>
+ (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 13.10).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52413">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58787">
+ </A>
+<A NAME="marker=58786">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58788">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52415">
+ </A>
+<A NAME="marker=52414">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52416">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52418">
+ </A>
+<A NAME="marker=52417">
+ </A>
+INVERSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52419">
+ </A>
+If the INVERSE keyword is set, the inverse transform is computed. By default, WTN performs the forward wavelet transform.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52421">
+ </A>
+<A NAME="marker=52420">
+ </A>
+OVERWRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52422">
+ </A>
+Set the OVERWRITE keyword to perform the transform &quot;in place.&quot; The result overwrites the original contents of the array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52423">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52424">
+ </A>
+This example demonstrates the use of IDL's discrete wavelet transform and sparse array storage format to compress and store an 8-bit gray-scale digital image. First, an image selected from the <CODE CLASS="Code">
+people.dat</CODE>
+ data file is transformed into its wavelet representation and written to a separate data file using the WRITEU procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52425">
+ </A>
+Next, the transformed image is converted, using the SPRSIN function, to row-indexed sparse storage format retaining only elements with an absolute magnitude greater than or equal to a specified threshold. The sparse image is written to a data file using the WRITE_SPR procedure.   </P>
+<P CLASS="Body">
+<A NAME="pgfId=52426">
+ </A>
+Finally, the transformed image is reconstructed from the storage file and displayed alongside the original.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52427">
+ </A>
+Begin by choosing the number of wavelet coefficients to use and a threshold value:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52428">
+ </A>
+coeffs = 12&nbsp;&amp;&nbsp;thres = 10.0</P>
+<P CLASS="Body">
+<A NAME="pgfId=52429">
+ </A>
+Open the <CODE CLASS="Code">
+people.dat</CODE>
+ data file, read an image using associated variables, and close the file.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52430">
+ </A>
+OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])</P>
+<P CLASS="Code">
+<A NAME="pgfId=52431">
+ </A>
+images = assoc(1, bytarr(192, 192))</P>
+<P CLASS="Code">
+<A NAME="pgfId=52432">
+ </A>
+image_1 = images[0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52433">
+ </A>
+close, 1</P>
+<P CLASS="Body">
+<A NAME="pgfId=52434">
+ </A>
+Expand the image to the nearest power of two using cubic convolution, and transform the image into its wavelet representation using the WTN function.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52435">
+ </A>
+pwr = 256</P>
+<P CLASS="Code">
+<A NAME="pgfId=52436">
+ </A>
+image_1 = CONGRID(image_1, pwr, pwr, /CUBIC)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52437">
+ </A>
+wtn_image = WTN(image_1, coeffs)</P>
+<P CLASS="Body">
+<A NAME="pgfId=52438">
+ </A>
+Write the image to a file using the WRITEU procedure and check the size of the file (in bytes) using the FSTAT function.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52439">
+ </A>
+OPENW, 1, 'original.dat'</P>
+<P CLASS="Code">
+<A NAME="pgfId=52440">
+ </A>
+WRITEU, 1, wtn_image</P>
+<P CLASS="Code">
+<A NAME="pgfId=52441">
+ </A>
+status = FSTAT(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52442">
+ </A>
+CLOSE, 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=52443">
+ </A>
+PRINT, 'The size of the file is ', status.size, ' bytes.'</P>
+<P CLASS="Body">
+<A NAME="pgfId=52444">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52445">
+ </A>
+The size of the file is       262144 bytes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52446">
+ </A>
+Now, we convert the wavelet representation of the image to a row-indexed sparse storage format using the SPRSIN function, write the data to a file using the WRITE_SPR procedure, and check the size of the &quot;compressed&quot; file.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52447">
+ </A>
+sprs_image&nbsp;=&nbsp;SPRSIN(wtn_image,&nbsp;THRES&nbsp;=&nbsp;thres)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52448">
+ </A>
+WRITE_SPR, sprs_image, 'sparse.dat'</P>
+<P CLASS="Code">
+<A NAME="pgfId=52449">
+ </A>
+OPENR, 1, 'sparse.dat'</P>
+<P CLASS="Code">
+<A NAME="pgfId=52450">
+ </A>
+status = FSTAT(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52451">
+ </A>
+CLOSE, 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=52452">
+ </A>
+PRINT, 'The size of the file is ', status.size, ' bytes.'</P>
+<P CLASS="Body">
+<A NAME="pgfId=52453">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52454">
+ </A>
+The size of the file is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;69600 bytes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52455">
+ </A>
+Determine the number of elements (as a percentage of total elements) whose absolute magnitude is less than the specified threshold. These elements are not retained in the row-indexed sparse storage format.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52456">
+ </A>
+PRINT,&nbsp;100.*N_ELEMENTS(WHERE(ABS(wtn_image)&nbsp;LT&nbsp;thres, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52457">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;count)) / N_ELEMENTS(image_1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=52458">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52459">
+ </A>
+87.0331</P>
+<P CLASS="Body">
+<A NAME="pgfId=52460">
+ </A>
+This means the sparse array contains only 13% of the elements contained in the original array. Next, read the row-indexed sparse data back from the file <CODE CLASS="Code">
+sparse.dat</CODE>
+ using the READ_SPR function and reconstruct the image from the non-zero data using the FULSTR function.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52461">
+ </A>
+sprs_image = READ_SPR('sparse.dat')</P>
+<P CLASS="Code">
+<A NAME="pgfId=52462">
+ </A>
+wtn_image = FULSTR(sprs_image)</P>
+<P CLASS="Body">
+<A NAME="pgfId=52463">
+ </A>
+Apply the inverse wavelet transform to the image.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52464">
+ </A>
+image_2 = WTN(wtn_image, COEFFS, /INVERSE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=52465">
+ </A>
+Calculate and print the amount of data used in reconstruction of the image.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52466">
+ </A>
+PRINT, 'The image on the right is reconstructed from:', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52467">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;100.0 - (100.* count/N_ELEMENTS(image_1)),$</P>
+<P CLASS="Code">
+<A NAME="pgfId=52468">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;'% of original image data.'</P>
+<P CLASS="Body">
+<A NAME="pgfId=52469">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52470">
+ </A>
+The image on the right is reconstructed from:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52471">
+ </A>
+12.9669% of original image data.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52472">
+ </A>
+Finally, display the original and reconstructed images side by side.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52473">
+ </A>
+WINDOW, 1, XSIZE = pwr*2, YSIZE = pwr, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52474">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;TITLE = 'Wavelet Image Compression and File I/O'</P>
+<P CLASS="Code">
+<A NAME="pgfId=52475">
+ </A>
+TV, image_1, 0, 0</P>
+<P CLASS="Code">
+<A NAME="pgfId=52476">
+ </A>
+TV, image_2, pwr - 1, 0</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52477">
+ </A>
+Sample Image</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52486">
+ </A>
+The image on the left is the original 256 by 256 image. The image on the right was compressed by the above process and was reconstructed from 13% of the original data. The size of the compressed image's data file is 26.6% of the size of the original image's data file. Note that due to limitations in the printing process, differences between the images may not be as evident as they would be on a high-resolution printer or monitor.</P>
+<DIV>
+<MAP NAME="idl-119">
+</MAP>
+<CENTER><IMG SRC="idl_119.gif" USEMAP="#idl-119" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52487">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52491">
+ </A>
+<A HREF="idl9d.htm#24646" CLASS="XRef">
+FFT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

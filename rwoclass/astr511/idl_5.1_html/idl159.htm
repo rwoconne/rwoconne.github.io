@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> QROMO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl15a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl158.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51569">
+ </A>
+<A NAME="31379">
+ </A>
+QROMO</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51573">
+ </A>
+The <A NAME="marker=51571">
+ </A>
+QROMO <A NAME="marker=51572">
+ </A>
+function evaluates the integral of a function over the open interval (<I CLASS="Italic">
+A, B</I>
+) using a modified <A NAME="marker=51574">
+ </A>
+Romberg's method.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51575">
+ </A>
+QROMO is based on the routine <CODE CLASS="Code">
+qromo</CODE>
+ described in section 4.4 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51576">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51577">
+ </A>
+Result = QROMO(<I CLASS="Italic">
+Func, A </I>
+[<I CLASS="Italic">
+, B</I>
+])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51578">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51579">
+ </A>
+Func</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51580">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function to be integrated. This function must accept a single scalar argument <I CLASS="Italic">
+X</I>
+ and return a scalar result. It must be defined over the open interval (<I CLASS="Italic">
+A, B</I>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=51581">
+ </A>
+For example, if we wish to integrate the fourth-order polynomial</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=51582">
+ </A>
+<EM CLASS="Emphasis">
+y</EM>
+ = 1 / <EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+4</SUP>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51583">
+ </A>
+we define a function HYPER to express this relationship in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51584">
+ </A>
+FUNCTION hyper, X</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51585">
+ </A>
+&nbsp;&nbsp;RETURN, 1.0 / X^4</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=51586">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51587">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51588">
+ </A>
+The lower limit of the integration. <I CLASS="Italic">
+A</I>
+ can be either a scalar or an array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51589">
+ </A>
+ B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51590">
+ </A>
+The upper limit of the integration. <I CLASS="Italic">
+B</I>
+ can be either a scalar or an array. If the MIDEXP keyword is specified, <I CLASS="Italic">
+B</I>
+ is assumed to be infinite, and should not be supplied by the user.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51591">
+ </A>
+Note: If arrays are specified for <I CLASS="Italic">
+A</I>
+ and <I CLASS="Italic">
+B</I>
+, then QROMO integrates the user-supplied function over the interval [<I CLASS="Italic">
+A</I>
+<SUB CLASS="Subscript">
+i</SUB>
+, <I CLASS="Italic">
+B</I>
+<SUB CLASS="Subscript">
+i</SUB>
+] for each <I CLASS="Italic">
+i</I>
+. If either <I CLASS="Italic">
+A</I>
+ or <I CLASS="Italic">
+B</I>
+ is a scalar and the other an array, the scalar is paired with each array element in turn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51592">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51594">
+ </A>
+<A NAME="marker=51593">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51595">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51597">
+ </A>
+<A NAME="marker=51596">
+ </A>
+EPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51598">
+ </A>
+The fractional accuracy desired, as determined by the extrapolation error estimate. For single-precision calculations, the default value is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-6</SUP>
+. For double-precision calculations, the default value is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-12</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51600">
+ </A>
+<A NAME="marker=51599">
+ </A>
+JMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51601">
+ </A>
+Set to specify the maximum allowed number of mid quadrature points to be 3<SUP CLASS="Superscript">
+(JMAX - 1)</SUP>
+. The default value is 14.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51603">
+ </A>
+<A NAME="marker=51602">
+ </A>
+K</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51604">
+ </A>
+Integration is performed by Romberg's method of order 2K. If not specified, the default is K=5.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51606">
+ </A>
+<A NAME="marker=51605">
+ </A>
+MIDEXP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51607">
+ </A>
+Use the <CODE CLASS="Code">
+midexp()</CODE>
+ function (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 4.4) as the integrating function. If the MIDEXP keyword is specified, argument B is assumed to be infinite, and should not be supplied by the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51609">
+ </A>
+<A NAME="marker=51608">
+ </A>
+MIDINF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51610">
+ </A>
+Use the <CODE CLASS="Code">
+midinf()</CODE>
+ function (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 4.4) as the integrating function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51612">
+ </A>
+<A NAME="marker=51611">
+ </A>
+MIDPNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51613">
+ </A>
+Use the <CODE CLASS="Code">
+midpnt()</CODE>
+ function (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 4.4) as the integrating function. This is the default if no other integrating function keyword is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51615">
+ </A>
+<A NAME="marker=51614">
+ </A>
+MIDSQL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51616">
+ </A>
+Use the <CODE CLASS="Code">
+midsql()</CODE>
+ function (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 4.4) as the integrating function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51618">
+ </A>
+<A NAME="marker=51617">
+ </A>
+MIDSQU</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51619">
+ </A>
+Use the <CODE CLASS="Code">
+midsqu()</CODE>
+ function (see <I CLASS="Italic">
+Numerical Recipes</I>
+, section 4.4) as the integrating function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51620">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51621">
+ </A>
+To integrate the HYPER function (listed above) over the open interval (2, <EM CLASS="Symbol">
+&#183;</EM>
+) and print the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51622">
+ </A>
+PRINT, QROMO('hyper', 2.0, /MIDEXP)</P>
+<P CLASS="Body">
+<A NAME="pgfId=51624">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51625">
+ </A>
+&nbsp;0.0412050</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=828901">
+ </A>
+When using the /MIDEXP keyword, the upper integration limit is assumed to be infinity and is not supplied.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51626">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51642">
+ </A>
+<A HREF="idld4.htm#70083" CLASS="XRef">
+INT_2D</A>
+, <A HREF="idld5.htm#74581" CLASS="XRef">
+INT_3D</A>
+, <A HREF="idld6.htm#51833" CLASS="XRef">
+INT_TABULATED</A>
+, <A HREF="idl158.htm#72956" CLASS="XRef">
+QROMB</A>
+, <A HREF="idl15a.htm#21978" CLASS="XRef">
+QSIMP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

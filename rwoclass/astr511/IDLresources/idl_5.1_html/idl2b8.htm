@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_GETID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2b9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2b7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999635">
+ </A>
+<A NAME="91594">
+ </A>
+HDF_VD_GETID</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999639">
+ </A>
+The <A NAME="marker=999637">
+ </A>
+HDF_VD_GETID function returns the <A NAME="marker=999638">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ reference number for the next <EM CLASS="Emphasis">
+VData</EM>
+ in a Hierarchical Data Format file after the specified <I CLASS="Italics">
+VDataId</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999640">
+ </A>
+Set <I CLASS="Italics">
+VDataId</I>
+ to -1 to return the first <EM CLASS="Emphasis">
+VData</EM>
+ ID in the file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999641">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999642">
+ </A>
+Result = HDF_VD_GETID(<I CLASS="Italics">
+FileHandle, VDataId</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999643">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999644">
+ </A>
+FileHandle</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999645">
+ </A>
+The HDF file handle returned by a previous call to HDF_OPEN.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999646">
+ </A>
+VDataID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999647">
+ </A>
+The VData reference number, generally obtained by HDF_VD_GETID or HDF_VD_LONE. Set this argument to -1 to return the first VData in the file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999648">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

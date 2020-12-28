@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HIST_2D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlc8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758132">
+ </A>
+<A NAME="87584">
+ </A>
+HIST_2D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758134">
+ </A>
+The <A NAME="marker=758133">
+ </A>
+HIST_2D function returns the two dimensional density function (histogram) of two variables, a longword array of dimensions (MAX(<EM CLASS="Emphasis">
+V1</EM>
+)+1, MAX(<EM CLASS="Emphasis">
+V2</EM>
+)+1). Result(<EM CLASS="Emphasis">
+i,j</EM>
+) is equal to the number of simultaneous occurrences of <EM CLASS="Emphasis">
+V1</EM>
+ = <EM CLASS="Emphasis">
+i</EM>
+ and <EM CLASS="Emphasis">
+V2</EM>
+ = <EM CLASS="Emphasis">
+j</EM>
+ at the specified element.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758135">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+hist_2d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758136">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758137">
+ </A>
+Result = HIST_2D(<EM CLASS="Emphasis">
+V1, V2</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758138">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758139">
+ </A>
+V1, V2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758140">
+ </A>
+Arrays containing the variables. <EM CLASS="Emphasis">
+V1</EM>
+ and <EM CLASS="Emphasis">
+V2</EM>
+ must be of byte, integer, or longword type, and must contain no negative elements.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758141">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832830">
+ </A>
+BIN1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832831">
+ </A>
+The size of each bin in the <EM CLASS="Emphasis">
+V1</EM>
+ direction (column width). If this keyword is not specified, the size is set to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832832">
+ </A>
+BIN2 </H4>
+<P CLASS="Body">
+<A NAME="pgfId=832833">
+ </A>
+The size of each bin in the <EM CLASS="Emphasis">
+V2</EM>
+ direction (row height). If this keyword is not specified, the size is set to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832284">
+ </A>
+MAX1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832322">
+ </A>
+MAX1 is the maximum <EM CLASS="Emphasis">
+V1</EM>
+ value to consider. If this keyword is not specified, then <EM CLASS="Emphasis">
+V1</EM>
+ is searched for its largest value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832345">
+ </A>
+MAX2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832348">
+ </A>
+MAX2 is the maximum <EM CLASS="Emphasis">
+V2</EM>
+ value to consider. If this keyword is not specified, then <EM CLASS="Emphasis">
+V2</EM>
+ is searched for its largest value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832837">
+ </A>
+MIN1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832838">
+ </A>
+MIN1 is the minimum <EM CLASS="Emphasis">
+V1 </EM>
+value to consider. If this keyword is not specified, then it is set to 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832839">
+ </A>
+MIN2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832840">
+ </A>
+MIN2 is the minimum <EM CLASS="Emphasis">
+V2</EM>
+ value to consider. If this keyword is not specified, then it is set to 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832276">
+ </A>
+Example</H3>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=758142">
+ </A>
+To return the 2D histogram of two byte images:</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=758143">
+ </A>
+R = HIST_2D(image1, image2)</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=758144">
+ </A>
+To return the 2D histogram made from two floating point images with range of -1 to +1, and with 100 bins:</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=758145">
+ </A>
+R = HIST_2D(LONG((F1+1) * 50), LONG((F2+1) * 50))</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832270">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822697">
+ </A>
+<A HREF="idlbf.htm#52883" CLASS="XRef">
+H_EQ_CT</A>
+, <A HREF="idlc0.htm#94073" CLASS="XRef">
+H_EQ_INT</A>
+, <A HREF="idlc8.htm#23334" CLASS="XRef">
+HIST_EQUAL</A>
+, <A HREF="idlc9.htm#31792" CLASS="XRef">
+HISTOGRAM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

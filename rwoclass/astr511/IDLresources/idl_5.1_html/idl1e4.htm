@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRISOL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52308">
+ </A>
+<A NAME="66905">
+ </A>
+TRISOL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52313">
+ </A>
+The <A NAME="marker=52310">
+ </A>
+TRISOL <A NAME="marker=153723">
+ </A>
+function solves <A NAME="marker=52312">
+ </A>
+tridiagonal systems of linear equations that have the form: A<SUP CLASS="Superscript">
+T</SUP>
+U = R</P>
+<P CLASS="Body">
+<A NAME="pgfId=52315">
+ </A>
+Note: because IDL subscripts are in column-row order, the equation above is written A<SUP CLASS="Superscript">
+T</SUP>
+U = R rather than AU = R. The result <I CLASS="Italic">
+U</I>
+ is a vector of length <I CLASS="Italic">
+n</I>
+ whose type is identical to <I CLASS="Italic">
+A</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52316">
+ </A>
+TRISOL is based on the routine <CODE CLASS="Code">
+tridag</CODE>
+ described in section 2.4 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52317">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52318">
+ </A>
+Result = TRISOL(<I CLASS="Italic">
+A, B, C, R</I>
+) </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52319">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52320">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52321">
+ </A>
+A vector of length <I CLASS="Italic">
+n</I>
+ containing the <I CLASS="Italic">
+n</I>
+-1 sub-diagonal elements of A<SUP CLASS="Superscript">
+T</SUP>
+. The first element of <I CLASS="Italic">
+A</I>
+, A<SUB CLASS="Subscript">
+0</SUB>
+, is ignored. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52322">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52323">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element vector containing the main diagonal elements of A<SUP CLASS="Superscript">
+T</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52324">
+ </A>
+C</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52325">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element vector containing the <I CLASS="Italic">
+n</I>
+-1 super-diagonal elements of A<SUP CLASS="Superscript">
+T</SUP>
+. The last element of <I CLASS="Italic">
+C</I>
+, <I CLASS="Italic">
+C</I>
+<SUB CLASS="Subscript">
+n-1</SUB>
+, is ignored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52326">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52327">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element vector containing the right hand side of the linear system <BR>
+A<SUP CLASS="Superscript">
+T</SUP>
+U = R.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52328">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52330">
+ </A>
+<A NAME="marker=52329">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52331">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52332">
+ </A>
+Example</H3>
+<P CLASS="CellBody">
+<A NAME="pgfId=965405">
+ </A>
+To solve a tridiagonal linear system, begin with an array representing a real tridiagonal linear system. (Note that only three vectors need be specified; there is no need to enter the entire array shown.)</P>
+<DIV>
+<CENTER><IMG SRC="idl_110.gif" BORDER=0>
+</DIV>
+<P CLASS="CellBody">
+<A NAME="pgfId=948793">
+ </A>
+&nbsp;</P>
+<P CLASS="CellBody">
+<A NAME="pgfId=948794">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=835037">
+ </A>
+Define a vector A containing the sub-diagonal elements with a leading 0.0 element:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52343">
+ </A>
+A = [0.0, 2.0, 2.0, 2.0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=52344">
+ </A>
+Define B containing the main diagonal elements:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52345">
+ </A>
+B = [-4.0, -4.0, -4.0, -4.0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=52346">
+ </A>
+Define C containing the super-diagonal elements with a trailing 0.0 element:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52347">
+ </A>
+C = [1.0, 1.0, 1.0, 0.0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=52348">
+ </A>
+Define the right-hand side vector:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52349">
+ </A>
+R = [6.0, -8.0, -5.0, 8.0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=52350">
+ </A>
+Compute the solution and print:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52351">
+ </A>
+result = TRISOL(A, B, C, R)</P>
+<P CLASS="Code">
+<A NAME="pgfId=52352">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=52353">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52354">
+ </A>
+&nbsp;&nbsp;-1.00000&nbsp;&nbsp;2.00000&nbsp;&nbsp;2.00000&nbsp;&nbsp;-1.00000</P>
+<P CLASS="Body">
+<A NAME="pgfId=52355">
+ </A>
+The exact solution vector is [-1.0, 2.0, 2.0, -1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52356">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52378">
+ </A>
+<A HREF="idl48.htm#10735" CLASS="XRef">
+CRAMER</A>
+, <A HREF="idlbe.htm#39130" CLASS="XRef">
+GS_ITER</A>
+, <A HREF="idl105.htm#65053" CLASS="XRef">
+LU_COMPLEX</A>
+, <A HREF="idl30.htm#21199" CLASS="XRef">
+CHOLSOL</A>
+, <A HREF="idl108.htm#55550" CLASS="XRef">
+LUSOL</A>
+, <A HREF="idl1ca.htm#53821" CLASS="XRef">
+SVSOL</A>
+, <A HREF="idl1e4.htm#66905" CLASS="XRef">
+TRISOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_READ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2c0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2be.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999770">
+ </A>
+<A NAME="94190">
+ </A>
+HDF_VD_READ</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999774">
+ </A>
+The <A NAME="marker=999772">
+ </A>
+HDF_VD_READ function reads data from a <A NAME="marker=999773">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ in a Hierarchical Data Format file. This function returns the number of records successfully read from the <EM CLASS="Emphasis">
+VData</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999775">
+ </A>
+The default is to use FULL_INTERLACE and to read all fields in all records. The user can override the defaults with keywords. If multiple fields with different data types are read, all of the data is read into a byte array. The data must then be explicitly converted back into the correct type(s) using various IDL type conversion routines. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999776">
+ </A>
+nread = HDF_VD_READ(vdat, x, NREC=1, FIELDS=&quot;FLT,LNG&quot;)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999777">
+ </A>
+floatvalue = FLOAT(x, 0)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999778">
+ </A>
+longvalue = LONG(x, 4)</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999779">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999780">
+ </A>
+Result = HDF_VD_READ(<I CLASS="Italics">
+VData, Data</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999781">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999782">
+ </A>
+VData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999783">
+ </A>
+The VData handle returned by a previous call to HDF_VD_ATTACH.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999784">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999785">
+ </A>
+A named variable in which the data is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999786">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999788">
+ </A>
+<A NAME="marker=999787">
+ </A>
+FIELDS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999789">
+ </A>
+A string containing a comma-separated list of fields to be read. Normally HDF_VD_READ will read all fields in the VData.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999791">
+ </A>
+<A NAME="marker=999790">
+ </A>
+FULL_INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999792">
+ </A>
+Set this keyword to use full interlace when reading (the default).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999794">
+ </A>
+<A NAME="marker=999793">
+ </A>
+NO_INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999795">
+ </A>
+Set this keyword to use no interlace when reading.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999797">
+ </A>
+<A NAME="marker=999796">
+ </A>
+NRECORDS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999798">
+ </A>
+The number of records to read. By default, HDF_VD_READ reads all records from a VData.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999799">
+ </A>
+Examples</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999800">
+ </A>
+Typical read:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999801">
+ </A>
+NREC = HDF_VD_READ(Vdat, X)</P>
+<P CLASS="Body">
+<A NAME="pgfId=999802">
+ </A>
+Read one field:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999803">
+ </A>
+NREC = HDF_VD_READ(Vdat, X, FIELDS='VEL')</P>
+<P CLASS="Body">
+<A NAME="pgfId=999804">
+ </A>
+Read a record:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999805">
+ </A>
+NREC = HDF_VD_READ(Vdat, X, NRECORDS=1)</P>
+</DIV>
+</BODY>
+</HTML>

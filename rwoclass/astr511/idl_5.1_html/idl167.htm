@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_PICT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl168.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl166.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756164">
+ </A>
+<A NAME="23922">
+ </A>
+READ_PICT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756168">
+ </A>
+The <A NAME="marker=756166">
+ </A>
+READ_PICT procedure reads the contents of a <A NAME="marker=756167">
+ </A>
+PICT (version 2) format image file and returns the image and color table vectors (if present) in the form of IDL variables. The PICT format is used by Apple Macintosh computers.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756169">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_pict.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756170">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756171">
+ </A>
+READ_PICT, <EM CLASS="Emphasis">
+Filename, Image [, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756172">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756173">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756174">
+ </A>
+A scalar string specifying the full pathname of the PICT file to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756175">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756176">
+ </A>
+A named variable that will contain the 2D image read from <EM CLASS="Emphasis">
+Filename</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756177">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756178">
+ </A>
+Named variables that will contain the Red, Green, and Blue color vectors read from the PICT file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756179">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756180">
+ </A>
+To open and read the PICT image file named <CODE CLASS="Code">
+foo.pict</CODE>
+ in the current directory, store the image in the variable <CODE CLASS="Code">
+image1</CODE>
+, and store the color vectors in the variables R, G, and B, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756181">
+ </A>
+READ_PICT, 'foo.pict', image1, R, G, B</P>
+<P CLASS="Body">
+<A NAME="pgfId=756182">
+ </A>
+To load the new color table and display the image, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756183">
+ </A>
+TVLCT, R, G, B</P>
+<P CLASS="Code">
+<A NAME="pgfId=756184">
+ </A>
+TV, image1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756185">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756186">
+ </A>
+<A HREF="idl211.htm#89368" CLASS="XRef">
+WRITE_PICT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

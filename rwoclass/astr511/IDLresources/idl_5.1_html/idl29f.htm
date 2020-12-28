@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_ATTRINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl29e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998495">
+ </A>
+<A NAME="65416">
+ </A>
+HDF_SD_ATTRINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998498">
+ </A>
+The <A NAME="marker=998497">
+ </A>
+HDF_SD_ATTRINFO procedure reads or retrieves information about an SD attribute. The attribute can be global or from a specific dataset. If an attribute is not present, an error message is printed.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998499">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998500">
+ </A>
+HDF_SD_ATTRINFO, <I CLASS="Italics">
+S_ID, Attr_Index</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998501">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998502">
+ </A>
+S_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998503">
+ </A>
+An SD interface ID as returned by HDF_SD_START (i.e., a global attribute's &quot;<I CLASS="Italics">
+SD_ID</I>
+&quot;), or HDF_SD_SELECT/HDF_SD_CREATE (i.e., a dataset's &quot;<I CLASS="Italics">
+SDS_ID</I>
+&quot;).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998504">
+ </A>
+Attr_Index</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998505">
+ </A>
+The attribute index, usually obtained by calling HDF_SD_ATTRFIND or HDF_SD_NAMETOINDEX .</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998506">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998508">
+ </A>
+<A NAME="marker=998507">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998509">
+ </A>
+Set this keyword to a named variable in which the total number of values in the specified attribute is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998511">
+ </A>
+<A NAME="marker=998510">
+ </A>
+DATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998512">
+ </A>
+Set this keyword to a named variable in which the attribute data is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998514">
+ </A>
+<A NAME="marker=998513">
+ </A>
+HDF_TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998515">
+ </A>
+Set this keyword to a named variable in which the HDF type of the attribute is returned as a scalar string. Possible returned values are <CODE CLASS="Code">
+DFNT_NONE</CODE>
+, <CODE CLASS="Code">
+DFNT_CHAR</CODE>
+, <CODE CLASS="Code">
+DFNT_FLOAT32</CODE>
+, <CODE CLASS="Code">
+DFNT_FLOAT64</CODE>
+, <CODE CLASS="Code">
+DFNT_INT8</CODE>
+, <CODE CLASS="Code">
+DFNT_INT16</CODE>
+, <CODE CLASS="Code">
+DFNT_INT32</CODE>
+, <CODE CLASS="Code">
+DFNT_UINT8</CODE>
+, <CODE CLASS="Code">
+DFNT_UINT16</CODE>
+, and <CODE CLASS="Code">
+DFNT_UINT32</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998517">
+ </A>
+<A NAME="marker=998516">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998518">
+ </A>
+Set this keyword to a named variable in which the name of the attribute is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998520">
+ </A>
+<A NAME="marker=998519">
+ </A>
+TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998521">
+ </A>
+Set this keyword to a named variable in which the IDL type of the attribute is returned as a scalar string. Possible returned values are <CODE CLASS="Code">
+BYTE</CODE>
+, <CODE CLASS="Code">
+INT</CODE>
+, <CODE CLASS="Code">
+LONG</CODE>
+, <CODE CLASS="Code">
+FLOAT</CODE>
+, <CODE CLASS="Code">
+DOUBLE</CODE>
+, <CODE CLASS="Code">
+STRING</CODE>
+, or <CODE CLASS="Code">
+UNKNOWN</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998522">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998523">
+ </A>
+sd_id = HDF_SD_START('demo.hdf')	<EM CLASS="Comment">;
+Open an HDF file and start the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998524">
+ </A>
+gindex = HDF_SD_ATTRFIND(sd_id, 'TITLE')	<EM CLASS="Comment">;
+Find a global attribute</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998525">
+ </A>
+HDF_SD_ATTRINFO, sd_id, gindex, NAME=n, TYPE=t, COUNT=c, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998526">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA=d, HDF_TYPE=h	<EM CLASS="Comment">;
+Retrieve attribute info.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998527">
+ </A>
+HELP, n, t, c, h	<EM CLASS="Comment">;
+Print information about the returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998528">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998529">
+ </A>
+N STRING = 'TITLE'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998530">
+ </A>
+T STRING = 'STRING'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998531">
+ </A>
+C LONG = 17</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998532">
+ </A>
+D STRING = '5th Ave Surf Shop'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998533">
+ </A>
+H STRING = 'DFNT_CHAR'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998534">
+ </A>
+sds_id = HDF_SD_SELECT(sd_id, 0)	<EM CLASS="Comment">;
+Return the SD dataset ID for the first dataset (index 0).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998535">
+ </A>
+dindex = HDF_SD_ATTRFIND(sds_id, 'LOCATION')<BR>
+<EM CLASS="Comment">;
+Find a dataset attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998536">
+ </A>
+HDF_SD_ATTRINFO,SDS_ID, dindex, NAME=n, TYPE=t, COUNT=c, DATA=d<BR>
+<EM CLASS="Comment">;
+Retrieve attribute info.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998537">
+ </A>
+HELP, n, t, c, d	<EM CLASS="Comment">;
+Print information about the new returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998538">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998539">
+ </A>
+N STRING = 'LOCATION'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998540">
+ </A>
+T STRING = 'STRING'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998541">
+ </A>
+C LONG = 15</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998542">
+ </A>
+D STRING = 'MELBOURNE BEACH'</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998543">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998556">
+ </A>
+<A HREF="idl29e.htm#85081" CLASS="XRef">
+HDF_SD_ATTRFIND</A>
+, <A HREF="idl2a0.htm#60488" CLASS="XRef">
+HDF_SD_ATTRSET</A>
+, <A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+, <A HREF="idl2b1.htm#92639" CLASS="XRef">
+HDF_SD_START</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

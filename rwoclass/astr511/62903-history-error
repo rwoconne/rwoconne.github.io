@@ -1,0 +1,397 @@
+     1	20:02	grep table ~/130/web/lec*html
+     2	20:11	fg
+     3	20:12	pg 511links.html
+     4	20:12	fg
+     5	20:14	cp lec1-f03.html $a511home/.
+     6	22:45	bakmail tmm
+     7	22:45	mail -f tmm
+     8	22:48	cd 511/web
+     9	22:48	jove lec1-f03.html
+    10	23:29	cp lec1-f03.html $bakdir/.
+    11	23:29	cp lec1-f03.html $bak2/.
+    12	23:30	new
+    13	23:30	cp lec1-f03.html $a511home/.
+    14	23:30	cd
+    15	23:30	bakmail tmm
+    16	23:30	mail -f tmm
+    17	23:30	cd 511/vgraphs
+    18	23:30	xdr
+    19	23:30	xdir
+    20	23:30	cd 01
+    21	23:30	xdir
+    22	23:30	cp lec2-vg.tex lec2
+    23	23:31	detex lec2 > lec2-f03.html
+    24	23:31	pg lec2-f03.html
+    25	23:33	pg lec2-vg.tex
+    26	23:37	exit
+    27	22:46	bakmail tmm
+    28	22:46	mail -f tmm
+    29	22:46	cd 511/web
+    30	22:46	new
+    31	22:46	jove lec1-f03.html
+    32	23:10	cp lec1-f03.html $bakdir/.
+    33	23:10	cp lec1-f03.html $bak2/.
+    34	23:10	df
+    35	19:00	bakmail tmm
+    36	19:00	mail -f tmm
+    37	19:06	mail
+    38	19:06	checkspam
+    39	19:07	which mail
+    40	19:07	cd bin
+    41	19:08	ls
+    42	19:08	ll
+    43	19:08	ll | pg
+    44	19:08	mv old-demail old.Hspit old/.
+    45	19:09	w
+    46	19:09	clog
+    47	19:09	w
+    48	19:09	cd idldoc
+    49	19:09	new
+    50	19:10	cd ..
+    51	19:10	new
+    52	19:10	cd idldoc
+    53	19:10	new
+    54	19:10	cd gen
+    55	19:10	new
+    56	19:11	cd xr
+    57	19:11	new
+    58	19:11	cd lit
+    59	19:11	new
+    60	19:11	cd ..
+    61	19:11	new
+    62	19:11	cd cxo
+    63	19:11	new
+    64	19:11	cd
+    65	19:11	xdir
+    66	19:12	cd reviews/cxorev
+    67	19:12	new
+    68	19:12	cd reviews
+    69	19:12	xdir
+    70	19:12	cd cxocy5-03/
+    71	19:12	new
+    72	19:12	cd ..
+    73	19:12	cd ..
+    74	19:12	new
+    75	19:13	cd idldoc
+    76	19:13	find . -name "*evrard*' -print
+    77	19:13	find . -name '*evrard*' -print
+    78	19:13	xdir
+    79	19:14	cd 121/stats
+    80	19:14	new
+    81	19:21	cd 511/web
+    82	19:21	new
+    83	19:21	date
+    84	19:21	cal
+    85	19:22	xdir
+    86	19:22	cd ../vgraphs/
+    87	19:22	new
+    88	19:22	jove lec3-vg.tex
+    89	19:39	xdir
+    90	19:40	cd 01
+    91	19:40	xdir
+    92	19:40	pg 091101.lec3-vg.tex
+    93	19:41	cd
+    94	19:41	cd 511/vgraphs
+    95	19:41	new
+    96	19:41	cp lec3-vg.tex $bakdir/.
+    97	19:41	cp lec3-vg.tex $bak2/.
+    98	19:41	w
+    99	19:41	exit
+   100	9:21	cp /home/www/statistics/class-month.html .
+   101	9:21	ll class-month.html
+   102	9:21	mv class-month.html 121/stats/webstats-mo-29jun03.html
+   103	9:22	bakmail tmm
+   104	9:22	mail -f tmm
+   105	9:22	mail
+   106	9:23	checkspam
+   107	9:52	cd 511
+   108	9:52	new
+   109	9:53	cd 121
+   110	9:53	find . -name "*background" -print
+   111	9:53	find . -name "*back" -print
+   112	9:53	find . -name "*bck" -print
+   113	9:54	find . -name "*form" -print
+   114	9:54	cd 511
+   115	9:54	new
+   116	9:54	w
+   117	9:54	cd stu
+   118	9:54	new
+   119	9:54	cd ..
+   120	9:54	xdir
+   121	9:55	pg midterm.tex
+   122	9:55	cp midterm.tex stu-background.tex
+   123	9:55	jove stu-background.tex
+   124	9:58	cd 121/s02
+   125	9:58	ll *tex
+   126	9:59	pv exam1.tex
+   127	9:59	pg exam1.tex
+   128	9:59	cd 511
+   129	9:59	fg
+   130	10:02	pg ~/121/s02/exam1.tex
+   131	10:04	fg
+   132	10:12	new
+   133	10:12	cp stu-background.tex $bakdir/.
+   134	10:12	cp stu-background.tex $bak2/.
+   135	10:12	new
+   136	10:13	pg obs-limits.517
+   137	10:15	pg obs-limits.517
+   138	10:17	cd web
+   139	10:17	new
+   140	10:17	jove lec1-f03.html
+   141	10:29	pg 511links.html
+   142	10:30	fg
+   143	10:54	grep units ../vgraphs/f01/*tex
+   144	10:54	grep units ../vgraphs/01/*.tex
+   145	10:54	fg
+   146	11:14	pg ../obs-limits.517
+   147	11:17	fg
+   148	11:32	cp lec1-f03.html $a511home/.
+   149	11:32	fg
+   150	11:39	cp lec1-f03.html $a511home/.
+   151	11:40	fg
+   152	11:41	cp lec1-f03.html $a511home/.
+   153	11:41	fg
+   154	11:43	fg
+   155	11:43	cp lec1-f03.html $a511home/.
+   156	11:47	fg
+   157	11:57	cp lec1-f03.html $a511home/.
+   158	11:58	cp lec1-f03.html $bakdir/.
+   159	11:58	cp lec1-f03.html $bak2/.
+   160	11:58	new
+   161	11:58	w
+   162	11:58	cd
+   163	11:58	ssh -l rwo astsun
+   164	11:59	mail
+   165	11:59	exit
+   166	15:45	bakmail tmm
+   167	15:45	mail -f tmm
+   168	15:46	mail
+   169	15:47	cd 511
+   170	15:47	new
+   171	15:47	tex stu-background
+   172	15:47	jove stu-background.
+   173	15:47	jove stu-background.tex
+   174	15:50	tex stu-background
+   175	15:50	new
+   176	15:50	file *.dvi
+   177	15:50	cd web
+   178	15:50	xdir
+   179	15:50	jove lec1-f03.html
+   180	16:10	cd /home/www/class
+   181	16:10	dirid
+   182	16:10	cd fall2001
+   183	16:10	dirid
+   184	16:10	cd oconnell
+   185	16:10	dirid
+   186	16:10	cd astr511
+   187	16:10	xdir
+   188	16:10	ll | wc
+   189	16:10	du
+   190	16:11	cd IDLexercises/
+   191	16:11	cd data
+   192	16:11	ls
+   193	16:11	xdir
+   194	16:11	du
+   195	16:11	cd ..
+   196	16:11	du
+   197	16:11	du -s *
+   198	16:12	xdir
+   199	16:12	cd ..
+   200	16:12	ls
+   201	20:44	bakmail tmm
+   202	20:44	mail -f tmm
+   203	20:45	cd $a511home
+   204	20:45	xdir
+   205	20:46	ll
+   206	20:47	du
+   207	20:47	dir LBT
+   208	20:48	cd ..
+   209	20:48	dir
+   210	20:48	cd LBT
+   211	20:48	xdir
+   212	20:48	new
+   213	20:48	cd
+   214	20:48	cd $a511home
+   215	20:48	grep LBT *.html
+   216	20:49	grep UIT *.html
+   217	20:50	dirid
+   218	20:50	ln -s /home/www/class/oconnell/UIT UIT
+   219	20:50	grep LBT *.html
+   220	20:50	ll LBT
+   221	20:51	cd ..
+   222	20:51	ll LBT
+   223	20:51	ll LBT*smex*
+   224	20:51	ll LBT/*smex*
+   225	20:51	cd 511
+   226	20:51	dirid
+   227	20:51	cd
+   228	20:51	cd $a511home
+   229	20:52	dirid
+   230	20:52	mv LBT lbt-old-tm
+   231	20:52	ln -s /home/www/class/oconnell/LBT/ LBT
+   232	20:52	ls
+   233	20:57	new
+   234	20:58	pg index.html
+   235	20:58	pg index.html
+   236	20:59	cd
+   237	20:59	cd 121/stats
+   238	20:59	new
+   239	21:00	grep "511/index" webstats-mo-29jun03.html
+   240	21:00	grep "511" webstats-mo-29jun03.html
+   241	21:00	grep "511" webstats-mo-29jun03.html | pg
+   242	21:00	grep "511" webstats-mo-29jun03.html | pg
+   243	21:01	cd $a511home/.
+   244	21:01	xdir
+   245	21:02	cd 511/web
+   246	21:02	new
+   247	21:02	ll *indx*
+   248	21:02	ll *index*
+   249	21:02	cp index.html index.030703
+   250	21:02	jove index.html
+   251	21:03	ll *index*
+   252	21:03	diff index.030703 index.082901
+   253	21:03	fg
+   254	21:06	cp index.html $a511home/.
+   255	21:06	cp index.html index-f01.062903
+   256	21:06	xdir
+   257	21:07	jove index.html
+   258	21:11	xdir
+   259	21:12	mkdir 01
+   260	21:12	mv index.[0-9]*html 01/.
+   261	21:13	mv index.[1-9]*html 01/.
+   262	21:13	mv index.*01*html 01/.
+   263	21:13	ll index*
+   264	21:14	mv index.01* 01/.
+   265	21:14	mv index.*01 01/.
+   266	21:14	ll index*
+   267	21:15	mv index-0998.dev index-f01.062903 index.030703 index.0816 index.811 01/.
+   268	21:15	mv index-0998.dev index-f01.062903 index.030703 index.0816 index.822 01/.
+   269	21:15	ll index*
+   270	21:15	xdir
+   271	21:15	cp *html 01/.
+   272	21:16	dir *gif
+   273	21:16	mv *gif 01/.
+   274	21:16	mv *jpg 01/.
+   275	21:16	xdir
+   276	21:16	cd 01
+   277	21:16	xdir
+   278	21:17	cd ..
+   279	21:17	cp *pdf 01/.
+   280	21:17	xdir
+   281	21:17	mv 091802.lectureindex 120201-511links.html 01/.
+   282	21:17	xdir
+   283	21:17	rm 120201-511links.html
+   284	21:17	xdir
+   285	21:17	pg test-uv.html
+   286	21:18	ll 01/test-uv.html
+   287	21:18	rm test-uv.html
+   288	21:18	xdir
+   289	21:18	pg extext
+   290	21:18	mv extext 01/.
+   291	21:18	xdir
+   292	21:19	mv update-L4.txt 01/.
+   293	21:19	xdir
+   294	21:19	cp Vega_SED.sav 01/.
+   295	21:19	mv 09* 01/.
+   296	21:19	mv 09*
+   297	21:19	rm 09*
+   298	21:20	cd 01
+   299	21:20	xdir
+   300	21:20	ll 09*
+   301	21:20	cd ..
+   302	21:20	xdir
+   303	21:20	pg SD-template
+   304	21:20	mv SD-template 01/.
+   305	21:20	xdir
+   306	21:20	mv UV*00 01/.
+   307	21:21	pg uv-astr.intermed1
+   308	21:21	pg uv-astr.intermed1
+   309	21:21	mv uv-astr.intermed1 01/.
+   310	21:21	xdir
+   311	21:21	mv uv.html.bak astr313-syll-f99.html 511-index-html.97 01/.
+   312	21:21	pg 01/511-index-html.97
+   313	21:22	xdir
+   314	21:22	pg pmf.914
+   315	21:22	mv pmf.914 01/.
+   316	21:22	xdir
+   317	21:22	xdir
+   318	21:23	mv photbib-01.ps.gz 01/.
+   319	21:23	mv sced-dead-829.ps.gz 01/.
+   320	21:23	ll 01/0828-sched-dead.html
+   321	21:23	rm 0828-sched-dead.html
+   322	21:23	xdir
+   323	21:24	fg
+   324	21:24	jove index.html
+   325	21:30	cp index.html $a511home/.
+   326	21:33	cp ~/130/web/weather.html 130-f02-weather.html
+   327	21:33	pg 130-f02-weather.html
+   328	21:35	pg weather.html
+   329	21:35	ll 01/weather.html
+   330	21:35	ll weather.html
+   331	21:35	cp 130-f02-weather.html weather.html
+   332	21:35	jove weather.html
+   333	21:37	cp weather.html $a511home/.
+   334	21:37	ll lectureindex.html
+   335	21:38	ll 01/lectureindex.html
+   336	21:38	jove lectureindex.html
+   337	21:40	xdir
+   338	21:40	pg lectureindex.html
+   339	21:40	jove lectureindex.html
+   340	21:42	cp lectureindex.html $a511home/.
+   341	21:42	jove psindex.html
+   342	21:44	cp psindex.html $a511home/.
+   343	21:44	jove labindex.html
+   344	21:51	cp labindex.html $a511home/.
+   345	21:51	fg
+   346	21:51	jove labindex.html
+   347	21:52	jove lectureindex.html
+   348	21:52	cp lectureindex.html $a511home/.
+   349	21:53	jove labindex.html
+   350	21:53	cp labindex.html $a511home/.
+   351	21:55	jove lectureindex.html
+   352	21:56	cp lectureindex.html $a511home/.
+   353	21:57	xdir
+   354	21:58	jove psindex.html
+   355	21:59	cp psindex.html $a511home/.
+   356	22:00	xdir
+   357	22:00	cp index.html 062903.index
+   358	22:00	jove 511links.html
+   359	22:02	cp 511links.html $a511home/.
+   360	22:02	cd $a511home
+   361	22:02	cd 01
+   362	22:02	dir *pdf
+   363	22:03	dir *html
+   364	22:03	dirid
+   365	22:03	cd lbt-old-tm/
+   366	22:03	xdir
+   367	22:03	rm *jpg
+   368	22:03	y
+   369	22:04	xdir
+   370	22:04	rm *gif
+   371	22:04	cd ..
+   372	22:04	dirid
+   373	22:04	mv uit-olddir/ 01/.
+   374	22:04	mv uit-olddir/ 01/
+   375	22:05	mv lbt-old-tm/ 01/
+   376	22:05	dirid
+   377	22:05	dir wf3
+   378	22:05	mv AO 01/.
+   379	22:05	ls
+   380	22:05	ll *pdf
+   381	22:06	dir 01/ps*
+   382	22:06	dir 01/*pdf
+   383	22:06	dir
+   384	22:06	dirid
+   385	22:06	cd 01
+   386	22:06	dir
+   387	22:06	h
+   388	22:07	history
+   389	22:07	cd ..
+   390	22:07	ls
+   391	22:07	dirid
+   392	22:07	cd 01
+   393	22:08	ls
+   394	22:08	history
+   395	22:09	cd ..
+   396	22:09	ls
+   397	22:10	history > 62903-history-error

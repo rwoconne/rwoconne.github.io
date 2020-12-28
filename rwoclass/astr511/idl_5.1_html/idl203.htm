@@ -1,0 +1,885 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_DRAW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl204.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl202.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680218">
+ </A>
+<A NAME="48726">
+ </A>
+WIDGET_DRAW</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680219">
+ </A>
+<A NAME="marker=674590">
+ </A>
+The <A NAME="marker=781795">
+ </A>
+WIDGET_DRAW function is <A NAME="marker=781799">
+ </A>
+used to create draw widgets. Draw widgets are rectangular areas that IDL treats as standard graphics windows. Draw widgets can use either IDL Direct graphics or IDL Object graphics, depending on the value of the GRAPHICS_LEVEL keyword. (See <A HREF="..html#41280" CLASS="XRef">
+Graphics</A>
+ for an explanation of IDL's graphics modes.) Any graphical output that can be produced by IDL can be directed to a draw widget. Draw widgets can have optional scroll bars to allow viewing a larger graphics area than could otherwise be displayed in the widget's visible area.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680220">
+ </A>
+The returned value of this function is the widget ID of the newly-created draw widget.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=132584">
+ </A>
+On some systems, when backing store is provided by the window system (RETAIN=1), reading data from a window using TVRD(&nbsp;) may cause unexpected results. For example, data may be improperly read from the window even when the image displayed on screen is correct. Having IDL provide the backing store (RETAIN=2) ensures that the window contents will be read properly.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680221">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680222">
+ </A>
+Result = WIDGET_DRAW(<I CLASS="Italic">
+Parent</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680223">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680224">
+ </A>
+Parent </H4>
+<P CLASS="Body">
+<A NAME="pgfId=680225">
+ </A>
+The widget ID of the parent widget of the new draw widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680226">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680227">
+ </A>
+<A NAME="marker=941979">
+ </A>
+APP_SCROLL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=941809">
+ </A>
+Set this keyword to create a scrollable draw widget with horizontal and vertical scrollbars and a draw area canvas with the same size as the viewport. You can specify the size of the viewport using the X_SCROLL_SIZE and Y_SCROLL_SIZE keywords, and the virtual size of the canvas using the XSIZE and YSIZE keywords. If APP_SCROLL is set, the application generates expose and viewport events such as would occur wiith EXPOSE=1, RETAIN=0, and VIEWPORT_EVENTS=1. This allows you to redraw the appropriate part of the virtual canvas when your application receives expose or viewport events.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=941808">
+ </A>
+<A NAME="marker=674597">
+ </A>
+BUTTON_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680228">
+ </A>
+Set this keyword to make the draw widget generate events when the mouse buttons are pressed or released (and the mouse pointer is in the draw widget). Normally, draw widgets do not generate events.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=930114">
+ </A>
+<A NAME="marker=930113">
+ </A>
+COLOR_MODEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=930115">
+ </A>
+Set this keyword equal to 1 (one) to cause the draw widget's associated IDLgrWindow object to use indexed color. If the COLOR_MODEL keyword is not set, or is set to a value other than one, the draw widget will use RGB color.</P>
+<P CLASS="Body">
+<A NAME="pgfId=930116">
+ </A>
+This keyword is only valid when the draw widget uses IDL Object Graphics. (The graphics type used by a draw widget is determined by setting the <A HREF="idl203.htm#35823" CLASS="XRef">
+GRAPHICS_LEVEL</A>
+ keyword to WIDGET_DRAW.) See <EM CLASS="Emphasis">
+Objects and Object Graphics</EM>
+ for details on using indexed color in Object Graphics window objects.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896380">
+ </A>
+<A NAME="marker=674598">
+ </A>
+COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680231">
+ </A>
+<A NAME="marker=674599">
+ </A>
+The maximum number of color table indices to be used. This parameter has effect <I CLASS="Italic">
+only</I>
+ if it is supplied when the <I CLASS="Italic">
+first</I>
+ IDL graphics window is created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680232">
+ </A>
+If COLORS is not specified when the first window is created, all or most of the available color indices are allocated, depending upon the window system in use.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680233">
+ </A>
+To use monochrome windows on a color display, set COLORS equal to 2 when creating the first window. One color table is maintained for all IDL windows. A negative value for COLORS specifies that all but the given number of colors from the shared color table should be used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680234">
+ </A>
+<A NAME="marker=108962">
+ </A>
+EVENT_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680235">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680236">
+ </A>
+<A NAME="marker=108963">
+ </A>
+EVENT_PRO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680237">
+ </A>
+A string containing the name of a procedure to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907355">
+ </A>
+<A NAME="marker=907370">
+ </A>
+EXPOSE_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907358">
+ </A>
+Set this keyword to make the draw widget generate event when the visibility of the draw widget changes. This may occur when the widget is hidden behind something else on the screen, brought to the foreground, or when the scroll bars are moved.</P>
+<P CLASS="Body">
+<A NAME="pgfId=909817">
+ </A>
+Normally, draw widgets do not generate events.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=909810">
+ </A>
+You must explicitly disable backing store (by setting the RETAIN keyword equal to zero) in order to generate expose events.</LI>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=907364">
+ </A>
+Large numbers of events may be generated when EXPOSE_EVENTS is specified. You may wish to compress the events (perhaps using a timer) and only act on a subset.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680238">
+ </A>
+<A NAME="marker=674618">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680239">
+ </A>
+The value of this keyword specifies the width of a frame in units specified by the UNITS keyword (pixels are the default) to be drawn around the borders of the widget. Note that this keyword is only a hint to the toolkit, and may be ignored in some instances.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680240">
+ </A>
+<A NAME="marker=108964">
+ </A>
+FUNC_GET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680241">
+ </A>
+A string containing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=914743">
+ </A>
+<A NAME="35823">
+ </A>
+GRAPHICS_LEVEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914770">
+ </A>
+Set this keyword equal to 2 (two) to use IDL Object Graphics in the draw widget. If the GRAPHICS_LEVEL keyword is not set, or is set to a value other than two, the draw widget will use IDL Direct Graphics.</P>
+<P CLASS="Body">
+<A NAME="pgfId=914774">
+ </A>
+See <A HREF="..html#41280" CLASS="XRef">
+Graphics</A>
+ for information on IDL's graphics modes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680242">
+ </A>
+<A NAME="marker=108965">
+ </A>
+GROUP_LEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680243">
+ </A>
+The widget ID of an existing widget that serves as &quot;group leader&quot; for the newly-created widget. When a group leader is killed, for any reason, all widgets in the group are also destroyed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680244">
+ </A>
+A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680245">
+ </A>
+<A NAME="marker=108966">
+ </A>
+KILL_NOTIFY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680246">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget dies. Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). Note that the procedure specified is used only if you are not using the XMANAGER procedure to manage your widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=153789">
+ </A>
+The callback routine is called with the widget identifier as its only argument. At that point, the widget identifier can only be used with the WIDGET_CONTROL procedure to get or set the user value. All other requests that require a widget ID are disallowed for the target widget. The callback is not issued until the WIDGET_EVENT function is called.</P>
+<P CLASS="Body">
+<A NAME="pgfId=158821">
+ </A>
+If you use the XMANAGER procedure to manage your widgets, the value of this keyword is overwritten. Use the CLEANUP keyword to XMANAGER to specify a procedure to be called when a managed widget dies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=153791">
+ </A>
+<A NAME="marker=153790">
+ </A>
+MOTION_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680249">
+ </A>
+Set this keyword to make the draw <A NAME="marker=106466">
+ </A>
+widget generate events when the mouse <A NAME="marker=674644">
+ </A>
+cursor moves across the widget. Normally, draw widgets do not generate events.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680250">
+ </A>
+Draw widgets that return motion events can generate a large number of events that can result in poor performance on slower machines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=163548">
+ </A>
+Note that it is possible to generate motion events with coordinates outside the draw widget. If you position the mouse cursor inside the draw widget, press the mouse button, and drag the cursor out of the draw widget, the X and Y fields of the widget event will specify coordinates outside the draw widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680251">
+ </A>
+<A NAME="marker=108967">
+ </A>
+NO_COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=913966">
+ </A>
+Usually, when setting or getting widget user values, either at widget creation or using the SET_UVALUE and GET_UVALUE keywords to WIDGET_CONTROL, IDL makes a second copy of the data being transferred. Although this technique is fine for small data, it can have a significant memory cost when the data being copied is large.</P>
+<P CLASS="Body">
+<A NAME="pgfId=913967">
+ </A>
+If the NO_COPY keyword is set, IDL handles these operations differently. Rather than copy the source data, it takes the data away from the source and attaches it directly to the destination. This feature can be used by compound widgets to obtain state information from a UVALUE without all the memory copying that would otherwise occur. However, it has the side effect of causing the source variable to become undefined. On a &quot;set&quot; operation (using the UVALUE keyword to WIDGET_DRAW or the SET_UVALUE keyword to WIDGET_CONTROL), the variable passed as value becomes undefined. On a &quot;get&quot; operation (GET_UVALUE keyword to WIDGET_CONTROL), the user value of the widget in question becomes undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67601">
+ </A>
+<A NAME="marker=108968">
+ </A>
+NOTIFY_REALIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67604">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget is realized. This callback occurs just once (because widgets are realized only once). Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). The callback routine is called with the widget ID as its only argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680253">
+ </A>
+<A NAME="marker=108969">
+ </A>
+PRO_SET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680254">
+ </A>
+A string containing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to designate a routine that sets the value for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=930656">
+ </A>
+<A NAME="marker=930655">
+ </A>
+RENDERER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=941447">
+ </A>
+Set this keyword to an integer value indicating which graphics renderer to use when drawing objects within the window. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=941448">
+ </A>
+0 = Platform native OpenGL</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=941449">
+ </A>
+1 = IDL's software implementation</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=941450">
+ </A>
+By default, your platform's native OpenGL implementation is used. If your platform does not have a native OpenGL implementation, IDL's software implementation is used regardless of the value of this property. See <A HREF="..html#34873" CLASS="XRef">
+Hardware vs. Software Rendering</A>
+ for details. Your choice of renderer may also affect the maximum size of a draw widget. See <A HREF="..html#72835" CLASS="XRef">
+IDLgrWindow</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=724035">
+ </A>
+<A NAME="marker=724033">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=734095">
+ </A>
+A string containing an X Window System resource name to be applied to the widget. See <A HREF="idl200.htm#71756" CLASS="XRef">
+RESOURCE_NAME</A>
+ for a complete discussion of this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680255">
+ </A>
+<A NAME="marker=674657">
+ </A>
+RETAIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=132532">
+ </A>
+<A NAME="marker=132531">
+ </A>
+Set this keyword to 0, 1, or 2 to specify how backing store should be handled for the draw widget. RETAIN=0 specifies no backing store. RETAIN=1 requests that the server or window system provide backing store. RETAIN=2 specifies that IDL provide backing store directly. See <A HREF="idl22f.htm#83595" CLASS="XRef">
+Backing Store</A>
+<EM CLASS="Emphasis">
+ </EM>
+for details on the use of RETAIN with Direct Graphics. For more information on the use of RETAIN with Object Graphics, see <A HREF="..html#14899" CLASS="XRef">
+IDLgrWindow::Init</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67289">
+ </A>
+<A NAME="marker=67288">
+ </A>
+SCR_XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67290">
+ </A>
+Set this keyword to the desired &quot;screen&quot; width of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the XSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67292">
+ </A>
+<A NAME="marker=67291">
+ </A>
+SCR_YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67293">
+ </A>
+Set this keyword to the desired &quot;screen&quot; height of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the YSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67286">
+ </A>
+<A NAME="marker=674661">
+ </A>
+SCROLL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680257">
+ </A>
+Set this keyword to give the draw widget <A NAME="marker=674662">
+ </A>
+scroll bars that allow viewing portions of the widget contents that are not currently on the screen.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67368">
+ </A>
+<A NAME="marker=106470">
+ </A>
+TRACKING_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67369">
+ </A>
+Set this keyword to cause widget tracking events to be issued for the widget whenever the mouse pointer enters or leaves the region covered by that widget. For the structure of tracking events, see <A HREF="idl200.htm#72083" CLASS="XRef">
+TRACKING_EVENTS</A>
+ in the documentation for WIDGET_BASE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895543">
+ </A>
+<A NAME="marker=895542">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895545">
+ </A>
+Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680259">
+ </A>
+<A NAME="marker=674663">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680260">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680261">
+ </A>
+Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680262">
+ </A>
+If UVALUE is not present, the widget's initial user value is undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680263">
+ </A>
+<A NAME="marker=674667">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=941575">
+ </A>
+The initial value setting of the widget. The value of a draw widget is the IDL window number for use with Direct Graphics routines, such as WSET. For Object Graphics routines, it is the draw window object reference. This value cannot be set or modified by the user.</P>
+<P CLASS="Body">
+<A NAME="pgfId=941579">
+ </A>
+To <A NAME="marker=941577">
+ </A>
+obtain the <A NAME="marker=941578">
+ </A>
+window number for a newly-created draw widget, use the GET_VALUE keyword to WIDGET_CONTROL <I CLASS="Italic">
+after</I>
+ the draw widget has been realized. Draw widgets do not have a window number assigned to them until they are realized. For example, to return the window number of a draw widget in the variable <I CLASS="Italic">
+win_num</I>
+, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=941591">
+ </A>
+WIDGET_CONTROL, my_drawwidget, GET_VALUE = win_num</P>
+<P CLASS="Body">
+<A NAME="pgfId=941592">
+ </A>
+where <I CLASS="Italic">
+my_drawwidget</I>
+ is the widget ID of the desired draw widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=941593">
+ </A>
+When using Object Graphics for the widget draw, the following command returns an object reference to the draw window:</P>
+<P CLASS="Code">
+<A NAME="pgfId=941599">
+ </A>
+WIDGET_CONTROL, my_drawwidget, GET_VALUE = oWindow</P>
+<P CLASS="Body">
+<A NAME="pgfId=941601">
+ </A>
+where <I CLASS="Italic">
+oWindow</I>
+ is a window object.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279483">
+ </A>
+<A NAME="marker=279519">
+ </A>
+VIEWPORT_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279518">
+ </A>
+Set this keyword to enable viewport motion events for draw widgets.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680268">
+ </A>
+<A NAME="marker=674670">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680269">
+ </A>
+The horizontal offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680270">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget layout.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680271">
+ </A>
+<A NAME="marker=674671">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680272">
+ </A>
+The width of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations. By default, draw widgets are 100 pixels wide by 100 pixels high.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680274">
+ </A>
+<A NAME="marker=674672">
+ </A>
+X_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680275">
+ </A>
+The XSIZE keyword always specifies the width of a widget. When the SCROLL keyword is specified, this size is not necessarily the same as the width of the visible area. The X_SCROLL_SIZE keyword allows you to set the width of the scrolling viewport independently of the actual width of the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680276">
+ </A>
+Use of the X_SCROLL_SIZE keyword implies SCROLL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680277">
+ </A>
+<A NAME="marker=674673">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680278">
+ </A>
+The vertical offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent. This offset is specified relative to the <I CLASS="Italic">
+upper left</I>
+ corner of the parent widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680279">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget layout.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680280">
+ </A>
+<A NAME="marker=674674">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680281">
+ </A>
+The height of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a hint to the toolkit and may be ignored in some situations. By default, draw widgets are 100 pixels wide by 100 pixels high.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680283">
+ </A>
+<A NAME="marker=674675">
+ </A>
+Y_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680284">
+ </A>
+The YSIZE keyword always specifies the height of a widget. When the SCROLL keyword is specified, this size is not necessarily the same as the height of the visible area. The Y_SCROLL_SIZE keyword allows you to set the height of the scrolling viewport independently of the actual height of the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680285">
+ </A>
+Use of the Y_SCROLL_SIZE keyword implies SCROLL.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888817">
+ </A>
+Keywords to WIDGET_CONTROL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888818">
+ </A>
+A number of keywords to the <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ procedure affect the behavior of draw widgets. In addition to those keywords that affect all widgets, the following are particularly useful: <A HREF="idl202.htm#70900" CLASS="XRef">
+DRAW_BUTTON_EVENTS</A>
+, <A HREF="idl202.htm#21042" CLASS="XRef">
+DRAW_EXPOSE_EVENTS</A>
+, <A HREF="idl202.htm#85655" CLASS="XRef">
+DRAW_MOTION_EVENTS</A>
+, <A HREF="idl202.htm#60154" CLASS="XRef">
+DRAW_VIEWPORT_EVENTS</A>
+, <A HREF="idl202.htm#86280" CLASS="XRef">
+DRAW_XSIZE</A>
+, <A HREF="idl202.htm#86128" CLASS="XRef">
+DRAW_YSIZE</A>
+, <A HREF="idl202.htm#74777" CLASS="XRef">
+GET_DRAW_VIEW</A>
+, <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+, <A HREF="idl202.htm#93591" CLASS="XRef">
+INPUT_FOCUS</A>
+, <A HREF="idl202.htm#89861" CLASS="XRef">
+SET_DRAW_VIEW</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889758">
+ </A>
+Keywords to WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889762">
+ </A>
+A number of keywords to the <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+ function return information that applies specifically to draw widgets. In addition to those keywords that apply to all widgets, the following are particularly useful: <A HREF="idl206.htm#99741" CLASS="XRef">
+DRAW_BUTTON_EVENTS</A>
+, <A HREF="idl206.htm#10997" CLASS="XRef">
+DRAW_EXPOSE_EVENTS</A>
+, <A HREF="idl206.htm#52336" CLASS="XRef">
+DRAW_MOTION_EVENTS</A>
+, <A HREF="idl206.htm#22682" CLASS="XRef">
+DRAW_VIEWPORT_EVENTS</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680286">
+ </A>
+Widget Events Returned by Draw Widgets</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680287">
+ </A>
+<A NAME="marker=674676">
+ </A>
+By default, draw widgets do not generate events. If the BUTTON_EVENTS keyword is set when the widget is created, pressing or releasing any mouse button while the mouse cursor is over the draw widget causes events to be generated. Specifying the MOTION_EVENTS keyword causes events to be generated <I CLASS="Italic">
+continuously</I>
+ as the mouse cursor moves across the draw widget. Specifying the EXPOSE_EVENTS keyword causes events to be generated whenever the visibility of any portion of the draw window (or viewport) changes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680288">
+ </A>
+The event structure returned by the WIDGET_EVENT function is defined by the following statement:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=680289">
+ </A>
+{WIDGET_DRAW, ID:0L, TOP:0L, HANDLER:0L, TYPE: 0, X:0, Y:0, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRESS:0B, RELEASE:0B, CLICKS:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=680290">
+ </A>
+ID, TOP, and HANDLER are the three standard fields found in every widget event. TYPE returns a value that describes the type of draw widget interaction that generated an event. The values for TYPE are shown in the table below.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=675442">
+ </A>
+Values for the TYPE field.</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=675432">
+ </A>
+Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=675425">
+ </A>
+Meaning</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675434">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675431">
+ </A>
+Button Press</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675436">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675433">
+ </A>
+Button Release</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675438">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675435">
+ </A>
+Motion</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675440">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=675437">
+ </A>
+Viewport Moved (Scrollbars)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=907348">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=907350">
+ </A>
+Visibility Changed (Exposed)</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=680291">
+ </A>
+The X and Y fields give the device coordinates at which the event occurred, measured from the lower left corner of the drawing area. PRESS and RELEASE are bitmasks in which the least significant bit represents the leftmost mouse button. The corresponding bit of PRESS is set when a mouse button is pressed, and in RELEASE when the button is released. If the event is a motion event, both PRESS and RELEASE are zero.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907352">
+ </A>
+The CLICKS field returns either 1 or 2. If the time interval between two button-press events is less than the time interval for a double-click event for the platform, the CLICKS field returns 2. If the time interval between button-press events is greater than the time interval for a double-click event for the platform, the CLICKS field returns 1. This means that if you are writing a widget application that requires the user to double-click on a draw widget, you will need to handle two events. The CLICKS field will return a 1 on the first click and a 2 on the second click.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680898">
+ </A>
+Note that the CURSOR procedure is only for use with IDL graphics windows. It should not be used with draw widgets. To obtain the cursor position and button state information from a draw widget, examine the X, Y, PRESS, and RELEASE fields in the structures returned by the draw widget in response to cursor events.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680292">
+ </A>
+Backing Store</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680293">
+ </A>
+<A NAME="marker=674678">
+ </A>
+Draw widgets with scroll bars rely on backing store to repaint the visible area of the window as it is moved. Their performance is best on systems that provide backing store. However, if your system does not automatically provide backing store, you can make IDL supply it with the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680294">
+ </A>
+DEVICE, RETAIN=2</P>
+<P CLASS="Body">
+<A NAME="pgfId=680295">
+ </A>
+or by using the RETAIN keyword to WIDGET_DRAW.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=907351">
+ </A>
+If you are using graphics acceleration, you may wish to turn off backing store entirely and enable expose events (via the EXPOSE_EVENTS keyword) and redraw the draw widget's contents manually. However, because the number of events generated may be quite high, you may wish to enable a timer as well and only redraw the draw widget periodically.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820455">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820456">
+ </A>
+<A HREF="idl1a5.htm#12925" CLASS="XRef">
+SLIDE_IMAGE</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

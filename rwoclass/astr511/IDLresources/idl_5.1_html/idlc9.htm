@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HISTOGRAM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlca.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677165">
+ </A>
+<A NAME="31792">
+ </A>
+HISTOGRAM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=816404">
+ </A>
+The <A NAME="marker=673149">
+ </A>
+HISTOGRAM <A NAME="marker=50071">
+ </A>
+function returns a longword vector equal to the <A NAME="marker=43556">
+ </A>
+density function of <I CLASS="Italics">
+Array</I>
+. In the simplest case, the density function, at subscript <I CLASS="Italics">
+i</I>
+, is the number of <I CLASS="Italics">
+Array</I>
+ elements in the argument with a value of <I CLASS="Italics">
+i</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=815172">
+ </A>
+Let <I CLASS="Italics">
+F</I>
+<SUB CLASS="subscript">
+i</SUB>
+= the value of element <I CLASS="Italics">
+i</I>
+, 0 <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+i</EM>
+ &lt; <EM CLASS="Emphasis">
+n</EM>
+. Let <I CLASS="Italics">
+H</I>
+<SUB CLASS="subscript">
+v</SUB>
+ = result of histogram function, a longword vector. The definition of the histogram function becomes:</P>
+<DIV>
+<CENTER><IMG SRC="idl_51.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_52.gif" BORDER=0>
+</DIV>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=828321">
+ </A>
+There may not always be enough virtual memory available to find the density functions of arrays that contain a large number of bins.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=677167">
+ </A>
+For bivariate probability distributions, use the HIST_2D function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677168">
+ </A>
+HISTOGRAM can optionally return an array containing a list of the original array subscripts that contributed to each histogram bin. This list, commonly called the <A NAME="marker=673156">
+ </A>
+reverse (or backwards) index list, efficiently determines which array elements are accumulated in a set of histogram <A NAME="marker=673157">
+ </A>
+bins. A typical application of the reverse index list is reverse histogram or scatter plot interrogation--a histogram bin or 2D scatter plot location is marked with the cursor and the original data items within that bin are highlighted.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677169">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677170">
+ </A>
+Result = HISTOGRAM(<I CLASS="Italics">
+Array</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677171">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677172">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677173">
+ </A>
+The vector or array for which the <A NAME="marker=673158">
+ </A>
+density function is to be computed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677174">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677175">
+ </A>
+<A NAME="marker=673159">
+ </A>
+BINSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677176">
+ </A>
+The size of the bin to use. If this keyword is not specified, a bin size of 1 is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677177">
+ </A>
+<A NAME="marker=673160">
+ </A>
+INPUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677178">
+ </A>
+Set this keyword to a named variable that contains an array to be added to the output of HISTOGRAM. The density function of <I CLASS="Italics">
+Array</I>
+ is added to the existing contents of INPUT and returned as the result. The array is converted to longword type if necessary and must have at least as many elements as are required to form the histogram.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677179">
+ </A>
+Multiple histograms can be efficiently accumulated by specifying partial sums via this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677180">
+ </A>
+<A NAME="marker=673161">
+ </A>
+MAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677181">
+ </A>
+MAX is the maximum value to consider. Note that the data type of the value specified for MAX should match the data type of the input array; specifying mismatched data types may produce undesired results. If this keyword is not specified, <I CLASS="Italics">
+Array</I>
+ is searched for its largest value. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677182">
+ </A>
+<A NAME="marker=673162">
+ </A>
+MIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677183">
+ </A>
+MIN is the minimum value to consider. Note that the data type of the value specified for MIN should match the data type of the input array; specifying mismatched data types may produce undesired results. If this keyword is not specified, and <I CLASS="Italics">
+Array</I>
+ is of type byte, 0 is used. If this keyword is not specified and <I CLASS="Italics">
+Array</I>
+ is not of byte type, <I CLASS="Italics">
+Array</I>
+ is searched for its smallest value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=197674">
+ </A>
+<A NAME="marker=197673">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832055">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677184">
+ </A>
+<A NAME="marker=673163">
+ </A>
+OMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677185">
+ </A>
+A named variable that, upon exit, contains the maximum data value used in constructing the histogram.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677186">
+ </A>
+<A NAME="marker=673164">
+ </A>
+OMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677187">
+ </A>
+A named variable that, upon exit, contains the minimum data value used in constructing the histogram.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677188">
+ </A>
+<A NAME="marker=673165">
+ </A>
+REVERSE_INDICES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677189">
+ </A>
+Set this keyword to a named variable in which the list of reverse indices is returned. This list is returned as a longword vector whose number of elements is the sum of the number of elements in the histogram, <I CLASS="Italics">
+N</I>
+, and the number of array elements included in the histogram, plus one.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677190">
+ </A>
+The subscripts of the original array elements falling in the <I CLASS="Italics">
+i</I>
+th bin, 0 <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+i</EM>
+ &lt; <EM CLASS="Emphasis">
+N</EM>
+, are given by the expression: R(R[i] : R(i+1)-1), where R is the reverse index list. If R[i] is equal to R[i+1], no elements are present in the <I CLASS="Italics">
+i</I>
+th bin.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=677191">
+ </A>
+Make the histogram of array A:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677192">
+ </A>
+H = HISTOGRAM(A, REVERSE_INDICES = R)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=841075">
+ </A>
+IF R(i) NE R(i+1) THEN A(R(R(I) : R(i+1)-1)) = 0<BR>
+<EM CLASS="Comment">;
+Set all elements of A that are in the ith bin of H to 0.</EM>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=677195">
+ </A>
+The above is usually more efficient than the following:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677196">
+ </A>
+bini = WHERE(A EQ i, count)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677197">
+ </A>
+IF count NE 0 THEN A(bini) = 0</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677198">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=856893">
+ </A>
+Create a simple, two-dimensional dataset with the DIST function by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856894">
+ </A>
+D = DIST(200)</P>
+<P CLASS="Body">
+<A NAME="pgfId=856895">
+ </A>
+Plot the histogram of D with a bin size of 1 and the default minimum and maximum by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677202">
+ </A>
+PLOT, HISTOGRAM(D)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677203">
+ </A>
+To plot a histogram considering only those values from 10 to 50 using a bin size of 4, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677204">
+ </A>
+PLOT, HISTOGRAM(D, MIN = 10, MAX = 50, BINSIZE = 4)</P>
+<P CLASS="Body">
+<A NAME="pgfId=856900">
+ </A>
+The HISTOGRAM function can also be used to <A NAME="marker=673168">
+ </A>
+increment the elements of one vector whose subscripts are contained in another vector. To increment those elements of vector A indicated by vector B, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677206">
+ </A>
+A = HISTOGRAM(B, INPUT=A, MIN=0, MAX=N_ELEMENTS(A)-1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677207">
+ </A>
+This method works for duplicate subscripts, whereas the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677208">
+ </A>
+A[B] = A[B]+1</P>
+<P CLASS="Body">
+<A NAME="pgfId=856925">
+ </A>
+never adds more than 1 to any element, even if that element is duplicated in vector B. For example, the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856926">
+ </A>
+A = LONARR(5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=856927">
+ </A>
+B = [2,2,3]</P>
+<P CLASS="Code">
+<A NAME="pgfId=856928">
+ </A>
+PRINT, HISTOGRAM(B, INPUT=A, MIN=0, MAX=4)</P>
+<P CLASS="Body">
+<A NAME="pgfId=856929">
+ </A>
+print:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856930">
+ </A>
+&nbsp;&nbsp;&nbsp;0&nbsp; 0&nbsp; 2&nbsp; 1&nbsp; 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=856931">
+ </A>
+while the commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856932">
+ </A>
+A = LONARR(5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=856933">
+ </A>
+A[B] = A[B]+1</P>
+<P CLASS="Code">
+<A NAME="pgfId=856934">
+ </A>
+PRINT, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=856935">
+ </A>
+gives the result:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856936">
+ </A>
+&nbsp;&nbsp;&nbsp;0&nbsp; 0&nbsp; 1&nbsp; 1&nbsp; 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=856941">
+ </A>
+The following example demonstrates how to use HISTOGRAM.</P>
+<P CLASS="Code">
+<A NAME="pgfId=856974">
+ </A>
+PRO t_histogram</P>
+<P CLASS="Code">
+<A NAME="pgfId=856947">
+ </A>
+data = [[-5,  4,   2,  -8,  1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856948">
+ </A>
+        [ 3,  0,   5,  -5,  1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856949">
+ </A>
+        [ 6, -7,   4,  -4, -8], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856950">
+ </A>
+        [-1, -5, -14,   2,  1]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=856952">
+ </A>
+hist = HISTOGRAM(data)</P>
+<P CLASS="Code">
+<A NAME="pgfId=856954">
+ </A>
+bins = FINDGEN(N_ELEMENTS(hist)) - ABS(MIN(data))</P>
+<P CLASS="Code">
+<A NAME="pgfId=856955">
+ </A>
+PRINT, MIN(hist)</P>
+<P CLASS="Code">
+<A NAME="pgfId=856956">
+ </A>
+PRINT, bins</P>
+<P CLASS="Code">
+<A NAME="pgfId=856957">
+ </A>
+PLOT, bins, hist, YRANGE = [MIN(hist)-1, MAX(hist)+1], PSYM = 10, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856958">
+ </A>
+&nbsp;&nbsp;&nbsp;XTITLE = 'Bin Number', YTITLE = 'Density per Bin'</P>
+<P CLASS="Code">
+<A NAME="pgfId=856977">
+ </A>
+END</P>
+<P CLASS="Code">
+<A NAME="pgfId=856979">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=856980">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856981">
+ </A>
+      0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856982">
+ </A>
+&nbsp;</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856983">
+ </A>
+-14.0000     -13.0000     -12.0000     -11.0000     -10.0000     -9.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856984">
+ </A>
+-8.00000     -7.00000     -6.00000     -5.00000     -4.00000     -3.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856985">
+ </A>
+-2.00000     -1.00000      0.00000      1.00000      2.00000      3.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856986">
+ </A>
+ 4.00000   &nbsp;5.00000&nbsp;&nbsp;&nbsp; 6.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=856918">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822642">
+ </A>
+<A HREF="idlbf.htm#52883" CLASS="XRef">
+H_EQ_CT</A>
+, <A HREF="idlc0.htm#94073" CLASS="XRef">
+H_EQ_INT</A>
+, <A HREF="idlc7.htm#87584" CLASS="XRef">
+HIST_2D</A>
+, <A HREF="idlc8.htm#23334" CLASS="XRef">
+HIST_EQUAL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

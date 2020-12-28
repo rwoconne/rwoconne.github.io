@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrLegend</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2fb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1144768">
+ </A>
+<A NAME="18270">
+ </A>
+IDLgrLegend</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1144771">
+ </A>
+The <A NAME="marker=1144770">
+ </A>
+IDLgrLegend object provides a simple interface for displaying a legend. The legend itself consists of a (filled and/or framed) box around one or more legend items (arranged in a single column) and an optional title string. Each legend item consists of a glyph patch positioned to the left of a text string. The glyph patch is drawn in a square which is a fraction of the legend label font height. The glyph itself can be in one of two types (see the TYPE keyword). In line type, the glyph is a line segment with linestyle, thickness and color attributes and an optional symbol object drawn over it. In fill type, the glyph is a square patch drawn with color and optional pattern object attributes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1156705">
+ </A>
+An IDLgrLegend object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1156152">
+ </A>
+This object class is implemented in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+idlgrlegend.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1156153">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156160">
+ </A>
+This class is a subclass of <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1144774">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144775">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144776">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144783">
+ </A>
+See <A HREF="idl2fa.htm#31156" CLASS="XRef">
+IDLgrLegend::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144784">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144785">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144786">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144793">
+ </A>
+<A HREF="idl2fa.htm#19920" CLASS="XRef">
+IDLgrLegend::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1166374">
+ </A>
+<A HREF="idl2fa.htm#38887" CLASS="XRef">
+IDLgrLegend::ComputeDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144807">
+ </A>
+<A HREF="idl2fa.htm#23259" CLASS="XRef">
+IDLgrLegend::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144814">
+ </A>
+<A HREF="idl2fa.htm#31156" CLASS="XRef">
+IDLgrLegend::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144821">
+ </A>
+<A HREF="idl2fa.htm#41858" CLASS="XRef">
+IDLgrLegend::SetProperty</A>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156174">
+ </A>
+Inherited Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156175">
+ </A>
+This class inherits the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156182">
+ </A>
+<A HREF="idl2fc.htm#25790" CLASS="XRef">
+IDLgrModel::GetCTM</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144824">
+ </A>
+<A NAME="19920">
+ </A>
+IDLgrLegend::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144827">
+ </A>
+The IDLgrLegend::<A NAME="marker=1144826">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fa.htm#18270" CLASS="XRef">
+IDLgrLegend</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144834">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144835">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144836">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144837">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144838">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLegend::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144839">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144840">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144841">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1156250">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1166225">
+ </A>
+<A NAME="38887">
+ </A>
+IDLgrLegend::ComputeDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166286">
+ </A>
+The IDLgrLegend::<A NAME="marker=1166353">
+ </A>
+ComputeDimensions function method retrieves the dimensions of a legend object for the given destination object. The result is a three-element floating-point vector [<I CLASS="Italic">
+xDim</I>
+, <I CLASS="Italic">
+yDim</I>
+, <I CLASS="Italic">
+zDim</I>
+] representing the dimensions of the legend object measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fa.htm#18270" CLASS="XRef">
+IDLgrLegend</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166245">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166246">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLegend::]</EM>
+ComputeDimensions(<I CLASS="Italic">
+DestinationObj</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166248">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1166249">
+ </A>
+DestinationObject</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1166250">
+ </A>
+The object reference to a destination object (IDLgrBuffer, IDLgrClipboard, IDLgrPrinter, or IDLgrWindow) for which the dimensions of the legend are being requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166253">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166335">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1156279">
+ </A>
+<A NAME="23259">
+ </A>
+IDLgrLegend::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144874">
+ </A>
+The IDLgrLegend::<A NAME="marker=1144873">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the legend. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fa.htm#18270" CLASS="XRef">
+IDLgrLegend</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144881">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144882">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLegend::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144883">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144884">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144885">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144892">
+ </A>
+Any keyword to <A HREF="idl2fa.htm#31156" CLASS="XRef">
+IDLgrLegend::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144894">
+ </A>
+<A NAME="marker=1144893">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144895">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the retrievable properties associated with this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144897">
+ </A>
+<A NAME="marker=1144896">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144898">
+ </A>
+Set this keyword to a named variable that will contain an object reference to the object that contains this legend.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144900">
+ </A>
+<A NAME="marker=1144899">
+ </A>
+XRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144901">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<I CLASS="Italic">
+xmin</I>
+, <EM CLASS="Emphasis">
+xmax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+X</EM>
+ data coordinates covered by the legend.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144903">
+ </A>
+<A NAME="marker=1144902">
+ </A>
+YRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144904">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+Y</EM>
+ data coordinates covered by the legend.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144906">
+ </A>
+<A NAME="marker=1144905">
+ </A>
+ZRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144907">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+] specifying the range of the <EM CLASS="Emphasis">
+Z</EM>
+ data coordinates covered by the legend.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1166331">
+ </A>
+Until the legend is drawn to the destination object, the [XYZ]RANGE properties will be zero. Use the ComputeDimensions method on the legend object to get the data dimensions of the legend prior to a draw operation.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1144910">
+ </A>
+<A NAME="31156">
+ </A>
+IDLgrLegend::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144916">
+ </A>
+The IDLgrLegend::<A NAME="marker=1144912">
+ </A>
+Init function method initializes the legend object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fa.htm#18270" CLASS="XRef">
+IDLgrLegend</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144920">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144921">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144922">
+ </A>
+Obj = OBJ_NEW('IDLgrLegend')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144923">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144924">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrLegend::]</EM>
+Init(<EM CLASS="Emphasis">
+[aItemNames]</EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144925">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144926">
+ </A>
+aItemNames</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144927">
+ </A>
+An array of strings to be used as the displayed item label. The length of this array is used to determine the number of items to be displayed. Each item is defined by taking one element from the ITEM_NAME, ITEM_TYPE, ITEM_LINESTYLE, ITEM_THICK, ITEM_COLOR, and ITEM_OBJECT vectors. If the number of items (as defined by the ITEM_NAME array) exceeds any of the attribute vectors, the attribute defaults will be used for any additional items.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144928">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144935">
+ </A>
+Properties retrievable via <A HREF="idl2fa.htm#23259" CLASS="XRef">
+IDLgrLegend::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144943">
+ </A>
+<A NAME="marker=1144942">
+ </A>
+BORDER_GAP (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144944">
+ </A>
+Set this keyword to a floating-point value to indicate the amount of blank space to be placed around the outside of the glyphs and text items. The units for this property are fractions of the legend label font height. The default is 0.1 (10% of the label font height). </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144946">
+ </A>
+<A NAME="marker=1144945">
+ </A>
+COLUMNS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144947">
+ </A>
+Set this keyword to an integer value to indicate the number of columns the legend items should be displayed in. The default is one column.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144949">
+ </A>
+<A NAME="marker=1144948">
+ </A>
+FILL_COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144950">
+ </A>
+Set this keyword to the color to be used to fill the legend background box. The color may be specified as a color lookup table index or as an RGB vector. The default is [255,255,255]. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144952">
+ </A>
+<A NAME="marker=1144951">
+ </A>
+FONT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144953">
+ </A>
+Set this keyword to an instance of an IDLgrFont object class to describe the font to use to draw the legend labels. The default is 12 point Helvetica.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144954">
+ </A>
+If the default font is in use, retrieving the value of the FONT property (using the GetProperty method) will return a font object that will be destroyed when this legend object is destroyed, leaving a dangling object reference.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144956">
+ </A>
+<A NAME="marker=1144955">
+ </A>
+GAP (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144957">
+ </A>
+Set this keyword to a floating-point value to indicate the amount of blank space to be placed vertically between each legend item. The units for this keyword are fractions of the legend label font height. The default is 0.1 (10% of the label font height). The same gap is placed horizontally between the legend glyph and the legend text string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144959">
+ </A>
+<A NAME="marker=1144958">
+ </A>
+GLYPH_WIDTH (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144960">
+ </A>
+Set this keyword to a floating-point value to indicate the width of the glyphs, measured as a fraction of the font height. The default is 0.8 (80% of the font height).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144962">
+ </A>
+<A NAME="marker=1144961">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144963">
+ </A>
+Set this keyword to a boolean value to indicate whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144964">
+ </A>
+0 = Draw graphic (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144965">
+ </A>
+1 = Do not draw graphic</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144967">
+ </A>
+<A NAME="marker=1144966">
+ </A>
+ITEM_COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144968">
+ </A>
+Set this keyword to an array of colors defining the color of each item. The array defines <EM CLASS="Emphasis">
+M</EM>
+ different colors, and should be either of the form [3,<EM CLASS="Emphasis">
+M</EM>
+] or [<EM CLASS="Emphasis">
+M</EM>
+]. In the first case, the three values are used as an RGB triplet, in the second case, the single value is used as a color index value. The default color is [0,0,0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144970">
+ </A>
+<A NAME="marker=1144969">
+ </A>
+ITEM_LINESTYLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144971">
+ </A>
+Set this keyword to an array of integers defining the style of the line to be drawn if the TYPE property is set to zero. The array can be of the form [<EM CLASS="Emphasis">
+M</EM>
+] or [2,<EM CLASS="Emphasis">
+M</EM>
+]. The first form selects the linestyle for each legend item from the predefined defaults:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144972">
+ </A>
+0 = Solid line (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144973">
+ </A>
+1 = dotted</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144974">
+ </A>
+2 = dashed</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144975">
+ </A>
+3 = dash dot</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144976">
+ </A>
+4 = dash dot dot dot</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144977">
+ </A>
+5 = long dash</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144978">
+ </A>
+6 = no line drawn</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1144979">
+ </A>
+The second form specifies the stippling pattern explicitly for each legend item (see IDLgrPolyline::Init LINESTYLE keyword for details). </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144981">
+ </A>
+<A NAME="marker=1144980">
+ </A>
+ITEM_NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144982">
+ </A>
+Set this keyword to an array of strings. Specifying this keyword is the same as providing the <I CLASS="Italic">
+aName</I>
+ argument for the IDLgrLegend::Init method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144984">
+ </A>
+<A NAME="marker=1144983">
+ </A>
+ITEM_OBJECT (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144985">
+ </A>
+Set this keyword to an array of object references of type IDLgrSymbol or IDLgrPattern. A symbol object is drawn only if the TYPE property is set to zero. A pattern object is used when drawing the color patch if the TYPE property is set to one. The default object is the NULL object.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144986">
+ </A>
+If one or more IDlgrSymbol object references are provided, the SIZE property of those objects may be modified by this legend to suit its layout needs.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144988">
+ </A>
+<A NAME="marker=1144987">
+ </A>
+ITEM_THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144989">
+ </A>
+Set this keyword to an array of integers which define the thickness of each item line, in pixels. This property is only used if the TYPE property is set to zero. The default is 1 pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144991">
+ </A>
+<A NAME="marker=1144990">
+ </A>
+ITEM_TYPE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144992">
+ </A>
+Set this keyword to an array of integers which define the type of glyph to be displayed for each item:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144993">
+ </A>
+0 = line type (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144994">
+ </A>
+1 = filled box type</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144996">
+ </A>
+<A NAME="marker=1144995">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144997">
+ </A>
+Set this keyword to a string representing the name to be associated with this object. The default is the null string, ''.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144999">
+ </A>
+<A NAME="marker=1144998">
+ </A>
+OUTLINE_COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145000">
+ </A>
+Set this keyword to the color to be used to draw the legend outline box. The color may be specified as a color lookup table index or as an RGB vector. The default is [0,0,0]. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145002">
+ </A>
+<A NAME="marker=1145001">
+ </A>
+OUTLINE_THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145003">
+ </A>
+Set this keyword to an integer which defines the thickness of the outline frame. The default is 1 pixel. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145005">
+ </A>
+<A NAME="marker=1145004">
+ </A>
+SHOW_FILL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145006">
+ </A>
+Set this keyword to a boolean value indicating whether the background should be filled with a color: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145007">
+ </A>
+0 = Do not fill background (the default) </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145008">
+ </A>
+1 = Fill background</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145010">
+ </A>
+<A NAME="marker=1145009">
+ </A>
+SHOW_OUTLINE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145011">
+ </A>
+Set this keyword to a boolean value indicating whether the outline box should be displayed: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145012">
+ </A>
+0 = Do not display outline (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1145013">
+ </A>
+1 = Display outline</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145015">
+ </A>
+<A NAME="marker=1145014">
+ </A>
+TEXT_COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145016">
+ </A>
+Set this keyword to the color to be used to draw the legend item text. The color may be specified as a color lookup table index or as an RGB vector. The default is [0,0,0]. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145018">
+ </A>
+<A NAME="marker=1145017">
+ </A>
+TITLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145019">
+ </A>
+Set this keyword to an instance of the IDLgrText object class to specify the title for the legend. The default is the null object, specifying that no title is drawn. The title will be centered at the top of the legend, even if the text object itself has an associated location.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145021">
+ </A>
+<A NAME="marker=1145020">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145022">
+ </A>
+Set this keyword to a value of any type. Use this value to contain any information you wish.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145024">
+ </A>
+<A NAME="marker=1145023">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145025">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145026">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145027">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145028">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145029">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145031">
+ </A>
+<A NAME="marker=1145030">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145032">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145033">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145034">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173683">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173684">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145035">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145036">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1145038">
+ </A>
+<A NAME="marker=1145037">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1145039">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145040">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145041">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1145042">
+ </A>
+[(-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1145043">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1145046">
+ </A>
+<A NAME="41858">
+ </A>
+IDLgrLegend::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145049">
+ </A>
+The IDLgrLegend::<A NAME="marker=1145048">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the legend. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fa.htm#18270" CLASS="XRef">
+IDLgrLegend</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145056">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145057">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrLegend::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145058">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145059">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1145060">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1145067">
+ </A>
+Any keyword to <A HREF="idl2fa.htm#31156" CLASS="XRef">
+IDLgrLegend::Init</A>
+</DIV>
+</BODY>
+</HTML>

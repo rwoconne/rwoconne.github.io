@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDL Graphics Devices</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl22e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl22c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Chapter-Name">
+<A NAME="pgfId=498877">
+ </A>
+<BR>
+<A NAME="56982">
+ </A>
+IDL Graphics Devices</H1>
+<P CLASS="Body">
+<A NAME="pgfId=151115">
+ </A>
+IDL Direct Graphics support <A NAME="marker=425844">
+ </A>
+graphic output to the devices described in the table below. Each of these devices is described in a section of this chapter. The SET_PLOT procedure can be used to select the graphic device to which IDL directs its output. IDL Object Graphics does not rely on the concept of a current graphics device; see <EM CLASS="Emphasis">
+Objects and Object Graphics</EM>
+ for details about IDL Object Graphics.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=145002">
+ </A>
+<A NAME="42345">
+ </A>
+IDL Graphics Output Devices</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143905">
+ </A>
+Device Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=148680">
+ </A>
+Page</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143906">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143907">
+ </A>
+CGM</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148682">
+ </A>
+<A HREF="idl231.htm#91500" CLASS="XRef">
+The CGM Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143908">
+ </A>
+Computer Graphics Metafile</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143909">
+ </A>
+HP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148684">
+ </A>
+<A HREF="idl232.htm#92072" CLASS="XRef">
+The HP-GL Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143910">
+ </A>
+Hewlett-Packard Graphics Language (HP-GL)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143911">
+ </A>
+LJ</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148686">
+ </A>
+<A HREF="idl233.htm#37431" CLASS="XRef">
+The LJ Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143912">
+ </A>
+Digital Equipment LJ250 (VMS Only)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=145030">
+ </A>
+MAC</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148688">
+ </A>
+<A HREF="idl234.htm#34776" CLASS="XRef">
+The Macintosh Display Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=145031">
+ </A>
+<A NAME="marker=143400">
+ </A>
+Macintosh display</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143913">
+ </A>
+NULL</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148690">
+ </A>
+<A HREF="idl235.htm#17137" CLASS="XRef">
+The Null Display Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143914">
+ </A>
+No graphics output</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143915">
+ </A>
+PCL</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148692">
+ </A>
+<A HREF="idl236.htm#54861" CLASS="XRef">
+The PCL Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143916">
+ </A>
+Hewlett-Packard Printer Control Language (PCL)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=451628">
+ </A>
+PRINTER</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=451630">
+ </A>
+<A HREF="idl237.htm#11884" CLASS="XRef">
+The Printer Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=451632">
+ </A>
+System printer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143917">
+ </A>
+PS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148694">
+ </A>
+<A HREF="idl238.htm#97555" CLASS="XRef">
+The PostScript Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143918">
+ </A>
+PostScript</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143919">
+ </A>
+REGIS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148696">
+ </A>
+<A HREF="idl239.htm#65999" CLASS="XRef">
+The Regis Terminal Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143920">
+ </A>
+Regis graphics protocol (DEC systems only)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143923">
+ </A>
+TEK</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148700">
+ </A>
+<A HREF="idl23a.htm#40852" CLASS="XRef">
+The Tektronix Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143924">
+ </A>
+Tektronix compatible terminal</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143925">
+ </A>
+WIN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148702">
+ </A>
+<A HREF="idl23b.htm#12039" CLASS="XRef">
+The Microsoft Windows Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143927">
+ </A>
+<A NAME="marker=142731">
+ </A>
+Microsoft Windows </P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143928">
+ </A>
+X</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148704">
+ </A>
+<A HREF="idl23c.htm#95114" CLASS="XRef">
+The X Windows Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143929">
+ </A>
+X Window System</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144143">
+ </A>
+Z</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148706">
+ </A>
+<A HREF="idl23d.htm#65311" CLASS="XRef">
+The Z-Buffer Device</A>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144150">
+ </A>
+Z-buffer pseudo device</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=144151">
+ </A>
+The <A NAME="marker=142450">
+ </A>
+DEVICE procedure controls the graphic device-specific functions. An attempt has been made to isolate all device-specific functions in this procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144152">
+ </A>
+DEVICE controls the graphics device currently selected by <A NAME="marker=142451">
+ </A>
+SET_PLOT. When using DEVICE, it is important to make sure that the current graphics device is the one you intend to use. This is because most of the devices have different keywords--you will most likely get a ``<EM CLASS="tt">
+Keyword ... ... not allowed in call to: Device</EM>
+'' error if you call DEVICE when the wrong device is selected.</P>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl22e.htm#pgfId=145032" CLASS="Hypertext">
+Keywords Accepted by the IDL Devices</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl22f.htm#pgfId=144213" CLASS="Hypertext">
+Window Systems</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl230.htm#pgfId=144180" CLASS="Hypertext">
+Printing Graphics Output Files</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl231.htm#pgfId=144725" CLASS="Hypertext">
+The CGM Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl232.htm#pgfId=144328" CLASS="Hypertext">
+The HP-GL Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl233.htm#pgfId=144388" CLASS="Hypertext">
+The LJ Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl234.htm#pgfId=148774" CLASS="Hypertext">
+The Macintosh Display Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl235.htm#pgfId=148789" CLASS="Hypertext">
+The Null Display Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl236.htm#pgfId=144443" CLASS="Hypertext">
+The PCL Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl237.htm#pgfId=451373" CLASS="Hypertext">
+The Printer Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl238.htm#pgfId=451367" CLASS="Hypertext">
+The PostScript Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl239.htm#pgfId=144681" CLASS="Hypertext">
+The Regis Terminal Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl23a.htm#pgfId=144766" CLASS="Hypertext">
+The Tektronix Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl23b.htm#pgfId=144570" CLASS="Hypertext">
+The Microsoft Windows Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl23c.htm#pgfId=488321" CLASS="Hypertext">
+The X Windows Device</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl23d.htm#pgfId=144929" CLASS="Hypertext">
+The Z-Buffer Device</A>
+</H2>
+</BODY>
+</HTML>

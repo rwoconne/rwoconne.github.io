@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SVDC</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52094">
+ </A>
+<A NAME="67678">
+ </A>
+SVDC</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52099">
+ </A>
+The <A NAME="marker=52096">
+ </A>
+SVDC <A NAME="marker=52097">
+ </A>
+procedure computes the <A NAME="marker=52098">
+ </A>
+Singular Value Decomposition (SVD) of a square (<I CLASS="Italic">
+n</I>
+&nbsp;x<I CLASS="Italic">
+&nbsp;n</I>
+) or non-square (<EM CLASS="Emphasis">
+n</EM>
+&nbsp;x&nbsp;<EM CLASS="Emphasis">
+m</EM>
+) array as the product of orthogonal and diagonal arrays. SVD is a very powerful tool for the solution of linear systems, and is often used when a solution cannot be determined by other numerical algorithms.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52100">
+ </A>
+The SVD of an (<I CLASS="Italic">
+m</I>
+ x <I CLASS="Italic">
+n</I>
+) non-square array <I CLASS="Italic">
+A</I>
+ is computed as the product of an (<I CLASS="Italic">
+m</I>
+&nbsp;x<I CLASS="Italic">
+&nbsp;n</I>
+) column orthogonal array <I CLASS="Italic">
+U</I>
+, an (<I CLASS="Italic">
+n</I>
+ x <I CLASS="Italic">
+n</I>
+) diagonal array <I CLASS="Italic">
+SV</I>
+, composed of the singular values, and the transpose of an (<I CLASS="Italic">
+n</I>
+ x <I CLASS="Italic">
+n</I>
+) orthogonal array V: A = U&nbsp;&nbsp;SV&nbsp;&nbsp;V<SUP CLASS="Superscript">
+T</SUP>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=52101">
+ </A>
+SVDC is based on the routine <CODE CLASS="Code">
+svdcmp</CODE>
+ described in section 2.6 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52102">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52103">
+ </A>
+SVDC,<I CLASS="Italic">
+ A, W, U, V</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52104">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52105">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52106">
+ </A>
+The square (<I CLASS="Italic">
+n</I>
+ x <I CLASS="Italic">
+n</I>
+) or non-square (<I CLASS="Italic">
+n</I>
+ x <I CLASS="Italic">
+m</I>
+) single- or double-precision floating-point array to decompose.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52107">
+ </A>
+W</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52108">
+ </A>
+On output, <EM CLASS="Emphasis">
+W</EM>
+ is an <EM CLASS="Emphasis">
+n</EM>
+-element output vector containing the &quot;singular values.&quot;</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52109">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52110">
+ </A>
+On output, <EM CLASS="Emphasis">
+U</EM>
+ is an <I CLASS="Italic">
+n</I>
+-column, <I CLASS="Italic">
+m</I>
+-row orthogonal array used in the decomposition of <I CLASS="Italic">
+A</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52111">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52112">
+ </A>
+On output, <EM CLASS="Emphasis">
+V</EM>
+ is an <I CLASS="Italic">
+n</I>
+-column, <I CLASS="Italic">
+n</I>
+-row orthogonal array used in the decomposition of <I CLASS="Italic">
+A</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52113">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58767">
+ </A>
+<A NAME="marker=58766">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58768">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52115">
+ </A>
+<A NAME="marker=52114">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52116">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52117">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52121">
+ </A>
+To find the singular values of an array A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=59044">
+ </A>
+A&nbsp;=&nbsp;[[1.0, 2.0, -1.0, 2.5], $	<EM CLASS="Comment">;
+Define the array A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=59046">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.5, 3.3, -0.5, 2.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=59047">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1, 0.7, &nbsp;2.2, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=59049">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.0, 0.3, -2.0, 5.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=59050">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1, 1.0, &nbsp;4.3, 2.2], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=59051">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.0, 5.5, &nbsp;3.8, 0.2]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=59048">
+ </A>
+SVDC, A, W, U, V	<EM CLASS="Comment">;
+Compute the Singular Value Decomposition.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=59055">
+ </A>
+PRINT, W	<EM CLASS="Comment">;
+Print the singular values.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=59041">
+ </A>
+IDL prints: </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59064">
+ </A>
+8.81973      2.65502      4.30598      6.84484</P>
+<P CLASS="Body">
+<A NAME="pgfId=59058">
+ </A>
+To verify the decomposition, use the relationship A = U ## SV ## TRANSPOSE(V), where SV is a diagonal array created from the output vector W.</P>
+<P CLASS="Code">
+<A NAME="pgfId=59056">
+ </A>
+sv = FLTARR(4, 4)</P>
+<P CLASS="Code">
+<A NAME="pgfId=59066">
+ </A>
+FOR K = 0, 3 DO sv(K,K) = W[K]</P>
+<P CLASS="Code">
+<A NAME="pgfId=59068">
+ </A>
+result = U ## sv ## TRANSPOSE(V)</P>
+<P CLASS="Code">
+<A NAME="pgfId=59069">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=59070">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59071">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.00000      2.00000     -1.00000      2.50000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59073">
+ </A>
+      1.50000      3.30000    -0.500001      2.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59074">
+ </A>
+      3.10000     0.700000      2.20000      0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59075">
+ </A>
+  2.23517e-08     0.300000     -2.00000      5.30000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59076">
+ </A>
+      2.10000     0.999999      4.30000      2.20000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=59077">
+ </A>
+ -3.91155e-07      5.50000      3.80000     0.200000</P>
+<P CLASS="Body">
+<A NAME="pgfId=59078">
+ </A>
+This is the input array, to within machine precision.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=59067">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=154003">
+ </A>
+<A HREF="idl2f.htm#46702" CLASS="XRef">
+CHOLDC</A>
+, <A HREF="idl106.htm#56865" CLASS="XRef">
+LUDC</A>
+, <A HREF="idl1ca.htm#53821" CLASS="XRef">
+SVSOL</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=154007">
+ </A>
+<A HREF="..html#61597" CLASS="XRef">
+Linear Systems</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

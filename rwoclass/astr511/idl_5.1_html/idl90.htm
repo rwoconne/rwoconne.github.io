@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ERRORF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl91.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl8f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676742">
+ </A>
+<A NAME="47104">
+ </A>
+ERRORF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=721022">
+ </A>
+The <A NAME="marker=672956">
+ </A>
+ERRORF function returns the value of the error function:</P>
+<DIV>
+<CENTER><IMG SRC="idl_27.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839109">
+ </A>
+The result is a double-precision if the argument is double-precision. If the argument is floating-point, the result is floating-point. The result always has the same structure as <I CLASS="Italics">
+X</I>
+. The ERRORF function does not work with complex arguments.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676745">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676746">
+ </A>
+Result = ERRORF(<I CLASS="Italics">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676747">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676748">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676749">
+ </A>
+The expression for which the error function is to be evaluated.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676750">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676751">
+ </A>
+To find the error function of 0.4 and print the result, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676752">
+ </A>
+PRINT, ERRORF(0.4)</P>
+<P CLASS="Body">
+<A NAME="pgfId=676753">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676754">
+ </A>
+0.428392</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35161">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=37018">
+ </A>
+<A HREF="idlb1.htm#93572" CLASS="XRef">
+GAMMA</A>
+, <A HREF="idld0.htm#62754" CLASS="XRef">
+IGAMMA</A>
+, <A HREF="idl97.htm#65448" CLASS="XRef">
+EXPINT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

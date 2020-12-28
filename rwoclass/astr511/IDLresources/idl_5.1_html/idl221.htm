@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XMANAGER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl222.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl220.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762775">
+ </A>
+<A NAME="55404">
+ </A>
+XMANAGER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=921467">
+ </A>
+The <A NAME="marker=921464">
+ </A>
+XMANAGER procedure provides the <A NAME="marker=921465">
+ </A>
+main event loop and <A NAME="marker=921466">
+ </A>
+management for widgets created using IDL. Calling XMANAGER &quot;registers&quot; a widget program with the XMANAGER event handler. XMANAGER takes control of event processing until all widgets have been destroyed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=921660">
+ </A>
+Beginning with IDL version 5.0, IDL supports an <EM CLASS="Emphasis">
+active command line</EM>
+ that allows the IDL command input line to continue accepting input while properly configured widget applications are running. See <A HREF="idl221.htm#12599" CLASS="XRef">
+A Note About Blocking in XMANAGER</A>
+ for a more detailed explanation of the active command line.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762780">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xmanager.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762781">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762782">
+ </A>
+XMANAGER <I CLASS="Italic">
+[, Name, ID]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762783">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762784">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762785">
+ </A>
+A string that contains the name of the routine that creates the widget (i.e., the name of the widget creation routine that is calling XMANAGER).</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=927162">
+ </A>
+The <EM CLASS="Emphasis">
+Name</EM>
+ argument is stored in a COMMON block for use by the <A HREF="idl225.htm#86032" CLASS="XRef">
+XREGISTERED</A>
+ routine. The stored name is case-sensitive.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762786">
+ </A>
+ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762787">
+ </A>
+The widget ID of the new widget's top-level base.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762788">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762790">
+ </A>
+<A NAME="marker=762789">
+ </A>
+BACKGROUND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762791">
+ </A>
+<I CLASS="Italic">
+This keyword is obsolete and is included in XMANAGER for compatibility with existing code only. Its functionality has been replaced by the TIMER keyword to the WIDGET_CONTROL procedure.</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=762792">
+ </A>
+A string that contains the name of a background task procedure to be called when the event loop is idle.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=919187">
+ </A>
+<A NAME="marker=919186">
+ </A>
+<A NAME="30366">
+ </A>
+CATCH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900694">
+ </A>
+Set this keyword to cause XMANAGER to catch any errors, using the <A HREF="idl28.htm#70268" CLASS="XRef">
+CATCH</A>
+ procedure, when dispatching widget events. If the CATCH keyword is set equal to zero, execution halts and IDL provides traceback information when an error is detected. This keyword is set by default (errors are caught and processing continues).</P>
+<P CLASS="Body">
+<A NAME="pgfId=921493">
+ </A>
+Do not specify either the <EM CLASS="Emphasis">
+Name</EM>
+ or <EM CLASS="Emphasis">
+ID</EM>
+ argument to XMANAGER when specifying the CATCH keyword (they are ignored). CATCH acts as a switch to turn error catching on and off for <EM CLASS="Emphasis">
+all</EM>
+ applications managed by XMANAGER. When CATCH is specified, XMANAGER changes its error-catching behavior and returns immediately, without taking any other action.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=921178">
+ </A>
+Beginning with IDL version 5.0, the default behavior of XMANAGER is to catch errors and continue processing events. In versions of IDL prior to version 5.0, XMANAGER halted when an error was detected. This change in default behavior was necessary in order to allow multiple widget applications (all being managed by XMANAGER) to coexist peacefully. When CATCH is set equal to zero, (the old behavior), any error halts XMANAGER, and thus halts event processing for all running widget applications. </LI>
+</UL>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=932585">
+ </A>
+Note also that CATCH is only effective if XMANAGER is blocking to dispatch errors. If event dispatching for an active IDL command line is in use, the CATCH keyword has no effect.</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=932586">
+ </A>
+The CATCH=0 setting (errors are not caught and processing halts in XMANAGER when an error is detected) is intended as a debugging aid. Finished programs should not set CATCH=0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762794">
+ </A>
+<A NAME="marker=762793">
+ </A>
+<A NAME="15947">
+ </A>
+CLEANUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762795">
+ </A>
+Set this keyword to a string that contains the name of the routine to be called when the widget dies. If not specified, no routine is called. The cleanup routine must accept one parameter which is the widget ID of the dying widget. The routine specified by CLEANUP becomes the KILL_NOTIFY routine for the application, overriding any cleanup routines that may have been set previously via the <A HREF="idl202.htm#26948" CLASS="XRef">
+KILL_NOTIFY</A>
+ keyword to WIDGET_CONTROL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762797">
+ </A>
+<A NAME="marker=762796">
+ </A>
+EVENT_HANDLER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762798">
+ </A>
+Set this keyword to a string that contains the name of a routine to be called when a widget event occurs in the widget program being registered. If this keyword is not supplied, XMANAGER will construct a default name by adding the &quot;_event&quot; suffix to the Name argument. See the example below for a more detailed explanation.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762800">
+ </A>
+<A NAME="marker=762799">
+ </A>
+GROUP_LEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762801">
+ </A>
+The widget ID of the group leader for the widget being processed. When the leader dies either by the users actions or some other routine, all widgets that have that leader will also die.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762802">
+ </A>
+For example, a widget that views a help file for a demo widget would have that demo widget as its leader. When the help widget is registered, it sets the keyword GROUP_LEADER to the widget ID of the demo widget. If the demo widget were destroyed, the help widget led by it would be killed by the XMANAGER.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762804">
+ </A>
+<A NAME="marker=762803">
+ </A>
+JUST_REG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900686">
+ </A>
+Set this keyword to indicate that XMANAGER should just register the widget and return immediately. This keyword is useful if you want to register a group of related top-level widgets before beginning event processing and either:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=932545">
+ </A>
+your command-processing front-end does not support an active command line, or </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=932558">
+ </A>
+one or more of the registered widgets requests that XMANAGER block event processing. (Note that in this case a later call to XMANAGER without the JUST_REG keyword is necessary to begin blocking.)</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=932555">
+ </A>
+(See <A HREF="idl221.htm#12599" CLASS="XRef">
+A Note About Blocking in XMANAGER</A>
+ for further discussion of the active command line.)</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=921651">
+ </A>
+JUST_REG is not the same as NO_BLOCK. See <A HREF="idl221.htm#38729" CLASS="XRef">
+JUST_REG vs. NO_BLOCK</A>
+ for additional details.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900689">
+ </A>
+<A NAME="marker=900687">
+ </A>
+<A NAME="24922">
+ </A>
+MODAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900697">
+ </A>
+<I CLASS="Italic">
+This keyword is obsolete and is included in XMANAGER for compatibility with existing code only. Its functionality has been replaced by the MODAL keyword to the WIDGET_BASE procedure.</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=762809">
+ </A>
+When this keyw<A NAME="marker=762808">
+ </A>
+ord is set, the widget that is being registered traps all events and desensitizes all the other widgets. It is useful when input from the user is necessary to continue (i.e., &quot;blocking&quot; dialog boxes). Once the modal widget dies, the others are resensitized and the normal event processing continues.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=921241">
+ </A>
+<A NAME="marker=921431">
+ </A>
+NO_BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=921430">
+ </A>
+Set this keyword to tell XMANAGER that the registering client does not require XMANAGER to block if active command line event processing is available. If active command line event processing is available <EM CLASS="Emphasis">
+and</EM>
+ every current XMANAGER client specifies NO_BLOCK, then XMANAGER will not block and the user will have access to the command line while widget applications are running.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=921250">
+ </A>
+NO_BLOCK is not the same as JUST_REG. See <A HREF="idl221.htm#38729" CLASS="XRef">
+JUST_REG vs. NO_BLOCK</A>
+ for additional details.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762810">
+ </A>
+Warning</H3>
+<P CLASS="Body">
+<A NAME="pgfId=900705">
+ </A>
+Although this routine is written in the IDL language, it may change in the future in its internal implementation. For future upgradability, it is best not to modify or even worry about what this routine does internally.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900706">
+ </A>
+<A NAME="12599">
+ </A>
+A Note About Blocking in XMANAGER</H3>
+<P CLASS="Body">
+<A NAME="pgfId=921577">
+ </A>
+Beginning with IDL version 5.0, most versions of IDL's command-processing front-end are able to support an <EM CLASS="Emphasis">
+active command line</EM>
+<A NAME="marker=921591">
+ </A>
+ while running properly constructed widget applications. What this means is that--provided the widget application is properly configured--the IDL command input line is available for input while a widget application is running and widget events are being processed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=921582">
+ </A>
+There are currently 5 separate IDL command-processing front-end implementations:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=921583">
+ </A>
+Apple Macintosh Integrated Development Environment (IDLDE)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=921584">
+ </A>
+Microsoft Windows IDLDE</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=921585">
+ </A>
+Motif IDLDE (Unix and VMS)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=921586">
+ </A>
+Unix plain tty</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=921587">
+ </A>
+VMS plain tty</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=921580">
+ </A>
+All of these front-ends are able to process widget events except for the VMS plain tty. VMS users can still enjoy an active command line by using the IDLDE interface.</P>
+<P CLASS="Body">
+<A NAME="pgfId=921592">
+ </A>
+If the command-processing front-end can process widget events (that is, if the front-end is <EM CLASS="Emphasis">
+not</EM>
+ the VMS plain tty), it is still necessary for widget applications to be well-behaved with respect to blocking widget event processing. Since in most cases XMANAGER is used to handle widget event processing, this means that in order for the command line to remain active, all widget applications must be run with the NO_BLOCK keyword to XMANAGER set. (Note that since NO_BLOCK is <EM CLASS="Emphasis">
+not</EM>
+ the default, it is quite likely that some application will block.) If a single application runs in blocking mode, the command line will be inaccessible until the blocking application exits. When a blocking application exits, the IDL command line will once again become active.</P>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=900708">
+ </A>
+<A NAME="38729">
+ </A>
+JUST_REG vs. NO_BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=921573">
+ </A>
+Although their names imply a similar function, the JUST_REG and NO_BLOCK keywords perform very different services. It is important to understand what they do and how they differ.</P>
+<P CLASS="Body">
+<A NAME="pgfId=921510">
+ </A>
+The JUST_REG keyword tells XMANAGER that it should simply register a client and then return immediately. The result is that the client becomes known to XMANAGER, and that future calls to XMANAGER will take this client into account. Therefore, JUST_REG only controls how the registering call to XMANAGER should behave. The client can still be registered as requiring XMANAGER to block by setting NO_BLOCK=0. In this case, <EM CLASS="Emphasis">
+future</EM>
+ calls to XMANAGER will block.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=932562">
+ </A>
+JUST_REG is useful in situations where you suspect blocking might occur--if the active command line is not supported and you wish to keep it active before beginning event processing, or if blocking will be requested at a later time. If no blocking will occur or if the blocking behavior is useful, it is not necessary to use JUST_REG.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=921518">
+ </A>
+The NO_BLOCK keyword tells XMANAGER that the registered client does not require XMANAGER to block if the command-processing front-end is able to support active command line event processing. XMANAGER remembers this attribute of the client until the client exits, even after the call to XMANAGER that registered the client returns. NO_BLOCK is just a &quot;vote&quot; on how XMANAGER should behave--the final decision is made by XMANAGER by considering the NO_BLOCK attributes of <EM CLASS="Emphasis">
+all</EM>
+ of its current clients as well as the ability of the command-processing front-end in use to support the active command line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=921528">
+ </A>
+Blocking vs. Non-blocking Applications</H4>
+<P CLASS="Body">
+<A NAME="pgfId=921505">
+ </A>
+The issue of blocking in XMANAGER requires some explanation. IDL widget events are not processed until the WIDGET_EVENT function is called to handle them. Otherwise, they are queued by IDL indefinitely. Knowing how and when to call WIDGET_EVENT is the primary service provided by XMANAGER. </P>
+<P CLASS="Body">
+<A NAME="pgfId=921635">
+ </A>
+There are two ways blocking is typically handled:</P>
+<OL>
+<LI CLASS="Numbered-1">
+<A NAME="pgfId=900714">
+ </A>
+The first call to XMANAGER processes events by calling WIDGET_EVENT as necessary until no managed widgets remain on the screen. This is referred to as &quot;blocking&quot; because XMANAGER does not return to the caller until it is done, and the IDL command line is not available.</LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=900717">
+ </A>
+XMANAGER does not block, and instead, the part of IDL that reads command input also watches for widget events and calls WIDGET_EVENT as necessary while also reading command input. This is referred to as &quot;non-blocking&quot; or &quot;active command line&quot; mode.</LI>
+</OL>
+<P CLASS="Body">
+<A NAME="pgfId=900730">
+ </A>
+XMANAGER will block unless all of the following conditions are met:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=921612">
+ </A>
+The command-processing front-end is able to process widget events (that is, the front-end is not the VMS plain tty).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=921622">
+ </A>
+All registered widget applications have the NO_BLOCK keyword to XMANAGER set.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=921623">
+ </A>
+No modal dialogs are displayed. (Modal dialogs always block until dismissed.)</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=900749">
+ </A>
+In general, we suggest that new widget applications be written with XMANAGER blocking disabled (that is, with the NO_BLOCK keyword set). Since a widget application that does block event processing for itself will block event processing for all other widget applications (and the IDL command line) as well, we suggest that older widget applications be upgraded to take advantage of the new, non-blocking behavior by adding the NO_BLOCK keyword to most calls to XMANAGER.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900707">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762813">
+ </A>
+The following code creates a widget named EXAMPLE that is just a base widget with a &quot;Done&quot; button and registers it with the XMANAGER. Widgets being registered with the XMANAGER must provide at least two routines. The first routine creates the widget and registers it with the manager and the second routine processes the events that occur within that widget. An example widget is supplied below that uses only two routines. A number of other &quot;Simple Widget Examples&quot;, can be viewed by entering WEXMASTER at the IDL prompt. These simple programs demonstrate many aspects of widget programming.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762814">
+ </A>
+The following lines of code would be saved in a single file, named <CODE CLASS="Code">
+example.pro</CODE>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=762815">
+ </A>
+PRO example_event, ev	<EM CLASS="Comment">;
+Begin the event handler routine for the EXAMPLE widget.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762816">
+ </A>
+WIDGET_CONTROL, ev.id, GET_UVALUE = uv	<EM CLASS="Comment">;
+The uservalue is retrieved from a widget when an event occurs.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762817">
+ </A>
+if (uv eq 'DONE') THEN WIDGET_CONTROL, ev.top, /DESTROY<BR>
+<EM CLASS="Comment">;
+If the event occurred in the Done button, kill the widget example.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762818">
+ </A>
+END	<EM CLASS="Comment">;
+End of the event handler part.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=888268">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=762820">
+ </A>
+PRO example	<EM CLASS="Comment">;
+This is the routine that creates the widget and registers it with the XMANAGER.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762821">
+ </A>
+base = WIDGET_BASE(TITLE='Example')	<EM CLASS="Comment">;
+Create the top-level base for the widget.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762822">
+ </A>
+done = WIDGET_BUTTON(base, VALUE = 'Done', UVALUE = 'DONE')<BR>
+<EM CLASS="Comment">;
+Create the Done button and set its uservalue to &quot;DONE&quot;.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762823">
+ </A>
+WIDGET_CONTROL, base, /REALIZE	<EM CLASS="Comment">;
+Realize the widget (i.e., display it on screen).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762824">
+ </A>
+XMANAGER, 'example', base, /NO_BLOCK	<EM CLASS="Comment">;
+Register the widget with the XMANAGER, leaving the IDL command line active.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762825">
+ </A>
+END	<EM CLASS="Comment">;
+End of the widget creation part.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=762826">
+ </A>
+First the event handler routine is listed. The handler routine has the same name as the main routine with the characters &quot;_event&quot; added. If you would like to use another event handler name, you would need to pass its name to XMANAGER using the EVENT_HANDLER keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762827">
+ </A>
+Notice that the event routine is listed before the main routine. This is because the compiler will not compile the event routine if it was below the main routine. This is only needed if both routines reside in the same file and the file name is the same as the main routine name with the <CODE CLASS="Code">
+.pro</CODE>
+ extension added.</P>
+<P CLASS="Body">
+<A NAME="pgfId=921462">
+ </A>
+Notice also the NO_BLOCK keyword to XMANAGER has been included. This allows IDL to continue processing events and accepting input at the command prompt while the <CODE CLASS="Code">
+example</CODE>
+ widget application is running.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762828">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762829">
+ </A>
+<A HREF="idl223.htm#50122" CLASS="XRef">
+XMTOOL</A>
+, <A HREF="idl225.htm#86032" CLASS="XRef">
+XREGISTERED</A>
+, <A HREF="..html#29669" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

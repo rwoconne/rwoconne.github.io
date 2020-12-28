@@ -1,0 +1,534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FFT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl9c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676828">
+ </A>
+<A NAME="24646">
+ </A>
+FFT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=816366">
+ </A>
+The <A NAME="marker=672991">
+ </A>
+FFT <A NAME="marker=811014">
+ </A>
+function returns a result equal to the complex, discrete Fourier transform of <I CLASS="Italics">
+Array</I>
+. The result of this function is a single- or double-precision complex array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=39027">
+ </A>
+The discrete Fourier transform, <I CLASS="Italics">
+F</I>
+(<I CLASS="Italics">
+u</I>
+), of an <I CLASS="Italics">
+N</I>
+-element, one-dimensional function, <I CLASS="Italics">
+f</I>
+(<I CLASS="Italics">
+x</I>
+), is defined as:</P>
+<DIV>
+<CENTER><IMG SRC="idl_29.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=827304">
+ </A>
+And the inverse transform, (<I CLASS="Italics">
+Direction</I>
+ &gt; 0), is defined as:</P>
+<DIV>
+<CENTER><IMG SRC="idl_30.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=843847">
+ </A>
+If the keyword OVERWRITE is set, the transform is performed in-place, and the result overwrites the original contents of the array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=846942">
+ </A>
+The result returned by FFT is a complex array that has the same dimensions as the input array. The output array is ordered in the same manner as almost all discrete Fourier transforms. Element 0 contains the zero frequency component, F0. F1 contains the smallest nonzero positive frequency, which is equal to 1/(Ni Ti), where Ni and Ti are the number of elements and the sampling interval of the ith dimension, respectively. F2 corresponds to a frequency of 2/(Ni Ti). Negative frequencies are stored in the reverse order of positive frequencies, ranging from the highest to lowest negative frequencies (see storage scheme below).</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=846640">
+ </A>
+The FFT can be performed on functions of up to eight (8) dimensions in size. If a function has n dimensions, IDL performs a transform in each dimension separately, starting with the first dimension and progressing sequentially to dimension n. For example, if the function has two dimensions, IDL first does the FFT row by row, and then column by column. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=846785">
+ </A>
+For an even number of points in the ith dimension, the storage scheme of returned complex values is as follows:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859582">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F0 </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859584">
+ </A>
+1/(NiTi)</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859586">
+ </A>
+...</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859588">
+ </A>
+(Ni-2)/2NiTi</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859590">
+ </A>
+&nbsp;&nbsp;&nbsp;1/(2Ti)</P>
+<P CLASS="CellHeading">
+<A NAME="pgfId=859591">
+ </A>
+&nbsp;&nbsp;(Nyquist)</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859593">
+ </A>
+-(Ni-2)/2NiTi</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859595">
+ </A>
+...</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859597">
+ </A>
+-1/(NiTi)</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859599">
+ </A>
+Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859601">
+ </A>
+Real, Imag	</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859603">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859605">
+ </A>
+Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859607">
+ </A>
+Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859609">
+ </A>
+&nbsp;&nbsp;&nbsp;Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859611">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859613">
+ </A>
+Real, Imag</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=847047">
+ </A>
+For an odd number of points in the ith dimension, the storage scheme of returned complex values is as follows:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859635">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F0 </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859637">
+ </A>
+1/(NiTi)</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859639">
+ </A>
+...</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859641">
+ </A>
+(Ni-1)/2NiTi</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859643">
+ </A>
+-(Ni-1)/2NiTi</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859645">
+ </A>
+...</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=859647">
+ </A>
+-1/(NiTi)</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859649">
+ </A>
+Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859651">
+ </A>
+Real, Imag	</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859653">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859655">
+ </A>
+Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859657">
+ </A>
+&nbsp;&nbsp;&nbsp;Real, Imag</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859659">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=859661">
+ </A>
+Real, Imag</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=848121">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676834">
+ </A>
+Result = FFT(<I CLASS="Italics">
+Array [, Direction]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676835">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676836">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676837">
+ </A>
+The array to which the Fast Fourier Transform should be applied. If <I CLASS="Italics">
+Array</I>
+ is not of complex type, it is converted to complex type. The dimensions of the result are identical to those of <I CLASS="Italics">
+Array</I>
+. The size of each dimension may be any integer value and does not necessarily have to be an integer power of 2, although powers of 2 are certainly the most efficient.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676838">
+ </A>
+Direction</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676839">
+ </A>
+<EM CLASS="Emphasis">
+Direction</EM>
+ is a scalar indicating the direction of the transform, which is negative by convention for the forward transform, and positive for the inverse transform. If <EM CLASS="Emphasis">
+Direction</EM>
+ is not specified, the forward transform is performed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676840">
+ </A>
+A normalization factor of 1/<I CLASS="Italics">
+N</I>
+, where <I CLASS="Italics">
+N</I>
+ is the number of points, is applied during the forward transform.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=676841">
+ </A>
+When transforming from a real vector to complex and back, it is slightly faster to set <I CLASS="Italics">
+Direction</I>
+ to 1 in the real to complex FFT.</LI>
+</UL>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=37873">
+ </A>
+Note also that the value of <EM CLASS="Emphasis">
+Direction</EM>
+ is ignored if the INVERSE keyword is set.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676842">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37862">
+ </A>
+<A NAME="marker=37867">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37863">
+ </A>
+Set this keyword to a value other than zero to force the computation to be done in double-precision arithmetic, and to give a result of double-precision complex type. If DOUBLE is set equal to zero, computation is done in single-precision arithmetic and the result is single-precision complex. If DOUBLE is not specified, the data type of the result will match the data type of <EM CLASS="Emphasis">
+Array</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37868">
+ </A>
+<A NAME="marker=37874">
+ </A>
+INVERSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37869">
+ </A>
+Set this keyword to perform an inverse transform. Setting this keyword is equivalent to setting the <EM CLASS="Emphasis">
+Direction</EM>
+ argument to a positive value. Note, however, that setting INVERSE results in an inverse transform even if <EM CLASS="Emphasis">
+Direction</EM>
+ is specified as negative.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676843">
+ </A>
+<A NAME="marker=672997">
+ </A>
+OVERWRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676844">
+ </A>
+If this keyword is set, and the <I CLASS="Italics">
+Array</I>
+ parameter is a variable of complex type, the transform is done &quot;in-place&quot;. The result overwrites the previous contents of the variable. For example, to perform a forward, in-place FFT on the variable a:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676845">
+ </A>
+a = FFT(a, -1, /OVERWRITE)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=815112">
+ </A>
+Running Time</H3>
+<P CLASS="Body">
+<A NAME="pgfId=841519">
+ </A>
+For a one-dimensional FFT, running time is roughly proportional to the total number of points in <I CLASS="Italics">
+Array</I>
+ times the sum of its prime factors. Let <I CLASS="Italics">
+N</I>
+ be the total number of elements in <I CLASS="Italics">
+Array</I>
+, and decompose <I CLASS="Italics">
+N</I>
+ into its prime factors:</P>
+<DIV>
+<CENTER><IMG SRC="idl_31.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=841528">
+ </A>
+Running time is proportional to:</P>
+<DIV>
+<CENTER><IMG SRC="idl_32.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=827342">
+ </A>
+where <I CLASS="Italics">
+T</I>
+<SUB CLASS="subscript">
+3</SUB>
+ ~ <I CLASS="Italics">
+4T</I>
+<SUB CLASS="subscript">
+2</SUB>
+. For example, the running time of a 263 point FFT is approximately 10 times longer than that of a 264 point FFT, even though there are fewer points. The sum of the prime factors of 263 is 264 (1 + 263), while the sum of the prime factors of 264 is 20 (2 + 2 + 2 + 3 + 11).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676846">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=58797">
+ </A>
+Display the log of the power spectrum of a 100-element index array by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=58798">
+ </A>
+PLOT, /YLOG, ABS(FFT(FINDGEN(100), -1))</P>
+<P CLASS="Body">
+<A NAME="pgfId=58799">
+ </A>
+As a more complex example, display the power spectrum of a 100-element vector sampled at a rate of 0.1 seconds per point. Show the 0 frequency component at the center of the plot and label the abscissa with frequency:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676850">
+ </A>
+N = 100	<EM CLASS="Comment">;
+Define the number of points.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676851">
+ </A>
+T = 0.1	<EM CLASS="Comment">;
+Define the interval.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676852">
+ </A>
+N21 = N/2 + 1	<EM CLASS="Comment">;
+Midpoint+1 is the most negative frequency subscript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676853">
+ </A>
+F = INDGEN(N)	<EM CLASS="Comment">;
+The array of subscripts.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676854">
+ </A>
+F[N21] = N21 -N + FINDGEN(N21-2)	<EM CLASS="Comment">;
+Insert negative frequencies in elements F(N/2 +1), ..., F(N-1).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676855">
+ </A>
+F = F/(N*T)	<EM CLASS="Comment">;
+Compute T</EM>
+<SUB CLASS="subscript">
+0</SUB>
+<EM CLASS="Comment">;
+ frequency.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676856">
+ </A>
+PLOT, /YLOG, SHIFT(F, -N21), SHIFT(ABS(FFT(F, -1)), -N21)<BR>
+<EM CLASS="Comment">;
+Shift so that the most negative frequency is plotted first.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35166">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=35167">
+ </A>
+<A HREF="idlc6.htm#72104" CLASS="XRef">
+HILBERT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

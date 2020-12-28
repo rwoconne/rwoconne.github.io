@@ -1,0 +1,24 @@
+
+17 JUNE 2003:
+
+This "minimousse" directory contains IDL programs useful in the IDL
+Tutorial but which are NOT distributed as part of the "Astronomy IDL
+User's Library."  These are selected from the larger set of MOUSSE
+routines written by the UIT Team (GSFC).
+
+The versions used are from 
+
+   http://idlastro.gsfc.nasa.gov/ftp/contrib/landsman/mousse
+
+and 
+
+   http://idlastro.gsfc.nasa.gov/ftp/contrib/landsman/help
+
+Several other programs are from the original MOUSSE package
+(Dec. 1997).  
+
+The MAN.PRO routine, which prints the header information for
+non-intrinsic IDL programs, will work in the simple mode
+described in the Tutorial as long as it is in your IDL path.
+In order to use the full graphics version of this program,
+see the README.help file.

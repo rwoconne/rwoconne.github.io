@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LSODE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl105.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl103.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=859116">
+ </A>
+<A NAME="26443">
+ </A>
+LSODE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=859117">
+ </A>
+The <A NAME="marker=859163">
+ </A>
+LSODE function uses adaptive numerical methods to advance a solution to a system of ordinary differential equations<A NAME="marker=859164">
+ </A>
+ one time-step H, given values for the variables <I CLASS="Italic">
+Y</I>
+ and <I CLASS="Italic">
+X</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=859118">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=859119">
+ </A>
+Result = LSODE(<I CLASS="Italic">
+Y, X, H, Derivs[, Status]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=859120">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=859121">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859122">
+ </A>
+A vector of values for Y at X</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=859125">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859126">
+ </A>
+A scalar value for the initial condition.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=859127">
+ </A>
+H</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859128">
+ </A>
+A scalar value giving interval length or step size.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=859129">
+ </A>
+Derivs</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859130">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that calculates the values of the derivatives <I CLASS="Italic">
+Dydx</I>
+ at X. This function must accept two arguments: A scalar floating value <I CLASS="Italic">
+X</I>
+, and one n-element vector <I CLASS="Italic">
+Y</I>
+. It must return an <I CLASS="Italic">
+n</I>
+-element vector result.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=859131">
+ </A>
+Suppose the values of the derivatives are defined by the following relations:</LI>
+</UL>
+<P CLASS="Body---centered">
+<A NAME="pgfId=860957">
+ </A>
+<EM CLASS="Emphasis">
+dy</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ / <EM CLASS="Emphasis">
+dx</EM>
+ = -0.5<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SUB>
+<EM CLASS="Emphasis">
+dy</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ / <EM CLASS="Emphasis">
+dx</EM>
+ = 4.0 - 0.3<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ - 0.1<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=859133">
+ </A>
+We can write a function called <CODE CLASS="Code">
+differential</CODE>
+ to express these relationships in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=859134">
+ </A>
+FUNCTION differential, X, Y</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=859135">
+ </A>
+RETURN, [-0.5 * Y[0], 4.0 - 0.3 * Y[1] - 0.1 * Y[0]]</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=859136">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=860963">
+ </A>
+Status</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860966">
+ </A>
+An index used for input and output to specify the state of the calculation. This argument contains a positive value if the function was successfully completed. Negative values indicate different errors. </P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=882454">
+ </A>
+Input Values for Status</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=882438">
+ </A>
+Input Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=882440">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=882442">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=882444">
+ </A>
+ This is the first call for the problem; initializations will occur. This is the default value.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=882446">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=882448">
+ </A>
+This is not the first call. The calculation is to continue normally.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=882450">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=882452">
+ </A>
+ This is not the first call. The calculation is to continue normally, but with a change in input parameters.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=883401">
+ </A>
+A preliminary call with <CODE CLASS="Code">
+tout = t</CODE>
+ is not counted as a first call here, as no initialization or checking of input is done.  (Such a call is sometimes useful for the purpose of outputting the initial condition <I CLASS="Italic">
+s</I>
+.) Thus, the first call for which tout <EM CLASS="Symbol">
+ </EM>
+t requires <CODE CLASS="Code">
+STATUS = 1</CODE>
+ on input..</LI>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=883294">
+ </A>
+Output Values for Status</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=883254">
+ </A>
+Output Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=883256">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883258">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883260">
+ </A>
+ Nothing occurred.  (However, an internal counter was set to detect and prevent repeated calls of this type.)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883262">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883264">
+ </A>
+The integration was performed successfully, and no roots were found.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883266">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883268">
+ </A>
+The integration was successful, and one or more roots were found.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883270">
+ </A>
+-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883272">
+ </A>
+An excessive amount of work was done on this call, but the integration was otherwise successful. To continue, reset STATUS to a value greater than1 and begin again (the excess work step counter will be reset to 0).</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883274">
+ </A>
+-2 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883276">
+ </A>
+The precision of the machine being used is insufficient for the requested amount of accuracy. Integration was successful. To continue, the tolerance parameters must be reset, and STATUS must be set to 3. (If this condition is detected before taking any steps, then an illegal input return (STATUS = -3) occurs instead.)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883278">
+ </A>
+-3 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883280">
+ </A>
+Illegal input was detected, before processing any integration steps. If the solver detects an infinite loop of calls to the solver with illegal input, it will cause the run to stop.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883282">
+ </A>
+-4 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883284">
+ </A>
+There were repeated error test failures on one attempted step, before completing the requested task, but the integration was successful. The problem may have a singularity, or the input may be inappropriate.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883286">
+ </A>
+-5 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883288">
+ </A>
+There were repeated convergence test failures on one attempted step, before completing the requested task, but the integration was successful. This may be caused by an inaccurate jacobian matrix, if one is being used.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883352">
+ </A>
+-6 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883354">
+ </A>
+ewt(i) became zero for some i during the integration. Pure relative error control was requested on a variable which has now vanished. Integration was successful.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883290">
+ </A>
+-7 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=883292">
+ </A>
+The length of <I CLASS="Italic">
+rwork</I>
+ and/or <I CLASS="Italic">
+iwork</I>
+ was too small to proceed, but the integration was successful. This happens when LSODA chooses to switch methods but other variables are too small for the new method.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=882049">
+ </A>
+Since the normal output value of STATUS is 2, it does not need to be reset for normal continuation. Also, since a negative input value of STATUS will be regarded as illegal, a negative output value requires the user to change it, and possibly other inputs, before calling the solver again.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=859140">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=859141">
+ </A>
+To integrate the example system of differential equations for one time step, H:</P>
+<P CLASS="Code">
+<A NAME="pgfId=859142">
+ </A>
+H = 0.5<EM CLASS="Comment">;
+	Define the step size.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=859143">
+ </A>
+X = 0.0<EM CLASS="Comment">;
+	Define an initial X value.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=859144">
+ </A>
+Y = [4.0, 6.0]<EM CLASS="Comment">;
+	Define initial Y values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=859146">
+ </A>
+result = LSODE(Y, X, H, 'differential')<BR>
+<EM CLASS="Comment">;
+Integrate over the interval (0,&nbsp;0.5).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=859147">
+ </A>
+PRINT, result<EM CLASS="Comment">;
+	Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=859148">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=859149">
+ </A>
+3.11523&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.85767</P>
+<P CLASS="Body">
+<A NAME="pgfId=859150">
+ </A>
+This is the exact solution vector to 5-decimal precision.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=881529">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=881536">
+ </A>
+<A HREF="idl73.htm#75359" CLASS="XRef">
+DERIV</A>
+, <A HREF="idl74.htm#22668" CLASS="XRef">
+DERIVSIG</A>
+, <A HREF="idl182.htm#86011" CLASS="XRef">
+RK4</A>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=881785">
+ </A>
+References</H3>
+<OL>
+<LI CLASS="Numbered-1">
+<A NAME="pgfId=883412">
+ </A>
+Alan C. Hindmarsh,  ODEPACK, A Systematized Collection of ODE Solvers, in Scientific Computing, R. S. Stepleman et al. (eds.), North-Holland, Amsterdam, 1983, <BR>
+pp. 55-64. </LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=883415">
+ </A>
+Linda R. Petzold, Automatic Selection of Methods for Solving Stiff and Nonstiff Systems of Ordinary Differential Equations, SIAM J. SCI. STAT. COMPUT. 4 (1983), pp. 136-148. </LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=883418">
+ </A>
+Kathie L. Hiebert and Lawrence F. Shampine, Implicitly Defined Output Points for Solutions of ODE's, Sandia Report SAND80-0180, February, 1980. </LI>
+</OL>
+</DIV>
+</BODY>
+</HTML>

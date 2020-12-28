@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CTI_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl4f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl4d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53340">
+ </A>
+<A NAME="28469">
+ </A>
+CTI_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53345">
+ </A>
+The <A NAME="marker=53342">
+ </A>
+CTI_TEST <A NAME="marker=53343">
+ </A>
+function constructs a &quot;<A NAME="marker=53344">
+ </A>
+contingency table&quot; from an array of observed frequencies and <A NAME="marker=53346">
+ </A>
+tests the <A NAME="marker=53347">
+ </A>
+hypothesis that the rows and columns are independent using an extension of the <A NAME="marker=53348">
+ </A>
+chi-square goodness-of-fit test. The result is a two-element vector containing the chi-square test statistic X2 and the one-tailed probability of obtaining a value of X2 or greater.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53349">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cti_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53350">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53351">
+ </A>
+Result = CTI_TEST(<EM CLASS="Emphasis">
+Obfreq</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53352">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53353">
+ </A>
+Obfreq</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53354">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ array containing observed frequencies. <EM CLASS="Emphasis">
+Obfreq</EM>
+ can contain either integer, single-, double-precision floating-point values.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53355">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53357">
+ </A>
+<A NAME="marker=53356">
+ </A>
+COEFF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53358">
+ </A>
+Set this keyword to a named variable that will contain the Coefficient of Contingency. The Coefficient of Contingency is a non-negative scalar, in the interval [0.0, 1.0], which measures the degree of dependence within a contingency table. The larger the value of COEFF, the greater the degree of dependence.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53360">
+ </A>
+<A NAME="marker=53359">
+ </A>
+CORRECTED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53361">
+ </A>
+Set this keyword to use the &quot;Yate's Correction for Continuity&quot; when computing the Chi-squared test statistic, X2. The Yate's correction always decreases the magnitude of X2. In general, this keyword should be set for small sample sizes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53363">
+ </A>
+<A NAME="marker=53362">
+ </A>
+CRAMV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53364">
+ </A>
+Set this keyword to a named variable that will contain Cramer's V. Cramer's V is a non-negative scalar, in the interval [0.0, 1.0], which measures the degree of dependence within a contingency table.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53366">
+ </A>
+<A NAME="marker=53365">
+ </A>
+DF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53367">
+ </A>
+Set this keyword to a named variable that will contain the number of degrees of freedom used to compute the probability of obtaining the value of the Chi-squared test statistic or greater. DF = (<EM CLASS="Emphasis">
+n</EM>
+ - 1) * (<EM CLASS="Emphasis">
+m</EM>
+ - 1) where <EM CLASS="Emphasis">
+m </EM>
+and <EM CLASS="Emphasis">
+n </EM>
+are the number of columns and rows of the contingency table, respectively.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53369">
+ </A>
+<A NAME="marker=53368">
+ </A>
+EXFREQ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53370">
+ </A>
+Set this keyword to a named variable that will contain an array of <EM CLASS="Emphasis">
+m</EM>
+-columns and <EM CLASS="Emphasis">
+n</EM>
+-rows containing expected frequencies. The elements of this array are often referred to as the &quot;cells&quot; of the expected frequencies. The expected frequency of each cell is computed as the product of row and column marginal frequencies divided by the overall total of observed frequencies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53372">
+ </A>
+<A NAME="marker=53371">
+ </A>
+RESIDUAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53373">
+ </A>
+Set this keyword to a named variable that will contain an array of <EM CLASS="Emphasis">
+m</EM>
+-columns and <EM CLASS="Emphasis">
+n</EM>
+-rows containing signed differences between corresponding cells of observed frequencies and expected frequencies.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53374">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53375">
+ </A>
+Define a 5-column and 4-row array of observed frequencies.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53376">
+ </A>
+obfreq&nbsp;=&nbsp;[[748, 821, 786, 720, 672], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53377">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 74, &nbsp;60, &nbsp;51, &nbsp;66, &nbsp;50], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53378">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 31, &nbsp;25, &nbsp;22, &nbsp;16, &nbsp;15], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53379">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ &nbsp;9, &nbsp;10, &nbsp;&nbsp;6, &nbsp;&nbsp;5, &nbsp;&nbsp;7]]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53380">
+ </A>
+Test the hypothesis that the rows and columns of &quot;obfreq&quot; contain independent data at the 0.05 significance level.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53381">
+ </A>
+result = CTI_TEST(obfreq, COEFF = coeff)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53382">
+ </A>
+The result should be the two-element vector [14.3953, 0.276181].</P>
+<P CLASS="Body">
+<A NAME="pgfId=53383">
+ </A>
+The computed value of 0.276181 indicates that there is no reason to reject the proposed hypothesis at the 0.05 significance level. The Coefficient of Contingency returned in the parameter &quot;coeff&quot; (coeff = 0.0584860) also indicates the lack of dependence between the rows and columns of the observed frequencies. Setting the CORRECTED keyword returns the two-element vector [12.0032, 0.445420] and (coeff = 0.0534213) resulting in the same conclusion of independence.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53384">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65869">
+ </A>
+<A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl109.htm#43333" CLASS="XRef">
+M_CORRELATE</A>
+, <A HREF="idl226.htm#50626" CLASS="XRef">
+XSQ_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

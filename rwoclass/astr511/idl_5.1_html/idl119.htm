@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MIN_CURVE_SURF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl11a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl118.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888757">
+ </A>
+<A NAME="65439">
+ </A>
+MIN_CURVE_SURF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888762">
+ </A>
+The <A NAME="marker=888760">
+ </A>
+MIN_CURVE_SURF function <A NAME="marker=888761">
+ </A>
+interpolates a regularly- or irregularly-gridded set of points with either a <A NAME="marker=888763">
+ </A>
+minimum curvature surface or a <A NAME="marker=888764">
+ </A>
+thin-plate-<A NAME="marker=888765">
+ </A>
+spline surface. It returns a two-dimensional floating-point array containing the interpolated surface, sampled at the grid points.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888766">
+ </A>
+A minimum curvature spline surface is fitted to the data points described by <EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, and <EM CLASS="Emphasis">
+z</EM>
+. The basis function is:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=888767">
+ </A>
+<EM CLASS="Emphasis">
+C</EM>
+ (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+)&nbsp;=&nbsp;<EM CLASS="Emphasis">
+d</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+ log(<EM CLASS="Emphasis">
+dk</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888768">
+ </A>
+where <EM CLASS="Emphasis">
+d</EM>
+ is the distance between (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="subscript">
+0</SUB>
+), (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="subscript">
+1</SUB>
+,<EM CLASS="Emphasis">
+ y</EM>
+<SUB CLASS="subscript">
+1</SUB>
+) and <EM CLASS="Emphasis">
+k</EM>
+ = 1 for minimum curvature surface or <EM CLASS="Emphasis">
+k</EM>
+ = 2 for Thin Plate Splines. For <EM CLASS="Emphasis">
+n</EM>
+ data points, a system of <EM CLASS="Emphasis">
+n</EM>
++3 simultaneous equations are solved for the coefficients of the surface. For any interpolation point, the interpolated value is:</P>
+<DIV>
+<CENTER><IMG SRC="idl_69.gif" BORDER=0>
+</DIV>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=888774">
+ </A>
+The accuracy of this function is limited by the single-precision floating-point accuracy of the machine.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=888775">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+min_curve_surf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888776">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888777">
+ </A>
+Result = MIN_CURVE_SURF(<EM CLASS="Emphasis">
+Z [, X, Y]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888778">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888779">
+ </A>
+Z, X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888780">
+ </A>
+Arrays containing the <EM CLASS="Emphasis">
+Z</EM>
+, <EM CLASS="Emphasis">
+X</EM>
+, and <EM CLASS="Emphasis">
+Y</EM>
+ coordinates of the data points on the surface. Points need not be regularly gridded. For regularly gridded input data, <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are not used: the grid spacing is specified via the XGRID and YGRID (or XVALUES and YVALUES) keywords, and <EM CLASS="Emphasis">
+Z</EM>
+ must be a two dimensional array. For irregular grids, all three parameters must be present and have the same number of elements. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888781">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888782">
+ </A>
+TPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888783">
+ </A>
+Set this keyword to use the thin-plate-spline method. The default is to use the minimum curvature surface method.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888784">
+ </A>
+<EM CLASS="Emphasis">
+Input Grid Description:</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888785">
+ </A>
+REGULAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888786">
+ </A>
+If set, the <EM CLASS="Emphasis">
+Z</EM>
+ parameter is a two-dimensional array of dimensions (<EM CLASS="Emphasis">
+n,m</EM>
+), containing measurements over a regular grid. If any of XGRID, YGRID, XVALUES, or YVALUES are specified, REGULAR is implied. REGULAR is also implied if there is only one parameter, <EM CLASS="Emphasis">
+Z</EM>
+. If REGULAR is set, and no grid specifications are present, the grid is set to (0, 1, 2, ...). </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888787">
+ </A>
+XGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888788">
+ </A>
+A two-element array, [<EM CLASS="Emphasis">
+xstart</EM>
+, <EM CLASS="Emphasis">
+xspacing</EM>
+], defining the input grid in the <EM CLASS="Emphasis">
+x </EM>
+direction. Do not specify both XGRID and XVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888789">
+ </A>
+XVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888790">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element array defining the <EM CLASS="Emphasis">
+x</EM>
+ locations of Z[<EM CLASS="Emphasis">
+i,j</EM>
+]. Do not specify both XGRID and XVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888791">
+ </A>
+YGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888792">
+ </A>
+A two-element array, [<EM CLASS="Emphasis">
+ystart</EM>
+, <EM CLASS="Emphasis">
+yspacing</EM>
+], defining the input grid in the <EM CLASS="Emphasis">
+y </EM>
+direction. Do not specify both YGRID and YVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888793">
+ </A>
+YVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888794">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element array defining the <EM CLASS="Emphasis">
+y</EM>
+ locations of Z[<EM CLASS="Emphasis">
+i,j</EM>
+]. Do not specify both YGRID and YVALUES. </P>
+<P CLASS="Body">
+<A NAME="pgfId=888795">
+ </A>
+<EM CLASS="Emphasis">
+Output Grid Description:</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888796">
+ </A>
+GS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888797">
+ </A>
+The output grid spacing. If present, GS must be a two-element vector [<EM CLASS="Emphasis">
+xs, ys</EM>
+], where <EM CLASS="Emphasis">
+xs </EM>
+is the horizontal spacing between grid points and <EM CLASS="Emphasis">
+ys</EM>
+ is the vertical spacing. The default is based on the extents of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. If the grid starts at <EM CLASS="Emphasis">
+x</EM>
+ value <EM CLASS="Emphasis">
+xmin</EM>
+ and ends at <EM CLASS="Emphasis">
+xmax</EM>
+, then the default horizontal spacing is (<EM CLASS="Emphasis">
+xmax</EM>
+ - <EM CLASS="Emphasis">
+xmin</EM>
+)/(NX-1). <EM CLASS="Emphasis">
+ys</EM>
+ is computed in the same way. The default grid size, if neither NX or NY are specified, is 26 by 26. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888798">
+ </A>
+BOUNDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888799">
+ </A>
+If present, BOUNDS must be a four-element array containing the grid limits in <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ of the output grid: [<EM CLASS="Emphasis">
+xmin, ymin, xmax, ymax</EM>
+]. If not specified, the grid limits are set to the extent of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888800">
+ </A>
+NX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888801">
+ </A>
+The output grid size in the <EM CLASS="Emphasis">
+x</EM>
+ direction. NX need not be specified if the size can be inferred from GS and BOUNDS. The default value is 26.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888802">
+ </A>
+NY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888803">
+ </A>
+The output grid size in the <EM CLASS="Emphasis">
+y </EM>
+direction. NY need not be specified if the size can be inferred from GS and BOUNDS. The default value is 26.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888804">
+ </A>
+XOUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888805">
+ </A>
+Use the XOUT keyword to specify a vector containing the output grid <EM CLASS="Emphasis">
+x</EM>
+ values. If this parameter is supplied, GS, BOUNDS, and NX are ignored for the <EM CLASS="Emphasis">
+x</EM>
+ output grid. XOUT allows you to specify irregularly-spaced output grids.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888806">
+ </A>
+YOUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888807">
+ </A>
+Use the YOUT keyword to specify a vector containing the output grid <EM CLASS="Emphasis">
+y </EM>
+values. If this parameter is supplied, GS, BOUNDS, and NY are ignored for the <EM CLASS="Emphasis">
+y </EM>
+output grid. YOUT allows you to specify irregularly-spaced output grids.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888808">
+ </A>
+XPOUT/YPOUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888809">
+ </A>
+Use the XPOUT and YPOUT keywords to specify arrays that contain the <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ values for the output points. If these keywords are used, the output grid need not be regular, and all other output grid parameters are ignored. XPOUT and YPOUT must have the same number of points, which is also the number of points returned in the result.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888810">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888811">
+ </A>
+Make a random set of points that lie on a Gaussian:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888812">
+ </A>
+N = 15	<EM CLASS="Comment">;
+Number of random points.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=888813">
+ </A>
+X = RANDOMU(seed, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=888814">
+ </A>
+Y = RANDOMU(seed, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=888815">
+ </A>
+Z = EXP(-2 * ((X-.5)^2 + (Y-.5)^2))	<EM CLASS="Comment">;
+The Gaussian.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=888816">
+ </A>
+Use a 26 by 26 grid over the rectangle bounding x and y:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888817">
+ </A>
+R = MIN_CURVE_SURF(Z, X, Y)	<EM CLASS="Comment">;
+Get the surface.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=888818">
+ </A>
+Alternatively, get a surface over the unit square, with spacing of 0.05:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888819">
+ </A>
+R = MIN_CURVE_SURF(Z, X, Y, GS=[0.05, 0.05], BOUNDS=[0,0,1,1])</P>
+<P CLASS="Body">
+<A NAME="pgfId=888820">
+ </A>
+Alternatively, get a 10 by 10 surface over the rectangle bounding x and y:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888821">
+ </A>
+R = MIN_CURVE_SURF(Z, X, Y, NX=10, NY=10)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888822">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888829">
+ </A>
+<A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl1df.htm#16346" CLASS="XRef">
+TRI_SURF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

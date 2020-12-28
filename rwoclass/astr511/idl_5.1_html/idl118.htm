@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MIN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl119.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl117.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888722">
+ </A>
+<A NAME="39440">
+ </A>
+MIN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888727">
+ </A>
+The <A NAME="marker=888725">
+ </A>
+MIN <A NAME="marker=888726">
+ </A>
+function returns the value of the smallest element of <I CLASS="Italics">
+Array</I>
+. The type of the result is the same as that of <I CLASS="Italics">
+Array</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888728">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888729">
+ </A>
+Result = MIN(<I CLASS="Italics">
+Array [, Min_Subscript]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888730">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888731">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888732">
+ </A>
+The array to be searched.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888733">
+ </A>
+Min_Subscript</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888734">
+ </A>
+A named variable that, if supplied, is converted to a long integer containing the one-dimensional subscript of the minimum element. Otherwise, the system variable !C is set to the one-dimensional subscript of the minimum element.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888735">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888737">
+ </A>
+<A NAME="marker=888736">
+ </A>
+MAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888738">
+ </A>
+The name of a variable to receive the value of the maximum array element. If you need to find both the minimum and maximum array values, use this keyword to avoid scanning the array twice with separate calls to MAX and MIN.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888740">
+ </A>
+<A NAME="marker=888739">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888741">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888745">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888746">
+ </A>
+Create a simple two-dimensional array by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888747">
+ </A>
+D = DIST(100)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888748">
+ </A>
+Find the minimum value in array D and print the result by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888749">
+ </A>
+PRINT, MIN(D)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888750">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888754">
+ </A>
+<A HREF="idl111.htm#18475" CLASS="XRef">
+MAX</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

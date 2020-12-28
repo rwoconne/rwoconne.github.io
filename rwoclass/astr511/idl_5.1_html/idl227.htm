@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XSURFACE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl228.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl226.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787840">
+ </A>
+<A NAME="99182">
+ </A>
+XSURFACE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787843">
+ </A>
+The <A NAME="marker=787842">
+ </A>
+XSURFACE procedure provides a graphical interface to the SURFACE and SHADE_SURF commands. Different controls are provided to change the viewing angle and other <A NAME="marker=787844">
+ </A>
+plot parameters. The command used to generate the resulting surface plot is shown in a text window. Note that this procedure does not accept SURFACE or SHADE_SURF keywords.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787845">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xsurface.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787846">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787847">
+ </A>
+XSURFACE, <EM CLASS="Emphasis">
+Data</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787848">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787849">
+ </A>
+Data</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787850">
+ </A>
+The two-dimensional array to display as a wire-mesh or shaded surface.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787851">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937566">
+ </A>
+<A NAME="marker=937565">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937567">
+ </A>
+Set this keyword to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787853">
+ </A>
+<A NAME="marker=787852">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787854">
+ </A>
+Set this keyword to the widget ID of the widget that calls XSURFACE. When GROUP is specified, the death of the calling widget results in the death of XSURFACE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787855">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=796026">
+ </A>
+z = DIST(30)	<EM CLASS="Comment">;
+Make a 2D array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=796027">
+ </A>
+XSURFACE, z	<EM CLASS="Comment">;
+Call XSURFACE. The XSURFACE widget appears.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787856">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787857">
+ </A>
+<A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

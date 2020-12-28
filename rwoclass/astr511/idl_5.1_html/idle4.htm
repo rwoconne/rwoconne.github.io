@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LABEL_DATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762402">
+ </A>
+<A NAME="71420">
+ </A>
+LABEL_DATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762406">
+ </A>
+The <A NAME="marker=762403">
+ </A>
+LABEL_DATE function <A NAME="marker=762404">
+ </A>
+can be <A NAME="marker=762405">
+ </A>
+used, in conjunction with the [XYZ]TICKFORMAT keyword to IDL plotting routines, to easily label axes with dates.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762407">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+label_date.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762408">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762409">
+ </A>
+Result = LABEL_DATE(DATE_FORMAT =<I CLASS="Italics">
+ String</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=762410">
+ </A>
+PLOT, x, y, XTICKFORMAT = 'LABEL_DATE'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762411">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762412">
+ </A>
+LABEL_DATE has no explicit inputs. When called from the plotting routines, the input parameters are (<I CLASS="Italics">
+Axis, Index, Value</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762413">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762415">
+ </A>
+<A NAME="marker=762414">
+ </A>
+DATE_FORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762416">
+ </A>
+Set this keyword to a format string that can contain any of the following variables: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762417">
+ </A>
+%M for month (3 character abbreviations)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762418">
+ </A>
+%N for month (2 digit abbreviations)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762419">
+ </A>
+%D for day of month</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762420">
+ </A>
+%Y for 4 digit year</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762421">
+ </A>
+%Z for last two digits of year </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=849187">
+ </A>
+%H for hours (2 digits)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=849181">
+ </A>
+%I for minutes (2 digits)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=849182">
+ </A>
+%S for seconds (2 digits)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762422">
+ </A>
+%% to represent the % character</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762423">
+ </A>
+Any vector font positioning and font change commands</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=762424">
+ </A>
+Other characters are passed directly through</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=762425">
+ </A>
+For example, <CODE CLASS="Code">
+'%M %D, %Y'</CODE>
+ results in labels of the form <CODE CLASS="Code">
+DEC 11, 1993</CODE>
+. <CODE CLASS="Code">
+'%M %2Y'</CODE>
+ yields <CODE CLASS="Code">
+DEC 93</CODE>
+. <CODE CLASS="Code">
+'%D-%M'</CODE>
+ yields <CODE CLASS="Code">
+11-DEC</CODE>
+. <CODE CLASS="Code">
+'%D/%N/%Y'</CODE>
+ yields <CODE CLASS="Code">
+11/12/1993</CODE>
+. <CODE CLASS="Code">
+'%M!C%Y'</CODE>
+ yields <CODE CLASS="Code">
+DEC</CODE>
+ on the top line, <CODE CLASS="Code">
+1993</CODE>
+ on the bottom (!C is the newline graphics command).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762427">
+ </A>
+<A NAME="marker=762426">
+ </A>
+MONTHS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762428">
+ </A>
+A twelve element string array that contains the names to be used for months. If omitted, three-letter abbreviations are used (i.e., Jan, Feb, ..., Dec).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762429">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762430">
+ </A>
+The following commands create a sample plot that has a date axis from Jan 1, 1993 to July 12, 1994:</P>
+<P CLASS="Code">
+<A NAME="pgfId=762431">
+ </A>
+start_date = JULDAY(1, 1, 1993)</P>
+<P CLASS="Code">
+<A NAME="pgfId=762432">
+ </A>
+end_date = JULDAY(7, 12, 1994)</P>
+<P CLASS="Code">
+<A NAME="pgfId=762433">
+ </A>
+dummy = LABEL_DATE(DATE_FORMAT = '%N/%D')<EM CLASS="Comment">;
+	Simple mm/dd</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762434">
+ </A>
+x = FINDGEN(end_date+1 - start_date) + start_date<BR>
+<EM CLASS="Comment">;
+Time axis</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762435">
+ </A>
+PLOT, x, sqrt(x), XTICKFORMAT = 'LABEL_DATE', XSTYLE=1<BR>
+<EM CLASS="Comment">;
+Plot with X axis style set to exact.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762436">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762437">
+ </A>
+<A HREF="idl22c.htm#67386" CLASS="XRef">
+[XYZ]TICKFORMAT</A>
+ keyword</P>
+</DIV>
+</BODY>
+</HTML>

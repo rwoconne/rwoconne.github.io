@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRUCT_ASSIGN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=900692">
+ </A>
+<A NAME="15324">
+ </A>
+STRUCT_ASSIGN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=900697">
+ </A>
+The IDL &quot;=&quot; operator is unable to assign a structure value to a structure of a different type. The <A NAME="marker=901007">
+ </A>
+STRUCT_ASSIGN procedure performs &quot;<A NAME="marker=901008">
+ </A>
+relaxed structure assignment,&quot; which is a field-by-field copy of a structure to another structure. Fields are copied according to the following rules:</P>
+<OL>
+<LI CLASS="Numbered-1-Indent">
+<A NAME="pgfId=900703">
+ </A>
+Any fields found in the destination structure that are not found in the source structure are &quot;zeroed&quot; (set to zero, the empty string, or a null pointer or object reference depending on the type of field).</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=900706">
+ </A>
+Any fields in the source structure that are not found in the destination structure are quietly ignored.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=900778">
+ </A>
+Any fields that are found in both the source and destination structures are copied one at a time. If necessary, type conversion is done to make their types agree. If a field in the source structure has fewer data elements than the corresponding field in the destination structure, then the &quot;extra&quot; elements in the field in the destination structure are zeroed. If a field in the source structure has more elements than the corresponding field in the destination structure, the extra elements are quietly ignored.</LI>
+</OL>
+<P CLASS="Body">
+<A NAME="pgfId=901129">
+ </A>
+Relaxed structure assignment is especially useful when restoring structures from disk files into an environment where the structure definition has changed. See the description o f the RELAXED_STRUCTURE_ASSIGNMENT keyword to the <A HREF="idl17c.htm#85451" CLASS="XRef">
+RESTORE</A>
+ procedure for additional details. <A HREF="..html#32734" CLASS="XRef">
+Relaxed Structure Assignment</A>
+ provides a more in-depth discussion of the structure-definition process.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900788">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=900789">
+ </A>
+STRUCT_ASSIGN, <EM CLASS="Emphasis">
+Source</EM>
+, <EM CLASS="Emphasis">
+Destination</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900791">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900792">
+ </A>
+Source</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900793">
+ </A>
+A named variable containing a structure, the contents of which will be assigned to the structure specified by the <EM CLASS="Emphasis">
+Destination</EM>
+ argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900795">
+ </A>
+Destination</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900796">
+ </A>
+A named variable containing a structure into which the contents of the structure specified by the <EM CLASS="Emphasis">
+Source</EM>
+ argument will be inserted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=901017">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901018">
+ </A>
+<A NAME="marker=901049">
+ </A>
+VERBOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901024">
+ </A>
+Set this keyword to cause STRUCT_ASSIGN to issue informational messages about any incompatibilities that prevent data from being copied.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900797">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=900913">
+ </A>
+The following example creates two anonymous structures, then uses STRUCT_ASSIGN to insert the contents of the first into the second.</P>
+<P CLASS="Code">
+<A NAME="pgfId=901056">
+ </A>
+source = { a:FINDGEN(4), b:12 }</P>
+<P CLASS="Code">
+<A NAME="pgfId=900914">
+ </A>
+dest = { a:INDGEN(2), c:20 }</P>
+<P CLASS="Code">
+<A NAME="pgfId=900915">
+ </A>
+STRUCT_ASSIGN, /VERBOSE, source, dest</P>
+<P CLASS="Body">
+<A NAME="pgfId=900916">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=901057">
+ </A>
+% STRUCT_ASSIGN: &lt;Anonymous&gt; tag A is longer than destination.</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900917">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The end will be clipped.</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900918">
+ </A>
+% STRUCT_ASSIGN: Destination lacks &lt;Anonymous&gt; tag B. Not copied.</P>
+<P CLASS="Body">
+<A NAME="pgfId=900779">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=901058">
+ </A>
+After assignment, <CODE CLASS="Code">
+dest</CODE>
+ contains a two-element integer array [0, 1] in its field A and the integer 0 in its field C. Since <CODE CLASS="Code">
+dest</CODE>
+ does not have a field B, field B from <CODE CLASS="Code">
+source</CODE>
+ is not copied.</P>
+</DIV>
+</BODY>
+</HTML>

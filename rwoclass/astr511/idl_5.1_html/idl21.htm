@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> C_CORRELATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl22.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl20.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54428">
+ </A>
+<A NAME="28107">
+ </A>
+C_CORRELATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=838888">
+ </A>
+The <A NAME="marker=838884">
+ </A>
+C_CORRELATE <A NAME="marker=838885">
+ </A>
+function computes the <A NAME="marker=838886">
+ </A>
+cross correlation <EM CLASS="Emphasis">
+Pxy</EM>
+(<EM CLASS="Emphasis">
+L</EM>
+) or <A NAME="marker=838887">
+ </A>
+cross covariance <EM CLASS="Emphasis">
+Rxy</EM>
+(<EM CLASS="Emphasis">
+L</EM>
+) of two sample populations <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ as a function of the lag <EM CLASS="Emphasis">
+L</EM>
+.  </P>
+<DIV>
+<CENTER><IMG SRC="idl_6.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_7.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=838902">
+ </A>
+where<EM CLASS="MathSymbol">
+`</EM>
+<EM CLASS="Emphasis">
+x  </EM>
+and<EM CLASS="MathSymbol">
+`</EM>
+<EM CLASS="Emphasis">
+y&nbsp; </EM>
+are the means of the sample populations <EM CLASS="Emphasis">
+x</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ... , <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+N-1</SUB>
+) and <EM CLASS="Emphasis">
+y </EM>
+= (<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ... , <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+N-1</SUB>
+), respectively.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54445">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+c_correlate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54446">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54447">
+ </A>
+Result = C_CORRELATE(<EM CLASS="Emphasis">
+X, Y, Lag</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54448">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54449">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54450">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54451">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54452">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54453">
+ </A>
+Lag</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54455">
+ </A>
+<A NAME="marker=54454">
+ </A>
+A scalar or <EM CLASS="Emphasis">
+n</EM>
+-element integer vector in the interval [-(<EM CLASS="Emphasis">
+n</EM>
+-2), (<EM CLASS="Emphasis">
+n</EM>
+-2)], specifying the signed distances between indexed elements of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54456">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54458">
+ </A>
+<A NAME="marker=54457">
+ </A>
+COVARIANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54459">
+ </A>
+Set this keyword to compute the sample cross covariance rather than the sample cross correlation.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=826756">
+ </A>
+<A NAME="marker=826767">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=826757">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54460">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54461">
+ </A>
+Define two n-element sample populations. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54462">
+ </A>
+X = [3.73, 3.67, 3.77, 3.83, 4.67, 5.87, 6.70, 6.97, 6.40, 5.57]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54463">
+ </A>
+Y = [2.31, 2.76, 3.02, 3.13, 3.72, 3.88, 3.97, 4.39, 4.34, 3.95]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54464">
+ </A>
+Compute the cross correlation of X and Y for LAG = -5, 0, 1, 5, 6, 7 </P>
+<P CLASS="Code">
+<A NAME="pgfId=54465">
+ </A>
+lag = [-5, 0, 1, 5, 6, 7] </P>
+<P CLASS="Code">
+<A NAME="pgfId=54466">
+ </A>
+result = C_CORRELATE(X, Y, lag)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54467">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54468">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54469">
+ </A>
+-0.428246&nbsp;&nbsp;0.914755&nbsp;&nbsp;0.674547&nbsp;&nbsp;-0.405140&nbsp;&nbsp;-0.403100&nbsp;&nbsp;-0.339685</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54470">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871662">
+ </A>
+<A HREF="idl1.htm#71421" CLASS="XRef">
+A_CORRELATE</A>
+, <A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl109.htm#43333" CLASS="XRef">
+M_CORRELATE</A>
+, <A HREF="idl133.htm#76534" CLASS="XRef">
+P_CORRELATE</A>
+, <A HREF="idl15b.htm#46692" CLASS="XRef">
+R_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

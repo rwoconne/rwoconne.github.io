@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DOUBLE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl84.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl82.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=37011">
+ </A>
+<A NAME="59771">
+ </A>
+DOUBLE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676666">
+ </A>
+The <A NAME="marker=672920">
+ </A>
+DOUBLE function returns a result equal to <I CLASS="Italics">
+Expression</I>
+ converted to double-precision floating-point.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676667">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676668">
+ </A>
+Result = DOUBLE(<I CLASS="Italics">
+Expression</I>
+[,<I CLASS="Italics">
+ Offset</I>
+ [, <I CLASS="Italics">
+Dim</I>
+<SUB CLASS="subscript">
+1</SUB>
+, ..., <I CLASS="Italics">
+Dim</I>
+<SUB CLASS="subscript">
+n</SUB>
+]])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676669">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676670">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676671">
+ </A>
+The expression to be converted to double-precision floating-point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676672">
+ </A>
+Offset</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855352">
+ </A>
+Offset from beginning of the <I CLASS="Italics">
+Expression</I>
+ data area. Specifying this argument allows fields of data extracted from <I CLASS="Italics">
+Expression</I>
+ to be treated as double-precision floating-point data. See the description in <A HREF="..html#77809" CLASS="XRef">
+Constants and Variables</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676674">
+ </A>
+D<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676675">
+ </A>
+When extracting fields of data, the <I CLASS="Italics">
+D</I>
+<SUB CLASS="subscript">
+i</SUB>
+ arguments specify the dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified. If no dimension arguments are given, the result is taken to be scalar.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676676">
+ </A>
+When converting from a string argument, it is possible that the string does not contain a valid floating-point value and no conversion is possible. The default action in such cases is to print a warning message and return 0. The ON_IOERROR procedure can be used to establish a statement to be jumped to in case of such errors.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676677">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676678">
+ </A>
+Suppose that A contains the integer value 45. A double-precision, floating-point version of A can be stored in B by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676679">
+ </A>
+B = DOUBLE(A)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823216">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920872">
+ </A>
+<A HREF="idl1e.htm#28497" CLASS="XRef">
+BYTE</A>
+, <A HREF="idl39.htm#61718" CLASS="XRef">
+COMPLEX</A>
+, <A HREF="idl6a.htm#50604" CLASS="XRef">
+DCOMPLEX</A>
+, <A HREF="idla2.htm#84913" CLASS="XRef">
+FIX</A>
+, <A HREF="idla4.htm#33608" CLASS="XRef">
+FLOAT</A>
+, <A HREF="idl103.htm#20254" CLASS="XRef">
+LONG</A>
+, <A HREF="idl1bc.htm#79752" CLASS="XRef">
+STRING</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

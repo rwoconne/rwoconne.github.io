@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_SPR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl214.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl212.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=754256">
+ </A>
+<A NAME="23995">
+ </A>
+WRITE_SPR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=754259">
+ </A>
+The <A NAME="marker=754257">
+ </A>
+WRITE_SPR procedure writes a row-indexed <A NAME="marker=754258">
+ </A>
+sparse array structure to a specified file. Row-indexed sparse arrays are created using the SPRSIN function.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754260">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=754261">
+ </A>
+WRITE_SPR, <EM CLASS="Emphasis">
+AS, Filename </EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754262">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754263">
+ </A>
+AS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754264">
+ </A>
+A row-indexed sparse array created by SPRSIN.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754265">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754266">
+ </A>
+The name of the file that will contain AS.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754267">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=754268">
+ </A>
+A = [[3.,0., 1., 0., 0.],$	<EM CLASS="Comment">;
+Create an array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=754269">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.,4., 0., 0., 0.],$</P>
+<P CLASS="Code">
+<A NAME="pgfId=754270">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.,7., 5., 9., 0.],$</P>
+<P CLASS="Code">
+<A NAME="pgfId=754271">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.,0., 0., 0., 2.],$</P>
+<P CLASS="Code">
+<A NAME="pgfId=754272">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.,0., 0., 6., 5.]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=754273">
+ </A>
+A = SPRSIN(A)	<EM CLASS="Comment">;
+Convert it to sparse storage format.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=754274">
+ </A>
+WRITE_SPR, A, 'sprs.as'	<EM CLASS="Comment">;
+Store it in the file </EM>
+sprs.as</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754873">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52832">
+ </A>
+<A HREF="idlac.htm#82247" CLASS="XRef">
+FULSTR</A>
+, <A HREF="idle8.htm#41659" CLASS="XRef">
+LINBCG</A>
+, <A HREF="idl1b0.htm#69406" CLASS="XRef">
+SPRSAB</A>
+, <A HREF="idl1b1.htm#31054" CLASS="XRef">
+SPRSAX</A>
+, <A HREF="idl1b2.htm#41214" CLASS="XRef">
+SPRSIN</A>
+, <A HREF="idl169.htm#57482" CLASS="XRef">
+READ_SPR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> INVERT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idldb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50793">
+ </A>
+<A NAME="99308">
+ </A>
+INVERT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50798">
+ </A>
+The <A NAME="marker=50795">
+ </A>
+INVERT <A NAME="marker=50796">
+ </A>
+function uses the <A NAME="marker=50797">
+ </A>
+Gaussian elimination method to compute the inverse of a square array. The result is a single- or double-precision floating-point array. Errors from singular or near-singular arrays are accumulated in the optional <I CLASS="Italics">
+Status</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50800">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50801">
+ </A>
+Result = INVERT(<I CLASS="Italics">
+Array [, Status])</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50802">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50803">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50804">
+ </A>
+The array to be inverted. <I CLASS="Italics">
+Array </I>
+must have two dimensions of equal size (i.e., a square array) and can be of any type except string. Note that the resulting array will be composed of single- or double-precision floating-point values, depending on whether the DOUBLE keyword is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50805">
+ </A>
+Status</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50806">
+ </A>
+A named variable to receive the status of the operation. Possible status values are: 0 for successful completion, 1 for a singular array (which indicates that the inversion is invalid), and 2 which is a warning that a small pivot element was used and that significant accuracy was probably lost.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50807">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50809">
+ </A>
+<A NAME="marker=50808">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50810">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50811">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50812">
+ </A>
+Begin with an array A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50813">
+ </A>
+A = [[ 5.0, -1.0, 3.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50814">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 2.0,  0.0, 1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50815">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0,  2.0, 1.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=50816">
+ </A>
+result = INVERT(A)	<EM CLASS="Comment">;
+Invert.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50817">
+ </A>
+We can check the accuracy of the inversion by multiplying the inverted array by the original array. The result should be a 3 x 3 identity array.</P>
+<P CLASS="Code">
+<A NAME="pgfId=50818">
+ </A>
+PRINT, result # A</P>
+<P CLASS="Body">
+<A NAME="pgfId=50819">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50820">
+ </A>
+      1.00000      0.00000      0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50821">
+ </A>
+      0.00000      1.00000      0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50822">
+ </A>
+      0.00000  9.53674e-07      1.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50823">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50842">
+ </A>
+<A HREF="idl3d.htm#31512" CLASS="XRef">
+COND</A>
+, <A HREF="idl75.htm#64296" CLASS="XRef">
+DETERM</A>
+, <A HREF="idlda.htm#99308" CLASS="XRef">
+INVERT</A>
+, <A HREF="idl17f.htm#82341" CLASS="XRef">
+REVERSE</A>
+, <A HREF="idl185.htm#94278" CLASS="XRef">
+ROTATE</A>
+, <A HREF="idl1de.htm#70508" CLASS="XRef">
+TRANSPOSE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

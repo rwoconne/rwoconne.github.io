@@ -1,0 +1,1230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAP_SET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl111.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl10f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887896">
+ </A>
+<A NAME="72745">
+ </A>
+MAP_SET</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887900">
+ </A>
+The <A NAME="marker=887899">
+ </A>
+MAP_SET procedure establishes the axis type and coordinate conversion mechanism for <A NAME="marker=887901">
+ </A>
+mapping points on the earth's surface, expressed in latitude and longitude, to points on a plane, according to one of several possible map projections.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887902">
+ </A>
+The type of map projection, the map center, polar rotation and geographical limits can all be customized. The system variable <A NAME="marker=887903">
+ </A>
+!MAP1 retains the information needed to effect <A NAME="marker=887904">
+ </A>
+coordinate conversions to the plane and, inversely, from the projection plane to points on the earth in latitude and longitude. Users should not change the values of the fields in !MAP directly.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887905">
+ </A>
+MAP_SET can also be made to plot the grid of latitude and longitude lines and continental boundaries by setting the keywords GRID and CONTINENTS. Many other types of boundaries can be overplotted on maps using the MAP_CONTINENTS procedure.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887906">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887907">
+ </A>
+MAP_SET <I CLASS="Italics">
+[, P</I>
+<SUB CLASS="subscript">
+0lat</SUB>
+<I CLASS="Italics">
+, P</I>
+<SUB CLASS="subscript">
+0lon</SUB>
+<I CLASS="Italics">
+, Rot]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887908">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887909">
+ </A>
+P<SUB CLASS="subscript">
+0lat</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887910">
+ </A>
+The latitude of the point on the earth's surface to be mapped to the center of the projection plane. Latitude is measured in degrees North of the equator and <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lat</SUB>
+ must be in the range: -90<EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lat</SUB>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ 90<EM CLASS="MathSymbol">
+</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887911">
+ </A>
+If <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lat</SUB>
+ is not set, the default value is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887912">
+ </A>
+P<SUB CLASS="subscript">
+0lon</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887913">
+ </A>
+The longitude of the point on the earth's surface to be mapped to the center of the map projection. Longitude is measured in degrees east of the Greenwich meridian and P0lon must be in the range: -180<EM CLASS="MathSymbol">
+</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lon</SUB>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ 180<EM CLASS="MathSymbol">
+</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887914">
+ </A>
+If <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lon</SUB>
+ is not set, the default value is zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887915">
+ </A>
+Rot</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887916">
+ </A>
+<I CLASS="Italics">
+Rot</I>
+ is the angle through which the North direction should be rotated around the line <I CLASS="Italics">
+L</I>
+ between the earth's center and the point (<I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lat</SUB>
+, <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lon</SUB>
+). <I CLASS="Italics">
+Rot</I>
+ is measured in degrees with the positive direction being clockwise rotation around line <I CLASS="Italics">
+L</I>
+. <I CLASS="Italics">
+Rot</I>
+ can have values from -180<EM CLASS="MathSymbol">
+</EM>
+ to 180<EM CLASS="MathSymbol">
+</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887917">
+ </A>
+If the center of the map is at the North pole, North is in the direction <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lon</SUB>
+ + 180<EM CLASS="MathSymbol">
+</EM>
+. If the origin is at the South pole, North is in the direction <I CLASS="Italics">
+P</I>
+<SUB CLASS="subscript">
+0lon</SUB>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887918">
+ </A>
+The default value of <I CLASS="Italics">
+Rot</I>
+ is 0 degrees.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887919">
+ </A>
+Keywords--Projection Types</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887921">
+ </A>
+<A NAME="marker=887920">
+ </A>
+AITOFF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887923">
+ </A>
+Set this keyword to select the <A NAME="marker=887922">
+ </A>
+Aitoff projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887925">
+ </A>
+<A NAME="marker=887924">
+ </A>
+ALBERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887926">
+ </A>
+Set this keyword to select the Albers equal-area conic projection. To specify the latitude of the standard parallels, see <A HREF="idl110.htm#14132" CLASS="XRef">
+STANDARD_PARALLELS</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887931">
+ </A>
+<A NAME="marker=887930">
+ </A>
+AZIMUTHAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887932">
+ </A>
+Set this keyword to select the azimuthal equidistant projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887934">
+ </A>
+<A NAME="marker=887933">
+ </A>
+CONIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887935">
+ </A>
+Set this keyword to select Lambert's conformal conic projection with one or two standard parallels. To specify the latitude of the standard parallels, see <A HREF="idl110.htm#14132" CLASS="XRef">
+STANDARD_PARALLELS</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887940">
+ </A>
+<A NAME="marker=887939">
+ </A>
+CYLINDRICAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887941">
+ </A>
+Set this keyword to select the cylindrical equidistant projection. Cylindrical is the default map projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887943">
+ </A>
+<A NAME="marker=887942">
+ </A>
+GNOMIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887944">
+ </A>
+Set this keyword to select the gnomonic projection. Note that if default clipping is enabled, this projection will display a maximum of <EM CLASS="Symbol">
+</EM>
+ 60<EM CLASS="Symbol">
+</EM>
+ from the center of the projection area when the center is at either the equator or one of the poles.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887946">
+ </A>
+<A NAME="marker=887945">
+ </A>
+HAMMER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887948">
+ </A>
+Set this keyword to select the <A NAME="marker=887947">
+ </A>
+Hammer-Aitoff equal area projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887950">
+ </A>
+<A NAME="marker=887949">
+ </A>
+LAMBERT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887951">
+ </A>
+Set this keyword to select Lambert's azimuthal equal area projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887953">
+ </A>
+<A NAME="marker=887952">
+ </A>
+MERCATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887954">
+ </A>
+Set this keyword to select the Mercator projection. Note that this projection will not display regions within <EM CLASS="Symbol">
+</EM>
+ 10<EM CLASS="Symbol">
+</EM>
+ of the poles of projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887956">
+ </A>
+<A NAME="marker=887955">
+ </A>
+MILLER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887957">
+ </A>
+Set this keyword to select the Miller Cylindrical projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887959">
+ </A>
+<A NAME="marker=887958">
+ </A>
+MOLLWEIDE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887960">
+ </A>
+Set this keyword to select the Mollweide projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887962">
+ </A>
+<A NAME="marker=887961">
+ </A>
+ORTHOGRAPHIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887963">
+ </A>
+Set this keyword to select the orthographic projection. Note that this projection will display a maximum of <EM CLASS="Symbol">
+</EM>
+ 90<EM CLASS="Symbol">
+</EM>
+ from the center of the projection area.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887965">
+ </A>
+<A NAME="marker=887964">
+ </A>
+SATELLITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887967">
+ </A>
+Set this keyword to select the satellite projection.<A NAME="marker=887966">
+ </A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=887968">
+ </A>
+For the satellite projection, P0LAT and P0LON represent the latitude and longitude of the sub-satellite point. Three additional parameters, <I CLASS="Italics">
+P</I>
+, <I CLASS="Italics">
+Omega</I>
+, and <I CLASS="Italics">
+Gamma</I>
+ (supplied as a three-element vector argument to the SAT_P keyword), are also required.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887969">
+ </A>
+Note that since all meridians and parallels are oblique lines or arcs, the LIMIT keyword must be supplied as an eight-element vector representing four points that delineate the limits of the map. The extent of the map limits, when expressed in latitude/longitude is a complicated polygon, rather than a simple quadrilateral.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887971">
+ </A>
+<A NAME="marker=887970">
+ </A>
+SINUSOIDAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887972">
+ </A>
+Set this keyword to select the sinusoidal projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887974">
+ </A>
+<A NAME="marker=887973">
+ </A>
+STEREOGRAPHIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887975">
+ </A>
+Set this keyword to select the stereographic projection. Note that if default clipping is enabled, this projection will display a maximum of <EM CLASS="Symbol">
+</EM>
+ 90<EM CLASS="Symbol">
+</EM>
+ from the center of the projection area.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887977">
+ </A>
+<A NAME="marker=887976">
+ </A>
+TRANSVERSE_MERCATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887978">
+ </A>
+Set this keyword to select the Transverse Mercator projection, also called the UTM or Gauss-Krueger projection. This projection works well with the ellipsoid form. The default ellipsoid is the Clarke 1866 ellipsoid. To change the default ellipsoid characteristics, see <A HREF="idl110.htm#18592" CLASS="XRef">
+ELLIPSOID</A>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887982">
+ </A>
+Keywords--Map Characteristics</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887984">
+ </A>
+<A NAME="marker=887983">
+ </A>
+ADVANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887985">
+ </A>
+Set this keyword to advance to the next frame when the screen is set to display multiple plots. Otherwise the entire screen is erased.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887987">
+ </A>
+<A NAME="marker=887986">
+ </A>
+CHARSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887988">
+ </A>
+The size of the characters used for the labels. The default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887990">
+ </A>
+<A NAME="marker=887989">
+ </A>
+CLIP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887991">
+ </A>
+Set this keyword to clip the map using the map-specific graphics technique. The default is to perform map-specific clipping. Set CLIP=0 to disable clipping. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=887992">
+ </A>
+Clipping controlled by the CLIP keyword to MAP_SET applies only to the map itself. In order to disable general clipping within the plot window, you must set the system variable !P.NOCLIP=1. For more information, see <A HREF="sysvars.html#18792" CLASS="XRef">
+</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887997">
+ </A>
+<A NAME="marker=887996">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887998">
+ </A>
+The color index of the map border in the plotting window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888000">
+ </A>
+<A NAME="marker=887999">
+ </A>
+CONTINENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888001">
+ </A>
+Set this keyword to plot the continental boundaries. Note that if you are using the low-resolution map database (if the HIRES keyword is <EM CLASS="Emphasis">
+not</EM>
+ set), outlines for continents, islands, and lakes are drawn when the CONTINENTS keyword is set. If you are using the high-resolution map database (if the HIRES keyword <EM CLASS="Emphasis">
+is</EM>
+ set), only continental outlines are drawn when the CONTINENTS keyword is set. To draw islands and lakes when using the high-resolution map database, use the COASTS keyword to the MAP_CONTINENTS procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888003">
+ </A>
+<A NAME="marker=888002">
+ </A>
+CON_COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888004">
+ </A>
+The color index for continent outlines if CONTINENTS is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888006">
+ </A>
+<A NAME="marker=888005">
+ </A>
+E_CONTINENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888007">
+ </A>
+Set this keyword to a structure containing extra keywords to be passed to MAP_CONTINENTS. For example, to fill continents, the FILL keyword of MAP_CONTINENTS is set to 1.  To fill the continents with MAP_SET, specify E_CONTINENTS={FILL:1}.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888009">
+ </A>
+<A NAME="marker=888008">
+ </A>
+E_GRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888010">
+ </A>
+Set this keyword to a structure containing extra keywords to be passed to MAP_GRID. For example, to label every other gridline on a grid of parallels and meridians, the LABEL keyword of MAP_GRID is set to 2.  To do the same with MAP_SET, specify E_GRID={LABEL:2}.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888013">
+ </A>
+<A NAME="marker=888011">
+ </A>
+<A NAME="36701">
+ </A>
+E_HORIZON</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888014">
+ </A>
+Set this keyword to a structure containing extra keywords to be set as modifiers to the HORIZON keyword. </P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=888015">
+ </A>
+To draw a Stereographic map, with the sphere filled in color index 3, enter:</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=888016">
+ </A>
+MAP_SET, 0, 0, /STEREO, /HORIZON, /ISOTROPIC, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888017">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E_HORIZON={FILL:1, COLOR:3}</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888019">
+ </A>
+<A NAME="marker=888018">
+ </A>
+GLINESTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888020">
+ </A>
+Set this keyword to a line style index used to draw the grid of parallels and meridians. See <A HREF="idl10c.htm#95087" CLASS="XRef">
+IDL Linestyles</A>
+ for a list of available linestyles. The default is 1, drawing a grid of dotted lines.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888025">
+ </A>
+<A NAME="marker=888024">
+ </A>
+GLINETHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888026">
+ </A>
+Set this keyword to the thickness of the gridlines drawn if the GRID keyword is set. The default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888028">
+ </A>
+<A NAME="marker=888027">
+ </A>
+GRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888029">
+ </A>
+Set this keyword to draw the grid of parallels and meridians.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888031">
+ </A>
+<A NAME="marker=888030">
+ </A>
+HIRES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888032">
+ </A>
+Set this keyword to use the high-resolution continent outlines when drawing continents. This keyword only has effect if the CONTINENTS keyword is also set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888034">
+ </A>
+<A NAME="marker=888033">
+ </A>
+HORIZON</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888035">
+ </A>
+Set this keyword to draw a horizon line, when the projection in use permits. The horizon delineates the boundary of the sphere.  The HORIZON keyword has no effect with the CONIC projections. See <A HREF="idl110.htm#36701" CLASS="XRef">
+E_HORIZON</A>
+ for more options.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888040">
+ </A>
+<A NAME="marker=888039">
+ </A>
+LABEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888041">
+ </A>
+Set this keyword to label the parallels and meridians with their corresponding latitudes and longitudes. Setting this keyword to an integer will cause every LABEL gridline to be labeled (that is, if LABEL=3 then every third gridline will be labeled). The starting point for determining which gridlines are labeled is the minimum latitude or longitude (-180 to 180).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888043">
+ </A>
+<A NAME="marker=888042">
+ </A>
+LATALIGN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888044">
+ </A>
+The alignment of the text baseline for latitude labels. A value of 0.0 left justifies the label, 1.0 right justifies it, and 0.5 centers it.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888046">
+ </A>
+<A NAME="marker=888045">
+ </A>
+LATLAB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888047">
+ </A>
+The longitude at which to place latitude labels. The default is the center longitude of the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888049">
+ </A>
+<A NAME="marker=888048">
+ </A>
+LATDEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888050">
+ </A>
+Set this keyword equal to the spacing (in degrees) between parallels of latitude drawn by the MAP_GRID procedure. If this keyword is not set, a suitable value is determined from the current map projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888052">
+ </A>
+<A NAME="marker=888051">
+ </A>
+LONALIGN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888053">
+ </A>
+The alignment of the text baseline for longitude labels. A value of 0.0 left justifies the label, 1.0 right justifies it, and 0.5 centers it.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888055">
+ </A>
+<A NAME="marker=888054">
+ </A>
+LONDEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888056">
+ </A>
+Set this keyword equal to the spacing (in degrees) between meridians of longitude drawn by the MAP_GRID procedure. If this keyword is not set, a suitable value is determined from the current map projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888058">
+ </A>
+<A NAME="marker=888057">
+ </A>
+LONLAB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888059">
+ </A>
+The latitude at which to place longitude labels. The default is the center latitude of the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888061">
+ </A>
+<A NAME="marker=888060">
+ </A>
+MLINESTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888062">
+ </A>
+The line style index used for continental boundaries. Linestyles are described in the table below. The default is 0 for solid.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=888097">
+ </A>
+<A NAME="95087">
+ </A>
+IDL Linestyles</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888065">
+ </A>
+Index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888067">
+ </A>
+Linestyle</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888069">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888071">
+ </A>
+Solid</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888073">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888075">
+ </A>
+Dotted</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888077">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888079">
+ </A>
+Dashed</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888081">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888083">
+ </A>
+Dash Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888085">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888087">
+ </A>
+Dash Dot Dot Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888089">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888091">
+ </A>
+Long Dashes</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888101">
+ </A>
+<A NAME="marker=888100">
+ </A>
+MLINETHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888102">
+ </A>
+The line thickness used for continental boundaries. The default is 2.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888104">
+ </A>
+<A NAME="marker=888103">
+ </A>
+NOBORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888105">
+ </A>
+Set this keyword to not draw a border around the map. The map will fill the extent of the plotting region. If NOBORDER is <EM CLASS="Emphasis">
+not</EM>
+ specified, a margin equalling 1% of the plotting region will be placed between the map and the border.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888107">
+ </A>
+<A NAME="marker=888106">
+ </A>
+NOERASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888108">
+ </A>
+Set this keyword to have MAP_SET not erase the current plot window. The default is to erase before drawing the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888110">
+ </A>
+<A NAME="marker=888109">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888111">
+ </A>
+A string containing the main title for the map. The title appears centered above the map window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888113">
+ </A>
+<A NAME="marker=888112">
+ </A>
+USA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888114">
+ </A>
+Set this keyword to draw borders for each state in the United States.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888116">
+ </A>
+<A NAME="marker=888115">
+ </A>
+XMARGIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888117">
+ </A>
+A scalar or two-element vector that specifies the vertical margin between the map and screen border in character units. If a scalar is specified, the same margin will be used on both sides of the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888119">
+ </A>
+<A NAME="marker=888118">
+ </A>
+YMARGIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888120">
+ </A>
+A scalar or two-element vector that specifies in the horizontal margin between the map and screen border in character units. If a scalar is specified, the same margin will be used on the top and bottom of the map.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888121">
+ </A>
+Keywords--Projection Parameters</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888123">
+ </A>
+<A NAME="marker=888122">
+ </A>
+CENTRAL_AZIMUTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888124">
+ </A>
+Set this keyword to the angle of the central azimuth, in degrees east of North. This keyword can be used with the following projections: Cylindrical, Mercator, Miller, Mollweide, and Sinusoidal. The default is 0 degrees. The pole is placed at an azimuth of CENTRAL_AZIMUTH degrees CCW of North, as specified by the <I CLASS="Italic">
+Rot</I>
+ argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888127">
+ </A>
+<A NAME="marker=888125">
+ </A>
+<A NAME="18592">
+ </A>
+ELLIPSOID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888128">
+ </A>
+Set this keyword to a 3-element array, [a, e<SUP CLASS="Superscript">
+2</SUP>
+, k<SUB CLASS="Subscript">
+0</SUB>
+], defining the ellipsoid for the Transverse Mercator projection.</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=888129">
+ </A>
+a: equatorial radius, in meters.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=888130">
+ </A>
+e<SUP CLASS="Superscript">
+2</SUP>
+: eccentricity squared. e<SUP CLASS="Superscript">
+2</SUP>
+ = 2 * f - f<SUP CLASS="Superscript">
+2</SUP>
+, where f = 1 - b/a (a: equatorial radius, b: polar radius; in meters).</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=888131">
+ </A>
+k<SUB CLASS="Subscript">
+0</SUB>
+: scale on the central meridian.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=888132">
+ </A>
+The default is the Clarke 1866 ellipsoid, [6378206.4,&nbsp;0.00676866,&nbsp;0.9996].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888134">
+ </A>
+<A NAME="marker=888133">
+ </A>
+ISOTROPIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888135">
+ </A>
+Set this keyword to produce a map that has the same scale in the X and Y directions.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=888136">
+ </A>
+The X and Y axes will be scaled isotropically and then fit within the rectangle defined by the POSITION keyword; one of the axes may be shortened. See <A HREF="idl22c.htm#54782" CLASS="XRef">
+POSITION</A>
+ for more information.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888141">
+ </A>
+<A NAME="marker=888140">
+ </A>
+LIMIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888142">
+ </A>
+A four- or eight-element vector that specifies the limits of the map.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888143">
+ </A>
+As a four-element vector, LIMIT has the form [<I CLASS="Italics">
+Lat</I>
+<SUB CLASS="Subscript">
+min</SUB>
+, <I CLASS="Italics">
+Lon</I>
+<SUB CLASS="Subscript">
+min</SUB>
+, <I CLASS="Italics">
+Lat</I>
+<SUB CLASS="Subscript">
+max</SUB>
+, <I CLASS="Italics">
+Lon</I>
+<SUB CLASS="Subscript">
+max</SUB>
+] that specifies the boundaries of the region to be mapped. (<I CLASS="Italics">
+Lat</I>
+<SUB CLASS="Subscript">
+min</SUB>
+, <I CLASS="Italics">
+Lon</I>
+<SUB CLASS="Subscript">
+min</SUB>
+) and (<I CLASS="Italics">
+Lat</I>
+<I CLASS="Italic">
+max</I>
+, <I CLASS="Italics">
+Lon</I>
+<SUB CLASS="Subscript">
+max</SUB>
+) are the latitudes and longitudes of two points diagonal from each other on the region's boundary.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888144">
+ </A>
+As an eight-element vector, LIMIT has the form: [<I CLASS="Italics">
+Lat</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italics">
+, Lon</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italics">
+, Lat</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italics">
+, Lon</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italics">
+, Lat</I>
+<SUB CLASS="Subscript">
+2</SUB>
+<I CLASS="Italics">
+, Lon</I>
+<SUB CLASS="Subscript">
+2</SUB>
+<I CLASS="Italics">
+, Lat</I>
+<SUB CLASS="Subscript">
+3</SUB>
+<I CLASS="Italics">
+, Lon</I>
+<SUB CLASS="Subscript">
+3</SUB>
+]. These four latitude/longitude pairs describe, respectively, four points on the left, top, right, and bottom edges of the map extent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888146">
+ </A>
+<A NAME="marker=888145">
+ </A>
+SAT_P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888147">
+ </A>
+A three-element vector containing three parameters, <I CLASS="Italics">
+P</I>
+, <I CLASS="Italics">
+Omega</I>
+, and <I CLASS="Italics">
+Gamma,</I>
+ that must be supplied when using the SATELLITE projection where:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=888148">
+ </A>
+<I CLASS="Italics">
+P</I>
+ is the distance of the point of perspective (camera) from the center of the globe, expressed in units of the radius of the globe.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=888149">
+ </A>
+<I CLASS="Italics">
+Omega</I>
+ is the downward tilt of the camera, in degrees from the new horizontal. If both <I CLASS="Italics">
+Gamma</I>
+ and <I CLASS="Italics">
+Omega</I>
+ are 0, a Vertical Perspective projection results.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=888150">
+ </A>
+<I CLASS="Italics">
+Gamma</I>
+ is the angle, expressed in degrees clockwise from north, of the rotation of the projection plane.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888152">
+ </A>
+<A NAME="marker=888151">
+ </A>
+SCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888153">
+ </A>
+Set this keyword to construct an isotropic map with the given scale, set to the ratio of 1:<I CLASS="Italic">
+scale</I>
+. If SCALE is not specified, the map is fit to the window. The typical scale for global maps is in the ratio of between 1:100&nbsp;million and 1:200&nbsp;million. For continents, the typical scale is in the ratio of approximately 1:50&nbsp;million. For example, <CODE CLASS="Code">
+SCALE=100E6</CODE>
+ sets the scale at the center of the map to 1:100&nbsp;million, which is in the same ratio as 1 inch to 1578 miles (1 cm to 1000 km).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888156">
+ </A>
+<A NAME="marker=888154">
+ </A>
+<A NAME="14132">
+ </A>
+STANDARD_PARALLELS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888157">
+ </A>
+Set this keyword to a one- or two-element array defining, respectively, one or two standard parallels for conic projections.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888158">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=888159">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=888160">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=888161">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888162">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888166">
+ </A>
+See <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for descriptions of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#54782" CLASS="XRef">
+POSITION</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888176">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888186">
+ </A>
+<A HREF="idl10c.htm#95626" CLASS="XRef">
+MAP_CONTINENTS</A>
+, <A HREF="idl10d.htm#30282" CLASS="XRef">
+MAP_GRID</A>
+, <A HREF="idl10e.htm#12714" CLASS="XRef">
+MAP_IMAGE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

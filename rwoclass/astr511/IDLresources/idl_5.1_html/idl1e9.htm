@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TS_SMOOTH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ea.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=223083">
+ </A>
+<A NAME="99629">
+ </A>
+TS_SMOOTH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=223086">
+ </A>
+The <A NAME="marker=225136">
+ </A>
+TS_SMOOTH function computes central, backward, or forward <A NAME="marker=225152">
+ </A>
+moving averages of an <EM CLASS="Emphasis">
+n</EM>
+-element time-series. Autoregressive forecasting and backcasting are used to extrapolate the time-series and compute a moving average for each point. The result is an <EM CLASS="Emphasis">
+n</EM>
+-element vector of the same data type as the input vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=225172">
+ </A>
+Note that central moving averages require <EM CLASS="Emphasis">
+Nvalues</EM>
+/2 forecasts and <EM CLASS="Emphasis">
+Nvalues</EM>
+/2 backcasts. Backward moving averages require <EM CLASS="Emphasis">
+Nvalues</EM>
+-1 backcasts. Forward moving averages require <EM CLASS="Emphasis">
+Nvalues</EM>
+-1 forecasts.</P>
+<P CLASS="Body">
+<A NAME="pgfId=223107">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ts_smooth.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=223088">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=223105">
+ </A>
+Result = TS_SMOOTH(<EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Nvalues</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=223089">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223137">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223138">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element single- or double-precision floating-point vector containing time-series samples. Note that <EM CLASS="Emphasis">
+n</EM>
+ must be greater than or equal to 11.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223090">
+ </A>
+Nvalues</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223120">
+ </A>
+A scalar of type integer or long integer that specifies the number of time-series values used to compute each moving-average. If central-moving averages are computed (the default), this parameter must be an odd integer greater than or equal to three.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=223091">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223123">
+ </A>
+<A NAME="marker=225133">
+ </A>
+BACKWARD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223124">
+ </A>
+Set this keyword to compute backward-moving averages. If BACKWARD is set, the <EM CLASS="Emphasis">
+Nvalues</EM>
+ argument must be an integer greater than one.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223168">
+ </A>
+<A NAME="marker=223167">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223169">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223093">
+ </A>
+<A NAME="marker=225134">
+ </A>
+FORWARD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223182">
+ </A>
+Set this keyword to compute forward-moving averages. If FORWARD is set, the <EM CLASS="Emphasis">
+Nvalues</EM>
+ argument must be an integer greater than one.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223094">
+ </A>
+<A NAME="marker=225135">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223375">
+ </A>
+An integer or long-integer scalar that specifies the order of the autoregressive model used to compute the forecasts and backcasts of the time-series. By default, a time-series with a length between 11 and 219 elements will use an autoregressive model with an order of 10. A time-series with a length greater than 219 will use an autoregressive model with an order equal to 5% of its length. The ORDER keyword is used to override this default.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=223130">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=223131">
+ </A>
+Define an n-element vector of time-series samples. </P>
+<P CLASS="Code">
+<A NAME="pgfId=223202">
+ </A>
+X = [6.63, 6.59, 6.46, 6.49, 6.45, 6.41, 6.38, 6.26, 6.09, 5.99,$</P>
+<P CLASS="Code">
+<A NAME="pgfId=223203">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.92, 5.93, 5.83, 5.82, 5.95, 5.91, 5.81, 5.64, 5.51, 5.31,$</P>
+<P CLASS="Code">
+<A NAME="pgfId=223204">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.36, 5.17, 5.07, 4.97, 5.00, 5.01, 4.85, 4.79, 4.73, 4.76]</P>
+<P CLASS="Code">
+<A NAME="pgfId=223245">
+ </A>
+PRINT, TS_SMOOTH(X, 11)	<EM CLASS="Comment">;
+Compute the 11-point central-moving-averages of the time-series.</EM>
+ </P>
+<P CLASS="Body">
+<A NAME="pgfId=223209">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=223287">
+ </A>
+6.65761 6.60592 6.54673 6.47646 6.40480 6.33364</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=223288">
+ </A>
+6.27000 6.20091 6.14273 6.09364 6.04455 5.99000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=223289">
+ </A>
+5.92273 5.85455 5.78364 5.72636 5.65818 5.58000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=223216">
+ </A>
+5.50182 5.42727 5.34182 5.24545 5.15273 5.07000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=223217">
+ </A>
+5.00182 4.94261 4.87205 4.81116 4.75828 4.71280</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=223218">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=223098">
+ </A>
+<A HREF="idl1a6.htm#43465" CLASS="XRef">
+SMOOTH</A>
+, <A HREF="idl1e7.htm#96780" CLASS="XRef">
+TS_DIFF</A>
+, <A HREF="idl1e8.htm#74523" CLASS="XRef">
+TS_FCAST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

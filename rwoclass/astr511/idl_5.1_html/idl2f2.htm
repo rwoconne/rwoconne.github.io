@@ -1,0 +1,794 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDL_Container</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1022250">
+ </A>
+<A NAME="19831">
+ </A>
+IDL_Container</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1052109">
+ </A>
+An IDL_<A NAME="marker=1055970">
+ </A>
+Container object holds other objects. Destroying an IDL_Container object destroys any objects that have been added to the container via the Add method.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1055972">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1055976">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1055977">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1055978">
+ </A>
+The following classes are subclassed from this class:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173416">
+ </A>
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173425">
+ </A>
+<A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173432">
+ </A>
+<A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173439">
+ </A>
+<A HREF="idl30a.htm#27087" CLASS="XRef">
+IDLgrViewgroup</A>
+</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1055979">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1055983">
+ </A>
+See <A HREF="idl2f2.htm#24115" CLASS="XRef">
+IDL_Container::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1055984">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1055985">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093737">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1093744">
+ </A>
+<A HREF="idl2f2.htm#33490" CLASS="XRef">
+IDL_Container::Add</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1093748">
+ </A>
+<A HREF="idl2f2.htm#30826" CLASS="XRef">
+IDL_Container::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1069872">
+ </A>
+<A HREF="idl2f2.htm#27771" CLASS="XRef">
+IDL_Container::Count</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1069877">
+ </A>
+<A HREF="idl2f2.htm#33593" CLASS="XRef">
+IDL_Container::Get</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1057686">
+ </A>
+<A HREF="idl2f2.htm#24115" CLASS="XRef">
+IDL_Container::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1069884">
+ </A>
+<A HREF="idl2f2.htm#22803" CLASS="XRef">
+IDL_Container::IsContained</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1069889">
+ </A>
+<A HREF="idl2f2.htm#21346" CLASS="XRef">
+IDL_Container::Move</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1074340">
+ </A>
+<A HREF="idl2f2.htm#20621" CLASS="XRef">
+IDL_Container::Remove</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1074343">
+ </A>
+<A NAME="33490">
+ </A>
+IDL_Container::Add</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1074346">
+ </A>
+The IDL_Container::<A NAME="marker=1074345">
+ </A>
+Add procedure method adds a child object to the container. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056053">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056054">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Add(<EM CLASS="Emphasis">
+Object</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056055">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1090402">
+ </A>
+Object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1090403">
+ </A>
+An instance of an object to be added to the container object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056057">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1056058">
+ </A>
+<A NAME="marker=1069102">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069101">
+ </A>
+Set this keyword equal to the zero-based index of the position within the container at which the new object should be placed. The default is to add the new object at the end of the list of contained items.  </P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=1183390">
+ </A>
+If the container has three objects, the new object will be placed at the fourth position. Since positions begin at zero, this would be equivalent to setting POSITION=3.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1056061">
+ </A>
+<A NAME="30826">
+ </A>
+IDL_Container::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056064">
+ </A>
+The IDL_Container::<A NAME="marker=1067648">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1057839">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056068">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1057750">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1057751">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1057752">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056070">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056071">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056072">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056073">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069188">
+ </A>
+<A NAME="27771">
+ </A>
+IDL_Container::Count</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069201">
+ </A>
+The IDL_Container::<A NAME="marker=1069200">
+ </A>
+Count function method returns the number of objects contained by the container object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069212">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069215">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Count()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069216">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069217">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069218">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069219">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069496">
+ </A>
+<A NAME="33593">
+ </A>
+IDL_Container::Get</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069499">
+ </A>
+The IDL_Container::<A NAME="marker=1069498">
+ </A>
+Get function method returns an array of object references to objects in a container. Unless the ALL or COUNT keywords are specified, the first object in the container is returned. If no objects are found in the container, the Get function returns -1. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069503">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069504">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Get()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069505">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069506">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069507">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069508">
+ </A>
+<A NAME="marker=1069552">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069531">
+ </A>
+Set this keyword to return an array of object references to all of the objects in the container.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069532">
+ </A>
+<A NAME="marker=1069553">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1090498">
+ </A>
+Set this keyword equal to a named variable that will contain the number of objects selected by the function. If the ALL keyword is also specified, specifying this keyword is the same as calling the IDL_Container::Count method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069548">
+ </A>
+<A NAME="marker=1069554">
+ </A>
+ISA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069549">
+ </A>
+Set this keyword equal to a class name. Only objects that inherit from the specified class will be returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069550">
+ </A>
+<A NAME="marker=1069555">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069551">
+ </A>
+Set this keyword equal to a scalar or array containing the zero-based indices of the positions of the objects to return.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069191">
+ </A>
+<A NAME="24115">
+ </A>
+IDL_Container::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069194">
+ </A>
+The IDL_Container::<A NAME="marker=1069193">
+ </A>
+Init function method initializes the container object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1057841">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056143">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056144">
+ </A>
+Obj = OBJ_NEW('IDL_Container')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1056145">
+ </A>
+<EM CLASS="Emphasis">
+</EM>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1056146">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Init()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056147">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056148">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056149">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069307">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069320">
+ </A>
+<A NAME="22803">
+ </A>
+IDL_Container::IsContained</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069323">
+ </A>
+The IDL_Container::<A NAME="marker=1069322">
+ </A>
+IsContained function method returns true (1) if the specified object is in the container, or false (0) otherwise. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069398">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069399">
+ </A>
+Result<EM CLASS="Emphasis">
+ = Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+IsContained(<EM CLASS="Emphasis">
+Object)</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069400">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069330">
+ </A>
+Object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069331">
+ </A>
+The object reference of the object to search for in the container.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069332">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069356">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069699">
+ </A>
+<A NAME="21346">
+ </A>
+IDL_Container::Move</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069702">
+ </A>
+The IDL_Container::<A NAME="marker=1069701">
+ </A>
+Move procedure method moves an object from one position in a container to a new position. The order of the other objects in the container remains unchanged. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+<P CLASS="Body">
+<A NAME="pgfId=1090566">
+ </A>
+Positioning within a container controls the rendering order of the contained objects. The object whose location has the lowest index value is rendered first. If several objects are located at the same point in three-dimensional space, the object rendered first will occlude objects rendered later. Objects located &quot;behind&quot; other objects in three-dimensional space must be rendered before objects in front of them, even if the &quot;front&quot; objects are translucent.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069728">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069729">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Move, <EM CLASS="Emphasis">
+Source</EM>
+, <EM CLASS="Emphasis">
+Destination</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069730">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069709">
+ </A>
+Source</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069710">
+ </A>
+The zero-based index of the current location of the object to be moved.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069736">
+ </A>
+Destination</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069737">
+ </A>
+The zero-based index of the location in the container where the object will reside after being moved.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069711">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069712">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069310">
+ </A>
+<A NAME="20621">
+ </A>
+IDL_Container::Remove</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1069313">
+ </A>
+The IDL_Container::<A NAME="marker=1069312">
+ </A>
+Remove procedure method removes an object from view from the container. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056160">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1056161">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDL_Container::]</EM>
+Remove<I CLASS="Italic">
+[</I>
+, <EM CLASS="Emphasis">
+Child_object]</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056162">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1056163">
+ </A>
+Child_object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1057819">
+ </A>
+The object reference of the object to be removed from the container. If <I CLASS="Italic">
+Child_object</I>
+ is not provided (and neither the ALL nor POSITION keyword are set), the first object in the container will be removed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1056164">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1056165">
+ </A>
+<A NAME="marker=1069133">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069132">
+ </A>
+Set this keyword to remove all object from the container. If this keyword is set, the <EM CLASS="Emphasis">
+Child_object</EM>
+ argument is not required.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069134">
+ </A>
+<A NAME="marker=1069136">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069135">
+ </A>
+Set this keyword equal to the zero-based index of the object to be removed. If the <EM CLASS="Emphasis">
+Child_object</EM>
+ argument is supplied, this keyword is ignored.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

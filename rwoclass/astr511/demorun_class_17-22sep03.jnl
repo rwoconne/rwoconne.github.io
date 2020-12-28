@@ -1,0 +1,337 @@
+; IDL Version 5.2 (sunos sparc)
+; Journal File for rwo@gemini.astro.Virginia.EDU
+; Working directory: /net/gemini.vela/rwo/idldocs/demos/2003
+; Date: Wed Sep 17 13:58:26 2003
+
+
+;;; CLASSROOM IDL DEMO---JOURNAL FILE 
+
+;;; [Some editing done to provide headers & remove blunders]
+
+;;; Warning: some routines, like "vline", "show", "maxmin", "zoomer", "boxer"
+;;;   "resetcon", "rainbow2" are my own and not part of the Users Library.
+;;;   I can make these available to you if you wish.
+
+;;; SCALARS
+
+a=3.0e10
+z=a^2
+print,z
+;  9.00000e+20
+print,a^2
+;  9.00000e+20
+print,a^2.26
+;  4.76754e+23
+print,a^8
+;          Inf
+; % Program caused arithmetic error: Floating overflow
+b=alog10(a) & print,b
+;      10.4771
+print,10.0^b
+;  3.00000e+10
+
+;; VECTORS
+
+x=fltarr(5)
+print,x
+;      0.00000      0.00000      0.00000      0.00000      0.00000
+x=fltarr(5,2)
+print,x
+;      0.00000      0.00000      0.00000      0.00000      0.00000
+;      0.00000      0.00000      0.00000      0.00000      0.00000
+
+z=fltarr(5)
+print,z+1
+;      1.00000      1.00000      1.00000      1.00000      1.00000
+z=fltarr(5)+1
+z=z*5 & print,z
+;      5.00000      5.00000      5.00000      5.00000      5.00000
+print,z^2
+;      25.0000      25.0000      25.0000      25.0000      25.0000
+
+x=findgen(5) & print,x
+;      0.00000      1.00000      2.00000      3.00000      4.00000
+chan,9
+plot,x
+plot,x,psym=5
+plot,x,psym=1
+plot,x,psym=1,symsize=2
+
+x=findgen(200)*0.1
+print,max(x)
+;      19.9000
+print,min(x)
+;      0.00000
+?sin
+plot,x,sin(x)
+plot,x,sin(x)+x
+plot,x,2*sin(x)+x
+plot,x,5*sin(x)+x
+plot,x,x*sin(x)+x
+y=x*sin(x)+x
+
+;;; WHERE utility
+
+find=where(y gt 20)
+print,find
+
+; 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 
+; 153 154 190 191 192 193 194 195 196 197 198 199
+
+oplot,x(find),y(find),psym=5
+
+print,5/2.
+;      2.50000
+print,5/2
+;       2
+
+print,x(find)   ;;; [NOTE! My editor truncated some of the following
+                ;;;    output lines.]
+
+; 13.2000 13.3000 13.4000 13.5000 13.6000 13.7000 13.8000 13.9000
+14.0000 14.1000 14.2000 14.3000 14.4000 14.5000 14.6000 14.7000
+14.8000 14.9000 15.0000 1
+;5.1000 15.2000 15.3000 15.4000 19.0000 19.1000 19.2000 19.3000
+19.4000 19.5000 19.6000 19.7000 19.8000 19.9000
+
+print,y(find)
+
+; 21.0154 22.2053 23.3210 24.3511 25.2846 26.1116 26.8230 27.4109
+27.8685 28.1903 28.3720 28.4108 28.3055 28.0560 27.6639 27.1325
+26.4661 25.6709 24.7543 2
+
+;3.7251 22.5933 21.3701 20.0680 21.8477 23.8336 25.7917 27.7026
+29.5475 31.3080 32.9665 34.5060 35.9108 37.1661
+
+;;; USER-SUPPLIED ROUTINE/PLANCK FUNCTION
+
+;;;    DISPLAY INFORMATION HEADER FOR THIS ROUTINE
+
+man,'planck
+;       PLANCK()
+; PURPOSE:
+;       To calculate the Planck function in units of ergs/cm2/s/A
+; CALLING SEQUENCE:
+;       bbflux = PLANCK( wave, temp)
+; INPUT PARAMETERS:
+;       WAVE   Scalar or vector giving the wavelength(s) in **Angstroms**
+;               at which the Planck function is to be evaluated.
+;       TEMP   Scalar giving the temperature of the planck function in degree K
+; OUTPUT PARAMETERS:
+;       BBFLUX - Scalar or vector giving the blackbody flux (i.e. !pi*Intensity)
+;               in erg/cm^2/s/A in at the specified wavelength points.
+; EXAMPLES:
+;       To calculate the blackbody flux at 30,000 K every 100 Angstroms between
+;       2000A and 2900 A
+;       IDL> wave = 2000 + findgen(10)*100
+;       IDL> bbflux = planck(wave,30000)
+;       If a star with a blackbody spectrum has a radius R, and distance,d, then
+;       the flux at Earth in erg/cm^2/s/A will be bbflux*R^2/d^2
+; PROCEDURE:
+;       The wavelength data are converted to cm, and the Planck function
+;       is calculated for each wavelength point. See Allen (1973), Astrophysical
+;       Quantities, section 44 for more information.
+; NOTES:
+;       See the procedure planck_radiance.pro in
+;       ftp://origin.ssec.wisc.edu/pub/paulv/idl/Radiance/planck_radiance.pro
+;       for computation of Planck radiance given wavenumber in cm-1 or
+;       wavelength in microns
+; MODIFICATION HISTORY:
+;       Adapted from the IUE RDAF               August, 1989
+;       Converted to IDL V5.0   W. Landsman   September 1997
+;       Improve precision of constants    W. Landsman  January 2002
+
+lam=findgen(40000)+500.
+
+chan,9
+plot,lam,planck(lam,5000)
+plot_io,lam,planck(lam,5000)
+plot,lam,planck(lam,10000)
+plot,lam,planck(lam,1000)
+
+
+;;; Relevant to Problem Set 2: 
+
+plot,lam,planck(lam,6000),xrange=[4000,6000]
+oplot,lam,planck(lam,5000)
+oplot,lam,planck(lam,5200)
+oplot,lam,planck(lam,5500)
+vline,5500
+
+!p.title='Planck Fcn for various t'
+!x.title='Wavelength'
+plot,lam,planck(lam,6000),xrange=[4000,6000]
+
+;;;
+;;;  2-D ARRAYS
+
+im=fltarr(25,25)+20.
+im(5,15)=10000.
+im(10,23)=10000.
+
+chan,0
+ctvscl,im,min=0,max=100
+show,im,5
+; 
+
+;;; READ FITS FILE
+
+sd,'data
+;/net/gemini.vela/rwo/idldocs/demos/2003/data
+
+fits_read,'m87i-ex.fits',m87i,hdm87i
+
+help,m87i
+
+maxmin,m87i
+;      432.874     -666.000
+
+;;; IMAGE HISTOGRAM
+
+chan,9
+plothist,m87i
+plothist,m87i,xrange=[0,200]
+plothist,m87i,xrange=[0,20]
+find=where(m87i eq -666,count) & print,count
+;           2
+; 
+show,m87i,2,min=0,max=20
+
+;;; SLICES THRU IMAGE
+; 
+plot,m87i(*,150)
+plot,m87i(*,250)
+
+;;; ZOOM
+
+chan,0
+ctvscl,m87i
+zoomer
+;Left for zoom center, Middle for new zoom factor, Right to quit
+
+;;; AVAILABLE COLOR TABLES
+
+retall
+cdel,18
+resetcon
+
+show,m87i,2,min=0,max=170
+; 
+rainbow2,1
+
+exit
+
+;;; ================== END OF FIRST PART OF DEMO =================
+
+; IDL Version 5.2 (sunos sparc)
+; Journal File for rwo@gemini.astro.Virginia.EDU
+; Working directory: /net/gemini.vela/rwo/idldocs/demos/2003
+; Date: Mon Sep 22 13:55:28 2003
+ 
+;;; Continue IDL Demo, 9/22/03 
+
+;;; USE OF "SD" COMMAND
+
+sd
+;/net/gemini.vela/rwo/idldocs/demos/2003
+sd,'data
+;/net/gemini.vela/rwo/idldocs/demos/2003/data
+
+;;; LIST FITS ("Flexible Image Transport System") FILES
+
+fitsdir
+;FITS File Directory Mon Sep 22 14:10:21 2003
+;/net/gemini.vela/rwo/idldocs/demos/2003/data/*.fits
+; 
+; NAME             SIZE    DATE-OBS   TELESCOP OBJECT            EXPTIME 
+; 
+;m87-GC1-stisim-ex 0        2001-04-23 HST      NGC4486-GCFIELD-1 
+;m87b-ex           301 301  2001-07-24                            
+;m87i-ex           301 301  2001-07-24                            
+
+;;; READ & DISPLAY ANOTHER FITS FILE: 
+
+fits_read,'m87-GC1-stisim-ex.fits',im,hdim
+help,im
+
+chan,0
+ctvscl,im
+ctvscl,im,min=0,max=200
+ctvscl,im,min=90,max=200
+ctvscl,im,min=90,max=800
+
+
+chan,9
+plot,im(*,300)   ;;; Plots a slice 
+
+
+chan,0
+zoomer
+;Left for zoom center, Middle for new zoom factor, Right to quit
+
+;;; UNSHARP MASKING
+
+blur=median(im,11)
+chan,1
+ctvscl,blur,min=90,max=800
+
+diff=im-blur
+
+ctvscl,diff
+ctvscl,diff,min=20,max=80
+ctvscl,diff,min=20,max=60
+
+;;; USE FIND ALGORITHM FROM DAOPHOT TO ID POINT SOURCES
+
+chan,0
+
+find,im,xc,yc
+;Enter approximate FWHM: 
+; 6
+;RELATIVE ERROR computed from FWHM     0.788343
+;Enter minimum value above background for threshold detection: 
+; 250
+;Enter low and high cutoffs, press [RETURN] for defaults:
+;Image Sharpness Statistic (DEFAULT = 0.2,1.0): 
+; 
+;Image Roundness Statistic [DEFAULT = -1.0,1.0]: 
+; 
+;114 local maxima were located above threshold
+; Do you want to continue at this HMIN? [YES] 
+; 
+;             STAR      X      Y     FLUX     SHARP    ROUND
+;                0  531.3   58.8   1492.8     0.86     0.00
+;                1  489.1   67.2    357.2     0.86     0.15
+;                2  289.7   69.0    566.5     0.82    -0.04
+;                3  413.0   72.7   3153.4     0.99     0.05
+;                4  516.4   91.0    344.0     0.90    -0.02
+;                5  283.2  111.6    840.0     0.86     0.06
+;                6  330.1  126.9    524.9     0.97    -0.05
+;                7  538.2  137.1   1757.8     0.91     0.04
+;                8  318.8  138.3   1978.8     0.79    -0.02
+
+;;; ...abbreviated listing here
+
+;               37  923.9  506.2    990.1     0.93     0.01
+;               38  225.8  508.2    544.5     0.94    -0.05
+; No. of sources rejected by SHARPNESS criteria      75
+; No. of sources rejected by ROUNDNESS criteria       0
+; No. of sources rejected by CENTROID  criteria       0
+; No. of sources ACCEPTED          39
+; Threshold above background (HMIN) for this pass was   250.0
+;Enter new threshold or [RETURN] to exit: 
+; 
+
+;;; MARK IDS ON ORIGINAL DIPLAYED IMAGE
+
+chan,0
+boxer,13,xc,yc
+
+
+;;; CALL ATV, an IDL GUI image display/analysis package similar to XIMTOOL,
+;;;   SAOImage, DS9
+
+atv,im
+
+
+;;; <<<<<<<<<<<<<<<<<<<<<<<<<<<< END DEMO <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITEU</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl219.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl217.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756607">
+ </A>
+<A NAME="93251">
+ </A>
+WRITEU</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680660">
+ </A>
+The <A NAME="marker=675056">
+ </A>
+WRITEU procedure <A NAME="marker=675057">
+ </A>
+writes <A NAME="marker=675058">
+ </A>
+unformatted binary data from an expression into a file. This procedure performs a direct transfer with no processing of any kind being done to the data.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680661">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680662">
+ </A>
+WRITEU, <I CLASS="Italic">
+Unit, Expr</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+ ..., Expr</I>
+<SUB CLASS="Subscript">
+n</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680663">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680664">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680665">
+ </A>
+The IDL file unit to which the output is sent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680666">
+ </A>
+Expr<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680667">
+ </A>
+The expressions to be output. For non-string variables, the number of bytes implied by the data type is output. When WRITEU is used with a variable of type string, IDL outputs exactly the number of bytes contained in the existing string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680668">
+ </A>
+Unix Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680669">
+ </A>
+<A NAME="marker=675065">
+ </A>
+TRANSFER_COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680670">
+ </A>
+Set this keyword to a named variable in which to return the number of elements transferred by the output operation. Note that the number of elements is not the same as the number of bytes (except in the case where the data type being transferred is bytes). For example, transferring 256 floating-point numbers yields a transfer count of 256, not 1024 (the number of bytes transferred).</P>
+<P CLASS="Body">
+<A NAME="pgfId=680671">
+ </A>
+This keyword is useful with files opened with the NOSTDIO keyword to the OPEN routines. Normally, writing more data than an output device will accept causes an error. Files opened with the <A NAME="marker=675066">
+ </A>
+NOSTDIO keyword will not generate such an error. Instead, the programmer must keep track of the transfer count to judge the success or failure of a WRITEU operation.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680672">
+ </A>
+VMS Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680673">
+ </A>
+Note that the obsolete <A NAME="marker=675067">
+ </A>
+FORWRT routine has been replaced by WRITEU.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680674">
+ </A>
+<A NAME="marker=675068">
+ </A>
+REWRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680675">
+ </A>
+When writing data to a file with indexed organization, setting the REWRITE keyword specifies that the data should update the contents of the most recently input record instead of creating a new record.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680676">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680677">
+ </A>
+Create some data to store in a file by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680678">
+ </A>
+D = BYTSCL(DIST(200))</P>
+<P CLASS="Body">
+<A NAME="pgfId=680679">
+ </A>
+Open a new file for writing as IDL file unit number 1 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680680">
+ </A>
+OPENW, 1, 'newfile'</P>
+<P CLASS="Body">
+<A NAME="pgfId=680681">
+ </A>
+To write the data in D to the file, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680682">
+ </A>
+WRITEU, 1, D</P>
+<P CLASS="Body">
+<A NAME="pgfId=680683">
+ </A>
+Close file unit 1 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680684">
+ </A>
+CLOSE, 1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796051">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796052">
+ </A>
+<A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+, <A HREF="idl171.htm#52434" CLASS="XRef">
+READU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

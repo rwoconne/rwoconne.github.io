@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> KW_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=859052">
+ </A>
+<A NAME="95076">
+ </A>
+KW_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=859058">
+ </A>
+The <A NAME="marker=859054">
+ </A>
+KW_TEST <A NAME="marker=859055">
+ </A>
+function <A NAME="marker=859056">
+ </A>
+tests the <A NAME="marker=859057">
+ </A>
+hypothesis that three or more sample populations have the same <A NAME="marker=859059">
+ </A>
+mean of distribution against the hypothesis that they differ. The populations may be of equal or unequal lengths. The result is a two-element vector containing the test statistic H and the one-tailed probability of obtaining a value of H or greater from a Chi-square distribution. </P>
+<P CLASS="Body">
+<A NAME="pgfId=53656">
+ </A>
+This test is an extension of the Rank Sum Test implemented in the RS_TEST function. When each sample population contains at least five observations, the H test statistic is approximated very well by a Chi-square distribution with DF degrees of freedom. The hypothesis that three of more sample populations have the same mean of distribution is rejected if two or more populations differ with statistical significance. This type of test is often referred to as the <A NAME="marker=53657">
+ </A>
+Kruskal-Wallis H-Test.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53661">
+ </A>
+The test statistic H is defined as follows:</P>
+<DIV>
+<CENTER><IMG SRC="idl_63.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=825201">
+ </A>
+where <EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+ is the number of observations in the <EM CLASS="Emphasis">
+i</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ sample population, <EM CLASS="Emphasis">
+N</EM>
+<SUB CLASS="Subscript">
+T</SUB>
+ is the total number of observations in all sample populations, and <EM CLASS="Emphasis">
+R</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+ is the overall rank sum of the <EM CLASS="Emphasis">
+i</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ sample population.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53666">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+kw_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53667">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53668">
+ </A>
+Result = KW_TEST(<EM CLASS="Emphasis">
+X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53669">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53670">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53671">
+ </A>
+An integer, single-, or double-precision floating-point array of <EM CLASS="Emphasis">
+m</EM>
+-columns (with <EM CLASS="Emphasis">
+m</EM>
+ <EM CLASS="MathSymbol">
+</EM>
+ 3) and <EM CLASS="Emphasis">
+n</EM>
+-rows. The columns of this two dimensional array correspond to the sample populations.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53672">
+ </A>
+If the sample populations are of unequal length, any columns of <EM CLASS="Emphasis">
+X</EM>
+ that are shorter than the longest column must be &quot;filled in&quot; by appending a user-specified missing data value. This method requires the use of the MISSING keyword. See the <EM CLASS="Emphasis">
+Example</EM>
+ section below for an example of this case.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53673">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53675">
+ </A>
+<A NAME="marker=53674">
+ </A>
+DF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53676">
+ </A>
+Use this keyword to specify a named variable that will contain the number of degrees of freedom used to compute the probability of obtaining a value of H or greater from the corresponding Chi-square distribution</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53678">
+ </A>
+<A NAME="marker=53677">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53679">
+ </A>
+Set this keyword equal to a non-zero numeric value that has been appended to some columns of <EM CLASS="Emphasis">
+X</EM>
+ to make them all a common length of <EM CLASS="Emphasis">
+n</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53680">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53681">
+ </A>
+Test the hypothesis that three sample populations have the same mean of distribution against the hypothesis that they differ at the 0.05 significance level. Assume we have the following sample populations:</P>
+<P CLASS="Body">
+<A NAME="pgfId=53682">
+ </A>
+sp0 = [24.0, 16.7, 22.8, 19.8, 18.9]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53683">
+ </A>
+sp1 = [23.2, 19.8, 18.1, 17.6, 20.2, 17.8]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53684">
+ </A>
+sp2 = [18.2, 19.1, 17.3, 17.3, 19.7, 18.9, 18.8, 19.3]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53685">
+ </A>
+Since the sample populations are of unequal lengths, a missing value must be appended to sp0 and sp1. In this example the missing value is -1.0 and the 3-column, 8-row input array <CODE CLASS="Code">
+X</CODE>
+ is defined as:</P>
+<P CLASS="Code">
+<A NAME="pgfId=53686">
+ </A>
+X = [[24.0, 23.2, 18.2], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53687">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[16.7, 19.8, 19.1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53688">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[22.8, 18.1, 17.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53689">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[19.8, 17.6, 17.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53690">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[18.9, 20.2, 19.7], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53691">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1.0, 17.8, 18.9], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53692">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1.0, -1.0, 18.8], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53693">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1.0, -1.0, 19.3]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53694">
+ </A>
+PRINT, KW_TEST(X, MISSING = -1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53695">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53696">
+ </A>
+[1.65862, 0.436351]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53697">
+ </A>
+The computed probability (0.436351) is greater than the 0.05 significance level and therefore we do not reject the hypothesis that the three sample populations sp0, sp1, and sp2 have the same mean of distribution.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53698">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65972">
+ </A>
+<A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

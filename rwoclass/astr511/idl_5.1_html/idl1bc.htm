@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRING</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1bd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1bb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679053">
+ </A>
+<A NAME="79752">
+ </A>
+STRING</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679054">
+ </A>
+The <A NAME="marker=673968">
+ </A>
+STRING function returns its arguments converted to string type. It is similar to the PRINT procedure, except that its output is placed in a string rather than being output to the terminal. The case in which a single expression of type byte is specified without the FORMAT keyword is special--see the discussion below for details.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679055">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679056">
+ </A>
+Result = STRING(<I CLASS="Italic">
+Expression</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Expression</I>
+<SUB CLASS="Subscript">
+n</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679057">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679058">
+ </A>
+Expression<SUB CLASS="Subscript">
+n</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679059">
+ </A>
+The expressions to be converted to string type.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679060">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679061">
+ </A>
+<A NAME="marker=673975">
+ </A>
+FORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679062">
+ </A>
+A format string to be used in formatting the expressions. See <A HREF="..html#50524" CLASS="XRef">
+Using Explicitly Formatted Input/Output</A>
+. Note that formatted output from STRING is limited to a maximum of 1024 lines.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679063">
+ </A>
+<A NAME="marker=673979">
+ </A>
+PRINT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679064">
+ </A>
+Set this keyword to specify that any special case processing should be ignored and that STRING should behave exactly as the PRINT procedure would.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679065">
+ </A>
+Differences Between STRING and PRINT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679066">
+ </A>
+The behavior of STRING differs from the behavior of the PRINT procedure in the following ways (unless the PRINT keyword is set):</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=679067">
+ </A>
+When called with a single non-byte argument and no format specification, STRING returns a result that has the same dimensions as the original argument. For example, the statement:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679068">
+ </A>
+HELP, STRING(INDGEN(5))</P>
+<P CLASS="Body">
+<A NAME="pgfId=679069">
+ </A>
+gives the result:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679070">
+ </A>
+&lt;Expression&gt; STRING = Array[5]</P>
+<P CLASS="Body">
+<A NAME="pgfId=679071">
+ </A>
+while:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679072">
+ </A>
+HELP, STRING(INDGEN(5), /PRINT)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679073">
+ </A>
+results in:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679074">
+ </A>
+&lt;Expression&gt; STRING =' 0 1 2 3 4'</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=679075">
+ </A>
+If called with a single argument of byte type and the FORMAT keyword is not used, STRING simply stores the unmodified values of each byte element in the result. This result is a string containing the byte values from the original argument. Thus, the result has one less dimension than the original argument. For example, a 2-dimensional byte array becomes a vector of strings, a byte vector becomes a scalar string. However, a byte scalar also becomes a string scalar. For example, the statement:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679076">
+ </A>
+PRINT, STRING([72B, 101B, 108B, 108B, 111B])</P>
+<P CLASS="Body">
+<A NAME="pgfId=679077">
+ </A>
+produces the output:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679078">
+ </A>
+Hello</P>
+<P CLASS="Body">
+<A NAME="pgfId=679079">
+ </A>
+because the argument to STRING, is a byte vector. Its first element is a 72B which is the ASCII code for &quot;H&quot;, the second is 101B which is an ASCII &quot;e&quot;, and so forth.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=679080">
+ </A>
+If both the FORMAT and PRINT keywords are not present and STRING is called with more than one argument, and the last argument is a scalar string starting with the characters &quot;$(&quot; or &quot;(&quot;, this final argument is taken to be the format specification, just as if it had been specified via the FORMAT keyword. This feature is maintained for compatibility with version 1 of VMS IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679081">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679082">
+ </A>
+To convert the contents of variable A to string type and store the result in the variable B, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679083">
+ </A>
+B = STRING(A)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795931">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820840">
+ </A>
+<A HREF="idl1e.htm#28497" CLASS="XRef">
+BYTE</A>
+, <A HREF="idl39.htm#61718" CLASS="XRef">
+COMPLEX</A>
+, <A HREF="idl6a.htm#50604" CLASS="XRef">
+DCOMPLEX</A>
+, <A HREF="idl83.htm#59771" CLASS="XRef">
+DOUBLE</A>
+, <A HREF="idla2.htm#84913" CLASS="XRef">
+FIX</A>
+, <A HREF="idla4.htm#33608" CLASS="XRef">
+FLOAT</A>
+, <A HREF="idl103.htm#20254" CLASS="XRef">
+LONG</A>
+, <A HREF="idl14a.htm#89996" CLASS="XRef">
+PRINT/PRINTF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

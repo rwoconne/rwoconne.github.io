@@ -1,0 +1,525 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_LIST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl209.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl207.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=891101">
+ </A>
+<A NAME="52324">
+ </A>
+WIDGET_LIST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=900276">
+ </A>
+The <A NAME="marker=900275">
+ </A>
+WIDGET_LIST function is used to create list widgets. A list widget offers the user a list of text elements from which to choose. The user can select an item by pointing at it with the mouse cursor and pressing a button. This action generates an event containing the index of the selected item, which ranges from 0 to the number of elements in the list minus one.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680426">
+ </A>
+The returned value of this function is the widget ID of the newly-created list widget.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680427">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680428">
+ </A>
+Result = WIDGET_LIST(<I CLASS="Italic">
+Parent</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680429">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680430">
+ </A>
+Parent </H4>
+<P CLASS="Body">
+<A NAME="pgfId=680431">
+ </A>
+The widget ID of the parent widget for the new list widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680432">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680433">
+ </A>
+<A NAME="marker=108998">
+ </A>
+EVENT_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680434">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680435">
+ </A>
+<A NAME="marker=108999">
+ </A>
+EVENT_PRO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680436">
+ </A>
+A string containing the name of a procedure to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680437">
+ </A>
+<A NAME="marker=109000">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934145">
+ </A>
+The name of the font to be used by the widget. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=923707">
+ </A>
+On Microsoft Windows platforms, if FONT is not specified, IDL uses the system default font. Different versions of Windows use different system default fonts; in general, the system default font is the font appropriate for the version of Windows in question.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680439">
+ </A>
+<A NAME="marker=674810">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680440">
+ </A>
+The value of this keyword specifies the width of a frame in units specified by the UNITS keyword (pixels are the default) to be drawn around the borders of the widget. Note that this keyword is only a &quot;hint&quot; to the toolkit, and may be ignored in some instances.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680441">
+ </A>
+<A NAME="marker=109001">
+ </A>
+FUNC_GET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680442">
+ </A>
+A string containing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680443">
+ </A>
+<A NAME="marker=109002">
+ </A>
+GROUP_LEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680444">
+ </A>
+The widget ID of an existing widget that serves as &quot;group leader&quot; for the newly-created widget. When a group leader is killed, for any reason, all widgets in the group are also destroyed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680445">
+ </A>
+A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680446">
+ </A>
+<A NAME="marker=109003">
+ </A>
+KILL_NOTIFY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680447">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget dies. Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). Note that the procedure specified is used only if you are not using the XMANAGER procedure to manage your widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680448">
+ </A>
+The callback routine is called with the widget identifier as its only argument. At that point, the widget identifier can only be used with the WIDGET_CONTROL procedure to get or set the user value. All other requests that require a widget ID are disallowed for the target widget. The callback is not issued until the WIDGET_EVENT function is called.</P>
+<P CLASS="Body">
+<A NAME="pgfId=158845">
+ </A>
+If you use the XMANAGER procedure to manage your widgets, the value of this keyword is overwritten. Use the CLEANUP keyword to XMANAGER to specify a procedure to be called when a managed widget dies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934705">
+ </A>
+<A NAME="marker=934707">
+ </A>
+MULTIPLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934706">
+ </A>
+<A NAME="marker=934745">
+ </A>
+Set this keyword to allow the user to select more than one item from the list in a single operation. Multiple selections are handled using the platform's native mechanism:</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=934708">
+ </A>
+Motif</H6>
+<P CLASS="Body">
+<A NAME="pgfId=934709">
+ </A>
+Holding down the Shift key and clicking an item selects the range from the previously selected item to the new item. Holding down the mouse button when selecting items also selects a range. Holding down the Control key and clicking an item toggles that item between the selected and unselected state.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=934711">
+ </A>
+Windows</H6>
+<P CLASS="Body">
+<A NAME="pgfId=934712">
+ </A>
+Holding down the Shift key and clicking an item selects the range from the previously selected item to the new item. Holding down the Control key and clicking an item toggles that item between the selected and unselected state.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=934721">
+ </A>
+Macintosh</H6>
+<P CLASS="Body">
+<A NAME="pgfId=934722">
+ </A>
+Holding down the Shift key and clicking an item selects the range from the previously selected item to the new item. Holding down the Command key and clicking an item toggles that item between the selected and unselected state.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680449">
+ </A>
+<A NAME="marker=109004">
+ </A>
+NO_COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=913998">
+ </A>
+Usually, when setting or getting widget user values, either at widget creation or using the SET_UVALUE and GET_UVALUE keywords to WIDGET_CONTROL, IDL makes a second copy of the data being transferred. Although this technique is fine for small data, it can have a significant memory cost when the data being copied is large.</P>
+<P CLASS="Body">
+<A NAME="pgfId=913999">
+ </A>
+If the NO_COPY keyword is set, IDL handles these operations differently. Rather than copy the source data, it takes the data away from the source and attaches it directly to the destination. This feature can be used by compound widgets to obtain state information from a UVALUE without all the memory copying that would otherwise occur. However, it has the side effect of causing the source variable to become undefined. On a &quot;set&quot; operation (using the UVALUE keyword to WIDGET_LIST or the SET_UVALUE keyword to WIDGET_CONTROL), the variable passed as value becomes undefined. On a &quot;get&quot; operation (GET_UVALUE keyword to WIDGET_CONTROL), the user value of the widget in question becomes undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67642">
+ </A>
+<A NAME="marker=109005">
+ </A>
+NOTIFY_REALIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67645">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget is realized. This callback occurs just once (because widgets are realized only once). Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). The callback routine is called with the widget ID as its only argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680451">
+ </A>
+<A NAME="marker=109006">
+ </A>
+PRO_SET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680452">
+ </A>
+A string containing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to designate a routine that sets the value for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=724057">
+ </A>
+<A NAME="marker=724055">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=734123">
+ </A>
+A string containing an X Window System resource name to be applied to the widget. See <A HREF="idl200.htm#71756" CLASS="XRef">
+RESOURCE_NAME</A>
+ for a complete discussion of this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67319">
+ </A>
+<A NAME="marker=67318">
+ </A>
+SCR_XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67320">
+ </A>
+Set this keyword to the desired &quot;screen&quot; width of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the XSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67322">
+ </A>
+<A NAME="marker=67321">
+ </A>
+SCR_YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67323">
+ </A>
+Set this keyword to the desired &quot;screen&quot; height of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the YSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67404">
+ </A>
+<A NAME="marker=109007">
+ </A>
+TRACKING_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67405">
+ </A>
+Set this keyword to cause widget tracking events to be issued for the widget whenever the mouse pointer enters or leaves the region covered by that widget. For the structure of tracking events, see <A HREF="idl200.htm#72083" CLASS="XRef">
+TRACKING_EVENTS</A>
+ in the documentation for WIDGET_BASE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895619">
+ </A>
+<A NAME="marker=895618">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895621">
+ </A>
+Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=895622">
+ </A>
+This keyword does not affect all sizing operations. Specifically, the value of UNITS is ignored when setting the XSIZE or YSIZE keywords to <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+. </LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680453">
+ </A>
+<A NAME="marker=674847">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680454">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680455">
+ </A>
+Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680456">
+ </A>
+If UVALUE is not present, the widget's initial user value is undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680457">
+ </A>
+<A NAME="marker=674851">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680458">
+ </A>
+The initial value setting of the widget. The value of a list widget is a scalar string or array of strings that contains the text of the list items--one list item per array element. List widgets are sized based on the length (in characters) of the longest item specified in the array of values for the VALUE keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680459">
+ </A>
+Note that the value of a list widget can only be set. It cannot be retrieved using WIDGET_CONTROL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680460">
+ </A>
+<A NAME="marker=674852">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680461">
+ </A>
+The horizontal offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680462">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget programming.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680463">
+ </A>
+<A NAME="marker=674853">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=716762">
+ </A>
+The desired width of the widget, in characters. Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. Note that the final size of the widget may be adjusted to include space for scrollbars (which are not always visible), so your widget may be slightly larger than specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680466">
+ </A>
+<A NAME="marker=674854">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680467">
+ </A>
+The vertical offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent. This offset is specified relative to the <I CLASS="Italic">
+upper left</I>
+ corner of the parent widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680468">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget programming.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58021">
+ </A>
+<A NAME="marker=58020">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58022">
+ </A>
+The desired height of the widget, in number of list items visible. Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. Note that the final size of the widget may be adjusted to include space for scrollbars (which are not always visible), so your widget may be slightly larger than specified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888917">
+ </A>
+Keywords to WIDGET_CONTROL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888918">
+ </A>
+A number of keywords to the <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ procedure affect the behavior of list widgets. In addition to those keywords that affect all widgets, the following are particularly useful: <A HREF="idl202.htm#86707" CLASS="XRef">
+SET_LIST_SELECT</A>
+, <A HREF="idl202.htm#63814" CLASS="XRef">
+SET_LIST_TOP</A>
+, <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889825">
+ </A>
+Keywords to WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889829">
+ </A>
+A number of keywords to the <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+ function return information that applies specifically to list widgets. In addition to those keywords that apply to all widgets, the following are particularly useful: <A HREF="idl206.htm#LIST_MULTIPLE keyword" CLASS="XRef">
+LIST_MULTIPLE</A>
+, <A HREF="idl206.htm#88228" CLASS="XRef">
+LIST_NUMBER</A>
+, <A HREF="idl206.htm#11720" CLASS="XRef">
+LIST_NUM_VISIBLE</A>
+, <A HREF="idl206.htm#58841" CLASS="XRef">
+LIST_SELECT</A>
+, <A HREF="idl206.htm#98328" CLASS="XRef">
+LIST_TOP</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680472">
+ </A>
+Widget Events Returned by List Widgets</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680473">
+ </A>
+<A NAME="marker=674856">
+ </A>
+Pressing the mouse button while the mouse cursor is over an element of a list widget causes the widget to highlight the appearance of that element and to generate an event. The appearance of any previously selected element is restored to normal at the same time. The event structure returned by the WIDGET_EVENT function is defined by the following statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680474">
+ </A>
+{ WIDGET_LIST, ID:0L, TOP:0L, HANDLER:0L, INDEX:0L, CLICKS:0L}</P>
+<P CLASS="Body">
+<A NAME="pgfId=680475">
+ </A>
+The first three fields are the standard fields found in every widget event. INDEX returns the index of the selected item. This index can be used to subscript the array of names originally used to set the widget's value. The CLICKS field returns either 1 or 2, depending upon how the list item was selected. If the list item is <A NAME="marker=68004">
+ </A>
+double-clicked, CLICKS is set to 2.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=933949">
+ </A>
+If you are writing a widget application that requires the user to double-click on a list widget, you will need to handle two events. The CLICKS field will return a 1 on the first click and a 2 on the second click.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820483">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820484">
+ </A>
+<A HREF="idl58.htm#73565" CLASS="XRef">
+CW_BGROUP</A>
+, <A HREF="idl204.htm#29873" CLASS="XRef">
+WIDGET_DROPLIST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

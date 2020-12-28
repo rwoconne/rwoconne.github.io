@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DF24_GETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl26b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl269.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=996996">
+ </A>
+<A NAME="39506">
+ </A>
+HDF_DF24_GETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=996999">
+ </A>
+The <A NAME="marker=996998">
+ </A>
+HDF_DF24_GETINFO procedure retrieves information about the current 24-bit HDF image.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997000">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997001">
+ </A>
+HDF_DF24_GETINFO, <I CLASS="Italics">
+Filename, Width, Height, Interlace</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997002">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997003">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997004">
+ </A>
+A string containing the name of the file to be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997005">
+ </A>
+Width</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997006">
+ </A>
+A named variable in which the width of the image is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997007">
+ </A>
+Height</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997008">
+ </A>
+A named variable in which the height of the image is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997009">
+ </A>
+Interlace</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997010">
+ </A>
+A named variable in which the interface method is returned. The returned value is 0 for pixel interlacing, 1 for scan-line interlacing, and 2 for scan-plane interlacing.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997011">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997012">
+ </A>
+h = HDF_OPEN('myhdf.hdf')	<EM CLASS="Comment">;
+Open the file </EM>
+myhdf.hdf<EM CLASS="Comment">;
+.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997013">
+ </A>
+HDF_DF24_GETINFO, 'myhdf.hdf', width, height, interlace<BR>
+<EM CLASS="Comment">;
+Return information about the 24-bit image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997014">
+ </A>
+HELP, width, height, interlace	<EM CLASS="Comment">;
+Print information about the returned variables. If the image were 536 by 412 pixels, and scan-line interlaced, IDL would print:<BR>
+WIDTH LONG = 536<BR>
+HEIGHT LONG = 412<BR>
+INTERLACE LONG = 1</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997015">
+ </A>
+HDF_CLOSE('myhdf.hdf')	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997016">
+ </A>
+For a more detailed example, see the file <CODE CLASS="Code">
+hdf_info.pro</CODE>
+, located in the <CODE CLASS="Code">
+examples</CODE>
+ subdirectory of the main IDL directory.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997017">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997027">
+ </A>
+<A HREF="idl269.htm#28927" CLASS="XRef">
+HDF_DF24_GETIMAGE</A>
+, <A HREF="idl26b.htm#35330" CLASS="XRef">
+HDF_DF24_LASTREF</A>
+, <A HREF="idl26c.htm#83049" CLASS="XRef">
+HDF_DF24_NIMAGES</A>
+, <A HREF="idl26d.htm#24088" CLASS="XRef">
+HDF_DF24_READREF</A>
+, <A HREF="idl26e.htm#28643" CLASS="XRef">
+HDF_DF24_RESTART</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

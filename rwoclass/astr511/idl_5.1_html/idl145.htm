@@ -1,0 +1,364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLYSHADE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl146.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl144.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678306">
+ </A>
+<A NAME="45438">
+ </A>
+POLYSHADE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678307">
+ </A>
+The <A NAME="marker=673611">
+ </A>
+POLYSHADE function returns a shaded-surface representation of one or more solids described by a set of polygons. This function accepts, as arguments, an array of three-dimensional vertices and a list of the indices of the vertices that describe each polygon. Output is a two-dimensional byte array containing the shaded image unless the current graphics output device is the <A NAME="marker=673612">
+ </A>
+Z-buffer. If the current output device is the Z-buffer, the results are merged with the Z-buffer's contents and the function result contains a dummy value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678308">
+ </A>
+<A NAME="marker=673613">
+ </A>
+Shading values are determined from one of three sources: a light source model, a user-specified array containing vertex shade values, or a user-specified array containing polygon shade values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678309">
+ </A>
+The shaded surface is constructed using the scan line algorithm. The default shading model is a combination of diffuse reflection and depth cueing. With this shading model, polygons are shaded using either constant shading, in which each polygon is given a constant intensity, or with Gouraud shading where the intensity is computed at each vertex and then interpolated over the polygon. Use the <A NAME="marker=673614">
+ </A>
+SET_SHADING procedure to control the direction of the light source and other shading parameters.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678310">
+ </A>
+User-specified shading arrays allow &quot;<A NAME="marker=673615">
+ </A>
+4-dimensional&quot; displays that consist of a surface defined by a set of polygons, shaded with values from another variable.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678311">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678312">
+ </A>
+Result = POLYSHADE(<I CLASS="Italic">
+Vertices, Polygons</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678313">
+ </A>
+or</P>
+<P CLASS="Body">
+<A NAME="pgfId=678314">
+ </A>
+Result = POLYSHADE(<I CLASS="Italic">
+X, Y, Z, Polygons</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678315">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678316">
+ </A>
+Vertices</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678317">
+ </A>
+A (3, <I CLASS="Italic">
+n</I>
+) array containing the X, Y, and Z coordinates of each vertex. Coordinates can be in either data or normalized coordinates, depending on which keywords are present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678318">
+ </A>
+X, Y, Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678319">
+ </A>
+The X, Y, and Z coordinates of each vertex can, alternatively, be specified as three array expressions of the same dimensions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678320">
+ </A>
+Polygons</H4>
+<P CLASS="Body">
+<A NAME="pgfId=797953">
+ </A>
+An integer or longword array containing the indices of the vertices for each polygon. The vertices of each polygon should be listed in counterclockwise order when observed from outside the surface. The vertex description of each polygon is a vector of the form: [<EM CLASS="Emphasis">
+n</EM>
+, <EM CLASS="Emphasis">
+i</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+i</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, ..., <EM CLASS="Emphasis">
+i</EM>
+<SUB CLASS="Subscript">
+n-1</SUB>
+] and the array <I CLASS="Italic">
+Polygons</I>
+ is the concatenation of the lists of each polygon. For example, to render a pyramid consisting of four triangles, <I CLASS="Italic">
+Polygons</I>
+ would contain 16 elements, made by concatenating four, four-element vectors of the form [3, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+]. <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+0</SUB>
+, <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+2</SUB>
+ are the indices of the vertices describing each triangle.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678322">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678323">
+ </A>
+<A NAME="marker=673618">
+ </A>
+DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678324">
+ </A>
+Set this keyword to indicate that the vertex coordinates are in data units, the default coordinate system.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678325">
+ </A>
+<A NAME="marker=673619">
+ </A>
+NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678326">
+ </A>
+Set this keyword to indicate that coordinates are in normalized units, within the three dimensional (0,1) cube.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678327">
+ </A>
+<A NAME="marker=673620">
+ </A>
+POLY_SHADES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678328">
+ </A>
+An array expression, with the same number of elements as there are polygons defined in the <I CLASS="Italic">
+Polygons</I>
+ array, containing the color index used to render each polygon. No interpolation is performed if all pixels within a given polygon have the same shade value. For most displays, this parameter should be scaled into the range of bytes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678329">
+ </A>
+<A NAME="marker=673621">
+ </A>
+SHADES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678330">
+ </A>
+An array expression, with the same number of elements as <I CLASS="Italic">
+Vertices</I>
+, containing the color index at each vertex. The shading of each pixel is interpolated from the surrounding SHADE values. For most displays, this parameter should be scaled into the range of bytes.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=948889">
+ </A>
+When using the SHADES keyword on True Color devices, we recommend that decomposed color support be turned off, by setting DECOMPOSED=0 for <BR>
+<A HREF="idl76.htm#17188" CLASS="XRef">
+DEVICE</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678331">
+ </A>
+<A NAME="marker=673622">
+ </A>
+T3D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678332">
+ </A>
+Set this keyword to use the three-dimensional to two-dimensional transformation contained in the homogeneous 4 by 4 matrix !P.T. Note that if T3D is set, !P.T must contain a valid transformation matrix. The SURFACE, SCALE3, and T3D procedures (and others) can all be used to set up transformations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678333">
+ </A>
+<A NAME="marker=673623">
+ </A>
+TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678334">
+ </A>
+The maximum shading value when light source shading is in effect. The default value is one less than the number of colors available in the currently selected graphics device.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678335">
+ </A>
+<A NAME="marker=673624">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678336">
+ </A>
+The number of columns in the output image array. If this parameter is omitted, the number of columns is equal to the X size of the currently selected display device.</P>
+<P CLASS="Body">
+<A NAME="pgfId=143080">
+ </A>
+Warning: The size parameters should be explicitly specified when the current graphics device is PostScript or any other high-resolution device. Making the output image the default full device size is likely to cause an insufficient memory error.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678338">
+ </A>
+<A NAME="marker=673625">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678339">
+ </A>
+The number of rows in the output image array. If this parameter is omitted, the number of rows is equal to the Y resolution of the currently selected display device.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678340">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678341">
+ </A>
+POLYSHADE is often used in conjunction with <A NAME="marker=673626">
+ </A>
+SHADE_VOLUME for volume visualization. The following example creates a spherical volume dataset and renders an isosurface from that dataset:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678342">
+ </A>
+SPHERE = FLTARR(20, 20, 20)	<EM CLASS="Comment">;
+Create an empty, 3D array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678343">
+ </A>
+FOR X=0,19 DO FOR Y=0,19 DO FOR Z=0,19 DO $</P>
+<P CLASS="Code">
+<A NAME="pgfId=678344">
+ </A>
+&nbsp;&nbsp;&nbsp;SPHERE(X, Y, Z) = SQRT((X-10)^2 + (Y-10)^2 + (Z-10)^2)<BR>
+<EM CLASS="Comment">;
+Create the spherical dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678346">
+ </A>
+SHADE_VOLUME, SPHERE, 8, V, P	<EM CLASS="Comment">;
+Find the vertices and polygons for a density level of 8.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678347">
+ </A>
+SCALE3, XRANGE=[0,20], YRANGE=[0,20], ZRANGE=[0,20]<BR>
+<EM CLASS="Comment">;
+Set up an appropriate 3D transformation so we can see the sphere. This step is very important.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678348">
+ </A>
+image = POLYSHADE(V, P, /T3D)	<EM CLASS="Comment">;
+Render the image. Note that the T3D keyword has been set so that the previously-established 3D transformation is used.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678349">
+ </A>
+TV, image	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795783">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795784">
+ </A>
+<A HREF="idl14f.htm#31417" CLASS="XRef">
+PROJECT_VOL</A>
+, <A HREF="idl174.htm#52389" CLASS="XRef">
+RECON3</A>
+, <A HREF="idl192.htm#14374" CLASS="XRef">
+SET_SHADING</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl19a.htm#78379" CLASS="XRef">
+SHADE_VOLUME</A>
+, <A HREF="idl1f9.htm#99427" CLASS="XRef">
+VOXEL_PROJ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

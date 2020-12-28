@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_FDEFINE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2b5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2b3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999522">
+ </A>
+<A NAME="98024">
+ </A>
+HDF_VD_FDEFINE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999526">
+ </A>
+The <A NAME="marker=999524">
+ </A>
+HDF_VD_FDEFINE procedure adds a new field specification for a <A NAME="marker=999525">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ in a Hierarchical Data Format file. HDF_VD_FDEFINE can only be used for a new <EM CLASS="Emphasis">
+VData</EM>
+.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999527">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999528">
+ </A>
+HDF_VD_FDEFINE, <I CLASS="Italics">
+VData, Fieldname</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999529">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999530">
+ </A>
+VData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999531">
+ </A>
+The VData handle returned by a previous call to HDF_VD_ATTACH.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999532">
+ </A>
+Fieldname</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999533">
+ </A>
+A string containing the new field name.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999534">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999536">
+ </A>
+<A NAME="marker=999535">
+ </A>
+BYTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999537">
+ </A>
+Set this keyword to indicate that the field will contain 8-bit unsigned integer data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999539">
+ </A>
+<A NAME="marker=999538">
+ </A>
+DOUBLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999540">
+ </A>
+Set this keyword to indicate that the field will contain 64-bit floating point data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999542">
+ </A>
+<A NAME="marker=999541">
+ </A>
+FLOAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999543">
+ </A>
+Set this keyword to indicate that the field will contain 32-bit floating point data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999545">
+ </A>
+<A NAME="marker=999544">
+ </A>
+INT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999546">
+ </A>
+Set this keyword to indicate that the field will contain 16-bit integer data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999548">
+ </A>
+<A NAME="marker=999547">
+ </A>
+LONG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999549">
+ </A>
+Set this keyword to indicate that the field will contain 32-bit integer data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999551">
+ </A>
+<A NAME="marker=999550">
+ </A>
+ORDER</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999552">
+ </A>
+This keyword specifies the number of distinct components in the new field. Compound variables have an order greater than 1. The default order is 1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999553">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999554">
+ </A>
+HDF_VD_FDEFINE, vid, 'VEL', /DOUBLE, ORDER=3</P>
+</DIV>
+</BODY>
+</HTML>

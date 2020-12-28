@@ -1,0 +1,655 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_BUTTON</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl202.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl200.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=36288">
+ </A>
+<A NAME="63640">
+ </A>
+WIDGET_BUTTON</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680007">
+ </A>
+The <A NAME="marker=674362">
+ </A>
+WIDGET_BUTTON function creates button widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680008">
+ </A>
+The returned value of this function is the widget ID of the newly-created button.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680009">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680010">
+ </A>
+Result = WIDGET_BUTTON(<I CLASS="Italic">
+Parent</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680011">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680012">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680013">
+ </A>
+The widget ID of the parent for the new button widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680014">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680015">
+ </A>
+<A NAME="marker=57961">
+ </A>
+ALIGN_CENTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=57958">
+ </A>
+Set this keyword to center justify the button's text label.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=57956">
+ </A>
+<A NAME="marker=57962">
+ </A>
+ALIGN_LEFT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=57959">
+ </A>
+Set this keyword to left justify the button's text label.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=57957">
+ </A>
+<A NAME="marker=57963">
+ </A>
+ALIGN_RIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=106415">
+ </A>
+Set this keyword to right justify the button's text label.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=192775">
+ </A>
+<A NAME="marker=192777">
+ </A>
+DYNAMIC_RESIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=192776">
+ </A>
+<A NAME="marker=192778">
+ </A>
+Set this keyword to create a widget that resizes itself to fit its new value whenever its value is changed. Note that this keyword does not take effect when used with the SCR_XSIZE, SCR_YSIZE, XSIZE, or YSIZE keywords. If one of these keywords is also set, the widget will be sized as specified by the sizing keyword and will never resize itself dynamically.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=106419">
+ </A>
+<A NAME="marker=108825">
+ </A>
+EVENT_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=106422">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680017">
+ </A>
+<A NAME="marker=108828">
+ </A>
+EVENT_PRO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680018">
+ </A>
+A string containing the name of a procedure to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680019">
+ </A>
+<A NAME="marker=674375">
+ </A>
+<A NAME="FONT">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934087">
+ </A>
+The name of the font to be used by the widget. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934096">
+ </A>
+On Microsoft Windows platforms, if FONT is not specified, IDL uses the system default font. Different versions of Windows use different system default fonts; in general, the system default font is the font appropriate for the version of Windows in question.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680021">
+ </A>
+<A NAME="marker=674378">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=108836">
+ </A>
+The value of this keyword specifies the width of a frame in units specified by the UNITS keyword (pixels are the default) to be drawn around the borders of the widget. Note that this keyword is only a &quot;hint&quot; to the toolkit, and may be ignored in some instances.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=108837">
+ </A>
+<A NAME="marker=108841">
+ </A>
+FUNC_GET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=108838">
+ </A>
+A string containing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680025">
+ </A>
+<A NAME="marker=108842">
+ </A>
+GROUP_LEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680026">
+ </A>
+The widget ID of an existing widget that serves as &quot;group leader&quot; for the newly-created widget. When a group leader is killed, for any reason, all widgets in the group are also destroyed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680027">
+ </A>
+A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=57994">
+ </A>
+<A NAME="marker=57996">
+ </A>
+HELP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=57995">
+ </A>
+<A NAME="marker=57997">
+ </A>
+Set this keyword to tell the widget toolkit that this button is a &quot;help&quot; button for a menubar and should be given that appearance. For example, Motif specifies that the help menubar item is displayed on the far right of the menubar. This keyword is ignored in all other contexts and may be ignored by window managers (including that for the Macintosh) that have no such special appearance defined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680028">
+ </A>
+<A NAME="marker=108849">
+ </A>
+KILL_NOTIFY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680029">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget dies. Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). Note that the procedure specified is used only if you are not using the XMANAGER procedure to manage your widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680030">
+ </A>
+The callback routine is called with the widget identifier as its only argument. At that point, the widget identifier can only be used with the WIDGET_CONTROL procedure to get or set the user value. All other requests that require a widget ID are disallowed for the target widget. The callback is not issued until the WIDGET_EVENT function is called.</P>
+<P CLASS="Body">
+<A NAME="pgfId=158805">
+ </A>
+If you use the XMANAGER procedure to manage your widgets, the value of this keyword is overwritten. Use the CLEANUP keyword to XMANAGER to specify a procedure to be called when a managed widget dies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680031">
+ </A>
+<A NAME="marker=674403">
+ </A>
+MENU</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680032">
+ </A>
+The presence of this keyword indicates that the button will be used to activate a <A NAME="marker=674404">
+ </A>
+pull-down menu. Such buttons can have button children that are then placed into a pull-down menu.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680033">
+ </A>
+Under Motif, if the value specified for MENU is greater than 1, the button label is enclosed in a box to indicate that this button is a pull-down menu. See the <A NAME="marker=674405">
+ </A>
+<A HREF="idl61.htm#62114" CLASS="XRef">
+CW_PDMENU</A>
+ function for a high-level pull-down menu creation utility.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=109087">
+ </A>
+<A NAME="marker=108856">
+ </A>
+NO_COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=913946">
+ </A>
+Usually, when setting or getting widget user values, either at widget creation or using the SET_UVALUE and GET_UVALUE keywords to WIDGET_CONTROL, IDL makes a second copy of the data being transferred. Although this technique is fine for small data, it can have a significant memory cost when the data being copied is large.</P>
+<P CLASS="Body">
+<A NAME="pgfId=913947">
+ </A>
+If the NO_COPY keyword is set, IDL handles these operations differently. Rather than copy the source data, it takes the data away from the source and attaches it directly to the destination. This feature can be used by compound widgets to obtain state information from a UVALUE without all the memory copying that would otherwise occur. However, it has the side effect of causing the source variable to become undefined. On a &quot;set&quot; operation (using the UVALUE keyword to WIDGET_BUTTON or the SET_UVALUE keyword to WIDGET_CONTROL), the variable passed as value becomes undefined. On a &quot;get&quot; operation (GET_UVALUE keyword to WIDGET_CONTROL), the user value of the widget in question becomes undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680036">
+ </A>
+<A NAME="marker=674412">
+ </A>
+NO_RELEASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680037">
+ </A>
+Set this keyword to make exclusive and non-exclusive buttons generate only <I CLASS="Italic">
+select</I>
+ events. This keyword has no effect on regular buttons.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67569">
+ </A>
+<A NAME="marker=108860">
+ </A>
+NOTIFY_REALIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67574">
+ </A>
+Set this keyword to a string that contains the name of a procedure to be called automatically when the specified widget is realized. This callback occurs just once (because widgets are realized only once). Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). The callback routine is called with the widget ID as its only argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680038">
+ </A>
+<A NAME="marker=108863">
+ </A>
+PRO_SET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680039">
+ </A>
+A string containing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to designate a routine that sets the value for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=724023">
+ </A>
+<A NAME="marker=724022">
+ </A>
+<A NAME="91428">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=724020">
+ </A>
+A string containing an X Window System resource name to be applied to the widget. See <A HREF="idl200.htm#71756" CLASS="XRef">
+RESOURCE_NAME</A>
+ for a complete discussion of this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67277">
+ </A>
+<A NAME="marker=67276">
+ </A>
+SCR_XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67278">
+ </A>
+Set this keyword to the desired &quot;screen&quot; width of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the XSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67280">
+ </A>
+<A NAME="marker=67279">
+ </A>
+SCR_YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67281">
+ </A>
+Set this keyword to the desired &quot;screen&quot; height of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the YSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58000">
+ </A>
+<A NAME="marker=58002">
+ </A>
+SEPARATOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58001">
+ </A>
+<A NAME="marker=58003">
+ </A>
+Set this keyword to tell the widget toolkit that this button is part of a pulldown menu pane and that a separator line should be added directly above this entry. This keyword is ignored in all other contexts.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67354">
+ </A>
+<A NAME="marker=108875">
+ </A>
+TRACKING_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67355">
+ </A>
+Set this keyword to cause widget tracking events to be issued for the widget whenever the mouse pointer enters or leaves the region covered by that widget. For the structure of tracking events, see <A HREF="idl200.htm#72083" CLASS="XRef">
+TRACKING_EVENTS</A>
+ in the documentation for WIDGET_BASE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895525">
+ </A>
+<A NAME="marker=895524">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895527">
+ </A>
+Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680040">
+ </A>
+<A NAME="marker=674419">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680041">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680042">
+ </A>
+Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680043">
+ </A>
+If UVALUE is not present, the widget's initial user value is undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680044">
+ </A>
+<A NAME="marker=674423">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680045">
+ </A>
+The initial value setting of the widget. The value of a widget button is the label for that button. This label can be a string or a bitmap as described below under &quot;<A HREF="idl201.htm#35064" CLASS="XRef">
+Bitmap Button Labels</A>
+&quot;.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=907441">
+ </A>
+Under Microsoft Windows, including the ampersand character (&amp;) in the value of a button widget causes the window manager to place an underline under the character following the ampersand. (This is a feature of Microsoft Windows, and is generally used to indicate which character is used as a keyboard accelerator for the button.) If you are designing an application that will run on different platforms, you should avoid the use of the ampersand in button value strings.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680046">
+ </A>
+<A NAME="marker=674424">
+ </A>
+X_BITMAP_EXTRA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680047">
+ </A>
+<A NAME="marker=674425">
+ </A>
+When creating a bitmap button that is not of a &quot;byte-aligned&quot; size (i.e., a dimension is not a multiple of 8), this keyword specifies how many bits of the supplied bitmap must be ignored (within the end byte). For example, to create a 10 by 8 bitmap, you need to supply a 2 by 8 array of bytes and ignore the bottom 6 bits. Therefore, you would specify <CODE CLASS="Code">
+X_BITMAP_EXTRA = 6</CODE>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680048">
+ </A>
+<A NAME="marker=674426">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680049">
+ </A>
+The horizontal offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680050">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget programming.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680051">
+ </A>
+<A NAME="marker=674427">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680052">
+ </A>
+The width of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680054">
+ </A>
+<A NAME="marker=674428">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680055">
+ </A>
+The vertical offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent. This offset is specified relative to the <I CLASS="Italic">
+upper left</I>
+ corner of the parent widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680056">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget programming.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680057">
+ </A>
+<A NAME="marker=674429">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680058">
+ </A>
+The height of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888786">
+ </A>
+Keywords to WIDGET_CONTROL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888787">
+ </A>
+A number of keywords to the <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ procedure affect the behavior of button widgets. In addition to those keywords that affect all widgets, the following are particularly useful: <A HREF="idl202.htm#69286" CLASS="XRef">
+DYNAMIC_RESIZE</A>
+, <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+, <A HREF="idl202.htm#93591" CLASS="XRef">
+INPUT_FOCUS</A>
+, <A HREF="idl202.htm#46769" CLASS="XRef">
+SET_BUTTON</A>
+, <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+, <A HREF="idl202.htm#72980" CLASS="XRef">
+X_BITMAP_EXTRA</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889746">
+ </A>
+Keywords to WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889750">
+ </A>
+Some keywords to the <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+ function return information that applies specifically to button widgets. In addition to those keywords that apply to all widgets, the following are particularly useful: <A HREF="idl206.htm#62955" CLASS="XRef">
+DYNAMIC_RESIZE</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680060">
+ </A>
+Exclusive And Non-Exclusive Bases</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680061">
+ </A>
+Buttons placed into exclusive or non-exclusive bases (created via the EXCLUSIVE or NONEXCLUSIVE keywords to WIDGET_BASE procedure) are created as two-state <A NAME="marker=674430">
+ </A>
+&quot;toggle&quot; buttons, which are controlled by such bases.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680062">
+ </A>
+Events Returned by Button Widgets</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680063">
+ </A>
+<A NAME="marker=674431">
+ </A>
+Pressing the mouse button while the mouse cursor is over a button widget causes the widget to generate an event. The event structure returned by the WIDGET_EVENT function is defined by the following statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680064">
+ </A>
+{WIDGET_BUTTON, ID:0L, TOP:0L, HANDLER:0L, SELECT:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=680065">
+ </A>
+ID is the widget id of the button generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. SELECT is set to 1 if the button was set, and 0 if released. Normal buttons do not generate events when released, so SELECT will always be 1. However, toggle buttons (created by parenting a button to an exclusive or non-exclusive base) return separate events for the set and release actions.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680066">
+ </A>
+<A NAME="35064">
+ </A>
+Bitmap Button Labels</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680067">
+ </A>
+<A NAME="marker=674432">
+ </A>
+In addition to using a text string as the label of a button (set via the VALUE keyword), a button can have a bitmap label. This ability allows buttons to contain a graphic symbol. The bitmap is specified as a 2-dimensional byte array via the VALUE keyword. Appropriate bitmaps can be produced in 2 ways:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680068">
+ </A>
+Create a bitmap using an external bitmap editor, and read it into an IDL byte array using the appropriate procedure (<A HREF="idl163.htm#75148" CLASS="XRef">
+READ_BMP</A>
+, <A HREF="idl167.htm#23922" CLASS="XRef">
+READ_PICT</A>
+, etc.) and convert the byte array to a bitmap byte array using the <A HREF="idl52.htm#14106" CLASS="XRef">
+CVTTOBM</A>
+ function.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=917381">
+ </A>
+On an X-Window system, use the X11 bitmap utility to create a bitmap byte array and read it in to IDL using the <A HREF="idl16e.htm#77118" CLASS="XRef">
+READ_X11_BITMAP</A>
+ routine.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680069">
+ </A>
+Create a bitmap using the <A NAME="marker=674434">
+ </A>
+XBM_EDIT procedure. This procedure offers several alternatives for the form of the final bitmap.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=676420">
+ </A>
+Although IDL places no restriction on the size of bitmap allowed, the various toolkits may prefer certain sizes.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820445">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820446">
+ </A>
+<A HREF="idl58.htm#73565" CLASS="XRef">
+CW_BGROUP</A>
+, <A HREF="idl61.htm#62114" CLASS="XRef">
+CW_PDMENU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

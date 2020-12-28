@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RSTRPOS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl18a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl188.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762605">
+ </A>
+<A NAME="13736">
+ </A>
+RSTRPOS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762608">
+ </A>
+The <A NAME="marker=762606">
+ </A>
+RSTRPOS function finds the <I CLASS="Italic">
+last</I>
+ occurrence of a <A NAME="marker=762607">
+ </A>
+substring within an object string (the STRPOS function finds the first occurrence of a substring). If the substring is found in the expression, RSTRPOS returns the character position of the match, otherwise it returns -1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762609">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+rstrpos.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762610">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762611">
+ </A>
+Result = RSTRPOS(<I CLASS="Italic">
+Expression, Search_String [, Pos]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762612">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762613">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762614">
+ </A>
+The expression string in which to search for the substring.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762615">
+ </A>
+Search_String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762616">
+ </A>
+The substring to be searched for within <I CLASS="Italic">
+Expression</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762617">
+ </A>
+Pos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762618">
+ </A>
+The character position before which the search is begun. If <I CLASS="Italic">
+Pos</I>
+ is omitted, the search begins at the last character of <I CLASS="Italic">
+Expression</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762619">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=762620">
+ </A>
+exp = 'Holy smokes, Batman!'	<EM CLASS="Comment">;
+Define the expression.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762621">
+ </A>
+pos = RSTRPOS(exp, 'smokes')	<EM CLASS="Comment">;
+Find the position of a substring.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762622">
+ </A>
+PRINT, pos	<EM CLASS="Comment">;
+Print the substring's position.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=825989">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=825990">
+ </A>
+5	<EM CLASS="Comment">;
+Substring begins at position 5 (the sixth character).</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762623">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762624">
+ </A>
+<A HREF="idl1c1.htm#37928" CLASS="XRef">
+STRPOS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

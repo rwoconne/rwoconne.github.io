@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ASCII_TEMPLATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=871781">
+ </A>
+<A NAME="16502">
+ </A>
+ASCII_TEMPLATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=871784">
+ </A>
+The <A NAME="marker=871783">
+ </A>
+ASCII_TEMPLATE function presents a graphical user interface (GUI) which generates a template defining an ASCII file format. Templates are IDL structure variables that may be used when reading ASCII files with the <A HREF="idl162.htm#30033" CLASS="XRef">
+READ_ASCII</A>
+ routine. See <A HREF="idl162.htm#30033" CLASS="XRef">
+READ_ASCII</A>
+ for details on reading ASCII files.</P>
+<P CLASS="Body">
+<A NAME="pgfId=871269">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ascii_template.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871240">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=870999">
+ </A>
+Result = ASCII_TEMPLATE(<EM CLASS="Emphasis">
+[Filename]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871000">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871001">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871002">
+ </A>
+A string containing the name of a file to base the template on. If <I CLASS="Italic">
+Filename</I>
+ is not specified, a dialog allows you to choose a file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871005">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871007">
+ </A>
+<A NAME="marker=871093">
+ </A>
+BROWSE_LINES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871138">
+ </A>
+Set this keyword equal to the number of lines that will be read in at a time when the &quot;Browse&quot; button is selected. The default is 50 lines.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871139">
+ </A>
+<A NAME="marker=871181">
+ </A>
+CANCEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871112">
+ </A>
+Set this keyword to a named variable that will contain the byte value 1 if the user clicked the &quot;Cancel&quot; button or 0 otherwise.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=884032">
+ </A>
+<A NAME="marker=884031">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=884033">
+ </A>
+The widget ID of an existing widget that serves as &quot;group leader&quot; for the ASCII_TEMPLATE GUI. When a group leader is killed, for any reason, all widgets in the group are also destroyed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871330">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871336">
+ </A>
+Use the following command to generate a template structure from the file &quot;myFile&quot;.</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=871337">
+ </A>
+myTemplate = ASCII_TEMPLATE(myFile)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=871035">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871045">
+ </A>
+<A HREF="idl162.htm#30033" CLASS="XRef">
+READ_ASCII</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

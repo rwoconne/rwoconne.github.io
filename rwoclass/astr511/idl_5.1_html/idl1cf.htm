@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> T3D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1d0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ce.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787431">
+ </A>
+<A NAME="36880">
+ </A>
+T3D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787435">
+ </A>
+The <A NAME="marker=787433">
+ </A>
+T3D procedure implements three-dimensional <A NAME="marker=788211">
+ </A>
+transforms.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787440">
+ </A>
+This routine accumulates one or more sequences of <A NAME="marker=787436">
+ </A>
+translation, <A NAME="marker=787437">
+ </A>
+scaling, <A NAME="marker=787438">
+ </A>
+rotation, <A NAME="marker=787439">
+ </A>
+perspective, and oblique transformations and stores the result in <A NAME="marker=788132">
+ </A>
+!P.T, the 3D transformation system variable. All the IDL graphic routines use this (4,4) matrix for output. Note that !P.T3D is <EM CLASS="Emphasis">
+not</EM>
+ set, so for the transformations to have effect you must set !P.T3D = 1 (or set the T3D keyword in subsequent calls to graphics routines).</P>
+<P CLASS="Body">
+<A NAME="pgfId=787442">
+ </A>
+This procedure is based on that of Foley &amp; Van Dam, <EM CLASS="Emphasis">
+Fundamentals of Interactive Computer Graphics</EM>
+, Chapter 8, &quot;Viewing in Three Dimensions&quot;. The matrix notation is reversed from the normal IDL sense, i.e., here, the first subscript is the column, the second is the row, in order to conform with this reference.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787443">
+ </A>
+A right-handed system is used. Positive rotations are counterclockwise when looking from a positive axis position towards the origin.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787444">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+t3d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787447">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787448">
+ </A>
+T3D</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787449">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787450">
+ </A>
+Any, all, or none of the following keywords can be present in a call to T3D. The order of the input parameters does not matter.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787451">
+ </A>
+The transformation specified by each keyword is performed in the order of their descriptions below (e.g., if both TRANSLATE and SCALE are specified, the translation is done first).</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787453">
+ </A>
+<A NAME="marker=787452">
+ </A>
+OBLIQUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787454">
+ </A>
+A two-element vector of oblique projection parameters. Points are projected onto the XY plane at Z=0 as follows: </P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=787455">
+ </A>
+x' = x + z(d * COS(a))</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=787456">
+ </A>
+y' = y + z(d * SIN(a))</P>
+<P CLASS="Body">
+<A NAME="pgfId=787457">
+ </A>
+where OBLIQUE[0] = d and OBLIQUE[1] = a.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787459">
+ </A>
+<A NAME="marker=787458">
+ </A>
+PERSPECTIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787460">
+ </A>
+Perspective transformation. This parameter is a scalar (p) that indicates the Z distance of the center of the projection. Objects are projected into the XY plane at Z=0, and the &quot;eye&quot; is at point (0,0,p).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787462">
+ </A>
+<A NAME="marker=787461">
+ </A>
+RESET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787463">
+ </A>
+Set this keyword to reset the transformation to the default identity matrix.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787465">
+ </A>
+<A NAME="marker=787464">
+ </A>
+ROTATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787466">
+ </A>
+A three-element vector of the rotations, in DEGREES, about the X, Y, and Z axes. Rotations are performed in the order of X, Y, and then Z.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787468">
+ </A>
+<A NAME="marker=787467">
+ </A>
+SCALE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787469">
+ </A>
+A three-element vector of scale factors for the X, Y, and Z axes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787471">
+ </A>
+<A NAME="marker=787470">
+ </A>
+TRANSLATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787472">
+ </A>
+A three-element vector of the translations in the X, Y, and Z directions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787474">
+ </A>
+<A NAME="marker=787473">
+ </A>
+XYEXCH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787475">
+ </A>
+Set this keyword to exchange the X and Y axes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787477">
+ </A>
+<A NAME="marker=787476">
+ </A>
+XZEXCH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787478">
+ </A>
+Set this keyword to exchange the X and Z axes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787480">
+ </A>
+<A NAME="marker=787479">
+ </A>
+YZEXCH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787481">
+ </A>
+Set this keyword to exchange the Y and Z axes.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787482">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787483">
+ </A>
+To reset the transformation, rotate 30 degs about the X axis and do perspective transformation with the center of the projection at Z = -1, X=0, and Y=0, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=787484">
+ </A>
+T3D, /RESET, ROT = [ 30,0,0], PERS = 1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787485">
+ </A>
+Transformations may be cascaded, for example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=787486">
+ </A>
+T3D, /RESET, TRANS = [-.5,-.5,0], ROT = [0,0,45] </P>
+<P CLASS="Code">
+<A NAME="pgfId=787487">
+ </A>
+T3D, TRANS = [.5,.5,0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=787488">
+ </A>
+The first command resets, translates the point (.5,.5,0) to the center of the viewport, then rotates 45 degrees counterclockwise about the Z axis. The second call to T3D moves the origin back to the center of the viewport.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787489">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787490">
+ </A>
+<A HREF="idl18c.htm#24364" CLASS="XRef">
+SCALE3</A>
+, <A HREF="idl18d.htm#35062" CLASS="XRef">
+SCALE3D</A>
+, <A HREF="idl1c7.htm#31282" CLASS="XRef">
+SURFR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

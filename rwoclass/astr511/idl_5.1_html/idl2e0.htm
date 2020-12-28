@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_CONTROL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2e1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2df.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997182">
+ </A>
+<A NAME="86430">
+ </A>
+NCDF_CONTROL</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997186">
+ </A>
+The <A NAME="marker=997184">
+ </A>
+NCDF_CONTROL procedure performs <A NAME="marker=997185">
+ </A>
+miscellaneous netCDF operations.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997187">
+ </A>
+Different options are controlled by keywords. Only one keyword can be specified in any call to NCDF_CONTROL, unless the OLDFILL keyword is specified.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997188">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997189">
+ </A>
+NCDF_CONTROL, <I CLASS="Italics">
+Cdfid</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997190">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997191">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997192">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997193">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997195">
+ </A>
+<A NAME="marker=997194">
+ </A>
+ABORT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997196">
+ </A>
+Set this keyword to close a netCDF file that is not in define mode. If the file is being created and is still in define mode, the file is deleted. If define mode was entered by a call to NCDF_CONTROL with the REDEF keyword, the netCDF file is restored to its state before definition mode was entered, and the file is closed.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997198">
+ </A>
+<A NAME="marker=997197">
+ </A>
+ENDEF</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997199">
+ </A>
+Set this keyword to take an open netCDF file out of define mode (and into data mode).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997201">
+ </A>
+<A NAME="marker=997200">
+ </A>
+FILL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997202">
+ </A>
+Set this keyword so that data in the netCDF file is pre-filled with default fill values. The default values (which cannot be changed) are:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=997205">
+ </A>
+Default Fill Values for netCDF Files</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=997209">
+ </A>
+Data Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=997211">
+ </A>
+Fill Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997213">
+ </A>
+BYTE</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997215">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997217">
+ </A>
+CHAR</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997219">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997221">
+ </A>
+SHORT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997223">
+ </A>
+-32767</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997225">
+ </A>
+LONG</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997227">
+ </A>
+-2147483647</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997229">
+ </A>
+FLOAT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997231">
+ </A>
+9.96921E+36</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997233">
+ </A>
+DOUBLE</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997235">
+ </A>
+9.96921E+36</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997237">
+ </A>
+<A NAME="marker=997236">
+ </A>
+NOFILL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997238">
+ </A>
+Set this keyword so that data in the netCDF file is not pre-filled. This option saves time when it is certain that variable values will be written before a read is attempted.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997240">
+ </A>
+<A NAME="marker=997239">
+ </A>
+NOVERBOSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997241">
+ </A>
+Set this keyword to suppress the printing of netCDF error messages. <I CLASS="Italics">
+Cdfid</I>
+ is required but not used.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997243">
+ </A>
+<A NAME="marker=997242">
+ </A>
+OLDFILL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997244">
+ </A>
+This keyword specifies a named variable in which the previous fill value is returned. This keyword can only be used in combination with the FILL or NOFILL keywords. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=997245">
+ </A>
+NCDF_CONTROL, id, FILL=1, OLDFILL=previous_fill</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997247">
+ </A>
+<A NAME="marker=997246">
+ </A>
+REDEF</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997248">
+ </A>
+Set this keyword to put an open netCDF file into define mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997250">
+ </A>
+<A NAME="marker=997249">
+ </A>
+SYNC</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997251">
+ </A>
+Set this keyword to update the disk copy of a netCDF file that is open for writing. The netCDF file must be in data mode. A netCDF file in define mode will be updated only when NCDF_CONTROL is called with the ENDEF keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997253">
+ </A>
+<A NAME="marker=997252">
+ </A>
+VERBOSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997255">
+ </A>
+Set this keyword to cause netCDF <A NAME="marker=997254">
+ </A>
+error messages to be printed. <I CLASS="Italics">
+Cdfid</I>
+ is required but not used. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=997256">
+ </A>
+NCDF_CONTROL, 0, /VERBOSE</P>
+<P CLASS="Body">
+<A NAME="pgfId=997257">
+ </A>
+is a valid command even if 0 is not a valid NetCDF file ID.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997258">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997265">
+ </A>
+See the examples under <A HREF="idl2db.htm#96620" CLASS="XRef">
+NCDF_ATTINQ</A>
+ and <A HREF="idl2ee.htm#78210" CLASS="XRef">
+NCDF_VARPUT</A>
+.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997266">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997276">
+ </A>
+<A HREF="idl2df.htm#63513" CLASS="XRef">
+NCDF_CLOSE</A>
+, <A HREF="idl2e1.htm#30606" CLASS="XRef">
+NCDF_CREATE</A>
+, <A HREF="idl2e8.htm#41970" CLASS="XRef">
+NCDF_OPEN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

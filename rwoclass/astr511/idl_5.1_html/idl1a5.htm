@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SLIDE_IMAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787331">
+ </A>
+<A NAME="12925">
+ </A>
+SLIDE_IMAGE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787334">
+ </A>
+The <A NAME="marker=787333">
+ </A>
+SLIDE_IMAGE procedure creates a scrolling graphics window for examining large <A NAME="marker=787335">
+ </A>
+images. By default, 2 draw widgets are used. The draw widget on the left shows a reduced version of the complete image, while the draw widget on the right displays the actual image with scrollbars that allow sliding the visible window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787336">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+slide_image.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787337">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787338">
+ </A>
+SLIDE_IMAGE<EM CLASS="Emphasis">
+ [, Image]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787339">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787340">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787341">
+ </A>
+A 2D image array to be displayed. If this argument is not specified, no image is displayed. The FULL_WINDOW and SCROLL_WINDOW keywords can be used to obtain the window numbers of the two draw widgets so they can be drawn into at a later time.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787342">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=923990">
+ </A>
+<A NAME="marker=923989">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=923991">
+ </A>
+Set this keyword to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787344">
+ </A>
+<A NAME="marker=787343">
+ </A>
+CONGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787345">
+ </A>
+Normally, the image is processed with the CONGRID procedure before it is written to the fully visible window on the left. Specifying CONGIRD=0 will force the image to be drawn as is.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787347">
+ </A>
+<A NAME="marker=787346">
+ </A>
+FULL_WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787348">
+ </A>
+Set this keyword to a named variable that will contain the IDL window number of the fully visible window. This window number can be used with the WSET procedure to draw to the scrolling window at a later point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787350">
+ </A>
+<A NAME="marker=787349">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787351">
+ </A>
+Set this keyword to the widget ID of the widget that calls SLIDE_IMAGE. If set, the death of the caller results in the death of SLIDE_IMAGE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787353">
+ </A>
+<A NAME="marker=787352">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787354">
+ </A>
+This keyword is passed directly to the TV procedure to control the order in which the images are drawn. Usually, images are drawn from the bottom up. Set this keyword to a non-zero value to draw images from the top down.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787356">
+ </A>
+<A NAME="marker=787355">
+ </A>
+REGISTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787357">
+ </A>
+Set this keyword to create a &quot;Done&quot; button for SLIDE_IMAGE and register the widgets with the XMANAGER procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787358">
+ </A>
+The basic widgets used in this procedure do not generate widget events, so it is not necessary to process events in an event loop. The default is therefore to simply create the widgets and return. Hence, when REGISTER is not set, SLIDE_IMAGE can be displayed and the user can still type commands at the IDL command prompt.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787360">
+ </A>
+<A NAME="marker=787359">
+ </A>
+RETAIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=132509">
+ </A>
+This keyword is passed directly to the WIDGET_DRAW function. Set RETAIN to zero, one, or two to specify how backing store should be handled for the window. RETAIN=0 specifies no backing store. RETAIN=1 requests that the server or window system provide backing store. RETAIN=2 specifies that IDL provide backing store directly. See <A HREF="idl22f.htm#83595" CLASS="XRef">
+Backing Store</A>
+<EM CLASS="Emphasis">
+ </EM>
+for details.&quot;Backing Store&quot; on page 103</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787363">
+ </A>
+<A NAME="marker=787362">
+ </A>
+SLIDE_WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787364">
+ </A>
+Set this keyword to a named variable that will contain the IDL window number of the sliding window. This window number can be used with the WSET procedure to draw to the scrolling window at a later time.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787366">
+ </A>
+<A NAME="marker=900071">
+ </A>
+SHOW_FULL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900069">
+ </A>
+Set this keyword to zero to show the entire image at full resolution in one scrolling graphics window. By default, SHOW_FULL is set, displaying two draw widgets.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=900084">
+ </A>
+On Windows platforms only, using TVRD to return the array size of the displayed image will cause the returned array to be off by the size of the frame (one pixel per side). To return the dimensions of the original image, you must modify the <CODE CLASS="Code">
+slide_image.pro</CODE>
+ library routine so that the FRAME keyword is not used with SHOW_FULL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900068">
+ </A>
+<A NAME="marker=787365">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787367">
+ </A>
+Set this keyword to the title to be used for the SLIDE_IMAGE widget. If this keyword is not specified, &quot;Slide Image&quot; is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787369">
+ </A>
+<A NAME="marker=787368">
+ </A>
+TOP_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787370">
+ </A>
+Set this keyword to a named variable that will contain the top widget ID of the SLIDE_IMAGE hierarchy. This ID can be used to kill the hierarchy as shown below:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=787371">
+ </A>
+SLIDE_IMAGE, TOP_ID=base, ... </P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=787372">
+ </A>
+WIDGET_CONTROL, /DESTROY, base</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787374">
+ </A>
+<A NAME="marker=787373">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787375">
+ </A>
+Set this keyword to the maximum width of the image that can be displayed by the scrolling window. This keyword should not be confused with the visible size of the image, controlled by the XVISIBLE keyword. If XSIZE is not specified, the width of <EM CLASS="Emphasis">
+Image</EM>
+ is used. If <EM CLASS="Emphasis">
+Image</EM>
+ is not specified, 256 is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787377">
+ </A>
+<A NAME="marker=787376">
+ </A>
+XVISIBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787378">
+ </A>
+Set this keyword to the width of the viewport on the scrolling window. If this keyword is not specified, 256 is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787380">
+ </A>
+<A NAME="marker=787379">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787381">
+ </A>
+Set this keyword to the maximum height of the image that can be displayed by the scrolling window. This keyword should not be confused with the visible size of the image, controlled by the YVISIBLE keyword. If YSIZE is not present the height of <EM CLASS="Emphasis">
+Image</EM>
+ is used. If <EM CLASS="Emphasis">
+Image</EM>
+ is not specified, 256 is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787383">
+ </A>
+<A NAME="marker=787382">
+ </A>
+YVISIBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787384">
+ </A>
+Set this keyword to the height of the viewport on the scrolling window. If this keyword is not present, 256 is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787385">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787386">
+ </A>
+Open an image from the IDL distribution and load it into SLIDE_IMAGE:</P>
+<P CLASS="Code">
+<A NAME="pgfId=787387">
+ </A>
+image = BYTARR(768,512)	<EM CLASS="Comment">;
+Create a variable to hold the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787388">
+ </A>
+OPENR, unit, FILEPATH('nyny.dat', SUBDIR=['examples','data']), /GET_LUN</P>
+<P CLASS="Code">
+<A NAME="pgfId=787389">
+ </A>
+READU, unit, image</P>
+<P CLASS="Code">
+<A NAME="pgfId=787390">
+ </A>
+CLOSE, unit</P>
+<P CLASS="Code">
+<A NAME="pgfId=787391">
+ </A>
+image = BYTSCL(image)	<EM CLASS="Comment">;
+Scale the image into byte range of the display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787392">
+ </A>
+SLIDE_IMAGE, image	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787393">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821001">
+ </A>
+<A HREF="idl1ea.htm#65425" CLASS="XRef">
+TV</A>
+, <A HREF="idl1ee.htm#90730" CLASS="XRef">
+TVSCL</A>
+, <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

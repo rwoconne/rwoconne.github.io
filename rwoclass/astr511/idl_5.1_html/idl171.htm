@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READU</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl172.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl170.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678459">
+ </A>
+<A NAME="52434">
+ </A>
+READU</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678460">
+ </A>
+The <A NAME="marker=673690">
+ </A>
+READU procedure reads <A NAME="marker=673691">
+ </A>
+unformatted binary data from a file into IDL variables. READU transfers data direct<A NAME="marker=673695">
+ </A>
+ly with no processing of any kind performed on the data.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678461">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678462">
+ </A>
+READU, <I CLASS="Italic">
+Unit, Var</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Var</I>
+<SUB CLASS="Subscript">
+n</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678463">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678464">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678465">
+ </A>
+The IDL file unit from which input is taken.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678466">
+ </A>
+Var<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678467">
+ </A>
+Named variables to receive the data. For non-string variables, the number of bytes required for Var are read. When READU is used with a variable of type string, IDL reads exactly the number of bytes contained in the existing string. For example, to read a 5-character string, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678468">
+ </A>
+temp = '12345'</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678469">
+ </A>
+READU, unit, temp</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678470">
+ </A>
+Unix Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678471">
+ </A>
+<A NAME="marker=673702">
+ </A>
+TRANSFER_COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678472">
+ </A>
+Set this keyword to a named variable in which to return the number of elements transferred by the input operation. Note that the number of elements is not the same as the number of bytes (except in the case where the data type being transferred is bytes). For example, transferring 256 floating-point numbers yields a transfer count of 256, not 1024 (the number of bytes transferred).</P>
+<P CLASS="Body">
+<A NAME="pgfId=678473">
+ </A>
+This keyword is useful with files opened with the NOSTDIO keyword to the OPEN routines. Normally, attempting to read more data than is available from a file causes the unfilled space to be zeroed and an error to be issued. This does not happen with files opened with the NOSTDIO keyword. Instead, the programmer must keep track of the transfer count.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678474">
+ </A>
+VMS Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678475">
+ </A>
+Note that the obsolete VMS routines <A NAME="marker=862189">
+ </A>
+FORRD, and <A NAME="marker=862196">
+ </A>
+FORRD_KEY have been replaced by the READU command used with the following keywords.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678476">
+ </A>
+<A NAME="marker=673705">
+ </A>
+KEY_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678477">
+ </A>
+The index key to be used (primary = 0, first alternate key = 1, etc...) when accessing data from a file with indexed organization. If this keyword is omitted, the primary key is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678478">
+ </A>
+<A NAME="marker=673706">
+ </A>
+KEY_MATCH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678479">
+ </A>
+The relation to be used when matching the supplied key with key field values (EQ = 0, GE = 1, GT = 2) when accessing data from a file with indexed organization. If this keyword is omitted, the equality relation (0) is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678480">
+ </A>
+<A NAME="marker=673707">
+ </A>
+KEY_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678481">
+ </A>
+The value of a key to be found when accessing data from a file with indexed organization. This value must match the key definition that is determined when the file was created in terms of type and size--no conversions are performed. If this keyword is omitted, the previous key value is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678482">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=828807">
+ </A>
+The following commands can be used to open the IDL distribution file people.dat and read an image from that file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=828808">
+ </A>
+OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])<BR>
+<EM CLASS="Comment">;
+Open the file for reading as file unit 1.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=828811">
+ </A>
+B = BYTARR(192, 192)	<EM CLASS="Comment">;
+The image we want to read is a 192 by 192 byte array, so make B that size.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678486">
+ </A>
+READU, 1, B	<EM CLASS="Comment">;
+Read the data into B.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678487">
+ </A>
+CLOSE, 1	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678488">
+ </A>
+TV, B	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795804">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795805">
+ </A>
+<A HREF="idl161.htm#26845" CLASS="XRef">
+READ/READF</A>
+, <A HREF="idl170.htm#45159" CLASS="XRef">
+READS</A>
+, <A HREF="idl218.htm#93251" CLASS="XRef">
+WRITEU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

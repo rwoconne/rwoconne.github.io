@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NORM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl127.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl125.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889364">
+ </A>
+<A NAME="33112">
+ </A>
+NORM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889370">
+ </A>
+The <A NAME="marker=889367">
+ </A>
+NORM function <A NAME="marker=889368">
+ </A>
+computes the <A NAME="marker=889369">
+ </A>
+Euclidean norm of a vector. Alternatively, NORM computes the <A NAME="marker=889371">
+ </A>
+Infinity norm of an array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889372">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+norm.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889373">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889374">
+ </A>
+Result = NORM(<EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889375">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889376">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889377">
+ </A>
+A can be either of the following:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889378">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element real or complex vector, if NORM is being used to compute the Euclidean norm of a vector.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=889379">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ real or complex array, if NORM is being used to compute the Infinity norm of an array.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889380">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889381">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889382">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889383">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889384">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element complex vector A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889385">
+ </A>
+A = [COMPLEX(1, 0), COMPLEX(2,-2), COMPLEX(-3,1)]</P>
+<P CLASS="Code">
+<A NAME="pgfId=889386">
+ </A>
+PRINT, NORM(A)	<EM CLASS="Comment">;
+Compute the Euclidean norm of A and print.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=889387">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=889388">
+ </A>
+4.35890</P>
+<P CLASS="Body">
+<A NAME="pgfId=889389">
+ </A>
+Define an <EM CLASS="Emphasis">
+m</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ complex array A: </P>
+<P CLASS="Code">
+<A NAME="pgfId=889390">
+ </A>
+B = [[COMPLEX(1, 0), COMPLEX(2,-2), COMPLEX(-3,1)], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=889391">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[COMPLEX(1,-2), COMPLEX(2, 2), COMPLEX(1, 0)]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=889392">
+ </A>
+PRINT, NORM(B, /DOUBLE)	<EM CLASS="Comment">;
+Compute the Infinity norm of B and print.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=889393">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=889394">
+ </A>
+6.9907048</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889395">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889399">
+ </A>
+<A HREF="idl3d.htm#31512" CLASS="XRef">
+COND</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GAUSS2DFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlb6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlb4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=197913">
+ </A>
+<A NAME="23241">
+ </A>
+GAUSS2DFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=197921">
+ </A>
+The <A NAME="marker=199777">
+ </A>
+GAUSS2DFIT function <A NAME="marker=199840">
+ </A>
+fits a two-dimensional, elliptical Gaussian equation to rectilinearly gridded data.</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=197964">
+ </A>
+<I CLASS="Italics">
+Z</I>
+ = <I CLASS="Italics">
+F</I>
+(<I CLASS="Italics">
+x, y</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=197966">
+ </A>
+where:</P>
+<DIV>
+<CENTER><IMG SRC="idl_41.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=197968">
+ </A>
+<I CLASS="Italics">
+</I>
+And the elliptical function is:</P>
+<DIV>
+<CENTER><IMG SRC="idl_42.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=197970">
+ </A>
+<I CLASS="Italics">
+</I>
+The parameters of the ellipse <I CLASS="Italics">
+U</I>
+ are:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=197971">
+ </A>
+Axis lengths are 2<I CLASS="Italics">
+a</I>
+ and 2<I CLASS="Italics">
+b</I>
+, in the unrotated X and Y axes, respectively.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=219087">
+ </A>
+Center is at (<I CLASS="Italics">
+h, k</I>
+).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=219091">
+ </A>
+Rotation of <I CLASS="Italics">
+T</I>
+ radians from the X axis, in the <I CLASS="Italics">
+clockwise</I>
+ direction.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=199780">
+ </A>
+The rotated coordinate system is defined as: </P>
+<DIV>
+<CENTER><IMG SRC="idl_43.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_44.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=197922">
+ </A>
+<I CLASS="Italics">
+</I>
+The rotation is optional, and can be forced to 0, making the major and minor axes of the ellipse parallel to the X and Y axes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=199808">
+ </A>
+Coefficients of the computed fit are returned in argument <I CLASS="Italics">
+A</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=199847">
+ </A>
+Procedure Used and Other Notes</H3>
+<P CLASS="Body">
+<A NAME="pgfId=199853">
+ </A>
+The peak/valley is found by first smoothing <I CLASS="Italics">
+Z</I>
+ and then finding the maximum or minimum, respectively. GAUSSFIT is then applied to the row and column running through the peak/valley to estimate the parameters of the Gaussian in X and Y. Finally, CURVEFIT is used to fit the 2D Gaussian to the data.</P>
+<P CLASS="Body">
+<A NAME="pgfId=199848">
+ </A>
+Be sure that the 2D array to be fit contains the entire peak/valley out to at least 5 to 8 half-widths, or the curve-fitter may not converge.</P>
+<P CLASS="Body">
+<A NAME="pgfId=199845">
+ </A>
+This computationally-intensive routine takes approximately 4 seconds for a 128 by 128-element array on a Sun SPARC LX. The time required is roughly proportional to the number of elements in <I CLASS="Italics">
+Z</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=199693">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+gauss2dfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=197924">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=199698">
+ </A>
+Result = GAUSS2DFIT(<I CLASS="Italics">
+Z, A [,X, Y]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=197925">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=199700">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=199701">
+ </A>
+The dependent variable. <I CLASS="Italics">
+Z</I>
+ should be a two-dimensional array with dimensions (<I CLASS="Italics">
+N</I>
+<SUB CLASS="Subscript">
+x</SUB>
+<I CLASS="Italics">
+, N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+). Gridding in the array must be rectilinear.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=199718">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=199787">
+ </A>
+A named variable in which the coefficients of the fit are returned. <I CLASS="Italics">
+A</I>
+ is returned as a seven element vector the coefficients of the fitted function. The meanings of the seven elements in relation to the discussion above is:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199788">
+ </A>
+<I CLASS="Italics">
+A</I>
+[0] = <I CLASS="Italics">
+A</I>
+<SUB CLASS="Subscript">
+0</SUB>
+ = constant term</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199789">
+ </A>
+<I CLASS="Italics">
+A</I>
+[1] = <I CLASS="Italics">
+A</I>
+<SUB CLASS="Subscript">
+1</SUB>
+ = scale factor</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199790">
+ </A>
+<I CLASS="Italics">
+A</I>
+[2] = <I CLASS="Italics">
+a</I>
+ = width of Gaussian in the X direction</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199791">
+ </A>
+<I CLASS="Italics">
+A</I>
+[3] = <I CLASS="Italics">
+b</I>
+ = width of Gaussian in the Y direction</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199792">
+ </A>
+<I CLASS="Italics">
+A</I>
+[4] = <I CLASS="Italics">
+h</I>
+ = center X location</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199793">
+ </A>
+<I CLASS="Italics">
+A</I>
+[5] = <I CLASS="Italics">
+k</I>
+ = center Y location.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=199794">
+ </A>
+<I CLASS="Italics">
+A</I>
+[6] = <I CLASS="Italics">
+T</I>
+ = <I CLASS="Italics">
+Theta</I>
+, the rotation of the ellipse from the X axis in radians, <I CLASS="Italics">
+counter-clockwise</I>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=199716">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=199703">
+ </A>
+An optional vector with <I CLASS="Italics">
+N</I>
+<SUB CLASS="Subscript">
+x</SUB>
+ elements that contains the X values of <I CLASS="Italics">
+Z </I>
+(i.e., <I CLASS="Italics">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ is the X value for <I CLASS="Italics">
+Z</I>
+<SUB CLASS="Subscript">
+i,j</SUB>
+. If this argument is omitted, a regular grid in X is assumed, and the X location of <I CLASS="Italics">
+Z</I>
+<SUB CLASS="Subscript">
+i,j</SUB>
+ = <I CLASS="Italics">
+i</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=199704">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=199705">
+ </A>
+An optional vector with <I CLASS="Italics">
+N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+ elements that contains the Y values of Z (i.e., <I CLASS="Italics">
+Y</I>
+<SUB CLASS="Subscript">
+j</SUB>
+ is the Y value for <I CLASS="Italics">
+Z</I>
+<SUB CLASS="Subscript">
+i,j</SUB>
+. If this argument is omitted, a regular grid in Y is assumed, and the Y location of <I CLASS="Italics">
+Z</I>
+<SUB CLASS="Subscript">
+i,j</SUB>
+ = <I CLASS="Italics">
+j</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=197926">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=199709">
+ </A>
+<A NAME="marker=199841">
+ </A>
+NEGATIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=199710">
+ </A>
+Set this keyword to indicate that the Gaussian to be fitted is a valley (such as an absorption line). By default, a peak is fit.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=199711">
+ </A>
+<A NAME="marker=199842">
+ </A>
+TILT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=199712">
+ </A>
+Set this keyword to allow the orientation of the major and minor axes of the ellipse to be unrestricted. The default is that the axes of the ellipse must be parallel to the X and Y axes. Therefore, in the default case, <I CLASS="Italics">
+A</I>
+[6] is always returned as 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=197931">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=199729">
+ </A>
+This example creates a 2D gaussian, adds random noise and then applies GAUSS2DFIT.</P>
+<P CLASS="Code">
+<A NAME="pgfId=199735">
+ </A>
+nx = 128 &amp; ny = 100	<EM CLASS="Comment">;
+Define array dimensions.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199740">
+ </A>
+A = [ 5., 10., nx/6., ny/10., nx/2., .6*ny]<BR>
+<EM CLASS="Comment">;
+Define input function parameters.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199741">
+ </A>
+X = FINDGEN(nx) # REPLICATE(1.0, ny)</P>
+<P CLASS="Code">
+<A NAME="pgfId=199743">
+ </A>
+Y = REPLICATE(1.0, nx) # FINDGEN(ny)<BR>
+<EM CLASS="Comment">;
+Create X and Y arrays.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199891">
+ </A>
+U = ((X-A[4])/A[2])^2 + ((Y-A[5])/A[3])^2<BR>
+<EM CLASS="Comment">;
+Create an ellipse.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199892">
+ </A>
+Z = A[0] + A[1] * EXP(-U/2)	<EM CLASS="Comment">;
+Create gaussian Z.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199893">
+ </A>
+Z = Z + RANDOMN(seed, nx, ny)	<EM CLASS="Comment">;
+Add random noise, SD = 1.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199748">
+ </A>
+yfit = GAUSS2DFIT(Z, B)	<EM CLASS="Comment">;
+Fit the function, no rotation.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=199749">
+ </A>
+PRINT, 'Should be: ', STRING(A, FORMAT='(6f10.4)')</P>
+<P CLASS="Code">
+<A NAME="pgfId=199750">
+ </A>
+PRINT, 'Is: ', STRING(B(0:5), FORMAT='(6f10.4)')<BR>
+<EM CLASS="Comment">;
+Report results.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=218946">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=218968">
+ </A>
+<A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

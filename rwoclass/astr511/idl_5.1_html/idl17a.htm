@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RESOLVE_ALL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl17b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl179.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678560">
+ </A>
+<A NAME="64718">
+ </A>
+RESOLVE_ALL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=135751">
+ </A>
+The <A NAME="marker=168338">
+ </A>
+RESOLVE_ALL procedure iteratively resolves (by <A NAME="marker=135816">
+ </A>
+compiling) any uncompiled user-written or library procedures or functions that are called in any already-compiled procedure or function. The process ends when there are no unresolved routines left to compile. If an unresolved procedure or function is not in the IDL search path, this routine exits with an error, and no additional routines are compiled. </P>
+<P CLASS="Body">
+<A NAME="pgfId=135764">
+ </A>
+RESOLVE_ALL is useful when preparing SAVE/RESTORE files containing all the IDL routines required for an application.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=135760">
+ </A>
+RESOLVE_ALL does not resolve procedures or functions that are called via CALL_PROCEDURE, CALL_FUNCTION, or EXECUTE. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=843418">
+ </A>
+Similarly, RESOLVE_ALL does not resolve widget event handler procedures based on a call to the widget routine that uses the event handler. In general, it is best to include the event handling routine in the same program file as the widget creation routine--building widget programs in this way ensures that RESOLVE_ALL will &quot;catch&quot; the event handler for a widget application.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=135754">
+ </A>
+RESOLVE_ALL is of special interest when constructing an IDL SAVE file containing the compiled code for a package of routines. If you are constructing such a <CODE CLASS="Code">
+.sav</CODE>
+ file, that contains calls to built-in IDL system functions that are not present under all operating systems (e.g., IOCTL, TRNLOG), you must make sure to use FORWARD_FUNCTION to tell IDL that these names are functions. Otherwise, IDL may interpret them as arrays and generate unintended results.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=950223">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+resolve_all.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=135752">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=135757">
+ </A>
+RESOLVE_ALL</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=135758">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=135759">
+ </A>
+QUIET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=135765">
+ </A>
+Set this keyword to suppress informational messages.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=135766">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=135767">
+ </A>
+<A HREF="idl17b.htm#57784" CLASS="XRef">
+RESOLVE_ROUTINE</A>
+, <A HREF="idl187.htm#30902" CLASS="XRef">
+ROUTINE_INFO</A>
+, .COMPILE in <A HREF="executive.html#49256" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

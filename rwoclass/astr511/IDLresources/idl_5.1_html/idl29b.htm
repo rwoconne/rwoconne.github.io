@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_OPEN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl29c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl29a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998366">
+ </A>
+<A NAME="27462">
+ </A>
+HDF_OPEN</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998370">
+ </A>
+The <A NAME="marker=998368">
+ </A>
+HDF_OPEN function <A NAME="marker=998369">
+ </A>
+opens or creates a Hierarchical Data Format file for reading and/or writing. If successful, a non-zero file handle (a longword integer) is returned. Longword -1 is returned on failure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=998371">
+ </A>
+Note that any combination of the READ, WRITE and CREATE keywords is valid.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998372">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998373">
+ </A>
+Result = HDF_OPEN(<I CLASS="Italics">
+Filename</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998374">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998375">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998376">
+ </A>
+A scalar string containing the name of the file to be opened.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998377">
+ </A>
+ Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998379">
+ </A>
+<A NAME="marker=998378">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998380">
+ </A>
+Set this keyword to create a new HDF file with read and write access. Setting this keyword is equivalent to:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998381">
+ </A>
+HDF_OPEN(filename, /READ, /WRITE, /CREATE)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998383">
+ </A>
+<A NAME="marker=998382">
+ </A>
+CREATE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998384">
+ </A>
+Set this keyword to create a new HDF file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998386">
+ </A>
+<A NAME="marker=998385">
+ </A>
+NUM_DD</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998387">
+ </A>
+Use this keyword to override the machine default for the number of data descriptors to be allocated per DD block. For example:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998388">
+ </A>
+H = HDF_OPEN('foo.hdf',/CREATE,/WRITE, NUM_DD=100)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998390">
+ </A>
+<A NAME="marker=998389">
+ </A>
+RDWR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998391">
+ </A>
+Set this keyword to open file with both read and write access. Setting this keyword is equivalent to:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=998392">
+ </A>
+HDF_OPEN(filename, /READ, /WRITE)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998394">
+ </A>
+<A NAME="marker=998393">
+ </A>
+READ</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998395">
+ </A>
+Set this keyword to open the file with read access.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998397">
+ </A>
+<A NAME="marker=998396">
+ </A>
+WRITE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998398">
+ </A>
+Set this keyword to open the file with write access.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

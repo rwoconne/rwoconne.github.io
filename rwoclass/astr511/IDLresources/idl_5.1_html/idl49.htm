@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CREATE_STRUCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl4a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl48.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676445">
+ </A>
+<A NAME="23746">
+ </A>
+CREATE_STRUCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=683000">
+ </A>
+The <A NAME="marker=683088">
+ </A>
+CREATE_STRUCT function creates a structure given pairs of <A NAME="marker=683089">
+ </A>
+tag names and values. CREATE_STRUCT can also be used to <A NAME="marker=683090">
+ </A>
+concatenate structures.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=683001">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=683054">
+ </A>
+Result = CREATE_STRUCT(<EM CLASS="Emphasis">
+Tags</EM>
+, <EM CLASS="Emphasis">
+Values</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=683055">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=683056">
+ </A>
+Tags</H4>
+<P CLASS="Body">
+<A NAME="pgfId=683057">
+ </A>
+The structure tag names. Tag names may be specified either as scalar strings or string arrays. If scalar strings are specified, values alternate with tag names. If a string array is provided, values must still be specified individually. Tag names must be enclosed in quotes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=683061">
+ </A>
+Values</H4>
+<P CLASS="Body">
+<A NAME="pgfId=683062">
+ </A>
+The value of each field of the structure must be provided.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=279438">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=279439">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=279440">
+ </A>
+Use this keyword to create a named structure using the specified string as the structure name.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=683063">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=683064">
+ </A>
+To create the anonymous structure { A: 1, B: `xxx'} in the variable <EM CLASS="Emphasis">
+P</EM>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=683008">
+ </A>
+p = CREATE_STRUCT('A', 1, 'B', 'xxx')</P>
+<P CLASS="Body">
+<A NAME="pgfId=683009">
+ </A>
+To add the fields &quot;FIRST&quot; and &quot;LAST&quot; to the structure, enter the following:</P>
+<P CLASS="Code">
+<A NAME="pgfId=683010">
+ </A>
+p = CREATE_STRUCT('FIRST', 0, p, 'LAST', 3)</P>
+<P CLASS="Body">
+<A NAME="pgfId=683011">
+ </A>
+The resulting structure contains { FIRST: 0, A: 1, B: 'xxx', LAST: 3}.</P>
+<P CLASS="Body">
+<A NAME="pgfId=683049">
+ </A>
+Finally, the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=683013">
+ </A>
+p = CREATE_STRUCT(name='list', ['A','B','C'], 1, 2, 3)</P>
+<P CLASS="Body">
+<A NAME="pgfId=683014">
+ </A>
+creates the structure { LIST, A: 1, B: 2, C: 3}.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823434">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823435">
+ </A>
+<A HREF="idl124.htm#49338" CLASS="XRef">
+N_TAGS</A>
+, <A HREF="idl1d0.htm#98384" CLASS="XRef">
+TAG_NAMES</A>
+, <A HREF="..html#25128" CLASS="XRef">
+Creating and Defining Structures</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

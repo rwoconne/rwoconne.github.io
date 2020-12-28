@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Example: Creating a CDF File</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl244.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl242.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=999695">
+ </A>
+<A NAME="33878">
+ </A>
+Example: Creating a CDF File</H2>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999696">
+ </A>
+The following is a simple example demonstrates the basic procedure used in creating a CDF file. See <A HREF="idl23f.htm#16963" CLASS="XRef">
+Variables and Attributes</A>
+ for a discussion of the variances used in this example. See the documentation for individual CDF routines for more specific examples.</P>
+<P CLASS="Code">
+<A NAME="pgfId=999616">
+ </A>
+id = CDF_CREATE('Temperature.cdf', [2,3], /CLOBBER )</P>
+<P CLASS="Code">
+<A NAME="pgfId=999591">
+ </A>
+att_id = CDF_ATTCREATE(id, 'Title', /GLOBAL)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999592">
+ </A>
+CDF_ATTPUT, id, att_id, 0, 'My Fancy CDF'</P>
+<P CLASS="Code">
+<A NAME="pgfId=999593">
+ </A>
+att1_id = CDF_ATTCREATE(id, 'Planet', /GLOBAL)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999594">
+ </A>
+CDF_ATTPUT, id, 'Planet', 0, 'Mars'</P>
+<P CLASS="Code">
+<A NAME="pgfId=999595">
+ </A>
+time_id = CDF_VARCREATE(id, 'Time', ['NOVARY', 'NOVARY'], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999710">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/REC_VARY)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999596">
+ </A>
+att2_id = CDF_ATTCREATE(id, 'Time Standard', /VARIABLE_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999597">
+ </A>
+CDF_ATTPUT, id, att2_id, time_id, 'GMT'	<EM CLASS="Comment">;
+times are every half hour starting a 8 am GMT.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999599">
+ </A>
+FOR I=0,9 DO CDF_VARPUT, id, time_id, 8.+ 0.5 * I, rec_start=I</P>
+<P CLASS="Code">
+<A NAME="pgfId=999600">
+ </A>
+temp_id = CDF_VARCREATE(id, 'Temp', ['VARY', 'VARY'], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999713">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/REC_VARY, /ZVAR, DIMENSIONS=[2,3])</P>
+<P CLASS="Code">
+<A NAME="pgfId=999602">
+ </A>
+long_id = CDF_VARCREATE(id, 'Longitude', ['VARY', 'VARY'], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999716">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/REC_NOVARY)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999603">
+ </A>
+lat_id = CDF_VARCREATE(id, 'Latitude', ['VARY', 'VARY'], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999717">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/REC_NOVARY)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999604">
+ </A>
+CDF_VARPUT, id, temp_id, FINDGEN(2, 3, 10)<BR>
+<EM CLASS="Comment">;
+write 10 temperature records.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999605">
+ </A>
+CDF_VARPUT, id, long_id, [[10.0, 12.0], [8.0, 6.0], [3.0, 2.0]]<BR>
+<EM CLASS="Comment">;
+create longitudes.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999606">
+ </A>
+CDF_VARPUT, id, lat_id, [[40.0, 42.0], [38.0, 34.0],[30.0, 31.0]]<BR>
+<EM CLASS="Emphasis">
+create latitudes.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999607">
+ </A>
+CDF_CLOSE, id</P>
+</BODY>
+</HTML>

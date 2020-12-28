@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DERIVSIG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl75.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl73.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757924">
+ </A>
+<A NAME="22668">
+ </A>
+DERIVSIG</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757926">
+ </A>
+The <A NAME="marker=757925">
+ </A>
+DERIVSIG function computes the standard deviation of a derivative as found by the DERIV function, using the input variables of DERIV and the standard deviations of those input variables. </P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757927">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757928">
+ </A>
+Result = DERIVSIG(<EM CLASS="Emphasis">
+[X, Y, Sigx,] Sigy</EM>
+) </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757929">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757930">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757931">
+ </A>
+The variable to differentiate with respect to. If omitted, unit spacing for Y (i.e., X<EM CLASS="Emphasis">
+i</EM>
+ = <EM CLASS="Emphasis">
+i</EM>
+) is assumed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757932">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757933">
+ </A>
+The variable to be differentiated. Omit if <EM CLASS="Emphasis">
+X</EM>
+ is omitted.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757934">
+ </A>
+Sigx</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757935">
+ </A>
+The standard deviation of <EM CLASS="Emphasis">
+X</EM>
+ (either vector or constant). Use &quot;0.0&quot; if the abscissa is exact; omit if <EM CLASS="Emphasis">
+X</EM>
+ is omitted.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757936">
+ </A>
+Sigy</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757937">
+ </A>
+The standard deviation of <EM CLASS="Emphasis">
+Y</EM>
+. <EM CLASS="Emphasis">
+Sigy</EM>
+ must be a vector if the other arguments are omitted, but may be either a vector or a constant if <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Sigx</EM>
+ are supplied.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757939">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757940">
+ </A>
+<A HREF="idl73.htm#75359" CLASS="XRef">
+DERIV</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

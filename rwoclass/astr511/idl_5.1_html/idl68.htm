@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DBLARR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl69.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl67.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=920436">
+ </A>
+<A NAME="70733">
+ </A>
+DBLARR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676480">
+ </A>
+The <A NAME="marker=672793">
+ </A>
+DBLARR function <A NAME="marker=672794">
+ </A>
+returns a double-precision, floating-point vector or array.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676481">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676482">
+ </A>
+Result = DBLARR(<I CLASS="Italics">
+D</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., D</I>
+<SUB CLASS="Subscript">
+n</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676483">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676484">
+ </A>
+D<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676485">
+ </A>
+The dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676486">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676487">
+ </A>
+NOZERO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676488">
+ </A>
+Normally, DBLARR sets every element of the result to zero. If NOZERO is set, this zeroing is not performed and DBLARR executes faster.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676489">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676490">
+ </A>
+To create D, an 3-element by 3-element, double-precision, floating-point array with every element set to 0.0, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676491">
+ </A>
+D = DBLARR(3, 3)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=819015">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=819036">
+ </A>
+<A HREF="idl3a.htm#77245" CLASS="XRef">
+COMPLEXARR</A>
+, <A HREF="idl6b.htm#58439" CLASS="XRef">
+DCOMPLEXARR</A>
+, <A HREF="idla7.htm#77222" CLASS="XRef">
+FLTARR</A>
+, <A HREF="idld7.htm#87062" CLASS="XRef">
+INTARR</A>
+, <A HREF="idl102.htm#33860" CLASS="XRef">
+LONARR</A>
+, <A HREF="idl10b.htm#80497" CLASS="XRef">
+MAKE_ARRAY</A>
+, <A HREF="idl1b9.htm#27748" CLASS="XRef">
+STRARR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

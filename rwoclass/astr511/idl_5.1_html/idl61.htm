@@ -1,0 +1,685 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_PDMENU</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl62.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl60.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755661">
+ </A>
+<A NAME="62114">
+ </A>
+CW_PDMENU</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755665">
+ </A>
+The <A NAME="marker=755662">
+ </A>
+CW_PDMENU function simplifies creating <A NAME="marker=66716">
+ </A>
+widget <A NAME="marker=755664">
+ </A>
+pulldown menus. It has a simpler interface than the XPDMENU procedure, which it replaces. Events for the individual buttons are handled transparently, and a CW_PDMENU event returned. This event can return any one of the following:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755666">
+ </A>
+the Index of the button within the base,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755667">
+ </A>
+the widget ID of the button,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755668">
+ </A>
+the name of the button.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=755669">
+ </A>
+the fully qualified name of the button. This allows different sub-menus to contain buttons with the same name in an unambiguous way.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=755670">
+ </A>
+Only buttons with textual names are handled by this widget. Bitmaps are not understood.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796146">
+ </A>
+The returned value of this function is the widget ID of the newly-created pulldown menu widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755671">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_pdmenu.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755672">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755673">
+ </A>
+Result = CW_PDMENU(<EM CLASS="Emphasis">
+Parent, Desc</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755674">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755675">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755676">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755677">
+ </A>
+Desc</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755678">
+ </A>
+An array of strings or structures. If <EM CLASS="Emphasis">
+Desc</EM>
+ is an array of strings, each element contains the flag field, followed by a backslash character, followed by the name of the menu item, optionally followed by another backslash character and the name of an event-processing procedure for that element. A string element of the <EM CLASS="Emphasis">
+Desc</EM>
+ array would look like:</P>
+<P CLASS="Code">
+<A NAME="pgfId=855783">
+ </A>
+'n\<EM CLASS="Emphasis">
+item_name</EM>
+'</P>
+<P CLASS="Body">
+<A NAME="pgfId=855776">
+ </A>
+or</P>
+<P CLASS="Code">
+<A NAME="pgfId=855784">
+ </A>
+'n\<EM CLASS="Emphasis">
+item_name</EM>
+\<EM CLASS="Emphasis">
+event_proc</EM>
+'</P>
+<P CLASS="Body">
+<A NAME="pgfId=855774">
+ </A>
+where <CODE CLASS="Code">
+n</CODE>
+ is the flag field and <EM CLASS="Emphasis">
+item_name</EM>
+ is the name of the menu item. The flag field is a bitmask that controls how the button is interpreted; appropriate values for the flag field are shown in <A HREF="idl61.htm#18388" CLASS="XRef">
+Button Flag Bit Meanings.</A>
+. If the <EM CLASS="Emphasis">
+event_proc</EM>
+ field is present, it is the name of an event-handling procedure for the menu element and all of its children.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855775">
+ </A>
+If <EM CLASS="Emphasis">
+Desc</EM>
+ is an array of structures, each structure has the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755679">
+ </A>
+{CW_PDMENU_S, flags:0, name:''}</P>
+<P CLASS="Body">
+<A NAME="pgfId=855862">
+ </A>
+The name tag is a string field with the following components:</P>
+<P CLASS="Code">
+<A NAME="pgfId=870877">
+ </A>
+'<EM CLASS="Emphasis">
+item_name</EM>
+'</P>
+<P CLASS="Body">
+<A NAME="pgfId=870878">
+ </A>
+or</P>
+<P CLASS="Code">
+<A NAME="pgfId=870879">
+ </A>
+'<EM CLASS="Emphasis">
+item_name</EM>
+\<EM CLASS="Emphasis">
+event_proc</EM>
+'</P>
+<P CLASS="Body">
+<A NAME="pgfId=870875">
+ </A>
+where <EM CLASS="Emphasis">
+item_name</EM>
+ is the name of the menu item. If the <EM CLASS="Emphasis">
+event_proc</EM>
+ field is present, it is the name of an event-handling procedure for the menu element and all of its children</P>
+<P CLASS="Body">
+<A NAME="pgfId=870874">
+ </A>
+The flags field is a bitmask that controls how the button is interpreted; appropriate values for the flag field are shown in <A HREF="idl61.htm#18388" CLASS="XRef">
+Button Flag Bit Meanings.</A>
+. Note that if <EM CLASS="Emphasis">
+Desc</EM>
+ is an array of structures, you cannot specify individual event-handling procedures for each element.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=855857">
+ </A>
+<A NAME="18388">
+ </A>
+Button Flag Bit Meanings.</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=855836">
+ </A>
+Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=855838">
+ </A>
+Meaning</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855840">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855842">
+ </A>
+This button is neither the beginning nor the end of a pulldown level.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855844">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855846">
+ </A>
+This button is the root of a sub-pulldown menu. The sub-buttons start with the next button.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855848">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855850">
+ </A>
+This button is the last button at the current pulldown level. The next button belongs to the same level as the current parent button. If the name field is not specified (or is an empty string), no button is created, and the next button is created one level up in the hierarchy.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855852">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=855854">
+ </A>
+This button is the root of a sub-pulldown menu, but it is also the last entry of the current level.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755706">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755708">
+ </A>
+<A NAME="marker=755707">
+ </A>
+DELIMITER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755709">
+ </A>
+The character used to separate the parts of a fully qualified name in returned events. The default is to use the `.' character.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67046">
+ </A>
+<A NAME="marker=67045">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=906223">
+ </A>
+The name of the font to be used for the button titles. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855550">
+ </A>
+<A NAME="marker=855690">
+ </A>
+HELP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855551">
+ </A>
+If the MBAR keyword is set, and one of the buttons on the menubar has the label &quot;help&quot; (case insensitive) then that button is created with the /HELP keyword to give it any special appearance it is supposed to have on a menubar. For example, Motif expects help buttons to be on the right.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=860166">
+ </A>
+<A NAME="marker=860165">
+ </A>
+IDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860167">
+ </A>
+A named variable in which the button IDs will be stored as a longword vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855454">
+ </A>
+<A NAME="marker=855541">
+ </A>
+MBAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855455">
+ </A>
+Set this keyword to create a menubar pulldown. If MBAR is set, <EM CLASS="Emphasis">
+Parent</EM>
+ must be the menubar of a top-level base. (See the MBAR keyword to <A HREF="idl200.htm#51835" CLASS="XRef">
+WIDGET_BASE</A>
+ for details.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755717">
+ </A>
+<A NAME="marker=755716">
+ </A>
+RETURN_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755718">
+ </A>
+If this keyword is set, the VALUE field of returned events will contain the widget ID of the button.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755720">
+ </A>
+<A NAME="marker=755719">
+ </A>
+RETURN_INDEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755721">
+ </A>
+If this keyword is set, the VALUE field of returned events will contain the zero-based index of the button within the base. THIS IS THE DEFAULT.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755723">
+ </A>
+<A NAME="marker=755722">
+ </A>
+RETURN_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755724">
+ </A>
+If this keyword is set, the VALUE field of returned events will be the name of the selected button.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755726">
+ </A>
+<A NAME="marker=755725">
+ </A>
+RETURN_FULL_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755727">
+ </A>
+Set this keyword and the VALUE field of returned events will be the fully qualified name of the selected button. This means that the names of all the buttons from the topmost button of the pulldown menu to the selected one are concatenated with the delimiter specified by the DELIMITER keyword. For example, if the top button was named COLORS, the second level button was named BLUE, and the selected button was named LIGHT, the returned value would be</P>
+<P CLASS="Code">
+<A NAME="pgfId=755728">
+ </A>
+COLORS.BLUE.LIGHT</P>
+<P CLASS="Body">
+<A NAME="pgfId=755729">
+ </A>
+This allows different submenus to have buttons with the same name (e.g., COLORS.RED.LIGHT).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755731">
+ </A>
+<A NAME="marker=755730">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755732">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755734">
+ </A>
+<A NAME="marker=755733">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755735">
+ </A>
+The X offset of the widget relative to its parent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755737">
+ </A>
+<A NAME="marker=755736">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755738">
+ </A>
+The Y offset of the widget relative to its parent.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837857">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837858">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837872">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755739">
+ </A>
+Widget Events Returned by the CW_PDMENU Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755740">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755741">
+ </A>
+event = { ID:0L, TOP:0L, HANDLER:0L, VALUE:0 }</P>
+<P CLASS="Body">
+<A NAME="pgfId=755742">
+ </A>
+VALUE is either the INDEX, ID, NAME, or FULL_NAME of the button, depending on how the widget was created.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755743">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755744">
+ </A>
+The following is the description of a menu bar with two buttons, &quot;Colors&quot; and &quot;Quit&quot;. Colors is a pulldown containing the colors &quot;Red&quot;, &quot;Green&quot;, Blue&quot;, &quot;Cyan&quot;, and &quot;Magenta&quot;. Blue is a sub-pulldown containing &quot;Light&quot;, &quot;Medium&quot;, &quot;Dark&quot;, &quot;Navy&quot;, and &quot;Royal.&quot;</P>
+<P CLASS="Body">
+<A NAME="pgfId=755745">
+ </A>
+The following small program can be used with the above description to create the specified menu:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755746">
+ </A>
+PRO PD_EXAMPLE</P>
+<P CLASS="Code">
+<A NAME="pgfId=855877">
+ </A>
+desc&nbsp;=&nbsp;[&nbsp;'1\Colors' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855878">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Red' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855879">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Green' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855880">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'1\Blue' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855881">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Light' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855882">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Medium' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855883">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Dark' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855884">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Navy' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855885">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'2\Royal' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855886">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0\Cyan' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855887">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'2\Magenta' , $</P>
+<P CLASS="Code">
+<A NAME="pgfId=855888">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'2\Quit' ]</P>
+<P CLASS="Body">
+<A NAME="pgfId=755762">
+ </A>
+Create the widget:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755763">
+ </A>
+base = WIDGET_BASE()</P>
+<P CLASS="Code">
+<A NAME="pgfId=755764">
+ </A>
+menu = CW_PDMENU(base, desc, /RETURN_FULL_NAME)</P>
+<P CLASS="Code">
+<A NAME="pgfId=755765">
+ </A>
+WIDGET_CONTROL, /REALIZE, base</P>
+<P CLASS="Body">
+<A NAME="pgfId=755766">
+ </A>
+Provide a simple event handler:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755767">
+ </A>
+REPEAT BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=755768">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;ev = WIDGET_EVENT(base)</P>
+<P CLASS="Code">
+<A NAME="pgfId=755769">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, ev.value</P>
+<P CLASS="Code">
+<A NAME="pgfId=755770">
+ </A>
+END UNTIL ev.value EQ 'Quit'</P>
+<P CLASS="Code">
+<A NAME="pgfId=755771">
+ </A>
+WIDGET_CONTROL, /DESTROY, base</P>
+<P CLASS="Code">
+<A NAME="pgfId=755772">
+ </A>
+END</P>
+<P CLASS="Code">
+<A NAME="pgfId=755773">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=856119">
+ </A>
+The <EM CLASS="Emphasis">
+Desc</EM>
+ array could also have been defined using a structure for each element. The following array of structures creates the same menu as the array of strings shown above. Note, however, that if the <EM CLASS="Emphasis">
+Desc</EM>
+ array is composed of structures, you cannot specify individual event-handling routines. </P>
+<P CLASS="Body">
+<A NAME="pgfId=856136">
+ </A>
+First, make sure CW_PDMENU_S structure is defined:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856120">
+ </A>
+junk = {CW_PDMENU_S, flags:0, name:'' }</P>
+<P CLASS="Body">
+<A NAME="pgfId=856121">
+ </A>
+Define the menu:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856122">
+ </A>
+desc = [ { CW_PDMENU_S, 1, 'Colors' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856123">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Red' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856124">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Green' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856125">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 1, 'Blue' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856126">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Light' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856127">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Medium' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856128">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Dark' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856129">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Navy' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856130">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 2, 'Royal' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856131">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 0, 'Cyan' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856132">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 2, 'Magenta' }, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=856133">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ CW_PDMENU_S, 2, 'Quit' } ]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755774">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=819002">
+ </A>
+<A HREF="idl58.htm#73565" CLASS="XRef">
+CW_BGROUP</A>
+, <A HREF="idl204.htm#29873" CLASS="XRef">
+WIDGET_DROPLIST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

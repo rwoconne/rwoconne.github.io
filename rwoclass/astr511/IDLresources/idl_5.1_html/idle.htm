@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> AXIS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlf.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675776">
+ </A>
+<A NAME="27219">
+ </A>
+AXIS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=675777">
+ </A>
+The <A NAME="marker=672484">
+ </A>
+AXIS procedure draws an <A NAME="marker=672485">
+ </A>
+axis of the specified type and scale at a given position. The new scale is saved for use by subsequent overplots if the SAVE keyword parameter is set. The keyword parameters XAXIS, YAXIS, and ZAXIS specify the type of axis to be drawn, and its position.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675778">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675779">
+ </A>
+AXIS <I CLASS="Italics">
+[[[, X], Y], Z]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675780">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675781">
+ </A>
+X, Y, and Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675782">
+ </A>
+Scalars giving the starting coordinates of the new axis. If no coordinates are specified, the axis is drawn in its default position as given by the [XYZ]AXIS keyword. When drawing an X axis, the <EM CLASS="Emphasis">
+X</EM>
+ coordinate is ignored, similarly the <EM CLASS="Emphasis">
+Y</EM>
+ and <EM CLASS="Emphasis">
+Z</EM>
+ parameters are ignored when drawing their respective axes (i.e., new axes will always point in the correct direction).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675783">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861649">
+ </A>
+<A NAME="marker=672486">
+ </A>
+SAVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675785">
+ </A>
+Set this keyword to indicate that the scaling to and from data coordinates established by the call to AXIS is to be saved in the appropriate axis system variable, !X, !Y, or !Z. If this keyword is not present, the scaling is not changed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675786">
+ </A>
+<A NAME="marker=672487">
+ </A>
+XAXIS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675787">
+ </A>
+Set this keyword to draw an X axis. If the <EM CLASS="Emphasis">
+X</EM>
+ parameter <EM CLASS="Emphasis">
+is not</EM>
+ present, setting XAXIS equal to 0 draws an axis under the plot window with the tick marks pointing up, and setting XAXIS equal to one draws an axis above the plot window with the tick marks pointing down. If the <EM CLASS="Emphasis">
+X</EM>
+ parameter <EM CLASS="Emphasis">
+is</EM>
+ present, the X axis is positioned accordingly, and setting XAXIS equal to 0 or 1 causes the tick marks to point up or down, respectively.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=168148">
+ </A>
+<A NAME="marker=168147">
+ </A>
+YAXIS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=168149">
+ </A>
+Set this keyword to draw a Y axis. If the <EM CLASS="Emphasis">
+Y </EM>
+parameter <EM CLASS="Emphasis">
+is not</EM>
+ present, setting YAXIS equal to 0 draws an axis on the left side of the plot window with the tick marks pointing right, and setting YAXIS equal to one draws an axis on the right side of the plot window with the tick marks pointing left. If the <EM CLASS="Emphasis">
+Y </EM>
+parameter <EM CLASS="Emphasis">
+is</EM>
+ present, the Y axis is positioned accordingly, and setting YAXIS equal to 0 or 1 causes the tick marks to point right or left, respectively.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675790">
+ </A>
+<A NAME="marker=672489">
+ </A>
+ZAXIS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675791">
+ </A>
+Set this keyword to draw a Z axis. If the <EM CLASS="Emphasis">
+Z </EM>
+parameter <EM CLASS="Emphasis">
+is not</EM>
+ present, setting ZAXIS has the following meanings:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=675792">
+ </A>
+0 = lower (front) right, with tickmarks pointing left</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=168136">
+ </A>
+1 = lower (front) left, with tickmarks pointing right</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=168141">
+ </A>
+2 = upper (back) left, with tickmarks pointing right</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=168144">
+ </A>
+3 = upper (back) right, with tickmarks pointing left</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=168164">
+ </A>
+If the <EM CLASS="Emphasis">
+Z </EM>
+parameter <EM CLASS="Emphasis">
+is</EM>
+ present, the Z axis is positioned accordingly, and setting ZAXIS equal to 0 or 1 causes the tick marks to point left or right, respectively.</P>
+<P CLASS="Body">
+<A NAME="pgfId=168194">
+ </A>
+Note that AXIS uses the 3D plotting transformation stored in the system variable field !P.T. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158300">
+ </A>
+<A NAME="marker=158298">
+ </A>
+XLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158303">
+ </A>
+Set this keyword to specify a <A NAME="marker=883867">
+ </A>
+logarithmic X <A NAME="marker=158302">
+ </A>
+axis</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158293">
+ </A>
+<A NAME="marker=158292">
+ </A>
+YNOZERO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158319">
+ </A>
+Set this keyword to inhibit setting the minimum Y axis value to zero when the Y data are all positive and non-zero, and no explicit minimum Y value is specified (using YRANGE, or !Y.RANGE). By default, the Y axis spans the range of 0 to the maximum value of Y, in the case of positive Y data. Set bit 4 in !Y.STYLE to make this option the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158321">
+ </A>
+<A NAME="marker=158320">
+ </A>
+YLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158322">
+ </A>
+Set this keyword to specify a logarithmic Y axis.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675799">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=839247">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#23414" CLASS="XRef">
+CHARSIZE</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675801">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675802">
+ </A>
+The following example shows how the AXIS procedure can be used with normal or polar plots to draw axes through the origin, dividing the plot window into four quadrants:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675803">
+ </A>
+PLOT, /POLAR, XSTYLE=4, YSTYLE=4, TITLE='Polar Plot', r, theta<BR>
+<EM CLASS="Comment">;
+Make the plot, polar in this example, and suppress the X and Y axes using the XSTYLE and YSTYLE keywords.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675804">
+ </A>
+AXIS,0,0,XAX=0,/DATA 	<EM CLASS="Comment">;
+Draw an X axis, through data Y coordinate of 0. Because the XAXIS keyword parameter has a value of 0, the tick marks point down.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675805">
+ </A>
+AXIS,0,0,0,YAX=0,/DATA	<EM CLASS="Comment">;
+Similarly, draw the Y axis through data X = 0. The tick marks point left.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769715">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=907183">
+ </A>
+<A HREF="idle4.htm#71420" CLASS="XRef">
+LABEL_DATE</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

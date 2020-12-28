@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VEL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787533">
+ </A>
+<A NAME="16476">
+ </A>
+VEL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787538">
+ </A>
+The <A NAME="marker=787535">
+ </A>
+VEL procedure draws a <A NAME="marker=787536">
+ </A>
+velocity (<A NAME="marker=787537">
+ </A>
+flow) field with arrows following the field proportional in length to the field strength. Arrows are composed of a number of small segments that follow the <A NAME="marker=787539">
+ </A>
+streamlines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787540">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+vel.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787541">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787542">
+ </A>
+VEL, <EM CLASS="Emphasis">
+U, V</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787543">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787544">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787545">
+ </A>
+The X component at each point of the vector field. <EM CLASS="Emphasis">
+U</EM>
+ must be a 2D array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787546">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787547">
+ </A>
+The Y component at each point of the vector field. <EM CLASS="Emphasis">
+V </EM>
+must have the same dimensions as <EM CLASS="Emphasis">
+U</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787548">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787550">
+ </A>
+<A NAME="marker=787549">
+ </A>
+NVECS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787551">
+ </A>
+The number of vectors (arrows) to draw. If this keyword is omitted, 200 vectors are drawn.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787553">
+ </A>
+<A NAME="marker=787552">
+ </A>
+XMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787554">
+ </A>
+X axis size as a fraction of Y axis size. The default is 1.0. This argument is ignored when !P.MULTI is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787556">
+ </A>
+<A NAME="marker=787555">
+ </A>
+LENGTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787557">
+ </A>
+The length of each arrow line segment expressed as a fraction of the longest vector divided by the number of steps. The default is 0.1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787559">
+ </A>
+<A NAME="marker=787558">
+ </A>
+NSTEPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787560">
+ </A>
+The number of shoots or line segments for each arrow. The default is 10.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787562">
+ </A>
+<A NAME="marker=787561">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787563">
+ </A>
+A string containing the title for the plot.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787564">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=787565">
+ </A>
+X = DIST(20)	<EM CLASS="Comment">;
+Create a vector of X values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787566">
+ </A>
+Y = SIN(X)*100	<EM CLASS="Comment">;
+Create a vector of Y values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787567">
+ </A>
+VEL, X, Y	<EM CLASS="Comment">;
+Plot the vector field.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787568">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787569">
+ </A>
+<A HREF="idla6.htm#62250" CLASS="XRef">
+FLOW3</A>
+, <A HREF="idl137.htm#86526" CLASS="XRef">
+PLOT_FIELD</A>
+, <A HREF="idl1f5.htm#51661" CLASS="XRef">
+VELOVECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

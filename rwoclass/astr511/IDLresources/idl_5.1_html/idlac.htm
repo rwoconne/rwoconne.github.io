@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FULSTR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlad.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlab.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50677">
+ </A>
+<A NAME="82247">
+ </A>
+FULSTR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50682">
+ </A>
+The <A NAME="marker=50679">
+ </A>
+FULSTR restores a row-indexed <A NAME="marker=50680">
+ </A>
+sparse <A NAME="marker=50681">
+ </A>
+array to full storage mode. If the sparse array was created with the SPRSIN function using the THRESH keyword, any values in the original array that were below the specified threshold are replaced with zeros.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50683">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50684">
+ </A>
+Result = FULSTR(<EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50685">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50686">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50687">
+ </A>
+A row-indexed sparse array created by the SPRSIN function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50688">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50689">
+ </A>
+Suppose we have converted an array to sparse storage format with the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50690">
+ </A>
+A = [[ 5.0, -0.2, 0.1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50691">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, -2.0, 0.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50692">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -1.0, 0.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=50693">
+ </A>
+sparse = SPRSIN(A, THRESH=0.5)<BR>
+<EM CLASS="Comment">;
+Convert to sparse storage mode. All elements of the array A that have absolute values less than THRESH are set to zero.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50694">
+ </A>
+The variable SPARSE now contains a representation of the array A in structure form. To restore the array from the sparse-format structure, type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50695">
+ </A>
+result = FULSTR(sparse)	<EM CLASS="Comment">;
+Restore the array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50696">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50697">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50698">
+ </A>
+5.00000      0.00000      0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50699">
+ </A>
+3.00000     -2.00000      0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50700">
+ </A>
+4.00000     -1.00000      0.00000</P>
+<P CLASS="Body">
+<A NAME="pgfId=50701">
+ </A>
+Note that the elements with an absolute value less than the specified threshold have been set to zero.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50702">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50721">
+ </A>
+<A HREF="idle8.htm#41659" CLASS="XRef">
+LINBCG</A>
+, <A HREF="idl1b0.htm#69406" CLASS="XRef">
+SPRSAB</A>
+, <A HREF="idl1b1.htm#31054" CLASS="XRef">
+SPRSAX</A>
+, <A HREF="idl1b2.htm#41214" CLASS="XRef">
+SPRSIN</A>
+, <A HREF="idl169.htm#57482" CLASS="XRef">
+READ_SPR</A>
+, <A HREF="idl213.htm#23995" CLASS="XRef">
+WRITE_SPR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

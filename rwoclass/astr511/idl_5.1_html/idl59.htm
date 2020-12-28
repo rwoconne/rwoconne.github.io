@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_CLR_INDEX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl58.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=854083">
+ </A>
+<A NAME="84105">
+ </A>
+CW_CLR_INDEX</H2>
+<P CLASS="Body">
+<A NAME="pgfId=854089">
+ </A>
+The <A NAME="marker=854086">
+ </A>
+CW_CLR_INDEX function creates a compound <A NAME="marker=854087">
+ </A>
+widget for the selection of a <A NAME="marker=854088">
+ </A>
+color index. A horizontal color bar is displayed. Clicking on the bar sets the color index.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854090">
+ </A>
+The returned value of this function is the widget ID of the newly-created color index widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854091">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_clr_index.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854092">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854093">
+ </A>
+Result = CW_CLR_INDEX(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854094">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854095">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854096">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854097">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854099">
+ </A>
+<A NAME="marker=854098">
+ </A>
+COLOR_VALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854100">
+ </A>
+A vector of color indices containing the colors to be displayed in the color bar. If omitted, NCOLORS and START_COLOR specify the range of color indices.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854102">
+ </A>
+<A NAME="marker=854101">
+ </A>
+EVENT_FUNCT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854103">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget. This function is called with the return value structure whenever a button is pressed, and follows the conventions for user-written event functions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854105">
+ </A>
+<A NAME="marker=854104">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854106">
+ </A>
+If set, a frame will be drawn around the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854108">
+ </A>
+<A NAME="marker=854107">
+ </A>
+LABEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854109">
+ </A>
+A text label that appears to the left of the color bar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854111">
+ </A>
+<A NAME="marker=854110">
+ </A>
+NCOLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854112">
+ </A>
+The number of colors to place in the color bar. The default is !D.N_COLORS.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854114">
+ </A>
+<A NAME="marker=854113">
+ </A>
+START_COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854115">
+ </A>
+The starting color index, placed at the left of the bar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854117">
+ </A>
+<A NAME="marker=854116">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854118">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854120">
+ </A>
+<A NAME="marker=854119">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854121">
+ </A>
+The width of the color bar in pixels. The default is 192.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854123">
+ </A>
+<A NAME="marker=854122">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854124">
+ </A>
+The height of the color bar in pixels. The default is 12.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854125">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854126">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854133">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#46689" CLASS="XRef">
+GET_UVALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the value of the color selection widget. The value of a CW_CLR_INDEX widget is the index of the color selected.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854143">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854150">
+ </A>
+Widget Events Returned by the CW_CLR_INDEX Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854151">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=854152">
+ </A>
+Event = {CW_COLOR_INDEX, ID: base, TOP: ev.top, HANDLER: 0L, VALUE:c}</P>
+<P CLASS="Body">
+<A NAME="pgfId=854153">
+ </A>
+The VALUE field is the color index selected.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854154">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854164">
+ </A>
+<A HREF="idl5a.htm#44366" CLASS="XRef">
+CW_COLORSEL</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+, <A HREF="idl224.htm#10360" CLASS="XRef">
+XPALETTE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

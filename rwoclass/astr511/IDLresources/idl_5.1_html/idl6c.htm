@@ -1,0 +1,1345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DEFINE_KEY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl6d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl6b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676492">
+ </A>
+<A NAME="78848">
+ </A>
+DEFINE_KEY</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676493">
+ </A>
+The <A NAME="marker=672795">
+ </A>
+DEFINE_KEY procedure <A NAME="marker=672796">
+ </A>
+programs the keyboard function <I CLASS="Italics">
+Key</I>
+ with the string <I CLASS="Italics">
+Value</I>
+, or with one of the actions specified by the available keywords.</P>
+<P CLASS="Body">
+<A NAME="pgfId=871801">
+ </A>
+DEFINE_KEY is primarily intended for use with IDL's command line interface (available under UNIX and VMS). IDL's graphical interface (IDLDE), which is available under all operating systems supported by IDL, uses different system-specific mechanisms.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676494">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676495">
+ </A>
+DEFINE_KEY, <I CLASS="Italics">
+Key [, Value]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676496">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676497">
+ </A>
+Key</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676498">
+ </A>
+A scalar string containing the name of a function key to be programmed. IDL maintains an internal list of function key names and the escape sequences they send.</P>
+<UL>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=717360">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+UNIX: </STRONG>
+Under UNIX, DEFINE_KEY allows you to set the values of two distinctly different types of keys:</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=871814">
+ </A>
+Control characters: Any of the 26 control characters (Ctrl+A through Ctrl+Z) can be associated with specific actions by specifying the CONTROL keyword. Control characters are the unprintable ASCII characters at the beginning of the ASCII character set. They are usually entered by holding down the Control key while the corresponding letter key is pressed.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=871830">
+ </A>
+Function keys: Most terminals (and terminal emulators) send escape sequences when a function key is pressed. An escape sequence is a sequence of characters starting the ASCII Escape character. Escape sequences follow strict rules that allow applications such as IDL to determine when the sequence is complete. For instance, the left arrow key on most machines sends the sequence &lt;esc&gt;[D. The available function keys and the escape sequences they send vary from keyboard to keyboard; IDL cannot be built to recognize all of the different keyboards in existence. The ESCAPE keyword allows you to program IDL with the escape sequences for your keyboard. When you press the function key, IDL will recognize the sequence and take the appropriate action.</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=871809">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+UNIX:</STRONG>
+ Under Unix, if <I CLASS="Italics">
+Key</I>
+ is not already on IDL's internal list, you must use the ESCAPE keyword to specify the escape sequence, otherwise, <I CLASS="Italics">
+Key</I>
+ alone will suffice. The available function keys and the escape sequences they send vary from keyboard to keyboard. The <A NAME="marker=717361">
+ </A>
+SETUP_KEYS procedure should be used once at the beginning of the session to enter the keys for the current keyboard. <A HREF="idl6c.htm#62475" CLASS="XRef">
+Standard Key Definitions for Unix</A>
+ describes the standard key definitions.</LI>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=834445">
+ </A>
+<A NAME="62475">
+ </A>
+Standard Key Definitions for Unix</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805366">
+ </A>
+Editing Key</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805368">
+ </A>
+Function</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805370">
+ </A>
+Ctrl+A</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805372">
+ </A>
+Move cursor to start of line</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805374">
+ </A>
+Ctrl+B</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805376">
+ </A>
+Move cursor left one word</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805378">
+ </A>
+Ctrl+D</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805380">
+ </A>
+EOF if current line is empty, EOL otherwise</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805382">
+ </A>
+Ctrl+E</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805384">
+ </A>
+Move to end of line</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805386">
+ </A>
+Ctrl+F</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805388">
+ </A>
+Move cursor right one word</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805390">
+ </A>
+Ctrl+K</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805392">
+ </A>
+Erase from the cursor to the end of the line</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805394">
+ </A>
+Ctrl+N</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805396">
+ </A>
+Move back one line in the recall buffer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805398">
+ </A>
+Ctrl+R</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805400">
+ </A>
+Retype current line</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805402">
+ </A>
+Ctrl+U</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805404">
+ </A>
+Delete from current position to start of line</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805406">
+ </A>
+Ctrl+W</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805408">
+ </A>
+Delete previous word</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805410">
+ </A>
+Ctrl+X</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805412">
+ </A>
+Delete current character</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805414">
+ </A>
+Backspace, Delete</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805416">
+ </A>
+Delete previous character</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805418">
+ </A>
+ESC-I</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805420">
+ </A>
+Overstrike/insert toggle</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805422">
+ </A>
+ESC-Delete</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805424">
+ </A>
+Delete previous word</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805426">
+ </A>
+Up Arrow</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805428">
+ </A>
+Move back one line in the recall buffer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805430">
+ </A>
+Down Arrow</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805432">
+ </A>
+Move forward one line in the recall buffer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805434">
+ </A>
+Left Arrow</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805436">
+ </A>
+Move left one character</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805438">
+ </A>
+Right Arrow</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805440">
+ </A>
+Move right one character</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805442">
+ </A>
+R13</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805444">
+ </A>
+Move cursor left one word (Sun keyboards)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805446">
+ </A>
+R15</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805448">
+ </A>
+Move cursor right one word (Sun keyboards)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805450">
+ </A>
+^<I CLASS="Italics">
+text</I>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805452">
+ </A>
+Recall the first line containing <I CLASS="Italics">
+text</I>
+. If <I CLASS="Italics">
+text</I>
+ is blank, recall the previous line</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805454">
+ </A>
+<I CLASS="Italics">
+Other Characters</I>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805456">
+ </A>
+Insert character at the current cursor position</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=720861">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+VMS:</STRONG>
+ Under VMS, the key names are those defined by the Screen Management utility (SMG). <A HREF="idl6c.htm#11709" CLASS="XRef">
+VMS Line Editing Keys</A>
+ describes some of these keys. For a complete description, refer to the <I CLASS="Italics">
+VMS RTL Screen Management (SMG$) Manual</I>
+. </LI>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=805534">
+ </A>
+<A NAME="11709">
+ </A>
+VMS Line Editing Keys</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805473">
+ </A>
+Key Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805475">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805477">
+ </A>
+DELETE</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805479">
+ </A>
+Delete previous character.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805481">
+ </A>
+PF1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805483">
+ </A>
+Recall most recent command that matches supplied string.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805485">
+ </A>
+PF2--PF4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805487">
+ </A>
+Top row of keypad.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805489">
+ </A>
+KP0--KP9</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805491">
+ </A>
+Keypad keys 0 through 9</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805493">
+ </A>
+ENTER</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805495">
+ </A>
+Keypad ENTER key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805497">
+ </A>
+MINUS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805499">
+ </A>
+Keypad &quot;-&quot; key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805501">
+ </A>
+COMMA</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805503">
+ </A>
+Keypad &quot;,&quot; key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805505">
+ </A>
+PERIOD</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805507">
+ </A>
+Keypad &quot;.&quot; key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805509">
+ </A>
+FIND</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805511">
+ </A>
+Editing keypad FIND key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805513">
+ </A>
+INSERT_HERE</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805515">
+ </A>
+Editing keypad INSERT HERE key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805517">
+ </A>
+REMOVE</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805519">
+ </A>
+Editing keypad REMOVE key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805521">
+ </A>
+SELECT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805523">
+ </A>
+Editing keypad SELECT key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805525">
+ </A>
+PREV_SCREEN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805527">
+ </A>
+Editing keypad PREV_SCREEN key</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805529">
+ </A>
+NEXT_SCREEN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805531">
+ </A>
+Editing keypad NEXT_SCREEN key</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=720091">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Windows:</STRONG>
+ Under Windows, function keys F2, F4, F11, and F12 can be customized.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=870458">
+ </A>
+In IDL for Windows, three special variables can be used to expand the current mouse selection, the current line, or the current filename into the output of defined keys.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=870495">
+ </A>
+Variable expansions for defined keys</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870475">
+ </A>
+Variable</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=870477">
+ </A>
+Expansion</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870487">
+ </A>
+%f</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870489">
+ </A>
+filename of the currently-selected IDL Editor window</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870507">
+ </A>
+%l</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870509">
+ </A>
+number of the current line in an IDL Editor window</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870503">
+ </A>
+%s</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=870505">
+ </A>
+Currently-selected text from an IDL Output Log or Editor window</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=870462">
+ </A>
+For example, to define F2 as a key that executes an IDL PRINT command with the current mouse selection as its argument, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=870463">
+ </A>
+DEFINE_KEY, 'F2', 'PRINT, &quot;%S&quot;'</P>
+<P CLASS="Body">
+<A NAME="pgfId=870464">
+ </A>
+Dragging the mouse over any text in an IDL Editor or Output Log window and pressing F1 causes the selected text to be printed. The <CODE CLASS="Code">
+%l</CODE>
+ and <CODE CLASS="Code">
+%f</CODE>
+ variables can be used in a similar fashion.</P>
+<UL>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=717497">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Macintosh:</STRONG>
+ DEFINE_KEY does not currently work with <EM CLASS="Emphasis">
+IDL for Macintosh</EM>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676500">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676501">
+ </A>
+The scalar string that will be printed (as if it had been typed manually at the keyboard) when <I CLASS="Italics">
+Key</I>
+ is pressed. If <EM CLASS="Emphasis">
+Value</EM>
+ is not present, and no function is specified for the key with one of the keywords, the key is cleared so that nothing happens when it is pressed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676502">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676503">
+ </A>
+<A NAME="marker=672809">
+ </A>
+MATCH_PREVIOUS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676504">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to prompt the user for a string, and then search the saved command buffer for the most recently issued command that contains that string. If a match is found, the matching command becomes the current command, otherwise the last command entered is used. Under Unix, the default match key is the up caret &quot;^&quot; key when pressed in column 1. Under VMS, the default match key is PF1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676505">
+ </A>
+<A NAME="marker=672810">
+ </A>
+NOECHO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676506">
+ </A>
+Set this keyword to enter the Value assigned to <I CLASS="Italics">
+Key</I>
+ when pressed, without echoing the string to the screen. This feature is useful for defining keys that perform such actions as erasing the screen. If NOECHO is set, TERMINATE is also assumed to be set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676507">
+ </A>
+<A NAME="marker=672811">
+ </A>
+TERMINATE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=676508">
+ </A>
+If this keyword is set, and <I CLASS="Italics">
+Value</I>
+ is present, pressing <I CLASS="Italics">
+Key</I>
+ terminates the current input operation after its assigned value is entered. Essentially, an implicit carriage return is added to the end of <I CLASS="Italics">
+Value</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676509">
+ </A>
+Unix Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676510">
+ </A>
+<A NAME="marker=672812">
+ </A>
+BACK_CHARACTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676511">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move the current cursor position left one character.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676512">
+ </A>
+<A NAME="marker=672813">
+ </A>
+BACK_WORD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676513">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move the current cursor position left one word.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676514">
+ </A>
+<A NAME="marker=871866">
+ </A>
+CONTROL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871861">
+ </A>
+Set this keyword to indicate that <EM CLASS="Emphasis">
+Key</EM>
+ is the name of a control key. The default is for <I CLASS="Italic">
+Key</I>
+ to define a function key escape sequence. To view the names used by IDL for the control keys, type the following at the Command Input Line:</P>
+<P CLASS="Code">
+<A NAME="pgfId=871864">
+ </A>
+HELP, /ALL_KEYS</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=871865">
+ </A>
+The CONTROL and ESCAPE keywords are mutually exclusive and cannot be specified together.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871860">
+ </A>
+<A NAME="marker=672814">
+ </A>
+DELETE_CHARACTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676515">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to delete the character to the left of the cursor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676516">
+ </A>
+<A NAME="marker=672815">
+ </A>
+DELETE_CURRENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676517">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to delete the character directly underneath the cursor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676518">
+ </A>
+<A NAME="marker=672816">
+ </A>
+DELETE_EOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676519">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to delete from the cursor position to the end of the line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676520">
+ </A>
+<A NAME="marker=672817">
+ </A>
+DELETE_LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676521">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to delete all characters to the left of the cursor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676522">
+ </A>
+<A NAME="marker=672818">
+ </A>
+DELETE_WORD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676523">
+ </A>
+Set this keyword to programs <I CLASS="Italics">
+Key</I>
+ to delete the word to the left of the cursor.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676524">
+ </A>
+<A NAME="marker=672819">
+ </A>
+END_OF_LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676525">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move the cursor to the end of the line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676526">
+ </A>
+<A NAME="marker=871876">
+ </A>
+END_OF_FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871877">
+ </A>
+Set this keyword to program <I CLASS="Italic">
+Key</I>
+ to exit IDL if the current line is empty, and to end the current input line if the current line is not empty.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871875">
+ </A>
+<A NAME="marker=672820">
+ </A>
+ENTER_LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676527">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to enter the current line (i.e., the action normally performed by the &quot;Return&quot; key).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676528">
+ </A>
+<A NAME="marker=672821">
+ </A>
+ESCAPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676529">
+ </A>
+A scalar string that specifies the escape sequence that corresponds to <I CLASS="Italics">
+Key</I>
+. See <A HREF="idl6c.htm#39257" CLASS="XRef">
+Defining New Function Keys</A>
+ for further details.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=871880">
+ </A>
+The CONTROL and ESCAPE keywords are mutually exclusive and cannot be specified together.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676530">
+ </A>
+<A NAME="marker=672822">
+ </A>
+FORWARD_CHARACTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676531">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move the current cursor position right one character.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676532">
+ </A>
+<A NAME="marker=672823">
+ </A>
+FORWARD_WORD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676533">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move the current cursor position right one word.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676534">
+ </A>
+<A NAME="marker=672824">
+ </A>
+INSERT_OVERSTRIKE_TOGGLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676535">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to toggle between &quot;insert&quot; and &quot;overstrike&quot; mode. When characters are typed into the middle of a line, insert mode causes the trailing characters to be moved to the right to make room for the new ones. Overstrike mode causes the new characters to overwrite the existing ones.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676536">
+ </A>
+<A NAME="marker=672825">
+ </A>
+NEXT_LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676537">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move forward one command in the saved command buffer and make that command the current one.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676538">
+ </A>
+<A NAME="marker=672826">
+ </A>
+PREVIOUS_LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676539">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move back one command in the saved command buffer and make that command the current one.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676540">
+ </A>
+<A NAME="marker=672827">
+ </A>
+RECALL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676541">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to prompt the user for a command number. The saved command corresponding to the entered number becomes the current command. In order to view the currently saved commands and the number currently associated with each, enter the IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676542">
+ </A>
+HELP, /RECALL COMMANDS</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=676543">
+ </A>
+The RECALL operation remembers the last command number entered, and if the user simply presses return, it recalls the command currently associated with that saved number. Since the number associated with a given command increases by one each time a new command is saved, this feature can be used to quickly replay a sequence of commands. </LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676544">
+ </A>
+IDL&gt; PRINT, 1</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676545">
+ </A>
+1</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676546">
+ </A>
+IDL&gt; PRINT, 2</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676547">
+ </A>
+2</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676548">
+ </A>
+IDL&gt; HELP, /RECALL_COMMANDS</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676549">
+ </A>
+Recall buffer length: 20</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676550">
+ </A>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 2</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676551">
+ </A>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 1</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676552">
+ </A>
+IDL&gt;	<EM CLASS="Comment">;
+User presses key tied to RECALL.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676553">
+ </A>
+Recall Line #: 2	<EM CLASS="Comment">;
+Line 2 is requested.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676554">
+ </A>
+IDL&gt; PRINT, 1	<EM CLASS="Comment">;
+Saved command 2 is recalled. </EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676555">
+ </A>
+1</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676556">
+ </A>
+Recall Line #: 	<EM CLASS="Comment">;
+User presses return.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676557">
+ </A>
+IDL&gt; PRINT, 2	<EM CLASS="Comment">;
+Saved command 2 is recalled again.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676558">
+ </A>
+2</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676559">
+ </A>
+<A NAME="marker=672849">
+ </A>
+REDRAW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676560">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to retype the current line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676561">
+ </A>
+<A NAME="marker=672850">
+ </A>
+START_OF_LINE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=676562">
+ </A>
+Set this keyword to program <I CLASS="Italics">
+Key</I>
+ to move the cursor to the start of the line.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676563">
+ </A>
+<A NAME="39257">
+ </A>
+Defining New <A NAME="marker=672851">
+ </A>
+Function Keys</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676564">
+ </A>
+Under VMS, IDL uses the SMG screen management package, which ensures that IDL command editing behaves in the standard VMS way. Hence, it is not possible to use a key SMG does not understand.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676565">
+ </A>
+Under Unix, IDL can handle arbitrary function keys. When adding a definition for a function key that is not built into IDL's default list of recognized keys, you must use the ESCAPE keyword to specify the escape sequence it sends. For example, to add a function key named &quot;HELP&quot; which sends the escape sequence &lt;Escape&gt;[28~, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676566">
+ </A>
+DEFINE_KEY, 'HELP', ESCAPE = '\033[28~'</P>
+<P CLASS="Body">
+<A NAME="pgfId=676567">
+ </A>
+This command adds the HELP key to the list of keys understood by IDL. Since only the key name and escape sequence were specified, pressing the HELP key will do nothing. The Value argument, or one of the keywords provided to specify command line editing functions, could have been included in the above statement to program it with an action.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676568">
+ </A>
+Once a key is defined using the ESCAPE keyword, it is contained in the internal list of function keys. It can then be subsequently redefined without specifying the escape sequence.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676569">
+ </A>
+It is convenient to include commonly used key definitions in a startup file, so that they will always be available. See <A HREF="..html#84712" CLASS="XRef">
+Startup File</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676570">
+ </A>
+Usually, the SETUP_KEYS procedure is used to define the function keys found on the keyboard, so it is not necessary to specify the ESCAPE keyword. For example, to program key &quot;F2&quot; on a Sun keyboard to redraw the current line:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676571">
+ </A>
+SETUP_KEYS</P>
+<P CLASS="Code">
+<A NAME="pgfId=676572">
+ </A>
+DEFINE_KEY, 'F2', /REDRAW</P>
+<P CLASS="Body">
+<A NAME="pgfId=871885">
+ </A>
+The CONTROL keyword alters the action that IDL takes when it sees the specified characters defining the control keys. IDL may not be able to alter the behavior of some control characters. For example, Ctrl+S and Ctrl+Q are usually reserved by the operating system for flow control . Similarly, Ctrl+Z is usually The UNIX suspend character.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=871895">
+ </A>
+Ctrl+D is the UNIX end-of-file character. It is a common UNIX convention (followed by IDL) for programs to quit upon encountering Ctrl+D.However, Ctrl+D is also used by some text editors to delete characters. To disable IDL default handling of Ctrl+D, type the following:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=871905">
+ </A>
+DEFINE_KEY, /CONTROL, '^D'</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=871910">
+ </A>
+&nbsp;</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=871927">
+ </A>
+To print a reminder of how to exit IDL properly, type the following:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=871911">
+ </A>
+DEFINE_KEY, /CONTROL, '^D', &quot;print, 'Enter EXIT to quit IDL'&quot;, $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=871913">
+ </A>
+/NOECHO, /TERMINATE</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=871926">
+ </A>
+&nbsp;</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=871928">
+ </A>
+To use Ctrl+D to delete characters, type the following:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=871929">
+ </A>
+DEFINE_KEY, /CONTROL, '^D', /DELETE_CURRENT</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823331">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823335">
+ </A>
+<A HREF="idlb8.htm#65544" CLASS="XRef">
+GET_KBRD</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

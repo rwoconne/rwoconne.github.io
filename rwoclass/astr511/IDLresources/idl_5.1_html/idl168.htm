@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_PPM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl169.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl167.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=67791">
+ </A>
+<A NAME="85985">
+ </A>
+READ_PPM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=67796">
+ </A>
+The <A NAME="marker=67793">
+ </A>
+READ_PPM procedure reads the contents of a <A NAME="marker=67794">
+ </A>
+PGM (gray scale) or <A NAME="marker=67795">
+ </A>
+PPM (portable pixmap for color) format image file and returns the image in the form of a 2D byte array (for grayscale images) or a (3, <EM CLASS="Emphasis">
+n</EM>
+, <EM CLASS="Emphasis">
+m</EM>
+) byte array (for true-color images). </P>
+<P CLASS="Body">
+<A NAME="pgfId=67797">
+ </A>
+Files to be read should adhere to the PGM/PPM standard. The following file types are supported: P2 (graymap ASCII), P5 (graymap RAWBITS), P3 (true-color ASCII pixmaps), and P6 (true-color RAWBITS pixmaps). Maximum pixel values are limited to 255. Images are always stored with the top row first.</P>
+<P CLASS="Body">
+<A NAME="pgfId=67798">
+ </A>
+PPM/PGM format is supported by the PBMPLUS toolkit for converting various image formats to and from portable formats, and by the Netpbm package.</P>
+<P CLASS="Body">
+<A NAME="pgfId=67799">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_ppm.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67800">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=67801">
+ </A>
+READ_PPM, <EM CLASS="Emphasis">
+Filename</EM>
+, <EM CLASS="Emphasis">
+Image</EM>
+ </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67802">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67803">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67804">
+ </A>
+A scalar string specifying the full path name of the PGM or PPM file to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67805">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67806">
+ </A>
+A named variable that will contain the image. For grayscale images, <EM CLASS="Emphasis">
+Image</EM>
+ is a 2D byte array. For true-color images, <EM CLASS="Emphasis">
+Image</EM>
+ is a (3, <EM CLASS="Emphasis">
+n</EM>
+, <EM CLASS="Emphasis">
+m</EM>
+) byte array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67807">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67809">
+ </A>
+<A NAME="marker=67808">
+ </A>
+MAXVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67810">
+ </A>
+A named variable that will contain the maximum pixel value.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67811">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=67812">
+ </A>
+To open and read the PGM image file named &quot;foo.pgm&quot; in the current directory and store the image in the variable IMAGE1:</P>
+<P CLASS="Code">
+<A NAME="pgfId=67813">
+ </A>
+READ_PPM, &quot;foo.pgm&quot;, IMAGE1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=67814">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=67815">
+ </A>
+<A HREF="idl212.htm#13011" CLASS="XRef">
+WRITE_PPM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

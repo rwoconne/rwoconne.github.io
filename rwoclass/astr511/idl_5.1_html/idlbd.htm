@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GRID3</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlbe.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlbc.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677084">
+ </A>
+<A NAME="17743">
+ </A>
+GRID3</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677085">
+ </A>
+The <A NAME="marker=673098">
+ </A>
+GRID3 function fits a smooth function to a set of 3D scattered nodes (<I CLASS="Italics">
+x</I>
+<SUB CLASS="subscript">
+i</SUB>
+, <I CLASS="Italics">
+y</I>
+<SUB CLASS="subscript">
+i</SUB>
+, <I CLASS="Italics">
+z</I>
+<SUB CLASS="subscript">
+i</SUB>
+) with associated data values (<I CLASS="Italics">
+f</I>
+<SUB CLASS="subscript">
+i</SUB>
+). The function can be sampled over a set of user-specified points, or over an arbitrary 3D grid which can then be viewed using the <A NAME="marker=158909">
+ </A>
+SLICER procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677086">
+ </A>
+GRID3 uses the method described in Renka, R. J., &quot;Multivariate Interpolation of Large Sets of Scattered Data,&quot; <I CLASS="Italics">
+ACM Transactions on Mathematical Software</I>
+, Vol. 14, No. 2, June 1988, Pages 139-148, which has been referred to as the Modified Shepard's Method. The function described by this method has the advantages of being equal to the values of <I CLASS="Italics">
+f</I>
+<SUB CLASS="subscript">
+i</SUB>
+, at each (<I CLASS="Italics">
+x</I>
+<SUB CLASS="subscript">
+i</SUB>
+, <I CLASS="Italics">
+y</I>
+<SUB CLASS="subscript">
+i</SUB>
+, <I CLASS="Italics">
+z</I>
+<SUB CLASS="subscript">
+i</SUB>
+), and being smooth (having continuous first partial derivatives).</P>
+<P CLASS="Body">
+<A NAME="pgfId=677087">
+ </A>
+If no optional or keyword parameters are supplied, GRID3 produces a regularly-sampled volume with dimensions of (25, 25, 25), made up of single-precision, floating-point values, enclosing the original data points.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677088">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677089">
+ </A>
+Result = GRID3(<I CLASS="Italics">
+X, Y, Z, F, G</I>
+<SUB CLASS="subscript">
+x</SUB>
+<I CLASS="Italics">
+, G</I>
+<SUB CLASS="subscript">
+y</SUB>
+<I CLASS="Italics">
+, G</I>
+<SUB CLASS="subscript">
+z</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677090">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677091">
+ </A>
+X, Y, Z and F</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677092">
+ </A>
+Arrays containing the locations of the data points, and the value of the variable to be interpolated at that point. <I CLASS="Italics">
+X</I>
+, <I CLASS="Italics">
+Y</I>
+, <I CLASS="Italics">
+Z</I>
+, and <I CLASS="Italics">
+F</I>
+ must have the same number of elements (with a minimum of 10 elements per array) and are converted to floating-point if necessary.</P>
+<P CLASS="Body">
+<A NAME="pgfId=168206">
+ </A>
+Note: For the greatest possible accuracy, the arrays <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+ should be scaled to fit in the range [0,1].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677093">
+ </A>
+G<SUB CLASS="subscript">
+x</SUB>
+, G<SUB CLASS="subscript">
+y</SUB>
+, and G<SUB CLASS="subscript">
+z</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677094">
+ </A>
+Optional arrays containing the locations within the volume to be sampled (if the GRID keyword is not set), or the locations along each axis of the sampling grid (if the GRID keyword is set). If these parameters are supplied, the keywords DELTA, NGRID, and START are ignored.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677095">
+ </A>
+If the keyword GRID is <I CLASS="Italics">
+not</I>
+ set, the result has the same number of elements as <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+z</SUB>
+. The <I CLASS="Italics">
+i</I>
+th element of the result contains the value of the interpolate at (<I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+xi</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+yi</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+zi</SUB>
+). The result has the same dimensions as <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+x</SUB>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677096">
+ </A>
+If the GRID keyword is set, the result of GRID3 is a three-dimensional, single-precision, floating-point array with dimensions of (<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+, <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+), where <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+ are the number of elements in <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+z</SUB>
+, respectively.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677097">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677098">
+ </A>
+DELTA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677099">
+ </A>
+Set this keyword to a three-element vector or a scalar that specifies the grid spacing in the X, Y, and Z dimensions. The default spacing produces NGRID samples within the range of each axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=168207">
+ </A>
+<A NAME="marker=168216">
+ </A>
+DTOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=168208">
+ </A>
+The tolerance for detecting an ill-conditioned system of equations. The default value is 0.01, which is appropriate for small ranges of <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+. For large ranges of <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, or <EM CLASS="Emphasis">
+Z</EM>
+, it may be necessary to decrease the value of DTOL. If you receive the error message &quot;GRID3: Ill-conditioned matrix or all nodes co-planar,&quot; try decreasing the value of DTOL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677100">
+ </A>
+GRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677101">
+ </A>
+This keyword specifies the interpretation of <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+z</SUB>
+. The default value for GRID is zero if <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+G</I>
+<SUB CLASS="subscript">
+z</SUB>
+ are supplied, otherwise a regularly-gridded volume is produced.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677102">
+ </A>
+NGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677103">
+ </A>
+The number of samples along each axis. NGRID can be set to a scalar, in which case each axis has the same number of samples, or to a three-element array containing the number of samples for each axis. The default value for NGRID is 25.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677104">
+ </A>
+START</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677105">
+ </A>
+A three-element array that specifies the starting value for each grid. The default value for START is the minimum value in the respective X, Y, and Z array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677106">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677107">
+ </A>
+Produce a set random points within the (0,1) unit cube and simulate a function: </P>
+<P CLASS="Code">
+<A NAME="pgfId=677108">
+ </A>
+N = 300	<EM CLASS="Comment">;
+Number of irregular samples.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677109">
+ </A>
+X = RANDOMU(SEED, N)	<EM CLASS="Comment">;
+Generate random values between 0 and 1.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677110">
+ </A>
+Y = RANDOMU(SEED, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=677111">
+ </A>
+Z = RANDOMU(SEED, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=677112">
+ </A>
+F = (X-.5)^2 + (Y-.5)^2 + Z	<EM CLASS="Comment">;
+The function to simulate.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=677113">
+ </A>
+Return a cube with 25 equal-interval samples along each axis:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677114">
+ </A>
+Result = GRID3(X, Y, Z, F)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677115">
+ </A>
+Return a cube with 11 elements along each dimension, which samples each axis at (0, 0.1, ..., 1.0):</P>
+<P CLASS="Code">
+<A NAME="pgfId=677116">
+ </A>
+Result = GRID3(X, Y, Z, F, START=[0., 0., 0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=677117">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DELTA=0.1, NGRID=10)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677118">
+ </A>
+The same result is produced by the statements:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677119">
+ </A>
+S = FINDGEN(11) / 10.	<EM CLASS="Comment">;
+Create sample values</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=36135">
+ </A>
+Result = GRID3(X, Y, Z, F, S, S, S, /GRID)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36149">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=36150">
+ </A>
+<A HREF="idl1a4.htm#19999" CLASS="XRef">
+SLICER3</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

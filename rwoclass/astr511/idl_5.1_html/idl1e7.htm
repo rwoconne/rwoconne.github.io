@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TS_DIFF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=106001">
+ </A>
+<A NAME="96780">
+ </A>
+TS_DIFF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=106007">
+ </A>
+The <A NAME="marker=106166">
+ </A>
+TS_DIFF function recursively computes the <A NAME="marker=106167">
+ </A>
+forward differences of an <EM CLASS="Emphasis">
+n</EM>
+-element <A NAME="marker=106168">
+ </A>
+time-series <EM CLASS="Emphasis">
+k</EM>
+ times. The result is an <EM CLASS="Emphasis">
+n</EM>
+-element differenced time-series with its last <EM CLASS="Emphasis">
+k</EM>
+ elements as zeros. </P>
+<P CLASS="Body">
+<A NAME="pgfId=106031">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ts_diff.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=106008">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=106025">
+ </A>
+Result = TS_DIFF(<EM CLASS="Emphasis">
+X, K</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=106009">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=106026">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=106028">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single- or double-precision floating-point vector containing time-series samples.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=106010">
+ </A>
+K</H4>
+<P CLASS="Body">
+<A NAME="pgfId=106029">
+ </A>
+A positive integer or long integer scalar that specifies the number of times <EM CLASS="Emphasis">
+X</EM>
+ is to be differenced. <EM CLASS="Emphasis">
+K</EM>
+ must be in the interval [1, N_ELEMENTS(<EM CLASS="Emphasis">
+X</EM>
+) - 1].</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=861953">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861958">
+ </A>
+<A NAME="marker=861957">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=861959">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=106011">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=833503">
+ </A>
+Define an <I CLASS="Italic">
+n</I>
+-element vector of time-series samples:</P>
+<P CLASS="Code">
+<A NAME="pgfId=106012">
+ </A>
+X = [389, 345, 303, 362, 412, 356, 325, 375, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=106013">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;410, 350, 310, 388, 399, 362, 325, 382, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=106014">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;399, 382, 318, 385, 437, 357, 310, 391]</P>
+<P CLASS="Code">
+<A NAME="pgfId=833491">
+ </A>
+PRINT, TS_DIFF(X, 2)	<EM CLASS="Comment">;
+Compute the second forward differences of X.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=833494">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=106058">
+ </A>
+&nbsp;&nbsp;2&nbsp;&nbsp;101&nbsp;&nbsp;&nbsp;-9&nbsp;-106&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;81&nbsp;&nbsp;-15&nbsp;&nbsp;-95&nbsp;&nbsp;&nbsp;20</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=106060">
+ </A>
+118&nbsp;&nbsp;-67&nbsp;&nbsp;-48&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;94&nbsp;&nbsp;-40&nbsp;&nbsp;-34&nbsp;&nbsp;-47&nbsp;&nbsp;131</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=106061">
+ </A>
+-15&nbsp;-132&nbsp;&nbsp;&nbsp;33&nbsp;&nbsp;128&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=106021">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=106022">
+ </A>
+<A HREF="idl1a6.htm#43465" CLASS="XRef">
+SMOOTH</A>
+, <A HREF="idl1e8.htm#74523" CLASS="XRef">
+TS_FCAST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

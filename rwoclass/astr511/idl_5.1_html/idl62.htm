@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_RGBSLIDER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl63.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl61.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755775">
+ </A>
+<A NAME="75978">
+ </A>
+CW_RGBSLIDER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755779">
+ </A>
+The <A NAME="marker=755776">
+ </A>
+CW_RGBSLIDER function creates a compound <A NAME="marker=755777">
+ </A>
+widget that provides three sliders for adjusting <A NAME="marker=755778">
+ </A>
+color values. The <A NAME="marker=106662">
+ </A>
+RGB, <A NAME="marker=755781">
+ </A>
+CMY, <A NAME="marker=755782">
+ </A>
+HSV, and <A NAME="marker=755783">
+ </A>
+HLS <A NAME="marker=755784">
+ </A>
+color systems can all be used. No matter which color system is in use, the resulting color is always supplied in RGB, which is the base system for IDL.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796153">
+ </A>
+The returned value of this function is the widget ID of the newly-created color adjustment widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755785">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_rgbslider.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755786">
+ </A>
+Using CW_RGBSLIDER</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755787">
+ </A>
+The CW_RGBSLIDER widget consists of a pulldown menu which allows the user to change between the supported color systems, and three color adjustment sliders, allowing the user to select a new color value. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755788">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755789">
+ </A>
+Result = CW_RGBSLIDER(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755790">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755791">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755792">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755793">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755795">
+ </A>
+<A NAME="marker=755794">
+ </A>
+CMY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755796">
+ </A>
+If set, the initial color system used is CMY.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755798">
+ </A>
+<A NAME="marker=755797">
+ </A>
+COLOR_INDEX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755799">
+ </A>
+If set, display a small rectangle with the selected color, using the given index. The color is updated as the values are changed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755801">
+ </A>
+<A NAME="marker=755800">
+ </A>
+DRAG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755802">
+ </A>
+Set this keyword and <A NAME="marker=788344">
+ </A>
+events will be generated continuously when the sliders are adjusted. If not set, events will only be generated when the mouse button is released. Note: On slow systems, /DRAG performance can be inadequate. The default is DRAG = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755804">
+ </A>
+<A NAME="marker=755803">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755805">
+ </A>
+If set, a frame will be drawn around the widget. The default is FRAME = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755807">
+ </A>
+<A NAME="marker=755806">
+ </A>
+HSV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755808">
+ </A>
+If set, the initial color system used is HSV.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755810">
+ </A>
+<A NAME="marker=755809">
+ </A>
+HLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755811">
+ </A>
+If set, the initial color system used is HLS.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755813">
+ </A>
+<A NAME="marker=755812">
+ </A>
+LENGTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755814">
+ </A>
+The length of the sliders. The default = 256.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755816">
+ </A>
+<A NAME="marker=755815">
+ </A>
+RGB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755817">
+ </A>
+If set, the initial color system used is RGB. This is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755819">
+ </A>
+<A NAME="marker=755818">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755820">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755822">
+ </A>
+<A NAME="marker=755821">
+ </A>
+VERTICAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755823">
+ </A>
+If set, the sliders will be oriented vertically. The default is VERTICAL = 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837882">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837883">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837897">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=809032">
+ </A>
+Widget Events Returned by the CW_RGBSLIDER Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=809033">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=809034">
+ </A>
+event = {ID:0L, TOP:0L, HANDLER:0L, R:0B, G:0B, B:0B }</P>
+<P CLASS="Body">
+<A NAME="pgfId=809029">
+ </A>
+The `R', `G', and `B' fields contain the Red, Green and Blue components of the selected color. Note that CW_RGBSLIDER reports back the Red, Green, and Blue values no matter which color system is selected.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755827">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823343">
+ </A>
+<A HREF="idl59.htm#84105" CLASS="XRef">
+CW_CLR_INDEX</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+, <A HREF="idl224.htm#10360" CLASS="XRef">
+XPALETTE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

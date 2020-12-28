@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ARG_PRESENT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756649">
+ </A>
+<A NAME="17021">
+ </A>
+ARG_PRESENT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=878767">
+ </A>
+The <A NAME="marker=878981">
+ </A>
+ARG_PRESENT function returns a nonzero value if the following conditions are met:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=878770">
+ </A>
+The argument to ARG_PRESENT was passed as a plain or keyword <A NAME="marker=878982">
+ </A>
+argument to the current routine by its caller, and</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=878772">
+ </A>
+The argument to ARG_PRESENT is a named variable into which a value will be copied when the current routine exits.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=878775">
+ </A>
+In other words, ARG_PRESENT returns TRUE if the value of the specified variable will be passed back to the caller. This function is useful in user-written procedures that need to know if the lifetime of a value they are creating extends beyond the current routine's lifetime. This can be important for two reasons:</P>
+<OL>
+<LI CLASS="Numbered-1-Indent">
+<A NAME="pgfId=878781">
+ </A>
+To avoid expensive computations that the caller is not interested in.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=879011">
+ </A>
+To prevent heap variable leakage that would result if the routine creates pointers or object references and assigns them to arguments that are <EM CLASS="Emphasis">
+not</EM>
+ passed back to the caller.</LI>
+</OL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=879012">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=878789">
+ </A>
+Result = ARG_PRESENT(<EM CLASS="Emphasis">
+Variable</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=878792">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=878794">
+ </A>
+Variable</H4>
+<P CLASS="Body">
+<A NAME="pgfId=878795">
+ </A>
+The variable to be tested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=878798">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=878908">
+ </A>
+Suppose that you are writing an IDL procedure that has the following procedure definition line:</P>
+<P CLASS="Code">
+<A NAME="pgfId=878803">
+ </A>
+PRO myproc, RET_PTR = ret_ptr</P>
+<P CLASS="Body">
+<A NAME="pgfId=878805">
+ </A>
+The intent of the RET_PTR keyword is to pass back a pointer to a new pointer heap variable. The following command could be used to avoid creating (and possibly losing) a pointer if no named variable is provided by the caller:</P>
+<P CLASS="Code">
+<A NAME="pgfId=878810">
+ </A>
+IF ARG_PRESENT(ret_ptr) THEN BEGIN</P>
+<P CLASS="Body">
+<A NAME="pgfId=878812">
+ </A>
+The commands that follow would only be executed if <CODE CLASS="Code">
+ret_ptr</CODE>
+ is supplied and will be copied into a variable in the scope of the calling routine.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=879031">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=879032">
+ </A>
+<A HREF="idle0.htm#96477" CLASS="XRef">
+KEYWORD_SET</A>
+, <A HREF="idl122.htm#23226" CLASS="XRef">
+N_ELEMENTS</A>
+, <A HREF="idl123.htm#97632" CLASS="XRef">
+N_PARAMS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

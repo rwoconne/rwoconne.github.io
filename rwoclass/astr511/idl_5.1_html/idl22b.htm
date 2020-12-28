@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ZOOM_24</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl22c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl22a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787906">
+ </A>
+<A NAME="89698">
+ </A>
+ZOOM_24</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787910">
+ </A>
+The <A NAME="marker=787908">
+ </A>
+ZOOM_24 procedure displays part of a 24-bit color <A NAME="marker=787909">
+ </A>
+image from the current window expanded in a new (&quot;zoom&quot;) window, and provides information about cursor location and color values in an auxiliary (&quot;data&quot;) window. The cursor is used to mark the center of the zoom area, and different zoom factors can be specified interactively.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=787911">
+ </A>
+ZOOM only works on 24-bit color systems.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=787912">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+zoom_24.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787913">
+ </A>
+Using ZOOM_24</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787914">
+ </A>
+After calling ZOOM_24, windows titled &quot;Zoomed Image&quot; (the zoom window) and &quot;Pixel Values&quot; (the data window) appear on the screen. Place the mouse cursor over a 24-bit color image in an IDL graphics window and click the left mouse button to display a magnified version of the image in the zoom window. The zoomed image is centered around the pixel selected in the original window. Move the mouse cursor in the zoom window to determine the coordinates (in the original image) and color values of individual pixels.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787915">
+ </A>
+With the cursor located in the zoom window, click the right mouse button to return to selection mode, which allows you to either choose a new zoom center, change the zoom factor, or exit the procedure. Move the cursor to the original image and click the middle mouse button to display a menu of zoom factors, or click the right mouse button to exit the procedure.</P>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=932500">
+ </A>
+Using ZOOM_24 with Draw Widgets</H4>
+<P CLASS="Body">
+<A NAME="pgfId=932501">
+ </A>
+Note that the ZOOM_24 procedure is only for use with IDL graphics windows. It should not be used with draw widgets. To obtain a zooming effect in a draw widget, use the CW_ZOOM function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787916">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787917">
+ </A>
+ZOOM_24</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787918">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787920">
+ </A>
+<A NAME="marker=787919">
+ </A>
+FACT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787921">
+ </A>
+Use this keyword to specify the zoom factor, which must be an integer. The default zoom factor is 4.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787923">
+ </A>
+<A NAME="marker=787922">
+ </A>
+RIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787924">
+ </A>
+Set this keyword to position the zoom and data windows to the right of the original window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787926">
+ </A>
+<A NAME="marker=787925">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787927">
+ </A>
+Use this keyword to specify the X size of the zoom window. The default is 512.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787929">
+ </A>
+<A NAME="marker=787928">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787930">
+ </A>
+Use this keyword to specify the Y size of the zoom window. The default is 512.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787932">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=892279">
+ </A>
+<A HREF="idl64.htm#46430" CLASS="XRef">
+CW_ZOOM</A>
+, <A HREF="idl22a.htm#20984" CLASS="XRef">
+ZOOM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

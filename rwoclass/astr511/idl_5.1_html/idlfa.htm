@@ -1,0 +1,493 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LIVE_TEXT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlfb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlf9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=858619">
+ </A>
+<A NAME="31927">
+ </A>
+LIVE_TEXT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=871160">
+ </A>
+The <A NAME="marker=858621">
+ </A>
+LIVE_TEXT procedure is an interface for text annotation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=860489">
+ </A>
+You can control your LIVE window after it is created using any of several auxiliary routines. See <A HREF="idlec.htm#15642" CLASS="XRef">
+LIVE_Tools</A>
+ for an explanation.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858640">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=858641">
+ </A>
+LIVE_TEXT[, `Text']</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858642">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858643">
+ </A>
+Text</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858644">
+ </A>
+The string to be used for the text annotation. The default is `Text'. If Text is an array of strings, each element of the string array will appear on a separate line.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858645">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858647">
+ </A>
+<A NAME="marker=858646">
+ </A>
+ALIGNMENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858648">
+ </A>
+Set this keyword to a floating-point value between 0.0 and 1.0 to indicate the requested alignment of the text baseline. The alignment scheme follows:</P>
+<P CLASS="Body">
+<A NAME="pgfId=871181">
+ </A>
+1.0---------0.5--------0.0</P>
+<P CLASS="Body">
+<A NAME="pgfId=871179">
+ </A>
+Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Middle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869666">
+ </A>
+<A NAME="marker=869665">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858651">
+ </A>
+Set this keyword to a string (case-sensitive) of the foreground color to be used for the text. The color must be specified as an Insight color. The default is `Black'. Available colors are listed in the table below.</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869670">
+ </A>
+`Black'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869672">
+ </A>
+`Red'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869674">
+ </A>
+`Green'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869676">
+ </A>
+`Yellow'</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869678">
+ </A>
+`Blue'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869680">
+ </A>
+`Magenta'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869682">
+ </A>
+`Cyan'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869684">
+ </A>
+`Dark Gray'</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869686">
+ </A>
+`Light Gray'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869688">
+ </A>
+`Brown'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869690">
+ </A>
+`Light Red'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869692">
+ </A>
+`Light Green'</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869694">
+ </A>
+`Light Blue'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869696">
+ </A>
+`Light Cyan'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869698">
+ </A>
+`Light Magenta'</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=869700">
+ </A>
+`White'</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858686">
+ </A>
+<A NAME="marker=858685">
+ </A>
+DIALOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858687">
+ </A>
+Set this keyword to have an Insight text annotation dialog appear. This dialog will fill in known attributes from set keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871194">
+ </A>
+<A NAME="marker=871196">
+ </A>
+ENABLE_FORMATTING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871195">
+ </A>
+Set this keyword to have LIVE_TEXT interpret &quot;!&quot; (exclamation mark) as font and positioning commands.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858689">
+ </A>
+<A NAME="marker=858688">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858690">
+ </A>
+Set this keyword to a named variable to contain the returned error message (string). An empty string is returned if no errors occurred during the operation. By default, errors are reported via a GUI.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=866801">
+ </A>
+If a named variable is passed in this keyword and an error occurs, the error GUI will not be displayed.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858692">
+ </A>
+<A NAME="marker=858691">
+ </A>
+FONTNAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858693">
+ </A>
+Set this keyword to a string containing the name of the desired font. The default is Helvetica.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858695">
+ </A>
+<A NAME="marker=858694">
+ </A>
+FONTSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858696">
+ </A>
+Set this keyword to an integer scalar specifying the font point size to be used. The default is 12. Available point sizes are 9 through 72.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858698">
+ </A>
+<A NAME="marker=858697">
+ </A>
+HIDE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858699">
+ </A>
+Set this keyword to a boolean value indicating whether this item should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=858700">
+ </A>
+0 = Draw (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=858701">
+ </A>
+1 = Do not draw</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858703">
+ </A>
+<A NAME="marker=858702">
+ </A>
+LOCATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858704">
+ </A>
+Set this keyword to a two-element, floating-point vector of the form [X, Y] specifying the location of the visualization (relative to the lower left hand corner within the visualization window) in normalized coordinates. The default is [0.0, 0.0].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871208">
+ </A>
+<A NAME="marker=871207">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858707">
+ </A>
+Set this keyword equal to a string containing the name to be associated with this item. The name must be unique within the given window or buffer (WINDOW_IN). If not specified, a unique name will be assigned automatically.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=871267">
+ </A>
+<A NAME="marker=871266">
+ </A>
+NO_DRAW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871264">
+ </A>
+Set this keyword to inhibit the visualization window from drawing. This is useful if multiple visualizations and/or annotations are being created via calls to other LIVE_Tools in order to reduce unwanted draws and help speed the display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862098">
+ </A>
+<A NAME="marker=862097">
+ </A>
+REFERENCE_OUT</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858712">
+ </A>
+Set this keyword to a variable to return a structure defining the names of the created items. The fields of the structure are shown in the following table.</H4>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=862172">
+ </A>
+Fields of the LIVE_TEXT Reference Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=862156">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=862158">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862160">
+ </A>
+WIN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862162">
+ </A>
+Window Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862164">
+ </A>
+VIS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862166">
+ </A>
+Visualization Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862168">
+ </A>
+GRAPHIC </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862170">
+ </A>
+Graphic Name the text created</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862152">
+ </A>
+<A NAME="marker=858711">
+ </A>
+TEXTANGLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858713">
+ </A>
+Set this keyword to a floating-point value defining the angle of rotation of the text. The valid range is from 0.0 to 360.0. The default is 0.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858715">
+ </A>
+<A NAME="marker=858714">
+ </A>
+VISUALIZATION_IN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858716">
+ </A>
+Set this keyword equal to the name (string, case-insensitive) of a LIVE tool or Insight visualization. The VISUALIZATION field from the REFERENCE_OUT keyword from the creation of the LIVE tool will provide the visualization name. Visualization names are also visible in Insight's Visualization Manager and visualization property dialogs. If only one visualization is present in the window or buffer (WINDOW_IN), this keyword will default to it.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=858718">
+ </A>
+<A NAME="marker=858717">
+ </A>
+WINDOW_IN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=858719">
+ </A>
+Set this keyword equal to a name (string, case-sensitive) of a LIVE tool or Insight window, or a LIVE tool buffer. The WINDOW tag of the REFERENCE_OUT structure from the creation of the LIVE tool will provide the window or buffer name. Window names are also visible in visualization window titlebars. If only one LIVE tool or Insight window (or buffer) is present in the IDL session, this keyword will default to it.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858720">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=858721">
+ </A>
+LIVE_TEXT, `My Annotation', WINDOW_IN='Live Plot 2', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=871275">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;VISUALIZATION_IN='line plot visualization'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=858724">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=858725">
+ </A>
+<EM CLASS="Emphasis">
+<A HREF="idlf3.htm#28702" CLASS="XRef">
+LIVE_LINE</A>
+, <A HREF="idlf7.htm#14120" CLASS="XRef">
+LIVE_RECT</A>
+, Using IDL Insight</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

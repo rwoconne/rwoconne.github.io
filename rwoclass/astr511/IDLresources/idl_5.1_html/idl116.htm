@@ -1,0 +1,855 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MESH_OBJ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl117.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl115.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888450">
+ </A>
+<A NAME="73388">
+ </A>
+MESH_OBJ</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888455">
+ </A>
+The <A NAME="marker=888453">
+ </A>
+MESH_OBJ procedure <A NAME="marker=888454">
+ </A>
+generates a polygon mesh (vertex list and polygon list) that represent the desired primitive object. The available primitive objects are: triangulated surface, rectangular surface, polar surface, cylindrical surface, spherical surface, <A NAME="marker=888456">
+ </A>
+surface of extrusion, surface of revolution, and ruled surface.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888457">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+mesh_obj.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888458">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888459">
+ </A>
+MESH_OBJ, <EM CLASS="Emphasis">
+Type, Vertex_List, Polygon_List, Array1 [, Array2]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888460">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888461">
+ </A>
+Type</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888462">
+ </A>
+An integer which specifies what type of object to create. The various surface types are described in the table below.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="TableTitle">
+<A NAME="pgfId=888505">
+ </A>
+Surface Types</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888465">
+ </A>
+Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888467">
+ </A>
+Surface Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888469">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888471">
+ </A>
+Triangulated</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888473">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888475">
+ </A>
+Rectangular</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888477">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888479">
+ </A>
+Polar</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888481">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888483">
+ </A>
+Cylindrical</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888485">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888487">
+ </A>
+Spherical</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888489">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888491">
+ </A>
+Extrusion</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888493">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888495">
+ </A>
+Revolution</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888497">
+ </A>
+7</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888499">
+ </A>
+Ruled</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888501">
+ </A>
+Other values</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888503">
+ </A>
+None</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888508">
+ </A>
+Vertex_List</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888509">
+ </A>
+A named variable that will contain the mesh vertices. <EM CLASS="Emphasis">
+Vertex_List</EM>
+ has the same format as the lists returned by the SHADE_VOLUME procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888510">
+ </A>
+Polygon_List</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888511">
+ </A>
+A named variable that will contain the mesh indexes. <EM CLASS="Emphasis">
+Polygon_List </EM>
+has the same format as the lists returned by the SHADE_VOLUME procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888512">
+ </A>
+Array1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888513">
+ </A>
+An array whose use depends on the type of object being created. The table below describes the differences.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=888552">
+ </A>
+Array 1 Type</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888516">
+ </A>
+Surface Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888518">
+ </A>
+<EM CLASS="Emphasis">
+Array1</EM>
+ Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888520">
+ </A>
+Triangulated</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888522">
+ </A>
+A (3, <EM CLASS="Emphasis">
+n</EM>
+) array containing random [<EM CLASS="Emphasis">
+x, y, z</EM>
+] points to build a triangulated surface from. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ vertices. When shading a triangulated mesh, the shading array should have (<EM CLASS="Emphasis">
+n</EM>
+) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888524">
+ </A>
+Rectangular</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888526">
+ </A>
+A two dimensional (<EM CLASS="Emphasis">
+n, m</EM>
+) array containing <EM CLASS="Emphasis">
+z</EM>
+ values. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ vertices. When shading a rectangular mesh, the shading array should have (<EM CLASS="Emphasis">
+n, m</EM>
+) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888528">
+ </A>
+Polar</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888530">
+ </A>
+A two dimensional (<EM CLASS="Emphasis">
+n, m</EM>
+) array containing <EM CLASS="Emphasis">
+z</EM>
+ values. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ vertices. The <EM CLASS="Emphasis">
+n</EM>
+ dimension of the array is mapped to the polar angle, and the <EM CLASS="Emphasis">
+m</EM>
+ dimension is mapped to the polar radius. When shading a polar mesh, the shading array should have (<EM CLASS="Emphasis">
+n, m</EM>
+) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888532">
+ </A>
+Cylindrical</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888534">
+ </A>
+A two dimensional (<EM CLASS="Emphasis">
+n, m</EM>
+) array containing radius values. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ vertices. The <EM CLASS="Emphasis">
+n</EM>
+ dimension of the array is mapped to the polar angle, and the m dimension is mapped to the Z axis. When shading a cylindrical mesh, the shading array should have (<EM CLASS="Emphasis">
+n, m</EM>
+) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888536">
+ </A>
+Spherical</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888538">
+ </A>
+A two dimensional (<EM CLASS="Emphasis">
+n, m</EM>
+) array containing radius values. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ vertices. The <EM CLASS="Emphasis">
+n</EM>
+ dimension of the array is mapped to the longitude (0.0 to 360.0 degrees), and the <EM CLASS="Emphasis">
+m</EM>
+ dimension is mapped to the latitude (-90.0 to +90.0 degrees). When shading a spherical mesh, the shading array should have (<EM CLASS="Emphasis">
+n, m</EM>
+) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888540">
+ </A>
+Extrusion</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888542">
+ </A>
+A (3, <EM CLASS="Emphasis">
+n</EM>
+) array of connected 3D points which define the shape to extrude. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ x (steps+1) vertices (where steps is the number of &quot;segments&quot; in the extrusion). (See the P1 keyword). If the order of the elements in <EM CLASS="Emphasis">
+Array1</EM>
+ is reversed, then the polygon facing is reversed. When shading an extrusion mesh, the shading array should have (<EM CLASS="Emphasis">
+n</EM>
+, steps+1) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888544">
+ </A>
+Revolution</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888546">
+ </A>
+A (3, <EM CLASS="Emphasis">
+n</EM>
+) array of connected 3D points which define the shape to revolve. The resulting polygon mesh will have <EM CLASS="Emphasis">
+n</EM>
+ x ((steps&gt;3)+1) vertices (where steps is the number of &quot;steps&quot; in the revolution). (See the P1 keyword). If the order of the elements in <EM CLASS="Emphasis">
+Array1</EM>
+ is reversed, then the polygon facing is reversed. When shading a revolution mesh, the shading array should have (<EM CLASS="Emphasis">
+n</EM>
+, (steps&gt;3)+1) elements.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888548">
+ </A>
+Ruled</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888550">
+ </A>
+A (3, <EM CLASS="Emphasis">
+n</EM>
+) array of connected 3D points which define the shape of the first ruled vector. The optional (3, <EM CLASS="Emphasis">
+m</EM>
+) <EM CLASS="Emphasis">
+Array2</EM>
+ parameter defines the shape of the second ruled vector. The resulting polygon mesh will have (<EM CLASS="Emphasis">
+n</EM>
+&nbsp;&gt;&nbsp;<EM CLASS="Emphasis">
+m</EM>
+)*(steps+1) vertices (where steps is the number of intermediate &quot;steps&quot;). (See the P1 keyword). When shading a ruled mesh, the shading array should have (<EM CLASS="Emphasis">
+n</EM>
+&nbsp;&gt;&nbsp;<EM CLASS="Emphasis">
+m</EM>
+, steps+1) elements.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888555">
+ </A>
+Array2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888556">
+ </A>
+If the object type is 7 (Ruled Surface) then <EM CLASS="Emphasis">
+Array2</EM>
+ is a (3, <EM CLASS="Emphasis">
+m</EM>
+) array containing the 3D points which define the second ruled vector. If <EM CLASS="Emphasis">
+Array2</EM>
+ has fewer elements than <EM CLASS="Emphasis">
+Array1</EM>
+ then <EM CLASS="Emphasis">
+Array2</EM>
+ is processed with CONGRID to give it the same number of elements as <EM CLASS="Emphasis">
+Array1</EM>
+. If <EM CLASS="Emphasis">
+Array1</EM>
+ has fewer elements than <EM CLASS="Emphasis">
+Array2</EM>
+ then <EM CLASS="Emphasis">
+Array1</EM>
+ is processed with CONGRID to give it the same number of elements as <EM CLASS="Emphasis">
+Array2</EM>
+. <EM CLASS="Emphasis">
+Array2</EM>
+ must be supplied if the object type is 7. Otherwise, <EM CLASS="Emphasis">
+Array2</EM>
+ is ignored.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888557">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888559">
+ </A>
+<A NAME="marker=888558">
+ </A>
+DEGREES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888560">
+ </A>
+If set, then the input parameters are in degrees (where applicable). Otherwise, the angles are in radians.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888562">
+ </A>
+<A NAME="marker=888561">
+ </A>
+P1 - P5</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888563">
+ </A>
+The meaning of the keywords P1 through P5 vary depending upon the object type. The table below describes the differences.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=888602">
+ </A>
+P1-P5 Keywords</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888566">
+ </A>
+Surface Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=888568">
+ </A>
+Keywords</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888570">
+ </A>
+Triangulated</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888572">
+ </A>
+P1 through P5 are ignored.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888574">
+ </A>
+Rectangular</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888576">
+ </A>
+If <EM CLASS="Emphasis">
+Array1</EM>
+ is an (<EM CLASS="Emphasis">
+n, m</EM>
+) array, and if P1 has n elements, then the values contained in P1 are the X coordinates for each column of vertices. Otherwise, FINDGEN(<EM CLASS="Emphasis">
+n</EM>
+) is used for the X coordinates. If P2 has <EM CLASS="Emphasis">
+m</EM>
+ elements, then the values contained in P2 are the Y coordinates for each row of vertices. Otherwise, FINDGEN(<EM CLASS="Emphasis">
+m</EM>
+) is used for the Y coordinates. The polygon facing is reversed if the order of either P1 or P2 (but not both) is reversed. P3, P4, and P5 are ignored.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888578">
+ </A>
+Polar</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888580">
+ </A>
+P1 specifies the polar angle of the first column of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 0). P2 specifies the polar angle of the last column of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 2*PI). If P2 is less than P1 then the polygon facing is reversed. P3 specifies the radius of the first row of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 0). P4 specifies the radius of the last row of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is <EM CLASS="Emphasis">
+m</EM>
+-1). If P4 is less than P3 then the polygon facing is reversed. P5 is ignored.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888582">
+ </A>
+Cylindrical</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888584">
+ </A>
+P1 specifies the polar angle of the first column of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 0). P2 specifies the polar angle of the last column of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 2*PI). If P2 is less than P1 then the polygon facing is reversed. P3 specifies the Z coordinate of the first row of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 0). P4 specifies the Z coordinate of the last row of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is <EM CLASS="Emphasis">
+m</EM>
+-1). If P4 is less than P3 then the polygon facing is reversed. P5 is ignored.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888586">
+ </A>
+Spherical</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888588">
+ </A>
+P1 specifies the longitude of the first column of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 0). P2 specifies the longitude of the last column of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is 2*PI). IF P2 is less than P1 then the polygon facing is reversed. P3 specifies the latitude of the first row of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is -PI/2). P4 specifies the latitude of the last row of <EM CLASS="Emphasis">
+Array1</EM>
+ (the default is +PI/2). If P4 is less than P3 then the polygon facing is reversed. P5 is ignored.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888590">
+ </A>
+Extrusion</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888592">
+ </A>
+P1 specifies the number of steps in the extrusion (the default is 1). P2 is a three element vector specifying the direction (and length) of the extrusion (the default is [0, 0, 1]). P3, P4, and P5 are ignored.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888594">
+ </A>
+Revolution</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888596">
+ </A>
+P1 specifies the number of &quot;facets&quot; in the revolution (the default is 3). If P1 is less than 3 then 3 is used. P2 is a three element vector specifying a point that the rotation vector passes through (the default is [0, 0, 0]). P3 is a three element vector specifying the direction of the rotation vector (the default is [0, 0, 1]). P4 specifies the starting angle for the revolution (the default is 0). P5 specifies the ending angle for the revolution (the default is 2*PI). If P5 is less than P4 then the polygon facing is reversed.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888598">
+ </A>
+Ruled</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=888600">
+ </A>
+P1 specifies the number of &quot;steps&quot; in the ruling (the default is 1). P2, P3, P4, and P5 are ignored.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888605">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888606">
+ </A>
+Create a 48x64 cylinder with a constant radius of 0.25. </P>
+<P CLASS="Code">
+<A NAME="pgfId=888607">
+ </A>
+MESH_OBJ, 3, Vertex_List, Polygon_List, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888608">
+ </A>
+&nbsp;&nbsp;Replicate(0.25, 48, 64), P4=0.5</P>
+<P CLASS="Body">
+<A NAME="pgfId=888609">
+ </A>
+Transform the vertices. </P>
+<P CLASS="Code">
+<A NAME="pgfId=888610">
+ </A>
+T3D, /RESET </P>
+<P CLASS="Code">
+<A NAME="pgfId=888611">
+ </A>
+T3D, ROTATE=[0.0, 30.0, 0.0] </P>
+<P CLASS="Code">
+<A NAME="pgfId=888612">
+ </A>
+T3D, ROTATE=[0.0, 0.0, 40.0] </P>
+<P CLASS="Code">
+<A NAME="pgfId=888613">
+ </A>
+T3D, TRANSLATE=[0.25, 0.25, 0.25]</P>
+<P CLASS="Code">
+<A NAME="pgfId=888614">
+ </A>
+VERTEX_LIST = VERT_T3D(Vertex_List)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888615">
+ </A>
+Create the window and view. </P>
+<P CLASS="Code">
+<A NAME="pgfId=888616">
+ </A>
+WINDOW, 0, XSIZE=512, YSIZE=512 </P>
+<P CLASS="Code">
+<A NAME="pgfId=888617">
+ </A>
+CREATE_VIEW, WINX=512, WINY=512</P>
+<P CLASS="Body">
+<A NAME="pgfId=888618">
+ </A>
+Render the mesh.</P>
+<P CLASS="Code">
+<A NAME="pgfId=888619">
+ </A>
+SET_SHADING, LIGHT=[-0.5, 0.5, 2.0], REJECT=0 </P>
+<P CLASS="Code">
+<A NAME="pgfId=888620">
+ </A>
+TVSCL, POLYSHADE(Vertex_List, Polygon_List, /NORMAL)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888621">
+ </A>
+Create a cone (surface of revolution). </P>
+<P CLASS="Code">
+<A NAME="pgfId=888622">
+ </A>
+MESH_OBJ, 6, Vertex_List, Polygon_List, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888623">
+ </A>
+&nbsp;&nbsp;[[0.75, 0.0, 0.25], [0.5, 0.0, 0.75]], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888624">
+ </A>
+&nbsp;&nbsp;P1=16, P2=[0.5, 0.0, 0.0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=888625">
+ </A>
+Create the window and view. </P>
+<P CLASS="Code">
+<A NAME="pgfId=888626">
+ </A>
+WINDOW, 0, XSIZE=512, YSIZE=512 </P>
+<P CLASS="Code">
+<A NAME="pgfId=888627">
+ </A>
+CREATE_VIEW, WINX=512, WINY=512, AX=30.0, AY=(140.0), ZOOM=0.5</P>
+<P CLASS="Body">
+<A NAME="pgfId=888628">
+ </A>
+Render the mesh. </P>
+<P CLASS="Code">
+<A NAME="pgfId=888629">
+ </A>
+SET_SHADING, LIGHT=[-0.5, 0.5, 2.0], REJECT=0 </P>
+<P CLASS="Code">
+<A NAME="pgfId=888630">
+ </A>
+TVSCL, POLYSHADE(Vertex_List, Polygon_List, /DATA, /T3D)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888631">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888644">
+ </A>
+<A HREF="idl4a.htm#67072" CLASS="XRef">
+CREATE_VIEW</A>
+, <A HREF="idl145.htm#45438" CLASS="XRef">
+POLYSHADE</A>
+, <A HREF="idl192.htm#14374" CLASS="XRef">
+SET_SHADING</A>
+, <A HREF="idl1f6.htm#66899" CLASS="XRef">
+VERT_T3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

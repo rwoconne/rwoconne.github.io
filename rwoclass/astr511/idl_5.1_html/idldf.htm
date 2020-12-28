@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> JULDAY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlde.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762378">
+ </A>
+<A NAME="52189">
+ </A>
+JULDAY</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762381">
+ </A>
+The <A NAME="marker=762379">
+ </A>
+JULDAY function calculates the <A NAME="marker=762380">
+ </A>
+Julian Day Number for a given month, day, and year. This is the inverse of the CALDAT procedure. JULDAY returns the Julian Day Number (which begins at noon) of the specified calendar date.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=829341">
+ </A>
+The Julian calendar, established by Julius Caesar in the year 45 BCE, was corrected by Pope Gregory XIII in 1582, excising ten days from the calendar. The CALDAT procedure reflects the adjustment for dates after October 4, 1582. See the example below for an illustration.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=762382">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+julday.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762383">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762384">
+ </A>
+Result = JULDAY(<I CLASS="Italics">
+Month, Day, Year</I>
+<I CLASS="Italic">
+, Hour, Minute, Second</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762385">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762386">
+ </A>
+Month</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762387">
+ </A>
+Number of the desired month (1 = January, ..., 12 = December).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762388">
+ </A>
+Day</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762389">
+ </A>
+Number of the day of the month (1-31).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762390">
+ </A>
+Year</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762391">
+ </A>
+Number of the desired year (e.g., 1994).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=852397">
+ </A>
+Hour</H4>
+<P CLASS="Body">
+<A NAME="pgfId=852402">
+ </A>
+Number of the hour of the day (0-23) .</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=852403">
+ </A>
+Minute</H4>
+<P CLASS="Body">
+<A NAME="pgfId=852404">
+ </A>
+Number of the minute of the day (0-1439).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=852405">
+ </A>
+Second</H4>
+<P CLASS="Body">
+<A NAME="pgfId=852406">
+ </A>
+Number of the second of the day (0-86399).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=829342">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=829345">
+ </A>
+In 1582, Pope Gregory XIII adjusted the Julian calendar to correct for its inaccuracy of slightly more than 11 minutes per year. As a result, the day following October 4, 1582 was October 15, 1582. JULDAY follows this convention, as illustrated by the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=829346">
+ </A>
+PRINT, JULDAY(10,4,1582), JULDAY(10,5,1582), JULDAY(10,15,1582)</P>
+<P CLASS="Body">
+<A NAME="pgfId=829362">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=829356">
+ </A>
+2299160&nbsp;&nbsp;&nbsp;&nbsp;2299161&nbsp;&nbsp;&nbsp;&nbsp;2299161</P>
+<P CLASS="Body">
+<A NAME="pgfId=829354">
+ </A>
+If you are using JULDAY to calculate an absolute number of days elapsed, be sure to account for the Gregorian adjustment.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762392">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762393">
+ </A>
+<A HREF="idl15.htm#74370" CLASS="XRef">
+BIN_DATE</A>
+, <A HREF="idl22.htm#69711" CLASS="XRef">
+CALDAT</A>
+, <A HREF="idlde.htm#18354" CLASS="XRef">
+JUL_TO_DT</A>
+, <A HREF="idl1cc.htm#42147" CLASS="XRef">
+SYSTIME</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

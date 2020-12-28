@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PRINT/PRINTF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl14b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl149.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678350">
+ </A>
+<A NAME="89996">
+ </A>
+PRINT/PRINTF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678351">
+ </A>
+The two <A NAME="marker=673627">
+ </A>
+PRINT procedures perform <A NAME="marker=673628">
+ </A>
+formatted output. PRINT performs output to the standard output stream (IDL file unit -1), while <A NAME="marker=673632">
+ </A>
+PRINTF requires a <A NAME="marker=673633">
+ </A>
+file unit to be explicitly specified.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678352">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678353">
+ </A>
+PRINT <EM CLASS="Emphasis">
+[, </EM>
+<I CLASS="Italic">
+Expr</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Expr</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<EM CLASS="Emphasis">
+]</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=678354">
+ </A>
+or</P>
+<P CLASS="Body">
+<A NAME="pgfId=678355">
+ </A>
+PRINTF <EM CLASS="Emphasis">
+[</EM>
+, <I CLASS="Italic">
+Unit, Expr</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Expr</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<EM CLASS="Emphasis">
+]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678356">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678357">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678358">
+ </A>
+For PRINTF, <I CLASS="Italic">
+Unit</I>
+ specifies the file unit to which the output is sent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678359">
+ </A>
+Expr<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678360">
+ </A>
+The expressions to be output.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678361">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678362">
+ </A>
+<A NAME="marker=673634">
+ </A>
+FORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=835233">
+ </A>
+If FORMAT is not specified, IDL uses its default rules for formatting the output. FORMAT allows the format of the output to be specified in precise detail, using a FORTRAN-style specification. See <A HREF="..html#50524" CLASS="XRef">
+Using Explicitly Formatted Input/Output</A>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=835234">
+ </A>
+VMS Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678365">
+ </A>
+<A NAME="marker=673641">
+ </A>
+REWRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678366">
+ </A>
+When writing data to a file with indexed organization, set the REWRITE keyword to specify that the data should update the contents of the most recently input record instead of creating a new record.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678367">
+ </A>
+Format Compatibility</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678368">
+ </A>
+If the FORMAT keyword is not present and PRINT is called with more than one argument, and the first argument is a scalar string starting with the characters &quot;$(&quot;, this initial argument is taken to be the format specification, just as if it had been specified via the FORMAT keyword. This feature is maintained for compatibility with version 1 of VMS IDL.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678369">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678370">
+ </A>
+To print the string &quot;IDL is fun.&quot; enter the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678371">
+ </A>
+PRINT, 'IDL is fun.'</P>
+<P CLASS="Body">
+<A NAME="pgfId=678372">
+ </A>
+To print the same message to the open file associated with file unit number 2, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678373">
+ </A>
+PRINTF, 2, 'IDL is fun.'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795785">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795786">
+ </A>
+<A HREF="idl7.htm#64698" CLASS="XRef">
+ANNOTATE</A>
+, <A HREF="idl117.htm#14106" CLASS="XRef">
+MESSAGE</A>
+, <A HREF="idl218.htm#93251" CLASS="XRef">
+WRITEU</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

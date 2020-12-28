@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_COLORSEL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl59.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=854167">
+ </A>
+<A NAME="44366">
+ </A>
+CW_COLORSEL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=854173">
+ </A>
+The <A NAME="marker=854170">
+ </A>
+CW_COLORSEL function creates a compound <A NAME="marker=854171">
+ </A>
+widget that displays all the <A NAME="marker=854172">
+ </A>
+colors in the current colormap in a 16 x 16 (320 x 320 pixels) grid. To select a color index, the user moves the mouse pointer over the desired color square and presses any mouse button. Alternatively, the color index can be selected by moving one of the three sliders provided around the grid.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854174">
+ </A>
+The returned value of this function is the widget ID of the newly-created color index widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854175">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_colorsel.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854176">
+ </A>
+Using CW_COLORSEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854177">
+ </A>
+The command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=854178">
+ </A>
+WIDGET_CONTROL, widgetID, SET_VALUE = -1 </P>
+<P CLASS="Body">
+<A NAME="pgfId=854179">
+ </A>
+informs the widget to initialize itself and redraw. It should be called when any of the following happen:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=854180">
+ </A>
+the widget is realized,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=854181">
+ </A>
+the widget needs redrawing,</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=854182">
+ </A>
+the brightest or darkest color has changed. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=854183">
+ </A>
+To set the current color index, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=854184">
+ </A>
+WIDGET_CONTROL, widgetID, SET_VALUE = index </P>
+<P CLASS="Body">
+<A NAME="pgfId=854185">
+ </A>
+To retrieve the current color index and store it in the variable <CODE CLASS="Code">
+var</CODE>
+, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=854186">
+ </A>
+WIDGET_CONTROL, widgetID, GET_VALUE = var </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854187">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854188">
+ </A>
+Result = CW_COLORSEL(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854189">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854190">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854191">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854192">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854194">
+ </A>
+<A NAME="marker=854193">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854195">
+ </A>
+If set, a frame is drawn around the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854197">
+ </A>
+<A NAME="marker=854196">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854198">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854200">
+ </A>
+<A NAME="marker=854199">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854201">
+ </A>
+The X offset position</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854203">
+ </A>
+<A NAME="marker=854202">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854204">
+ </A>
+The Y offset position</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854205">
+ </A>
+Widget Events Returned by the CW_COLORSEL Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854206">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=854207">
+ </A>
+Event = {COLORSEL_EVENT, ID: base, TOP: ev.top, HANDLER: 0L, VALUE:c}</P>
+<P CLASS="Body">
+<A NAME="pgfId=854208">
+ </A>
+The VALUE field is the color index selected.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854209">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854219">
+ </A>
+<A HREF="idl59.htm#84105" CLASS="XRef">
+CW_CLR_INDEX</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+, <A HREF="idl224.htm#10360" CLASS="XRef">
+XPALETTE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

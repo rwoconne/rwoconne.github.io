@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_ADDDATA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl29e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl29c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998401">
+ </A>
+<A NAME="98818">
+ </A>
+HDF_SD_ADDDATA</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998404">
+ </A>
+The <A NAME="marker=998403">
+ </A>
+HDF_SD_ADDDATA procedure writes a hyperslab of values to an SD dataset. By default, the output data is transposed. This transposition puts the data in column order, which is more efficient in HDF than row order (which is more efficient in IDL). In the rare cases where it is necessary to write the data without transposing, set the NOREVERSE keyword. The OFFSET, COUNT, and STRIDE keywords are similarly affected by the NOREVERSE keyword.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998405">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998406">
+ </A>
+HDF_SD_ADDDATA, <I CLASS="Italics">
+SDS_ID, Data</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998407">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998408">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998409">
+ </A>
+An SD dataset ID as returned by HDF_SE_SELECT or HDF_SD_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998410">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998411">
+ </A>
+The data to be written.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998412">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998414">
+ </A>
+<A NAME="marker=998413">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998415">
+ </A>
+Set this keyword to a vector of counts (i.e., the number of items) to be written in each dimension. The default is to write all available data. Use caution when using this keyword. See the second example, below.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998417">
+ </A>
+<A NAME="marker=998416">
+ </A>
+NOREVERSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998418">
+ </A>
+Set this keyword to prevent HDF_SD_ADDDATA's transposition of <EM CLASS="Emphasis">
+Data</EM>
+ and any vectors specified by keywords into column order.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998420">
+ </A>
+<A NAME="marker=998419">
+ </A>
+START</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998421">
+ </A>
+Set this keyword to a vector that contains the starting position for the data. The default position is [0, 0, ..., 0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998423">
+ </A>
+<A NAME="marker=998422">
+ </A>
+STRIDE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998424">
+ </A>
+Set this keyword to a vector that contains the strides, or sampling intervals, between accessed values of the NetCDF variable. The default stride vector is that for a contiguous write: [0, 0, ..., 0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998425">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998426">
+ </A>
+The following example writes a 230-element by 380-element byte image to an SD dataset, then reads it back as a 70 by 100 image starting at (40, 20), sampling every other Y pixel and every third X pixel:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998427">
+ </A>
+start = [40, 20]	<EM CLASS="Comment">;
+Set the start vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998428">
+ </A>
+count = [70, 100]	<EM CLASS="Comment">;
+Set the count vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998429">
+ </A>
+stride = [2, 3]	<EM CLASS="Comment">;
+Set the stride vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998430">
+ </A>
+image = DIST(230, 380)	<EM CLASS="Comment">;
+Create the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998431">
+ </A>
+TV, image	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998432">
+ </A>
+sd_id = HDF_SD_START('image.hdf', /CREATE)<BR>
+<EM CLASS="Comment">;
+Create a new HDF file in SD mode.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998433">
+ </A>
+sds_id = HDF_SD_CREATE(sd_id, 'image', [230, 380], /BYTE)<BR>
+<EM CLASS="Comment">;
+Define a new SD dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998434">
+ </A>
+HDF_SD_ADDDATA, sds_id, image	<EM CLASS="Comment">;
+Write the image into the dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998435">
+ </A>
+HDF_SD_GETDATA, sds_id, full	<EM CLASS="Comment">;
+Retrieve the full image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998436">
+ </A>
+HDF_SD_GETDATA, sds_id, small, COUNT=count, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998437">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;START=start, STRIDE=stride	<EM CLASS="Comment">;
+Retrieve the sub-sampled image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998438">
+ </A>
+HELP, full, small	<EM CLASS="Comment">;
+Print information about the images. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998439">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998440">
+ </A>
+FULL &nbsp;&nbsp;BYTE = Array(230, 380)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998441">
+ </A>
+SMALL &nbsp;BYTE = Array(70, 100)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998442">
+ </A>
+ERASE	<EM CLASS="Comment">;
+Erase the window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998443">
+ </A>
+TV, full	<EM CLASS="Comment">;
+Display the full image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998444">
+ </A>
+TV, small	<EM CLASS="Comment">;
+Display the sub-sampled image.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998445">
+ </A>
+Continuing with our example, suppose we want to write the center 50 by 100 pixels of the image to the file. You might be tempted to try:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998446">
+ </A>
+HDF_SD_ADDDATA, sds_id, image, START=[90, 90], COUNT=[50,100]</P>
+<P CLASS="Body">
+<A NAME="pgfId=998447">
+ </A>
+You will find, however, that this captures the lower left-hand corner of the original image, rather than the center. To write the data from the center, subset the original image, choosing the data from the center:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998448">
+ </A>
+HDF_SD_ADDDATA, sds_id, image(90:139, 90:189), START=[90, 90],$</P>
+<P CLASS="Code">
+<A NAME="pgfId=998449">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COUNT=[50,100]	<EM CLASS="Comment">;
+This is the correct way to add the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998450">
+ </A>
+HDF_SD_ENDACCESS, sds_id	<EM CLASS="Comment">;
+End SD access.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998451">
+ </A>
+HDF_SD_END, sd_id	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998452">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998456">
+ </A>
+<A HREF="idl2a8.htm#10376" CLASS="XRef">
+HDF_SD_GETDATA</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

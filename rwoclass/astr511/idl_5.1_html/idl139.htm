@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PLOTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl13a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl138.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678154">
+ </A>
+<A NAME="19349">
+ </A>
+PLOTS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678155">
+ </A>
+The <A NAME="marker=673563">
+ </A>
+PLOTS procedure <A NAME="marker=673564">
+ </A>
+plots vectors or points on the current graphics device in either two or three dimensions. The coordinates can be given in data, device, or normalized form using the DATA (the default), DEVICE, or NORMAL keywords.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678156">
+ </A>
+The COLOR keyword can be set to a scalar or vector value. If it is set to a vector value, the line segment connecting (<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+i</SUB>
+) to (<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i+1</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+i+1</SUB>
+) is drawn with a color index of COLOR<SUB CLASS="Subscript">
+i+1</SUB>
+. In this case, COLOR must have the same number of elements as <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678157">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678158">
+ </A>
+PLOTS, <I CLASS="Italic">
+X [, Y [, Z]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678159">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678160">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678161">
+ </A>
+A vector or scalar argument providing the X components of the points to be connected. If only one argument is specified, <I CLASS="Italic">
+X</I>
+ must be an array of either two or three vectors (i.e., <CODE CLASS="Code">
+(2,*)</CODE>
+ or <CODE CLASS="Code">
+(3,*)</CODE>
+). In this special case, <CODE CLASS="Code">
+X[0,*]</CODE>
+ are taken as the X values, <CODE CLASS="Code">
+X[1,*]</CODE>
+ are taken as the Y values, and <CODE CLASS="Code">
+X[2,*]</CODE>
+ are taken as the Z values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678162">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678163">
+ </A>
+An optional argument providing the Y coordinate(s) of the points to be connected.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678164">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678165">
+ </A>
+An optional argument providing the Z coordinates of the points to be connected. If <I CLASS="Italic">
+Z</I>
+ is not provided, X and Y are used to draw lines in two dimensions. </P>
+<P CLASS="Body">
+<A NAME="pgfId=678166">
+ </A>
+<I CLASS="Italic">
+Z</I>
+ has no effect if the keyword T3D is not specified and the system variable !P.T3D= 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678167">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678168">
+ </A>
+<A NAME="marker=673565">
+ </A>
+CONTINUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843639">
+ </A>
+Set this keyword to continue drawing a line from the last point of the most recent call to PLOTS.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=843643">
+ </A>
+&nbsp;</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=843640">
+ </A>
+PLOTS, 0, 0	<EM CLASS="Comment">;
+Position at (0,0).</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678171">
+ </A>
+PLOTS, 1, 1, /CONTINUE	<EM CLASS="Comment">;
+Draws vector from (0,0) to (1,1).</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=843331">
+ </A>
+PLOTS, [2,3], [2,3], /CONTINUE	<EM CLASS="Comment">;
+Draws two vectors from (1,1) to (2,2) to (3,3).</EM>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843332">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=843339">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#36225" CLASS="XRef">
+CLIP</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678175">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678176">
+ </A>
+Draw a line from (100, 200) to (600, 700), in device coordinates, using color index 12:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678177">
+ </A>
+PLOTS, [100,600], [200,700], COLOR=12, /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=678178">
+ </A>
+Draw a polyline where the line color is proportional to the ordinate that ends each line segment. First create datasets X and Y by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678179">
+ </A>
+X = SIN(FINDGEN(100)) &amp; Y = COS(FINDGEN(100))</P>
+<P CLASS="Body">
+<A NAME="pgfId=678180">
+ </A>
+Now plot X and Y in normalized coordinates with colors as described above:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678181">
+ </A>
+PLOTS, X, Y, COLOR = BYTSCL(Y, TOP=!D.N COLORS-1), /NORMAL</P>
+<P CLASS="Body">
+<A NAME="pgfId=678182">
+ </A>
+Load a good colortable to better show the result. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678183">
+ </A>
+LOADCT, 13</P>
+<P CLASS="Body">
+<A NAME="pgfId=680878">
+ </A>
+<A NAME="marker=672657">
+ </A>
+Draw 3D vectors over an established SURFACE plot:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680880">
+ </A>
+SURFACE, DIST(5), /SAVE	<EM CLASS="Comment">;
+The SAVE keyword tells IDL to save the 3D transformation established by SURFACE.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680879">
+ </A>
+PLOTS, [0,3], [0,3], [0,3], /T3D	<EM CLASS="Comment">;
+Draw a line between (0,0,0) and (3,3,3). The T3D keyword makes PLOTS use the previously established 3D transformation.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680881">
+ </A>
+PLOTS, [3,3], [0,3], [0,3], /T3D	<EM CLASS="Comment">;
+Draw a line between (3,0,0) and (3,3,3).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680882">
+ </A>
+PLOTS, [0,3], [3,3], [0,3], /T3D	<EM CLASS="Comment">;
+Draw a line between (0,3,0) and (3,3,3).</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821532">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821533">
+ </A>
+<A HREF="idl7.htm#64698" CLASS="XRef">
+ANNOTATE</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

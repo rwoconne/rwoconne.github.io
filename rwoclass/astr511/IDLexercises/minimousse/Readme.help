@@ -1,0 +1,43 @@
+                                                               19-July-1996
+ MAN.PRO - An "old-style" IDL help facility
+
+ The online help system was changed in IDL V4.0.1 to use a commercial 
+ hypertext system.   The new system has the advantage of including the entire 
+ IDL manual online with hypertext links.    However, it has least two 
+ disadvantages compared to the online help in earlier IDL versions:
+
+	(1) It is difficult for users to add help for their own procedures
+	(2) It is cumbersome if the user already knows exactly which procedure 
+            he requires help with.
+
+Therefore, the MAN procedure was written to emulate the feel of the old-style
+IDL help.   In addition, MAN allows one to directly get help on any procedure
+without knowing the topic.   For example,
+                             
+IDL> man,'rebin'         ;Display help on intrinisic IDL REBIN function
+IDL> man,'hrebin'        ;Display help on Astronomy Library HREBIN procedure
+IDL> man,'astron'        ;Display all astronomy library procedures
+
+To install the MAN procedure
+
+1.  Place the procedures in this directory in one's !PATH.   
+
+2.  Define the !HELP_PATH sytem prior to entering IDL, to point to a directory
+    to contain the help files.    This can be done either by setting the
+    environment variable IDL_HELP_PATH or by assigning !HELP_PATH in a startup
+    file.
+
+3.  Place any IDL help files (such ASTRON.HELP from the Astronomy Library)
+    in the !HELP_PATH directory.    Also place the file ROUTINES.HELP from 
+    IDL V3.6 into this directory.   This information in the ROUTINES.HELP
+    file will be somewhat obsolete, but it is the only way to get online
+    help for intrinsic procedures.
+
+Note that MAN has thus far only been tested on VMS and Unix systems.
+
+Modification History:
+
+1-Apr-1996: Modified MPBASIC so that it works even if no ROUTINES.HELP file
+            is present
+
+19-Jul-1996: Modified MPBASIC on VMS so that it works for VMS text libraries.

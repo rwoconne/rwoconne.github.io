@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRMID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1bf.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679118">
+ </A>
+<A NAME="64169">
+ </A>
+STRMID</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679119">
+ </A>
+The <A NAME="marker=674015">
+ </A>
+STRMID function extracts a substring from a string expression. The result of the function is a string of <I CLASS="Italic">
+Length</I>
+ characters taken from <I CLASS="Italic">
+Expression</I>
+, starting at character position <I CLASS="Italic">
+First_Character</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679120">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679121">
+ </A>
+Result = STRMID(<I CLASS="Italic">
+Expression, First_Character [, Length</I>
+<EM CLASS="Emphasis">
+]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679122">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679123">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679124">
+ </A>
+The expression from which the substring is to be extracted. If this argument is not a string, it is converted using IDL's default formatting rules. If <I CLASS="Italic">
+Expression</I>
+ is an array, the result is an array with the same structure, where each element contains the substring of the corresponding <I CLASS="Italic">
+Expression</I>
+ element.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679125">
+ </A>
+First_Character</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679126">
+ </A>
+The starting position within <I CLASS="Italic">
+Expression</I>
+ at which the substring starts. The first character position is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679127">
+ </A>
+Length</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679128">
+ </A>
+The length of the substring. If there are not enough characters left in the main string to obtain <I CLASS="Italic">
+Length</I>
+ characters, the substring is truncated. If <I CLASS="Italic">
+Length</I>
+ is not supplied, STRMID extracts all characters from the specified start position to the end of the string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679129">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679130">
+ </A>
+If the variable B contains the string &quot;IDL is fun&quot;, the substring &quot;is&quot; can be extracted and stored in the variable C with the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679131">
+ </A>
+C = STRMID(B, 4, 2)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795941">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820800">
+ </A>
+<A HREF="idl189.htm#13736" CLASS="XRef">
+RSTRPOS</A>
+, <A HREF="idl1c1.htm#37928" CLASS="XRef">
+STRPOS</A>
+, <A HREF="idl1c2.htm#64894" CLASS="XRef">
+STRPUT</A>
+, <A HREF="idl1c3.htm#95224" CLASS="XRef">
+STRTRIM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Printing Graphics Output Files</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl231.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl22f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144180">
+ </A>
+<A NAME="48736">
+ </A>
+<A NAME="marker=142510">
+ </A>
+Printing Graphics Output Files</H2>
+<P CLASS="Body">
+<A NAME="pgfId=144181">
+ </A>
+For printer and plotter devices (e.g., <A NAME="marker=142511">
+ </A>
+PCL, <A NAME="marker=142512">
+ </A>
+PostScript, and <A NAME="marker=142513">
+ </A>
+HP-GL), IDL creates a file containing output commands. This file can be sent to the printer via the normal methods provided by the local operating system. When attempting to output the file before exiting IDL, the user must be sure that the graphics output file is complete. For example, the following IDL commands (executed under Unix) will not produce the desired result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144182">
+ </A>
+SET_PLOT,'PS'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144183">
+ </A>
+PLOT,x,y</P>
+<P CLASS="Code">
+<A NAME="pgfId=144184">
+ </A>
+SPAWN,'lpr idl.ps'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144185">
+ </A>
+These commands fail because the attempt to print the file is premature--the file is still open within IDL and is not yet complete.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144186">
+ </A>
+The following lines of code are an IDL procedure called OUTPUT_PLOT which closes the current graphics file and sends it to the printer. This routine assumes that the graphics output file is named <EM CLASS="tt">
+idl.xxx</EM>
+, where <EM CLASS="tt">
+xxx</EM>
+ represents the name of the graphics driver. For example, PostScript output file is assumed to be <EM CLASS="tt">
+idl.ps</EM>
+. It also assumes that the graphics output to be printed is from the current graphics device, as selected with SET_PLOT.</P>
+<P CLASS="Code">
+<A NAME="pgfId=144187">
+ </A>
+Pro OUTPUT_PLOT, New_file	<EM CLASS="Comment">;
+Close the current graphics file, and print it. If the New_file parameter is present, rename the file to the given name so it won't be overwritten.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144188">
+ </A>
+DEVICE,/CLOSE	<EM CLASS="Comment">;
+Close current graphics file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144189">
+ </A>
+file = 'idl.' + STRLOWCASE(!D.NAME)	<EM CLASS="Comment">;
+Build the default output file name by using the idl name for the current device (!D.NAME).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144190">
+ </A>
+cmd = 'lpr ' + file	<EM CLASS="Comment">;
+Build shell commands to send file to the printer. You will probably have to change this command in accordance with local usage.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144191">
+ </A>
+IF N_ELEMENTS(New_file) GT 0 THEN $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144192">
+ </A>
+&nbsp;&nbsp;cmd = cmd + '; mv' + file + ' ' + New_file<BR>
+<EM CLASS="Comment">;
+Concatenate rename command if new file specified.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144193">
+ </A>
+SPAWN, cmd	<EM CLASS="Comment">;
+Issue shell commands to print/rename file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144194">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=144195">
+ </A>
+The call to DEVICE causes IDL to finish the file and close it, which makes it available for printing.</P>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144196">
+ </A>
+Setting Up The <A NAME="marker=142543">
+ </A>
+Printer</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144197">
+ </A>
+In order for IDL generated output files to work properly with printers and plotters, it is necessary for the device to be configured properly. This usually involves configuring both the device hardware and the operating system printing software. When setting up your system, keep the following points in mind:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144198">
+ </A>
+The device and computer must use some form of flow control to prevent the computer from sending data faster than the printing device can handle it. The most common form of flow control is known as XON/XOFF, and involves the sending of Control-S (off) and Control-Q (on) characters from the device to the printer to manage the flow of data.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144199">
+ </A>
+Many printers have a large buffer into which they store incoming data they haven't yet processed. This reduces the need to invoke flow control. When testing your configuration to ensure flow control is actually enabled, you must be sure to print a document long enough to fill any such buffer, or flow control may never occur, giving a false impression that the setup is correct. A common source of problems stem from attempting to print long IDL generated output files without proper flow control.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144200">
+ </A>
+Some devices (such as PCL) require an eight-bit data path, while others (such as PostScript) do not. For devices that do, it is important to ensure that the printer port and system printing software provide such a connection.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144201">
+ </A>
+If you are having problems printing on a PostScript printer, the <EM CLASS="tt">
+ehandler.ps</EM>
+ file provided in the <EM CLASS="tt">
+ps</EM>
+ subdirectory of the <EM CLASS="tt">
+fonts</EM>
+ subdirectory of the <EM CLASS="tt">
+resource</EM>
+ subdirectory of the IDL distribution can help you to debug your problem. Sending this file to your PostScript Printer causes it to print any subsequent errors it encounters on a sheet of paper and eject it. The effect of this file lasts until the printer is reset.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144202">
+ </A>
+Setting Up Printers Under Unix</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144203">
+ </A>
+Printers are configured in the <EM CLASS="tt">
+/etc/printcap</EM>
+ file. This file describes to the system which printers are connected to it, the characteristics of each printer, and how the printer port should be configured. Managing the printcap file is usually discussed in the system management documentation supplied with the system by the manufacturer.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144204">
+ </A>
+Setting Up Printers Under VMS</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144205">
+ </A>
+Printer queue configuration under VMS is a large topic. However, it is often sufficient to set the printer port up properly using the DCL_SET_TERMINAL command, and set up a printer queue using the standard printer form. Users can send eight-bit data to such a printer using the DCL PRINT/PASSALL command (On very small systems, it is even possible to dispense with the printer queue entirely and simply use the COPY command to send data to the printer port directly).</P>
+<P CLASS="Body">
+<A NAME="pgfId=144206">
+ </A>
+However, much more sophisticated arrangements are possible including the definition of specialized printer forms, placing printers on the local area network for use by more than one machine, and so forth. For information on these topics, refer to the relevant VMS documentation.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144207">
+ </A>
+<A NAME="15754">
+ </A>
+<A NAME="marker=142554">
+ </A>
+Positioning Graphics Output</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144208">
+ </A>
+The difference between the XOFFSET and YOFFSET keywords to the DEVICE procedure, and the higher level plot positioning keywords and system variables (discussed in <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+ and <A HREF="..html#71657" CLASS="XRef">
+Plotting</A>
+) can lead to confusion. A common misunderstanding is to attempt to use the DEVICE procedure &quot;offset&quot; and &quot;size&quot; keywords multiple times in an attempt to produce multiple plots on a single output page.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144209">
+ </A>
+The DEVICE keywords are intended to specify the size and position of the entire output area on the page, not to move the plotting region for multiple plots. The driver does not monitor their values continuously, but only when initializing a new page or ejecting the current one.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144210">
+ </A>
+The proper way to produce multiple plots is to use the high level positioning abilities. The !P.MULTI, !P.POSITION, and !P.REGION system variables can be used to position individual plots on the page. The plotting routines also accept the POSITION, MARGIN and REGION keywords.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144211">
+ </A>
+Image Background <A NAME="marker=142637">
+ </A>
+Color</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144212">
+ </A>
+Graphical output that is displayed with a black background on a monitor frequently look better if the background is changed to white when printed on white paper. This is easily done with the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144470">
+ </A>
+a(WHERE(a EQ 0B)) = 255B</P>
+</DIV>
+</BODY>
+</HTML>

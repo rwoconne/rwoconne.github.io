@@ -1,0 +1,664 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_FORM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=141335">
+ </A>
+<A NAME="83465">
+ </A>
+CW_FORM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=141339">
+ </A>
+The <A NAME="marker=141337">
+ </A>
+CW_FORM function is a compound widget that simplifies creating small <A NAME="marker=141338">
+ </A>
+forms which contain text, numeric fields, buttons, lists, and droplists. Event handling is also simplified.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141340">
+ </A>
+If the argument <EM CLASS="Emphasis">
+Parent</EM>
+ is present, the returned value of this function is the widget ID of the newly-created form widget. If <EM CLASS="Emphasis">
+Parent</EM>
+ is omitted, the form realizes itself as a modal, top-level widget and CW_FORM returns a structure containing the value of each field in the form when the user finishes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141341">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_form.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=141342">
+ </A>
+Using CW_FORM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=141343">
+ </A>
+The form has a value that is a structure with a tag/value pair for each field in the form. Use the command</P>
+<P CLASS="Code">
+<A NAME="pgfId=141344">
+ </A>
+WIDGET_CONTROL, id, GET_VALUE=v </P>
+<P CLASS="Body">
+<A NAME="pgfId=141345">
+ </A>
+to read the current value of the form. To set the value of one or more tags, use the command</P>
+<P CLASS="Code">
+<A NAME="pgfId=141346">
+ </A>
+WIDGET_CONTROL, id, SET_VALUE={ <EM CLASS="Emphasis">
+Tag</EM>
+:<EM CLASS="Emphasis">
+value</EM>
+, ..., <EM CLASS="Emphasis">
+Tag</EM>
+:<EM CLASS="Emphasis">
+value</EM>
+} </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=141347">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=141348">
+ </A>
+Result = CW_FORM(<EM CLASS="Emphasis">
+[Parent,] Desc</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=141349">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141350">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141351">
+ </A>
+The widget ID of the parent widget. Omit this argument to created a modal, top-level widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141352">
+ </A>
+Desc</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141353">
+ </A>
+A string array describing the form. Each element of the string array contains two or more comma-delimited fields. Each string has the following format:</P>
+<P CLASS="Code">
+<A NAME="pgfId=141354">
+ </A>
+'<EM CLASS="Emphasis">
+Depth</EM>
+, <EM CLASS="Emphasis">
+Item</EM>
+, <EM CLASS="Emphasis">
+Initial value</EM>
+, <EM CLASS="Emphasis">
+Keywords</EM>
+'</P>
+<P CLASS="Body">
+<A NAME="pgfId=141355">
+ </A>
+Use the backslash character (&quot;\&quot;) to escape commas that appear within fields. To include the backslash character, escape it with another backslash.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141356">
+ </A>
+The fields are defined as follows:</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141357">
+ </A>
+Depth</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141358">
+ </A>
+A digit defining the level at which the element will be placed on the form. Nesting is used primarily for layout, with row or column bases.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141359">
+ </A>
+This field must contain the digit 0, 1, or 2, with the following effects:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141360">
+ </A>
+A &quot;0&quot; continues the current nesting level.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141361">
+ </A>
+A &quot;1&quot; begins a new level under the current level.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141362">
+ </A>
+A &quot;2&quot; denotes the last element at the current level.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141363">
+ </A>
+Item</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141364">
+ </A>
+A label defining the type of element to be placed in the form. <EM CLASS="Emphasis">
+Item </EM>
+must be one of the following: BASE, BUTTON, DROPLIST, FLOAT, INTEGER, LABEL, LIST, or TEXT. </P>
+<P CLASS="Body">
+<A NAME="pgfId=141365">
+ </A>
+BASEs and LABELs do not return a value in the widget value structure. The other items return the following value types:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141366">
+ </A>
+BUTTON<BR>
+An integer or integer array. For single buttons, the value is 1 if the button is set, or 0 if it is not set. For exclusive button groups, the value is the index of the currently set button. For non-exclusive button groups, the value is an array containing an element for each button. Array elements are set to 1 if the corresponding button is set, or 0 if it is not set.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141367">
+ </A>
+DROPLIST<BR>
+An integer. The value set in the widget value structure is the zero-based index of the item is selected.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141368">
+ </A>
+FLOAT<BR>
+A floating-point value. The value set in the widget value structure is the floating-point value of the field.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141369">
+ </A>
+INTEGER<BR>
+An integer. The value set in the widget value structure is the integer value of the field.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=142916">
+ </A>
+LIST<BR>
+An integer. The value set in the widget value structure is the zero-based index of the item is selected.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141370">
+ </A>
+TEXT<BR>
+A string. The value set in the widget value structure is the string value of the field.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141371">
+ </A>
+Initial value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141372">
+ </A>
+The initial value of the field. The <EM CLASS="Emphasis">
+Initial value</EM>
+ field is left empty for BASEs.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141373">
+ </A>
+For BUTTON, DROPLIST, and LIST items, the value field contains one or more item names, separated by the | character. Strings do not need to be enclosed in quotes. For example, the following line defines an exclusive button group with buttons labeled &quot;one,&quot; &quot;two,&quot; and &quot;three.&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=141374">
+ </A>
+'0, BUTTON, one|two|three, EXCLUSIVE'</P>
+<P CLASS="Body">
+<A NAME="pgfId=141375">
+ </A>
+For FLOAT, INTEGER, LABEL, and TEXT items, the value field contains the initial value of the field.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141376">
+ </A>
+Keywords</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141377">
+ </A>
+The <EM CLASS="Emphasis">
+Keyword</EM>
+ field contains one of the following keywords or keyword=<EM CLASS="Emphasis">
+value</EM>
+ pairs. Keywords are used to specify optional attributes or options. Any number of <EM CLASS="Emphasis">
+Keyword</EM>
+ fields may be included in the description string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141378">
+ </A>
+Note that preceding keywords with a &quot;/&quot; character has no effect. Simply including a keyword in the <EM CLASS="Emphasis">
+Keyword</EM>
+ field enables that option.</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=142933">
+ </A>
+CENTER<BR>
+Specifies alignment of LABEL items.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141379">
+ </A>
+COLUMN<BR>
+If present, specifies column layout in BASES or for BUTTON groups.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141380">
+ </A>
+EXCLUSIVE<BR>
+If present, makes an exclusive set of BUTTONs. The default is nonexclusive.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=906212">
+ </A>
+FONT=<EM CLASS="Emphasis">
+font name<BR>
+</EM>
+If present, the font for the item is specified. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=142946">
+ </A>
+EVENT=<EM CLASS="Emphasis">
+function<BR>
+</EM>
+Specifies the name of a user-written event function that is called whenever the element is changed. The event function is called with the widget event structure as a parameter. It may return an event structure or zero to indicate that no further event processing is desired.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141385">
+ </A>
+FRAME<BR>
+If present, a frame is drawn around the item. Valid only for BASEs.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141386">
+ </A>
+LABEL_LEFT=<EM CLASS="Emphasis">
+label<BR>
+</EM>
+Place a label to the left of the item. This keyword is valid with BUTTON, DROPLIST, FLOAT, INTEGER and TEXT items.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141387">
+ </A>
+LABEL_TOP=<EM CLASS="Emphasis">
+label<BR>
+</EM>
+Place a label above the item. This keyword is valid with BUTTON, DROPLIST, FLOAT, INTEGER and TEXT items.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=142927">
+ </A>
+LEFT<BR>
+Specifies alignment of LABEL items.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141389">
+ </A>
+QUIT<BR>
+If the form widget is created as a top-level, modal widget, when the user activates an item defined with this keyword, the form is destroyed and its widget value returned in the widget value structure of CW_FORM. For non-modal form widgets, events generated by changing this item have their QUIT field set to 1.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=142939">
+ </A>
+RIGHT<BR>
+Specifies alignment of LABEL items.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141390">
+ </A>
+ROW<BR>
+If present, specifies row layout in BASES or for BUTTON groups.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141391">
+ </A>
+SET_VALUE=<EM CLASS="Emphasis">
+value<BR>
+</EM>
+Sets the initial value of BUTTON groups or DROPLISTs. For droplists and exclusive button groups, <EM CLASS="Emphasis">
+value</EM>
+ should be the zero-based index of the item selected.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141392">
+ </A>
+TAG=<EM CLASS="Emphasis">
+name<BR>
+</EM>
+The tag name of this element in the widget's value structure. If not specified, the tag name is TAG<EM CLASS="Emphasis">
+nnn</EM>
+, where <EM CLASS="Emphasis">
+nnn</EM>
+ is the zero-based index of the item in the <EM CLASS="Emphasis">
+Desc</EM>
+ array.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=141393">
+ </A>
+WIDTH=<EM CLASS="Emphasis">
+n<BR>
+</EM>
+Specifies the width, in characters, of a TEXT, INTEGER, or FLOAT item.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=141394">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141396">
+ </A>
+<A NAME="marker=141395">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141397">
+ </A>
+Set this keyword to make the orientation of the form vertical. If COLUMN is not set, the form is laid out in a horizontal row.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141399">
+ </A>
+<A NAME="marker=141398">
+ </A>
+IDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141400">
+ </A>
+Set this keyword equal to a named variable into which the widget id of each widget corresponding to an element in the <EM CLASS="Emphasis">
+Desc</EM>
+ array is stored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870689">
+ </A>
+<A NAME="marker=870688">
+ </A>
+NO_RELEASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870690">
+ </A>
+If set, button release events will not be returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141402">
+ </A>
+<A NAME="marker=141401">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141403">
+ </A>
+Set this keyword equal to a scalar string containing the title of the top level base. TITLE is not used if the form widget has a parent widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=141405">
+ </A>
+<A NAME="marker=141404">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=141406">
+ </A>
+Set this keyword equal to the user value associated with the form widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837754">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837755">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837762">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the value of the form. The form has a value that is a structure with a tag/value pair for each field in the form. Use the command</P>
+<P CLASS="Code">
+<A NAME="pgfId=837777">
+ </A>
+WIDGET_CONTROL, id, GET_VALUE=v </P>
+<P CLASS="Body">
+<A NAME="pgfId=837778">
+ </A>
+to read the current value of the form. To set the value of one or more tags, use the command</P>
+<P CLASS="Code">
+<A NAME="pgfId=837779">
+ </A>
+WIDGET_CONTROL, id, SET_VALUE={ <EM CLASS="Emphasis">
+Tag</EM>
+:<EM CLASS="Emphasis">
+value</EM>
+, ..., <EM CLASS="Emphasis">
+Tag</EM>
+:<EM CLASS="Emphasis">
+value</EM>
+} </P>
+<P CLASS="Body">
+<A NAME="pgfId=837766">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=141407">
+ </A>
+Widget Events Returned by the CW_FORM Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=141408">
+ </A>
+This widget generates event structures each time the value of the form is changed. The event structure has the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=141409">
+ </A>
+Event = { ID:0L, TOP:0L, HANDLER:0L, TAG:'', VALUE:0, QUIT:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=141410">
+ </A>
+The ID field is the widget ID of the CW_FORM widget. The TOP field is the widget ID of the top-level widget. The TAG field contains the tag name of the field that changed. The VALUE field contains the new value of the changed field. The QUIT field contains a zero if the quit flag is not set, or one if it is set.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=141411">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=141412">
+ </A>
+Define a form with a label, two groups of vertical buttons (one non-exclusive and the other exclusive), a text field, an integer field, and &quot;OK&quot; and &quot;Done&quot; buttons. If either the &quot;OK&quot; or &quot;Done&quot; buttons are pressed, the form exits.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141413">
+ </A>
+Begin by defining a string array describing the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=906108">
+ </A>
+desc = [ $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906109">
+ </A>
+'0, LABEL, Centered Label, CENTER', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906110">
+ </A>
+'1, BASE,, ROW, FRAME', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906111">
+ </A>
+'0, BUTTON, B1|B2|B3, LABEL_TOP=Nonexclusive:,' $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906112">
+ </A>
+    + 'COLUMN, TAG=bg1', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906113">
+ </A>
+'2, BUTTON, E1|E2|E2, EXCLUSIVE,LABEL_TOP=Exclusive:,' $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906114">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;+ 'COLUMN,TAG=bg2', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906115">
+ </A>
+'0, TEXT, , LABEL_LEFT=Enter File name:, WIDTH=12,' $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906116">
+ </A>
+    + 'TAG=fname', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906117">
+ </A>
+'0, INTEGER, 0, LABEL_LEFT=File size:, WIDTH=6, TAG=fsize', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906118">
+ </A>
+'1, BASE,, ROW', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906128">
+ </A>
+'0, BUTTON, OK, QUIT,' $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906129">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;+  'TAG=OK', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=906130">
+ </A>
+'2, BUTTON, Cancel, QUIT']</P>
+<P CLASS="Body">
+<A NAME="pgfId=906124">
+ </A>
+To use the form as a modal widget:</P>
+<P CLASS="Code">
+<A NAME="pgfId=141429">
+ </A>
+a = CW_FORM(desc, /COLUMN)</P>
+<P CLASS="Body">
+<A NAME="pgfId=141431">
+ </A>
+When the form is exited, (when the user presses the OK or Cancel buttons), a structure is returned as the function's value. We can examine the structure by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=141432">
+ </A>
+HELP, /STRUCTURE, a</P>
+<P CLASS="Body">
+<A NAME="pgfId=141433">
+ </A>
+IDL displays the following:</P>
+<P CLASS="Code">
+<A NAME="pgfId=141434">
+ </A>
+BG1&nbsp;&nbsp;&nbsp;&nbsp;INT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array[3]	<EM CLASS="Comment">;
+Set buttons = 1, unset = 0.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=141435">
+ </A>
+BG2&nbsp;&nbsp;&nbsp;&nbsp;INT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1	<EM CLASS="Comment">;
+Second button of exclusive button group was set.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=141436">
+ </A>
+FNAME&nbsp;&nbsp;STRING&nbsp;&nbsp;'test.dat'	<EM CLASS="Comment">;
+Value of the text field.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=141437">
+ </A>
+FSIZE&nbsp;&nbsp;LONG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;120	<EM CLASS="Comment">;
+Value of the integer field.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=141438">
+ </A>
+OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LONG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1	<EM CLASS="Comment">;
+This button was pressed.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=141439">
+ </A>
+TAG8&nbsp;&nbsp;&nbsp;LONG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0	<EM CLASS="Comment">;
+This button wasn't pressed.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=141440">
+ </A>
+Note that if the &quot;Cancel&quot; button is pressed, the &quot;OK&quot; field is set to 0.</P>
+<P CLASS="Body">
+<A NAME="pgfId=141441">
+ </A>
+To use CW_FORM inside another widget:</P>
+<P CLASS="Code">
+<A NAME="pgfId=141442">
+ </A>
+a = WIDGET_BASE(TITLE='Testing')</P>
+<P CLASS="Code">
+<A NAME="pgfId=141443">
+ </A>
+b = CW_FORM(a, desc, /COLUMN)</P>
+<P CLASS="Code">
+<A NAME="pgfId=141444">
+ </A>
+WIDGET_CONTROL, a, /REALIZE</P>
+<P CLASS="Code">
+<A NAME="pgfId=141445">
+ </A>
+XMANAGER, 'Test', a</P>
+<P CLASS="Body">
+<A NAME="pgfId=141446">
+ </A>
+The event handling procedure (in this example, called TEST_EVENT), may use the TAG field of the event structure to determine which field changed and perform any data validation or special actions required. It can also get and set the value of the widget by calling WIDGET_CONTROL.</P>
+</DIV>
+</BODY>
+</HTML>

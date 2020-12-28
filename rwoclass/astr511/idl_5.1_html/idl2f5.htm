@@ -1,0 +1,863 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrClipboard</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1143842">
+ </A>
+<A NAME="34533">
+ </A>
+IDLgrClipboard</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1143845">
+ </A>
+An <A NAME="marker=1143844">
+ </A>
+IDLgrClipboard object will send Object Graphics output to the operating system native clipboard in bitmap format. The format of bitmaps sent to the clipboard is operating system dependent: output is stored as a PICT image on the Macintosh, as a device-independent bitmap under Windows, and as an Encapsulated PostScript (EPS) image under Unix and VMS.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155893">
+ </A>
+Objects or subclasses of this type can not be saved or restored.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1143846">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143847">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1143848">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143849">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143850">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143857">
+ </A>
+See <A HREF="idl2f5.htm#29565" CLASS="XRef">
+IDLgrClipboard::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143858">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143859">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143860">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165563">
+ </A>
+<A HREF="idl2f5.htm#17584" CLASS="XRef">
+IDLgrClipboard::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165570">
+ </A>
+<A HREF="idl2f5.htm#29112" CLASS="XRef">
+IDLgrClipboard::Draw</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165594">
+ </A>
+<A HREF="idl2f5.htm#36032" CLASS="XRef">
+IDLgrClipboard::GetContiguousPixels</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165577">
+ </A>
+<A HREF="idl2f5.htm#33840" CLASS="XRef">
+IDLgrClipboard::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1165584">
+ </A>
+<A HREF="idl2f5.htm#14100" CLASS="XRef">
+IDLgrClipboard::GetTextDimensions</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143895">
+ </A>
+<A HREF="idl2f5.htm#29565" CLASS="XRef">
+IDLgrClipboard::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1216307">
+ </A>
+<A HREF="idl2f5.htm#37226" CLASS="XRef">
+IDLgrClipboard::SetProperty</A>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1173621">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173622">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1173618">
+ </A>
+<A NAME="17584">
+ </A>
+IDLgrClipboard::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143908">
+ </A>
+The IDLgrClipboard::<A NAME="marker=1143907">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143915">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143916">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143917">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143918">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1143919">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143920">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143921">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143922">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143923">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143926">
+ </A>
+<A NAME="29112">
+ </A>
+IDLgrClipboard::Draw</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143929">
+ </A>
+The IDLgrClipboard::<A NAME="marker=1143928">
+ </A>
+Draw procedure method draws the given picture to this graphics destination. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1155911">
+ </A>
+Objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143937">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143938">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+Draw, <EM CLASS="Emphasis">
+Picture</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143939">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143940">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143944">
+ </A>
+The view (an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object), viewgroup (an instance of an IDLgrViewgroup object) or scene (an instance of an <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ object) to be drawn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143948">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143949">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1165480">
+ </A>
+<A NAME="36032">
+ </A>
+IDLgrClipboard::GetContiguousPixels</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165483">
+ </A>
+The IDLgrClipboard::<A NAME="marker=1165482">
+ </A>
+GetContiguousPixels function method returns an array of long integers whose length is equal to the number of colors available in the index color mode (that is, the value of the N_COLORS property).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165484">
+ </A>
+The returned array marks contiguous pixels with the ranking of the range's size. This means that within the array, the elements in the largest available range are set to zero, the elements in the second-largest range are set to one, etc. Use this range to set an appropriate colormap for use with the SHADE_RANGE property of the <A HREF="idl305.htm#83847" CLASS="XRef">
+IDLgrSurface</A>
+ and <A HREF="idl301.htm#46829" CLASS="XRef">
+IDLgrPolygon</A>
+ object classes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165491">
+ </A>
+To get the largest contiguous range, you could use the following IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165492">
+ </A>
+result = <I CLASS="Italic">
+obj</I>
+ -&gt; GetContiguousPixels()</P>
+<P CLASS="Code">
+<A NAME="pgfId=1165493">
+ </A>
+Range0 = WHERE(result EQ 0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165494">
+ </A>
+A contiguous region in the colormap can be increasing or decreasing in values. The following would be considered contiguous:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165495">
+ </A>
+<CODE CLASS="Code">
+[0,1,2,3,4]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165496">
+ </A>
+<CODE CLASS="Code">
+[4,3,2,1,0]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1165525">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165504">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165505">
+ </A>
+Return = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+GetContiguousPixels()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165506">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165507">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1165508">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1165509">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143952">
+ </A>
+<A NAME="33840">
+ </A>
+IDLgrClipboard::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143955">
+ </A>
+The IDLgrClipboard::<A NAME="marker=1143954">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the clipboard buffer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143962">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143963">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143964">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143965">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143966">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143973">
+ </A>
+Any keyword to <A HREF="idl2f5.htm#29565" CLASS="XRef">
+IDLgrClipboard::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143975">
+ </A>
+<A NAME="marker=1143974">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143976">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the retrievable properties associated with this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156045">
+ </A>
+<A NAME="marker=1156044">
+ </A>
+SCREEN_DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156046">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of the form [<I CLASS="Italic">
+width</I>
+, <I CLASS="Italic">
+height</I>
+] specifying the maximum allowed dimensions (measured in device units) for the clipboard object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143979">
+ </A>
+<A NAME="14100">
+ </A>
+IDLgrClipboard::GetTextDimensions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143982">
+ </A>
+The IDLgrClipboard::<A NAME="marker=1143981">
+ </A>
+GetTextDimensions function method retrieves the dimensions of a text object that will be rendered in the clipboard buffer. The result is a 3-element floating-point vector [<EM CLASS="Emphasis">
+xDim</EM>
+, <EM CLASS="Emphasis">
+yDim</EM>
+, <EM CLASS="Emphasis">
+zDim</EM>
+] representing the dimensions of the text object, measured in data units. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143989">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143990">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+GetTextDimensions(<EM CLASS="Emphasis">
+TextObj</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143991">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155946">
+ </A>
+TextObj</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155947">
+ </A>
+The object reference to a text or axis object for which the text dimensions are requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143994">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1155985">
+ </A>
+<A NAME="marker=1155984">
+ </A>
+DESCENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1155986">
+ </A>
+Set this keyword equal to a named variable that will contain an array of floating-point values (one for each string in the IDLgrText object). The values represent the distance to travel (parallel to the UPDIR vector) from the text baseline to reach the bottom of the lowest descender in the string. All values will be negative numbers, or zero. This keyword is valid only if <I CLASS="Italic">
+TextObj</I>
+ is an IDLgrText object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143998">
+ </A>
+<A NAME="29565">
+ </A>
+IDLgrClipboard::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144001">
+ </A>
+The IDLgrClipboard::<A NAME="marker=1144000">
+ </A>
+Init function method initializes the clipboard object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1144008">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144009">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144010">
+ </A>
+Obj = OBJ_NEW('IDLgrClipboard')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144011">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1144012">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144013">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144014">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144015">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144022">
+ </A>
+Properties retrievable via <A HREF="idl2f5.htm#33840" CLASS="XRef">
+IDLgrClipboard::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144030">
+ </A>
+<A NAME="marker=1144029">
+ </A>
+COLOR_MODEL (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144031">
+ </A>
+Set this keyword to the color model to be used for the clipboard buffer: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144032">
+ </A>
+0 = RGB (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144033">
+ </A>
+1 = Color Index</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144035">
+ </A>
+<A NAME="marker=1144034">
+ </A>
+DIMENSIONS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144036">
+ </A>
+Set this keyword to a two-element vector of the form [<I CLASS="Italic">
+width</I>
+, <I CLASS="Italic">
+height</I>
+] to specify the dimensions of the clipboard buffer in units specified by the UNITS property. The default is [640,480].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144038">
+ </A>
+<A NAME="marker=1144037">
+ </A>
+GRAPHICS_TREE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144039">
+ </A>
+Set this keyword to an object reference of type IDLgrScene, IDLgrViewgroup, or IDLgrView. If this property is set to a valid object reference, calling the Draw method on the destination object with no arguments will cause the object reference associated with this property to be drawn. If this object is valid and the destination object is destroyed, this object reference will be destroyed as well. By default the GRAPHICS_TREE property is set equal to the null-object. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144041">
+ </A>
+<A NAME="marker=1144040">
+ </A>
+N_COLORS (Get)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144042">
+ </A>
+Set this keyword to the number of colors (between 2 and 256) to be used if COLOR_MODEL is set to Color Index. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144044">
+ </A>
+<A NAME="marker=1144043">
+ </A>
+PALETTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144045">
+ </A>
+Set this keyword to the object reference of a palette object (an instance of the IDLgrPalette object class) to specify the red, green, and blue values that are to be loaded into the clipboard buffer's color lookup table.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144047">
+ </A>
+<A NAME="marker=1144046">
+ </A>
+QUALITY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144048">
+ </A>
+Set this keyword to an integer indicating the rendering quality at which graphics are to be drawn to the clipboard buffer. Valid values are: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144049">
+ </A>
+0 = Low</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144050">
+ </A>
+1 = Medium</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144051">
+ </A>
+2 = High (default)</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144053">
+ </A>
+<A NAME="marker=1144052">
+ </A>
+RESOLUTION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144054">
+ </A>
+Set this keyword to a two-element vector of the form [<I CLASS="Italic">
+xres</I>
+, <I CLASS="Italic">
+yres</I>
+] specifying the device resolution in centimeters per pixel. The default value is: [0.0352778, 0.0352778] (72 DPI).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173623">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144056">
+ </A>
+<A NAME="marker=1144055">
+ </A>
+UNITS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144057">
+ </A>
+Set this keyword to indicate the units of measure for the DIMENSIONS property. Valid values are: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144059">
+ </A>
+0 = Device (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144060">
+ </A>
+1 = Inches</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144061">
+ </A>
+2 = Centimeters</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1144062">
+ </A>
+3 = Normalized (relative to 1600 x 1200)</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1144064">
+ </A>
+<A NAME="marker=1144063">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1144065">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1146531">
+ </A>
+<A NAME="37226">
+ </A>
+IDLgrClipboard::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144067">
+ </A>
+The IDLgrClipboard::SetProperty procedure method sets the value of a property or group of properties for the clipboard buffer. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144074">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144075">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrClipboard::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144076">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144077">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1144078">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1144085">
+ </A>
+Any keyword to <A HREF="idl2f5.htm#29565" CLASS="XRef">
+IDLgrClipboard::Init</A>
+</DIV>
+</BODY>
+</HTML>

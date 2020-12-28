@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BINOMIAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl18.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl16.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53018">
+ </A>
+<A NAME="90297">
+ </A>
+BINOMIAL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53023">
+ </A>
+The <A NAME="marker=53020">
+ </A>
+BINOMIAL <A NAME="marker=53021">
+ </A>
+function computes the <A NAME="marker=53022">
+ </A>
+probability that in a cumulative binomial (<A NAME="marker=53024">
+ </A>
+Bernoulli) distribution, a random variable <EM CLASS="Emphasis">
+X</EM>
+ is greater than or equal to a user-specified value <EM CLASS="Emphasis">
+V</EM>
+, given <EM CLASS="Emphasis">
+N</EM>
+ independent performances and a probability of occurrence or success <EM CLASS="Emphasis">
+P</EM>
+ in a single performance.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53025">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+binomial.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53026">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53027">
+ </A>
+Result = BINOMIAL(<EM CLASS="Emphasis">
+V, N, P</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53028">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53029">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53030">
+ </A>
+A non-negative integer specifying the minimum number of times the event occurs in <EM CLASS="Emphasis">
+N</EM>
+ independent performances.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53031">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53032">
+ </A>
+A non-negative integer specifying the number of performances. If the number of performances exceeds 25, the Gaussian distribution is used to approximate the cumulative binomial distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53033">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53034">
+ </A>
+A non-negative single- or double-precision floating-point scalar, in the interval [0.0, 1.0], that specifies the probability of occurrence or success of a single independent performance.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53035">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53036">
+ </A>
+Compute the probability of obtaining at least two 6s in rolling a die four times. The result should be 0.131944.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53037">
+ </A>
+result = binomial(2, 4, 1.0/6.0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53038">
+ </A>
+Compute the probability of obtaining exactly two 6s in rolling a die four times. The result should be 0.115741.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53039">
+ </A>
+result = binomial(2, 4, 1./6.) - binomial(3, 4, 1./6.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53040">
+ </A>
+Compute the probability of obtaining three or fewer 6s in rolling a die four times. The result should be 0.999228.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53041">
+ </A>
+result = (binomial(0, 4, 1./6.) - binomial(1, 4, 1./6.)) + $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53042">
+ </A>
+(binomial(1, 4, 1./6.) - binomial(2, 4, 1./6.)) + $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53043">
+ </A>
+(binomial(2, 4, 1./6.) - binomial(3, 4, 1./6.)) + $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53044">
+ </A>
+(binomial(3, 4, 1./6.) - binomial(4, 4, 1./6.))</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53045">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=907627">
+ </A>
+<A HREF="idl2e.htm#33316" CLASS="XRef">
+CHISQR_PDF</A>
+, <A HREF="idl9b.htm#50751" CLASS="XRef">
+F_PDF</A>
+, <A HREF="idlb4.htm#29831" CLASS="XRef">
+GAUSS_PDF</A>
+, <A HREF="idl1ce.htm#52203" CLASS="XRef">
+T_PDF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

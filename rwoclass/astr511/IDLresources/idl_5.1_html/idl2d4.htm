@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Creating NetCDF Files</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=998557">
+ </A>
+<A NAME="41026">
+ </A>
+Creating NetCDF Files</H2>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998559">
+ </A>
+<A NAME="marker=998558">
+ </A>
+The following IDL commands should be used to create a new netCDF file:</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998560">
+ </A>
+NCDF_CREATE: Call this procedure to begin creating a new file. The new file is put into <I CLASS="Italics">
+define</I>
+ mode.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998561">
+ </A>
+NCDF_DIMDEF: Create dimensions for the file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998562">
+ </A>
+NCDF_VARDEF: Define the variables to be used in the file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998563">
+ </A>
+NCDF_ATTPUT: Optionally, use attributes to describe the data.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998564">
+ </A>
+NCDF_CONTROL, /ENDEF: Call NCDF_CONTROL and set the ENDEF keyword to leave <I CLASS="Italics">
+define</I>
+ mode and enter <I CLASS="Italics">
+data</I>
+ mode.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998565">
+ </A>
+NCDF_VARPUT: Write the appropriate data to the netCDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998566">
+ </A>
+NCDF_CLOSE: Close the file.</P>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=998567">
+ </A>
+Reading NetCDF Files</H3>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998569">
+ </A>
+<A NAME="marker=998568">
+ </A>
+The following commands should be used to read data from a netCDF file:</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998570">
+ </A>
+NCDF_OPEN: Open an existing netCDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998571">
+ </A>
+NCDF_INQUIRE: Call this function to find the format of the netCDF file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998572">
+ </A>
+NCDF_DIMINQ: Retrieve the names and sizes of dimensions in the file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998573">
+ </A>
+NCDF_VARINQ: Retrieve the names, types, and sizes of variables in the file.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998574">
+ </A>
+NCDF_ATTNAME: Optionally, retrieve attribute names.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998575">
+ </A>
+NCDF_ATTINQ: Optionally, retrieve the types and lengths of attributes.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998576">
+ </A>
+NCDF_ATTGET: Optionally, retrieve the attributes.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998577">
+ </A>
+NCDF_VARGET: Read the data from the variables.</P>
+<P CLASS="Body-Bullet---Intro">
+<A NAME="pgfId=998578">
+ </A>
+NCDF_CLOSE: Close the file.</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998579">
+ </A>
+If the structure of the netCDF file is already known, the inquiry routines do not need to be called--only NCDF_OPEN, NCDF_ATTGET, NCDF_VARGET, and NCDF_CLOSE would be needed.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=998580">
+ </A>
+NetCDF Examples</H3>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998581">
+ </A>
+Two example files that demonstrate the use of the netCDF routines can be found in the <EM CLASS="tt">
+hdf_ncdf</EM>
+ subdirectory of the <EM CLASS="tt">
+examples</EM>
+ subdirectory of the IDL distribution. The file <EM CLASS="tt">
+nncdf_cat.pro</EM>
+ prints a summary of basic information about a netCDF file. The file <EM CLASS="tt">
+ncdf_rdwr.pro</EM>
+ creates a new netCDF file and then reads the information back from that file.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=998582">
+ </A>
+A Complete Example with Unlimited Dimensions</H5>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998583">
+ </A>
+The following example shows how to create a netCDF file, populate it with data, read data from the file, and make a simple plot from the data.The resulting graphic is shown in <A HREF="NetCDF-routines.html#48744" CLASS="XRef">
+SHOW3 Result of Unlimited Dimensions Example</A>
+.</P>
+<DIV>
+<MAP NAME="idl-128">
+</MAP>
+<CENTER><IMG SRC="idl_128.gif" USEMAP="#idl-128" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=998811">
+ </A>
+id = NCDF_CREATE('inquire.nc', /CLOBBER)<BR>
+<EM CLASS="Comment">;
+Create a new NetCDF file with the filename inquire.nc.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998599">
+ </A>
+NCDF_CONTROL, id, /FILL	<EM CLASS="Comment">;
+Fill the file with default values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998600">
+ </A>
+hours = INDGEN(5)	<EM CLASS="Comment">;
+We'll create some time-dependant data, so here is an array of hours from 0 to 5.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998601">
+ </A>
+data = FLTARR(5,10)	<EM CLASS="Comment">;
+Create a 5 by 10 array to hold floating-point data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998602">
+ </A>
+FOR i=0,9 DO $	<EM CLASS="Comment">;
+Generate some values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998603">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;data(*,i) = (i+0.5) * EXP(-hours/2.) / SIN((i+1)/30.*!PI)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998604">
+ </A>
+xid = NCDF_DIMDEF(id, 'x', 10)	<EM CLASS="Comment">;
+Make dimensions.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998605">
+ </A>
+zid = NCDF_DIMDEF(id, 'z', /UNLIMITED)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998606">
+ </A>
+hid = NCDF_VARDEF(id, 'Hour', [zid], /SHORT)<BR>
+<EM CLASS="Comment">;
+Define variables.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998607">
+ </A>
+vid = NCDF_VARDEF(id, 'Temperature', [xid,zid], /FLOAT)<BR>
+<EM CLASS="Comment">;
+Define variable.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998608">
+ </A>
+NCDF_ATTPUT, id, vid, 'units', 'Degrees x 100 F'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998609">
+ </A>
+NCDF_ATTPUT, id, vid, 'long_name', 'Warp Core Temperature'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998610">
+ </A>
+NCDF_ATTPUT, id, hid, 'long_name', 'Hours Since Shutdown'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998611">
+ </A>
+NCDF_ATTPUT, id, /GLOBAL, 'Title', 'Really important data'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998612">
+ </A>
+NCDF_CONTROL, id, /ENDEF	<EM CLASS="Comment">;
+Put file in data mode.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998613">
+ </A>
+NCDF_VARPUT, id, hid, hours 	<EM CLASS="Comment">;
+Input data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998614">
+ </A>
+FOR i=0,4 DO NCDF_VARPUT, id, vid, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998615">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;REFORM(data(i,*)), OFFSET=[0,i]<EM CLASS="Comment">;
+	Oops! We forgot the 6th hour! This is not a problem, however, as you can dynamically expand a netCDF file if the unlimited dimension is used.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998616">
+ </A>
+NCDF_VARPUT, id, hid, 6, OFFSET=[5]	<EM CLASS="Comment">;
+Add the hour and data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998617">
+ </A>
+NCDF_VARPUT, id, vid, FINDGEN(10)*EXP(-6./2), OFFSET=[0,5]<BR>
+<EM CLASS="Comment">;
+Add the temperature.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998618">
+ </A>
+NCDF_VARGET, id, vid, output_data	<EM CLASS="Comment">;
+Read the data back out.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998619">
+ </A>
+NCDF_ATTGET, id, vid, 'long_name', ztitle</P>
+<P CLASS="Code">
+<A NAME="pgfId=998620">
+ </A>
+NCDF_ATTGET, id, hid, 'long_name', ytitle</P>
+<P CLASS="Code">
+<A NAME="pgfId=998621">
+ </A>
+NCDF_ATTGET, id, vid, 'units', subtitle</P>
+<P CLASS="Code">
+<A NAME="pgfId=998622">
+ </A>
+!P.CHARSIZE = 2.5</P>
+<P CLASS="Code">
+<A NAME="pgfId=998623">
+ </A>
+!X.TITLE = 'Location'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998624">
+ </A>
+!Y.TITLE = STRING(ytitle)	<EM CLASS="Comment">;
+Convert from bytes to strings.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998625">
+ </A>
+!Z.TITLE = STRING(ztitle) + '!C' + STRING(subtitle)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998626">
+ </A>
+NCDF_CLOSE, id	<EM CLASS="Comment">;
+Close the NetCDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998627">
+ </A>
+SHOW3, output_data	<EM CLASS="Comment">;
+Display the data.</EM>
+</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

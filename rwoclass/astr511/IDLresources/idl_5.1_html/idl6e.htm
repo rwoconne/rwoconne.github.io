@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DEFSYSV</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl6f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl6d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757055">
+ </A>
+<A NAME="71903">
+ </A>
+DEFSYSV</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757058">
+ </A>
+The <A NAME="marker=757056">
+ </A>
+DEFSYSV procedure creates a new <A NAME="marker=757057">
+ </A>
+system variable called <I CLASS="Italics">
+Name </I>
+initialized to <I CLASS="Italics">
+Value</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676575">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676576">
+ </A>
+DEFSYSV, <I CLASS="Italics">
+Name, Value [, Read_Only]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676577">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676578">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676579">
+ </A>
+A scalar string containing the name of the system variable to be created. All system variable names must begin with the character `!'.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676580">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676581">
+ </A>
+An expression from which the type, structure, and initial value of the new system variable is taken. <I CLASS="Italics">
+Value</I>
+ can be a scalar, array, or structure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676582">
+ </A>
+Read_Only</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676583">
+ </A>
+If the <I CLASS="Italics">
+Read_Only</I>
+ argument is present and nonzero, the value of the <A NAME="marker=672872">
+ </A>
+newly-created system variable cannot be changed (i.e., the system variable is read-only, like the !PI system variable). Otherwise, the value of the new system variable can be modified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676584">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676585">
+ </A>
+EXISTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676586">
+ </A>
+Set this keyword to a named variable that returns 1 if the system variable specified by <I CLASS="Italics">
+Name</I>
+ exists. If this keyword is specified, <I CLASS="Italics">
+Value</I>
+ can be omitted. For example, the following commands could be used to check that the system variable XYZ exists:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676587">
+ </A>
+DEFSYSV, '!XYZ', EXISTS = i</P>
+<P CLASS="Code">
+<A NAME="pgfId=676588">
+ </A>
+IF i EQ 1 THEN PRINT, '!XYZ exists' ELSE PRINT, '!XYZ does not exist'</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676590">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676591">
+ </A>
+To create a new, floating-point, scalar system variable called !NEWVAR with an initial value of 2.0, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676592">
+ </A>
+DEFSYSV, '!NEWVAR', 2.0</P>
+<P CLASS="Body">
+<A NAME="pgfId=928101">
+ </A>
+You can both define and use a system variable within a single procedure:</P>
+<P CLASS="Code">
+<A NAME="pgfId=928158">
+ </A>
+PRO foo</P>
+<P CLASS="Code">
+<A NAME="pgfId=928105">
+ </A>
+DEFSYSV, '!foo', 'Rocky, watch me pull a squirrel out of my hat!'<EM CLASS="Comment">;
+</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=928107">
+ </A>
+PRINT, !foo<EM CLASS="Comment">;
+	Print </EM>
+!foo<EM CLASS="Comment">;
+ after defining it.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=928108">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823323">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823324">
+ </A>
+<A HREF="sysvars.html#11283" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

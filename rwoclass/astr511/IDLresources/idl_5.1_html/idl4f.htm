@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CURSOR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl50.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl4e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=682999">
+ </A>
+<A NAME="58964">
+ </A>
+CURSOR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676446">
+ </A>
+The <A NAME="marker=672776">
+ </A>
+CURSOR procedure is used to read the <A NAME="marker=672777">
+ </A>
+position of the interactive <A NAME="marker=672778">
+ </A>
+graphics cursor from the current graphics device. Note that not all graphics devices have interactive cursors. CURSOR enables the graphic cursor on the device and optionally waits for the operator to position it. On devices that have a <A NAME="marker=672779">
+ </A>
+mouse, CURSOR normally waits until a mouse <A NAME="marker=672780">
+ </A>
+button is pressed (or already down). If no mouse buttons are present, CURSOR waits for a key on the keyboard to be pressed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676447">
+ </A>
+The <A NAME="marker=672781">
+ </A>
+system variable <A NAME="marker=672782">
+ </A>
+!MOUSE is set to the button status. Each mouse button is assigned a bit in !MOUSE, bit 0 is the left most button, bit 1 the next, etc. See <A HREF="sysvars.html#12246" CLASS="XRef">
+</A>
+ for details.</P>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=680890">
+ </A>
+Using CURSOR with Draw Widgets</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677271">
+ </A>
+Note that the CURSOR procedure is only for use with IDL graphics windows. It should not be used with draw widgets. To obtain the cursor position and button state information from a draw widget, examine the X, Y, PRESS, and RELEASE fields in the structures returned by the draw widget in response to cursor events.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=680787">
+ </A>
+Using CURSOR with the TEK Device</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680789">
+ </A>
+Note that for the CURSOR procedure to work properly with Tektronix terminals, you may need to execute the command, <CODE CLASS="Code">
+DEVICE, GIN_CHARS=6</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676448">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676449">
+ </A>
+CURSOR, <I CLASS="Italics">
+X, Y [, Wait]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676450">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676451">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676452">
+ </A>
+A named variable to receive the cursor's current column position.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676453">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676454">
+ </A>
+A named variable to receive the cursor's current row position.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676455">
+ </A>
+Wait</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676456">
+ </A>
+An integer that specifies the conditions under which CURSOR returns. This parameter can be used interchangeably with the keyword parameters listed below that specify the type of wait. The default value is 1. The table below describes each type of wait.</P>
+<P CLASS="Body">
+<A NAME="pgfId=805283">
+ </A>
+Note that not all modes of waiting work with all display devices.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=805278">
+ </A>
+Values for CURSOR Wait Parameter</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805242">
+ </A>
+Wait Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805244">
+ </A>
+Corresponding Keyword</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=805246">
+ </A>
+Action</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805248">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805250">
+ </A>
+NOWAIT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805252">
+ </A>
+Return immediately.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805254">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805256">
+ </A>
+WAIT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805258">
+ </A>
+Return if a button is down.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805260">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805262">
+ </A>
+CHANGE</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805264">
+ </A>
+Return if a button is pressed, released, or the pointer is moved.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805266">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805268">
+ </A>
+DOWN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805270">
+ </A>
+Return when a button down transition is detected.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805272">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805274">
+ </A>
+UP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=805276">
+ </A>
+Return when a button up transition is detected.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676457">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676458">
+ </A>
+<A NAME="marker=672785">
+ </A>
+CHANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676459">
+ </A>
+Set this keyword to wait for pointer movement or button transition within the currently selected window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676460">
+ </A>
+<A NAME="marker=672786">
+ </A>
+DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676461">
+ </A>
+Set this keyword to return <I CLASS="Italics">
+X</I>
+ and <I CLASS="Italics">
+Y</I>
+ in data coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676462">
+ </A>
+<A NAME="marker=672787">
+ </A>
+DOWN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676463">
+ </A>
+Set this keyword to wait for a button down transition within the currently selected window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676464">
+ </A>
+<A NAME="marker=672788">
+ </A>
+DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676465">
+ </A>
+Set this keyword to return <I CLASS="Italics">
+X</I>
+ and <I CLASS="Italics">
+Y</I>
+ in device coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676466">
+ </A>
+<A NAME="marker=672789">
+ </A>
+NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676467">
+ </A>
+Set this keyword to return <I CLASS="Italics">
+X</I>
+ and <I CLASS="Italics">
+Y</I>
+ in normalized coordinates.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676468">
+ </A>
+<A NAME="marker=672790">
+ </A>
+NOWAIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676469">
+ </A>
+Set this keyword to read the pointer position and button status and return immediately. If the pointer is not within the currently selected window, the device coordinates -1, -1 are returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676470">
+ </A>
+<A NAME="marker=672791">
+ </A>
+UP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676471">
+ </A>
+Set this keyword to wait for a button up transition within the current window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676472">
+ </A>
+<A NAME="marker=672792">
+ </A>
+WAIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676473">
+ </A>
+Set this keyword to wait for a button to be depressed within the currently selected window. If a button is already pressed, return immediately.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676474">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676475">
+ </A>
+Activate the graphics cursor, select a point in the graphics window, and return the position of the cursor in device coordinates. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676476">
+ </A>
+CURSOR, X, Y, /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=676477">
+ </A>
+Move the cursor over the graphics window and press the mouse button. The position of the cursor in device coordinates is stored in the variables X and Y. To label the location, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676478">
+ </A>
+XYOUTS, X, Y, 'X marks the spot.', /DEVICE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=818867">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818868">
+ </A>
+<A HREF="idl160.htm#87088" CLASS="XRef">
+RDPIX</A>
+, <A HREF="idl1eb.htm#99624" CLASS="XRef">
+TVCRS</A>
+, <A HREF="idl22e.htm#69514" CLASS="XRef">
+CURSOR_CROSSHAIR</A>
+ (and other CURSOR_ keywords), <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+, <A HREF="sysvars.html#12246" CLASS="XRef">
+</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

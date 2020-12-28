@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DOC_LIBRARY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl83.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl81.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=129451">
+ </A>
+<A NAME="50938">
+ </A>
+DOC_LIBRARY</H2>
+<P CLASS="Body">
+<A NAME="pgfId=129455">
+ </A>
+The <A NAME="marker=129453">
+ </A>
+DOC_LIBRARY procedure extracts <A NAME="marker=129454">
+ </A>
+documentation headers from one or more IDL programs (procedures or functions). This command provides a standard interface to the operating-system specific DL_DOS, DL_UNIX, and DL_VMS procedures.</P>
+<P CLASS="Body">
+<A NAME="pgfId=129456">
+ </A>
+The documentation header of the <CODE CLASS="Code">
+.pro</CODE>
+ file in question must have the following format:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=42987">
+ </A>
+The first line of the documentation block contains only the characters <CODE CLASS="Code">
+;+</CODE>
+, starting in column 1.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=42988">
+ </A>
+The last line of the documentation block contains only the characters <CODE CLASS="Code">
+;-</CODE>
+, starting in column 1.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=42989">
+ </A>
+All other lines in the documentation block contain a <CODE CLASS="Code">
+;</CODE>
+ in column 1.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=196495">
+ </A>
+The file <CODE CLASS="Code">
+template.pro</CODE>
+ in the <CODE CLASS="Code">
+general</CODE>
+ subdirectory of the <CODE CLASS="Code">
+examples</CODE>
+ subdirectory of the IDL distribution contains a template for creating your own documentation headers.</P>
+<P CLASS="Body">
+<A NAME="pgfId=193120">
+ </A>
+This routine is supplied for users to view <A NAME="marker=193119">
+ </A>
+online documentation from their own IDL programs. Though it could be used to view documentation headers from the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution, we do not recommend doing so. The documentation headers on the files in the <CODE CLASS="Code">
+lib</CODE>
+ directory are used for historical purposes--most do not contain the most current or accurate documentation for those routines. The most current documentation for IDL's built-in and library routines is found in IDL's online help system (enter <CODE CLASS="Code">
+?</CODE>
+ at the IDL prompt).</P>
+<P CLASS="Body">
+<A NAME="pgfId=42991">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+doc_library.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=42992">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=42993">
+ </A>
+DOC_LIBRARY <I CLASS="Italics">
+[, Name] </I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=42994">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=42995">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=42996">
+ </A>
+A string containing the name of the IDL routine in question. Under Windows or Unix, <I CLASS="Italics">
+Name</I>
+ can be <CODE CLASS="Code">
+&quot;*&quot;</CODE>
+ to get information on all routines.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=42997">
+ </A>
+Keywords (All Platforms)</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=42998">
+ </A>
+<A NAME="marker=43031">
+ </A>
+PRINT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=42999">
+ </A>
+Set this keyword to send the output of DOC_LIBRARY to the default printer. Under Unix, if PRINT is a string, it is interpreted as a shell command used for output with the documentation from DOC_LIBRARY providing standard input (i.e., <CODE CLASS="Code">
+PRINT=&quot;cat &gt; junk&quot;</CODE>
+).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43000">
+ </A>
+Unix Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43001">
+ </A>
+<A NAME="marker=43032">
+ </A>
+DIRECTORY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43002">
+ </A>
+A string containing the name of the directory to search. If omitted, the current directory and !PATH are used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43003">
+ </A>
+<A NAME="marker=43033">
+ </A>
+MULTI</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43004">
+ </A>
+Set this keyword to allow printing of more than one file if the requested module exists in more than one directory.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43005">
+ </A>
+VMS Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43006">
+ </A>
+<A NAME="marker=43034">
+ </A>
+FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43007">
+ </A>
+If this keyword is set, the output is left in the file <CODE CLASS="Code">
+userlib.doc</CODE>
+, in the current directory.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43008">
+ </A>
+<A NAME="marker=43035">
+ </A>
+PATH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43009">
+ </A>
+A string that describes an optional directory/library search path. This keyword uses the same format and semantics as !PATH. If omitted, !PATH is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=43010">
+ </A>
+<A NAME="marker=43036">
+ </A>
+OUTPUTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=43011">
+ </A>
+If this keyword is set, documentation is sent to the standard output unless the PRINT keyword is set.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=43012">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=43013">
+ </A>
+To view the documentation header for the library function DIST, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=43014">
+ </A>
+DOC_LIBRARY, 'DIST'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=193087">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=193088">
+ </A>
+<A HREF="idl11a.htm#95205" CLASS="XRef">
+MK_HTML_HELP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

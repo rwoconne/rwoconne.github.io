@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARCREATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl258.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997710">
+ </A>
+<A NAME="72205">
+ </A>
+CDF_VARCREATE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997714">
+ </A>
+The <A NAME="marker=997712">
+ </A>
+CDF_VARCREATE function creates a new <A NAME="marker=997713">
+ </A>
+variable in a Common Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997715">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997716">
+ </A>
+Result = CDF_VARCREATE(<I CLASS="Italics">
+Id, Name [, DimVary]</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997717">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997718">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997719">
+ </A>
+The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997720">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997721">
+ </A>
+A string containing the name of the variable to be created.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997722">
+ </A>
+DimVary</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997723">
+ </A>
+A one-dimensional array containing one element per CDF dimension. If the element is non-zero or the string <CODE CLASS="Code">
+'VARY'</CODE>
+, the variable will have variance in that dimension. If the element is zero or the string <CODE CLASS="Code">
+'NOVARY'</CODE>
+ then the variable will have no variance with that dimension. If the variable is zero-dimensional, this argument may be omitted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997724">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997725">
+ </A>
+You must specify the type variable being created. This is done by setting one of the following keywords:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997726">
+ </A>
+CDF_BYTE	&#183;&nbsp;&nbsp;CDF_INT4	</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997727">
+ </A>
+CDF_CHAR	&#183;&nbsp;&nbsp;CDF_REAL4</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997728">
+ </A>
+CDF_DOUBLE	&#183;&nbsp;&nbsp;CDF_REAL8</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997729">
+ </A>
+CDF_EPOCH	&#183;&nbsp;&nbsp;CDF_UCHAR</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997730">
+ </A>
+CDF_FLOAT	&#183;&nbsp;&nbsp;CDF_UINT1</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997731">
+ </A>
+CDF_INT1	&#183;&nbsp;&nbsp;CDF_UINT2</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=997732">
+ </A>
+CDF_INT2	&#183;&nbsp;&nbsp;CDF_UINT4</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=997733">
+ </A>
+If no type is specified, CDF_FLOAT is assumed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997734">
+ </A>
+Although all CDF variable types are supported within the file, IDL has full support only for the following CDF data types: CDF_DOUBLE, CDF_EPOCH, CDF_FLOAT, CDF_INT2, CDF_INT4, CDF_REAL4, CDF_REAL8, and CDF_UCHAR.</P>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997736">
+ </A>
+<A NAME="marker=997735">
+ </A>
+ALLOCATERECS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997737">
+ </A>
+Set this keyword equal to the desired number of pre-allocated records for this variable in a SINGLE_FILE CDF file. Pre-allocating records ensure that variable data is stored contiguously in the CDF file. For discussion about allocating records, see section 2.3.8 (&quot;Records&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997739">
+ </A>
+<A NAME="marker=997738">
+ </A>
+DIMENSIONS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997740">
+ </A>
+Set this keyword to create a new zVariable with the specified dimensions. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997741">
+ </A>
+id = CDF_CREATE(&quot;cdffile.cdf&quot;, [100] )</P>
+<P CLASS="Code">
+<A NAME="pgfId=997742">
+ </A>
+<EM CLASS="Kern-Code--1%">
+zid = CDF_VARCREATE(id, &quot;Zvar&quot;, [1,1,1], DIM=[10,20,30])</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997744">
+ </A>
+<A NAME="marker=997743">
+ </A>
+NUMELEM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997745">
+ </A>
+The number of elements of the data type at each variable value. This keyword only has meaning for string data types (CDF_CHAR, CDF_UCHAR). This is the number of characters in the string. The default is 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997747">
+ </A>
+<A NAME="marker=997746">
+ </A>
+REC_NOVARY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997748">
+ </A>
+If this keyword is set, all records will contain the same information. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997750">
+ </A>
+<A NAME="marker=997749">
+ </A>
+REC_VARY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997751">
+ </A>
+If this keyword is set, all records will contain unique data. This is the default.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997753">
+ </A>
+<A NAME="marker=997752">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997754">
+ </A>
+A variable is assumed to be a zVariable if its dimensions are specified by the DIMENSIONS keyword. Set this keyword to create a zero-dimensional zVariable.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997755">
+ </A>
+For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997756">
+ </A>
+id = CDF_CREATE(&quot;cdffile.cdf&quot;, [100] )</P>
+<P CLASS="Code">
+<A NAME="pgfId=997757">
+ </A>
+zid = CDF_VARCREATE(id, &quot;Zvar&quot;, /ZVARIABLE)</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997758">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1001225">
+ </A>
+Create a CDF file to record the data retrieved from an array of temperature and salinity detectors. In this example, there is a 3 x 4 array of detectors at two depths, 10.0 meters and 20.2 meters:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001230">
+ </A>
+id = CDF_CREATE(&quot;temp_salinity.cdf&quot;, [3,4], /NETWORK_ENCODING, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001359">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/SUN_DECODING, /CLOBBER)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001232">
+ </A>
+temp_id =CDF_VARCREATE(id, &quot;Temperature&quot;, ['Vary', 'Vary'], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001367">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/REC_VARY,/CDF_FLOAT)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001234">
+ </A>
+depth_id = CDF_VARCREATE(id, &quot;Depth&quot;, [0,0], /REC_VARY, /CDF_FLOAT)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001235">
+ </A>
+sal_id = CDF_VARCREATE(id, &quot;Salinity&quot;, [1,1], /REC_VARY, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001384">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/CDF_DOUBLE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001236">
+ </A>
+Create and fill the UNITS attribute:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001237">
+ </A>
+units_att = CDF_ATTCREATE(id, 'UNITS', /VARIABLE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001238">
+ </A>
+CDF_ATTPUT, id, 'UNITS', 'Depth', 'Meters'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001239">
+ </A>
+CDF_ATTPUT, id, 'UNITS', temp_id, 'Kelvin'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001450">
+ </A>
+CDF_ATTPUT, id, units_att, sal_id, 'Percent'</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001451">
+ </A>
+Create and write some fictitous data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001244">
+ </A>
+data1 = 20.0 + FINDGEN(3,4)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001245">
+ </A>
+CDF_VARPUT, id, varid, data1</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001246">
+ </A>
+CDF_VARPUT, id, depth_id, '10.0'	<EM CLASS="Comment">;
+IDL will handle the type conversion, CDF will set all values of this record to a depth of 10.0.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001249">
+ </A>
+CDF_VARPUT, id, depth_id, 20.2,rec_start=1<BR>
+<EM CLASS="Comment">;
+Set the second depth.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001251">
+ </A>
+CDF_VARPUT, id, sal_id, DINDGEN(3,4)/10.0<BR>
+<EM CLASS="Comment">;
+Make more fictitous data.</EM>
+ </P>
+<P CLASS="Body">
+<A NAME="pgfId=1001253">
+ </A>
+Demostrate the non-variance of depth by retrieving the values. On the first pass, use CDF_VARGET1 to retrieve single values:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001255">
+ </A>
+CDF_VARGET1, id, depth_id, pth_0	<EM CLASS="Comment">;
+Get single values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001256">
+ </A>
+CDF_VARGET1, id, depth_id, depth_1, REC_START=1<BR>
+<EM CLASS="Comment">;
+Get single values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001257">
+ </A>
+HELP, depth_0, depth_1</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001602">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001603">
+ </A>
+DEPTH_0         FLOAT     =       10.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001604">
+ </A>
+DEPTH_1         FLOAT     =       20.2000</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001279">
+ </A>
+Now retrieve the full depth records:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001280">
+ </A>
+CDF_VARGET, id, depth_id, depth, REC_COUNT=2</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001283">
+ </A>
+Examine the depth variable</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001285">
+ </A>
+HELP, depth</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001286">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001287">
+ </A>
+DEPTH           FLOAT     = Array(3, 4, 2)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1001288">
+ </A>
+PRINT, depth</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001289">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001290">
+ </A>
+10.0000      10.0000      10.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001291">
+ </A>
+10.0000      10.0000      10.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001292">
+ </A>
+10.0000      10.0000      10.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001293">
+ </A>
+10.0000      10.0000      10.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001294">
+ </A>
+&nbsp;</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001295">
+ </A>
+20.2000      20.2000      20.2000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001296">
+ </A>
+20.2000      20.2000      20.2000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001297">
+ </A>
+20.2000      20.2000      20.2000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1001298">
+ </A>
+20.2000      20.2000      20.2000</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001220">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1001221">
+ </A>
+The following example creates a variable, setting the data type from a string variable, which could have been returned by the DATATYPE keyword to a CDF_VARINQ call.</P>
+<P CLASS="Code">
+<A NAME="pgfId=998891">
+ </A>
+VARTYPE = 'CDF_FLOAT'</P>
+<P CLASS="Body">
+<A NAME="pgfId=998892">
+ </A>
+Use the _EXTRA keyword and the CREATE_STRUCT function to make the appropriate keyword.</P>
+<P CLASS="Code">
+<A NAME="pgfId=998897">
+ </A>
+VarId = CDF_VARCREATE(Id, 'Pressure', [1,1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998898">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;NUMELEM=2, _EXTRA=CREATE_STRUCT(VARTYPE,1))</P>
+<P CLASS="Code">
+<A NAME="pgfId=998899">
+ </A>
+CDF_CLOSE, id	<EM CLASS="Comment">;
+Close the CDF file.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

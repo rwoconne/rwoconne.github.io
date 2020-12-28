@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFAN_ADDFID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl271.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl26f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997148">
+ </A>
+<A NAME="51409">
+ </A>
+HDF_DFAN_ADDFID</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997152">
+ </A>
+The <A NAME="marker=997150">
+ </A>
+HDF_DFAN_ADDFID procedure adds a <A NAME="marker=997151">
+ </A>
+file annotation to a Hierarchical Data Format file. A file can have multiple annotations added.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997153">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997154">
+ </A>
+HDF_DFAN_ADDFID, <I CLASS="Italics">
+Filename, Label</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997155">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997156">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997157">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997158">
+ </A>
+Label</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997159">
+ </A>
+A string containing the annotation string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997160">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997161">
+ </A>
+Open and HDF file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997162">
+ </A>
+filename = 'FID.hdf'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997163">
+ </A>
+hid = HDF_OPEN(filename,/CREATE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997164">
+ </A>
+Write two file annotations:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997165">
+ </A>
+HDF_DFAN_ADDFID, filename, 'File Annotation #1'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997166">
+ </A>
+HDF_DFAN_ADDFID, filename, 'File Annotation #2'</P>
+<P CLASS="Body">
+<A NAME="pgfId=997167">
+ </A>
+Read the two annotations back:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997168">
+ </A>
+HDF_DFAN_GETFID, filename, fid1</P>
+<P CLASS="Code">
+<A NAME="pgfId=997169">
+ </A>
+HDF_DFAN_GETFID, filename, fid2</P>
+<P CLASS="Code">
+<A NAME="pgfId=997170">
+ </A>
+HELP, fid1, fid2</P>
+<P CLASS="Body">
+<A NAME="pgfId=997171">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997172">
+ </A>
+FID1            STRING    = 'File Annotation #1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997173">
+ </A>
+FID2            STRING    = 'File Annotation #2'</P>
+<P CLASS="Body">
+<A NAME="pgfId=997174">
+ </A>
+Try to read a non-existant FID:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997175">
+ </A>
+HDF_DFAN_GETFID, filename, fid3</P>
+<P CLASS="Body">
+<A NAME="pgfId=997176">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997177">
+ </A>
+% HDF_DFAN_GETFID: Could not read ID length</P>
+<P CLASS="Body">
+<A NAME="pgfId=997178">
+ </A>
+Read the FIRST fid again, using the FIRST keyword:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997179">
+ </A>
+HDF_DFAN_GETFID, filename, fid4, /FIRST</P>
+<P CLASS="Code">
+<A NAME="pgfId=997180">
+ </A>
+HELP, fid4</P>
+<P CLASS="Body">
+<A NAME="pgfId=997181">
+ </A>
+&nbsp;</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997182">
+ </A>
+FID4            STRING    = 'File Annotation #1'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997183">
+ </A>
+HDF_CLOSE, hid	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

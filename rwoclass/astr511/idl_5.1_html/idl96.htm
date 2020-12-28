@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXPAND_PATH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl97.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl95.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676787">
+ </A>
+<A NAME="94060">
+ </A>
+EXPAND_PATH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676788">
+ </A>
+The <A NAME="marker=672981">
+ </A>
+EXPAND_PATH function is used to expand a simple <A NAME="marker=672982">
+ </A>
+path-definition string into a full path name for use with the !PATH system variable.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=676790">
+ </A>
+<CODE CLASS="Code">
+!PATH</CODE>
+<A NAME="marker=672984">
+ </A>
+ is a list of locations where IDL searches for currently undefined procedures and functions.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676792">
+ </A>
+<CODE CLASS="Code">
+</CODE>
+The Path Definition String</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676793">
+ </A>
+EXPAND_PATH accepts a single argument, a scalar string that contains a simple path-definition string, that the function expands into a list of directories that can be assigned to !PATH. This string uses the same format as the IDL_PATH environment variable (Unix, Windows) or logical name (VMS). This format is also used in the path preferences dialog (Windows, Macintosh).</P>
+<P CLASS="Body">
+<A NAME="pgfId=676794">
+ </A>
+The path-definition string is a scalar string containing a list of directories (and in the case of <A NAME="marker=672986">
+ </A>
+VMS, text library files that are prefixed with the &quot;@&quot; character), separated by a special character (&quot;<CODE CLASS="Code">
+:</CODE>
+&quot; for Unix and Macintosh, &quot;<CODE CLASS="Code">
+,</CODE>
+&quot; for VMS, and &quot;<CODE CLASS="Code">
+;</CODE>
+&quot; for Windows). Prepending a &quot;+&quot; character to a directory name causes all of its subdirectories to be searched.</P>
+<P CLASS="Body">
+<A NAME="pgfId=723897">
+ </A>
+If a directory specified in the string does <I CLASS="Italics">
+not</I>
+ have a &quot;+&quot; character prepended to it, it is copied to the output string verbatim. However, if it does have a leading &quot;+&quot; then EXPAND_PATH performs the following steps, searching each subdirectory of the specified directory recursively for other subdirectories. All directories found that contain at least one file of the desired type are added to the search path.</P>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=879065">
+ </A>
+A Note on Order within !PATH</H6>
+<P CLASS="Body">
+<A NAME="pgfId=879067">
+ </A>
+IDL ensures only that all directories containing IDL files are placed in !PATH. The order in which they appear is completely unspecified, and does not necessarily correspond to any specific order (such as top-down alphabetized). This allows IDL to construct the path in the fastest possible way and speeds startup. This is only a problem if two subdirectories in such a hierarchy contain a file with the same name. Such hierarchies usually are a collection of cooperative routines designed to work together, so such duplication is rare.</P>
+<P CLASS="Body">
+<A NAME="pgfId=879066">
+ </A>
+If the order in which &quot;+&quot; expands directories is a problem for your application, you should add the directories to the path explicitly and not use &quot;+&quot;. Only the order of the files within a given &quot;+&quot; entry are determined by IDL. It never reorders !PATH in any other way. You can therefore obtain any search order you desire by writing the path explicitly.</P>
+<UL>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=676796">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Unix:</STRONG>
+ The directory name is expanded to remove wildcards (~ and *). This avoids overhead IDL would otherwise incur as it searches for library routines. It is discarded from the search path if any of the following is true:</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676797">
+ </A>
+It is not a directory.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676798">
+ </A>
+The directory it names does not exist or cannot be accessed.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676799">
+ </A>
+The directory does not contain any <CODE CLASS="Code">
+.pro</CODE>
+ or <CODE CLASS="Code">
+.sav</CODE>
+ files.</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=676801">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+VMS:</STRONG>
+ The directory name is discarded from the search path if any of the following is true:</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676802">
+ </A>
+It is not a directory.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676803">
+ </A>
+The directory it names does not exist or cannot be accessed.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676804">
+ </A>
+The directory does not contain any <CODE CLASS="Code">
+.PRO</CODE>
+ or <CODE CLASS="Code">
+.SAV</CODE>
+ files).</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=676805">
+ </A>
+In addition, any text library (<CODE CLASS="Code">
+.TLB</CODE>
+) files are added to the result.</P>
+<UL>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=676806">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Windows:</STRONG>
+ The directory name is expanded to remove wildcards (*). This avoids overhead IDL would otherwise incur as it searches for library routines. It is discarded from the search path if any of the following is true:</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676807">
+ </A>
+It is not a directory.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676808">
+ </A>
+The directory it names does not exist or cannot be accessed.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=676809">
+ </A>
+The directory does not contain any <CODE CLASS="Code">
+.PRO</CODE>
+ or <CODE CLASS="Code">
+.SAV</CODE>
+ files.</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=723863">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Macintosh:</STRONG>
+ The folder name is expanded to remove wildcards (*). This avoids overhead IDL would otherwise incur as it searches for library routines. It is discarded from the search path if any of the following is true:</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=723867">
+ </A>
+It is not a folder.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=723868">
+ </A>
+The folder it names does not exist or cannot be accessed.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=723869">
+ </A>
+The folder does not contain any <CODE CLASS="Code">
+.pro</CODE>
+ or <CODE CLASS="Code">
+.sav</CODE>
+ files.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676811">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676812">
+ </A>
+Result = EXPAND_PATH(<I CLASS="Italics">
+String</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676813">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676814">
+ </A>
+String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676815">
+ </A>
+A scalar string containing the path-definition string to be expanded. See &quot;The Path Definition String,&quot; above, for details.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676816">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676817">
+ </A>
+<A NAME="marker=672987">
+ </A>
+ARRAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676818">
+ </A>
+Set this keyword to return the result as a string array with each element containing one path segment. In this case, there is no need for a separator character and none is supplied. Normally, the result is a string array with the various path segments separated with the correct special delimiter character for the current operating system.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676819">
+ </A>
+<A NAME="marker=672988">
+ </A>
+COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676820">
+ </A>
+Set this keyword to a named variable which returns the number of path segments contained in the result.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676823">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676824">
+ </A>
+Under the Unix operating system, the default value of !PATH is specified as &quot;<CODE CLASS="Code">
++/usr/local/rsi/idl/lib</CODE>
+&quot;, unless this default is changed by setting the IDL_PATH environment variable. When IDL starts, one of the first things it does is to run this default value through the EXPAND_PATH function to obtain the actual value for the !PATH system variable. The following statement shows how this expansion might look (assuming that your IDL is installed in <CODE CLASS="Code">
+/usr/local/rsi/idl</CODE>
+):</P>
+<P CLASS="Code">
+<A NAME="pgfId=676825">
+ </A>
+PRINT, EXPAND_PATH('+/usr/local/rsi/idl/lib')</P>
+<P CLASS="Body">
+<A NAME="pgfId=36103">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=36104">
+ </A>
+/usr/local/rsi/idl/lib</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36111">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=855414">
+ </A>
+<A HREF="..html#14651" CLASS="XRef">
+Executing Program Files</A>
+ and <A HREF="sysvars.html#70125" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

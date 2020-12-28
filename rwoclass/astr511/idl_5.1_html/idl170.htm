@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl171.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl16f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=279683">
+ </A>
+<A NAME="45159">
+ </A>
+READS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678447">
+ </A>
+The <A NAME="marker=673684">
+ </A>
+READS procedure performs formatted <A NAME="marker=673685">
+ </A>
+input from a string variable and writes the results into one or more output variables. This procedure differs from the READ procedure only in that the input comes from memory instead of a file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678448">
+ </A>
+This routine is useful when you need to examine the format of a data file before reading the information it contains. Each line of the file can be read into a string using READF. Then the components of that line can be read into variables using READS.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678449">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678450">
+ </A>
+READS, <I CLASS="Italic">
+Input</I>
+, <I CLASS="Italic">
+Var</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, ..., <I CLASS="Italic">
+Var</I>
+<SUB CLASS="Subscript">
+n</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678451">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678452">
+ </A>
+Input</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678453">
+ </A>
+The string variable from which the input is taken. If the supplied argument is not a string, it is automatically converted. The argument can be scalar or array. If <I CLASS="Italic">
+Input</I>
+ is an array, the individual string elements are treated as successive lines of input.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678454">
+ </A>
+Var<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678455">
+ </A>
+The named variables to receive the input.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678456">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678457">
+ </A>
+<A NAME="marker=673686">
+ </A>
+FORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843158">
+ </A>
+If FORMAT is not specified, IDL uses its default rules for formatting the input. FORMAT allows the format of the input to be specified in precise detail, using a FORTRAN-style specification. See <A HREF="..html#50524" CLASS="XRef">
+Using Explicitly Formatted Input/Output</A>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795801">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795802">
+ </A>
+<A HREF="idl161.htm#26845" CLASS="XRef">
+READ/READF</A>
+, <A HREF="idl171.htm#52434" CLASS="XRef">
+READU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

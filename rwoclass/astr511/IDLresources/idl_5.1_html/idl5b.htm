@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_DEFROI</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755425">
+ </A>
+<A NAME="37165">
+ </A>
+CW_DEFROI</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755429">
+ </A>
+The <A NAME="marker=755426">
+ </A>
+CW_DEFROI function creates a compound <A NAME="marker=755427">
+ </A>
+widget that allows the user to define a <A NAME="marker=755428">
+ </A>
+region of interest within a widget draw window. </P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=906035">
+ </A>
+This is a <EM CLASS="Emphasis">
+modal</EM>
+ widget. No other widget applications will be responsive while this widget is in use. Also, since CW_DEFROI has its own event-handling loop, it should not be created as a child of a modal base.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=796114">
+ </A>
+The returned value of this function is an array of subscripts defining the region. If no region is defined, the scalar -1 is returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755431">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_defroi.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755432">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755433">
+ </A>
+Result = CW_DEFROI(<EM CLASS="Emphasis">
+Draw</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755434">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755435">
+ </A>
+Draw</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755436">
+ </A>
+The widget ID of draw window in which to draw the region. Note that the draw window must have both BUTTON and MOTION events enabled (see <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+ for more information).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755437">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755439">
+ </A>
+<A NAME="marker=755438">
+ </A>
+IMAGE_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755440">
+ </A>
+The size of the underlying array, expressed as a two element vector: [<EM CLASS="Emphasis">
+columns</EM>
+, <EM CLASS="Emphasis">
+rows</EM>
+]. Default is the size of the draw window divided by the value of ZOOM.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755442">
+ </A>
+<A NAME="marker=755441">
+ </A>
+OFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755443">
+ </A>
+The offset of lower left corner of image within the draw window. Default = [0,0].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755445">
+ </A>
+<A NAME="marker=755444">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755446">
+ </A>
+Set this keyword to return inverted subscripts, as if the array were output from top to bottom.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755448">
+ </A>
+<A NAME="marker=755447">
+ </A>
+RESTORE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755449">
+ </A>
+Set this keyword to restore the draw window to its previous appearance on exit. Otherwise, the regions remain on the drawable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755451">
+ </A>
+<A NAME="marker=755450">
+ </A>
+ZOOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755452">
+ </A>
+If the image array was expanded (using REBIN, for example) specify this two element vector containing the expansion factor in X and Y. Default = [1,1]. Both elements of ZOOM must be integers.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837664">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837665">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837676">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796264">
+ </A>
+Widget Events Returned by the CW_DEFROI Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796267">
+ </A>
+Region definition widgets do not return an event structure.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755453">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755454">
+ </A>
+The following two procedures create a region-of-interest widget and its event handler. Create a file containing the program code using a text editor and compile using the .RUN command, or type .RUN at the IDL prompt and enter the lines interactively.</P>
+<P CLASS="Body">
+<A NAME="pgfId=163473">
+ </A>
+First, create the event handler:</P>
+<P CLASS="Code">
+<A NAME="pgfId=163360">
+ </A>
+PRO test_event, ev</P>
+<P CLASS="Code">
+<A NAME="pgfId=163363">
+ </A>
+COMMON T, draw, dbutt, done, image<BR>
+<EM CLASS="Comment">;
+The common block holds variables that are shared between the routine and its event handler.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163364">
+ </A>
+IF ev.id EQ dbutt THEN BEGIN	<EM CLASS="Comment">;
+Define what happens when you click the &quot;Draw ROI&quot; button.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163366">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;Q = CW_DEFROI(draw)	<EM CLASS="Comment">;
+The ROI definition will be stored in the variable Q.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163367">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;HELP, Q	<EM CLASS="Comment">;
+Show the size of the ROI definition array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163368">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;image2 = image	<EM CLASS="Comment">;
+Duplicate the original image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163369">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;image2(Q)=!P.COLOR-1	<EM CLASS="Comment">;
+Set the points in the ROI array Q equal to a single color value.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163370">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;WIDGET_CONTROL, draw, GET_VALUE=W<BR>
+<EM CLASS="Comment">;
+Get the window ID of the draw widget.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163459">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;WSET, W	<EM CLASS="Comment">;
+Set the draw widget as the current graphics window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163372">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;TV, image2	<EM CLASS="Comment">;
+Load the image plus the ROI into the draw widget.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163494">
+ </A>
+ENDIF</P>
+<P CLASS="Code">
+<A NAME="pgfId=163495">
+ </A>
+IF ev.id EQ done THEN WIDGET_CONTROL, ev.top, /DESTROY<BR>
+<EM CLASS="Comment">;
+Define what happens when you click the &quot;Done&quot; button.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163496">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=163376">
+ </A>
+Next, create a draw widget that can call CW_DEFROI. Note that you <EM CLASS="Emphasis">
+must</EM>
+ specify both button events and motion events when creating the draw widget, if it is to be use with CW_DEFROI.</P>
+<P CLASS="Code">
+<A NAME="pgfId=163381">
+ </A>
+PRO test</P>
+<P CLASS="Code">
+<A NAME="pgfId=163383">
+ </A>
+COMMON T, draw, dbutt, done, image</P>
+<P CLASS="Code">
+<A NAME="pgfId=163384">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=163385">
+ </A>
+base = WIDGET_BASE(/COLUMN)	<EM CLASS="Comment">;
+Create a base to hold the draw widget and buttons.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163388">
+ </A>
+draw = WIDGET_DRAW(base, XSIZE=256, YSIZE=256, /BUTTON, /MOTION)<BR>
+<EM CLASS="Comment">;
+Create a draw widget that will return both button and motion events.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163389">
+ </A>
+dbutt = WIDGET_BUTTON(base, VALUE='Draw ROI')</P>
+<P CLASS="Code">
+<A NAME="pgfId=163390">
+ </A>
+done = WIDGET_BUTTON(base, VALUE='Done')</P>
+<P CLASS="Code">
+<A NAME="pgfId=163391">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=163392">
+ </A>
+WIDGET_CONTROL, base, /REALIZE</P>
+<P CLASS="Code">
+<A NAME="pgfId=163393">
+ </A>
+WIDGET_CONTROL, draw, GET_VALUE=W	<EM CLASS="Comment">;
+Get the widget ID of the draw widget.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163394">
+ </A>
+WSET, W	<EM CLASS="Comment">;
+Set the draw widget as the current graphics window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163395">
+ </A>
+image = BYTSCL(SIN(DIST(256)))	<EM CLASS="Comment">;
+Create an original image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163396">
+ </A>
+TV, image	<EM CLASS="Comment">;
+Display the image in the draw widget.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163397">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=163398">
+ </A>
+XMANAGER, &quot;test&quot;, base	<EM CLASS="Comment">;
+Start XMANAGER.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=163399">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=163401">
+ </A>
+END</P>
+<P CLASS="Code">
+<A NAME="pgfId=939218">
+ </A>
+&nbsp;</P>
+<DIV>
+<MAP NAME="idl-21">
+</MAP>
+<CENTER><IMG SRC="idl_21.gif" USEMAP="#idl-21" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=839068">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818964">
+ </A>
+<A HREF="idl6d.htm#72309" CLASS="XRef">
+DEFROI</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

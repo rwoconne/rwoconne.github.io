@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BLK_CON</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl18.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=908043">
+ </A>
+<A NAME="43884">
+ </A>
+BLK_CON</H2>
+<P CLASS="Body">
+<A NAME="pgfId=66618">
+ </A>
+The <A NAME="marker=66616">
+ </A>
+BLK_CON function <A NAME="marker=66617">
+ </A>
+computes a &quot;fast convolution&quot; of a digital signal and an impulse-response sequence. It returns the <A NAME="marker=66619">
+ </A>
+filtered <A NAME="marker=66620">
+ </A>
+signal.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754631">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+blk_con.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749497">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749498">
+ </A>
+Result = BLK_CON(<EM CLASS="Emphasis">
+Filter, Signal</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749499">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749500">
+ </A>
+Filter</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749501">
+ </A>
+A <EM CLASS="Emphasis">
+P</EM>
+-element floating-point vector containing the impulse-response sequence of the digital filter.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37136">
+ </A>
+Signal</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37178">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element floating-point vector containing the discrete signal samples.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749504">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749505">
+ </A>
+<A NAME="marker=48838">
+ </A>
+B_LENGTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749506">
+ </A>
+A scalar specifying the <EM CLASS="Emphasis">
+block length</EM>
+ of the subdivided signal segments. If this parameter is not specified, a near-optimal value is chosen by the algorithm based upon the length <EM CLASS="Emphasis">
+P</EM>
+ of the impulse-response sequence. If <EM CLASS="Emphasis">
+P</EM>
+ is a value less than 11 or greater than 377, then B_LENGTH must be specified.</P>
+<P CLASS="Body">
+<A NAME="pgfId=749507">
+ </A>
+B_LENGTH must be greater than the filter length, <EM CLASS="Emphasis">
+P</EM>
+, and less than the number of signal samples.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749508">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749509">
+ </A>
+Create a filter of length <EM CLASS="Emphasis">
+P</EM>
+ = 32:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749510">
+ </A>
+filter = REPLICATE(1.0,32)	<EM CLASS="Comment">;
+Set all points to 1.0</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=749511">
+ </A>
+filter(2*INDGEN(16)) = 0.5	<EM CLASS="Comment">;
+Set even points to 0.5</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=749512">
+ </A>
+Create a sampled signal with random noise:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749513">
+ </A>
+signal = SIN((FINDGEN(1000)/35.0)^2.5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=749514">
+ </A>
+noise = (RANDOMU(SEED,1000)-.5)/2.</P>
+<P CLASS="Code">
+<A NAME="pgfId=749515">
+ </A>
+signal = signal + noise</P>
+<P CLASS="Body">
+<A NAME="pgfId=749516">
+ </A>
+Convolve the filter and signal using block convolution:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749517">
+ </A>
+result = BLK_CON(filter, signal)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34562">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34563">
+ </A>
+<A HREF="idl43.htm#17663" CLASS="XRef">
+CONVOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

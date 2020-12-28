@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CRVLENGTH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl4d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl4b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862828">
+ </A>
+<A NAME="25378">
+ </A>
+CRVLENGTH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862829">
+ </A>
+The<A NAME="marker=862868">
+ </A>
+ CRVLENGTH function computes the length of a curve with a tabular representation, <I CLASS="Italic">
+Y</I>
+[<I CLASS="Italic">
+i</I>
+] = F(<I CLASS="Italic">
+X</I>
+[<I CLASS="Italic">
+i</I>
+]).</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=862830">
+ </A>
+Data that is highly oscillatory requires a sufficient number of samples for an accurate curve length computation.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=862831">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+crvlength.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862832">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862833">
+ </A>
+Result = CRVLENGTH(<I CLASS="Italic">
+X</I>
+, <I CLASS="Italic">
+Y</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862834">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862835">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862836">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element single- or double-precision floating-point vector. <I CLASS="Italic">
+X</I>
+ must contain at least three elements, and values must be specified in ascending order. Duplicate <I CLASS="Italic">
+X</I>
+ values will result in a warning message.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862837">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862838">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element single- or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862839">
+ </A>
+Keyword</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862840">
+ </A>
+<A NAME="marker=862869">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862841">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862842">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862843">
+ </A>
+Define a 21-element vector of <I CLASS="Italic">
+X</I>
+-values.</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862844">
+ </A>
+x = [-2.00, -1.50, -1.00, -0.50, 0.00, 0.50, 1.00, 1.50, 2.00, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862845">
+ </A>
+2.50,  3.00,  3.50,  4.00, 4.50, 5.00, 5.50, 6.00, 6.50, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862846">
+ </A>
+7.00,  7.50,  8.00]</P>
+<P CLASS="Body">
+<A NAME="pgfId=862847">
+ </A>
+Define a 21-element vector of <I CLASS="Italic">
+Y</I>
+-values.</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862848">
+ </A>
+y = [-2.99, -2.37, -1.64, -0.84, 0.00, 0.84, 1.64, 2.37, 2.99, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862849">
+ </A>
+3.48,  3.86,  4.14,  4.33, 4.49, 4.65, 4.85, 5.13, 5.51, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=862850">
+ </A>
+6.02,  6.64,  7.37]</P>
+<P CLASS="Code">
+<A NAME="pgfId=862851">
+ </A>
+result = CRVLENGTH(x, y)	<EM CLASS="Comment">;
+Compute the length of the curve</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=862852">
+ </A>
+Print, result	<EM CLASS="Comment">;
+Print result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=862853">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862854">
+ </A>
+14.8115</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862855">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862870">
+ </A>
+<A HREF="idld6.htm#51833" CLASS="XRef">
+INT_TABULATED</A>
+, <A HREF="idl13a.htm#34875" CLASS="XRef">
+PNT_LINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

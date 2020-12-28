@@ -1,0 +1,51 @@
+; IDL Version 5.2 (sunos sparc)
+; Journal File for rwo@gemini.astro.Virginia.EDU
+; Working directory: /net/gemini.vela/rwo/511/jnl
+; Date: Wed Sep 24 14:06:01 2003
+
+ ;;; Generate a 200x200 array filled with random noise characterized
+ ;;;  by a Poisson distribution with mean 10/pixel
+
+noise=randomn(seed,200,200,poisson=10)
+show,noise,3
+; 
+
+zoomer
+;Left for zoom center, Middle for new zoom factor, Right to quit
+
+chan,9
+
+ ;;; Plot row slices through array. Does it "look" random?
+
+plot,noise(*,100)
+plot,noise(*,101)
+plot,noise(*,102)
+plot,noise(*,108)
+
+ ;;; Plot histogram for individual pixels in full array
+
+plothist,noise
+meanarray,noise
+; 
+;     Mean        RMS     SE(Mean)        Max         Min 
+;      9.998      3.159      0.016     2.6000e+01  0.0000e+00
+
+
+ ;;; Generate  20 pixel samples and find means; repeat a total
+ ;;;   of 200 times:
+
+samp20=fltarr(200)
+
+for i=0,199 do samp20(i)=mean(noise(0:19,i))   
+
+ ;;; Compare parent histogram to histogram of 20-pixel means
+
+plothist,samp20,xs,ys,bin=0.2,/noplot
+chan,9
+plothist,noise
+oplot,xs,ys*200,psym=10
+
+ ;;; The width of the sample mean distribution should be
+ ;;;  smaller by factor sqrt(20). 
+
+

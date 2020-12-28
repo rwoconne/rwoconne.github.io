@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAP_CONTINENTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl10d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl10b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887516">
+ </A>
+<A NAME="95626">
+ </A>
+MAP_CONTINENTS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887521">
+ </A>
+The <A NAME="marker=887519">
+ </A>
+MAP_CONTINENTS procedure draws <A NAME="marker=887520">
+ </A>
+continental boundaries, filled continents, political boundaries, coastlines, and/or rivers, over an existing map projection <A NAME="marker=887522">
+ </A>
+established by MAP_SET. Outlines can be drawn in low or high-resolution (if the optional high-resolution CIA World Map database is installed). If MAP_CONTINENTS is called without any keywords, it draws low-resolution, unfilled continent outlines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887523">
+ </A>
+MAP_SET must be called before MAP_CONTINENTS to establish the projection type, the center of the projection, polar rotation and geographic limits.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887524">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887525">
+ </A>
+MAP_CONTINENTS</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887526">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887528">
+ </A>
+<A NAME="marker=887527">
+ </A>
+COASTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887529">
+ </A>
+Set this keyword to draw coastlines, islands, and lakes instead of the default continent outlines. Note that if you are using the low-resolution map database (if the HIRES keyword is <EM CLASS="Emphasis">
+not</EM>
+ set), many islands are drawn even when COASTS is not set. If you are using the high-resolution map database (if the HIRES keyword <EM CLASS="Emphasis">
+is</EM>
+ set), no islands are drawn unless COASTS is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887531">
+ </A>
+<A NAME="marker=887530">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887532">
+ </A>
+The color index of the lines being drawn.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887534">
+ </A>
+<A NAME="marker=887533">
+ </A>
+COUNTRIES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887535">
+ </A>
+Set this keyword to draw political boundaries as of 1993.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887537">
+ </A>
+<A NAME="marker=887536">
+ </A>
+FILL_CONTINENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887538">
+ </A>
+Set this keyword to 1 to fill continent boundaries with a solid color. The color is set by the COLOR keyword. Set this keyword to 2 to fill continent boundaries with a line fill. For line filling, the COLOR, MLINESTYLE, MLINETHICK, ORIENTATION, and SPACING keywords can be used to control the type of line fill.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887540">
+ </A>
+<A NAME="marker=887539">
+ </A>
+HIRES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887541">
+ </A>
+Set this keyword to use high-resolution map data instead of the default low-resolution data. This option is only available if you have installed the optional high-resolution map datasets. If the high-resolution data is not available, a warning is printed and the low-resolution data is used instead.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887542">
+ </A>
+This keyword can be used in conjunction with the COASTS, COUNTRIES, FILL_CONTINENTS, and RIVERS keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887544">
+ </A>
+<A NAME="marker=887543">
+ </A>
+MLINESTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887545">
+ </A>
+The line style of the boundaries being drawn. The default is solid lines. Valid linestyles are shown in the table below:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=887580">
+ </A>
+<A NAME="95087">
+ </A>
+IDL Linestyles</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=887548">
+ </A>
+Index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=887550">
+ </A>
+Linestyle</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887552">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887554">
+ </A>
+Solid</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887556">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887558">
+ </A>
+Dotted</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887560">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887562">
+ </A>
+Dashed</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887564">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887566">
+ </A>
+Dash Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887568">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887570">
+ </A>
+Dash Dot Dot Dot</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887572">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887574">
+ </A>
+Long Dashes</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887584">
+ </A>
+<A NAME="marker=887583">
+ </A>
+MLINETHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887585">
+ </A>
+The thickness of the boundary or fill lines. The default thickness is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887588">
+ </A>
+<A NAME="marker=887586">
+ </A>
+<A NAME="77075">
+ </A>
+ORIENTATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887589">
+ </A>
+Set this keyword to the counterclockwise angle in degrees from horizontal that the line fill should be drawn. The default is 0. This keyword only has effect if the FILL_CONTINENTS keyword is set to 2.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887591">
+ </A>
+<A NAME="marker=887590">
+ </A>
+RIVERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887592">
+ </A>
+Set this keyword to draw rivers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887594">
+ </A>
+<A NAME="marker=887593">
+ </A>
+SPACING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887595">
+ </A>
+Set this keyword to the spacing, in centimeters, for a line fill. This keyword only has effect if the FILL_CONTINENTS keyword is set to 2. The default is 0.5 centimeters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887597">
+ </A>
+<A NAME="marker=887596">
+ </A>
+USA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887598">
+ </A>
+Set this keyword to draw borders for each state in the United States in addition to continental boundaries.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887599">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887600">
+ </A>
+The following example demonstrates the use of the map outlines to embellish a map projection:</P>
+<P CLASS="Code">
+<A NAME="pgfId=887601">
+ </A>
+tek_color	<EM CLASS="Comment">;
+Load discrete color table.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887602">
+ </A>
+black=0 &amp; white=1 &amp; red=2</P>
+<P CLASS="Code">
+<A NAME="pgfId=887603">
+ </A>
+green=3 &amp; dk_blue=4 &amp; lt_blue=5	<EM CLASS="Comment">;
+Match color indices to colors we want to use.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887604">
+ </A>
+MAP_SET,  /ORTHO, 40, -30, 23, /ISOTROPIC, $<BR>
+<EM CLASS="Comment">;
+Set up an orthographic projection centered over the north Atlantic.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887605">
+ </A>
+&nbsp;&nbsp;&nbsp;/HORIZON, E_HORIZON={FILL:1, COLOR:dk_blue}, $<BR>
+<EM CLASS="Comment">;
+Fill the hemisphere with dark blue.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887606">
+ </A>
+&nbsp;&nbsp;&nbsp;/GRID, COLOR=black<EM CLASS="Comment">;
+	Specify black gridlines</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887607">
+ </A>
+MAP_CONTINENTS, /FILL_CONTINENTS, COLOR=white<BR>
+<EM CLASS="Comment">;
+Fill the continent boundaries with solid white.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887608">
+ </A>
+MAP_CONTINENTS, /COASTS, COLOR=black	<EM CLASS="Comment">;
+Overplot coastline data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887609">
+ </A>
+MAP_CONTINENTS, /RIVERS, COLOR=lt_blue	<EM CLASS="Comment">;
+Add rivers, in light blue.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887610">
+ </A>
+MAP_CONTINENTS, /COUNTRIES, COLOR=red, MLINETHICK=2<BR>
+<EM CLASS="Comment">;
+Show national borders.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887611">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887624">
+ </A>
+<A HREF="idl10d.htm#30282" CLASS="XRef">
+MAP_GRID</A>
+, <A HREF="idl10e.htm#12714" CLASS="XRef">
+MAP_IMAGE</A>
+, <A HREF="idl10f.htm#32545" CLASS="XRef">
+MAP_PATCH</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

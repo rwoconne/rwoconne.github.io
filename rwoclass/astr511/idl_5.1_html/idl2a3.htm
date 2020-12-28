@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_DIMGETID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998785">
+ </A>
+<A NAME="56662">
+ </A>
+HDF_SD_DIMGETID</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998788">
+ </A>
+The <A NAME="marker=998787">
+ </A>
+HDF_SD_DIMGETID function returns a dimension ID given a dataset's &quot;SDS_ID&quot; and a dimension number. </P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998789">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998790">
+ </A>
+Result = HDF_SD_DIMGETID(<I CLASS="Italics">
+SDS_ID, Dimension_Number</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998791">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998792">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998793">
+ </A>
+An SD dataset ID as returned by HDF_SD _SELECT or HDF_SD_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998794">
+ </A>
+Dimension_Number</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998795">
+ </A>
+A zero-based dimension number. The dimension number must be greater than or equal to 0 and less than the maximum dimension number, or <I CLASS="Italics">
+rank</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998796">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998797">
+ </A>
+For an example illustrating this routine, see the documentation for HDF_SD_DIMSET.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998798">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998811">
+ </A>
+<A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2a2.htm#47376" CLASS="XRef">
+HDF_SD_DIMGET</A>
+, <A HREF="idl2a4.htm#58405" CLASS="XRef">
+HDF_SD_DIMSET</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

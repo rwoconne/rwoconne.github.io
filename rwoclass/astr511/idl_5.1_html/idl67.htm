@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DAY_OF_YEAR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl68.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl66.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=920467">
+ </A>
+<A NAME="41116">
+ </A>
+DAY_OF_YEAR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=920470">
+ </A>
+The <A NAME="marker=920469">
+ </A>
+DAY_OF_YEAR function returns an array of integers containing the day of the year for each element of an array of IDLDT date/time variables. The result is an array of integers in the range 1-365 (1-366 for leap years).</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920471">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920472">
+ </A>
+Result = DAY_OF_YEAR(<I CLASS="Italic">
+Dt_days</I>
+ )</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920473">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920474">
+ </A>
+Dt_days</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920475">
+ </A>
+An array of type IDLDT (the IDL date/time structure).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920476">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=920477">
+ </A>
+PRINT, DAY_OF_YEAR(TODAY())	<EM CLASS="Comment">;
+Print the day of year for the day this was written, using the <BR>
+TODAY function.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=920966">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=920967">
+ </A>
+% Compiled module: DAY_OF_YEAR.</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=920969">
+ </A>
+      65</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920959">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=920963">
+ </A>
+<A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+, <A HREF="idl65.htm#40163" CLASS="XRef">
+DAY_NAME</A>
+, <A HREF="idl66.htm#20799" CLASS="XRef">
+DAY_OF_WEEK</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

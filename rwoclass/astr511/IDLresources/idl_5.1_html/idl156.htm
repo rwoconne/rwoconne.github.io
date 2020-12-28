@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PTRARR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl157.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl155.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=845087">
+ </A>
+<EM CLASS="Bold">
+PTRARR</EM>
+<A NAME="35488">
+ </A>
+</H2>
+<P CLASS="Body">
+<A NAME="pgfId=845088">
+ </A>
+The <A NAME="marker=845160">
+ </A>
+PTRARR function returns a <A NAME="marker=845161">
+ </A>
+pointer vector or array. The individual elements of the array are set to the Null Pointer.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845089">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845090">
+ </A>
+Result = PTRARR(<I CLASS="Italic">
+D1</I>
+, ... ..., <I CLASS="Italic">
+Dn</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845091">
+ </A>
+Argument</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845092">
+ </A>
+Di</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845093">
+ </A>
+The dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845094">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845095">
+ </A>
+<A NAME="marker=845162">
+ </A>
+ALLOCATE_HEAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845096">
+ </A>
+Normally, PTRARR sets every element of the result to the null pointer. It you wish IDL to allocate heap variables for every element of the array instead, set the ALLOCATE_HEAP keyword. In this case, every element of the array will be initialized to point at an undefined heap variable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845097">
+ </A>
+<A NAME="marker=845163">
+ </A>
+NOZERO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845098">
+ </A>
+If ALLOCATE_HEAP is not specified, PTRARR sets every element of the result to the null pointer. If NOZERO is nonzero, this initialization is not performed and PTRARR executes faster. NOZERO is ignored if ALLOCATE_HEAP is specified.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=845099">
+ </A>
+If you specify NOZERO, the resulting array will have whatever value happens to exist at the system memory location that the array is allocated from. You should be careful to initialize such an array to valid pointer values.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845100">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845101">
+ </A>
+Create P, a 3 element by 3 element pointer array with each element containing the Null Pointer by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=845102">
+ </A>
+P = PTRARR(3, 3)</P>
+<P CLASS="Body">
+<A NAME="pgfId=845104">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

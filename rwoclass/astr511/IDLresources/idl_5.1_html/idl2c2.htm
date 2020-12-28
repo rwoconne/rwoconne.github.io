@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_WRITE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2c3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2c1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999849">
+ </A>
+<A NAME="87489">
+ </A>
+HDF_VD_WRITE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999853">
+ </A>
+The <A NAME="marker=999851">
+ </A>
+HDF_VD_WRITE procedure stores data in a <A NAME="marker=999852">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ in a Hierarchical Data Format file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999854">
+ </A>
+There are many restrictions on writing data to a <EM CLASS="Emphasis">
+VData</EM>
+. When writing multiple fields of varying types, only limited error checking is possible. When writing a series of fields all with the same type, data is converted to that type before writing. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999855">
+ </A>
+Vdat = HDF_VD_ATTACH(Fid, -1, /WRITE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999856">
+ </A>
+Data = INDGEN(10)	<EM CLASS="Comment">;
+Create a 10 integer vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999857">
+ </A>
+HDF_VD_WRITE, Vdat, 'PX', Data	<EM CLASS="Comment">;
+Data converted to FLOAT before write.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999858">
+ </A>
+It is possible to write less data than exists in <I CLASS="Italics">
+Data</I>
+ by using the NRECORDS keyword. For example, the following command writes 5 records, instead of the 10 implied by the size of the data (VEL is assumed to be of type FLOAT, order=3):</P>
+<P CLASS="Code">
+<A NAME="pgfId=999859">
+ </A>
+HDF_VD_WRITE, Vdat, 'VEL', FINDGEN(3,10),NREC=5</P>
+<P CLASS="Body">
+<A NAME="pgfId=999860">
+ </A>
+VEL now contains [ [ 0.0, 1.0, 2.0 ], ..., [ 12.0, 13.0, 14.0] ]</P>
+<P CLASS="Body">
+<A NAME="pgfId=999861">
+ </A>
+HDF_VD_WRITE will not allow a user to specify more records than exist. For example, the following command fails:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999862">
+ </A>
+HDF_VD_WRITE, Vdat, 'VEL', [1,2,3], NREC=1000</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999863">
+ </A>
+Bugs</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999864">
+ </A>
+Data can not be appended. Attempts to append data may make future attempts to read data fail. Data can not be overwritten.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999865">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999866">
+ </A>
+HDF_VD_WRITE, <I CLASS="Italics">
+VData, Fields, Data</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999867">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999868">
+ </A>
+VData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999869">
+ </A>
+The VData handle returned by a previous call to HDF_VD_ATTACH.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999870">
+ </A>
+Fields</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999871">
+ </A>
+A string containing a comma-separated list of the fields to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999872">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999873">
+ </A>
+The data to be written to the specified VData.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999874">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999876">
+ </A>
+<A NAME="marker=999875">
+ </A>
+FULL_INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999877">
+ </A>
+Set this keyword to use full interlace when writing (the default).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999879">
+ </A>
+<A NAME="marker=999878">
+ </A>
+NO_INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999880">
+ </A>
+Set this keyword to use no interlace when writing.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999882">
+ </A>
+<A NAME="marker=999881">
+ </A>
+NRECORDS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999883">
+ </A>
+The number of records to written. By default, HDF_VD_WRITE writes all records from a VData.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999884">
+ </A>
+Restrictions</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999885">
+ </A>
+It is not possible to write IDL structures directly to a VData (because of possible internal padding depending upon fields/machine architecture, etc.). The user must put the data into a byte array before using HDF_VD_WRITE.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999886">
+ </A>
+When writing a series of fields all with the same type, the low order dimension of <I CLASS="Italics">
+Data</I>
+ must match the sum of the orders of the fields. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=999887">
+ </A>
+HDF_VD_WRITE, Vdat, 'PX,PY', FLTARR(3,10)</P>
+<P CLASS="Body">
+<A NAME="pgfId=999888">
+ </A>
+fails. PX and PY are both order 1 (total 2) and the array's low order dimension is 3.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999889">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

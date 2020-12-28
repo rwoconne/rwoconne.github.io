@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SETLOG (VMS Only)</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl196.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl194.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678718">
+ </A>
+<A NAME="50056">
+ </A>
+SETLOG (VMS Only)</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678719">
+ </A>
+The<A NAME="marker=673838">
+ </A>
+ SETLOG procedure defines a <A NAME="marker=673839">
+ </A>
+logical name. SETLOG is available only under VMS. </P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678720">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678721">
+ </A>
+SETLOG, <I CLASS="Italic">
+Lognam, Value</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678722">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678723">
+ </A>
+Lognam</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678724">
+ </A>
+A scalar string containing the name of the logical to be defined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678725">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678726">
+ </A>
+A string containing the value to which the logical will be set. If <I CLASS="Italic">
+Value</I>
+ is a string array, <I CLASS="Italic">
+Lognam</I>
+ is defined as a multi-valued logical where each element of <I CLASS="Italic">
+Value</I>
+ defines one of the equivalence strings.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678727">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678728">
+ </A>
+<A NAME="marker=673840">
+ </A>
+CONCEALED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678729">
+ </A>
+If this keyword is set, RMS (VMS Record Management Services) interprets the equivalence name as a device name.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678730">
+ </A>
+<A NAME="marker=673841">
+ </A>
+CONFINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678731">
+ </A>
+If this keyword is set, the logical name is not copied from the IDL process to its spawned subprocesses.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678732">
+ </A>
+<A NAME="marker=673845">
+ </A>
+NO_ALIAS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678733">
+ </A>
+If this keyword is set, the logical name cannot be duplicated in the same logical table at an outer access mode. If another logical name with the same name already exists at an outer access mode, it is deleted. See the <I CLASS="Italic">
+VMS System Services Manual</I>
+ for additional information on logical names and access modes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678734">
+ </A>
+<A NAME="marker=673846">
+ </A>
+TABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678735">
+ </A>
+A scalar string containing the name of the logical table into which <EM CLASS="Emphasis">
+Lognam</EM>
+ will be entered. If TABLE is not specified, LNM$PROCESS_TABLE is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678736">
+ </A>
+<A NAME="marker=673847">
+ </A>
+TERMINAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678737">
+ </A>
+If this keyword is set, when attempting to translate the logical, further iterative logical name translation on the equivalence name is not to be performed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36063">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=36070">
+ </A>
+<A HREF="idl6f.htm#10137" CLASS="XRef">
+DELETE_SYMBOL (VMS Only)</A>
+, <A HREF="idl70.htm#23627" CLASS="XRef">
+DELLOG (VMS Only)</A>
+, <A HREF="idl194.htm#55234" CLASS="XRef">
+SETENV (Unix and Windows Only)</A>
+, <A HREF="idl193.htm#71896" CLASS="XRef">
+SET_SYMBOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_NAMETOINDEX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ad.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2ab.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999159">
+ </A>
+<A NAME="56518">
+ </A>
+HDF_SD_NAMETOINDEX</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999162">
+ </A>
+The <A NAME="marker=999161">
+ </A>
+HDF_SD_NAMETOINDEX function returns an SD dataset index given its name and SD interface ID. An error message is printed if the dataset cannot be located. The returned index can be used by HDF_SD_SELECT to access an SD dataset.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999163">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999164">
+ </A>
+Result = HDF_SD_NAMETOINDEX(<I CLASS="Italics">
+SD_ID, SDS_Name</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999165">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999166">
+ </A>
+SD_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999167">
+ </A>
+An SD interface ID as returned by HDF_SD_START.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999168">
+ </A>
+SDS_Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999169">
+ </A>
+A string containing the name of the SD dataset be located.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999170">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999171">
+ </A>
+sd_id = HDF_SD_START('demo.hdf')	<EM CLASS="Comment">;
+Start the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999172">
+ </A>
+index = HDF_SD_NAMETOINDEX(sd_id, 'variable_2')<BR>
+<EM CLASS="Comment">;
+Return the index of the `variable_2' dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999173">
+ </A>
+sds_id=HDF_SD_SELECT(sd_id,index)	<EM CLASS="Comment">;
+Access the dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999174">
+ </A>
+HDF_SD_ENDACCESS, sds_id	<EM CLASS="Comment">;
+End access.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999175">
+ </A>
+HDF_SD_END, sd_id</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999176">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999186">
+ </A>
+<A HREF="idl2ad.htm#14254" CLASS="XRef">
+HDF_SD_REFTOINDEX</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+, <A HREF="idl2b1.htm#92639" CLASS="XRef">
+HDF_SD_START</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

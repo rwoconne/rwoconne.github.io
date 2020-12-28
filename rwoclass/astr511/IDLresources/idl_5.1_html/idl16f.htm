@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_XWD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl170.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl16e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756274">
+ </A>
+<A NAME="53567">
+ </A>
+READ_XWD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756277">
+ </A>
+The <A NAME="marker=756275">
+ </A>
+READ_XWD function reads the contents of a file created by the <CODE CLASS="Code">
+xwd</CODE>
+<A NAME="marker=756276">
+ </A>
+ (X Windows Dump) command and returns the image and color table vectors in the form of IDL variables. READ_XWD returns a 2D byte array containing the image. If the file cannot be open or read, the return value is zero.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756278">
+ </A>
+Note: this function is intended to be used only on files containing 8-bit pixmaps created with <CODE CLASS="Code">
+xwd</CODE>
+ version 6 or later.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756279">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_xwd.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756280">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864661">
+ </A>
+Result = READ_XWD(<EM CLASS="Emphasis">
+Filename[, R, G, B]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756282">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756283">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756284">
+ </A>
+A scalar string specifying the full pathname of the XWD file to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843859">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756286">
+ </A>
+Named variables that will contain the Red, Green, and Blue color vectors, if the XWD file contains color tables.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756287">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756288">
+ </A>
+To open and read the X Windows Dump file named <CODE CLASS="Code">
+my.xwd</CODE>
+ in the current directory, store the image in the variable <CODE CLASS="Code">
+image1</CODE>
+, and store the color vectors in the variables, <CODE CLASS="Code">
+R</CODE>
+, <CODE CLASS="Code">
+G</CODE>
+, and <CODE CLASS="Code">
+B</CODE>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756289">
+ </A>
+image1 = READ_XWD('my.xwd', R, G, B)</P>
+<P CLASS="Body">
+<A NAME="pgfId=756290">
+ </A>
+To load the new color table and display the image, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756291">
+ </A>
+TVLCT, R, G, B</P>
+<P CLASS="Code">
+<A NAME="pgfId=756292">
+ </A>
+TV, image1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756293">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756294">
+ </A>
+<A HREF="idl16e.htm#77118" CLASS="XRef">
+READ_X11_BITMAP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> THREED</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1d9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1d7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787501">
+ </A>
+<A NAME="83933">
+ </A>
+THREED</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787504">
+ </A>
+The <A NAME="marker=787503">
+ </A>
+THREED procedure plots a 2D array as a pseudo 3D plot. The orientation of the data is fixed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787505">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+threed.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787506">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787507">
+ </A>
+THREED, <EM CLASS="Emphasis">
+A [, Sp]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787508">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787509">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787510">
+ </A>
+The two-dimensional array to plot.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787511">
+ </A>
+Sp</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787512">
+ </A>
+The spacing between plot lines. If <EM CLASS="Emphasis">
+Sp</EM>
+ is omitted, the spacing is set to: (MAX(<EM CLASS="Emphasis">
+A</EM>
+)-MIN(<EM CLASS="Emphasis">
+A</EM>
+))/ROWS. If <EM CLASS="Emphasis">
+Sp</EM>
+ is negative, hidden lines are not removed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787513">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787515">
+ </A>
+<A NAME="marker=787514">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787516">
+ </A>
+Set this keyword to the main plot title.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787518">
+ </A>
+<A NAME="marker=787517">
+ </A>
+XTITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787519">
+ </A>
+Set this keyword to the X axis title.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787521">
+ </A>
+<A NAME="marker=787520">
+ </A>
+YTITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787522">
+ </A>
+Set this keyword to the Y axis title.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787523">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=795973">
+ </A>
+A = -SHIFT(DIST(30), 15, 15)	<EM CLASS="Comment">;
+Create a 2D dataset.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=795974">
+ </A>
+THREED, A	<EM CLASS="Comment">;
+Make a THREED plot.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=795975">
+ </A>
+SURFACE, A	<EM CLASS="Comment">;
+Compare to SURFACE.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787524">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787525">
+ </A>
+<A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

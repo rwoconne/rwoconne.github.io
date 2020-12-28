@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TS_FCAST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54749">
+ </A>
+<A NAME="74523">
+ </A>
+TS_FCAST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54753">
+ </A>
+The <A NAME="marker=54751">
+ </A>
+TS_FCAST function computes future or past values of a stationary <A NAME="marker=54752">
+ </A>
+time-series using a <EM CLASS="Emphasis">
+P</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ order <A NAME="marker=54754">
+ </A>
+autoregressive model. The result is an <EM CLASS="Emphasis">
+Nvalues</EM>
+-element vector whose type is identical to <EM CLASS="Emphasis">
+X</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54755">
+ </A>
+A <EM CLASS="Emphasis">
+P</EM>
+<SUP CLASS="Superscript">
+th</SUP>
+ order autoregressive model relates a forecasted value <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+t</SUB>
+ of the time series <EM CLASS="Emphasis">
+X</EM>
+&nbsp;=&nbsp;[<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ... , <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+t-1</SUB>
+], as a linear combination of <EM CLASS="Emphasis">
+P</EM>
+ past values.</P>
+<DIV>
+<CENTER><IMG SRC="idl_111.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835029">
+ </A>
+The coefficients <EM CLASS="Symbol">
+f</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Symbol">
+f</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ... , <EM CLASS="Symbol">
+f</EM>
+<SUB CLASS="Subscript">
+P</SUB>
+ are calculated such that they minimize the uncorrelated random error terms, <EM CLASS="Emphasis">
+wt</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54763">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ts_fcast.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54764">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54765">
+ </A>
+Result = TS_FCAST(<EM CLASS="Emphasis">
+X, P, Nvalues</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54766">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54767">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54768">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element single- or double-precision floating-point vector containing time-series samples.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54769">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54770">
+ </A>
+An integer or long integer scalar that specifies the number of actual time-series values to be used in the forecast. In general, a larger number of values results in a more accurate forecast.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54771">
+ </A>
+Nvalues</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54772">
+ </A>
+An integer or long integer scalar that specifies the number of future or past values to be computed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=223045">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223046">
+ </A>
+<A NAME="marker=223061">
+ </A>
+BACKCAST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223047">
+ </A>
+Set this keyword to produce past values (backward forecasts or &quot;backcasts&quot;)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=223055">
+ </A>
+<A NAME="marker=223054">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=223056">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54773">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54774">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element vector of time-series samples:</P>
+<P CLASS="Code">
+<A NAME="pgfId=54775">
+ </A>
+X&nbsp;=&nbsp;[6.63, 6.59, 6.46, 6.49, 6.45, 6.41, 6.38, 6.26, 6.09, 5.99, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54776">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.92, 5.93, 5.83, 5.82, 5.95, 5.91, 5.81, 5.64, 5.51, 5.31, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54777">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.36, 5.17, 5.07, 4.97, 5.00, 5.01, 4.85, 4.79, 4.73, 4.76]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54779">
+ </A>
+PRINT, TS_FCAST(X, 10, 5)	<EM CLASS="Comment">;
+Compute and print five future values of the time-series using ten time-series values.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=54780">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54781">
+ </A>
+4.65870      4.58380      4.50030      4.48828      4.46971</P>
+<P CLASS="Code">
+<A NAME="pgfId=223042">
+ </A>
+PRINT, TS_FCAST(X, 10, 5, /BACKCAST)	<EM CLASS="Comment">;
+Compute five past values of the time-series using ten time-series values.</EM>
+ </P>
+<P CLASS="Body">
+<A NAME="pgfId=223043">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=223044">
+ </A>
+6.94862&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.91103&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.86297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.77826&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.70282</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54782">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=841273">
+ </A>
+<A HREF="idl1.htm#71421" CLASS="XRef">
+A_CORRELATE</A>
+, <A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idl1a6.htm#43465" CLASS="XRef">
+SMOOTH</A>
+, <A HREF="idl1e6.htm#74783" CLASS="XRef">
+TS_COEF</A>
+ , <A HREF="idl1e7.htm#96780" CLASS="XRef">
+TS_DIFF</A>
+, <A HREF="idl1e8.htm#74523" CLASS="XRef">
+TS_FCAST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

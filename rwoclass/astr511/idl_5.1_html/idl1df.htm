@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRI_SURF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1de.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758595">
+ </A>
+<A NAME="16346">
+ </A>
+TRI_SURF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758597">
+ </A>
+The <A NAME="marker=758596">
+ </A>
+TRI_SURF function interpolates a regularly- or irregularly-gridded set of points with a smooth quintic surface. The result is s a two-dimensional floating-point array containing the interpolated surface, sampled at the grid points.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758598">
+ </A>
+TRI_SURF is similar to MIN_CURVE_SURF but the surface fitted is a smooth surface, not a minimum curvature surface. TRI_SURF has the advantage of being much more efficient for larger numbers of points.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=836971">
+ </A>
+The TRI_SURF function is designed to interpolate low resolution data. Large arrays may cause TRI_SURF to issue the following error message:<BR>
+<CODE CLASS="Code">
+Partial Derivative Approximation Failed to Converge</CODE>
+&quot;<BR>
+In such cases, interpolation is most likely unnecessary.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=758599">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+tri_surf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758600">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758601">
+ </A>
+Result = TRI_SURF(<EM CLASS="Emphasis">
+Z [, X, Y]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758602">
+ </A>
+Arguments </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758603">
+ </A>
+X, Y, Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758604">
+ </A>
+arrays containing the X, Y, and Z coordinates of the data points on the surface. Points need not be regularly gridded. For regularly gridded input data, X and Y are not used: the grid spacing is specified via the XGRID and YGRID (or XVALUES and YVALUES) keywords, and Z must be a two dimensional array. For irregular grids, all three parameters must be present and have the same number of elements. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758605">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758607">
+ </A>
+<A NAME="marker=758606">
+ </A>
+EXTRAPOLATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758608">
+ </A>
+Set this keyword to cause TRI_SURF to extrapolate the surface to points outside the convex hull of input points. This keyword has no effect if the input points are regularly gridded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758610">
+ </A>
+<A NAME="marker=949477">
+ </A>
+LINEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=949474">
+ </A>
+Set this keyword to use linear interpolation, without gradient estimates, instead of quintic interpolation. Linear interpolation does not extrapolate, although it is faster and more numerically stable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=949473">
+ </A>
+<A NAME="marker=758609">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=851709">
+ </A>
+<A NAME="marker=851708">
+ </A>
+Set this keyword equal to the value to which points outside the convex hull of input points should be set. The default is 0. This keyword has no effect if the input points are regularly gridded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=851710">
+ </A>
+Input grid description:</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=851712">
+ </A>
+<A NAME="marker=851711">
+ </A>
+REGULAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758615">
+ </A>
+If set, the <EM CLASS="Emphasis">
+Z</EM>
+ parameter is a two-dimensional array of dimensions (<EM CLASS="Emphasis">
+n,m</EM>
+), containing measurements over a regular grid. If any of XGRID, YGRID, XVALUES, or YVALUES are specified, REGULAR is implied. REGULAR is also implied if there is only one parameter, <EM CLASS="Emphasis">
+Z</EM>
+. If REGULAR is set, and no grid specifications are present, the grid is set to (0, 1, 2, ...). </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758617">
+ </A>
+<A NAME="marker=758616">
+ </A>
+XGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758618">
+ </A>
+A two-element array, [<EM CLASS="Emphasis">
+xstart, xspacing</EM>
+], defining the input grid in the <EM CLASS="Emphasis">
+x</EM>
+ direction. Do not specify both XGRID and XVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758620">
+ </A>
+<A NAME="marker=758619">
+ </A>
+XVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758621">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element array defining the <EM CLASS="Emphasis">
+x</EM>
+ locations of Z[<EM CLASS="Emphasis">
+i,j</EM>
+]. Do not specify both XGRID and XVALUES.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758623">
+ </A>
+<A NAME="marker=758622">
+ </A>
+YGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758624">
+ </A>
+A two-element array, [<EM CLASS="Emphasis">
+ystart, yspacing</EM>
+], defining the input grid in the <EM CLASS="Emphasis">
+y </EM>
+direction. Do not specify both YGRID and YVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758626">
+ </A>
+<A NAME="marker=758625">
+ </A>
+YVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=851715">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element array defining the <EM CLASS="Emphasis">
+y </EM>
+locations of Z[<EM CLASS="Emphasis">
+i,j</EM>
+]. Do not specify both YGRID and YVALUES.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=851716">
+ </A>
+Output grid description:</H4>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=851717">
+ </A>
+The output grid must enclose the convex hull of the input points.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758631">
+ </A>
+<A NAME="marker=758630">
+ </A>
+GS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758632">
+ </A>
+The output grid spacing. If present, GS must be a two-element vector [<EM CLASS="Emphasis">
+xs, ys</EM>
+], where <EM CLASS="Emphasis">
+xs</EM>
+ is the horizontal spacing between grid points and <EM CLASS="Emphasis">
+ys</EM>
+ is the vertical spacing. The default is based on the extents of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. If the grid starts at <EM CLASS="Emphasis">
+x</EM>
+ value <EM CLASS="Emphasis">
+xmin</EM>
+ and ends at <EM CLASS="Emphasis">
+xmax</EM>
+, then the default horizontal spacing is (<EM CLASS="Emphasis">
+xmax</EM>
+ - <EM CLASS="Emphasis">
+xmin</EM>
+)/(NX-1). YS is computed in the same way. The default grid size, if neither NX or NY are specified, is 26 by 26. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758634">
+ </A>
+<A NAME="marker=758633">
+ </A>
+BOUNDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758635">
+ </A>
+If present, BOUNDS must be a four-element array containing the grid limits in <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ of the output grid: [<EM CLASS="Emphasis">
+xmin, ymin, xmax, ymax</EM>
+]. If not specified, the grid limits are set to the extent of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758637">
+ </A>
+<A NAME="marker=758636">
+ </A>
+NX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758638">
+ </A>
+The output grid size in the <EM CLASS="Emphasis">
+x</EM>
+ direction. NX need not be specified if the size can be inferred from GS and BOUNDS. The default value is 26.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758640">
+ </A>
+<A NAME="marker=758639">
+ </A>
+NY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758641">
+ </A>
+The output grid size in the <EM CLASS="Emphasis">
+y</EM>
+ direction. NY need not be specified if the size can be inferred from GS and BOUNDS. The default value is 26.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758642">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758643">
+ </A>
+Example 1: Irregularly gridded cases</P>
+<P CLASS="Body">
+<A NAME="pgfId=758644">
+ </A>
+Make a random set of points that lie on a Gaussian:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758645">
+ </A>
+N = 15	<EM CLASS="Comment">;
+Number of random points</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758646">
+ </A>
+X = RANDOMU(seed, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758647">
+ </A>
+Y = RANDOMU(seed, N)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758648">
+ </A>
+Z = EXP(-2 * ((X-.5)^2 + (Y-.5)^2))	<EM CLASS="Comment">;
+The Gaussian</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758649">
+ </A>
+Use a 26 by 26 grid over the rectangle bounding x and y:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758650">
+ </A>
+R = TRI_SURF(Z, X, Y)	<EM CLASS="Comment">;
+Get the surface</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758651">
+ </A>
+Alternatively, get a surface over the unit square, with spacing of 0.05:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758652">
+ </A>
+R = TRI_SURF(z, x, y, GS=[0.05, 0.05], BOUNDS=[0,0,1,1])</P>
+<P CLASS="Body">
+<A NAME="pgfId=758653">
+ </A>
+Alternatively, get a 10 by 10 surface over the rectangle bounding x and y:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758654">
+ </A>
+R = TRI_SURF(z, x, y, NX=10, NY=10)</P>
+<P CLASS="Body">
+<A NAME="pgfId=758655">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=758656">
+ </A>
+Example 2: Regularly gridded cases</P>
+<P CLASS="Code">
+<A NAME="pgfId=758657">
+ </A>
+z = randomu(seed, 5, 6)	<EM CLASS="Comment">;
+Make some random data</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758658">
+ </A>
+CONTOUR, TRI_SURF(z, /REGULAR)	<EM CLASS="Comment">;
+Interpolate to a 26 x 26 grid</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758659">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758660">
+ </A>
+<A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+, <A HREF="idl119.htm#65439" CLASS="XRef">
+MIN_CURVE_SURF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

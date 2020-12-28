@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FLOW3</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idla7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idla5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757290">
+ </A>
+<A NAME="62250">
+ </A>
+FLOW3</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757295">
+ </A>
+The <A NAME="marker=757291">
+ </A>
+FLOW3 procedure draws lines representing a 3D <A NAME="marker=757292">
+ </A>
+flow/<A NAME="marker=757293">
+ </A>
+velocity <A NAME="marker=757294">
+ </A>
+field. Note that the 3D scaling system must be in place before calling FLOW3. This procedure works best with Z buffer output device.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757296">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+flow3.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757297">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757298">
+ </A>
+FLOW3, <EM CLASS="Emphasis">
+Vx, Vy, Vz</EM>
+ </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757299">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757300">
+ </A>
+Vx, Vy, Vz</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757301">
+ </A>
+3D arrays containing X, Y, and Z components of the field. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757302">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757304">
+ </A>
+<A NAME="marker=757303">
+ </A>
+ARROWSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757305">
+ </A>
+Size of arrowheads (default = 0.05).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757307">
+ </A>
+<A NAME="marker=757306">
+ </A>
+BLOB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757308">
+ </A>
+Set this keyword to draw a blob at the beginning of each flow line and suppress the arrows. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757310">
+ </A>
+<A NAME="marker=757309">
+ </A>
+LEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757311">
+ </A>
+Length of each step used to follow flow lines (default = 2.0). Expressed in units of largest field vector (i.e., the length of the longest step is set to len times the grid spacing. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757313">
+ </A>
+<A NAME="marker=757312">
+ </A>
+NSTEPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757314">
+ </A>
+Number of steps used to follow the flow lines (default = largest dimension of <EM CLASS="Emphasis">
+Vx</EM>
+ / 5). </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757316">
+ </A>
+<A NAME="marker=757315">
+ </A>
+NVECS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757317">
+ </A>
+Number of random flow lines to draw (default = 200). Only used if Sx, Sy, Sz are not present. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757321">
+ </A>
+<A NAME="marker=757318">
+ </A>
+SX, <A NAME="marker=757319">
+ </A>
+SY, <A NAME="marker=757320">
+ </A>
+SZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757322">
+ </A>
+Optional vectors containing the starting coordinates of the flow lines. If omitted random starting points are chosen. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757323">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757324">
+ </A>
+Create a set of random three-dimensional arrays to represent the field:</P>
+<P CLASS="Code">
+<A NAME="pgfId=757325">
+ </A>
+vx = RANDOMU(seed, 5, 5, 5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=757326">
+ </A>
+vy = RANDOMU(seed, 5, 5, 5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=757327">
+ </A>
+vz = RANDOMU(seed, 5, 5, 5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=757328">
+ </A>
+Set up the 3D scaling system:</P>
+<P CLASS="Code">
+<A NAME="pgfId=757329">
+ </A>
+SCALE3, xr=[0,4], yr=[0,4], zr = [0,4] </P>
+<P CLASS="Body">
+<A NAME="pgfId=757330">
+ </A>
+Plot the vector field:</P>
+<P CLASS="Code">
+<A NAME="pgfId=757331">
+ </A>
+FLOW3, vx, vy, vz</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757332">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757333">
+ </A>
+<A HREF="idl1f4.htm#16476" CLASS="XRef">
+VEL</A>
+, <A HREF="idl1f5.htm#51661" CLASS="XRef">
+VELOVECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

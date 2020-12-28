@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XLOADCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl221.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl21f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=761892">
+ </A>
+<A NAME="56942">
+ </A>
+XLOADCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=761895">
+ </A>
+The <A NAME="marker=761893">
+ </A>
+XLOADCT procedure <A NAME="marker=761894">
+ </A>
+provides a graphical widget interface to the LOADCT procedure. XLOADCT displays the current colortable and shows a list of available predefined color tables. Clicking on the name of a color table causes the color table to be loaded. Many other options, such as Gamma correction, stretching, and transfer functions can also be applied to the colortable.</P>
+<P CLASS="Body">
+<A NAME="pgfId=761896">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xloadct.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761897">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=761898">
+ </A>
+XLOADCT</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=937518">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937520">
+ </A>
+<A NAME="marker=937519">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937521">
+ </A>
+Set this keyword to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937526">
+ </A>
+<A NAME="marker=937525">
+ </A>
+BOTTOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=168316">
+ </A>
+The first color index to use. XLOADCT will use color indices from BOTTOM to BOTTOM+NCOLORS-1. The default is BOTTOM=0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937512">
+ </A>
+<A NAME="marker=937511">
+ </A>
+FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937513">
+ </A>
+If this keyword is set, the file by the given name is used instead of the file <CODE CLASS="Code">
+colors1.tbl</CODE>
+ in the IDL directory.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=761904">
+ </A>
+<A NAME="marker=761903">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=930514">
+ </A>
+The widget ID of the widget that calls XLOADCT. When this ID is specified, a death of the caller results in a death of XLOADCT.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=930516">
+ </A>
+<A NAME="marker=930597">
+ </A>
+MODAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=930526">
+ </A>
+Set this keyword to block processing of events from other widgets until the user quits XLOADCT. A group leader must be specified (via the GROUP keyword) for the MODAL keyword to have any effect. By default, XLOADCT does not block event processing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=930518">
+ </A>
+<A NAME="marker=930515">
+ </A>
+NCOLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=930517">
+ </A>
+The number of colors to use. Use color indices from 0 to the smaller of !D.TABLE_SIZE-1 and NCOLORS-1. The default is all available colors (!D.TABLE_SIZE).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=761913">
+ </A>
+<A NAME="marker=761912">
+ </A>
+SILENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=761914">
+ </A>
+Normally, no informational message is printed when a color map is loaded. If this keyword is set to zero, the message is printed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=761916">
+ </A>
+<A NAME="marker=761915">
+ </A>
+USE_CURRENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=761917">
+ </A>
+Set this keyword to use the current color tables, regardless of the contents of the COLORS common block.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761918">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=761919">
+ </A>
+<A HREF="idl101.htm#61192" CLASS="XRef">
+LOADCT</A>
+, <A HREF="idl224.htm#10360" CLASS="XRef">
+XPALETTE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

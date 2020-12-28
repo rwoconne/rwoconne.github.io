@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CONGRID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl3f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl3d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=757829">
+ </A>
+<A NAME="73623">
+ </A>
+CONGRID</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757832">
+ </A>
+The <A NAME="marker=757830">
+ </A>
+CONGRID function shrinks or expands the size of an <A NAME="marker=757831">
+ </A>
+array by an arbitrary amount. CONGRID is similar to REBIN in that it can resize a one, two, or three dimensional array, but where REBIN requires that the new array size must be an integer multiple of the original size, CONGRID will resize an array to any arbitrary size. (REBIN is somewhat faster, however.) REBIN averages multiple points when shrinking an array, while CONGRID just resamples the array. </P>
+<P CLASS="Body">
+<A NAME="pgfId=757833">
+ </A>
+The returned array has the same number of dimensions as the original array and is of the same data type.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757834">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+congrid.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757835">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757836">
+ </A>
+Result = CONGRID(<EM CLASS="Emphasis">
+Array, X, Y, Z</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757837">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757838">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757839">
+ </A>
+A 1-, 2-, or 3-dimensional array to resize. <EM CLASS="Emphasis">
+Array</EM>
+ can be any type except string or structure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757840">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757841">
+ </A>
+The new X-dimension of the resized array. <EM CLASS="Emphasis">
+X</EM>
+ must be an integer or a long integer, and must be greater than or equal to 2.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757842">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757843">
+ </A>
+The new Y-dimension of the resized array. If the original array has only 1 dimension, <EM CLASS="Emphasis">
+Y</EM>
+ is ignored. If the original array has 2 or 3 dimensions <EM CLASS="Emphasis">
+Y</EM>
+ MUST be present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757844">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757845">
+ </A>
+The new Z-dimension of the resized array. If the original array has only 1 or 2 dimensions, <EM CLASS="Emphasis">
+Z</EM>
+ is ignored. If the original array has 3 dimensions then <EM CLASS="Emphasis">
+Z</EM>
+ MUST be present. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757846">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757848">
+ </A>
+<A NAME="marker=757847">
+ </A>
+CUBIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855704">
+ </A>
+Set this keyword to a value between -1 and 0 to use the cubic convolution interpolation method with the specified value as the interpolation parameter. Setting this keyword equal to a value greater than zero specifies a value of -1 for the interpolation parameter. Park and Schowengerdt (see reference below) suggest that a value of -0.5 significantly improves the reconstruction properties of this algorithm. This keyword has no effect when used with 3-dimensional arrays.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855705">
+ </A>
+Cubic convolution is an interpolation method that closely approximates the theoretically optimum sinc interpolation function using cubic polynomials. According to sampling theory, details of which are beyond the scope of this document, if the original signal, <I CLASS="Italics">
+f</I>
+, is a band-limited signal, with no frequency component larger than <EM CLASS="MathSymbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, and <I CLASS="Italics">
+f</I>
+ is sampled with spacing less than or equal to 1/(2<EM CLASS="MathSymbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+), then <I CLASS="Italics">
+f</I>
+ can be reconstructed by convolving with a sinc function: sinc(<EM CLASS="Emphasis">
+x</EM>
+) = sin(<EM CLASS="MathSymbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+) / (<EM CLASS="MathSymbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=855706">
+ </A>
+In the one-dimensional case, four neighboring points are used, while in the two-dimensional case 16 points are used. Note that cubic convolution interpolation is significantly slower than bilinear interpolation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855707">
+ </A>
+For further details see:</P>
+<P CLASS="Body">
+<A NAME="pgfId=855708">
+ </A>
+Rifman, S.S. and McKinnon, D.M., &quot;Evaluation of Digital Correction Techniques for ERTS Images; Final Report&quot;, Report 20634-6003-TU-00, TRW Systems, Redondo Beach, CA, July 1974.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855709">
+ </A>
+S. Park and R. Schowengerdt, 1983 &quot;Image Reconstruction by Parametric Cubic Convolution&quot;, Computer Vision, Graphics &amp; Image Processing 23, 256.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757851">
+ </A>
+<A NAME="marker=757850">
+ </A>
+INTERP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757852">
+ </A>
+Set this keyword to force CONGRID to use linear interpolation when resizing a 1- or 2-dimensional array. CONGRID automatically uses linear interpolation if the input array is 3-dimensional. When the input array is 1- or 2-dimensional, the default is to employ nearest-neighbor sampling.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757854">
+ </A>
+<A NAME="marker=757853">
+ </A>
+MINUS_ONE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757855">
+ </A>
+Set this keyword to prevent CONGRID from extrapolating one row or column beyond the bounds of the input array. For example, if the input array has the dimensions (<EM CLASS="Emphasis">
+i, j</EM>
+) and the output array has the dimensions (<EM CLASS="Emphasis">
+x, y</EM>
+), then by default the array is resampled by a factor of (<EM CLASS="Emphasis">
+i/x</EM>
+) in the X direction and (<EM CLASS="Emphasis">
+j/y</EM>
+) in the Y direction. If MINUS_ONE is set, the array will be resampled by the factors (<EM CLASS="Emphasis">
+i</EM>
+-1)/(<EM CLASS="Emphasis">
+x</EM>
+-1) and (<EM CLASS="Emphasis">
+j</EM>
+-1)/(<EM CLASS="Emphasis">
+y</EM>
+-1). </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757856">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757857">
+ </A>
+Given <CODE CLASS="Code">
+vol</CODE>
+ is a 3-D array with the dimensions (80, 100, 57), resize it to be a (90, 90, 80) array</P>
+<P CLASS="Code">
+<A NAME="pgfId=757858">
+ </A>
+vol = CONGRID(vol, 90, 90, 80)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757859">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757860">
+ </A>
+<A HREF="idl172.htm#24539" CLASS="XRef">
+REBIN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

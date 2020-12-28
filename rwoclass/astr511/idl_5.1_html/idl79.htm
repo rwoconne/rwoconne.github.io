@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DIALOG_PICKFILE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl7a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl78.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862366">
+ </A>
+<A NAME="54846">
+ </A>
+DIALOG_PICKFILE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862370">
+ </A>
+The <A NAME="marker=862368">
+ </A>
+DIALOG_PICKFILE function allows the user to i<A NAME="marker=862369">
+ </A>
+nteractively pick a file using the platform's own native graphical file-selection dialog. The user can also enter the name of a file that does not exist (see the description of the WRITE keyword, below). DIALOG_PICKFILE returns a string that contains the full path name of the selected file. If no file is selected, DIALOG_PICKFILE returns a null string.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862309">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862310">
+ </A>
+Result = DIALOG_PICKFILE()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=907481">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907482">
+ </A>
+<A NAME="marker=907525">
+ </A>
+DIRECTORY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907491">
+ </A>
+Set this keyword to display only the existing directories in the current directory. Individual files are not displayed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907484">
+ </A>
+<A NAME="marker=907483">
+ </A>
+DISPLAY_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871721">
+ </A>
+Set this keyword equal to a string that specifies the name of the X Windows display on which the dialog should be displayed. This keyword is ignored on Microsoft Windows and Macintosh platforms.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862313">
+ </A>
+<A NAME="marker=862312">
+ </A>
+FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862314">
+ </A>
+Set this keyword to a scalar string that contains the name of the initial file selection. This keyword is useful for specifying a default filename.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907329">
+ </A>
+<A NAME="marker=907328">
+ </A>
+FILTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907331">
+ </A>
+A string value for <A NAME="marker=907330">
+ </A>
+filtering the files in the file list. This keyword is used to reduce the number of files to choose from. The user can modify the filter unless the FIX_FILTER keyword is set. Example filter values could be <CODE CLASS="Code">
+'*.pro'</CODE>
+ or <CODE CLASS="Code">
+'*.dat'</CODE>
+. Only a single filter condition is allowed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907332">
+ </A>
+Under Microsoft Windows, the user cannot modify the filter. (The user can, however, enter a filter string in the filename field to filter the files displayed.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=907384">
+ </A>
+On the Macintosh, the filter is not displayed if the WRITE keyword is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907334">
+ </A>
+<A NAME="marker=907333">
+ </A>
+FIX_FILTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907335">
+ </A>
+When this keyword is set, only files that satisfy the filter can be selected. The user has no ability to modify the filter and the filter is not shown.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907336">
+ </A>
+Under Microsoft Windows, the user cannot modify the filter even if FIX_FILTER is <EM CLASS="Emphasis">
+not</EM>
+ set. Note that the user can enter a filter string in the filename field of the dialog to change the filter condition even if FIX_FILTER <EM CLASS="Emphasis">
+is</EM>
+ set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862316">
+ </A>
+<A NAME="marker=862315">
+ </A>
+GET_PATH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862317">
+ </A>
+Set this keyword to a named variable in which the path of the selection is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862319">
+ </A>
+<A NAME="marker=862318">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862320">
+ </A>
+The widget ID of a widget that calls DIALOG_PICKFILE. When this ID is specified, a death of the caller results in the death of the DIALOG_PICKFILE dialog.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907351">
+ </A>
+<A NAME="marker=907350">
+ </A>
+MUST_EXIST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907352">
+ </A>
+Set this keyword to allow only files that already exist to be selected. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907343">
+ </A>
+<A NAME="marker=907342">
+ </A>
+PATH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907344">
+ </A>
+Set this keyword to a string that contains the initial path from which to select files. If this keyword is not set, the current working directory is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862322">
+ </A>
+<A NAME="marker=862321">
+ </A>
+READ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862323">
+ </A>
+Set this keyword to make the title of the dialog &quot;Select File to Read&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907359">
+ </A>
+<A NAME="marker=907358">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907360">
+ </A>
+Set this keyword to a scalar string to be used for the dialog title. If it is not specified, the default title is &quot;Select File&quot;. This keyword is ignored on Macintosh platforms.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862325">
+ </A>
+<A NAME="marker=862324">
+ </A>
+WRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862326">
+ </A>
+Set this keyword to make the title of the dialog &quot;Select File to Write&quot;.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=907373">
+ </A>
+On the Macintosh, you <EM CLASS="Emphasis">
+must</EM>
+ set the WRITE keyword in order to be able to enter the name of a file that does not exist. As a result, the FILTER and FIX_FILTER keywords are ignored when the WRITE keyword is specified on a Macintosh.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862346">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862347">
+ </A>
+Create a DIALOG_PICKFILE dialog that lets users select only files with the extension `pro'. Use the `Select File to Read' title and store the name of the selected file in the variable <CODE CLASS="Code">
+file</CODE>
+. Enter: </P>
+<P CLASS="Code">
+<A NAME="pgfId=862348">
+ </A>
+file = DIALOG_PICKFILE(/READ, FILTER = '*.pro')</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862349">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862353">
+ </A>
+<A HREF="idl9e.htm#97064" CLASS="XRef">
+FILEPATH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

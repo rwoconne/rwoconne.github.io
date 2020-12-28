@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CLUSTER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl36.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl34.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862474">
+ </A>
+<A NAME="31115">
+ </A>
+CLUSTER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862731">
+ </A>
+The <A NAME="marker=862729">
+ </A>
+CLUSTER function <A NAME="marker=862730">
+ </A>
+computes the classification of an <EM CLASS="Emphasis">
+m</EM>
+-column, <EM CLASS="Emphasis">
+n</EM>
+-row array, where <EM CLASS="Emphasis">
+m</EM>
+ is the number of variables and <EM CLASS="Emphasis">
+n</EM>
+ is the number of observations or samples. The classification is based upon a cluster analysis of sample-based distances. The result is a 1-column, <EM CLASS="Emphasis">
+n</EM>
+-row array of cluster number assignments that correspond to each sample.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862569">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862570">
+ </A>
+Result = CLUSTER(<EM CLASS="Emphasis">
+Array, Weights</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862573">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862624">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862627">
+ </A>
+An M-column, N-row array of type float or double.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862575">
+ </A>
+Weights</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862632">
+ </A>
+An array of weights (the cluster centers) computed using the CLUST_WTS function. The dimensions of this array vary according to keyword values.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862579">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862580">
+ </A>
+<A NAME="marker=862738">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862741">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862583">
+ </A>
+<A NAME="marker=862739">
+ </A>
+N_CLUSTERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862646">
+ </A>
+Set this keyword equal to the number of clusters. The default is based upon the row dimension of the <EM CLASS="Emphasis">
+Weights</EM>
+ array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862587">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862588">
+ </A>
+Define an array with 4 variables and 10 observations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=862589">
+ </A>
+array = $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862590">
+ </A>
+[[ 1.5, 43.1, 29.1,  1.9], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862591">
+ </A>
+&nbsp;[24.7, 49.8, 28.2, 22.8], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862592">
+ </A>
+&nbsp;[30.7, 51.9,  7.0, 18.7], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862593">
+ </A>
+&nbsp;[ 9.8,  4.3, 31.1,  0.1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862594">
+ </A>
+&nbsp;[19.1, 42.2,  0.9, 12.9], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862595">
+ </A>
+&nbsp;[25.6, 13.9,  3.7, 21.7], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862596">
+ </A>
+&nbsp;[ 1.4, 58.5, 27.6,  7.1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862597">
+ </A>
+&nbsp;[ 7.9,  2.1, 30.6,  5.4], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862598">
+ </A>
+&nbsp;[22.1, 49.9,  3.2, 21.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862599">
+ </A>
+&nbsp;[ 5.5, 53.5,  4.8, 19.3]]</P>
+<P CLASS="Body">
+<A NAME="pgfId=862601">
+ </A>
+Compute the cluster weights, using two distinct clusters.</P>
+<P CLASS="Code">
+<A NAME="pgfId=862602">
+ </A>
+weights = CLUST_WTS(array, N_CLUSTERS=2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=862604">
+ </A>
+Compute the classification of each sample.</P>
+<P CLASS="Code">
+<A NAME="pgfId=862605">
+ </A>
+result = CLUSTER(array, weights, N_CLUSTERS=2)</P>
+<P CLASS="Body">
+<A NAME="pgfId=862607">
+ </A>
+Print each sample (each row) of the array and its corresponding cluster assignment.</P>
+<P CLASS="Code">
+<A NAME="pgfId=862609">
+ </A>
+FOR k = 0, N_ELEMENTS(result)-1 DO PRINT, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=862610">
+ </A>
+array[*,k], result(k), FORMAT = '(4(f4.1, 2x), 5x, i1)'</P>
+<P CLASS="Body">
+<A NAME="pgfId=862761">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862762">
+ </A>
+&nbsp;1.5  43.1  29.1   1.9       1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862763">
+ </A>
+24.7  49.8  28.2  22.8       0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862692">
+ </A>
+30.7  51.9   7.0  18.7       0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862693">
+ </A>
+ 9.8   4.3  31.1   0.1       1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862694">
+ </A>
+19.1  42.2   0.9  12.9       0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862695">
+ </A>
+25.6  13.9   3.7  21.7       0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862696">
+ </A>
+ 1.4  58.5  27.6   7.1       1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862697">
+ </A>
+ 7.9   2.1  30.6   5.4       1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862698">
+ </A>
+22.1  49.9   3.2  21.3       0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862699">
+ </A>
+ 5.5  53.5   4.8  19.3       0</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862662">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862666">
+ </A>
+<A HREF="idl34.htm#11803" CLASS="XRef">
+CLUST_WTS</A>
+, <A HREF="idl134.htm#40101" CLASS="XRef">
+PCOMP</A>
+, <A HREF="idl1b4.htm#22088" CLASS="XRef">
+STANDARDIZE</A>
+, <A HREF="..html#51012" CLASS="XRef">
+Multivariate Analysis</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,530 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> KRIG2D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=750558">
+ </A>
+<A NAME="19008">
+ </A>
+KRIG2D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=750561">
+ </A>
+The <A NAME="marker=750559">
+ </A>
+KRIG2D function <A NAME="marker=750560">
+ </A>
+interpolates a regularly- or irregularly-gridded set of points z&nbsp;=&nbsp;<EM CLASS="Emphasis">
+f </EM>
+(<EM CLASS="Emphasis">
+x, y</EM>
+) using <A NAME="marker=750562">
+ </A>
+kriging. It returns a two dimensional floating-point array containing the interpolated surface, sampled at the grid points.</P>
+<P CLASS="Body">
+<A NAME="pgfId=750563">
+ </A>
+The parameters of the data model - the range, nugget, and sill - are highly dependent upon the degree and type of spatial variation of your data, and should be determined statistically. Experimentation, or preferably rigorous analysis, is required.</P>
+<P CLASS="Body">
+<A NAME="pgfId=825173">
+ </A>
+For <EM CLASS="Emphasis">
+n</EM>
+ data points, a system of <EM CLASS="Emphasis">
+n</EM>
++1 simultaneous equations are solved for the coefficients of the surface. For any interpolation point, the interpolated value is: </P>
+<DIV>
+<CENTER><IMG SRC="idl_60.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=825179">
+ </A>
+The following formulas are used to model the variogram functions:</P>
+<P CLASS="Body">
+<A NAME="pgfId=825180">
+ </A>
+d(<EM CLASS="Emphasis">
+i,j</EM>
+) = the distance from point i to point j.</P>
+<P CLASS="Body">
+<A NAME="pgfId=750571">
+ </A>
+V = the variance of the samples.</P>
+<P CLASS="Body">
+<A NAME="pgfId=810714">
+ </A>
+C(<EM CLASS="Emphasis">
+i,j</EM>
+) = the covariance of sample i with sample j.</P>
+<P CLASS="Body">
+<A NAME="pgfId=810715">
+ </A>
+C(<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+,<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+,<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+,<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+) = the covariance of point (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+,<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+) with point (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+,<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=750577">
+ </A>
+Exponential covariance:</P>
+<DIV>
+<CENTER><IMG SRC="idl_61.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=825187">
+ </A>
+Spherical covariance:   </P>
+<DIV>
+<CENTER><IMG SRC="idl_62.gif" BORDER=0>
+</DIV>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=825191">
+ </A>
+The accuracy of this function is limited by the single-precision floating-point accuracy of the machine.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=754746">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+krig2d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750589">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750590">
+ </A>
+Result = KRIG2D(<EM CLASS="Emphasis">
+Z [, X, Y]</EM>
+) </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750591">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750592">
+ </A>
+Z, X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750593">
+ </A>
+Arrays containing the <EM CLASS="Emphasis">
+Z</EM>
+, <EM CLASS="Emphasis">
+X</EM>
+, and <EM CLASS="Emphasis">
+Y</EM>
+ coordinates of the data points on the surface. Points need not be regularly gridded. For regularly gridded input data, <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are not used: the grid spacing is specified via the XGRID and YGRID (or XVALUES and YVALUES) keywords, and <EM CLASS="Emphasis">
+Z</EM>
+ must be a two dimensional array. For irregular grids, all three parameters must be present and have the same number of elements. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750594">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750595">
+ </A>
+<EM CLASS="Emphasis">
+Model Parameters:</EM>
+</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750596">
+ </A>
+<A NAME="marker=855683">
+ </A>
+EXPONENTIAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750597">
+ </A>
+Set this keyword to a two- or three-element vector of model parameters to use an exponential semivariogram model. The model parameters (A, CO, and C1) are explained below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750598">
+ </A>
+<A NAME="marker=855684">
+ </A>
+SPHERICAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750599">
+ </A>
+Set this keyword to a two- or three-element vector of model parameters to use a spherical semivariogram model. The model parameters (A, CO, and C1) are explained below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750600">
+ </A>
+<A NAME="marker=855685">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750601">
+ </A>
+The <EM CLASS="Emphasis">
+range</EM>
+. At distances beyond <EM CLASS="Emphasis">
+A</EM>
+, the semivariogram or covariance remains essentially constant. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750602">
+ </A>
+<A NAME="marker=855686">
+ </A>
+C0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750603">
+ </A>
+The <EM CLASS="Emphasis">
+nugget</EM>
+, which provides a discontinuity at the origin. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750604">
+ </A>
+<A NAME="marker=855687">
+ </A>
+C1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750605">
+ </A>
+If specified, C1 is the covariance value for a zero distance, and the variance of the random sample <EM CLASS="Emphasis">
+z</EM>
+ variable. If only a two element vector is supplied, C1 is set to the sample variance. (C0 + C1) = the <EM CLASS="Emphasis">
+sill</EM>
+, which is the variogram value for very large distances.</P>
+<P CLASS="Body">
+<A NAME="pgfId=750606">
+ </A>
+<EM CLASS="Emphasis">
+Input Grid Description:</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750607">
+ </A>
+<A NAME="marker=855688">
+ </A>
+REGULAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750608">
+ </A>
+If set, the <EM CLASS="Emphasis">
+Z</EM>
+ parameter is a two dimensional array of dimensions (<EM CLASS="Emphasis">
+n,m</EM>
+), containing measurements over a regular grid. If any of XGRID, YGRID, XVALUES, or YVALUES are specified, REGULAR is implied. REGULAR is also implied if there is only one parameter, <EM CLASS="Emphasis">
+Z</EM>
+. If REGULAR is set, and no grid specifications are present, the grid is set to (0, 1, 2, ...). </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750609">
+ </A>
+<A NAME="marker=855689">
+ </A>
+XGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750610">
+ </A>
+A two-element array, [<EM CLASS="Emphasis">
+xstart</EM>
+, <EM CLASS="Emphasis">
+xspacing</EM>
+], defining the input grid in the <EM CLASS="Emphasis">
+x </EM>
+direction. Do not specify both XGRID and XVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750611">
+ </A>
+<A NAME="marker=855690">
+ </A>
+XVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750612">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element array defining the <EM CLASS="Emphasis">
+x</EM>
+ locations of Z[<EM CLASS="Emphasis">
+i,j</EM>
+]. Do not specify both XGRID and XVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750613">
+ </A>
+<A NAME="marker=855691">
+ </A>
+YGRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750614">
+ </A>
+A two-element array, [<EM CLASS="Emphasis">
+ystart</EM>
+, <EM CLASS="Emphasis">
+yspacing</EM>
+], defining the input grid in the <EM CLASS="Emphasis">
+y </EM>
+direction. Do not specify both YGRID and YVALUES. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750615">
+ </A>
+<A NAME="marker=855692">
+ </A>
+YVALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750616">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element array defining the <EM CLASS="Emphasis">
+y</EM>
+ locations of Z[<EM CLASS="Emphasis">
+i,j</EM>
+]. Do not specify both YGRID and YVALUES. </P>
+<P CLASS="Body">
+<A NAME="pgfId=750617">
+ </A>
+<EM CLASS="Emphasis">
+Output Grid Description:</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750618">
+ </A>
+<A NAME="marker=855693">
+ </A>
+GS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750619">
+ </A>
+The output grid spacing. If present, GS must be a two-element vector [<EM CLASS="Emphasis">
+xs, ys</EM>
+], where <EM CLASS="Emphasis">
+xs </EM>
+is the horizontal spacing between grid points and <EM CLASS="Emphasis">
+ys</EM>
+ is the vertical spacing. The default is based on the extents of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. If the grid starts at <EM CLASS="Emphasis">
+x</EM>
+ value <EM CLASS="Emphasis">
+xmin</EM>
+ and ends at <EM CLASS="Emphasis">
+xmax</EM>
+, then the default horizontal spacing is (<EM CLASS="Emphasis">
+xmax</EM>
+ - <EM CLASS="Emphasis">
+xmin</EM>
+)/(NX-1). <EM CLASS="Emphasis">
+ys</EM>
+ is computed in the same way. The default grid size, if neither NX or NY are specified, is 26 by 26. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750620">
+ </A>
+<A NAME="marker=855694">
+ </A>
+BOUNDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750621">
+ </A>
+If present, BOUNDS must be a four-element array containing the grid limits in <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ of the output grid: [<EM CLASS="Emphasis">
+xmin, ymin, xmax, ymax</EM>
+]. If not specified, the grid limits are set to the extent of <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750622">
+ </A>
+<A NAME="marker=855695">
+ </A>
+NX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750623">
+ </A>
+The output grid size in the <EM CLASS="Emphasis">
+x</EM>
+ direction. NX need not be specified if the size can be inferred from GS and BOUNDS. The default value is 26.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750624">
+ </A>
+<A NAME="marker=855696">
+ </A>
+NY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750625">
+ </A>
+The output grid size in the <EM CLASS="Emphasis">
+y </EM>
+direction. NY need not be specified if the size can be inferred from GS and BOUNDS. The default value is 26.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750626">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=824652">
+ </A>
+Make a random set of points that lie on a Gaussian: </P>
+<P CLASS="Code">
+<A NAME="pgfId=824655">
+ </A>
+N = 15	<EM CLASS="Comment">;
+Number of random points.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=824656">
+ </A>
+X = RANDOMU(seed, N) </P>
+<P CLASS="Code">
+<A NAME="pgfId=750630">
+ </A>
+Y = RANDOMU(seed, N) </P>
+<P CLASS="Code">
+<A NAME="pgfId=750631">
+ </A>
+Z = EXP(-2 * ((X-.5)^2 + (Y-.5)^2))	<EM CLASS="Comment">;
+The Gaussian. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=750632">
+ </A>
+Get a 26 by 26 grid over the rectangle bounding x and y: </P>
+<P CLASS="Code">
+<A NAME="pgfId=750633">
+ </A>
+E = [ 0.25, 0.0]	<EM CLASS="Comment">;
+Range is 0.25 and nugget is 0. These numbers are dependent on your data model.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=750634">
+ </A>
+R = KRIG2D(Z, X, Y, EXPON = E)	<EM CLASS="Comment">;
+Get the surface. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=750635">
+ </A>
+Alternatively, get a surface over the unit square, with spacing of 0.05: </P>
+<P CLASS="Code">
+<A NAME="pgfId=750636">
+ </A>
+R = KRIG2D(Z, X, Y, EXPON=E, GS=[0.05, 0.05], BOUNDS=[0,0,1,1])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769740">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=859046">
+ </A>
+<A HREF="idl14.htm#43479" CLASS="XRef">
+BILINEAR</A>
+, <A HREF="idld9.htm#72496" CLASS="XRef">
+INTERPOLATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

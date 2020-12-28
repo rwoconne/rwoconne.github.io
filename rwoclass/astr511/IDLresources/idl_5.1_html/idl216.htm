@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_TIFF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl217.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl215.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=943138">
+ </A>
+<A NAME="37850">
+ </A>
+WRITE_TIFF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=943142">
+ </A>
+The <A NAME="marker=943140">
+ </A>
+WRITE_TIFF procedure writes 8- or 24-bit images to a <A NAME="marker=943141">
+ </A>
+TIFF file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=943143">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_tiff.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=896459">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=917283">
+ </A>
+WRITE_TIFF, <EM CLASS="Emphasis">
+Filename[, Image, Order]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=896461">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896462">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896463">
+ </A>
+A scalar string containing the full pathname of the TIFF to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896464">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896465">
+ </A>
+The array to be written to the TIFF. If <EM CLASS="Emphasis">
+Image</EM>
+ has dimensions (3,<EM CLASS="Emphasis">
+n,m</EM>
+), a 24-bit TIFF is written. <EM CLASS="Emphasis">
+Image</EM>
+ should be of byte type, and in top to bottom scan line order. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=941534">
+ </A>
+The Image argument is optional if PLANARCONFIG is set to 2 and the RED, GREEN, and BLUE keywords have been specified.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896466">
+ </A>
+Order</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917285">
+ </A>
+This argument should be 0 if the image is stored from bottom to top (the default). For images stored from top to bottom, this argument should be 1.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=941432">
+ </A>
+Not all TIFF readers honor the value of the <I CLASS="Italic">
+Order</I>
+ argument. IDL writes the value into the file, but many known readers ignore this value. In such cases, we recommend that you convert the image to top to bottom order with the REVERSE function and then set <I CLASS="Italic">
+Order</I>
+ to 1.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=896526">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896473">
+ </A>
+<A NAME="marker=917288">
+ </A>
+PLANARCONFIG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917287">
+ </A>
+Set this keyword to 2 if you are writing an RGB image that is contained in three separate images (color planes). The three images must be stored in the variables specified by the RED, GREEN, and BLUE keywords. Otherwise, omit this parameter (or set it to 1).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917291">
+ </A>
+<A NAME="marker=917295">
+ </A>
+RED, GREEN, BLUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917296">
+ </A>
+If you are writing a Class P, Palette color image, set these keywords equal to the color table vectors, scaled from 0 to 255.</P>
+<P CLASS="Body">
+<A NAME="pgfId=917303">
+ </A>
+If you are writing an RGB interleaved image (i.e., if the PLANARCONFIG keyword is set to 2), set these keywords to the names of the variables containing the 3-color component image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896478">
+ </A>
+<A NAME="marker=917328">
+ </A>
+XRESOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917319">
+ </A>
+The horizontal resolution, in pixels per inch. The default is 100.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917320">
+ </A>
+<A NAME="marker=917329">
+ </A>
+YRESOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917323">
+ </A>
+The vertical resolution, in pixels per inch. The default is 100.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917318">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=896479">
+ </A>
+Create a pseudo screen dump from the current window:</P>
+<P CLASS="Code">
+<A NAME="pgfId=896480">
+ </A>
+WRITE_TIFF, 'test.tiff', TVRD()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=896481">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=896485">
+ </A>
+<A HREF="idl16c.htm#55282" CLASS="XRef">
+READ_TIFF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

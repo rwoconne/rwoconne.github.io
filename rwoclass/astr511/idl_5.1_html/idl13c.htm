@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLAR_CONTOUR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl13d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl13b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=128363">
+ </A>
+<A NAME="84211">
+ </A>
+POLAR_CONTOUR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=128364">
+ </A>
+The <A NAME="marker=128372">
+ </A>
+POLAR_CONTOUR procedure <A NAME="marker=128434">
+ </A>
+draws a contour plot from data in polar coordinates. Data can be regularly- or irregularly-gridded. All of the keyword options supported by CONTOUR are available to POLAR_CONTOUR.</P>
+<P CLASS="Body">
+<A NAME="pgfId=128378">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+polar_contour.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=128371">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=128384">
+ </A>
+POLAR_CONTOUR, <I CLASS="Italic">
+Z, Theta, R</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=128385">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=128386">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=128387">
+ </A>
+The data values to be contoured. If the data is regularly gridded, <I CLASS="Italic">
+Z</I>
+ must have the dimensions (N_ELEMENTS(<I CLASS="Italic">
+Theta</I>
+), N_ELEMENTS(<I CLASS="Italic">
+R</I>
+). Note that the ordering of the elements in the array <I CLASS="Italic">
+Z</I>
+ is opposite that used by the POLAR_SURFACE routine.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=128391">
+ </A>
+Theta</H4>
+<P CLASS="Body">
+<A NAME="pgfId=128392">
+ </A>
+A vector of angles in radians. For regularly-gridded data, <I CLASS="Italic">
+Theta</I>
+ must have the same number of elements as the first dimension of <I CLASS="Italic">
+Z</I>
+. For a scattered grid, <I CLASS="Italic">
+Theta</I>
+ must have the same number of elements as <I CLASS="Italic">
+Z</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=128393">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=128394">
+ </A>
+A vector of radius values. For regularly-gridded data, <I CLASS="Italic">
+R</I>
+ must have the same number of elements as the second dimension of <I CLASS="Italic">
+Z</I>
+. For a scattered grid, <I CLASS="Italic">
+R</I>
+ must have the same number of elements as <I CLASS="Italic">
+Z</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=128395">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=128396">
+ </A>
+POLAR_CONTOUR accepts all of the keywords accepted by the CONTOUR routine except C_LABELS, DOWNHILL, FOLLOW, PATH_FILENAME, PATH_INFO, and PATH_XY. See <A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+. In addition, there is one unique keyword:</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=128404">
+ </A>
+SHOW_TRIANGULATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=128405">
+ </A>
+Set this keyword to a color index to be used in overplotting the triangulation between datapoints.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=128406">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=128410">
+ </A>
+The first example uses POLAR_CONTOUR with regularly-gridded data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=128411">
+ </A>
+nr = 12	<EM CLASS="Comment">;
+The number of radii.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=128412">
+ </A>
+nt = 18	<EM CLASS="Comment">;
+The number of Thetas.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=128413">
+ </A>
+r = FINDGEN(nr)/(nr-1)	<EM CLASS="Comment">;
+Create a vector of radii.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=128414">
+ </A>
+theta = 2*!PI * FINDGEN(nt)/(nt-1)	C<EM CLASS="Comment">;
+reate a vector of Thetas.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=128418">
+ </A>
+z = COS(theta*3) # (r-0.5)^2	<EM CLASS="Comment">;
+Create some data values to be contoured.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=828727">
+ </A>
+POLAR_CONTOUR, z, theta, r, /FILL, c_color=[2, 3, 4, 5]<BR>
+<EM CLASS="Comment">;
+Create the polar contour plot.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=828729">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=128424">
+ </A>
+<A HREF="idl41.htm#88445" CLASS="XRef">
+CONTOUR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PNT_LINE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl13b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl139.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758320">
+ </A>
+<A NAME="34875">
+ </A>
+PNT_LINE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758322">
+ </A>
+The <A NAME="marker=758321">
+ </A>
+PNT_LINE function returns the perpendicular distance between a point <EM CLASS="Emphasis">
+P0</EM>
+ and a line between points <EM CLASS="Emphasis">
+L0</EM>
+ and <EM CLASS="Emphasis">
+L1</EM>
+. This function is limited by the machine accuracy of single precision floating point.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758323">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+pnt_line.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758324">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758325">
+ </A>
+Result = PNT_LINE(P0, L0, L1 [, Pl])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758326">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758327">
+ </A>
+P0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758328">
+ </A>
+The location of the point. <EM CLASS="Emphasis">
+P0</EM>
+ may have 2 to <EM CLASS="Emphasis">
+n</EM>
+ elements, for <EM CLASS="Emphasis">
+n</EM>
+ dimensions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758329">
+ </A>
+L0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758330">
+ </A>
+One end-point of the line. <EM CLASS="Emphasis">
+L0</EM>
+ must have same number of elements as <EM CLASS="Emphasis">
+P0</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758331">
+ </A>
+L1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758332">
+ </A>
+The other end-point of the line. <EM CLASS="Emphasis">
+L1</EM>
+ must have the same number of elements as <EM CLASS="Emphasis">
+L0</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758333">
+ </A>
+Pl</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758334">
+ </A>
+A named variable that will contain the location of the point on the line between <EM CLASS="Emphasis">
+L0</EM>
+ and <EM CLASS="Emphasis">
+L1</EM>
+ that is closest to <EM CLASS="Emphasis">
+P0</EM>
+. <EM CLASS="Emphasis">
+Pl</EM>
+ is not necessarily in the interval (<EM CLASS="Emphasis">
+L0, L1</EM>
+).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758335">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758337">
+ </A>
+<A NAME="marker=758336">
+ </A>
+INTERVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758338">
+ </A>
+If set, and if the point on the line between <EM CLASS="Emphasis">
+L0</EM>
+ and <EM CLASS="Emphasis">
+L1</EM>
+ that is closest to <EM CLASS="Emphasis">
+P0</EM>
+ is not within the interval (<EM CLASS="Emphasis">
+L0, L1</EM>
+), PNT_LINE will return the distance from <EM CLASS="Emphasis">
+P0</EM>
+ to the closer of the two endpoints <EM CLASS="Emphasis">
+L0</EM>
+ and <EM CLASS="Emphasis">
+L1</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758339">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758340">
+ </A>
+To print the distance between the point (2,3) and the line from (-3,3) to (5,12), and also the location of the point on the line closest to (2,3), enter the following command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758341">
+ </A>
+PRINT, PNT_LINE([2,3], [-3,3], [5,12], Pl), Pl</P>
+<P CLASS="Body">
+<A NAME="pgfId=758342">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=758343">
+ </A>
+3.73705    -0.793104      5.48276</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758344">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758345">
+ </A>
+<A HREF="idl32.htm#32752" CLASS="XRef">
+CIR_3PNT</A>
+, <A HREF="idl1aa.htm#56866" CLASS="XRef">
+SPH_4PNT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

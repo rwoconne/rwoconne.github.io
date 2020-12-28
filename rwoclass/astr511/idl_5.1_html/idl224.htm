@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XPALETTE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl225.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl223.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=761932">
+ </A>
+<A NAME="10360">
+ </A>
+XPALETTE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=761935">
+ </A>
+The <A NAME="marker=761933">
+ </A>
+XPALETTE <A NAME="marker=761934">
+ </A>
+procedure displays a widget interface that allows interactive creation and modification of colortables using the RGB, CMY, HSV, or HLS color systems. Single colors can be defined or multiple color indices between two endpoints can be interpolated. </P>
+<P CLASS="Body">
+<A NAME="pgfId=761936">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xpalette.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761937">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=761938">
+ </A>
+XPALETTE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761939">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937555">
+ </A>
+<A NAME="marker=937554">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937556">
+ </A>
+Set this keyword to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=761941">
+ </A>
+<A NAME="marker=761940">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=761942">
+ </A>
+The widget ID of the widget that calls XPALETTE. When this ID is specified, a death of the caller results in a death of XPALETTE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761943">
+ </A>
+Using the XPALETTE Interface</H3>
+<P CLASS="Body">
+<A NAME="pgfId=761944">
+ </A>
+Calling XPALETTE causes a graphical interface to appear. The elements of this interface are described below.</P>
+<P CLASS="Body">
+<A NAME="pgfId=761950">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Plots on Left Side of Interface:</STRONG>
+ Three plots show the current red, green, and blue vectors. </P>
+<P CLASS="Body">
+<A NAME="pgfId=761951">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Status Region:</STRONG>
+ The center of the XPALETTE widget is a status region containing:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761952">
+ </A>
+The total number of colors.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761953">
+ </A>
+The current color index. XPALETTE allows changing one color at a time. This color is known as the &quot;current color&quot; and is indicated in the color spectrum display with a special marker.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761954">
+ </A>
+The current mark index. The mark is used to remember a color index. Click the &quot;Set Mark Button&quot; to make the current color index the mark index.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761955">
+ </A>
+A sample of the current color. The special marker used in the color spectrum display prevents the user from seeing the color of the current index, but it is visible here. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=761956">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Control Panel:</STRONG>
+ A panel of 8 buttons control common XPALETTE functions: </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761957">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Done:</STRONG>
+ Click this button to exit XPALETTE. The new color tables are saved in the COLORS common block and loaded to the display.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761958">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Predefined:</STRONG>
+ Click this button to start XLOADCT, allowing selection of one of the predefined color tables. Note that when you change the color map via XLOADCT, XPALETTE is not always able to keep its display accurate. This problem can be overcome by pressing the XPALETTE &quot;Redraw&quot; button after changing the colortable via XLOADCT. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761959">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Help:</STRONG>
+ Click this button to display help information.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761960">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Redraw:</STRONG>
+ Click this button to redraws the display using the current state of the color map.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761961">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Set Mark:</STRONG>
+ Click this button to set the value of the mark index to the current color index.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761962">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Switch Mark:</STRONG>
+ Click this button to exchange the mark and the current index. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761963">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Copy Current:</STRONG>
+ Click this button to make every color lying between the current index and the mark index (inclusive) the same color as the current color.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761964">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Interpolate:</STRONG>
+ Click this button to smoothly interpolate colors between the current index and the mark index.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=761965">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Color System Control:</STRONG>
+ This section of the interface allows you to select the color system used to modify individual colors. The &quot;Select Color System&quot; pulldown menu lets you select from four different systems--RGB, CMY, HSV, and HLS. Depending upon the current system, 3 sliders below the pulldown menu allow you to alter the current color.</P>
+<P CLASS="Body">
+<A NAME="pgfId=761966">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+Right Side Color Spectrum Display:</STRONG>
+ A display on the right side of the XPALETTE interface shows the current color map as a series of squares. Color index 0 is at the upper left. The color index increases monotonically by rows going left to right and top to bottom. The current color index is indicated by a special marker symbol. There are 4 ways to change the current color:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761967">
+ </A>
+Click on any square in the color map display.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761968">
+ </A>
+Use the &quot;By Index&quot; slider to move to the desired color index.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761969">
+ </A>
+Use the &quot;Row&quot; Slider to move the marker vertically.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=761970">
+ </A>
+Use the &quot;Column&quot; Slider to move the marker horizontally.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761971">
+ </A>
+A Note about the Colors Used in the Interface</H3>
+<P CLASS="Body">
+<A NAME="pgfId=761972">
+ </A>
+XPALETTE uses two colors from the current color table as drawing foreground and background colors. These are used for the RGB plots on the left, and the current index marker on the right. This means that if the user set these two colors to the same value, the XPALETTE display could become unreadable (like writing on black paper with black ink). XPALETTE minimizes this possibility by noting changes to the color map and always using the brightest available color for the foreground color and the darkest for the background. Thus, the only way to make XPALETTE's display unreadable is to set the entire color map to a single color, which is highly unlikely. The only side effect of this policy is that you may notice XPALETTE redrawing the entire display after you've modified the current color. This simply means that the change has made XPALETTE pick new drawing colors. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761973">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=761974">
+ </A>
+<A HREF="idl101.htm#61192" CLASS="XRef">
+LOADCT</A>
+, <A HREF="idl11b.htm#53817" CLASS="XRef">
+MODIFYCT</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,750 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CONSTRAINED_MIN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl41.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl3f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=909247">
+ </A>
+<A NAME="16176">
+ </A>
+CONSTRAINED_MIN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=909249">
+ </A>
+The <A NAME="marker=917863">
+ </A>
+CONSTRAINED_MIN procedure solves <A NAME="marker=927508">
+ </A>
+nonlinear optimization problems of the following form: </P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=909282">
+ </A>
+Minimize or maximize gp(X), subject to: </P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=909727">
+ </A>
+glb<SUB CLASS="Subscript">
+i</SUB>
+ <EM CLASS="Symbol">
+&#163;</EM>
+ g<SUB CLASS="Subscript">
+i</SUB>
+(X) <EM CLASS="Symbol">
+&#163;</EM>
+ gub<SUB CLASS="Subscript">
+i</SUB>
+ &nbsp;&nbsp;for i = 0,...,nfuns-1, i <EM CLASS="Symbol">
+</EM>
+ p</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=909728">
+ </A>
+xlb<SUB CLASS="Subscript">
+j</SUB>
+ <EM CLASS="Symbol">
+&#163;</EM>
+ x<SUB CLASS="Subscript">
+j</SUB>
+ <EM CLASS="Symbol">
+&#163;</EM>
+ xub<SUB CLASS="Subscript">
+j</SUB>
+ &nbsp;&nbsp;for j = 0,...,nvars-1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=909729">
+ </A>
+<I CLASS="Italic">
+X</I>
+ is a vector of <I CLASS="Italic">
+nvars</I>
+ variables, <I CLASS="Italic">
+x</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+&nbsp;,...,x</I>
+<SUB CLASS="Subscript">
+nvars</SUB>
+<I CLASS="Italic">
+-1</I>
+ and <I CLASS="Italic">
+G</I>
+ is a vector of <I CLASS="Italic">
+nfuns</I>
+ functions <I CLASS="Italic">
+g</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+&nbsp;,...,g</I>
+<SUB CLASS="Subscript">
+nfuns</SUB>
+<I CLASS="Italic">
+-1</I>
+ which all depend on <I CLASS="Italic">
+X</I>
+. Any of these functions may be nonlinear. Any of the bounds may be infinite and any of the constraints may be absent. If there are no constraints, the problem is solved as an unconstrained optimization problem. The program solves problems of this form by the Generalized Reduced Gradient Method. See References 1-4.</P>
+<P CLASS="Body">
+<A NAME="pgfId=909405">
+ </A>
+CONSTRAINED_MIN uses first partial derivatives of each function <I CLASS="Italic">
+g</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ with respect to each variable <I CLASS="Italic">
+x</I>
+<SUB CLASS="Subscript">
+j</SUB>
+. These are automatically computed by finite difference approximation (either forward or central differences) unless the user supplies a function that evaluates them. </P>
+<P CLASS="Body">
+<A NAME="pgfId=909442">
+ </A>
+CONSTRAINED_MIN is based on an implementation of the GRG algorithm supplied by Windward Technologies, Inc. See Reference 11.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=908127">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=908129">
+ </A>
+CONSTRAINED_MIN, <I CLASS="Italic">
+Xbnd, Gbnd, Nobj, Gcomp, X, Inform</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=908131">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908133">
+ </A>
+Xbnd </H4>
+<P CLASS="Body">
+<A NAME="pgfId=909760">
+ </A>
+Bounds on variables. <I CLASS="Italic">
+Xbnd</I>
+ is an <I CLASS="Italic">
+nvars x 2</I>
+ element array. </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=909761">
+ </A>
+<I CLASS="Italic">
+Xbnd[j,0]</I>
+ is the lower bound for variable <I CLASS="Italic">
+x[j]</I>
+. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=909762">
+ </A>
+<I CLASS="Italic">
+Xbnd[j,1]</I>
+ is the upper bound for variable <I CLASS="Italic">
+x[j]</I>
+. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=909597">
+ </A>
+Use -1.0e30 to denote no lower bound and 1.0e30 for no upper bound. </LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908139">
+ </A>
+Gbnd</H4>
+<P CLASS="Body">
+<A NAME="pgfId=908140">
+ </A>
+Bounds on constraint functions. <I CLASS="Italic">
+Gbnd</I>
+ is an <I CLASS="Italic">
+nfuns x 2</I>
+ element array. </P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=909599">
+ </A>
+<I CLASS="Italic">
+Gbnd[i,0]</I>
+ is the lower bound for function <I CLASS="Italic">
+g[i]</I>
+. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=909602">
+ </A>
+<I CLASS="Italic">
+Gbnd[i,1]</I>
+ is the upper bound for function <I CLASS="Italic">
+g[i]</I>
+. </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=909603">
+ </A>
+use -1.0e30 to denote no lower bound and 1.0e30 for no upper bound. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=908144">
+ </A>
+Bounds on the objective function are ignored; set them to 0. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908146">
+ </A>
+Nobj</H4>
+<P CLASS="Body">
+<A NAME="pgfId=908147">
+ </A>
+Index of the objective function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908149">
+ </A>
+Gcomp</H4>
+<P CLASS="Body">
+<A NAME="pgfId=908150">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function. This function must accept an <I CLASS="Italic">
+nvars</I>
+-element vector argument <I CLASS="Italic">
+x</I>
+ of variable values and return an <I CLASS="Italic">
+nfuns</I>
+-element vector <I CLASS="Italic">
+G</I>
+ of function values. </P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=908153">
+ </A>
+G = HMBL11(X) </LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908155">
+ </A>
+X </H4>
+<P CLASS="Body">
+<A NAME="pgfId=908156">
+ </A>
+An <I CLASS="Italic">
+nvars</I>
+-element vector. On input, <I CLASS="Italic">
+X</I>
+ contains initial values for the variables. On output, <I CLASS="Italic">
+X</I>
+ contains final values of the variable settings determined by CONSTRAINED_MIN.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908159">
+ </A>
+Inform </H4>
+<P CLASS="Body">
+<A NAME="pgfId=909922">
+ </A>
+Termination status returned from CONSTRAINED_MIN.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=910349">
+ </A>
+<I CLASS="Italic">
+Inform</I>
+ argument values</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=910313">
+ </A>
+<I CLASS="Italic">
+Inform</I>
+ value </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=910315">
+ </A>
+Message</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910317">
+ </A>
+0 </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910319">
+ </A>
+Kuhn-Tucker conditions satisfied. <BR>
+This is the best possible indicator that an optimal point has been found.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910321">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910323">
+ </A>
+Fractional change in objective less than EPSTOP for NSTOP consecutive iterations. See Keywords below.<BR>
+This is not as good as <I CLASS="Italic">
+Inform</I>
+=0, but still indicates the likelihood that an optimal point has been found.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910325">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910327">
+ </A>
+All remedies have failed to find a better point. <BR>
+User should check functions and bounds for consistency and, perhaps, try other starting values.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910329">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910331">
+ </A>
+Number of completed 1-dimensional searches exceeded LIMSER. See Keywords below.<BR>
+User should check functions and bounds for consistency and, perhaps, try other starting values. It might help to increase limser. Use LIMSER=<I CLASS="Italic">
+larger_value</I>
+ to do this.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910333">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910335">
+ </A>
+Objective function is unbounded.</P>
+<P CLASS="CellBody">
+<A NAME="pgfId=910352">
+ </A>
+CONSTRAINED_MIN has observed dramatic change in the objective function over several steps. This is a good indication that the objective function is unbounded. If this is not the case, the user should check functions and bounds for consistency.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910337">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910339">
+ </A>
+Feasible point not found. <BR>
+CONSTRAINED_MIN was not able to find a feasible point. If the problem is believed to be feasible, the user should check functions and bounds for consistency and perhaps try other starting values.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910341">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910343">
+ </A>
+Degeneracy has been encountered. <BR>
+The point returned may be close to optimal. The user should check functions and bounds for consistency and perhaps try other starting values.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910345">
+ </A>
+-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=910347">
+ </A>
+Fatal Error. <BR>
+Some condition, such as <I CLASS="Italic">
+nvar</I>
+s &lt; 0, was encountered. CONSTRAINED_MIN documented the condition in the report and terminated. In this case, the user needs to correct the input and rerun CONSTRAINED_MIN.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=908200">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908210">
+ </A>
+<A NAME="marker=927419">
+ </A>
+EPSTOP </H4>
+<P CLASS="Body">
+<A NAME="pgfId=908211">
+ </A>
+Set this keyword to specify the CONSTRAINED_MIN convergence criteria. If the fractional change in the objective function is less than EPSTOP for NSTOP consecutive iterations, the program will accept the current point as optimal. CONSTRAINED_MIN will accept the current point as optimal if the Kuhn-Tucker optimality conditions are satisfied to EPSTOP. By default, EPSTOP = 1.0e-4. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927415">
+ </A>
+<A NAME="marker=927420">
+ </A>
+LIMSER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927416">
+ </A>
+If the number of completed one dimensional searches exceeds LIMSER, CONSTRAINED_MIN terminates and returns inform = 3. By default: LIMSER = 10000.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=908217">
+ </A>
+<A NAME="marker=927421">
+ </A>
+NSTOP </H4>
+<P CLASS="Body">
+<A NAME="pgfId=908218">
+ </A>
+Set this keyword to specify the CONSTRAINED_MIN convergence criteria. If the fractional change in the objective function is less than EPSTOP for NSTOP consecutive iterations, CONSTRAINED_MIN will accept the current point as optimal. By default, NSTOP = 3.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927406">
+ </A>
+<A NAME="marker=927422">
+ </A>
+REPORT </H4>
+<P CLASS="Body">
+<A NAME="pgfId=927407">
+ </A>
+Set this keyword to specify a name for the CONSTRAINED_MIN report file. If the specified file does not exist it will be created. If it exists, it will be overwritten. By default, CONSTRAINED_MIN does not create a report file. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927408">
+ </A>
+<A NAME="marker=927423">
+ </A>
+TITLE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=927409">
+ </A>
+Set this keyword to specify a title for the problem in the CONSTRAINED_MIN report. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=910548">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=910550">
+ </A>
+This example has 5 variables {X0, X1, ..., X4}, bounded above and below, a quadratic objective function {G3}, and three quadratic constraints {G0, G1, G2}, with both upper and lower bounds. See the Himmelblau text [7], problem 11.</P>
+<P CLASS="Body">
+<A NAME="pgfId=908232">
+ </A>
+Minimize: </P>
+<P CLASS="Body">
+<A NAME="pgfId=911455">
+ </A>
+G3 = 5.3578547X2X2 + 0.8356891X0X4 + 37.293239X0 - 40792.141 </P>
+<P CLASS="Body">
+<A NAME="pgfId=908234">
+ </A>
+Subject to: </P>
+<P CLASS="Body">
+<A NAME="pgfId=908236">
+ </A>
+0 &lt; G0 = 85.334407 + 0.0056858X1X4 + 0.0006262X0X3 - 0.0022053X2X4 &lt; 92</P>
+<P CLASS="Body">
+<A NAME="pgfId=908238">
+ </A>
+90 &lt; G1 = 80.51249  + 0.0071317X1X4 + 0.0029955X0X1 + 0.0021813X2X2 &lt; 110</P>
+<P CLASS="Body">
+<A NAME="pgfId=908240">
+ </A>
+20 &lt; G2 = 9.300961  + 0.0047026X2X4 + 0.0012547X0X2 + 0.0019085X2X3 &lt; 25</P>
+<P CLASS="Body">
+<A NAME="pgfId=908243">
+ </A>
+and, </P>
+<P CLASS="Body">
+<A NAME="pgfId=908245">
+ </A>
+78 &lt; X0 &lt; 102 </P>
+<P CLASS="Body">
+<A NAME="pgfId=908246">
+ </A>
+33 &lt; X1 &lt; 45</P>
+<P CLASS="Body">
+<A NAME="pgfId=908247">
+ </A>
+27 &lt; X2 &lt; 45 </P>
+<P CLASS="Body">
+<A NAME="pgfId=908248">
+ </A>
+27 &lt; X3 &lt; 45</P>
+<P CLASS="Body">
+<A NAME="pgfId=908249">
+ </A>
+27 &lt; X4 &lt; 45</P>
+<P CLASS="Body">
+<A NAME="pgfId=908251">
+ </A>
+This problem is solved starting from X = {78, 33, 27, 27, 27} which is infeasible because constraint G2 is not satisfied at this point. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908254">
+ </A>
+The constraint functions and objective function are evaluated by HMBL11: </P>
+<P CLASS="Code">
+<A NAME="pgfId=908256">
+ </A>
+FUNCTION HMBL11, x	<EM CLASS="Comment">;
+; Himmelblau Problem 11, 5 variables and 4 functions.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908258">
+ </A>
+<CODE CLASS="Code">
+g = DBLARR(4)</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908259">
+ </A>
+<CODE CLASS="Code">
+g[0] = 85.334407 + 0.0056858*x[1]*x[4] + 0.0006262*x[0]*x[3] $</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908260">
+ </A>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;- 0.0022053*x[2]*x[4]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908261">
+ </A>
+<CODE CLASS="Code">
+g[1] = 80.51249  + 0.0071317*x[1]*x[4] + 0.0029955*x[0]*x[1] $</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908262">
+ </A>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;+ 0.0021813*x[2]*x[2]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908263">
+ </A>
+<CODE CLASS="Code">
+g[2] = 9.300961  + 0.0047026*x[2]*x[4] + 0.0012547*x[0]*x[2] $</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908264">
+ </A>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;+ 0.0019085*x[2]*x[3]</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908265">
+ </A>
+<CODE CLASS="Code">
+g[3] = 5.3578547*x[2]*x[2] + 0.8356891*x[0]*x[4] $</CODE>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=908266">
+ </A>
+<CODE CLASS="Code">
+&nbsp;&nbsp;&nbsp;+</CODE>
+ 37.293239*x[0] - 40792.141</P>
+<P CLASS="Code">
+<A NAME="pgfId=908267">
+ </A>
+RETURN, g</P>
+<P CLASS="Code">
+<A NAME="pgfId=908268">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=908270">
+ </A>
+; Example problem for CONSTRAINED_MIN<BR>
+; Himmelblau Problem 11<BR>
+;  5 variables and 3 constraints<BR>
+;  Constraints and objective defined in HMBL11</P>
+<P CLASS="Code">
+<A NAME="pgfId=911072">
+ </A>
+xbnd   = [[78, 33, 27, 27, 27], [102, 45, 45, 45, 45]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=908276">
+ </A>
+gbnd   = [[0, 90, 20, 0], [92, 110, 25, 0 ]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=908277">
+ </A>
+nobj   = -4 </P>
+<P CLASS="Code">
+<A NAME="pgfId=908278">
+ </A>
+gcomp  = 'HMBL11'</P>
+<P CLASS="Code">
+<A NAME="pgfId=908279">
+ </A>
+title  = 'IDL:  Himmelblau 11'</P>
+<P CLASS="Code">
+<A NAME="pgfId=908280">
+ </A>
+report = 'hmbl11.txt'</P>
+<P CLASS="Code">
+<A NAME="pgfId=908281">
+ </A>
+x      = [78, 33, 27, 27, 27]</P>
+<P CLASS="Code">
+<A NAME="pgfId=911139">
+ </A>
+CONSTRAINED_MIN, x, xbnd, gbnd, nobj, gcomp, inform, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=908284">
+ </A>
+REPORT = report, TITLE = title<EM CLASS="Comment">;
+</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=911470">
+ </A>
+g = HMBL11(x)</P>
+<P CLASS="Code">
+<A NAME="pgfId=911471">
+ </A>
+PRINT, g[nobj]	<EM CLASS="Comment">;
+Print minimized objective <BR>
+function for HMBL11 problem.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=908290">
+ </A>
+References</H3>
+<P CLASS="Body">
+<A NAME="pgfId=908292">
+ </A>
+1. Lasdon, L.S., Waren, A.D., Jain, A., and Ratner, M., &quot;Design and Testing of a Generalized Reduced Gradient Code for Nonlinear Programming&quot;, ACM Transactions on Mathematical Software, Vol. 4, No. 1, March 1978, pp. 34-50. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908296">
+ </A>
+2. Lasdon, L.S. and Waren, A.D., &quot;Generalized Reduced Gradient Software for Linearly and Nonlinearly Constrained Problems&quot;, in &quot;Design and Implementation of Optimization Software&quot;, H. Greenberg, ed., Sijthoff and Noordhoff, pubs, 1979. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908300">
+ </A>
+3. Abadie, J. and Carpentier, J. &quot;Generalization of the Wolfe Reduced Gradient Method to the Case of Nonlinear Constraints&quot;, in Optimization, R. Fletcher (ed.), Academic Press London; 1969, pp. 37-47. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908304">
+ </A>
+4. Murtagh, B.A. and Saunders, M.A. &quot;Large-scale Linearly Constrained Optimization&quot;, Mathematical Programming, Vol. 14, No. 1, January 1978, pp. 41-72. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908307">
+ </A>
+5. Powell, M.J.D., &quot;Restart Procedures for the Conjugate Gradient Method,&quot; Mathematical Programming, Vol. 12, No. 2, April 1977, pp. 241-255. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908310">
+ </A>
+6. Colville, A.R., &quot;A Comparative Study of Nonlinear Programming Codes,&quot; I.B.M. T.R. no. 320-2949 (1968). </P>
+<P CLASS="Body">
+<A NAME="pgfId=908313">
+ </A>
+7. Himmelblau, D.M., Applied Nonlinear Programming, McGraw-Hill Book Co., New York, 1972. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908316">
+ </A>
+8. Fletcher, R., &quot;A New Approach to Variable Metric Algorithms&quot;, Computer Journal, Vol. 13, 1970, pp. 317-322. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908319">
+ </A>
+9. Smith, S. and Lasdon, L.S., Solving Large Sparse Nonlinear Programs Using GRG, ORSA Journal on Computing, Vol. 4, No. 1,Winter 1992, pp. 1-15. </P>
+<P CLASS="Body">
+<A NAME="pgfId=908322">
+ </A>
+10. Luenbuerger, David G., Linear and Nonlinear Programming, Second Edition, Addison-Wesley, Reading Massachusetts, 1984.</P>
+<P CLASS="Body">
+<A NAME="pgfId=908325">
+ </A>
+11. Windward Technologies, GRG2 Users's Guide, http://web.wt.net/~wti, 1997.</P>
+</DIV>
+</BODY>
+</HTML>

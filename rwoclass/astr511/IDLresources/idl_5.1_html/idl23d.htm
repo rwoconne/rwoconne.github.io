@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The Z-Buffer Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl23e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl23c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144929">
+ </A>
+<A NAME="65311">
+ </A>
+The <A NAME="marker=421554">
+ </A>
+Z-Buffer Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=488463">
+ </A>
+Device Keywords Accepted by the Z Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=488476">
+ </A>
+<A HREF="idl22e.htm#23518" CLASS="XRef">
+CLOSE</A>
+, <A HREF="idl22e.htm#29131" CLASS="XRef">
+GET_GRAPHICS_FUNCTION</A>
+, <A HREF="idl22e.htm#37885" CLASS="XRef">
+GET_WRITE_MASK</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#67838" CLASS="XRef">
+SET_COLORS</A>
+, <A HREF="idl22e.htm#78342" CLASS="XRef">
+SET_GRAPHICS_FUNCTION</A>
+, <A HREF="idl22e.htm#40567" CLASS="XRef">
+SET_RESOLUTION</A>
+, <A HREF="idl22e.htm#92914" CLASS="XRef">
+Z_BUFFERING</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144930">
+ </A>
+The IDL Z-buffer device is a pseudo device that draws 2D or 3D graphics in a buffer contained in memory. This driver implements the classic Z buffer algorithm for hidden surface removal. Although primarily used for 3D graphics, the Z-buffer driver can be used to create 2D objects in a frame buffer in memory. The resolution of this device can be set by the user.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144931">
+ </A>
+All of the IDL plotting and graphics routines work with the Z-buffer device driver. In addition, the POLYFILL procedure has a few keyword parameters, allowing Gouraud shading and warping images over 3D polygons, that are only effective when used with the Z-buffer.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144932">
+ </A>
+When used for 3D graphics, two buffers are present: an 8-bit-deep frame buffer that contains the picture; and a 16-bit-deep Z-buffer of the same resolution, containing the z-value of the visible surface of each pixel. The Z-buffer is initialized to the depth at the back of the viewing volume. When objects are drawn, the z-value of each pixel is compared with the value at the same location in the Z-buffer, and if the z-value is greater (closer to the viewer), the new pixel is written in the frame buffer and the Z-buffer is updated with the new z-value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144933">
+ </A>
+The Z-buffer device is a &quot;pseudo device&quot; in that drawing commands update buffers in memory rather than sending commands to a physical device or file. The TVRD function reads the contents of either buffer to an IDL array. This array may then be further processed, written to a file, or output to a raster-based graphics output device.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144934">
+ </A>
+The Z-buffer driver can be used for 2D graphics by disabling the depth computations.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144935">
+ </A>
+To use the Z-buffer as the current graphics device, issue the IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144936">
+ </A>
+SET_PLOT, 'Z'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144937">
+ </A>
+Once the Z-buffer driver is enabled the DEVICE procedure is used to control its actions, as described below.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144938">
+ </A>
+Use the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144939">
+ </A>
+HELP, /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=144940">
+ </A>
+to view the current state of the Z-buffer driver and the amount of memory used for the buffers.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144949">
+ </A>
+Reading and Writing Buffers</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144950">
+ </A>
+The contents of both buffers are directly accessed by the TV and TVRD routines. The frame buffer that contains the picture is 8 bits deep and is accessed as channel 0. The Z depth buffer contains 16 bit integers and is accessed as channel 1. Always use <EM CLASS="tt">
+CHANNEL=1</EM>
+ and set the keyword WORDS when reading or writing the depth buffer.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144951">
+ </A>
+The normal procedure is to set the graphics device to &quot;Z&quot;, draw the objects, read the frame buffer, and then select another graphics device and write the image. For example, to create an image with the Z-buffer driver and then display it on an X-Window display:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144952">
+ </A>
+SET_PLOT,'Z'	<EM CLASS="Comment">;
+Select Z-buffer device.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144953">
+ </A>
+... ... ...	<EM CLASS="Comment">;
+Write objects to the frame buffer using normal graphics routines, e.g. PLOT, SURFACE, POLYFILL.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144954">
+ </A>
+a=TVRD()	<EM CLASS="Comment">;
+Read back the entire frame buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144955">
+ </A>
+SET_PLOT,'X'	<EM CLASS="Comment">;
+Select X Windows.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144956">
+ </A>
+TV, a	<EM CLASS="Comment">;
+Display the contents of the frame buffer.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144957">
+ </A>
+To read the depth values in the Z-buffer, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144958">
+ </A>
+a = TVRD(CHANNEL=1, /WORDS)</P>
+<P CLASS="Body">
+<A NAME="pgfId=144959">
+ </A>
+To write the depth values, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144960">
+ </A>
+TV, a, /WORDS, CHANNEL=1</P>
+<P CLASS="Body">
+<A NAME="pgfId=144961">
+ </A>
+The TV, TVSCL, and TVRD routines write or read pixels directly to a rectangular area of the designated buffer without affecting the other buffer.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144962">
+ </A>
+Z-Axis Scaling</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144963">
+ </A>
+The values in the depth buffer are short integers, scaled from -32765 to +32765, corresponding to normalized Z-coordinate values of 0.0 to 1.0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144964">
+ </A>
+Polyfill Procedure</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144965">
+ </A>
+The following POLYFILL keywords are active only with the Z-buffer device: IMAGE_COORDINATES, IMAGE_INTERPOLATE, and TRANSPARENT. These parameters allow images, specified via the PATTERN keyword, to be warped over 2D and 3D polygons.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144966">
+ </A>
+The IMAGE_COORDINATES keyword contains a 2 by <I CLASS="Italics">
+N</I>
+ array containing the image space coordinates that correspond to each of the <I CLASS="Italics">
+N</I>
+ vertices of the polygon. The IMAGE_INTERPOLATE keyword indicates that bilinear interpolation is to be used, rather than the default nearest neighbor sampling. Pixels less than the value of TRANSPARENT are not drawn, simulating transparency. For Gouraud shading of polygons, the COLOR keyword can contain an array specifying the color index for each polygon vertex.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144967">
+ </A>
+Examples Using the Z-Buffer</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144968">
+ </A>
+This example forms a Bessel function, draws its shaded surface and overlays its contour, using the Z-buffer as shown in <A HREF="devices.html#13693" CLASS="XRef">
+Image Warped to a Cube Using the Z-Buffer</A>
+ <EM CLASS="Comment">;
+</EM>
+The final output is directed to PostScript.</P>
+<DIV>
+<MAP NAME="idl-126">
+</MAP>
+<CENTER><IMG SRC="idl_126.gif" USEMAP="#idl-126" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=144969">
+ </A>
+SET_PLOT, 'Z'	<EM CLASS="Comment">;
+Select the Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144970">
+ </A>
+n = 50	<EM CLASS="Comment">;
+Size of array for Bessel.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144971">
+ </A>
+a = BESELJ(SHIFT(DIST(n), n/2, n/2)/2, 0)<BR>
+<EM CLASS="Comment">;
+Make the Bessel function.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144972">
+ </A>
+SHADE_SURF, a, /SAVE, COLOR=1, BACKGROUND=255<BR>
+<EM CLASS="Comment">;
+Draw the surface, label axes in black, background in white.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144973">
+ </A>
+nlev = 8	<EM CLASS="Comment">;
+Number of contour levels.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144974">
+ </A>
+CONTOUR, a, /OVERPLOT, ZVALUE=.6, /T3D, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144975">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEVELS=FINDGEN(nlev)*1.5/nlev-.5, COLOR=1<BR>
+<EM CLASS="Comment">;
+Make the Contour at normalized Z=.6.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144976">
+ </A>
+b=TVRD()	<EM CLASS="Comment">;
+Read image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144977">
+ </A>
+SET_PLOT, 'PS'	<EM CLASS="Comment">;
+Select PostScript output.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144978">
+ </A>
+TV, b	<EM CLASS="Comment">;
+Output the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144979">
+ </A>
+DEVICE, /CLOSE	<EM CLASS="Comment">;
+Close the new PostScript file.</EM>
+ </P>
+<P CLASS="Body">
+<A NAME="pgfId=144980">
+ </A>
+The following example warps an image to a cube as shown in <A HREF="devices.html#13693" CLASS="XRef">
+Image Warped to a Cube Using the Z-Buffer</A>
+. The lower two quadrants of the image are warped to the front two faces of the cube. The upper-right quadrant is warped to the top face of the cube. The image is held in the array <EM CLASS="tt">
+a</EM>
+, with dimensions <EM CLASS="tt">
+nx</EM>
+ by <EM CLASS="tt">
+ny</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=144981">
+ </A>
+SET_PLOT, 'Z'	<EM CLASS="Comment">;
+Select the Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144982">
+ </A>
+ERASE, 255	<EM CLASS="Comment">;
+Make a white background for final output to PostScript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144983">
+ </A>
+SCALE3, XRANGE=[0,1], YRANGE=[0,1], ZRANGE=[0,1]<BR>
+<EM CLASS="Comment">;
+Establish 3D scaling as (0,1) cube.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144984">
+ </A>
+verts = [[0,0,0], [1,0,0], [1,1,0], [0,1,0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144985">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0,0,1], [1,0,1], [1,1,1], [0,1,1]]<BR>
+<EM CLASS="Comment">;
+Define vertices of cube. Vertices 0-3 are bottom, 4-7 are top.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144986">
+ </A>
+POLYFILL, verts[*, [3,0,4,7]], /T3D, PATTERN=a, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144987">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE_COORD=[[0,0], [nx/2,0], [nx/2,ny/2], [0,ny/2]]<BR>
+<EM CLASS="Comment">;
+Fill lower left face.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144988">
+ </A>
+POLYFILL, verts[*, [0,1,5,4]], /T3D, PATTERN=a, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144989">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE_COORD=[[nx/2,0], [nx-1,0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144990">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nx-1,ny/2], [nx/2,ny/2]]<EM CLASS="Comment">;
+	Lower right face.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144991">
+ </A>
+POLYFILL, verts[*, [4,5,6,7]], /T3D, PATTERN=a, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144992">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE_COORD = [[nx/2,ny/2], [nx-1,ny/2], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144993">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nx-1,ny-1], [nx/2,ny-1]]<EM CLASS="Comment">;
+	Top face.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144994">
+ </A>
+PLOTS, verts[*, [0,4]], /T3D, COLOR=0<EM CLASS="Comment">;
+	Draw edges of cube in black.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144995">
+ </A>
+PLOTS, verts[*, [4,5,6,7,4]], /T3D, COLOR=0<BR>
+<EM CLASS="Comment">;
+Edges of top face.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=456732">
+ </A>
+The image is then output to PostScript as in the previous example. </P>
+<DIV>
+<MAP NAME="idl-127">
+</MAP>
+<CENTER><IMG SRC="idl_127.gif" USEMAP="#idl-127" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=456588">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

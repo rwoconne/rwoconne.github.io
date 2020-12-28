@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FV_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlaf.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlad.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53454">
+ </A>
+<A NAME="67435">
+ </A>
+FV_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53458">
+ </A>
+The <A NAME="marker=53456">
+ </A>
+FV_TEST <A NAME="marker=53457">
+ </A>
+function computes the F-statistic and the probability that two sample populations <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have significantly different <A NAME="marker=53459">
+ </A>
+variances. <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ may be of different lengths. The result is a two-element vector containing the F-statistic and its significance. The significance is a value in the interval [0.0, 1.0]; a small value (0.05 or 0.01) indicates that <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have significantly different variances. This type of <A NAME="marker=53460">
+ </A>
+test is often referred to as the F-variance test.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843578">
+ </A>
+The F-statistic formula for sample populations <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ with means<EM CLASS="MathSymbol">
+`</EM>
+<EM CLASS="Emphasis">
+x</EM>
+ and<EM CLASS="MathSymbol">
+`</EM>
+<EM CLASS="Emphasis">
+y</EM>
+<EM CLASS="MathSymbol">
+ </EM>
+is defined as: </P>
+<DIV>
+<CENTER><IMG SRC="idl_34.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=843581">
+ </A>
+where <EM CLASS="Emphasis">
+x</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ..., <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+N-1</SUB>
+) and <EM CLASS="Emphasis">
+y</EM>
+ = (<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+ ..., <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+M-1</SUB>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53469">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+fv_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53470">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53471">
+ </A>
+Result = FV_TEST(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53472">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53473">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53474">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single- or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53475">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53476">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+-element integer, single- or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53477">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53478">
+ </A>
+Define two n-element sample populations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53479">
+ </A>
+X = [257, 208, 296, 324, 240, 246, 267, 311, 324, 323, 263, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53480">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;305, 270, 260, 251, 275, 288, 242, 304, 267]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53481">
+ </A>
+Y = [201, &nbsp;56, 185, 221, 165, 161, 182, 239, 278, 243, 197, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53482">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;271, 214, 216, 175, 192, 208, 150, 281, 196]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53483">
+ </A>
+Compute the F-statistic (of X and Y) and its significance. </P>
+<P CLASS="Code">
+<A NAME="pgfId=53484">
+ </A>
+PRINT, FV_TEST(X, Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53485">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53486">
+ </A>
+2.48578    0.0540116</P>
+<P CLASS="Body">
+<A NAME="pgfId=53487">
+ </A>
+The result indicates that X and Y have significantly different variances.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53488">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65913">
+ </A>
+<A HREF="idle3.htm#95076" CLASS="XRef">
+KW_TEST</A>
+, <A HREF="idl11c.htm#59358" CLASS="XRef">
+MOMENT</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_BMP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl20e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl20c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756424">
+ </A>
+<A NAME="19796">
+ </A>
+WRITE_BMP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=929168">
+ </A>
+The <A NAME="marker=929167">
+ </A>
+WRITE_BMP procedure writes an image and its color table vectors to a Microsoft Windows Version 3 device independent <A NAME="marker=929169">
+ </A>
+bitmap file (.BMP).</P>
+<P CLASS="Body">
+<A NAME="pgfId=929170">
+ </A>
+WRITE_BMP does not handle 1-bit-deep images or compressed images, and is not fast for 4-bit images. The algorithm works best on images where the number of bytes in each scan-line is evenly divisible by 4.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756429">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_bmp.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917268">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=917272">
+ </A>
+WRITE_BMP, <EM CLASS="Emphasis">
+Filename, Image[, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917270">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756433">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756434">
+ </A>
+A scalar string containing the full pathname of the bitmap file to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756435">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756436">
+ </A>
+The array to write into the new bitmap file. The array should be scaled into a range of bytes for 8- and 24-bit deep images. Scale to 0-15 for 4 bit deep images. If the image has 3 dimensions and the first dimension is 3, a 24 bit deep bitmap file is created. Note: for 24-bit images, color interleaving is blue, green, red: <EM CLASS="Emphasis">
+Image[0,i,j]</EM>
+ = blue, <EM CLASS="Emphasis">
+Image[1,i,j]</EM>
+ = green, etc.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756437">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756438">
+ </A>
+Color tables. If omitted, the colors loaded in the COLORS common block are used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756439">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756441">
+ </A>
+<A NAME="marker=756440">
+ </A>
+FOUR_BIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756442">
+ </A>
+Set this keyword to write as a 4-bit device independent bitmap. If omitted or zero, an 8-bit deep bitmap is written.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756444">
+ </A>
+<A NAME="marker=756443">
+ </A>
+IHDR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756445">
+ </A>
+Set this keyword to a BITMAPINFOHEADER structure containing the file header fields that are not obtained from the image itself. The fields in this structure that can be set are: <CODE CLASS="Code">
+bi{XY}PelsPerMeter</CODE>
+, <CODE CLASS="Code">
+biClrUsed</CODE>
+, and <CODE CLASS="Code">
+biClrImportant</CODE>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756447">
+ </A>
+<A NAME="marker=756446">
+ </A>
+HEADER_DEFINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756448">
+ </A>
+If this keyword is set, WRITE_BMP returns an empty BITMAPINFOHEADER structure, containing zeros. No other actions are performed. This structure may be then modified with the pertinent fields and passed in via the IHDR keyword parameter. See the Microsoft Windows Programmers Reference Guide for a description of each field in the structure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756449">
+ </A>
+Note: this parameter must be defined <EM CLASS="Emphasis">
+before</EM>
+ the call. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756450">
+ </A>
+H = 0</P>
+<P CLASS="Code">
+<A NAME="pgfId=756451">
+ </A>
+WRITE_BMP, HEADER_DEFINE = H</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756452">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756453">
+ </A>
+The following command captures the contents of the current IDL graphics window and saves it to a Microsoft Windows Bitmap file with the name <CODE CLASS="Code">
+test.bmp</CODE>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756454">
+ </A>
+WRITE_BMP, 'test.bmp', TVRD()</P>
+<P CLASS="Body">
+<A NAME="pgfId=756455">
+ </A>
+The following commands scale an image to 0-15, and then write a 4-bit BMP file, using a grayscale color table:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756456">
+ </A>
+r = BYTSCL(INDGEN(16))	<EM CLASS="Comment">;
+Create a ramp from 0 to 255</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756457">
+ </A>
+WRITE_BMP, 'test.bmp', BYTSCL(Image, MAX=15), r, r, r, /FOUR</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756458">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756459">
+ </A>
+<A HREF="idl163.htm#75148" CLASS="XRef">
+READ_BMP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

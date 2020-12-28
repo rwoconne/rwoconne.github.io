@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_CREATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998662">
+ </A>
+<A NAME="14563">
+ </A>
+HDF_SD_CREATE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998665">
+ </A>
+The <A NAME="marker=998664">
+ </A>
+HDF_SD_CREATE function creates and defines a Scientific Dataset (SD) for an HDF file. Keywords can be set to specify the data type. If no keywords are present a floating-point dataset is created. The returned value of this function is the SDS ID of the newly-created dataset.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998666">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998667">
+ </A>
+Result = HDF_SD_CREATE(<I CLASS="Italics">
+SD_ID, Name, Dims</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998668">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998669">
+ </A>
+SD_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998670">
+ </A>
+An SD ID as returned by HDF_SD_START.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998671">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998672">
+ </A>
+A string containing the name of the variable to be created.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998673">
+ </A>
+Dims</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998674">
+ </A>
+A 1-based vector specifying the dimensions of the variable. If an UNLIMITED dimension is desired, set the last vector element to zero or a negative number.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998675">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998677">
+ </A>
+<A NAME="marker=998676">
+ </A>
+BYTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998678">
+ </A>
+Set this keyword to indicate that the dataset is composed of bytes. Data will be stored with the HDF DFNT_UINT8 data type. Setting this keyword is the same as setting the DFNT_UINT8 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998680">
+ </A>
+<A NAME="marker=998679">
+ </A>
+DFNT_CHAR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998681">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_CHAR. Setting this keyword is the same as setting the STRING keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998683">
+ </A>
+<A NAME="marker=998682">
+ </A>
+DFNT_FLOAT32</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998684">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_FLOAT32. Setting this keyword is the same as setting the FLOAT keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998686">
+ </A>
+<A NAME="marker=998685">
+ </A>
+DFNT_FLOAT64</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998687">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_FLOAT64. Setting this keyword is the same as setting the DOUBLE keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998689">
+ </A>
+<A NAME="marker=998688">
+ </A>
+DFNT_INT8</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998690">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_INT8.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998692">
+ </A>
+<A NAME="marker=998691">
+ </A>
+DFNT_INT16</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998693">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_INT16. Setting this keyword is the same as setting either the INT keyword or the SHORT keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998695">
+ </A>
+<A NAME="marker=998694">
+ </A>
+DFNT_INT32</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998696">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_INT32. Setting this keyword is the same as setting the LONG keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998698">
+ </A>
+<A NAME="marker=998697">
+ </A>
+DFNT_UINT8</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998699">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_UINT8. Setting this keyword is the same as setting the BYTE keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998701">
+ </A>
+<A NAME="marker=998700">
+ </A>
+DFNT_UINT16</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998702">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_UINT16.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998704">
+ </A>
+<A NAME="marker=998703">
+ </A>
+DFNT_UINT32</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998705">
+ </A>
+Set this keyword to create a data set of HDF type DFNT_UINT32.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998707">
+ </A>
+<A NAME="marker=998706">
+ </A>
+DOUBLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998708">
+ </A>
+Set this keyword to indicate that the dataset is composed of double-precision floating-point values. Data will be stored with the HDF DFNT_FLOAT64 data type. Setting this keyword is the same as setting the DFNT_FLOAT64 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998710">
+ </A>
+<A NAME="marker=998709">
+ </A>
+FLOAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998711">
+ </A>
+Set this keyword to indicate that the dataset is composed of single-precision floating-point values. Data will be stored with the HDF DFNT_FLOAT32 data type. Setting this keyword is the same as setting the DFNT_FLOAT32 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998713">
+ </A>
+<A NAME="marker=998712">
+ </A>
+INT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998714">
+ </A>
+Set this keyword to indicate that the dataset is composed of 2-byte integers. Data will be stored with the HDF DFNT_INT16 data type. Setting this keyword is the same as setting either the SHORT keyword or the DFNT_INT16 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998716">
+ </A>
+<A NAME="marker=998715">
+ </A>
+LONG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998717">
+ </A>
+Set this keyword to indicate that the dataset is composed of longword integers. Data will be stored with the HDF DFNT_INT32 data type. Setting this keyword is the same as setting the DFNT_INT32 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998719">
+ </A>
+<A NAME="marker=998718">
+ </A>
+SHORT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998720">
+ </A>
+Set this keyword to indicate that the dataset is composed of 2-byte integers. Data will be stored with the HDF DFNT_INT16 data type. Setting this keyword is the same as setting either the INT keyword or the DFNT_INT16 keyword.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998722">
+ </A>
+<A NAME="marker=998721">
+ </A>
+STRING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998723">
+ </A>
+Set this keyword to indicate that the dataset is composed of strings. Data will be stored with the HDF DFNT_CHAR data type. Setting this keyword is the same as setting the DFNT_CHAR keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998724">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998725">
+ </A>
+sd_id = HDF_SD_START('test.hdf', /CREATE)<BR>
+<EM CLASS="Comment">;
+Create a new HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998726">
+ </A>
+sds_id = HDF_SD_CREATE(sd_id, 'var1', [9,40,0], /SHORT)<BR>
+<EM CLASS="Comment">;
+Create an dataset that includes an unlimited dimension.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998727">
+ </A>
+The example for HDF_SD_ATTRSET also demonstrates the use of this routine.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998728">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998738">
+ </A>
+<A HREF="idl29b.htm#27462" CLASS="XRef">
+HDF_OPEN</A>
+, <A HREF="idl2a6.htm#78622" CLASS="XRef">
+HDF_SD_ENDACCESS</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SIN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl19d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678844">
+ </A>
+<A NAME="91988">
+ </A>
+SIN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678845">
+ </A>
+The periodic function <A NAME="marker=673873">
+ </A>
+SIN returns the trigonometric sine of X.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678846">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678847">
+ </A>
+Result = SIN(<I CLASS="Italic">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678848">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678849">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=722427">
+ </A>
+The angle for which the sine is desired, specified in radians. If <I CLASS="Italic">
+X</I>
+ is double-precision floating or complex, the result is of the same type. All other types are converted to single-precision floating-point and yield floating-point results. When applied to complex numbers:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=798076">
+ </A>
+sin <EM CLASS="Emphasis">
+x</EM>
+ = COMPLEX(sin <EM CLASS="Emphasis">
+R</EM>
+ cosh <EM CLASS="Emphasis">
+I</EM>
+, cos <EM CLASS="Emphasis">
+R</EM>
+ sinh <EM CLASS="Emphasis">
+I</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678851">
+ </A>
+where <I CLASS="Italic">
+R</I>
+ and <I CLASS="Italic">
+I</I>
+ are the real and imaginary parts of <I CLASS="Italic">
+x</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678852">
+ </A>
+If input argument <I CLASS="Italic">
+X</I>
+ is an array, the result has the same structure, with each element containing the sine of the corresponding element of <I CLASS="Italic">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678853">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678854">
+ </A>
+To find the sine of 0.5 radians and print the result, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678855">
+ </A>
+PRINT, SIN(0.5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678856">
+ </A>
+The following example plots the SIN function between 0 and 2<EM CLASS="Symbol">
+p</EM>
+ with 100 intervals:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678857">
+ </A>
+X = 2*!PI/100 * FINDGEN(100)</P>
+<P CLASS="Code">
+<A NAME="pgfId=678858">
+ </A>
+PLOT, X, SIN(X)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678859">
+ </A>
+Note: !PI is a read-only system variable that contains the single-precision value for <EM CLASS="Symbol">
+p</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821077">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821078">
+ </A>
+<A HREF="idlb.htm#27947" CLASS="XRef">
+ASIN</A>
+, <A HREF="idl1a0.htm#70304" CLASS="XRef">
+SINH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

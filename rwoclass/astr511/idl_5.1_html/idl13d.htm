@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLAR_SURFACE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl13e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl13c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=753620">
+ </A>
+<A NAME="31340">
+ </A>
+POLAR_SURFACE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=753624">
+ </A>
+The <A NAME="marker=753621">
+ </A>
+POLAR_SURFACE function <A NAME="marker=753622">
+ </A>
+interpolates a surface from <A NAME="marker=753623">
+ </A>
+polar coordinates (R, Theta, Z) to <A NAME="marker=753625">
+ </A>
+rectangular coordinates (X, Y, Z). The function returns a two-dimensional array of the same type as Z.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754778">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+polar_surface.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753627">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=753628">
+ </A>
+Result = POLAR_SURFACE(<EM CLASS="Emphasis">
+Z, R, Theta</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753629">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753630">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753631">
+ </A>
+An array containing the surface value at each point. If the data are regularly gridded in <EM CLASS="Emphasis">
+R</EM>
+ and <EM CLASS="Emphasis">
+Theta</EM>
+, <EM CLASS="Emphasis">
+Z</EM>
+ is a two dimensional array, where <EM CLASS="Emphasis">
+Zi,j</EM>
+ has a radius of <EM CLASS="Emphasis">
+Ri</EM>
+ and an azimuth of <EM CLASS="Emphasis">
+Thetaj</EM>
+. If the data are irregularly-gridded, <EM CLASS="Emphasis">
+Ri</EM>
+ and <EM CLASS="Emphasis">
+Thetai</EM>
+ contain the radius and azimuth of each <EM CLASS="Emphasis">
+Zi</EM>
+. Note that the ordering of the elements in the array <I CLASS="Italic">
+Z</I>
+ is opposite that used by the POLAR_CONTOUR routine.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753632">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753633">
+ </A>
+The radius. If the data are regularly gridded in <EM CLASS="Emphasis">
+R</EM>
+ and <EM CLASS="Emphasis">
+Theta</EM>
+, <EM CLASS="Emphasis">
+Zi,j</EM>
+ has a radius of <EM CLASS="Emphasis">
+Ri</EM>
+. If the data are irregularly-gridded, <EM CLASS="Emphasis">
+R</EM>
+ must have the same number of elements as <EM CLASS="Emphasis">
+Z</EM>
+, and contains the radius of each point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=810839">
+ </A>
+Theta</H4>
+<P CLASS="Body">
+<A NAME="pgfId=810840">
+ </A>
+The azimuth, in radians. If the data are regularly gridded in <EM CLASS="Emphasis">
+R</EM>
+ and <EM CLASS="Emphasis">
+Theta</EM>
+, <EM CLASS="Emphasis">
+Zi,j</EM>
+ has an azimuth of <EM CLASS="Emphasis">
+Thetaj</EM>
+. If the data are irregularly-gridded, <EM CLASS="Emphasis">
+Theta </EM>
+must have the same number of elements as <EM CLASS="Emphasis">
+Z</EM>
+, and contains the azimuth of each point.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753636">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753637">
+ </A>
+GRID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753638">
+ </A>
+Set this keyword to indicate that <EM CLASS="Emphasis">
+Z</EM>
+ is regularly gridded in <EM CLASS="Emphasis">
+R</EM>
+ and <EM CLASS="Emphasis">
+Theta</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753639">
+ </A>
+SPACING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753640">
+ </A>
+A two element vector containing the desired grid spacing of the resulting array in <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+. If omitted, the grid will be approximately 51 by 51.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753641">
+ </A>
+BOUNDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753642">
+ </A>
+A four element vector, [<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], containing the limits of the <EM CLASS="Emphasis">
+xy</EM>
+ grid of the resulting array. If omitted, the extent of input data sets the limits of the grid.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753643">
+ </A>
+QUINTIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753644">
+ </A>
+Set this keyword to use quintic interpolation, which is slower but smoother than the default linear interpolation.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753645">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753646">
+ </A>
+Use this keyword to specify a value to use for areas within the grid but not within the convex hull of the data points. The default is 0.0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753647">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=753648">
+ </A>
+R = FINDGEN(50) / 50.0	<EM CLASS="Comment">;
+The radius.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753649">
+ </A>
+THETA = FINDGEN(50) * (2 * !PI / 50.0)<EM CLASS="Comment">;
+	Theta.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753650">
+ </A>
+Z = R # SIN(THETA)	<EM CLASS="Comment">;
+Make a function (tilted circle).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753651">
+ </A>
+SURFACE, POLAR_SURFACE(Z, R, THETA, /GRID)<BR>
+<EM CLASS="Comment">;
+Show it.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821509">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821513">
+ </A>
+<A HREF="idl135.htm#49336" CLASS="XRef">
+POLAR</A>
+ Keyword (to <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+)</P>
+</DIV>
+</BODY>
+</HTML>

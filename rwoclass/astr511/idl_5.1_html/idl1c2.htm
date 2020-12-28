@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRPUT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679148">
+ </A>
+<A NAME="64894">
+ </A>
+STRPUT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679149">
+ </A>
+The <A NAME="marker=674038">
+ </A>
+STRPUT procedure inserts the contents of one string into another. The source string, <I CLASS="Italic">
+Source</I>
+, is inserted into the destination string, <I CLASS="Italic">
+Destination</I>
+, starting at the given position, <I CLASS="Italic">
+Position</I>
+. Characters in <I CLASS="Italic">
+Destination</I>
+ before the starting position and after the starting position plus the length of <I CLASS="Italic">
+Source</I>
+ remain unchanged. The length of the destination string is not changed. If the insertion extends past the end of the destination, it is clipped at the end.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679150">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679151">
+ </A>
+STRPUT, <I CLASS="Italic">
+Destination, Source [, Position]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679152">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679153">
+ </A>
+Destination</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679154">
+ </A>
+The named string variable into which <I CLASS="Italic">
+Source</I>
+ is inserted. <I CLASS="Italic">
+Destination</I>
+ must be a named variable of type string. If it is an array, <I CLASS="Italic">
+Source</I>
+ is inserted into every element of the array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679155">
+ </A>
+Source</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679156">
+ </A>
+A scalar string to be inserted into <I CLASS="Italic">
+Destination</I>
+. If this argument is not a string, it is converted using IDL's default formatting rules.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679157">
+ </A>
+Position</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679158">
+ </A>
+The character position at which the insertion is begun. If <I CLASS="Italic">
+Position</I>
+ is omitted, the insertion begins at the first character (character position 0). If <I CLASS="Italic">
+Position</I>
+ is less than zero, zero is used for the initial position.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679159">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679160">
+ </A>
+If the variable A contains the string &quot;IBM is fun&quot;, the substring &quot;IBM&quot; can be overwritten with the string &quot;IDL&quot; by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679161">
+ </A>
+STRPUT, A, 'IDL', 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=679162">
+ </A>
+The following commands demonstrate the clipping of output that extends past the end of the destination string:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679163">
+ </A>
+STRPUT, A, 'FUNNY', 7</P>
+<P CLASS="Code">
+<A NAME="pgfId=679164">
+ </A>
+PRINT, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=679165">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679166">
+ </A>
+IDL is FUN</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795945">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795946">
+ </A>
+<A HREF="idl1c0.htm#64169" CLASS="XRef">
+STRMID</A>
+, <A HREF="idl1c1.htm#37928" CLASS="XRef">
+STRPOS</A>
+, <A HREF="idl1c3.htm#95224" CLASS="XRef">
+STRTRIM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

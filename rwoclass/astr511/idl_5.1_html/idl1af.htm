@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPLINE_P</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ae.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758542">
+ </A>
+<A NAME="27408">
+ </A>
+SPLINE_P</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758544">
+ </A>
+The <A NAME="marker=758543">
+ </A>
+SPLINE_P procedure performs parametric cubic <A NAME="marker=788746">
+ </A>
+spline <A NAME="marker=788747">
+ </A>
+interpolation with relaxed or clamped end conditions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758545">
+ </A>
+This routine is both more general and faster than the SPLINE function. One call to SPLINE_P is equivalent to two calls to SPLINE, as both the X and Y are interpolated with splines. It is suited for interpolating between randomly placed points, and the abscissa values need not be monotonic. In addition, the end conditions may be optionally specified via tangents.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758546">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+spline_p.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758547">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758548">
+ </A>
+SPLINE_P, <EM CLASS="Emphasis">
+X, Y, Xr, Yr</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758549">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758550">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758551">
+ </A>
+The abscissa vector. <EM CLASS="Emphasis">
+X</EM>
+ should be floating-point or double-precision.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758552">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758553">
+ </A>
+The vector of ordinate values corresponding to X. <EM CLASS="Emphasis">
+Y </EM>
+should be floating-point or double-precision.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758554">
+ </A>
+Neither X or Y need be monotonic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758555">
+ </A>
+Xr</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758556">
+ </A>
+A named variable that will contain the abscissa values of the interpolated function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758557">
+ </A>
+Yr</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758558">
+ </A>
+A named variable that will contain the ordinate values of the interpolated function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758559">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758561">
+ </A>
+<A NAME="marker=758560">
+ </A>
+INTERVAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758562">
+ </A>
+Set this keyword equal to the desired interval in XY space between interpolants. If omitted, approximately 8 interpolants per XY segment will result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758564">
+ </A>
+<A NAME="marker=758563">
+ </A>
+TAN0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758565">
+ </A>
+The tangent to the spline curve at X[0], Y[0]. If omitted, the tangent is calculated to make the curvature of the result zero at the beginning. TAN0 is a two element vector, containing the X and Y components of the tangent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758567">
+ </A>
+<A NAME="marker=758566">
+ </A>
+TAN1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758568">
+ </A>
+The tangent to the spline curve at X[<EM CLASS="Emphasis">
+n</EM>
+-1], Y[<EM CLASS="Emphasis">
+n</EM>
+-1]. If omitted, the tangent is calculated to make the curvature of the result zero at the end. TAN1 is a two element vector, containing the X and Y components of the tangent.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758569">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758570">
+ </A>
+The commands below show a typical use of SPLINE_P:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758571">
+ </A>
+X = [0.,1,0,-1,0]	<EM CLASS="Comment">;
+Abscissas for square with a vertical diagonal</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758572">
+ </A>
+Y = [0.,1,2,1,0]	<EM CLASS="Comment">;
+Ordinates</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758573">
+ </A>
+SPLINE_P, X, Y, XR, YR	<EM CLASS="Comment">;
+Interpolate with relaxed end conditions</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758574">
+ </A>
+PLOT, XR, YR	<EM CLASS="Comment">;
+Show it</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758575">
+ </A>
+As above, but with setting both the beginning and end tangents:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758576">
+ </A>
+SPLINE_P, X, Y, XR, YR, TAN0=[1,0], TAN1=[1,0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=758577">
+ </A>
+This yields approximately 32 interpolants.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758578">
+ </A>
+As above, but with setting the interval to 0.05, making more interpolants, closer together:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758579">
+ </A>
+SPLINE_P, X, Y, XR, YR, TAN0=[1,0], TAN1=[1,0], INTERVAL=0.05</P>
+<P CLASS="Body">
+<A NAME="pgfId=758580">
+ </A>
+This yields 116 interpolants and looks close to a circle.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758581">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758582">
+ </A>
+<A HREF="idl1ac.htm#34901" CLASS="XRef">
+SPL_INIT</A>
+, <A HREF="idl1ae.htm#46341" CLASS="XRef">
+SPLINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RANKS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl160.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl15e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54661">
+ </A>
+<A NAME="76294">
+ </A>
+RANKS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54666">
+ </A>
+The <A NAME="marker=54663">
+ </A>
+RANKS <A NAME="marker=54664">
+ </A>
+function computes the <A NAME="marker=54665">
+ </A>
+magnitude-based ranks of a sample population <EM CLASS="Emphasis">
+X</EM>
+. Elements of identical magnitude &quot;ties&quot; are ranked according to the mean of the ranks that would otherwise be assigned. The result is a vector of ranks equal in length to <EM CLASS="Emphasis">
+X</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54667">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ranks.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54668">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54669">
+ </A>
+Result = RANKS(<EM CLASS="Emphasis">
+X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54670">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54671">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54672">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector. The elements of this vector must be in ascending order based on their magnitude.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54673">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54674">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element sample population. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54675">
+ </A>
+X = [-0.8, 0.1, -2.3, -0.6, 0.2, 1.1, -0.3, 0.6, -0.2, 1.1, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54676">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.7, -0.2, 0.6, 0.4, -0.1, 1.1, -0.3, 0.3, -1.3, 1.1]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54677">
+ </A>
+Allocate a two-column, <EM CLASS="Emphasis">
+n</EM>
+-row array to store the results. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54678">
+ </A>
+array = FLTARR(2, N_ELEMENTS(X))</P>
+<P CLASS="Body">
+<A NAME="pgfId=54679">
+ </A>
+Sort the sample population and store in the 0th column of ARRAY. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54680">
+ </A>
+array[0, *] = X[SORT(X)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54681">
+ </A>
+Compute the ranks of the sorted sample population and store in the 1st column of ARRAY. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54682">
+ </A>
+array[1, *] = RANKS(X[SORT(X)])</P>
+<P CLASS="Body">
+<A NAME="pgfId=54683">
+ </A>
+Display the sorted sample population and corresponding ranks with a two-decimal format. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54684">
+ </A>
+PRINT, array, FORMAT = '(2(5x, f5.2))'</P>
+<P CLASS="Body">
+<A NAME="pgfId=54685">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54686">
+ </A>
+-2.30      1.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54687">
+ </A>
+-1.30      2.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54688">
+ </A>
+-0.80      3.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54689">
+ </A>
+-0.70      4.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54690">
+ </A>
+-0.60      5.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54691">
+ </A>
+-0.30      6.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54692">
+ </A>
+-0.30      6.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54693">
+ </A>
+-0.20      8.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54694">
+ </A>
+-0.20      8.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54695">
+ </A>
+-0.10     10.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54696">
+ </A>
+&nbsp;0.10     11.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54697">
+ </A>
+&nbsp;0.20     12.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54698">
+ </A>
+&nbsp;0.30     13.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54699">
+ </A>
+&nbsp;0.40     14.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54700">
+ </A>
+&nbsp;0.60     15.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54701">
+ </A>
+&nbsp;0.60     15.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54702">
+ </A>
+&nbsp;1.10     18.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54703">
+ </A>
+&nbsp;1.10     18.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54704">
+ </A>
+&nbsp;1.10     18.50</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54705">
+ </A>
+&nbsp;1.10     18.50</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54706">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54707">
+ </A>
+<A HREF="idl15b.htm#46692" CLASS="XRef">
+R_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SAVE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl18c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl18a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678623">
+ </A>
+<A NAME="30525">
+ </A>
+SAVE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862004">
+ </A>
+The <A NAME="marker=862003">
+ </A>
+SAVE procedure saves variables, system variables, and IDL routines in a file using the XDR (eXternal Data Representation) format for later recovery by RESTORE. Note that variables and routines cannot be saved in the same file. Note also that save files containing routines may not be compatible between different versions of IDL, but that files containing data are always backwards-compatible.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862005">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678626">
+ </A>
+SAVE <I CLASS="Italic">
+[, Var</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., Var</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<I CLASS="Italic">
+]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678627">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678628">
+ </A>
+Var<SUB CLASS="Subscript">
+n</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678629">
+ </A>
+Optional named variables that are to be saved.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678630">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678631">
+ </A>
+<A NAME="marker=673775">
+ </A>
+ALL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678632">
+ </A>
+Set this keyword to save all common blocks, system variables, and local variables from the current IDL session.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=862001">
+ </A>
+Routines and variables cannot be saved in the same file. Setting the ALL keyword does not save routines.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678633">
+ </A>
+<A NAME="marker=673779">
+ </A>
+COMM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678634">
+ </A>
+Set this keyword to save all main level common block definitions. Note that setting this keyword does not cause the contents of the common block to be saved unless the VARIABLES keyword is also set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678635">
+ </A>
+<A NAME="marker=673780">
+ </A>
+FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678636">
+ </A>
+A string containing the name of the file into which the IDL objects should be saved. If this keyword is not specified, the file <CODE CLASS="Code">
+idlsave.dat</CODE>
+ is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678637">
+ </A>
+<A NAME="marker=673784">
+ </A>
+ROUTINES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678638">
+ </A>
+Set this keyword to save user defined procedures and functions in a machine independent, <A NAME="marker=673785">
+ </A>
+binary form. If parameters are present, they must be strings containing the names of the procedures and/or functions to be saved. If no parameters are present, all compiled routines are saved. If you are using VMS, see the XDR keyword below. Routines and variables cannot be saved in the same file.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=861990">
+ </A>
+Because SAVE stores routines in a binary format, save files containing routines are not guaranteed to be compatible between successive versions of IDL. You will not be able to RESTORE save files containing routines if they are made with incompatible versions of IDL. In this case, you should recompile your original code with the newer version of IDL. Save files containing data will always be restorable.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678639">
+ </A>
+<A NAME="marker=673789">
+ </A>
+SYSTEM_VARIABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678640">
+ </A>
+<A NAME="marker=673790">
+ </A>
+Set this keyword to save the current state of all system variables.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=678641">
+ </A>
+Saving system variables is not recommended, as the structure may change between versions of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678642">
+ </A>
+<A NAME="marker=673791">
+ </A>
+VARIABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678643">
+ </A>
+<A NAME="marker=673792">
+ </A>
+Set this keyword to save all variables in the current program unit. This option is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678644">
+ </A>
+<A NAME="marker=673793">
+ </A>
+VERBOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678645">
+ </A>
+Set this keyword to print an informative message for each saved object.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678646">
+ </A>
+<A NAME="marker=673794">
+ </A>
+XDR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678647">
+ </A>
+<I CLASS="Italic">
+This keyword is obsolete and will be quietly ignored (there is no need to remove uses of the XDR keyword from existing code). IDL always generates XDR format files, although it will continue to read VAX format SAVE files generated by old versions of VMS IDL.</I>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678648">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678649">
+ </A>
+Save the status of all currently-defined variables in the file variables1.dat by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678650">
+ </A>
+SAVE, /VARIABLES, FILENAME = 'variables1.dat'</P>
+<P CLASS="Body">
+<A NAME="pgfId=678651">
+ </A>
+The variables can be restored with the RESTORE procedure. Save the user procedures MYPROC and MYFUN:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678652">
+ </A>
+SAVE, /ROUTINES, 'MYPROC', 'MYFUN'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795736">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795737">
+ </A>
+<A HREF="idldd.htm#47579" CLASS="XRef">
+JOURNAL</A>
+, <A HREF="idl17a.htm#64718" CLASS="XRef">
+RESOLVE_ALL</A>
+, <A HREF="idl17c.htm#85451" CLASS="XRef">
+RESTORE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

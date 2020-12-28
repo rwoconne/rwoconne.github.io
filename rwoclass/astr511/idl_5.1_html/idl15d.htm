@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RANDOMN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl15e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl15c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678374">
+ </A>
+<A NAME="99750">
+ </A>
+RANDOMN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678375">
+ </A>
+The <A NAME="marker=673655">
+ </A>
+RANDOMN function returns one or <A NAME="marker=673656">
+ </A>
+more normally-distributed, floating-point, <A NAME="marker=50092">
+ </A>
+pseudo-random numbers with a mean of zero and a standard deviation of one.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678376">
+ </A>
+RANDOMN uses the Box-Muller method for generating normally-distributed (Gaussian) random numbers.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678377">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678378">
+ </A>
+Result = RANDOMN(<I CLASS="Italic">
+Seed [, D</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., D</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<I CLASS="Italic">
+]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678379">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678380">
+ </A>
+Seed</H4>
+<P CLASS="Body">
+<A NAME="pgfId=924056">
+ </A>
+A long integer used to initialize the IDL random number generator. Both of the random number generators, RANDOMN and RANDOMU, simulate random floating point numbers using a seqence of long integers. You can use <I CLASS="Italic">
+Seed</I>
+ to start the sequence. IDL saves the sequence for subsequent calls to RANDOMN and RANDOMU.  If <I CLASS="Italic">
+Seed</I>
+ is a named variable, RANDOMN and RANDOMU will update it to the next long integer in the sequence. </P>
+<P CLASS="Body">
+<A NAME="pgfId=956430">
+ </A>
+To start the sequence with a &quot;random&quot; seed, call RANDOMN or RANDOMU with <I CLASS="Italic">
+Seed</I>
+ set to an undefined named variable.  The first seed will be taken from the system time.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=949345">
+ </A>
+RANDOMN and RANDOMU use the same sequence, so starting or restarting the sequence for one starts or restarts the sequence for the other.  Some IDL routines use the random number generator, so using them will initialize the seed sequence.  An example of such a routine is <A HREF="idl34.htm#11803" CLASS="XRef">
+CLUST_WTS</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678382">
+ </A>
+D<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678383">
+ </A>
+The dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified. If no dimensions are specified, RANDOMN returns a scalar result</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=867690">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=867701">
+ </A>
+The formulas for the binomial, gamma, and Poisson distributions are from section 7.3 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867947">
+ </A>
+<A NAME="marker=868017">
+ </A>
+BINOMIAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867948">
+ </A>
+<A NAME="marker=868015">
+ </A>
+Set this keyword to a 2-element array, [<I CLASS="Italic">
+n</I>
+, <I CLASS="Italic">
+p</I>
+], to generate random deviates from a binomial distribution. If an event occurs with probability <I CLASS="Italic">
+p</I>
+, with <I CLASS="Italic">
+n</I>
+ trials, then the number of times it occurs has a binomial distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867736">
+ </A>
+<A NAME="marker=868018">
+ </A>
+GAMMA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867772">
+ </A>
+<A NAME="marker=868019">
+ </A>
+Set this keyword to an integer order <I CLASS="Italic">
+i</I>
+ &gt; 0 to generate random deviates from a gamma distribution. The gamma distribution is the waiting time to the <I CLASS="Italic">
+i</I>
+th event in a Poisson random process of unit mean. A gamma distribution of order equal to 1 is the same as the exponential distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867741">
+ </A>
+NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867746">
+ </A>
+Set this keyword to generate random deviates from a normal distribution. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867743">
+ </A>
+<A NAME="marker=868020">
+ </A>
+POISSON</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867752">
+ </A>
+<A NAME="marker=868021">
+ </A>
+Set this keyword to the mean number of events occurring during a unit of time. The POISSON keyword returns a random deviate drawn from a Poisson distribution with that mean.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867744">
+ </A>
+UNIFORM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868007">
+ </A>
+Set this keyword to generate random deviates from a uniform distribution.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=868009">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=956667">
+ </A>
+If you start the sequence with an <I CLASS="Italic">
+undefined</I>
+ variable--if RANDOMN has already been called, <I CLASS="Italic">
+Seed</I>
+ is no longer undefined--IDL initializes the sequence with the system time:</P>
+<P CLASS="Code">
+<A NAME="pgfId=956668">
+ </A>
+randomValue = RANDOMN(systime_seed)<EM CLASS="Comment">;
+	;Generate one random variable and initialize the sequence with an undefined variable.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=956669">
+ </A>
+PRINT, systime_seed, randomValue </P>
+<P CLASS="Body">
+<A NAME="pgfId=956670">
+ </A>
+IDL prints the updated systime_seed (no longer undefined) and the floating-point random number:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=956671">
+ </A>
+780458725     0.683157</P>
+<P CLASS="Body">
+<A NAME="pgfId=949841">
+ </A>
+To generate repeatable experiments, begin the sequence with a particular seed. If RANDOMN has already been called, <I CLASS="Italic">
+Seed</I>
+ is no longer undefined; you must restart IDL.</P>
+<P CLASS="Code">
+<A NAME="pgfId=950085">
+ </A>
+seed_value = 5L</P>
+<P CLASS="Code">
+<A NAME="pgfId=950086">
+ </A>
+randomValue = RANDOMN(seed_value)<EM CLASS="Comment">;
+	;Generate one random variable and initialize the sequence with 5.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=949615">
+ </A>
+PRINT, seed_value, randomValue</P>
+<P CLASS="Body">
+<A NAME="pgfId=950142">
+ </A>
+IDL prints the updated seed and the floating-point random number:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=950143">
+ </A>
+1960118772     0.521414</P>
+<P CLASS="Body">
+<A NAME="pgfId=956656">
+ </A>
+To restart the sequence with a particular seed, call IDL with the the negative of the seed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=956657">
+ </A>
+SEED = -5L</P>
+<P CLASS="Code">
+<A NAME="pgfId=956658">
+ </A>
+randomValue = RANDOMN(seed)	<EM CLASS="Comment">;
+;Get a normal random number, and restart the sequence with a seed of 5.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=956659">
+ </A>
+PRINT, restart_seed, randomValue</P>
+<P CLASS="Body">
+<A NAME="pgfId=956660">
+ </A>
+IDL prints the updated seed and the FLOAT random number:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=956661">
+ </A>
+1960118772     0.521414</P>
+<P CLASS="Body">
+<A NAME="pgfId=949661">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=950162">
+ </A>
+To create a 10 by 10 array of normally-distributed, random numbers, type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678386">
+ </A>
+R = RANDOMN(seed, 10, 10)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678387">
+ </A>
+Since seed is undefined, the system time is used to initialize the random number generator. Print the resulting values by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678388">
+ </A>
+PRINT, R</P>
+<P CLASS="Body">
+<A NAME="pgfId=678390">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=867941">
+ </A>
+A more interesting example plots the probability function of 2000 numbers returned by RANDOMN. Type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678391">
+ </A>
+PLOT, HISTOGRAM(RANDOMN(SEED, 2000), BINSIZE=0.1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=867836">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=867858">
+ </A>
+To obtain a sequence of 1000 exponential (gamma distribution, order 1) deviates, type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=867839">
+ </A>
+Result = RANDOMN(seed, 1000, GAMMA=1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=867840">
+ </A>
+Intuitively, the result contains a random series of waiting times for events occurring an average of one per time period.</P>
+<P CLASS="Body">
+<A NAME="pgfId=867936">
+ </A>
+To obtain a series of 1000 random elapsed times required for the arrival of two events, type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=867844">
+ </A>
+Result = RANDOMN(seed, 1000, GAMMA=2)	<EM CLASS="Comment">;
+Returns a series of 1000 random elapsed times required for the &nbsp;arrival of two events.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=867848">
+ </A>
+To obtain a 128 x 128 array filled with Poisson deviates, with a mean of 1.5, type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=867850">
+ </A>
+Result = RANDOMN(seed, 128, 128, POISSON=1.5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=867852">
+ </A>
+To simulate the count of &quot;heads&quot; obtained when flipping a coin 10 times, type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=949366">
+ </A>
+Result = RANDOMN(seed, BINOMIAL=[10,.5])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795788">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795789">
+ </A>
+<A HREF="idl15e.htm#39733" CLASS="XRef">
+RANDOMU</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

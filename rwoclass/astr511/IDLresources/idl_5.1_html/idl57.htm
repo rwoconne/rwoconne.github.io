@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_ARCBALL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl58.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl56.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755040">
+ </A>
+<A NAME="34446">
+ </A>
+CW_ARCBALL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755044">
+ </A>
+The <A NAME="marker=755041">
+ </A>
+CW_ARCBALL function creates a compound <A NAME="marker=755042">
+ </A>
+widget for intuitively specifying <A NAME="marker=788178">
+ </A>
+three-dimensional orientations.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755045">
+ </A>
+The user drags a simulated track-ball with the mouse to interactively obtain arbitrary rotations. Sequences of rotations may be cascaded. The <A NAME="marker=755046">
+ </A>
+rotations may be unconstrained (about any axis), constrained to the view X, Y, or Z axes, or constrained to the object's X, Y, or Z axis.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755047">
+ </A>
+This widget is based on &quot;ARCBALL: A User Interface for Specifying Three-Dimensional Orientation Using a Mouse,&quot; by Ken Shoemake, Computer Graphics Laboratory, University of Pennsylvania, Philadelphia, PA 19104.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755048">
+ </A>
+This widget can generate any rotation about any axis. Note, however, that not all rotations are compatible with the IDL SURFACE procedure, which is restricted to rotations that project the object Z axis parallel to the view Y axis.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796079">
+ </A>
+The returned value of this function is the widget ID of the newly-created ARCBALL widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755049">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_arcball.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755050">
+ </A>
+Using CW_ARCBALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755051">
+ </A>
+Use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755052">
+ </A>
+WIDGET_CONTROL, id, GET_VALUE = matrix</P>
+<P CLASS="Body">
+<A NAME="pgfId=755053">
+ </A>
+to return the current 3x3 rotation matrix in the variable <CODE CLASS="Code">
+matrix</CODE>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755054">
+ </A>
+You can set the arcball to new rotation matrix using the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755055">
+ </A>
+WIDGET_CONTROL, id, SET_VALUE = matrix</P>
+<P CLASS="Body">
+<A NAME="pgfId=755056">
+ </A>
+after the widget is initially realized.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755057">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755058">
+ </A>
+Result = CW_ARCBALL(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755059">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755060">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755061">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755062">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755064">
+ </A>
+<A NAME="marker=755063">
+ </A>
+COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755065">
+ </A>
+A 6-element array containing the color indices to be used.</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=755066">
+ </A>
+Colors[0] = view axis color,</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=755067">
+ </A>
+Colors[1] = object axis color, </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=755068">
+ </A>
+Colors[2] = XZ plane +Y side (body top) color, </LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=755069">
+ </A>
+Colors[3] = YZ plane (fin) color,</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=755070">
+ </A>
+Colors[4] = XZ plane -Y side (body bottom),</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=755071">
+ </A>
+Colors[5] = background color.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=755072">
+ </A>
+The default value is <CODE CLASS="Code">
+[1,7,2,3,7,0]</CODE>
+, which yields good colors with the TEK_COLOR table: (white, yellow, red, green, yellow, black).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755074">
+ </A>
+<A NAME="marker=755073">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755075">
+ </A>
+Set this keyword to draw a frame around the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755077">
+ </A>
+<A NAME="marker=755076">
+ </A>
+LABEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755078">
+ </A>
+Set this keyword to a string containing the widget's label.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755080">
+ </A>
+<A NAME="marker=755079">
+ </A>
+RETAIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=805327">
+ </A>
+<A NAME="marker=755081">
+ </A>
+Set this keyword to zero, one, or two to specify how backing store should be handled for the draw widget. RETAIN=0 specifies no backing store. RETAIN=1 requests that the server or window system provide backing store. RETAIN=2 specifies that IDL provide backing store directly. See <A HREF="idl22f.htm#83595" CLASS="XRef">
+Backing Store</A>
+<EM CLASS="Emphasis">
+ </EM>
+for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755108">
+ </A>
+<A NAME="marker=755107">
+ </A>
+SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755109">
+ </A>
+The size of the square drawable area containing the arcball, in pixels. The default is 192.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755111">
+ </A>
+<A NAME="marker=755110">
+ </A>
+UPDATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755112">
+ </A>
+Set this keyword to cause the widget will send an event each time the mouse button is released after a drag operation. By default, events are only sent when the &quot;Update&quot; button is pressed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755114">
+ </A>
+<A NAME="marker=755113">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755115">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755117">
+ </A>
+<A NAME="marker=755116">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755118">
+ </A>
+Set this keyword to a 3 x 3 array that will be the initial value for the rotation matrix. VALUE must be a valid rotation matrix (no translation or perspective) where TRANSPOSE(VALUE) = INVERSE(VALUE). This can be the upper-left corner of !P.T after executing the command </P>
+<P CLASS="Code">
+<A NAME="pgfId=755119">
+ </A>
+T3D, /RESET, ROTATE = [x,y,z]. </P>
+<P CLASS="Body">
+<A NAME="pgfId=755120">
+ </A>
+The default is the identity matrix.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837183">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837184">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837195">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the 3 x 3 rotation matrix in the arcball widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837188">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796229">
+ </A>
+Widget Events Returned by the CW_ARCBALL Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796343">
+ </A>
+Arcball widgets generate event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=796231">
+ </A>
+event = {ID:0L, TOP:0L, HANDLER:0L, VALUE:fltarr(3,3) }</P>
+<P CLASS="Body">
+<A NAME="pgfId=796232">
+ </A>
+The VALUE field contains the 3 x 3 array representing the new rotation matrix.</P>
+<DIV>
+<MAP NAME="idl-20">
+</MAP>
+<CENTER><IMG SRC="idl_20.gif" USEMAP="#idl-20" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755121">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755122">
+ </A>
+See the procedure <CODE CLASS="Code">
+ARCBALL_TEST</CODE>
+, contained in the <CODE CLASS="Code">
+cw_arcball.pro</CODE>
+ file. To test CW_ARCBALL, enter the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755123">
+ </A>
+.RUN cw_arcball</P>
+<P CLASS="Code">
+<A NAME="pgfId=755124">
+ </A>
+ARCBALL_TEST</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755131">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818951">
+ </A>
+<A HREF="idl4a.htm#67072" CLASS="XRef">
+CREATE_VIEW</A>
+, <A HREF="idl18c.htm#24364" CLASS="XRef">
+SCALE3</A>
+, <A HREF="idl1cf.htm#36880" CLASS="XRef">
+T3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

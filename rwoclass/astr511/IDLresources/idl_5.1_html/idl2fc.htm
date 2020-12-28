@@ -1,0 +1,1384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrModel</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2fd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2fb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=997415">
+ </A>
+<A NAME="83081">
+ </A>
+IDLgrModel</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1049637">
+ </A>
+A <A NAME="marker=1049636">
+ </A>
+model object represents a graphical item or group of items that can be transformed (rotated, scaled, and/or translated). It serves as a container of other IDLgrModel objects or atomic graphic objects. IDLgrModel applies a transform to the current view tree.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1049657">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156527">
+ </A>
+This class is a subclass of <A HREF="idl2f2.htm#19831" CLASS="XRef">
+IDL_Container</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1004322">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173445">
+ </A>
+The following classes are subclassed from this class:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173449">
+ </A>
+<A HREF="idl2f6.htm#35296" CLASS="XRef">
+IDLgrColorbar</A>
+</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1173453">
+ </A>
+<A HREF="idl2fa.htm#18270" CLASS="XRef">
+IDLgrLegend</A>
+</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004367">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004325">
+ </A>
+See <A HREF="idl2fc.htm#53112" CLASS="XRef">
+IDLgrModel::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003606">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1003609">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1003610">
+ </A>
+This class has this following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003611">
+ </A>
+<A HREF="idl2fc.htm#18756" CLASS="XRef">
+IDLgrModel::Add</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1040296">
+ </A>
+<A HREF="idl2fc.htm#40365" CLASS="XRef">
+IDLgrModel::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1166058">
+ </A>
+<A HREF="idl2fc.htm#28773" CLASS="XRef">
+IDLgrModel::Draw</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1040322">
+ </A>
+<A HREF="idl2fc.htm#11579" CLASS="XRef">
+IDLgrModel::GetByName</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1166137">
+ </A>
+<A HREF="idl2fc.htm#25790" CLASS="XRef">
+IDLgrModel::GetCTM</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033730">
+ </A>
+<A HREF="idl2fc.htm#56393" CLASS="XRef">
+IDLgrModel::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003615">
+ </A>
+<A HREF="idl2fc.htm#53112" CLASS="XRef">
+IDLgrModel::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003619">
+ </A>
+<A HREF="idl2fc.htm#17236" CLASS="XRef">
+IDLgrModel::Remove</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143141">
+ </A>
+<A HREF="idl2fc.htm#35432" CLASS="XRef">
+IDLgrModel::Reset</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143151">
+ </A>
+<A HREF="idl2fc.htm#73973" CLASS="XRef">
+IDLgrModel::Rotate</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003623">
+ </A>
+<A HREF="idl2fc.htm#26802" CLASS="XRef">
+IDLgrModel::Scale</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003627">
+ </A>
+<A HREF="idl2fc.htm#91577" CLASS="XRef">
+IDLgrModel::SetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003631">
+ </A>
+<A HREF="idl2fc.htm#95426" CLASS="XRef">
+IDLgrModel::Translate</A>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1156406">
+ </A>
+Inherited Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1156407">
+ </A>
+This class inherits the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156414">
+ </A>
+<A HREF="idl2f2.htm#27771" CLASS="XRef">
+IDL_Container::Count</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156421">
+ </A>
+<A HREF="idl2f2.htm#33593" CLASS="XRef">
+IDL_Container::Get</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156428">
+ </A>
+<A HREF="idl2f2.htm#22803" CLASS="XRef">
+IDL_Container::IsContained</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1156435">
+ </A>
+<A HREF="idl2f2.htm#21346" CLASS="XRef">
+IDL_Container::Move</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1040273">
+ </A>
+<A NAME="18756">
+ </A>
+IDLgrModel::Add</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040276">
+ </A>
+The IDLgrModel::<A NAME="marker=1052184">
+ </A>
+Add procedure method adds a child to this Model. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040280">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040281">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Add, <I CLASS="Italic">
+Object</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040282">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1040283">
+ </A>
+Object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1050288">
+ </A>
+An instance of an atomic graphic object or another model object to be added to the model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1069108">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1069115">
+ </A>
+<A NAME="marker=1069114">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1069116">
+ </A>
+Set this keyword equal to the zero-based index of the position within the container at which the new object should be placed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1069112">
+ </A>
+<A NAME="40365">
+ </A>
+IDLgrModel::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031326">
+ </A>
+The IDLgrModel::<A NAME="marker=1052187">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041810">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031330">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051177">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051178">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031331">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031332">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031333">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031334">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031335">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1166066">
+ </A>
+<A NAME="28773">
+ </A>
+IDLgrModel::Draw</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166069">
+ </A>
+The IDLgrModel::<A NAME="marker=1166068">
+ </A>
+Draw procedure method draws the specified picture to the specified graphics destination. <I CLASS="Italic">
+This method is provided for purposes of sub-classing only, and is intended to be called only from the Draw method of a subclass of IDLgrModel. </I>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1166076">
+ </A>
+Objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166077">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166078">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Draw, <EM CLASS="Emphasis">
+Destination, Picture</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166079">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1166080">
+ </A>
+Destination</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1166093">
+ </A>
+The destination object (<A HREF="idl2f4.htm#22886" CLASS="XRef">
+IDLgrBuffer</A>
+, <A HREF="idl2f5.htm#34533" CLASS="XRef">
+IDLgrClipboard</A>
+, <A HREF="idl303.htm#80600" CLASS="XRef">
+IDLgrPrinter</A>
+, or <A HREF="idl30d.htm#72835" CLASS="XRef">
+IDLgrWindow</A>
+) to which the specified view object will be drawn.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1166094">
+ </A>
+Picture</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1166098">
+ </A>
+The view (an instance of an <A HREF="idl309.htm#24783" CLASS="XRef">
+IDLgrView</A>
+ object), viewgroup (an instance of an IDLgrViewgroup object), or scene (an instance of an <A HREF="idl304.htm#25953" CLASS="XRef">
+IDLgrScene</A>
+ object) to be drawn.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1166102">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1166103">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1040301">
+ </A>
+<A NAME="11579">
+ </A>
+IDLgrModel::GetByName</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040304">
+ </A>
+The IDLgrModel::<A NAME="marker=1052190">
+ </A>
+GetByName function method finds contained objects by name and returns the object reference to the named object. If the named object is not found, the GetByName function returns a null object reference.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1060606">
+ </A>
+The GetByName function does <EM CLASS="Emphasis">
+not</EM>
+ perform a recursive search through the object hierarchy. If a fully qualified object name is not specified, only the contents of the current container object are inspected for the named object.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1060603">
+ </A>
+<STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040308">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040309">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+GetByName(<I CLASS="Italic">
+Name</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040310">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1040311">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1057784">
+ </A>
+A string containing the name of the object to be returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060628">
+ </A>
+Object naming syntax is very much like the syntax of a Unix filesystem. Objects contained by other objects can include the name of their parent object; this allows you to create a fully qualified name specification. For example, if <CODE CLASS="Code">
+object1</CODE>
+ contains <CODE CLASS="Code">
+object2</CODE>
+, which in turn contains <CODE CLASS="Code">
+object3</CODE>
+, the string specifying the fully qualified object name of object3 would be <CODE CLASS="Code">
+'object1/object2/object3'</CODE>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060629">
+ </A>
+Object names are specified relative to the object on which the GetByName method is called. If used at the beginning of the name string, the <CODE CLASS="Code">
+/</CODE>
+ character represents the top of an object hierarchy. The string <CODE CLASS="Code">
+'..'</CODE>
+ represents the object one level &quot;up&quot; in the hierarchy.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1040312">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1040313">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1049673">
+ </A>
+<A NAME="25790">
+ </A>
+IDLgrModel::GetCTM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049676">
+ </A>
+The IDLgrModel::<A NAME="marker=1052193">
+ </A>
+GetCTM function method returns the 4 x 4 graphics transform matrix from the current object upward through the graphics tree. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1049680">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049681">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+GetCTM()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1049682">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049683">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1049684">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049686">
+ </A>
+<A NAME="marker=1049685">
+ </A>
+DESTINATION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058045">
+ </A>
+Set this keyword to the object reference of a destination object to specify that the projection matrix for the View object in the current tree be included in the returned transformation matrix. The resulting matrix will transform a point in the data space of the object on which the GetCTM method is called into a normalized coordinate system (-1 to +1 in X, Y, and Z), relative to the View object that contains the model object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049689">
+ </A>
+<A NAME="marker=1049688">
+ </A>
+TOP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059511">
+ </A>
+Set this keyword equal to the object reference to an <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ object to specify that the returned matrix accumulate from the object on which the GetCTM method is called up to and including the specified model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1011002">
+ </A>
+<A NAME="56393">
+ </A>
+IDLgrModel::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1011003">
+ </A>
+The IDLgrModel::<A NAME="marker=1052196">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the model. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1011007">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1011008">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1011009">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1011010">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1016906">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016910">
+ </A>
+Any keyword to <A HREF="idl2fc.htm#53112" CLASS="XRef">
+IDLgrModel::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1016914">
+ </A>
+<A NAME="marker=1022537">
+ </A>
+<A NAME="28176">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1011017">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with this object. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1016133">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1048870">
+ </A>
+<A NAME="marker=1048869">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068337">
+ </A>
+Set this keyword equal to a named variable that will contain an object reference to the object that contains this object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1003608">
+ </A>
+<A NAME="53112">
+ </A>
+IDLgrModel::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004413">
+ </A>
+The IDLgrModel::<A NAME="marker=1052202">
+ </A>
+Init procedure method initializes the model object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041693">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004414">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019617">
+ </A>
+Obj = OBJ_NEW('IDLgrModel')</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041948">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041949">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Init(<EM CLASS="Emphasis">
+ </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1004416">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004417">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997422">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020215">
+ </A>
+Properties retrievable via <A HREF="idl2fc.htm#56393" CLASS="XRef">
+IDLgrModel::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049158">
+ </A>
+<A NAME="marker=1049157">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049159">
+ </A>
+Set this keyword to a boolean value indicating whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068477">
+ </A>
+0 = Draw model and children (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068478">
+ </A>
+1 = Do not draw model and children</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1049165">
+ </A>
+HIDE only controls the display attributes of IDLgrModel children since the IDLgrModel object itself lacks geometry.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143002">
+ </A>
+<A NAME="marker=1143001">
+ </A>
+LIGHTING (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143003">
+ </A>
+Set this keyword to one of the following values to indicate whether lighting is to be enabled or disabled for all atomic graphic objects that have this model as a parent. IDLgrModel objects that have this model as a parent will not be effected, as they have their own value for this property. If this value is set to 0, any lights added as children of this model will be used to illuminate any other models in the view hierarchy that have lighting enabled.</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143004">
+ </A>
+0 = Disable lighting</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143005">
+ </A>
+1 = Enable single-sided lighting</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1143006">
+ </A>
+2 = Enable double-sided lighting (the default)</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997500">
+ </A>
+<A NAME="marker=1029324">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058305">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997506">
+ </A>
+<A NAME="marker=1029515">
+ </A>
+SELECT_TARGET (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1029508">
+ </A>
+Set this keyword to tag the model object as the target object to be returned when any object contained by the model is selected via the <A HREF="idl30d.htm#97164" CLASS="XRef">
+IDLgrWindow::Select</A>
+ method. By default, an IDLgrModel object cannot be returned as the target of a SELECT operation since it contains no geometry.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1029507">
+ </A>
+<A NAME="marker=1022914">
+ </A>
+<A NAME="30037">
+ </A>
+TRANSFORM (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997507">
+ </A>
+Set this keyword to a 4x4 transformation matrix to be applied to this object. This matrix will be multiplied by its parent's transformation matrix (if the parent has one). The default is the identity transformation matrix.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997508">
+ </A>
+<A NAME="marker=1022915">
+ </A>
+<A NAME="13962">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058414">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143015">
+ </A>
+<A NAME="17236">
+ </A>
+IDLgrModel::Remove</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143018">
+ </A>
+The IDLgrModel::<A NAME="marker=1143017">
+ </A>
+Remove procedure method removes an atomic graphic object or model object from the model. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143025">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143026">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Remove, <I CLASS="Italic">
+Object </I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143027">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143028">
+ </A>
+Object</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143029">
+ </A>
+An instance of an atomic graphic object or model object to be removed from the model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143030">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143032">
+ </A>
+<A NAME="marker=1143031">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143033">
+ </A>
+Set this keyword to remove all object from the container. If this keyword is set, the <EM CLASS="Emphasis">
+Object</EM>
+ argument is not required.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143035">
+ </A>
+<A NAME="marker=1143034">
+ </A>
+POSITION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143036">
+ </A>
+Set this keyword equal to the zero-based index of the object to be removed. If the <EM CLASS="Emphasis">
+Object</EM>
+ argument is supplied, this keyword is ignored.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=999922">
+ </A>
+<A NAME="35432">
+ </A>
+IDLgrModel::Reset</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1029153">
+ </A>
+The IDLgrModel::<A NAME="marker=1052208">
+ </A>
+Reset procedure method sets the current transform matrix for the model object to the identity matrix. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143068">
+ </A>
+Using this method is functionally identical to the following statement:</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1143079">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+SetProperty, TRANSFORM=IDENTITY(4) </P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1029157">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999912">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Reset</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997555">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997559">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997560">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997562">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1143095">
+ </A>
+<A NAME="73973">
+ </A>
+<A NAME="81345">
+ </A>
+IDLgrModel::Rotate</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143098">
+ </A>
+The IDLgrModel::<A NAME="marker=1143097">
+ </A>
+Rotate procedure method rotates the model about the specified axis by the specified angle. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143105">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1143106">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Rotate<EM CLASS="Emphasis">
+, Axis, Angle</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143107">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143108">
+ </A>
+Axis</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143109">
+ </A>
+A three-element vector of the form [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+] describing the axis about which the model is to be rotated.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143110">
+ </A>
+Angle</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143111">
+ </A>
+The angle (measured in degrees) by which the rotation is to occur.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1143112">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1143114">
+ </A>
+<A NAME="marker=1143113">
+ </A>
+PREMULTIPLY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1143115">
+ </A>
+Set this keyword to cause the rotation matrix specified by <EM CLASS="Emphasis">
+Axis</EM>
+ and <EM CLASS="Emphasis">
+Angle</EM>
+ to be pre-multiplied to the model's transformation matrix. By default, the rotation matrix is post-multiplied.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1004536">
+ </A>
+<A NAME="26802">
+ </A>
+IDLgrModel::Scale</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004539">
+ </A>
+The IDLgrModel::<A NAME="marker=1052211">
+ </A>
+Scale procedure method scales the model by the specified scaling factors. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999927">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999928">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Scale<EM CLASS="Emphasis">
+, Sx, Sy, Sz</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997566">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997567">
+ </A>
+Sx, Sy, Sz</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997568">
+ </A>
+The scaling factors in the <EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, and <EM CLASS="Emphasis">
+z</EM>
+ dimensions by which the model is to be scaled.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997569">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997570">
+ </A>
+<A NAME="marker=1022928">
+ </A>
+PREMULTIPLY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058687">
+ </A>
+Set this keyword to cause the scaling matrix specified by <EM CLASS="Emphasis">
+Sx, Sy, Sz </EM>
+to be pre-multiplied to the model's transformation matrix. By default, the scaling matrix is post-multiplied.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1011031">
+ </A>
+<A NAME="91577">
+ </A>
+IDLgrModel::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1011032">
+ </A>
+The IDLgrModel::<A NAME="marker=1052214">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the model. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1011036">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1011037">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1011038">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1011039">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1011040">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049942">
+ </A>
+Any keyword to <A HREF="idl2fc.htm#53112" CLASS="XRef">
+IDLgrModel::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997573">
+ </A>
+<A NAME="95426">
+ </A>
+IDLgrModel::Translate</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1004550">
+ </A>
+The IDLgrModel::<A NAME="marker=1052217">
+ </A>
+Translate procedure method translates the model by the specified translation offsets. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999932">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999933">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrModel::]</EM>
+Translate<EM CLASS="Emphasis">
+, Tx, Ty, Tz</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997575">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997576">
+ </A>
+Tx, Ty, Tz</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997577">
+ </A>
+The offsets in <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and <EM CLASS="Emphasis">
+Z</EM>
+, respectively, by which the model is to be translated.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997578">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997579">
+ </A>
+<A NAME="marker=1022935">
+ </A>
+PREMULTIPLY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058703">
+ </A>
+Set this keyword to cause the translation matrix specified by <EM CLASS="Emphasis">
+Tx, Ty, Tz </EM>
+to be pre-multiplied to the model's transformation matrix. By default, the translation matrix is post-multiplied.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

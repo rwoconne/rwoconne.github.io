@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLYFILL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl143.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl141.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678236">
+ </A>
+<A NAME="92013">
+ </A>
+POLYFILL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678237">
+ </A>
+The <A NAME="marker=673589">
+ </A>
+POLYFILL procedure <A NAME="marker=673590">
+ </A>
+fills the interior of a region of the display enclosed by an arbitrary two or three-dimensional polygon. The available filling methods are: solid fill, hardware-dependent fill pattern, parallel lines, or a pattern contained in an array. Not all methods are available on every hardware output device.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678238">
+ </A>
+The polygon is defined by a list of connected vertices stored in X, Y, and Z. The coordinates can be given in data, device, or normalized form using the DATA, DEVICE, or NORMAL keywords.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678239">
+ </A>
+Line-fill method: Filling using parallel lines is device-independent and works on all devices that can draw lines. Crosshatching can be simulated by performing multiple fills with different orientations. The spacing, linestyle, orientation, and thickness of the filling lines can be specified using the corresponding keyword parameters. The LINE_FILL keyword selects this filling style, but is not required if either the ORIENTATION or SPACING parameters are present.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678240">
+ </A>
+Solid fill method: Most, but not all, devices can fill with a solid color. Solid fill is performed using the line-fill method for devices that don't have this hardware capability. Method specifying keyword parameters are not required for solid filling.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678241">
+ </A>
+Patterned fill: The method of patterned filling and the usage of various fill patterns is hardware dependent. The fill pattern array can be explicitly specified with the PATTERN keyword parameter for some output devices. If this parameter is omitted, the polygon is filled with the hardware-dependent pattern index specified by the FILL_PATTERN keyword.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678242">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678243">
+ </A>
+POLYFILL, <I CLASS="Italic">
+X [, Y [, Z]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678244">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678245">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678246">
+ </A>
+A vector argument providing the X coordinates of the points to be connected. The vector must contain at least three elements. If only one argument is specified, <I CLASS="Italic">
+X</I>
+ must be an array of either two or three vectors (i.e., <CODE CLASS="Code">
+(2,*)</CODE>
+ or <CODE CLASS="Code">
+(3,*)</CODE>
+). In this special case, the vector <CODE CLASS="Code">
+X[0,*]</CODE>
+ specifies the X values, <CODE CLASS="Code">
+X[1,*]</CODE>
+ specifies Y, and <CODE CLASS="Code">
+X[2,*]</CODE>
+ contain the Z values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678247">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678248">
+ </A>
+A vector argument providing the Y coordinates of the points to be connected. <I CLASS="Italic">
+Y</I>
+ must contain at least three elements.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678249">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678250">
+ </A>
+An optional vector argument providing the Z coordinates of the points to be connected. If Z is not provided, X and Y are used to draw lines in two dimensions. Z must contain at least three elements. Z has no effect if the keyword T3D is not specified and the system variable !P.T3D= 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678251">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678252">
+ </A>
+<A NAME="marker=673591">
+ </A>
+FILL_PATTERN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678253">
+ </A>
+The hardware dependent fill pattern index for the POLYFILL procedure. If omitted or set to 0, a solid fill results.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678254">
+ </A>
+<A NAME="marker=673592">
+ </A>
+IMAGE_COORD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678255">
+ </A>
+(<A NAME="marker=673593">
+ </A>
+Z-Buffer output only) A 2 x <I CLASS="Italic">
+n</I>
+ array containing the fill pattern array subscripts of each of the <I CLASS="Italic">
+n</I>
+ polygon vertices. Use this keyword in conjunction with the PATTERN keyword to warp images over 2D and 3D polygons.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678256">
+ </A>
+<A NAME="marker=673594">
+ </A>
+IMAGE_INTERP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678257">
+ </A>
+(Z-Buffer output only) Specifies the method of sampling the PATTERN array when the IMAGE_COORD keyword is present. The default method is to use nearest-neighbor sampling. Bilinear interpolation sampling is performed if IMAGE_INTERP is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678258">
+ </A>
+<A NAME="marker=673595">
+ </A>
+LINE_FILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678259">
+ </A>
+Set this keyword to indicate that polygons are to be filled with parallel lines, rather than using solid or patterned filling methods.When using the line-drawing method of filling, the thickness, linestyle, orientation, and spacing of the lines may be specified with keywords.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678260">
+ </A>
+<A NAME="marker=673596">
+ </A>
+PATTERN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678261">
+ </A>
+A rectangular array of pixels giving the fill pattern. If this keyword parameter is omitted, POLYFILL fills the area with a solid color. The pattern array may be of any size; if it is smaller than the filled area the pattern array is cyclically repeated.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=163295">
+ </A>
+When the display device selected is PostScript (PS), POLYFILL can only fill with solid colors.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=678263">
+ </A>
+For example, to fill the current plot window with a grid of dots, enter the following commands:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678264">
+ </A>
+PAT = BYTARR(10,10)	<EM CLASS="Comment">;
+Define pattern array as 10 by 10.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678265">
+ </A>
+PAT(5,5) = 255	<EM CLASS="Comment">;
+Set center pixel to bright.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678266">
+ </A>
+POLYFILL, !X.WINDOW([0,1,1,0]), $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678267">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!Y.WINDOW([0,0,1,1]), /NORM, PAT = PAT	<EM CLASS="Comment">;
+Fill the rectangle defined by the four corners of the window with the pattern.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678269">
+ </A>
+<A NAME="marker=673597">
+ </A>
+SPACING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678270">
+ </A>
+The spacing, in centimeters, between the parallel lines used to fill polygons.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678271">
+ </A>
+<A NAME="marker=673598">
+ </A>
+TRANSPARENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678272">
+ </A>
+(Z-Buffer output only) specifies the minimum pixel value to draw in conjunction with the PATTERN and IMAGE_COORD keywords. Pixels less than this value are not drawn and the Z-buffer is not updated.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678273">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=817348">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#36225" CLASS="XRef">
+CLIP</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678275">
+ </A>
+Z-Buffer-Specific Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678276">
+ </A>
+Certain keyword parameters are only active when the <A NAME="marker=673602">
+ </A>
+Z-buffer is the currently selected graphics device: IMAGE_COORD, IMAGE_INTERP, TRANSPARENT and COLOR. These parameters allow images to be warped over 2D or 3D polygons, and the output of shaded polygons. For examples, see &quot;The Z-Buffer Device&quot; on page&nbsp;62.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678277">
+ </A>
+For shaded polygons, the COLOR keyword can specify an array that contains the color index at each vertex. Color indices are linearly interpolated between vertices. If COLOR contains a scalar, the entire polygon is drawn with the given color index, just as with the other graphics output devices.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678278">
+ </A>
+Images can be warped over polygons by passing in the image with the PATTERN parameter, and a (2, <I CLASS="Italic">
+n</I>
+) array containing the image space coordinates that correspond to each of the N vertices with the IMAGE_COORD keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678279">
+ </A>
+The IMAGE_INTERP keyword indicates that bilinear interpolation is to be used, rather than the default nearest-neighbor sampling. Pixels less than the value of TRANSPARENT are not drawn, simulating transparency.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678280">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678281">
+ </A>
+Fill a rectangular polygon that has the vertices (30,30), (100, 30), (100, 100), and (30, 100) in device coordinates. Create the vectors of X and Y values by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678282">
+ </A>
+X = [30, 100, 100, 30] &amp; Y = [30, 30, 100, 100]</P>
+<P CLASS="Body">
+<A NAME="pgfId=678283">
+ </A>
+Fill the polygon with color index 175 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678284">
+ </A>
+POLYFILL, X, Y, COLOR = 175, /DEVICE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821466">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821467">
+ </A>
+<A HREF="idl143.htm#19180" CLASS="XRef">
+POLYFILLV</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,854 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LIVE_PLOT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlf6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlf4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=857712">
+ </A>
+<A NAME="14114">
+ </A>
+LIVE_PLOT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=857715">
+ </A>
+The <A NAME="marker=857714">
+ </A>
+LIVE_PLOT procedure creates an interactive plotting environment. </P>
+<P CLASS="Body">
+<A NAME="pgfId=897652">
+ </A>
+Click on a section of the plot to display a properties dialog. A set of buttons in the upper left corner of the image window allows you to print, undo the last operation, redo the last &quot;undone&quot; operation, copy, draw a line, draw a rectangle, or add text..</P>
+<DIV>
+<CENTER><IMG SRC="idl_67.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=866038">
+ </A>
+LIVE_PLOT is actually a subset of the IDL Insight application. If you find that the LIVE_PLOT graphical user interface does not provide the level of control you need, consider using Insight itself. You can start the Insight application by entering <CODE CLASS="Code">
+insight</CODE>
+ at the IDL command prompt.</P>
+<P CLASS="Body">
+<A NAME="pgfId=860454">
+ </A>
+You can control your LIVE window after it is created using any of several auxiliary routines. See <A HREF="idlec.htm#15642" CLASS="XRef">
+LIVE_Tools</A>
+ for an explanation.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857733">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=857734">
+ </A>
+LIVE_PLOT, Yvector1, Yvector2,...</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857735">
+ </A>
+Argument</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857736">
+ </A>
+YVector</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857737">
+ </A>
+A vector of data. Up to 25 of these arguments may be specified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857738">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857740">
+ </A>
+<A NAME="marker=857739">
+ </A>
+BUFFER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859541">
+ </A>
+Set this keyword to bypass the creation of a LIVE window and send the visualization to an offscreen buffer. The WINDOW field of the reference structure returned by the REFERENCE_OUT keyword will contain the name of the buffer.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857743">
+ </A>
+<A NAME="marker=857742">
+ </A>
+DIMENSIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857744">
+ </A>
+Set this keyword to a two-element, floating-point vector specifying the dimensions of the visualization in normalized coordinates. The default is [1.0, 1.0].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857746">
+ </A>
+<A NAME="marker=857745">
+ </A>
+DRAW_DIMENSIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857747">
+ </A>
+Set this keyword equal to a vector of the form [width, height] representing the desired size of the LIVE tools draw widget (in pixels). The default is [452, 452].</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=857748">
+ </A>
+This default value may be different depending on previous template projects.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857750">
+ </A>
+<A NAME="marker=857749">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857751">
+ </A>
+Set this keyword to a named variable to contain the returned error message (string). An empty string is returned if no errors occurred during the operation. By default, errors are reported via a GUI.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=866785">
+ </A>
+If a named variable is passed in this keyword and an error occurs, the error GUI will not be displayed.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=860283">
+ </A>
+<A NAME="marker=860285">
+ </A>
+HISTOGRAM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860284">
+ </A>
+Set this keyword to represent plot values as a histogram.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857753">
+ </A>
+<A NAME="marker=857752">
+ </A>
+INDEPENDENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857754">
+ </A>
+Set this keyword to an independent vector specifying X-values for LIVE_PLOT.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857756">
+ </A>
+<A NAME="marker=857755">
+ </A>
+INDEXED_COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869884">
+ </A>
+If set, the indexed color mode will be used. The default is true color. (See Using IDL for more information on color modes.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=894954">
+ </A>
+<A NAME="marker=894953">
+ </A>
+INSTANCING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=894955">
+ </A>
+Set this keyword to 1 to instance drawing on, or 0 to turn it off. The default (-1) is to use instancing if and only if the &quot;software renderer&quot; is being used (see RENDERER). For more information, see <A HREF="..html#34873" CLASS="XRef">
+Hardware vs. Software Rendering</A>
+in <A HREF="..html#14919" CLASS="XRef">
+See Destination Objects</A>
+the Objects and Object Graphics manual.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=860286">
+ </A>
+<A NAME="marker=860288">
+ </A>
+LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860287">
+ </A>
+Set this keyword to represent plot values as a line plot. This is the default. Alternate choices are provided by keywords HISTOGRAM, POLAR, and SCATTER.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857759">
+ </A>
+<A NAME="marker=857758">
+ </A>
+LOCATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857760">
+ </A>
+Set this keyword to a two-element, floating-point vector of the form [X, Y] specifying the location of the visualization (relative to the lower left hand corner within the visualization window) in normalized coordinates. The default is [0.0, 0.0].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857762">
+ </A>
+<A NAME="marker=857761">
+ </A>
+MANAGE_STYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857763">
+ </A>
+Set this keyword to have the passed in style item destroyed when the LIVE tool window is destroyed. This keyword will have no effect if the STYLE keyword is not set to a style item.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=865443">
+ </A>
+<A NAME="marker=865511">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=865455">
+ </A>
+Set this keyword to a structure containing suggested names for the data items to be created for this visualization. See the REPLACE keyword for details on how they will be used. The fields of the structure are as follows. (Any or all of the tags may be set.)</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=866558">
+ </A>
+Fields of the NAME keyword.</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=866546">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=866548">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=866550">
+ </A>
+DATA</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=866552">
+ </A>
+Dependent Data Name(s)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=866554">
+ </A>
+I</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=866556">
+ </A>
+Independent Data Name</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=869905">
+ </A>
+The default for a field is to use the given variable name. If the variable does not have a name (i.e., is an expression), a default name is automatically generated. The dependent data names will be used in a round-robin fashion if more data than names are input.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869914">
+ </A>
+<A NAME="marker=869913">
+ </A>
+NO_DRAW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869906">
+ </A>
+Set this keyword to inhibit the visualization window from drawing. This is useful if multiple visualizations and/or annotations are being created via calls to other LIVE_Tools in order to reduce unwanted draws and help speed the display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869908">
+ </A>
+<A NAME="marker=869907">
+ </A>
+NO_STATUS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869909">
+ </A>
+Set this keyword to prevent the creation of the status bar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857768">
+ </A>
+<A NAME="marker=857767">
+ </A>
+NO_TOOLBAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857769">
+ </A>
+Set this keyword to prevent the creation of the toolbar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857771">
+ </A>
+<A NAME="marker=857770">
+ </A>
+PARENT_BASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886958">
+ </A>
+Set this keyword to the widget ID of an existing base widget to bypass the creation of a LIVE window and create the visualization within the specified base widget.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=886959">
+ </A>
+The location of the draw widget is not settable. To insert a tool into your widget application, you must determine the setting from the parent base sent to the tool. LIVE_DESTROY on a window is recommended when using PARENT_BASE so that proper memory cleanup is done. Destroying the parent base is not sufficient.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886929">
+ </A>
+<A NAME="marker=886928">
+ </A>
+POLAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886930">
+ </A>
+Set this keyword to represent plot values as a polar plot. In this case, the arguments to LIVE_PLOT represent values of r (radius), while the INDEPENDENT keyword represents the values of T (angle theta). If POLAR is set, you must specify INDEPENDENT .</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861910">
+ </A>
+<A NAME="marker=861909">
+ </A>
+REFERENCE_OUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860295">
+ </A>
+Set this keyword to a variable to return a structure defining the names of the modified items. The fields of the structure are shown in the following table.<A NAME="marker=861953">
+ </A>
+</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=861950">
+ </A>
+Fields of the LIVE_PLOT Reference Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=861914">
+ </A>
+Tag</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=861916">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861918">
+ </A>
+WIN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861920">
+ </A>
+Window Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861922">
+ </A>
+VIS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861924">
+ </A>
+Visualization Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861926">
+ </A>
+XAXIS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861928">
+ </A>
+X-Axis Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861930">
+ </A>
+YAXIS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861932">
+ </A>
+Y-Axis Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861934">
+ </A>
+GRAPHIC</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861936">
+ </A>
+Graphic Name(s)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861938">
+ </A>
+LEGEND</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861940">
+ </A>
+Legend Name</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861942">
+ </A>
+DATA</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861944">
+ </A>
+Dependent Data Names(s)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861946">
+ </A>
+I</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=861948">
+ </A>
+Independent Data Name</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895003">
+ </A>
+<A NAME="marker=895002">
+ </A>
+RENDERER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895004">
+ </A>
+Set this keyword to 1 to use the &quot;software renderer&quot;, or 0 to use the `hardware renderer&quot;.  The default (-1) is to use the setting in the IDE (IDL Development Environment) preferences; if the IDE is not running, however, the default is hardware rendering.  For more information, see <A HREF="..html#34873" CLASS="XRef">
+Hardware vs. Software Rendering</A>
+in <A HREF="..html#14919" CLASS="XRef">
+See Destination Objects</A>
+the Objects and Object Graphics manual.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895000">
+ </A>
+<A NAME="marker=865663">
+ </A>
+REPLACE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=865665">
+ </A>
+Set this keyword to a structure containing tags as listed for the NAME keyword, with scalar values corresponding to the replacement options listed below. (Any or all of the tags may be set.) The replacement settings are used to determine what action to take when an item (such as data) being input would have the same name as one already existing in the given window or buffer (WINDOW_IN).</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=867256">
+ </A>
+REPLACE keyword Settings and Action Taken</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=867232">
+ </A>
+Setting</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=867234">
+ </A>
+Action Taken</P>
+</TH>
+</TR>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867236">
+ </A>
+0</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867238">
+ </A>
+New items will be given unique names.</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867240">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867242">
+ </A>
+Existing items will be replaced by new items (i.e., the old items will be deleted and new ones created).</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867244">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867246">
+ </A>
+User will be prompted for the action to take.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867248">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867250">
+ </A>
+The values of existing items will be replaced. This will cause dynamic updating to occur for any current uses, e.g., a visualization would redraw to show the new value.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867252">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=867254">
+ </A>
+Default. Option 0 will be used for items that do not have names (e.g., data input as an expression rather than a named variable, with no name provided via the NAME keyword). Option 3 will be used for all named items. </P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=865661">
+ </A>
+<A NAME="marker=860304">
+ </A>
+SCATTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860306">
+ </A>
+Set this keyword to represent plot values as a scatter plot.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857783">
+ </A>
+<A NAME="marker=857782">
+ </A>
+STYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868848">
+ </A>
+Set this keyword to either a string specifying a style name (or a style in the Insight template project), or to a style reference created from <A HREF="idlf8.htm#41593" CLASS="XRef">
+LIVE_STYLE</A>
+. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=869923">
+ </A>
+If STYLE is not set, the default plot style will be used.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857786">
+ </A>
+<A NAME="marker=857785">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857787">
+ </A>
+Set this keyword to a string specifying the title to give the main window. It must not already be in use. A default will be chosen if no title is specified.</P>
+<P CLASS="Body">
+<A NAME="pgfId=886971">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=886972">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857789">
+ </A>
+<A NAME="marker=857788">
+ </A>
+TLB_LOCATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859831">
+ </A>
+Set this keyword to a two-element vector of the form [<I CLASS="Italic">
+Xoffset</I>
+, <I CLASS="Italic">
+Yoffset</I>
+] specifying the offset (in pixels) of the LIVE window from the upper left corner of the screen. This keyword has no effect if the PARENT_BASE keyword is set. The default is [0, 0].</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857792">
+ </A>
+<A NAME="marker=857791">
+ </A>
+WINDOW_IN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857793">
+ </A>
+Set this keyword equal to a name (string, case-sensitive) of a LIVE tool or Insight window, or a LIVE tool buffer, in which to display the visualization. The WINDOW tag of the REFERENCE_OUT structure from the creation of the LIVE tool will provide the window or buffer name. Window names are also visible in visualization window titlebars. The default is to create a new window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869074">
+ </A>
+<A NAME="marker=869073">
+ </A>
+[XY]LOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869075">
+ </A>
+Set these keywords to make the specified axis a log axis. The default is 0 (linear axis).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869077">
+ </A>
+<A NAME="marker=869076">
+ </A>
+[XY]RANGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869078">
+ </A>
+Set these keywords equal to a two-element array which defines the minimum and maximum values of the axis range. The default equals the values computed from the data range.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=869080">
+ </A>
+<A NAME="marker=869079">
+ </A>
+[XY]_TICKNAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=869081">
+ </A>
+Set these keywords equal to an array of elements. The values of the strings will be used to label the tick mark for the given axis. The default equals the values computed from the data range.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857804">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=857805">
+ </A>
+LIVE_PLOT, tempdata, pressureData	<EM CLASS="Comment">;
+Plot two data sets simultaneously.</EM>
+</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=869277">
+ </A>
+This is a &quot;Live&quot; situation. When data of the same name is used multiple times within the same window, it always represents the same internal data item. For example, if one does the following:</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=869278">
+ </A>
+Y= indgen(10)</P>
+<P CLASS="Code">
+<A NAME="pgfId=869279">
+ </A>
+LIVE_PLOT, Y, WINDOW_IN=w, DIMENSIONS=d, LOCATION=loc1</P>
+<P CLASS="Code">
+<A NAME="pgfId=869280">
+ </A>
+Y = indgen(20)</P>
+<P CLASS="Code">
+<A NAME="pgfId=869281">
+ </A>
+LIVE_PLOT, Y, WINDOW_IN=w, DIMENSIONS=d, LOCATION=loc2</P>
+<P CLASS="Body">
+<A NAME="pgfId=869282">
+ </A>
+The first plot will update to use the Y of the second plot when the second plot is drawn. If the user wants to display 2 &quot;tweaks&quot; of the same data, a different variable name must be used each time, or at least one should be an expression (thus not a named variable). For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=869283">
+ </A>
+LIVE_PLOT, Y1,...</P>
+<P CLASS="Code">
+<A NAME="pgfId=869284">
+ </A>
+LIVE_PLOT, Y2,...</P>
+<P CLASS="Body">
+<A NAME="pgfId=869285">
+ </A>
+or</P>
+<P CLASS="Code">
+<A NAME="pgfId=869286">
+ </A>
+LIVE_PLOT, Y,...</P>
+<P CLASS="Code">
+<A NAME="pgfId=869287">
+ </A>
+LIVE_PLOT, myFunc(Y),...</P>
+<P CLASS="Body">
+<A NAME="pgfId=869288">
+ </A>
+In last example, the data of the second visualization will be given a default unique name since an expression rather than a named variable is input.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=869289">
+ </A>
+The above shows the default behavior for naming and replacing data, which can be overridden using the NAME and REPLACE keywords.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857806">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=857813">
+ </A>
+<A HREF="idlf4.htm#26418" CLASS="XRef">
+LIVE_OPLOT</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="routinesM-O.html#28954" CLASS="XRef">
+</A>
+, <EM CLASS="Emphasis">
+Using IDL Insight</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

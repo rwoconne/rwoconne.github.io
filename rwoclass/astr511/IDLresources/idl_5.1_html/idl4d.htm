@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CT_LUMINANCE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl4e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl4c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=759129">
+ </A>
+<A NAME="70938">
+ </A>
+CT_LUMINANCE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=759132">
+ </A>
+The <A NAME="marker=759130">
+ </A>
+CT_LUMINANCE function calculates the luminance of <A NAME="marker=759131">
+ </A>
+colors. The function returns an array containing the luminance values of the specified colors. If the <I CLASS="Italics">
+R</I>
+, <I CLASS="Italics">
+G</I>
+, and <I CLASS="Italics">
+B</I>
+ parameters are not specified, or if <I CLASS="Italics">
+R</I>
+ is of integer, byte or long type, the result is a longword array with the same number of elements as the input arguments. Otherwise, the result is a floating-point array with the same number of elements as the input arguments.</P>
+<P CLASS="Body">
+<A NAME="pgfId=759133">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ct_luminance.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759134">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759135">
+ </A>
+Result = CT_LUMINANCE(<I CLASS="Italics">
+[R, G, B]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759136">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759137">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759138">
+ </A>
+An array representing the red color table. If omitted, the color values from either the COLORS common block, or the current color table are used. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759139">
+ </A>
+G</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759140">
+ </A>
+An array representing the green color table. This parameter is optional. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759141">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759142">
+ </A>
+An array representing the blue color table. This parameter is optional.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759143">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759145">
+ </A>
+<A NAME="marker=759144">
+ </A>
+BRIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759146">
+ </A>
+Set this keyword to a named variable in which the array index of the brightest color is returned. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759148">
+ </A>
+<A NAME="marker=759147">
+ </A>
+DARK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759149">
+ </A>
+Set this keyword to a named variable in which the array index of the darkest color is returned. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759151">
+ </A>
+<A NAME="marker=759150">
+ </A>
+READ_TABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759152">
+ </A>
+Set this keyword, and don't specify the <I CLASS="Italics">
+R, G</I>
+, and <I CLASS="Italics">
+B</I>
+ arguments, to read colors directly from the current colortable (using TVLCT, /GET) instead of using the COLORS common block.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823423">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823424">
+ </A>
+<A HREF="idlb2.htm#85521" CLASS="XRef">
+GAMMA_CT</A>
+, <A HREF="idl1bb.htm#89083" CLASS="XRef">
+STRETCH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

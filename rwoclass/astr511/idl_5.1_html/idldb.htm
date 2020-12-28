@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IOCTL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idldc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlda.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677310">
+ </A>
+<A NAME="61154">
+ </A>
+IOCTL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677311">
+ </A>
+The <A NAME="marker=673214">
+ </A>
+IOCTL function provides a thin wrapper over the Unix <CODE CLASS="Code">
+ioctl(2)</CODE>
+ system call. IOTCL performs special functions on the specified <A NAME="marker=673215">
+ </A>
+file. The set of functions actually available depends on your version of Unix and the type of file (tty, tape, disk file, etc.) referred to.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677312">
+ </A>
+To use IOCTL, read the C programmer's documentation describing the <CODE CLASS="Code">
+ioctl(2)</CODE>
+ function for the desired device and convert all constants and data to their IDL equivalents.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677313">
+ </A>
+The value returned by the system <CODE CLASS="Code">
+ioctl</CODE>
+ function is returned as the value of the IDL IOCTL function.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677314">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677315">
+ </A>
+Result = IOCTL(<I CLASS="Italics">
+File_Unit [, Request, Arg]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677316">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677317">
+ </A>
+File_Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677318">
+ </A>
+The IDL logical file unit (LUN) for the open file on which the <CODE CLASS="Code">
+ioctl</CODE>
+ request is made.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677319">
+ </A>
+Request</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677320">
+ </A>
+A longword integer that specifies the ioctl request code. These codes are usually contained in C language header files provided by the operating system, and are not generally portable between Unix versions. If one of the &quot;MT&quot; keywords is used, this argument can be omitted.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677321">
+ </A>
+Arg</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677322">
+ </A>
+A named variable through which data if passed to and from ioctl. IOCTL requests usually request data from the system or supply the system with information. The user must make <I CLASS="Italics">
+Arg</I>
+ the correct type and size. Errors in typing or sizing <I CLASS="Italics">
+Arg</I>
+ can corrupt the IDL address space and/or make IDL crash. If one of the MT keywords is used, this argument can be omitted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677323">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677324">
+ </A>
+Note that the keyword below that start with &quot;MT&quot; can be used to issue commonly used magnetic tape ioctl() calls. When these keywords are used, the <I CLASS="Italics">
+Request</I>
+ and <I CLASS="Italics">
+Arg</I>
+ arguments are ignored and an be omitted. Magnetic tape operations not available via these keywords can still be executed by supplying the appropriate <I CLASS="Italics">
+Request</I>
+ and <I CLASS="Italics">
+Arg</I>
+ values. When issuing magnetic tape IOCTL calls, be aware that different devices have different rules for which ioctl calls are allowed, and when. The documentation for your computer system explains those rules.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677325">
+ </A>
+<A NAME="marker=673216">
+ </A>
+BY_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677326">
+ </A>
+If this keyword is set, <I CLASS="Italics">
+Arg</I>
+ is converted to a scalar longword and this longword is passed by value. Normally, <I CLASS="Italics">
+Arg</I>
+ is passed to ioctl by reference (i.e., by address).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677327">
+ </A>
+<A NAME="marker=673217">
+ </A>
+MT_OFFLINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677328">
+ </A>
+Set this keyword to rewind and unload a tape.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677329">
+ </A>
+<A NAME="marker=673218">
+ </A>
+MT_REWIND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677330">
+ </A>
+Set this keyword to rewind a tape.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677331">
+ </A>
+<A NAME="marker=673219">
+ </A>
+MT_SKIP_FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677332">
+ </A>
+Use this keyword to skip files on a tape. A positive value skips forward that number of files. A negative value skips backward.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677333">
+ </A>
+<A NAME="marker=673220">
+ </A>
+MT_SKIP_RECORD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677334">
+ </A>
+Use this keyword to skip records on tape. A positive value skips forward that number of files. A negative value skips backward.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677335">
+ </A>
+<A NAME="marker=673221">
+ </A>
+MT_WEOF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677336">
+ </A>
+Set this keyword to write an end of file (&quot;tape mark&quot;) on the tape at the current location.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677337">
+ </A>
+<A NAME="marker=673222">
+ </A>
+SUPPRESS_ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677338">
+ </A>
+Set this keyword to log errors quietly and cause a value of -1 to be returned. The default is for IDL to notice any failures associated with the use of <CODE CLASS="Code">
+ioctl </CODE>
+and issue the appropriate IDL error and halt execution.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677339">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677340">
+ </A>
+The following example prints the size of the terminal being used by the current IDL session. It is known to work under SunOS 4.1.2. Changes may be necessary for other operating systems or even other versions of SunOS.</P>
+<P CLASS="Code">
+<A NAME="pgfId=677341">
+ </A>
+winsize = { row:0, col:0, xpixel:0, ypixel:0 }<BR>
+<EM CLASS="Comment">;
+Variable to receive result. This structure is described in Section 4 of the SunOS manual pages under termios(4).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677342">
+ </A>
+TIOCGWINSZ = 1074295912L	<EM CLASS="Comment">;
+The request code for obtaining the tty size, as determined by reading the termios(4) documentation, and reading the system include files in the /usr/include/sys directory.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677343">
+ </A>
+ret = ioctl(-1, TIOCGWINSZ, winsize)<BR>
+<EM CLASS="Comment">;
+Make the information request. -1 is the </EM>
+IDL<EM CLASS="Comment">;
+ logical file unit for the standard output.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677344">
+ </A>
+print,winsize.row, winsize.col, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=677345">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format='(&quot;TTY has &quot;, I0,&quot; rows and &quot;, I0,&quot; columns.&quot;)'<BR>
+<EM CLASS="Comment">;
+Output the results.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=677346">
+ </A>
+The following points should be noted in this example:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=677347">
+ </A>
+Even though we only want the number of rows and columns, we must include all the fields required by the TIOCGWINSIZ <CODE CLASS="Code">
+ioctl</CODE>
+ in the winsize variable (as documented in the <CODE CLASS="Code">
+termio(4)</CODE>
+ manual page). Not providing a large enough result buffer would cause IDL's memory to be corrupted.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=677348">
+ </A>
+The value of TIOCGWINSZ was determined by examining the system header files provided in the <CODE CLASS="Code">
+/usr/include/sys</CODE>
+ directory. Such values are not always portable between major operating system releases.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822399">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822400">
+ </A>
+<A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

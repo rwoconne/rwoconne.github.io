@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_PICT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl212.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl210.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756509">
+ </A>
+<A NAME="89368">
+ </A>
+WRITE_PICT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756513">
+ </A>
+The <A NAME="marker=756511">
+ </A>
+WRITE_PICT procedure writes and image and its color table vectors to a <A NAME="marker=756512">
+ </A>
+PICT (version 2) format image file. The PICT format is used by Apple Macintosh computers.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756514">
+ </A>
+Note: WRITE_PICT only works with 8-bit displays</P>
+<P CLASS="Body">
+<A NAME="pgfId=756515">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_pict.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756516">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756517">
+ </A>
+WRITE_PICT, <EM CLASS="Emphasis">
+Filename [, Image, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756518">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756519">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756520">
+ </A>
+A scalar string containing the full pathname of the PICT file to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756521">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756522">
+ </A>
+The byte array to be written to the PICT file. If <EM CLASS="Emphasis">
+Image</EM>
+ is omitted, the entire current graphics window is read into an array and written to the PICT file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756523">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756524">
+ </A>
+The Red, Green, and Blue color vectors to be written to the PICT file. If <EM CLASS="Emphasis">
+R</EM>
+, <EM CLASS="Emphasis">
+G</EM>
+, <EM CLASS="Emphasis">
+B</EM>
+ values are not provided, the last color table established using LOADCT is included. If no color table has been established, WRITE_PICT calls LOADCT to load the grayscale entry (table 0).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=896356">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756526">
+ </A>
+Create a pseudo screen dump from the current window:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756527">
+ </A>
+WRITE_PICT, 'test.pict', TVRD()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756528">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756529">
+ </A>
+<A HREF="idl167.htm#23922" CLASS="XRef">
+READ_PICT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

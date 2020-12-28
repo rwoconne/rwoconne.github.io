@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_FSLIDER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl60.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755566">
+ </A>
+<A NAME="36057">
+ </A>
+CW_FSLIDER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755567">
+ </A>
+The <A NAME="marker=755568">
+ </A>
+CW_FSLIDER function creates a <A NAME="marker=755569">
+ </A>
+slider that selects <A NAME="marker=755570">
+ </A>
+floating-point values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796135">
+ </A>
+The returned value of this function is the widget ID of the newly-created slider widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755571">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_fslider.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755572">
+ </A>
+Using CW_FSLIDER</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755573">
+ </A>
+To get or set the value of a CW_FSLIDER widget, use the GET_VALUE and SET_VALUE keywords to WIDGET_CONTROL. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=907295">
+ </A>
+The CW_FSLIDER widget is based on the WIDGET_SLIDER routine, which accepts only integer values. Because conversion between integers and floating-point numbers necessarily involves round-off errors, the slider value returned by CW_FSLIDER may not exactly match the input value, even when a floating-point number is entered in the slider's text field as an ASCII value. For more information on floating-point issues, see <A HREF="..html#44409" CLASS="XRef">
+Accuracy &amp; Floating-Point Operations</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755574">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755575">
+ </A>
+Result = CW_FSLIDER(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755576">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755577">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755578">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755579">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755581">
+ </A>
+<A NAME="marker=755580">
+ </A>
+DRAG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755582">
+ </A>
+Set this keyword to zero if <A NAME="marker=788342">
+ </A>
+events should only be generated when the mouse is released. If DRAG is non-zero, events will be generated continuously when the slider is adjusted. Note: On slow systems, /DRAG performance can be inadequate. The default is DRAG = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755584">
+ </A>
+<A NAME="marker=755583">
+ </A>
+EDIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755585">
+ </A>
+Set this keyword to make the slider label be editable. The default is EDIT = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755587">
+ </A>
+<A NAME="marker=755586">
+ </A>
+FORMAT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755588">
+ </A>
+Provides the format in which the slider value is displayed. This should be a format as accepted by the STRING procedure. The default FORMAT is <CODE CLASS="Code">
+'(G13.6)'</CODE>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755590">
+ </A>
+<A NAME="marker=755589">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755591">
+ </A>
+Set this keyword to have a frame drawn around the widget. The default is FRAME = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755593">
+ </A>
+<A NAME="marker=755592">
+ </A>
+MAXIMUM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755594">
+ </A>
+The maximum value of the slider. The default is MAXIMUM = 100.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755596">
+ </A>
+<A NAME="marker=755595">
+ </A>
+MINIMUM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755597">
+ </A>
+The minimum value of the slider. The default is MINIMUM = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=218849">
+ </A>
+<A NAME="marker=218848">
+ </A>
+SCROLL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=218850">
+ </A>
+Under the Motif window manager, the value provided for SCROLL specifies how many units the scroll bar should move when the user clicks the left mouse button inside the slider area, but not on the slider itself. This keyword has no effect under other window systems.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755599">
+ </A>
+<A NAME="marker=755598">
+ </A>
+SUPPRESS_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755600">
+ </A>
+If true, the current slider value is not displayed. The default is SUPPRESS_VALUE = 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755602">
+ </A>
+<A NAME="marker=755601">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755603">
+ </A>
+The title of slider. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755605">
+ </A>
+<A NAME="marker=755604">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755606">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755608">
+ </A>
+<A NAME="marker=755607">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755609">
+ </A>
+The initial value of the slider</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755611">
+ </A>
+<A NAME="marker=755610">
+ </A>
+VERTICAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755612">
+ </A>
+If set, the slider will be oriented vertically. The default is horizontal.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755614">
+ </A>
+<A NAME="marker=755613">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755615">
+ </A>
+For horizontal sliders, sets the length.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755617">
+ </A>
+<A NAME="marker=755616">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=837789">
+ </A>
+For vertical sliders, sets the height.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837793">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837794">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837801">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the value of the slider. Note that the SET_SLIDER_MAX and SET_SLIDER_MIN keywords to WIDGET_CONTROL and the SLIDER_MIN_MAX keyword to WIDGET_INFO <EM CLASS="Emphasis">
+do not</EM>
+ work with floating point sliders created with CW_FSLIDER.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837815">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837790">
+ </A>
+Widget Events Returned by the CW_FSLIDER Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837791">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=796374">
+ </A>
+Event = { ID:0L, TOP:0L, HANDLER:0L, VALUE:0.0, DRAG:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=796375">
+ </A>
+The VALUE field is the floating-point value selected by the slider. The DRAG field reports on whether events are generated continuously (when the DRAG keyword is set) or only when the mouse button is released (the default).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755622">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818993">
+ </A>
+<A HREF="idl209.htm#65490" CLASS="XRef">
+WIDGET_SLIDER</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

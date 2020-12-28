@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_REFTOINDEX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ae.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2ac.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999189">
+ </A>
+<A NAME="14254">
+ </A>
+HDF_SD_REFTOINDEX</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999192">
+ </A>
+The <A NAME="marker=999191">
+ </A>
+HDF_SD_REFTOINDEX function returns a scientific dataset's index given its reference number and SD interface ID.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999193">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999194">
+ </A>
+Result = HDF_SD_REFTOINDEX(<I CLASS="Italics">
+SD_ID, Refno</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999195">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999196">
+ </A>
+SD_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999197">
+ </A>
+An SD interface ID as returned by HDF_SD_START.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999198">
+ </A>
+Refno</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999199">
+ </A>
+The SD reference number for the desired dataset.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999200">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999201">
+ </A>
+sd_id = HDF_SDSTART('demo.hdf')	<EM CLASS="Comment">;
+Initialize the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999202">
+ </A>
+refno = 66	<EM CLASS="Comment">;
+Define the reference number for which we want to search.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999203">
+ </A>
+index = HDF_SD_REFTOINDEX(sd_id, refno)	<EM CLASS="Comment">;
+Return the index number.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999204">
+ </A>
+sds_id = HDF_SD_SELECT(sd_id, index)	<EM CLASS="Comment">;
+Now the dataset can be accessed.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999205">
+ </A>
+HDF_SD_ENDACCESS,SDS_ID	<EM CLASS="Comment">;
+End access.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999206">
+ </A>
+HDF_SD_END, sd_id</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999207">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999211">
+ </A>
+HDF_SD_IDTOREF, <A HREF="idl2ac.htm#56518" CLASS="XRef">
+HDF_SD_NAMETOINDEX</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

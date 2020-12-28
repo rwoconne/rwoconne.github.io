@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BREAKPOINT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675850">
+ </A>
+<A NAME="37671">
+ </A>
+BREAKPOINT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=675851">
+ </A>
+The <A NAME="marker=672508">
+ </A>
+BREAKPOINT procedure allows you to insert and remove breakpoints in programs for <A NAME="marker=672509">
+ </A>
+debugging. A breakpoint causes program execution to <A NAME="marker=672510">
+ </A>
+stop after the designated statement is executed. Breakpoints are specified using the source file name and line number. For multiple-line statements (statements containing &quot;$&quot;, the continuation character), specify the line number of the last line of the statement.</P>
+<P CLASS="Body">
+<A NAME="pgfId=917895">
+ </A>
+You can insert breakpoints in programs without editing the source file. Enter the following<CODE CLASS="Code">
+:</CODE>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675852">
+ </A>
+HELP, /BREAKPOINT</P>
+<P CLASS="Body">
+<A NAME="pgfId=675853">
+ </A>
+to display the breakpoint table which gives the index, module and source file locations of each breakpoint.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675854">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675855">
+ </A>
+BREAKPOINT <I CLASS="Italics">
+[, File], Index</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675856">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675857">
+ </A>
+File</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675858">
+ </A>
+An optional string argument that contains the name of the source file. Note that if <EM CLASS="Emphasis">
+File</EM>
+ is not in the current directory, the full path name must be specified even if <EM CLASS="Emphasis">
+File</EM>
+ is in one of the directories specified by !PATH.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675859">
+ </A>
+Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675860">
+ </A>
+The line number at which to clear or set a breakpoint.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675861">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=113854">
+ </A>
+<A NAME="marker=113858">
+ </A>
+AFTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=113855">
+ </A>
+Set this keyword equal to an integer <EM CLASS="Emphasis">
+n</EM>
+. Execution will stop only after the <EM CLASS="Emphasis">
+n</EM>
+th time the breakpoint is hit. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=113856">
+ </A>
+BREAKPOINT, /SET, 'test.pro', 8, AFTER=3</P>
+<P CLASS="Body">
+<A NAME="pgfId=113857">
+ </A>
+sets a breakpoint at the eighth line of the file <CODE CLASS="Code">
+test.pro</CODE>
+, but only stops execution after the breakpoint has been encountered three times.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675862">
+ </A>
+<A NAME="marker=672512">
+ </A>
+CLEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675863">
+ </A>
+Set this keyword to remove a <A NAME="marker=672513">
+ </A>
+breakpoint. The breakpoint to be removed is specified either by index, or by the source file and line number. Use command <CODE CLASS="Code">
+HELP, /BREAKPOINT</CODE>
+ to display the indices of existing breakpoints. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675864">
+ </A>
+BREAKPOINT, /CLEAR, 3	<EM CLASS="Comment">;
+Clear breakpoint with an index of 3.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675865">
+ </A>
+BREAKPOINT, /CLEAR, 'test.pro',8	<EM CLASS="Comment">;
+Clear the breakpoint corresponding to the statement in the file test.pro, line number 8.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=113859">
+ </A>
+<A NAME="marker=907446">
+ </A>
+CONDITION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907452">
+ </A>
+Set this keyword to a string containing an IDL expression. When a breakpoint is encountered, the expression is evaluated. If the expression is true (if it returns a non-zero value), program execution is interrupted. The expression is evaluated in the context of the program containing the breakpoint.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=907453">
+ </A>
+<CODE CLASS="Code">
+BREAKPOINT, 'myfile.pro', 6, CONDITION='i gt 2'</CODE>
+</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=907456">
+ </A>
+<EM CLASS="Comment">;
+	If i is greater than 2 at line 6 of&nbsp;&nbsp; myfile.pro, the program is interrupted.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907385">
+ </A>
+<A NAME="marker=113871">
+ </A>
+ONCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=113860">
+ </A>
+Set this keyword to make the breakpoint temporary. If ONCE is set, the breakpoint is cleared as soon as it is hit. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=113864">
+ </A>
+BREAKPOINT, /SET, 'file.pro', 12, AFTER=3, /ONCE</P>
+<P CLASS="Body">
+<A NAME="pgfId=113865">
+ </A>
+sets a breakpoint at line 12 of <CODE CLASS="Code">
+file.pro</CODE>
+. Execution stops when line 12 is encountered the third time, and the breakpoint is automatically cleared.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675866">
+ </A>
+<A NAME="marker=672514">
+ </A>
+SET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675867">
+ </A>
+Set this keyword to set a <A NAME="marker=672515">
+ </A>
+breakpoint at the designated source file line. If this keyword is set, the first input parameter, <I CLASS="Italics">
+File</I>
+ must be a string expression that contains the name of the source file. The second input parameter must be an integer that represents the source line number.</P>
+<P CLASS="Body">
+<A NAME="pgfId=675868">
+ </A>
+For example, to set a breakpoint at line 23 in the source file <CODE CLASS="Code">
+xyz.pro</CODE>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675869">
+ </A>
+BREAKPOINT, /SET, 'xyz.pro', 23</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=824024">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853369">
+ </A>
+<A HREF="executive.html#49256" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

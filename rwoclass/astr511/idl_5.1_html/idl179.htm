@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> REPLICATE_INPLACE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl17a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl178.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=901796">
+ </A>
+<A NAME="21692">
+ </A>
+REPLICATE_INPLACE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=901797">
+ </A>
+The <A NAME="marker=903165">
+ </A>
+REPLICATE_INPLACE procedure updates an existing array by replacing all or selected parts of it with a specified value. REPLICATE_INPLACE can be faster and use less memory than the IDL function REPLICATE or the IDL array notation for large arrays that already exist.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=903207">
+ </A>
+REPLICATE_INPLACE is much faster when operating on entire arrays and rows, than when used on columns or higher dimensions.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=901798">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=901799">
+ </A>
+REPLICATE_INPLACE, <I CLASS="Italic">
+X, Value [, D1, Loc1 [, D2, Range]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=901800">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=903176">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=903177">
+ </A>
+The array to be updated. <I CLASS="Italic">
+X</I>
+ can be of any scalar numeric type. REPLICATE_INPLACE does not change the size and type of <I CLASS="Italic">
+X</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=903178">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=903179">
+ </A>
+The scalar value which will fill all or part of <I CLASS="Italic">
+X</I>
+. <I CLASS="Italic">
+Value</I>
+ may be any scalar type that IDL can convert to the type of <I CLASS="Italic">
+X</I>
+. REPLICATE_INPLACE does not change <I CLASS="Italic">
+Value</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=903182">
+ </A>
+D1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=903183">
+ </A>
+An optional parameter indicating which dimension of <I CLASS="Italic">
+X</I>
+ is to be updated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=903184">
+ </A>
+Loc1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=903185">
+ </A>
+An array with the same number of elements as the number of dimensions of <I CLASS="Italic">
+X</I>
+. The <I CLASS="Italic">
+Loc1 </I>
+and <I CLASS="Italic">
+D1</I>
+ arguments together determine which one-dimensional subvector (or subvectors, if <I CLASS="Italic">
+D1</I>
+ and <I CLASS="Italic">
+Range</I>
+ are provided) of <I CLASS="Italic">
+X</I>
+ is to be updated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=903186">
+ </A>
+D2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=903187">
+ </A>
+An optional parameter, indicating in which dimension of <I CLASS="Italic">
+X</I>
+ a group of one-dimensional subvectors are to be updated. <I CLASS="Italic">
+D2</I>
+ should be different from <I CLASS="Italic">
+D1</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=903188">
+ </A>
+Range</H4>
+<P CLASS="Body">
+<A NAME="pgfId=903189">
+ </A>
+An array of indices of dimension <I CLASS="Italic">
+D2</I>
+ of <I CLASS="Italic">
+X</I>
+, indicating where to put one-dimensional updates of <I CLASS="Italic">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=901808">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=903116">
+ </A>
+A = FLTARR( 40, 90, 10)<EM CLASS="Comment">;
+	Create a multidimensional zero array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=903134">
+ </A>
+REPLICATE_INPLACE, A, 4.5<EM CLASS="Comment">;
+	Populate it with the value 4.5. (i.e., A[*]= 4.5 )</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=903135">
+ </A>
+REPLICATE_INPLACE, A, 20, 1, [0,4,0]<EM CLASS="Comment">;
+	Update a single subvector.<BR>
+(i.e., A[*,4,0]= 20. )</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=903119">
+ </A>
+REPLICATE_INPLACE, A, -8, 3, [0,0,0], 2, [0,5,89]<BR>
+<EM CLASS="Comment">;
+Update a group of subvectors.<BR>
+(i.e., A[ 0, [0, 5,89], * ] = -8 )</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=903120">
+ </A>
+REPLICATE_INPLACE, A, 0., 3, [9,0,0] , 2, LINDGEN(90)<BR>
+<EM CLASS="Comment">;
+Update a 2-dimensional slice of A (i.e., A[9,*, *] = 0.)</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=903113">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=901809">
+ </A>
+<A HREF="idl178.htm#97512" CLASS="XRef">
+REPLICATE</A>
+, <A HREF="idl18.htm#18170" CLASS="XRef">
+BLAS_AXPY</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

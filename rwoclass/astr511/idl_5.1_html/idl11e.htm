@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MPEG_OPEN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl11f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl11d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889055">
+ </A>
+<A NAME="29348">
+ </A>
+MPEG_OPEN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889060">
+ </A>
+The <A NAME="marker=889058">
+ </A>
+MPEG_OPEN function initializes an IDLgrMPEG object for <A NAME="marker=889059">
+ </A>
+MPEG encoding and returns the object reference. The MPEG routines provide a wrapper around the IDL Object Graphics IDLgrMPEG object, eliminating the need to use the Object Graphics interface to create MPEG files.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889061">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+mpeg_open.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889062">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889063">
+ </A>
+mpegID = MPEG_OPEN(<EM CLASS="Emphasis">
+Dimensions</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889064">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889065">
+ </A>
+Dimensions</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889066">
+ </A>
+A two-element vector of the form [<EM CLASS="Emphasis">
+xsize</EM>
+, <EM CLASS="Emphasis">
+ysize</EM>
+] indicating the dimensions of the images to be used as frames in the MPEG movie file. All images in the MPEG file must have the same dimensions.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889067">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889068">
+ </A>
+FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889069">
+ </A>
+Set this keyword equal to a string representing the name of the file in which the encoded MPEG sequence is to be saved. The default file name is <CODE CLASS="Code">
+idl.mpg</CODE>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889070">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889071">
+ </A>
+The following sequence of IDL commands illustrates the steps needed to create an MPEG movie file from a series of image arrays named image0, image1, .., image<EM CLASS="Emphasis">
+n</EM>
+, where <EM CLASS="Emphasis">
+n</EM>
+ is the zero-based index of the last image in the movie:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889072">
+ </A>
+mpegID = MPEG_OPEN()	<EM CLASS="Comment">;
+Open an MPEG sequence.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889073">
+ </A>
+MPEG_PUT, mpegID, IMAGE=image0, FRAME=0<BR>
+<EM CLASS="Comment">;
+Add the first frame.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889074">
+ </A>
+MPEG_PUT, mpegID, IMAGE=image1, FRAME=1</P>
+<P CLASS="Code">
+<A NAME="pgfId=889075">
+ </A>
+...	<EM CLASS="Comment">;
+Subsequent frames.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889076">
+ </A>
+MPEG_PUT, mpegID, IMAGE=imagen, FRAME=n<BR>
+<EM CLASS="Comment">;
+Last frame.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889077">
+ </A>
+MPEG_SAVE, mpegID, FILENAME='myMovie.mpg'<BR>
+<EM CLASS="Comment">;
+Save the MPEG sequence in the file </EM>
+myMovie.mpg<EM CLASS="Comment">;
+.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889078">
+ </A>
+MPEG_CLOSE, mpegID	<EM CLASS="Comment">;
+Close the MPEG sequence</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889079">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889092">
+ </A>
+<A HREF="idl11d.htm#17096" CLASS="XRef">
+MPEG_CLOSE</A>
+, <A HREF="idl11f.htm#31350" CLASS="XRef">
+MPEG_PUT</A>
+, <A HREF="idl120.htm#36346" CLASS="XRef">
+MPEG_SAVE</A>
+, <A HREF="idl21f.htm#64099" CLASS="XRef">
+XINTERANIMATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

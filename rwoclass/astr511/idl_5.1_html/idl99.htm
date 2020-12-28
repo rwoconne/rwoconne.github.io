@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXTRACT_SLICE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl98.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758802">
+ </A>
+<A NAME="75003">
+ </A>
+EXTRACT_SLICE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758805">
+ </A>
+This <A NAME="marker=758803">
+ </A>
+EXTRACT_SLICE function returns a two-dimensional planar slice<A NAME="marker=758804">
+ </A>
+ extracted from 3D volumetric data. The slicing plane can be oriented at any angle and pass through any desired location in the volume.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758806">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+extract_slice.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758807">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758808">
+ </A>
+Result = EXTRACT_SLICE(<I CLASS="Italics">
+Vol, Xsize, Ysize, Xcenter, Ycenter, Zcenter, Xrot, Yrot, Zrot</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758809">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758810">
+ </A>
+Vol</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758811">
+ </A>
+The volume of data to slice. This argument is a three-dimensional array of any type except string or structure. The planar slice returned by EXTRACT_SLICE has the same data type as <I CLASS="Italics">
+Vol</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758812">
+ </A>
+Xsize</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758813">
+ </A>
+The desired X size (dimension 0) of the returned slice. To preserve the correct aspect ratio of the data, Xsize should equal Ysize. For optimal results, set Xsize and Ysize to be greater than or equal to the largest of the three dimensions of <I CLASS="Italics">
+Vol</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758814">
+ </A>
+Ysize</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758815">
+ </A>
+The desired Ysize (dimension 1) of the returned slice. To preserve the correct aspect ratio of the data, Ysize should equal Xsize. For optimal results, set Xsize and Ysize to be greater than or equal to the largest of the three dimensions of <I CLASS="Italics">
+Vol</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758816">
+ </A>
+Xcenter</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758817">
+ </A>
+The X coordinate (index) of the point within the volume that the slicing plane passes through. The center of the slicing plane passes through <I CLASS="Italics">
+Vol</I>
+ at the coordinate (<I CLASS="Italics">
+Xcenter, YCenter, Zcenter</I>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758818">
+ </A>
+Ycenter</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758819">
+ </A>
+The Y coordinate (index) of the point within the volume that the slicing plane passes through. The center of the slicing plane passes through <I CLASS="Italics">
+Vol</I>
+ at the coordinate (<I CLASS="Italics">
+Xcenter, YCenter, Zcenter</I>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758820">
+ </A>
+Zcenter</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758821">
+ </A>
+The Z coordinate (index) of the point within the volume that the slicing plane passes through. The center of the slicing plane passes through <I CLASS="Italics">
+Vol</I>
+ at the coordinate (<I CLASS="Italics">
+Xcenter, YCenter, Zcenter</I>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758822">
+ </A>
+Xrot</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758823">
+ </A>
+The X-axis rotation of the slicing plane, in degrees. Before transformation, the slicing plane is parallel to the X-Y plane. The slicing plane transformations are performed in the following order:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=758824">
+ </A>
+Rotate Z_rot degrees about the Z axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=758825">
+ </A>
+Rotate Y_rot degrees about the Y axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=758826">
+ </A>
+Rotate X_rot degrees about the X axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=758827">
+ </A>
+Translate the center of the plane to Xcenter, Ycenter, Zcenter.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758828">
+ </A>
+Yrot</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758829">
+ </A>
+The Y-axis rotation of the slicing plane, in degrees. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758830">
+ </A>
+Zrot</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758831">
+ </A>
+The orientation Z-axis rotation of the slicing plane, in degrees.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758832">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758834">
+ </A>
+<A NAME="marker=758833">
+ </A>
+RADIANS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758835">
+ </A>
+Set this keyword to indicate that Xrot, Yrot, and Zrot are in radians. The default is degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758837">
+ </A>
+<A NAME="marker=758836">
+ </A>
+OUT_VAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758838">
+ </A>
+Set this keyword to a value that will be assigned to elements of the returned slice that lie outside of the original volume.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758840">
+ </A>
+<A NAME="marker=758839">
+ </A>
+SAMPLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758841">
+ </A>
+Set this keyword to perform nearest neighbor sampling when computing the returned slice. The default is to use bilinear interpolation. A small reduction in execution time results when SAMPLE is set and the OUT_VAL keyword is <I CLASS="Italics">
+not</I>
+ used. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758842">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758843">
+ </A>
+Display an oblique slice through volumetric data:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758844">
+ </A>
+vol = RANDOMU(s, 40, 40, 40)	<EM CLASS="Comment">;
+Create some data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758845">
+ </A>
+FOR i=0, 10 DO vol = SMOOTH(vol, 3) 	<EM CLASS="Comment">;
+Smooth the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758846">
+ </A>
+vol = BYTSCL(vol(3:37, 3:37, 3:37))<EM CLASS="Comment">;
+	Scale the smoothed part into the range of bytes</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758847">
+ </A>
+slice = EXTRACT_SLICE(vol, 40, 40, 17, 17, 17, 30.0, 30.0, 0.0, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=883700">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;OUT_VAL=0B)	<EM CLASS="Comment">;
+Extract a slice.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758849">
+ </A>
+TVSCL, REBIN(slice, 400, 400)	<EM CLASS="Comment">;
+Display the 2D slice as a magnified image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795846">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795847">
+ </A>
+<A HREF="idl1a4.htm#19999" CLASS="XRef">
+SLICER3</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

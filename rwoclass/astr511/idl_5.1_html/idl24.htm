@@ -1,0 +1,597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CALL_EXTERNAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl23.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=106442">
+ </A>
+<A NAME="65173">
+ </A>
+CALL_EXTERNAL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=905884">
+ </A>
+The <A NAME="marker=905881">
+ </A>
+CALL_EXTERNAL function calls a function in <A NAME="marker=905882">
+ </A>
+an <A NAME="marker=905883">
+ </A>
+external sharable object and returns a scalar value. Parameters can be passed by reference (the default) or by value. See <A HREF="..html#92814" CLASS="XRef">
+See </A>
+ for examples.</P>
+<P CLASS="Body">
+<A NAME="pgfId=905885">
+ </A>
+CALL_EXTERNAL is supported under all systems operating systems supported by IDL, although there are system specific details of which you must be aware. This function requires no interface routines and is much simpler and easier to use than the <A NAME="marker=905886">
+ </A>
+LINKIMAGE procedure. However, CALL_EXTERNAL performs no checking of the type and number of parameters. Programming errors are likely to cause IDL to crash or to corrupt your data.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=905890">
+ </A>
+Input and output actions should be performed within IDL code, using IDL's built-in <BR>
+input/output facilities, or by using <EM CLASS="Bold">
+IDL_Message()</EM>
+. Using external code options for <BR>
+input and output, such as stdin or stdout, may generate unexpected results.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=905891">
+ </A>
+CALL_EXTERNAL supports the <EM CLASS="Emphasis">
+IDL Portable convention</EM>
+, a portable calling convention that works on all platforms. This convention passes two arguments to the called routine, an argument count (<CODE CLASS="Code">
+argc</CODE>
+) and an array of arguments (<CODE CLASS="Code">
+argv</CODE>
+). On non-VMS systems, this is the only available convention. Under VMS, the VMS LIB$CALLG convention is also available,. This convention, which is the default, uses the VMS LIB$CALLG runtime library routine to call functions without requiring a special (<CODE CLASS="Code">
+argc</CODE>
+, <CODE CLASS="Code">
+argv</CODE>
+) convention.</P>
+<P CLASS="Body">
+<A NAME="pgfId=905892">
+ </A>
+The result of the CALL_EXTERNAL function is a scalar value returned by the external function. By default, this is a scalar integer, unless the D_VALUE, F_VALUE, or S_VALUE keywords are specified, indicating that the function returns a double-precision floating-point, single-precision floating-point, or string value, respectively.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905893">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905894">
+ </A>
+Result = CALL_EXTERNAL(<I CLASS="Italics">
+Image, Entry [, P</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+, ..., P</I>
+<SUB CLASS="subscript">
+N-1</SUB>
+<I CLASS="Italics">
+]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905895">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905896">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905897">
+ </A>
+The name of the file, which must be a sharable image (VMS), sharable library (Unix and Macintosh), or DLL (Windows), which contains the routine to be called.</P>
+<P CLASS="Body">
+<A NAME="pgfId=905900">
+ </A>
+Under VMS the full interpretation of this argument is discussed in <A HREF="idl24.htm#17114" CLASS="XRef">
+VMS CALL_EXTERNAL and LIB$FIND_IMAGE_SYMBOL</A>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905902">
+ </A>
+Entry</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905903">
+ </A>
+A string containing the name of the symbol in the library which is the entry point of the routine to be called.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905904">
+ </A>
+P<SUB CLASS="subscript">
+0</SUB>
+, ..., P<SUB CLASS="subscript">
+N-1</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905905">
+ </A>
+The parameters to be passed to the external routine. All array and structure arguments are passed by reference (address). The default is to also pass scalars by reference, but the ALL_VALUE or VALUE keywords can be used to pass them by value. Care must be taken to ensure that the type, structure, and passing mechanism of the parameters passed to the external routine match what it expects. There are some restrictions on data types that can be passed by value, and the user needs to be aware of how IDL passes strings. Both issues discussed in further detail below.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905906">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905908">
+ </A>
+<A NAME="marker=905907">
+ </A>
+ALL_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905909">
+ </A>
+Set this keyword to indicate that all parameters are passed by value. There are some restrictions on data types that should be considered when using this keyword., as discussed below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905911">
+ </A>
+<A NAME="marker=905910">
+ </A>
+CDECL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905912">
+ </A>
+The Microsoft Windows operating system has two distinct system defined standards that govern how routines pass arguments: <CODE CLASS="Code">
+stdcall</CODE>
+, which is used by much of the operating system as well as languages such as Visual Basic, and <CODE CLASS="Code">
+cdecl</CODE>
+, which is used widely for programming in the C language. These standards differ in how and when arguments are pushed onto the system stack. The standard used by a given function is determined when the function is compiled, and can usually be controlled by the programmer. If a function is called using the wrong standard (e.g. calling a <CODE CLASS="Code">
+stdcall</CODE>
+ function as if it were <CODE CLASS="Code">
+cdecl</CODE>
+, or the reverse), incorrect results may result, including memory corruption or even IDL crashing. Unfortunately, there is no way for IDL to know which convention a given function uses, this information must be supplied by the user of CALL_EXTERNAL. If the CDECL keyword is present, IDL will use the <CODE CLASS="Code">
+cdecl</CODE>
+ convention to call the function. Otherwise, <CODE CLASS="Code">
+stdcall</CODE>
+ is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905914">
+ </A>
+<A NAME="marker=905913">
+ </A>
+DEFAULT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905915">
+ </A>
+This keyword is ignored on non-VMS platforms. Under VMS, it is a string containing the default device, directory, file name, and file type information for the file that contains the sharable image. See <A HREF="idl24.htm#17114" CLASS="XRef">
+VMS CALL_EXTERNAL and LIB$FIND_IMAGE_SYMBOL</A>
+ for additional information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905920">
+ </A>
+<A NAME="marker=905919">
+ </A>
+D_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905921">
+ </A>
+If set, this keyword indicates that the called function returns a double-precision floating value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905923">
+ </A>
+<A NAME="marker=905922">
+ </A>
+F_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905924">
+ </A>
+If set, this keyword indicates that the called function returns a single-precision floating value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905926">
+ </A>
+<A NAME="marker=905925">
+ </A>
+PORTABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905927">
+ </A>
+Under VMS, causes CALL_EXTERNAL to use the IDL Portable calling convention for passing arguments to the called function instead of the default VMS LIB$CALLG convention. Under other operating systems, only the portable convention is available, so this keyword is quietly ignored. The details of these calling conventions are described in <A HREF="idl24.htm#11962" CLASS="XRef">
+Calling Convention</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905933">
+ </A>
+<A NAME="marker=905932">
+ </A>
+S_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905934">
+ </A>
+If set, this keyword indicates that the called function returns a pointer to a null-terminated string.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905936">
+ </A>
+<A NAME="marker=905935">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905937">
+ </A>
+A byte array, with as many elements as there are optional parameters, indicating the method of parameter passing. Arrays are always passed by reference. If parameter P<SUB CLASS="Subscript">
+i</SUB>
+ is a scalar, it is passed by reference if VALUE[<I CLASS="Italic">
+i</I>
+] is 0; and by value if it is non-zero. There are some restrictions on data types that should be considered when using this keyword, as discussed below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907150">
+ </A>
+<A NAME="marker=907149">
+ </A>
+VAX_FLOAT (VMS Only)</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907151">
+ </A>
+If specified, all data passed to the called function is first converted to VAX F (single) or D (double) floating point formats. On return, any data passed by reference is converted back to the IEEE format used by IDL. This feature allow you to call code compiled to work with earlier versons of IDL, which used the old VAX formats.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907152">
+ </A>
+The default setting for this keyword is FALSE, unless IDL was started with the VAX_FLOAT startup option, in which case the default is TRUE. See <A HREF="..html#25040" CLASS="XRef">
+Command Line Options</A>
+ for details on this qualifier. You can change this setting at runtime using the <A HREF="idl1f3.htm#19939" CLASS="XRef">
+VAX_FLOAT</A>
+ function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=907156">
+ </A>
+Note On IEEE to VAX Format Conversion</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907157">
+ </A>
+Translation of floating-point values from the IDL's native (IEEE) format to the VAX format and back (IEEE to VAX to IEEE) is not a completely reversable operation, and should be avoided when possible. There are many cases where the recovered values will differ from the original, including:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=907158">
+ </A>
+The VAX floating point format lacks support for the IEEE special values (NaN, Infinity). Hence, their special meaning is lost when they are converted to VAX format and cannot be recovered.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=907159">
+ </A>
+Differences in precision and range can also cause information to be lost in both directions.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=907160">
+ </A>
+Research Systems recommends using IEEE/VAX conversions only to read existing VAX format data, and strongly recommends that all new files be created using the IEEE format.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905938">
+ </A>
+String Parameters</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905939">
+ </A>
+IDL represents strings internally as IDL_STRING descriptors, which are defined in the C language as:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905940">
+ </A>
+typedef struct {</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905941">
+ </A>
+  unsigned short slen;</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905942">
+ </A>
+  unsigned short stype;</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905943">
+ </A>
+  char *s;</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905944">
+ </A>
+} IDL_STRING;</P>
+<P CLASS="Body">
+<A NAME="pgfId=905945">
+ </A>
+To pass a string by reference, IDL passes the address of its IDL_STRING descriptor. To pass a string by value the string pointer (the <CODE CLASS="Code">
+s</CODE>
+ field of the descriptor) is passed. Programmers should be aware of the following when manipulating IDL strings:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905946">
+ </A>
+Called code should treat the information in the passed IDL_STRING descriptor and the string itself as readonly, and should not modify these values.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905947">
+ </A>
+The <CODE CLASS="Code">
+slen</CODE>
+ field contains the length of the string without including the NULL termination <BR>
+that is required at the end of all C strings.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905948">
+ </A>
+The <CODE CLASS="Code">
+stype</CODE>
+ field is used internally by IDL to know keep track of how the memory for <BR>
+the string was obtained, and should be ignored by CALL_EXTERNAL users.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905949">
+ </A>
+<CODE CLASS="Code">
+s</CODE>
+ is the pointer to the actual C string represented by the descriptor. If the string is NULL, <BR>
+IDL represents it as a NULL (0) pointer, not as a pointer to an empty null terminated string. Hence, called code that expects a string pointer should check for a NULL pointer before dereferencing it.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=905950">
+ </A>
+These issues are examined in greater detail in the IDL <I CLASS="Italic">
+Advanced Development Guide</I>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905952">
+ </A>
+<A NAME="11962">
+ </A>
+Calling Convention</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905953">
+ </A>
+CALL_EXTERNAL supports two distinct calling conventions for calling user-supplied routines. The primary convention is the IDL Portable convention, which is supported on all platforms. The second is the VMS LIB$CALLG convention which is only available under VMS.</P>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=905954">
+ </A>
+Portable</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905955">
+ </A>
+The portable interface convention passes all arguments as elements of an array of C void <BR>
+pointers (void *). The C language prototype for a user function called this way looks like one of the following:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905956">
+ </A>
+RET_TYPE xxx(int argc, void *argv[])</P>
+<P CLASS="Body">
+<A NAME="pgfId=905957">
+ </A>
+Where RET_TYPE is one of <CODE CLASS="Code">
+int</CODE>
+, <CODE CLASS="Code">
+float</CODE>
+, <CODE CLASS="Code">
+double</CODE>
+, or <CODE CLASS="Code">
+char *</CODE>
+. The return type used must agree with the type assumed by CALL_EXTERNAL, as specified by the D_VALUE, F_VALUE, and S_VALUE keywords. <CODE CLASS="Code">
+Argc</CODE>
+ is the number of arguments, and the vector <CODE CLASS="Code">
+argv</CODE>
+ contains the arguments themselves, one argument per element. Arguments passed by reference map directly to these (<CODE CLASS="Code">
+void *</CODE>
+) pointers, and can be cast to the proper type and then dereferenced directly by the called function. Passing arguments by value is allowed, but since the values are passed in (<CODE CLASS="Code">
+void *</CODE>
+) pointers, there are some limitations and restrictions on what is possible:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905958">
+ </A>
+Types that are larger than a pointer cannot be passed by value, and CALL_EXTERNAL will issue an error if this is attempted.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905959">
+ </A>
+Integer values can be easily passed by value. IDL widens any of the integer types to the C int type and they are then converted to a (void *) pointer using a C cast operation.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905960">
+ </A>
+There is no C language-defined conversion between pointers and floating point types, so IDL copies the data for the value directly into the pointer element. Although such values can be retrieved by the called routine with the correct C casting operations, this is inconvenient and error prone. It is best to pass non-integer data by reference.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=905961">
+ </A>
+VMS LIB$CALLG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905962">
+ </A>
+The LIB$CALLG calling convention is built directly upon the VMS LIB$CALLG runtime library function. This function allows calling functions with a natural interface without requiring a special (<CODE CLASS="Code">
+argc</CODE>
+, <CODE CLASS="Code">
+argv</CODE>
+) convention. In Fortran, a typical routine might be declared:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=905963">
+ </A>
+INTEGER *4 FUNCTION XXX(P1, P2, ..., PN)</P>
+<P CLASS="Body">
+<A NAME="pgfId=905964">
+ </A>
+As with the Portable convention described above, the return type for the function must be one of the four types: <CODE CLASS="Code">
+int</CODE>
+, <CODE CLASS="Code">
+float</CODE>
+, <CODE CLASS="Code">
+double</CODE>
+, or <CODE CLASS="Code">
+char *</CODE>
+. It is possible to pass arguments of any data type by reference, but there are some limitations and restrictions on passing arguments by value. Unfortunately, the interface to LIB$CALLG was designed explicitly for the VAX hardware architecture, and does not provide sufficient information to the operating system to pass all data types by value properly on ALPHA Risc CPUs which pass arguments in registers as well as on the system stack. To the best of our knowledge, Digital Equipment Corporation has no plans to supply an updated version of LIB$CALLG that does not have these limitations. Therefore, this calling convention has the following restrictions on ALPHA/VMS:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905965">
+ </A>
+A single or double-precision floating-point argument can only be passed by value if it is one of the first six arguments to the function.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905966">
+ </A>
+Single- and double-precision complex arguments cannot be passed by value.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=905967">
+ </A>
+The LIB$CALLG calling convention is the default for VMS IDL because it was the original convention supported on that platform, and because it allows calling routines that do not adhere to the (<CODE CLASS="Code">
+argc</CODE>
+, <CODE CLASS="Code">
+argv</CODE>
+) style interface required by the portable convention. The Portable convention, described above, can be used under VMS by setting the PORTABLE keyword. If you are writing external code to be used under operating systems other than VMS, using the portable interface simplifies cross platform development.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905969">
+ </A>
+<A NAME="17114">
+ </A>
+VMS CALL_EXTERNAL and LIB$FIND_IMAGE_SYMBOL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905970">
+ </A>
+The VMS implementation of CALL_EXTERNAL uses the system runtime library function LIB$FIND_IMAGE_SYMBOL to perform the dynamic linking. This function has a complicated interface in which the name of the library to be linked is given in two separate arguments. We encourage VMS users wishing to use CALL_EXTERNAL to read and fully understand the documentation for LIB$FIND_IMAGE_SYMBOL in order to understand how it is used by IDL. The following discussion assumes that you have a copy of the LIB$FIND_IMAGE_SYMBOL documentation available to consult as you read.</P>
+<P CLASS="Body">
+<A NAME="pgfId=905971">
+ </A>
+LIB$FIND_IMAGE_SYMBOL uses an argument called <I CLASS="Italic">
+filename</I>
+ to specify the name of the sharable library or executable to be loaded. This means that none of the file specification punctuation characters (:, [, &lt;, ;, .) are allowed. Filename can also be a logical name, in which case its translated value is the name of the file to be loaded. The translation of such a logical name is allowed to contain additional file specification information. VMS uses this information to find the file to load, using SYS$SHARE as the default location if a location is not specified via a logical name. Alternatively, the user can supply the <I CLASS="Italic">
+image-name </I>
+argument, which is used as a &quot;default filespec&quot; to fill in the parts of the file specification not contained in filename. IDL uses the following rules, in the order listed, to determine how to call LIB$FIND_IMAGE_SYMBOL:</P>
+<OL>
+<LI CLASS="Numbered-1-Indent">
+<A NAME="pgfId=905972">
+ </A>
+If CALL_EXTERNAL is called with both the Image argument and DEFAULT keyword, Image is passed to LIB$FIND_IMAGE_SYMBOL as filename, and DEFAULT is passed as image-name. Both are passed directly to the function without any interpretation. </LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=905973">
+ </A>
+If DEFAULT is not present and Image does not contain a file specification character (<CODE CLASS="Code">
+:</CODE>
+, <CODE CLASS="Code">
+[</CODE>
+, <CODE CLASS="Code">
+&lt;</CODE>
+, <CODE CLASS="Code">
+;</CODE>
+, <CODE CLASS="Code">
+.</CODE>
+) then it is passed to LIB$CALL_IMAGE_SYMBOL as it's filename argument without any further interpretation.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=905974">
+ </A>
+If DEFAULT is not present and Image contains a file specification character, then IDL examines it and locates the filename part. The filename part is passed to LIB$FIND_IMAGE_SYMBOL as filename and the entire string from Image is passed as <I CLASS="Italic">
+image-name</I>
+.</LI>
+</OL>
+<P CLASS="Body">
+<A NAME="pgfId=905975">
+ </A>
+This means that although LIB$CALL_IMAGE_SYMBOL has a complicated interface, the CALL_EXTERNAL user can supply a simple file specification for Image and it will be properly loaded by IDL. Full control of LIB$CALL_IMAGE_SYMBOL is still available for those who require it.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905976">
+ </A>
+Important Changes Since IDL 5.0</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905977">
+ </A>
+The current version of CALL_EXTERNAL differs from IDL versions up to and including IDL 5.0 in a few important ways that are important to users moving code to the current version:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905978">
+ </A>
+Under Windows, CALL_EXTERNAL would pass IDL strings by value no matter how the ALL_VALUE or VALUE keywords were set. This was inconsistent with all the other platforms and created unnecessary confusion. IDL now uses these keywords to decide how to pass strings on all platforms. Windows users with existing code that expects strings to be passed by value without having specified it via one of these keywords will need to adjust their use of CALL_EXTERNAL or their code. </LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905979">
+ </A>
+VMS IDL through version 5.0 was only capable of using the LIB$CALLG calling convention. Newer versions can also use the portable convention.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=905980">
+ </A>
+Older versions of IDL would quietly pass by value arguments that are larger than a pointer without issuing an error when using the portable calling convention. Although this might work on some hardware, it is error prone and can cause IDL to crash. IDL now issues an error in this case. Programmers with existing code moving to a current version of IDL should change their code to pass such data by reference.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905981">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905982">
+ </A>
+See the IDL <EM CLASS="Emphasis">
+Advanced Development Guide</EM>
+ for examples using CALL_EXTERNAL.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=905983">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=905987">
+ </A>
+<A HREF="idleb.htm#83640" CLASS="XRef">
+LINKIMAGE</A>
+, <A HREF="idl1f3.htm#19939" CLASS="XRef">
+VAX_FLOAT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

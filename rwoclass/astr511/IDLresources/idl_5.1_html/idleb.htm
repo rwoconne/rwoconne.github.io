@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LINKIMAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlec.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlea.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=840842">
+ </A>
+<A NAME="83640">
+ </A>
+LINKIMAGE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=855570">
+ </A>
+<A NAME="marker=855565">
+ </A>
+LINKIMAGE merges routines <A NAME="marker=855566">
+ </A>
+written in other languages with IDL at run-time. Each call to LINKIMAGE defines a new system procedure or function by specifying the routine's name, the name of the file containing the code, and the entry point name. The name of your routine is added to IDL's internal system routine table, making it available in the same manner as any other IDL built-in routine. LINKIMAGE can also be used to add graphics device drivers.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=855580">
+ </A>
+Using LINKIMAGE requires intimate knowledge of the internals of IDL, and is not for use by the novice user. We recommend use of CALL_EXTERNAL, which has a simpler interface, instead of LINKIMAGE unless your application specifically requires it. To use LINKIMAGE, you should be familiar with the material in the IDL <EM CLASS="Emphasis">
+Advanced Development Guide</EM>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=855581">
+ </A>
+LINKIMAGE uses the dynamic linking interface supported by the operating system to do its work. Programmers should be familiar with the services supported by their system in order to better understand LINKIMAGE:</P>
+<UL>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=855582">
+ </A>
+Under VMS, the LIB$FIND_IMAGE_SYMBOL run-time library routine is used to activate your sharable image and merge it into the IDL address space, as described in VMS LINKIMAGE and LIB$FIND_IMAGE_SYMBOL, below.</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=855586">
+ </A>
+Under Unix, LINKIMAGE uses the <CODE CLASS="Code">
+dlopen()</CODE>
+ interface to the dynamic linker in all cases except for HP-UX (which uses <CODE CLASS="Code">
+shl_load()</CODE>
+) and AIX (which uses <CODE CLASS="Code">
+load()</CODE>
+).</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=855587">
+ </A>
+Under Windows, LINKIMAGE uses <CODE CLASS="Code">
+LoadLibrary()</CODE>
+ to load a 32-bit, Win32 DLL.</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=855588">
+ </A>
+On the PowerPC Macintosh, LINKIMAGE uses the Code Fragment Manager routines <CODE CLASS="Code">
+GetDiskFragment()</CODE>
+ and <CODE CLASS="Code">
+FindSymbol()</CODE>
+ to load shared libraries.</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=855589">
+ </A>
+Modules must be merged via LINKIMAGE before other procedures and functions that call them are compiled, or the compilation of those routines will fail. Note that because routines merged via LINKIMAGE are considered built-in routines by IDL, declaring the routine with the FORWARD_FUNCTION statement will not eliminate this restriction.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=855590">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=855591">
+ </A>
+LINKIMAGE, <I CLASS="Italics">
+Name, Image [, Type [, Entry]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=855592">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855593">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855597">
+ </A>
+A string containing the IDL name of the function, procedure or device routine which is to be merged. When loading a device driver, <I CLASS="Italics">
+Name</I>
+ contains the name of the global (also called &quot;universal&quot; under VMS) DEVICE_DEF structure in the driver. Upon successful loading of the routine, a new procedure or function with the given name will exist, or the new device driver will be loaded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855598">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855599">
+ </A>
+A string that holds the name of the file containing the code to be dynamically linked.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855602">
+ </A>
+Under VMS, the full interpretation of this argument is discussed in <A HREF="idleb.htm#31819" CLASS="XRef">
+VMS LINKIMAGE and LIB$FIND_IMAGE_SYMBOL</A>
+. Under other operating systems, this argument contains the full path specification of the dynamically loaded object file. See your system documentation on sharable libraries or DLLs for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855604">
+ </A>
+Type</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855605">
+ </A>
+An optional scalar integer parameter that contains 0 (zero) for a procedure, 1 (one) for a function, and 2 for a device driver. The keyword parameters DEVICE and FUNCT can also be used to indicate the type of routine being merged. The default value is 0, for procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855606">
+ </A>
+Entry</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855607">
+ </A>
+An optional string that contains the name of the symbol which is the entry point of the procedure or function. With some compilers or operating systems, this name may require the addition of leading or trailing characters. For example, some Unix C compilers add a leading underscore to the beginning of a function name, and some Unix FORTRAN compilers add a trailing underscore.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855608">
+ </A>
+If <EM CLASS="Emphasis">
+Entry</EM>
+ is not supplied, LINKIMAGE will provide a default name by converting the value suppled for <EM CLASS="Emphasis">
+Name</EM>
+ to lower case and adding any special characters (leading or trailing underscores) typical of the system.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=855609">
+ </A>
+Under Microsoft Windows operating systems, only <CODE CLASS="Code">
+cdecl</CODE>
+ functions can by used with LINKIMAGE. Attempting to use routines with other calling conventions will yield undefined results, including memory corruption or even IDL crashing.</LI>
+</UL>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=855610">
+ </A>
+The Windows operating system has two distinct system defined standards that govern how routines pass arguments: <CODE CLASS="Code">
+stdcall</CODE>
+, which is used by much of the operating system as well as languages such as Visual Basic, and <CODE CLASS="Code">
+cdecl</CODE>
+, which is used widely for programming in the C language. These standards differ in how and when arguments are pushed onto the system stack. The standard used by a given function is determined when the function is compiled, and can be controlled by the programmer. LINKIMAGE can only be used with <CODE CLASS="Code">
+cdecl</CODE>
+ functions. Unfortunately, there is no way for IDL to know which convention a given function uses, meaning that LINKIMAGE will quietly accept an entry point of the wrong type. The LINKIMAGE user is responsible for ensuring that Entry is a <CODE CLASS="Code">
+cdecl</CODE>
+ function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=855611">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855613">
+ </A>
+<A NAME="marker=855612">
+ </A>
+DEFAULT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855614">
+ </A>
+This keyword is ignored on non-VMS platforms. Under VMS, it is a string containing the default device, directory, file name, and file type information for the file that contains the sharable image. See <A HREF="idleb.htm#31819" CLASS="XRef">
+VMS LINKIMAGE and LIB$FIND_IMAGE_SYMBOL</A>
+ for additional information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855619">
+ </A>
+<A NAME="marker=855618">
+ </A>
+DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855620">
+ </A>
+Set this keyword to indicate that the module being loaded contains a device driver.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855622">
+ </A>
+<A NAME="marker=855621">
+ </A>
+FUNCT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855623">
+ </A>
+Set this keyword to indicate that the module being loaded contains a function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855625">
+ </A>
+<A NAME="marker=855624">
+ </A>
+KEYWORDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855626">
+ </A>
+Set this keyword to indicate that the procedure or function being loaded accepts keyword parameters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855628">
+ </A>
+<A NAME="marker=855627">
+ </A>
+MAX_ARGS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855629">
+ </A>
+Set this keyword equal to the maximum number of non-keyword arguments the procedure or function accepts. If this keyword is not present, the maximum number of parameters is not checked when the routine is called.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=855630">
+ </A>
+It is a very good idea to specify a value for MAX_ARGS. Passing the wrong number of arguments to an external routine may cause unexpected results, including causing IDL to crash. By forcing IDL to check the number of arguments before passing them to the linked routine, you will avoid parameter mismatch problems.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=855632">
+ </A>
+<A NAME="marker=855631">
+ </A>
+MIN_ARGS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855633">
+ </A>
+Set this keyword equal to the minimum number of non-keyword arguments accepted by the procedure or function.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=855635">
+ </A>
+<A NAME="31819">
+ </A>
+VMS LINKIMAGE and LIB$FIND_IMAGE_SYMBOL</H3>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=855636">
+ </A>
+Specifying The Library Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855637">
+ </A>
+The VMS implementation of LINKIMAGE uses the system runtime library function LIB$FIND_IMAGE_SYMBOL to perform the dynamic linking. This function has a complicated interface in which the name of the library to be linked is given in two separate arguments. We encourage VMS users wishing to use LINKIMAGE to read and fully understand the documentation for LIB$FIND_IMAGE_SYMBOL in order to understand how it is used by IDL. The following discussion assumes that you have a copy of the LIB$FIND_IMAGE_SYMBOL documentation available to consult as you read.</P>
+<P CLASS="Body">
+<A NAME="pgfId=855638">
+ </A>
+LIB$FIND_IMAGE_SYMBOL uses an argument called <I CLASS="Italic">
+filename</I>
+ to specify the name of the sharable library or executable to be loaded. Only the actual file name itself is allowed, meaning that none of the file specification punctuation characters (<CODE CLASS="Code">
+:</CODE>
+, <CODE CLASS="Code">
+[</CODE>
+, <CODE CLASS="Code">
+&lt;</CODE>
+, <CODE CLASS="Code">
+;</CODE>
+, <CODE CLASS="Code">
+.</CODE>
+) are allowed. Filename can also be a logical name, in which case its translated value is the name of the file to be loaded. The translation of such a logical name is allowed to contain additional file specification information. VMS uses this information to find the file to load, using SYS$SHARE as the default location if a location is not specified via a logical name. Alternatively, the user can also supply the optional <I CLASS="Italic">
+image-name</I>
+ argument, which is used as a &quot;default filespec&quot; to fill in the parts of the file specification not contained in filename. IDL uses the following rules, in the order listed, to determine how to call LIB$FIND_IMAGE_SYMBOL:</P>
+<OL>
+<LI CLASS="Numbered-1-Indent">
+<A NAME="pgfId=855639">
+ </A>
+If LINKIMAGE is called with both the Image argument and DEFAULT keyword, Image is passed to LIB$FIND_IMAGE_SYMBOL as filename, and DEFAULT is passed as image-name. Both are passed directly to the function without any interpretation. </LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=855640">
+ </A>
+If DEFAULT is not present and Image does not contain a file specification character (<CODE CLASS="Code">
+:</CODE>
+, <CODE CLASS="Code">
+[</CODE>
+, <CODE CLASS="Code">
+&lt;</CODE>
+, <CODE CLASS="Code">
+;</CODE>
+, <CODE CLASS="Code">
+.</CODE>
+) then it is passed to LIB$CALL_IMAGE_SYMBOL as it's filename argument without any further interpretation. </LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=855641">
+ </A>
+If DEFAULT is not present and Image contains a file specification character, then IDL examines it and locates the filename part. The filename part is passed to LIB$FIND_IMAGE_SYMBOL as filename and the entire string from Image is passed as image-name.</LI>
+</OL>
+<P CLASS="Body">
+<A NAME="pgfId=855642">
+ </A>
+This means that although LIB$CALL_IMAGE_SYMBOL has a complicated interface, the LINKIMAGE user can supply a simple file specification for Image and it will be properly loaded by IDL. Full control of LIB$CALL_IMAGE_SYMBOL is still available for those who require it.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=855643">
+ </A>
+Linking To The IDL Executable</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855644">
+ </A>
+LINKIMAGE routines invariably need to call functions supplied by the IDL program. In order to do this, you must link your sharable library with IDL. This requires you to supply the linker with the path (file specification) of the IDL program. The VMS linker in turn includes the path you specify in the resulting library. This can be inconvenient because a library linked this way can only run with the exact IDL executable that it was linked with. This means that you cannot move your IDL installation or keep multiple installations for use with your library. The standard VMS solution to this problem is to use a logical name instead of an actual path. For example, IDL users frequently use the logical name IDL_EXE to point at their IDL executable. To make this process easier and less trouble prone, IDL defines this logical name in the users process logical table when it starts running. Therefore, you can always link with the IDL_EXE logical and know that it will refer to the IDL executable you are actually running when the LINKIMAGE call is made.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=855645">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=855646">
+ </A>
+To add a procedure called MY_PROC, whose entry symbol is also named MY_PROC, and whose file is pointed to by the logical name MY_PROC_EXE:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=855647">
+ </A>
+LINKIMAGE, 'MY_PROC', 'MY_PROC_EXE'</P>
+<P CLASS="Body">
+<A NAME="pgfId=855648">
+ </A>
+Under VMS, to add a device driver contained in the file <CODE CLASS="Code">
+DRA0:[SMITH]XXDRIV.EXE</CODE>
+:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=855649">
+ </A>
+LINKIMAGE, 'XX_DEV', 'XXDRIV', $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=855650">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/DEVICE, DEFAULT='DRA0:[SMITH].EXE'</P>
+<P CLASS="Body">
+<A NAME="pgfId=855651">
+ </A>
+The global symbol <CODE CLASS="Code">
+XX_DEV</CODE>
+, which contains the device definition structure, must be defined as universal within the sharable image.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=855652">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=860821">
+ </A>
+<A HREF="idl24.htm#65173" CLASS="XRef">
+CALL_EXTERNAL</A>
+, <A HREF="idl1a9.htm#35911" CLASS="XRef">
+SPAWN</A>
+, and the IDL <EM CLASS="Emphasis">
+Advanced Development Guide</EM>
+. </P>
+</DIV>
+</BODY>
+</HTML>

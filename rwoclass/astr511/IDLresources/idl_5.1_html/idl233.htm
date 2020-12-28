@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The LJ Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl234.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl232.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144388">
+ </A>
+<A NAME="37431">
+ </A>
+The <A NAME="marker=142782">
+ </A>
+LJ Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=487498">
+ </A>
+Device Keywords Accepted by the LJ Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=487517">
+ </A>
+<A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#93306" CLASS="XRef">
+DEPTH</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#51831" CLASS="XRef">
+FLOYD</A>
+, <A HREF="idl22e.htm#41095" CLASS="XRef">
+INCHES</A>
+, <A HREF="idl22e.htm#10843" CLASS="XRef">
+LANDSCAPE</A>
+, <A HREF="idl22e.htm#17648" CLASS="XRef">
+ORDERED</A>
+, <A HREF="idl22e.htm#56239" CLASS="XRef">
+PIXELS</A>
+, <A HREF="idl22e.htm#29147" CLASS="XRef">
+PORTRAIT</A>
+, <A HREF="idl22e.htm#75184" CLASS="XRef">
+RESOLUTION</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#72570" CLASS="XRef">
+THRESHOLD</A>
+, <A HREF="idl22e.htm#37651" CLASS="XRef">
+XOFFSET</A>
+, <A HREF="idl22e.htm#19057" CLASS="XRef">
+XSIZE</A>
+, <A HREF="idl22e.htm#89972" CLASS="XRef">
+YOFFSET</A>
+, <A HREF="idl22e.htm#60607" CLASS="XRef">
+YSIZE</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144389">
+ </A>
+The LJ250 and LJ252 are color printers sold by Digital Equipment Corporation (DEC). To direct graphics output to a picture description file compatible with these printers, issue the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144390">
+ </A>
+SET_PLOT, 'LJ'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144391">
+ </A>
+This causes IDL to use the LJ driver for producing graphical output. To actually print the generated graphics, send the file to the printer using the normal printing facilities supplied by the operating system. Once the LJ driver is enabled via SET_PLOT, the DEVICE procedure is used to control its actions, as described below. The default settings for the LJ driver are given in <A HREF="idl233.htm#55547" CLASS="XRef">
+Default LJ Driver Settings</A>
+. Use the <EM CLASS="tt">
+HELP, /DEVICE</EM>
+ command to view the current font, file, and other options currently set for LJ output.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=144039">
+ </A>
+<A NAME="55547">
+ </A>
+Default LJ Driver Settings</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=144019">
+ </A>
+Feature</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=144014">
+ </A>
+Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144021">
+ </A>
+File</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144018">
+ </A>
+idl.lj</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144023">
+ </A>
+Mode</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144020">
+ </A>
+Portrait</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144025">
+ </A>
+Dither method</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144022">
+ </A>
+Floyd-Steinberg</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144027">
+ </A>
+Resolution</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144024">
+ </A>
+180 dpi</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144029">
+ </A>
+Number of planes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144026">
+ </A>
+1 (monochrome)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144031">
+ </A>
+Horizontal offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144028">
+ </A>
+1/2 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144033">
+ </A>
+Vertical offset</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144030">
+ </A>
+1 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144035">
+ </A>
+Width</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144032">
+ </A>
+7 in.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144037">
+ </A>
+Height</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144034">
+ </A>
+5 in.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144429">
+ </A>
+LJ Driver Strengths</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144430">
+ </A>
+The LJ250 produces color graphics at a low cost. It is capable of producing good quality monochrome output, and is also good at color vector graphics and simple color imaging using a small number of predefined solid colors.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144431">
+ </A>
+LJ Driver Limitations</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144432">
+ </A>
+The LJ250 is intended to be used as a low cost printer for business color graphics. Although it can be used to print color images, it is limited in its ability to produce satisfactory images of the sort commonly encountered in science and engineering. These limitations make it a poor choice for such work.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144433">
+ </A>
+Although color is specified via the usual RGB triples using the TVLCT procedure, the LJ250 is only capable of generating a fixed set of colors. The number of possible colors depends on the resolution in use. When producing 180 dpi graphics, only the colors given in the table below are possible. In 90 dpi mode, 256 colors are available.</LI>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=143793">
+ </A>
+<A NAME="86684">
+ </A>
+LJ250 Colors Available at 180 dpi</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143757">
+ </A>
+Color</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143750">
+ </A>
+Red Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143754">
+ </A>
+Green Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=143755">
+ </A>
+Blue Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143761">
+ </A>
+Black</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143756">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143758">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143759">
+ </A>
+10</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143765">
+ </A>
+Yellow</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143760">
+ </A>
+227</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143762">
+ </A>
+212</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143763">
+ </A>
+33</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143769">
+ </A>
+Magenta</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143764">
+ </A>
+135</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143766">
+ </A>
+13</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143767">
+ </A>
+64</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143773">
+ </A>
+Cyan</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143768">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143770">
+ </A>
+56</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143771">
+ </A>
+163</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143777">
+ </A>
+Red</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143772">
+ </A>
+135</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143774">
+ </A>
+20</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143775">
+ </A>
+36</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143781">
+ </A>
+Green</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143776">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143778">
+ </A>
+66</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143779">
+ </A>
+56</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143785">
+ </A>
+Blue</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143780">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143782">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143783">
+ </A>
+74</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143789">
+ </A>
+White</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143784">
+ </A>
+229</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143786">
+ </A>
+224</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=143787">
+ </A>
+217</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144434">
+ </A>
+If a color is specified that the printer cannot produce, it substitutes the closest color it can. However, the results of such substitutions can give unexpected results. The fixed set of possible colors means that the LOADCT procedure is of limited use with the LJ250. It also means that it is difficult to produce satisfactory grayscale images.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144435">
+ </A>
+The number of simultaneous colors possible on an output page is limited. Although images are specified in 8-bit bytes, the number of significant bits used ranges from 1 to 4 (as specified via the DEPTH keyword to the DEVICE procedure), allowing from 2 to 16 colors. Coupled with the above limitation on the colors that are possible, it is difficult to produce high quality image output.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144436">
+ </A>
+LJ Suggestions</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144437">
+ </A>
+The following suggestions are intended to help you get the most out of the LJ250, taking its limitations into account:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144438">
+ </A>
+Use monochrome output when possible. This results in considerably smaller output files, and provides most of the abilities the LJ250 handles well. When producing monochrome output, the LJ250 driver dithers images. This can often produce more satisfying gray scale output than possible using the printer in color mode.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144439">
+ </A>
+<A HREF="idl233.htm#86684" CLASS="XRef">
+LJ250 Colors Available at 180 dpi</A>
+ gives the RGB values to use when specifying colors at 180 dpi. To make more colors available, use 90 dpi resolution. The RGB values for the possible colors at 90 dpi are given in Table 7-6 of the <I CLASS="Italics">
+LJ250/LJ252 Companion Color Printer Programmer Reference Manual</I>
+. You can cause the printer to display the complete 256 color palette as follows: With the power off, press and hold the READY and DEC/PCL switches while momentarily pressing the power switch. Wait approximately 2 seconds and release the READY and DEC/PCL switches. The printer will take a few minutes to print all 256 colors. The complete display fits on a single page.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144440">
+ </A>
+Use the table in the programmers manual with this display to select the colors to use. Note that the RGB values in the programmers manual are scaled from 1 to 100, while IDL scales such values from 0 to 255. Therefore, multiply the values obtained from the manual by 2.55 to properly scale them for use within IDL.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144441">
+ </A>
+Unlike most devices, IDL does not initialize the LJ250 color map to a gray scale ramp because the printer cannot produce a satisfactory gray scale image. Instead, the default palettes given in Table 7-5 of the <I CLASS="Italics">
+LJ250/LJ252 Companion Color Printer Programmer Reference Manual</I>
+ are used. If you modify the color map, the LJLCT procedure can be used to reset the color table to these defaults. LJLCT examines the !D.N_COLORS system variable to determine the number of output planes in use, and then loads the appropriate default color map.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144442">
+ </A>
+When producing images, stick to images with small amounts of detail and large sections of uniform color. Complicated images do not reproduce well on this printer.</LI>
+</UL>
+</DIV>
+</BODY>
+</HTML>

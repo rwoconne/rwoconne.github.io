@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SMOOTH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678915">
+ </A>
+<A NAME="43465">
+ </A>
+SMOOTH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=815442">
+ </A>
+The <A NAME="marker=673902">
+ </A>
+SMOOTH <A NAME="marker=50056">
+ </A>
+function returns a copy of <I CLASS="Italic">
+Array</I>
+ <A NAME="marker=810998">
+ </A>
+smoothed with a <A NAME="marker=673903">
+ </A>
+boxcar average of the specified width. The result has the same type and dimensions as <I CLASS="Italic">
+Array</I>
+. The algorithm used by SMOOTH is:</P>
+<DIV>
+<CENTER><IMG SRC="idl_100.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835204">
+ </A>
+where <I CLASS="Italic">
+N</I>
+ is the number of elements in A.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678916">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678917">
+ </A>
+Result = SMOOTH(<I CLASS="Italic">
+Array, Width</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678918">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678919">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678920">
+ </A>
+The array to be smoothed. <I CLASS="Italic">
+Array</I>
+ can have any number of dimensions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678921">
+ </A>
+Width</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678922">
+ </A>
+The width of the smoothing window, in each dimension. <I CLASS="Italic">
+Width</I>
+ should be an odd number, smaller than the smallest dimension of <I CLASS="Italic">
+Array</I>
+. If <I CLASS="Italic">
+Width</I>
+ is an even number, one plus the given value of <I CLASS="Italic">
+Width</I>
+ is used. For example, if you use a <EM CLASS="Emphasis">
+Width</EM>
+ of 3 to smooth a two-dimensional array, the smoothing window will contain nine elements (including the element being smoothed). The value of <I CLASS="Italic">
+Width</I>
+ does not affect the running time of SMOOTH to a great extent.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=47235">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=113915">
+ </A>
+<A NAME="marker=114076">
+ </A>
+EDGE_TRUNCATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=113916">
+ </A>
+Set this keyword to apply the smoothing function to all points. If the neighborhood around a point includes a point outside the array, the nearest edge point is used to compute the smoothed result. If EDGE_TRUNCATE is not set, the end points are copied from the original array to the result with no smoothing.</P>
+<P CLASS="Body">
+<A NAME="pgfId=113949">
+ </A>
+For example, when smoothing an <EM CLASS="Emphasis">
+n</EM>
+-element vector with a three point wide smoothing window, the first point of the result R<SUB CLASS="Subscript">
+0</SUB>
+ is equal to A<SUB CLASS="Subscript">
+0</SUB>
+ if EDGE_TRUNCATE is not set, but is equal to (A<SUB CLASS="Subscript">
+0</SUB>
++A<SUB CLASS="Subscript">
+0</SUB>
++A<SUB CLASS="Subscript">
+1</SUB>
+)/3 if the keyword is set. In the same manner, point R<SUB CLASS="Subscript">
+n-1</SUB>
+ is set to A<SUB CLASS="Subscript">
+n-1</SUB>
+ if EDGE_TRUNCATE is not set, or to (A<SUB CLASS="Subscript">
+n-2</SUB>
++A<SUB CLASS="Subscript">
+n-1</SUB>
++A<SUB CLASS="Subscript">
+n-1</SUB>
+)/3 if it is.</P>
+<P CLASS="Body">
+<A NAME="pgfId=114075">
+ </A>
+Points not within a distance of <EM CLASS="Emphasis">
+Width</EM>
+/2 from an edge are not affected by this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47239">
+ </A>
+<A NAME="marker=47238">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843230">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678923">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678924">
+ </A>
+Create and display a simple image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678925">
+ </A>
+D = SIN(DIST(256)/3) &amp; TVSCL, D</P>
+<P CLASS="Body">
+<A NAME="pgfId=678926">
+ </A>
+Now display the same dataset smoothed with a width of 9 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678927">
+ </A>
+TVSCL, SMOOTH(D, 9), 256, 256</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820995">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820996">
+ </A>
+<A HREF="idl7c.htm#25464" CLASS="XRef">
+DIGITAL_FILTER</A>
+, <A HREF="idle7.htm#62710" CLASS="XRef">
+LEEFILT</A>
+, <A HREF="idl115.htm#23439" CLASS="XRef">
+MEDIAN</A>
+, <A HREF="idl1e7.htm#96780" CLASS="XRef">
+TS_DIFF</A>
+, <A HREF="idl1e8.htm#74523" CLASS="XRef">
+TS_FCAST</A>
+, <A HREF="idl1e9.htm#99629" CLASS="XRef">
+TS_SMOOTH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

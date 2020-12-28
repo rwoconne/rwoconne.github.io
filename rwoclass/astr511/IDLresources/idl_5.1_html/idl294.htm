@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFSD_STARTSLICE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl295.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl293.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998227">
+ </A>
+<A NAME="49580">
+ </A>
+HDF_DFSD_STARTSLICE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998231">
+ </A>
+The <A NAME="marker=998229">
+ </A>
+HDF_DFSD_STARTSLICE procedure prepares the system to write a <A NAME="marker=998230">
+ </A>
+slice of data to a Hierarchical Data Format file. HDF_DFSD_SETINFO must be called before HDF_DFSD_STARTSLICE to set the dimensions and attributes of the slice. </P>
+<P CLASS="Body">
+<A NAME="pgfId=998232">
+ </A>
+This procedure must be called before calling HDF_DFSD_PUTSLICE, and must be terminated with a call to HDF_DFSD_ENDSLICE.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998233">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998234">
+ </A>
+HDF_DFSD_STARTSLICE, <I CLASS="Italics">
+Filename</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998235">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998236">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998237">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998238">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998239">
+ </A>
+fid=HDF_OPEN('test.hdf',/ALL)	<EM CLASS="Comment">;
+Open an HDF file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998240">
+ </A>
+Create two datasets:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998241">
+ </A>
+slicedata1=FINDGEN(5,10,15)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998242">
+ </A>
+slicedata2=DINDGEN(4,5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=998243">
+ </A>
+Use HDF_DFSD_SETINFO to set the dimensions, then add the first slice:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998244">
+ </A>
+HDF_DFSD_SETINFO,LABEL='label1', DIMS=[5,10,15], /FLOAT</P>
+<P CLASS="Code">
+<A NAME="pgfId=998245">
+ </A>
+HDF_DFSD_STARTSLICE,'test.hdf'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998246">
+ </A>
+HDF_DFSD_PUTSLICE, slicedata1</P>
+<P CLASS="Code">
+<A NAME="pgfId=998247">
+ </A>
+HDF_DFSD_ENDSLICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=998248">
+ </A>
+Repeat the process for the second slice:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998249">
+ </A>
+HDF_DFSD_SETINFO, LABEL='label2', DIMS=[4,5], /DOUBLE</P>
+<P CLASS="Code">
+<A NAME="pgfId=998250">
+ </A>
+HDF_DFSD_STARTSLICE,'test.hdf'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998251">
+ </A>
+HDF_DFSD_PUTSLICE, slicedata2</P>
+<P CLASS="Code">
+<A NAME="pgfId=998252">
+ </A>
+HDF_DFSD_ENDSLICE</P>
+<P CLASS="Code">
+<A NAME="pgfId=998253">
+ </A>
+HDF_DFSD_SETINFO, /RESTART</P>
+<P CLASS="Body">
+<A NAME="pgfId=998254">
+ </A>
+Use HDF_DFSD_GETINFO to advance slices and set slice attributes, then get the slices:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998255">
+ </A>
+HDF_DFSD_GETINFO, name, DIMS=dims, TYPE=type</P>
+<P CLASS="Code">
+<A NAME="pgfId=998256">
+ </A>
+HDF_DFSD_GETSLICE, out1	</P>
+<P CLASS="Code">
+<A NAME="pgfId=998257">
+ </A>
+HDF_DFSD_GETINFO, name, DIMS=dims, TYPE=type</P>
+<P CLASS="Code">
+<A NAME="pgfId=998258">
+ </A>
+HDF_DFSD_GETSLICE, out2</P>
+<P CLASS="Body">
+<A NAME="pgfId=998259">
+ </A>
+Close the HDF file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998260">
+ </A>
+HDF_CLOSE('test.hdf')</P>
+<P CLASS="Body">
+<A NAME="pgfId=998261">
+ </A>
+Check the first slice to see if everything worked:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998262">
+ </A>
+IF TOTAL(out1 EQ slicedata1) EQ N_ELEMENTS(out1) THEN $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998263">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 'SLICE 1 WRITTEN/READ CORRECTLY' ELSE $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998264">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 'SLICE 1 WRITTEN/READ INCORRECTLY'</P>
+<P CLASS="Body">
+<A NAME="pgfId=998265">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998266">
+ </A>
+SLICE 1 WRITTEN/READ CORRECTLY</P>
+<P CLASS="Body">
+<A NAME="pgfId=998267">
+ </A>
+Check the second slice to see if everything worked:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998268">
+ </A>
+IF TOTAL(out2 EQ slicedata2) EQ N_ELEMENTS(out2) THEN $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998269">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 'SLICE 2 WRITTEN/READ CORRECTLY' ELSE $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998270">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 'SLICE 2 WRITTEN/READ INCORRECTLY'</P>
+<P CLASS="Body">
+<A NAME="pgfId=998271">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998272">
+ </A>
+SLICE 2 WRITTEN/READ CORRECTLY</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998273">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998283">
+ </A>
+<A HREF="idl28d.htm#65821" CLASS="XRef">
+HDF_DFSD_ENDSLICE</A>
+, <A HREF="idl28f.htm#18154" CLASS="XRef">
+HDF_DFSD_GETINFO</A>
+, <A HREF="idl290.htm#64800" CLASS="XRef">
+HDF_DFSD_GETSLICE</A>
+, <A HREF="idl291.htm#19339" CLASS="XRef">
+HDF_DFSD_PUTSLICE</A>
+, <A HREF="idl293.htm#56658" CLASS="XRef">
+HDF_DFSD_SETINFO</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

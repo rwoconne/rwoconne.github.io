@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXTRAC</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl99.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl97.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=36106">
+ </A>
+<A NAME="72615">
+ </A>
+EXTRAC</H2>
+<P CLASS="Body">
+<A NAME="pgfId=48898">
+ </A>
+The <A NAME="marker=48896">
+ </A>
+EXTRAC function <A NAME="marker=48897">
+ </A>
+returns as its result any rectangular sub-matrix or portion of the parameter array. Note that it is usually more efficient to use the array subscript ranges (the &quot;:&quot; operator; see <A HREF="..html#67346" CLASS="XRef">
+Subscript Ranges</A>
+) to perform such operations. The main advantage to EXTRAC is that, when parts of the specified subsection lie outside the bounds of the array, zeros are entered into these outlying elements.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758764">
+ </A>
+EXTRAC was originally a built-in system procedure in the PDP-11 version of IDL, and was retained in that form in the original VAX/VMS IDL for compatibility. Most applications of the EXTRAC function are more concisely written using subscript ranges (e.g., X(10:15)). EXTRAC has been rewritten as a library function that provides the same interface as the previous versions.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=758765">
+ </A>
+If you know that the subarray will never lie beyond the edges of the array, it is more efficient to use array subscript ranges (the &quot;:&quot; operator) to extract the data instead of EXTRAC.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=758766">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+extrac.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758767">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758768">
+ </A>
+Result = EXTRAC(<I CLASS="Italics">
+Array, C</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italics">
+, C</I>
+<SUB CLASS="Subscript">
+2</SUB>
+<I CLASS="Italics">
+, ..., C</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<I CLASS="Italics">
+, S</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italics">
+, S</I>
+<SUB CLASS="Subscript">
+2</SUB>
+<I CLASS="Italics">
+, ..., S</I>
+<SUB CLASS="Subscript">
+n</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758769">
+ </A>
+Arguments </H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758770">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758771">
+ </A>
+The array from which the subarray will be copied.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758772">
+ </A>
+C<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758773">
+ </A>
+The starting subscript in <I CLASS="Italics">
+Array</I>
+ for the subarray. There should be one <I CLASS="Italics">
+C</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ for each dimension of <I CLASS="Italics">
+Array</I>
+. These arguments must be integers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758774">
+ </A>
+S<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758775">
+ </A>
+The size of each dimension. The result will have dimensions of (<I CLASS="Italics">
+S</I>
+<SUB CLASS="Subscript">
+1</SUB>
+, <I CLASS="Italics">
+S</I>
+<SUB CLASS="Subscript">
+2</SUB>
+, ..., <I CLASS="Italics">
+S</I>
+<SUB CLASS="Subscript">
+n</SUB>
+). There should be one <I CLASS="Italics">
+S</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ for each dimension of <I CLASS="Italics">
+Array</I>
+. These arguments must be non-negative.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758776">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758777">
+ </A>
+Extracting elements from a vector:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758778">
+ </A>
+A = FINDGEN(1000)	<EM CLASS="Comment">;
+Create a 1000 element floating-point vector with each element set to the value of its subscript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758779">
+ </A>
+B = EXTRAC(A, 200, 300)	<EM CLASS="Comment">;
+Extract 300 points starting at A[200] and extending to A[499].</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=829104">
+ </A>
+In the next example, the first 49 points extracted-- <CODE CLASS="Code">
+B[0]</CODE>
+ to <CODE CLASS="Code">
+B[49]</CODE>
+--lie outside the bounds of the vector and are set to 0. <CODE CLASS="Code">
+B[50]</CODE>
+ is gets the value of <CODE CLASS="Code">
+A[0]</CODE>
+, <CODE CLASS="Code">
+B[51]</CODE>
+ gets the value of <CODE CLASS="Code">
+A[1]</CODE>
+which is 1. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758781">
+ </A>
+A = FINDGEN(1000)	<EM CLASS="Comment">;
+Create a 1000 element vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758782">
+ </A>
+B = EXTRAC(A, -50, 100)	<EM CLASS="Comment">;
+Extract 50 elements, 49 of which lie outside the bounds of A.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758783">
+ </A>
+The following commands illustrate the use of EXTRAC with multi-dimensional arrays. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758784">
+ </A>
+A = INTARR(64,64)	<EM CLASS="Comment">;
+Make a 64 by 64 array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758785">
+ </A>
+B = EXTRAC(A, 20, 30, 32, 32)	<EM CLASS="Comment">;
+Extract a 32 by 32 portion starting at A(20,30).</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758786">
+ </A>
+As suggested in the discussion above, a better way to perform the same operation as the previous line is:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758787">
+ </A>
+B = A(20:51, 30:61)	<EM CLASS="Comment">;
+Use the array subscript operator instead of EXTRAC.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758788">
+ </A>
+Extract the 20th column and 32nd row of A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758789">
+ </A>
+B = EXTRAC(A, 19, 0, 1, 64)	<EM CLASS="Comment">;
+Extract 20th column of A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758790">
+ </A>
+B = EXTRAC(A, 0, 31, 64, 1)	<EM CLASS="Comment">;
+Extract 32nd row of A.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758791">
+ </A>
+Take a 32 BY 32 matrix from A starting at A(40,50):</P>
+<P CLASS="Code">
+<A NAME="pgfId=758792">
+ </A>
+B = EXTRAC(A, 40, 50, 32, 32)	<EM CLASS="Comment">;
+Note that those points beyond the boundaries of A are set to 0.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795844">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795845">
+ </A>
+<A HREF="..html#67346" CLASS="XRef">
+Subscript Ranges</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> T_PDF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1cf.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1cd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54241">
+ </A>
+<A NAME="52203">
+ </A>
+T_PDF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54246">
+ </A>
+The <A NAME="marker=54243">
+ </A>
+T_PDF <A NAME="marker=54244">
+ </A>
+function computes the probability <EM CLASS="Emphasis">
+P</EM>
+ that, in a <A NAME="marker=54245">
+ </A>
+Student's t distribution with <EM CLASS="Emphasis">
+Df</EM>
+ degrees of freedom, a random variable <EM CLASS="Emphasis">
+X</EM>
+ is less than or equal to a user-specified cutoff value <EM CLASS="Emphasis">
+V</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54247">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+t_pdf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54248">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54249">
+ </A>
+Result = T_PDF(<EM CLASS="Emphasis">
+V, Df</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54250">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54251">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54252">
+ </A>
+An integer, single-, or double-precision floating-point scalar that specifies the cutoff value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54253">
+ </A>
+Df</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54254">
+ </A>
+A positive integer, single- or double-precision floating-point scalar that specifies the number of degrees of freedom of the Student's t distribution.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54255">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54256">
+ </A>
+Use the following command to compute the probability that a random variable X, from the Student's t distribution with 15 degrees of freedom, is less than or equal to 0.691. The result should be 0.749940.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54257">
+ </A>
+result = T_PDF(0.691, 15)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54258">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54259">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54260">
+ </A>
+0.749940</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54261">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65648">
+ </A>
+<A HREF="idl17.htm#90297" CLASS="XRef">
+BINOMIAL</A>
+, <A HREF="idl2e.htm#33316" CLASS="XRef">
+CHISQR_PDF</A>
+, <A HREF="idl9b.htm#50751" CLASS="XRef">
+F_PDF</A>
+, <A HREF="idlb4.htm#29831" CLASS="XRef">
+GAUSS_PDF</A>
+, <A HREF="idl1cd.htm#27587" CLASS="XRef">
+T_CVF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

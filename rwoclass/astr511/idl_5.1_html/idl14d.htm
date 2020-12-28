@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PROFILER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl14e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl14c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=900496">
+ </A>
+<A NAME="36237">
+ </A>
+PROFILER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=900497">
+ </A>
+The <A NAME="marker=948804">
+ </A>
+PROFILER procedure allows you to access the IDL Code Profiler. The IDL Code Profiler helps you analyze the performance of your applications. You can easily monitor the calling frequency and execution time for procedures and functions.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900152">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=900179">
+ </A>
+PROFILER <I CLASS="Italic">
+[, Module]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900153">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900188">
+ </A>
+Module</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900190">
+ </A>
+The program to which changes in profiling will be applied. If <I CLASS="Italic">
+Module</I>
+ is not specified, profiling changes will be applied to all currently-compiled programs. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=900296">
+ </A>
+The<I CLASS="Italic">
+ Module</I>
+ is often named with respect to the file in which it is stored. For example, the file <CODE CLASS="Code">
+build_it.pro</CODE>
+ may contain the module, <CODE CLASS="Code">
+build_it</CODE>
+. If you specify the file name, you will incur a syntax error.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900154">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900205">
+ </A>
+<A NAME="marker=900248">
+ </A>
+CLEAR </H4>
+<P CLASS="Body">
+<A NAME="pgfId=900206">
+ </A>
+Set this keyword to disable profiling of <I CLASS="Italic">
+Module</I>
+ or of all compiled modules if <I CLASS="Italic">
+Module</I>
+ is not specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900155">
+ </A>
+<A NAME="marker=900249">
+ </A>
+OUTPUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900193">
+ </A>
+Set this keyword to a specified variable in which to store the results of the REPORT keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900194">
+ </A>
+<A NAME="marker=900250">
+ </A>
+REPORT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900198">
+ </A>
+Set this keyword to report the results of profiling. If you enter a program at the command line, the PROFILER procedure will report the status of all the specified modules used either since the beginning of the IDL session, or since the PROFILER was reset.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900195">
+ </A>
+<A NAME="marker=900251">
+ </A>
+RESET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900199">
+ </A>
+Set this keyword to clear the results of profiling.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900159">
+ </A>
+<A NAME="marker=900252">
+ </A>
+SYSTEM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900200">
+ </A>
+Set this keyword to profile IDL system procedures and functions. By default, only user-written or library files, which have been compiled, are profiled.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900261">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=900403">
+ </A>
+PROFILER, /SYSTEM	<EM CLASS="Comment">;
+Include IDL system procedures and functions when profiling.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=900321">
+ </A>
+A= DIST(500)	<EM CLASS="Comment">;
+Create a dataset using the library function DIST. Note that DIST is immediately compiled.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=900322">
+ </A>
+TV, A	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=900323">
+ </A>
+PROFILER, /REPORT	<EM CLASS="Comment">;
+Retrieve the profiling results.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=900324">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900325">
+ </A>
+Module          Type  Count     Only(s)   Avg.(s)     Time(s)   Avg.(s)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900327">
+ </A>
+FINDGEN         &nbsp;(S)       1    0.000239  0.000239    0.000239  0.000239</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900356">
+ </A>
+FLTARR          &nbsp;(S)       1    0.010171  0.010171    0.010171  0.010171</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900357">
+ </A>
+N_ELEMENTS &nbsp;&nbsp;&nbsp;&nbsp;(S)       1    0.000104  0.000104    0.000104  0.000104</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900358">
+ </A>
+ON_ERROR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(S)       1    0.000178  0.000178    0.000178  0.000178</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900331">
+ </A>
+SQRT            &nbsp;&nbsp;(S)     251    0.099001  0.000394    0.099001  0.000394</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=900332">
+ </A>
+TV              &nbsp;&nbsp;(S)       1    2.030000  2.030000    2.030000  2.030000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=900333">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=900458">
+ </A>
+&quot;Debugging in IDL&quot;, <A HREF="..html#40840" CLASS="XRef">
+Programming Tools</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

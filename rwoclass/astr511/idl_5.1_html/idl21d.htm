@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XDISPLAYFILE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl21e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl21c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762731">
+ </A>
+<A NAME="58439">
+ </A>
+XDISPLAYFILE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762734">
+ </A>
+The <A NAME="marker=762732">
+ </A>
+XDISPLAYFILE procedure displays <A NAME="marker=762733">
+ </A>
+an ASCII text file using a widget interface.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762735">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xdisplayfile.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762736">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762737">
+ </A>
+XDISPLAYFILE, <I CLASS="Italic">
+Filename</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762738">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762739">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762740">
+ </A>
+A scalar string that contains the filename of the file to display. <I CLASS="Italic">
+Filename</I>
+ can include a path to that file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762741">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=937490">
+ </A>
+<A NAME="marker=937489">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937491">
+ </A>
+Set this keyword to have XMANAGER <I CLASS="Italic">
+block</I>
+ when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause <I CLASS="Italic">
+all</I>
+ widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to <A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762743">
+ </A>
+<A NAME="marker=762742">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934189">
+ </A>
+A string containing the name of the font to use. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762749">
+ </A>
+<A NAME="marker=762748">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762750">
+ </A>
+The widget ID of the widget that calls XDISPLAYFILE. If this keyword is specified, the death of the group leader results in the death of XDISPLAYFILE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762752">
+ </A>
+<A NAME="marker=762751">
+ </A>
+HEIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=933304">
+ </A>
+The number of text lines that the widget should display at one time. If this keyword is not specified, 24 lines is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=933305">
+ </A>
+<A NAME="marker=933307">
+ </A>
+MODAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=933306">
+ </A>
+Set this keyword to create the XDISPLAYFILE dialog as a modal dialog. Setting the MODAL keyword allows you to call XDISPLAYFILE from another modal dialog.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762755">
+ </A>
+<A NAME="marker=762754">
+ </A>
+TEXT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762756">
+ </A>
+A string or string array to be displayed in the widget instead of the contents of a file. If this keyword is present, the <I CLASS="Italic">
+Filename</I>
+ input argument is ignored (but is still required). String arrays are displayed one element per line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762758">
+ </A>
+<A NAME="marker=762757">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762759">
+ </A>
+A string to use as the widget title rather than the file name or &quot;XDisplayFile&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762761">
+ </A>
+<A NAME="marker=762760">
+ </A>
+WIDTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762762">
+ </A>
+The width of the widget display in characters. If this keyword is not specified, 80 characters is the default.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820214">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820215">
+ </A>
+<A HREF="idl14a.htm#89996" CLASS="XRef">
+PRINT/PRINTF</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

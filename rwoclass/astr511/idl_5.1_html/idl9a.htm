@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> F_CVF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl99.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=841644">
+ </A>
+<A NAME="15114">
+ </A>
+F_CVF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=841650">
+ </A>
+The <A NAME="marker=841646">
+ </A>
+F_CVF <A NAME="marker=841647">
+ </A>
+function computes the <A NAME="marker=841648">
+ </A>
+cutoff value <EM CLASS="Emphasis">
+V</EM>
+ in an <A NAME="marker=841649">
+ </A>
+F distribution with <EM CLASS="Emphasis">
+Dfn</EM>
+ and<EM CLASS="Emphasis">
+ Dfd </EM>
+degrees of freedom such that the probability that a random variable <EM CLASS="Emphasis">
+X</EM>
+ is greater than <EM CLASS="Emphasis">
+V</EM>
+ is equal to a user-supplied probability <EM CLASS="Emphasis">
+P</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53403">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+f_cvf.pro </CODE>
+in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53404">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53405">
+ </A>
+Result = F_CVF(<EM CLASS="Emphasis">
+P, Dfn, Dfd</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53406">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53407">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53408">
+ </A>
+A non-negative single- or double-precision floating-point scalar, in the interval [0.0, 1.0], that specifies the probability of occurrence or success.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53409">
+ </A>
+Dfn</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53410">
+ </A>
+A positive integer, single- or double-precision floating-point scalar that specifies the number of degrees of freedom of the F distribution numerator.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53411">
+ </A>
+Dfd</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53412">
+ </A>
+A positive integer, single- or double-precision floating-point scalar that specifies the number of degrees of freedom of the F distribution denominator.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53413">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53414">
+ </A>
+Use the following command to compute the cutoff value in an F distribution with ten degrees of freedom in the numerator and six degrees of freedom in the denominator such that the probability that a random variable X is greater than the cutoff value is 0.01. The result should be 7.87413.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53415">
+ </A>
+PRINT, F_CVF(0.01, 10, 6)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53416">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53417">
+ </A>
+7.87413</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53418">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65720">
+ </A>
+<A HREF="idl2d.htm#11696" CLASS="XRef">
+CHISQR_CVF</A>
+, <A HREF="idl9b.htm#50751" CLASS="XRef">
+F_PDF</A>
+, <A HREF="idlb3.htm#95076" CLASS="XRef">
+GAUSS_CVF</A>
+, <A HREF="idl1cd.htm#27587" CLASS="XRef">
+T_CVF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

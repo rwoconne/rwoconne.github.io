@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IBETA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlce.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlcc.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53552">
+ </A>
+<A NAME="61717">
+ </A>
+IBETA</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53560">
+ </A>
+The <A NAME="marker=53554">
+ </A>
+IBETA <A NAME="marker=53555">
+ </A>
+function computes the incomplete <A NAME="marker=53556">
+ </A>
+beta function.</P>
+<DIV>
+<CENTER><IMG SRC="idl_53.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=828328">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ibeta.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53565">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53566">
+ </A>
+Result = IBETA(<EM CLASS="Emphasis">
+A, B, X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53567">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53568">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53569">
+ </A>
+A positive integer, single-, or double-precision floating-point scalar that specifies the parametric exponent of the integrand.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53570">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53571">
+ </A>
+A positive integer, single-, or double-precision floating-point scalar that specifies the parametric exponent of the integrand.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53572">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53573">
+ </A>
+An integer, single-, or double-precision floating-point scalar, in the interval [0, 1], that specifies the upper limit of integration.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53574">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53575">
+ </A>
+Compute the incomplete beta function for the corresponding elements of A, B, and X.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53576">
+ </A>
+Define an array of parametric exponents.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53577">
+ </A>
+A = [0.5, 0.5, 1.0, 5.0, 10.0, 20.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53578">
+ </A>
+B = [0.5, 0.5, 0.5, 5.0, 5.0, 10.0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53579">
+ </A>
+Define the upper limits of integration.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53580">
+ </A>
+X = [0.01, 0.1, 0.1, 0.5, 1.0, 0.8]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53581">
+ </A>
+Allocate an array to store the results.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53582">
+ </A>
+result = FLTARR(N_ELEMENTS(A))</P>
+<P CLASS="Body">
+<A NAME="pgfId=53583">
+ </A>
+Compute the incomplete beta functions. Note that the result for each element in the input arrays must be computed individually.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53584">
+ </A>
+FOR K = 0, N_ELEMENTS(A)-1 DO $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53585">
+ </A>
+&nbsp;&nbsp;result[K] = IBETA(A[K], B[K], X[K])</P>
+<P CLASS="Code">
+<A NAME="pgfId=53586">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=53587">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53588">
+ </A>
+[0.0637686, 0.204833, 0.0513167, 0.500000, 1.00000, 0.950736]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53589">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853751">
+ </A>
+<A HREF="idl13.htm#73826" CLASS="XRef">
+BETA</A>
+, <A HREF="idlb1.htm#93572" CLASS="XRef">
+GAMMA</A>
+, <A HREF="idld0.htm#62754" CLASS="XRef">
+IGAMMA</A>
+, <A HREF="idlff.htm#16807" CLASS="XRef">
+LNGAMMA</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

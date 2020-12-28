@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_ORIENT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl61.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755623">
+ </A>
+<A NAME="77210">
+ </A>
+CW_ORIENT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755626">
+ </A>
+The <A NAME="marker=755624">
+ </A>
+CW_ORIENT function creates a compound <A NAME="marker=755625">
+ </A>
+widget that provides a means to interactively adjust the <A NAME="marker=788240">
+ </A>
+three-dimensional drawing transformation and resets the <A NAME="marker=755628">
+ </A>
+!P.T system variable field to reflect the changed orientation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796139">
+ </A>
+The returned value of this function is the widget ID of the newly-created orientation-adjustment widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755629">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_orient.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755630">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755631">
+ </A>
+Result = CW_ORIENT(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755632">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755633">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755634">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755635">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755637">
+ </A>
+<A NAME="marker=755636">
+ </A>
+AX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755638">
+ </A>
+The initial rotation in the X direction. The default is 30 degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755640">
+ </A>
+<A NAME="marker=755639">
+ </A>
+AZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755641">
+ </A>
+The initial rotation in the Z direction. The default is 30 degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755643">
+ </A>
+<A NAME="marker=755642">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755644">
+ </A>
+Set this keyword to draw a frame around the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755646">
+ </A>
+<A NAME="marker=755645">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755647">
+ </A>
+The title of the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755649">
+ </A>
+<A NAME="marker=755648">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755650">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755652">
+ </A>
+<A NAME="marker=755651">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755653">
+ </A>
+Determines the width of the widget. The default is 100.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755655">
+ </A>
+<A NAME="marker=755654">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755656">
+ </A>
+Determines the height of the widget. The default is 100.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837832">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837833">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837847">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755657">
+ </A>
+Widget Events Returned by the CW_ORIENT Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755658">
+ </A>
+CW_ORIENT only returns events when the three dimensional drawing transformation has been altered. The !P.T system variable field is automatically updated to reflect the new orientation.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755660">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818998">
+ </A>
+<A HREF="idl57.htm#34446" CLASS="XRef">
+CW_ARCBALL</A>
+, <A HREF="idl1cf.htm#36880" CLASS="XRef">
+T3D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

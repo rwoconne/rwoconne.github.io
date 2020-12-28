@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl94.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl92.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676771">
+ </A>
+<A NAME="65438">
+ </A>
+EXIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676772">
+ </A>
+The <A NAME="marker=672970">
+ </A>
+EXIT procedure <A NAME="marker=672971">
+ </A>
+quits IDL and exits back to the operating system. All <A NAME="marker=672975">
+ </A>
+buffers are flushed and open files are closed. The values of all variables that were not saved are lost.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676773">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676774">
+ </A>
+EXIT</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=126977">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126978">
+ </A>
+NO_CONFIRM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=127068">
+ </A>
+Set this keyword to suppress any confirmation dialog that would otherwise be displayed in a GUI version of IDL such as the IDL Development Environment.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=126983">
+ </A>
+STATUS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=127069">
+ </A>
+Set this keyword equal to an exit status code that will be returned when IDL exits. For example, on a Unix system using the Bourne shell:</P>
+<P CLASS="Code">
+<A NAME="pgfId=126986">
+ </A>
+$ idl	<EM CLASS="Comment">;
+Start IDL</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=126987">
+ </A>
+IDL&gt; exit, status=45	<EM CLASS="Comment">;
+Exit, specifying exit status 45</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=126988">
+ </A>
+$ echo $?	<EM CLASS="Comment">;
+Display last exit status code</EM>
+</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=126989">
+ </A>
+45</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823133">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823134">
+ </A>
+<A HREF="idl33.htm#57858" CLASS="XRef">
+CLOSE</A>
+, <A HREF="idla8.htm#65872" CLASS="XRef">
+FLUSH</A>
+, <A HREF="idl1b6.htm#29047" CLASS="XRef">
+STOP</A>
+, <A HREF="idl1fa.htm#28263" CLASS="XRef">
+WAIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

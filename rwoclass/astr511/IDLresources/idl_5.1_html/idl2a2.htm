@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_DIMGET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998741">
+ </A>
+<A NAME="47376">
+ </A>
+HDF_SD_DIMGET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998744">
+ </A>
+The <A NAME="marker=998743">
+ </A>
+HDF_SD_DIMGET procedure retrieves information about an SD dataset dimension. </P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998745">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998746">
+ </A>
+HDF_SD_DIMGET, <I CLASS="Italics">
+Dim_ID</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998747">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998748">
+ </A>
+Dim_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998749">
+ </A>
+A dimension ID as returned by HDF_SD _DIMGETID. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998750">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998751">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998752">
+ </A>
+Set this keyword to return the dimension size.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998753">
+ </A>
+COMPATIBILITY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025159">
+ </A>
+Set this keyword to a named variable that will contain a string indicating the dimensional compatibility of the current dimension. Possible values are &quot;BW_COMP&quot; (backwards compatible), &quot;BW_INCOMP&quot; (backwards incompatible), or &quot;FAIL&quot; (the information is unavailable). For further information about dimensional compatibilities, see section 3.8.3 &quot;Old and New Dimension Implementations&quot; of the HDF4.0 User's Guide, and the BW_INCOMP keyword of HDF_SD_DIMSET. By default, IDL writes HDF files in &quot;BW_COMP&quot; mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025014">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998754">
+ </A>
+Set this keyword to return the dimension format description string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998755">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998756">
+ </A>
+Set this keyword to return the dimension label description string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998757">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998758">
+ </A>
+Set this keyword to return the dimension name.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998759">
+ </A>
+NATTR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998760">
+ </A>
+Set this keyword to return the number of attributes for the dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998761">
+ </A>
+SCALE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998762">
+ </A>
+Set this keyword to return the scale of the dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998763">
+ </A>
+TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998764">
+ </A>
+Set this keyword to return a string describing the data's type (i.e., `BYTE').</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998765">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998766">
+ </A>
+Set this keyword to return the dimension unit description string. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998767">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998768">
+ </A>
+For an example using this routine, see the example for HDF_SD_DIMSET.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998769">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998782">
+ </A>
+<A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2a3.htm#56662" CLASS="XRef">
+HDF_SD_DIMGETID</A>
+, <A HREF="idl2a4.htm#58405" CLASS="XRef">
+HDF_SD_DIMSET</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

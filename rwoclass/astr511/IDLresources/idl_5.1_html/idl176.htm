@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> REFORM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl177.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl175.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678519">
+ </A>
+<A NAME="40629">
+ </A>
+REFORM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678520">
+ </A>
+The <A NAME="marker=673722">
+ </A>
+REFORM function changes the dimensions of an array without changing the total number of elements. If no dimensions are specified, REFORM returns a copy of <I CLASS="Italic">
+Array</I>
+ with all leading dimensions of size 1 removed. If dimensions are specified, the result is given those dimensions. Only the dimensions of <I CLASS="Italic">
+Array</I>
+ are changed--the actual data remains unmodified.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678521">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678522">
+ </A>
+Result = REFORM(<I CLASS="Italic">
+Array, D</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., D</I>
+<SUB CLASS="Subscript">
+n</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678523">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678524">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678525">
+ </A>
+The array to have its dimensions modified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678526">
+ </A>
+D<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678527">
+ </A>
+The dimensions of the result. The <I CLASS="Italic">
+D</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ arguments can be either a single array containing the new dimensions or a sequence of scalar dimensions. <I CLASS="Italic">
+Array</I>
+ must have the same number of elements as specified by the product of the new dimensions.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678528">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678529">
+ </A>
+<A NAME="marker=673723">
+ </A>
+OVERWRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678530">
+ </A>
+Set this keyword to cause the specified dimensions to overwrite the present dimensions of the <I CLASS="Italic">
+Array</I>
+ parameter. No data are copied, only the internal array descriptor is changed. The result of the function, in this case, is the <I CLASS="Italic">
+Array</I>
+ parameter with its newly-modified dimensions. For example, to change the dimensions of the variable a, without moving data, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=678531">
+ </A>
+a = REFORM(a, n1, n2, /OVERWRITE)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678532">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678533">
+ </A>
+REFORM can be used to remove &quot;degenerate&quot; leading dimensions of size one. Such dimensions can appear when a subarray is extracted from an array with more dimensions. For example</P>
+<P CLASS="Code">
+<A NAME="pgfId=678534">
+ </A>
+a = INTARR(10,10,10)	<EM CLASS="Comment">;
+a is a 3-dimensional array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678535">
+ </A>
+b = a[5,*,*]	<EM CLASS="Comment">;
+Extract a &quot;slice&quot; from a.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678536">
+ </A>
+HELP, b, REFORM(b)	<EM CLASS="Comment">;
+Use HELP to show what REFORM does.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=678537">
+ </A>
+Executing the above statements produces the output:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678538">
+ </A>
+B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INT = Array[1, 10, 10]</P>
+<P CLASS="Code">
+<A NAME="pgfId=678539">
+ </A>
+&lt;Expression&gt; INT = Array[10, 10]</P>
+<P CLASS="Body">
+<A NAME="pgfId=678540">
+ </A>
+The statements:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678541">
+ </A>
+b = REFORM(a,200,5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=678542">
+ </A>
+b = REFORM(a,[200,5])</P>
+<P CLASS="Body">
+<A NAME="pgfId=678543">
+ </A>
+have identical effect. They create a new array, b, with dimensions of (200, 5), from a.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795811">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795812">
+ </A>
+<A HREF="idl17f.htm#82341" CLASS="XRef">
+REVERSE</A>
+, <A HREF="idl184.htm#79661" CLASS="XRef">
+ROT</A>
+, <A HREF="idl185.htm#94278" CLASS="XRef">
+ROTATE</A>
+, <A HREF="idl1de.htm#70508" CLASS="XRef">
+TRANSPOSE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

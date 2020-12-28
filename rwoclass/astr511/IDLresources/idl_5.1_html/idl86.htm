@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DT_TO_VAR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl87.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl85.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=920682">
+ </A>
+<A NAME="28793">
+ </A>
+DT_TO_VAR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=920685">
+ </A>
+The <A NAME="marker=920684">
+ </A>
+DT_TO_VAR procedure converts a date/time variable to numerical data.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920686">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920687">
+ </A>
+DT_TO_VAR, <I CLASS="Italic">
+Dt_var</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920688">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=920689">
+ </A>
+Dt_var </H4>
+<P CLASS="Body">
+<A NAME="pgfId=920690">
+ </A>
+A date/time variable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920691">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927443">
+ </A>
+<A NAME="marker=927442">
+ </A>
+DAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927477">
+ </A>
+Set this keyword to a byte variable containing the days.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927446">
+ </A>
+<A NAME="marker=927445">
+ </A>
+HOUR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927485">
+ </A>
+Set this keyword to a byte variable containing the hours.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927449">
+ </A>
+<A NAME="marker=927448">
+ </A>
+MINUTE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927495">
+ </A>
+Set this keywork to a byte variable containing the minutes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927452">
+ </A>
+<A NAME="marker=927471">
+ </A>
+MONTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927466">
+ </A>
+Set this keyword to a byte variable containing the months.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927463">
+ </A>
+<A NAME="marker=927451">
+ </A>
+SECOND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927503">
+ </A>
+Set this keyword to a floating-point variable containing the seconds and fractional seconds.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927455">
+ </A>
+<A NAME="marker=927454">
+ </A>
+YEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=920693">
+ </A>
+Set this keyword to an integer variable containing the years.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920704">
+ </A>
+Example </H3>
+<P CLASS="Body">
+<A NAME="pgfId=920705">
+ </A>
+Assume the date/time variable <I CLASS="Italic">
+date1</I>
+ contains the following date/time data:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=920706">
+ </A>
+date1=[ $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=920707">
+ </A>
+{IDLDT, 1971,6,23,15,52,15.000,87474.440,0}, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=920708">
+ </A>
+{IDLDT, 1970,9,4,10,30,19.000,84224.521,0}, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=920709">
+ </A>
+{IDLDT, 1969,10,8,4,25,14.000,77350.684,0}, $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=921019">
+ </A>
+{IDLDT, 1977,6,18,10,42,19.000,84224.521,0}]</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=920710">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=920711">
+ </A>
+To extract each date/time element into a separate variable, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=920712">
+ </A>
+DT_TO_VAR, date1, YEAR=years, MONTH=months, DAY=days<BR>
+years<EM CLASS="Comment">;
+ is an integer variable, while </EM>
+months<EM CLASS="Comment">;
+ and </EM>
+days<EM CLASS="Comment">;
+ are byte <BR>
+variables.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=920713">
+ </A>
+PRINT, &quot;Years = &quot;, years</P>
+<P CLASS="Code">
+<A NAME="pgfId=920714">
+ </A>
+PRINT, &quot;Months = &quot;, months</P>
+<P CLASS="Code">
+<A NAME="pgfId=920715">
+ </A>
+PRINT, &quot;Days = &quot;, days</P>
+<P CLASS="Body">
+<A NAME="pgfId=920716">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=920717">
+ </A>
+% Compiled module: DT_TO_VAR.</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=921022">
+ </A>
+Years =     1971    1970    1969    1977</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=921024">
+ </A>
+Months =    6   9  10   6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=921027">
+ </A>
+Days =   23   4   8  18</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=920720">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=920721">
+ </A>
+VAR_TO_DT, <A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

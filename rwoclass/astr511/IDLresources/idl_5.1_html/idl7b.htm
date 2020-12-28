@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DIALOG_PRINTERSETUP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl7c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl7a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=902950">
+ </A>
+<A NAME="26708">
+ </A>
+DIALOG_PRINTERSETUP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=902960">
+ </A>
+The <A NAME="marker=902959">
+ </A>
+DIALOG_PRINTERSETUP function opens a native dialog for setting the applicable <A NAME="marker=902961">
+ </A>
+properties for a particular <A NAME="marker=902962">
+ </A>
+printer.</P>
+<P CLASS="Body">
+<A NAME="pgfId=902963">
+ </A>
+DIALOG_PRINTERSETUP returns a nonzero value if the user pressed the &quot;OK&quot; button in the dialog, or zero otherwise. You can use the result of this function to programmatically begin printing.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863768">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=863769">
+ </A>
+Result = DIALOG_PRINTERSETUP([PrintDestination])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863770">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863771">
+ </A>
+PrintDestination</H4>
+<P CLASS="Body">
+<A NAME="pgfId=877172">
+ </A>
+An instance of the IDLgrPrinter object for which setup properties are to be set. If no <EM CLASS="Emphasis">
+PrintDestination</EM>
+ is specified, the printer used by the IDL Direct Graphics <CODE CLASS="Code">
+printer</CODE>
+ device is modified. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863773">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870934">
+ </A>
+<A NAME="marker=870933">
+ </A>
+DIALOG_PARENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870935">
+ </A>
+Set this keyword to the widget ID of a widget to be used as the parent of this dialog.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870937">
+ </A>
+<A NAME="marker=870936">
+ </A>
+DISPLAY_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870938">
+ </A>
+Set this keyword equal to a string indicating the name of the X Windows display on which the dialog is to appear. This keyword is ignored if the DIALOG_PARENT keyword is specified. This keyword is also ignored on Microsoft Windows and Macintosh platforms.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870940">
+ </A>
+<A NAME="marker=870939">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870941">
+ </A>
+Set this keyword equal to a string containing an X Window System resource name to be applied to the dialog.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870943">
+ </A>
+<A NAME="marker=870942">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870944">
+ </A>
+Set this keyword equal to a string to be displayed on the dialog frame. This keyword is ignored on Windows and Macintosh platforms.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=877152">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=877156">
+ </A>
+<A HREF="idl7a.htm#13911" CLASS="XRef">
+DIALOG_PRINTJOB</A>
+, <A HREF="idl237.htm#11884" CLASS="XRef">
+The Printer Device</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

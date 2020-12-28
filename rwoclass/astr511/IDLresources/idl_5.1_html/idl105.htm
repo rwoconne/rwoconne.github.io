@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LU_COMPLEX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl106.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl104.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=881548">
+ </A>
+<A NAME="65053">
+ </A>
+LU_COMPLEX</H2>
+<P CLASS="Body">
+<A NAME="pgfId=750778">
+ </A>
+The <A NAME="marker=750775">
+ </A>
+LU_COMPLEX function solves an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ complex <A NAME="marker=750776">
+ </A>
+linear system Az = b using <A NAME="marker=750777">
+ </A>
+LU decomposition. The result is an <EM CLASS="Emphasis">
+n</EM>
+-element complex vector <EM CLASS="Emphasis">
+z</EM>
+. Alternatively, LU_COMPLEX computes the generalized <A NAME="marker=750779">
+ </A>
+inverse of an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ complex array. The result is an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ complex array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754753">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+lu_complex.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750781">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750782">
+ </A>
+Result = LU_COMPLEX(<EM CLASS="Emphasis">
+A, B</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750783">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750784">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750785">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ complex array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750786">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750788">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element right-hand side vector (real or complex).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750790">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750791">
+ </A>
+<A NAME="marker=48848">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750792">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=48859">
+ </A>
+<A NAME="marker=48861">
+ </A>
+INVERSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=48860">
+ </A>
+Set this keyword to compute the generalized inverse of <EM CLASS="Emphasis">
+A</EM>
+. If INVERSE is specified, the input argument <EM CLASS="Emphasis">
+B</EM>
+ is ignored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37275">
+ </A>
+<A NAME="marker=48849">
+ </A>
+SPARSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37360">
+ </A>
+Set this keyword to convert the input array to row-indexed sparse storage format. Computations are done using the iterative biconjugate gradient method. This keyword is effective only when solving complex linear systems. This keyword has no effect when calculating the generalized inverse.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750794">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750795">
+ </A>
+Define a complex array <EM CLASS="Emphasis">
+A</EM>
+ and right-side vector <EM CLASS="Emphasis">
+B</EM>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=750796">
+ </A>
+A = [[COMPLEX(1, 0), COMPLEX(2,-2), COMPLEX(-3,1)], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=750797">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[COMPLEX(1,-2), COMPLEX(2, 2), COMPLEX(1, 0)], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=750798">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[COMPLEX(1, 1), COMPLEX(0, 1), COMPLEX(1, 5)]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=750799">
+ </A>
+B =  [COMPLEX(1, 1), COMPLEX(3,-2), COMPLEX(1,-2)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=750800">
+ </A>
+Solve the complex linear system <EM CLASS="Bold">
+Az = b</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=750801">
+ </A>
+Z = LU_COMPLEX(A, B)</P>
+<P CLASS="Code">
+<A NAME="pgfId=750802">
+ </A>
+PRINT, Z</P>
+<P CLASS="Body">
+<A NAME="pgfId=750803">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750804">
+ </A>
+(     0.552267,      1.22818)(    -0.290371,    -0.600974)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750805">
+ </A>
+(    -0.629824,    -0.340952)</P>
+<P CLASS="Body">
+<A NAME="pgfId=750806">
+ </A>
+Compute the inverse of the complex array <EM CLASS="Emphasis">
+A</EM>
+ by supplying a scalar for <EM CLASS="Emphasis">
+B</EM>
+ (in this example -1).</P>
+<P CLASS="Code">
+<A NAME="pgfId=750807">
+ </A>
+inv = LU_COMPLEX(A, B, /INVERSE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=750808">
+ </A>
+PRINT, inv</P>
+<P CLASS="Body">
+<A NAME="pgfId=750809">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750810">
+ </A>
+(     0.261521,   -0.0303485)(    0.0138629,     0.329337)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750811">
+ </A>
+(    -0.102660,    -0.168602)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750812">
+ </A>
+(     0.102660,     0.168602)(    0.0340952,    -0.162982)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750813">
+ </A>
+(     0.125890,   -0.0633196)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750814">
+ </A>
+(   -0.0689397,    0.0108655)(   -0.0666916,   -0.0438366)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=750815">
+ </A>
+(    0.0614462,    -0.161858)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34683">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=35372">
+ </A>
+<A HREF="idl48.htm#10735" CLASS="XRef">
+CRAMER</A>
+, <A HREF="idl30.htm#21199" CLASS="XRef">
+CHOLSOL</A>
+, <A HREF="idlbe.htm#39130" CLASS="XRef">
+GS_ITER</A>
+, <A HREF="idl108.htm#55550" CLASS="XRef">
+LUSOL</A>
+, <A HREF="idl1ca.htm#53821" CLASS="XRef">
+SVSOL</A>
+, <A HREF="idl1e4.htm#66905" CLASS="XRef">
+TRISOL</A>
+, and <A HREF="..html#45047" CLASS="XRef">
+Sparse Arrays</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

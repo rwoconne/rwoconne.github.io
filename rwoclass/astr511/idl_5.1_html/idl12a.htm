@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> OBJ_NEW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl12b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl129.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889454">
+ </A>
+<EM CLASS="Bold">
+OBJ_NEW</EM>
+<A NAME="40428">
+ </A>
+</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889459">
+ </A>
+Given the name of a structure that defines an object class, the <A NAME="marker=889458">
+ </A>
+OBJ_NEW function returns an <A NAME="marker=889460">
+ </A>
+object reference to a new instance of the specified object type by carrying out the following operations in order:</P>
+<OL>
+<LI CLASS="Numbered-1">
+<A NAME="pgfId=889461">
+ </A>
+If the class structure has not been defined, IDL will attempt to find and call a procedure to define it automatically. (See <A HREF="..html#10297" CLASS="XRef">
+Object Basics</A>
+ for details.) If the structure is still not defined, OBJ_NEW fails and issues an error.</LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=889465">
+ </A>
+If the class structure has been defined, OBJ_NEW creates an object heap variable containing a zeroed instance of the class structure.</LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=889466">
+ </A>
+Once the new object heap variable has been created, OBJ_NEW looks for a <EM CLASS="Emphasis">
+method</EM>
+ function named <EM CLASS="Emphasis">
+Class</EM>
+::INIT (where <EM CLASS="Emphasis">
+Class</EM>
+ is the actual name of the class). If an INIT method exists, it is called with the new object as its implicit SELF argument, as well as any arguments and keywords specified in the call to OBJ_NEW. If the class has no INIT method, the usual method-searching rules are applied to find one from a superclass. For more information on methods and method-searching rules, see &quot;<A HREF="..html#95541" CLASS="XRef">
+Method Routines</A>
+&quot; in Chapter 2 of <I CLASS="Italic">
+Objects and Object Graphics</I>
+.</LI>
+</OL>
+<P CLASS="Body">
+<A NAME="pgfId=889470">
+ </A>
+The INIT method is expected to initialize the object instance data as necessary to meet the needs of the class implementation. INIT should return a scalar TRUE value (such as 1) if the initialization is successful, and FALSE (such as 0) if the initialization fails.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=889471">
+ </A>
+OBJ_NEW does not call all the INIT methods in an object's class hierarchy. Instead, it simply calls the first one it finds. Therefore, the INIT method for a class should call the INIT methods of its direct superclasses as necessary. </LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=889472">
+ </A>
+If the INIT method returns true, or if no INIT method exists, OBJ_NEW returns an object reference to the heap variable. If INIT returns false, OBJ_NEW destroys the new object and returns the NULL object reference, indicating that the operation failed. Note that in this case the CLEANUP method is not called. See &quot;<A HREF="..html#14662" CLASS="XRef">
+Destruction</A>
+&quot; in Chapter 2 of <I CLASS="Italic">
+Object and Object Graphics</I>
+ for more on CLEANUP methods.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=889476">
+ </A>
+If called without arguments, OBJ_NEW returns a NULL object reference. The NULL object reference is special value that never refers to a value object. It is primarily used as a placeholder in structure definitions, and as the initial value for elements of object arrays created via OBJARR. The null object reference is useful as an indicator that an object reference is currently not usable.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889477">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889478">
+ </A>
+Result = OBJ_NEW(<EM CLASS="Emphasis">
+[ObjectClassName [, Arg1......Argn]]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889479">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889480">
+ </A>
+ObjectClassName</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889481">
+ </A>
+String giving the name of the structure type that defines the object class for which a new object should be created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889482">
+ </A>
+If <I CLASS="Italic">
+ObjectClassName</I>
+ is not provided, OBJ_NEW does not create a new heap variable, and returns the <EM CLASS="Emphasis">
+Null Object</EM>
+, which is a special object reference that is guaranteed to never point at a valid object heap variable. The null object is a convenient value to use when defining structure definitions for fields that are object references, since it avoids the need to have a pre-existing valid object reference.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889483">
+ </A>
+Arg1...Argn</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889484">
+ </A>
+Any arguments accepted by the INIT method for the class of object being created can be specified when the object is created.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889485">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889486">
+ </A>
+Any keywords accepted by the INIT method for the class of object being created can be specified when the object is created.</P>
+</DIV>
+</BODY>
+</HTML>

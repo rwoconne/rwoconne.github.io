@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_INQUIRE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl256.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl254.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997544">
+ </A>
+<A NAME="24050">
+ </A>
+CDF_INQUIRE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997548">
+ </A>
+The <A NAME="marker=997546">
+ </A>
+CDF_INQUIRE function returns global <A NAME="marker=997547">
+ </A>
+information about the Common Data Format file. This information is returned in a structure of the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997549">
+ </A>
+{ NDIMS:0L, DECODING:&quot;&quot;, ENCODING:&quot;&quot;, MAJORITY:&quot;&quot;, MAXREC:0L, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997550">
+ </A>
+&nbsp;&nbsp;NVARS:0L, NZVARS:0L, NATTS:0L, DIM:LONARR(NDIMS) }</P>
+<P CLASS="Body">
+<A NAME="pgfId=997551">
+ </A>
+The tags of this structure are described below.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997552">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997553">
+ </A>
+Result = CDF_INQUIRE(<I CLASS="Italics">
+Id</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997554">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997555">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997556">
+ </A>
+A CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997557">
+ </A>
+ Explanation of the Structure Tags</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997558">
+ </A>
+NDIMS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997559">
+ </A>
+The longword integer specifying the number of dimensions in the rVariables in the current CDF.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997560">
+ </A>
+DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997561">
+ </A>
+A string describing the decoding type set in the CDF file. For example, <CODE CLASS="Code">
+'MAC_DECODING'</CODE>
+ or <CODE CLASS="Code">
+'ALPHAVMSD_ENCODING'.</CODE>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997562">
+ </A>
+ENCODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997563">
+ </A>
+A string describing the type of encoding used in the CDF file. For example, <CODE CLASS="Code">
+'NETWORK_ENCODING'</CODE>
+ or <CODE CLASS="Code">
+'SUN_ENCODING'</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997564">
+ </A>
+MAJORITY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997565">
+ </A>
+A string describing the majority used in the CDF file. The majority will be either row (<CODE CLASS="Code">
+'ROW_MAJOR'</CODE>
+) or column (<CODE CLASS="Code">
+'COL_MAJOR'</CODE>
+).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997566">
+ </A>
+MAXREC</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997567">
+ </A>
+A longword integer specifying the highest record number written in the rVariables in the current CDF. The MAXREC field will contain the value <CODE CLASS="Code">
+-1</CODE>
+ if no rVariables have yet been written to the CDF.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997568">
+ </A>
+NVARS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997569">
+ </A>
+A longword integer specifying the number of rVariables (regular variables) in the CDF.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997570">
+ </A>
+NZVARS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997571">
+ </A>
+A longword integer specifying the number of zVariables in the CDF.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997572">
+ </A>
+NATTS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997573">
+ </A>
+A longword integer specifying the number of attributes in the CDF. Note that the number returned in this field includes both global and variable attributes. You can use the GET_NUMATTR keyword to the <A HREF="idl24d.htm#97922" CLASS="XRef">
+CDF_CONTROL</A>
+ routine to determine the number of each.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997577">
+ </A>
+DIM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997578">
+ </A>
+A vector where each element contains the corresponding dimension size for the rVariables in the current CDF. For 0-dimensional CDF's, this argument contains a single element (a zero).</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997579">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997580">
+ </A>
+cdfid = CDF_CREATE('CDFinquire', /HP_ENCODING, /MAC_DECODING)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997581">
+ </A>
+attr1_id = CDF_ATTCREATE(cdfid, 'GLOBAL_ATT', /GLOBAL_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997582">
+ </A>
+attr2_id = CDF_ATTCREATE(cdfid,'VARIABLE_ATT', /VARIABLE_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997583">
+ </A>
+CDF_CONTROL, cdfid, GET_NUMATTRS = num_attrs</P>
+<P CLASS="Code">
+<A NAME="pgfId=997584">
+ </A>
+PRINT, 'This CDF has ', num_attrs(0), 'Global attribute(s) and ',$</P>
+<P CLASS="Code">
+<A NAME="pgfId=997585">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;num_attrs(1), 'Variable attribute(s).', FORMAT='(A,I2,A,I2,A)'</P>
+<P CLASS="Body">
+<A NAME="pgfId=997586">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997587">
+ </A>
+This CDF has  1 Global attribute(s) and  1 Variable attribute(s).</P>
+<P CLASS="Code">
+<A NAME="pgfId=997588">
+ </A>
+inquire = CDF_INQUIRE(cdfid)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997589">
+ </A>
+HELP, inquire, /STRUCT</P>
+<P CLASS="Body">
+<A NAME="pgfId=997590">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997591">
+ </A>
+** Structure &lt;4003e0c0&gt;, 9 tags, length=48, refs=1:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997592">
+ </A>
+   NDIMS           LONG                 0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997593">
+ </A>
+   DECODING        STRING&nbsp;&nbsp;&nbsp;&nbsp;'MAC_DECODING'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997594">
+ </A>
+   ENCODING        STRING&nbsp;&nbsp;&nbsp;&nbsp;'HP_ENCODING'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997595">
+ </A>
+   MAJORITY        STRING&nbsp;&nbsp;&nbsp;&nbsp;'ROW_MAJOR'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997596">
+ </A>
+   MAXREC          LONG                -1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997597">
+ </A>
+   NVARS           LONG                 0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997598">
+ </A>
+   NZVARS          LONG                 0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997599">
+ </A>
+   NATTS           LONG                 2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997600">
+ </A>
+   DIM             LONG      Array(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997601">
+ </A>
+CDF_DELETE, cdfid	<EM CLASS="Comment">;
+Delete the CDF file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997602">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997612">
+ </A>
+<A HREF="idl24d.htm#97922" CLASS="XRef">
+CDF_CONTROL</A>
+, <A HREF="idl250.htm#93091" CLASS="XRef">
+CDF_DOC</A>
+, <A HREF="idl256.htm#57079" CLASS="XRef">
+CDF_LIB_INFO</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

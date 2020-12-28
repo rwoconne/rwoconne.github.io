@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TM_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1db.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1d9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=876674">
+ </A>
+<A NAME="91249">
+ </A>
+TM_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=843044">
+ </A>
+The <A NAME="marker=843041">
+ </A>
+TM_TEST <A NAME="marker=843042">
+ </A>
+function computes the <A NAME="marker=843043">
+ </A>
+Student's T-statistic and the probability that two sample populations <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have significantly different means. <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ may be of different lengths. The result is a two-element vector containing the T-statistic and its significance. The significance is a value in the interval [0.0, 1.0]; a small value (0.05 or 0.01) indicates that <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have significantly different means. The default assumption is that the data is drawn from populations with the same true variance. This type of test is often referred to as the <A NAME="marker=843045">
+ </A>
+t-means <A NAME="marker=843046">
+ </A>
+test.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54284">
+ </A>
+The T-statistic for sample populations <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+y</EM>
+ with means<EM CLASS="Symbol">
+`</EM>
+<EM CLASS="Emphasis">
+x</EM>
+ and<EM CLASS="Symbol">
+`</EM>
+<EM CLASS="Emphasis">
+y</EM>
+<EM CLASS="Symbol">
+ </EM>
+is defined as:</P>
+<DIV>
+<CENTER><IMG SRC="idl_108.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835055">
+ </A>
+where <EM CLASS="Emphasis">
+x</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ..., <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+N-1</SUB>
+) and <EM CLASS="Emphasis">
+y</EM>
+ = (<EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+ ..., <EM CLASS="Emphasis">
+y</EM>
+<SUB CLASS="Subscript">
+M-1</SUB>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=54289">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+tm_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54290">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54291">
+ </A>
+Result = TM_TEST(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54292">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54293">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54294">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54295">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54296">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+-element integer, single-, or double-precision floating-point vector. If the PAIRED keyword is set, <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ must have the same number of elements.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54297">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54299">
+ </A>
+<A NAME="marker=54298">
+ </A>
+PAIRED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54300">
+ </A>
+If this keyword is set, <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are assumed to be paired samples and must have the same number of elements.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54302">
+ </A>
+<A NAME="marker=54301">
+ </A>
+UNEQUAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54303">
+ </A>
+If this keyword is set, <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are assumed to be from populations with unequal variances.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54304">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54305">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element sample populations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54306">
+ </A>
+X = [257, 208, 296, 324, 240, 246, 267, 311, 324, 323, 263, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54307">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;305, 270, 260, 251, 275, 288, 242, 304, 267]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54308">
+ </A>
+Y = [201, 56, 185, 221, 165, 161, 182, 239, 278, 243, 197, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54309">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;271, 214, 216, 175, 192, 208, 150, 281, 196]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54310">
+ </A>
+Compute the Student's t-statistic and its significance assuming that <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ belong to populations with the same true variance. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54311">
+ </A>
+PRINT, TM_TEST(X, Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=54312">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54313">
+ </A>
+5.52839  2.52455e-06</P>
+<P CLASS="Body">
+<A NAME="pgfId=54314">
+ </A>
+The result indicates that <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have significantly different means.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54315">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66090">
+ </A>
+<A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="idle3.htm#95076" CLASS="XRef">
+KW_TEST</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

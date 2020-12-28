@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> F_PDF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl9a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53421">
+ </A>
+<A NAME="50751">
+ </A>
+F_PDF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53426">
+ </A>
+The <A NAME="marker=53423">
+ </A>
+F_PDF <A NAME="marker=53424">
+ </A>
+function computes the probability <EM CLASS="Emphasis">
+P</EM>
+ that, in an <A NAME="marker=53425">
+ </A>
+F distribution with <EM CLASS="Emphasis">
+Dfn</EM>
+ and<EM CLASS="Emphasis">
+ Dfd </EM>
+degrees of freedom, a random variable <EM CLASS="Emphasis">
+X</EM>
+ is less than or equal to a user-specified cutoff value <EM CLASS="Emphasis">
+V</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53427">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+f_pdf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53428">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53429">
+ </A>
+Result = F_PDF(<EM CLASS="Emphasis">
+V, Dfn, Dfd</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53430">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53431">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53432">
+ </A>
+An integer, single-, or double-precision floating-point scalar that specifies the cutoff value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53433">
+ </A>
+Dfn</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53434">
+ </A>
+A positive integer, single- or double-precision floating-point scalar that specifies the number of degrees of freedom of the F distribution numerator.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53435">
+ </A>
+Dfd</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53436">
+ </A>
+A positive integer, single- or double-precision floating-point scalar that specifies the number of degrees of freedom of the F distribution denominator.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53437">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53438">
+ </A>
+Use the following command to compute the probability that a random variable X, from the F distribution with five degrees of freedom in the numerator and 24 degrees of freedom in the denominator, is less than or equal to 3.90. The result should be 0.990059.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53439">
+ </A>
+PRINT, F_PDF(3.90, 5, 24</P>
+<P CLASS="Body">
+<A NAME="pgfId=53440">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53441">
+ </A>
+0.990059</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53442">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65580">
+ </A>
+<A HREF="idl17.htm#90297" CLASS="XRef">
+BINOMIAL</A>
+, <A HREF="idl2e.htm#33316" CLASS="XRef">
+CHISQR_PDF</A>
+, <A HREF="idl9a.htm#15114" CLASS="XRef">
+F_CVF</A>
+, <A HREF="idlb4.htm#29831" CLASS="XRef">
+GAUSS_PDF</A>
+, <A HREF="idl1ce.htm#52203" CLASS="XRef">
+T_PDF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

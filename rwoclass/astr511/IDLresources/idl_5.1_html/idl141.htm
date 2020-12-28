@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLY_FIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl142.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl140.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=753815">
+ </A>
+<A NAME="24656">
+ </A>
+POLY_FIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=753819">
+ </A>
+The <A NAME="marker=753816">
+ </A>
+POLY_FIT function performs a <A NAME="marker=753817">
+ </A>
+least-square polynomial <A NAME="marker=753818">
+ </A>
+fit with optional error estimates and returns a vector of coefficients with a length of <EM CLASS="Emphasis">
+NDegree</EM>
++1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=753820">
+ </A>
+The POLY_FIT routine uses matrix inversion. A newer version of this routine, SVDFIT, uses Singular Value Decomposition. The SVD technique is more flexible, but slower. Another version of this routine, POLYFITW, performs a weighted least square fit.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754789">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+poly_fit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753822">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=753823">
+ </A>
+Result = POLY_FIT(<EM CLASS="Emphasis">
+X, Y, NDegree [,Yfit, Yband, Sigma, Corrm]</EM>
+ )</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753824">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753825">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753826">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector of independent variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753827">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753828">
+ </A>
+A vector of dependent variables, the same length as <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753829">
+ </A>
+NDegree</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753830">
+ </A>
+The degree of the polynomial to fit.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753831">
+ </A>
+Yfit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753832">
+ </A>
+A named variable that will contain the vector of calculated <EM CLASS="Emphasis">
+Y</EM>
+ values. These values have an error of plus or minus <EM CLASS="Emphasis">
+Yband</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753833">
+ </A>
+Yband</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753834">
+ </A>
+A named variable that will contain the error estimate for each point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753835">
+ </A>
+Sigma</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753836">
+ </A>
+A named variable that will contain the standard deviation in <EM CLASS="Emphasis">
+Y</EM>
+ units.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=753837">
+ </A>
+Corrm</H4>
+<P CLASS="Body">
+<A NAME="pgfId=753838">
+ </A>
+A named variable that will contain the correlation matrix of the coefficients.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837039">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=837040">
+ </A>
+<A NAME="marker=837042">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=837041">
+ </A>
+Set this keyword to force computations to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=753839">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=753840">
+ </A>
+In this example, we use X and Y data corresponding to the known polynomial <EM CLASS="Emphasis">
+f</EM>
+&nbsp;(<EM CLASS="Emphasis">
+x</EM>
+)&nbsp;=&nbsp;0.25 - <EM CLASS="Emphasis">
+x</EM>
+ + <EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+. Using POLY_FIT to compute a second degree polynomial fit returns the exact coefficients (to within machine accuracy).</P>
+<P CLASS="Code">
+<A NAME="pgfId=753844">
+ </A>
+X = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]<BR>
+<EM CLASS="Comment">;
+Define an 11-element vector of independent variable data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753845">
+ </A>
+Y = [0.25, 0.16, 0.09, 0.04, 0.01, 0.00, 0.01, 0.04, 0.09, 0.16, 0.25]<BR>
+<EM CLASS="Comment">;
+Define an 11-element vector of dependent variable data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753846">
+ </A>
+result = POLY_FIT(X, Y, 2)	<EM CLASS="Comment">;
+Compute the second degree polynomial fit to the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=753847">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the coefficients.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=753848">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=753849">
+ </A>
+&nbsp;0.24999996</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=753850">
+ </A>
+-0.99999974</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=753851">
+ </A>
+&nbsp;0.99999975</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821472">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34813">
+ </A>
+<A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DF24_ADDIMAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl269.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl267.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=996952">
+ </A>
+<A NAME="16041">
+ </A>
+HDF_DF24_ADDIMAGE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=996956">
+ </A>
+The <A NAME="marker=996954">
+ </A>
+HDF_DF24_ADDIMAGE procedure writes a 24-bit raster <A NAME="marker=996955">
+ </A>
+image to a Hierarchical Data Format file. The interlace is set automatically based upon the dimensions of the image being written: ARR(3, Width, Height) for pixel interlace, ARR(Width, 3, Height) for scan-line interlace, and ARR(Width, Height, 3) for scan-plane interlace.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=996957">
+ </A>
+HDF_DF24_ADDIMAGE chooses an interlace based upon the location of the `3'-sized dimension. For 3x3xN, 3xNx3 and Nx3x3 images, if the first `3' encountered is supposed to be a width or height, HDF_DF24_ADDIMAGE will choose the `wrong' interlace. However, as long as one reads in the image using the same interlace, the image will be read correctly anyway. Avoid writing 24-bit-deep raster images with a width or height of 3 pixels.</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1025913">
+ </A>
+Input data is converted to bytes before being written to the file, as images in the DF24 HDF model are necessarily byte images.</LI>
+</UL>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996959">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=996960">
+ </A>
+HDF_DF24_ADDIMAGE, <I CLASS="Italics">
+Filename, Image</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996961">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996962">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996963">
+ </A>
+A scalar string containing the name of the file to be written.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996964">
+ </A>
+Image</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996965">
+ </A>
+A 3-dimensional array of values representing the 3 planes (Red, Green, and Blue) of the 24-bit image. One of the dimensions <I CLASS="Italics">
+must</I>
+ be 3 (e.g., a 3 x 100 x 100 array).</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996966">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025840">
+ </A>
+<A NAME="marker=1025839">
+ </A>
+FORCE_BASELINE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025841">
+ </A>
+Set this keyword to force the JPEG quantization tables to be constrained to the range 1...255. This provides full baseline compatibility with external JPEG applications, but only makes a difference if the QUALITY keyword is set to a value less than 25. The default is TRUE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025843">
+ </A>
+<A NAME="marker=1025842">
+ </A>
+JPEG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025844">
+ </A>
+Set this keyword to compress the image being added using the JPEG (Joint Photographic Expert Group) method. Note that JPEG compression is <EM CLASS="Emphasis">
+lossy</EM>
+; see WRITE_JPEG in the <EM CLASS="Emphasis">
+IDL Reference Guide</EM>
+ for more information about when this method is appropriate. (In other words, using JPEG compression to reduce the size of an images changes the values of the pixels and hence may alter the meaning of the corresponding data.) Setting either the QUALITY or the FORCE_BASELINE keywords implies this method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025857">
+ </A>
+<A NAME="marker=1025856">
+ </A>
+QUALITY</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025858">
+ </A>
+Set this keyword equal to the JPEG &quot;quality&quot; desired. This value should be in range 0 (terrible image quality but excellent compression) to 100 (excellent image quality but minimum compression). The default is 75. Setting this keyword implies that the JPEG keyword is set. Lower values of QUALITY produce higher compression ratios and smaller files.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025860">
+ </A>
+<A NAME="marker=1025859">
+ </A>
+RLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025861">
+ </A>
+Set this keyword to store the image using run length compression. RLE compression is lossless, and is recommended for images where data retention is critical.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1025918">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025919">
+ </A>
+WRITE_JPEG in the <EM CLASS="Emphasis">
+IDL Reference Guide</EM>
+.</P>
+</DIV>
+</BODY>
+</HTML>

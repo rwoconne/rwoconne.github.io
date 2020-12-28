@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> S_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl18b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl189.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54176">
+ </A>
+<A NAME="14319">
+ </A>
+S_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54182">
+ </A>
+The <A NAME="marker=54178">
+ </A>
+S_TEST <A NAME="marker=54179">
+ </A>
+function <A NAME="marker=54180">
+ </A>
+tests the <A NAME="marker=54181">
+ </A>
+hypothesis that two sample populations <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have the same mean of distribution against the hypothesis that they differ. The result is a two-element vector containing the maximum number of signed differences between corresponding pairs of <EM CLASS="Emphasis">
+xi</EM>
+ and <EM CLASS="Emphasis">
+yi</EM>
+ and its one-tailed significance. This type of test is often referred to as the &quot;<A NAME="marker=54183">
+ </A>
+Sign Test.&quot;</P>
+<P CLASS="Body">
+<A NAME="pgfId=54184">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+s_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54185">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54186">
+ </A>
+Result = S_TEST(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54187">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54188">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54189">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54190">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54191">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54192">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54194">
+ </A>
+<A NAME="marker=54193">
+ </A>
+ZDIFF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54195">
+ </A>
+Set this keyword to a named variable that will contain the number of differences between corresponding pairs of <EM CLASS="Emphasis">
+xi</EM>
+ and <EM CLASS="Emphasis">
+yi</EM>
+ resulting in zero. Paired data resulting in a difference of zero are excluded from the ranking and the sample size is correspondingly reduced.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54196">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54197">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element sample populations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54198">
+ </A>
+X = [47, 56, 54, 49, 36, 48, 51, 38, 61, 49, 56, 52]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54199">
+ </A>
+Y = [71, 63, 45, 64, 50, 55, 42, 46, 53, 57, 75, 60]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54200">
+ </A>
+Test the hypothesis that the two sample populations have the same mean of distribution against the hypothesis that they differ at the 0.05 significance level.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54201">
+ </A>
+PRINT, S_TEST(X, Y, ZDIFF = zdiff)</P>
+<P CLASS="Body">
+<A NAME="pgfId=54202">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54203">
+ </A>
+[9.00000, 0.0729981]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54204">
+ </A>
+The computed probability (0.0729981) is greater than the 0.05 significance level and therefore we do not reject the hypothesis that <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ have the same mean of distribution.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54205">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66051">
+ </A>
+<A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="idle3.htm#95076" CLASS="XRef">
+KW_TEST</A>
+, <A HREF="idl112.htm#89505" CLASS="XRef">
+MD_TEST</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

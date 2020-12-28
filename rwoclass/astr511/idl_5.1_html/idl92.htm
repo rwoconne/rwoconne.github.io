@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> EXECUTE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl93.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl91.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676755">
+ </A>
+<A NAME="90309">
+ </A>
+EXECUTE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676756">
+ </A>
+The <A NAME="marker=672961">
+ </A>
+EXECUTE function compiles and executes one or more IDL statements contained in a <A NAME="marker=672965">
+ </A>
+string at run-time. It also returns<I CLASS="Italics">
+ true</I>
+ (1) if the string was successfully compiled and executed. If an error occurs during either phase, the result is <I CLASS="Italics">
+false</I>
+ (0).</P>
+<P CLASS="Body">
+<A NAME="pgfId=676757">
+ </A>
+Like the CALL_PROCEDURE and CALL_FUNCTION routines, calls to EXECUTE can be nested. However, compiling the string at run-time is inefficient. CALL_FUNCTION and CALL_PROCEDURE provide much of the functionality of EXECUTE without imposing this limitation, and should be used instead of EXECUTE whenever possible.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676758">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676759">
+ </A>
+Result = EXECUTE(<I CLASS="Italics">
+String</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676760">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676761">
+ </A>
+String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676762">
+ </A>
+A string containing the command(s) to be compiled and executed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676765">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676766">
+ </A>
+Create a string that holds a valid IDL command by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676767">
+ </A>
+com = 'PLOT, [0,1]'</P>
+<P CLASS="Body">
+<A NAME="pgfId=676768">
+ </A>
+Execute the contents of the string by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676769">
+ </A>
+R = EXECUTE(com)</P>
+<P CLASS="Body">
+<A NAME="pgfId=676770">
+ </A>
+A plot should appear. You can confirm that the string was successfully compiled and executed by checking that the value of R is 1.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795842">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795843">
+ </A>
+<A HREF="idl25.htm#68076" CLASS="XRef">
+CALL_FUNCTION</A>
+, <A HREF="idl27.htm#94346" CLASS="XRef">
+CALL_PROCEDURE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

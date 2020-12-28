@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PTR_VALID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl156.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl154.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=845070">
+ </A>
+<EM CLASS="Bold">
+PTR_VALID</EM>
+<A NAME="34100">
+ </A>
+</H2>
+<P CLASS="Body">
+<A NAME="pgfId=845071">
+ </A>
+The <A NAME="marker=845158">
+ </A>
+PTR_VALID function verifies the validity of its <A NAME="marker=845159">
+ </A>
+pointer arguments, or alternatively returns a vector of pointers to all the existing valid pointer heap variables.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845072">
+ </A>
+If called with an pointer or array of pointers as its argument, PTR_VALID returns a byte array of the same size as the argument. Each element of the result is set to True (1) if the corresponding pointer in the argument refers to an existing valid heap variable, or to False (0) otherwise.</P>
+<P CLASS="Body">
+<A NAME="pgfId=865155">
+ </A>
+If called with an integer or array of integers as its argument and the CAST keyword is set, PTR_VALID returns an array of pointers. Each element of the result is a pointer to the heap variable indexed by the integer value. Integers used to index heap variables are shown in the output of the HELP and PRINT commands. This is useful primarily in programming/debugging when the you have lost a reference but see it with HELP and need to get a reference to it interactively in order to determine what it is and take steps to fix the code. See the &quot;Examples&quot; section below for an example.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845073">
+ </A>
+If no argument is specified, PTR_VALID returns a vector of pointers to all existing valid pointer heap variables--<EM CLASS="Emphasis">
+even if there are currently no pointers to the heap variable</EM>
+. This usage allows you to &quot;reclaim&quot; pointer heap variables to which all pointers have been lost. If no valid pointer heap variables exist, a scalar null pointer is returned.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845074">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845075">
+ </A>
+Result = PTR_VALID([<I CLASS="Italic">
+Arg</I>
+])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845076">
+ </A>
+Argument</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845077">
+ </A>
+Arg</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845078">
+ </A>
+<EM CLASS="Emphasis">
+Arg</EM>
+ can be one of the following:</P>
+<OL>
+<LI CLASS="Numbered-1-Indent">
+<A NAME="pgfId=865144">
+ </A>
+A scalar or array argument of pointer type.</LI>
+<LI CLASS="Numbered-Indent">
+<A NAME="pgfId=865145">
+ </A>
+If the CAST keyword is set, an integer index or array of integer indices to heap variables. Integers used to index heap variables are shown in the output of the HELP and PRINT commands.</LI>
+</OL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845079">
+ </A>
+Keyword</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863586">
+ </A>
+<A NAME="marker=863713">
+ </A>
+CAST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863613">
+ </A>
+Set this keyword to create a new pointer to each heap variable index specified in <EM CLASS="Emphasis">
+Arg</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863622">
+ </A>
+<A NAME="marker=863621">
+ </A>
+COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845081">
+ </A>
+Set this keyword equal to a named variable that will contain the number of currently valid heap variables. This value is returned as a longword integer.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845082">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845083">
+ </A>
+To determine if a given pointer refers to a valid heap variable</P>
+<P CLASS="Code">
+<A NAME="pgfId=845084">
+ </A>
+IF (PTR_VALID(p)) THEN ...</P>
+<P CLASS="Body">
+<A NAME="pgfId=845085">
+ </A>
+To destroy all existing pointer heap variables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=845086">
+ </A>
+PTR_FREE, PTR_VALID()</P>
+<P CLASS="Body">
+<A NAME="pgfId=863629">
+ </A>
+You can use the CAST keyword to &quot;reclaim&quot; lost heap variables. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=863630">
+ </A>
+A = PTR_NEW(10)</P>
+<P CLASS="Code">
+<A NAME="pgfId=863631">
+ </A>
+PRINT, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=863632">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=863633">
+ </A>
+&lt;PtrHeapVar2&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=863648">
+ </A>
+In this case, the integer index to the heap variable is 2. If we reassign the variable A, we will &quot;lose&quot; the pointer, but the heap variable will still exist:</P>
+<P CLASS="Code">
+<A NAME="pgfId=863649">
+ </A>
+A=0</P>
+<P CLASS="Code">
+<A NAME="pgfId=863650">
+ </A>
+PRINT, A, PTR_VALID()</P>
+<P CLASS="Body">
+<A NAME="pgfId=863651">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=863645">
+ </A>
+0 &lt;PtrHeapVar2&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=863658">
+ </A>
+We can reclaim the lost heap variable using the CAST keyword:</P>
+<P CLASS="Code">
+<A NAME="pgfId=863659">
+ </A>
+A = PTR_VALID(2, /CAST)</P>
+<P CLASS="Code">
+<A NAME="pgfId=863660">
+ </A>
+PRINT, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=863661">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=863663">
+ </A>
+&lt;PtrHeapVar2&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=863655">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

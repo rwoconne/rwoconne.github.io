@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> USERSYM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ef.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=886931">
+ </A>
+<A NAME="29292">
+ </A>
+USERSYM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=886934">
+ </A>
+The <A NAME="marker=886933">
+ </A>
+USERSYM procedure is used to define the plotting symbol that marks points when the plotting symbol is set to plus or minus 8. Symbols can be drawn with vectors or can be filled. Symbols can be of any size and can have up to 50 vertices. See <A HREF="..html#43797" CLASS="XRef">
+Defining Your Own Plotting Symbols</A>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886938">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=886939">
+ </A>
+USERSYM, <I CLASS="Italic">
+X [, Y]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886940">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886941">
+ </A>
+X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886942">
+ </A>
+The <I CLASS="Italic">
+X</I>
+ and/or <I CLASS="Italic">
+Y</I>
+ parameters define the vertices of the symbol as offsets from the data point in units of approximately the size of a character. In the case of a vector drawn symbol, the symbol is formed by connecting the vertices in order. If only one argument is specified, it must be a (2, <I CLASS="Italic">
+N</I>
+) array of vertices, with element [0, <I CLASS="Italic">
+i</I>
+] containing the X coordinate of the vertex, and element [1, <I CLASS="Italic">
+i</I>
+] containing the Y. If both arguments are provided, <I CLASS="Italic">
+X</I>
+ contains only the X coordinates.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886943">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886945">
+ </A>
+<A NAME="marker=886944">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886946">
+ </A>
+The color used to draw the symbols, or used to fill the polygon. The default color is the same as the line color.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886948">
+ </A>
+<A NAME="marker=886947">
+ </A>
+FILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886950">
+ </A>
+Set this <A NAME="marker=886949">
+ </A>
+keyword to fill the polygon defined by the vertices. If FILL is not set, lines are drawn connecting the vertices.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886951">
+ </A>
+THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886952">
+ </A>
+The thickness of the lines used in drawing the symbol. The default thickness is 1.0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886953">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=886954">
+ </A>
+Make a large, diamond-shaped plotting symbol. Define the vectors of X values by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886955">
+ </A>
+X = [-6, 0, 6, 0, -6]</P>
+<P CLASS="Body">
+<A NAME="pgfId=886956">
+ </A>
+Define the vectors of Y values by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886957">
+ </A>
+Y = [0, 6, 0, -6, 0]</P>
+<P CLASS="Body">
+<A NAME="pgfId=886958">
+ </A>
+Now call USERSYM to create the new plotting symbol 8. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886959">
+ </A>
+USERSYM, X, Y</P>
+<P CLASS="Body">
+<A NAME="pgfId=886960">
+ </A>
+Generate a simple plot to test the plotting symbol by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886961">
+ </A>
+PLOT, FINDGEN(20), PSYM = 8</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886962">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=886969">
+ </A>
+<A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

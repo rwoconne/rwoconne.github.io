@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> REPLICATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl179.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl177.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678544">
+ </A>
+<A NAME="97512">
+ </A>
+REPLICATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678545">
+ </A>
+The <A NAME="marker=673724">
+ </A>
+REPLICATE function returns an array with the given dimensions, filled with the scalar value specified as the first parameter.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678546">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678547">
+ </A>
+Result = REPLICATE(<I CLASS="Italic">
+Value, D</I>
+<SUB CLASS="Subscript">
+1 </SUB>
+<I CLASS="Italic">
+[, ..., D</I>
+<SUB CLASS="Subscript">
+n</SUB>
+<EM CLASS="Emphasis">
+]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678548">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678549">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678550">
+ </A>
+The scalar value with which to fill the resulting array. The type of the result is the same as that of <I CLASS="Italic">
+Value</I>
+. <I CLASS="Italic">
+Value</I>
+ can be any single element expression such as a scalar or 1 element array. This includes structures.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678551">
+ </A>
+D<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678552">
+ </A>
+The dimensions of the result.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678553">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678554">
+ </A>
+Create D, a 5-element by 5-element array with every element set to the string &quot;IDL&quot; by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678555">
+ </A>
+D = REPLICATE('IDL', 5, 5)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678556">
+ </A>
+REPLICATE can also be used to create <A NAME="marker=673728">
+ </A>
+arrays of structures. For example, the following command creates a structure named &quot;emp&quot; that contains a string name field and a long integer employee ID field:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678557">
+ </A>
+employee = {emp, NAME:' ', ID:0L}</P>
+<P CLASS="Body">
+<A NAME="pgfId=678558">
+ </A>
+To create a 10-element array of this structure, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678559">
+ </A>
+emps = REPLICATE(employee, 10)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795816">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795817">
+ </A>
+<A HREF="idl10b.htm#80497" CLASS="XRef">
+MAKE_ARRAY</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

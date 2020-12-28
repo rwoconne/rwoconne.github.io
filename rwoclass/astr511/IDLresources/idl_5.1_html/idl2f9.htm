@@ -1,0 +1,1370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrImage</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2fa.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1029003">
+ </A>
+<A NAME="13854">
+ </A>
+IDLgrImage</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1029007">
+ </A>
+An <A NAME="marker=1029005">
+ </A>
+image <A NAME="marker=1029006">
+ </A>
+object represents a mapping from a two-dimensional array of data values to a two dimensional array of pixel colors, resulting in a flat 2D-scaled version of the image, drawn at Z = 0.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051282">
+ </A>
+The image object is drawn at Z =0 and is positioned and sized with respect to two points:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1051283">
+ </A>
+p1&nbsp;=&nbsp;[LOCATION(0),&nbsp;LOCATION(1),&nbsp;0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=1051285">
+ </A>
+p2&nbsp;=&nbsp;[LOCATION(0)&nbsp;+&nbsp;DIMENSION(0),&nbsp;LOCATION(1)&nbsp;+&nbsp;DIMENSION(1),&nbsp;0]. </P>
+<P CLASS="Body">
+<A NAME="pgfId=1051284">
+ </A>
+where LOCATION and DIMENSION are properties of the image object. These points are transformed in three dimensions, resulting in screen space points designated as p1' and p2'. The image data is drawn in a 2D rectangle defined by [(p1'(0), p1'(1), p2'(0), p2'(1)] by scaling the image pixels to fit the rectangle.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1070377">
+ </A>
+Image objects do not take into account the Z locations of other objects that may be included in the view object. This means that objects that are drawn to the destination object (window or printer) <EM CLASS="Emphasis">
+after the image is drawn</EM>
+ will appear to be in front of the image, even if they are located at a negative Z value (behind the image object). Objects are drawn to a destination device in the order that they are added (via the Add method) to the model, view, or scene that contains them. To position image objects in three-dimensional space, use the <A HREF="idl301.htm#46829" CLASS="XRef">
+IDLgrPolygon</A>
+ object with texture mapping enabled.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1040080">
+ </A>
+An IDLgrImage object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1038520">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1038521">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1003476">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1003477">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003478">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003479">
+ </A>
+See <A HREF="idl2f9.htm#64380" CLASS="XRef">
+IDLgrImage::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003491">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1003492">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1003493">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003497">
+ </A>
+<A HREF="idl2f9.htm#16183" CLASS="XRef">
+IDLgrImage::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1038691">
+ </A>
+<A HREF="idl2f9.htm#30630" CLASS="XRef">
+IDLgrImage::GetCTM</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033704">
+ </A>
+<A HREF="idl2f9.htm#28052" CLASS="XRef">
+IDLgrImage::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003501">
+ </A>
+<A HREF="idl2f9.htm#64380" CLASS="XRef">
+IDLgrImage::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003505">
+ </A>
+<A HREF="idl2f9.htm#49534" CLASS="XRef">
+IDLgrImage::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031293">
+ </A>
+<A NAME="16183">
+ </A>
+IDLgrImage::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031296">
+ </A>
+The IDLgrImage::<A NAME="marker=1052150">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041802">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031300">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051167">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051168">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031301">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrImage::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031302">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031303">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031304">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031305">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1038657">
+ </A>
+<A NAME="30630">
+ </A>
+IDLgrImage::GetCTM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1067749">
+ </A>
+The IDLgrImage::<A NAME="marker=1067748">
+ </A>
+GetCTM function method returns the 4 x 4 graphics transform matrix from the current object upward through the graphics tree. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1067753">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038665">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrImage::]</EM>
+GetCTM()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038666">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038667">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038668">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1038670">
+ </A>
+<A NAME="marker=1038669">
+ </A>
+DESTINATION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058035">
+ </A>
+Set this keyword to the object reference of a destination object to specify that the projection matrix for the View object in the current tree be included in the returned transformation matrix. The resulting matrix will transform a point in the data space of the object on which the GetCTM method is called into a normalized coordinate system (-1 to +1 in X, Y, and Z), relative to the View object that contains the image object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1047274">
+ </A>
+<A NAME="marker=1047273">
+ </A>
+TOP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059501">
+ </A>
+Set this keyword equal to the object reference to an <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+</STRONG>
+ object to specify that the returned matrix accumulate from the object on which the GetCTM method is called up to and including the specified model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1059499">
+ </A>
+<A NAME="28052">
+ </A>
+IDLgrImage::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003744">
+ </A>
+The IDLgrImage::<A NAME="marker=1052156">
+ </A>
+GetProperty procedure method retrieves the value of the property or group of properties for the image. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003709">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003710">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrImage::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003711">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997285">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997286">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016582">
+ </A>
+Any keyword to <A HREF="idl2f9.htm#64380" CLASS="XRef">
+IDLgrImage::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997288">
+ </A>
+<A NAME="marker=1022516">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093536">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093537">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1048860">
+ </A>
+<A NAME="marker=1048859">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068331">
+ </A>
+Set this keyword equal to a named variable that will contain an object reference to the object that contains this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039029">
+ </A>
+<A NAME="marker=1039027">
+ </A>
+XRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068378">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+xmin</EM>
+, <EM CLASS="Emphasis">
+xmax</EM>
+] that specifies the range of <EM CLASS="Emphasis">
+x</EM>
+ data coordinates covered by the graphic object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039033">
+ </A>
+<A NAME="marker=1039031">
+ </A>
+YRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068406">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+] that specifies the range of <EM CLASS="Emphasis">
+y </EM>
+data coordinates covered by the graphic object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039037">
+ </A>
+<A NAME="marker=1039035">
+ </A>
+ZRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068430">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+] that specifies the range of <EM CLASS="Emphasis">
+z </EM>
+data coordinates covered by the graphic object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1012675">
+ </A>
+<A NAME="64380">
+ </A>
+IDLgrImage::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1012676">
+ </A>
+The IDLgrImage::<A NAME="marker=1052160">
+ </A>
+Init function method initializes the image object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041681">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012680">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019567">
+ </A>
+Obj = OBJ_NEW('IDLgrImage' <EM CLASS="Emphasis">
+[, ImageData]</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041940">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041941">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrImage::]</EM>
+Init(<EM CLASS="Emphasis">
+[ImageData]</EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012682">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012683">
+ </A>
+ImageData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012684">
+ </A>
+An array of data values to be displayed as an image. If this argument is not already of byte type, it is converted when the image object is created. ImageData can be any of the following, where <EM CLASS="Emphasis">
+n</EM>
+ is the width of the image, and <EM CLASS="Emphasis">
+m</EM>
+ is the height:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068535">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+ array of color lookup table indices.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068538">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+ greyscale image, or a 2x<EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+x2x<EM CLASS="Emphasis">
+m</EM>
+, or <EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+x2 greyscale image with an alpha channel. (The alpha channel is ignored if the destination device uses Indexed color mode.)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060880">
+ </A>
+A 3x<EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+x3x<EM CLASS="Emphasis">
+m</EM>
+, or <EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+x3 RGB image, or a 4x<EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+x4x<EM CLASS="Emphasis">
+m</EM>
+, or <EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+x4 RGB image with an alpha channel.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1068555">
+ </A>
+If the array has more than one channel, the interleave is specified by the INTERLEAVE property.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012685">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1025038">
+ </A>
+Properties retrievable via <A HREF="idl2f9.htm#28052" CLASS="XRef">
+IDLgrImage::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025046">
+ </A>
+<A NAME="marker=1028059">
+ </A>
+BLEND_FUNCTION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1110688">
+ </A>
+Set this keyword equal to a two-element vector [<I CLASS="Italic">
+src</I>
+, <I CLASS="Italic">
+dst</I>
+] specifying one of the functions listed below for each of the source and destination objects. These are only valid for RGB model destinations. If no Alpha data are specified in an image, the image's Alpha value is assumed to be 1.0. The values of the blending function (<I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+src</SUB>
+ and <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+dst</SUB>
+) are used in the following equation</P>
+<DIV>
+<CENTER><IMG SRC="idl_130.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=1110693">
+ </A>
+where C<SUB CLASS="Subscript">
+d</SUB>
+ is the initial color of a pixel on the destination device (the background color), C<SUB CLASS="Subscript">
+i</SUB>
+ is the color of the pixel in the image, and C<SUB CLASS="Subscript">
+d</SUB>
+' is the resulting color of the pixel.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1110694">
+ </A>
+Setting <EM CLASS="Emphasis">
+src</EM>
+ and <EM CLASS="Emphasis">
+dst</EM>
+ in the BLEND_FUNCTION vector to the following values determine how each term in the equation is calculated:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1110697">
+ </A>
+src or dst</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1110699">
+ </A>
+V<SUB CLASS="Subscript">
+src</SUB>
+ or V<SUB CLASS="Subscript">
+dst</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1110701">
+ </A>
+What the function does</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110703">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110705">
+ </A>
+n/a</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110707">
+ </A>
+Alpha blending is disabled. C<SUB CLASS="Subscript">
+d</SUB>
+' = C<SUB CLASS="Subscript">
+i</SUB>
+.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110709">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110711">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110713">
+ </A>
+The value of <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+src</SUB>
+ or <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+dst</SUB>
+ in the equation is zero, thus the value of the term is zero.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110715">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110717">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110719">
+ </A>
+The value of <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+src</SUB>
+ or <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+dst</SUB>
+ in the equation is one, thus the value of the term is the same as the color value.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110721">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110723">
+ </A>
+Image<SUB CLASS="Subscript">
+a</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110725">
+ </A>
+The value of <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+src</SUB>
+ or <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+dst</SUB>
+ in the equation is the value of the alpha channel of the image.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110727">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110729">
+ </A>
+1-Image<SUB CLASS="Subscript">
+a</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1110731">
+ </A>
+The value of <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+src</SUB>
+ or <I CLASS="Italic">
+V</I>
+<SUB CLASS="Subscript">
+dst</SUB>
+ in the equation is one minus the value of the alpha channel of the image.</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1028067">
+ </A>
+<A NAME="marker=1028066">
+ </A>
+CHANNEL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1030445">
+ </A>
+Set this keyword to a hexadecimal bitmask that defines which color channel(s) to draw. Each bit that is a 1 is drawn; each bit that is a 0 is not drawn. For example, 'ff0000'X represents a Red channel write. The default is to draw all channels, and is represented by the hexadecimal value 'ffffff'X.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1173717">
+ </A>
+This keyword is ignored for CI destination objects.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1028023">
+ </A>
+<A NAME="marker=1028022">
+ </A>
+DATA (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1028024">
+ </A>
+Set this keyword to a <EM CLASS="Emphasis">
+n</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+2xnxm</EM>
+, <EM CLASS="Emphasis">
+3xn</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+, or <EM CLASS="Emphasis">
+4xn</EM>
+x<EM CLASS="Emphasis">
+m</EM>
+ array of image data for the object. The <EM CLASS="Emphasis">
+n</EM>
+ and <EM CLASS="Emphasis">
+m</EM>
+ values may be in any position as specified by the INTERLEAVE keyword. This keyword is equivalent to the optional argument, <EM CLASS="Emphasis">
+ImageData</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1028026">
+ </A>
+<A NAME="marker=1028025">
+ </A>
+DIMENSIONS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025059">
+ </A>
+Set this keyword equal to a two-element vector of the form [<EM CLASS="Emphasis">
+width</EM>
+, <EM CLASS="Emphasis">
+height</EM>
+] specifying the dimensions of the rectangle in which the image is to be drawn on the device. The image will be resampled as necessary to fit within this rectangle. The default is derived from the dimensions of the given image data and is measured in pixels.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1054721">
+ </A>
+<A NAME="marker=1054720">
+ </A>
+GREYSCALE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1054722">
+ </A>
+Set this keyword to specify that the image not be drawn through a palette. </P>
+<P CLASS="Body">
+<A NAME="pgfId=1059652">
+ </A>
+If this keyword is not set, for an RGB colormodel destination, if a palette is present in the image object, it is used. If there is no current destination palette, a greyscale palette is used. For a Color Index colormodel destination, the current destination palette is used.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1054723">
+ </A>
+Only single band images (i.e. <EM CLASS="Emphasis">
+1xnxm</EM>
+) are affected by this keyword. By default, GREYSCALE is disabled.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049499">
+ </A>
+<A NAME="marker=1049498">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049500">
+ </A>
+Set this keyword to a boolean value indicating whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068463">
+ </A>
+0 = Draw graphic (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068464">
+ </A>
+1 = Do not draw graphic</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1028440">
+ </A>
+<A NAME="marker=1028045">
+ </A>
+INTERLEAVE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1028056">
+ </A>
+Set this keyword to indicate the dimension over which color is interleaved for images with more than one channel:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032485">
+ </A>
+0 = Pixel interleaved: Images with dimensions (3, <EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032487">
+ </A>
+1 = Scanline interleaved (row interleaved): Images with dimensions (<EM CLASS="Emphasis">
+m</EM>
+, 3, <EM CLASS="Emphasis">
+n</EM>
+)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1032490">
+ </A>
+2 = Planar interleaved: Images with dimensions (<EM CLASS="Emphasis">
+m</EM>
+, <EM CLASS="Emphasis">
+n</EM>
+, 3).</LI>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1028048">
+ </A>
+If an alpha channel is present, the 3s should be replaced by 4s. In a greyscale image with an alpha channel, the 3s should be replaced by 2s.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049507">
+ </A>
+<A NAME="marker=1049506">
+ </A>
+LOCATION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049508">
+ </A>
+A two- or three-element vector [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] or [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+] specifying the position of the lower lefthand corner of the image, measured in data units. If the vector is of the form [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+], the <EM CLASS="Emphasis">
+z</EM>
+ value is set equal to zero. The default is [0, 0, 0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049027">
+ </A>
+<A NAME="marker=1049026">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058297">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025083">
+ </A>
+<A NAME="marker=1025082">
+ </A>
+NO_COPY (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025088">
+ </A>
+Set this keyword to relocate the image data from the input variable to the image object, leaving the input variable <EM CLASS="Emphasis">
+ImageData</EM>
+ undefined. Only the <EM CLASS="Emphasis">
+ImageData</EM>
+ argument is affected. If this keyword is omitted, the input image data will be duplicated and a copy will be stored in the object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049513">
+ </A>
+<A NAME="marker=1049512">
+ </A>
+ORDER (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049514">
+ </A>
+Set this keyword to force the rows of the image data to be drawn from top to bottom. By default, image data is drawn from the bottom row up to the top row.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012695">
+ </A>
+<A NAME="marker=1022851">
+ </A>
+PALETTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012699">
+ </A>
+Set this keyword equal to the object reference of a palette object (an instance of the <A HREF="idl2fe.htm#45361" CLASS="XRef">
+IDLgrPalette</A>
+ object class) to specify the red, green, and blue values of the color lookup table to be associated with the image if it is an indexed color image. This property is ignored if the image is a greyscale or RGB image.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1028453">
+ </A>
+This table is only used when the destination is an RGB model device. The Indexed color model writes the indices directly to the device. In order to ensure that these colors are used when the image is displayed, this palette must be copied to the graphics destination's palette for any graphics destination that uses the Indexed color model.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1060509">
+ </A>
+<A NAME="marker=1060508">
+ </A>
+RESET_DATA (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1060506">
+ </A>
+Set this keyword to treat the data provided via the DATA property as a new data set unique to this object, rather than overwriting data that is shared by other objects. There is no reason to use this keyword if the object on which the property is being set does not currently share data with another object (that is, if the SHARE_DATA property is not in use). This keyword has no effect if no new data is provided via the DATA property. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1028455">
+ </A>
+<A NAME="marker=1028454">
+ </A>
+SHARE_DATA (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012701">
+ </A>
+Set this keyword equal to the object reference of an object with which data is to be shared by this image. An image may only share data with another image. The SHARE_DATA property is intended for use when data values are not set via an argument to the object's Init method or by setting the object's DATA property.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049519">
+ </A>
+<A NAME="marker=1049517">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058422">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039398">
+ </A>
+<A NAME="marker=1039397">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039399">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039400">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039401">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039402">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039403">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039405">
+ </A>
+<A NAME="marker=1039404">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039406">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039407">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039408">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039409">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039410">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039412">
+ </A>
+<A NAME="marker=1039411">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039413">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039414">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039415">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039416">
+ </A>
+[(-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Z</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039417">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997293">
+ </A>
+<A NAME="49534">
+ </A>
+IDLgrImage::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003723">
+ </A>
+The IDLgrImage::<A NAME="marker=1052163">
+ </A>
+SetProperty procedure method sets the value of the property or group of properties for the image. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f9.htm#13854" CLASS="XRef">
+IDLgrImage</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003724">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003725">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrImage::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003726">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003727">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997295">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049917">
+ </A>
+Any keyword to <A HREF="idl2f9.htm#64380" CLASS="XRef">
+IDLgrImage::Init</A>
+</DIV>
+</BODY>
+</HTML>

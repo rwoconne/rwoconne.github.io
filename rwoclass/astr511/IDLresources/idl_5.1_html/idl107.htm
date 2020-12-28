@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LUMPROVE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl108.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl106.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=51301">
+ </A>
+<A NAME="72173">
+ </A>
+LUMPROVE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51306">
+ </A>
+The <A NAME="marker=51303">
+ </A>
+LUMPROVE <A NAME="marker=51304">
+ </A>
+function uses LU decomposition to <A NAME="marker=51305">
+ </A>
+iteratively improve an approximate solution <I CLASS="Italics">
+X</I>
+ of a set of <I CLASS="Italics">
+n</I>
+ linear equations in <I CLASS="Italics">
+n</I>
+ unknowns <EM CLASS="Bold">
+Ax = b</EM>
+. The result is a vector, whose type and length are identical to <I CLASS="Italics">
+X</I>
+, containing the improved solution. </P>
+<P CLASS="Body">
+<A NAME="pgfId=51307">
+ </A>
+LUMPROVE is based on the routine <CODE CLASS="Code">
+mprove</CODE>
+ described in section 2.5 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51308">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51309">
+ </A>
+Result = LUMPROVE(<I CLASS="Italics">
+A, Alud, Index, B, X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51310">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51311">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51312">
+ </A>
+The <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ coefficient array of the linear system <EM CLASS="Bold">
+Ax = b</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51313">
+ </A>
+Alud</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51314">
+ </A>
+The <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ LU decomposition of <I CLASS="Italics">
+A</I>
+ created by the LUDC procedure. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51315">
+ </A>
+Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51316">
+ </A>
+An input vector, created by the LUDC procedure, containing a record of the row permutations which occurred as a result of partial pivoting.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51317">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51318">
+ </A>
+An <I CLASS="Italics">
+n</I>
+-element vector containing the right-hand side of the linear system<BR>
+<EM CLASS="Bold">
+Ax = b</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51319">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51320">
+ </A>
+An <I CLASS="Italics">
+n</I>
+-element vector containing the approximate solution of the linear system<BR>
+<EM CLASS="Bold">
+Ax = b</EM>
+. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51321">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58736">
+ </A>
+<A NAME="marker=58735">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58737">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51323">
+ </A>
+<A NAME="marker=51322">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51324">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51325">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51326">
+ </A>
+Use LUMPROVE to improve an approximate solution X to the linear system Ax = B:</P>
+<P CLASS="Code">
+<A NAME="pgfId=51327">
+ </A>
+A = [[ 2.0, &nbsp;1.0, &nbsp;1.0], $	<EM CLASS="Comment">;
+Create coefficient array A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51328">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -6.0, &nbsp;0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=51329">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2.0, &nbsp;7.0, &nbsp;2.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=51330">
+ </A>
+alud = A	<EM CLASS="Comment">;
+Create a duplicate of A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51331">
+ </A>
+B = [3.0, -8.0, 10.0]	<EM CLASS="Comment">;
+Define the right-hand side vector B.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51332">
+ </A>
+X = [.89, 1.78, -0.88]	<EM CLASS="Comment">;
+Begin with an estimated solution X.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51333">
+ </A>
+LUDC, alud, INDEX	<EM CLASS="Comment">;
+Decompose the duplicate of A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51334">
+ </A>
+result = LUMPROVE(A, alud, INDEX, B, X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=51335">
+ </A>
+	<EM CLASS="Comment">;
+Compute an improved solution.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=51336">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print it.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=51337">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=51338">
+ </A>
+ 1.00000 2.00000 -1.00000</P>
+<P CLASS="Body">
+<A NAME="pgfId=51339">
+ </A>
+This is the exact solution vector.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51340">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51347">
+ </A>
+<A HREF="idlbe.htm#39130" CLASS="XRef">
+GS_ITER</A>
+, <A HREF="idl106.htm#56865" CLASS="XRef">
+LUDC</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

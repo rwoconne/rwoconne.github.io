@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> UNIQ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ee.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=886898">
+ </A>
+<A NAME="77828">
+ </A>
+UNIQ</H2>
+<P CLASS="Body">
+<A NAME="pgfId=886902">
+ </A>
+The <A NAME="marker=886900">
+ </A>
+UNIQ function <A NAME="marker=886901">
+ </A>
+returns the subscripts of the unique elements in an array. Note that repeated elements must be adjacent in order to be found. This routine is intended to be used with the SORT function: see the examples below. This function was inspired by the Unix <CODE CLASS="Code">
+uniq(1)</CODE>
+ command.</P>
+<P CLASS="Body">
+<A NAME="pgfId=886903">
+ </A>
+UNIQ returns an array of indices into the original array. Note that the index of the last element in each set of non-unique elements is returned. The following expression is a copy of the sorted array with duplicate adjacent elements removed:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886904">
+ </A>
+<I CLASS="Italic">
+Array</I>
+(UNIQ(<I CLASS="Italic">
+Array</I>
+))</P>
+<P CLASS="Body">
+<A NAME="pgfId=889707">
+ </A>
+UNIQ returns 0 (zero) if the argument supplied is a scalar rather than an array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=886905">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+uniq.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886906">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=886907">
+ </A>
+Result = UNIQ(<I CLASS="Italic">
+Array [, Index]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886908">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886909">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886910">
+ </A>
+The array to be scanned. For UNIQ to work properly, the array must be sorted into monotonic order unless the optional parameter <I CLASS="Italic">
+Idx</I>
+ is supplied.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=886911">
+ </A>
+Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=886912">
+ </A>
+This optional parameter is an array of indices into <I CLASS="Italic">
+Array</I>
+ that order the elements into monotonic order. That is, the expression:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886913">
+ </A>
+<I CLASS="Italic">
+Array</I>
+(<I CLASS="Italic">
+Index</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=886914">
+ </A>
+yields an array in which the elements of <I CLASS="Italic">
+Array</I>
+ are rearranged into monotonic order. If the array is not already in monotonic order, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886915">
+ </A>
+UNIQ(Array, SORT(Array))</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886916">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=886917">
+ </A>
+Find the unique elements of an unsorted array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=886918">
+ </A>
+array = [1, 2, 1, 2, 3, 4, 5, 6, 6, 5]	<EM CLASS="Comment">;
+Create an array .</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=886919">
+ </A>
+b = array(UNIQ(array, SORT(array)))	<EM CLASS="Comment">;
+Variable B holds an array containing the sorted, unique values in array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=886920">
+ </A>
+PRINT, b</P>
+<P CLASS="Body">
+<A NAME="pgfId=887470">
+ </A>
+IDL prints</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=887468">
+ </A>
+1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=886921">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=886928">
+ </A>
+<A HREF="idl1a8.htm#59536" CLASS="XRef">
+SORT</A>
+, <A HREF="idl1ff.htm#76802" CLASS="XRef">
+WHERE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

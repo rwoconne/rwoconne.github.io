@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Window Systems</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl230.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl22e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144213">
+ </A>
+<A NAME="11671">
+ </A>
+<A NAME="marker=142558">
+ </A>
+Window Systems</H2>
+<P CLASS="Body">
+<A NAME="pgfId=144214">
+ </A>
+The different window systems supported by IDL have many features in common. This section describes those features. See the individual descriptions of each system later in this chapter for additional information about each one.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144215">
+ </A>
+IDL utilizes the window system by creating and using one or more largely independent windows, each of which can be used for the display of graphics and/or images. One color map table is shared among all these windows. Multiple windows can be active simultaneously. Windows are referenced using their index which is a non-negative integer. </P>
+<P CLASS="Body">
+<A NAME="pgfId=144216">
+ </A>
+&quot;<A NAME="marker=142565">
+ </A>
+Dithering&quot; or <A NAME="marker=142566">
+ </A>
+halftoning techniques are used to display images with multiple shades of gray on monochrome displays--displays that can only display white or black. This topic is discussed in <A HREF="idl22f.htm#24166" CLASS="XRef">
+Image Display On Monochrome Devices</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144217">
+ </A>
+Graphic and image output is always directed to the current window. When a window system is selected as the current IDL graphics device, the index number of the current window is found in the !D.WINDOW system variable. This variable contains -1 if no window is open or selected. The <A NAME="marker=142573">
+ </A>
+WSET procedure is used to change the current window. <A NAME="marker=142574">
+ </A>
+WSHOW hides, displays, and iconifies windows. <A NAME="marker=142575">
+ </A>
+WDELETE deletes a window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144218">
+ </A>
+The <A NAME="marker=142576">
+ </A>
+WINDOW procedure creates a new window with a given index. If a window already exists with the same index, it is first deleted. The size, position, title, and number of colors, may also be specified. If you access the display before creating the first window, IDL automatically creates a window with an index number of 0 and with the default attributes.</P>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144260">
+ </A>
+<A NAME="83595">
+ </A>
+<A NAME="marker=142639">
+ </A>
+Backing Store</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144261">
+ </A>
+One of the features that distinguishes various window systems is how they handle the issue of backing store. When part of a window that was previously not visible is exposed, there are two basic approaches that a window system can take. Some keep track of the current contents of all windows and automatically repair any damage to their visible regions (retained windows). This saved information is known as the backing store. Others simply report the damage to the program that created the window and leave repairing the visible region to the program (non-retained windows).</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=171220">
+ </A>
+<A NAME="57221">
+ </A>
+Allowed Values for the RETAIN Keyword</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=171200">
+ </A>
+Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=171202">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171204">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171206">
+ </A>
+No backing store.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171208">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171210">
+ </A>
+Request the server or window system to perform backing store.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171212">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=171217">
+ </A>
+Make IDL perform backing store.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=144262">
+ </A>
+There are convincing arguments for and against both approaches. It is generally more convenient for IDL if the window system handles this problem automatically, but this often comes at a performance penalty. The actual cost of retained windows varies between systems and depends partially on the application.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144264">
+ </A>
+The X Window system does not by default keep track of window contents. Therefore, when a window on the display is obscured by another window, the contents of its obscured portion is lost. Re-exposing the window causes the X server to fill the missing data with the default background color for that window, and request the application to redraw the missing data. Applications can request a backing store for their windows, but servers are not required to provide it. Many X servers do not provide backing store, and even those that do cannot necessarily provide it for all requesting windows. Therefore, requesting backing store from the server might help, but there is no certainty.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144265">
+ </A>
+The IDL window system drivers allow you to control the issue of backing store using the RETAIN keyword to the DEVICE and WINDOW procedures. Using it with DEVICE allows you to set the default action for all windows, while using it with WINDOW lets you override the default for the new window. The possible values for this keyword are summarized in <A HREF="idl22f.htm#57221" CLASS="XRef">
+Allowed Values for the RETAIN Keyword</A>
+, and are described below:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144266">
+ </A>
+Setting the RETAIN keyword to 0 specifies that no backing store is kept. In this case, exposing a previously obscured window leaves the missing portion of the window blank. Although this behavior can be inconvenient, it usually has the highest performance because there is no need to keep a copy of the window contents.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144267">
+ </A>
+Setting the RETAIN keyword to 1 causes IDL to request that a backing store be maintained. If the window system decides to accept the request, it will automatically repair the missing portions when the window is exposed. X Windows may or may not provide backing store when requested, depending on the capabilities of the server and the resources available to it.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144268">
+ </A>
+Setting the RETAIN keyword to 2 specifies that IDL should keep a backing store for the window itself, and repair any window damage when the window system requests it. This option exists for X Windows. In this case, a pixmap (off-screen display memory) the same size as the window is created at the same time the window is created, and all graphics operations sent to the window are also sent to the pixmap. When the server requests IDL to repair freshly exposed windows, this pixmap is used to fill in the missing contents. Pixmaps are a precious resource in the X server, so backing pixmaps should only be requested for windows with contents that must absolutely be preserved.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=144269">
+ </A>
+If the type of backing store to use is not explicitly specified using the RETAIN keyword, IDL assumes option 1 and requests the window system to keep a backing store.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=171234">
+ </A>
+A Note on Reading Data from Windows</H5>
+<P CLASS="Body">
+<A NAME="pgfId=421719">
+ </A>
+On some systems, when backing store is provided by the window system (RETAIN=1), reading data from a window using TVRD may cause unexpected results. For example, data may be improperly read from the window even when the image displayed on screen is correct. Having IDL provide the backing store (RETAIN=2) ensures that the window contents will be read properly. These types of problems are described in more detail in the documentation for TVRD. <A HREF="idl1ed.htm#92228" CLASS="XRef">
+Unexpected Results Using TVRD with X Windows</A>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144270">
+ </A>
+<A NAME="24166">
+ </A>
+<A NAME="marker=142663">
+ </A>
+Image Display On Monochrome <A NAME="marker=142664">
+ </A>
+Devices</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144271">
+ </A>
+Images are automatically dithered when sent to some monochrome devices. <A NAME="marker=142665">
+ </A>
+Dithering is a technique which increases the number of apparent brightness levels at the expense of spatial resolution. Images with 256 gray levels are displayed on a display with only two colors, black and white, using halftoning techniques. PostScript handles dithering directly. IDL supports dithering for other devices if their DEVICE procedures accept the FLOYD, ORDERED, or THRESHOLD keywords.</P>
+</DIV>
+</BODY>
+</HTML>

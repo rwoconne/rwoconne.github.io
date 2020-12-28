@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LINDGEN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlea.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=829898">
+ </A>
+<A NAME="60864">
+ </A>
+LINDGEN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=829902">
+ </A>
+The <A NAME="marker=829900">
+ </A>
+LINDGEN function returns a longword integer <A NAME="marker=829901">
+ </A>
+array with the specified dimensions. Each element of the array is set to the value of its one-dimensional subscript.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677416">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677417">
+ </A>
+Result = LINDGEN(<I CLASS="Italics">
+D</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., D</I>
+<SUB CLASS="subscript">
+n</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677418">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677419">
+ </A>
+D<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677420">
+ </A>
+The dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified. If the dimension arguments are not integer values, IDL will convert them to integer values before creating the new array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677421">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677422">
+ </A>
+To create L, a 10-element by 10-element longword array where each element is set to the value of its one-dimensional subscript, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677423">
+ </A>
+L = LINDGEN(10, 10)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769884">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822315">
+ </A>
+<A HREF="idl16.htm#64183" CLASS="XRef">
+BINDGEN</A>
+, <A HREF="idl31.htm#62457" CLASS="XRef">
+CINDGEN</A>
+, <A HREF="idl69.htm#51663" CLASS="XRef">
+DCINDGEN</A>
+, <A HREF="idl7e.htm#26060" CLASS="XRef">
+DINDGEN</A>
+, <A HREF="idla0.htm#80149" CLASS="XRef">
+FINDGEN</A>
+, <A HREF="idld3.htm#60998" CLASS="XRef">
+INDGEN</A>
+, <A HREF="idl19f.htm#39406" CLASS="XRef">
+SINDGEN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

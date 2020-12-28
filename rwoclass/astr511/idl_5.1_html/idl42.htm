@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CONVERT_COORD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl43.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl41.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=818797">
+ </A>
+<A NAME="98010">
+ </A>
+CONVERT_COORD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=818800">
+ </A>
+The <A NAME="marker=818799">
+ </A>
+CONVERT_COORD function transforms one or more sets of coordinates to and from the <A NAME="marker=818801">
+ </A>
+coordinate systems supported by IDL. The result of the function is a (3, <I CLASS="Italics">
+n</I>
+) vector containing the (<I CLASS="Italics">
+x, y, z</I>
+) components of the n output coordinates.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676365">
+ </A>
+The input coordinates <I CLASS="Italics">
+X</I>
+ and, optionally, <I CLASS="Italics">
+Y</I>
+ and/or <I CLASS="Italics">
+Z</I>
+ can be given in data, device, or normalized form by using the DATA, DEVICE, or NORMAL keywords. The default input coordinate system is DATA. The keywords TO_DATA, TO_DEVICE, and TO_NORMAL specify the output coordinate system.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676366">
+ </A>
+If the input points are in 3D data coordinates, be sure to set the T3D keyword.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676367">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676368">
+ </A>
+Result = CONVERT_COORD(, <I CLASS="Italics">
+X [, Y [, Z]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676369">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676370">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676371">
+ </A>
+A vector or scalar argument providing the X components of the input coordinates. If only one argument is specified, <I CLASS="Italics">
+X</I>
+ must be an array of either two or three vectors (i.e., <CODE CLASS="Code">
+(2,*)</CODE>
+ or <CODE CLASS="Code">
+(3,*)</CODE>
+). In this special case, <CODE CLASS="Code">
+X[0,*]</CODE>
+ are taken as the X values, <CODE CLASS="Code">
+X[1,*]</CODE>
+ are taken as the Y values, and, if present, <CODE CLASS="Code">
+X[2,*]</CODE>
+ are taken as the Z values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676372">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676373">
+ </A>
+An optional argument providing the Y input coordinate(s).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676374">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676375">
+ </A>
+An optional argument providing the Z input coordinate(s).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676376">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676377">
+ </A>
+<A NAME="marker=672734">
+ </A>
+DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676378">
+ </A>
+Set this keyword if the input coordinates are in <A NAME="marker=672735">
+ </A>
+data space (the default).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676379">
+ </A>
+<A NAME="marker=672736">
+ </A>
+DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676380">
+ </A>
+Set this keyword if the input coordinates are in <A NAME="marker=672737">
+ </A>
+device space.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676381">
+ </A>
+<A NAME="marker=672738">
+ </A>
+NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676382">
+ </A>
+Set this keyword if the input coordinates are in <A NAME="marker=672739">
+ </A>
+normalized space.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676383">
+ </A>
+<A NAME="marker=672740">
+ </A>
+T3D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676384">
+ </A>
+Set this keyword if the 3D transformation !P.T is to be applied.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676385">
+ </A>
+<A NAME="marker=672741">
+ </A>
+TO_DATA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676386">
+ </A>
+Set this keyword if the output coordinates are to be in data space.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676387">
+ </A>
+<A NAME="marker=672742">
+ </A>
+TO_DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676388">
+ </A>
+Set this keyword if the output coordinates are to be in device space.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676389">
+ </A>
+<A NAME="marker=672743">
+ </A>
+TO_NORMAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676390">
+ </A>
+Set this keyword if the output coordinates are to be in normalized space.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676391">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676392">
+ </A>
+Convert, using the currently established viewing transformation, 11 points along the parametric line <EM CLASS="Emphasis">
+x = t</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+ = 2<EM CLASS="Emphasis">
+t</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+ = <EM CLASS="Emphasis">
+t</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+, along the interval [0, 1] from data coordinates to device coordinates:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676393">
+ </A>
+X = FINDGEN(11)/10.	<EM CLASS="Comment">;
+Make a vector of X values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676394">
+ </A>
+D = CONVERT_COORD(X, 2*X, X^2, /T3D, /TO_DEVICE)<BR>
+<EM CLASS="Comment">;
+Convert the coordinates. D will be an (3,11) element array.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823445">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823446">
+ </A>
+<A HREF="idl51.htm#29538" CLASS="XRef">
+CV_COORD</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

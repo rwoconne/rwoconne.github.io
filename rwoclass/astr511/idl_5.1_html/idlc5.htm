@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HELP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlc6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=748700">
+ </A>
+<A NAME="54264">
+ </A>
+HELP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677125">
+ </A>
+The <A NAME="marker=673109">
+ </A>
+HELP procedure gives the user information on many aspects of the current IDL session. The specific area for which help is desired is selected by specifying the appropriate keyword. If no arguments or keywords are specified, the default is to show the current <A NAME="marker=673113">
+ </A>
+nesting of procedures and functions, all current variables at the current program level, and <A NAME="marker=673114">
+ </A>
+open files. Only one keyword can be specified at a time.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677126">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677127">
+ </A>
+HELP, <I CLASS="Italics">
+Expression</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., Expression</I>
+<SUB CLASS="Subscript">
+n</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677128">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677129">
+ </A>
+Expression(s)</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677130">
+ </A>
+The arguments are interpreted differently depending on the keyword selected. If no keyword is selected, HELP displays basic information for its parameters. For example, to see the type and structure of the variable A, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677131">
+ </A>
+HELP, A</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677132">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677133">
+ </A>
+Note that the use of some of the following keywords causes any arguments to HELP to be ignored and HELP provides other types of information instead. If the description of the keyword does not explicitly mention the arguments, the arguments are ignored.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677134">
+ </A>
+<A NAME="marker=673115">
+ </A>
+ALL_KEYS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677135">
+ </A>
+Set this keyword to show current <A NAME="marker=673116">
+ </A>
+function-key definitions as set by DEFINE_KEY. If no arguments are supplied, information on all function keys is displayed. If arguments are provided, they must be scalar strings containing the names of function keys, and information on the specified keys is given. Under Unix, this keyword is different from KEYS because every key is displayed, no matter what its current programming. Under VMS and Windows, the two keywords mean the same thing. On the Macintosh, keys cannot be defined via DEFINE_KEY.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677136">
+ </A>
+<A NAME="marker=673117">
+ </A>
+BREAKPOINTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677137">
+ </A>
+Set this keyword to display the <A NAME="marker=673118">
+ </A>
+breakpoint table which shows the program module and location for each breakpoint.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677138">
+ </A>
+<A NAME="marker=673119">
+ </A>
+CALLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677139">
+ </A>
+Set this keyword to a named variable in which to store the <A NAME="marker=673120">
+ </A>
+procedure call stack. Each string element contains the name of the program module, source file name, and line number. Array element zero contains the information about the caller of HELP, element one contains information about its caller, etc. This keyword is useful for programs that require <A NAME="marker=673121">
+ </A>
+traceback information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677140">
+ </A>
+<A NAME="marker=673122">
+ </A>
+DEVICE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677141">
+ </A>
+Set this keyword to show information about the currently selected <A NAME="marker=673123">
+ </A>
+graphics device. This information is dependent on the abilities of the current device, but the name of the device is always given. Arguments to HELP are ignored when DEVICE is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677142">
+ </A>
+<A NAME="marker=843813">
+ </A>
+DLM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843807">
+ </A>
+Set this keyword to display all known dynamically loadable modules<A NAME="marker=843814">
+ </A>
+ and their state (loaded or not loaded).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843801">
+ </A>
+<A NAME="marker=673124">
+ </A>
+FILES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677143">
+ </A>
+Set this keyword to display information about <A NAME="marker=673125">
+ </A>
+file units. If no arguments are supplied in the call to HELP, information on all open file units (except the special units 0, -1, and -2) is displayed. If arguments are provided, they are taken to be integer file unit numbers, and information on the specified file units is given.</P>
+<P CLASS="Body">
+<A NAME="pgfId=835773">
+ </A>
+For example, the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=835776">
+ </A>
+HELP, /FILES, -2, -1, 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=835777">
+ </A>
+gives information below about the default file units:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=835778">
+ </A>
+Unit Attributes Name<BR>
+-2&nbsp;&nbsp;&nbsp;Write, Truncate, Tty, Reserved&nbsp;&nbsp;&nbsp;&lt;stderr&gt;<BR>
+-1&nbsp;&nbsp;&nbsp;Write, Truncate, Tty, Reserved&nbsp;&nbsp;&nbsp;&lt;stdout&gt;<BR>
+ 0&nbsp;&nbsp;&nbsp;Read, Tty, Reserved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;stdin&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=835779">
+ </A>
+The attributes column tells about the characteristics of the file. For instance, the file connected to logical file unit 2 is called &quot;stderr&quot; and is the standard error file. It is opened for write access (Write), is a new file (Truncate), is a terminal (Tty), and cannot be closed by the CLOSE command (Reserved).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832176">
+ </A>
+<A NAME="marker=832178">
+ </A>
+HEAP_VARIABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832177">
+ </A>
+Set this keyword to display help information for all the current heap variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677144">
+ </A>
+<A NAME="marker=673126">
+ </A>
+KEYS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677145">
+ </A>
+Set this keyword to show current <A NAME="marker=673127">
+ </A>
+function key definitions as set by DEFINE_ KEY, for those function keys that are currently programmed to perform a function. Under Unix, this keyword is different from ALL_KEYS because that keyword displays every key, no matter what its current programming. Under VMS and Windows, the two keywords mean the same thing. On the Macintosh, keys cannot be defined via DEFINE_KEY. If no arguments are supplied, information on all function keys is displayed. If arguments are provided, they must be scalar strings containing the names of function keys, and information on the specified keys is given.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843755">
+ </A>
+<A NAME="marker=843788">
+ </A>
+LAST_MESSAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843756">
+ </A>
+Set this keyword to display the last error message issued by IDL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677146">
+ </A>
+<A NAME="marker=673128">
+ </A>
+MEMORY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677147">
+ </A>
+Set this keyword to see a report on the amount of <A NAME="marker=673129">
+ </A>
+dynamic memory (in bytes) currently in use by the IDL session, and the number of times dynamic memory has been allocated and deallocated. Arguments to HELP are ignored when MEMORY is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677148">
+ </A>
+<A NAME="marker=843818">
+ </A>
+MESSAGES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843819">
+ </A>
+Set this keyword to display all known message blocks and the error space range into which they are loaded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843817">
+ </A>
+<A NAME="marker=673133">
+ </A>
+NAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677149">
+ </A>
+A string of the names of variables whose values are to be printed. This string, which must be enclosed in quotes, can contain the standard wildcard matching characters, &quot;*&quot; and &quot;?&quot;. For example, to print only the values of variables beginning with &quot;A&quot;, use the command <CODE CLASS="Code">
+HELP, NAME='a*'</CODE>
+. Similarly, <CODE CLASS="Code">
+HELP, NAME='?'</CODE>
+, prints the values of all variables with a single-character name.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832180">
+ </A>
+<A NAME="marker=832187">
+ </A>
+OBJECTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832181">
+ </A>
+Set this keyword to display information on defined object classes. If no arguments are provided, all currently-defined object classes are shown. If arguments are provided, the definition of the object class for the heap variables referred to is displayed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=832182">
+ </A>
+Information is provided on inherited superclasses and all <EM CLASS="Emphasis">
+known methods. A method is known to IDL only if it has been compiled in the current IDL session and called by its own class or a subclass. Methods that have not been compiled yet will not be shown. Thus, the list of methods displayed by HELP is not necessarily a complete list of all possible method for the object class.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=835840">
+ </A>
+If called within a class' method, the OBJECTS keyword also displays the instance data of the object on which it was called.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832171">
+ </A>
+<A NAME="marker=832174">
+ </A>
+OUTPUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832172">
+ </A>
+Set this keyword equal to a named variable that will contain a string array containing the formatted output of the HELP command. Each line of formatted output becomes a single element in the string array.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=832173">
+ </A>
+The OUTPUT keyword is primarily for use in capturing HELP output in order to display it someplace else, such as in a text widget. This keyword is <EM CLASS="Emphasis">
+not</EM>
+ intended to be used in obtaining programmatic information about the IDL session, and is formatted to be human readable. Research Systems reserves the right to change the format and content of this text <I CLASS="Italic">
+at any time, without warning</I>
+. If you find yourself using OUTPUT for a non-display purpose, you should consider submitting an enhancement request for a function that will provide the information you require in a safe form.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677150">
+ </A>
+<A NAME="marker=673134">
+ </A>
+RECALL_COMMANDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=835793">
+ </A>
+Set this keyword to display the saved commands in the <A NAME="marker=673135">
+ </A>
+command input buffer. By default, IDL saves the last 20 lines of input in a buffer from which they can be recalled for command line editing. Arguments to HELP are ignored when RECALL is specified.</P>
+<P CLASS="Body">
+<A NAME="pgfId=835794">
+ </A>
+The number of lines saved can be changed by assigning the desired number of lines to the environment variable !EDIT_INPUT in the IDL startup file. See <A HREF="sysvars.html#81663" CLASS="XRef">
+</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677152">
+ </A>
+<A NAME="marker=673136">
+ </A>
+ROUTINES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677153">
+ </A>
+Set this keyword to show a list of all compiled <A NAME="marker=673137">
+ </A>
+procedures and functions with their parameter names. Keyword parameters accepted by each module are shown to the right of the routine name.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=168290">
+ </A>
+<A NAME="marker=168292">
+ </A>
+SOURCE_FILES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=168291">
+ </A>
+Set this keyword to display information on procedures and functions written in the IDL language that have been compiled during the current IDL session. Full path names (relative to the current directory) of compiled <CODE CLASS="Code">
+.pro</CODE>
+ files are displayed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677154">
+ </A>
+<A NAME="marker=673138">
+ </A>
+STRUCTURES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=835808">
+ </A>
+Set this keyword to display information on <A NAME="marker=673139">
+ </A>
+structure-type variables. If no arguments are provided, all currently-defined structures are shown. If arguments are provided, the structure definition for those expressions is displayed. It is often more convenient to use <CODE CLASS="Code">
+HELP, /STRUCTURES</CODE>
+ instead of <CODE CLASS="Code">
+PRINT</CODE>
+ to look at the contents of a structure variable because it shows the names of the fields as well as the data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677156">
+ </A>
+<A NAME="marker=673140">
+ </A>
+SYSTEM_VARIABLES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677157">
+ </A>
+Set this keyword to display information on all <A NAME="marker=673141">
+ </A>
+system variables. Arguments are ignored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677158">
+ </A>
+<A NAME="marker=673142">
+ </A>
+TRACEBACK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677159">
+ </A>
+Set this <A NAME="marker=673143">
+ </A>
+keyword to display the current <A NAME="marker=673144">
+ </A>
+nesting of procedures and functions.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677160">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677161">
+ </A>
+To see general information on the current IDL session, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677162">
+ </A>
+HELP</P>
+<P CLASS="Body">
+<A NAME="pgfId=677163">
+ </A>
+To see information on the structure definition of the system variable !D, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=835325">
+ </A>
+HELP, !D, /STRUCTURES</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36172">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=36173">
+ </A>
+<A HREF="..html#23590" CLASS="XRef">
+Getting Help with IDL</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

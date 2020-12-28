@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SHIFT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl19a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678824">
+ </A>
+<A NAME="56933">
+ </A>
+SHIFT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678825">
+ </A>
+The <A NAME="marker=673870">
+ </A>
+SHIFT function shifts elements of vectors or <A NAME="marker=673871">
+ </A>
+arrays along any dimension by any number of elements. The result is a vector or array of the same structure and type as <I CLASS="Italic">
+Array</I>
+. Positive shifts are to the right while left shifts are expressed as a negative number. All shifts are circular.</P>
+<P CLASS="Body">
+<A NAME="pgfId=807810">
+ </A>
+Elements shifted off one end wrap around and are shifted onto the other end. In the case of vectors the action of SHIFT can be expressed:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=810312">
+ </A>
+Result<SUB CLASS="Subscript">
+(i + s) modulation</SUB>
+ = Array<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;&nbsp;for&nbsp;&nbsp;(0 <EM CLASS="Symbol">
+&#163;</EM>
+ 1 &lt; <EM CLASS="Emphasis">
+n</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=807811">
+ </A>
+where <I CLASS="Italic">
+s</I>
+ is the amount of the shift, and <I CLASS="Italic">
+n</I>
+ is the number of elements in the array.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678826">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678827">
+ </A>
+Result = SHIFT(<I CLASS="Italic">
+Array, S</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+, ..., S</I>
+<SUB CLASS="Subscript">
+n</SUB>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678828">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678829">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678830">
+ </A>
+The array to be shifted.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678831">
+ </A>
+S<SUB CLASS="Subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678832">
+ </A>
+The shift parameters. For arrays of more than one dimension, the parameter <I CLASS="Italic">
+S</I>
+<SUB CLASS="Subscript">
+n</SUB>
+ specifies the shift applied to the <I CLASS="Italic">
+n</I>
+th dimension. <I CLASS="Italic">
+S</I>
+<SUB CLASS="Subscript">
+1</SUB>
+ specifies the shift along the first dimension and so on. If only one shift parameter is present and the parameter is an array, the array is treated as a vector (i.e., the array is treated as having one-dimensional subscripts).</P>
+<P CLASS="Body">
+<A NAME="pgfId=678833">
+ </A>
+A shift specification of 0 means that no shift is to be performed along that dimension.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=828955">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=828956">
+ </A>
+The following example demonstrates using SHIFT with a vector. by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=828957">
+ </A>
+A = INDGEN(5)	</P>
+<P CLASS="Code">
+<A NAME="pgfId=828971">
+ </A>
+Print the original vector, the vector shifted one position to the right, and the vector shifted one position to the left:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678838">
+ </A>
+PRINT, A, SHIFT(A, 1), SHIFT(A, -1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=678839">
+ </A>
+Executing these statements gives the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678840">
+ </A>
+&nbsp;&nbsp;0 &nbsp;&nbsp;1 &nbsp;&nbsp;2 &nbsp;&nbsp;3 &nbsp;&nbsp;4</P>
+<P CLASS="Code">
+<A NAME="pgfId=730536">
+ </A>
+&nbsp;&nbsp;4 &nbsp;&nbsp;0&nbsp;&nbsp; 1&nbsp;&nbsp; 2&nbsp;&nbsp; 3</P>
+<P CLASS="Code">
+<A NAME="pgfId=678842">
+ </A>
+&nbsp;&nbsp;1&nbsp;&nbsp; 2&nbsp;&nbsp; 3&nbsp;&nbsp; 4&nbsp;&nbsp; 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=678843">
+ </A>
+Notice how elements of the vector that shift off the end wrap around to the other end. This &quot;wrap around&quot; occurs when shifting arrays of any dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821103">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821104">
+ </A>
+<A HREF="idldc.htm#41330" CLASS="XRef">
+ISHFT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

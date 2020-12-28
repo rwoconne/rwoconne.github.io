@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_DICE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=818127">
+ </A>
+<A NAME="99324">
+ </A>
+CW_DICE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=818132">
+ </A>
+The <A NAME="marker=818129">
+ </A>
+CW_DICE function creates a compound <A NAME="marker=818130">
+ </A>
+widget that implements a single <A NAME="marker=818131">
+ </A>
+die. The widget uses a button with a bitmap label. If the user presses the button, the die tumbles for a moment, then the new value is displayed and an event is issued.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755469">
+ </A>
+The primary purpose of this compound widget is to serve as a full example of a realistic compound widget for the <EM CLASS="Emphasis">
+IDL User's Guide</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796121">
+ </A>
+The returned value of this function is the widget ID of the newly-created die widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755470">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_dice.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755474">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755475">
+ </A>
+Result = CW_DICE(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755476">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755477">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755478">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755479">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755481">
+ </A>
+<A NAME="marker=755480">
+ </A>
+TUMBLE_CNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755482">
+ </A>
+The widget simulates the tumbling of a dice by changing the bitmap on the dice several times before settling down to a final value. The number of &quot;tumbles&quot; is specified by the TUMBLE_CNT keyword. The default is 10.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755484">
+ </A>
+<A NAME="marker=755483">
+ </A>
+TUMBLE_PERIOD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755485">
+ </A>
+The amount of time in seconds between each tumble of the dice. The default is .05 seconds.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755487">
+ </A>
+<A NAME="marker=755486">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755488">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837686">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837687">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837706">
+ </A>
+To get or set the value of a CW_DICE widget, use the GET_VALUE and SET_VALUE keywords to WIDGET_CONTROL. The value of a CW_DICE widget is an integer in the range [1,6].</P>
+<P CLASS="Body">
+<A NAME="pgfId=837707">
+ </A>
+If a value outside the range [1,6] is specified by the SET_VALUE keyword, the die tumbles to a new value as if the user had pressed the button, but no event is issued.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837698">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796288">
+ </A>
+Widget Events Returned by the CW_DICE Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796293">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=796299">
+ </A>
+event = {CW_DICE_EVENT, ID: base, TOP: ev.top, HANDLER: 0L, VALUE:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=796300">
+ </A>
+The VALUE field is the value of the die face. Such events are only sent when the user presses the dice button.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755491">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755492">
+ </A>
+See <A HREF="..html#97725" CLASS="XRef">
+Using CW_DICE in a Widget Program</A>
+ for an example using CW_DICE.</P>
+</DIV>
+</BODY>
+</HTML>

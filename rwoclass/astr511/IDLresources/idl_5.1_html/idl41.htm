@@ -1,0 +1,1048 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CONTOUR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl42.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl40.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=908085">
+ </A>
+<A NAME="88445">
+ </A>
+CONTOUR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676254">
+ </A>
+The <A NAME="marker=672691">
+ </A>
+CONTOUR procedure draws a contour <A NAME="marker=672692">
+ </A>
+plot from data stored in a rectangular array or from a set of unstructured points. Both line contours and filled contour plots can be created. Note that outline and fill contours cannot be drawn at the same time. To create a contour plot with both filled contours and outlines, first create the filled contour plot, then add the outline contours by calling CONTOUR a second time with the OVERPLOT keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676255">
+ </A>
+Contours can be smoothed by using the MIN_CURVE_SURF function on the contour data before contouring.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676256">
+ </A>
+Using various keywords, described below, it is possible to specify contour levels, labeling, colors, line styles, and other options. CONTOUR draws contours by searching for each contour <A NAME="marker=672694">
+ </A>
+line and then following the line until it reaches a boundary or closes.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676260">
+ </A>
+Smoothing Contours</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676261">
+ </A>
+The <A NAME="marker=672695">
+ </A>
+MIN_CURVE_SURF function can be used to <A NAME="marker=672696">
+ </A>
+smoothly interpolate both regularly and irregularly sampled surfaces before contouring. This function replaces the older SPLINE keyword to CONTOUR, which was inaccurate and is no longer supported. MIN_CURVE_SURF interpolates the entire surface to a relatively fine grid before drawing the contours.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676262">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676263">
+ </A>
+CONTOUR, <I CLASS="Italics">
+Z [, X, Y]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676264">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676265">
+ </A>
+<A NAME="marker=672697">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676266">
+ </A>
+A one- or two-dimensional array containing the values that make up the contour surface. If arguments <I CLASS="Italics">
+X</I>
+ and <I CLASS="Italics">
+Y</I>
+ are provided, the contour is plotted as a function of the (X, Y) locations specified by their contents. Otherwise, the contour is generated as a function of the two-dimensional array index of each element of <I CLASS="Italics">
+Z</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=883650">
+ </A>
+If the IRREGULAR keyword is set, X, Y, and Z are treated as vectors. Each point has a value of Z<EM CLASS="Emphasis">
+i</EM>
+ and a location of (X<EM CLASS="Emphasis">
+i</EM>
+, Y<EM CLASS="Emphasis">
+i</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=676267">
+ </A>
+This argument is converted to single-precision floating-point before plotting. Plots created with CONTOUR are limited to the range and precision of single-precision floating-point values.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676268">
+ </A>
+<A NAME="marker=672698">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676269">
+ </A>
+A vector or two-dimensional array specifying the X coordinates for the contour surface. If <I CLASS="Italics">
+X</I>
+ is a vector, each element of <I CLASS="Italics">
+X</I>
+ specifies the X coordinate for a column of <I CLASS="Italics">
+Z</I>
+ (e.g., X[0] specifies the X coordinate for Z[0,*]). If X is a two-dimensional array, each element of X specifies the X coordinate of the corresponding point in Z (i.e., <I CLASS="Italics">
+X</I>
+<SUB CLASS="subscript">
+ij</SUB>
+ specifies the X coordinate for <I CLASS="Italics">
+Z</I>
+<SUB CLASS="subscript">
+ij</SUB>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676270">
+ </A>
+<A NAME="marker=672699">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676271">
+ </A>
+A vector or two-dimensional array specifying the Y coordinates for the contour surface. If <I CLASS="Italics">
+Y</I>
+ a vector, each element of <I CLASS="Italics">
+Y</I>
+ specifies the Y coordinate for a row of Z (e.g., Y[0] specifies the Y coordinate for Z[*,0]). If <I CLASS="Italics">
+Y</I>
+ is a two-dimensional array, each element of <I CLASS="Italics">
+Y</I>
+ specifies the Y coordinate of the corresponding point in Z (<I CLASS="Italics">
+Y</I>
+<SUB CLASS="subscript">
+ij</SUB>
+ specifies the Y coordinate for <I CLASS="Italics">
+Z</I>
+<SUB CLASS="subscript">
+ij</SUB>
+).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676272">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676273">
+ </A>
+<A NAME="marker=672700">
+ </A>
+C_ANNOTATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676274">
+ </A>
+The label to be drawn on each contour. Usually, contours are labeled with their value. This parameter, a vector of strings, allows any text to be specified. The first label is used for the first contour drawn, and so forth. If the LEVELS keyword is specified, the elements of C_ANNOTATION correspond directly to the levels specified, otherwise, they correspond to the default levels chosen by the CONTOUR procedure. If there are more contour levels than elements in C_ANNOTATION, the remaining levels are labeled with their values.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676275">
+ </A>
+Use of this keyword implies use of the FOLLOW keyword.</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=676276">
+ </A>
+Example</H6>
+<P CLASS="Body">
+<A NAME="pgfId=676277">
+ </A>
+To produce a contour plot with three levels labeled &quot;low&quot;, &quot;medium&quot;, and &quot;high&quot;:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=676278">
+ </A>
+CONTOUR, Z, LEVELS = [0.0, 0.5, 1.0], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=47026">
+ </A>
+&nbsp;&nbsp;C_ANNOTATION = ['low', 'medium', 'high']</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676279">
+ </A>
+<A NAME="marker=672701">
+ </A>
+C_CHARSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676280">
+ </A>
+The size of the characters used to annotate contour labels. Normally, contour labels are drawn at 3/4 of the size used for the axis labels (specified by the CHARSIZE keyword or !P.CHARSIZE system variable. This keyword allows the contour label size to be specified directly. Use of this keyword implies use of the FOLLOW keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=905138">
+ </A>
+<A NAME="marker=905164">
+ </A>
+C_CHARTHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=905141">
+ </A>
+The thickness of the characters used to annotate contour labels. Set this keyword equal to an integer value specifying the line thickness of the vector drawn font characters. This keyword has no effect when used with the hardware drawn fonts. The default value is 1. Use of this keyword implies use of the FOLLOW keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676281">
+ </A>
+<A NAME="marker=672702">
+ </A>
+C_COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=871354">
+ </A>
+The color index used to draw each contour. This parameter is a vector, converted to integer type if necessary. If there are more contour levels than elements in C_COLORS, the elements of the color vector are cyclically repeated.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=676284">
+ </A>
+If C_COLORS contains three elements, and there are seven contour levels to be drawn, the colors <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+0</SUB>
+, <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+1</SUB>
+, <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+2</SUB>
+, <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+0</SUB>
+, <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+1</SUB>
+, <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+2</SUB>
+, <I CLASS="Italic">
+c</I>
+<SUB CLASS="subscript">
+0</SUB>
+ will be used for the seven levels. To call CONTOUR and set the colors to [100,150,200], use the command:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676285">
+ </A>
+CONTOUR, Z, C_COLORS = [100,150,200]</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676286">
+ </A>
+<A NAME="marker=672703">
+ </A>
+C_LABELS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676287">
+ </A>
+Specifies which contour levels should be labeled. By default, every other contour level is labeled. C_LABELS allows you to override this default and explicitly specify the levels to label. This parameter is a vector, converted to integer type if necessary. If the LEVELS keyword is specified, the elements of C_LABELS correspond directly to the levels specified, otherwise, they correspond to the default levels chosen by the CONTOUR procedure. Setting an element of the vector to zero causes that contour label to not be labeled. A nonzero value forces labeling.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676288">
+ </A>
+Use of this keyword implies use of the FOLLOW keyword.</P>
+<UL>
+<LI CLASS="Example">
+<A NAME="pgfId=676290">
+ </A>
+To produce a contour plot with four levels where all but the third level is labeled:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676291">
+ </A>
+CONTOUR, Z, LEVELS = [0.0, 0.25, 0.75, 1.0], $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=729227">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;C_LABELS = [1, 1, 0, 1]</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676292">
+ </A>
+<A NAME="marker=672704">
+ </A>
+C_LINESTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676293">
+ </A>
+The line style used to draw each contour. As with C_COLORS, C_LINESTYLE is a vector of line style indices. If there are more contour levels than line styles, the line styles are cyclically repeated. See <A HREF="idl22c.htm#95087" CLASS="XRef">
+IDL Linestyles</A>
+ on page <A HREF="idl22c.htm#95087" CLASS="XRef">
+IDL Linestyles</A>
+ for a list of available styles.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=676294">
+ </A>
+The cell drawing contouring algorithm draws all the contours in each cell, rather than following contours. Since an entire contour is not drawn as a single operation, the appearance of the more complicated linestyles will suffer. Use of the contour following method (selected with the FOLLOW keyword) will give better looking results in such cases.</LI>
+<LI CLASS="Example">
+<A NAME="pgfId=676296">
+ </A>
+To produce a contour plot, with the contour levels directly specified in a vector V, with all negative contours drawn with dotted lines, and with positive levels in solid lines:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=676297">
+ </A>
+CONTOUR, Z, LEVELS = V, C_LINESTYLE = (V LT 0.0)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676298">
+ </A>
+<A NAME="marker=672711">
+ </A>
+C_ORIENTATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676299">
+ </A>
+If the FILL keyword is set, this keyword can be set to the angle, in degrees counterclockwise from the horizontal, of the lines used to fill contours. If neither C_ORIENTATION or C_SPACING are specified, the contours are solid filled.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676300">
+ </A>
+<A NAME="marker=672712">
+ </A>
+C_SPACING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676301">
+ </A>
+If the FILL keyword is set, this keyword can be used to control the distance, in centimeters, between the lines used to fill the contours.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676302">
+ </A>
+<A NAME="marker=672713">
+ </A>
+C_THICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676303">
+ </A>
+The line used to draw each contour level. As with C_COLORS, C_THICK is a vector of line thickness values, although the values are floating point. If there are more contours than thickness elements, elements are repeated. If omitted, the overall line thickness specified by the THICK keyword parameter or !P.THICK is used for all contours.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=892176">
+ </A>
+<A NAME="marker=892189">
+ </A>
+CELL_FILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=892177">
+ </A>
+Set this keyword to produce a filled contour plot using a &quot;cell filling&quot; algorithm. Use this keyword instead of FILL when you are drawing filled contours over a map, when you have missing data, or when contours that extend off the edges of the contour plot. CELL_FILL is less efficient than FILL because it makes one or more polygons for each data cell. It also gives poor results when used with patterned (line) fills, because each cell is assigned its own pattern. Otherwise, this keyword operates identically to the FILL keyword, described below.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=896511">
+ </A>
+In order for CONTOUR to fill the contours properly when using a map projection, the X and Y arrays (if supplied) must be arranged in increasing order. This ensures that the polygons generated will be in counterclockwise order, as required by the mapping graphics pipeline.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676304">
+ </A>
+<A NAME="marker=672714">
+ </A>
+CLOSED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676305">
+ </A>
+Set this keyword to close contours that intersect the plot boundaries. After a contour hits a boundary, it is follows the plot boundary until it connects with its other boundary intersection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676306">
+ </A>
+<A NAME="marker=672715">
+ </A>
+DOWNHILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676307">
+ </A>
+Set this keyword to label each contour with short, perpendicular tick marks that point in the &quot;downhill&quot; direction, making the direction of the grade readily apparent. If this keyword is set, the contour following method is used in drawing the contours.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676308">
+ </A>
+<A NAME="marker=672716">
+ </A>
+<A NAME="22631">
+ </A>
+FILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676309">
+ </A>
+Set this keyword to produce a filled contour plot. The contours are filled with solid or line-filled polygons. For solid polygons, use the C_COLOR keyword to specify the color index of the polygons for each contour level. For line fills, use C_ORIENTATION, C_SPACING, C_COLOR, C_LINESTYLE, and/or C_THICK to specify attributes for the lines.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676310">
+ </A>
+If the current device is not a pen plotter, each polygon is erased to the background color before the fill lines are drawn, to avoid superimposing one pattern over another.</P>
+<P CLASS="Body">
+<A NAME="pgfId=277900">
+ </A>
+Contours that are not closed can not be filled because their interior and exterior are undefined. Contours created from data sets with missing data may not be closed; many map projections can also produce contours that are not closed. Filled contours should not be used in these cases.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=906026">
+ </A>
+If the current graphics device is the Z-buffer, the algorithm used when the FILL keyword is specified will not work when a Z value is also specified with the graphics keyword ZVALUE. In this situation, use the CELL_FILL keyword instead of the FILL keyword.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676311">
+ </A>
+<A NAME="marker=672717">
+ </A>
+FOLLOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676312">
+ </A>
+<EM CLASS="Emphasis">
+In IDL version 5, CONTOUR always uses a line-following method. The FOLLOW keyword remains available for compatibility with existing code, but is no longer necessary. As in previous versions of IDL, setting FOLLOW will cause CONTOUR to draw contour labels.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=879096">
+ </A>
+<A NAME="marker=879105">
+ </A>
+IRREGULAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=879097">
+ </A>
+Set this keyword to indicate that the input data is irregularly gridded. Setting IRREGULAR is the same as performing an explicit triangulation. That is:</P>
+<P CLASS="Code">
+<A NAME="pgfId=879101">
+ </A>
+CONTOUR, Z, X, Y, /IRREGULAR</P>
+<P CLASS="Body">
+<A NAME="pgfId=879102">
+ </A>
+is the same as</P>
+<P CLASS="Code">
+<A NAME="pgfId=879103">
+ </A>
+TRIANGULATE, X, Y, tri	;Get triangulation.</P>
+<P CLASS="Code">
+<A NAME="pgfId=879104">
+ </A>
+CONTOUR, Z, X, Y, TRIANGULATION=tri</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676316">
+ </A>
+<A NAME="marker=927697">
+ </A>
+ISOTROPIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=927698">
+ </A>
+Set this keyword to force the scaling of the X and Y axes to be equal.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=928082">
+ </A>
+The X and Y axes will be scaled isotropically and then fit within the rectangle defined by the POSITION keyword; one of the axes may be shortened. See <A HREF="idl22c.htm#54782" CLASS="XRef">
+POSITION</A>
+ for more information.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=927695">
+ </A>
+<A NAME="marker=672718">
+ </A>
+LEVELS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676317">
+ </A>
+Specifies a vector containing the contour levels drawn by the CONTOUR procedure. A contour is drawn at each level in LEVELS.</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=676318">
+ </A>
+Example</H6>
+<P CLASS="Body">
+<A NAME="pgfId=676319">
+ </A>
+To draw a contour plot with levels at 1, 100, 1000, and 10000:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676320">
+ </A>
+CONTOUR, Z, LEVELS = [1, 100, 1000, 10000]</P>
+<P CLASS="Body">
+<A NAME="pgfId=676321">
+ </A>
+To draw a contour plot with levels at 50, 60, ..., 90, 100:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676322">
+ </A>
+CONTOUR, Z, LEVELS = FINDGEN(6) * 10 + 50</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676323">
+ </A>
+<A NAME="marker=672719">
+ </A>
+MAX_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855254">
+ </A>
+Data points with values above this value are ignored (i.e., treated as <A NAME="marker=788497">
+ </A>
+missing data) when contouring. Cells containing one or more corners with values above MAX_VALUE will have no contours drawn through them. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47033">
+ </A>
+<A NAME="marker=47049">
+ </A>
+MIN_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855262">
+ </A>
+Data points with values less than this value are ignored (i.e., treated as <A NAME="marker=47037">
+ </A>
+missing data) when contouring. Cells containing one or more corners with values below MIN_VALUE will have no contours drawn through them. Note that the IEEE floating-point value NaN is also treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676325">
+ </A>
+<A NAME="marker=672720">
+ </A>
+NLEVELS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676326">
+ </A>
+The number of equally spaced contour levels that are produced by CONTOUR. If the LEVELS parameter, which explicitly specifies the value of the contour levels, is present this keyword has no effect. If neither parameter is present, approximately six levels are drawn. NLEVELS should be an integer between 1 and 29.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861732">
+ </A>
+<A NAME="marker=672721">
+ </A>
+OVERPLOT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676328">
+ </A>
+Set this keyword to make CONTOUR &quot;overplot&quot;. That is, the current graphics screen is not erased, no axes are drawn and the previously established scaling remains in effect. You must explicitly specify either the values of the contour levels or the number of levels (via the NLEVELS keyword) when using this option, unless geographic mapping coordinates are in effect.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=879089">
+ </A>
+<A NAME="marker=879095">
+ </A>
+PATH_DATA_COORDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=879090">
+ </A>
+Set this keyword to cause the output contour positions to be measured in data units rather than the default normalized units. This keyword is useful only if the PATH_XY or PATH_FILENAME keywords are set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676329">
+ </A>
+<A NAME="marker=672722">
+ </A>
+PATH_FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676330">
+ </A>
+Specifies the name of a file to contain the contour positions. If PATH_FILENAME is present, CONTOUR does not draw the contours, but rather, opens the specified file and writes the positions, in normalized coordinates, into it. The file consists of a series of logical records containing binary data. Each record is preceded with a header structure defining the contour as follows:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676331">
+ </A>
+{CONTOUR_HEADER, TYPE:0B, HIGH:0B, LEVEL:0,&nbsp;NUM:0L, VALUE:0.0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=676332">
+ </A>
+The fields are:</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=676333">
+ </A>
+TYPE</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848821">
+ </A>
+A byte that is zero if the contour is open, and one if it is closed.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=676334">
+ </A>
+HIGH</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848823">
+ </A>
+A byte that is 1 if the contour is closed and above its surroundings, and is 0 if the contour is below. This field is meaningless if the contour is not closed.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=676335">
+ </A>
+LEVEL</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848824">
+ </A>
+A short integer with value greater or equal to zero (It is an index into the LEVELS array).</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=676336">
+ </A>
+NUM</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848825">
+ </A>
+The longword number of data points in the contour.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=676337">
+ </A>
+VALUE</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848826">
+ </A>
+The contour value. This is a single precision floating point value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676338">
+ </A>
+Following the header in each record are NUM X-coordinate values followed by NUM Y-coordinate values, expressed in normalized coordinates.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676339">
+ </A>
+PATH_XY is ignored if the TRIANGULATION keyword is set. Use of this keyword implies use of the FOLLOW keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=746342">
+ </A>
+<A NAME="marker=746497">
+ </A>
+PATH_INFO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=746354">
+ </A>
+Set this keyword to a named variable that will return path information for the contours. This information can be used, along with data stored in a variable named by the PATH_XY keyword, to trace closed contours. If PATH_INFO is present, CONTOUR does not draw the contours, but rather records the path information in an array of structures of the following type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=746355">
+ </A>
+{CONTOUR_PATH_STRUCTURE, TYPE:0B, HIGH_LOW:0B, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=746399">
+ </A>
+&nbsp;LEVEL:0, N:0L, OFFSET:0L, VALUE:0.0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=746356">
+ </A>
+The fields are:</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=746357">
+ </A>
+TYPE</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848828">
+ </A>
+A byte that is zero if the contour is open, and one if it is closed. In the present implementation, all contours are closed.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=746358">
+ </A>
+HIGH_LOW</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848829">
+ </A>
+A byte that is 1 if the contour is above its surroundings, and is 0 if the contour is below.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=746359">
+ </A>
+LEVEL</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848830">
+ </A>
+A short integer indicating the index of the contour level, from zero to the number of levels minus one.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=746360">
+ </A>
+N</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848831">
+ </A>
+A long integer indicating the number of XY pairs in the contour's path.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=746393">
+ </A>
+OFFSET</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848832">
+ </A>
+A long integer that is the offset into the array defined by PATH_XY, representing the first XY coordinate for this contour. </P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-2">
+<A NAME="pgfId=746361">
+ </A>
+VALUE</H6>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=848833">
+ </A>
+The contour value. This is a single precision floating point value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=746405">
+ </A>
+PATH_INFO is ignored if the TRIANGULATION keyword is set.</P>
+<P CLASS="Body">
+<A NAME="pgfId=218818">
+ </A>
+See the examples section below for an example using the PATH_INFO and PATH_XY keywords to return contour path information.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=746343">
+ </A>
+<A NAME="marker=746498">
+ </A>
+PATH_XY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=746409">
+ </A>
+Set this keyword to a named variable that returns the normalized coordinates of a set of closed polygons defining the closed paths of the contours. This information can be used, along with data stored in a variable named by the PATH_INFO keyword, to trace closed contours. If PATH_XY is present, CONTOUR does not draw the contours, but rather records the normalized path coordinates in the named array. PATH_XY is ignored if the TRIANGULATION keyword is set.</P>
+<P CLASS="Body">
+<A NAME="pgfId=746425">
+ </A>
+See the examples section below for an example using the PATH_INFO and PATH_XY keywords to return contour path information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=746344">
+ </A>
+<A NAME="marker=746499">
+ </A>
+TRIANGULATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=746474">
+ </A>
+Set this keyword to a variable that contains an array of triangles returned from the TRIANGULATE procedure. Providing triangulation data allows you to contour irregularly gridded data directly, without gridding.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158329">
+ </A>
+<A NAME="marker=158327">
+ </A>
+XLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158332">
+ </A>
+Set this keyword to specify a <A NAME="marker=883841">
+ </A>
+logarithmic X <A NAME="marker=158331">
+ </A>
+axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158344">
+ </A>
+<A NAME="marker=158342">
+ </A>
+YLOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158347">
+ </A>
+Set this keyword to specify a <A NAME="marker=883846">
+ </A>
+logarithmic Y <A NAME="marker=158346">
+ </A>
+axis.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676344">
+ </A>
+<A NAME="marker=672725">
+ </A>
+ZAXIS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676345">
+ </A>
+Set this keyword to draw a Z axis for the CONTOUR plot. CONTOUR draws no Z axis by default. This keyword is of use only if a three-dimensional transformation is established.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676346">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=839373">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#57588" CLASS="XRef">
+BACKGROUND</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676348">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676349">
+ </A>
+To create a contour plot with 10 contour levels where every other contour is labeled:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676350">
+ </A>
+Z = DIST(100)	<EM CLASS="Comment">;
+Create a simple dataset to plot.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676351">
+ </A>
+CONTOUR, Z, NLEVELS=10, /FOLLOW, TITLE='Simple Contour Plot'<BR>
+<EM CLASS="Comment">;
+Draw the plot.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=676352">
+ </A>
+The following commands describe a more complicated example that shows the use of polygon filling and smoothing.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676353">
+ </A>
+First, create a surface to contour:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676354">
+ </A>
+A = RANDOMU(seed, 5, 6)	<EM CLASS="Comment">;
+Create a 2D array of random numbers.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676355">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=862461">
+ </A>
+	<EM CLASS="Comment">;
+Smooth the dataset before contouring.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=676356">
+ </A>
+Draw solid-filled contours:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676357">
+ </A>
+TEK_COLOR	<EM CLASS="Comment">;
+Load discrete colors for contours.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676358">
+ </A>
+CONTOUR, B, /FILL, NLEVELS=5, C_COLOR=INDGEN(5)+2<BR>
+<EM CLASS="Comment">;
+Draw filled contours.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676359">
+ </A>
+CONTOUR, B, NLEVELS=5, /DOWNHILL, /OVERPLOT<BR>
+<EM CLASS="Comment">;
+Overplot the contour lines with tickmarks.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=676360">
+ </A>
+Draw line-filled contours:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676361">
+ </A>
+CONTOUR, B, C_ORIENTATION=[0, 22, 45]</P>
+<P CLASS="Code">
+<A NAME="pgfId=676362">
+ </A>
+CONTOUR, B, /OVERPLOT, NLEVELS=5	<EM CLASS="Comment">;
+Overplot the contours.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=746430">
+ </A>
+The following program saves the closed path information of a set of contours and plots the result:</P>
+<P CLASS="Code">
+<A NAME="pgfId=746431">
+ </A>
+PRO path</P>
+<P CLASS="Code">
+<A NAME="pgfId=746433">
+ </A>
+A = RANDOMU(seed, 8, 10)	<EM CLASS="Comment">;
+Create a 2D array of random numbers.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=746434">
+ </A>
+B = MIN_CURVE_SURF(A)	<EM CLASS="Comment">;
+Smooth the dataset before contouring.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=746435">
+ </A>
+CONTOUR, B, PATH_XY=xy, PATH_INFO=info<BR>
+<EM CLASS="Comment">;
+Compute contour paths.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=746436">
+ </A>
+FOR I = 0, (N_ELEMENTS(info) - 1 ) DO BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=746437">
+ </A>
+S = [INDGEN(info(I).N), 0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=746438">
+ </A>
+PLOTS, xy(*,INFO(I).OFFSET + S ), /NORM<BR>
+<EM CLASS="Comment">;
+Plot the closed paths.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=746439">
+ </A>
+ENDFOR</P>
+<P CLASS="Code">
+<A NAME="pgfId=746440">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=746441">
+ </A>
+To contour irregularly-gridded data without having to call TRIGRID, first use the TRIANGULATE procedure to get the Delaunay triangulation of your data, then pass the triangulation array to CONTOUR:</P>
+<P CLASS="Code">
+<A NAME="pgfId=746481">
+ </A>
+TRIANGULATE, X, Y, tri	<EM CLASS="Comment">;
+Get triangulation.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=746482">
+ </A>
+CONTOUR, Z, X, Y, TRIANGULATION = tri<BR>
+<EM CLASS="Comment">;
+Draw the contours.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=818791">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818795">
+ </A>
+<A HREF="idld1.htm#42513" CLASS="XRef">
+IMAGE_CONT</A>
+, <A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl19c.htm#53864" CLASS="XRef">
+SHOW3</A>
+, <A HREF="idl1c6.htm#11616" CLASS="XRef">
+SURFACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

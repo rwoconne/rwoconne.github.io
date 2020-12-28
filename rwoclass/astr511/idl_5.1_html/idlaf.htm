@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FX_ROOT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlb0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlae.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=749869">
+ </A>
+<A NAME="97846">
+ </A>
+FX_ROOT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=749873">
+ </A>
+The <A NAME="marker=749870">
+ </A>
+FX_ROOT <A NAME="marker=749871">
+ </A>
+function computes real and complex <A NAME="marker=749872">
+ </A>
+roots of a univariate nonlinear function using an optimal <A NAME="marker=749874">
+ </A>
+M&uuml;ller's method.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754691">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+fx_root.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749876">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749877">
+ </A>
+Result = FX_ROOT(<EM CLASS="Emphasis">
+X, Func</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749878">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749879">
+ </A>
+X </H4>
+<P CLASS="Body">
+<A NAME="pgfId=749880">
+ </A>
+A 3-element real or complex initial guess vector. Real initial guesses may result in real or complex roots. Complex initial guesses will result in complex roots.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749881">
+ </A>
+Func</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749882">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the univariate nonlinear function. This function must accept the vector argument X.</P>
+<P CLASS="Body">
+<A NAME="pgfId=749886">
+ </A>
+For example, suppose we wish to find a root of the following function: </P>
+<DIV>
+<CENTER><IMG SRC="idl_35.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=827360">
+ </A>
+We write a function FUNC to express the function in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=749889">
+ </A>
+FUNCTION func, X</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=749890">
+ </A>
+&nbsp;&nbsp;RETURN, EXP(SIN(X)^2 + COS(X)^2 - 1) - 1 </P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=749891">
+ </A>
+END </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749892">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749893">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749894">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749897">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749898">
+ </A>
+The maximum allowed number of iterations. The default is 100.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749899">
+ </A>
+STOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749900">
+ </A>
+Use this keyword to specify the stopping criterion used to judge the accuracy of a computed root r(<EM CLASS="Emphasis">
+k</EM>
+). Setting STOP = 0 (the default) checks whether the absolute value of the difference between two successively-computed roots, | r(<EM CLASS="Emphasis">
+k</EM>
+) - r(<EM CLASS="Emphasis">
+k</EM>
++1) | is less than the stopping tolerance TOL. Setting STOP = 1 checks whether the absolute value of the function FUNC at the current root, | FUNC(r(<EM CLASS="Emphasis">
+k</EM>
+)) |, is less than TOL.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749901">
+ </A>
+TOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749902">
+ </A>
+Use this keyword to specify the stopping error tolerance. The default is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-4</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749906">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749907">
+ </A>
+To find the roots of the function FUNC defined above, first define a real 3-element initial guess vector:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749908">
+ </A>
+x = [0.0, -!pi/2, !pi]</P>
+<P CLASS="Body">
+<A NAME="pgfId=749909">
+ </A>
+Compute a root of the function using double-precision arithmetic.</P>
+<P CLASS="Code">
+<A NAME="pgfId=749910">
+ </A>
+root = FX_ROOT(X, 'FUNC', /DOUBLE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=749911">
+ </A>
+Check the accuracy of the computed root.</P>
+<P CLASS="Code">
+<A NAME="pgfId=749912">
+ </A>
+PRINT, EXP(SIN(ROOT)^2 + COS(ROOT)^2 - 1) - 1</P>
+<P CLASS="Body">
+<A NAME="pgfId=749913">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=749914">
+ </A>
+0.0000000</P>
+<P CLASS="Body">
+<A NAME="pgfId=749915">
+ </A>
+We can also define a complex 3-element initial guess vector:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749916">
+ </A>
+X = [COMPLEX(-!PI/3, 0), COMPLEX(0, !PI), COMPLEX(0, -!PI/6)]</P>
+<P CLASS="Code">
+<A NAME="pgfId=749917">
+ </A>
+root = FX_ROOT(x, 'FUNC')	<EM CLASS="Comment">;
+Compute the root of the function.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=749918">
+ </A>
+Check the accuracy of the computed complex root.</P>
+<P CLASS="Code">
+<A NAME="pgfId=749919">
+ </A>
+PRINT, EXP(SIN(ROOT)^2 + COS(ROOT)^2 - 1) - 1</P>
+<P CLASS="Body">
+<A NAME="pgfId=749920">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=749921">
+ </A>
+(      0.00000,      0.00000)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35182">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=35183">
+ </A>
+<A HREF="idl1c.htm#62043" CLASS="XRef">
+BROYDEN</A>
+, <A HREF="idl125.htm#50918" CLASS="XRef">
+NEWTON</A>
+, <A HREF="idlb0.htm#61728" CLASS="XRef">
+FZ_ROOTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

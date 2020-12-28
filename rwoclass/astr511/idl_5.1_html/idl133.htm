@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> P_CORRELATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl134.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl132.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=901945">
+ </A>
+<A NAME="76534">
+ </A>
+P_CORRELATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=901952">
+ </A>
+The <A NAME="marker=901947">
+ </A>
+P_CORRELATE <A NAME="marker=901948">
+ </A>
+function computes the <A NAME="marker=901949">
+ </A>
+partial <A NAME="marker=901950">
+ </A>
+correlation <A NAME="marker=901951">
+ </A>
+coefficient of a dependent variable and one particular independent variable when the effects of all other variables involved are removed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53961">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+p_correlate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53962">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53963">
+ </A>
+Result = P_CORRELATE(<EM CLASS="Emphasis">
+X, Y, C</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53964">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53965">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53966">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector that specifies the independent variable data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53967">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53968">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector that specifies the dependent variable data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53969">
+ </A>
+C</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53970">
+ </A>
+An integer, single-, or double-precision floating-point array that specifies the independent variable data whose effects are to be removed. The columns of this two-dimensional array correspond to the <EM CLASS="Emphasis">
+n</EM>
+-element vectors of independent variable data.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53971">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53972">
+ </A>
+Define three sample populations:</P>
+<P CLASS="Code">
+<A NAME="pgfId=53973">
+ </A>
+X0 = [64, 71, 53, 67, 55, 58, 77, 57, 56, 51, 76, 68]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53974">
+ </A>
+X1 = [57, 59, 49, 62, 51, 50, 55, 48, 52, 42, 61, 57]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53975">
+ </A>
+X2 = [ 8, 10, 6, 11, 8, 7, 10, 9, 10, 6, 12, 9]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53977">
+ </A>
+result = P_CORRELATE(X0, X1, REFORM(X2, 1, N_ELEMENTS(X2)))<BR>
+<EM CLASS="Comment">;
+Compute the partial correlation of X0 and X1 with the effects of X2 removed.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=833709">
+ </A>
+The result should be 0.533469.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53978">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65473">
+ </A>
+<A HREF="idl1.htm#71421" CLASS="XRef">
+A_CORRELATE</A>
+, <A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl21.htm#28107" CLASS="XRef">
+C_CORRELATE</A>
+, <A HREF="idl109.htm#43333" CLASS="XRef">
+M_CORRELATE</A>
+, <A HREF="idl15b.htm#46692" CLASS="XRef">
+R_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

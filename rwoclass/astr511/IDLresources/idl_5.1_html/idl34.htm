@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CLUST_WTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl35.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl33.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=862463">
+ </A>
+<A NAME="11803">
+ </A>
+CLUST_WTS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=862464">
+ </A>
+The <A NAME="marker=862718">
+ </A>
+CLUST_WTS function computes the <A NAME="marker=862719">
+ </A>
+weights (the cluster centers) of an <EM CLASS="Emphasis">
+m</EM>
+-column, <EM CLASS="Emphasis">
+n</EM>
+-row array, where <EM CLASS="Emphasis">
+m</EM>
+ is the number of variables and <EM CLASS="Emphasis">
+n</EM>
+ is the number of observations or samples. The result is an <EM CLASS="Emphasis">
+m</EM>
+-column, N_CLUSTERS-row array of cluster centers.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862484">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862492">
+ </A>
+Result = CLUST_WTS(<EM CLASS="Emphasis">
+Array</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862485">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862495">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862506">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+-column, <EM CLASS="Emphasis">
+n</EM>
+-row array of any data type except string, single- or double-precision complex.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862486">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862498">
+ </A>
+<A NAME="marker=862523">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862528">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862487">
+ </A>
+<A NAME="marker=862524">
+ </A>
+N_CLUSTERS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862500">
+ </A>
+Set this keyword equal to the number of cluster centers. The default is to compute <EM CLASS="Emphasis">
+n</EM>
+ cluster centers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862488">
+ </A>
+<A NAME="marker=862525">
+ </A>
+N_ITERATIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862501">
+ </A>
+Set this keyword equal to the number of iterations used when in computing the cluster centers. The default is to use 20 iterations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862545">
+ </A>
+<A NAME="marker=862544">
+ </A>
+VARIABLE_WTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862812">
+ </A>
+Set this keyword equal to an <EM CLASS="Emphasis">
+m</EM>
+-element vector of floating-point variable weights. The elements of this vector are used to give greater or lesser importance to each variable (each column) in determining the cluster centers. The default is to give all variables equal weighting using a value of 1.0. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862813">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862814">
+ </A>
+See the documentation for CLUSTER.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862815">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=862505">
+ </A>
+<A HREF="idl35.htm#31115" CLASS="XRef">
+CLUSTER</A>
+, <A HREF="..html#51012" CLASS="XRef">
+Multivariate Analysis</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IGAMMA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlcf.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=853588">
+ </A>
+<A NAME="62754">
+ </A>
+IGAMMA</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53599">
+ </A>
+The <A NAME="marker=53594">
+ </A>
+IGAMMA function computes the<A NAME="marker=53595">
+ </A>
+ incomplete gamma function.</P>
+<DIV>
+<CENTER><IMG SRC="idl_54.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=828336">
+ </A>
+IGAMMA uses either a power series representation or a continued fractions method. If <EM CLASS="Emphasis">
+X</EM>
+ is less than or equal to <EM CLASS="Emphasis">
+A</EM>
++1, a power series representation is used. If <EM CLASS="Emphasis">
+X</EM>
+ is greater than <EM CLASS="Emphasis">
+A</EM>
++1, a continued fractions method is used. </P>
+<P CLASS="Body">
+<A NAME="pgfId=53604">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+igamma.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53605">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53606">
+ </A>
+Result = IGAMMA(<EM CLASS="Emphasis">
+A, X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53607">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53608">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53609">
+ </A>
+A positive integer, single-, or double-precision floating-point scalar that specifies the parametric exponent of the integrand.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53610">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53611">
+ </A>
+An integer, single-, or double-precision floating-point scalar that spe`eFcifies the upper limit of integration.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53612">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53614">
+ </A>
+<A NAME="marker=53613">
+ </A>
+METHOD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53615">
+ </A>
+Set this keyword to a named variable that will contain the method used to compute the incomplete gamma function. A value of 0 indicates that a power series representation was used. A value of 1 indicates that a continued fractions method was used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53616">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53617">
+ </A>
+Compute the incomplete gamma function for the corresponding elements of A and X.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53618">
+ </A>
+Define an array of parametric exponents.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53619">
+ </A>
+A = [0.10, 0.50, 1.00, 1.10, 6.00, 26.00]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53620">
+ </A>
+Define the upper limits of integration.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53621">
+ </A>
+X = [0.0316228, 0.0707107, 5.00000, 1.04881, 2.44949, 25.4951]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53622">
+ </A>
+Allocate an array to store the results.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53623">
+ </A>
+result = FLTARR(N_ELEMENTS(A))</P>
+<P CLASS="Body">
+<A NAME="pgfId=53624">
+ </A>
+Compute the incomplete gamma functions. Note that the result for each element in the input arrays must be computed individually.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53625">
+ </A>
+FOR K = 0, N_ELEMENTS(A)-1 DO $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53626">
+ </A>
+result[K] = IGAMMA(A[K], X[K])</P>
+<P CLASS="Code">
+<A NAME="pgfId=53627">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=53628">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53629">
+ </A>
+[0.742026, 0.293128, 0.993262, 0.607646, 0.0387318, 0.486387]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53630">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66213">
+ </A>
+<A HREF="idl13.htm#73826" CLASS="XRef">
+BETA</A>
+, <A HREF="idlb1.htm#93572" CLASS="XRef">
+GAMMA</A>
+, <A HREF="idlcd.htm#61717" CLASS="XRef">
+IBETA</A>
+, <A HREF="idlff.htm#16807" CLASS="XRef">
+LNGAMMA</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

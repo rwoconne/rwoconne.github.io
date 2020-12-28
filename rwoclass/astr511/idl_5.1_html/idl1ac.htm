@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPL_INIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ad.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ab.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=126854">
+ </A>
+<A NAME="34901">
+ </A>
+SPL_INIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=51806">
+ </A>
+The <A NAME="marker=51803">
+ </A>
+SPL_INIT <A NAME="marker=51804">
+ </A>
+function is called to establish the type of interpolating <A NAME="marker=51805">
+ </A>
+spline for a tabulated set of functional values <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+i</SUB>
+ = <I CLASS="Italic">
+F</I>
+(<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+). SPL_INIT returns the values of the 2nd derivative of the interpolating function at the points <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51807">
+ </A>
+It is important to realize that SPL_INIT should be called only <I CLASS="Italic">
+once</I>
+ to process an entire tabulated function in arrays <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+. Once this has been done, values of the interpolated function for any value of <I CLASS="Italic">
+X</I>
+ can be obtained by calls (as many as desired) to the separate function SPL_INTERP.</P>
+<P CLASS="Body">
+<A NAME="pgfId=51808">
+ </A>
+SPL_INIT is based on the routine spline described in section 3.3 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51809">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51810">
+ </A>
+Result = SPL_INIT(<I CLASS="Italic">
+X, Y</I>
+) </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51811">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51812">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51813">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element input vector that specifies the tabulate points in ascending order.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51814">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51815">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element input vector that specifies the values of the tabulated function <I CLASS="Italic">
+F</I>
+(<I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+) corresponding to <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+i</SUB>
+. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51816">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51818">
+ </A>
+<A NAME="marker=51817">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=51819">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=51822">
+ </A>
+<A NAME="marker=51820">
+ </A>
+YP0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=851671">
+ </A>
+The first derivative of the interpolating function at the point <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+0</SUB>
+. If YP0 is omitted, the second derivative at the boundary is set to zero, resulting in a &quot;natural spline.&quot;</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=851674">
+ </A>
+<A NAME="marker=851673">
+ </A>
+YPN_1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=851675">
+ </A>
+The first derivative of the interpolating function at the point <I CLASS="Italic">
+X</I>
+<SUB CLASS="Subscript">
+n-1</SUB>
+. If YPN_1 is omitted, the second derivative at the boundary is set to zero, resulting in a &quot;natural spline.&quot;</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=862295">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=862296">
+ </A>
+X = (FINDGEN(21)/20.) * 2.0*!PI</P>
+<P CLASS="Code">
+<A NAME="pgfId=862297">
+ </A>
+Y = SIN(X)</P>
+<P CLASS="Code">
+<A NAME="pgfId=862282">
+ </A>
+PRINT, SPL_INIT(X, Y, YP0 = -1.1, YPN_1 = 0.0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=862300">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862283">
+ </A>
+23.1552&nbsp;&nbsp;&nbsp;&nbsp;-6.51599&nbsp;&nbsp;&nbsp;&nbsp;1.06983&nbsp;&nbsp;&nbsp;-1.26115&nbsp;&nbsp;-0.839544&nbsp;&nbsp;&nbsp;&nbsp;-1.04023</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862284">
+ </A>
+-0.950336&nbsp;&nbsp;-0.817987&nbsp;&nbsp;-0.592022&nbsp;&nbsp;-0.311726&nbsp;&nbsp;2.31192e-05&nbsp;&nbsp;0.311634</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862285">
+ </A>
+&nbsp;0.592347&nbsp;&nbsp;&nbsp;0.816783&nbsp;&nbsp;&nbsp;0.954825&nbsp;&nbsp;&nbsp;1.02348&nbsp;&nbsp;&nbsp;0.902068&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.02781</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862359">
+ </A>
+-0.198994&nbsp;&nbsp;&nbsp;3.26597&nbsp;&nbsp;-11.0260</P>
+<P CLASS="Code">
+<A NAME="pgfId=862287">
+ </A>
+PRINT, SPL_INIT(X, Y, YP0 = -1.1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=862370">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862288">
+ </A>
+23.1552&nbsp;&nbsp;&nbsp;&nbsp;-6.51599&nbsp;&nbsp;&nbsp;&nbsp;1.06983&nbsp;&nbsp;&nbsp;-1.26115&nbsp;&nbsp;-0.839544&nbsp;&nbsp;&nbsp;&nbsp;-1.04023</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862289">
+ </A>
+-0.950336&nbsp;&nbsp;-0.817988&nbsp;&nbsp;-0.592020&nbsp;&nbsp;-0.311732&nbsp;&nbsp;4.41521e-05&nbsp;&nbsp;0.311555</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862290">
+ </A>
+&nbsp;0.592640&nbsp;&nbsp;&nbsp;0.815690&nbsp;&nbsp;&nbsp;0.958905&nbsp;&nbsp;&nbsp;1.00825&nbsp;&nbsp;&nbsp;0.958905&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.815692</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=862291">
+ </A>
+&nbsp;0.592635&nbsp;&nbsp;&nbsp;0.311567&nbsp;&nbsp;&nbsp;0.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=51826">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=51836">
+ </A>
+<A HREF="idl1ad.htm#65579" CLASS="XRef">
+SPL_INTERP</A>
+, <A HREF="idl1ae.htm#46341" CLASS="XRef">
+SPLINE</A>
+, <A HREF="idl1af.htm#27408" CLASS="XRef">
+SPLINE_P</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

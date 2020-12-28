@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BROYDEN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50255">
+ </A>
+<A NAME="62043">
+ </A>
+BROYDEN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50259">
+ </A>
+The <A NAME="marker=50257">
+ </A>
+BROYDEN function solves a system of <EM CLASS="Emphasis">
+n</EM>
+ <A NAME="marker=50258">
+ </A>
+nonlinear equations (where <EM CLASS="Emphasis">
+n</EM>
+ <EM CLASS="MathSymbol">
+</EM>
+ 2) in <EM CLASS="Emphasis">
+n</EM>
+ dimensions using a globally-convergent Broyden's method. The result is an <EM CLASS="Emphasis">
+n</EM>
+-element vector containing the solution.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50260">
+ </A>
+BROYDEN is based on the routine <CODE CLASS="Code">
+broydn</CODE>
+ described in section 9.7 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50261">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50262">
+ </A>
+Result = BROYDEN(<EM CLASS="Emphasis">
+X, Vecfunc</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50263">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50264">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50265">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element vector (where <EM CLASS="Emphasis">
+n</EM>
+ <EM CLASS="MathSymbol">
+</EM>
+ 2) containing an initial guess at the solution of the system.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50266">
+ </A>
+Vecfunc</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50267">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the system of non-linear equations. This function must accept a vector argument <EM CLASS="Emphasis">
+X</EM>
+ and return a vector result.</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=50274">
+ </A>
+For example, suppose we wish to solve the following system:</P>
+<DIV>
+<CENTER><IMG SRC="idl_5.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=50275">
+ </A>
+To represent this system, we define an IDL function named BROYFUNC:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50277">
+ </A>
+FUNCTION broyfunc, X</P>
+<P CLASS="Code">
+<A NAME="pgfId=829113">
+ </A>
+&nbsp;&nbsp;RETURN, [3.0&nbsp;*&nbsp;X[0]&nbsp;-&nbsp;COS(X[1]*X[2])&nbsp;-&nbsp;0.5,$</P>
+<P CLASS="Code">
+<A NAME="pgfId=50278">
+ </A>
+&nbsp;&nbsp;X[0]^2&nbsp;-&nbsp;81.0*(X[1]&nbsp;+&nbsp;0.1)^2&nbsp;+&nbsp;SIN(X[2])&nbsp;+&nbsp;1.06,$</P>
+<P CLASS="Code">
+<A NAME="pgfId=50279">
+ </A>
+&nbsp;&nbsp;EXP(-X[0]*X[1])&nbsp;+&nbsp;20.0&nbsp;*&nbsp;X[2]&nbsp;+&nbsp;(10.0*!PI&nbsp;-&nbsp;3.0)/3.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=50280">
+ </A>
+END</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50281">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50283">
+ </A>
+<A NAME="marker=50282">
+ </A>
+CHECK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50284">
+ </A>
+BROYDEN calls an internal function named <CODE CLASS="Code">
+fmin()</CODE>
+ to determine whether the routine has converged to a local rather than a global minimum (see <I CLASS="Italics">
+Numerical Recipes</I>
+, section 9.7). Use the CHECK keyword to specify a named variable which will be set to 1 if the routine has converged to a local minimum or to 0 if not. If the routine does converge to a local minimum, try restarting from a different initial guess to obtain the global minimum.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50286">
+ </A>
+<A NAME="marker=50285">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50287">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50289">
+ </A>
+<A NAME="marker=50288">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50290">
+ </A>
+Use this keyword to specify the maximum allowed number of iterations. The default is 200. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50292">
+ </A>
+<A NAME="marker=50291">
+ </A>
+STEPMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50293">
+ </A>
+Use this keyword to specify the scaled maximum step length allowed in line searches. The default value is 100.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50295">
+ </A>
+<A NAME="marker=50294">
+ </A>
+TOLF</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50296">
+ </A>
+Set the convergence criterion on the function values. The default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-4</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50298">
+ </A>
+<A NAME="marker=50297">
+ </A>
+TOLMIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50299">
+ </A>
+Set the criterion for deciding whether spurious convergence to a minimum of the function <CODE CLASS="Code">
+fmin()</CODE>
+ has occurred. The default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-6</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50301">
+ </A>
+<A NAME="marker=50300">
+ </A>
+TOLX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50302">
+ </A>
+Set the convergence criterion on <EM CLASS="Emphasis">
+X</EM>
+. The default value is 1.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-7</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50303">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50304">
+ </A>
+We can use BROYDEN to solve the non-linear system of equations defined by the BROYFUNC function above:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50305">
+ </A>
+X = [-1.0, 1.0, 2.0]	<EM CLASS="Comment">;
+Provide an initial guess as the algorithm's starting point.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50306">
+ </A>
+result = BROYDEN(X, 'BROYFUNC')	<EM CLASS="Comment">;
+Compute the solution.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50307">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50308">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50309">
+ </A>
+&nbsp;&nbsp;&nbsp;0.500000&nbsp;&nbsp;-1.10731e-07&nbsp;&nbsp;-0.523599</P>
+<P CLASS="Body">
+<A NAME="pgfId=50310">
+ </A>
+The exact solution (to eight-decimal accuracy) is [0.5, 0.0, -0.52359877].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50311">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50321">
+ </A>
+<A HREF="idlaf.htm#97846" CLASS="XRef">
+FX_ROOT</A>
+, <A HREF="idl125.htm#50918" CLASS="XRef">
+NEWTON</A>
+, <A HREF="idlb0.htm#61728" CLASS="XRef">
+FZ_ROOTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

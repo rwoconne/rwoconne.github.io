@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRMESSAGE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1be.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679108">
+ </A>
+<A NAME="35359">
+ </A>
+STRMESSAGE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679109">
+ </A>
+The <A NAME="marker=674009">
+ </A>
+STRMESSAGE function returns the text of the error message specified by <I CLASS="Italic">
+Err</I>
+. This function is especially useful in conjunction with the CODE field of the <A NAME="marker=902075">
+ </A>
+<A HREF="sysvars.html#36182" CLASS="XRef">
+</A>
+ system variable which always contains the error number of the last error. The <A NAME="marker=948750">
+ </A>
+MSG field of the !ERROR_STATE system variable contains the text of the last error message.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679110">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679111">
+ </A>
+Result = STRMESSAGE(<I CLASS="Italic">
+Err</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679112">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679113">
+ </A>
+Err</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679114">
+ </A>
+The error number or text. Programs must not make the assumption that certain error numbers are always related to certain error messages the actual correspondence changes over time as IDL is modified.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=923970">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=923971">
+ </A>
+<A NAME="marker=923973">
+ </A>
+BLOCK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=923972">
+ </A>
+Set this keyword to return the name of the message block that defines <I CLASS="Italic">
+Err</I>
+. If this keyword is specified, <I CLASS="Italic">
+Err</I>
+ must be an error code.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=923974">
+ </A>
+<A NAME="marker=923978">
+ </A>
+CODE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=923975">
+ </A>
+Set this keyword to return the error code for the error message specified in <I CLASS="Italic">
+Err</I>
+. If this keyword is specified, <I CLASS="Italic">
+Err</I>
+ must be an error name.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=923979">
+ </A>
+<A NAME="marker=923985">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=923980">
+ </A>
+Set this keyword to return a string containing the error message that goes with <I CLASS="Italic">
+Err</I>
+. If this keyword is specified, <I CLASS="Italic">
+Err</I>
+ must be an error code.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679115">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679116">
+ </A>
+Print the error message associated with error number 4 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679117">
+ </A>
+PRINT, STRMESSAGE(4)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795939">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795940">
+ </A>
+<A HREF="idl117.htm#14106" CLASS="XRef">
+MESSAGE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

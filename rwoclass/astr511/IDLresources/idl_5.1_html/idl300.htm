@@ -1,0 +1,1131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrPlot</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl301.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2ff.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=997741">
+ </A>
+<A NAME="71324">
+ </A>
+IDLgrPlot</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997742">
+ </A>
+A <A NAME="marker=1022378">
+ </A>
+plot object creates a set of polylines connecting data points in two-dimensional space.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1040099">
+ </A>
+An IDLgrPlot object is an<EM CLASS="Emphasis">
+ atomic graphic object</EM>
+; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1038543">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1038544">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1005596">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1005597">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005598">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005599">
+ </A>
+See <A HREF="idl300.htm#81618" CLASS="XRef">
+IDLgrPlot::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005611">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1005612">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1005613">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1013122">
+ </A>
+<A HREF="idl300.htm#37905" CLASS="XRef">
+IDLgrPlot::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1038779">
+ </A>
+<A HREF="idl300.htm#24712" CLASS="XRef">
+IDLgrPlot::GetCTM</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1034365">
+ </A>
+<A HREF="idl300.htm#10683" CLASS="XRef">
+IDLgrPlot::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1005617">
+ </A>
+<A HREF="idl300.htm#81618" CLASS="XRef">
+IDLgrPlot::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1005625">
+ </A>
+<A HREF="idl300.htm#41926" CLASS="XRef">
+IDLgrPlot::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031396">
+ </A>
+<A NAME="37905">
+ </A>
+IDLgrPlot::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031399">
+ </A>
+The IDLgrPlot::<A NAME="marker=1052257">
+ </A>
+Cleanup procedure method performs all cleanup on the object.<STRONG CLASS="Stone-Semibold">
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041822">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031403">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051192">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051193">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031404">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPlot::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031405">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031406">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031407">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031408">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1038753">
+ </A>
+<A NAME="24712">
+ </A>
+IDLgrPlot::GetCTM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038756">
+ </A>
+The IDLgrPlot::<A NAME="marker=1052260">
+ </A>
+GetCTM function method returns the 4 x 4 graphics transform matrix from the current object upward through the graphics tree. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl300.htm#71324" CLASS="XRef">
+IDLgrPlot</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038760">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038761">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPlot::]</EM>
+GetCTM()</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038762">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1038763">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1038764">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1038766">
+ </A>
+<A NAME="marker=1038765">
+ </A>
+DESTINATION</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058048">
+ </A>
+Set this keyword to the object reference of a destination object to specify that the projection matrix for the View object in the current tree be included in the returned transformation matrix. The resulting matrix will transform a point in the data space of the object on which the GetCTM method is called into a normalized coordinate system (-1 to +1 in X, Y, and Z), relative to the View object that contains the plot object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1047305">
+ </A>
+<A NAME="marker=1047304">
+ </A>
+TOP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059518">
+ </A>
+Set this keyword equal to the object reference to an <A HREF="idl2fc.htm#83081" CLASS="XRef">
+IDLgrModel</A>
+ object to specify that the returned matrix accumulate from the object on which the GetCTM method is called up to and including the specified model object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997778">
+ </A>
+<A NAME="10683">
+ </A>
+IDLgrPlot::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005705">
+ </A>
+The IDLgrPlot::<A NAME="marker=1052263">
+ </A>
+GetProperty procedure method retrieves the value of the property or group of properties for the plot. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl300.htm#71324" CLASS="XRef">
+IDLgrPlot</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005709">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005710">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPlot::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005711">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997779">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997780">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016654">
+ </A>
+Any keyword to <A HREF="idl300.htm#81618" CLASS="XRef">
+IDLgrPlot::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997782">
+ </A>
+<A NAME="marker=1022559">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093579">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093580">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1029627">
+ </A>
+<A NAME="marker=1048922">
+ </A>
+DATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1029628">
+ </A>
+Set this keyword to retrieve the plot data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1048928">
+ </A>
+<A NAME="marker=1048927">
+ </A>
+PARENT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068346">
+ </A>
+Set this keyword equal to a named variable that will contain an object reference to the object that contains this object.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1068611">
+ </A>
+<A NAME="marker=1068610">
+ </A>
+ZRANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1068612">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector of the form [<EM CLASS="Emphasis">
+zmin</EM>
+, <EM CLASS="Emphasis">
+zmax</EM>
+] specifying the range of <EM CLASS="Emphasis">
+z</EM>
+ data values covered by the graphic object.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1068613">
+ </A>
+The XRANGE and YRANGE properties can also be retrieved via the GetProperty method; ZRANGE, however, can only be retrieved, not initialized (Init method) or set (SetProperty method).</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1013127">
+ </A>
+<A NAME="81618">
+ </A>
+IDLgrPlot::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1013128">
+ </A>
+The IDLgrPlot::<A NAME="marker=1052267">
+ </A>
+Init function method initializes the plot object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl300.htm#71324" CLASS="XRef">
+IDLgrPlot</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041712">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013132">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019701">
+ </A>
+Obj = OBJ_NEW('IDLgrPlot' <EM CLASS="Emphasis">
+[, [X,] Y]</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041970">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041971">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrPlot::]</EM>
+Init(<EM CLASS="Emphasis">
+[[X], Y] </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013134">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013135">
+ </A>
+X</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013136">
+ </A>
+A vector representing the abscissa values to be plotted. If <EM CLASS="Emphasis">
+X</EM>
+ is provided, <EM CLASS="Emphasis">
+Y</EM>
+ is plotted as a function of <EM CLASS="Emphasis">
+X</EM>
+. This argument is converted to single-precision floating-point values. <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ are measured in units specified by the UNITS keyword. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013137">
+ </A>
+Y</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013138">
+ </A>
+Either a vector of two-element arrays [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] representing the points to be plotted, or a vector representing the ordinate values to be plotted. If <EM CLASS="Emphasis">
+Y</EM>
+ is a vector of ordinate values and <EM CLASS="Emphasis">
+X</EM>
+ is not specified, <EM CLASS="Emphasis">
+Y</EM>
+ is plotted as a function of the vector index of <EM CLASS="Emphasis">
+Y</EM>
+. This argument is converted to single-precision floating point.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013139">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020247">
+ </A>
+Properties retrievable via <A HREF="idl300.htm#10683" CLASS="XRef">
+IDLgrPlot::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039570">
+ </A>
+<A NAME="marker=1039569">
+ </A>
+COLOR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1059565">
+ </A>
+Set this keyword to the color to be used as the foreground color for this plot. The color may be specified as a color lookup table index or as an RGB vector. The default is [255, 255, 255].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1058186">
+ </A>
+<A NAME="marker=1058185">
+ </A>
+DATAX (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058187">
+ </A>
+Set this keyword to a vector specifying the X values to be plotted. This keyword is the same as the <I CLASS="Italic">
+X</I>
+ argument.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1050022">
+ </A>
+<A NAME="marker=1050021">
+ </A>
+DATAY (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1050011">
+ </A>
+Set this keyword to a vector specifying the Yvalues to be plotted. This keyword is the same as the <I CLASS="Italic">
+Y</I>
+ argument.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049173">
+ </A>
+<A NAME="marker=1049172">
+ </A>
+HIDE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049174">
+ </A>
+Set this keyword to a boolean value indicating whether this object should be drawn:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068493">
+ </A>
+0 = Draw graphic (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1068494">
+ </A>
+1 = Do not draw graphic</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025160">
+ </A>
+<A NAME="marker=1025159">
+ </A>
+HISTOGRAM (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025163">
+ </A>
+Set this keyword to force only horizontal and vertical lines to be used to connect the plotted points. By default, the points are connected using a single straight line.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013141">
+ </A>
+<A NAME="marker=1022999">
+ </A>
+LINESTYLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1028643">
+ </A>
+Set this keyword to indicate the line style that should be used to draw the plot lines. The value can be either an integer value specifying a pre-defined line style, or a two-element vector specifying a stippling pattern.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060785">
+ </A>
+To use a pre-defined line style, set the LINESTYLE property equal to one of the following integer values:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060786">
+ </A>
+0 = Solid line (the default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060787">
+ </A>
+1 = dotted</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060788">
+ </A>
+2 = dashed</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060789">
+ </A>
+3 = dash dot</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060790">
+ </A>
+4 = dash dot dot dot</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060791">
+ </A>
+5 = long dash</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1060793">
+ </A>
+6 = no line drawn</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1060784">
+ </A>
+To define your own stippling pattern, specify a two-element vector [<EM CLASS="Emphasis">
+repeat</EM>
+, <EM CLASS="Emphasis">
+bitmask</EM>
+], where <EM CLASS="Emphasis">
+repeat</EM>
+ indicates the number of times consecutive runs of 1's or 0's in the <EM CLASS="Emphasis">
+bitmask</EM>
+ should be repeated. (That is, if three consecutive 0's appear in the <EM CLASS="Emphasis">
+bitmask</EM>
+ and the value of <EM CLASS="Emphasis">
+repeat</EM>
+ is 2, then the line that is drawn will have six consecutive bits turned off.) The value of <EM CLASS="Emphasis">
+repeat</EM>
+ must be in the range 1&nbsp;<EM CLASS="Symbol">
+&#163;</EM>
+&nbsp;<EM CLASS="Emphasis">
+repeat</EM>
+&nbsp;<EM CLASS="Symbol">
+&#163;</EM>
+&nbsp;255.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060795">
+ </A>
+The <EM CLASS="Emphasis">
+bitmask</EM>
+ indicates which pixels are drawn and which are not along the length of the line. <EM CLASS="Emphasis">
+Bitmask</EM>
+ is most conveniently specified as a 16-bit hexadecimal value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1060796">
+ </A>
+For example, <CODE CLASS="Code">
+LINESTYLE = [2, 'F0F0'X]</CODE>
+ describes a dashed line (8 bits on, 8 bits off, 8 bits on, 8 bits off).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013146">
+ </A>
+<A NAME="marker=1023000">
+ </A>
+MAX_VALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013147">
+ </A>
+The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as missing data and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013148">
+ </A>
+<A NAME="marker=1023001">
+ </A>
+MIN_VALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013149">
+ </A>
+The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as missing data and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049038">
+ </A>
+<A NAME="marker=1049037">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058308">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013150">
+ </A>
+<A NAME="marker=1023002">
+ </A>
+NSUM (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013151">
+ </A>
+Set this keyword to the number of data points to average when plotting. If NSUM is larger than 1, every group of NSUM points is averaged to produce one plotted point. If there are M data points, then M/NSUM points are plotted.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013152">
+ </A>
+<A NAME="marker=1023003">
+ </A>
+POLAR (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013153">
+ </A>
+Set this keyword to create a polar plot. The <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ arguments must both be present. The <EM CLASS="Emphasis">
+X</EM>
+ argument represents the radius, and the <EM CLASS="Emphasis">
+Y</EM>
+ argument represents the angle expressed in radians.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1060489">
+ </A>
+<A NAME="marker=1060488">
+ </A>
+RESET_DATA (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1060486">
+ </A>
+Set this keyword to treat the data provided via one of the DATA[XY] properties as a new data set unique to this object, rather than overwriting data that is shared by other objects. There is no reason to use this keyword if the object on which the property is being set does not currently share data with another object (that is, if the SHARE_DATA property is not in use). This keyword has no effect if no new data is provided via a DATA property. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013154">
+ </A>
+<A NAME="marker=1023004">
+ </A>
+SHARE_DATA (Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013155">
+ </A>
+Set this keyword to an object with which data is to be shared by this plot. A plot may only share data with another plot. The SHARE_DATA property is intended for use when data values are not set via an argument to the object's Init method or by setting the object's DATA property.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013156">
+ </A>
+<A NAME="marker=1023005">
+ </A>
+SYMBOL (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013160">
+ </A>
+Set this keyword to a vector containing instances of the <A HREF="idl306.htm#66762" CLASS="XRef">
+IDLgrSymbol</A>
+ object class. Each symbol in the vector will be drawn at the corresponding plotted point. If there are more points than elements in SYMBOL, the elements of the SYMBOL vector are cyclically repeated. By default, no symbols are drawn. To remove symbols from a plot, set the SYMBOL property equal to a null object reference.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013161">
+ </A>
+<A NAME="marker=1023006">
+ </A>
+THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013162">
+ </A>
+Set this keyword to an integer value between 1 and 10, specifying the line thickness to be used to draw the plotted lines, in pixels. The default is one pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013168">
+ </A>
+<A NAME="marker=1029603">
+ </A>
+USE_ZVALUE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1029605">
+ </A>
+Set this keyword to use the current ZVALUE. The plot is considered three-dimensional if this keyword is set.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1050030">
+ </A>
+<A NAME="marker=1050029">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058410">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1029602">
+ </A>
+<A NAME="marker=1023008">
+ </A>
+VERT_COLORS (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013169">
+ </A>
+Set this keyword to a vector of colors to be used to draw at each vertex. Color is interpolated between vertices. If there are more plot points than elements in VERT_COLORS, the elements of VERT_COLORS are cyclically repeated. By default, the plot is all drawn in the single color provided by the COLOR keyword. If the VERT_COLORS is provided, the COLOR keyword is ignored. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039537">
+ </A>
+<A NAME="marker=1039536">
+ </A>
+XCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039538">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+X</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039539">
+ </A>
+Normalized<EM CLASS="Emphasis">
+X</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+X</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039540">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039541">
+ </A>
+[(-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039542">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1058800">
+ </A>
+<A NAME="marker=1058799">
+ </A>
+XRANGE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058801">
+ </A>
+Set this keyword equal to a two-element vector of the form [<EM CLASS="Emphasis">
+xmin</EM>
+, <EM CLASS="Emphasis">
+xmax</EM>
+] specifying the range of <EM CLASS="Emphasis">
+x</EM>
+ data coordinates covered by the graphic object. If this property is not specified, the minimum and maximum data values are used.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1039544">
+ </A>
+<A NAME="marker=1039543">
+ </A>
+YCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039545">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Y</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039546">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Y</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Y</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039547">
+ </A>
+Recommended values are:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039548">
+ </A>
+[(-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+), 1/(<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+max</SUB>
+-<EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+min</SUB>
+)]</P>
+<P CLASS="Body">
+<A NAME="pgfId=1039549">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1058812">
+ </A>
+<A NAME="marker=1058811">
+ </A>
+YRANGE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058819">
+ </A>
+Set this keyword equal to a two-element vector of the form [<EM CLASS="Emphasis">
+ymin</EM>
+, <EM CLASS="Emphasis">
+ymax</EM>
+] specifying the range of <EM CLASS="Emphasis">
+y</EM>
+ data values covered by the graphic object. If this property is not specified, the minimum and maximum data values are used.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1173688">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1058824">
+ </A>
+<A NAME="marker=1058823">
+ </A>
+ZCOORD_CONV (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058825">
+ </A>
+Set this keyword to a vector, [<EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+], of scaling factors used to convert <EM CLASS="Emphasis">
+Z</EM>
+ coordinates from data units to normalized units. The formula for the conversion is as follows:</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=1039553">
+ </A>
+Normalized<EM CLASS="Emphasis">
+Z</EM>
+ = <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ + <EM CLASS="Emphasis">
+s</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ * Data<EM CLASS="Emphasis">
+Z</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1058840">
+ </A>
+The default is [0.0, 1.0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1058845">
+ </A>
+<A NAME="marker=1058844">
+ </A>
+ZVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1039606">
+ </A>
+Set this keyword to a floating point value representing the constant <EM CLASS="Emphasis">
+Z</EM>
+ value to be used for this plot. The plotted lines and symbols are projected onto the plane specified by this value. The default is 0.0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997785">
+ </A>
+<A NAME="41926">
+ </A>
+IDLgrPlot::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005737">
+ </A>
+The IDLgrPlot::<A NAME="marker=1052270">
+ </A>
+SetProperty procedure method sets the value of the property or group of properties for the plot. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl300.htm#71324" CLASS="XRef">
+IDLgrPlot</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005738">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005739">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPlot::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005740">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005741">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005742">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016662">
+ </A>
+Any keyword to <A HREF="idl300.htm#81618" CLASS="XRef">
+IDLgrPlot::Init</A>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ATAN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675758">
+ </A>
+<A NAME="92570">
+ </A>
+ATAN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=809130">
+ </A>
+The <A NAME="marker=809129">
+ </A>
+ATAN function returns the <A NAME="marker=848674">
+ </A>
+angle, expressed in radians, whose tangent is <I CLASS="Italics">
+X</I>
+ (i.e., the <A NAME="marker=809131">
+ </A>
+arc-tangent). If two parameters are supplied, the angle whose tangent is equal to <I CLASS="Italics">
+Y/X</I>
+ is returned. The range of ATAN is between -<EM CLASS="MathSymbol">
+p</EM>
+/2 and <EM CLASS="MathSymbol">
+p</EM>
+/2 for the single argument case, and between -<EM CLASS="MathSymbol">
+p</EM>
+ and <EM CLASS="MathSymbol">
+p</EM>
+ if two arguments are given.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=809135">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675761">
+ </A>
+Result = ATAN(<I CLASS="Italics">
+X</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=675762">
+ </A>
+or</P>
+<P CLASS="Body">
+<A NAME="pgfId=675763">
+ </A>
+Result = ATAN(<I CLASS="Italics">
+Y, X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675764">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675765">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675766">
+ </A>
+The tangent of the desired angle.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675767">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675768">
+ </A>
+An optional argument. If this argument is supplied, ATAN returns the angle whose tangent is equal to <I CLASS="Italics">
+Y/X</I>
+. If both arguments are zero, the result is undefined.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675769">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675770">
+ </A>
+To find the arc-tangent of 0.707 and store the result in the variable B, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675771">
+ </A>
+B = ATAN(0.707)</P>
+<P CLASS="Body">
+<A NAME="pgfId=675772">
+ </A>
+The following code defines a function that converts Cartesian coordinates to polar coordinates. It returns &quot;r&quot; and &quot;theta&quot; given an &quot;x&quot; and &quot;y&quot; position:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675773">
+ </A>
+FUNCTION TO_POLAR, X, Y	<EM CLASS="Comment">;
+Define function TO_POLAR that accepts X and Y as arguments.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675774">
+ </A>
+RETURN, [SQRT(X^2 + Y^2), ATAN(Y, X)]<BR>
+<EM CLASS="Comment">;
+Return the distance and angle as a two-element array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675775">
+ </A>
+END	<EM CLASS="Comment">;
+End of function.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=769713">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=769714">
+ </A>
+<A HREF="idl1d1.htm#10234" CLASS="XRef">
+TAN</A>
+, <A HREF="idl1d2.htm#99189" CLASS="XRef">
+TANH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

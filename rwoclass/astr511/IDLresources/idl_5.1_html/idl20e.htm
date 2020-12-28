@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_GIF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl20f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl20d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756460">
+ </A>
+<A NAME="20502">
+ </A>
+WRITE_GIF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756462">
+ </A>
+The <A NAME="marker=756461">
+ </A>
+WRITE_GIF procedure writes an image and its color table vectors to a Graphics Interchange Format (<A NAME="marker=756463">
+ </A>
+GIF) file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756464">
+ </A>
+WRITE_GIF produces 8-bit GIF files of the standard type: non-interlaced, global colormap.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=911456">
+ </A>
+The Graphics Interchange Format&#169; is the Copyright property of CompuServ Incorporated. GIF(sm) is a Service Mark property of CompuServ Incorporated. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=756465">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_gif.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756466">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=917275">
+ </A>
+WRITE_GIF, <EM CLASS="Emphasis">
+Filename, Image[, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756468">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756469">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756470">
+ </A>
+A scalar string containing the full pathname of the GIF file to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756471">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756472">
+ </A>
+The array to write into the new GIF file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756473">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756474">
+ </A>
+The Red, Green, and Blue color vectors to be written with to the GIF file. If <EM CLASS="Emphasis">
+R</EM>
+, <EM CLASS="Emphasis">
+G</EM>
+, <EM CLASS="Emphasis">
+B</EM>
+ values are not provided, the last color table established using LOADCT is saved, and the table is padded to 256 entries. If no color table has been established, WRITE_GIF calls LOADCT to load the grayscale entry (table 0).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756475">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=912149">
+ </A>
+<A NAME="marker=912148">
+ </A>
+CLOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=912150">
+ </A>
+Set this keyword to close any open files. The CLOSE keyword is only useful if a file containing multiple images (as specified by the MULTIPLE keyword) is being written. If the CLOSE keyword is specified, nothing is written to the file, and all other parameters are ignored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=912152">
+ </A>
+<A NAME="marker=912151">
+ </A>
+MULTIPLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=912153">
+ </A>
+Set this keyword to write multiple images to a file. Each call to WRITE_GIF writes the next image, with the file remaining open between calls. The <EM CLASS="Emphasis">
+Filename</EM>
+ argument is ignored after the first call, <EM CLASS="Emphasis">
+but must be supplied</EM>
+. After the first image has been written, any R, G, and B color vectors supplied are ignored. All images written to a GIF file must be the same size.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=896386">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756476">
+ </A>
+The following command captures the contents of the current IDL graphics window and saves it to a GIF file named <CODE CLASS="Code">
+test.gif</CODE>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756477">
+ </A>
+WRITE_GIF, 'test.gif', TVRD()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756478">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756479">
+ </A>
+<A HREF="idl164.htm#81602" CLASS="XRef">
+READ_GIF</A>
+, <A HREF="idl20f.htm#94631" CLASS="XRef">
+WRITE_JPEG</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

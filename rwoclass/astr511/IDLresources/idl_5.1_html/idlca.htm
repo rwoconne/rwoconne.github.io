@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HLS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlcb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=759228">
+ </A>
+<A NAME="43154">
+ </A>
+HLS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=759231">
+ </A>
+The <A NAME="marker=759229">
+ </A>
+HLS procedure creates a <A NAME="marker=759230">
+ </A>
+color table based on the HLS (Hue, Lightness, Saturation) color system.</P>
+<P CLASS="Body">
+<A NAME="pgfId=759232">
+ </A>
+Using the input parameters, a spiral through the double-ended HLS cone is traced. Points along the cone are converted from HLS to RGB. The current colortable (and the COLORS common block) contains the new colortable on exit.</P>
+<P CLASS="Body">
+<A NAME="pgfId=759233">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+hls.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759234">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759235">
+ </A>
+HLS<I CLASS="Italics">
+, Litlo, Lithi, Satlo, Sathi, Hue, Loops [, Colr]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759236">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759237">
+ </A>
+Litlo</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759238">
+ </A>
+Starting lightness, from 0 to 100%. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759239">
+ </A>
+Lithi</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759240">
+ </A>
+Ending lightness, from 0 to 100%. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759241">
+ </A>
+Satlo</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759242">
+ </A>
+Starting saturation, from 0 to 100%. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759243">
+ </A>
+Sathi</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759244">
+ </A>
+Ending saturation, from 0 to 100%. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759245">
+ </A>
+Hue</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759246">
+ </A>
+Starting Hue, from 0 to 360 degrees. Red = 0 degs, green = 120, blue = 240.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759247">
+ </A>
+Loops</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759248">
+ </A>
+The number of loops through the color spiral. This parameter does not have to be an integer. A negative value causes the loops to traverse the spiral in the opposite direction.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759249">
+ </A>
+Colr</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759250">
+ </A>
+An optional (256,3) integer array in which the new R, G, and B values are returned. Red = <I CLASS="Italics">
+Colr</I>
+[*,0], green = <I CLASS="Italics">
+Colr</I>
+[*,1], blue = <I CLASS="Italics">
+Colr</I>
+[*,2].</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822628">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822635">
+ </A>
+<A HREF="idl36.htm#70836" CLASS="XRef">
+COLOR_CONVERT</A>
+, <A HREF="idlcc.htm#88897" CLASS="XRef">
+HSV</A>
+, <A HREF="idl152.htm#99086" CLASS="XRef">
+PSEUDO</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FINDFILE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idla0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl9e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676858">
+ </A>
+<A NAME="82292">
+ </A>
+FINDFILE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676859">
+ </A>
+The <A NAME="marker=673000">
+ </A>
+FINDFILE function returns a string array containing the names of all <A NAME="marker=673001">
+ </A>
+files matching <I CLASS="Italics">
+File_Specification</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676860">
+ </A>
+All matched filenames are returned in a string array, one file name per array element. If no files exist with names matching the <I CLASS="Italics">
+File_Specification</I>
+ a null scalar string is returned instead of a string array. Except for VMS, described below, FINDFILE returns the full path only if the path itself is specified in <EM CLASS="Emphasis">
+File_Specification</EM>
+. See the &quot;Examples&quot; section below for details.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=843596">
+ </A>
+Platform specific differences are described below:</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=843600">
+ </A>
+Under Macintosh, FINDFILE function brackets the returned filename in colons if the file is a folder (e.g., :lib:)</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=723990">
+ </A>
+Under UNIX, to refer to all of the files in a directory only, use <BR>
+FINDFILE('/<I CLASS="Italics">
+File_Specification</I>
+/*.*'). To include all the files in any subdirectories, use FINDFILE('/<I CLASS="Italics">
+File_Specification</I>
+/*')</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=843599">
+ </A>
+Under VMS, FINDFILE returns the <EM CLASS="Emphasis">
+full path</EM>
+ specification for any file it finds.</LI>
+<LI CLASS="Diamond-Bullet">
+<A NAME="pgfId=835644">
+ </A>
+Under Windows, FINDFILE appends a &quot;\&quot; character to the end of the returned file name if the file is a directory. To refer to all the files in a specific directory only, use FINDFILE('\<I CLASS="Italics">
+File_Specification</I>
+\*').</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676862">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676863">
+ </A>
+Result = FINDFILE(<I CLASS="Italics">
+File_Specification</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676864">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676865">
+ </A>
+File_Specification</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676866">
+ </A>
+A scalar string used to find files. The string can contain any valid command-interpreter wildcard characters. If <I CLASS="Italics">
+File_Specification</I>
+ contains path information, that path information is included in the returned value. If <I CLASS="Italics">
+File_Specification</I>
+ is omitted, the names of all files in the current directory are returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676867">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676868">
+ </A>
+<A NAME="marker=673003">
+ </A>
+COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676869">
+ </A>
+A named variable into which the number of files found is placed. If no files are found, a value of 0 is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676870">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676871">
+ </A>
+To print the file names of all the Unix files with &quot;dat&quot; extensions in the current directory, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676872">
+ </A>
+PRINT, FINDFILE('*.dat')</P>
+<P CLASS="Body">
+<A NAME="pgfId=835866">
+ </A>
+To print the full path names of all <CODE CLASS="Code">
+.pro</CODE>
+ files in the IDL <CODE CLASS="Code">
+lib</CODE>
+ directory that begin with the letter &quot;x&quot;, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=835869">
+ </A>
+PRINT, FINDFILE('/usr/local/rsi/idl/lib/x*.pro')</P>
+<P CLASS="Body">
+<A NAME="pgfId=835878">
+ </A>
+To print the path names of all <CODE CLASS="Code">
+.pro</CODE>
+ files in the <CODE CLASS="Code">
+profiles</CODE>
+ subdirectory of the current directory (a relative path), use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=835879">
+ </A>
+PRINT, FINDFILE('profiles/*.pro')</P>
+<P CLASS="Body">
+<A NAME="pgfId=835892">
+ </A>
+Note that the values returned are (like the <EM CLASS="Emphasis">
+File_Specification</EM>
+) relative path names. Use caution when comparing values against this type of relative path specification.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795850">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795851">
+ </A>
+<A HREF="idl9e.htm#97064" CLASS="XRef">
+FILEPATH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFAN_LABLIST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl276.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl274.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997356">
+ </A>
+<A NAME="14991">
+ </A>
+HDF_DFAN_LABLIST</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997359">
+ </A>
+The <A NAME="marker=997358">
+ </A>
+HDF_DFAN_LABLIST function retrieves a list of the reference numbers and the corresponding labels for a given <A NAME="marker=997360">
+ </A>
+tag in a Hierarchical Data Format file. If successful, the number of entries found is returned.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997361">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997362">
+ </A>
+Result = HDF_DFAN_LABLIST(<I CLASS="Italics">
+Filename, Tag, Reflist, Labellist</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997363">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997364">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997365">
+ </A>
+A scalar string containing the name of the file to be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997366">
+ </A>
+Tag</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997367">
+ </A>
+The tag number.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997368">
+ </A>
+Reflist</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997369">
+ </A>
+A named variable in which an array of reference numbers associated with the given tag is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997370">
+ </A>
+Labellist</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997371">
+ </A>
+A named variable in which an array of labels is returned. Unless the STRING keyword is set, <EM CLASS="Emphasis">
+Labellist</EM>
+ will contain an N_ELEMENTS(<EM CLASS="Emphasis">
+Reflist</EM>
+) by MAXLABEL array of bytes. Note that array elements containing labels that are shorter than MAXLABEL will be padded with zeroes.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997372">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997374">
+ </A>
+<A NAME="marker=997373">
+ </A>
+LISTSIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997375">
+ </A>
+Set the maximum size of the <I CLASS="Italics">
+Reflist</I>
+ and <I CLASS="Italics">
+Labellist</I>
+ returned. The default is to read all references present, or 20 if the inquiry to obtain the number of references fails.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997377">
+ </A>
+<A NAME="marker=997376">
+ </A>
+MAXLABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997378">
+ </A>
+Use this keyword to override the default label length of 16.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997380">
+ </A>
+<A NAME="marker=997379">
+ </A>
+STARTPOS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997381">
+ </A>
+Use this keyword to set the default starting position in the <EM CLASS="Emphasis">
+Reflist</EM>
+ array.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997383">
+ </A>
+<A NAME="marker=997382">
+ </A>
+STRING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997384">
+ </A>
+Set this keyword to return an array of strings rather than an array of bytes. If STRING is set, the MAXLABEL keyword is ignored and full-length strings are returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997385">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997386">
+ </A>
+tag_image = 302</P>
+<P CLASS="Code">
+<A NAME="pgfId=997387">
+ </A>
+file = 'DEMOlablist.hdf'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997388">
+ </A>
+n_images = HDF_DFAN_LABLIST(file, tag_image, refs, list, /STRING)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997389">
+ </A>
+help, n_images, refs, list</P>
+<P CLASS="Body">
+<A NAME="pgfId=997390">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997391">
+ </A>
+N_IMAGES        LONG      =            2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997392">
+ </A>
+REFS            INT       = Array(2)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997393">
+ </A>
+LIST            STRING    = Array(2)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997394">
+ </A>
+PRINT, list(0)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997395">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997396">
+ </A>
+SAMPLE IMAGE LABEL</P>
+<P CLASS="Body">
+<A NAME="pgfId=997397">
+ </A>
+Find all the compressed images:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997398">
+ </A>
+tag_image_comp = 303</P>
+<P CLASS="Code">
+<A NAME="pgfId=997399">
+ </A>
+n_comp_images = HDF_DFAN_LABLIST(file, tag_image_comp, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997400">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;refs, list, MAXLABEL=5)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997401">
+ </A>
+HELP, n_comp_images, refs, list</P>
+<P CLASS="Body">
+<A NAME="pgfId=997402">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997403">
+ </A>
+N_COMP_IMAGES   LONG      =            3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997404">
+ </A>
+REFS            INT       = Array(3)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997405">
+ </A>
+LIST            BYTE      = Array(5, 3)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997406">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997413">
+ </A>
+<A HREF="idl274.htm#56732" CLASS="XRef">
+HDF_DFAN_GETLABEL</A>
+, <A HREF="idl278.htm#13293" CLASS="XRef">
+HDF_DFAN_PUTLABEL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

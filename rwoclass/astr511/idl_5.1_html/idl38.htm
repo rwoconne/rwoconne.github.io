@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COMFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl39.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl37.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53189">
+ </A>
+<A NAME="47619">
+ </A>
+COMFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53193">
+ </A>
+The <A NAME="marker=53191">
+ </A>
+COMFIT <A NAME="marker=53192">
+ </A>
+function fits the paired data {<EM CLASS="Emphasis">
+xi</EM>
+, <EM CLASS="Emphasis">
+yi</EM>
+} to one of six common types of <A NAME="marker=53194">
+ </A>
+approximating <A NAME="marker=53195">
+ </A>
+models using a gradient-expansion least-squares method. The result is a vector containing the model parameters <EM CLASS="Emphasis">
+a</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+a</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+a</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, etc.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53196">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+comfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53197">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53198">
+ </A>
+Result = COMFIT(<EM CLASS="Emphasis">
+X, Y, A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53199">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53200">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53201">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53202">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53203">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53204">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53205">
+ </A>
+A vector of initial estimates for each model parameter. The length of this vector depends upon the type of model selected.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53206">
+ </A>
+Keywords</H3>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=864012">
+ </A>
+One of the following keywords specifying a type of model must be set when using COMFIT. If you do not specify a model, IDL will display a warning message when COMFIT is called.</LI>
+</UL>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53208">
+ </A>
+<A NAME="marker=53207">
+ </A>
+EXPONENTIAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53212">
+ </A>
+Set this keyword to compute the parameters of the exponential model.<A NAME="marker=53216">
+ </A>
+</P>
+<DIV>
+<CENTER><IMG SRC="idl_8.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=838932">
+ </A>
+GEOMETRIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=937479">
+ </A>
+Set this keyword to compute the parameters of the geometric model.</P>
+<DIV>
+<CENTER><IMG SRC="idl_9.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=838937">
+ </A>
+<A NAME="marker=838926">
+ </A>
+GOMPERTZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53230">
+ </A>
+Set this keyword to compute the parameters of the Gompertz model.</P>
+<DIV>
+<CENTER><IMG SRC="idl_10.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=838944">
+ </A>
+<A NAME="marker=53234">
+ </A>
+HYPERBOLIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53239">
+ </A>
+Set this keyword to compute the parameters of the hyperbolic model. </P>
+<DIV>
+<CENTER><IMG SRC="idl_11.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=838961">
+ </A>
+<A NAME="marker=53243">
+ </A>
+LOGISTIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53248">
+ </A>
+Set this keyword to compute the parameters of the logistic model. </P>
+<DIV>
+<CENTER><IMG SRC="idl_12.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=838970">
+ </A>
+<A NAME="marker=72511">
+ </A>
+LOGSQUARE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=72519">
+ </A>
+Set this keyword to compute the parameters of the logsquare model. </P>
+<DIV>
+<CENTER><IMG SRC="idl_13.gif" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=838980">
+ </A>
+<A NAME="marker=72520">
+ </A>
+SIGMA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53263">
+ </A>
+Set this keyword to a named variable that will contain a vector of standard deviations for the computed model parameters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53265">
+ </A>
+<A NAME="marker=53264">
+ </A>
+WEIGHTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864580">
+ </A>
+Set this keyword equal to a vector of weights for <EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+. This vector should be the same length as <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+. The error for each term is weighted by WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+ when computing the fit. Frequently, WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0/s<SUP CLASS="Superscript">
+2</SUP>
+<SUB CLASS="Subscript">
+i</SUB>
+, where s is the measurement error or standard deviation of <EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+ (Gaussian or instrumental weighting), or WEIGHTS&nbsp;=&nbsp;1/Y (Poisson or statistical weighting). If WEIGHTS is not specified, WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+ is assumed to be 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53268">
+ </A>
+<A NAME="marker=53267">
+ </A>
+YFIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53269">
+ </A>
+Set this keyword to a named variable that will contain an <EM CLASS="Emphasis">
+n</EM>
+-element vector of y-data corresponding to the computed model parameters.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53270">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53271">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element vectors of paired data.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53272">
+ </A>
+X&nbsp;=&nbsp;[&nbsp;2.27, 15.01, 34.74, 36.01, 43.65, 50.02, 53.84, 58.30, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53273">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;62.12, 64.66, 71.66, 79.94, 85.67, 114.95]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53274">
+ </A>
+Y&nbsp;=&nbsp;[&nbsp;5.16, 22.63, 34.36, 34.92, 37.98, 40.22, 41.46, 42.81, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53275">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;43.91, 44.62, 46.44, 48.43, 49.70, 55.31]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53276">
+ </A>
+Define a 3-element vector of initial estimates for the logsquare model.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53277">
+ </A>
+A = [1.5, 1.5, 1.5]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53278">
+ </A>
+Compute the model parameters of the logsquare model, A[0], A[1], &amp; A[2].</P>
+<P CLASS="Code">
+<A NAME="pgfId=53279">
+ </A>
+result = COMFIT(X, Y, A, /LOGSQUARE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53280">
+ </A>
+The result should be the 3-element vector: [1.42494, 7.21900, 9.18794].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=65784">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=65791">
+ </A>
+<A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idle6.htm#94704" CLASS="XRef">
+LADFIT</A>
+, <A HREF="idlea.htm#74603" CLASS="XRef">
+LINFIT</A>
+, <A HREF="idlfd.htm#38447" CLASS="XRef">
+LMFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_SRF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl16b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl169.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756193">
+ </A>
+<A NAME="41759">
+ </A>
+READ_SRF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756196">
+ </A>
+The <A NAME="marker=756194">
+ </A>
+READ_SRF procedure reads the contents of a <A NAME="marker=756195">
+ </A>
+Sun rasterfile and returns the image and color table vectors (if present) in the form of IDL variables.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756197">
+ </A>
+READ_SRF only handles 1-, 8-, 24-, and 32-bit rasterfiles of type <CODE CLASS="Code">
+RT_OLD</CODE>
+ and <CODE CLASS="Code">
+RT_STANDARD</CODE>
+. See the file <CODE CLASS="Code">
+/usr/include/rasterfile.h</CODE>
+ for the structure of Sun rasterfiles.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756198">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_srf.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756199">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756200">
+ </A>
+READ_SRF, <EM CLASS="Emphasis">
+Filename, Image [, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756201">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756202">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756203">
+ </A>
+A scalar string containing the name of the rasterfile to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756204">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756205">
+ </A>
+A named variable that will contain the 2D byte array (image).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756206">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756207">
+ </A>
+Named variables that will contain the Red, Green, and Blue color vectors, if the rasterfile contains colormaps.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843821">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756209">
+ </A>
+To open and read the Sun rasterfile named <CODE CLASS="Code">
+sun.srf</CODE>
+ in the current directory, store the image in the variable <CODE CLASS="Code">
+image1</CODE>
+, and store the color vectors in the variables <CODE CLASS="Code">
+R</CODE>
+, <CODE CLASS="Code">
+G</CODE>
+, and <CODE CLASS="Code">
+B</CODE>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756210">
+ </A>
+READ_SRF, 'sun.srf', image1, R, G, B</P>
+<P CLASS="Body">
+<A NAME="pgfId=756211">
+ </A>
+To load the new color table and display the image, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756212">
+ </A>
+TVLCT, R, G, B</P>
+<P CLASS="Code">
+<A NAME="pgfId=756213">
+ </A>
+TV, image1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756214">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756215">
+ </A>
+<A HREF="idl214.htm#20886" CLASS="XRef">
+WRITE_SRF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DCOMPLEX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl6b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl69.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=37570">
+ </A>
+<A NAME="50604">
+ </A>
+DCOMPLEX</H2>
+<P CLASS="Body">
+<A NAME="pgfId=37575">
+ </A>
+The <A NAME="marker=37572">
+ </A>
+DCOMPLEX <A NAME="marker=37573">
+ </A>
+function returns double-precision <A NAME="marker=37574">
+ </A>
+complex scalars or arrays given one or two scalars or arrays. If only one parameter is supplied, the imaginary part of the result is zero, otherwise it is set to the value of the <I CLASS="Italics">
+Imaginary</I>
+ parameter. Parameters are first converted to double-precision floating-point. If either or both of the parameters are arrays, the result is an array, following the same rules as standard IDL operators. If three parameters are supplied, DCOMPLEX extracts fields of data from <I CLASS="Italics">
+Expression</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=37579">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=37580">
+ </A>
+Result = DCOMPLEX(<I CLASS="Italics">
+Real [, Imaginary]</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=37581">
+ </A>
+or</P>
+<P CLASS="Body">
+<A NAME="pgfId=37582">
+ </A>
+Result = DCOMPLEX(<I CLASS="Italics">
+Expression, Offset, Dim</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+ [, ..., Dim</I>
+<SUB CLASS="subscript">
+n</SUB>
+<I CLASS="Italics">
+]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=37583">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37584">
+ </A>
+Real</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37585">
+ </A>
+Scalar or array to be used as the real part of the complex result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37586">
+ </A>
+Imaginary</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37587">
+ </A>
+Scalar or array to be used as the imaginary part of the complex result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37588">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37589">
+ </A>
+The expression from which data is to be extracted.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37590">
+ </A>
+Offset</H4>
+<P CLASS="Body">
+<A NAME="pgfId=855343">
+ </A>
+Offset from beginning of the <I CLASS="Italics">
+Expression</I>
+ data area. Specifying this argument allows fields of data extracted from <I CLASS="Italics">
+Expression</I>
+ to be treated as complex data. See the description in <A HREF="..html#77809" CLASS="XRef">
+Constants and Variables</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=37595">
+ </A>
+D<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=37596">
+ </A>
+When extracting fields of data, the <I CLASS="Italics">
+D</I>
+<SUB CLASS="subscript">
+i</SUB>
+ arguments specify the dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified. If no dimension arguments are given, the result is taken to be scalar.</P>
+<P CLASS="Body">
+<A NAME="pgfId=37597">
+ </A>
+When converting from a string argument, it is possible that the string does not contain a valid floating-point value and no conversion is possible. The default action in such cases is to print a warning message and return 0. The ON_IOERROR procedure can be used to establish a statement to be jumped to in case of such errors.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=37598">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=37599">
+ </A>
+Create a complex array from two integer arrays by entering the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=37600">
+ </A>
+A = [1,2,3]	<EM CLASS="Comment">;
+Create the first integer array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=37601">
+ </A>
+B = [4,5,6]	<EM CLASS="Comment">;
+Create the second integer array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=37602">
+ </A>
+C = DCOMPLEX(A, B)	<EM CLASS="Comment">;
+Make A the real parts and B the imaginary parts of the new complex array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=37603">
+ </A>
+PRINT, C	<EM CLASS="Comment">;
+See how the two arrays were combined.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=37607">
+ </A>
+<I CLASS="Italics">
+</I>
+IDL<I CLASS="Italics">
+ prints:</I>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=37608">
+ </A>
+( 1.0000000, 4.0000000)( 2.0000000, 5.0000000)</P>
+<P CLASS="Code">
+<A NAME="pgfId=37609">
+ </A>
+( 3.0000000, 6.0000000)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=37610">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=37632">
+ </A>
+<A HREF="idl1e.htm#28497" CLASS="XRef">
+BYTE</A>
+, <A HREF="idl3f.htm#81550" CLASS="XRef">
+CONJ</A>
+, <A HREF="idl39.htm#61718" CLASS="XRef">
+COMPLEX</A>
+, <A HREF="idl83.htm#59771" CLASS="XRef">
+DOUBLE</A>
+, <A HREF="idla2.htm#84913" CLASS="XRef">
+FIX</A>
+, <A HREF="idla4.htm#33608" CLASS="XRef">
+FLOAT</A>
+, <A HREF="idl103.htm#20254" CLASS="XRef">
+LONG</A>
+, <A HREF="idl1bc.htm#79752" CLASS="XRef">
+STRING</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

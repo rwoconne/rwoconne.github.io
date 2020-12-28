@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PTR_NEW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl155.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl153.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=845054">
+ </A>
+<EM CLASS="Bold">
+PTR_NEW</EM>
+<A NAME="41884">
+ </A>
+</H2>
+<P CLASS="Body">
+<A NAME="pgfId=845055">
+ </A>
+The <A NAME="marker=845156">
+ </A>
+PTR_NEW function provides the primary mechanism for creating<A NAME="marker=845157">
+ </A>
+ heap variables. It returns a pointer to the created variable.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845056">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845057">
+ </A>
+Result = PTR_NEW([<I CLASS="Italic">
+InitExpr</I>
+])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=845058">
+ </A>
+Argument</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845059">
+ </A>
+InitExpr</H4>
+<P CLASS="Body">
+<A NAME="pgfId=863736">
+ </A>
+If <I CLASS="Italic">
+InitExpr</I>
+ is provided, PTR_NEW uses it to initialize the newly created heap variable. Note that the new heap variable does not point at the <I CLASS="Italic">
+InitExpr</I>
+ variable in any sense--the new heap variable simply contains a copy of its value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=863737">
+ </A>
+If <I CLASS="Italic">
+InitExpr</I>
+ is not provided, PTR_NEW does not create a new heap variable, and returns the <EM CLASS="Emphasis">
+Null Pointer, </EM>
+a special pointer with a fixed known value that can never point at a heap variable. The null pointer is useful as a terminator in dynamic data structures, or as a placeholder in structure definitions.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=863738">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845063">
+ </A>
+<A NAME="marker=845171">
+ </A>
+ALLOCATE_HEAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845064">
+ </A>
+Set this keyword to cause PTR_NEW to allocate an undefined heap variable rather than return a null pointer when <EM CLASS="Emphasis">
+InitExpr</EM>
+ is not specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845065">
+ </A>
+<A NAME="marker=845172">
+ </A>
+NO_COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845066">
+ </A>
+Usually, when the <EM CLASS="Emphasis">
+InitExpr</EM>
+ argument is provided, PTR_NEW allocates additional memory to make a copy. If the NO_COPY keyword is set, the value data is taken away from the <EM CLASS="Emphasis">
+InitExpr</EM>
+ variable and attached directly to the heap variable. This feature can be used to move data very efficiently. However, it has the side effect of causing the <EM CLASS="Emphasis">
+InitExpr</EM>
+ variable to become undefined. Using the NO_COPY keyword is completely equivalent to the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=845067">
+ </A>
+Result = PTR_NEW(TEMPORARY(InitExpr))</P>
+<P CLASS="Body">
+<A NAME="pgfId=845068">
+ </A>
+and is provided as a syntactic convenience.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LOADCT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl102.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl100.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=759286">
+ </A>
+<A NAME="61192">
+ </A>
+LOADCT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=759289">
+ </A>
+The <A NAME="marker=759287">
+ </A>
+LOADCT procedure loads one of 41 predefined IDL <A NAME="marker=759288">
+ </A>
+color tables. These color tables are defined in the file <CODE CLASS="Code">
+colors1.tbl</CODE>
+<A NAME="marker=759290">
+ </A>
+ (located in the main IDL directory) unless the FILE keyword is specified. The selected colortable is loaded into the COLORS common block as both the &quot;current&quot; and &quot;original&quot; colortable. If the current device has fewer than 256 colors, the color table data is interpolated to cover the number of colors in the device.</P>
+<P CLASS="Body">
+<A NAME="pgfId=759291">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+loadct.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759292">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759293">
+ </A>
+LOADCT<I CLASS="Italics">
+ [, Table]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759294">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759295">
+ </A>
+Table</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759296">
+ </A>
+The number of the pre-defined color table to load, from 0 to 40. If this value is omitted, a menu of the available tables is printed and the user is prompted to enter a table number.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759297">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=168327">
+ </A>
+<A NAME="marker=168326">
+ </A>
+BOTTOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=168328">
+ </A>
+The first color index to use. LOADCT will use color indices from BOTTOM to BOTTOM+NCOLORS-1. The default is BOTTOM=0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759299">
+ </A>
+<A NAME="marker=759298">
+ </A>
+FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759300">
+ </A>
+Set this keyword to the name of a colortable file to be used instead of the file <CODE CLASS="Code">
+colors1.tbl</CODE>
+ in the IDL directory. The <A HREF="routinesM-O.html#53817" CLASS="XRef">
+</A>
+ procedure (page <A HREF="routinesM-O.html#53817" CLASS="XRef">
+</A>
+) can be used to create and modify colortable files.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759305">
+ </A>
+<A NAME="marker=759304">
+ </A>
+GET_NAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759306">
+ </A>
+Set this keyword to a named variable in which the names of the color tables are returned as a string array. No changes are made to the color table.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759308">
+ </A>
+<A NAME="marker=759307">
+ </A>
+NCOLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759309">
+ </A>
+The number of colors to use. The default is all available colors (this number is stored in the system variable !D.TABLE_SIZE).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759311">
+ </A>
+<A NAME="marker=759310">
+ </A>
+SILENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759312">
+ </A>
+If this keyword is set, the Color Table message is suppressed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759313">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759314">
+ </A>
+<A HREF="routinesM-O.html#53817" CLASS="XRef">
+</A>
+, <A HREF="idl220.htm#56942" CLASS="XRef">
+XLOADCT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

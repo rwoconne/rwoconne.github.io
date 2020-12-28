@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_ATTCREATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl245.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl243.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999407">
+ </A>
+<A NAME="43582">
+ </A>
+CDF_ATTCREATE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=996924">
+ </A>
+The <A NAME="marker=996920">
+ </A>
+CDF_ATTCREATE function<A NAME="marker=996921">
+ </A>
+ creates<A NAME="marker=996922">
+ </A>
+ a new <A NAME="marker=996923">
+ </A>
+attribute in the specified Common Data Format file. If successful, the attribute ID is returned.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996925">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=996926">
+ </A>
+Result = CDF_ATTCREATE(<I CLASS="Italics">
+Id, Attribute_Name</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996927">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996928">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996929">
+ </A>
+The CDF ID of the file for which a new attribute is created, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996930">
+ </A>
+Attribute_Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996931">
+ </A>
+A string containing the name of the attribute to be created.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996932">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996934">
+ </A>
+<A NAME="marker=996933">
+ </A>
+GLOBAL_SCOPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996935">
+ </A>
+Set this keyword to make the scope of the attribute global. This is the default.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=996937">
+ </A>
+<A NAME="marker=996936">
+ </A>
+VARIABLE_SCOPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=996938">
+ </A>
+Set this keyword to indicate that the attribute's scope is per variable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=996939">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=996940">
+ </A>
+id = CDF_OPEN('test')	<EM CLASS="Comment">;
+Create a CDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=996941">
+ </A>
+xx = CDF_ATTCREATE(id, 'Attribute-1', /GLOBAL_SCOPE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=996942">
+ </A>
+CDF_ATTRENAME, id, 'Attribute-1', 'My Favorite Attribute'</P>
+<P CLASS="Code">
+<A NAME="pgfId=996943">
+ </A>
+PRINT, CDF_ATTNUM(id, 'My Favorite Attribute')</P>
+<P CLASS="Code">
+<A NAME="pgfId=996944">
+ </A>
+CDF_CLOSE, id	<EM CLASS="Comment">;
+Close the CDF file.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

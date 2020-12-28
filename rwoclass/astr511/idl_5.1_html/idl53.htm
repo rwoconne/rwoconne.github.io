@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_ANIMATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl54.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl52.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=871563">
+ </A>
+<A NAME="95424">
+ </A>
+CW_ANIMATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=853839">
+ </A>
+The <A NAME="marker=853836">
+ </A>
+CW_ANIMATE function creates a compound <A NAME="marker=853837">
+ </A>
+widget that displays an <A NAME="marker=853838">
+ </A>
+animated sequence of images using off-screen windows knows as <EM CLASS="Emphasis">
+pixmaps</EM>
+. The speed and direction of the display can be adjusted using the widget interface. </P>
+<P CLASS="Body">
+<A NAME="pgfId=853840">
+ </A>
+CW_ANIMATE provides the graphical interface used by the XINTERANIMATE procedure, which is the preferred routine for displaying animation sequences in most situations. Use this widget instead of XINTERANIMATE when you need to run multiple instances of the animation widget simultaneously. Note that if more than one animation widget is running, they will have to share resources and will display images more slowly than a single instance of the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853841">
+ </A>
+The returned value of this function is the widget ID of the newly-created animation widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853842">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_animate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853843">
+ </A>
+Using CW_ANIMATE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=928554">
+ </A>
+Unlike XINTERANIMATE, using the CW_ANIMATE widget requires calls to two separate procedures, CW_ANIMATE_LOAD and CW_ANIMATE_RUN, to load the images to be animated and to run the animation. Alternatively, you can supply a vector of pre-existing pixmap window IDs, eliminating the need to use CW_ANIMATE_LOAD. The vector of pixmaps is commonly obtained from a call to CW_ANIMATE_GETP applied to a previous animation widget. Once the images are loaded, they are displayed by copying the images from the pixmap or buffer to the visible draw widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=928555">
+ </A>
+See the documentation for CW_ANIMATE_LOAD, CW_ANIMATE_RUN, and CW_ANIMATE_GETP for more information.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853846">
+ </A>
+The only event returned by CW_ANIMATE indicates that the user has clicked on the &quot;End Animation&quot; button. The parent application should use this as a signal to kill the animation widget via WIDGET_CONTROL. When the widget is destroyed, the pixmaps used in the animation are destroyed as well, unless they were saved by a call to CW_ANIMATE_GETP.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853847">
+ </A>
+See the animation widget's help file (available by clicking the &quot;Help&quot; button on the widget) for more information about the widget's controls.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853848">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853849">
+ </A>
+Result = CW_ANIMATE(<EM CLASS="Emphasis">
+Parent, Sizex, Sizey, Nframes</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853850">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853851">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853852">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853853">
+ </A>
+Sizex</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853854">
+ </A>
+The width of the displayed image, in pixels.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853855">
+ </A>
+Sizey</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853856">
+ </A>
+The height of the displayed image, in pixels</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853857">
+ </A>
+Nframes</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853858">
+ </A>
+The number of frames in the animation sequence.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853859">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853861">
+ </A>
+<A NAME="marker=853860">
+ </A>
+NO_KILL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853862">
+ </A>
+Set this keyword to omit the &quot;End Animation&quot; button from the animation widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853864">
+ </A>
+<A NAME="marker=853863">
+ </A>
+OPEN_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853865">
+ </A>
+Set this keyword equal to a scalar string specifying the name of a user-written function that loads animation data. If a function is specified, an &quot;Open ...&quot; button is added to the animation widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853866">
+ </A>
+For an example showing the format and use of an animation-loading function, see the file <CODE CLASS="Code">
+animate.pro</CODE>
+ in the <CODE CLASS="Code">
+general</CODE>
+ subdirectory of the <CODE CLASS="Code">
+examples</CODE>
+ subdirectory of the IDL distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853868">
+ </A>
+<A NAME="marker=853867">
+ </A>
+PIXMAPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853869">
+ </A>
+Use this keyword to provide the animation widget with a vector of pre-existing pixmap (off screen window) IDs. This vector is usually obtained from a call to CW_ANIMATE_GETP applied to a previous animation widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853871">
+ </A>
+<A NAME="marker=853870">
+ </A>
+TRACK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853872">
+ </A>
+Set this keyword to cause the frame slider to track the frame number of the currently-displayed frame.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853874">
+ </A>
+<A NAME="marker=853873">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853875">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853876">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853877">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853887">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853894">
+ </A>
+Widget Events Returned by the CW_ANIMATE Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853895">
+ </A>
+The only event returned by this widget indicates that the user has pressed the DONE button. The parent application should use this as a signal to kill the animation widget via WIDGET_CONTROL.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853896">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853897">
+ </A>
+Assume the following event handler procedure exists:</P>
+<P CLASS="Code">
+<A NAME="pgfId=853898">
+ </A>
+PRO EHANDLER, EV</P>
+<P CLASS="Code">
+<A NAME="pgfId=853899">
+ </A>
+WIDGET_CONTROL, /DESTROY, EV.TOP</P>
+<P CLASS="Code">
+<A NAME="pgfId=853900">
+ </A>
+end</P>
+<P CLASS="Body">
+<A NAME="pgfId=853901">
+ </A>
+(If you wish to create this event handler starting from the IDL command prompt, remember to begin with the <CODE CLASS="Code">
+.RUN</CODE>
+ command.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=853902">
+ </A>
+Enter the following commands to open the file <CODE CLASS="Code">
+ABNORM.DAT</CODE>
+ (a series of images of a human heart) and load the images it contains into an array <CODE CLASS="Code">
+H</CODE>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=853903">
+ </A>
+OPENR, 1, FILEPATH('abnorm.dat', SUBDIR = ['examples','data'])</P>
+<P CLASS="Code">
+<A NAME="pgfId=853904">
+ </A>
+H = BYTARR(64, 64, 16)</P>
+<P CLASS="Code">
+<A NAME="pgfId=853905">
+ </A>
+READU, 1, H</P>
+<P CLASS="Code">
+<A NAME="pgfId=853906">
+ </A>
+CLOSE, 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=853907">
+ </A>
+H = REBIN(H, 128, 128, 16)</P>
+<P CLASS="Body">
+<A NAME="pgfId=853908">
+ </A>
+Create an instance of the animation widget and load the frames. Note that because the animation widget is realized before the call to CW_ANIMATE_LOAD, the frames are displayed as they are loaded. This provides the user with an indication of how things are progressing.</P>
+<P CLASS="Code">
+<A NAME="pgfId=853909">
+ </A>
+base = WIDGET_BASE(TITLE = 'Animation Widget')</P>
+<P CLASS="Code">
+<A NAME="pgfId=853910">
+ </A>
+animate = CW_ANIMATE(base, 128, 128, 16)</P>
+<P CLASS="Code">
+<A NAME="pgfId=853911">
+ </A>
+WIDGET_CONTROL, /REALIZE, base</P>
+<P CLASS="Code">
+<A NAME="pgfId=853912">
+ </A>
+FOR I=0,15 DO CW_ANIMATE_LOAD, animate, FRAME=I, IMAGE=H[*,*,I]</P>
+<P CLASS="Body">
+<A NAME="pgfId=853913">
+ </A>
+Save the pixmap window IDs for future use:</P>
+<P CLASS="Code">
+<A NAME="pgfId=853914">
+ </A>
+CW_ANIMATE_GETP, animate, pixmap_vect</P>
+<P CLASS="Body">
+<A NAME="pgfId=853915">
+ </A>
+Start the animation:</P>
+<P CLASS="Code">
+<A NAME="pgfId=853916">
+ </A>
+CW_ANIMATE_RUN, animate</P>
+<P CLASS="Code">
+<A NAME="pgfId=853917">
+ </A>
+XMANAGER, 'CW_ANIMATE Demo', base, EVENT_HANDLER = 'EHANDLER'</P>
+<P CLASS="Body">
+<A NAME="pgfId=853924">
+ </A>
+Pressing the &quot;End Animation&quot; button kills the application.</P>
+<DIV>
+<MAP NAME="idl-19">
+</MAP>
+<CENTER><IMG SRC="idl_19.gif" USEMAP="#idl-19" BORDER=0>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853925">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853935">
+ </A>
+<A HREF="idl55.htm#56464" CLASS="XRef">
+CW_ANIMATE_LOAD</A>
+, <A HREF="idl56.htm#33378" CLASS="XRef">
+CW_ANIMATE_RUN</A>
+, <A HREF="idl54.htm#17787" CLASS="XRef">
+CW_ANIMATE_GETP</A>
+, <A HREF="idl21f.htm#64099" CLASS="XRef">
+XINTERANIMATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

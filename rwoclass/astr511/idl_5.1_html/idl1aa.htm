@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPH_4PNT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ab.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758483">
+ </A>
+<A NAME="56866">
+ </A>
+SPH_4PNT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758485">
+ </A>
+Given four 3-dimensional points, the <A NAME="marker=758484">
+ </A>
+SPH_4PNT procedure returns the center and radius necessary to define the unique sphere passing through those points.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758486">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+sph_4pnt.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758487">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758488">
+ </A>
+SPH_4PNT, <EM CLASS="Emphasis">
+X, Y, Z, Xc, Yc, Zc, R</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758489">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758490">
+ </A>
+X, Y, Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758491">
+ </A>
+4-element floating-point or double-precision vectors containing the X, Y, and Z coordinates of the points.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758492">
+ </A>
+Xc, Yc, Zc</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758493">
+ </A>
+Named variables that will contain the sphere's center X, Y, and Z coordinates. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758494">
+ </A>
+R</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758495">
+ </A>
+A named variable that will contain the sphere's radius.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758496">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758497">
+ </A>
+Find the center and radius of the unique sphere passing through the points: (1, 1, 0), (2, 1, 2), (1, 0, 3), (1, 0, 1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=758498">
+ </A>
+Define the floating-point vectors containing the x, y and z coordinates of the points. </P>
+<P CLASS="Code">
+<A NAME="pgfId=758499">
+ </A>
+X = [1, 2, 1, 1] + 0.0	<EM CLASS="Comment">;
+Define the floating-point vectors</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758500">
+ </A>
+Y = [1, 1, 0, 0] + 0.0	&nbsp;&nbsp;&nbsp;<EM CLASS="Comment">;
+containing the x, y and z</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758501">
+ </A>
+Z = [0, 2, 3, 1] + 0.0	&nbsp;&nbsp;&nbsp;<EM CLASS="Comment">;
+coordinates of the points.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758503">
+ </A>
+SPH_4PNT, X, Y, Z, Xc, Yc, Zc, R	<EM CLASS="Comment">;
+Compute sphere's center and radius.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758505">
+ </A>
+PRINT, Xc, Yc, Zc, R	<EM CLASS="Comment">;
+Print the results.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=758506">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=758507">
+ </A>
+-0.500000      2.00000      2.00000      2.69258</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758508">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758509">
+ </A>
+<A HREF="idl32.htm#32752" CLASS="XRef">
+CIR_3PNT</A>
+, <A HREF="idl13a.htm#34875" CLASS="XRef">
+PNT_LINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

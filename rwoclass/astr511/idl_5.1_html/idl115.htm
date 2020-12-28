@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MEDIAN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl116.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl114.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888401">
+ </A>
+<A NAME="23439">
+ </A>
+MEDIAN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888406">
+ </A>
+The <A NAME="marker=888404">
+ </A>
+MEDIAN function returns the <A NAME="marker=888405">
+ </A>
+median value (element <EM CLASS="Emphasis">
+n</EM>
+/2) of <I CLASS="Italics">
+Array</I>
+ if one parameter is present, or applies a one- or two-dimensional median filter of the specified width to <I CLASS="Italics">
+Array</I>
+ and returns the result. In an ordered set of values, the median is a value with an equal number of values above and below it. Median <A NAME="marker=888407">
+ </A>
+smoothing replaces each point with the median of the one- or two-dimensional neighborhood of a given width. It is similar to smoothing with a boxcar or average filter but does not blur edges larger than the neighborhood.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888410">
+ </A>
+In addition, median <A NAME="marker=888408">
+ </A>
+filtering is effective in removing &quot;salt and pepper&quot; <A NAME="marker=888409">
+ </A>
+noise, (isolated high or low values). The scalar median is simply the middle value, which should not be confused with the average value (e.g., the median of the array [1,10,4] is 4, while the average is 5.)</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888411">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888412">
+ </A>
+Result = MEDIAN(<I CLASS="Italics">
+Array [, Width]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888413">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888414">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888415">
+ </A>
+The array to be processed. If <I CLASS="Italics">
+Width</I>
+ is also supplied, and <I CLASS="Italics">
+Array</I>
+ is of byte type, the result is of byte type. All other types are converted to single-precision floating-point, and the result is floating-point. <I CLASS="Italics">
+Array</I>
+ can have only one or two dimensions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888416">
+ </A>
+If <I CLASS="Italics">
+Width</I>
+ is not given, <I CLASS="Italics">
+Array</I>
+ can have any valid number of dimensions. The array is converted to single-precision floating-point, and the median value is returned as a floating-point value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888417">
+ </A>
+Width</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888418">
+ </A>
+The size of the one or two-dimensional neighborhood to be used for the median filter. The neighborhood has the same number of dimensions as <I CLASS="Italics">
+Array</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888419">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888421">
+ </A>
+<A NAME="marker=888420">
+ </A>
+EVEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888422">
+ </A>
+If the EVEN keyword is set when <EM CLASS="Emphasis">
+Array</EM>
+ contains an even number of points (i.e. there is no middle number), MEDIAN returns the average of the two middle numbers. The returned value may not be an element of <EM CLASS="Emphasis">
+Array</EM>
+. If <EM CLASS="Emphasis">
+Array</EM>
+ contains an odd number of points, MEDIAN returns the median value. The returned value will always be an element of <EM CLASS="Emphasis">
+Array</EM>
+--even if the EVEN keyword is set--since an odd number of points will always have a single middle value.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888423">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888424">
+ </A>
+Create a simple image and display it by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888425">
+ </A>
+D = SIN(DIST(200)^0.8) &amp; TVSCL, D</P>
+<P CLASS="Body">
+<A NAME="pgfId=888426">
+ </A>
+Display D median-filtered with a width of 9 by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888427">
+ </A>
+TVSCL, MEDIAN(D, 9)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888428">
+ </A>
+Print the median of a six-element array, with and without the EVEN keyword:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888429">
+ </A>
+PRINT, MEDIAN([1, 2, 3, 4], /EVEN) </P>
+<P CLASS="Code">
+<A NAME="pgfId=888430">
+ </A>
+PRINT, MEDIAN([1, 2, 3, 4])</P>
+<P CLASS="Body">
+<A NAME="pgfId=888431">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888432">
+ </A>
+2.50000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888433">
+ </A>
+3.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888434">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888447">
+ </A>
+<A HREF="idl7c.htm#25464" CLASS="XRef">
+DIGITAL_FILTER</A>
+, <A HREF="routinesK-L.html#62710" CLASS="XRef">
+</A>
+, <A HREF="idl11c.htm#59358" CLASS="XRef">
+MOMENT</A>
+, <A HREF="idl1a6.htm#43465" CLASS="XRef">
+SMOOTH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

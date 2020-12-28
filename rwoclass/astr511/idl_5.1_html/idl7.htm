@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ANNOTATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756612">
+ </A>
+<A NAME="64698">
+ </A>
+ANNOTATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756614">
+ </A>
+The <A NAME="marker=756613">
+ </A>
+ANNOTATE procedure starts an IDL widget program that allows you to interactively annotate <A NAME="marker=756615">
+ </A>
+images and plots with text and drawings. <A NAME="marker=756616">
+ </A>
+Drawing objects include lines, arrows, polygons, rectangles, circles, and ellipses. Annotation files can be saved and restored, and annotated displays can be written to TIFF, GIF, or PostScript files. The Annotation <A NAME="marker=756617">
+ </A>
+widget will work on any IDL graphics window or draw widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756618">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+annotate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756619">
+ </A>
+Using the Annotation Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756620">
+ </A>
+Before calling the Annotation widget, plot or display your data in an IDL graphics window or draw widget. Unless you specify otherwise (using the DRAWABLE or WINDOW keywords), annotations will be made in the current graphics window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756621">
+ </A>
+For information on using the Annotation widget, click on the widget's &quot;Help&quot; button.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756622">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756623">
+ </A>
+ANNOTATE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756624">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756625">
+ </A>
+This procedure has no required arguments.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756626">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756628">
+ </A>
+<A NAME="marker=756627">
+ </A>
+COLOR_INDICES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756629">
+ </A>
+An array of color indices from which the user can choose colors. For example, to allow the user to choose 10 colors, spread evenly over the available indices, set the keyword as follows: </P>
+<P CLASS="Code">
+<A NAME="pgfId=756630">
+ </A>
+COLOR_INDICES = INDGEN(10) * (!D.N_COLORS-1) / 9 </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756631">
+ </A>
+If neither TEK_COLORS or COLOR_INDICES are specified, the default is to load 10 colors, evenly distributed over those available.</H4>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756633">
+ </A>
+<A NAME="marker=756632">
+ </A>
+DRAWABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756634">
+ </A>
+The widget ID of the draw widget for the annotations. Do not set both DRAWABLE and WINDOW. If neither WINDOW or DRAWABLE are specified, the current window is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756636">
+ </A>
+<A NAME="marker=756635">
+ </A>
+LOAD_FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756637">
+ </A>
+The name of an annotation format file to load after initialization. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756639">
+ </A>
+<A NAME="marker=756638">
+ </A>
+TEK_COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756640">
+ </A>
+Set this keyword and the Tektronix color table is loaded starting at color index TEK_COLORS(0), with TEK_COLORS(1) color indices. The Tektronix color table contains up to 32 distinct colors suitable for graphics. If neither TEK_COLORS or COLOR_INDICES are specified, the default is to load 10 colors, evenly distributed over those available.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756642">
+ </A>
+<A NAME="marker=756641">
+ </A>
+WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756643">
+ </A>
+The window index number of the window to receive the annotations. Do not set both DRAWABLE and WINDOW. If neither WINDOW or DRAWABLE are specified, the current window is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756644">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=756645">
+ </A>
+TVSCL, HANNING(300,200)	<EM CLASS="Comment">;
+Output an image in the current window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756646">
+ </A>
+ANNOTATE	<EM CLASS="Comment">;
+Annotate it.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756647">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756648">
+ </A>
+<A HREF="idl139.htm#19349" CLASS="XRef">
+PLOTS</A>
+, <A HREF="idl229.htm#38347" CLASS="XRef">
+XYOUTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

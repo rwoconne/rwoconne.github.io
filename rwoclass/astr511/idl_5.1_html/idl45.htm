@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CORRELATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl46.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl44.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53290">
+ </A>
+<A NAME="13574">
+ </A>
+CORRELATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=218799">
+ </A>
+The <A NAME="marker=218796">
+ </A>
+CORRELATE function computes the linear <A NAME="marker=218797">
+ </A>
+Pearson <A NAME="marker=218798">
+ </A>
+correlation coefficient of two vectors or the <A NAME="marker=218800">
+ </A>
+correlation matrix of an <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ array. If vectors of unequal lengths are specified, the longer vector is truncated to the length of the shorter vector and a single correlation coefficient is returned. If an <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ array is specified, the result will be an <EM CLASS="Emphasis">
+m</EM>
+&nbsp;x&nbsp;<EM CLASS="Emphasis">
+m</EM>
+ array of linear Pearson correlation coefficients, with the element <EM CLASS="Emphasis">
+i</EM>
+,<EM CLASS="Emphasis">
+j</EM>
+ corresponding to correlation of the <EM CLASS="Emphasis">
+i</EM>
+th and <EM CLASS="Emphasis">
+j</EM>
+th columns of the input array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=218782">
+ </A>
+Alternatively, this function computes the covariance of two vectors or the covariance matrix of an <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=53297">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+correlate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53298">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53299">
+ </A>
+Result = CORRELATE(<EM CLASS="Emphasis">
+X [,Y]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53300">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53301">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53302">
+ </A>
+A vector or an <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ array. <EM CLASS="Emphasis">
+X</EM>
+ can be integer, single-, or double-precision floating-point.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53303">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53304">
+ </A>
+An integer, single-, or double-precision floating-point vector. If <EM CLASS="Emphasis">
+X</EM>
+ is an <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ array, <EM CLASS="Emphasis">
+Y</EM>
+ should not be supplied.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53305">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53307">
+ </A>
+<A NAME="marker=53306">
+ </A>
+COVARIANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53308">
+ </A>
+Set this keyword to compute the sample covariance rather than the correlation coefficient.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=868819">
+ </A>
+<A NAME="marker=868818">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=868820">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53309">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53310">
+ </A>
+Define the data vectors.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53311">
+ </A>
+X = [65, 63, 67, 64, 68, 62, 70, 66, 68, 67, 69, 71]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53312">
+ </A>
+Y = [68, 66, 68, 65, 69, 66, 68, 65, 71, 67, 68, 70]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53313">
+ </A>
+Compute the linear Pearson correlation coefficient of x and y. The result should be 0.702652:</P>
+<P CLASS="Code">
+<A NAME="pgfId=53314">
+ </A>
+PRINT, CORRELATE(X, Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53315">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53316">
+ </A>
+0.702652</P>
+<P CLASS="Body">
+<A NAME="pgfId=53317">
+ </A>
+Compute the covariance of x and y. The result should be 3.66667.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53318">
+ </A>
+PRINT, CORRELATE(X, Y, /COVARIANCE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53319">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53320">
+ </A>
+3.66667</P>
+<P CLASS="Body">
+<A NAME="pgfId=53321">
+ </A>
+Define an array with x and y as its columns.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53322">
+ </A>
+A = TRANSPOSE([[X],[Y]])</P>
+<P CLASS="Body">
+<A NAME="pgfId=53323">
+ </A>
+Compute the correlation matrix.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53324">
+ </A>
+PRINT, CORRELATE(A)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53325">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53326">
+ </A>
+&nbsp;&nbsp;1.00000&nbsp;&nbsp;&nbsp;&nbsp;0.702652</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53327">
+ </A>
+&nbsp;&nbsp;0.702652&nbsp;&nbsp;&nbsp;1.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53328">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=871705">
+ </A>
+<A HREF="idl1.htm#71421" CLASS="XRef">
+A_CORRELATE</A>
+, <A HREF="idl21.htm#28107" CLASS="XRef">
+C_CORRELATE</A>
+, <A HREF="idl109.htm#43333" CLASS="XRef">
+M_CORRELATE</A>
+, <A HREF="idl133.htm#76534" CLASS="XRef">
+P_CORRELATE</A>
+, <A HREF="idl15b.htm#46692" CLASS="XRef">
+R_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

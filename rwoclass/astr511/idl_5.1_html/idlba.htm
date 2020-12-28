@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GET_SCREEN_SIZE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlbb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlb9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=837902">
+ </A>
+<A NAME="26849">
+ </A>
+GET_SCREEN_SIZE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=837939">
+ </A>
+The <A NAME="marker=837938">
+ </A>
+GET_SCREEN_SIZE function returns a two-element vector of the form [<I CLASS="Italic">
+width</I>
+, <I CLASS="Italic">
+height</I>
+] that represents the dimensions, measured in device units, of the screen.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837941">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837942">
+ </A>
+Result = GET_SCREEN_SIZE(<I CLASS="Italic">
+[Display_name])</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837943">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=837944">
+ </A>
+Display_name (X Only)</H4>
+<P CLASS="Body">
+<A NAME="pgfId=837945">
+ </A>
+A string indicating the name of the X WIndows display that should be used to determine the screen size.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=841673">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=841676">
+ </A>
+<A NAME="marker=853570">
+ </A>
+DISPLAY_NAME (X Only)</H4>
+<P CLASS="Body">
+<A NAME="pgfId=841677">
+ </A>
+Set this keyword equal to a string indicating the name of the X WIndows display that should be used to determine the screen size. Setting this keyword is equivalent to setting the optional <EM CLASS="Emphasis">
+Display_name</EM>
+ argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853571">
+ </A>
+<A NAME="marker=853573">
+ </A>
+RESOLUTION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853572">
+ </A>
+Set this keyword equal to a named variable that will contain a two-element vector, <BR>
+[<I CLASS="Italic">
+xres</I>
+, <I CLASS="Italic">
+yres</I>
+], specifying the screen resolution in cm/pixel.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=856865">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=856866">
+ </A>
+You can find the dimensions and screen resolution of your screen by entering the following:</P>
+<P CLASS="Code">
+<A NAME="pgfId=856869">
+ </A>
+dimensions = GET_SCREEN_SIZE(RESOLUTION=resolution)</P>
+<P CLASS="Code">
+<A NAME="pgfId=856872">
+ </A>
+PRINT, dimensions, resolution</P>
+<P CLASS="Body">
+<A NAME="pgfId=856873">
+ </A>
+For the screen on which this was tested, IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856885">
+ </A>
+1280.00      1024.00</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=856875">
+ </A>
+0.0282031    0.0281250</P>
+</DIV>
+</BODY>
+</HTML>

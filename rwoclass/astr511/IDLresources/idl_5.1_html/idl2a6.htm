@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_ENDACCESS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998901">
+ </A>
+<A NAME="78622">
+ </A>
+HDF_SD_ENDACCESS</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998904">
+ </A>
+The <A NAME="marker=998903">
+ </A>
+HDF_SD_ENDACCESS function closes an SD dataset interface. Failure to close the interface can result in the loss of any changed or added SD data. This routine should be called once for each call to HDF_SD_START or HDF_SD_CREATE. After all SD dataset interfaces are closed, the HDF file can safely be closed with HDF_SD_END.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998905">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998906">
+ </A>
+HDF_SD_ENDACCESS, <I CLASS="Italics">
+SD_ID</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998907">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998908">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998909">
+ </A>
+An SD dataset ID as returned by HDF_SD_SELECT, or HDF_SD_CREATE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998910">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998911">
+ </A>
+sd_id = HDF_SD_START('test.hdf', /CREATE)<BR>
+<EM CLASS="Comment">;
+</EM>
+O<EM CLASS="Comment">;
+pen a new HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998912">
+ </A>
+sds_id_1 = HDF_SD_SELECT(sd_id,0)	<EM CLASS="Comment">;
+Access the HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998913">
+ </A>
+HDF_SD_ENDACCESS, sds_id_1	<EM CLASS="Comment">;
+End access to any SD IDs.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998914">
+ </A>
+HDF_SD_END, sd_id	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998915">
+ </A>
+For Also, see the example in HDF_SD_ATTRSET.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998916">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998929">
+ </A>
+<A HREF="idl266.htm#50345" CLASS="XRef">
+HDF_CLOSE</A>
+, <A HREF="idl29b.htm#27462" CLASS="XRef">
+HDF_OPEN</A>
+, <A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2a6.htm#78622" CLASS="XRef">
+HDF_SD_ENDACCESS</A>
+, <A HREF="idl2b1.htm#92639" CLASS="XRef">
+HDF_SD_START</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

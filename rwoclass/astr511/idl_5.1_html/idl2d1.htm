@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VG_SETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=1000172">
+ </A>
+<A NAME="15914">
+ </A>
+HDF_VG_SETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1000175">
+ </A>
+The <A NAME="marker=1000174">
+ </A>
+HDF_VG_SETINFO procedure sets the name and class of a <I CLASS="Italics">
+VGroup</I>
+.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000176">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1000177">
+ </A>
+HDF_VG_SETINFO,<I CLASS="Italics">
+ VGroup</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000178">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1000179">
+ </A>
+VGroup</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1000180">
+ </A>
+The VGroup handle as returned by HDF_VG _ATTACH.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000181">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1000182">
+ </A>
+CLASSNAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1000183">
+ </A>
+A string containing the class name for the VGroup.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1000184">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1000185">
+ </A>
+A string containing the name for the VGroup.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000186">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=1000187">
+ </A>
+fid = HDF_OPEN('demo.hdf',/RDWR)	<EM CLASS="Comment">;
+Open an HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000188">
+ </A>
+vgid = HDF_VG_ATTACH(fid, -1, /WRITE)	<EM CLASS="Comment">;
+Add a new VGroup.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000189">
+ </A>
+HDF_VG_SETINFO, vgid, NAME='My Name', CLASS='My VGroup Class'<BR>
+<EM CLASS="Comment">;
+Set the name and class for the VGroup.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000190">
+ </A>
+Now retrieve and show the information </P>
+<P CLASS="Code">
+<A NAME="pgfId=1000191">
+ </A>
+HDF_VG_GETINFO, vgid, NAME=outname, CLASS=outclass<BR>
+<EM CLASS="Comment">;
+Retrieve the name and class information from the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000192">
+ </A>
+HELP, outname, outclass	<EM CLASS="Comment">;
+Print information about the returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000193">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000194">
+ </A>
+OUTNAME STRING = 'My Name'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000195">
+ </A>
+OUTCLASS STRING = 'My VGroup Class'</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000196">
+ </A>
+HDF_VG_DETACH, vgid	<EM CLASS="Comment">;
+End VGroup access.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000197">
+ </A>
+HDF_CLOSE, fid	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1000198">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1000202">
+ </A>
+<A HREF="idl2c7.htm#72212" CLASS="XRef">
+HDF_VG_GETINFO</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=996747">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

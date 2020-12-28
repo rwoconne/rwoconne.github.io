@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_EVENT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl206.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl204.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680296">
+ </A>
+<A NAME="89308">
+ </A>
+WIDGET_EVENT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680297">
+ </A>
+The <A NAME="marker=674682">
+ </A>
+WIDGET_EVENT function returns <A NAME="marker=674683">
+ </A>
+events for the widget hierarchy rooted at <I CLASS="Italic">
+Widget_ID</I>
+. Widgets communicate information by generating events. Events are generated when a button is pressed, a slider position is changed, and so forth.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=680298">
+ </A>
+Widget applications should use the <A NAME="marker=674684">
+ </A>
+XMANAGER procedure in preference to calling WIDGET_EVENT directly. See <A HREF="..html#39838" CLASS="XRef">
+Widget Events</A>
+.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680299">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680300">
+ </A>
+Result = WIDGET_EVENT(<I CLASS="Italic">
+[Widget_ID]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680301">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680302">
+ </A>
+<I CLASS="Italic">
+Widget_ID</I>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680303">
+ </A>
+<I CLASS="Italic">
+Widget_ID</I>
+ specifies the widget hierarchy for which events are desired. The first available event for the specified widget or any of its children is returned. If this argument is not specified, WIDGET_EVENT processes events for all existing widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680304">
+ </A>
+<I CLASS="Italic">
+Widget_ID</I>
+ can also be an array of widget identifiers, in which case all of the specified widget hierarchies are searched.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=680305">
+ </A>
+Attempting to obtain events for a widget hierarchy which is not producing events will hang IDL, unless the NOWAIT keyword is used.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680306">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680307">
+ </A>
+<A NAME="marker=674688">
+ </A>
+BAD_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680308">
+ </A>
+<A NAME="marker=674689">
+ </A>
+If one of the values supplied via <I CLASS="Italic">
+Widget_ID</I>
+ is not a valid widget identifier, this function normally issues an error and causes program execution to stop. However, if BAD_ID is present and specifies a named variable, the invalid ID is stored into the variable, and this routine quietly returns. If no error occurs, a zero is stored.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680309">
+ </A>
+This keyword can be used to handle the situation in which IDL is waiting within WIDGET_EVENT when the user kills the widget hierarchy.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680310">
+ </A>
+This keyword has meaning only if <I CLASS="Italic">
+Widget_ID</I>
+ is explicitly specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680311">
+ </A>
+<A NAME="marker=674693">
+ </A>
+NOWAIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680312">
+ </A>
+When no events are currently available for the specified widget hierarchy, WIDGET_EVENT normally waits until one is available and then returns it. However, if NOWAIT is set and no events are present, it immediately returns. In this case, the ID field of the returned structure will be zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680313">
+ </A>
+<A NAME="marker=672300">
+ </A>
+SAVE_HOURGLASS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675443">
+ </A>
+<A NAME="marker=672301">
+ </A>
+Set this keyword to prevent the hourglass cursor from being cleared by WIDGET_EVENT. This keyword can be of use if a program has to poll a widget periodically during a long computation.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675439">
+ </A>
+<A NAME="marker=674694">
+ </A>
+YIELD_TO_TTY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680314">
+ </A>
+Unless the NOWAIT keyword is specified, WIDGET_EVENT does not return until the asked for event is available. If the user should enter a line of input from the keyboard, it cannot be processed until WIDGET_EVENT returns. If the YIELD_TO_TTY keyword is specified and the user enters a line of input, WIDGET_EVENT returns immediately. In this case, the ID field of the returned structure will be zero.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680315">
+ </A>
+Note: This keyword is supported under Unix only, and there are no plans to extend it to other operating systems. Do not use it if you intend to use non-Unix systems.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680316">
+ </A>
+<A NAME="marker=674695">
+ </A>
+Event Processing</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680317">
+ </A>
+All events for a given widget are processed in the order that they are generated. The event processing performed by WIDGET_EVENT consists of the following steps:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680318">
+ </A>
+Wait for an event from one of the specified widgets to arrive.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680319">
+ </A>
+Starting with the widget that the event belongs to, move up the widget hierarchy looking for a widget that has an event handling procedure or function associated with it. Such routines are associated with a widget via the EVENT_PRO and EVENT_FUNC keywords to the widget creation functions or the WIDGET_CONTROL procedure.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680320">
+ </A>
+If an event handling <I CLASS="Italic">
+procedure</I>
+ is found, it is called with the widget ID as its argument. When the procedure returns, WIDGET_EVENT returns to the first step. Hence, event procedures are said to &quot;swallow&quot; events.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680321">
+ </A>
+If an event handling <I CLASS="Italic">
+function</I>
+ is found, it is called with the widget ID as its argument. When the function returns, its value is examined. If the value is a non-structure, it is discarded and WIDGET_EVENT returns to the first step.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=680322">
+ </A>
+This behavior allows event functions to selectively act like event procedures and swallow events. If the returned value is a structure, it is checked to ensure that it has the standard first 3 fields: ID, TOP, and HANDLER. If not an error is issued. Otherwise the value replaces the event found in the first step and WIDGET_EVENT returns to the second step.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680323">
+ </A>
+Hence, event functions are said to &quot;rewrite&quot; events. This ability to rewrite events is the basis of the &quot;compound widget&quot; in which several widgets are combined to give the appearance of a single, more complicated widget.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=680324">
+ </A>
+If an event reaches the top of a widget hierarchy without being swallowed by an event handler, it is returned as the value of WIDGET_EVENT.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680325">
+ </A>
+Events</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680326">
+ </A>
+<A NAME="marker=674696">
+ </A>
+A widget event is returned in a structure. The exact contents of this <A NAME="marker=674697">
+ </A>
+structure vary depending upon the type of widget involved. The first three elements of this structure, however, are always the same. Any other elements vary from widget type to type. The three fixed elements are:</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680327">
+ </A>
+ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680328">
+ </A>
+The widget ID of the widget that generated the event.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680329">
+ </A>
+TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680330">
+ </A>
+The widget ID of the top level base for the widget hierarchy containing <CODE CLASS="Code">
+ID</CODE>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680331">
+ </A>
+HANDLER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680332">
+ </A>
+When an event is passed as the argument to an event handling procedure or function, as discussed in the previous section, this field contains the identifier of the widget associated with the handler routine. When an event is returned from WIDGET_EVENT, this value is always zero to indicate that no handler routine was found.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820464">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820465">
+ </A>
+<A HREF="idl221.htm#55404" CLASS="XRef">
+XMANAGER</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

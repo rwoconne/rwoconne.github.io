@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> A_CORRELATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=907277">
+ </A>
+<A NAME="71421">
+ </A>
+A_CORRELATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=935058">
+ </A>
+The <A NAME="marker=907279">
+ </A>
+A_CORRELATE <A NAME="marker=907280">
+ </A>
+function computes the <A NAME="marker=907281">
+ </A>
+autocorrelation <EM CLASS="Emphasis">
+Px</EM>
+(<EM CLASS="Emphasis">
+L</EM>
+) or <A NAME="marker=907282">
+ </A>
+autocovariance <EM CLASS="Emphasis">
+Rx</EM>
+(<EM CLASS="Emphasis">
+L</EM>
+)of a sample population <EM CLASS="Emphasis">
+X</EM>
+ as a function of the lag <EM CLASS="Emphasis">
+L</EM>
+. </P>
+<DIV>
+<CENTER><IMG SRC="idl_1.gif" BORDER=0>
+</DIV>
+<DIV>
+<CENTER><IMG SRC="idl_2.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=838005">
+ </A>
+where<EM CLASS="MathSymbol">
+`</EM>
+<EM CLASS="Emphasis">
+x </EM>
+is the mean of the sample population <EM CLASS="Emphasis">
+x</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+, <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+2</SUB>
+, ... , <EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+N-1</SUB>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=54394">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+a_correlate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54395">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54396">
+ </A>
+Result = A_CORRELATE(<EM CLASS="Emphasis">
+X, Lag</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54397">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54398">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54399">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54400">
+ </A>
+Lag</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54402">
+ </A>
+<A NAME="marker=54401">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer vector in the interval [-(<EM CLASS="Emphasis">
+n</EM>
+-2), (<EM CLASS="Emphasis">
+n</EM>
+-2)], specifying the signed distances between indexed elements of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54403">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54405">
+ </A>
+<A NAME="marker=54404">
+ </A>
+COVARIANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54406">
+ </A>
+Set this keyword to compute the sample autocovariance rather than the sample autocorrelation.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=826748">
+ </A>
+<A NAME="marker=826755">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=826749">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54407">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54408">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element sample population. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54409">
+ </A>
+X&nbsp;=&nbsp;[3.73,&nbsp;3.67,&nbsp;3.77,&nbsp;3.83,&nbsp;4.67,&nbsp;5.87,&nbsp;6.70,&nbsp;6.97,&nbsp;6.40,&nbsp;5.57]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54410">
+ </A>
+Compute the autocorrelation of X for LAG = -3, 0, 1, 3, 4, 8</P>
+<P CLASS="Code">
+<A NAME="pgfId=54411">
+ </A>
+lag = [-3, 0, 1, 3, 4, 8] </P>
+<P CLASS="Code">
+<A NAME="pgfId=54412">
+ </A>
+result = A_CORRELATE(X, lag)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54413">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54414">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54415">
+ </A>
+0.0146185&nbsp;&nbsp;1.00000&nbsp;&nbsp;0.810879&nbsp;&nbsp;0.0146185&nbsp;&nbsp;-0.325279&nbsp;&nbsp;-0.151684</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54416">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854788">
+ </A>
+<A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl21.htm#28107" CLASS="XRef">
+C_CORRELATE</A>
+, <A HREF="idl109.htm#43333" CLASS="XRef">
+M_CORRELATE</A>
+, <A HREF="idl133.htm#76534" CLASS="XRef">
+P_CORRELATE</A>
+, <A HREF="idl15b.htm#46692" CLASS="XRef">
+R_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

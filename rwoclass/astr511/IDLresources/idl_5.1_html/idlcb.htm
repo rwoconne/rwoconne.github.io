@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HQR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlcc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlca.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=50733">
+ </A>
+<A NAME="43596">
+ </A>
+HQR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=50738">
+ </A>
+The <A NAME="marker=50735">
+ </A>
+HQR <A NAME="marker=50736">
+ </A>
+function returns all eigenvalues of an upper <A NAME="marker=50737">
+ </A>
+Hessenberg array. Using the output produced by the ELMHES function, this function finds all <A NAME="marker=50739">
+ </A>
+eigenvalues of the original real, nonsymmetric array. The result is an <I CLASS="Italics">
+n</I>
+-element complex vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50740">
+ </A>
+HQR is based on the routine <CODE CLASS="Code">
+hqr</CODE>
+ described in section 11.6 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50741">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50742">
+ </A>
+Result = HQR(<I CLASS="Italics">
+A</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50743">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50744">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50745">
+ </A>
+An <I CLASS="Italics">
+n</I>
+ by <I CLASS="Italics">
+n</I>
+ upper Hessenberg array. Typically, <I CLASS="Italics">
+A</I>
+ would be an array resulting from an application of ELMHES. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50746">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50748">
+ </A>
+<A NAME="marker=50747">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50749">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58708">
+ </A>
+<A NAME="marker=58707">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58709">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50750">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50751">
+ </A>
+To compute the eigenvalues of a real, non-symmetric unbalanced array, first define the array <EM CLASS="Emphasis">
+A</EM>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50752">
+ </A>
+A = [[ 1.0, 2.0, 0.0, 0.0, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50753">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2.0, 3.0, 0.0, 0.0, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50754">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, 4.0, 50.0, 0.0, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=50755">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-4.0, 5.0, -60.0, 7.0, 0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=826279">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-5.0, 6.0, -70.0, 8.0, -9.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=826280">
+ </A>
+hes = ELMHES(A)	<EM CLASS="Comment">;
+Compute the upper Hessenberg form of the array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50758">
+ </A>
+evals = HQR(hes)	<EM CLASS="Comment">;
+Compute the eigenvalues.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50759">
+ </A>
+Sort the eigenvalues into ascending order based on their real components:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50760">
+ </A>
+evals = evals(SORT(FLOAT(evals)))</P>
+<P CLASS="Code">
+<A NAME="pgfId=50761">
+ </A>
+PRINT, evals	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50762">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50763">
+ </A>
+&nbsp;&nbsp;( -9.00000, 0.00000)( 2.00000, -1.73205)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50764">
+ </A>
+&nbsp;&nbsp;( &nbsp;2.00000, 1.73205)( 7.00000, &nbsp;0.00000)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50765">
+ </A>
+&nbsp;&nbsp;( 50.0000, &nbsp;0.00000)</P>
+<P CLASS="Body">
+<A NAME="pgfId=50766">
+ </A>
+This is the exact solution vector to five-decimal accuracy.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50767">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50780">
+ </A>
+<A HREF="idl8a.htm#90610" CLASS="XRef">
+EIGENVEC</A>
+, <A HREF="idl8b.htm#12703" CLASS="XRef">
+ELMHES</A>
+, <A HREF="idl1e2.htm#52845" CLASS="XRef">
+TRIQL</A>
+, <A HREF="idl1e3.htm#25832" CLASS="XRef">
+TRIRED</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50781">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

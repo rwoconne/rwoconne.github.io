@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_IDTOREF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2ab.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999084">
+ </A>
+<A NAME="14191">
+ </A>
+HDF_SD_IDTOREF</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999087">
+ </A>
+The <A NAME="marker=999086">
+ </A>
+HDF_SD_IDTOREF function converts a SD data set ID into a SD data set reference number. The reference number can be used to add the SD data set to a Vgroup through the HDF_VG interface. The tag number for an SD is 720.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999088">
+ </A>
+Calling Sequence </H2>
+<P CLASS="Body">
+<A NAME="pgfId=999089">
+ </A>
+Result = HDF_SD_IDTOREF(<EM CLASS="Emphasis">
+SDS_ID</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999090">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999091">
+ </A>
+SDS_ID </H3>
+<P CLASS="Body">
+<A NAME="pgfId=999092">
+ </A>
+A SDS_ID as returned from HDF_SD_CREATE or HDF_SD_SELECT . </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999093">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999094">
+ </A>
+Create an SD data set and get the Reference number.</P>
+<P CLASS="Code">
+<A NAME="pgfId=999095">
+ </A>
+file_id = HDF_OPEN('demo.hdf', /RDWR)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999096">
+ </A>
+sd_id = HDF_SD_START('demo.hdf', /RDWR)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999097">
+ </A>
+dim=[100]</P>
+<P CLASS="Code">
+<A NAME="pgfId=999098">
+ </A>
+sds_id = HDF_SD_CREATE(sd_id, 'demo_data', dim, /FLOAT)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999099">
+ </A>
+ref = HDF_SD_IDTOREF(sds_id)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999100">
+ </A>
+HDF_SD_ADDDATA, sds_id, FINDGEN(100)/10.45 + 2.98</P>
+<P CLASS="Code">
+<A NAME="pgfId=999101">
+ </A>
+HDF_SD_ENDACCESS, sds_id</P>
+<P CLASS="Code">
+<A NAME="pgfId=999102">
+ </A>
+HDF_SD_END, sd_id</P>
+<P CLASS="Body">
+<A NAME="pgfId=999103">
+ </A>
+Use the Reference number to add the SD to a Vgroup ;</P>
+<P CLASS="Code">
+<A NAME="pgfId=999104">
+ </A>
+SD_TAG = 720</P>
+<P CLASS="Code">
+<A NAME="pgfId=999105">
+ </A>
+vgID = HDF_VG_GETID(file_id,-1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999106">
+ </A>
+vg_handle = HDF_VG_ATTACH(file_id, vgID, /WRITE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=999107">
+ </A>
+HDF_VG_SETINFO, vg_handle, name='data1', class='demo'</P>
+<P CLASS="Code">
+<A NAME="pgfId=999108">
+ </A>
+HDF_VG_ADDTR, vg_handle, SD_TAG, ref</P>
+<P CLASS="Body">
+<A NAME="pgfId=999109">
+ </A>
+Use HDF_VG_INQTR to verify the SD was added correctly :</P>
+<P CLASS="Code">
+<A NAME="pgfId=999110">
+ </A>
+IF HDF_VG_INQTR(vg_handle, SD_TAG, ref) then $</P>
+<P CLASS="Code">
+<A NAME="pgfId=999111">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, 'SUCCESS' ELSE PRINT, 'Failure'</P>
+<P CLASS="Body">
+<A NAME="pgfId=999112">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999113">
+ </A>
+SUCCESS</P>
+<P CLASS="Code">
+<A NAME="pgfId=999114">
+ </A>
+HDF_VG_DETACH, vg_handle</P>
+<P CLASS="Code">
+<A NAME="pgfId=999115">
+ </A>
+HDF_CLOSE, file_id</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999116">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999126">
+ </A>
+<A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2ac.htm#56518" CLASS="XRef">
+HDF_SD_NAMETOINDEX</A>
+, <A HREF="idl2ad.htm#14254" CLASS="XRef">
+HDF_SD_REFTOINDEX</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+, <A HREF="idl2c3.htm#21646" CLASS="XRef">
+HDF_VG_ADDTR</A>
+, <A HREF="idl2c4.htm#10005" CLASS="XRef">
+HDF_VG_ATTACH</A>
+, <A HREF="idl2c5.htm#51178" CLASS="XRef">
+HDF_VG_DETACH</A>
+, <A HREF="idl2c6.htm#65685" CLASS="XRef">
+HDF_VG_GETID</A>
+, <A HREF="idl2cb.htm#17024" CLASS="XRef">
+HDF_VG_INQTR</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999145">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPLINE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1af.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ad.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758519">
+ </A>
+<A NAME="46341">
+ </A>
+SPLINE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758521">
+ </A>
+The <A NAME="marker=758520">
+ </A>
+SPLINE function performs cubic <A NAME="marker=788744">
+ </A>
+spline <A NAME="marker=788745">
+ </A>
+interpolation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758522">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+spline.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758523">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758524">
+ </A>
+Result = SPLINE(<EM CLASS="Emphasis">
+X, Y, T [, Sigma]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758525">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758526">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758527">
+ </A>
+The abscissa vector. Values <EM CLASS="Emphasis">
+must</EM>
+ be monotonically increasing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758528">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758529">
+ </A>
+The vector of ordinate values corresponding to <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758530">
+ </A>
+T</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758531">
+ </A>
+The vector of abscissa values for which the ordinate is desired. The values of <EM CLASS="Emphasis">
+T must</EM>
+ be monotonically increasing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758532">
+ </A>
+Sigma</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758533">
+ </A>
+The amount of &quot;tension&quot; that is applied to the curve. The default value is 1.0. If sigma is close to 0, (e.g., .01), then effectively there is a cubic spline fit. If sigma is large, (e.g., greater than 10), then the fit will be like a polynomial interpolation.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758534">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758535">
+ </A>
+The commands below show a typical use of SPLINE:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758536">
+ </A>
+X = [2.,3.,4.]	<EM CLASS="Comment">;
+X values of original function</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758537">
+ </A>
+Y = (X-3)^2	<EM CLASS="Comment">;
+Make a quadratic</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758538">
+ </A>
+T = FINDGEN(20)/10.+2	<EM CLASS="Comment">;
+Values for interpolated points</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758539">
+ </A>
+Z = SPLINE(X,Y,T)	<EM CLASS="Comment">;
+Do the interpolation</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758540">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758541">
+ </A>
+<A HREF="idl1ac.htm#34901" CLASS="XRef">
+SPL_INIT</A>
+, <A HREF="idl1af.htm#27408" CLASS="XRef">
+SPLINE_P</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

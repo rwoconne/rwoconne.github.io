@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFAN_GETFDS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl273.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl271.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997236">
+ </A>
+<A NAME="17347">
+ </A>
+HDF_DFAN_GETFDS</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997239">
+ </A>
+The <A NAME="marker=997238">
+ </A>
+HDF_DFAN_GETFDS procedure reads the next available file description from an HDF file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997240">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997241">
+ </A>
+HDF_DFAN_GETFDS, <I CLASS="Italics">
+Filename, Description</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997242">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997243">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997244">
+ </A>
+A string containing the name of the file to be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997245">
+ </A>
+Description</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997246">
+ </A>
+A named variable in which the description is returned. By default, the description is returned as a vector of bytes. Set the STRING keyword to return the description as a string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997247">
+ </A>
+If a description does not exist, the <EM CLASS="Emphasis">
+Description</EM>
+ variable will contain either a 0L (long-integer zero) or a blank string, and a warning message will be printed. Warning messages can be suppressed by setting the !QUIET system variable to a non-zero value.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997248">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997250">
+ </A>
+<A NAME="marker=997249">
+ </A>
+FIRST</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997251">
+ </A>
+Set this keyword to read the first file description in the file. If FIRST is not set, the next available file description (which can be the first file description) will be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997253">
+ </A>
+<A NAME="marker=997252">
+ </A>
+STRING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997254">
+ </A>
+Set this keyword to return <I CLASS="Italics">
+Description</I>
+ as a string instead of a vector of bytes.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997255">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997256">
+ </A>
+filename = 'DEMOfds.hdf'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997257">
+ </A>
+fds1 = 'FILE DESCRIPTION NUMBER 1'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997258">
+ </A>
+fds2 = 'SHORT FDS 2'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997259">
+ </A>
+fid = HDF_OPEN(filename, /CREATE)	<EM CLASS="Comment">;
+Create an HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997260">
+ </A>
+HDF_DFAN_ADDFDS, filename, fds1	<EM CLASS="Comment">;
+Add first file description.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997261">
+ </A>
+HDF_DFAN_ADDFDS, filename, fds2	<EM CLASS="Comment">;
+Add second file description.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997262">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=997263">
+ </A>
+HDF_DFAN_GETFDS, filename, out_fds1, /FIRST<BR>
+<EM CLASS="Comment">;
+Get the first file description.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997264">
+ </A>
+HELP, out_fds1</P>
+<P CLASS="Body">
+<A NAME="pgfId=997265">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997266">
+ </A>
+OUT_FDS1        BYTE      = Array(25)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997267">
+ </A>
+PRINT, STRING(out_fds1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997268">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997269">
+ </A>
+FILE DESCRIPTION NUMBER 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=997270">
+ </A>
+HDF_DFAN_GETFDS, filename, out_fds2, /STRING<BR>
+<EM CLASS="Comment">;
+Get the second file description.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997271">
+ </A>
+HELP, out_fds2</P>
+<P CLASS="Body">
+<A NAME="pgfId=997272">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997273">
+ </A>
+OUT_FDS2        STRING    = 'SHORT FDS 2'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997274">
+ </A>
+HDF_CLOSE, fid	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997275">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997285">
+ </A>
+<A HREF="idl26f.htm#37553" CLASS="XRef">
+HDF_DFAN_ADDFDS</A>
+, <A HREF="idl270.htm#51409" CLASS="XRef">
+HDF_DFAN_ADDFID</A>
+, <A HREF="idl271.htm#75461" CLASS="XRef">
+HDF_DFAN_GETDESC</A>
+, <A HREF="idl273.htm#32884" CLASS="XRef">
+HDF_DFAN_GETFID</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

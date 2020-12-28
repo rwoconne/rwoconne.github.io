@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAP_GRID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl10e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl10c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887627">
+ </A>
+<A NAME="30282">
+ </A>
+MAP_GRID</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887631">
+ </A>
+The <A NAME="marker=887630">
+ </A>
+MAP_GRID procedure draws the graticule of parallels and meridians, according to the specifications established by MAP_SET. MAP_SET must be called before MAP_GRID to establish the projection type, the center of the projection, polar rotation and geographical limits.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887632">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887633">
+ </A>
+MAP_GRID</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887634">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887636">
+ </A>
+<A NAME="marker=887635">
+ </A>
+CHARSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887637">
+ </A>
+The size of the characters used for the labels. The default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887639">
+ </A>
+<A NAME="marker=887638">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887640">
+ </A>
+The color index for the grid lines.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887642">
+ </A>
+<A NAME="marker=887641">
+ </A>
+GLINESTYLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887645">
+ </A>
+If set, the line style used to draw the grid of parallels and meridians. See <A HREF="idl22c.htm#95087" CLASS="XRef">
+IDL Linestyles</A>
+ for a list of available linestyles. The default index is 1, drawing a dotted line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887648">
+ </A>
+<A NAME="marker=887647">
+ </A>
+GLINETHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887649">
+ </A>
+The thickness of the grid lines. Default is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887651">
+ </A>
+<A NAME="marker=887650">
+ </A>
+LABEL </H4>
+<P CLASS="Body">
+<A NAME="pgfId=887652">
+ </A>
+Set this keyword to label the parallels and meridians with their corresponding latitudes and longitudes. Setting this keyword to an integer will cause every LABEL gridline to be labeled (that is, if LABEL=3 then every third gridline will be labeled). The starting point for determining which gridlines are labeled is the minimum latitude or longitude (-180 to 180), unless the LATS or LONS keyword is set to a single value. In this case, the starting point is the value of LATS or LONS.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887654">
+ </A>
+<A NAME="marker=887653">
+ </A>
+LATALIGN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887655">
+ </A>
+This keyword controls the alignment of the text baseline for latitude labels. A value of 0.0 left justifies the label, 1.0 right justifies it, and 0.5 centers it.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887657">
+ </A>
+<A NAME="marker=887656">
+ </A>
+LATDEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887658">
+ </A>
+Set this keyword equal to the spacing (in degrees) between parallels of latitude in the grid. If this keyword is not set, a suitable value is determined from the current map projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887660">
+ </A>
+<A NAME="marker=887659">
+ </A>
+LATLAB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887661">
+ </A>
+The longitude at which to place latitude labels. The default is the center longitude on the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887663">
+ </A>
+<A NAME="marker=887662">
+ </A>
+LATNAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887664">
+ </A>
+Set this keyword equal to an array specifying the names to be used for the latitude labels. By default, this array is automatically generated in units of degrees. The LATNAMES array can be either type string or any single numeric type, but should not be of mixed type.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887665">
+ </A>
+When LATNAMES is specified, the LATS keyword must also be specified. The number of elements in the two arrays need not be equal. If there are more elements in the LATNAMES array than in the LATS array, the extra LATNAMES are ignored. If there are more elements in the LATS array than in the LATNAMES array, labels in degrees will be automatically provided for the missing latitude labels.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887666">
+ </A>
+The LATNAMES keyword can be also used when the LATS keyword is set to a single value. It this case, the first label supplied will be used at the specified latitude; subsequent names will be placed at the next latitude line to the north, wrapping around the globe if appropriate. Caution should be used when using LATNAMES in conjunction with a single LATS value, since the number of visible latitude gridlines is dependent on many factors.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887668">
+ </A>
+<A NAME="marker=887667">
+ </A>
+LATS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887669">
+ </A>
+Set this keyword equal to a one or more element vector of latitudes for which lines will be drawn (and optionally labeled). If LATS is omitted, appropriate latitudes will be generated based on the value of the (optional) LATDEL keyword. If LATS is set to a single value, that latitude and a series of automatically generated latitudes will be drawn (and optionally labeled). Automatically generated latitudes have the values:</P>
+<P CLASS="Code">
+<A NAME="pgfId=887670">
+ </A>
+[...,LATS-LATDEL,LATS,LATS+LATDEL,...] </P>
+<P CLASS="Body">
+<A NAME="pgfId=887671">
+ </A>
+over the extent of the map. If LATS is a single value, that value is taken to be the starting point for labelling (See the LABEL keyword).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887673">
+ </A>
+<A NAME="marker=887672">
+ </A>
+LONALIGN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887674">
+ </A>
+This keyword controls the alignment of the text baseline for longitude labels. A value of 0.0 left justifies the label, 1.0 right justifies it, and 0.5 centers it.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887676">
+ </A>
+<A NAME="marker=887675">
+ </A>
+LONDEL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887677">
+ </A>
+Set this keyword equal to the spacing (in degrees) between meridians of longitude in the grid. If this keyword is not set, a suitable value is determined from the current map projection.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887679">
+ </A>
+<A NAME="marker=887678">
+ </A>
+LONLAB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887680">
+ </A>
+The latitude at which to place longitude labels. The default is the center latitude on the map.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887682">
+ </A>
+<A NAME="marker=887681">
+ </A>
+LONNAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887683">
+ </A>
+Set this keyword equal to an array specifying the names to be used for the longitude labels. By default, this array is automatically generated in units of degrees. The LONNAMES array can be either type string or any single numeric type, but should not be of mixed type.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887684">
+ </A>
+When LONNAMES is specified, the LONS keyword must also be specified. The number of elements in the two arrays need not be equal. If there are more elements in the LONNAMES array than in the LONS array, the extra LONNAMES are ignored. If there are more elements in the LONS array than in the LONNAMES array, labels in degrees will be automatically provided for the missing longitude labels.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887685">
+ </A>
+The LONNAMES keyword can be also used when the LONS keyword is set to a single value. It this case, the first label supplied will be used at the specified longitude; subsequent names will be placed at the next longitude line to the east, wrapping around the globe if appropriate. Caution should be used when using LONNAMES in conjunction with a single LONS value, since the number of visible longitude gridlines is dependent on many factors.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887687">
+ </A>
+<A NAME="marker=887686">
+ </A>
+LONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887688">
+ </A>
+Set this keyword equal to a one or more element vector of longitudes for which lines will be drawn (and optionally labeled). If LONS is omitted, appropriate longitudes will be generated based on the value of the (optional) LONDEL keyword. If LONS is set to a single value, that longitudes and a series of automatically generated longitudes will be drawn (and optionally labeled). Automatically generated longitudes have the values:</P>
+<P CLASS="Code">
+<A NAME="pgfId=887689">
+ </A>
+[...,LONS-LONDEL,LONS,LONS+LONDEL,...] </P>
+<P CLASS="Body">
+<A NAME="pgfId=887690">
+ </A>
+over the extent of the map. If LONS is a single value, that value is taken to be the starting point for labelling (See the LABEL keyword).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887692">
+ </A>
+<A NAME="marker=887691">
+ </A>
+ORIENTATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887693">
+ </A>
+Set this keyword equal to an angle in degrees from horizontal (in the clockwise direction) to rotate the labels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887694">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887695">
+ </A>
+The following example creates an orthographic projection, defines which latitudes to label, and provides text labels. Note that the text labels are rotated to match the orientation of the map projection.</P>
+<P CLASS="Code">
+<A NAME="pgfId=887696">
+ </A>
+MAP_SET, /ORTHO, 10, 20, 30, /ISOTROPIC, /CONTINENTS, /HORIZON<BR>
+<EM CLASS="Comment">;
+ Set up an orthographic projection.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887697">
+ </A>
+lats = [ -80, -45, -30, -20, 0, 15, 27, 35, 45, 55, 75]<BR>
+<EM CLASS="Comment">;
+Define latitudes of interest.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887698">
+ </A>
+latnames = strtrim(lats, 2)	<EM CLASS="Comment">;
+Create string equivalents of latitudes.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887699">
+ </A>
+latnames(where(lats eq 0)) = `Equator'	<EM CLASS="Comment">;
+Label the equator.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=887700">
+ </A>
+MAP_GRID, LABEL=2, LATS=lats, LATNAMES=latnames, LATLAB=7, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887701">
+ </A>
+&nbsp;&nbsp;&nbsp;LONLAB=-2.5, LONDEL=20, LONS=-15, ORIENTATION=-30<BR>
+<EM CLASS="Comment">;
+Draw the grid.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887702">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887715">
+ </A>
+<A HREF="idl10c.htm#95626" CLASS="XRef">
+MAP_CONTINENTS</A>
+, <A HREF="idl10e.htm#12714" CLASS="XRef">
+MAP_IMAGE</A>
+, <A HREF="idl10f.htm#32545" CLASS="XRef">
+MAP_PATCH</A>
+, <A HREF="idl110.htm#72745" CLASS="XRef">
+MAP_SET</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

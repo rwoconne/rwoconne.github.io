@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDENTITY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlcf.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlcd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=853755">
+ </A>
+<A NAME="29516">
+ </A>
+IDENTITY</H2>
+<P CLASS="Body">
+<A NAME="pgfId=853758">
+ </A>
+The <A NAME="marker=853757">
+ </A>
+IDENTITY function returns an <I CLASS="Italic">
+n</I>
+ by <I CLASS="Italic">
+n</I>
+ identity array (an array with ones along the main diagonal and zeros elsewhere).</P>
+<P CLASS="Body">
+<A NAME="pgfId=832657">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+identity.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832658">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=832659">
+ </A>
+Result = IDENTITY(<I CLASS="Italic">
+N</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832660">
+ </A>
+Argument</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832661">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832662">
+ </A>
+The desired column and row dimensions.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832663">
+ </A>
+Keyword</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832664">
+ </A>
+<A NAME="marker=832687">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832665">
+ </A>
+Set this keyword to return a double-precision identity array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832666">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=832667">
+ </A>
+Define an array, A.</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=832668">
+ </A>
+A = [[ 2.0,  1.0,  1.0, 1.5], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=832669">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -6.0,  0.0, 0.0], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=832670">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2.0,  7.0,  2.0, 2.5], $</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=832671">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 1.0,  0.5,  0.0, 5.0]]</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=841127">
+ </A>
+inverse = INVERT(A)	<EM CLASS="Comment">;
+Compute the inverse of A using the INVERT function</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=841129">
+ </A>
+Verify the accuracy of the computed inverse using the mathematical identity, A x A<SUP CLASS="Superscript">
+-1</SUP>
+ - I(4) = 0; where A<SUP CLASS="Superscript">
+-1</SUP>
+ is the inverse of A, I(4) is the 4 by 4 identity array and 0 is a 4 by 4 array of zeros.</P>
+<P CLASS="Code">
+<A NAME="pgfId=832674">
+ </A>
+PRINT, A ## inverse - IDENTITY(4)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832675">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=832688">
+ </A>
+<A HREF="idla0.htm#80149" CLASS="XRef">
+FINDGEN</A>
+, <A HREF="idla7.htm#77222" CLASS="XRef">
+FLTARR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

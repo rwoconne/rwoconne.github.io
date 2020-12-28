@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> INT_TABULATED</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=750296">
+ </A>
+<A NAME="51833">
+ </A>
+INT_TABULATED</H2>
+<P CLASS="Body">
+<A NAME="pgfId=750299">
+ </A>
+The <A NAME="marker=750297">
+ </A>
+INT_TABULATED function <A NAME="marker=750298">
+ </A>
+integrates a tabulated set of data { <EM CLASS="Emphasis">
+xi</EM>
+ , <EM CLASS="Emphasis">
+fi</EM>
+ } on the closed interval [MIN(<EM CLASS="Emphasis">
+x</EM>
+) , MAX(<EM CLASS="Emphasis">
+x</EM>
+)], using a five-point <A NAME="marker=750300">
+ </A>
+Newton-Cotes integration formula.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=835752">
+ </A>
+Data that is highly oscillatory requires a sufficient number of samples for an accurate integral approximation.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=754729">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+int_tabulated.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750302">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750303">
+ </A>
+Result = INT_TABULATED(<EM CLASS="Emphasis">
+X, F</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750304">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750305">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750306">
+ </A>
+The tabulated single- or double-precision floating-point <EM CLASS="Emphasis">
+x</EM>
+-value data. Data may be irregularly gridded and in random order. (If the data is randomly ordered, set the SORT keyword.) </P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=841182">
+ </A>
+Each <EM CLASS="Emphasis">
+X</EM>
+ value must be unique; if duplicate <EM CLASS="Emphasis">
+X</EM>
+ values are detected, the routine will exit and display a warning message.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750307">
+ </A>
+F</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750308">
+ </A>
+The tabulated single- or double-precision floating-point <EM CLASS="Emphasis">
+f</EM>
+-value data. Upon input to the function, <EM CLASS="Emphasis">
+xi</EM>
+ and <EM CLASS="Emphasis">
+fi</EM>
+ must have corresponding indices for all values of i. If <EM CLASS="Emphasis">
+x </EM>
+is reordered, <EM CLASS="Emphasis">
+f</EM>
+ is also reordered.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750309">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750310">
+ </A>
+SORT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750311">
+ </A>
+Set this keyword to sort the tabulated <EM CLASS="Emphasis">
+x</EM>
+-value data into ascending order. If SORT is set, both <EM CLASS="Emphasis">
+x</EM>
+ and <EM CLASS="Emphasis">
+f</EM>
+ values are sorted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750312">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750313">
+ </A>
+Define 11 <EM CLASS="Emphasis">
+x</EM>
+-values on the closed interval [0.0 , 0.8]:</P>
+<P CLASS="Code">
+<A NAME="pgfId=750314">
+ </A>
+X = [0.0, .12, .22, .32, .36, .40, .44, .54, .64, .70, .80]</P>
+<P CLASS="Body">
+<A NAME="pgfId=750315">
+ </A>
+Define 11 <EM CLASS="Emphasis">
+f</EM>
+-values corresponding to <EM CLASS="Emphasis">
+xi</EM>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=750316">
+ </A>
+F = [0.200000, 1.30973, 1.30524, 1.74339, 2.07490, 2.45600, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=750317">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.84299, 3.50730, 3.18194, 2.36302, 0.231964]</P>
+<P CLASS="Code">
+<A NAME="pgfId=750318">
+ </A>
+result = INT_TABULATED(X, F)	Integrate.</P>
+<P CLASS="Body">
+<A NAME="pgfId=750322">
+ </A>
+In this example, the f-values are generated from a known function</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=796971">
+ </A>
+<EM CLASS="Emphasis">
+f</EM>
+ = 0.2 + 25<EM CLASS="Emphasis">
+x</EM>
+ - 200<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+2</SUP>
+ + 675<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+3</SUP>
+ - 900<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+4</SUP>
+ + 400<EM CLASS="Emphasis">
+x</EM>
+<SUP CLASS="Superscript">
+5</SUP>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=750324">
+ </A>
+which allows the determination of an exact solution. A comparison of methods yields the following results:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=841188">
+ </A>
+The Multiple Application Trapezoid Method yields: 1.5648</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=841189">
+ </A>
+The Multiple Application Simpson's Method yields: 1.6036</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=841190">
+ </A>
+INT_TABULATED yields: 1.6271</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=750328">
+ </A>
+The exact solution (4 decimal accuracy) is: 1.6405</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=816272">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=816273">
+ </A>
+<A HREF="idld4.htm#70083" CLASS="XRef">
+INT_2D</A>
+, <A HREF="idld5.htm#74581" CLASS="XRef">
+INT_3D</A>
+, <A HREF="idl158.htm#72956" CLASS="XRef">
+QROMB</A>
+, <A HREF="idl159.htm#31379" CLASS="XRef">
+QROMO</A>
+, <A HREF="idl15a.htm#21978" CLASS="XRef">
+QSIMP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

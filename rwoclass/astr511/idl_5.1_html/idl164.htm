@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_GIF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl165.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl163.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756112">
+ </A>
+<A NAME="81602">
+ </A>
+READ_GIF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756115">
+ </A>
+The <A NAME="marker=756113">
+ </A>
+READ_GIF procedure reads the contents of a <A NAME="marker=756114">
+ </A>
+GIF format image file and returns the image and color table vectors (if present) in the form of IDL variables.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756116">
+ </A>
+Although the GIF format allows files to contain multiple images, READ_GIF only reads in the first image in a file. Only 8-bit images are supported, and local colormaps are <EM CLASS="Emphasis">
+not</EM>
+ supported. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=862454">
+ </A>
+The Graphics Interchange Format&#169; is the Copyright property of CompuServ Incorporated. GIF(sm) is a Service Mark property of CompuServ Incorporated. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=756117">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_gif.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756118">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756119">
+ </A>
+READ_GIF, <EM CLASS="Emphasis">
+Filename, Image [, R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756120">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756121">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756122">
+ </A>
+A scalar string specifying the full path name of the image file to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756123">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756124">
+ </A>
+A named variable that will contain the image data read from the file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756125">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756126">
+ </A>
+Named variables that will contain the Red, Green, and Blue color vectors, if the rasterfile contains colormaps.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843708">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862948">
+ </A>
+<A NAME="marker=862947">
+ </A>
+CLOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862949">
+ </A>
+Set this keyword to close any open files. The CLOSE keyword is only useful if a file containing multiple images (as specified by the MULTIPLE keyword) is in use. Note that you do not need to specify the normal arguments to READ_GIF (<EM CLASS="Emphasis">
+Filename</EM>
+, <EM CLASS="Emphasis">
+Image</EM>
+, etc.) when using this keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=862953">
+ </A>
+<A NAME="marker=862955">
+ </A>
+MULTIPLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=862954">
+ </A>
+Set this keyword to read files that contain multiple images. Each call to READ_GIF returns the next image, with the file remaining open between calls. The <EM CLASS="Emphasis">
+Filename</EM>
+ argument is ignored and may be omitted after the first call. Reading past the last image returns a scalar value of -1 in the variable specified in the <EM CLASS="Emphasis">
+Image</EM>
+ argument, and closes the file. R, G, and B color vectors are returned only once, along with the first image.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756127">
+ </A>
+<A NAME="marker=862937">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756128">
+ </A>
+To open and read the GIF image file named <CODE CLASS="Code">
+foo.gif</CODE>
+ in the current directory, store the image in the variable <CODE CLASS="Code">
+image1.</CODE>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756129">
+ </A>
+READ_GIF, 'foo.gif', image1, R, G, B	<EM CLASS="Comment">;
+Store the color vectors in the variables R, G, and B.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756131">
+ </A>
+TVLCT, R, G, B	<EM CLASS="Comment">;
+load the new color table and display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=756132">
+ </A>
+TV, image1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756133">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756134">
+ </A>
+<A HREF="idl20e.htm#20502" CLASS="XRef">
+WRITE_GIF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

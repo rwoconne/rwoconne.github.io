@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LABEL_REGION</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=677386">
+ </A>
+<A NAME="67218">
+ </A>
+LABEL_REGION</H2>
+<P CLASS="Body">
+<A NAME="pgfId=828061">
+ </A>
+The <A NAME="marker=673250">
+ </A>
+LABEL_REGION function consecutively labels all of the regions, or blobs, of a bi-level image with a unique region index. This process is sometimes called &quot;blob coloring&quot;. A region is a set of non-zero pixels within either a four-neighbor region (the default) or an eight-neighbor region (if the EIGHT keyword is specified) around the pixel under examination. The four-neighbor region around a pixel consists of two adjacent horizontal and two adjacent vertical neighbors. The eight-neighbor region around a pixel consists of all the immediately adjacent pixels.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677388">
+ </A>
+The argument for LABEL_REGION is a two-dimensional bi-level integer type array--only zero and non-zero values are considered. The result of the function is a two-dimensional integer array of the same dimensions with each pixel containing its region index. A region index of zero indicates that the original pixel was zero and belongs to no region. Output values range from 0 to the number of regions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677389">
+ </A>
+Statistics on each of the regions may be easily calculated using the HISTOGRAM function as shown in the examples below. </P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677390">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677391">
+ </A>
+Result = LABEL_REGION(<I CLASS="Italics">
+Image</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677392">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677393">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677394">
+ </A>
+The two-dimensional image to be labeled. <I CLASS="Italics">
+Image</I>
+ is converted to integer type if necessary. Pixels at the edges of <I CLASS="Italics">
+Image</I>
+ are considered to be zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=828026">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=828027">
+ </A>
+<A NAME="marker=828029">
+ </A>
+EIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=828028">
+ </A>
+If this keyword is set, LABEL_REGION searches the eight-neighbor region around a pixel rather than the four-neighbor region. The four-neighbor region around a pixel consists of two adjacent horizontal and two adjacent vertical neighbors. The eight-neighbor region around a pixel consists of all the immediately adjacent pixels.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677395">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=677396">
+ </A>
+Count the number of distinct regions within an image, and their population:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677397">
+ </A>
+b = LABEL_REGION(image)	<EM CLASS="Comment">;
+Get blob indices.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677398">
+ </A>
+h = HISTOGRAM(b)	<EM CLASS="Comment">;
+Get population of each blob.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677399">
+ </A>
+FOR i=0, N_ELEMENTS(h)-1 DO PRINT 'Region ',i, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=677400">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;', Population = ', h(i)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677401">
+ </A>
+Note that region 0 is the set of zero pixels that are not within a region.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677402">
+ </A>
+As above, but also print the average value and standard deviation of each region:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677403">
+ </A>
+b = LABEL_REGION(image)	<EM CLASS="Comment">;
+Get blob indices.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677404">
+ </A>
+h = HISTOGRAM(b, REVERSE_INDICES=r)<EM CLASS="Comment">;
+	Get population and members of each blob.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677405">
+ </A>
+FOR i=0, N_ELEMENTS(h)-1 DO BEGIN	<EM CLASS="Comment">;
+Each region </EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677406">
+ </A>
+p = r(r[i]:r[i+1]-1)	<EM CLASS="Comment">;
+Find subscripts of members of region i.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677407">
+ </A>
+q = image[p]	<EM CLASS="Comment">;
+Pixels of region i </EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677408">
+ </A>
+PRINT 'Region ', i, $ </P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677409">
+ </A>
+', Population = ', h[i], $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677410">
+ </A>
+', Standard Deviation = ', STDEV(q, mean), $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=677411">
+ </A>
+', Mean = ', mean </P>
+<P CLASS="Code">
+<A NAME="pgfId=677412">
+ </A>
+ENDFOR</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=825365">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=825369">
+ </A>
+<A HREF="idl7.htm#64698" CLASS="XRef">
+ANNOTATE</A>
+, <A HREF="idl6d.htm#72309" CLASS="XRef">
+DEFROI</A>
+, <A HREF="idlc9.htm#31792" CLASS="XRef">
+HISTOGRAM</A>
+, <A HREF="idl18e.htm#26448" CLASS="XRef">
+SEARCH2D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

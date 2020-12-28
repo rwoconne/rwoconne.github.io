@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LIVE_EXPORT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlf1.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlef.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=857322">
+ </A>
+<A NAME="23903">
+ </A>
+LIVE_EXPORT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=857325">
+ </A>
+The <A NAME="marker=857324">
+ </A>
+LIVE_EXPORT routine allows the user to export a given visualization or window to an image file. </P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857327">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=857328">
+ </A>
+LIVE_EXPORT</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857329">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857330">
+ </A>
+(None)</H4>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857331">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857333">
+ </A>
+<A NAME="marker=857332">
+ </A>
+DIALOG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857334">
+ </A>
+Set this keyword to have a dialog appear allowing the user to choose the image type and specifications.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857336">
+ </A>
+<A NAME="marker=857335">
+ </A>
+DIMENSIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857337">
+ </A>
+Set this keyword to a two-element vector of the form [width, height] to specify the dimensions of the image in units specified by the UNITS keyword. The default is [640, 480] pixels.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=865774">
+ </A>
+<A NAME="marker=865773">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=865775">
+ </A>
+Set this keyword to a named variable to contain the returned error message (string). An empty string is returned if no errors occurred during the operation. By default, errors are reported via a GUI.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=866745">
+ </A>
+If a named variable is passed in this keyword and an error occurs, the error GUI will not be displayed.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=865777">
+ </A>
+<A NAME="marker=865776">
+ </A>
+FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=865778">
+ </A>
+Set this keyword equal to a string specifying the desired name of the image file. The default is <CODE CLASS="Code">
+live_export.extension</CODE>
+, where extensions are:<CODE CLASS="Code">
+ .bmp, .gif, .jpg, .jpeg, .pic, .pict, .srf, .tif, .tiff, .xwd, and. vrml</CODE>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857345">
+ </A>
+<A NAME="marker=857344">
+ </A>
+ORDER (JPEG)</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857346">
+ </A>
+Set this keyword to have the image written from top to bottom. Default is bottom to top.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857348">
+ </A>
+<A NAME="marker=857347">
+ </A>
+PROGRESSIVE (JPEG)</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857349">
+ </A>
+Set this keyword to write the image as a series of scans of increasing quality. When used with a slow communications link, a decoder can generate a low-quality image very quickly, and then improve its quality as more scans are received. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857351">
+ </A>
+<A NAME="marker=857350">
+ </A>
+QUALITY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857352">
+ </A>
+This keyword specifies the quality index of JPEG images only: 0=Low, 1=Medium, 2=High (default). This keyword has no effect on non-JPEG images.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857354">
+ </A>
+<A NAME="marker=857353">
+ </A>
+RESOLUTION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857355">
+ </A>
+Set this keyword to a floating-point value specifying the device resolution in centimeters per pixel. The default is 72 DPI=2.54 (cm/in)/ 0.0352778 (cm/pixel).</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=869446">
+ </A>
+It is important to match the eventual output device's resolution so that text is scaled properly.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857357">
+ </A>
+<A NAME="marker=857356">
+ </A>
+TYPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857358">
+ </A>
+Set this keyword equal to a string specifying the image type to write. Valid strings are: `BMP', `GIF', `JPG', `JPEG' (default), `PIC', `PICT', `SRF', `TIF', `TIFF', `XWD', and `VRML'. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857360">
+ </A>
+<A NAME="marker=857359">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857361">
+ </A>
+Set this keyword to indicate the units of measure for the DIMENSIONS keyword. Valid values are 0=Device (default), 1=Inches, 2=Centimeters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857363">
+ </A>
+<A NAME="marker=857362">
+ </A>
+VISUALIZATION_IN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857364">
+ </A>
+Set this keyword equal to the name (string, case-insensitive) of a LIVE tool or Insight visualization to export. The VISUALIZATION field from the REFERENCE_OUT keyword from the creation of the LIVE tool will provide the visualization name. Visualization names are also visible in Insight's Visualization Manager and visualization property dialogs. If VISUALIZATION_IN is not specified, the whole window or buffer (WINDOW_IN) will be exported.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=857366">
+ </A>
+<A NAME="marker=857365">
+ </A>
+WINDOW_IN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=857367">
+ </A>
+Set this keyword equal to a name (string, case-sensitive) of a LIVE tool or Insight window, or a LIVE tool buffer, to export. The WINDOW tag of the REFERENCE_OUT structure from the creation of the LIVE tool will provide the window or buffer name. Window names are also visible in visualization window titlebars. If only one LIVE tool or Insight window (or buffer) is present in the IDL session, this keyword will default to it.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857368">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=857369">
+ </A>
+LIVE_EXPORT, WINDOW_IN='Live Plot 2'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=857370">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=875613">
+ </A>
+<EM CLASS="Emphasis">
+Using IDL Insight</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

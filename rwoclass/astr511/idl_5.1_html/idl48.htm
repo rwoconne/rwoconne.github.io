@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CRAMER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl49.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl47.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=749594">
+ </A>
+<A NAME="10735">
+ </A>
+CRAMER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=749597">
+ </A>
+The <A NAME="marker=749595">
+ </A>
+CRAMER <A NAME="marker=749596">
+ </A>
+function solves an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ linear system of equations using Cramer's rule.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754653">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cramer.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749599">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749600">
+ </A>
+       Result&nbsp;=&nbsp;CRAMER(<EM CLASS="Emphasis">
+A, B</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749601">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749602">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749603">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ single- or double-precision floating-point array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749604">
+ </A>
+B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749605">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element single- or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749606">
+ </A>
+ Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749607">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749608">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749609">
+ </A>
+ZERO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749610">
+ </A>
+Use this keyword to set the value of the floating-point zero. A floating-point zero on the main diagonal of a triangular array results in a zero determinant. A zero determinant results in a &quot;Singular matrix&quot; error and stops the execution of CRAMER. For single-precision inputs, the default value is 1.0 <EM CLASS="MathSymbol">
+&#165;</EM>
+ 10<SUP CLASS="Superscript">
+-6</SUP>
+. For double-precision inputs, the default value is 1.0 <EM CLASS="MathSymbol">
+&#165;</EM>
+ 10<SUP CLASS="Superscript">
+-12</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749617">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749618">
+ </A>
+Define an array A and right-hand side vector B.</P>
+<P CLASS="Code">
+<A NAME="pgfId=749619">
+ </A>
+A&nbsp;=&nbsp;[[ 2.0,  1.0,  1.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=749620">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -6.0,  0.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=749621">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2.0,  7.0,  2.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=749622">
+ </A>
+B&nbsp;=&nbsp;[3.0, 10.0, -5.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=749623">
+ </A>
+PRINT, CRAMER(A,B)	<EM CLASS="Comment">;
+Compute the solution and print.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=749624">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=749625">
+ </A>
+1.00000     -1.00000      2.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34666">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34667">
+ </A>
+<A HREF="idlbe.htm#39130" CLASS="XRef">
+GS_ITER</A>
+, <A HREF="idl105.htm#65053" CLASS="XRef">
+LU_COMPLEX</A>
+, <A HREF="idl30.htm#21199" CLASS="XRef">
+CHOLSOL</A>
+, <A HREF="idl108.htm#55550" CLASS="XRef">
+LUSOL</A>
+, <A HREF="idl1ca.htm#53821" CLASS="XRef">
+SVSOL</A>
+, <A HREF="idl1e4.htm#66905" CLASS="XRef">
+TRISOL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

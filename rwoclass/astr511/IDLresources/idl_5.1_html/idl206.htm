@@ -1,0 +1,1395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_INFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl207.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl205.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680333">
+ </A>
+<A NAME="45547">
+ </A>
+WIDGET_INFO</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680334">
+ </A>
+The <A NAME="marker=674698">
+ </A>
+WIDGET_INFO function is used to obtain <A NAME="marker=674699">
+ </A>
+information about the widget subsystem and individual widgets. The specific area for which information is desired is selected by setting the appropriate keyword.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680335">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680336">
+ </A>
+Result = WIDGET_INFO(<I CLASS="Italic">
+[Widget_ID]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680337">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680338">
+ </A>
+Widget_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680339">
+ </A>
+Usually this argument should be the widget ID of the widget for which information is desired. If the ACTIVE or VERSION keywords are specified, this argument is not required.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680340">
+ </A>
+<I CLASS="Italic">
+Widget_ID</I>
+ can also be an array of widget identifiers, in which case the result is an array with the same structure in which information on all the specified widgets is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680341">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890006">
+ </A>
+Not all keywords to WIDGET_INFO apply to all combinations of widgets. In the following list, descriptions of keywords that affect only certain types of widgets include a list of the widgets for which the keyword is useful.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680342">
+ </A>
+<A NAME="marker=674700">
+ </A>
+ACTIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889934">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680343">
+ </A>
+<A NAME="marker=674701">
+ </A>
+Set this keyword to return 1 if there is at least one realized, managed, top-level widget on the screen. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680344">
+ </A>
+<A NAME="marker=674702">
+ </A>
+CHILD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889936">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680345">
+ </A>
+<A NAME="marker=674703">
+ </A>
+Set this keyword to return the widget ID of the first child of the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+. If the widget has no children, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895941">
+ </A>
+<A NAME="marker=895945">
+ </A>
+<A NAME="38022">
+ </A>
+COLUMN_WIDTHS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895944">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895947">
+ </A>
+Set this keyword to return an array of long integers giving the width of each column in the table. If USE_TABLE_SELECT is set, only the column widths for the currently-selected cells are returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680346">
+ </A>
+<A NAME="marker=674704">
+ </A>
+<A NAME="99741">
+ </A>
+DRAW_BUTTON_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890011">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680347">
+ </A>
+<A NAME="marker=674705">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ is a draw widget with the BUTTON_EVENTS attribute set. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=909787">
+ </A>
+<A NAME="marker=909785">
+ </A>
+<A NAME="10997">
+ </A>
+DRAW_EXPOSE_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=909791">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=909793">
+ </A>
+<A NAME="marker=909792">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ is a draw widget with the EXPOSE_EVENTS attribute set. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680348">
+ </A>
+<A NAME="marker=674706">
+ </A>
+<A NAME="52336">
+ </A>
+DRAW_MOTION_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890016">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680349">
+ </A>
+<A NAME="marker=674707">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ is a draw widget with the MOTION_EVENTS attribute set. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680350">
+ </A>
+<A NAME="marker=674708">
+ </A>
+<A NAME="22682">
+ </A>
+DRAW_VIEWPORT_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890023">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl203.htm#48726" CLASS="XRef">
+WIDGET_DRAW</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680351">
+ </A>
+<A NAME="marker=674709">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ is a draw widget with the VIEWPORT_EVENTS attribute set. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58164">
+ </A>
+<A NAME="marker=58167">
+ </A>
+<A NAME="55802">
+ </A>
+DROPLIST_NUMBER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890028">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl204.htm#29873" CLASS="XRef">
+WIDGET_DROPLIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=58166">
+ </A>
+<A NAME="marker=58171">
+ </A>
+Set this keyword to return the number of elements currently contained in the specified droplist widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58165">
+ </A>
+<A NAME="marker=58169">
+ </A>
+<A NAME="70527">
+ </A>
+DROPLIST_SELECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890033">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl204.htm#29873" CLASS="XRef">
+WIDGET_DROPLIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=58168">
+ </A>
+<A NAME="marker=58170">
+ </A>
+Set this keyword to return the zero-based number of the currently-selected element (i.e., the currently-displayed element) in the specified droplist widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=192872">
+ </A>
+<A NAME="marker=192873">
+ </A>
+<A NAME="62955">
+ </A>
+DYNAMIC_RESIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890038">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl201.htm#63640" CLASS="XRef">
+WIDGET_BUTTON</A>
+, <A HREF="idl204.htm#29873" CLASS="XRef">
+WIDGET_DROPLIST</A>
+, and <A HREF="idl207.htm#90331" CLASS="XRef">
+WIDGET_LABEL</A>
+ functions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=192874">
+ </A>
+Set this keyword to return a True value (1) if the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+ is a button, droplist, or label widget that has had its DYNAMIC_RESIZE attribute set. Otherwise, False (0) is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680352">
+ </A>
+<A NAME="marker=674710">
+ </A>
+EVENT_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889950">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680353">
+ </A>
+<A NAME="marker=674711">
+ </A>
+Set this keyword to return a string containing the name of the event handler function associated with <I CLASS="Italic">
+Widget_ID</I>
+. A null string is returned if no event handler function exists.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680354">
+ </A>
+<A NAME="marker=675223">
+ </A>
+EVENT_PRO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889952">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680355">
+ </A>
+<A NAME="marker=675225">
+ </A>
+Set this keyword to return a string containing the name of the event handler procedure associated with <I CLASS="Italic">
+Widget_ID</I>
+. A null string is returned if no event handler procedure exists.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58144">
+ </A>
+<A NAME="marker=58146">
+ </A>
+<A NAME="84447">
+ </A>
+GEOMETRY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889954">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=58145">
+ </A>
+<A NAME="marker=58163">
+ </A>
+Set this keyword to return a WIDGET_GEOMETRY structure that describes the offset and size information for the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+. This structure has the following definition:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895952">
+ </A>
+{ WIDGET_GEOMETRY, </P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895953">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;XOFFSET:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895954">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;YOFFSET:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895955">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;XSIZE:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895956">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;YSIZE:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895957">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;SCR_XSIZE:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895958">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;SCR_YSIZE:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895959">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;DRAW_XSIZE:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895960">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;DRAW_YSIZE:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895961">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;MARGIN:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895962">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;XPAD:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895963">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;YPAD:0.0,</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=895964">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;SPACE:0.0 }</P>
+<P CLASS="Body">
+<A NAME="pgfId=58147">
+ </A>
+With the exception of MARGIN, all of the structure's fields correspond to the keywords of the same name to the various widget routines. MARGIN is the width of any frame added to the widget, in units specified by the UNITS keyword (pixels are the default). Therefore, the actual width of any widget is:</P>
+<P CLASS="Code">
+<A NAME="pgfId=58155">
+ </A>
+SCR_XSIZE + (2* MARGIN)</P>
+<P CLASS="Body">
+<A NAME="pgfId=58158">
+ </A>
+The actual height of any widget is:</P>
+<P CLASS="Code">
+<A NAME="pgfId=58159">
+ </A>
+SCR_YSIZE + (2 * MARGIN)</P>
+<P CLASS="Body">
+<A NAME="pgfId=894777">
+ </A>
+Note also that if the top-level base includes a menubar, it is not possible to determine the actual height of the base widget. Calling WIDGET_INFO with the GEOMETRY keyword on a top level base that includes a menubar will return a geometry structure that contains zeroes rather than the actual sizes of the widget.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=894794">
+ </A>
+Menubars are not included in the size of a top-level base, so the actual height of a widget that includes a menubar is:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=894780">
+ </A>
+SCR_YSIZE + (2 * MARGIN) + <EM CLASS="Emphasis">
+menubar height</EM>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=894778">
+ </A>
+It is not possible to either determine or change the height of a menubar within IDL. Retrieving the WIDGET_GEOMETRY structure of a menubar yields a structure with all the fields set equal to zero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=911595">
+ </A>
+<A NAME="marker=911594">
+ </A>
+<A NAME="21768">
+ </A>
+KBRD_FOCUS_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911612">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911613">
+ </A>
+<A NAME="marker=911717">
+ </A>
+Set this keyword to return the keyboard focus events status of the widget specified by <EM CLASS="Emphasis">
+Widget ID</EM>
+. WIDGET_INFO returns 1 (one) if keyboard focus events are currently enabled for the widget, or 0 (zero) if they are not. Only base, table, and text widgets can generate keyboard focus events.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934733">
+ </A>
+<A NAME="LIST_MULTIPLE keyword">
+ </A>
+LIST_MULTIPLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934739">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=934734">
+ </A>
+<A NAME="marker=934743">
+ </A>
+Set this keyword equal to a named variable that will contain a non-zero value if the list widget supports multiple item selections. See the MULTIPLE keyword to WIDGET_LIST for more on multiple item selections.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=911616">
+ </A>
+<A NAME="marker=911614">
+ </A>
+<A NAME="88228">
+ </A>
+LIST_NUMBER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890064">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=890059">
+ </A>
+<A NAME="marker=890058">
+ </A>
+Set this keyword to return the number of elements currently contained in the specified list widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680358">
+ </A>
+<A NAME="marker=675227">
+ </A>
+<A NAME="11720">
+ </A>
+LIST_NUM_VISIBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890069">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680359">
+ </A>
+<A NAME="marker=675229">
+ </A>
+Set this keyword to return the number of elements that can be visible in the scrolling viewport of the specified list widget. Note that this value can be larger than the total number of elements actually in the list.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680360">
+ </A>
+<A NAME="marker=675230">
+ </A>
+<A NAME="58841">
+ </A>
+LIST_SELECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890074">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680361">
+ </A>
+<A NAME="marker=675231">
+ </A>
+Set this keyword to return the index or indices of the currently-selected (highlighted) element or elements in the specified list widget. Note that this offset is zero-based. If no element is currently selected, -1 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680362">
+ </A>
+<A NAME="marker=675232">
+ </A>
+<A NAME="98328">
+ </A>
+LIST_TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890079">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680363">
+ </A>
+<A NAME="marker=675233">
+ </A>
+Set this keyword to return the zero-based offset of the topmost element currently visible in the specified list widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907337">
+ </A>
+<A NAME="marker=907345">
+ </A>
+MANAGED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907340">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907338">
+ </A>
+Set this keyword equal to a named variable. If a single widget ID is specified in the call to WIDGET_INFO, the variable will contain a True (1) value if the specified widget is managed, or False (0) otherwise. If no widget ID is specified in the call to WIDGET_INFO, the variable will contain an array containing the widget IDs of all currently-managed widgets.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=910752">
+ </A>
+<A NAME="marker=910768">
+ </A>
+<A NAME="16353">
+ </A>
+MODAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=910753">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl200.htm#51835" CLASS="XRef">
+WIDGET_BASE</A>
+ function and the <A HREF="idl200.htm#30467" CLASS="XRef">
+MODAL</A>
+ keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=910769">
+ </A>
+If this keyword is set, WIDGET_INFO will return True (1) if the base widget specified by <EM CLASS="Emphasis">
+Widget_ID</EM>
+ is a modal base widget, or False (0) otherwise.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58076">
+ </A>
+<A NAME="marker=58078">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889968">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=58077">
+ </A>
+<A NAME="marker=58079">
+ </A>
+Set this keyword to return the widget type name of the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+. The returned value will be one of the following strings: &quot;BASE&quot;, &quot;BUTTON&quot;, &quot;DRAW&quot;, &quot;DROPLIST&quot;, &quot;LABEL&quot;, &quot;LIST&quot;, &quot;SLIDER&quot;, &quot;TABLE&quot;, or &quot;TEXT&quot;. Set the TYPE keyword to return the widget's type code.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680364">
+ </A>
+<A NAME="marker=674712">
+ </A>
+PARENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889970">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680365">
+ </A>
+<A NAME="marker=674713">
+ </A>
+Set this keyword to return the widget ID of the parent of the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+. If the widget is a top-level base (i.e., it has no parent), 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680366">
+ </A>
+<A NAME="marker=674714">
+ </A>
+REALIZED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889972">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680367">
+ </A>
+<A NAME="marker=674715">
+ </A>
+Set this keyword to return 1 if the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+ has been realized. If the widget has not been realized, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895972">
+ </A>
+<A NAME="marker=895974">
+ </A>
+<A NAME="37426">
+ </A>
+ROW_HEIGHTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896030">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934595">
+ </A>
+This keyword is not supported under Microsoft Windows.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=895973">
+ </A>
+Set this keyword to return an array of long integers giving the height of each row in the table. If USE_TABLE_SELECT is set, only the row heights for the currently-selected cells are returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680368">
+ </A>
+<A NAME="marker=674716">
+ </A>
+SIBLING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889974">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680369">
+ </A>
+<A NAME="marker=674717">
+ </A>
+Set this keyword to return the widget ID of the first sibling of the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+. If the widget is the last sibling in the chain, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680889">
+ </A>
+<A NAME="marker=675234">
+ </A>
+<A NAME="64690">
+ </A>
+SLIDER_MIN_MAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890084">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl209.htm#65490" CLASS="XRef">
+WIDGET_SLIDER</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680891">
+ </A>
+<A NAME="marker=675236">
+ </A>
+Set this keyword to return the current minimum and maximum values of the specified slider as a two-element integer array. Element 0 is the minimum value and element 1 is the maximum value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895977">
+ </A>
+<A NAME="marker=895991">
+ </A>
+<A NAME="79085">
+ </A>
+TABLE_ALL_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896028">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895978">
+ </A>
+Set this keyword to return 1 (one) if <EM CLASS="Emphasis">
+Widget_ID</EM>
+ is a table widget with the ALL_EVENTS attribute set. Otherwise, 0 (zero) is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895979">
+ </A>
+<A NAME="marker=895992">
+ </A>
+<A NAME="60167">
+ </A>
+TABLE_EDITABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896026">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895980">
+ </A>
+Set this keyword to return 1 (one) if <EM CLASS="Emphasis">
+Widget_ID</EM>
+ is a table widget that allows user editing of its contents. Otherwise, 0 (zero) is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895981">
+ </A>
+<A NAME="marker=895993">
+ </A>
+<A NAME="75736">
+ </A>
+TABLE_EDIT_CELL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896024">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895982">
+ </A>
+Set this keyword to return a two-element integer array containing the <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ coordinates of the currently editable cell. If none of the cells in the table widget is currently editable, the array [-1, -1] is returned. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895983">
+ </A>
+<A NAME="marker=895994">
+ </A>
+<A NAME="87251">
+ </A>
+TABLE_SELECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896022">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895984">
+ </A>
+Set this keyword to return an array of the form [ <EM CLASS="Emphasis">
+left</EM>
+, <EM CLASS="Emphasis">
+top</EM>
+, <EM CLASS="Emphasis">
+right</EM>
+, <EM CLASS="Emphasis">
+bottom</EM>
+ ] containing the zero-based indices of the currently-selected (highlighted) cells in the specified table widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895985">
+ </A>
+<A NAME="marker=896003">
+ </A>
+<A NAME="31808">
+ </A>
+TABLE_VIEW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896020">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895986">
+ </A>
+Set this keyword to return a two-element array of the form [<EM CLASS="Emphasis">
+left</EM>
+, <EM CLASS="Emphasis">
+top</EM>
+] containing the zero-based offsets of the top-left cell currently visible in the specified table widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680895">
+ </A>
+<A NAME="marker=675235">
+ </A>
+<A NAME="65193">
+ </A>
+TEXT_ALL_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890089">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680897">
+ </A>
+<A NAME="marker=675243">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ is a text widget with the ALL_EVENTS attribute set. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680899">
+ </A>
+<A NAME="marker=675237">
+ </A>
+<A NAME="11134">
+ </A>
+TEXT_EDITABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890094">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680900">
+ </A>
+<A NAME="marker=675244">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ is a text widget that allows user editing of its contents. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680370">
+ </A>
+<A NAME="marker=675238">
+ </A>
+<A NAME="99800">
+ </A>
+TEXT_NUMBER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890099">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680884">
+ </A>
+<A NAME="marker=675245">
+ </A>
+Set this keyword to return the number of characters currently contained in the specified text widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680903">
+ </A>
+<A NAME="marker=675239">
+ </A>
+<A NAME="48029">
+ </A>
+TEXT_OFFSET_TO_XY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890104">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680886">
+ </A>
+<A NAME="marker=675246">
+ </A>
+Use this keyword to translate a text widget character offset into column and line form. The value of this keyword should be set to the character offset (an integer) to be translated. WIDGET_INFO returns a two-element integer array giving the column (element 0) and line (element 1) corresponding to the offset. If the offset specified is out of range, the array [-1,-1] is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680906">
+ </A>
+<A NAME="marker=675240">
+ </A>
+<A NAME="78096">
+ </A>
+TEXT_SELECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890109">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680907">
+ </A>
+<A NAME="marker=675247">
+ </A>
+Set this keyword to return the starting character offset and length (in characters) of the selected (highlighted) text in the specified text widget. WIDGET_INFO returns a two-element integer array containing the starting position of the highlighted text as an offset from character zero of the text in the widget (element 0), and length of the current selection (element 1).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680913">
+ </A>
+<A NAME="marker=675242">
+ </A>
+<A NAME="90924">
+ </A>
+TEXT_TOP_LINE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890119">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680915">
+ </A>
+<A NAME="marker=675249">
+ </A>
+Set this keyword to return the zero-based line number of the line currently at the top of a text widget's display viewport. Note that this value is different from the zero-based character offset of the characters in the line. The character offset can be calculated from the line offset via the TEXT_XY_TO_OFFSET keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=899965">
+ </A>
+<A NAME="marker=899963">
+ </A>
+<A NAME="15922">
+ </A>
+TEXT_XY_TO_OFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=899966">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=899968">
+ </A>
+<A NAME="marker=899967">
+ </A>
+Use this keyword to translate a text widget position given in line and column form into a character offset. The value of this keyword should be set to a two-element integer array specifying the column (element 0) and line (element 1) position. WIDGET_INFO returns the character offset (as a longword integer) corresponding to the position. If the position specified is out of range, -1 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=192881">
+ </A>
+<A NAME="marker=192883">
+ </A>
+<A NAME="33609">
+ </A>
+TLB_KILL_REQUEST_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890124">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl200.htm#51835" CLASS="XRef">
+WIDGET_BASE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=192882">
+ </A>
+Set this keyword to return 1 if the top-level base of the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+ is set to return kill request events. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58086">
+ </A>
+<A NAME="marker=58088">
+ </A>
+TRACKING_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889996">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=58087">
+ </A>
+<A NAME="marker=58089">
+ </A>
+Set his keyword to return the tracking events status for the widget specified by <I CLASS="Italic">
+Widget_ID</I>
+. WIDGET_INFO returns 1 if tracking events are currently enabled for the widget. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680072">
+ </A>
+<A NAME="marker=674718">
+ </A>
+TYPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889998">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=808523">
+ </A>
+<A NAME="marker=674719">
+ </A>
+Set this keyword to return the type code of the specified <I CLASS="Italic">
+Widget_ID</I>
+. Possible values are given in <A HREF="idl206.htm#17603" CLASS="XRef">
+Widget Type Codes</A>
+. Note that you can set the NAME keyword to return string names instead.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=58138">
+ </A>
+<A NAME="17603">
+ </A>
+Widget Type Codes</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=58102">
+ </A>
+Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=58104">
+ </A>
+Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58106">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58108">
+ </A>
+Base</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58110">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58112">
+ </A>
+Button</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58114">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58116">
+ </A>
+Slider</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58118">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58120">
+ </A>
+Text</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58122">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58124">
+ </A>
+Draw</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58126">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58128">
+ </A>
+Label</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58130">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58132">
+ </A>
+List</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58134">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=58136">
+ </A>
+Droplist</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=896005">
+ </A>
+9</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=896007">
+ </A>
+Table</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895579">
+ </A>
+<A NAME="marker=895578">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895580">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=895581">
+ </A>
+Use this keyword to specify the unit of measurement used when returning dimensions for most widget types. Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=895582">
+ </A>
+This keyword does not affect all sizing operations. Specifically, the value of UNITS is ignored when retrieving the XSIZE or YSIZE of a <A HREF="idl208.htm#52324" CLASS="XRef">
+WIDGET_LIST</A>
+, <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+, or <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+. </LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680371">
+ </A>
+<A NAME="marker=192887">
+ </A>
+UPDATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890000">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=891025">
+ </A>
+Set this keyword to return 1 if the widget hierarchy that contains <I CLASS="Italic">
+Widget_ID</I>
+ is set to display updates. Otherwise, 0 is returned. See <A HREF="idl202.htm#70549" CLASS="XRef">
+UPDATE</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=896009">
+ </A>
+<A NAME="marker=896012">
+ </A>
+<A NAME="81381">
+ </A>
+USE_TABLE_SELECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=896018">
+ </A>
+This keyword applies to widgets created with the <A HREF="idl20a.htm#35831" CLASS="XRef">
+WIDGET_TABLE</A>
+ function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=896010">
+ </A>
+Set this keyword to modify the behavior of the COLUMN_WIDTHS and ROW_HEIGHTS keywords. If USE_TABLE_SELECT is set, the COLUMN_WIDTHS and ROW_HEIGHTS keywords only apply to the currently-selected cells. Normally, these keywords apply to the entire contents of a table widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=896011">
+ </A>
+The USE_TABLE_SELECT keyword can also be specified as a four-element array, of the form [left, top, right, bottom], giving the group of cells to act on. In this usage, the value -1 is used to refer to the row or column titles. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=891030">
+ </A>
+<A NAME="marker=891029">
+ </A>
+VALID_ID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890002">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680372">
+ </A>
+<A NAME="marker=674722">
+ </A>
+Set this keyword to return 1 if <I CLASS="Italic">
+Widget_ID</I>
+ represents a currently-valid widget. Otherwise, 0 is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680373">
+ </A>
+<A NAME="marker=674723">
+ </A>
+VERSION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=890004">
+ </A>
+This keyword applies to all widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680374">
+ </A>
+<A NAME="marker=674724">
+ </A>
+Set this keyword to return a structure that gives information about the widget implementation. This structure has the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680375">
+ </A>
+{ WIDGET_VERSION, STYLE:'', TOOLKIT:'', RELEASE:'' }</P>
+<P CLASS="Body">
+<A NAME="pgfId=680376">
+ </A>
+<CODE CLASS="Code">
+STYLE</CODE>
+ is the style of widget toolkit used. <CODE CLASS="Code">
+TOOLKIT</CODE>
+ is the implementation of the toolkit. <CODE CLASS="Code">
+RELEASE</CODE>
+ is the version level of the toolkit. This field can be used to distinguish between different releases of a given toolkit, such as Motif 1.0 and Motif 1.1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36312">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890881">
+ </A>
+<A HREF="..html#36829" CLASS="XRef">
+Widgets</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SORT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678938">
+ </A>
+<A NAME="59536">
+ </A>
+SORT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678939">
+ </A>
+The <A NAME="marker=673910">
+ </A>
+SORT <A NAME="marker=50105">
+ </A>
+function returns a vector of subscripts that allow access to the elements of <I CLASS="Italic">
+Array</I>
+ in ascending order. The result is always a vector of longword type with the same number of elements as <I CLASS="Italic">
+Array</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678940">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678941">
+ </A>
+Result = SORT(<I CLASS="Italic">
+Array</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678942">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678943">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678944">
+ </A>
+The array to be sorted. <I CLASS="Italic">
+Array</I>
+ can be any basic type of vector or array. String arrays are sorted using the ASCII collating sequence. Complex arrays are sorted by their magnitude.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678945">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=722639">
+ </A>
+To illustrate, assume the vector A contains the elements [4, 3, 7, 1, 2]. Then:</P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=798121">
+ </A>
+SORT(A) = [3, 4, 1, 0, 2]</P>
+<P CLASS="Body">
+<A NAME="pgfId=678947">
+ </A>
+because:</P>
+<P CLASS="Body">
+<A NAME="pgfId=678948">
+ </A>
+A[3] &lt; A[4] &lt; A[1] &lt; A[0] &lt; A[2]</P>
+<P CLASS="Body">
+<A NAME="pgfId=678949">
+ </A>
+To see the elements of A in sorted order use the expression enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678950">
+ </A>
+PRINT, A(SORT(A))</P>
+<P CLASS="Body">
+<A NAME="pgfId=678951">
+ </A>
+which prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=678952">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; 7</P>
+<P CLASS="Body">
+<A NAME="pgfId=678953">
+ </A>
+To obtain the elements in descending order enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678954">
+ </A>
+PRINT, A(REVERSE(SORT(A)))</P>
+<P CLASS="Body">
+<A NAME="pgfId=678955">
+ </A>
+which prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=678956">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 1</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820983">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820984">
+ </A>
+<A HREF="idl1ef.htm#77828" CLASS="XRef">
+UNIQ</A>
+, <A HREF="idl1ff.htm#76802" CLASS="XRef">
+WHERE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

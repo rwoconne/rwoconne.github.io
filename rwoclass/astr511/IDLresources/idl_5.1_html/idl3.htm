@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ACOS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=908067">
+ </A>
+<A NAME="70015">
+ </A>
+ACOS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=861765">
+ </A>
+The <A NAME="marker=861763">
+ </A>
+ACOS function returns the <A NAME="marker=861764">
+ </A>
+angle, expressed in radians, whose cosine is <I CLASS="Italics">
+X</I>
+ (i.e., the arc-cosine). The range of ACOS is between 0 and <EM CLASS="MathSymbol">
+p</EM>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675697">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675698">
+ </A>
+Result = ACOS(<I CLASS="Italics">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675699">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=809512">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=809513">
+ </A>
+The cosine of the desired angle in the range (-1 <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+X</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ 1). If <I CLASS="Italics">
+X</I>
+ is double-precision floating, the result of ACOS is also double-precision. <I CLASS="Italics">
+X</I>
+ cannot be complex. All other types are converted to single-precision floating-point and yield floating-point results. If <I CLASS="Italics">
+X</I>
+ is an array, the result has the same structure, with each element containing the <A NAME="marker=809514">
+ </A>
+arc-cosine of the corresponding element of <I CLASS="Italics">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=767353">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675703">
+ </A>
+To find the arc-cosine of 0.707 and store the result in the variable B, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675704">
+ </A>
+B = ACOS(0.707)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=767359">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=767360">
+ </A>
+<A HREF="idl46.htm#64259" CLASS="XRef">
+COS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

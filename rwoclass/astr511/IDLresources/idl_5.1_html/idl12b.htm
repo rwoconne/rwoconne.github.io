@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> OBJ_VALID</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl12c.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl12a.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889488">
+ </A>
+<EM CLASS="Bold">
+OBJ_VALID</EM>
+<A NAME="20524">
+ </A>
+</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889494">
+ </A>
+The <A NAME="marker=889492">
+ </A>
+OBJ_VALID function verifies the validity of its argument <A NAME="marker=889493">
+ </A>
+object references, or alternatively returns a vector of references to all the existing valid objects.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889495">
+ </A>
+If called with an argument, OBJ_VALID returns a byte array of the same size as the argument. Each element of the result is set to True (1) if the corresponding object reference in the argument refers to an existing object, and False (0) otherwise.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889496">
+ </A>
+If called with an integer or array of integers as its argument and the CAST keyword is set, OBJ_VALID returns an array of object references. Each element of the result is a reference to the heap variable indexed by the integer value. Integers used to index heap variables are shown in the output of the HELP and PRINT commands. This is useful primarily in programming/debugging when the you have lost a reference but see it with HELP and need to get a reference to it interactively in order to determine what it is and take steps to fix the code. See the &quot;Examples&quot; section below for an example.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889497">
+ </A>
+If no argument is specified, OBJ_VALID returns a vector of references to all existing valid objects. If no valid objects exist, a scalar null object reference is returned. </P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889498">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889499">
+ </A>
+Result = OBJ_VALID([<I CLASS="Italic">
+Arg</I>
+])</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889500">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889501">
+ </A>
+Arg</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889502">
+ </A>
+Scalar or array argument of object reference type.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889503">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889505">
+ </A>
+<A NAME="marker=889504">
+ </A>
+CAST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889506">
+ </A>
+Set this keyword equal to an integer that indexes a heap variable to create a new pointer to that heap variable. Integers used to index heap variables are shown in the output of the HELP and PRINT commands. This is useful primarily in programming/debugging when the you have lost a reference but see it with HELP and need to get a reference to it interactively in order to determine what it is and take steps to fix the code. See the &quot;Examples&quot; section below for an example.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889508">
+ </A>
+<A NAME="marker=889507">
+ </A>
+COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889509">
+ </A>
+Set this keyword equal to a named variable that will contain the number of currently valid objects. This value is returned as a longword integer.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889510">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889511">
+ </A>
+To determine if a given object reference refers to a valid heap variable</P>
+<P CLASS="Code">
+<A NAME="pgfId=889512">
+ </A>
+IF (OBJ_VALID(obj)) THEN ...</P>
+<P CLASS="Body">
+<A NAME="pgfId=889513">
+ </A>
+To destroy all existing pointer heap variables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889514">
+ </A>
+OBJ_DESTROY, OBJ_VALID()</P>
+<P CLASS="Body">
+<A NAME="pgfId=889515">
+ </A>
+You can use the CAST keyword to &quot;reclaim&quot; lost object references. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889516">
+ </A>
+junk = {junk, data1:0, data2:0.0}	<EM CLASS="Comment">;
+Create a class structure.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889517">
+ </A>
+A = OBJ_NEW('junk')	<EM CLASS="Comment">;
+Create an object.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889518">
+ </A>
+PRINT, A	<EM CLASS="Emphasis">
+Find the integer index.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=889519">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=889520">
+ </A>
+&lt;ObjHeapVar3(JUNK)&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=889521">
+ </A>
+In this case, the integer index to the heap variable is 3. If we reassign the variable A, we will &quot;lose&quot; the object reference, but the heap variable will still exist:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889522">
+ </A>
+A = 0	<EM CLASS="Comment">;
+Lose the object reference.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889523">
+ </A>
+PRINT, A, OBJ_VALID()</P>
+<P CLASS="Body">
+<A NAME="pgfId=889524">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=889525">
+ </A>
+0 &lt;ObjHeapVar3(JUNK)&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=889526">
+ </A>
+We can reclaim the lost heap variable using the CAST keyword:</P>
+<P CLASS="Code">
+<A NAME="pgfId=889527">
+ </A>
+A = OBJ_VALID(3, /CAST)	<EM CLASS="Comment">;
+Reclaim the reference.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=889528">
+ </A>
+PRINT, A</P>
+<P CLASS="Body">
+<A NAME="pgfId=889529">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=889530">
+ </A>
+&lt;ObjHeapVar3(JUNK)&gt;</P>
+<P CLASS="Body">
+<A NAME="pgfId=889531">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> INT_2D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=750182">
+ </A>
+<A NAME="70083">
+ </A>
+INT_2D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=750186">
+ </A>
+The <A NAME="marker=750183">
+ </A>
+INT_2D function computes the double <A NAME="marker=750184">
+ </A>
+integral of a bivariate function using <A NAME="marker=750185">
+ </A>
+iterated Gaussian quadrature. The algorithm's transformation data is provided in tabulated form with 15 decimal accuracy.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754715">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+int_2d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750188">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=826297">
+ </A>
+Result = INT_2D(<EM CLASS="Emphasis">
+Fxy, AB_Limits, PQ_Limits, Pts</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=826298">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=826299">
+ </A>
+Fxy</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750192">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the bivariate function to be integrated. The function must accept X and Y and return a scalar result.</P>
+<P CLASS="Body">
+<A NAME="pgfId=750196">
+ </A>
+For example, if we wish to integrate the following function:</P>
+<DIV>
+<CENTER><IMG SRC="idl_55.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=828341">
+ </A>
+We define a function FXY to express this relationship in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750199">
+ </A>
+FUNCTION fxy, X, Y</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750200">
+ </A>
+&nbsp;&nbsp;RETURN, EXP(-X^2. -Y^2.)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750201">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750202">
+ </A>
+AB_Limits</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750203">
+ </A>
+A two-element vector containing the lower (A) and upper (B) limits of integration with respect to the variable <EM CLASS="Emphasis">
+x</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750204">
+ </A>
+PQ_Limits</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750205">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the lower (P(<EM CLASS="Emphasis">
+x</EM>
+)) and upper (Q(<EM CLASS="Emphasis">
+x</EM>
+)) limits of integration with respect to the variable <EM CLASS="Emphasis">
+y</EM>
+. The function must accept <EM CLASS="Emphasis">
+x</EM>
+ and return a two-element vector result. </P>
+<P CLASS="Body">
+<A NAME="pgfId=750206">
+ </A>
+For example, we might write the following IDL function to represent the limits of integration with respect to <EM CLASS="Emphasis">
+y</EM>
+:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750207">
+ </A>
+FUNCTION PQ_limits, X</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750208">
+ </A>
+&nbsp;&nbsp;RETURN, [-SQRT(16.0 - X^2), SQRT(16.0 - X^2)]</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750209">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750210">
+ </A>
+Pts</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750211">
+ </A>
+The number of transformation points used in the computation. Possible values are: 6, 10, 20, 48, or 96.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750212">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=832191">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=813282">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=813280">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=832195">
+ </A>
+A scalar value of either 0 or 1. If set to 0, the integral is computed using a dx-dy order of integration. If set to 1, the integral is computed using a dx-dy order of integration.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832194">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750216">
+ </A>
+Compute the double integral of the bivariate function. </P>
+<DIV>
+<CENTER><IMG SRC="idl_56.gif" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=828347">
+ </A>
+function PQ_Limits, x</P>
+<P CLASS="Code">
+<A NAME="pgfId=832202">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;return, [0.0, x^2]</P>
+<P CLASS="Code">
+<A NAME="pgfId=832203">
+ </A>
+end	<EM CLASS="Comment">;
+Define the limits of integration for y as a function of x.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=832208">
+ </A>
+AB_Limits = [0.0, 2.0]	<EM CLASS="Comment">;
+Define limits of integration for x.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=832197">
+ </A>
+Using the function and limits defined above, integrate with 48 and 96 point formulas using a dy-dx order of integration and double-precision arithmetic:</P>
+<P CLASS="Code">
+<A NAME="pgfId=750228">
+ </A>
+PRINT, INT_2D('Fxy', AB_Limits, 'PQ_Limits', 48, /DOUBLE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=841155">
+ </A>
+PRINT, INT_2D('Fxy', AB_Limits, 'PQ_Limits', 96, /DOUBLE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=841156">
+ </A>
+INT_2D with 48 transformation points yields: 0.055142668</P>
+<P CLASS="Body">
+<A NAME="pgfId=841157">
+ </A>
+INT_2D with 96transformation points yields: 0.055142668</P>
+<P CLASS="Body">
+<A NAME="pgfId=832245">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=832257">
+ </A>
+Compute the double integral of the bivariate function. </P>
+<DIV>
+<CENTER><IMG SRC="idl_57.gif" BORDER=0>
+</DIV>
+<P CLASS="Code">
+<A NAME="pgfId=832248">
+ </A>
+function PQ_Limits, y</P>
+<P CLASS="Code">
+<A NAME="pgfId=832249">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;return, [sqrt(y), 2.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=832250">
+ </A>
+end	<EM CLASS="Comment">;
+Define the limits of integration for y as a function of x.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=832251">
+ </A>
+AB_Limits = [0.0, 4.0]	<EM CLASS="Comment">;
+Define limits of integration for x.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=832252">
+ </A>
+Using the function and limits defined above, integrate with 48 and 96 point formulas using a dy-dx order of integration and double-precision arithmetic:</P>
+<P CLASS="Code">
+<A NAME="pgfId=832253">
+ </A>
+PRINT, INT_2D('Fxy', AB_Limits, 'PQ_Limits', 48, /DOUBLE, /ORDER)</P>
+<P CLASS="Code">
+<A NAME="pgfId=832254">
+ </A>
+PRINT, INT_2D('Fxy', AB_Limits, 'PQ_Limits', 96, /DOUBLE, ORDER)</P>
+<P CLASS="Body">
+<A NAME="pgfId=832255">
+ </A>
+INT_2D with 48 transformation points yields: 	0.055142678</P>
+<P CLASS="Body">
+<A NAME="pgfId=832256">
+ </A>
+INT_2D with 96 transformation points yields: 	0.055142668</P>
+<P CLASS="Body">
+<A NAME="pgfId=832239">
+ </A>
+The exact solution (7 decimal accuracy) is:	0.055142668</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=832240">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822565">
+ </A>
+<A HREF="idld5.htm#74581" CLASS="XRef">
+INT_3D</A>
+, <A HREF="idld6.htm#51833" CLASS="XRef">
+INT_TABULATED</A>
+, <A HREF="idl158.htm#72956" CLASS="XRef">
+QROMB</A>
+, <A HREF="idl159.htm#31379" CLASS="XRef">
+QROMO</A>
+, <A HREF="idl15a.htm#21978" CLASS="XRef">
+QSIMP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

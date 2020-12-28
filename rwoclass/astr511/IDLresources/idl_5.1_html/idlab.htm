@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FSTAT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlac.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlaa.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676968">
+ </A>
+<A NAME="25809">
+ </A>
+FSTAT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676969">
+ </A>
+The <A NAME="marker=673040">
+ </A>
+FSTAT function returns a structure expression of type FSTAT containing status information about a specified <A NAME="marker=673041">
+ </A>
+file unit. The contents of this structure are documented in <A HREF="..html#40320" CLASS="XRef">
+The FSTAT Function</A>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676970">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676971">
+ </A>
+Result = FSTAT(<I CLASS="Italics">
+Unit</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676972">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676973">
+ </A>
+Unit</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676974">
+ </A>
+The file unit about which information is required. This parameter can be an integer or an associated variable, in which case information about the variable's associated file is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676975">
+ </A>
+Fields of the <A NAME="marker=673048">
+ </A>
+FSTAT Structure</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676976">
+ </A>
+The following descriptions are of <I CLASS="Italics">
+fields</I>
+ in the structure returned by the FSTAT function. They are <I CLASS="Italics">
+not</I>
+ keywords to FSTAT.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676977">
+ </A>
+UNIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676978">
+ </A>
+The IDL logical unit number (LUN).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676979">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676980">
+ </A>
+The name of the file.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676981">
+ </A>
+OPEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676982">
+ </A>
+Nonzero if the file unit is open. If OPEN is zero, the remaining fields in FSTAT will not contain useful information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676983">
+ </A>
+ISATTY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676984">
+ </A>
+Nonzero if the file is actually a terminal instead of a normal file. For example, if you are using an <CODE CLASS="Code">
+xterm</CODE>
+ window on a Unix system and you invoke FSTAT on logical unit 0 (standard input), ISATTY will be set to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47263">
+ </A>
+ISAGUI</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47264">
+ </A>
+Nonzero if the file is actually a Graphical User Interface (for example, a logical unit associated with the IDL Development Environment). Thus, if you are using the IDLDE and you invoke FSTAT on logical unit 0 (standard input), ISAGUI will be set to 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47265">
+ </A>
+INTERACTIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=47266">
+ </A>
+Nonzero if <EM CLASS="Emphasis">
+either</EM>
+ ISATTY or ISAGUI is nonzero.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676985">
+ </A>
+READ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676986">
+ </A>
+Nonzero if the file is open for read access.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676987">
+ </A>
+WRITE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676988">
+ </A>
+Nonzero if the file is open for write access.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676989">
+ </A>
+TRANSFER_COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676990">
+ </A>
+The number of scalar IDL data items transferred in the last input/output operation on the unit. This is set by the following IDL routines: READU, WRITEU, PRINT, PRINTF, READ, and READF. TRANSFER_COUNT is useful when attempting to recover from input/output errors.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676991">
+ </A>
+CUR_PTR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676992">
+ </A>
+The current position of the <A NAME="marker=673059">
+ </A>
+file pointer, given in bytes from the start of the file. If the device is a terminal (ISATTY is nonzero), the value of CUR_PTR will not contain useful information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676993">
+ </A>
+SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676994">
+ </A>
+The current length of the <A NAME="marker=673060">
+ </A>
+file in bytes. If the device is a terminal (ISATTY is nonzero), the value of SIZE will not contain useful information.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=835823">
+ </A>
+VMS variable length records have a 2-byte record-length descriptor at the beginning of each record. Because the SIZE field contains the length of the data file <EM CLASS="Emphasis">
+including</EM>
+ the record descriptors, reading a file with VMS variable length records into a byte array of the size returned by FSTAT will result in an RMS EOF error.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676995">
+ </A>
+REC_LEN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676996">
+ </A>
+If the file is record-oriented (VMS), this field contains the <A NAME="marker=673061">
+ </A>
+record length; otherwise, it is zero.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676997">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676998">
+ </A>
+If file unit number 1 is open, the FSTAT information on that unit can be seen by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676999">
+ </A>
+PRINT, FSTAT(1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=677000">
+ </A>
+Specific information can be obtained by referring to single fields within the structure returned by FSTAT. The following code prints the name and length of the file open on unit 1:</P>
+<P CLASS="Code">
+<A NAME="pgfId=677001">
+ </A>
+A = FSTAT(1)	<EM CLASS="Comment">;
+Put FSTAT information in variable A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=677002">
+ </A>
+PRINT, 'File: ', A.NAME, ' is ', A.SIZE, ' bytes long.'<BR>
+<EM CLASS="Comment">;
+Print the name and size fields.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=822934">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822935">
+ </A>
+<A HREF="idlc.htm#76025" CLASS="XRef">
+ASSOC</A>
+, <A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

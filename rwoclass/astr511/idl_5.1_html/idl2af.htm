@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_SETEXTFILE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2b0.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2ae.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999256">
+ </A>
+<A NAME="48072">
+ </A>
+HDF_SD_SETEXTFILE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999259">
+ </A>
+The <A NAME="marker=999258">
+ </A>
+HDF_SD_SETEXTFILE procedure moves data values from a dataset into an external file. Only the data is moved, all other information remains in the original file. This routine can only be used with HDF version 3.3 (and later) files, not on older HDF files or NetCDF files. Data can only be moved once, and the user must keep track of the external file(s). The OFFSET keyword allows writing to an arbitrary location in the external file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999260">
+ </A>
+As shown in the example, when adding data to an external file SD, you <I CLASS="Italics">
+must</I>
+ first use HDF_SD_ENDACCESS to sync the file, then reacquire the SDS ID with HDF_SD_SELECT before using HDF_SD_SETEXTFILE.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999261">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999262">
+ </A>
+HDF_SD_SETEXTFILE, <I CLASS="Italics">
+SDS_ID, Filename</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999263">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999264">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999265">
+ </A>
+An SD dataset ID as returned by HDF_SD_SELECT.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999266">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999267">
+ </A>
+The name of the external file to be written.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999268">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999269">
+ </A>
+OFFSET</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999270">
+ </A>
+Set this keyword to a number of bytes from the beginning of the external file at which data writing should begin. Exercise extreme caution when using this keyword with existing files.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999271">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999272">
+ </A>
+sd_id = HDF_SD_START('ext_main.hdf', /CREATE)<BR>
+<EM CLASS="Comment">;
+Create an HDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999273">
+ </A>
+sds_id = HDF_SD_CREATE(sd_id, 'float_findgen', [3,5], /FLOAT)<BR>
+<EM CLASS="Comment">;
+Add an SD.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999274">
+ </A>
+HDF_SD_ADDDATA, sds_id, FINDGEN(3,5)	<EM CLASS="Comment">;
+Put some data into the SD.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999275">
+ </A>
+HDF_SD_ENDACCESS,sds_id	<EM CLASS="Comment">;
+Call HDF_SD_ENDACCESS to sync the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999276">
+ </A>
+sds_id = HDF_SD_SELECT(sd_id, 0)	<EM CLASS="Comment">;
+Reacquire the SDS_ID.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999277">
+ </A>
+HDF_SD_SETEXTFILE, sds_id, 'findgen.hdf'<BR>
+<EM CLASS="Comment">;
+Move data to an external file named </EM>
+findgen.hdf.</P>
+<P CLASS="Code">
+<A NAME="pgfId=999278">
+ </A>
+HDF_SD_GETDATA, sds_id, fout	<EM CLASS="Comment">;
+Retrieve data from the external file into the variable </EM>
+fout.</P>
+<P CLASS="Code">
+<A NAME="pgfId=999279">
+ </A>
+PRINT, fout	<EM CLASS="Comment">;
+Print the contents of fout.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=999280">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999281">
+ </A>
+0.00000 1.00000 2.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999282">
+ </A>
+3.00000 4.00000 5.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999283">
+ </A>
+6.00000 7.00000 8.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999284">
+ </A>
+9.00000 10.0000 11.0000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=999285">
+ </A>
+12.0000 13.0000 14.0000</P>
+<P CLASS="Code">
+<A NAME="pgfId=999286">
+ </A>
+HDF_SD_ENDACCESS, sds_id	<EM CLASS="Comment">;
+Sync and close the files.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=999287">
+ </A>
+HDF_SD_END, sd_id</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999288">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999301">
+ </A>
+<A HREF="idl2a5.htm#18397" CLASS="XRef">
+HDF_SD_END</A>
+, <A HREF="idl2a6.htm#78622" CLASS="XRef">
+HDF_SD_ENDACCESS</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+, <A HREF="idl2b1.htm#92639" CLASS="XRef">
+HDF_SD_START</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

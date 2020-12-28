@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> M_CORRELATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl10a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl108.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887243">
+ </A>
+<A NAME="43333">
+ </A>
+M_CORRELATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887251">
+ </A>
+The <A NAME="marker=887246">
+ </A>
+M_CORRELATE <A NAME="marker=887247">
+ </A>
+function computes the <A NAME="marker=887248">
+ </A>
+multiple <A NAME="marker=887249">
+ </A>
+correlation <A NAME="marker=887250">
+ </A>
+coefficient of a dependent variable and two or more independent variables.</P>
+<P CLASS="Body">
+<A NAME="pgfId=887252">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+m_correlate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887253">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887254">
+ </A>
+Result = M_CORRELATE(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887255">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887256">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887257">
+ </A>
+An integer, single-, or double-precision floating-point array of <EM CLASS="Emphasis">
+m</EM>
+-columns and <EM CLASS="Emphasis">
+n</EM>
+-rows that specifies the independent variable data. The columns of this two dimensional array correspond to the <EM CLASS="Emphasis">
+n</EM>
+-element vectors of independent variable data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887258">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887259">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector that specifies the dependent variable data.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887260">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887261">
+ </A>
+Define the independent (X) and dependent (Y) data.</P>
+<P CLASS="Code">
+<A NAME="pgfId=887262">
+ </A>
+X = [[0.477121, 2.0, 13.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887263">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.477121, 5.0, 6.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887264">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.301030, 5.0, 9.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887265">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.000000, 7.0, 5.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887266">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.602060, 3.0, 7.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887267">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.698970, 2.0, 9.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887268">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.301030, 2.0, 17.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887269">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.477121, 5.0, 12.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887270">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.698970, 2.0, 13.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887271">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.000000, 3.0, 12.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887272">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.602060, 4.0, 13.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887273">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.301030, 6.0, 7.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887274">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.301030, 2.0, 7.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887275">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.698970, 3.0, 12.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887276">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.000000, 4.0, 14.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887277">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.698970, 6.0, 11.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887278">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.301030, 2.0, 15.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887279">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.602060, 6.0, 8.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887280">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.477121, 7.0, 14.5], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887281">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.000000, 5.0, 9.5]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=887282">
+ </A>
+Y = [97.682, 98.424, 101.435, 102.266, 97.067, 97.397, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887283">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99.481, 99.613, 96.901, 100.152, 98.797, 100.796, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887284">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;98.750, 97.991, 100.007, 98.615, 100.225, 98.388, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=887285">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;98.937, 100.617]</P>
+<P CLASS="Body">
+<A NAME="pgfId=887286">
+ </A>
+Compute the multiple correlation of Y on the first column of X. The result should be 0.798816.</P>
+<P CLASS="Code">
+<A NAME="pgfId=887287">
+ </A>
+PRINT, M_CORRELATE(X[0,*], Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=887288">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=887289">
+ </A>
+0.798816</P>
+<P CLASS="Body">
+<A NAME="pgfId=887290">
+ </A>
+Compute the multiple correlation of Y on the first two columns of X. The result should be 0.875872.</P>
+<P CLASS="Code">
+<A NAME="pgfId=887291">
+ </A>
+PRINT, M_CORRELATE(X[0:1,*], Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=887292">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=887293">
+ </A>
+0.875872</P>
+<P CLASS="Body">
+<A NAME="pgfId=887294">
+ </A>
+Compute the multiple correlation of Y on all columns of X. The result should be 0.877197.</P>
+<P CLASS="Code">
+<A NAME="pgfId=887295">
+ </A>
+PRINT, M_CORRELATE(X, Y)</P>
+<P CLASS="Body">
+<A NAME="pgfId=887296">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=887297">
+ </A>
+0.877197</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887298">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887314">
+ </A>
+<A HREF="idl1.htm#71421" CLASS="XRef">
+A_CORRELATE</A>
+, <A HREF="idl45.htm#13574" CLASS="XRef">
+CORRELATE</A>
+, <A HREF="idl21.htm#28107" CLASS="XRef">
+C_CORRELATE</A>
+, <A HREF="idl133.htm#76534" CLASS="XRef">
+P_CORRELATE</A>
+, <A HREF="idl15b.htm#46692" CLASS="XRef">
+R_CORRELATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

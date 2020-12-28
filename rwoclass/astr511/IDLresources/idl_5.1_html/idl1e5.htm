@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRNLOG</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679642">
+ </A>
+<A NAME="79758">
+ </A>
+TRNLOG</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679643">
+ </A>
+The <A NAME="marker=674186">
+ </A>
+TRNLOG function searches the <A NAME="marker=674187">
+ </A>
+VMS logical name tables for a specified logical name and returns the <A NAME="marker=674188">
+ </A>
+equivalence string(s) in an IDL variable. TRNLOG is available only under VMS. TRNLOG also returns the VMS status code associated with the translation as a longword value. As with all VMS status codes, success is indicated by an odd value (least significant bit is set) and failure by an even value.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679644">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679645">
+ </A>
+Result = TRNLOG(<I CLASS="Italic">
+Lognam, Value</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679646">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679647">
+ </A>
+Lognam</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679648">
+ </A>
+A scalar string containing the name of the logical to be translated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679649">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679650">
+ </A>
+A named variable into which the equivalence string is placed. If Lognam has more than one equivalence string, the first one is used. The FULL_TRANSLATION keyword can be used to obtain all equivalence strings.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679651">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679652">
+ </A>
+<A NAME="marker=674192">
+ </A>
+ACMODE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=808292">
+ </A>
+The access mode to be used in the translation. The possible access modes are:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=808289">
+ </A>
+TRNLOG Access Modes</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=808269">
+ </A>
+Mode</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=808271">
+ </A>
+Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808273">
+ </A>
+Kernal</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808275">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808277">
+ </A>
+Executive</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808279">
+ </A>
+1</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808281">
+ </A>
+Supervisor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808283">
+ </A>
+2</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808285">
+ </A>
+User</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=808287">
+ </A>
+3</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=679653">
+ </A>
+When you specify the ACMODE keyword, all names at access modes less privileged than the specified mode are ignored. If you do not specify ACMODE, the translation proceeds without regard to access mode. However, the search proceeds from the outermost (User) to the innermost (Kernal) mode. Thus, if two logical names with the same name but different access modes exist in the same table, the name with the outermost access mode is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679654">
+ </A>
+<A NAME="marker=674195">
+ </A>
+FULL_TRANSLATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679655">
+ </A>
+Set this keyword to obtain the full set of <A NAME="marker=674196">
+ </A>
+equivalence strings for <I CLASS="Italic">
+Lognam</I>
+. By default, when translating a multivalued logical name, <I CLASS="Italic">
+Value</I>
+ only receives the first equivalence string as a scalar value. When this keyword is set, <I CLASS="Italic">
+Value</I>
+ instead returns a string array. Each element of this array contains one of the equivalence strings. For example, under recent versions of VMS, the SYS$SYSROOT logical can have multiple values. To see these values from within IDL, enter:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679656">
+ </A>
+ret = TRNLOG('SYS$SYSROOT', trans, /FULL, /ISSUE_ERROR)<BR>
+<EM CLASS="Comment">;
+Translate the logical.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=679657">
+ </A>
+PRINT, trans	<EM CLASS="Comment">;
+View the equivalence strings.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679658">
+ </A>
+<A NAME="marker=674200">
+ </A>
+ISSUE_ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679659">
+ </A>
+Set this keyword to issue an error message if the translation fails. Normally, no error is issued and the user must examine the return value to determine if the operation failed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679660">
+ </A>
+<A NAME="marker=674201">
+ </A>
+RESULT_ACMODE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679661">
+ </A>
+If present, this keyword specifies a named variable in which to place the access mode of the translated logical. The access modes are summarized above.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679662">
+ </A>
+<A NAME="marker=674202">
+ </A>
+RESULT_TABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679663">
+ </A>
+If present, this keyword specifies a named variable. The name of the logical table containing the translated logical is placed in this variable as a scalar string.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679664">
+ </A>
+<A NAME="marker=674203">
+ </A>
+TABLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679665">
+ </A>
+A scalar string giving the name of the logical table in which to search for <I CLASS="Italic">
+Lognam</I>
+. If TABLE is not specified, the standard <A NAME="marker=674204">
+ </A>
+VMS logical tables are searched until a match is found, starting with LNM$PROCESS_TABLE and ending with LNM$SYSTEM_TABLE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=948833">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=948834">
+ </A>
+<A HREF="idlbc.htm#28024" CLASS="XRef">
+GETENV</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

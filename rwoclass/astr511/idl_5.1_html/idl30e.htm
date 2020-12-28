@@ -1,0 +1,644 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TrackBall</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="none" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl30d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1164759">
+ </A>
+<A NAME="31705">
+ </A>
+TrackBall</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1164761">
+ </A>
+A <A NAME="marker=1165095">
+ </A>
+TrackBall object translates widget events from a draw widget (created with the WIDGET_DRAW function) into transformations that emulate a virtual trackball (for transforming object graphics in three dimensions).</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164762">
+ </A>
+This object class is implemented in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+trackball__define.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1164763">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164764">
+ </A>
+This class has no superclasses.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1164765">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164766">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164767">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164774">
+ </A>
+See <A HREF="idl30e.htm#39383" CLASS="XRef">
+TrackBall::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164775">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164776">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164777">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164784">
+ </A>
+<A HREF="idl30e.htm#39383" CLASS="XRef">
+TrackBall::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164791">
+ </A>
+<A HREF="idl30e.htm#28259" CLASS="XRef">
+Trackball::Reset</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164798">
+ </A>
+<A HREF="idl30e.htm#23806" CLASS="XRef">
+TrackBall::Update</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164799">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164800">
+ </A>
+The example code below provides a skeleton for a widget-based application that uses the TrackBall object to interactively change the orientation of graphics.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164801">
+ </A>
+Create a trackball centered on a 512x512 pixel drawable area, and a view containing the model to be manipulated:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164802">
+ </A>
+xdim = 512</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164803">
+ </A>
+ydim = 512</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164804">
+ </A>
+wBase = WIDGET_BASE()</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164805">
+ </A>
+wDraw = WIDGET_DRAW(wBase, XSIZE=xdim, YSIZE=ydim, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164806">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;GRAPHICS_LEVEL=2, /BUTTON_EVENTS, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164807">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/MOTION_EVENTS, /EXPOSE_EVENTS, RETAIN=0 )</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164808">
+ </A>
+WIDGET_CONTROL, wBase, /REALIZE</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164809">
+ </A>
+WIDGET_CONTROL, wDraw, GET_VALUE=oWindow</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164810">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164811">
+ </A>
+oTrackball = OBJ_NEW('Trackball', [xdim/2.,ydim/2.], xdim/2.)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164812">
+ </A>
+oView = OBJ_NEW('IDLgrView')</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164813">
+ </A>
+oModel = OBJ_NEW('IDLgrModel')</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164814">
+ </A>
+oView-&gt;Add, oModel</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164815">
+ </A>
+XMANAGER, 'TrackEx', wBase</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164816">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164817">
+ </A>
+You must handle the trackball updates in the widget event-handling code. As the trackball transformation changes, update the transformation for the model object, and redraw the view:</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164818">
+ </A>
+&nbsp;</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164819">
+ </A>
+PRO TrackEx_Event, sEvent</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164820">
+ </A>
+...</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164821">
+ </A>
+bHaveXform = oTrackball-&gt;Update( sEvent, TRANSFORM=TrackXform )</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164822">
+ </A>
+IF (bHaveXform) THEN BEGIN</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164823">
+ </A>
+oModel-&gt;GetProperty, TRANSFORM=ModelXform</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164824">
+ </A>
+oModel-&gt;SetProperty, TRANSFORM=ModelXform # TrackXform</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164825">
+ </A>
+oWindow-&gt;Draw, oView</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164826">
+ </A>
+ENDIF</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164827">
+ </A>
+...</P>
+<P CLASS="Code">
+<A NAME="pgfId=1164828">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164829">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164832">
+ </A>
+For a complete example, see the file <CODE CLASS="Code">
+surf_track.pro</CODE>
+<A NAME="marker=1164831">
+ </A>
+, located in the <CODE CLASS="Code">
+object</CODE>
+ subdirectory of the <CODE CLASS="Code">
+examples</CODE>
+ directory of the IDL distribution. The SURF_TRACK procedure uses IDL widgets to create a graphical user interface to an object tree, creates a surface object from user-specified data (or from default data, if none is specified), and places the surface object in an IDL draw widget. The SURF_TRACK interface allows the user to specify several attributes of the object hierarchy via pulldown menus. </P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1164834">
+ </A>
+<A NAME="39383">
+ </A>
+TrackBall::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164839">
+ </A>
+The TrackBall::<A NAME="marker=1165096">
+ </A>
+Init function method initializes the TrackBall object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30e.htm#31705" CLASS="XRef">
+TrackBall</A>
+ </STRONG>
+is described above.</P>
+TrackBall</A>
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164843">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164844">
+ </A>
+Obj = OBJ_NEW('TrackBall', <I CLASS="Italic">
+Center</I>
+, <I CLASS="Italic">
+Radius</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164845">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164846">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[TrackBall::]</EM>
+Init(<EM CLASS="Emphasis">
+Center, Radius</EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164847">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164848">
+ </A>
+Center</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164849">
+ </A>
+A two-dimensional vector, [<I CLASS="Italic">
+X</I>
+, <I CLASS="Italic">
+Y</I>
+], specifying the center coordinates of the trackball. <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ should be specified in device units.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164850">
+ </A>
+Radius</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164851">
+ </A>
+The radius of the trackball, specified in device units.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164852">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164854">
+ </A>
+<A NAME="marker=1164853">
+ </A>
+AXIS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164855">
+ </A>
+Set this keyword to an integer value to indicate the axis about which rotations are to be constrained if the CONSTRAIN keyword is set. Valid values include:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164856">
+ </A>
+0 = Rotate only around the <I CLASS="Italic">
+X</I>
+ axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164857">
+ </A>
+1 = Rotate only around the <I CLASS="Italic">
+Y</I>
+ axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164858">
+ </A>
+2 = Rotate only around the <I CLASS="Italic">
+Z</I>
+ axis (this is the default).</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164860">
+ </A>
+<A NAME="marker=1164859">
+ </A>
+CONSTRAIN</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164861">
+ </A>
+Set this keyword to indicate that the trackball transformations are to be constrained about the axis specified by the AXIS keyword. The default is not to constrain the transformations.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164863">
+ </A>
+<A NAME="marker=1164862">
+ </A>
+MOUSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164864">
+ </A>
+Set this keyword to a bitmask to indicate which mouse button to honor for trackball events. The least significant bit represents the leftmost button, the next highest bit represents the middle button, and the next highest bit represents the right button. The default is 1b, for the left mouse button.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1164866">
+ </A>
+<A NAME="28259">
+ </A>
+Trackball::Reset</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164871">
+ </A>
+The TrackBall::<A NAME="marker=1165097">
+ </A>
+Reset procedure method resets the state of the TrackBall object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30e.htm#31705" CLASS="XRef">
+TrackBall</A>
+ </STRONG>
+is described above.</P>
+TrackBall</A>
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164875">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164876">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[TrackBall::]</EM>
+Reset(<EM CLASS="Emphasis">
+Center, Radius</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164877">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164878">
+ </A>
+Center</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164879">
+ </A>
+A two-dimensional vector, [<I CLASS="Italic">
+X</I>
+, <I CLASS="Italic">
+Y</I>
+], specifying the center coordinates of the trackball. <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ should be specified in device units.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164880">
+ </A>
+Radius</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164881">
+ </A>
+The radius of the trackball, specified in device units.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164882">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164884">
+ </A>
+<A NAME="marker=1164883">
+ </A>
+AXIS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164885">
+ </A>
+Set this keyword to an integer value to indicate the axis about which rotations are to be constrained if the CONSTRAIN keyword is set. Valid values include:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164886">
+ </A>
+0 = Rotate only around the <I CLASS="Italic">
+X</I>
+ axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164887">
+ </A>
+1 = Rotate only around the <I CLASS="Italic">
+Y</I>
+ axis.s</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1164888">
+ </A>
+2 = Rotate only around the <I CLASS="Italic">
+Z</I>
+ axis (this is the default).</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164890">
+ </A>
+<A NAME="marker=1164889">
+ </A>
+CONSTRAIN</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164891">
+ </A>
+Set this keyword to indicate that the trackball transformations are to be constrained about the axis specified by the AXIS keyword. The default is not to constrain the transformations.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164893">
+ </A>
+<A NAME="marker=1164892">
+ </A>
+MOUSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164894">
+ </A>
+Set this keyword to a bitmask to indicate which mouse button to honor for trackball events. The least significant bit represents the leftmost button, the next highest bit represents the middle button, and the next highest bit represents the right button. The default is 1b, for the left mouse button.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1164896">
+ </A>
+<A NAME="23806">
+ </A>
+TrackBall::Update</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164898">
+ </A>
+The TrackBall::<A NAME="marker=1165098">
+ </A>
+Update function method updates the state of the TrackBall object based on the information contained in the input widget event structure. The return value is nonzero if a transformation matrix is calculated as a result of the event, or zero otherwise. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl30e.htm#31705" CLASS="XRef">
+TrackBall</A>
+ </STRONG>
+is described above.</P>
+TrackBall</A>
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164905">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1164906">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[TrackBall::]</EM>
+Update(<EM CLASS="Emphasis">
+sEvent</EM>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164907">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164908">
+ </A>
+sEvent</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164909">
+ </A>
+The widget event structure.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1164910">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164912">
+ </A>
+MOUSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164913">
+ </A>
+Set this keyword to a bitmask to indicate which mouse button to honor for trackball events. The least significant bit represents the leftmost button, the next highest bit represents the middle button, and the next highest bit represents the right button. The default is 1b, for the left mouse button.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164915">
+ </A>
+TRANSFORM</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164916">
+ </A>
+Set this keyword to a named variable that will contain a 4 x 4 element floating-point array if a new transformations matrix is calculated as a result of the widget event. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1164918">
+ </A>
+TRANSLATE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1164919">
+ </A>
+Set this keyword to indicate that the trackball movement should be constrained to translation in the <I CLASS="Italic">
+X-Y</I>
+ plane rather than rotation about an axis.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164920">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=1164724">
+ </A>
+&nbsp;</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

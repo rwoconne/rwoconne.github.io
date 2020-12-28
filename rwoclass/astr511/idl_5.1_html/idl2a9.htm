@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_GETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2aa.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999012">
+ </A>
+<A NAME="72240">
+ </A>
+HDF_SD_GETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999015">
+ </A>
+The <A NAME="marker=999014">
+ </A>
+HDF_SD_GETINFO procedure retrieves information about an SD dataset.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=999016">
+ </A>
+Reading a label, unit, format, or coordinate system string that has more than 256 characters can have unpredictable results.</LI>
+</UL>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999017">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999018">
+ </A>
+HDF_SD_GETINFO, <I CLASS="Italics">
+SDS_ID</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999019">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999020">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999021">
+ </A>
+An SD dataset ID as returned by HDF_SD _SELECT or HDF_SD_CREATE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999022">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999024">
+ </A>
+<A NAME="marker=999023">
+ </A>
+CALDATA</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999025">
+ </A>
+Set this keyword to a named variable in which the calibration data associated with the SD dataset is returned. The data is returned in a structure of the form:</P>
+<P CLASS="Body">
+<A NAME="pgfId=999026">
+ </A>
+For more information about calibration data, see the documentation for HDF_SD_SETINFO.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999028">
+ </A>
+<A NAME="marker=999027">
+ </A>
+COORDSYS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999029">
+ </A>
+Set this keyword to a named variable in which the coordinate system description string is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999031">
+ </A>
+<A NAME="marker=999030">
+ </A>
+DIMS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999032">
+ </A>
+Set this keyword to a named variable in which the dimensions of the SD dataset are returned. For efficiency, these dimensions are returned in reverse order from their HDF format unless the NOREVERSE keyword is also set.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999034">
+ </A>
+<A NAME="marker=999033">
+ </A>
+FILL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999035">
+ </A>
+Set this keyword to a named variable in which the fill value of the SD dataset is returned. Note that a fill value <EM CLASS="Emphasis">
+must</EM>
+ be set in the SD dataset. If a fill value is not set, the value of the variable named by this keyword will be undefined, and IDL will issue a warning message.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999037">
+ </A>
+<A NAME="marker=999036">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999038">
+ </A>
+Set this keyword to a named variable in which the format description string is returned. If the format description string is not present, this variable will contain an empty string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999040">
+ </A>
+<A NAME="marker=999039">
+ </A>
+HDF_TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999041">
+ </A>
+Set this keyword to a named variable in which the HDF type of the SD dataset is returned as a scalar string. Possible returned values are <CODE CLASS="Code">
+DFNT_NONE</CODE>
+, <CODE CLASS="Code">
+DFNT_CHAR</CODE>
+, <CODE CLASS="Code">
+DFNT_FLOAT32</CODE>
+, <CODE CLASS="Code">
+DFNT_FLOAT64</CODE>
+, <CODE CLASS="Code">
+DFNT_INT8</CODE>
+, <CODE CLASS="Code">
+DFNT_INT16</CODE>
+, <CODE CLASS="Code">
+DFNT_INT32</CODE>
+, <CODE CLASS="Code">
+DFNT_UINT8</CODE>
+, <CODE CLASS="Code">
+DFNT_UINT16</CODE>
+, and <CODE CLASS="Code">
+DFNT_UINT32</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999043">
+ </A>
+<A NAME="marker=999042">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999044">
+ </A>
+Set this keyword to a named variable in which the label description string is returned. If the label description string is not present, this variable will contain an empty string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999046">
+ </A>
+<A NAME="marker=999045">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999047">
+ </A>
+Set this keyword to a named variable in which the SD dataset name is returned. If the SD dataset name is not present, this variable will contain an empty string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999049">
+ </A>
+<A NAME="marker=999048">
+ </A>
+NATTS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999050">
+ </A>
+Set this keyword to a named variable in which the number of &quot;NetCDF-style&quot; attributes for the SD dataset is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999052">
+ </A>
+<A NAME="marker=999051">
+ </A>
+NDIMS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999053">
+ </A>
+Set this keyword to a named variable in which the number of dimensions in the dataset is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999055">
+ </A>
+<A NAME="marker=999054">
+ </A>
+NOREVERSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999056">
+ </A>
+Set this keyword in conjunction with DIMS to return the variable dimensions in non-reversed form. By default, IDL reverses data and dimensions from the HDF format to improve efficiency.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999058">
+ </A>
+<A NAME="marker=999057">
+ </A>
+RANGE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999059">
+ </A>
+Set this keyword to a named variable in which the maximum and minimum of the current SD dataset is returned as a two-element vector. Note that a range <EM CLASS="Emphasis">
+must</EM>
+ be set in the SD dataset. If the range is not set, the value of the variable named by this keyword will be undefined, and IDL will issue a warning message.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999061">
+ </A>
+<A NAME="marker=999060">
+ </A>
+TYPE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999062">
+ </A>
+Set this keyword to a named variable in which the IDL type of the SD dataset is returned as a scalar string. Possible returned values are <CODE CLASS="Code">
+BYTE</CODE>
+, <CODE CLASS="Code">
+INT</CODE>
+, <CODE CLASS="Code">
+LONG</CODE>
+, <CODE CLASS="Code">
+FLOAT</CODE>
+, <CODE CLASS="Code">
+DOUBLE</CODE>
+, <CODE CLASS="Code">
+STRING</CODE>
+, or <CODE CLASS="Code">
+UNKNOWN</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999064">
+ </A>
+<A NAME="marker=999063">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999065">
+ </A>
+Set this keyword to a named variable in which the unit description string is returned. If the unit description string is not present, this variable will contain an empty string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999066">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999067">
+ </A>
+For an example using this routine, see the documentation for HDF_SD_SETINFO.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999068">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999081">
+ </A>
+<A HREF="idl29b.htm#27462" CLASS="XRef">
+HDF_OPEN</A>
+, <A HREF="idl2a5.htm#18397" CLASS="XRef">
+HDF_SD_END</A>
+, <A HREF="idl2b0.htm#67028" CLASS="XRef">
+HDF_SD_SETINFO</A>
+, <A HREF="idl2b1.htm#92639" CLASS="XRef">
+HDF_SD_START</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

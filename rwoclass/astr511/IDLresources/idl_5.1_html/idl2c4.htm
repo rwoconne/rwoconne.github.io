@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VG_ATTACH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2c5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2c3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999927">
+ </A>
+<A NAME="10005">
+ </A>
+HDF_VG_ATTACH</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999931">
+ </A>
+The <A NAME="marker=999929">
+ </A>
+HDF_VG_ATTACH procedure attaches (opens) a <A NAME="marker=999930">
+ </A>
+<EM CLASS="Emphasis">
+VGroup</EM>
+ in a Hierarchical Data Format file for reading or writing. If successful, a handle for that group is returned. If it fails, 0 is returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=999932">
+ </A>
+If <I CLASS="Italics">
+VGroupId</I>
+ is set to -1, a new VGroup is created. If neither the READ nor WRITE keywords are set, the VGroup is opened for reading.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999933">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999934">
+ </A>
+Result = HDF_VG_ATTACH(<I CLASS="Italics">
+FileHandle, VGroupId</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999935">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999936">
+ </A>
+FileHandle</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999937">
+ </A>
+The HDF file handle returned from a previous call to HDF_OPEN.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999938">
+ </A>
+VGroupId</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999939">
+ </A>
+The VGroup reference number, generally obtained by HDF_VG_GETID or HDF_VG_LONE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999940">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999942">
+ </A>
+<A NAME="marker=999941">
+ </A>
+READ</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999943">
+ </A>
+Set this keyword to open the VGroup for reading.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999945">
+ </A>
+<A NAME="marker=999944">
+ </A>
+WRITE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999946">
+ </A>
+Set this keyword to open the VGroup for writing.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999947">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999951">
+ </A>
+See <A HREF="idl2aa.htm#14191" CLASS="XRef">
+HDF_SD_IDTOREF</A>
+ for an example using this function.</P>
+</DIV>
+</BODY>
+</HTML>

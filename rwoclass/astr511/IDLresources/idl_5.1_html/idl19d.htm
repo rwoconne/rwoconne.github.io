@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SHOWFONT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl19c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762058">
+ </A>
+<A NAME="28117">
+ </A>
+SHOWFONT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762061">
+ </A>
+The <A NAME="marker=762059">
+ </A>
+SHOWFONT procedure displays a TrueType or <A NAME="marker=762060">
+ </A>
+vector-drawn font (from the file <CODE CLASS="Code">
+hersh1.chr</CODE>
+, located in the main IDL directory) on the current graphics device.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762062">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+showfont.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762063">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762064">
+ </A>
+SHOWFONT, <I CLASS="Italic">
+Font, Name</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762065">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901968">
+ </A>
+Font</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901969">
+ </A>
+The index number of the font (may range from 3 to 29) or, if the TT_FONT keyword is set, a string that contains the name of the TrueType font to display.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901970">
+ </A>
+Name</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762069">
+ </A>
+A string that contains the text of a title to appear at the top of the font display.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762070">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762072">
+ </A>
+<A NAME="marker=762071">
+ </A>
+ENCAPSULATED</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762073">
+ </A>
+Set this keyword, if the current graphics device is &quot;PS&quot;, to make encapsulated PostScript output.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901959">
+ </A>
+<A NAME="marker=902012">
+ </A>
+TT_FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901960">
+ </A>
+If this keyword is set, the specified font will be interpreted as a TrueType font.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762074">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=902018">
+ </A>
+To create a display of the Helvetica italic TrueType font on the screen:</P>
+<P CLASS="Code">
+<A NAME="pgfId=902019">
+ </A>
+SHOWFONT, 'Helvetica Italic', 'Helvetica Italic', /TT_FONT</P>
+<P CLASS="Body">
+<A NAME="pgfId=762075">
+ </A>
+To create a display of Font 3 for PostScript:</P>
+<P CLASS="Code">
+<A NAME="pgfId=762076">
+ </A>
+SET_PLOT, 'PS'	<EM CLASS="Comment">;
+Set output to PostScript.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762077">
+ </A>
+SHOWFONT, 3, 'Simplex Roman'	<EM CLASS="Comment">;
+Display font 3.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762078">
+ </A>
+DEVICE, /CLOSE	<EM CLASS="Comment">;
+Close the new PS file (saved by default as idl.ps).</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762079">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762080">
+ </A>
+<A HREF="idl88.htm#99388" CLASS="XRef">
+EFONT</A>
+, <A HREF="idl150.htm#63619" CLASS="XRef">
+PS_SHOW_FONTS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRANSPOSE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1df.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1dd.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679495">
+ </A>
+<A NAME="70508">
+ </A>
+TRANSPOSE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679496">
+ </A>
+The <A NAME="marker=674152">
+ </A>
+TRANSPOSE function returns the transpose of <I CLASS="Italic">
+Array</I>
+. If an optional permutation vector is provided, the dimensions of <EM CLASS="Emphasis">
+Array</EM>
+ are rearranged as well.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679497">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679498">
+ </A>
+Result = TRANSPOSE(<I CLASS="Italic">
+Array</I>
+<EM CLASS="Emphasis">
+ [, P]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679499">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679500">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679501">
+ </A>
+The array to be transposed. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=158481">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=158486">
+ </A>
+A vector specifying how the dimensions of <EM CLASS="Emphasis">
+Array</EM>
+ will be permuted. The elements of <EM CLASS="Emphasis">
+P</EM>
+ correspond to the dimensions of <EM CLASS="Emphasis">
+Array</EM>
+; the <EM CLASS="Emphasis">
+i</EM>
+th dimension of the output array is dimension <EM CLASS="Emphasis">
+P</EM>
+[<EM CLASS="Emphasis">
+i</EM>
+] of the input array. Each element of the vector <EM CLASS="Emphasis">
+P</EM>
+ must be unique. Dimensions start at zero and can not be repeated.</P>
+<P CLASS="Body">
+<A NAME="pgfId=158499">
+ </A>
+If <EM CLASS="Emphasis">
+P</EM>
+ is not present, the order of the indices of <EM CLASS="Emphasis">
+Array</EM>
+ is reversed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=158494">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679503">
+ </A>
+Print a simple array and its transpose by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679504">
+ </A>
+PRINT, INDGEN(3,3)</P>
+<P CLASS="Code">
+<A NAME="pgfId=679505">
+ </A>
+PRINT, TRANSPOSE(INDGEN(3,3))</P>
+<P CLASS="Body">
+<A NAME="pgfId=679506">
+ </A>
+IDL prints the original array:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679507">
+ </A>
+&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;2</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158505">
+ </A>
+&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158506">
+ </A>
+&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8</P>
+<P CLASS="Body">
+<A NAME="pgfId=679511">
+ </A>
+and its transpose:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679512">
+ </A>
+&nbsp;&nbsp;0&nbsp;&nbsp;3&nbsp;&nbsp;6</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158590">
+ </A>
+&nbsp;&nbsp;1&nbsp;&nbsp;4&nbsp;&nbsp;7</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158564">
+ </A>
+&nbsp;&nbsp;2&nbsp;&nbsp;5&nbsp;&nbsp;8</P>
+<P CLASS="Body">
+<A NAME="pgfId=158621">
+ </A>
+To see how a multi-dimensional transposition works, first create a three-dimensional array A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=158622">
+ </A>
+A = INDGEN(2, 3, 4)</P>
+<P CLASS="Body">
+<A NAME="pgfId=158623">
+ </A>
+Take the transpose, reversing the order of the indices:</P>
+<P CLASS="Code">
+<A NAME="pgfId=158624">
+ </A>
+B = TRANSPOSE(A)</P>
+<P CLASS="Body">
+<A NAME="pgfId=158625">
+ </A>
+Now re-order the dimensions of A, so that the second dimension becomes the first, the third becomes the second, and the first becomes the third:</P>
+<P CLASS="Code">
+<A NAME="pgfId=158626">
+ </A>
+C = TRANSPOSE(A, [1, 2, 0])</P>
+<P CLASS="Body">
+<A NAME="pgfId=158627">
+ </A>
+Now view the sizes of the three arrays:</P>
+<P CLASS="Code">
+<A NAME="pgfId=158628">
+ </A>
+HELP, A, B, C</P>
+<P CLASS="Body">
+<A NAME="pgfId=158629">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158630">
+ </A>
+A&nbsp;&nbsp;&nbsp;INT&nbsp;&nbsp;= Array[2, 3, 4]	<EM CLASS="Comment">;
+The original array.</EM>
+</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158632">
+ </A>
+B&nbsp;&nbsp;&nbsp;INT&nbsp;&nbsp;= Array[4, 3, 2]	<EM CLASS="Comment">;
+Original array with indices reversed.</EM>
+</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=158633">
+ </A>
+C&nbsp;&nbsp;&nbsp;INT&nbsp;&nbsp;= Array[3, 4, 2]	<EM CLASS="Comment">;
+Original array with indices re-ordered.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795976">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795977">
+ </A>
+<A HREF="idl176.htm#40629" CLASS="XRef">
+REFORM</A>
+, <A HREF="idl184.htm#79661" CLASS="XRef">
+ROT</A>
+, <A HREF="idl185.htm#94278" CLASS="XRef">
+ROTATE</A>
+, <A HREF="idl17f.htm#82341" CLASS="XRef">
+REVERSE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

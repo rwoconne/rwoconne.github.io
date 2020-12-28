@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> NCDF_ATTINQ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2dc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2da.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997016">
+ </A>
+<A NAME="96620">
+ </A>
+NCDF_ATTINQ</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997019">
+ </A>
+The <A NAME="marker=997018">
+ </A>
+NCDF_ATTINQ function returns a structure that contains information about a netCDF attribute. This structure, described below, has the form:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997020">
+ </A>
+{ DATATYPE:'', LENGTH=0L }</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997021">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997022">
+ </A>
+Result = NCDF_ATTINQ(<I CLASS="Italics">
+Cdfid [,Varid], Name</I>
+)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997023">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997024">
+ </A>
+Cdfid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997025">
+ </A>
+The netCDF ID, returned from a previous call to NCDF_OPEN or NCDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997026">
+ </A>
+Varid</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997027">
+ </A>
+The netCDF variable ID, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable. If the GLOBAL keyword is set, this argument must be omitted.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997028">
+ </A>
+Name</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997029">
+ </A>
+A scalar string containing the name of the attribute for which information is to be returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997030">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997032">
+ </A>
+<A NAME="marker=997031">
+ </A>
+GLOBAL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997033">
+ </A>
+Set this keyword to inquire about a global variable. If this keyword is set, the <I CLASS="Italics">
+Varid</I>
+ argument must be omitted.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997034">
+ </A>
+Explanation of the Structure Tags</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997035">
+ </A>
+DataType</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997036">
+ </A>
+A string describing the data type of the variable. The string will be one of the following: `BYTE', `CHAR', `INT', `LONG', `FLOAT', or `DOUBLE'.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997037">
+ </A>
+Length</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997038">
+ </A>
+The number of values stored in the attribute. If the attribute is a string, the number of values indicates one more character than the string length to include the terminating null character. This is the NetCDF convention, as demonstrated in the example below.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997039">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1000188">
+ </A>
+Open two netCDF files:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000191">
+ </A>
+id = NCDF_CREATE('test.nc', /CLOBBER)  <EM CLASS="Comment">;
+Open a new netCDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000192">
+ </A>
+id2 = NCDF_CREATE('test2.nc', /CLOBBER)  <EM CLASS="Comment">;
+Open a second file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000194">
+ </A>
+Create two global attributes TITLE and DATE:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000196">
+ </A>
+NCDF_ATTPUT, id, /GLOBAL, 'TITLE', 'MY TITLE'<BR>
+<EM CLASS="Comment">;
+Insert a global attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000197">
+ </A>
+NCDF_ATTPUT, id, /GLOBAL, 'DAY', 'July 1,1996'<BR>
+<EM CLASS="Comment">;
+Insert a global attribute.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000199">
+ </A>
+Suppose we wanted to use DATE instead of DAY. We could use ATTRENAME to rename the attribute:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000202">
+ </A>
+NCDF_ATTRENAME, id, 'DAY', 'DATE', /GLOBAL</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000204">
+ </A>
+Next, copy both attributes into a duplicate file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000206">
+ </A>
+result = NCDF_ATTCOPY(id, 'TITLE', id2, /IN_GLOBAL, /OUT_GLOBAL)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000207">
+ </A>
+result2 = NCDF_ATTCOPY(id, 'DATE', id2, /IN_GLOBAL, /OUT_GLOBAL)</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000210">
+ </A>
+NCDF_CONTROL, id, /ENDEF	<EM CLASS="Comment">;
+Put the file into data mode.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000212">
+ </A>
+name = NCDF_ATTNAME(id, /GLOBAL, 1)	<EM CLASS="Comment">;
+Get the second attribute's name.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000213">
+ </A>
+NCDF_ATTGET, id, /GLOBAL, name, date	<EM CLASS="Comment">;
+Retrieve the date.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000214">
+ </A>
+result = NCDF_ATTINQ(id, /GLOBAL, name)	<EM CLASS="Comment">;
+Get info about the attribute.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000215">
+ </A>
+HELP, name, date, result, /STRUCTURE</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000216">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000218">
+ </A>
+NAME            STRING    = `DATE'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000219">
+ </A>
+DATE            BYTE      = Array(12)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000220">
+ </A>
+** Structure &lt;400dac30&gt;, 2 tags, length=12, refs=1:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000221">
+ </A>
+   DATATYPE        STRING    `BYTE'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000222">
+ </A>
+   LENGTH          LONG                12</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000224">
+ </A>
+Note the length includes the NCDF standard NULL terminator</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000227">
+ </A>
+PRINT, date</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000269">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000228">
+ </A>
+74 117 108 121  32  49  44  49  57  57  54   0</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000229">
+ </A>
+PRINT, STRING(date)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1000270">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=1000230">
+ </A>
+July 1,1996</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000232">
+ </A>
+NCDF_DELETE, id	<EM CLASS="Comment">;
+Close the netCDF files.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1000233">
+ </A>
+NCDF_DELETE, id2</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997062">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997075">
+ </A>
+<A HREF="idl2d9.htm#89540" CLASS="XRef">
+NCDF_ATTDEL</A>
+, <A HREF="idl2da.htm#96988" CLASS="XRef">
+NCDF_ATTGET</A>
+, <A HREF="idl2dc.htm#88656" CLASS="XRef">
+NCDF_ATTNAME</A>
+, <A HREF="idl2dd.htm#27333" CLASS="XRef">
+NCDF_ATTPUT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

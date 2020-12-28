@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> GAUSSFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlb7.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlb5.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=749954">
+ </A>
+<A NAME="49956">
+ </A>
+GAUSSFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=749957">
+ </A>
+The <A NAME="marker=749955">
+ </A>
+GAUSSFIT function computes a non-linear <A NAME="marker=749956">
+ </A>
+least-squares fit to a function <EM CLASS="Emphasis">
+f</EM>
+&nbsp;(<EM CLASS="Emphasis">
+x</EM>
+) with from three to six unknown parameters. <EM CLASS="Emphasis">
+f</EM>
+&nbsp;(<EM CLASS="Emphasis">
+x</EM>
+) is a linear combination of a Gaussian and a quadratic; the number of terms is controlled by the keyword parameter NTERMS.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754698">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+gaussfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749966">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749967">
+ </A>
+Result = GAUSSFIT(<EM CLASS="Emphasis">
+X, Y [, A]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749968">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749969">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749970">
+ </A>
+An<EM CLASS="Emphasis">
+ n</EM>
+-element vector of independent variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749971">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749972">
+ </A>
+A vector of dependent variables, the same length as <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749973">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749974">
+ </A>
+A named variable that will contain the coefficients <EM CLASS="Emphasis">
+A</EM>
+ of the fit.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=841703">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=841704">
+ </A>
+<A NAME="marker=841714">
+ </A>
+ESTIMATES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=841713">
+ </A>
+Set this keyword equal to an array of starting estimates for the parameters of the equation. If the NTERMS keyword is specified, the ESTIMATES array should have NTERMS elements. If NTERMS is not specified, the ESTIMATES array should have six elements. If the ESTIMATES array is not specified, estimates are calculated by the GAUSSFIT routine.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=841712">
+ </A>
+<A NAME="marker=841711">
+ </A>
+NTERMS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=841705">
+ </A>
+Set this keyword to an integer value between three and six to specify the function to be used for the fit. The values correspond to the functions shown below. In all cases: </P>
+<DIV>
+<CENTER><IMG SRC="idl_45.gif" BORDER=0>
+</DIV>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=828287">
+ </A>
+NTERMS=6 </LI>
+</UL>
+<DIV>
+<CENTER><IMG SRC="idl_46.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=828291">
+ </A>
+NTERMS=6 is the default setting. Here, A<SUB CLASS="Subscript">
+0</SUB>
+ is the height of the Gaussian, A<SUB CLASS="Subscript">
+1</SUB>
+ is the center of the Gaussian, A<SUB CLASS="Subscript">
+2</SUB>
+ is the width of the Gaussian, A<SUB CLASS="subscript">
+3</SUB>
+ is the constant term, A<SUB CLASS="subscript">
+4</SUB>
+ is the linear term, and A<SUB CLASS="subscript">
+5</SUB>
+ is the quadratic term.</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=179532">
+ </A>
+NTERMS=5</LI>
+</UL>
+<DIV>
+<CENTER><IMG SRC="idl_47.gif" BORDER=0>
+</DIV>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=828297">
+ </A>
+NTERMS=4</LI>
+</UL>
+<DIV>
+<CENTER><IMG SRC="idl_48.gif" BORDER=0>
+</DIV>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=828303">
+ </A>
+NTERMS=3</LI>
+</UL>
+<DIV>
+<CENTER><IMG SRC="idl_49.gif" BORDER=0>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=828307">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=749976">
+ </A>
+X = FINDGEN(13)/5 - 1.2	<EM CLASS="Comment">;
+Define the independent variables.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=749977">
+ </A>
+Y = [0.0, 0.1, 0.2, 0.5, 0.8, 0.9, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=749978">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;0.99, 0.9, 0.8, 0.5, 0.2, 0.1, 0.0]	<EM CLASS="Comment">;
+Define the dependent variables.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=749979">
+ </A>
+yfit = GAUSSFIT(X, Y, A)	<EM CLASS="Comment">;
+Fit the data to the default function, storing coefficients in A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=749980">
+ </A>
+PRINT, A	<EM CLASS="Comment">;
+Print the coefficients.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=749981">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=749982">
+ </A>
+2.25642 -1.62041e-07     0.703372     -1.25634  3.04487e-07     0.513596</P>
+<P CLASS="Body">
+<A NAME="pgfId=749984">
+ </A>
+We can compare original and fitted data by plotting one on top of the other:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749985">
+ </A>
+LOADCT, 30	<EM CLASS="Comment">;
+Load an appropriate color table.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=749986">
+ </A>
+PLOT, X, Y	<EM CLASS="Comment">;
+Plot the original data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=749987">
+ </A>
+OPLOT, X, yfit, COLOR = 100	<EM CLASS="Comment">;
+Overplot the fitted data in a different color.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34757">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34781">
+ </A>
+<A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb5.htm#23241" CLASS="XRef">
+GAUSS2DFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

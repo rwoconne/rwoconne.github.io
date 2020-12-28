@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_FIELD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl5e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl5c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=755494">
+ </A>
+<A NAME="99759">
+ </A>
+CW_FIELD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=755499">
+ </A>
+The <A NAME="marker=66663">
+ </A>
+CW_FIELD function creates a <A NAME="marker=66707">
+ </A>
+widget <A NAME="marker=755497">
+ </A>
+data entry field. The <A NAME="marker=755498">
+ </A>
+field consists of a label and a text widget. CW_FIELD can create string, integer, or floating-point fields. The default is an editable string field.</P>
+<P CLASS="Body">
+<A NAME="pgfId=796128">
+ </A>
+The returned value of this function is the widget ID of the newly-created field widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=755500">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_field.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755501">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755502">
+ </A>
+Result = CW_FIELD(<EM CLASS="Emphasis">
+Parent</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755503">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755504">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755505">
+ </A>
+The widget ID of the parent widget.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755506">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755508">
+ </A>
+<A NAME="marker=755507">
+ </A>
+ALL_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755509">
+ </A>
+Like RETURN_EVENTS but return an event whenever the contents of a text field have changed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755511">
+ </A>
+<A NAME="marker=755510">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755512">
+ </A>
+Set this keyword to center the label above the text field. The default is to position the label to the left of the text field.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755514">
+ </A>
+<A NAME="marker=755513">
+ </A>
+FIELDFONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755515">
+ </A>
+A string containing the name of the font to use for the TEXT part of the field.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755517">
+ </A>
+<A NAME="marker=755516">
+ </A>
+FLOATING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755518">
+ </A>
+Set this keyword to have the field accept only floating-point values. Any number or string entered is converted to its floating-point equivalent.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755520">
+ </A>
+<A NAME="marker=755519">
+ </A>
+FONT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67026">
+ </A>
+A string containing the name of the font to use for the TITLE of the field. The font specified is a &quot;device font&quot; (an X Windows font on Motif systems; a TrueType or PostScript font on Windows or Macintosh systems). See <A HREF="fonts.html#11429" CLASS="XRef">
+</A>
+ for details on specifying names for device fonts. If this keyword is omitted, the default font is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755523">
+ </A>
+<A NAME="marker=755522">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755524">
+ </A>
+The width, in pixels, of a frame to be drawn around the entire field cluster. The default is no frame.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755526">
+ </A>
+<A NAME="marker=755525">
+ </A>
+INTEGER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755527">
+ </A>
+Set this keyword to have the field accept only integer values. Any number or string entered is converted to its integer equivalent (using FIX). For example, if 12.5 is entered in this type of field, it is converted to 12.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755529">
+ </A>
+<A NAME="marker=755528">
+ </A>
+LONG</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755530">
+ </A>
+Set this keyword to have the field accept only long integer values. Any number or string entered is converted to its long integer equivalent (using LONG).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755532">
+ </A>
+<A NAME="marker=755531">
+ </A>
+NOEDIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755533">
+ </A>
+Normally, the value in the text field can be edited. Set this keyword to make the field non-editable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755535">
+ </A>
+<A NAME="marker=755534">
+ </A>
+RETURN_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755536">
+ </A>
+Set this keyword to make CW_FIELD return an event when a carriage return is pressed in a text field. The default is not to return events. Note that the value of the text field is always returned when the command </P>
+<P CLASS="Code">
+<A NAME="pgfId=755537">
+ </A>
+WIDGET_CONTROL, field, GET_VALUE = X</P>
+<P CLASS="Body">
+<A NAME="pgfId=755538">
+ </A>
+is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755540">
+ </A>
+<A NAME="marker=755539">
+ </A>
+ROW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755541">
+ </A>
+Set this keyword to position the label to the left of the text field. This is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755543">
+ </A>
+<A NAME="marker=755542">
+ </A>
+STRING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755544">
+ </A>
+Set this keyword to have the field accept only string values. Numbers entered in the field are converted to their string equivalents. This is the default.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755546">
+ </A>
+<A NAME="marker=755545">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755547">
+ </A>
+A string containing the text to be used as the label for the field. The default is &quot;Input Field&quot;.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755549">
+ </A>
+<A NAME="marker=755548">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755550">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755552">
+ </A>
+<A NAME="marker=755551">
+ </A>
+VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755553">
+ </A>
+The initial value in the text widget. This value is automatically converted to the type set by the STRING, INTEGER, and FLOATING keywords described below.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755555">
+ </A>
+<A NAME="marker=755554">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=755556">
+ </A>
+An explicit horizontal size (in characters) for the text input area. The default is to let the window manager size the widget. Using the XSIZE keyword is not recommended.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=755558">
+ </A>
+<A NAME="marker=755557">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=837715">
+ </A>
+An explicit vertical size (in lines) for the text input area. The default is 1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837719">
+ </A>
+Keywords to WIDGET_CONTROL and WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837720">
+ </A>
+The widget ID returned by most compound widgets is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837726">
+ </A>
+In addition, you can use the <A HREF="idl202.htm#27608" CLASS="XRef">
+GET_VALUE</A>
+ and <A HREF="idl202.htm#76956" CLASS="XRef">
+SET_VALUE</A>
+ keywords to WIDGET_CONTROL to obtain or set the value of the field. If one of the FLOATING, INTEGER, LONG, or STRING keywords to CW_FIELD is set, values set with the SET_VALUE keyword to WIDGET_CONTROL will be forced to the appropriate type. Values returned by the GET_VALUE keyword to WIDGET_CONTROL will be of the type specified when the field widget is created. Note that if the field contains string information, returned values will be contained in a string <I CLASS="Italic">
+array</I>
+ even if the field contains only a single string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=837735">
+ </A>
+See <A HREF="..html#51148" CLASS="XRef">
+Compound Widgets</A>
+ for a more complete discussion of controlling compound widgets using <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ and <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=837716">
+ </A>
+Widget Events Returned by the CW_FIELD Widget</H3>
+<P CLASS="Body">
+<A NAME="pgfId=837717">
+ </A>
+This widget generates event structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=796336">
+ </A>
+event = { ID:0L, TOP:0L, HANDLER: 0L, VALUE:'', TYPE:0 , UPDATE:0}</P>
+<P CLASS="Body">
+<A NAME="pgfId=796337">
+ </A>
+The VALUE field is the value of the field. TYPE specifies the type of data contained in the field and can be any of the following: 0=string, 1=floating-point, 2=integer, 3=long integer (the value of TYPE is determined by setting one of the STRING, FLOAT, INTETER, or LONG keywords). UPDATE contains a zero if the field has not been altered or a one if it has.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755560">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=755561">
+ </A>
+The code below creates a main base with a field cluster attached to it. The cluster accepts string input, has the title &quot;Name&quot;, and has a frame around it:</P>
+<P CLASS="Code">
+<A NAME="pgfId=755562">
+ </A>
+base = WIDGET_BASE()</P>
+<P CLASS="Code">
+<A NAME="pgfId=755563">
+ </A>
+field = CW_FIELD(base, TITLE = &quot;Name&quot;, /FRAME)</P>
+<P CLASS="Code">
+<A NAME="pgfId=755564">
+ </A>
+WIDGET_CONTROL, base, /REALIZE</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=755565">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818976">
+ </A>
+<A HREF="idl207.htm#90331" CLASS="XRef">
+WIDGET_LABEL</A>
+, <A HREF="idl20b.htm#54171" CLASS="XRef">
+WIDGET_TEXT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

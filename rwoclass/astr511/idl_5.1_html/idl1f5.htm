@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VELOVECT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787571">
+ </A>
+<A NAME="51661">
+ </A>
+VELOVECT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787576">
+ </A>
+The <A NAME="marker=787573">
+ </A>
+VELOVECT procedure produces a two-dimensional <A NAME="marker=787574">
+ </A>
+velocity field <A NAME="marker=787575">
+ </A>
+plot. A directed arrow is drawn at each point showing the direction and magnitude of the field. </P>
+<P CLASS="Body">
+<A NAME="pgfId=787577">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+velovect.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787578">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787579">
+ </A>
+VELOVECT, <EM CLASS="Emphasis">
+U, V [, X, Y]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787580">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787581">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787582">
+ </A>
+The X component of the two-dimensional field. <EM CLASS="Emphasis">
+U</EM>
+ must be a two-dimensional array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787583">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787584">
+ </A>
+The Y component of the two dimensional field. <EM CLASS="Emphasis">
+V </EM>
+must have the same dimensions as <EM CLASS="Emphasis">
+U</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787585">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787586">
+ </A>
+Optional abcissae values. <EM CLASS="Emphasis">
+X</EM>
+ must be a vector with a length equal to the first dimension of <EM CLASS="Emphasis">
+U</EM>
+ and <EM CLASS="Emphasis">
+V</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787587">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787588">
+ </A>
+Optional ordinate values. <EM CLASS="Emphasis">
+Y</EM>
+ must be a vector with a length equal to the second dimension of <EM CLASS="Emphasis">
+U</EM>
+ and <EM CLASS="Emphasis">
+V</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787589">
+ </A>
+Keywords</H3>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=787590">
+ </A>
+Keywords not described here are passed directly to the PLOT procedure and may be used to set options such as TITLE, POSITION, NOERASE, etc. </LI>
+</UL>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787592">
+ </A>
+<A NAME="marker=787591">
+ </A>
+COLOR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787593">
+ </A>
+Set this keyword equal to the color index used for the plot.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787595">
+ </A>
+<A NAME="marker=787594">
+ </A>
+DOTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787596">
+ </A>
+Set this keyword to 1 to place a dot at each missing point. Set this keyword to 0 or omit it to draw nothing for missing points. Has effect only if MISSING is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787598">
+ </A>
+<A NAME="marker=787597">
+ </A>
+LENGTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787599">
+ </A>
+Set this keyword equal to the length factor. The default of 1.0 makes the longest (<EM CLASS="Emphasis">
+U</EM>
+,<EM CLASS="Emphasis">
+V</EM>
+) vector the length of a cell.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787601">
+ </A>
+<A NAME="marker=787600">
+ </A>
+MISSING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787602">
+ </A>
+<A NAME="marker=788505">
+ </A>
+Set this keyword equal to the missing data value. Vectors with a length greater than MISSING are ignored.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=196912">
+ </A>
+PLOT Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=196913">
+ </A>
+In addition to the keywords described above, all other keywords accepted by the PLOT procedure are accepted by VELOVECT. See <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787603">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=787604">
+ </A>
+U = RANDOMN(S, 20, 20)	<EM CLASS="Comment">;
+Create some random data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787605">
+ </A>
+V = RANDOMN(S, 20, 20)</P>
+<P CLASS="Code">
+<A NAME="pgfId=787606">
+ </A>
+VELOVECT, U, V	<EM CLASS="Comment">;
+Plot the vector field.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787607">
+ </A>
+VELOVECT, U, V, MISSING=18, /DOTS	<EM CLASS="Comment">;
+Plot the field, using dots to represent vectors with values greater than 18.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=787608">
+ </A>
+VELOVECT, U, V, MISSING=18, /DOTS, XTITLE='Random Vectors'<BR>
+<EM CLASS="Comment">;
+Plot with a title. Note that the XTITLE keyword is passed directly to the PLOT procedure.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787609">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787610">
+ </A>
+<A HREF="idla6.htm#62250" CLASS="XRef">
+FLOW3</A>
+, <A HREF="idl135.htm#70398" CLASS="XRef">
+PLOT</A>
+, <A HREF="idl137.htm#86526" CLASS="XRef">
+PLOT_FIELD</A>
+, <A HREF="idl1f4.htm#16476" CLASS="XRef">
+VEL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

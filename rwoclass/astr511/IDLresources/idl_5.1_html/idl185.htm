@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ROTATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl186.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl184.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678594">
+ </A>
+<A NAME="94278">
+ </A>
+ROTATE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678595">
+ </A>
+The <A NAME="marker=673761">
+ </A>
+ROTATE function returns a <A NAME="marker=673762">
+ </A>
+rotated and/or transposed copy of <I CLASS="Italic">
+Array</I>
+. ROTATE can only rotate arrays in multiples of 90 degrees. To rotate by amounts other than multiples of 90 degrees, use the <A NAME="marker=673766">
+ </A>
+ROT function. Note, however, that ROTATE is more efficient.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678596">
+ </A>
+ROTATE can also be used to reverse the order of elements in vectors. For example, to reverse the order of elements in the vector X, use the expression <CODE CLASS="Code">
+ROTATE(X,2)</CODE>
+. If X = [0,1,2,3] then <CODE CLASS="Code">
+ROTATE(X,2)</CODE>
+yields the resulting array, [3,2,1,0].</P>
+<P CLASS="Body">
+<A NAME="pgfId=678597">
+ </A>
+Transposition is performed before rotation. Rotations are viewed with the first row at the top.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678598">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678599">
+ </A>
+Result = ROTATE(<I CLASS="Italic">
+Array, Direction</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678600">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678601">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678602">
+ </A>
+The array to be rotated. <I CLASS="Italic">
+Array </I>
+can have only one or two dimensions. The result has the same type as <I CLASS="Italic">
+Array</I>
+. The dimensions of the result are the same as those of <I CLASS="Italic">
+Array </I>
+if <I CLASS="Italic">
+Direction</I>
+ is equal to 0 or 2. The dimensions are transposed if the direction is 4 or greater.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678603">
+ </A>
+Direction</H4>
+<P CLASS="Body">
+<A NAME="pgfId=807723">
+ </A>
+<I CLASS="Italic">
+Direction</I>
+ specifies the operation to be performed as follows:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=147458">
+ </A>
+Rotation Directions</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=807634">
+ </A>
+Direction</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=807636">
+ </A>
+Transpose?</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=807638">
+ </A>
+Rotation Counterclockwise</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=807640">
+ </A>
+X<SUB CLASS="Subscript">
+1</SUB>
+&middot;</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=807642">
+ </A>
+Y<SUB CLASS="Subscript">
+1</SUB>
+&middot;</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807644">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807646">
+ </A>
+No</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807648">
+ </A>
+None</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807650">
+ </A>
+X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807652">
+ </A>
+Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807654">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807656">
+ </A>
+No</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807658">
+ </A>
+<EM CLASS="Symbol">
+90</EM>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807660">
+ </A>
+-Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807662">
+ </A>
+X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807664">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807666">
+ </A>
+No</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807668">
+ </A>
+<EM CLASS="Symbol">
+180</EM>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807670">
+ </A>
+-X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807672">
+ </A>
+-Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807674">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807676">
+ </A>
+No</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807678">
+ </A>
+<EM CLASS="Symbol">
+270</EM>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807680">
+ </A>
+Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807682">
+ </A>
+-X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807684">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807686">
+ </A>
+Yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807688">
+ </A>
+None</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807690">
+ </A>
+Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807692">
+ </A>
+X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807694">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807696">
+ </A>
+Yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807698">
+ </A>
+<EM CLASS="Symbol">
+90</EM>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807700">
+ </A>
+-X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807702">
+ </A>
+Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807704">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807706">
+ </A>
+Yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807708">
+ </A>
+<EM CLASS="Symbol">
+180</EM>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807710">
+ </A>
+-Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807712">
+ </A>
+-X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807714">
+ </A>
+7</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807716">
+ </A>
+Yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807718">
+ </A>
+<EM CLASS="Symbol">
+270</EM>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807720">
+ </A>
+X<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=807722">
+ </A>
+-Y<SUB CLASS="Subscript">
+0</SUB>
+&middot;</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=678604">
+ </A>
+In the table above, (X<SUB CLASS="Subscript">
+0</SUB>
+, Y<SUB CLASS="Subscript">
+0</SUB>
+) are the original subscripts, and (X<SUB CLASS="Subscript">
+1</SUB>
+, Y<SUB CLASS="Subscript">
+1</SUB>
+) are the subscripts of the resulting array. The notation -Y<SUB CLASS="Subscript">
+0</SUB>
+ indicates a reversal of the Y axis, <I CLASS="Italic">
+Y</I>
+<SUB CLASS="Subscript">
+1</SUB>
+<I CLASS="Italic">
+ = N</I>
+<SUB CLASS="Subscript">
+y</SUB>
+<I CLASS="Italic">
+ - Y</I>
+<SUB CLASS="Subscript">
+0</SUB>
+<I CLASS="Italic">
+ </I>
+- 1. <I CLASS="Italic">
+Direction</I>
+ is taken modulo 8, so a rotation of -1 is the same as 7, 9 is the same as 1, etc.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=863743">
+ </A>
+The assertion that <EM CLASS="Emphasis">
+Array</EM>
+ is rotating counterclockwise may cause some confusion. Remember that when arrays are displayed on the screen (using TV or TVSCL, for example), the image is drawn with the origin (0,0) at the bottom left corner of the window. When arrays are printed on the console or command log window (using the PRINT command, for example), the (0,0) element is drawn in the upper left corner of the array. This means that while an image displayed in a window appears to rotate counterclockwise, an array printed in the command log appears to rotate clockwise.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678605">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678606">
+ </A>
+Create and display a wedge image by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678607">
+ </A>
+F = REPLICATE(1, 256) # FINDGEN(256) &amp; TVSCL, F</P>
+<P CLASS="Body">
+<A NAME="pgfId=678608">
+ </A>
+To display the image rotated 90 degrees counterclockwise, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678609">
+ </A>
+TVSCL, ROTATE(F, 1)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795753">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795754">
+ </A>
+<A HREF="idl184.htm#79661" CLASS="XRef">
+ROT</A>
+, <A HREF="idl1de.htm#70508" CLASS="XRef">
+TRANSPOSE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

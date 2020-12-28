@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> ERODE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl90.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl8e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676716">
+ </A>
+<A NAME="36716">
+ </A>
+ERODE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676717">
+ </A>
+The <A NAME="marker=672945">
+ </A>
+ERODE function implements the <A NAME="marker=672946">
+ </A>
+<A NAME="marker=810992">
+ </A>
+erosion operator on binary and grayscale images and vectors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676718">
+ </A>
+See the description of the DILATE function for background on morphological operators. Erosion is the dual of dilation. It does to the background what dilation does to the foreground.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676719">
+ </A>
+Briefly, the ERODE function returns the erosion of <I CLASS="Italics">
+Image</I>
+ by the structuring element <I CLASS="Italics">
+Structure</I>
+. This operator is commonly known as &quot;<A NAME="marker=672947">
+ </A>
+shrink&quot; or &quot;<A NAME="marker=672948">
+ </A>
+reduce&quot;. It can be used to remove islands smaller than the structuring element. </P>
+<P CLASS="Body">
+<A NAME="pgfId=815076">
+ </A>
+Over each pixel of the image, the origin of the structuring element is overlaid. If each nonzero element of the structuring element is contained in the image, the output pixel is set to one. Letting <EM CLASS="Emphasis">
+A</EM>
+ <EM CLASS="MathSymbol">
+ </EM>
+<EM CLASS="Emphasis">
+B</EM>
+ represent the erosion of an image <I CLASS="Italics">
+A</I>
+ by structuring element <I CLASS="Italics">
+B</I>
+, erosion can be defined as:</P>
+<DIV>
+<CENTER><IMG SRC="idl_25.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839093">
+ </A>
+where <I CLASS="Italics">
+(A)</I>
+<SUB CLASS="subscript">
+-b</SUB>
+ represents the translation of <I CLASS="Italics">
+A</I>
+ by <I CLASS="Italics">
+b</I>
+. The structuring element <I CLASS="Italics">
+B</I>
+ can be visualized as a probe that slides across image <I CLASS="Italics">
+A</I>
+, testing the spatial nature of <I CLASS="Italics">
+A</I>
+ at each point. If <I CLASS="Italics">
+B</I>
+ translated by <I CLASS="Italics">
+i,j</I>
+ can be contained in <I CLASS="Italics">
+A</I>
+ (by placing the origin of <I CLASS="Italics">
+B</I>
+ at <I CLASS="Italics">
+i,j</I>
+), then <I CLASS="Italics">
+i,j</I>
+ belongs to the erosion of <I CLASS="Italics">
+A</I>
+ by <I CLASS="Italics">
+B</I>
+. For example:</P>
+<DIV>
+<CENTER><IMG SRC="idl_26.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=839098">
+ </A>
+In this example, the origin of the structuring element is at (0, 0).</P>
+<P CLASS="Body">
+<A NAME="pgfId=676721">
+ </A>
+Used with grayscale images, which are always converted to byte type, the ERODE function is accomplished by taking the minimum of a set of differences. It can be used to conveniently implement the neighborhood minimum operator with the shape of the neighborhood given by the structuring element.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676722">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676723">
+ </A>
+Result = ERODE(<I CLASS="Italics">
+Image, Structure [, X</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+ [, Y</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+ [, Z</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+]]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676724">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676725">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676726">
+ </A>
+A one-, two-, or three-dimensional array upon which the erosion is to be performed. If this parameter is not of byte type, a temporary byte copy is obtained. If neither of the keywords GRAY or VALUES is present, the image is treated as a binary image with all nonzero pixels considered as 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676727">
+ </A>
+Structure</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676728">
+ </A>
+A one-, two-, or three-dimensional array to be used as the structuring element. The elements are interpreted as binary values--either zero or nonzero. The structuring element must have the same number of dimensions as <I CLASS="Italics">
+Image</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=870791">
+ </A>
+X<SUB CLASS="subscript">
+0</SUB>
+, Y<SUB CLASS="subscript">
+0</SUB>
+, Z<SUB CLASS="subscript">
+0</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=870792">
+ </A>
+Optional parameters specifying the one-, two-, or three-dimensional coordinate of the structuring element's origin. If omitted, the origin is set to the center, ([<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+/2], [<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+/2], [<I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+/2]), where <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+x</SUB>
+, <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+y</SUB>
+, and <I CLASS="Italics">
+N</I>
+<SUB CLASS="subscript">
+z</SUB>
+ are the dimensions of the structuring element array. The origin need not be within the structuring element.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676731">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676732">
+ </A>
+<A NAME="marker=672953">
+ </A>
+GRAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676733">
+ </A>
+Set this keyword to perform grayscale, rather than binary, erosion. Nonzero elements of the <I CLASS="Italics">
+Structure</I>
+ parameter determine the shape of the structuring element (neighborhood). If VALUES is not present, all elements of the structuring element are 0, yielding the neighborhood minimum operator.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676734">
+ </A>
+<A NAME="marker=672954">
+ </A>
+VALUES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676735">
+ </A>
+An array of the same dimensions as <I CLASS="Italics">
+Structure</I>
+ providing the values of the structuring element. The presence of this keyword implies grayscale erosion. Each pixel of the result is the minimum of Image less the corresponding elements of VALUE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676736">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676737">
+ </A>
+The following example thresholds a gray scale image at the value of 100, producing a binary image. The result is then &quot;opened&quot; with a 3 pixel by 3 pixel square shape operator, using the ERODE and DILATE operators. The effect is to remove holes, islands, and peninsula smaller than the shape operator:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676738">
+ </A>
+B = A GE 100	<EM CLASS="Comment">;
+Threshold and make binary image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676739">
+ </A>
+S = REPLICATE(1, 3, 3)	<EM CLASS="Comment">;
+Create the shape operator.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676740">
+ </A>
+C = DILATE(ERODE(B, S), S)	<EM CLASS="Comment">;
+&quot;Opening&quot; operator.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676741">
+ </A>
+TVSCL, C	<EM CLASS="Comment">;
+Show the result.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=823163">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=823164">
+ </A>
+<A HREF="idl7d.htm#30529" CLASS="XRef">
+DILATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SIZE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a2.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a0.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678885">
+ </A>
+<A NAME="51745">
+ </A>
+SIZE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678886">
+ </A>
+The <A NAME="marker=673892">
+ </A>
+SIZE function returns a vector that contains size and type information for its argument if no keywords are set. If a keyword is set, SIZE returns the specified quantity.</P>
+<P CLASS="Body">
+<A NAME="pgfId=722579">
+ </A>
+The returned vector is always of longword type. The first element is equal to the number of dimensions of <I CLASS="Italic">
+Expression</I>
+. This value is zero if <I CLASS="Italic">
+Expression</I>
+ is scalar or undefined. The next elements contain the size of each dimension, one element per dimension (none if <I CLASS="Italic">
+Expression</I>
+ is scalar or undefined). After the dimension sizes, the last two elements contain the type code (zero if undefined) and the number of elements in <I CLASS="Italic">
+Expression</I>
+, respectively. The type code is described in the table below.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=147423">
+ </A>
+<A NAME="17771">
+ </A>
+IDL Type Codes </LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=815390">
+ </A>
+Type Code</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=815392">
+ </A>
+Data Type</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815394">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815396">
+ </A>
+Undefined</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815398">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815400">
+ </A>
+Byte</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815402">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815404">
+ </A>
+Integer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815406">
+ </A>
+3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815408">
+ </A>
+Longword integer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815410">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815412">
+ </A>
+Floating point</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815414">
+ </A>
+5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815416">
+ </A>
+Double-precision floating</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815418">
+ </A>
+6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815420">
+ </A>
+Complex floating</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815422">
+ </A>
+7</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815424">
+ </A>
+String</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815426">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=815428">
+ </A>
+Structure</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148353">
+ </A>
+9</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=148355">
+ </A>
+Double-precision complex</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862738">
+ </A>
+10</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862740">
+ </A>
+Pointer</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862734">
+ </A>
+11</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=862736">
+ </A>
+Object reference</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678888">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678889">
+ </A>
+Result = SIZE(<I CLASS="Italic">
+Expression</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678890">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678891">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678892">
+ </A>
+The expression for which size information is requested.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=901280">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=901728">
+ </A>
+The following keywords determine the return value of the SIZE function. The keywords are mutually exclusive -- specify at most one of the following.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901281">
+ </A>
+<A NAME="marker=901760">
+ </A>
+DIMENSIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901283">
+ </A>
+Set this keyword to return the dimensions of <EM CLASS="Emphasis">
+Expression</EM>
+. If <EM CLASS="Emphasis">
+Expression</EM>
+ is scalar, the result is a longword scalar containing a 1. For arrays, the result is a longword array containing the array dimensions.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901288">
+ </A>
+<A NAME="marker=901761">
+ </A>
+FILE_LUN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901289">
+ </A>
+Set this keyword to return the file unit to which <EM CLASS="Emphasis">
+Expression</EM>
+ is associated, if it is an IDL file variable, as created with the ASSOC function. If <EM CLASS="Emphasis">
+Expression</EM>
+ is not a file variable, 0 is returned (0 is not a valid file unit for ASSOC).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901294">
+ </A>
+<A NAME="marker=901762">
+ </A>
+N_DIMENSIONS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901295">
+ </A>
+Set this keyword to return the number of dimension in <EM CLASS="Emphasis">
+Expression</EM>
+, if it is an array. If <EM CLASS="Emphasis">
+Expression</EM>
+ is scalar, 0 is returned. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901298">
+ </A>
+<A NAME="marker=901763">
+ </A>
+N_ELEMENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901299">
+ </A>
+Set this keyword to returns the number of data elements in <EM CLASS="Emphasis">
+Expression</EM>
+. Setting this keyword is equivalent to using the N_ELEMENTS function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901301">
+ </A>
+<A NAME="marker=901764">
+ </A>
+STRUCTURE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901303">
+ </A>
+Set this keyword to return all available information about <EM CLASS="Emphasis">
+Expression</EM>
+ as an IDL_SIZE structure. Note that since the structure is a named structure, the size of its fields is fixed. The following are descriptions of the fields in the returned structure:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901694">
+ </A>
+TYPE_NAME</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901696">
+ </A>
+Name of IDL type of <EM CLASS="Emphasis">
+Expression.</EM>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901698">
+ </A>
+TYPEIDL </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901700">
+ </A>
+Type code of <EM CLASS="Emphasis">
+Expression.</EM>
+&middot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901702">
+ </A>
+FILE_LUN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901704">
+ </A>
+If <EM CLASS="Emphasis">
+Expression</EM>
+ is an IDL file variable, as created with the ASSOC function, the file unit to which it is associated. Otherwise, 0.           </P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901706">
+ </A>
+N_ELEMENTS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901708">
+ </A>
+Number of data elements in <EM CLASS="Emphasis">
+Expression</EM>
+.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901710">
+ </A>
+N_DIMENSIONS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901712">
+ </A>
+If <EM CLASS="Emphasis">
+Expression</EM>
+ is an array, the number of dimensions. Otherwise, 0.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901714">
+ </A>
+DIMENSIONS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=901716">
+ </A>
+An 8-element array containing the dimensions of <EM CLASS="Emphasis">
+Expression</EM>
+.</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901328">
+ </A>
+<A NAME="marker=901765">
+ </A>
+TNAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901329">
+ </A>
+Set this keyword to return the IDL type of <EM CLASS="Emphasis">
+Expression</EM>
+ as a string.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=901331">
+ </A>
+<A NAME="marker=901766">
+ </A>
+TYPE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901332">
+ </A>
+Set this keyword to returns the IDL type code for <EM CLASS="Emphasis">
+Expression</EM>
+. See <A HREF="idl1a1.htm#17771" CLASS="XRef">
+IDL Type Codes</A>
+ for details.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678893">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678894">
+ </A>
+Print the size information for a 10 by 20 floating-point array by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678895">
+ </A>
+PRINT, SIZE(FINDGEN(10, 20))</P>
+<P CLASS="Body">
+<A NAME="pgfId=678896">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=678897">
+ </A>
+&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp; 10&nbsp;&nbsp; 20&nbsp;&nbsp; 4&nbsp;&nbsp; 200</P>
+<P CLASS="Body">
+<A NAME="pgfId=678898">
+ </A>
+IDL shows that the array has 2 dimensions, equal to 10 and 20, a type code of 4, and 200 elements total.</P>
+<P CLASS="Body">
+<A NAME="pgfId=901746">
+ </A>
+Similarly, to print only the number of dimensions of the same array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=901747">
+ </A>
+PRINT, SIZE(FINDGEN(10, 20), /N_DIMENSIONS)</P>
+<P CLASS="Body">
+<A NAME="pgfId=901756">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=901757">
+ </A>
+&nbsp;&nbsp;&nbsp;2</P>
+</DIV>
+</BODY>
+</HTML>

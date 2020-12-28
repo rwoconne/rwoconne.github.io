@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Common Data Format</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl23f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl23d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Chapter-Name">
+<A NAME="pgfId=998267">
+ </A>
+<A NAME="93188">
+ </A>
+Common Data Format</H1>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004389">
+</A>
+The following topics are covered in this chapter:</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004390">
+</A>
+&nbsp;</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004397">
+</A>
+<A HREF="idl23f.htm" CLASS="XRef">
+Variables and Attributes</A>
+ 	 <A HREF="idl23f.htm" CLASS="XRef">
+Variables and Attributes</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004404">
+</A>
+<A HREF="idl240.htm" CLASS="XRef">
+CDF File Options</A>
+ 	 <A HREF="idl240.htm" CLASS="XRef">
+CDF File Options</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004411">
+</A>
+<A HREF="idl241.htm" CLASS="XRef">
+Type Conversion</A>
+ 	 <A HREF="idl241.htm" CLASS="XRef">
+Type Conversion</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004418">
+</A>
+<A HREF="idl242.htm" CLASS="XRef">
+Specifying Attributes and Variables</A>
+ 	 <A HREF="idl242.htm" CLASS="XRef">
+Specifying Attributes and Variables</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004425">
+</A>
+<A HREF="idl243.htm" CLASS="XRef">
+Example: Creating a CDF File</A>
+ 	 <A HREF="idl243.htm" CLASS="XRef">
+Example: Creating a CDF File</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004429">
+</A>
+CDF Routines 	 <A HREF="idl244.htm" CLASS="XRef">
+CDF_ATTCREATE</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1004430">
+</A>
+&nbsp;</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998271">
+ </A>
+This chapter details the interface routines for the Common Data Format. General notes about the interface are presented below, followed by individual descriptions of the routines. This version of IDL supports CDF V2.6. </P>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=998365">
+ </A>
+CDF Version 2.6 Compatibility Warning</H4>
+<P CLASS="Body---intro">
+<A NAME="pgfId=999257">
+ </A>
+CDFs created with CDF V2.6 (the version currently used by IDL) take up less disk space than CDFs created with previous CDF distributions. The new version saves 1689 bytes per CDF file regardless of the file's contents, plus an additional savings of 128 bytes per variable. A side effect of this improvement is that V2.6 CDFs can only be read with the CDF V2.6 distribution. CDF V2.6 files are not readable by previous versions of CDF.</P>
+</DIV>
+<P CLASS="ChapTOC">
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl23f.htm#pgfId=999273" CLASS="Hypertext">
+Variables and Attributes</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl240.htm#pgfId=999396" CLASS="Hypertext">
+CDF File Options</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl241.htm#pgfId=999512" CLASS="Hypertext">
+Type Conversion</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl242.htm#pgfId=999516" CLASS="Hypertext">
+Specifying Attributes and Variables</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl243.htm#pgfId=999695" CLASS="Hypertext">
+Example: Creating a CDF File</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl244.htm#pgfId=999407" CLASS="Hypertext">
+CDF_ATTCREATE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl245.htm#pgfId=996947" CLASS="Hypertext">
+CDF_ATTDELETE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl246.htm#pgfId=997002" CLASS="Hypertext">
+CDF_ATTEXISTS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl247.htm#pgfId=997060" CLASS="Hypertext">
+CDF_ATTGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl248.htm#pgfId=997085" CLASS="Hypertext">
+CDF_ATTINQ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl249.htm#pgfId=997111" CLASS="Hypertext">
+CDF_ATTNUM</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl24a.htm#pgfId=997125" CLASS="Hypertext">
+CDF_ATTPUT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl24b.htm#pgfId=1002693" CLASS="Hypertext">
+CDF_ATTRENAME</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl24c.htm#pgfId=997172" CLASS="Hypertext">
+CDF_CLOSE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl24d.htm#pgfId=999016" CLASS="Hypertext">
+CDF_CONTROL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl24e.htm#pgfId=997320" CLASS="Hypertext">
+CDF_CREATE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl24f.htm#pgfId=997397" CLASS="Hypertext">
+CDF_DELETE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl250.htm#pgfId=997409" CLASS="Hypertext">
+CDF_DOC</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl251.htm#pgfId=997439" CLASS="Hypertext">
+CDF_ENCODE_EPOCH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl252.htm#pgfId=997483" CLASS="Hypertext">
+CDF_EPOCH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl253.htm#pgfId=997519" CLASS="Hypertext">
+CDF_ERROR</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl254.htm#pgfId=997531" CLASS="Hypertext">
+CDF_EXISTS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl255.htm#pgfId=997544" CLASS="Hypertext">
+CDF_INQUIRE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl256.htm#pgfId=997615" CLASS="Hypertext">
+CDF_LIB_INFO</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl257.htm#pgfId=997660" CLASS="Hypertext">
+CDF_OPEN</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl258.htm#pgfId=997673" CLASS="Hypertext">
+CDF_PARSE_EPOCH</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl259.htm#pgfId=997710" CLASS="Hypertext">
+CDF_VARCREATE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl25a.htm#pgfId=997765" CLASS="Hypertext">
+CDF_VARDELETE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl25b.htm#pgfId=997831" CLASS="Hypertext">
+CDF_VARGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl25c.htm#pgfId=997893" CLASS="Hypertext">
+CDF_VARGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl25d.htm#pgfId=997927" CLASS="Hypertext">
+CDF_VARINQ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl25e.htm#pgfId=997970" CLASS="Hypertext">
+CDF_VARNUM</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl25f.htm#pgfId=997987" CLASS="Hypertext">
+CDF_VARPUT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl260.htm#pgfId=998032" CLASS="Hypertext">
+CDF_VARRENAME</A>
+</H2>
+</BODY>
+</HTML>

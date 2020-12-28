@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_VD_GET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2b8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2b6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999585">
+ </A>
+<A NAME="39251">
+ </A>
+HDF_VD_GET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=999589">
+ </A>
+The <A NAME="marker=999587">
+ </A>
+HDF_VD_GET procedure is a general <A NAME="marker=999588">
+ </A>
+<EM CLASS="Emphasis">
+VData</EM>
+ inquiry routine. Set the various keywords to named variables to return information about a <EM CLASS="Emphasis">
+VData</EM>
+ in a Hierarchical Data Format file.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999590">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999591">
+ </A>
+HDF_VD_GET, <I CLASS="Italics">
+VData</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999592">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999593">
+ </A>
+VData</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999594">
+ </A>
+A VData handle returned by HDF_VD_ATTACH.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999595">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999597">
+ </A>
+<A NAME="marker=999596">
+ </A>
+CLASS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999598">
+ </A>
+Set this keyword to a named variable in which the class name of the VData is returned as a string.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999600">
+ </A>
+<A NAME="marker=999599">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999601">
+ </A>
+Set this keyword to a named variable in which a long, containing the number of records in the VData, is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999603">
+ </A>
+<A NAME="marker=999602">
+ </A>
+FIELDS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999604">
+ </A>
+Set this keyword to a named variable in which a comma-separated string of fields in the VData is returned (e.g., <CODE CLASS="Code">
+'PX,PY,PZ'</CODE>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1009581">
+ </A>
+The maximum number of fields is 256 (except on the Macintosh, where it is 64). Each field can be up to 128 characters in length. The returned fields may or may not contain buffering whitespace depending on how the HDF file was created.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999606">
+ </A>
+<A NAME="marker=999605">
+ </A>
+INTERLACE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999607">
+ </A>
+Set this keyword to a named variable in which a string, containing either <CODE CLASS="Code">
+'FULL_INTERLACE'</CODE>
+ or <CODE CLASS="Code">
+'NO_INTERLACE'</CODE>
+, is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999609">
+ </A>
+<A NAME="marker=999608">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999610">
+ </A>
+Set this keyword to a named variable in which a string, containing the name of the VData, is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999612">
+ </A>
+<A NAME="marker=999611">
+ </A>
+NFIELDS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999613">
+ </A>
+Set this keyword to a named variable in which a long, containing the number of fields in the VDATA, is returned. For example, the VData containing the fields &quot;PX,PY,PZ&quot;, has an NFIELDS of 3.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999615">
+ </A>
+<A NAME="marker=999614">
+ </A>
+REF</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999616">
+ </A>
+Set this keyword to a named variable in which the reference number of the VData is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999618">
+ </A>
+<A NAME="marker=999617">
+ </A>
+SIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999619">
+ </A>
+Set this keyword to a named variable in which a long, containing the local size of a record of VData, is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=999621">
+ </A>
+<A NAME="marker=999620">
+ </A>
+TAG</H3>
+<P CLASS="Body">
+<A NAME="pgfId=999622">
+ </A>
+Set this keyword to a named variable in which the tag number of the VData is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999623">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=999624">
+ </A>
+HDF_VD_GET, vdat, CLASS=c, COUNT=co, FIELDS=f, NAME=n, SIZE=s</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999625">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999632">
+ </A>
+<A HREF="idl2b9.htm#19174" CLASS="XRef">
+HDF_VD_GETINFO</A>
+, <A HREF="idl2c7.htm#72212" CLASS="XRef">
+HDF_VG_GETINFO</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

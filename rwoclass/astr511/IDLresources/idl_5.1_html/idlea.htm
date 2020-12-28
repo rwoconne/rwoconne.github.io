@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LINFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idleb.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle9.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=53763">
+ </A>
+<A NAME="74603">
+ </A>
+LINFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=53766">
+ </A>
+The <A NAME="marker=53765">
+ </A>
+LINFIT function fits the paired data {<EM CLASS="Emphasis">
+xi</EM>
+, <EM CLASS="Emphasis">
+yi</EM>
+} to the linear model, y = A + Bx, by minimizing the <A NAME="marker=53767">
+ </A>
+Chi-square error statistic. The result is a two-element vector containing the model parameters [A, B]. </P>
+<P CLASS="Body">
+<A NAME="pgfId=53768">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+linfit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53769">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53770">
+ </A>
+Result = LINFIT(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53771">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53772">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53773">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53774">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53775">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53776">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53778">
+ </A>
+<A NAME="marker=53777">
+ </A>
+CHISQ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53779">
+ </A>
+Set this keyword to a named variable that will contain the Chi-square error statistic as the sum of squared errors between <EM CLASS="Emphasis">
+yi</EM>
+ and A + B<EM CLASS="Emphasis">
+xi</EM>
+. If individual standard deviations are supplied, then the Chi-square error statistic is computed as the sum of squared errors divided by the standard deviations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=837073">
+ </A>
+<A NAME="marker=837072">
+ </A>
+DOUBLE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=837074">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53781">
+ </A>
+<A NAME="marker=53780">
+ </A>
+PROB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53782">
+ </A>
+Set this keyword to a named variable that will contain the probability that the computed fit would have a value of CHISQ or greater. If PROB is greater than 0.1, the model parameters are &quot;believable&quot;. If PROB is less than 0.1, the accuracy of the model parameters is questionable.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53784">
+ </A>
+<A NAME="marker=53783">
+ </A>
+SDEV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53785">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector that specifies the individual standard deviations for {<EM CLASS="Emphasis">
+xi</EM>
+, <EM CLASS="Emphasis">
+yi</EM>
+} used for weighting, where the weight is defined as 1/SDEV<SUP CLASS="Superscript">
+2</SUP>
+. If SDEV is not set, no weighting is used.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=53787">
+ </A>
+<A NAME="marker=53786">
+ </A>
+SIGMA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=53788">
+ </A>
+Set this keyword to a named variable that will contain a two-element vector of probable uncertainties for the model parameters. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53789">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53790">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element vectors of paired data.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53791">
+ </A>
+X = [-3.20, 4.49, -1.66, 0.64, -2.43, -0.89, -0.12, 1.41, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53792">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.95, 2.18, 3.72, 5.26]</P>
+<P CLASS="Code">
+<A NAME="pgfId=53793">
+ </A>
+Y = [-7.14, -1.30, -4.26, -1.90, -6.19, -3.98, -2.87, -1.66, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=53794">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.78, -2.61, 0.31, 1.74]</P>
+<P CLASS="Body">
+<A NAME="pgfId=53795">
+ </A>
+Define an <EM CLASS="Emphasis">
+n</EM>
+-element vector of standard deviations with a constant value of 0.85</P>
+<P CLASS="Code">
+<A NAME="pgfId=53796">
+ </A>
+sdev = REPLICATE(0.85, N_ELEMENTS(X))</P>
+<P CLASS="Body">
+<A NAME="pgfId=53797">
+ </A>
+Compute the model parameters, A and B.</P>
+<P CLASS="Code">
+<A NAME="pgfId=53798">
+ </A>
+PRINT, LINFIT(X, Y, SDEV=sdev)</P>
+<P CLASS="Body">
+<A NAME="pgfId=53799">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=53800">
+ </A>
+[-3.44596, 0.867329]</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=53801">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=840829">
+ </A>
+<A HREF="idl38.htm#47619" CLASS="XRef">
+COMFIT</A>
+, <A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idle6.htm#94704" CLASS="XRef">
+LADFIT</A>
+, <A HREF="idlfd.htm#38447" CLASS="XRef">
+LMFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+, <A HREF="idl1c9.htm#70302" CLASS="XRef">
+SVDFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

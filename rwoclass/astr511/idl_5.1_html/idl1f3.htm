@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VAX_FLOAT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=938904">
+ </A>
+<A NAME="19939">
+ </A>
+VAX_FLOAT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=934773">
+ </A>
+The <A NAME="marker=938680">
+ </A>
+VAX_FLOAT function performs one of two possible actions:</P>
+<OL>
+<LI CLASS="Numbered-1">
+<A NAME="pgfId=934775">
+ </A>
+Determine, and optionally change, the default value for the VAX_FLOAT keyword to the OPEN procedures and the CALL_EXTERNAL function.</LI>
+<LI CLASS="Numbered">
+<A NAME="pgfId=934985">
+ </A>
+Determine if an open file unit has the VAX_FLOAT attribute set.</LI>
+</OL>
+<P CLASS="Body">
+<A NAME="pgfId=934986">
+ </A>
+See the discussion of VAX floating-point conversion in <A HREF="ieee.html#37815" CLASS="XRef">
+</A>
+ and the VAX_FLOAT keyword to <A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+ for more on the VAX floating-point conversion issue.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=934782">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=934784">
+ </A>
+Result = VAX_FLOAT(<I CLASS="Italic">
+[Default]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=934786">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934788">
+ </A>
+Default</H4>
+<P CLASS="Body">
+<A NAME="pgfId=935117">
+ </A>
+<I CLASS="Italic">
+Default</I>
+ is used to change the default value of the VAX_FLOAT keyword to the OPEN procedures and the CALL_EXTERNAL function. A value of 0 (zero) makes the default for those keywords False. A non-zero value makes the default True. Specifying <I CLASS="Italic">
+Default</I>
+ in conjunction with the FILE_UNIT keyword will cause an error.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=935118">
+ </A>
+If the FILE_UNIT keyword is <I CLASS="Italic">
+not</I>
+ specified, the value returned from VAX_FLOAT is the default value <I CLASS="Italic">
+before</I>
+ any change is made. This is the case even if <I CLASS="Italic">
+Default</I>
+ is specified. This allows you to get the old setting and change it in a single operation.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=934962">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934795">
+ </A>
+<A NAME="marker=938681">
+ </A>
+FILE_UNIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=934796">
+ </A>
+Set this keyword equal to the logical file unit number (LUN) of an open file. VAX_FLOAT returns True (1) if the file was opened with the VAX_FLOAT attribute, or False (0) otherwise. Setting the FILE_UNIT keyword when the <I CLASS="Italic">
+Default</I>
+ argument is specified will cause an error.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=934801">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=934803">
+ </A>
+To determine if the default VAX_FLOAT keyword value for OPEN and CALL_EXTERNAL is True or False:</P>
+<P CLASS="Code">
+<A NAME="pgfId=934806">
+ </A>
+default_vax_float = VAX_FLOAT()</P>
+<P CLASS="Body">
+<A NAME="pgfId=935130">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=938691">
+ </A>
+To determine the current default value of the VAX_FLOAT keyword for OPEN and CALL_EXTERNAL and change it to True (1) in a single operation:</P>
+<P CLASS="Code">
+<A NAME="pgfId=934811">
+ </A>
+old_vax_float = VAX_FLOAT(1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=934813">
+ </A>
+To determine if the file currently open on logical file unit 1 was opened with the VAX_FLOAT keyword set:</P>
+<P CLASS="Code">
+<A NAME="pgfId=934816">
+ </A>
+file_is_vax_float = VAX_FLOAT(FILE_UNIT=1)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=935057">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=935058">
+ </A>
+<A HREF="idl24.htm#65173" CLASS="XRef">
+CALL_EXTERNAL</A>
+, <A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+, <A HREF="..html#25040" CLASS="XRef">
+Command Line Options</A>
+, and <A HREF="ieee.html#37815" CLASS="XRef">
+</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

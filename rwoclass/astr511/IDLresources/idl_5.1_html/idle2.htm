@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> KURTOSIS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idle3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idle1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=859070">
+ </A>
+<A NAME="36156">
+ </A>
+KURTOSIS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=859071">
+ </A>
+The <A NAME="marker=859095">
+ </A>
+KURTOSIS function computes the <A NAME="marker=859101">
+ </A>
+statistical kurtosis of an <I CLASS="Italic">
+n</I>
+-element vector. If the variance of the vector is zero, the kurtosis is not defined, and KURTOSIS returns !VALUES.F_NAN as the result. KURTOSIS calls the IDL function MOMENT.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=881460">
+ </A>
+Calling sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=881461">
+ </A>
+Result = KURTOSIS(<I CLASS="Italic">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=881462">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=859075">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859076">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element, floating-point or double-precision vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=859077">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=859078">
+ </A>
+<A NAME="marker=880036">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=859079">
+ </A>
+If this keyword is set, computations are performed in double precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=860892">
+ </A>
+<A NAME="marker=880037">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=860896">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=859080">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=880056">
+ </A>
+x = [65, 63, 67, 64, 68, 62, 70, 66, 68, 67, 69, 71, 66, 65, 70]<BR>
+<EM CLASS="Comment">;
+Define the n-element vector of sample data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=880057">
+ </A>
+result = KURTOSIS(x)<EM CLASS="Comment">;
+	Compute the kurtosis.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=880059">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=859083">
+ </A>
+IDL prints</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=859084">
+ </A>
+-1.18258</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=880019">
+ </A>
+See Also </H3>
+<P CLASS="Body">
+<A NAME="pgfId=880035">
+ </A>
+<A HREF="routinesM-O.html#18025" CLASS="XRef">
+</A>
+, <A HREF="routinesM-O.html#22002" CLASS="XRef">
+</A>
+, <A HREF="routinesM-O.html#59358" CLASS="XRef">
+</A>
+, <A HREF="idl1b5.htm#11350" CLASS="XRef">
+STDDEV</A>
+, <A HREF="idl1a2.htm#38157" CLASS="XRef">
+SKEWNESS</A>
+, <A HREF="idl1f2.htm#16071" CLASS="XRef">
+VARIANCE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

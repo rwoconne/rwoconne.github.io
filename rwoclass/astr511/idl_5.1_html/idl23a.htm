@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The Tektronix Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl23b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl239.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144766">
+ </A>
+<A NAME="40852">
+ </A>
+The <A NAME="marker=143175">
+ </A>
+Tektronix Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=488171">
+ </A>
+Device Keywords Accepted by the REGIS Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=488184">
+ </A>
+<A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#83858" CLASS="XRef">
+COLORS</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#84491" CLASS="XRef">
+GIN_CHARS</A>
+, <A HREF="idl22e.htm#86126" CLASS="XRef">
+PLOT_TO</A>
+, <A HREF="idl22e.htm#51443" CLASS="XRef">
+RESET_STRING</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#57044" CLASS="XRef">
+SET_STRING</A>
+, <A HREF="idl22e.htm#76301" CLASS="XRef">
+TEK4014</A>
+, <A HREF="idl22e.htm#58847" CLASS="XRef">
+TEK4100</A>
+, <A HREF="idl22e.htm#55523" CLASS="XRef">
+TTY</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144767">
+ </A>
+The Tektronix 4000 (4010, 4014, etc.), 4100 and 4200 series of graphics terminals (and the multitude of terminals and microcomputers that emulate them) are among the most common graphics devices available. To use IDL graphics with such terminals, issue the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144768">
+ </A>
+SET_PLOT,'TEK'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144769">
+ </A>
+This causes IDL to use the Tektronix driver for producing graphical output. Once the Tektronix driver is enabled via SET_PLOT, the DEVICE procedure is used to control its actions, and to configure IDL for the specific features of your terminal. If you never call the DEVICE procedure, IDL assumes a plain vanilla Tektronix 4000 series compatible terminal. The 4200 series is upwardly compatible with the 4100 series; all references to the 4100 series also include the 4200 series. To set up IDL for use with a 4100 series compatible terminal with <I CLASS="Italics">
+n</I>
+ colors, enter the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144770">
+ </A>
+SET_PLOT, 'TEK'</P>
+<P CLASS="Code">
+<A NAME="pgfId=144771">
+ </A>
+DEVICE, /TEK4100, COLORS = <I CLASS="Italics">
+n</I>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144772">
+ </A>
+The number of colors should be set to 2B where B is the number of bit planes in your terminal. If you use a Tektronix compatible terminal that requires calling the DEVICE procedure for configuration, you should probably create and use a start-up procedure the calls the DEVICE procedure, as described in Chapter 2. Because of the tremendous variation among the requirements and abilities of these terminals, it is crucial that you configure IDL properly for your terminal. In particular, the mode switching character sequences, set by the keyword parameters SET_STRING and RESET_STRING must be set correctly.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144387">
+ </A>
+The DEVICE Procedure For Tektronix Terminals</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144423">
+ </A>
+The default setting for Tektronix output is: 10-bit coordinates, 4000 series terminals, and no use of color. The DEVICE keywords can be used to modify these defaults.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144178">
+ </A>
+Tektronix Limitations</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144774">
+ </A>
+The line drawing procedures work with all models. Line style and color capabilities vary greatly among terminal models and/or emulation programs.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144775">
+ </A>
+Color and the display of images (albeit very slowly and frequently of a poor quality because of the small number of colors) is usable only with 4100 series terminals. Hardware polygon fill and thick lines do not work with the 4000 series.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144776">
+ </A>
+The image coordinate system does not match the graphics coordinate system. The graphics coordinates range from 0 to 3071 in Y, and from 0 to 4095 in X. Image coordinates vary according to terminal model. A typical range is from 0 to 479 in Y, and 0 to 639 in X. Because of this, the SHADE_SURF procedure does not work with Tektronix terminals.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144777">
+ </A>
+Warning: Not all 4100 series terminals are capable of displaying images--the Tektronix pixel operations option is required. Many terminal emulators do not emulate this option. The Tektronix commands used to output images are: RU, begin pixel operations, RS, set pixel viewport, and RP, raster write. If your terminal or emulator does not accept these commands, you will not be able to display images.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144778">
+ </A>
+The Tektronix graphics protocol does not allow the specification of line thickness. Lines with a thickness more than 1.0 are drawn using polygon filling in the case of 4100 series terminals. With 4000 series terminals, thick lines are emulated by drawing multiple thin lines. This scheme will produce artifacts on some Tektronix emulating devices because of differing resolutions, normal line thicknesses and inexact coordinate conversions.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144811">
+ </A>
+Tektronix Device Limitations</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144812">
+ </A>
+Usage of Tektronix and Tektronix-compatible terminals with IDL has the following limitations:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144813">
+ </A>
+Image coordinates do not match the coordinates used by the rest of the graphic procedures. This is because no two models of Tektronix terminals are compatible. The graphics procedures utilize the default coordinate system of 1024 by 780, or 4096 by 3120 in the 12-bit mode. The size of the pixel memory and coordinate system vary widely between models. The <I CLASS="Italics">
+Position</I>
+ parameter of the TV and TVSCL procedures does not work.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144814">
+ </A>
+The cursor can not be positioned from the computer meaning that the TVCRS procedure cannot be used with the Tektronix driver.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144815">
+ </A>
+Pixel values may not be read back from the terminal, rendering the TVRD function inoperable.</LI>
+</UL>
+</DIV>
+</BODY>
+</HTML>

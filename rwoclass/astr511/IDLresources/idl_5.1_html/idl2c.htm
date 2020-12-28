@@ -1,0 +1,561 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CHECK_MATH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676079">
+ </A>
+<A NAME="92570">
+ </A>
+CHECK_MATH</H2>
+<P CLASS="Body">
+<A NAME="pgfId=219166">
+ </A>
+The <A NAME="marker=219165">
+ </A>
+CHECK_MATH function returns and clears the accumulated math error status. The returned value is the sum of the bit values (described in <A HREF="idl2c.htm#93235" CLASS="XRef">
+Math Error Status Values (note that not all machines detect all errors)</A>
+ below) of the accumulated errors.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=219203">
+ </A>
+<A NAME="93235">
+ </A>
+Math Error Status Values (note that not all machines detect all errors)</LI>
+</UL>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=219171">
+ </A>
+Value</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=219173">
+ </A>
+Condition</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219175">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219177">
+ </A>
+No errors detected since the last interactive prompt or call to CHECK_MATH</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219179">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219181">
+ </A>
+Integer divided by zero</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219183">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219185">
+ </A>
+Integer overflow</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219187">
+ </A>
+16</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219189">
+ </A>
+Floating-point divided by zero</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219191">
+ </A>
+32</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219193">
+ </A>
+Floating-point underflow</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219195">
+ </A>
+64</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219197">
+ </A>
+Floating-point overflow</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219199">
+ </A>
+128</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=219201">
+ </A>
+Floating-point operand error. An illegal operand was encountered, such as a negative operand to the SQRT or ALOG functions, or an attempt to convert to integer a number whose absolute value is greater than 2<SUP CLASS="Superscript">
+31</SUP>
+ - 1</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=219277">
+ </A>
+Note that each type of error is only represented once in the return value--any number of &quot;Integer divided by zero&quot; errors will result in a return value of 1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=219285">
+ </A>
+The math error status is cleared (reset to zero) when CHECK_MATH is called, or when errors are reported. Math errors are reported either never, when the interpreter returns to an interactive prompt, or after execution of each IDL statement, depending on the value of the !EXCEPT system variable (see <A HREF="sysvars.html#41357" CLASS="XRef">
+</A>
+). See &quot;Examples,&quot; below, for further discussion.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676081">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676082">
+ </A>
+Result = CHECK_MATH(<I CLASS="Italics">
+&nbsp;</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676088">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=219231">
+ </A>
+<A NAME="marker=219246">
+ </A>
+PRINT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=219234">
+ </A>
+Set this keyword to print an error message to the IDL command log if any accumulated math errors exist. If this keyword is not present, CHECK_MATH executes silently.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676095">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676096">
+ </A>
+To simply check and clear the accumulated math error status using all the defaults, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676097">
+ </A>
+PRINT, CHECK_MATH()</P>
+<P CLASS="Body">
+<A NAME="pgfId=676098">
+ </A>
+IDL prints the accumulated math error status code and resets to zero.</P>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=219464">
+ </A>
+CHECK_MATH and !EXCEPT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=219467">
+ </A>
+Because the accumulated math error status is cleared when it is reported, the behavior and appropriate use of CHECK_MATH depends on the value of the system variable !EXCEPT. </P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=219504">
+ </A>
+If !EXCEPT is set equal to 0, math exceptions are not reported automatically, and thus CHECK_MATH will always return the error status accumulated since the last time it was called. </LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=219505">
+ </A>
+If !EXCEPT is set equal to 1, math exceptions are reported when IDL returns to the interactive command prompt. In this case, CHECK_MATH will return appropriate error codes when used <EM CLASS="Emphasis">
+within</EM>
+ an IDL procedure, but will always return zero when called at the IDL prompt.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=219515">
+ </A>
+If !EXCEPT is set equal to 2, math exceptions are reported after each IDL statement. In this case, CHECK_MATH will return appropriate error codes only when used <EM CLASS="Emphasis">
+within an IDL statement</EM>
+, and will always return zero otherwise.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=219449">
+ </A>
+For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=219527">
+ </A>
+!EXCEPT=0	<EM CLASS="Comment">;
+Set value of !EXCEPT to zero.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219528">
+ </A>
+PRINT, 1./0., 1/0	<EM CLASS="Comment">;
+Both of these operations cause errors.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=219529">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219530">
+ </A>
+Inf&nbsp;&nbsp;&nbsp;&nbsp;1	<EM CLASS="Comment">;
+The special floating-point value </EM>
+Inf<EM CLASS="Comment">;
+ is returned for </EM>
+1./0.<EM CLASS="Comment">;
+ There is no integer analogue to the floating-point </EM>
+Inf<EM CLASS="Comment">;
+.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219533">
+ </A>
+PRINT, CHECK_MATH()	<EM CLASS="Comment">;
+Check the accumulated error status</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=219534">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219535">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;17	<EM CLASS="Comment">;
+CHECK_MATH reports floating-point and integer divide-by-zero errors.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219308">
+ </A>
+!EXCEPT=1	<EM CLASS="Comment">;
+Set value of !EXCEPT to one.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219309">
+ </A>
+PRINT, 1./0., 1/0	<EM CLASS="Comment">;
+Both of these operations cause errors.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=219331">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219332">
+ </A>
+Inf&nbsp;&nbsp;&nbsp;&nbsp;1	<EM CLASS="Comment">;
+This time IDL also prints error messages.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219334">
+ </A>
+% Program caused arithmetic error: Integer divide by 0</P>
+<P CLASS="Code">
+<A NAME="pgfId=219335">
+ </A>
+% Program caused arithmetic error: Floating divide by 0</P>
+<P CLASS="Code">
+<A NAME="pgfId=219336">
+ </A>
+PRINT, CHECK_MATH()	<EM CLASS="Comment">;
+Check the accumulated error status</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=219341">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219317">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;0	<EM CLASS="Comment">;
+Status was reset.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=219318">
+ </A>
+However, if we do not allow IDL to return to an interactive prompt before checking the math error status:</P>
+<P CLASS="Code">
+<A NAME="pgfId=219364">
+ </A>
+!EXCEPT=1	<EM CLASS="Comment">;
+Set value of !EXCEPT to one.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219365">
+ </A>
+PRINT, 1./0., 1/0 &amp; PRINT, CHECK_MATH()<BR>
+<EM CLASS="Comment">;
+Call to CHECK_MATH happens before returning to the IDL command prompt.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=219366">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219370">
+ </A>
+Inf&nbsp;&nbsp;&nbsp;&nbsp;1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219548">
+ </A>
+17</P>
+<P CLASS="Body">
+<A NAME="pgfId=219304">
+ </A>
+In this case, the math error status code (17) is printed, but because the error status has been cleared by the call to CHECK_MATH, no error messages are printed when IDL returns to the interactive command prompt. Finally,</P>
+<P CLASS="Code">
+<A NAME="pgfId=219555">
+ </A>
+!EXCEPT=2	<EM CLASS="Comment">;
+Set value of !EXCEPT to two.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219556">
+ </A>
+PRINT, 1./0., 1/0 &amp; PRINT, CHECK_MATH()<BR>
+<EM CLASS="Comment">;
+Call to CHECK_MATH happens before returning to the IDL command prompt.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=219557">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219553">
+ </A>
+Inf       1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219563">
+ </A>
+% Program caused arithmetic error: Integer divide by 0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219564">
+ </A>
+% Program caused arithmetic error: Floating divide by 0</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219565">
+ </A>
+% Detected at  $MAIN$                 </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219566">
+ </A>
+           0</P>
+<P CLASS="Body">
+<A NAME="pgfId=219567">
+ </A>
+Errors are printed before executing the CHECK_MATH function, so CHECK_MATH reports no errors. However, if we include the call to CHECK_MATH in the first PRINT command, we see the following:</P>
+<P CLASS="Code">
+<A NAME="pgfId=219580">
+ </A>
+PRINT, 1./0., 1/0, CHECK_MATH()<EM CLASS="Comment">;
+	Call to CHECK_MATH is part of a single IDL statement.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=219581">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=219582">
+ </A>
+Inf&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;17</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=219602">
+ </A>
+Printing Error Messages</H4>
+<P CLASS="Body">
+<A NAME="pgfId=219633">
+ </A>
+The following code fragment prints abbreviated names of errors that have occurred:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676099">
+ </A>
+ERRS = ['Divide by 0', 'Underflow', 'Overflow', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=676100">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Illegal Operand']	<EM CLASS="Comment">;
+Create a string array of error names.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676101">
+ </A>
+J = CHECK_MATH()	<EM CLASS="Comment">;
+Get math error status.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676102">
+ </A>
+FOR I = 4, 7 DO IF ISHFT(J, -I) AND 1 THEN $</P>
+<P CLASS="Code">
+<A NAME="pgfId=676103">
+ </A>
+&nbsp;&nbsp;PRINT, ERRS(I-4), ' Occurred'	<EM CLASS="Comment">;
+Check to see if an error occurred and print the corresponding error message.</EM>
+</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=219619">
+ </A>
+Testing Critical Code</H4>
+<P CLASS="Body">
+<A NAME="pgfId=219634">
+ </A>
+Assume you have a critical section of code that is likely to produce an error. The following example shows how to check for errors, and if one is detected, how to repeat the code with different parameters.</P>
+<P CLASS="Code">
+<A NAME="pgfId=219620">
+ </A>
+JUNK = CHECK_MATH(/PRINT)	<EM CLASS="Comment">;
+Clear error status from previous operations, and print error messages if an error exists.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219638">
+ </A>
+!EXCEPT=0	<EM CLASS="Comment">;
+Disable automatic printing of subsequent math errors.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219621">
+ </A>
+AGAIN: ... 	<EM CLASS="Comment">;
+Critical section goes here.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219622">
+ </A>
+IF CHECK_MATH() NE 0 THEN BEGIN	<EM CLASS="Comment">;
+Did an arithmetic error occur? If so, print error message and request new values.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219623">
+ </A>
+PRINT, 'Math error occurred in critical section.'</P>
+<P CLASS="Code">
+<A NAME="pgfId=219624">
+ </A>
+READ, 'Enter new values.',...	<EM CLASS="Comment">;
+Get new parameters from user.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219651">
+ </A>
+!EXCEPT=2	<EM CLASS="Comment">;
+Enable automatic printing of math errors.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219625">
+ </A>
+GOTO, AGAIN 	<EM CLASS="Comment">;
+And retry.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=219626">
+ </A>
+ENDIF </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=219615">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=36981">
+ </A>
+<A HREF="idla1.htm#48972" CLASS="XRef">
+FINITE</A>
+, <A HREF="idldc.htm#41330" CLASS="XRef">
+ISHFT</A>
+, <A HREF="idl10a.htm#91584" CLASS="XRef">
+MACHAR</A>
+, <A HREF="sysvars.html#62375" CLASS="XRef">
+</A>
+, <A HREF="sysvars.html#41357" CLASS="XRef">
+</A>
+, and <A HREF="..html#73043" CLASS="XRef">
+Math Errors</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

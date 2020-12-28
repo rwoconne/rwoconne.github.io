@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_BMP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl164.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl162.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756090">
+ </A>
+<A NAME="75148">
+ </A>
+READ_BMP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756092">
+ </A>
+The <A NAME="marker=756091">
+ </A>
+READ_BMP function reads a Microsoft Windows Version 3 device independent <A NAME="marker=756093">
+ </A>
+bitmap file (.BMP) and returns a byte array containing the image. Dimensions are taken from the BITMAPINFOHEADER of the file. In the case of 4-bit or 8-bit images, the dimensions of the resulting array are (<CODE CLASS="Code">
+biWidth</CODE>
+, <CODE CLASS="Code">
+biHeight</CODE>
+). </P>
+<P CLASS="Body">
+<A NAME="pgfId=756094">
+ </A>
+For 24-bit images, the dimensions are (<CODE CLASS="Code">
+3</CODE>
+, <CODE CLASS="Code">
+biWidth</CODE>
+, <CODE CLASS="Code">
+biHeight</CODE>
+). Color interleaving is blue, green, red; i.e., Result[<EM CLASS="Emphasis">
+0,i,j</EM>
+] = blue, Result[<EM CLASS="Emphasis">
+1,i,j</EM>
+] = green, etc.</P>
+<P CLASS="Body">
+<A NAME="pgfId=844033">
+ </A>
+READ_BMP does not handle 1-bit-deep images or compressed images, and is not fast for 4-bit images. The algorithm works best on images where the number of bytes in each scan-line is evenly divisible by 4.</P>
+<P CLASS="Body">
+<A NAME="pgfId=844034">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_bmp.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756097">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756098">
+ </A>
+Result = READ_BMP(<EM CLASS="Emphasis">
+Filename, [, R, G, B [, Ihdr])</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756099">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756100">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756101">
+ </A>
+A scalar string specifying the full path name of the bitmap file to read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843663">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867606">
+ </A>
+Named variables that will contain the color tables from the file. There 16 elements each for 4 bit images, 256 elements each for 8 bit images. Color tables are not defined or used for 24 bit images.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867607">
+ </A>
+Ihdr</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867608">
+ </A>
+A named variable that will contain a structure holding the BITMAPINFOHEADER from the file. Tag names are as defined in the MS Windows Programmer's Reference Manual, Chapter 7.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=867599">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867600">
+ </A>
+<A NAME="marker=867667">
+ </A>
+RGB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867666">
+ </A>
+If this keyword is set, color interleaving of 16- and 24-bit images will be R, G, B, i.e., Result[<EM CLASS="Emphasis">
+0,i,j</EM>
+] = red, Result[<EM CLASS="Emphasis">
+1,i,j</EM>
+] = green, Result[2,<I CLASS="Italic">
+i</I>
+,<I CLASS="Italic">
+j</I>
+] = blue.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843691">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=843692">
+ </A>
+To open, read, and display the BMP file named <CODE CLASS="Code">
+foo.bmp</CODE>
+ in the current directory and store the color vectors in the variables R, G, and B, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=828740">
+ </A>
+TV, READ_BMP('foo.bmp', R, G, B)	<EM CLASS="Comment">;
+Read and display an image</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=949301">
+ </A>
+TVLCT, R, G, B	<EM CLASS="Comment">;
+Load its colors</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=949302">
+ </A>
+Many applications that use 24-bit BMP files outside IDL expect BMP files to be stored as BGR. For example, enter the following commands.</P>
+<P CLASS="Code">
+<A NAME="pgfId=949148">
+ </A>
+a = BYTARR(3, 200, 200)</P>
+<P CLASS="Code">
+<A NAME="pgfId=949149">
+ </A>
+a(0, *, *) = 255	<EM CLASS="Comment">;
+Make a red square image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=949150">
+ </A>
+TV, a, /TRUE	<EM CLASS="Comment">;
+View the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=949151">
+ </A>
+WRITE_BMP, 'foo.bmp', a</P>
+<P CLASS="Body">
+<A NAME="pgfId=949153">
+ </A>
+If you open the <CODE CLASS="Code">
+.bmp</CODE>
+ file in certain bitmap editors, you may find that the square is blue. </P>
+<P CLASS="Code">
+<A NAME="pgfId=949233">
+ </A>
+READ_BMP, 'foo.bmp', image</P>
+<P CLASS="Code">
+<A NAME="pgfId=949159">
+ </A>
+TV, image, /TRUE	<EM CLASS="Comment">;
+IDL reads the image back in and interprets it as red.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=949284">
+ </A>
+READ_BMP, 'foo.bmp', image, /RGB	<EM CLASS="Comment">;
+Flip the order of the indices by adding the RGB keyword.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=949285">
+ </A>
+TV, image, /TRUE<EM CLASS="Comment">;
+	Displays the image in blue.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756110">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756111">
+ </A>
+<A HREF="idl20d.htm#19796" CLASS="XRef">
+WRITE_BMP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

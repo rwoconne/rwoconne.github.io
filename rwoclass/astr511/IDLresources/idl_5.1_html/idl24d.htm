@@ -1,0 +1,595 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_CONTROL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl24e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl24c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=999016">
+ </A>
+<A NAME="97922">
+ </A>
+CDF_CONTROL</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997190">
+ </A>
+The <A NAME="marker=997187">
+ </A>
+CDF_CONTROL procedure allows you to <A NAME="marker=997188">
+ </A>
+obtain or <A NAME="marker=997189">
+ </A>
+set information for a Common Data Format file, its variables, and its attributes.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997191">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997192">
+ </A>
+CDF_CONTROL, <EM CLASS="Emphasis">
+Id</EM>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997193">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997194">
+ </A>
+Id</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997195">
+ </A>
+The CDF ID of the file being changed or queried, as retuned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997196">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997198">
+ </A>
+<A NAME="marker=997197">
+ </A>
+ATTRIBUTE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997199">
+ </A>
+Makes the attribute specified the current attribute. Either an attribute name or an attribute number may be specified.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997201">
+ </A>
+<A NAME="marker=997200">
+ </A>
+GET_ATTR_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997202">
+ </A>
+Set this keyword to a named variable which will contain information about the current attribute. Information is returned in the form of a structure with the following tags:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997203">
+ </A>
+{ NUMGENTRIES:0L, NUMRENTRIES:0L, NUMZENTRIES:0L, </P>
+<P CLASS="Code">
+<A NAME="pgfId=997204">
+ </A>
+&nbsp;&nbsp;MAXGENTRY:0L, MAXRENTRY:0L, MAXZENTRY:0L }</P>
+<P CLASS="Body">
+<A NAME="pgfId=997205">
+ </A>
+The first three tags contain the number of globals, rVariables, and zVariables associated with the attribute. MAXGENTRY contains the highest index used, and the last two tags contain the highest variable ids used that were used when setting the attribute's value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997206">
+ </A>
+Note that an attribute must be set before GET_ATTR_INFO can be used. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997207">
+ </A>
+CDF_CONTROL, id, ATTRIBUTE='ATT1', GET_ATTR_INFO=X</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997209">
+ </A>
+<A NAME="marker=997208">
+ </A>
+GET_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997210">
+ </A>
+Set this keyword to a named variable which will be set equal to the number of 512-byte cache buffers being used for the current <CODE CLASS="Code">
+.cdf</CODE>
+ file. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997212">
+ </A>
+<A NAME="marker=997211">
+ </A>
+GET_COPYRIGHT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997213">
+ </A>
+Set this keyword to a named variable which will contain the copyright notice of the CDF library now being used by IDL (as opposed to the library that was used to write the current CDF).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997215">
+ </A>
+<A NAME="marker=997214">
+ </A>
+GET_FILENAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997216">
+ </A>
+Set this keyword to a named variable which will contain the pathname of the current <CODE CLASS="Code">
+.cdf</CODE>
+ file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997218">
+ </A>
+<A NAME="marker=997217">
+ </A>
+GET_FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997219">
+ </A>
+Set this keyword to a named variable which will contain a string describing the CDF Format of the current CDF file. Possible formats are SINGLE_FILE and MULTI_FILE, and can only be set with the CDF_CREATE procedure. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997220">
+ </A>
+id = CD<CODE CLASS="Code">
+F_CREATE('single', /SINGLE_FILE)</CODE>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997221">
+ </A>
+<CODE CLASS="Code">
+CDF_CONTROL, id, GET_FORMAT = cdfformat</CODE>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997222">
+ </A>
+<CODE CLASS="Code">
+HELP, cdf</CODE>
+format</P>
+<P CLASS="Body">
+<A NAME="pgfId=997223">
+ </A>
+IDL prints:</P>
+<P CLASS="Body">
+<A NAME="pgfId=997224">
+ </A>
+<CODE CLASS="Code">
+CDFFORMAT      STRING    = 'SINGLE_FILE'</CODE>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997226">
+ </A>
+<A NAME="marker=997225">
+ </A>
+GET_NEGTOPOSFP0_MODE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997227">
+ </A>
+Set this keyword to a named variable which will be set equal to the CDF negative to positive floating point 0.0 (NEGtoPOSfp0) mode. In NEGtoPOSfp0 mode, values equal to -0.0 will be converted to 0.0 whenever encountered. By CDF convention, a returned value of -1 indicates that this feature is enabled, a returned value of zero indicates that this feature is disabled.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997229">
+ </A>
+<A NAME="marker=997228">
+ </A>
+GET_NUMATTRS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997230">
+ </A>
+Set this keyword to a named variable which will contain a two-element array of longs. The first value will contain the number of attributes with global scope, the second value will contain the number of attributes with variable scope. NOTE: attributes with GLOBAL_SCOPE_ASSUMED scope will be included in the global scope count and attributes with VARIABLE_SCOPE_ASSUMED will be included in the count of attributes with variable scope.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997234">
+ </A>
+Note that you can obtain the total number of attributes using the <A HREF="idl255.htm#24050" CLASS="XRef">
+CDF_INQUIRE</A>
+ routine.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997236">
+ </A>
+<A NAME="marker=997235">
+ </A>
+GET_RVAR_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997237">
+ </A>
+Set this keyword to a named variable which will be set equal to the number of 512-byte cache buffers being used for the current MULTI_FILE format CDF and the <EM CLASS="Emphasis">
+rVariable</EM>
+ indicated by the VARIABLE keyword. This keyword should only be used for MULTI_FILE CDF files. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997239">
+ </A>
+<A NAME="marker=997238">
+ </A>
+GET_READONLY_MODE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997240">
+ </A>
+Set this keyword to a named variable which will be set equal to the CDF readonly mode. By CDF convention a returned value of -1 indicates that the file is in readonly mode, a returned value of zero indicates that the file is not in readonly mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997242">
+ </A>
+<A NAME="marker=997241">
+ </A>
+GET_VAR_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997243">
+ </A>
+Set this keyword to a named variable that will contain information about the current variable. For detailed information about the returned values, consult section 2.3.8 (&quot;RECORDS&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+. Information is returned in the form of a structure with the following tags:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=997244">
+ </A>
+{ EXTENDRECS:0L, MAXALLOCREC:0L, MAXREC:0L,<BR>
+MAXRECS:0L, NINDEXENTRIES:0L, NINDEXRECORDS:0L,<BR>
+PADVALUE:&lt;as appropriate&gt; }</P>
+<P CLASS="Body">
+<A NAME="pgfId=997245">
+ </A>
+The EXTENDRECS field will contain the number of records by which the current variable will be extended whenever a new record needs to be added.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997246">
+ </A>
+The MAXALLOCREC field will contain the maximum record number (zero-based) allocated for the current variable. Records can only be allocated for NOVARY zVariables in SINGLE_FILE format CDFs. When these conditions are not met, the value is set to -1.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997247">
+ </A>
+The MAXREC field will contain the maximum record number for the current variable. For variables with a record variance of NOVARY this will be at most zero. A value of -1 indicates that no records have been written.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997248">
+ </A>
+The MAXRECS field will contain the maximum record number (zero-based) of all variables of this type (rVariable or zVariable) in the current CDF. A value of -1 indicates that no records have been written.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997249">
+ </A>
+The NINDEXENTRIES field will contain the number of index entries for the current variable in the current CDF.  This value is -1 unless the current CDF is of SINGLE_FILE format, and the variable is a zVariable.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997250">
+ </A>
+The NINDEXRECORDS field will contain the number of index records for the current variable in the current CDF. This value is -1 unless the current CDF is of SINGLE_FILE format, and the variable is a zVariable.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997251">
+ </A>
+The PADVALUE field will contain the value being used to fill locations that are not explicitly filled by the user. If a PADVALUE is not specified, CDF_CONTROL returns an error.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997252">
+ </A>
+For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997253">
+ </A>
+fid = CDF_CREATE('test.cdf')</P>
+<P CLASS="Code">
+<A NAME="pgfId=997254">
+ </A>
+varid = CDF_VARCREATE(fid, 'test')</P>
+<P CLASS="Code">
+<A NAME="pgfId=997255">
+ </A>
+CDF_CONTROL, fid, GET_VAR_INFO=info, VARIABLE='test'</P>
+<P CLASS="Code">
+<A NAME="pgfId=997256">
+ </A>
+% CDF_CONTROL: Function completed but:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997257">
+ </A>
+NO_PADVALUE_SPECIFIED: A pad value has not been specified.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997259">
+ </A>
+<A NAME="marker=997258">
+ </A>
+GET_ZMODE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997260">
+ </A>
+Set this keyword to a named variable which will be set equal the zMode of the current CDF. In a non-zero zMode, CDF rVariables are temporarily replaced with zVariables. The possible returned values are:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=997261">
+ </A>
+0 = zMode is off</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=997262">
+ </A>
+1 = zMode is on in zMode/1, indicating that the dimensionality and variances of the variables will stay the same.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=997263">
+ </A>
+2 = zMode is on in zMode/2, indicating that those dimensions with false variances (NOVARY) will be eliminated.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=997264">
+ </A>
+For Information about zModes, consult Section 2.1.2 of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997266">
+ </A>
+<A NAME="marker=997265">
+ </A>
+GET_ZVAR_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997267">
+ </A>
+Set this keyword to a named variable which will be set equal to the number of 512-byte cache buffers being used in the current MULTI_FILE format CDF and the  zVariable indicated by the VARIABLE keyword. This keyword should only be used with MULTI_FILE CDF files. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997269">
+ </A>
+<A NAME="marker=997268">
+ </A>
+SET_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997270">
+ </A>
+Set this keyword equal to the desired number of 512-byte cache buffers to used for the current <CODE CLASS="Code">
+.cdf</CODE>
+ file. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997272">
+ </A>
+<A NAME="marker=997271">
+ </A>
+SET_EXTENDRECS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997273">
+ </A>
+Set this keyword equal to the number of additional physical records that should be added to the current variable whenever it needs to be extended. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997275">
+ </A>
+<A NAME="marker=997274">
+ </A>
+SET_INITIALRECS</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997276">
+ </A>
+Set this keyword equal to the number of records that should be initially written to the current variable. Note that this keyword should be set <EM CLASS="Emphasis">
+before</EM>
+ writing any data to the variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997278">
+ </A>
+<A NAME="marker=997277">
+ </A>
+SET_NEGTOPOSFP0_MODE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997279">
+ </A>
+Set this keyword to a non-zero value to put the current CDF file into negative to positive floating point 0.0 (NEGtoPOSfp0) mode. In this mode, values equal to -0.0 will be converted to 0.0 whenever encountered. Setting this keyword equal to 0 (zero) takes the current CDF file out of NEGtoPOSfp0 mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997281">
+ </A>
+<A NAME="marker=997280">
+ </A>
+SET_PADVALUE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997282">
+ </A>
+Set this keyword equal to the pad value for the current variable. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997284">
+ </A>
+<A NAME="marker=997283">
+ </A>
+SET_READONLY_MODE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997285">
+ </A>
+Set this keyword to a non-zero value to put the current CDF file into readonly mode. Set this keyword equal to 0 (zero) to take the current CDF file out of readonly mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997287">
+ </A>
+<A NAME="marker=997286">
+ </A>
+SET_RVAR_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997288">
+ </A>
+Set this keyword equal to the desired number of 512-byte cache buffers to used for the <EM CLASS="Emphasis">
+rVariable</EM>
+ file specified by the VARIABLE keyword. This keyword should only be used with MULTI_FILE CDF files. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997290">
+ </A>
+<A NAME="marker=997289">
+ </A>
+SET_RVARS_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997291">
+ </A>
+Set this keyword equal to the desired number of 512-byte cache buffers to used for all <EM CLASS="Emphasis">
+rVariable</EM>
+ files in the current CDF file or files. This keyword should only be used with MULTI_FILE CDF files. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997293">
+ </A>
+<A NAME="marker=997292">
+ </A>
+SET_ZMODE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997294">
+ </A>
+Set this keyword to change the zMode of the current CDF. In a non-zero zMode, CDF rVariables are temporarily replaced with zVariables. Set this keyword to one (1) to change to zMode/1, in which the dimensionality and variances of the variables stay the same. Set this keyword to two (2) to change to zMode/2, in which those dimensions with false variances (NOVARY) are eliminated. For Information about zModes, consult Section 2.1.2 of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997296">
+ </A>
+<A NAME="marker=997295">
+ </A>
+SET_ZVAR_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997297">
+ </A>
+Set this keyword equal to the desired number of 512-byte cache buffers to used for the zVariable's file specified by the VARIABLE keyword. This keyword should only be used with MULTI_FILE CDF files. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997298">
+ </A>
+SET_ZVARS_CACHESIZE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997299">
+ </A>
+Set this keyword equal to the desired number of 512-byte cache buffers to used for all zVariable files in the current CDF. This keyword should only be used with MULTI_FILE CDF files. For discussion about using caches with CDF files, see section 2.1.4 (&quot;Caching Scheme&quot; of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997301">
+ </A>
+<A NAME="marker=997300">
+ </A>
+VARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997302">
+ </A>
+Set this keyword to a name or index to set the current variable. For example, </P>
+<P CLASS="Code">
+<A NAME="pgfId=997303">
+ </A>
+CDF_CONTROL, id, VAR='MyData', SET_INITIALRECS=20</P>
+<P CLASS="Body">
+<A NAME="pgfId=997304">
+ </A>
+specifies that the variable <EM CLASS="Bold">
+MyData</EM>
+ should have 20 records written to it initially.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997305">
+ </A>
+Note that if VARIABLE is set to the index of a zVariable, the ZVARIABLE keyword <EM CLASS="Emphasis">
+must</EM>
+ also be set. If ZVARIABLE is not set, the variable is assumed to be an rVariable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997307">
+ </A>
+<A NAME="marker=997306">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997308">
+ </A>
+Set this keyword to TRUE if the current variable is a zVariable and is referred to by index. For example:</P>
+<P CLASS="Code-2">
+<A NAME="pgfId=997309">
+ </A>
+CDF_CONTROL, id, VARIABLE=0, /ZVARIABLE, GET_VAR_INFO=V</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997310">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997317">
+ </A>
+<A HREF="idl24e.htm#93139" CLASS="XRef">
+CDF_CREATE</A>
+, <A HREF="idl255.htm#24050" CLASS="XRef">
+CDF_INQUIRE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl28.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=716906">
+ </A>
+<A NAME="42885">
+ </A>
+CD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676052">
+ </A>
+The <A NAME="marker=672596">
+ </A>
+CD procedure is used to set and/or <A NAME="marker=672597">
+ </A>
+change the <A NAME="marker=672598">
+ </A>
+current working directory. This routine changes the working directory for the IDL session and any child processes started from IDL during that session after the directory change is made. Under Unix, CD does not affect the working directory of the process that started IDL. The <A NAME="marker=672608">
+ </A>
+PUSHD, <A NAME="marker=672609">
+ </A>
+POPD, and <A NAME="marker=672610">
+ </A>
+PRINTD procedures provide a convenient interface to CD.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676053">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676054">
+ </A>
+CD <I CLASS="Italics">
+[, Directory]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676055">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676056">
+ </A>
+Directory</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676057">
+ </A>
+A scalar string specifying the path of the new working directory. If <I CLASS="Italics">
+Directory</I>
+ is specified as a null string, the working directory is changed to the user's home directory (Unix and VMS) or to the directory specified by !DIR (Windows and Macintosh OS). If this argument is not specified, the working directory is not changed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676058">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676059">
+ </A>
+<A NAME="marker=672612">
+ </A>
+CURRENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676060">
+ </A>
+If CURRENT is present, it specifies a named variable into which the current working directory is stored as a scalar string. The returned directory is the working directory before the directory is changed. Thus, you can obtain the current working directory and change it in a single statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676061">
+ </A>
+CD, new_dir, CURRENT=old_dir</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676062">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676063">
+ </A>
+Under Unix, to change the working directory to the &quot;data&quot; subdirectory of the current directory, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676064">
+ </A>
+CD, 'data'</P>
+<P CLASS="Body">
+<A NAME="pgfId=676065">
+ </A>
+Under VMS, you could use:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676066">
+ </A>
+CD, '[.data]'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=818643">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=831835">
+ </A>
+PUSHD, POPD</P>
+<P CLASS="Body">
+<A NAME="pgfId=927533">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

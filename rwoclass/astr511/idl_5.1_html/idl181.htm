@@ -1,0 +1,460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RIEMANN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl182.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl180.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=280017">
+ </A>
+<A NAME="25216">
+ </A>
+RIEMANN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=280019">
+ </A>
+The <A NAME="marker=280018">
+ </A>
+RIEMANN procedure computes the &quot;Riemann sum&quot; (or its inverse) which helps implement the <A NAME="marker=280020">
+ </A>
+backprojection operator used to <A NAME="marker=280021">
+ </A>
+reconstruct the cross-section of an object, given <A NAME="marker=280022">
+ </A>
+projections through the object from multiple directions. This technique is widely used in medical imaging in the fields of computed x-ray tomography, MRI imaging, Positron Emission Tomography (PET), and also has applications in other areas such as seismology and astronomy. The inverse Riemann sum, which evaluates the projections given a slice through an object, is also a discrete approximation to the <A NAME="marker=280023">
+ </A>
+Radon transform. </P>
+<P CLASS="Body">
+<A NAME="pgfId=280024">
+ </A>
+Given a matrix <EM CLASS="Emphasis">
+A</EM>
+(<EM CLASS="Emphasis">
+m,n</EM>
+), which will contain the reconstructed slice; a vector <EM CLASS="Emphasis">
+P</EM>
+, containing the ray sums for a given view; and an angle <EM CLASS="Emphasis">
+Theta</EM>
+ measured in radians from the vertical: the Riemann sum &quot;backprojects&quot; the vector <EM CLASS="Emphasis">
+P</EM>
+ into <EM CLASS="Emphasis">
+A</EM>
+. For each element of <EM CLASS="Emphasis">
+A</EM>
+, the value of the closest element of <EM CLASS="Emphasis">
+P</EM>
+ is summed, leaving the result in <EM CLASS="Emphasis">
+A</EM>
+. Bilinear interpolation is an option. All operations are performed in single-precision floating point.</P>
+<P CLASS="Body">
+<A NAME="pgfId=280025">
+ </A>
+In the reverse operation, the ray sums contained in the view vector, <EM CLASS="Emphasis">
+P</EM>
+, are computed given the original slice, <EM CLASS="Emphasis">
+A</EM>
+, and <EM CLASS="Emphasis">
+Theta</EM>
+. This is sometimes called &quot;front projection&quot;. </P>
+<P CLASS="Body">
+<A NAME="pgfId=280029">
+ </A>
+The Riemann sum can be written: </P>
+<DIV>
+<CENTER><IMG SRC="idl_84.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=835155">
+ </A>
+which is the sum of the data along lines through an image with an angle of theta from the vertical.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=280032">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=280033">
+ </A>
+RIEMANN, <EM CLASS="Emphasis">
+P, A, Theta</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=280034">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=280035">
+ </A>
+P</H4>
+<P CLASS="Body">
+<A NAME="pgfId=280036">
+ </A>
+A <EM CLASS="Emphasis">
+k</EM>
+-element floating-point projection vector (or matrix if the ROW keyword is specified). For backprojection (when the BACKPROJECT keyword is set), <EM CLASS="Emphasis">
+P</EM>
+ contains the ray sums for a single view. For the inverse operation, <EM CLASS="Emphasis">
+P</EM>
+ should contain zeros on input and will contain the ray sums for the view on output.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=280037">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=960022">
+ </A>
+An <EM CLASS="Emphasis">
+m</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ floating-point image matrix. For backprojection, <EM CLASS="Emphasis">
+A</EM>
+ contains the accumulated results. For the inverse operation, <EM CLASS="Emphasis">
+A</EM>
+ contains the original image. Typically, <EM CLASS="Emphasis">
+k</EM>
+ should be larger than </P>
+<DIV>
+<CENTER><IMG SRC="idl_85.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=843587">
+ </A>
+which is the diagonal size of <EM CLASS="Emphasis">
+A</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=280042">
+ </A>
+Theta</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843427">
+ </A>
+The angle of the ray sums from the vertical.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=843428">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843430">
+ </A>
+<A NAME="marker=843434">
+ </A>
+BACKPROJECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843431">
+ </A>
+Set this keyword to perform backprojection in which <EM CLASS="Emphasis">
+P</EM>
+ is summed into <EM CLASS="Emphasis">
+A</EM>
+. If this keyword is not set, the inverse operation occurs and the ray sums are accumulated into <EM CLASS="Emphasis">
+P</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=280047">
+ </A>
+<A NAME="marker=843435">
+ </A>
+BILINEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=280048">
+ </A>
+Set this keyword to use bilinear interpolation rather than the default nearest neighbor sampling. Results are more accurate but slower when bilinear interpolation is used. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=280049">
+ </A>
+<A NAME="marker=843436">
+ </A>
+CENTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787980">
+ </A>
+Set this keyword equal to a floating-point number specifying the center of the projection. The default value for CENTER is one-half the number of elements of <EM CLASS="Emphasis">
+P</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787968">
+ </A>
+<A NAME="marker=843437">
+ </A>
+COR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=788039">
+ </A>
+Set this keyword equal to a two-element floating-point vector specifying the center of rotation in the array <EM CLASS="Emphasis">
+A</EM>
+. The default value is [<EM CLASS="Emphasis">
+m</EM>
+/2., <EM CLASS="Emphasis">
+n</EM>
+/2.], where <EM CLASS="Emphasis">
+A</EM>
+ is an <EM CLASS="Emphasis">
+m</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=836939">
+ </A>
+For symmetric results, given symmetric operands, COR should be set to the origin of symmetry [(<EM CLASS="Emphasis">
+m</EM>
+-1)/2, (<EM CLASS="Emphasis">
+n</EM>
+-1)/2], and CENTER should be set to (<EM CLASS="Emphasis">
+n</EM>
+-1)/2., where <EM CLASS="Emphasis">
+n</EM>
+ is the number of elements in the projection vector, <EM CLASS="Emphasis">
+P</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=843539">
+ </A>
+<A NAME="marker=843538">
+ </A>
+CUBIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=843540">
+ </A>
+Set this keyword to a value between -1 and 0 to use the cubic convolution interpolation method with the specified value as the interpolation parameter. Setting this keyword equal to a value greater than zero specifies a value of -1 for the interpolation parameter. Park and Schowengerdt (see reference below) suggest that a value of -0.5 significantly improves the reconstruction properties of this algorithm.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843535">
+ </A>
+Cubic convolution is an interpolation method that closely approximates the theoretically optimum sinc interpolation function using cubic polynomials. According to sampling theory, details of which are beyond the scope of this document, if the original signal, <I CLASS="Italic">
+f</I>
+, is a band-limited signal, with no frequency component larger than <EM CLASS="Symbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, and <I CLASS="Italic">
+f</I>
+ is sampled with spacing less than or equal to 1/2<EM CLASS="Symbol">
+w</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+, then <I CLASS="Italic">
+f</I>
+ can be reconstructed by convolving with a sinc function: sinc&nbsp;(<EM CLASS="Emphasis">
+x</EM>
+)&nbsp;=&nbsp;sin (<EM CLASS="Symbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+) / (<EM CLASS="Symbol">
+p</EM>
+<EM CLASS="Emphasis">
+x</EM>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=843532">
+ </A>
+In the one-dimensional case, four neighboring points are used, while in the two-dimensional case 16 points are used. Note that cubic convolution interpolation is significantly slower than bilinear interpolation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843449">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=948771">
+ </A>
+For further details see:</P>
+<P CLASS="Body">
+<A NAME="pgfId=843466">
+ </A>
+Rifman, S.S. and McKinnon, D.M., &quot;Evaluation of Digital Correction Techniques for ERTS Images; Final Report&quot;, Report 20634-6003-TU-00, TRW Systems, Redondo Beach, CA, July 1974.</P>
+<P CLASS="Body">
+<A NAME="pgfId=843468">
+ </A>
+S. Park and R. Schowengerdt, 1983 &quot;Image Reconstruction by Parametric Cubic Convolution&quot;, Computer Vision, Graphics &amp; Image Processing 23, 256.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787963">
+ </A>
+<A NAME="marker=843438">
+ </A>
+D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=280050">
+ </A>
+Use this keyword to specify the spacing between elements of <EM CLASS="Emphasis">
+P</EM>
+, expressed in the same units as the spacing between elements of <EM CLASS="Emphasis">
+A</EM>
+. The default is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=280051">
+ </A>
+<A NAME="marker=843439">
+ </A>
+ROW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=280052">
+ </A>
+Set this keyword to specify the <EM CLASS="Emphasis">
+P</EM>
+ vector as a given row within a matrix, so that the sinogram array can be used directly without having to extract or insert each row. In this case, <EM CLASS="Emphasis">
+P</EM>
+ must be an array with a first dimension equal to <EM CLASS="Emphasis">
+k</EM>
+, and the value of ROW must be in the range of 0 to the number of vectors of length <EM CLASS="Emphasis">
+k</EM>
+ in <EM CLASS="Emphasis">
+P</EM>
+, minus one.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=280053">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=280054">
+ </A>
+This example forms a synthetic image in <EM CLASS="Emphasis">
+A</EM>
+, computes <EM CLASS="Emphasis">
+Nviews</EM>
+ equally spaced views, and stores the stacked projections (commonly called the &quot;sinogram&quot;) in a matrix PP. It then backprojects the projections into the matrix B, forming the reconstructed slice. In practical use, the projections are convolved with a filter before being backprojected. </P>
+<P CLASS="Code">
+<A NAME="pgfId=280055">
+ </A>
+N = 100L	<EM CLASS="Comment">;
+Define number of columns in A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280056">
+ </A>
+M = 100L	<EM CLASS="Comment">;
+Define number of rows in A.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280057">
+ </A>
+nviews = 100	<EM CLASS="Comment">;
+Number of views.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280058">
+ </A>
+K = CEIL(SQRT(N^2 + M^2))	<EM CLASS="Comment">;
+The length of the longest projection. If filtered backprojection is used, 1/2 the length of the convolution kernel must also be added.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280059">
+ </A>
+A = FLTARR(N, M)	<EM CLASS="Comment">;
+Form original slice.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280060">
+ </A>
+A(N/2:N/2+5, M/2:M/2+5) = 1.0	<EM CLASS="Comment">;
+Simulate a square object.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280061">
+ </A>
+pp = FLTARR(K, nviews)	<EM CLASS="Comment">;
+Make array for sinogram.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280062">
+ </A>
+FOR I=0, NVIEWS-1 DO RIEMANN, pp, A, I * !PI/nviews, ROW=i<BR>
+<EM CLASS="Comment">;
+Compute each view.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280063">
+ </A>
+TVSCL, pp	<EM CLASS="Comment">;
+Show sinogram.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280064">
+ </A>
+B = FLTARR(N,M)	<EM CLASS="Comment">;
+Initial reconstructed image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280065">
+ </A>
+FOR I=0, nviews-1 DO $	<EM CLASS="Comment">;
+Do the backprojection for each view.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=280066">
+ </A>
+&nbsp;&nbsp;RIEMANN, pp, B, I * !PI/nviews, /BACKPROJECT, ROW=i</P>
+<P CLASS="Code">
+<A NAME="pgfId=280067">
+ </A>
+TVSCL, B	<EM CLASS="Comment">;
+Show reconstructed array.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35962">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=35963">
+ </A>
+<A HREF="idl1f9.htm#99427" CLASS="XRef">
+VOXEL_PROJ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

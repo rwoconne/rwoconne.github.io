@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COLOR_CONVERT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl37.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl35.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676129">
+ </A>
+<A NAME="70836">
+ </A>
+COLOR_CONVERT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676130">
+ </A>
+The <A NAME="marker=672643">
+ </A>
+COLOR_CONVERT procedure <A NAME="marker=672644">
+ </A>
+converts <A NAME="marker=672645">
+ </A>
+colors to and from the <A NAME="marker=672646">
+ </A>
+RGB (Red Green Blue), <A NAME="marker=672647">
+ </A>
+HLS (Hue Lightness Saturation), and <A NAME="marker=672648">
+ </A>
+HSV (Hue Saturation Value) color systems. A keyword parameter indicates the type of conversion to be performed (one of the keywords must be specified). The first three parameters contain the input color triple(s) which may be scalars or arrays of the same size. The result is returned in the last three parameters, <I CLASS="Italics">
+O</I>
+<SUB CLASS="subscript">
+0</SUB>
+, <I CLASS="Italics">
+O</I>
+<SUB CLASS="subscript">
+1</SUB>
+, and <I CLASS="Italics">
+O</I>
+<SUB CLASS="subscript">
+2</SUB>
+. RGB values are bytes in the range 0 to 255.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676131">
+ </A>
+Hue is measured in degrees, from 0 to 360. Saturation, Lightness, and Value are floating-point numbers in the range 0 to 1. A Hue of 0 degrees is the color red. Green is 120 degrees. Blue is 240 degrees. A reference containing a discussion of the various color systems is: Foley and Van Dam, <I CLASS="Italics">
+Fundamentals of Interactive Computer Graphics</I>
+, Addison-Wesley Publishing Co., 1982.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676132">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676133">
+ </A>
+COLOR_CONVERT, <I CLASS="Italics">
+I</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+, I</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, I</I>
+<SUB CLASS="subscript">
+2</SUB>
+<I CLASS="Italics">
+, O</I>
+<SUB CLASS="subscript">
+0</SUB>
+<I CLASS="Italics">
+, O</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, O</I>
+<SUB CLASS="subscript">
+2</SUB>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676134">
+ </A>
+<I CLASS="Italic">
+</I>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676135">
+ </A>
+I<SUB CLASS="subscript">
+0</SUB>
+, I<SUB CLASS="subscript">
+1</SUB>
+, I<SUB CLASS="subscript">
+2</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676136">
+ </A>
+The input color triple(s). These arguments may be either scalars or arrays of the same length.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676137">
+ </A>
+O<SUB CLASS="subscript">
+0</SUB>
+, O<SUB CLASS="subscript">
+1</SUB>
+, O<SUB CLASS="subscript">
+2</SUB>
+ </H4>
+<P CLASS="Body">
+<A NAME="pgfId=676138">
+ </A>
+The variables to receive the result. Their structure is copied from the input parameters.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676139">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861671">
+ </A>
+<A NAME="marker=672649">
+ </A>
+HLS_RGB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676141">
+ </A>
+Set this keyword to convert from HLS to RGB.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861673">
+ </A>
+<A NAME="marker=672650">
+ </A>
+HSV_RGB</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676143">
+ </A>
+Set this keyword to convert from HSV to RGB.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=861669">
+ </A>
+<A NAME="marker=672651">
+ </A>
+RGB_HLS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676145">
+ </A>
+Set this keyword to convert from RGB to HLS.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676146">
+ </A>
+<A NAME="marker=672652">
+ </A>
+RGB_HSV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676147">
+ </A>
+Set this keyword to convert from RGB to HSV.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676148">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676149">
+ </A>
+The command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676150">
+ </A>
+COLOR_CONVERT, 255, 255, 0, h, s, v, /RGB_HSV</P>
+<P CLASS="Body">
+<A NAME="pgfId=676151">
+ </A>
+converts the RGB color triple (255, 255, 0), which is the color yellow at full intensity and saturation, to the HSV system. The resulting hue in the variable h is 60.0 degrees. The saturation and value, s and v, are set to 1.0.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35974">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=35975">
+ </A>
+<A HREF="idlca.htm#43154" CLASS="XRef">
+HLS</A>
+, <A HREF="idlcc.htm#88897" CLASS="XRef">
+HSV</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

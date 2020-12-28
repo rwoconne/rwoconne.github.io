@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VARIANCE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=938725">
+ </A>
+<A NAME="16071">
+ </A>
+VARIANCE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=938729">
+ </A>
+The <A NAME="marker=938873">
+ </A>
+VARIANCE function computes the statistical variance of an <I CLASS="Italic">
+n</I>
+-element vector.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=938733">
+ </A>
+Calling sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=938735">
+ </A>
+Result = VARIANCE(<I CLASS="Italic">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=938739">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=938741">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=938742">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element, floating-point or double-precision vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=938746">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=938748">
+ </A>
+<A NAME="marker=938920">
+ </A>
+DOUBLE </H4>
+<P CLASS="Body">
+<A NAME="pgfId=938749">
+ </A>
+If this keyword is set, VARIANCE performs its computations in double precision arithmetic and returns a double precision result. If this keyword is not set, the computations and result depend upon the type of the input data (integer and float data return float results, while double data returns double results). </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=938858">
+ </A>
+<A NAME="marker=938857">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=938859">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=938756">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=938758">
+ </A>
+x = [1, 1, 1, 2, 5] 	<EM CLASS="Comment">;
+Define the n-element vector of sample data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=938760">
+ </A>
+result = VARIANCE(x)	<EM CLASS="Comment">;
+Compute the variance.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=938762">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=938764">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=938766">
+ </A>
+3.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=938881">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=938900">
+ </A>
+<A HREF="idle2.htm#36156" CLASS="XRef">
+KURTOSIS</A>
+, <A HREF="idl113.htm#18025" CLASS="XRef">
+MEAN</A>
+, <A HREF="idl114.htm#22002" CLASS="XRef">
+MEANABSDEV</A>
+, <A HREF="idl11c.htm#59358" CLASS="XRef">
+MOMENT</A>
+, <A HREF="idl1b5.htm#11350" CLASS="XRef">
+STDDEV</A>
+, <A HREF="idl1a2.htm#38157" CLASS="XRef">
+SKEWNESS</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

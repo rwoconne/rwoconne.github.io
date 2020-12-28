@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LL_ARC_DISTANCE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlfd.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlfb.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758212">
+ </A>
+<A NAME="29645">
+ </A>
+LL_ARC_DISTANCE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758214">
+ </A>
+The <A NAME="marker=758213">
+ </A>
+LL_ARC_DISTANCE function returns a two-element vector containing the longitude and latitude [lon, lat] of a point a given arc distance (-p &#163; <EM CLASS="Emphasis">
+Arc_Dist</EM>
+ &#163; p), and azimuth (<EM CLASS="Emphasis">
+Az</EM>
+), from a specified location <EM CLASS="Emphasis">
+Lon_lat0</EM>
+. Values are in radians unless the keyword DEGREES is set.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758215">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+ll_arc_distance.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758216">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758217">
+ </A>
+Result = LL_ARC_DISTANCE(<EM CLASS="Emphasis">
+Lon_lat0, Arc_Dist, Az</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758218">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758219">
+ </A>
+Lon_lat0</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758220">
+ </A>
+A 2-element vector containing the longitude and latitude of the starting point. Values are assumed to be in radians unless the keyword DEGREES is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758221">
+ </A>
+Arc_Dist</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758222">
+ </A>
+The arc distance from <EM CLASS="Emphasis">
+Lon_lat0</EM>
+. The value must be between -p and +p. To express distances in arc units, divide by the radius of the globe expressed in the original units. For example, if the radius of the earth is 6371 km, divide the distance in km by 6371 to obtain the arc distance. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758223">
+ </A>
+Az</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758224">
+ </A>
+The azimuth from <EM CLASS="Emphasis">
+Lon_lat0</EM>
+. The value is assumed to be in radians unless the keyword DEGREES is set.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758225">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758227">
+ </A>
+<A NAME="marker=758226">
+ </A>
+DEGREES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758228">
+ </A>
+Set this keyword to express all measurements and results in degrees.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758229">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=758230">
+ </A>
+Lon_lat0 = [1.0, 2.0]	<EM CLASS="Comment">;
+Initial point specified in radians</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758231">
+ </A>
+Arc_Dist = 2.0	<EM CLASS="Comment">;
+Arc distance in radians</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758232">
+ </A>
+Az = 1.0	<EM CLASS="Comment">;
+Azimuth in radians</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=758233">
+ </A>
+Result = LL_ARC_DISTANCE(Lon_lat0, Arc_Dist, Az)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758234">
+ </A>
+PRINT, Result</P>
+<P CLASS="Body">
+<A NAME="pgfId=758235">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=758236">
+ </A>
+2.91415 -0.622234</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758237">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822275">
+ </A>
+<A HREF="routinesM-O.html#72745" CLASS="XRef">
+</A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> LNP_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl101.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlff.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54526">
+ </A>
+<A NAME="95316">
+ </A>
+LNP_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54531">
+ </A>
+The <A NAME="marker=54528">
+ </A>
+LNP_TEST <A NAME="marker=54529">
+ </A>
+function computes the <A NAME="marker=54530">
+ </A>
+Lomb Normalized Periodogram of two sample populations <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ and <A NAME="marker=54532">
+ </A>
+tests the <A NAME="marker=54533">
+ </A>
+hypothesis that the populations represent a significant periodic signal against the hypothesis that they represent random noise. The result is a two-element vector containing the maximum peak in the Lomb Normalized Periodogram and its significance. The significance is a value in the interval [0.0, 1.0]; a small value indicates that a significant periodic signal is present.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54534">
+ </A>
+LNP_TEST is based on the routine <CODE CLASS="Code">
+fasper</CODE>
+ described in section 13.8 of <EM CLASS="Emphasis">
+Numerical Recipes in C: The Art of Scientific Computing</EM>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54535">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54536">
+ </A>
+Result = LNP_TEST(<EM CLASS="Emphasis">
+X, Y</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54537">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54538">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54539">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector containing equally or unequally spaced time samples.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54540">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54541">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single-, or double-precision floating-point vector containing amplitudes corresponding to <EM CLASS="Emphasis">
+X</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54542">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54544">
+ </A>
+<A NAME="marker=54543">
+ </A>
+HIFAC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54545">
+ </A>
+Use this keyword to specify the scale factor of the average Nyquist frequency. The default value is 1.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54547">
+ </A>
+<A NAME="marker=54546">
+ </A>
+JMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54548">
+ </A>
+Use this keyword to specify a named variable that will contain the index of the maximum peak in the Lomb Normalized Periodogram.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54550">
+ </A>
+<A NAME="marker=54549">
+ </A>
+OFAC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54551">
+ </A>
+Use this keyword to specify the oversampling factor. The default value is 4. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54553">
+ </A>
+<A NAME="marker=54552">
+ </A>
+WK1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54554">
+ </A>
+Use this keyword to specify a named variable that will contain a vector of increasing linear frequencies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54556">
+ </A>
+<A NAME="marker=54555">
+ </A>
+WK2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54557">
+ </A>
+Use this keyword to specify a named variable that will contain a vector of values from the Lomb Normalized Periodogram corresponding to the frequencies in WK1.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54558">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54559">
+ </A>
+Define two <EM CLASS="Emphasis">
+n</EM>
+-element sample populations.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54560">
+ </A>
+X&nbsp;=&nbsp;[ 1.0,  2.0,  5.0,  7.0,  8.0,  9.0, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54561">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.0, 11.0, 12.0, 13.0, 14.0, 15.0, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54562">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16.0, 17.0, 18.0, 19.0, 20.0, 22.0, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54563">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23.0, 24.0, 25.0, 26.0, 27.0, 28.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=54564">
+ </A>
+Y&nbsp;=&nbsp;[ 0.69502, -0.70425,  0.20632,  0.77206, -2.08339,  0.97806, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54565">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.77324,  2.34086,  0.91354,  2.04189,  0.53560, -2.05348, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54566">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.76308, -0.84501, -0.06507, -0.12260,  1.83075,  1.41403, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=54567">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.26438, -0.48142, -0.50929,  0.01942, -1.29268,  0.29697]</P>
+<P CLASS="Body">
+<A NAME="pgfId=54568">
+ </A>
+Test the hypothesis that <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ represent a significant periodic signal against the hypothesis that they represent random noise.</P>
+<P CLASS="Code">
+<A NAME="pgfId=54569">
+ </A>
+result = LNP_TEST(X, Y, WK1 = wk1, WK2 = wk2, JMAX = jmax)</P>
+<P CLASS="Code">
+<A NAME="pgfId=54570">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=54571">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54572">
+ </A>
+4.69296     0.198157</P>
+<P CLASS="Body">
+<A NAME="pgfId=54573">
+ </A>
+The small value of the significance represents the possibility of a significant periodic signal. A larger number of samples for <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ would produce a more conclusive result. WK1 and WK2 are both 48-element vectors containing linear frequencies and corresponding Lomb values, respectively. JMAX is the indexed location of the maximum Lomb value in WK2.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54574">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=66255">
+ </A>
+<A HREF="idl4e.htm#28469" CLASS="XRef">
+CTI_TEST</A>
+, <A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="idle3.htm#95076" CLASS="XRef">
+KW_TEST</A>
+, <A HREF="routinesM-O.html#89505" CLASS="XRef">
+</A>
+, <A HREF="idl15c.htm#56098" CLASS="XRef">
+R_TEST</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+, <A HREF="idl226.htm#50626" CLASS="XRef">
+XSQ_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

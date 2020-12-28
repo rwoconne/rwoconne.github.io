@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_DIMSET</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=998814">
+ </A>
+<A NAME="58405">
+ </A>
+HDF_SD_DIMSET</H1>
+<P CLASS="Body">
+<A NAME="pgfId=998817">
+ </A>
+The <A NAME="marker=998816">
+ </A>
+HDF_SD_DIMSET function sets the scale and data strings for an SD dimension. </P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998818">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998819">
+ </A>
+HDF_SD_DIMSET, <I CLASS="Italics">
+Dim_ID</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998820">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998821">
+ </A>
+Dim_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998822">
+ </A>
+A dimension ID as returned by HDF_SD _DIMGETID. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998823">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998824">
+ </A>
+BW_INCOMP</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1025451">
+ </A>
+Set this keyword to write SD dimensions in the &quot;new&quot; (HDF4.1 and later) style. Versions of HDF prior to HDF4.0 beta 2 were inefficient in the use of SD dimensions. HDF now uses a new internal representation of SD dimensions. If the BW_INCOMP keyword is not set, or is explicitly set equal to zero, the current version of HDF writes SD dimensions in both the pre-HDF4.0 format AND the &quot;new&quot; format. This default behavior is called the BW_COMP dimensional compatibility representation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1025483">
+ </A>
+Setting the BW_INCOMP keyword causes the current dimension to be written in only the &quot;new&quot; (HDF4.1 and later) format. Depending on your HDF file,using this new format can reduce the size of the HDF by up to a factor of 2, but at the expense of incompatibility with pre HDF4.0 beta 2 applications (IDL version 4, for example). The COMPATIBILITY keyword of HDF_SD_DIMGET can be used to check the dimensional compatibility of an HDF dimension. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1025914">
+ </A>
+Future versions of HDF will recognize <EM CLASS="Emphasis">
+only</EM>
+ the &quot;new&quot; (BW_INCOMP) dimensional representation.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025165">
+ </A>
+FORMAT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998825">
+ </A>
+A string for the dimension format.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998826">
+ </A>
+LABEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998827">
+ </A>
+A string for the dimension label.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998828">
+ </A>
+NAME</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998829">
+ </A>
+A string for the dimension name.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998830">
+ </A>
+SCALE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998831">
+ </A>
+A vector containing the dimension scale values.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998832">
+ </A>
+UNIT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998833">
+ </A>
+A string for the dimension unit. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998834">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=998835">
+ </A>
+sd_id = HDF_SD_START('myhdf.hdf', /RDWR)<BR>
+<EM CLASS="Comment">;
+Initialize the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998836">
+ </A>
+sds_id = HDF_SD_CREATE(sd_id, 'var1', [10,20,0], /LONG)<BR>
+<EM CLASS="Comment">;
+Create 3 dimensions.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998837">
+ </A>
+dim_id=HDF_SD_DIMGETID(sds_id,0)	<EM CLASS="Comment">;
+Select the first dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998838">
+ </A>
+HDF_SD_DIMSET, dim_id, NAME='d1', LABEL='l1', $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998839">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FORMAT='f1', UNIT='u1', SCALE=FINDGEN(10)<BR>
+<EM CLASS="Comment">;
+Set the data strings and scale for the first dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998840">
+ </A>
+HDF_SD_ENDACCESS, sds_id<EM CLASS="Comment">;
+</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1029941">
+ </A>
+HDF_SD_END, sd_id	<EM CLASS="Comment">;
+Close the HDF file to ensure everything is written.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1029963">
+ </A>
+sd_id = HDF_SD_START('myhdf.hdf')	<EM CLASS="Comment">;
+Reopen the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1029965">
+ </A>
+dim_id = HDF_SD_DIMGETID(sds_id,0)	<EM CLASS="Comment">;
+Select the first dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1030016">
+ </A>
+HDF_SD_DIMGET, dim_id, NAME=d1, LABEL=l1, FORMAT=f1, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=1030017">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UNIT=u1, SCALE=sc, COUNT=cnt, NATTR=natt, TYPE=type<BR>
+<EM CLASS="Comment">;
+Retrieve the information.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1029961">
+ </A>
+HELP, d1, l1, f1, u1, sc, cnt, natt, type<BR>
+<EM CLASS="Comment">;
+Print information about the returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998843">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998844">
+ </A>
+D1 STRING = 'd1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998845">
+ </A>
+L1 STRING = 'l1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998846">
+ </A>
+F1 STRING = 'f1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998847">
+ </A>
+U1 STRING = 'u1'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998848">
+ </A>
+SC FLOAT = Array(10)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998849">
+ </A>
+CNT LONG = 10</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998850">
+ </A>
+NATT LONG = 3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=998851">
+ </A>
+TYPE STRING = 'FLOAT'</P>
+<P CLASS="Code">
+<A NAME="pgfId=998852">
+ </A>
+HDF_SD_ENDACCESS,sds_id	<EM CLASS="Comment">;
+Close the SD interface.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998853">
+ </A>
+HDF_SD_END, sd_id</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998854">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998867">
+ </A>
+<A HREF="idl2a1.htm#14563" CLASS="XRef">
+HDF_SD_CREATE</A>
+, <A HREF="idl2a2.htm#47376" CLASS="XRef">
+HDF_SD_DIMGET</A>
+, <A HREF="idl2a3.htm#56662" CLASS="XRef">
+HDF_SD_DIMGETID</A>
+, <A HREF="idl2ae.htm#26460" CLASS="XRef">
+HDF_SD_SELECT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

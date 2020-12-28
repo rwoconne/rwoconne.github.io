@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_SD_GETDATA</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2a9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2a7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=1009248">
+ </A>
+<A NAME="10376">
+ </A>
+HDF_SD_GETDATA</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1009257">
+ </A>
+The <A NAME="marker=1009251">
+ </A>
+HDF_SD_GETDATA procedure retrieves a hyperslab of values from an SD dataset. By default, the retrieved data is transposed from HDF's column order format into IDL's row order which is more efficient in IDL. To retrieve the dataset without this transposition, set the NOREVERSE keyword.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998977">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998978">
+ </A>
+HDF_SD_GETDATA, <I CLASS="Italics">
+SDS_ID, Data</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998979">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998980">
+ </A>
+SDS_ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998981">
+ </A>
+An SD dataset ID as returned by HDF_SD _SELECT or HDF_SD_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998982">
+ </A>
+Data</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998983">
+ </A>
+A named variable in which the values are returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998984">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998986">
+ </A>
+<A NAME="marker=998985">
+ </A>
+COUNT</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998987">
+ </A>
+Set this keyword to a vector containing the counts, or number of items, to be read. The default is to read all available data.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998989">
+ </A>
+<A NAME="marker=998988">
+ </A>
+NOREVERSE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998990">
+ </A>
+Set the keyword to retrieve the data without transposing the data from column to row order.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998992">
+ </A>
+<A NAME="marker=998991">
+ </A>
+START</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998993">
+ </A>
+Set this keyword to a vector containing the starting position for the read. The default start position is [0, 0, ..., 0].</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998995">
+ </A>
+<A NAME="marker=998994">
+ </A>
+STRIDE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998996">
+ </A>
+Set this keyword to a vector containing the strides, or sampling intervals, between accessed values of the HDF variable. The default stride vector is that for a contiguous read: [0, 0, ..., 0].</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998997">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999001">
+ </A>
+For an example using this routine, see the documentation for <A HREF="idl29d.htm#98818" CLASS="XRef">
+HDF_SD_ADDDATA</A>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=999002">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=999009">
+ </A>
+<A HREF="idl29d.htm#98818" CLASS="XRef">
+HDF_SD_ADDDATA</A>
+, <A HREF="idl2a9.htm#72240" CLASS="XRef">
+HDF_SD_GETINFO</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

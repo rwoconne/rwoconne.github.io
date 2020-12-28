@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MACHAR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl10b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl109.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=887317">
+ </A>
+<A NAME="91584">
+ </A>
+MACHAR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=887322">
+ </A>
+The <A NAME="marker=887320">
+ </A>
+MACHAR function determines and returns <A NAME="marker=887321">
+ </A>
+machine-specific parameters affecting <A NAME="marker=887323">
+ </A>
+floating-point arithmetic. Information is returned in the form of a structure with the following fields: </P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=887326">
+ </A>
+Field Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=887328">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887331">
+ </A>
+<A NAME="marker=887330">
+ </A>
+IBETA</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887334">
+ </A>
+The <A NAME="marker=887333">
+ </A>
+radix in which numbers are represented. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887337">
+ </A>
+<A NAME="marker=887336">
+ </A>
+IT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887340">
+ </A>
+The number of base-IBETA digits in the <A NAME="marker=887339">
+ </A>
+floating-point mantissa M. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887343">
+ </A>
+<A NAME="marker=887342">
+ </A>
+IRND</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887345">
+ </A>
+A code in the range 0 - 5 giving information on what type of <A NAME="marker=887346">
+ </A>
+rounding is done and how underflow is handled. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887349">
+ </A>
+<A NAME="marker=887348">
+ </A>
+NGRD</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887352">
+ </A>
+The number of &quot;<A NAME="marker=887351">
+ </A>
+guard digits&quot; used when truncating the product of two mantissas. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887355">
+ </A>
+<A NAME="marker=887354">
+ </A>
+MACHEP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887357">
+ </A>
+The exponent of the smallest power of IBETA that, added to 1.0, gives something different from 1.0. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887360">
+ </A>
+<A NAME="marker=887359">
+ </A>
+NEGEP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887362">
+ </A>
+The exponent of the smallest power of IBETA that, subtracted from 1.0, gives something different from 1.0. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887365">
+ </A>
+<A NAME="marker=887364">
+ </A>
+IEXP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887367">
+ </A>
+The number of bits in the exponent. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887370">
+ </A>
+<A NAME="marker=887369">
+ </A>
+MINEXP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887372">
+ </A>
+The smallest value of IBETA consistent with there being no leading zeros in the mantissa. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887375">
+ </A>
+<A NAME="marker=887374">
+ </A>
+MAXEXP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887378">
+ </A>
+The smallest positive value of IBETA that causes <A NAME="marker=887377">
+ </A>
+overflow. A longword integer.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887381">
+ </A>
+<A NAME="marker=887380">
+ </A>
+EPS</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887383">
+ </A>
+The floating-point number IBETA<SUP CLASS="Superscript">
+MACHEP</SUP>
+, loosely referred to as the &quot;<A NAME="marker=887384">
+ </A>
+floating-point precision.&quot;</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887387">
+ </A>
+<A NAME="marker=887386">
+ </A>
+EPSNEG</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887389">
+ </A>
+The floating-point number IBETA<SUP CLASS="Superscript">
+NEGEP</SUP>
+, which is another way of determining floating-point precision.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887392">
+ </A>
+<A NAME="marker=887391">
+ </A>
+XMIN</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887394">
+ </A>
+The floating-point number IBETA<SUP CLASS="Superscript">
+MINEXP</SUP>
+, generally the smallest usable floating-point value.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887397">
+ </A>
+<A NAME="marker=887396">
+ </A>
+XMAX</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=887399">
+ </A>
+The largest usable floating-point value, defined as the number (1-EPSNEG)xIBETA<SUP CLASS="Superscript">
+MAXEXP</SUP>
+&middot;</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=887400">
+ </A>
+MACHAR is based on the routine <CODE CLASS="Code">
+machar</CODE>
+ described in section 20.1 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission. See that section for more details on and sample values of the various parameters returned.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887401">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887402">
+ </A>
+Result = MACHAR()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887403">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=887405">
+ </A>
+<A NAME="marker=887404">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=887406">
+ </A>
+The information returned is normally for single-precision floating-point arithmetic. Specify DOUBLE to see double-precision information.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=887407">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=887416">
+ </A>
+<A HREF="idld.htm#92570" CLASS="XRef">
+CHECK_MATH</A>
+, <A HREF="sysvars.html#62375" CLASS="XRef">
+</A>
+, and <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

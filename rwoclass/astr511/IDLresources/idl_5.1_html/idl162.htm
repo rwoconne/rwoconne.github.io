@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_ASCII</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl163.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl161.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=956701">
+ </A>
+<A NAME="30033">
+ </A>
+READ_ASCII</H2>
+<P CLASS="Body">
+<A NAME="pgfId=956705">
+ </A>
+The <A NAME="marker=956703">
+ </A>
+READ_ASCII function <A NAME="marker=956704">
+ </A>
+reads data from an ASCII file into an IDL structure variable. READ_ASCII may be used with templates created by the ASCII_TEMPLATE function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864342">
+ </A>
+This routine handles ASCII files consisting of an optional header of a fixed number of lines, followed by columnar data. One or more rows of data constitute a <EM CLASS="Emphasis">
+record</EM>
+. Each data element within a record is considered to be in a different column, or <EM CLASS="Emphasis">
+field</EM>
+. The data in one field must be of, or promotable to, a single type (e.g., FLOAT). Adjacent fields may be collected into multi-column fields, called <EM CLASS="Emphasis">
+groups</EM>
+. Files may also contain comments, which exist between a user-specified comment string and the corresponding end-of-line.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864964">
+ </A>
+READ_ASCII is designed to be used with templates created by the ASCII template function.</P>
+<P CLASS="Body">
+<A NAME="pgfId=864354">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_ascii.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678412">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678413">
+ </A>
+Result = READ_ASCII(<EM CLASS="Emphasis">
+Filename</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678416">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678417">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864075">
+ </A>
+A string containing the name of an ASCII file to read into an IDL variable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678425">
+ </A>
+Keywords</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864509">
+ </A>
+You can define the attributes of a field in two ways. If you use a template, you can either use a previously generated template, or create a template with the ASCII_TEMPLATE function on page <A HREF="idla.htm#16502" CLASS="XRef">
+ASCII_TEMPLATE</A>
+. You can use COMMENT_SYMBOL, DATA_START, DELIMITER, or MISSING_VALUE to either override template attributes or to provide one-time attributes for the file to be read, without a template.</P>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864824">
+ </A>
+<A NAME="marker=864823">
+ </A>
+COMMENT_SYMBOL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864510">
+ </A>
+Set this keyword to a string that identifies the character used to delineate comments in the ASCII file to be read. When READ_ASCII encounters the comment character, it discards data from that point until it reaches the end of the current line, identifying the rest of the line as a comment. The default character is a space, `&nbsp;', specifying that no comments will be recognized.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864541">
+ </A>
+<A NAME="marker=864540">
+ </A>
+COUNT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864542">
+ </A>
+Set this keyword equal to a named variable that will contain the number of records read.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864606">
+ </A>
+<A NAME="marker=864605">
+ </A>
+DATA_START</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864607">
+ </A>
+Set this keyword equal to the number of header lines you want to skip. The default value is 0 if no template is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=865250">
+ </A>
+<A NAME="marker=865249">
+ </A>
+DELIMITER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=865251">
+ </A>
+Set this keyword to a string that identifies the end of a field. If no delimiter is specified, READ_ASCII uses information provided by the template in use. The default is a space, `&nbsp;', specifying that an empty element constitutes the end of a field.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=865253">
+ </A>
+<A NAME="marker=865252">
+ </A>
+HEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864536">
+ </A>
+Set this keyword equal to a named variable that will contain the header in a string array of length DATA_START. If no header exists, an empty string is returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864515">
+ </A>
+<A NAME="marker=864514">
+ </A>
+MISSING_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864516">
+ </A>
+Set this keyword equal to a value used to replace any missing or invalid data. The default value, if no template is supplied, is !VALUES.F_NAN. See <A HREF="sysvars.html#62375" CLASS="XRef">
+</A>
+ for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=864373">
+ </A>
+<A NAME="marker=864372">
+ </A>
+NUM_RECORDS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864374">
+ </A>
+Set this keyword equal to the number of records to read. The default is to read up to and including the last record.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678426">
+ </A>
+<A NAME="marker=864079">
+ </A>
+RECORD_START</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864076">
+ </A>
+Set this keyword equal to the index of the first record to read. The default is the first record of the file (record 0).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863940">
+ </A>
+<A NAME="marker=864099">
+ </A>
+TEMPLATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864096">
+ </A>
+Use this keyword to specify the ASCII file template (generated by the function <A HREF="idla.htm#16502" CLASS="XRef">
+ASCII_TEMPLATE</A>
+), that defines attributes of the file to be read. Specific attributes of the template may be overridden by the following keywords: COMMENT_SYMBOL, DATA_START, DELIMITER, MISSING_VALUE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=863965">
+ </A>
+<A NAME="marker=864191">
+ </A>
+VERBOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=864192">
+ </A>
+Set this keyword to print runtime messages.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678440">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=864858">
+ </A>
+To read ASCII data using default file attributes, except for setting the number of skipped header lines to 10, type:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=864859">
+ </A>
+data = READ_ASCII(file, DATA_START=10)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=864861">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=864860">
+ </A>
+To use a template to define file attributes, overriding the number of skipped header lines defined in the template, type:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=864000">
+ </A>
+data = READ_ASCII(file, TEMPLATE=template, DATA_START=10)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=864862">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=864002">
+ </A>
+To use the ASCII_TEMPLATE GUI to generate a template within the function, type:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=864003">
+ </A>
+data = READ_ASCII(myfile, TEMPLATE=ASCII_TEMPLATE(mytemplate))</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795798">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795799">
+ </A>
+<A HREF="idla.htm#16502" CLASS="XRef">
+ASCII_TEMPLATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

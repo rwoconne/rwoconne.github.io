@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XVAREDIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl229.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl227.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=759100">
+ </A>
+<A NAME="71120">
+ </A>
+XVAREDIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=759103">
+ </A>
+The <A NAME="marker=759101">
+ </A>
+XVAREDIT procedure <A NAME="marker=759102">
+ </A>
+is a widget-based editor for any IDL variable. Use the input fields to change desired values of the variable or array. Click &quot;Accept&quot; to write the new values into the variable. Click &quot;Cancel&quot; to exit XVAREDIT without saving changes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=759104">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+xvaredit.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759105">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759106">
+ </A>
+XVAREDIT, <I CLASS="Italic">
+Var</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759107">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759108">
+ </A>
+Var</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759109">
+ </A>
+The variable to be edited. On output, this variable contains the edited value if the user selects the &quot;Accept&quot; button, or the original value if the user selects the &quot;Cancel&quot; button. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=917616">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917618">
+ </A>
+<A NAME="marker=917617">
+ </A>
+NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917619">
+ </A>
+The NAME of the variable. This keyword is overwritten with the structure name if the variable is a structure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759115">
+ </A>
+<A NAME="marker=759114">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759116">
+ </A>
+The widget ID of the widget that calls XVAREDIT. When this ID is specified, a death of the caller results in a death of XVAREDIT.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917623">
+ </A>
+<A NAME="marker=917627">
+ </A>
+X_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917632">
+ </A>
+Set this keyword to specify the column width of the scrolling viewport. The default is 4.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917633">
+ </A>
+<A NAME="marker=917635">
+ </A>
+Y_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917644">
+ </A>
+Set this keyword to specify the row width of the scrolling viewport. The default is 4.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

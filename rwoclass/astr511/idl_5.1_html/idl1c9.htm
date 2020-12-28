@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SVDFIT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1ca.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=154010">
+ </A>
+<A NAME="70302">
+ </A>
+SVDFIT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=754146">
+ </A>
+The <A NAME="marker=754143">
+ </A>
+SVDFIT function performs a general <A NAME="marker=754144">
+ </A>
+least squares <A NAME="marker=754145">
+ </A>
+fit with optional error estimates and returns a vector of coefficients. Either a user-supplied function written in the IDL language or a built-in polynomial can be used to fit the data.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845480">
+ </A>
+SVDFIT is based on the routine <CODE CLASS="Code">
+svdfit</CODE>
+ described in section 15.4 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754148">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=754149">
+ </A>
+Result = SVDFIT(<EM CLASS="Emphasis">
+X, Y [, M]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754150">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754151">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754152">
+ </A>
+An n-element vector of independent variables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754153">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754154">
+ </A>
+A vector of dependent variables, the same length as <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754155">
+ </A>
+M</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754156">
+ </A>
+The number of coefficients in the fitting function. For polynomials, <EM CLASS="Emphasis">
+M</EM>
+ is equal to the degree of the polynomial + 1. If the <EM CLASS="Emphasis">
+M</EM>
+ argument is not specified, you must supply initial coefficient estimates using the A keyword. In this case, <EM CLASS="Emphasis">
+M</EM>
+ is set equal to the number of elements of the array specified by the A keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754157">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845481">
+ </A>
+<A NAME="marker=845640">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845482">
+ </A>
+Set this keyword equal to a vector of initial estimates for the fitted function parameters. SVDFIT returns a vector of coefficients that are improvements of the initial estimates. If A is supplied, the M argument will be set equal to the number of elements in the vector specified by A.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845501">
+ </A>
+<A NAME="marker=845641">
+ </A>
+CHISQ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845502">
+ </A>
+Set this keyword equal to a named variable that will contain the sum of squared errors multiplied by weights if weights are specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845503">
+ </A>
+<A NAME="marker=845642">
+ </A>
+COVAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845504">
+ </A>
+Set this keyword equal to a named variable that will contain the covariance matrix of the fitted coefficients.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845488">
+ </A>
+<A NAME="marker=845643">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845489">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754160">
+ </A>
+<A NAME="marker=845410">
+ </A>
+FUNCTION_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754161">
+ </A>
+Set this keyword equal to a string containing the name of a user-supplied IDL basis function with <EM CLASS="Emphasis">
+M</EM>
+ coefficients. If this keyword is omitted, and the LEGENDRE keyword is not set, IDL assumes that the IDL procedure SVDFUNCT, found in the file <CODE CLASS="Code">
+svdfunct.pro</CODE>
+, located in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution, is to be used. SVDFUNCT uses the basis functions for the fitting polynomial</P>
+<DIV>
+<CENTER><IMG SRC="idl_105.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=845572">
+ </A>
+The function to be fit must be written as an IDL function and compiled prior to calling SVDFIT. The function must accept values of <EM CLASS="Emphasis">
+X</EM>
+ (a scalar), and <EM CLASS="Emphasis">
+M</EM>
+ (a scalar). It must return an <EM CLASS="Emphasis">
+M</EM>
+-element vector containing the basis functions.</P>
+<P CLASS="Body">
+<A NAME="pgfId=845573">
+ </A>
+See the <EM CLASS="Emphasis">
+Example</EM>
+ section below for an example function.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845523">
+ </A>
+<A NAME="marker=845644">
+ </A>
+LEGENDRE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845524">
+ </A>
+Set this keyword to use Legendre polynomials instead of the function specified by the FUNCTION_NAME keyword. If the LEGENDRE keyword is set, the IDL uses the function SVDLEG found in the file <CODE CLASS="Code">
+svdleg.pro</CODE>
+, located in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845539">
+ </A>
+<A NAME="marker=845645">
+ </A>
+SIGMA</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845554">
+ </A>
+Set this keyword equal to a named variable that will contain the vector of standard deviations for the returned coefficients.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845513">
+ </A>
+<A NAME="marker=845646">
+ </A>
+SINGULAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845514">
+ </A>
+Set this keyword equal to a named variable that will contain the number of singular values returned. This value should be 0. If not, the basis functions do not accurately characterize the data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845515">
+ </A>
+<A NAME="marker=845647">
+ </A>
+VARIANCE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845516">
+ </A>
+Set this keyword equal to a named variable that will contain the variance (sigma squared) of each coefficient <EM CLASS="Emphasis">
+M</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=845496">
+ </A>
+<A NAME="marker=845495">
+ </A>
+WEIGHTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=845497">
+ </A>
+Set this keyword equal to a vector of weights for <EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+. This vector should be the same length as <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+. The error for each term is weighted by WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+ when computing the fit. Frequently, WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+&nbsp;=&nbsp;1.0/s<SUP CLASS="Superscript">
+2</SUP>
+<SUB CLASS="Subscript">
+i</SUB>
+, where s is the measurement error or standard deviation of <EM CLASS="Emphasis">
+Y</EM>
+<SUB CLASS="Subscript">
+i</SUB>
+ (Gaussian or instrumental weighting), or WEIGHTS&nbsp;=&nbsp;1/Y (Poisson or statistical weighting). If WEIGHTS is not specified, WEIGHTS<SUB CLASS="Subscript">
+i</SUB>
+ is assumed to be 1.0.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=948914">
+ </A>
+You can not set any of the elements of the WEIGHTS array equal to zero.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=754165">
+ </A>
+<A NAME="marker=845648">
+ </A>
+YFIT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=754166">
+ </A>
+Set this keyword equal to a named variable that will contain the vector of calculated <EM CLASS="Emphasis">
+Y</EM>
+ values.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=754175">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=845752">
+ </A>
+To fit a function of the following form:</P>
+<DIV>
+<CENTER><IMG SRC="idl_106.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=845890">
+ </A>
+first, create the function in IDL, then create a procedure to perform the fit. Enter the following IDL commands into a file called <CODE CLASS="Code">
+example_svdfit.pro</CODE>
+:</P>
+<P CLASS="Code">
+<A NAME="pgfId=845891">
+ </A>
+FUNCTION myfunct, X ,M</P>
+<P CLASS="Code">
+<A NAME="pgfId=845734">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;return,[ [1.0], [SIN(2*X)/X], [COS(4.*X)^2.] ]</P>
+<P CLASS="Code">
+<A NAME="pgfId=845735">
+ </A>
+END</P>
+<P CLASS="Code">
+<A NAME="pgfId=845737">
+ </A>
+PRO example_svdfit</P>
+<P CLASS="Code">
+<A NAME="pgfId=851619">
+ </A>
+C = [7.77, 8.88, -9.99]	<EM CLASS="Comment">;
+Provide an array of coefficients.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=845738">
+ </A>
+X = FINDGEN(100)/15.0 + 0.1</P>
+<P CLASS="Code">
+<A NAME="pgfId=845739">
+ </A>
+Y = C[0] + C[1] * SIN(2*X)/X + C[2] * COS(4.*X)^2.</P>
+<P CLASS="Code">
+<A NAME="pgfId=876107">
+ </A>
+sig = 0.05 * Y	 <EM CLASS="Comment">;
+Set uncertainties to 5%</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=845914">
+ </A>
+A=[1,1,1]	<EM CLASS="Comment">;
+Provide an initial guess</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=845915">
+ </A>
+result_a = SVDFIT(X, Y, A=A, WEIGHTS=(1/SIG^2.), $</P>
+<P CLASS="Code">
+<A NAME="pgfId=845920">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;FUNCTION_NAME='myfunct', SIGMA=SIGMA, YFIT=YFIT)</P>
+<P CLASS="Code">
+<A NAME="pgfId=845744">
+ </A>
+; Plot the results</P>
+<P CLASS="Code">
+<A NAME="pgfId=845923">
+ </A>
+PLOT, X, YFIT</P>
+<P CLASS="Code">
+<A NAME="pgfId=845745">
+ </A>
+FOR I = 0, N_ELEMENTS(A)-1 DO $</P>
+<P CLASS="Code">
+<A NAME="pgfId=845746">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT, I, result_a[I], SIGMA[I], C[I],$</P>
+<P CLASS="Code">
+<A NAME="pgfId=845747">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;FORMAT = '(&quot; result_a ( &quot;,I1,&quot; ) = &quot;,F7.4,&quot; +- &quot;,F7.4,&quot; VS. &quot;,F7.4)'</P>
+<P CLASS="Code">
+<A NAME="pgfId=845750">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=845751">
+ </A>
+Place the file <CODE CLASS="Code">
+example_svdfit.pro</CODE>
+ in a directory in the IDL search path, and enter <CODE CLASS="Code">
+example_svdfit</CODE>
+ at the command prompt to create the plot. In addition to creating the plot, IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=845938">
+ </A>
+result_a [ 0 ] =  7.7700 +-  0.1757 VS.  7.7700</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=845942">
+ </A>
+result_a [ 1 ] =  8.8800 +-  0.1631 VS.  8.8800</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=845943">
+ </A>
+result_a [ 2 ] = -9.9900 +-  0.2833 VS. -9.9900</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34942">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34937">
+ </A>
+<A HREF="idl50.htm#20568" CLASS="XRef">
+CURVEFIT</A>
+, <A HREF="idlb6.htm#49956" CLASS="XRef">
+GAUSSFIT</A>
+, <A HREF="idlfd.htm#38447" CLASS="XRef">
+LMFIT</A>
+, <A HREF="idl141.htm#24656" CLASS="XRef">
+POLY_FIT</A>
+, <A HREF="idl144.htm#64192" CLASS="XRef">
+POLYFITW</A>
+, <A HREF="idl177.htm#59666" CLASS="XRef">
+REGRESS</A>
+, <A HREF="idl197.htm#31264" CLASS="XRef">
+SFIT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

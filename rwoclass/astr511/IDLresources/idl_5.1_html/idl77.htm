@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DFPMIN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl78.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl76.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=861630">
+ </A>
+<A NAME="29412">
+ </A>
+DFPMIN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=203200">
+ </A>
+The <A NAME="marker=203198">
+ </A>
+DFPMIN <A NAME="marker=203199">
+ </A>
+procedure minimizes a user-written function <EM CLASS="Emphasis">
+Func</EM>
+ of two or more independent variables using the Broyden-Fletcher-Goldfarb-Shanno variant of the <A NAME="marker=203201">
+ </A>
+Davidon-Fletcher-Powell <A NAME="marker=203202">
+ </A>
+method, using its gradient as calculated by a user-written function <I CLASS="Italics">
+Dfunc</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=50515">
+ </A>
+DFPMIN is based on the routine <CODE CLASS="Code">
+dfpmin</CODE>
+ described in section 10.7 of <I CLASS="Italics">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50516">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50517">
+ </A>
+DFPMIN, <I CLASS="Italics">
+X, Gtol, Fmin, Func, Dfunc</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50518">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50519">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50520">
+ </A>
+On input, <I CLASS="Italics">
+X</I>
+ is an <I CLASS="Italics">
+n</I>
+-element vector specifying the starting point. On output, it is replaced with the location of the minimum.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50521">
+ </A>
+Gtol</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50522">
+ </A>
+An input value specifying the convergence requirement on zeroing the gradient.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50523">
+ </A>
+Fmin</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50524">
+ </A>
+On output, <I CLASS="Italics">
+Fmin</I>
+ contains the value at the minimum-point <I CLASS="Italics">
+X</I>
+ of the user-supplied function specified by <I CLASS="Italics">
+Func</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50525">
+ </A>
+Func</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50526">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function of two or more independent variables to be minimized. This function must accept a vector argument <I CLASS="Italics">
+X</I>
+ and return a scalar result. </P>
+<P CLASS="Body">
+<A NAME="pgfId=50527">
+ </A>
+For example, suppose we wish to find the minimum value of the function </P>
+<P CLASS="Body---centered">
+<A NAME="pgfId=50528">
+ </A>
+<EM CLASS="Emphasis">
+y</EM>
+ = (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ - 3)<SUP CLASS="Superscript">
+4</SUP>
+ + (<EM CLASS="Emphasis">
+x</EM>
+<SUB CLASS="Subscript">
+1</SUB>
+ - 2)<SUP CLASS="Superscript">
+2</SUP>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50529">
+ </A>
+To evaluate this expression, we define an IDL function named MINIMUM:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50530">
+ </A>
+FUNCTION minimum, X </P>
+<P CLASS="Code">
+<A NAME="pgfId=50531">
+ </A>
+&nbsp;&nbsp;RETURN, (X[0] - 3.0)^4 + (X[1] - 2.0)^2</P>
+<P CLASS="Code">
+<A NAME="pgfId=50532">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50533">
+ </A>
+Dfunc</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50534">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that calculates the gradient of the function specified by <I CLASS="Italics">
+Func</I>
+. This function must accept a vector argument <I CLASS="Italics">
+X</I>
+ and return a vector result. </P>
+<P CLASS="Body">
+<A NAME="pgfId=838635">
+ </A>
+For example, the gradient of the above function is defined by the partial derivatives:</P>
+<DIV>
+<CENTER><IMG SRC="idl_22.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=50541">
+ </A>
+We can write a function GRAD to express these relationships in the IDL language:</P>
+<P CLASS="Code">
+<A NAME="pgfId=50542">
+ </A>
+FUNCTION grad, X</P>
+<P CLASS="Code">
+<A NAME="pgfId=50543">
+ </A>
+&nbsp;&nbsp;RETURN, [4.0*(X[0] - 3.0)^3, 2.0*(X[1] - 2.0)]</P>
+<P CLASS="Code">
+<A NAME="pgfId=50544">
+ </A>
+END</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50545">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50547">
+ </A>
+<A NAME="marker=50546">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50548">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50550">
+ </A>
+<A NAME="marker=50549">
+ </A>
+EPS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50551">
+ </A>
+Use this keyword to specify a number close to the machine precision. For single-precision calculations, the default value is 3.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-8</SUP>
+. For double-precision calculations, the default value is 3.0&nbsp;<EM CLASS="MathSymbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-16</SUP>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50553">
+ </A>
+<A NAME="marker=50552">
+ </A>
+ITER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50554">
+ </A>
+Use this keyword to specify a named variable which returns the number of iterations performed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50556">
+ </A>
+<A NAME="marker=50555">
+ </A>
+ITMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50557">
+ </A>
+Use this keyword to specify the maximum number of iterations allowed. The default value is 200.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50559">
+ </A>
+<A NAME="marker=50558">
+ </A>
+STEPMAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50560">
+ </A>
+Use this keyword to specify the scaled maximum step length allowed in line searches. The default value is 100.0</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=50562">
+ </A>
+<A NAME="marker=50561">
+ </A>
+TOLX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=50563">
+ </A>
+Use this keyword to specify the convergence criterion on <I CLASS="Italics">
+X</I>
+ values. The default value is 4 x EPS.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50564">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50565">
+ </A>
+To minimize the function MINIMUM (shown above):</P>
+<P CLASS="Code">
+<A NAME="pgfId=50566">
+ </A>
+X = [1.0, 1.0]	<EM CLASS="Comment">;
+Make an initial guess (the algorithm's starting point).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50567">
+ </A>
+Gtol = 1.0e-7	<EM CLASS="Comment">;
+Set the convergence requirement on the gradient.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50568">
+ </A>
+DFPMIN, X, Gtol, Fmin, 'minimum', 'grad'</P>
+<P CLASS="Code">
+<A NAME="pgfId=50569">
+ </A>
+	<EM CLASS="Comment">;
+Find the minimizing value.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=50570">
+ </A>
+PRINT, X	<EM CLASS="Comment">;
+Print the minimizing value.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=50571">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=50572">
+ </A>
+&nbsp;&nbsp;3.00175&nbsp;&nbsp;2.00000</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=50573">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=50577">
+ </A>
+<A HREF="idl148.htm#27298" CLASS="XRef">
+POWELL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

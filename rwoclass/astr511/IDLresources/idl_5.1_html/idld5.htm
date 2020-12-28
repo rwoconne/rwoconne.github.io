@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> INT_3D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idld6.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idld4.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=750234">
+ </A>
+<A NAME="74581">
+ </A>
+INT_3D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=750238">
+ </A>
+The <A NAME="marker=750235">
+ </A>
+INT_3D function computes the triple <A NAME="marker=750236">
+ </A>
+integral of a trivariate function using <A NAME="marker=750237">
+ </A>
+iterated Gaussian quadrature. The algorithm's transformation data is provided in tabulated form with 15 decimal accuracy.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754722">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+int_3d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750240">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=750241">
+ </A>
+Result = INT_3D(<EM CLASS="Emphasis">
+Fxyz, AB_Limits, PQ_Limits, UV_Limits, Pts</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750242">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750243">
+ </A>
+Fxyz</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750244">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the trivariate function to be integrated. The function must accept X, Y, and Z, and return a scalar result.</P>
+<P CLASS="Body">
+<A NAME="pgfId=750248">
+ </A>
+For example, if we wish to integrate the following function:</P>
+<DIV>
+<CENTER><IMG SRC="idl_58.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=828357">
+ </A>
+We define a function FXY to express this relationship in the IDL language:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750251">
+ </A>
+FUNCTION fxyz, X, Y, Z</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750252">
+ </A>
+&nbsp;&nbsp;RETURN, z*(x^2+y^2+z^2)^1.5</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750253">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750254">
+ </A>
+AB_Limits</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750255">
+ </A>
+A two-element vector containing the lower (A) and upper (B) limits of integration with respect to the variable <EM CLASS="Emphasis">
+x</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750256">
+ </A>
+PQ_Limits</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750257">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the lower (P(<EM CLASS="Emphasis">
+x</EM>
+)) and upper (Q(<EM CLASS="Emphasis">
+x</EM>
+)) limits of integration with respect to the variable <EM CLASS="Emphasis">
+y</EM>
+. The function must accept <EM CLASS="Emphasis">
+x</EM>
+ and return a two-element vector result. </P>
+<P CLASS="Body">
+<A NAME="pgfId=750258">
+ </A>
+For example, we might write the following IDL function to represent the limits of integration with respect to <EM CLASS="Emphasis">
+y</EM>
+:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750259">
+ </A>
+FUNCTION PQ_limits, X</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750260">
+ </A>
+&nbsp;&nbsp;RETURN, [-SQRT(4.0 - X^2), SQRT(4.0 - X^2)]</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750261">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750262">
+ </A>
+UV_Limits</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750263">
+ </A>
+A scalar string specifying the name of a user-supplied IDL function that defines the lower (U(<EM CLASS="Emphasis">
+x,y</EM>
+)) and upper (V(<EM CLASS="Emphasis">
+x</EM>
+,y)) limits of integration with respect to the variable <EM CLASS="Emphasis">
+z</EM>
+. The function must accept <EM CLASS="Emphasis">
+x </EM>
+and<EM CLASS="Emphasis">
+ y </EM>
+and return a two-element vector result. </P>
+<P CLASS="Body">
+<A NAME="pgfId=750264">
+ </A>
+For example, we might write the following IDL function to represent the limits of integration with respect to <EM CLASS="Emphasis">
+z</EM>
+:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750265">
+ </A>
+FUNCTION UV_limits, X, Y</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750266">
+ </A>
+&nbsp;&nbsp;RETURN, [0, SQRT(4.0 - X^2 - Y^2)]</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=750267">
+ </A>
+END</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=750268">
+ </A>
+Pts</H4>
+<P CLASS="Body">
+<A NAME="pgfId=750269">
+ </A>
+The number of transformation points used in the computation. Possible values are: 6, 10, 20, 48, or 96.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=813292">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=813293">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=813294">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=750270">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=813310">
+ </A>
+Compute the triple integral of the trivariate function</P>
+<DIV>
+<CENTER><IMG SRC="idl_59.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=828363">
+ </A>
+Using the functions and limits defined above, integrate with 10, 20, 48, and 96 point formulas (using double-precision arithmetic):</P>
+<P CLASS="Code">
+<A NAME="pgfId=750287">
+ </A>
+PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 10, /D)</P>
+<P CLASS="Code">
+<A NAME="pgfId=750288">
+ </A>
+PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 20, /D)</P>
+<P CLASS="Code">
+<A NAME="pgfId=750289">
+ </A>
+PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 48, /D)</P>
+<P CLASS="Code">
+<A NAME="pgfId=816294">
+ </A>
+PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 96, /D)</P>
+<P CLASS="Body">
+<A NAME="pgfId=750291">
+ </A>
+INT_3D with 10 transformation points yields: 57.444248</P>
+<P CLASS="Body">
+<A NAME="pgfId=750292">
+ </A>
+INT_3D with 20 transformation points yields: 57.446201</P>
+<P CLASS="Body">
+<A NAME="pgfId=750293">
+ </A>
+INT_3D with 48 transformation points yields: 57.446265</P>
+<P CLASS="Body">
+<A NAME="pgfId=816300">
+ </A>
+INT_3D with 96transformation points yields: 57.446266</P>
+<P CLASS="Body">
+<A NAME="pgfId=750294">
+ </A>
+The exact solution (6 decimal accuracy) is: 57.446267</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=816265">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822538">
+ </A>
+<A HREF="idld4.htm#70083" CLASS="XRef">
+INT_2D</A>
+, <A HREF="idld6.htm#51833" CLASS="XRef">
+INT_TABULATED</A>
+, <A HREF="idl158.htm#72956" CLASS="XRef">
+QROMB</A>
+, <A HREF="idl159.htm#31379" CLASS="XRef">
+QROMO</A>
+, <A HREF="idl15a.htm#21978" CLASS="XRef">
+QSIMP</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

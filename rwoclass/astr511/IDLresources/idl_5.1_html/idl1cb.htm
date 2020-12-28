@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SWAP_ENDIAN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1cc.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ca.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762670">
+ </A>
+<A NAME="86774">
+ </A>
+SWAP_ENDIAN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762671">
+ </A>
+The <A NAME="marker=781469">
+ </A>
+SWAP_ENDIAN function reverses the byte ordering of arbitrary scalars, arrays or structures. It can make &quot;<A NAME="marker=781470">
+ </A>
+big endian&quot; number &quot;<A NAME="marker=781471">
+ </A>
+little endian&quot; and vice-versa. Note that the BYTEORDER procedure can be used to reverse the byte ordering of <I CLASS="Italic">
+scalars and arrays</I>
+ (SWAP_ENDIAN also allows structures).</P>
+<P CLASS="Body">
+<A NAME="pgfId=762672">
+ </A>
+SWAP_ENDIAN returns values of the same type and structure as the input value, with the pertinent bytes reversed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762673">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+swap_endian.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762674">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762675">
+ </A>
+Result = SWAP_ENDIAN(<I CLASS="Italic">
+Variable</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762676">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762677">
+ </A>
+Variable</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762678">
+ </A>
+The named variable--scalar, array, or structure--to be swapped.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762679">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=762680">
+ </A>
+A = SWAP_ENDIAN(A)	<EM CLASS="Comment">;
+Reverse the byte order of A</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762681">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762682">
+ </A>
+<A HREF="idl1f.htm#64112" CLASS="XRef">
+BYTEORDER</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

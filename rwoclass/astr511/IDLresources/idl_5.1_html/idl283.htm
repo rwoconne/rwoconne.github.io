@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_DFR8_GETINFO</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl284.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl282.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997647">
+ </A>
+<A NAME="93354">
+ </A>
+HDF_DFR8_GETINFO</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997650">
+ </A>
+The <A NAME="marker=997649">
+ </A>
+HDF_DFR8_GETINFO procedure retrieves information about the current 8-bit HDF image.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997651">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997652">
+ </A>
+HDF_DFR8_GETINFO, <I CLASS="Italics">
+Filename, Width, Height, Has_Palette</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997653">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997654">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997655">
+ </A>
+A string containing the name of the file to be read.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997656">
+ </A>
+Width</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997657">
+ </A>
+A named variable in which the width of the image is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997658">
+ </A>
+Height</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997659">
+ </A>
+A named variable in which the height of the image is returned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997660">
+ </A>
+Has_Palette</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997661">
+ </A>
+A named variable in which 1 is returned if a palette is present. Otherwise, 0 is returned.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997662">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997663">
+ </A>
+h = HDF_OPEN('myhdf.hdf')	<EM CLASS="Comment">;
+Open the file </EM>
+myhdf.hdf<EM CLASS="Comment">;
+.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997664">
+ </A>
+HDF_DFR8_GETINFO, 'myhdf.hdf', width, height, has_palette<BR>
+<EM CLASS="Comment">;
+Retrieve information about an image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997665">
+ </A>
+HELP, width, height, has_palette	<EM CLASS="Comment">;
+Print information about the returned variables. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997666">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997667">
+ </A>
+WIDTH LONG = 536</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997668">
+ </A>
+HEIGHT LONG = 412</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997669">
+ </A>
+HAS_PALETTE LONG = 1</P>
+<P CLASS="Code">
+<A NAME="pgfId=997670">
+ </A>
+HDF_CLOSE('myhdf.hdf')	<EM CLASS="Comment">;
+Close the HDF file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997671">
+ </A>
+For a more detailed example, see the file <CODE CLASS="Code">
+hdf_info.pro</CODE>
+, located in the <CODE CLASS="Code">
+examples</CODE>
+ subdirectory of the main IDL directory.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997672">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997682">
+ </A>
+<A HREF="idl282.htm#16489" CLASS="XRef">
+HDF_DFR8_GETIMAGE</A>
+, <A HREF="idl285.htm#97758" CLASS="XRef">
+HDF_DFR8_NIMAGES</A>
+, <A HREF="idl287.htm#63170" CLASS="XRef">
+HDF_DFR8_READREF</A>
+, <A HREF="idl288.htm#50184" CLASS="XRef">
+HDF_DFR8_RESTART</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

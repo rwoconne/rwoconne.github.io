@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> FACTORIAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl9d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl9b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=54485">
+ </A>
+<A NAME="49328">
+ </A>
+FACTORIAL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=54490">
+ </A>
+The <A NAME="marker=54487">
+ </A>
+FACTORIAL <A NAME="marker=54488">
+ </A>
+function computes the <A NAME="marker=54489">
+ </A>
+factorial <EM CLASS="Emphasis">
+N</EM>
+! as the double-precision product, (<EM CLASS="Emphasis">
+N</EM>
+) <EM CLASS="MathSymbol">
+</EM>
+ (<EM CLASS="Emphasis">
+N</EM>
+-1) <EM CLASS="MathSymbol">
+</EM>
+ (<EM CLASS="Emphasis">
+N</EM>
+-2) <EM CLASS="MathSymbol">
+</EM>
+ ... <EM CLASS="MathSymbol">
+</EM>
+ 3 <EM CLASS="MathSymbol">
+</EM>
+ 2 <EM CLASS="MathSymbol">
+</EM>
+ 1. </P>
+<P CLASS="Body">
+<A NAME="pgfId=54491">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+factorial.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54492">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54493">
+ </A>
+Result = FACTORIAL(<EM CLASS="Emphasis">
+N</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54494">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54495">
+ </A>
+N</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54496">
+ </A>
+A non-negative integer or long integer.</P>
+<P CLASS="Body">
+<A NAME="pgfId=54497">
+ </A>
+Note: large values of <EM CLASS="Emphasis">
+N</EM>
+ will cause floating-point overflow errors. The maximum size of <EM CLASS="Emphasis">
+N</EM>
+ varies with machine architecture. On machines that support the IEEE standard for floating-point arithmetic, the maximum value of <EM CLASS="Emphasis">
+N</EM>
+ is 170. See <A HREF="idl10a.htm#91584" CLASS="XRef">
+MACHAR</A>
+ for a discussion of machine-specific parameters affecting floating-point arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54498">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=54500">
+ </A>
+<A NAME="marker=54499">
+ </A>
+STIRLING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=54504">
+ </A>
+Set this keyword to use Stirling's asymptotic formula to approximate <EM CLASS="Emphasis">
+N</EM>
+!:</P>
+<DIV>
+<CENTER><IMG SRC="idl_28.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=827295">
+ </A>
+where <EM CLASS="Emphasis">
+e</EM>
+ is the base of the natural logarithm.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54509">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54510">
+ </A>
+Compute 20!. </P>
+<P CLASS="Code">
+<A NAME="pgfId=54511">
+ </A>
+PRINT, FACTORIAL(20)</P>
+<P CLASS="Body">
+<A NAME="pgfId=54512">
+ </A>
+IDL prints: </P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=54513">
+ </A>
+2.4329020e+18</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=54514">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=54515">
+ </A>
+BINOMIAL, TOTAL</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,545 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrPattern</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl300.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2fe.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=997677">
+ </A>
+<A NAME="65057">
+ </A>
+IDLgrPattern</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1005144">
+ </A>
+A <A NAME="marker=1022368">
+ </A>
+pattern object describes which pixels are filled and which are left blank when an area is filled. Pattern objects are used by setting the FILL_PATTERN property of a polygon object equal to the object reference of the pattern object.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1005145">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1005146">
+ </A>
+This class has no superclass.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1005097">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1005098">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005099">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005100">
+ </A>
+See <A HREF="idl2ff.htm#30334" CLASS="XRef">
+IDLgrPattern::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005112">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1005113">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1005114">
+ </A>
+This class has this following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1005122">
+ </A>
+<A HREF="idl2ff.htm#27678" CLASS="XRef">
+IDLgrPattern::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033763">
+ </A>
+<A HREF="idl2ff.htm#68703" CLASS="XRef">
+IDLgrPattern::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049782">
+ </A>
+<A HREF="idl2ff.htm#30334" CLASS="XRef">
+IDLgrPattern::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049786">
+ </A>
+<A HREF="idl2ff.htm#41262" CLASS="XRef">
+IDLgrPattern:SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1049789">
+ </A>
+<A NAME="27678">
+ </A>
+IDLgrPattern::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031384">
+ </A>
+The IDLgrPattern::<A NAME="marker=1052243">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2ff.htm#65057" CLASS="XRef">
+IDLgrPattern</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041818">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031388">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051187">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051188">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031389">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPattern::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031390">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031391">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031392">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031393">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997695">
+ </A>
+<A NAME="68703">
+ </A>
+IDLgrPattern::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005174">
+ </A>
+The IDLgrPattern::<A NAME="marker=1052246">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the pattern. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2ff.htm#65057" CLASS="XRef">
+IDLgrPattern</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005175">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005176">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPattern::]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997697">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005179">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005180">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016636">
+ </A>
+Any keyword to <A HREF="idl2ff.htm#30334" CLASS="XRef">
+IDLgrPattern::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997699">
+ </A>
+<A NAME="marker=1022549">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093571">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093572">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1013028">
+ </A>
+<A NAME="30334">
+ </A>
+IDLgrPattern::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1013029">
+ </A>
+The IDLgrPattern::<A NAME="marker=1052250">
+ </A>
+Init function method initializes the pattern object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2ff.htm#65057" CLASS="XRef">
+IDLgrPattern</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041707">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013033">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019675">
+ </A>
+Obj = OBJ_NEW('IDLgrPattern' <EM CLASS="Emphasis">
+[, Style]</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041963">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041964">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrPattern::]</EM>
+Init(<EM CLASS="Emphasis">
+[Style] </EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013035">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013036">
+ </A>
+Style</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013037">
+ </A>
+A integer value representing the type of pattern. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049819">
+ </A>
+0 = Solid color (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049820">
+ </A>
+1 = Line Fill</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049821">
+ </A>
+2 = Pattern</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1013038">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020235">
+ </A>
+Properties retrievable via <A HREF="idl2ff.htm#68703" CLASS="XRef">
+IDLgrPattern::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013039">
+ </A>
+<A NAME="marker=1022975">
+ </A>
+ORIENTATION (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013040">
+ </A>
+Set this keyword to a scalar representing the angle (measured in degrees counterclockwise from the horizontal) of the lines used in a Line Fill. This keyword is ignored unless the <EM CLASS="Emphasis">
+Style</EM>
+ argument (or STYLE property) is set to one.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1173741">
+ </A>
+<A NAME="marker=1173740">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173742">
+ </A>
+Set this keyword equal to a string containing the name associated with this object. The default is the null string, ' '.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013041">
+ </A>
+<A NAME="marker=1022976">
+ </A>
+PATTERN (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1013042">
+ </A>
+A 32 x 32 bit array (bitmap) describing the pattern that will be tiled over a polygon when a Pattern fill is used. The bitmap must be configured as a 4 x 32 &quot;bitmap byte array&quot; as created by the IDL CVTTOBM function. Each bit that is a 1 is drawn, each bit that is 0 is not drawn. This keyword is ignored unless the <EM CLASS="Emphasis">
+Style</EM>
+ argument (or STYLE property) is set to two.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1013043">
+ </A>
+<A NAME="marker=1022977">
+ </A>
+SPACING (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058778">
+ </A>
+Set this keyword equal to a floating-point value representing the distance (measured in pixels) between the lines used for a Line Fill. This keyword is ignored unless the <EM CLASS="Emphasis">
+Style</EM>
+ argument (or STYLE property) is set to one. The default is 2.0 pixels.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049841">
+ </A>
+<A NAME="marker=1049840">
+ </A>
+STYLE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049842">
+ </A>
+Set this keyword to specify the type of pattern to be used. Valid values are:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049843">
+ </A>
+0 = Solid (default)</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049844">
+ </A>
+1 = Linefill</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1049845">
+ </A>
+2 = Pattern</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1049863">
+ </A>
+This keyword is the same as the <I CLASS="Italic">
+Style</I>
+ argument described above.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1025143">
+ </A>
+<A NAME="marker=1049798">
+ </A>
+THICK</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1058783">
+ </A>
+Set this keyword to an integer value between 1 and 10, specifying the line thickness to be used to draw the pattern lines used for a Line Fill, in pixels. The default is one pixel. This keyword is ignored unless the <EM CLASS="Emphasis">
+Style</EM>
+ argument (or STYLE property) is set to one.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1173761">
+ </A>
+<A NAME="marker=1173759">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173762">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997702">
+ </A>
+<A NAME="41262">
+ </A>
+IDLgrPattern:SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005196">
+ </A>
+The IDLgrPattern::<A NAME="marker=1052253">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the pattern. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2ff.htm#65057" CLASS="XRef">
+IDLgrPattern</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005197">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005198">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrPattern::]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005199">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005200">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005201">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1050868">
+ </A>
+Any keyword to <A HREF="idl2ff.htm#30334" CLASS="XRef">
+IDLgrPattern::Init</A>
+</DIV>
+</BODY>
+</HTML>

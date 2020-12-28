@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BYTE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675883">
+ </A>
+<A NAME="28497">
+ </A>
+BYTE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=675884">
+ </A>
+The <A NAME="marker=672519">
+ </A>
+BYTE function returns a result equal to <I CLASS="Italics">
+Expression</I>
+ converted <A NAME="marker=672520">
+ </A>
+to byte type. If <I CLASS="Italics">
+Expression</I>
+ is a string, each string is converted to a byte vector of the same length as the string. Each element of the vector is the character code of the corresponding character in the string. The BYTE function can also be used to extract data from <I CLASS="Italics">
+Expression</I>
+ and place it in a byte scalar or array without modification, if more than one parameter is present. See <A HREF="..html#68719" CLASS="XRef">
+Type Conversion Functions</A>
+ for details.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675885">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675886">
+ </A>
+Result = BYTE(<I CLASS="Italics">
+Expression[, Offset [, Dim</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., Dim</I>
+<SUB CLASS="subscript">
+n</SUB>
+<I CLASS="Italics">
+]]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675887">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675888">
+ </A>
+Expression</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675889">
+ </A>
+The expression to be converted to type byte.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675890">
+ </A>
+Offset</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675891">
+ </A>
+The byte offset from the beginning of <I CLASS="Italics">
+Expression</I>
+. Specifying this argument allows fields of data extracted from <I CLASS="Italics">
+Expression</I>
+ to be treated as byte data without conversion.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675892">
+ </A>
+D<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675893">
+ </A>
+When extracting fields of data, the <I CLASS="Italics">
+D</I>
+<SUB CLASS="subscript">
+i</SUB>
+ arguments specify the dimensions of the result. The dimension parameters can be any scalar expression. Up to eight dimensions can be specified. If no dimension arguments are given, the result is taken to be scalar.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675894">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675895">
+ </A>
+If the variable A contains the floating-point value 10.0, it can be converted to byte type and saved in the variable B by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675896">
+ </A>
+B = BYTE(A)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795864">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795865">
+ </A>
+<A HREF="idl39.htm#61718" CLASS="XRef">
+COMPLEX</A>
+, <A HREF="idl6a.htm#50604" CLASS="XRef">
+DCOMPLEX</A>
+, <A HREF="idl83.htm#59771" CLASS="XRef">
+DOUBLE</A>
+, <A HREF="idla2.htm#84913" CLASS="XRef">
+FIX</A>
+, <A HREF="idla4.htm#33608" CLASS="XRef">
+FLOAT</A>
+, <A HREF="idl103.htm#20254" CLASS="XRef">
+LONG</A>
+, <A HREF="idl1bc.htm#79752" CLASS="XRef">
+STRING</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

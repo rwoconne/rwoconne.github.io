@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COND</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl3e.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl3c.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=749531">
+ </A>
+<A NAME="31512">
+ </A>
+COND</H2>
+<P CLASS="Body">
+<A NAME="pgfId=749534">
+ </A>
+The <A NAME="marker=749532">
+ </A>
+COND function returns the <A NAME="marker=749533">
+ </A>
+condition number of an <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ real or complex array <EM CLASS="Emphasis">
+A</EM>
+ by explicitly computing NORM(A)&#183;NORM(A<SUP CLASS="Superscript">
+-1</SUP>
+). If <EM CLASS="Emphasis">
+A</EM>
+ is real and <EM CLASS="Emphasis">
+A</EM>
+<SUP CLASS="Superscript">
+-1</SUP>
+ is invalid (due to the singularity of <EM CLASS="Emphasis">
+A</EM>
+ or floating-point errors in the INVERT function), COND returns -1. If <EM CLASS="Emphasis">
+A</EM>
+ is complex and <EM CLASS="Emphasis">
+A</EM>
+<SUP CLASS="Superscript">
+-1</SUP>
+ is invalid (due to the singularity of <EM CLASS="Emphasis">
+A</EM>
+), calling COND results in floating-point errors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=754643">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cond.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749536">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749537">
+ </A>
+Result = COND(<EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749538">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749539">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749540">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ real or complex array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749541">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=749542">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=749543">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=749545">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=749546">
+ </A>
+Define a complex array A:</P>
+<P CLASS="Code">
+<A NAME="pgfId=749547">
+ </A>
+A = [[COMPLEX(1,&nbsp;0), COMPLEX(2,-2), COMPLEX(-3,&nbsp;1)], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=749548">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[COMPLEX(1,-2), COMPLEX(2,&nbsp;2), COMPLEX(1,&nbsp;0)], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=749549">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[COMPLEX(1,&nbsp;1), COMPLEX(0,&nbsp;1), COMPLEX(1,&nbsp;5)]]</P>
+<P CLASS="Body">
+<A NAME="pgfId=749550">
+ </A>
+Compute the condition number of the array using internal double-precision arithmetic.</P>
+<P CLASS="Code">
+<A NAME="pgfId=749551">
+ </A>
+PRINT, COND(A, /DOUBLE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=749553">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=749554">
+ </A>
+5.93773</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=34611">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=34620">
+ </A>
+<A HREF="idl75.htm#64296" CLASS="XRef">
+DETERM</A>
+, <A HREF="idlda.htm#99308" CLASS="XRef">
+INVERT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MD_TEST</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl113.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl111.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888234">
+ </A>
+<A NAME="89505">
+ </A>
+MD_TEST</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888241">
+ </A>
+The <A NAME="marker=888237">
+ </A>
+MD_TEST <A NAME="marker=888238">
+ </A>
+function <A NAME="marker=888239">
+ </A>
+tests the <A NAME="marker=888240">
+ </A>
+hypothesis that a sample population is random against the hypothesis that it is not random. The result is a two-element vector containing the nearly-normal test statistic <EM CLASS="Emphasis">
+Z</EM>
+ and its associated probability. This two-tailed is an extension of the &quot;Runs Test for Randomness&quot; and is often referred to as the <A NAME="marker=888242">
+ </A>
+Median Delta Test.</P>
+<P CLASS="Body">
+<A NAME="pgfId=888243">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+md_test.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888244">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888245">
+ </A>
+Result = MD_TEST(<EM CLASS="Emphasis">
+X</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888246">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888247">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888248">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+-element integer, single- or double-precision floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888249">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888251">
+ </A>
+<A NAME="marker=888250">
+ </A>
+ABOVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888252">
+ </A>
+Use this keyword to specify a named variable that will contain the number of sample population values greater than the median of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888254">
+ </A>
+<A NAME="marker=888253">
+ </A>
+BELOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888255">
+ </A>
+Use this keyword to specify a named variable that will contain the number of sample population values less than the median of <EM CLASS="Emphasis">
+X</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888257">
+ </A>
+<A NAME="marker=888256">
+ </A>
+MDC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888258">
+ </A>
+Use this keyword to specify a named variable that will contain the number of Median Delta Clusters (sequential values of <EM CLASS="Emphasis">
+X</EM>
+ above and below the median).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888259">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888260">
+ </A>
+Define a sample population.</P>
+<P CLASS="Code">
+<A NAME="pgfId=888261">
+ </A>
+X&nbsp;=&nbsp;[&nbsp;2.00,&nbsp;&nbsp;0.90,&nbsp;-1.44,&nbsp;-0.88,&nbsp;-0.24,&nbsp;&nbsp;0.83,&nbsp;-0.84,&nbsp;-0.74, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888262">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.99,&nbsp;-0.82,&nbsp;-0.59,&nbsp;-1.88,&nbsp;-1.96,&nbsp;&nbsp;0.77,&nbsp;-1.89,&nbsp;-0.56, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=888263">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.62,&nbsp;-0.36,&nbsp;-1.01,&nbsp;-1.36]</P>
+<P CLASS="Body">
+<A NAME="pgfId=888264">
+ </A>
+Test the hypothesis that <EM CLASS="Emphasis">
+X</EM>
+ represents a random population against the hypothesis that it does not represent a random population at the 0.05 significance level.</P>
+<P CLASS="Code">
+<A NAME="pgfId=888265">
+ </A>
+result = MD_TEST(X, MDC = mdc)</P>
+<P CLASS="Code">
+<A NAME="pgfId=888266">
+ </A>
+PRINT, result</P>
+<P CLASS="Body">
+<A NAME="pgfId=888267">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888268">
+ </A>
+0.459468&nbsp;&nbsp;&nbsp;&nbsp;0.322949</P>
+<P CLASS="Body">
+<A NAME="pgfId=888269">
+ </A>
+The computed probability (0.322949) is greater than the 0.05 significance level and therefore we do not reject the hypothesis that <EM CLASS="Emphasis">
+X</EM>
+ represents a random population. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888270">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888295">
+ </A>
+<A HREF="idl4e.htm#28469" CLASS="XRef">
+CTI_TEST</A>
+, <A HREF="idlae.htm#67435" CLASS="XRef">
+FV_TEST</A>
+, <A HREF="routinesK-L.html#95076" CLASS="XRef">
+</A>
+, <A HREF="routinesK-L.html#95316" CLASS="XRef">
+</A>
+,<A HREF="idl15c.htm#56098" CLASS="XRef">
+R_TEST</A>
+, <A HREF="idl188.htm#66399" CLASS="XRef">
+RS_TEST</A>
+, <A HREF="idl18a.htm#14319" CLASS="XRef">
+S_TEST</A>
+, <A HREF="idl1da.htm#91249" CLASS="XRef">
+TM_TEST</A>
+, <A HREF="idl226.htm#50626" CLASS="XRef">
+XSQ_TEST</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

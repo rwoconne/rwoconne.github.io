@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MPEG_PUT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl120.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl11e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=889095">
+ </A>
+<A NAME="31350">
+ </A>
+MPEG_PUT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=889099">
+ </A>
+The <A NAME="marker=889098">
+ </A>
+MPEG_PUT procedure stores the specified image array at the specified frame index in an <A NAME="marker=889100">
+ </A>
+MPEG sequence.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889101">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+mpeg_put.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889102">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889103">
+ </A>
+MPEG_PUT, <EM CLASS="Emphasis">
+mpegID</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889104">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889105">
+ </A>
+mpegID</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889106">
+ </A>
+The unique identifier of the MPEG sequence into which the image will be inserted. (MPEG sequence identifiers are returned by the MPEG_OPEN routine.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889107">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889108">
+ </A>
+FRAME </H4>
+<P CLASS="Body">
+<A NAME="pgfId=889109">
+ </A>
+Set this keyword equal to an integer specifying the frame at which the image is to be loaded. If the frame number matches a previously loaded frame, the previous frame is overwritten. The default is 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889110">
+ </A>
+IMAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889111">
+ </A>
+Set this keyword equal to an <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ image array or a 3 x <EM CLASS="Emphasis">
+m</EM>
+ x <EM CLASS="Emphasis">
+n</EM>
+ True Color image array representing the image to be loaded at the specified frame. This keyword is ignored if the WINDOW keyword is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889112">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889113">
+ </A>
+Set this keyword to indicate that the rows of the image should be drawn from top to bottom. By default, the rows are drawn from bottom to top.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=889114">
+ </A>
+WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=889115">
+ </A>
+Set this keyword to the index of a Direct Graphics Window (or to an object reference to an IDLgrWindow or IDLgrBuffer object) to indicate that the image to be loaded is to be read from the given window or buffer. If this keyword is specified, it overrides the value of the IMAGE keyword.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889116">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889120">
+ </A>
+See <A HREF="idl11e.htm#29348" CLASS="XRef">
+MPEG_OPEN</A>
+ for an example using this routine.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=889121">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889134">
+ </A>
+<A HREF="idl11d.htm#17096" CLASS="XRef">
+MPEG_CLOSE</A>
+, <A HREF="idl11e.htm#29348" CLASS="XRef">
+MPEG_OPEN</A>
+, <A HREF="idl120.htm#36346" CLASS="XRef">
+MPEG_SAVE</A>
+, <A HREF="idl21f.htm#64099" CLASS="XRef">
+XINTERANIMATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

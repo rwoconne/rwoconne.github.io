@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VOXEL_PROJ</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1fa.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f8.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679856">
+ </A>
+<A NAME="99427">
+ </A>
+VOXEL_PROJ</H2>
+<P CLASS="Body">
+<A NAME="pgfId=677300">
+ </A>
+The <A NAME="marker=672555">
+ </A>
+VOXEL_PROJ function generates <A NAME="marker=672557">
+ </A>
+visualizations of volumetric data by computing 2D projections of a colored, semi-transparent volume. Parallel rays from any given direction are cast through the volume, onto the viewing plane. User-selected colors and <A NAME="marker=672621">
+ </A>
+opacities can be assigned to arbitrary data ranges, simulating the appearance of the materials contained within the volume.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680871">
+ </A>
+The VOXEL_PROJ function can be combined with the Z-buffer to render volume data over objects. Cutting planes can also be specified to view selected portions of the volume. Other options include: selectable resolution to allow quick &quot;preview&quot; renderings, and average and maximum projections.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677301">
+ </A>
+VOXEL_PROJ renders volumes using an algorithm similar to the one described by Drebin, Carpenter, and Hanrahan, in &quot;Volume Rendering&quot;, <I CLASS="Italic">
+Computer Graphics</I>
+, Volume 22, Number 4, August 1988, pp. 125-134, but without the surface extraction and enhancement step.</P>
+<P CLASS="Body">
+<A NAME="pgfId=677302">
+ </A>
+Voxel rendering can be quite time consuming. The time required to render a volume is proportional to the viewing area's size, in pixels, times the thickness of the volume cube in the viewing direction, divided by the product of the user-specified X, Y, and Z steps.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677304">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680843">
+ </A>
+Result = VOXEL_PROJ(<I CLASS="Italic">
+V [, RGBO]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680844">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680845">
+ </A>
+V</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677303">
+ </A>
+A three-dimensional array containing the volume to be rendered. This array is converted to byte type if necessary.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677305">
+ </A>
+RGBO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=677297">
+ </A>
+This optional parameter is used to specify the look-up tables that indicate the color and opacity of each voxel value. This argument can be one of the following types:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=677306">
+ </A>
+A (256, 4) byte array for true-color rendering. This array represents 256 sets of red, green, blue, and opacity (RGBO) components for each voxel value, scaled into the range of bytes (0 to 255). The R, G, and B components should already be scaled by the opacity. For example, if a voxel value of 100 contains a material that is red, and 35% opaque, the RGBO values should be, respectively: [89, 0, 0, 89] because 255 * 0.35 = 89. If more than one material is present, the RGBO arrays contain the sum of the individual RGBO arrays. The content and shape of the RGBO curves is highly dependent upon the volume data and experimentation is often required to obtain the best display.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=677307">
+ </A>
+A (256, 2) byte array for volumes with only one material or monochrome rendering. This array represents 256 sets of pixel values and their corresponding opacities for each voxel value.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=677299">
+ </A>
+If this argument is omitted, the average projection method, or maximum intensity method (if the MAXIMUM_INTENSITY keyword is set) is used.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=677309">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=677308">
+ </A>
+<A NAME="marker=896342">
+ </A>
+BACKGROUND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680822">
+ </A>
+A one- or three-element array containing the background color indices. The default is (0,0,0), yielding a black background with most color tables.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680823">
+ </A>
+<A NAME="marker=896341">
+ </A>
+CUTTING_PLANE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680846">
+ </A>
+A floating-point array specifying the coefficients of additional cutting planes. The array has dimensions of (4, N), where N is the number of additional cutting planes from 1 to 6. Cutting planes are constraints in the form of:</P>
+<P CLASS="Body">
+<A NAME="pgfId=680873">
+ </A>
+C[0] * X + C[1] * Y + C[2] * Z + D &gt; 0</P>
+<P CLASS="Body">
+<A NAME="pgfId=680874">
+ </A>
+The X, Y, and Z coordinates are specified in voxel coordinates. For example, to specify a cutting plane that excludes all voxels with an X value greater than 10:</P>
+<P CLASS="Body">
+<A NAME="pgfId=680872">
+ </A>
+CUTTING_PLANE = [-1.0, 0, 0, 10.], for the constraint: -X + 10 &gt; 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680824">
+ </A>
+<A NAME="marker=896340">
+ </A>
+INTERPOLATE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680847">
+ </A>
+Set this keyword to use tri-linear interpolation to determine the data value for each step on a ray. Otherwise, the nearest-neighbor method is used. Setting this keyword improves the quality of images produced, especially when the volume has low resolution in relation to the size of the viewing plane, at the cost of more computing time.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680825">
+ </A>
+<A NAME="marker=896339">
+ </A>
+MAXIMUM_INTENSITY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680848">
+ </A>
+Set this keyword to make the value of each pixel in the viewing plane the maximum data value along the corresponding ray. The <I CLASS="Italic">
+RGBO</I>
+ argument is ignored if present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680826">
+ </A>
+<A NAME="marker=896338">
+ </A>
+STEP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680849">
+ </A>
+Set this keyword to a three-element vector, [<I CLASS="Italic">
+Sx</I>
+, <I CLASS="Italic">
+Sy</I>
+, <I CLASS="Italic">
+Sz</I>
+], that controls the resolution of the resulting projection. The first two elements contain the step size in the X and Y view plane, in pixels. The third element is the sampling step size in the Z direction, given in voxels. <I CLASS="Italic">
+Sx</I>
+ and <I CLASS="Italic">
+Sy</I>
+ must be integers equal to or greater than one, while <I CLASS="Italic">
+Sz</I>
+ can contain a fractional part. If <I CLASS="Italic">
+Sx</I>
+ or <I CLASS="Italic">
+Sy</I>
+ are greater than one, the values of intermediate pixels in the output image are linearly interpolated. Higher step sizes require less time because fewer rays are cast, at the expense of lower resolution in the output image. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680827">
+ </A>
+<A NAME="marker=896343">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680850">
+ </A>
+The width, in pixels, of the output image. If this keyword is omitted, the output image is as wide as the currently-selected output device.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680828">
+ </A>
+<A NAME="marker=896344">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680851">
+ </A>
+The height, in pixels, of the output image. If this keyword is omitted, the output image is as tall as the currently selected output device. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680829">
+ </A>
+<A NAME="marker=896345">
+ </A>
+ZBUFFER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680852">
+ </A>
+An integer array, with the same width and height as the output image, that contains the depth portion of the Z-buffer. Include this parameter to combine the previously-read contents of a Z-buffer with a voxel rendering. See the third example, below, for details.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680830">
+ </A>
+<A NAME="marker=896346">
+ </A>
+ZPIXELS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680841">
+ </A>
+A byte array, with the same width and height as the output image, that contains the image portion of the Z-buffer. Include this parameter to combine the contents of a Z-buffer with a voxel rendering. See the third example, below, for details.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680832">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680876">
+ </A>
+In the following example, assume that variable <CODE CLASS="Code">
+V</CODE>
+ contains a volume of data, with dimensions <CODE CLASS="Code">
+Vx</CODE>
+ by <CODE CLASS="Code">
+Vy</CODE>
+ by <CODE CLASS="Code">
+Vz</CODE>
+. The volume contains two materials, muscle tissue represented by a voxel range of 50 to 70, that we want to render with red color, and an opacity of 20; and bone tissue represented by a voxel range of 220-255, that we want to render with white color, and an opacity of 50:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680834">
+ </A>
+rgbo = BYTARR(256,4)	<EM CLASS="Comment">;
+Create the opacity vector.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680831">
+ </A>
+rgbo[50:70, [0,3]] = 20	<EM CLASS="Comment">;
+Red and opacity for muscle.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680821">
+ </A>
+rgbo[220:255, *] = 50	<EM CLASS="Comment">;
+White and opacity for bone.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=680835">
+ </A>
+Although it is common to use trapezoidal or Gaussian functions when forming the RGBO arrays, this example uses rectangular functions for simplicity.</P>
+<P CLASS="Code">
+<A NAME="pgfId=680836">
+ </A>
+SCALE3, XRANGE=[0, Vx-1], YRANGE=[0, Vy-1], ZRANGE=[0, Vz-1]<BR>
+<EM CLASS="Comment">;
+Set up the axis scaling and default rotation.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680854">
+ </A>
+C = VOXEL_PROJ(V, rgbo)	<EM CLASS="Comment">;
+Compute projected image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680856">
+ </A>
+TV, COLOR_QUAN(C, 3, R, G, B)	<EM CLASS="Comment">;
+Convert from 24-bit to 8-bit image and display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680857">
+ </A>
+TVLCT, R, G, B	<EM CLASS="Comment">;
+Load quantized color tables.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=680837">
+ </A>
+This example required approximately 27 seconds on a typical workstation to compute the view in a 640- by 512-pixel viewing window. Adding the keyword <CODE CLASS="Code">
+STEP=[2,2,1]</CODE>
+ in the call to VOXEL_PROJ decreased the computing time to about 8 seconds, at the expense of slightly poorer resolution.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680838">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=680833">
+ </A>
+When viewing a volume with only one constituent, the RGBO array should contain only an intensity/opacity value pair. To illustrate, if in the above example, only muscle was of interest we create the RGBO argument as follows:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680839">
+ </A>
+rgbo = BYTARR(256,2)	<EM CLASS="Comment">;
+Create an empty 256 x 2 array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680875">
+ </A>
+rgbo[50:70, *] = 20	<EM CLASS="Comment">;
+Intensity and opacity for muscle</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680855">
+ </A>
+SCALE3, XRANGE=[0, Vx-1], YRANGE=[0, Vy-1], ZRANGE=[0, Vz-1]</P>
+<P CLASS="Code">
+<A NAME="pgfId=680858">
+ </A>
+TV, VOXEL_PROJ(V, rgbo)	<EM CLASS="Comment">;
+Compute and display the projected image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680859">
+ </A>
+C = (FINDGEN(256)/255.) # [255., 0., 0]	<EM CLASS="Comment">;
+Create color table array for red.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680860">
+ </A>
+TVLCT, C[*,0], C[*,1], C[*,2]	<EM CLASS="Comment">;
+Load colors.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=680853">
+ </A>
+The following example demonstrates combining a volume with the contents of the Z-buffer:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680861">
+ </A>
+SET_PLOT, 'Z'	<EM CLASS="Comment">;
+Set plotting to Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680863">
+ </A>
+DEVICE, /Z_BUFFER	<EM CLASS="Comment">;
+Turn on Z buffering.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680862">
+ </A>
+SCALE3, XRANGE=[0, Vx-1], YRANGE=[0, Vy-1], ZRANGE=[0, Vz-1]<BR>
+<EM CLASS="Comment">;
+Set scaling.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680864">
+ </A>
+POLYFILL, [0, Vx-1, Vx-1, 0], [0, 0, Vy-1, Vy-1], Vz/2., /T3D<BR>
+<EM CLASS="Comment">;
+Draw a polygon at z equal to half the depth</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680866">
+ </A>
+zpix = TVRD()	<EM CLASS="Comment">;
+Read pixel values from the Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680867">
+ </A>
+zbuff = TVRD(/WORDS,/CHAN)	<EM CLASS="Comment">;
+Read depth values from the Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680865">
+ </A>
+SET_PLOT, 'X'	<EM CLASS="Comment">;
+Back to display window</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680868">
+ </A>
+C = VOXEL_PROJ(V, rgbo, ZPIX=zpix, ZBUFF=zbuff)<BR>
+<EM CLASS="Comment">;
+Compute the voxel projection and use the ZPIXELS and ZBUFFER keywords to combine the volume with the previously-read contents of the Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680869">
+ </A>
+TV, COLOR_QUAN(C, 3, R, G, B)	<EM CLASS="Comment">;
+Convert from 24-bit to 8-bit image and display.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=680870">
+ </A>
+TVLCT, R, G, B	<EM CLASS="Comment">;
+Load the quantized color tables. </EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820515">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=890503">
+ </A>
+<A HREF="idl145.htm#45438" CLASS="XRef">
+POLYSHADE</A>
+, <A HREF="idl14f.htm#31417" CLASS="XRef">
+PROJECT_VOL</A>
+, <A HREF="idl174.htm#52389" CLASS="XRef">
+RECON3</A>
+, <A HREF="idl19a.htm#78379" CLASS="XRef">
+SHADE_VOLUME</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> TRIQL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1e3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1e1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52198">
+ </A>
+<A NAME="52845">
+ </A>
+TRIQL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52203">
+ </A>
+The <A NAME="marker=52200">
+ </A>
+TRIQL <A NAME="marker=52201">
+ </A>
+procedure uses the <A NAME="marker=52202">
+ </A>
+QL algorithm with implicit shifts to determine the <A NAME="marker=52204">
+ </A>
+eigenvalues and <A NAME="marker=52205">
+ </A>
+eigenvectors of a real, <A NAME="marker=52206">
+ </A>
+symmetric, <A NAME="marker=52207">
+ </A>
+tridiagonal array. The routine TRIRED can be used to reduce a real, symmetric array to the tridiagonal form suitable for input to this procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52208">
+ </A>
+TRIQL is based on the routine <CODE CLASS="Code">
+tqli</CODE>
+ described in section 11.3 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52209">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52210">
+ </A>
+TRIQL, <I CLASS="Italic">
+D, E, A</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52211">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52212">
+ </A>
+D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52213">
+ </A>
+On input, this argument should be an <I CLASS="Italic">
+n</I>
+-element vector containing the diagonal elements of the array being analyzed. On output, <I CLASS="Italic">
+D</I>
+ contains the eigenvalues.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52214">
+ </A>
+E</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52215">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element vector containing the off-diagonal elements of the array. <I CLASS="Italic">
+E</I>
+<SUB CLASS="Subscript">
+0</SUB>
+ is arbitrary. On output, this parameter is destroyed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52216">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52217">
+ </A>
+A named variable that returns the <EM CLASS="Emphasis">
+n</EM>
+ eigenvectors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52218">
+ </A>
+If the eigenvectors of a tridiagonal array are desired, <I CLASS="Italic">
+A </I>
+should be input as an identity array. If the eigenvectors of an array that has been reduced by TRIRED are desired, <I CLASS="Italic">
+A </I>
+is input as the array <I CLASS="Italic">
+Q</I>
+ output by TRIRED.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52219">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52221">
+ </A>
+<A NAME="marker=52220">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52222">
+ </A>
+Set this keyword to force the computation to be done in double-precision arithmetic.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52223">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52224">
+ </A>
+To compute eigenvalues and eigenvectors of a real, symmetric, tridiagonal array, begin with an array A representing a symmetric array.</P>
+<P CLASS="Code">
+<A NAME="pgfId=52225">
+ </A>
+A = [[ 3.0, &nbsp;1.0, -4.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52226">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;[ 1.0, &nbsp;3.0, -4.0], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52227">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-4.0, -4.0, &nbsp;8.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52228">
+ </A>
+TRIRED, A, D, E	<EM CLASS="Comment">;
+Compute the tridiagonal form of A.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=52229">
+ </A>
+Compute the eigenvalues (returned in vector D) and the eigenvectors (returned in the rows of the array A):</P>
+<P CLASS="Code">
+<A NAME="pgfId=52230">
+ </A>
+TRIQL, D, E, A</P>
+<P CLASS="Code">
+<A NAME="pgfId=52231">
+ </A>
+PRINT, D	<EM CLASS="Comment">;
+Print eigenvalues.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=52232">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52233">
+ </A>
+&nbsp;&nbsp;2.00000&nbsp;&nbsp;4.76837e-7&nbsp;&nbsp;12.0000</P>
+<P CLASS="Body">
+<A NAME="pgfId=52234">
+ </A>
+The exact values are:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52235">
+ </A>
+&nbsp;&nbsp;[2.0, 0.0, 12.0]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52236">
+ </A>
+PRINT, A	<EM CLASS="Comment">;
+Print eigenvectors.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=52237">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52238">
+ </A>
+&nbsp;&nbsp;0.707107&nbsp;&nbsp;-0.707107&nbsp;&nbsp;&nbsp;0.00000</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52239">
+ </A>
+&nbsp;-0.577350&nbsp;&nbsp;-0.577350&nbsp;&nbsp;-0.577350</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=52240">
+ </A>
+&nbsp;-0.408248&nbsp;&nbsp;-0.408248&nbsp;&nbsp;&nbsp;0.816497</P>
+<P CLASS="Body">
+<A NAME="pgfId=52241">
+ </A>
+The exact eigenvectors are:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52242">
+ </A>
+&nbsp;[ 1.0/sqrt(2.0), -1.0/sqrt(2.0), 0.0/sqrt(2.0)],</P>
+<P CLASS="Code">
+<A NAME="pgfId=52243">
+ </A>
+&nbsp;[-1.0/sqrt(3.0), -1.0/sqrt(3.0), -1.0/sqrt(3.0)],</P>
+<P CLASS="Code">
+<A NAME="pgfId=52244">
+ </A>
+&nbsp;[-1.0/sqrt(6.0), -1.0/sqrt(6.0), 2.0/sqrt(6.0)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52245">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52258">
+ </A>
+<A HREF="idl8a.htm#90610" CLASS="XRef">
+EIGENVEC</A>
+, <A HREF="idl8b.htm#12703" CLASS="XRef">
+ELMHES</A>
+, <A HREF="idlcb.htm#43596" CLASS="XRef">
+HQR</A>
+, <A HREF="idl1e3.htm#25832" CLASS="XRef">
+TRIRED</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

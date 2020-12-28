@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CLOSE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl34.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl32.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676114">
+ </A>
+<A NAME="57858">
+ </A>
+CLOSE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676115">
+ </A>
+The <A NAME="marker=672630">
+ </A>
+CLOSE procedure closes the <A NAME="marker=672631">
+ </A>
+file units specified as arguments. All <A NAME="marker=672632">
+ </A>
+open files are also closed when IDL exits.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676116">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676117">
+ </A>
+CLOSE<I CLASS="Italics">
+[,Unit</I>
+<SUB CLASS="subscript">
+1</SUB>
+<I CLASS="Italics">
+, ..., Unit</I>
+<SUB CLASS="subscript">
+n</SUB>
+<I CLASS="Italics">
+]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676118">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676119">
+ </A>
+Unit<SUB CLASS="subscript">
+i</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676120">
+ </A>
+The IDL file units to close.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676121">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676122">
+ </A>
+<A NAME="marker=672639">
+ </A>
+ALL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676123">
+ </A>
+Set this keyword to close all open file units. In addition, any file units that were allocated via GET_LUN are freed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676124">
+ </A>
+<A NAME="marker=672640">
+ </A>
+FILE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676125">
+ </A>
+Set this keyword to close all file units from 1 to 99. File units greater than 99, which are associated with the <A NAME="marker=672641">
+ </A>
+GET_LUN and <A NAME="marker=672642">
+ </A>
+FREE_LUN procedures, are not affected.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676126">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676127">
+ </A>
+If file units 1 and 3 are open, they can both be closed at the same time by entering the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676128">
+ </A>
+CLOSE, 1, 3</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=818695">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=818696">
+ </A>
+<A HREF="idl130.htm#59773" CLASS="XRef">
+OPEN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

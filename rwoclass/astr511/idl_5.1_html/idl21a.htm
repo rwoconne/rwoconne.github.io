@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WSHOW</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl21b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl219.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680699">
+ </A>
+<A NAME="14449">
+ </A>
+WSHOW</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680700">
+ </A>
+The <A NAME="marker=675083">
+ </A>
+WSHOW procedure exposes or hides the designated window.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680701">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680702">
+ </A>
+WSHOW <I CLASS="Italic">
+[, Window_Index [, Show]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680703">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680704">
+ </A>
+Window_Index</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680705">
+ </A>
+The window index of the window to be hidden or exposed. If this argument is not specified, the current window is assumed. If this index is the window ID of a draw widget, the widget base associated with that drawable is brought to the front of the screen.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680706">
+ </A>
+Show</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680707">
+ </A>
+Set <I CLASS="Italic">
+Show</I>
+ to 0 to hide the window. Omit this argument or set it to 1 to expose the window.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680708">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680709">
+ </A>
+<A NAME="marker=675084">
+ </A>
+ICONIC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680710">
+ </A>
+Set this keyword to iconify the window. Set ICONIC to 0 to de-iconify the window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680711">
+ </A>
+Under windowing systems, iconification is the task of the window manager, and client applications such as IDL have no direct control over it. The ICONIC keyword serves as a hint to the window manager, which is free to iconify the window or ignore the request as it sees fit.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680712">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680713">
+ </A>
+To bring IDL window number 0 to the front, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680714">
+ </A>
+WSHOW, 0</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796049">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=891757">
+ </A>
+<A HREF="idl1fc.htm#13948" CLASS="XRef">
+WDELETE</A>
+, <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+, <A HREF="idl219.htm#42522" CLASS="XRef">
+WSET</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DTGEN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl88.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl86.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=928190">
+ </A>
+DTGEN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=928194">
+ </A>
+The <A NAME="marker=928193">
+ </A>
+DTGEN procedure returns an IDLDT date/time array variable beginning with a specified date and incremented by a specified amount.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=928195">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=928196">
+ </A>
+Result = DTGEN(<I CLASS="Italic">
+Dt_start</I>
+, <I CLASS="Italic">
+Number</I>
+) </P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=928197">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928198">
+ </A>
+Dt_start</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928303">
+ </A>
+An IDLDT date/time variable that represents the starting date and time in the new data set. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928301">
+ </A>
+Number</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928313">
+ </A>
+A numeric value specifying the number of date/time values to generate. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=928200">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928202">
+ </A>
+<A NAME="marker=928201">
+ </A>
+DAY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928203">
+ </A>
+Set this keyword to specify an increment in days.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928205">
+ </A>
+<A NAME="marker=928204">
+ </A>
+HOUR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928206">
+ </A>
+Set this keyword to specify an incrementin hours.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928208">
+ </A>
+<A NAME="marker=928207">
+ </A>
+MINUTE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928209">
+ </A>
+Set this keywork to specify an increment in minutes.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928211">
+ </A>
+<A NAME="marker=928210">
+ </A>
+MONTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928212">
+ </A>
+Set this keyword to specify an increment in months.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928214">
+ </A>
+<A NAME="marker=928213">
+ </A>
+SECOND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928215">
+ </A>
+Set this keyword to aspecify an increment in seconds.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=928217">
+ </A>
+<A NAME="marker=928216">
+ </A>
+YEAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=928218">
+ </A>
+Set this keyword to specify an increment in years.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=928219">
+ </A>
+Example </H3>
+<P CLASS="Body">
+<A NAME="pgfId=928220">
+ </A>
+This example shows how to generate an array of date/time structures for consecutive years. </P>
+<P CLASS="Code">
+<A NAME="pgfId=928347">
+ </A>
+today = TODAY()<EM CLASS="Comment">;
+	Create a date/time variable <BR>
+containing the current date.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=928352">
+ </A>
+date = DTGEN( today , 4, /Year)	<EM CLASS="Comment">;
+Use DTGEN to create a new IDLDT date/time variable <BR>
+containing 4 date/time values. The 4 IDLDT date/time values represent 4 consecutive years with identical months, days, and times.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=928364">
+ </A>
+PRINT, date</P>
+<P CLASS="Body">
+<A NAME="pgfId=928366">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=928469">
+ </A>
+{    1998   4   3  12  35      39.0000       2450907.5   0}</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=928510">
+ </A>
+{    1999   4   3  12  35      39.0000       2451272.5   0}</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=928511">
+ </A>
+{    2000   4   3  12  35      39.0000       2451638.5   0}</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=928512">
+ </A>
+{    2001   4   3  12  35      39.0000       2452003.5   0}</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=928237">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=928241">
+ </A>
+VAR_TO_DT, <A HREF="idlcf.htm#13169" CLASS="XRef">
+IDLDT__DEFINE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BYTSCL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl21.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=675956">
+ </A>
+<A NAME="65656">
+ </A>
+BYTSCL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=675957">
+ </A>
+The <A NAME="marker=672553">
+ </A>
+BYTSCL function <A NAME="marker=672554">
+ </A>
+scales all values of <I CLASS="Italics">
+Array</I>
+ that lie in the range (<EM CLASS="Emphasis">
+Min</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+x</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+Max</EM>
+) into the range (0 <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+x</EM>
+ <EM CLASS="MathSymbol">
+&lt;=</EM>
+ <EM CLASS="Emphasis">
+Top</EM>
+). The returned result has the same structure as the original parameter and is of byte type.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675958">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675959">
+ </A>
+Result = BYTSCL(<I CLASS="Italics">
+Array</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675960">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675961">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675962">
+ </A>
+The array to be scaled and converted to bytes.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675963">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675964">
+ </A>
+<A NAME="marker=672559">
+ </A>
+MAX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675965">
+ </A>
+The maximum value of <I CLASS="Italics">
+Array</I>
+ to be considered. If MAX is not provided, <I CLASS="Italics">
+Array</I>
+ is searched for its maximum value. All values greater or equal to MAX are set equal to TOP in the result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675966">
+ </A>
+<A NAME="marker=672560">
+ </A>
+MIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675967">
+ </A>
+The minimum value of <I CLASS="Italics">
+Array</I>
+ to be considered. If MIN is not provided, <I CLASS="Italics">
+Array</I>
+ is searched for its minimum value. All values less than or equal to MIN are set equal to 0 in the result.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=47179">
+ </A>
+<A NAME="marker=47182">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=49791">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=675968">
+ </A>
+<A NAME="marker=672561">
+ </A>
+TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=675969">
+ </A>
+The maximum value of the scaled result. If TOP is not specified, 255 is used. Note that the minimum value of the scaled result is always 0.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=675970">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=675971">
+ </A>
+BYTSCL is often used to scale images into the appropriate range for 8-bit displays. As an example, enter the following commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675972">
+ </A>
+IM = DIST(200)	<EM CLASS="Comment">;
+Create a simple image array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675973">
+ </A>
+TV, IM	<EM CLASS="Comment">;
+Display the array as an image.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=675974">
+ </A>
+Now scale the image into the full range of bytes (0 to 255) and re-display it by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=675975">
+ </A>
+IM = BYTSCL(IM)	<EM CLASS="Comment">;
+Byte scale the image and store the result in the same variable.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=675976">
+ </A>
+TV, IM	<EM CLASS="Comment">;
+Display the new image.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=796016">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=796020">
+ </A>
+<A HREF="idl1e.htm#28497" CLASS="XRef">
+BYTE</A>
+, <A HREF="idl1ee.htm#90730" CLASS="XRef">
+TVSCL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

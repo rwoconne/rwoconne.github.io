@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> BLAS_AXPY</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl17.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=907631">
+ </A>
+<A NAME="18170">
+ </A>
+BLAS_AXPY</H2>
+<P CLASS="Body">
+<A NAME="pgfId=935691">
+ </A>
+The <A NAME="marker=907716">
+ </A>
+BLAS_AXPY procedure updates an existing array by adding a multiple of another array. It can also be used to update one or more one-dimensional subvectors of an array according to the following vector operation: </P>
+<DIV>
+<CENTER><IMG SRC="idl_4.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=907633">
+ </A>
+where S is a scale factor and X is an input vector.</P>
+<P CLASS="Body">
+<A NAME="pgfId=907711">
+ </A>
+BLAS_AXPY can be faster and use less memory than the usual IDL array notation <BR>
+(e.g. <CODE CLASS="Code">
+Y=Y+A*X</CODE>
+) for updating existing arrays.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=909702">
+ </A>
+BLAS_AXPY is much faster when operating on entire arrays and rows, than when used on columns or higher dimensions.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=907543">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=907544">
+ </A>
+BLAS_AXPY, <I CLASS="Italic">
+Y, Value, X [, D1, Loc1 [, D2, Range]]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=907545">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907741">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907742">
+ </A>
+The array to be updated. <I CLASS="Italic">
+Y </I>
+can be of any scalar numeric type. REPLICATE_INPLACE does not change the size and type of <I CLASS="Italic">
+Y</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907746">
+ </A>
+Value</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907747">
+ </A>
+The scalar value which will fill all or part of <I CLASS="Italic">
+X</I>
+. <I CLASS="Italic">
+Value</I>
+ may be any scalar type that IDL can convert to the type of <I CLASS="Italic">
+X</I>
+. REPLICATE_INPLACE does not change <I CLASS="Italic">
+Value</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907753">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907830">
+ </A>
+The array to be scaled and added to array <I CLASS="Italic">
+Y</I>
+, or the vector to be scaled and added to subvectors of <I CLASS="Italic">
+Y</I>
+. <I CLASS="Italic">
+X</I>
+ must be of the same type as <I CLASS="Italic">
+Y</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907757">
+ </A>
+D1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907758">
+ </A>
+An optional parameter indicating which dimension of <I CLASS="Italic">
+X</I>
+ is to be updated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907761">
+ </A>
+Loc1</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907762">
+ </A>
+An array with the same number of elements as the number of dimensions of <I CLASS="Italic">
+X</I>
+. The <I CLASS="Italic">
+Loc1 </I>
+and <I CLASS="Italic">
+D1</I>
+ arguments together determine which one-dimensional subvector (or subvectors, if <I CLASS="Italic">
+D1</I>
+ and <I CLASS="Italic">
+Range</I>
+ are provided) of <I CLASS="Italic">
+X</I>
+ is to be updated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907768">
+ </A>
+D2</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907864">
+ </A>
+An optional parameter, indicating in which dimension of <I CLASS="Italic">
+X</I>
+ a group of one-dimensional subvectors are to be updated. <I CLASS="Italic">
+D2</I>
+ should be different from <I CLASS="Italic">
+D1</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=907875">
+ </A>
+Range</H4>
+<P CLASS="Body">
+<A NAME="pgfId=907880">
+ </A>
+An array of indices of dimension <I CLASS="Italic">
+D2</I>
+ of <I CLASS="Italic">
+X</I>
+, indicating where to put one-dimensional updates of <I CLASS="Italic">
+X</I>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=907556">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=928063">
+ </A>
+seed = 5L 	<EM CLASS="Comment">;
+A seed value needs to be defined</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=928061">
+ </A>
+A = FINDGEN(40, 90, 10)<EM CLASS="Comment">;
+	Create a multidimensional array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=907901">
+ </A>
+B = RANDOMU(40, 90, 10)<EM CLASS="Comment">;
+	Create a random update.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=907956">
+ </A>
+BLAS_AXPY, A, 4.5, B<EM CLASS="Comment">;
+	Add a multiple of B to A. <BR>
+(i.e., A = A + 4.5*B )</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=908020">
+ </A>
+BLAS_AXPY, A, 1., REPLICATE(4.3, 40), 1, [0,4,9]<BR>
+<EM CLASS="Comment">;
+Add a constant to a subvector of A. (i.e. A[*,4,9] = A[*,4,9] + 4.3)</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=908021">
+ </A>
+C = FINDGEN(90)<EM CLASS="Comment">;
+	Create a vector update.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=908053">
+ </A>
+BLAS_AXPY, A, 1., C, 2, [9,0,0], 3, LINDGEN(10)<BR>
+<EM CLASS="Comment">;
+Add C to a group of subvectors of A. ( i.e. A[ 9,*,*] = A[ 9,*,*] + C)</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=921154">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=921155">
+ </A>
+<A HREF="idl179.htm#21692" CLASS="XRef">
+REPLICATE_INPLACE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

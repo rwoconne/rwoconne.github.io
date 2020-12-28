@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The Regis Terminal Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl23a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl238.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144681">
+ </A>
+<A NAME="marker=143064">
+ </A>
+<A NAME="65999">
+ </A>
+The Regis Terminal Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=488034">
+ </A>
+Device Keywords Accepted by the REGIS Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=488056">
+ </A>
+<A HREF="idl22e.htm#49190" CLASS="XRef">
+AVERAGE_LINES</A>
+, <A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#28324" CLASS="XRef">
+PLOTTER_ON_OFF</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#55523" CLASS="XRef">
+TTY</A>
+, <A HREF="idl22e.htm#43177" CLASS="XRef">
+VT240, VT241</A>
+, <A HREF="idl22e.htm#98977" CLASS="XRef">
+VT340, VT341</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=144682">
+ </A>
+IDL provides Regis graphics output for the DEC <A NAME="marker=143068">
+ </A>
+VT240, <A NAME="marker=143069">
+ </A>
+VT330, and <A NAME="marker=143070">
+ </A>
+VT340 series of terminals. To output graphics to such terminals, issue the IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144683">
+ </A>
+SET_PLOT, 'REGIS'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144684">
+ </A>
+This causes IDL to use the Regis driver for producing graphical output.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144519">
+ </A>
+Defaults for Regis Devices</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144563">
+ </A>
+The default setting for Regis output is: VT340, 16 colors, 4 bits per pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144706">
+ </A>
+Regis Limitations</H3>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144707">
+ </A>
+Four colors are available with VT240 and VT241 terminals, sixteen colors are available with the VT330 and VT340.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144708">
+ </A>
+Thick lines are emulated by filling polygons. There may be a difference in linestyle appearance between thick and normal lines.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144709">
+ </A>
+Image output is slow and is of poor quality, especially on the VT240 series. The VT240 is only able to write pixels on even numbered screen lines. IDL offers two methods of writing images to the 240:</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144710">
+ </A>
+Even and odd pairs of rows are averaged and written to the screen. An <I CLASS="Italics">
+n</I>
+, <I CLASS="Italics">
+m</I>
+ image will occupy <I CLASS="Italics">
+n</I>
+ columns and <I CLASS="Italics">
+m</I>
+ screen rows. If this method is selected, graphics and image coordinates coincide. This method is the default (<EM CLASS="tt">
+AVERAGE_LINES = 1</EM>
+). Routines that rely on a uniform graphics and image coordinate system, such as SHADE_SURF, work only in this mode. </LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144711">
+ </A>
+Each line of the image is written to the screen, displaying every image pixel. An <I CLASS="Italics">
+n</I>
+, <I CLASS="Italics">
+m</I>
+ image occupies 2<I CLASS="Italics">
+m</I>
+ lines on the screen. (<EM CLASS="tt">
+AVERAGE_LINES = 0</EM>
+). Graphics and image coordinates coincide only at the lower left corner of the image.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144627">
+ </A>
+Pixel values cannot be read back from the terminal, rendering the TVRD function inoperable.</LI>
+</UL>
+</DIV>
+</BODY>
+</HTML>

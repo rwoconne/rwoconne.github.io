@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CW_ANIMATE_LOAD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl56.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl54.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=853976">
+ </A>
+<A NAME="56464">
+ </A>
+CW_ANIMATE_LOAD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=853979">
+ </A>
+The <A NAME="marker=853978">
+ </A>
+CW_ANIMATE_LOAD procedure creates an array of pixmaps which are loaded into a CW_ANIMATE compound widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853980">
+ </A>
+CW_ANIMATE provides the graphical interface used by the XINTERANIMATE procedure, which is the preferred routine for displaying animation sequences in most situations. Use this widget instead of XINTERANIMATE when you need to run multiple instances of the animation widget simultaneously. Note that if more than one animation widget is running, they will have to share resources and will display images more slowly than a single instance of the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=853981">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cw_animate.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853982">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=853983">
+ </A>
+CW_ANIMATE_LOAD, <EM CLASS="Emphasis">
+Widget</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853984">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853985">
+ </A>
+Widget</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853986">
+ </A>
+The widget ID of the animation widget (created with CW_ANIMATE) into which the image should be loaded.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=853987">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853989">
+ </A>
+<A NAME="marker=853988">
+ </A>
+CYCLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853990">
+ </A>
+Set this keyword to cause the animation to cycle. Normally, frames are displayed going either forward or backward. If CYCLE is set, the animation reverses direction after the last frame in either direction is displayed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853992">
+ </A>
+<A NAME="marker=853991">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853993">
+ </A>
+The frame number to be loaded. This is a value between 0 and NFRAMES. If not supplied, frame 0 is loaded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853995">
+ </A>
+<A NAME="marker=853994">
+ </A>
+IMAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853996">
+ </A>
+The image to be loaded.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=853998">
+ </A>
+<A NAME="marker=853997">
+ </A>
+ORDER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=853999">
+ </A>
+Set this keyword to display images from the top down instead of the default bottom up. This keyword is only used when loading images with the IMAGE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854001">
+ </A>
+<A NAME="marker=854000">
+ </A>
+WINDOW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854002">
+ </A>
+When this keyword is specified, an image is copied from an existing window to the animation pixmap. Under some windowing systems, this technique is much faster than reading from the display and then loading with the IMAGE keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=854003">
+ </A>
+The value of this parameter is either an IDL window number (in which case the entire window is copied), or a vector containing the window index and the rectangular bounds of the area to be copied. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=854004">
+ </A>
+WINDOW = [Window_Number, X0, Y0, Sx, Sy]</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854006">
+ </A>
+<A NAME="marker=854005">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854007">
+ </A>
+The horizontal offset, in pixels from the left of the frame, of the image in the destination window.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=854009">
+ </A>
+<A NAME="marker=854008">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=854010">
+ </A>
+The vertical offset, in pixels from the bottom of the frame, of the image in the destination window.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854011">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854012">
+ </A>
+See the documentation for CW_ANIMATE for an example using this procedure. Note that if the widget is realized before calls to CW_ANIMATE_LOAD, the frames are displayed as they are loaded. This provides the user with an indication of how things are progressing.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=854013">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=854026">
+ </A>
+<A HREF="idl53.htm#95424" CLASS="XRef">
+CW_ANIMATE</A>
+, <A HREF="idl54.htm#17787" CLASS="XRef">
+CW_ANIMATE_GETP</A>
+, <A HREF="idl56.htm#33378" CLASS="XRef">
+CW_ANIMATE_RUN</A>
+, <A HREF="idl21f.htm#64099" CLASS="XRef">
+XINTERANIMATE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

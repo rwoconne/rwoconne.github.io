@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_EPOCH</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl253.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl251.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997483">
+ </A>
+<A NAME="64236">
+ </A>
+CDF_EPOCH</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997486">
+ </A>
+The <A NAME="marker=997485">
+ </A>
+CDF_EPOCH procedure computes or breaks down CDF_EPOCH values in a Common Data Format file. When computing an <A NAME="marker=997487">
+ </A>
+epoch, any missing value is considered to be set to zero.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1005141">
+ </A>
+If you supply a value for the <EM CLASS="Emphasis">
+Epoch</EM>
+ argument and set the BREAKDOWN_EPOCH keyword, CDF_EPOCH will compute the values of the <EM CLASS="Emphasis">
+Year</EM>
+, <EM CLASS="Emphasis">
+Month</EM>
+, <EM CLASS="Emphasis">
+Day</EM>
+, etc. and insert the values into the named variables you supply. If you specify the <EM CLASS="Emphasis">
+Year</EM>
+ (and optionally, the <EM CLASS="Emphasis">
+Month</EM>
+, <EM CLASS="Emphasis">
+Day</EM>
+, etc.) and set the COMPUTE_EPOCH keyword, CDF_EPOCH will compute the epoch and place the value in the named variable supplied as the <EM CLASS="Emphasis">
+Epoch</EM>
+ parameter.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1005143">
+ </A>
+You must set either the BREAKDOWN_EPOCH keyword or the COMPUTE_EPOCH keyword.</LI>
+</UL>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005142">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997489">
+ </A>
+CDF_EPOCH, <I CLASS="Italics">
+Epoch, Year [, Month, Day, Hour, Minute, Second, Milli]</I>
+</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997490">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997491">
+ </A>
+Epoch</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997492">
+ </A>
+The Epoch value to be broken down, or a named variable into which the computed epoch will be placed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1005144">
+ </A>
+The Epoch value is the number of milliseconds since <CODE CLASS="Code">
+01-Jan-0000 00:00:00.000</CODE>
+</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1005147">
+ </A>
+&quot;Year zero&quot; is a convention chosen by NSSDC to measure epoch values. Note that this date is more commonly referred to as 1 BC. Remember that 1 BC was a leap year.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997493">
+ </A>
+Year</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997494">
+ </A>
+The year (e.g., 1992) or a named variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997495">
+ </A>
+Month</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997496">
+ </A>
+The month (1-12) or a named variable. You can also set the <I CLASS="Italic">
+Month</I>
+ argument equal to zero, in which case the <I CLASS="Italic">
+Day</I>
+ argument can take on any value between 1-366; this number is interpreted as the &quot;Day of the Year&quot; rather than a &quot;Day of the Month&quot;.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997497">
+ </A>
+Day</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997498">
+ </A>
+The day (1-31) or a named variable. If the <I CLASS="Italic">
+Month</I>
+ argument is set equal to zero, <I CLASS="Italic">
+Day</I>
+ can be set to any value between 1-366.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997499">
+ </A>
+Hour</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997500">
+ </A>
+The hour (0-23) or a named variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997501">
+ </A>
+Minute</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997502">
+ </A>
+The minute (0-59) or a named variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997503">
+ </A>
+Second</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997504">
+ </A>
+The second (0-59) or a named variable.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997505">
+ </A>
+Milli</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997506">
+ </A>
+The millisecond (0-999) or a named variable. If <I CLASS="Italic">
+Hour</I>
+, <I CLASS="Italic">
+Minute</I>
+, and <I CLASS="Italic">
+Second</I>
+ are all set equal to zero, <I CLASS="Italic">
+Milli</I>
+ is interpreted as the &quot;Millisecond of the Day&quot; and can be any value between 0-86400000.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997507">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997509">
+ </A>
+<A NAME="marker=997508">
+ </A>
+BREAKDOWN_EPOCH</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997510">
+ </A>
+If this keyword is set, <I CLASS="Italics">
+Epoch</I>
+ is a value which will broken down and the resulting Year, Month, Day, etc. are returned in the remaining parameters which must be named variables.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997512">
+ </A>
+<A NAME="marker=997511">
+ </A>
+COMPUTE_EPOCH</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997513">
+ </A>
+If this keyword is set, <I CLASS="Italics">
+Epoch</I>
+ is a named variable into which the epoch is placed and the other parameters are values which will be used to compute the epoch.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1005163">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1005164">
+ </A>
+To compute the epoch value of Septmber 20, 1992 at 3:00 am:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1005166">
+ </A>
+CDF_EPOCH, MergeDate, 1992, 9, 20, 3, /COMPUTE_EPOCH</P>
+<P CLASS="Body">
+<A NAME="pgfId=1005165">
+ </A>
+To break down the given epoch value into standard date components:</P>
+<P CLASS="Code">
+<A NAME="pgfId=1005167">
+ </A>
+CDF_EPOCH, 4.7107656e13, yr, mo, dy, hr, mn, sc, milli, /BREAK</P>
+</DIV>
+</BODY>
+</HTML>

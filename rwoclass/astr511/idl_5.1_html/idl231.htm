@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The CGM Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl232.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl230.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=144725">
+ </A>
+<A NAME="91500">
+ </A>
+The <A NAME="marker=142673">
+ </A>
+CGM Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=144279">
+ </A>
+Device Keywords Accepted by the CGM Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=487379">
+ </A>
+<A HREF="idl22e.htm#53447" CLASS="XRef">
+BINARY</A>
+, <A HREF="idl22e.htm#75202" CLASS="XRef">
+CLOSE_FILE</A>
+, <A HREF="idl22e.htm#83858" CLASS="XRef">
+COLORS</A>
+, <A HREF="idl22e.htm#21711" CLASS="XRef">
+ENCODING</A>
+, <A HREF="idl22e.htm#35644" CLASS="XRef">
+FILENAME</A>
+, <A HREF="idl22e.htm#10275" CLASS="XRef">
+NCAR</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#42952" CLASS="XRef">
+TEXT</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=487378">
+ </A>
+The CGM, <A NAME="marker=142674">
+ </A>
+Computer Graphics Metafile, standard describes a device independent file format used for the exchange of graphic information. The IDL CGM driver produces CGM files encoded in one of three methods: <I CLASS="Italics">
+Text</I>
+, <I CLASS="Italics">
+Binary</I>
+ or <I CLASS="Italics">
+NCAR</I>
+ <I CLASS="Italics">
+Binary</I>
+. To direct graphics output to a CGM file, issue the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144280">
+ </A>
+SET_PLOT,'CGM'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144281">
+ </A>
+This causes IDL to use the CGM driver for producing graphical output. Once the CGM driver is selected, the DEVICE procedure controls its actions, as described below. Typing <EM CLASS="tt">
+HELP, /DEVICE</EM>
+ displays the current state of the CGM driver. The CGM driver defaults to the binary encoding using 256 colors.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144289">
+ </A>
+Abilities and Limitations</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144290">
+ </A>
+This section describes details specific to IDL's CGM implementation:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144291">
+ </A>
+IDL uses the CGM default integer encoding for graphic primitives. Coordinate values range from 0 to 32767. It is advisable to use the values stored in !D.X_SIZE and !D.Y_SIZE instead of assuming a fixed coordinate range.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144292">
+ </A>
+Color information is output with a resolution of 8 bits (color indices and intensity values range from 0 to 255).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144293">
+ </A>
+The definition of background color in the CGM standard is somewhat ambiguous. According to the standard, color index 0 and the background color are the same. Because background color is specified in the metafile as a color value (RGB triple), not an index, it is possible to have the background color not correspond with the color value of index 0.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144294">
+ </A>
+The CGM BACKGROUND_COLOUR attribute is explicitly set by IDL only during an erase operation: changing the value of the color map at index 0 does not cause IDL to generate a BACKGROUND_COLOUR attribute until the next ERASE occurs. An ERASE command sets the background color to the value in the color map at index 0. The command <EM CLASS="tt">
+ERASE, INDEX</EM>
+ (where INDEX is not 0) generates the message &quot;<EM CLASS="tt">
+Value of background color is out of allowed range.</EM>
+&quot; For consistent results, modify the color table before any graphics are output.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144295">
+ </A>
+The CGM standard uses <A NAME="marker=142700">
+ </A>
+scalable (variable size) pixels for raster images. By default, the TV and TVSCL procedures output images, regardless of size, using the entire graphics output area. To output an image smaller than the graphics output area, specify the XSIZE and YSIZE keywords with the TV and TVSCL procedures. For example:</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=144296">
+ </A>
+SET_PLOT, 'CGM'	<EM CLASS="Comment">;
+Select the CGM driver.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144297">
+ </A>
+X = DIST(64)	<EM CLASS="Comment">;
+Create a 64 x 64 element array</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144298">
+ </A>
+TVSCL, X	<EM CLASS="Comment">;
+Display the image (fills entire screen)</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144299">
+ </A>
+ERASE	<EM CLASS="Comment">;
+Now display 4 images on the screen.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144300">
+ </A>
+XS = !D.X_SIZE / 2	<EM CLASS="Comment">;
+Size of each image, X dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144301">
+ </A>
+YS = !D.Y_SIZE / 2	<EM CLASS="Comment">;
+Size of each image, Y dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144302">
+ </A>
+TVSCL, X, 0, XSIZE=XS, YSIZE=YS		<EM CLASS="Comment">;
+Upper left.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144303">
+ </A>
+TVSCL, X, 1, XSIZE=XS, YSIZE=YS		<EM CLASS="Comment">;
+Upper right.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144304">
+ </A>
+TVSCL, X, 2, XSIZE=XS, YSIZE=YS		<EM CLASS="Comment">;
+Lower left.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144305">
+ </A>
+TVSCL, X, 3, XSIZE=XS, YSIZE=YS		<EM CLASS="Comment">;
+Lower right.</EM>
+</P>
+</DIV>
+</BODY>
+</HTML>

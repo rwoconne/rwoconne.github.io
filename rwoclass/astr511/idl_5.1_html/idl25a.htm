@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_VARDELETE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl25b.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl259.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997765">
+ </A>
+<A NAME="54831">
+ </A>
+CDF_VARDELETE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997767">
+ </A>
+The <A NAME="marker=997766">
+ </A>
+CDF_VARDELETE procedure deletes a variable from a SINGLE_FILE CDF file. Note that the variable's entries are also deleted, and that the variables which numerically follow the deleted variable within the CDF file are automatically renumbered. CDF rVariables and zVariables are counted separately within CDF files.  Attempting to delete a variable from a MULTI_FILE format CDF file will result in an warning message.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997768">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997769">
+ </A>
+CDF_VARDELETE,Id,Variable</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997770">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997771">
+ </A>
+ID</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997772">
+ </A>
+The CDF ID of the file containing the Variable to be deleted, returned from a previous call to CDF_OPEN or CDF_CREATE.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997773">
+ </A>
+VARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997774">
+ </A>
+A string containing the name of the variable to be deleted OR the variable number to be deleted.  Variable numbers are 0-based in IDL. zVariables and rVariables are counted separately in CDF files.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997775">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997776">
+ </A>
+ZVARIABLE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997777">
+ </A>
+Set this keyword if the Variable is a zVariable and was passed by number.  The default is to assume that Variable is an rVariable.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997778">
+ </A>
+Example</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997779">
+ </A>
+cid = CDF_CREATE('DEMOvardelete',/SINGLE_FILE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997780">
+ </A>
+Create 3 zVariables and 1 rVariable:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997781">
+ </A>
+var1_id = CDF_VARCREATE(cid, 'rVAR1', /CDF_FLOAT)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997782">
+ </A>
+var2_id = CDF_VARCREATE(cid, 'zVAR1', /CDF_INT4, /REC_NOVARY, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997783">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ZVARIABLE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997784">
+ </A>
+var3_id = CDF_VARCREATE(cid, 'zVAR2', /CDF_CHAR, [2,10], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=997785">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMELEM=10, DIM=[5,5])</P>
+<P CLASS="Code">
+<A NAME="pgfId=997786">
+ </A>
+var4_id = CDF_VARCREATE(cid, 'zVAR3' ,/CDF_REAL8, /ZVARIABLE)</P>
+<P CLASS="Body">
+<A NAME="pgfId=997787">
+ </A>
+Check the number of variables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997788">
+ </A>
+info = CDF_INQUIRE(cid)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997789">
+ </A>
+HELP, info.nzvars, info.nvars</P>
+<P CLASS="Body">
+<A NAME="pgfId=997790">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997791">
+ </A>
+&lt;Expression&gt;    LONG      =            3</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997792">
+ </A>
+&lt;Expression&gt;    LONG      =            1</P>
+<P CLASS="Body">
+<A NAME="pgfId=997793">
+ </A>
+Delete the first and third zvariables:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997794">
+ </A>
+CDF_VARDELETE, cid, 'zVAR1', /ZVARIABLE</P>
+<P CLASS="Code">
+<A NAME="pgfId=997795">
+ </A>
+CDF_VARDELETE, cid, 1, /ZVARIABLE</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=997796">
+ </A>
+Remember the variable numbers are zero-based and are automatically renumbered.</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=997797">
+ </A>
+info = CDF_INQUIRE(cid)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997798">
+ </A>
+HELP, info.nzvars, info.nvars</P>
+<P CLASS="Body">
+<A NAME="pgfId=997799">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997800">
+ </A>
+&lt;Expression&gt;    LONG      =            1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997801">
+ </A>
+&lt;Expression&gt;    LONG      =            1</P>
+<P CLASS="Code">
+<A NAME="pgfId=997802">
+ </A>
+varinfo = CDF_VARINQ(cid, 0, /ZVARIABLE)<BR>
+<EM CLASS="Comment">;
+check on zVAR2</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=997803">
+ </A>
+HELP, varinfo, /STRUCTURE</P>
+<P CLASS="Body">
+<A NAME="pgfId=997804">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997805">
+ </A>
+** Structure &lt;400a3b40&gt;, 8 tags, length=48, refs=1:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997806">
+ </A>
+   IS_ZVAR         INT              1</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997807">
+ </A>
+   NAME            STRING &nbsp;&nbsp;&nbsp;'zVAR2'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997808">
+ </A>
+   DATATYPE        STRING &nbsp;&nbsp;&nbsp;'CDF_CHAR'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997809">
+ </A>
+   NUMELEM         LONG                10</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997810">
+ </A>
+   RECVAR          STRING &nbsp;&nbsp;&nbsp;'VARY'</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997811">
+ </A>
+   DIMVAR          BYTE      Array(2)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997812">
+ </A>
+   ALLOCATERECS    LONG      Array(2)</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997813">
+ </A>
+   DIM             LONG      Array(1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997814">
+ </A>
+CDF_DELETE, cid</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997815">
+ </A>
+See Also</H2>
+<P CLASS="Code">
+<A NAME="pgfId=997828">
+ </A>
+<A HREF="idl245.htm#95843" CLASS="XRef">
+CDF_ATTDELETE</A>
+, <A HREF="idl24d.htm#97922" CLASS="XRef">
+CDF_CONTROL</A>
+, <A HREF="idl259.htm#72205" CLASS="XRef">
+CDF_VARCREATE</A>
+, <A HREF="idl25d.htm#91385" CLASS="XRef">
+CDF_VARINQ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

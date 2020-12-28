@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HDF_BROWSER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl266.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl264.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=1036460">
+ </A>
+<A NAME="22927">
+ </A>
+HDF_BROWSER</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1036463">
+ </A>
+The <A NAME="marker=1036462">
+ </A>
+HDF_BROWSER function presents a graphical user interface (GUI) which allows the user to view the contents of an Hierarchical Data Format (HDF) file, and prepare a template for extraction of HDF data and metadata into IDL. The output template is an IDL structure that may be used when reading HDF files with the HDF_READ routine. If you have several HDF files of identical form, the returned template from HDF_BROWSER may be reused to extract data from these files with HDF_READ. If you do not need a multi-use template, you may call HDF_READ directly.</P>
+<P CLASS="Body">
+<A NAME="pgfId=1036464">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+hdf_browser.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1036465">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1036466">
+ </A>
+Template = HDF_BROWSER([Filename])</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1036467">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1036468">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1036469">
+ </A>
+A string containing the name of a HDF file to browse. If <I CLASS="Italic">
+Filename</I>
+ is not specified, a dialog allows you to choose a file. </P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1036470">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1036472">
+ </A>
+<A NAME="marker=1036471">
+ </A>
+CANCEL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1036473">
+ </A>
+Set this keyword to a named variable that will contain the byte value 1 (one) if the user clicked the &quot;Cancel&quot; button or the byte value 0 (zero) otherwise. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1036475">
+ </A>
+<A NAME="marker=1036474">
+ </A>
+PREFIX</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1036476">
+ </A>
+When HDF_BROWSER reviews the contents of an HDF file, it creates default output names for the various data elements. By default these default names begin with a prefix derived from the filename. Set this keyword to a string value to be used in place of the default prefix.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=1036477">
+ </A>
+Graphical User Interface Menu Options</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1036478">
+ </A>
+The following options are available from the graphical user interface menus.</P>
+<DIV>
+<H5 CLASS="Heading-3R">
+<A NAME="pgfId=1036479">
+ </A>
+Pulldown Menu</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1036513">
+ </A>
+The following table shows the options available with the pulldown menu.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=1036510">
+ </A>
+HDF_BROWSER Pulldown Menu Options</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1036482">
+ </A>
+Menu Selection</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=1036484">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036486">
+ </A>
+HDF Summary</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036488">
+ </A>
+Overview of HDF file contents</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036490">
+ </A>
+DFR8 (8-bit Images)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036492">
+ </A>
+8-bit images, palettes, and their attributes</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036494">
+ </A>
+DFAN Elements</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036496">
+ </A>
+File annotations and descriptions</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036498">
+ </A>
+DF24 (24-bit Images)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036500">
+ </A>
+24-bit images and their attributes</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036502">
+ </A>
+DFP (Palettes)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036504">
+ </A>
+Image palettes</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036506">
+ </A>
+SD (Variables/Attributes)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1036508">
+ </A>
+Scientific Datasets and attributes</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3R">
+<A NAME="pgfId=1036514">
+ </A>
+View Image Button</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1036515">
+ </A>
+If you have selected an image from the pulldown menu, click on this button to view the image.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3R">
+<A NAME="pgfId=1036516">
+ </A>
+2-D Plot Button</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1036517">
+ </A>
+If you have selected a data item that can be plotted in two dimensions, click on this button to view a 2D plot of the data.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3R">
+<A NAME="pgfId=1036518">
+ </A>
+Read Checkbox</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1036519">
+ </A>
+Select this checkbox to extract the current data or metadata item from the HDF file.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3R">
+<A NAME="pgfId=1036520">
+ </A>
+Extract As</H5>
+<P CLASS="Body">
+<A NAME="pgfId=1036521">
+ </A>
+Specify a name for the extracted data or metadata item</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1036522">
+ </A>
+The Read Checkbox must be selected for the item to be extracted. Default names are generated for all data items, but may be changed at any time by the user.</LI>
+</UL>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1036523">
+ </A>
+Example </H2>
+<P CLASS="Code">
+<A NAME="pgfId=1036524">
+ </A>
+template = HDF_BROWSER('test.hdf') </P>
+<P CLASS="Code">
+<A NAME="pgfId=1036525">
+ </A>
+output_structure = HDF_READ(TEMPLATE=template)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1036526">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<EM CLASS="Emphasis">
+or,</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=1036527">
+ </A>
+output_structure = HDF_READ('test.hdf', TEMPLATE=template)</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1036528">
+ </A>
+Vgroups and Vdata's are not currently supported. HDF files written with HDF4.1 or greater may not be readable with this browser. Because of a bug in HDF4.0r2, multiple use of HDF_BROWSER on files containing both DFR8 and DF24 images may cause the DFR8 and DF24 interfaces to become unusable. In these cases, HDF_BROWSER will improperly indicate that there are no DFR8 or DF24 images in the HDF file, and all access to these interfaces will fail for the duration of the IDL session. Restarting IDL will allow you to again use HDF_BROWSER to view the full contents of the HDF file. </LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1036529">
+ </A>
+See Also</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1036533">
+ </A>
+<A HREF="idl29c.htm#13340" CLASS="XRef">
+HDF_READ</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

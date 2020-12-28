@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> String Data in NetCDF Files</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=998637">
+ </A>
+<A NAME="16968">
+ </A>
+String Data in NetCDF Files</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998639">
+ </A>
+<A NAME="marker=998638">
+ </A>
+Strings are stored as arrays of ASCII bytes in netCDF files. To read string data from netCDF files, use the STRING function to convert bytes back into characters. When writing an IDL string array to a variable, an extra dimension (the maximum string length) must be added to the variable definition. Both of these situations are illustrated by the following example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998640">
+ </A>
+string_in = REPLICATE('Test String',10,10)<BR>
+<EM CLASS="Comment">;
+Make a test string</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998641">
+ </A>
+string_in(0,0) = 'Long Test String'	<EM CLASS="Comment">;
+Make one element longer than the others.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998642">
+ </A>
+HELP, string_in	<EM CLASS="Comment">;
+IDL reports:<BR>
+STRING_IN &nbsp;&nbsp;&nbsp;STRING  = Array(10, 10)</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998643">
+ </A>
+ncdfid = NCDF_CREATE('string.nc', /CLOBBER)<BR>
+<EM CLASS="Comment">;
+Create a new netCDF file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998644">
+ </A>
+xid = NCDF_DIMDEF(ncdfid, 'height', 10)<BR>
+<EM CLASS="Comment">;
+Define first dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998645">
+ </A>
+yid = NCDF_DIMDEF(ncdfid, 'width', 10)<BR>
+<EM CLASS="Comment">;
+Define second dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998646">
+ </A>
+zid = NCDF_DIMDEF(ncdfid, 'length', MAX(STRLEN(string_in)))<BR>
+<EM CLASS="Comment">;
+Find the length of the longest string and use that as the third dimension.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998647">
+ </A>
+id = NCDF_VARDEF(ncdfid, 'strings', [zid,yid,xid], /CHAR)<BR>
+<EM CLASS="Comment">;
+Define the variable with dimensions zid, yid, xid.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998648">
+ </A>
+NCDF_CONTROL, ncdfid, /ENDEF	<EM CLASS="Comment">;
+Put the file into define mode.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998649">
+ </A>
+NCDF_VARPUT, ncdfid, id, string_in	<EM CLASS="Comment">;
+Write the string variable. The array will be stored as bytes in the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998650">
+ </A>
+NCDF_VARGET, ncdfid, id, byte_out	<EM CLASS="Comment">;
+Read the byte array back out.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998651">
+ </A>
+NCDF_CLOSE, ncdfid	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998652">
+ </A>
+HELP, byte_out	<EM CLASS="Comment">;
+IDL reports that BYTE_OUT is a (16, 10, 10) BYTE array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998653">
+ </A>
+PRINT, STRING(byte_out(*,0,0))	<EM CLASS="Comment">;
+Taking the STRING of the first &quot;row&quot; of byte_out returns the first element of our original array, &quot;Long Test String&quot;.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998654">
+ </A>
+string_new = STRING(byte_out)	<EM CLASS="Comment">;
+Convert the entire byte array back into strings.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998655">
+ </A>
+HELP, string_new	<EM CLASS="Comment">;
+The new string array has the same dimensions and values as our original string, string_in.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998656">
+ </A>
+IF TOTAL(string_in NE string_new) EQ 0 THEN PRINT, 'Success!'<BR>
+<EM CLASS="Comment">;
+This statement compares the two arrays and prints &quot;Success!&quot; if they are equal--and they are.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=997838">
+ </A>
+&nbsp;</P>
+</BODY>
+</HTML>

@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> XYOUTS</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl22a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl228.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=680715">
+ </A>
+<A NAME="38347">
+ </A>
+XYOUTS</H2>
+<P CLASS="Body">
+<A NAME="pgfId=680716">
+ </A>
+The <A NAME="marker=675091">
+ </A>
+XYOUTS procedure draws <A NAME="marker=788338">
+ </A>
+text on the currently-selected graphics device starting at the designated coordinate.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680717">
+ </A>
+Arguments <I CLASS="Italic">
+X</I>
+, <I CLASS="Italic">
+Y</I>
+, and <I CLASS="Italic">
+String</I>
+ can be any combination of scalars or arrays. If the arguments are arrays, multiple strings are output.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680718">
+ </A>
+If the optional <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ arguments are omitted, the text is positioned at the end of the most recently output text string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680719">
+ </A>
+Important keywords that control the appearance and positioning of the text include: ALIGNMENT, the justification of the text; CHARSIZE, the size of the text; FONT, chooses between vector drawn and hardware fonts; COLOR, the color of the text; and ORIENTATION, the angle between the baseline of the text and the horizontal. With hardware fonts, most of the text attributes, (e.g., size and orientation), are predetermined and not changeable.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=680720">
+ </A>
+Specify the Z coordinate with the Z keyword when positioning text in three dimensions.</LI>
+</UL>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680721">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680722">
+ </A>
+XYOUTS, <I CLASS="Italic">
+[X, Y,] String</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680723">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680724">
+ </A>
+X, Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680725">
+ </A>
+The horizontal and vertical coordinates used to position the string(s). <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ are normally interpreted in data coordinates. The DEVICE and NORMAL keywords can be used to specify the coordinate units.</P>
+<P CLASS="Body">
+<A NAME="pgfId=680726">
+ </A>
+<I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ can be arrays of positions if <I CLASS="Italic">
+String</I>
+ is an array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680727">
+ </A>
+String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680728">
+ </A>
+The string(s) to be output. This argument can be a scalar string or an array of strings. If this argument is not a string, it is converted prior to use using the default formatting rules. If <I CLASS="Italic">
+String</I>
+ is an array, <EM CLASS="Emphasis">
+X</EM>
+, <EM CLASS="Emphasis">
+Y</EM>
+, and the COLOR keyword can also be arrays so that each string can have a separate location and color. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680730">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680731">
+ </A>
+<A NAME="marker=675092">
+ </A>
+ALIGNMENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680732">
+ </A>
+Specifies the <A NAME="marker=675093">
+ </A>
+alignment of the text baseline. An alignment of 0.0 (the default) aligns the left edge of the text baseline with the given (<I CLASS="Italic">
+x</I>
+, <I CLASS="Italic">
+y</I>
+) coordinate. An alignment of 1.0 right-justifies the text, while 0.5 results in text centered over the point (<I CLASS="Italic">
+x</I>
+, <I CLASS="Italic">
+y</I>
+).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680733">
+ </A>
+<A NAME="marker=675094">
+ </A>
+CHARSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680734">
+ </A>
+The overall character size for the annotation. A CHARSIZE of 1.0 is normal. Setting CHARSIZE = -1 suppresses output of the text string.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680735">
+ </A>
+<A NAME="marker=675095">
+ </A>
+CHARTHICK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680736">
+ </A>
+The line thickness of the vector drawn font characters.This keyword has no effect when used with the hardware drawn fonts. The default value is 1.0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680737">
+ </A>
+<A NAME="marker=675096">
+ </A>
+TEXT_AXES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680738">
+ </A>
+This keyword specifies the plane of vector drawn text when three-dimensional plotting is enabled. By default, text is drawn in the plane of the XY axes. The horizontal text direction is in the X plane, and the vertical text direction is in the Y plane. Values for this keyword can range from 0 to 5, with the following effects: 0 for XY, 1 for XZ, 2 for YZ, 3 for YX, 4 for ZX, and 5 for ZY. The notation ZY means that the horizontal direction of the text lies in the Z plane, and the vertical direction of the text is drawn in the Y plane.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=680739">
+ </A>
+<A NAME="marker=675097">
+ </A>
+WIDTH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=680740">
+ </A>
+Set this keyword to a named variable in which to return the width of the text string, in normalized coordinate units.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680741">
+ </A>
+Graphics Keywords Accepted</H3>
+<P CLASS="Body">
+<A NAME="pgfId=892331">
+ </A>
+See <A HREF="idl.htm#19841" CLASS="XRef">
+</A>
+, <A HREF="idl22c.htm#49441" CLASS="XRef">
+Graphics Keywords</A>
+, for the description of graphics and plotting keywords not listed above. <A HREF="idl22c.htm#36225" CLASS="XRef">
+CLIP</A>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680743">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=680744">
+ </A>
+Print the string &quot;This is text&quot; at device coordinate position (100,100) by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680745">
+ </A>
+XYOUTS, 100, 100, 'This is text', /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=680746">
+ </A>
+Print an array of strings with each element of the array printed at a different location. Use larger text than in the previous example. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680747">
+ </A>
+XYOUTS, [0, 200, 250], [200, 50, 100], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=941445">
+ </A>
+&nbsp;&nbsp;&nbsp;['This', 'is', 'text'], CHARSIZE = 3, /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=941368">
+ </A>
+To determine the text size for a window device before opening an on-screen window, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=941373">
+ </A>
+WINDOW, /FREE, /PIXMAP, XSIZE=myWinXSize, YSIZE=myWinYSize</P>
+<P CLASS="Code">
+<A NAME="pgfId=941374">
+ </A>
+XYOUTS, 'Check this out', WIDTH=w</P>
+<P CLASS="Code">
+<A NAME="pgfId=941375">
+ </A>
+WDELETE</P>
+<P CLASS="Body">
+<A NAME="pgfId=941376">
+ </A>
+(where <I CLASS="Italic">
+myWinXSize</I>
+ and <I CLASS="Italic">
+myWinYSize</I>
+ are chosen to match your onscreen window.) Since we can not know the characteristics of a given device (such as character size) until a window has been opened, the PIXMAP keyword to <A HREF="idl20c.htm#29793" CLASS="XRef">
+WINDOW</A>
+ allows you to compute appropriate dimensions for text with an invisible window before displaying a window on your screen.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=761822">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820135">
+ </A>
+<A HREF="idl7.htm#64698" CLASS="XRef">
+ANNOTATE</A>
+, <A HREF="idl14a.htm#89996" CLASS="XRef">
+PRINT/PRINTF</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

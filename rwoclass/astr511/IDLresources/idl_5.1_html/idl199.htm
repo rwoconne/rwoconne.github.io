@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SHADE_SURF_IRR</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl19a.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl198.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=787144">
+ </A>
+<A NAME="27550">
+ </A>
+SHADE_SURF_IRR</H2>
+<P CLASS="Body">
+<A NAME="pgfId=787148">
+ </A>
+The <A NAME="marker=787146">
+ </A>
+SHADE_SURF_IRR procedure creates a shaded <A NAME="marker=787147">
+ </A>
+surface representation of an irregularly gridded elevation dataset.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787149">
+ </A>
+The data must be representable as an array of quadrilaterals. This routine should be used when the (<EM CLASS="Emphasis">
+X, Y, Z</EM>
+) arrays are too irregular to be drawn by SHADE_SURF, but are still semi-regular.</P>
+<P CLASS="Body">
+<A NAME="pgfId=787150">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+shade_surf_irr.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787151">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=787152">
+ </A>
+SHADE_SURF_IRR, <EM CLASS="Emphasis">
+Z, X, Y</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787153">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787154">
+ </A>
+Z</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787155">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ array of elevations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787156">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787157">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ array containing the <EM CLASS="Emphasis">
+X</EM>
+ location of each <EM CLASS="Emphasis">
+Z</EM>
+ value.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787158">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787159">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ x <EM CLASS="Emphasis">
+m</EM>
+ array containing the <EM CLASS="Emphasis">
+Y</EM>
+ location of each <EM CLASS="Emphasis">
+Z</EM>
+ value.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=196768">
+ </A>
+The grid described by <EM CLASS="Emphasis">
+X</EM>
+ and <EM CLASS="Emphasis">
+Y</EM>
+ must consist of quadrilaterals, must be semi-regular, and must be in &quot;clockwise&quot; order. Clockwise ordering means that:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=196778">
+ </A>
+x[i,j] &lt;= x[i+1, j]	<EM CLASS="Comment">;
+for all j</EM>
+</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=196779">
+ </A>
+and</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=196845">
+ </A>
+y[i,j] &lt;= y[i, j+1]	<EM CLASS="Comment">;
+for all i</EM>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787160">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787162">
+ </A>
+<A NAME="marker=787161">
+ </A>
+AX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787163">
+ </A>
+The angle of rotation about the X axis. The default is 30 degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787165">
+ </A>
+<A NAME="marker=787164">
+ </A>
+AZ</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787166">
+ </A>
+The angle of rotation about the Z axis. The default is 30 degrees.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787168">
+ </A>
+<A NAME="marker=787167">
+ </A>
+IMAGE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787169">
+ </A>
+Set this keyword to a named variable that will contain the resulting shaded surface image. The variable is returned as a byte array of the same size as the currently selected graphics device.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=787171">
+ </A>
+<A NAME="marker=787170">
+ </A>
+PLIST</H4>
+<P CLASS="Body">
+<A NAME="pgfId=787172">
+ </A>
+Set this keyword to a named variable that will contain the polygon list on return. This feature is useful when you want to make a number of images from the same set of vertices and polygons.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=867401">
+ </A>
+<A NAME="marker=867420">
+ </A>
+T3D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=867417">
+ </A>
+Set this keyword to indicate that the generalized transformation matrix in !P.T is to be used (in which case the keyword values for AX and AZ are ignored)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=196872">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=196873">
+ </A>
+The following example creates a semi-regular data set in the proper format at displays the resulting irregular surface.</P>
+<P CLASS="Code">
+<A NAME="pgfId=196867">
+ </A>
+z&nbsp;=&nbsp;DIST(10,10)*100.0	<EM CLASS="Comment">;
+Create some elevation data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=196856">
+ </A>
+x&nbsp;=&nbsp;FLTARR(10,10) &amp; y&nbsp;= FLTARR(10,10)	<EM CLASS="Comment">;
+Create arrays to hold X and Y data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=196857">
+ </A>
+FOR i&nbsp;=&nbsp;0,9 do x[0:9,i]&nbsp;=&nbsp;FINDGEN(10)</P>
+<P CLASS="Code">
+<A NAME="pgfId=196905">
+ </A>
+FOR j&nbsp;=&nbsp;0,9 DO y[j,0:9]&nbsp;=&nbsp;FINDGEN(10)	<EM CLASS="Comment">;
+Ensure that X and Y arrays are in &quot;clockwise&quot; order.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=196906">
+ </A>
+x&nbsp;=&nbsp;x&nbsp;+&nbsp;RANDOMU(seed,10,10)*0.49</P>
+<P CLASS="Code">
+<A NAME="pgfId=196907">
+ </A>
+y&nbsp;=&nbsp;y&nbsp;+&nbsp;RANDOMU(seed,10,10)*0.49	<EM CLASS="Comment">;
+Make X and Y arrays irregular.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=196865">
+ </A>
+SHADE_SURF_IRR, z, x, y	<EM CLASS="Comment">;
+Display the irregular surface.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=787174">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821118">
+ </A>
+<A HREF="idl198.htm#80802" CLASS="XRef">
+SHADE_SURF</A>
+, <A HREF="idl1e1.htm#16540" CLASS="XRef">
+TRIGRID</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

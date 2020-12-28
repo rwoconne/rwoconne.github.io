@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STR_SEP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1b6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=762644">
+ </A>
+<A NAME="45555">
+ </A>
+STR_SEP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=762647">
+ </A>
+The <A NAME="marker=762645">
+ </A>
+STR_SEP function <A NAME="marker=762646">
+ </A>
+divides a string into pieces as designated by a separator string. STR_SEP returns a string array where each element is a separated piece of the original string.</P>
+<P CLASS="Body">
+<A NAME="pgfId=762648">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+str_sep.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762649">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=762650">
+ </A>
+Result = STR_SEP(<I CLASS="Italic">
+Str</I>
+, <I CLASS="Italic">
+Separator</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762651">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762652">
+ </A>
+Str</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762653">
+ </A>
+The string to be separated.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=762654">
+ </A>
+Separator</H4>
+<P CLASS="Body">
+<A NAME="pgfId=762655">
+ </A>
+The separator string.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=762656">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=874331">
+ </A>
+<A NAME="marker=874354">
+ </A>
+TRIM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=874346">
+ </A>
+Set this keyword to remove leading and trailing blanks from each element of the returned string array. TRIM performs STRTRIM(<I CLASS="Italic">
+String</I>
+, 2).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=874335">
+ </A>
+<A NAME="marker=874367">
+ </A>
+REMOVE_ALL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=874365">
+ </A>
+Set this keyword to remove all blanks from each element of the returned string array. REMOVE_ALL performs STRCOMPRESS(<I CLASS="Italic">
+String</I>
+, /REMOVE_ALL)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=874337">
+ </A>
+<A NAME="marker=874384">
+ </A>
+ESC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=874388">
+ </A>
+Set this keyword to interpret the characters following the &lt;ESC&gt; character literally and not as separators. For example, if the separator is a comma and the escape character is a backslash, the character sequence &quot;a\,b&quot; is interpreted as a single field containing the characters &quot;a,b&quot;.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=874330">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=762657">
+ </A>
+str = 'Doug.is.a.cool.dude!'	<EM CLASS="Comment">;
+Create a string.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762658">
+ </A>
+parts = STR_SEP(str, '.')	<EM CLASS="Comment">;
+Separate the parts between the periods.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=762659">
+ </A>
+HELP, parts	<EM CLASS="Comment">;
+Confirm that the string has been broken up into 5 elements.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=826099">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=826100">
+ </A>
+PARTS &nbsp;&nbsp;STRING = Array[5]</P>
+<P CLASS="Code">
+<A NAME="pgfId=762660">
+ </A>
+PRINT, parts[3]</P>
+<P CLASS="Body">
+<A NAME="pgfId=826105">
+ </A>
+IDL prints:&quot;</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=826106">
+ </A>
+cool</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=820912">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=820913">
+ </A>
+<A HREF="idl1c0.htm#64169" CLASS="XRef">
+STRMID</A>
+, <A HREF="idl1c1.htm#37928" CLASS="XRef">
+STRPOS</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=939555">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

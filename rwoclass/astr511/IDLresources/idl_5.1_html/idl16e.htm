@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> READ_X11_BITMAP</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl16f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl16d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756244">
+ </A>
+<A NAME="77118">
+ </A>
+READ_X11_BITMAP</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756247">
+ </A>
+The <A NAME="marker=756245">
+ </A>
+READ_X11_BITMAP procedure reads bitmaps stored in the <A NAME="marker=756246">
+ </A>
+X Windows X11 format. The X Windows <CODE CLASS="Code">
+bitmap</CODE>
+ program produces a C header file containing the definition of a bitmap produced by that program. This procedure reads such a file and creates an IDL byte array containing the bitmap. It is used primarily to read bitmaps to be used as IDL <A NAME="marker=756248">
+ </A>
+widget button labels.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756249">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+read_x11_bitmap.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756250">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756251">
+ </A>
+READ_X11_BITMAP, <EM CLASS="Emphasis">
+File, Bitmap [, X, Y]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756252">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756253">
+ </A>
+File</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756254">
+ </A>
+A scalar string containing the name of the file containing the bitmap.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756255">
+ </A>
+Bitmap</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756256">
+ </A>
+A named variable that will contain the bitmap. This variable is returned as a byte array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756257">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756258">
+ </A>
+A named variable that will contain the width of the bitmap.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756259">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756260">
+ </A>
+A named variable that will contain the height of the bitmap.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756261">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756264">
+ </A>
+<A NAME="marker=756262">
+ </A>
+EXPAND_TO_BYTES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756265">
+ </A>
+Set this keyword to instruct READ_X11_BITMAP to return a 2D array which has one bit per byte (0 for a 0 bit), (255 for a 1 bit) instead.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756266">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756267">
+ </A>
+To open and read the X11 bitmap file named <CODE CLASS="Code">
+my.x11</CODE>
+ in the current directory, store the bitmap in the variable <CODE CLASS="Code">
+bitmap1</CODE>
+, and the width and height in the variables <CODE CLASS="Code">
+X</CODE>
+ and <CODE CLASS="Code">
+Y</CODE>
+, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756268">
+ </A>
+READ_X11_BITMAP, 'my.x11', bitmap1, X, Y</P>
+<P CLASS="Body">
+<A NAME="pgfId=756269">
+ </A>
+To display the new bitmap, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756270">
+ </A>
+READ_X11_BITMAP, 'my.x11', image, /EXPAND_TO_BYTES</P>
+<P CLASS="Code">
+<A NAME="pgfId=756271">
+ </A>
+TV, image, /ORDER</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756272">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756273">
+ </A>
+<A HREF="idl16f.htm#53567" CLASS="XRef">
+READ_XWD</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

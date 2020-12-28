@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MAX</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl112.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl110.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888189">
+ </A>
+<A NAME="18475">
+ </A>
+MAX</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888194">
+ </A>
+The <A NAME="marker=888192">
+ </A>
+MAX <A NAME="marker=888193">
+ </A>
+function returns the value of the largest element of <I CLASS="Italics">
+Array</I>
+. The type of the result is the same as the type of <I CLASS="Italics">
+Array</I>
+.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888195">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888196">
+ </A>
+Result = MAX(<I CLASS="Italics">
+Array [, Max_Subscript]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888197">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888198">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888199">
+ </A>
+The array to be searched.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888200">
+ </A>
+Max_Subscript</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888201">
+ </A>
+A named variable that, if supplied, is converted to a long integer containing the one-dimensional subscript of the maximum element. Otherwise, the system variable !C is set to the one-dimensional subscript of the maximum element.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888202">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888204">
+ </A>
+<A NAME="marker=888203">
+ </A>
+MIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888205">
+ </A>
+A named variable to receive the value of the minimum array element. If you need to find both the minimum and maximum array values, use this keyword to avoid scanning the array twice with separate calls to MAX and MIN.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888207">
+ </A>
+<A NAME="marker=888206">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888208">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888212">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888213">
+ </A>
+Create a simple two-dimensional array by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888214">
+ </A>
+D = DIST(100)</P>
+<P CLASS="Body">
+<A NAME="pgfId=888215">
+ </A>
+Print the maximum value in array D and its linear subscript by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888216">
+ </A>
+PRINT, MAX(D, I), I</P>
+<P CLASS="Body">
+<A NAME="pgfId=888220">
+ </A>
+IDL prints:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888221">
+ </A>
+ &nbsp;&nbsp;70.7107&nbsp;&nbsp; 5050</P>
+<P CLASS="Body">
+<A NAME="pgfId=888222">
+ </A>
+To convert I to a two-dimensional subscript, use the commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=888223">
+ </A>
+IX = I MOD 100</P>
+<P CLASS="Code">
+<A NAME="pgfId=888224">
+ </A>
+IY = I/100</P>
+<P CLASS="Code">
+<A NAME="pgfId=888225">
+ </A>
+PRINT, IX, IY</P>
+<P CLASS="Body">
+<A NAME="pgfId=888226">
+ </A>
+The maximum value of D is at location (50, 50) in the original array.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888227">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888231">
+ </A>
+<A HREF="idl118.htm#39440" CLASS="XRef">
+MIN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,519 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> IDLgrFont</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2f9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2f7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Class-Name">
+<A NAME="pgfId=1031223">
+ </A>
+<A NAME="77827">
+ </A>
+<A NAME="63756">
+ </A>
+IDLgrFont</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1031226">
+ </A>
+A <A NAME="marker=1031225">
+ </A>
+font object represents a typeface, style, weight, and point size that may be associated with text objects.</P>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1003042">
+ </A>
+Superclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1002991">
+ </A>
+This class has no superclass.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2R">
+<A NAME="pgfId=1002992">
+ </A>
+Subclasses</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1002993">
+ </A>
+This class has no subclasses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003026">
+ </A>
+Creation</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003027">
+ </A>
+See <A HREF="idl2f8.htm#43302" CLASS="XRef">
+IDLgrFont::Init</A>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003039">
+ </A>
+Methods</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1003040">
+ </A>
+Intrinsic Methods</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1003041">
+ </A>
+This class has the following methods:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1012566">
+ </A>
+<A HREF="idl2f8.htm#19337" CLASS="XRef">
+IDLgrFont::Cleanup</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1033670">
+ </A>
+<A HREF="idl2f8.htm#49155" CLASS="XRef">
+IDLgrFont::GetProperty</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003053">
+ </A>
+<A HREF="idl2f8.htm#43302" CLASS="XRef">
+IDLgrFont::Init</A>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=1003063">
+ </A>
+<A HREF="idl2f8.htm#25133" CLASS="XRef">
+IDLgrFont::SetProperty</A>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1031263">
+ </A>
+<A NAME="19337">
+ </A>
+IDLgrFont::Cleanup</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031266">
+ </A>
+The IDLgrFont::<A NAME="marker=1052137">
+ </A>
+Cleanup procedure method performs all cleanup on the object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f8.htm#77827" CLASS="XRef">
+IDLgrFont</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041798">
+ </A>
+Cleanup methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object destruction. This means that in most cases, you cannot call the Cleanup method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Cleanup method from within the Cleanup method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031270">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1051162">
+ </A>
+OBJ_DESTROY, <EM CLASS="Emphasis">
+Obj</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1051163">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1031271">
+ </A>
+<EM CLASS="Emphasis">
+Obj </EM>
+<CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrFont::]</EM>
+Cleanup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Cleanup method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031272">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031273">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1031274">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1031275">
+ </A>
+There are no keywords for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997207">
+ </A>
+<A NAME="49155">
+ </A>
+IDLgrFont::GetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003100">
+ </A>
+The IDLgrFont::<A NAME="marker=1052140">
+ </A>
+GetProperty procedure method retrieves the value of a property or group of properties for the font. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f8.htm#77827" CLASS="XRef">
+IDLgrFont</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003101">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003102">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrFont:]</EM>
+GetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003103">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997208">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997209">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1016562">
+ </A>
+Any keyword to <A HREF="idl2f8.htm#43302" CLASS="XRef">
+IDLgrFont::Init</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997211">
+ </A>
+<A NAME="marker=1022504">
+ </A>
+ALL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1093512">
+ </A>
+Set this keyword to a named variable that will contain an anonymous structure containing the values of all of the properties associated with the <I CLASS="Italic">
+state</I>
+ of this object. State information about the object includes things like color, range, tick direction, etc., but not image, vertex, or connectivity data, or user values.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1093513">
+ </A>
+The fields of this structure may change in subsequent releases of IDL.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=1012571">
+ </A>
+<A NAME="43302">
+ </A>
+IDLgrFont::Init</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1012572">
+ </A>
+The IDLgrFont::<A NAME="marker=1052143">
+ </A>
+Init function method initializes the font object. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f8.htm#77827" CLASS="XRef">
+IDLgrFont</A>
+ </STRONG>
+is described above.</P>
+
+
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1041676">
+ </A>
+Init methods are special <EM CLASS="Emphasis">
+lifecycle methods</EM>
+, and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012576">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1019543">
+ </A>
+Obj = OBJ_NEW('IDLgrFont' <EM CLASS="Emphasis">
+[, Fontname]</EM>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041936">
+ </A>
+<EM CLASS="Emphasis">
+or</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1041937">
+ </A>
+Result = <EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+ <EM CLASS="Emphasis">
+[IDLgrFont::]</EM>
+Init(<EM CLASS="Emphasis">
+[Fontname]</EM>
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<EM CLASS="Emphasis">
+In a subclass' Init method only</EM>
+.)</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012578">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012579">
+ </A>
+Fontname</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012580">
+ </A>
+A string representing the name of the font to be used. This string should take the form 'fontname*modifier1*modifier2*...*modifierN'. All destination objects support the following fontnames: Helvetica, Courier, Times, Symbol. (These fonts are included with IDL; you may have other fonts installed on your system as well.) <A NAME="marker=1024711">
+ </A>
+Valid modifiers for each of these fonts (except Symbol) are:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012581">
+ </A>
+Font weight: Bold</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=1012582">
+ </A>
+Font angle: Italic</LI>
+<LI CLASS="Example">
+<A NAME="pgfId=1012583">
+ </A>
+'Helvetica*Bold*Italic'</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=1058537">
+ </A>
+To select a Hershey font, use a fontname of the form: 'Hershey*fontnum'. </P>
+<P CLASS="Body">
+<A NAME="pgfId=1143305">
+ </A>
+See <A HREF="..html#10765" CLASS="XRef">
+Fonts</A>
+ in the <I CLASS="Italic">
+IDL Reference Guide</I>
+ for further information and a list of fonts supported by IDL.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=1143302">
+ </A>
+Beginning with IDL version 5.1, only TrueType and Hershey fonts are supported in the Object Graphics system.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1012602">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1020179">
+ </A>
+Properties retrievable via <A HREF="idl2f8.htm#49155" CLASS="XRef">
+IDLgrFont::GetProperty</A>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012603">
+ </A>
+<A NAME="marker=1049476">
+ </A>
+NAME (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1049473">
+ </A>
+Set this keyword equal to a string containing the name of the font to use. Setting the NAME keyword is the same as supplying the <I CLASS="Italic">
+Fontname</I>
+ argument described above.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1049468">
+ </A>
+<A NAME="marker=1022817">
+ </A>
+SIZE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012604">
+ </A>
+Set this keyword equal to a floating-point integer representing the point size of the font. The default is 12.0 points. </P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1012605">
+ </A>
+<A NAME="marker=1022818">
+ </A>
+SUBSTITUTE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1012606">
+ </A>
+Set this keyword to a string that indicates the font to use as a substitute if the specified <EM CLASS="Emphasis">
+Fontname</EM>
+ is not available on the graphics destination. Valid values are only those fonts that are available on all destination objects (the fonts included with IDL). These are: 'Helvetica' (the default), 'Courier', 'Times', 'Symbol', or 'Hershey'.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1017971">
+ </A>
+<A NAME="marker=1022820">
+ </A>
+THICK (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1017974">
+ </A>
+Set this keyword to an integer value between 1 and 10, indicating the line thickness (measured in device units) to use for the Hershey vector fonts. The default is one pixel.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=1173773">
+ </A>
+<A NAME="marker=1173771">
+ </A>
+UVALUE (Get, Set)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=1173774">
+ </A>
+Set this keyword to a value of any type. You can use this &quot;user value&quot; to contain any information you wish. Remember that if you set the user value equal to a pointer or object reference, you should destroy the pointer or object reference explicitly when destroying the object it is a user value of.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Method-Name">
+<HR><A HREF="#top"><IMG SRC="buttonup.gif" ALIGN="right" BORDER=0></A>
+<A NAME="pgfId=997216">
+ </A>
+<A NAME="25133">
+ </A>
+IDLgrFont::SetProperty</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003115">
+ </A>
+The IDLgrFont::<A NAME="marker=1052146">
+ </A>
+SetProperty procedure method sets the value of a property or group of properties for the font. <STRONG CLASS="Stone-Semibold">
+<A HREF="idl2f8.htm#77827" CLASS="XRef">
+IDLgrFont</A>
+ </STRONG>
+is described above.</P>
+
+
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003116">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1003117">
+ </A>
+<EM CLASS="Emphasis">
+Obj</EM>
+ <CODE CLASS="Code">
+-&gt;</CODE>
+<EM CLASS="Emphasis">
+[IDLgrFont:]</EM>
+SetProperty</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=1003122">
+ </A>
+Arguments</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997217">
+ </A>
+There are no arguments for this method.</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997218">
+ </A>
+Keywords</H2>
+<P CLASS="Body">
+<A NAME="pgfId=1049903">
+ </A>
+Any keyword to <A HREF="idl2f8.htm#43302" CLASS="XRef">
+IDLgrFont::Init</A>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CV_COORD</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl52.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl50.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=864570">
+ </A>
+<A NAME="29538">
+ </A>
+CV_COORD</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756953">
+ </A>
+The <A NAME="marker=756950">
+ </A>
+CV_COORD function converts 2D and 3D <A NAME="marker=756951">
+ </A>
+coordinates between the <A NAME="marker=756952">
+ </A>
+rectangular, <A NAME="marker=756954">
+ </A>
+polar, <A NAME="marker=756955">
+ </A>
+cylindrical, and <A NAME="marker=106670">
+ </A>
+spherical coordinate systems.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756957">
+ </A>
+If the value passed to the &quot;FROM_&quot; keyword is double precision, then all calculations are performed in double precision and the returned value is double precision. Otherwise, single precision is used. If none of the &quot;FROM_&quot; keywords are specified, 0 is returned. If none of the &quot;TO_&quot; keywords are specified, the input coordinates are returned.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756958">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+cv_coord.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756959">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756960">
+ </A>
+Result = CV_COORD()</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756961">
+ </A>
+Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756962">
+ </A>
+This function has no required arguments. All data is passed in via keywords.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756963">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756965">
+ </A>
+<A NAME="marker=756964">
+ </A>
+DEGREES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756966">
+ </A>
+If set, then the input and output coordinates are in degrees (where applicable). Otherwise, the angles are in radians.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756968">
+ </A>
+<A NAME="marker=756967">
+ </A>
+FROM_CYLIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756969">
+ </A>
+A vector of the form [<EM CLASS="Emphasis">
+angle</EM>
+, <EM CLASS="Emphasis">
+radius</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+], or a (3, <EM CLASS="Emphasis">
+n</EM>
+) array of cylindrical coordinates to convert.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756971">
+ </A>
+<A NAME="marker=756970">
+ </A>
+FROM_POLAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756972">
+ </A>
+A vector of the form [<EM CLASS="Emphasis">
+angle</EM>
+, <EM CLASS="Emphasis">
+radius</EM>
+], or a (2, n) array of polar coordinates to convert.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756974">
+ </A>
+<A NAME="marker=756973">
+ </A>
+FROM_RECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756975">
+ </A>
+A vector of the form [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] or [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+], or a (2, <EM CLASS="Emphasis">
+n</EM>
+) or (3, <EM CLASS="Emphasis">
+n</EM>
+) array containing rectangular coordinates to convert.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756977">
+ </A>
+<A NAME="marker=756976">
+ </A>
+FROM_SPHERE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756978">
+ </A>
+A vector of the form [<EM CLASS="Emphasis">
+longitude</EM>
+, <EM CLASS="Emphasis">
+latitude</EM>
+, <EM CLASS="Emphasis">
+radius</EM>
+], or a (3, <EM CLASS="Emphasis">
+n</EM>
+) array of spherical coordinates to convert.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756980">
+ </A>
+<A NAME="marker=756979">
+ </A>
+TO_CYLIN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756981">
+ </A>
+If set, cylindrical coordinates are returned in a vector of the form [<EM CLASS="Emphasis">
+angle</EM>
+, <EM CLASS="Emphasis">
+radius</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+], or a (3, <EM CLASS="Emphasis">
+n</EM>
+) array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756983">
+ </A>
+<A NAME="marker=756982">
+ </A>
+TO_POLAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756984">
+ </A>
+If set, polar coordinates are returned in a vector of the form [<EM CLASS="Emphasis">
+angle</EM>
+, <EM CLASS="Emphasis">
+radius</EM>
+], or a (2, n) array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756986">
+ </A>
+<A NAME="marker=756985">
+ </A>
+TO_RECT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756987">
+ </A>
+If set, rectangular coordinates are returned in a vector of the form [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+] or [<EM CLASS="Emphasis">
+x</EM>
+, <EM CLASS="Emphasis">
+y</EM>
+, <EM CLASS="Emphasis">
+z</EM>
+], or a (2, <EM CLASS="Emphasis">
+n</EM>
+) or (3, <EM CLASS="Emphasis">
+n</EM>
+) array.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756989">
+ </A>
+<A NAME="marker=756988">
+ </A>
+TO_SPHERE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756990">
+ </A>
+If set, spherical coordinates are returned in a vector of the form [<EM CLASS="Emphasis">
+longitude</EM>
+, <EM CLASS="Emphasis">
+latitude</EM>
+, <EM CLASS="Emphasis">
+radius</EM>
+], or a (3, <EM CLASS="Emphasis">
+n</EM>
+) array.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756991">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756992">
+ </A>
+Convert from spherical to cylindrical coordinates:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756993">
+ </A>
+sph_coord = [[45.0, -60.0, 10.0], [0.0, 0.0, 0.0]] </P>
+<P CLASS="Code">
+<A NAME="pgfId=756994">
+ </A>
+rect_coord = CV_COORD(FROM_SPHERE=sph_coord, /TO_CYLIN, /DEGREES)</P>
+<P CLASS="Body">
+<A NAME="pgfId=756995">
+ </A>
+Convert from rectangular to polar coordinates:</P>
+<P CLASS="Code">
+<A NAME="pgfId=756996">
+ </A>
+rect_coord = [10.0, 10.0] </P>
+<P CLASS="Code">
+<A NAME="pgfId=756997">
+ </A>
+polar_coord = CV_COORD(FROM_RECT=rect_coord, /TO_POLAR)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756998">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756999">
+ </A>
+<A HREF="idl42.htm#98010" CLASS="XRef">
+CONVERT_COORD</A>
+, <A HREF="idl44.htm#67373" CLASS="XRef">
+COORD2TO3</A>
+, <A HREF="idl4a.htm#67072" CLASS="XRef">
+CREATE_VIEW</A>
+, <A HREF="idl18c.htm#24364" CLASS="XRef">
+SCALE3</A>
+, <A HREF="idl1cf.htm#36880" CLASS="XRef">
+T3D</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=871496">
+ </A>
+&nbsp;</P>
+</DIV>
+</BODY>
+</HTML>

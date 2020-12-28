@@ -1,0 +1,1740 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WIDGET_BASE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl201.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1ff.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679911">
+ </A>
+<A NAME="51835">
+ </A>
+WIDGET_BASE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679912">
+ </A>
+The <A NAME="marker=674302">
+ </A>
+WIDGET_BASE function is used to create base widgets. Base widgets serve as containers for other widgets.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=907151">
+ </A>
+In most cases, you will want let IDL determine the placement of widgets within the base widget. Do this by specifying either the COLUMN keyword or the ROW keyword. See <A HREF="idl200.htm#38128" CLASS="XRef">
+Positioning Child Widgets Within a Base</A>
+ for details.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=911156">
+ </A>
+The returned value of this function is the widget ID of the newly-created base.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679914">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679915">
+ </A>
+Result = WIDGET_BASE(<I CLASS="Italic">
+[Parent]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679916">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679917">
+ </A>
+Parent</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679918">
+ </A>
+The widget ID of the parent widget. To create a <A NAME="marker=67507">
+ </A>
+<EM CLASS="Emphasis">
+top-level</EM>
+ base, omit the <I CLASS="Italic">
+Parent</I>
+ argument.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679919">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679920">
+ </A>
+<A NAME="marker=107139">
+ </A>
+ALIGN_BOTTOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107053">
+ </A>
+<A NAME="marker=107145">
+ </A>
+Set this keyword to align the new widget with the bottom of its parent base. To take effect, the parent must be a ROW base.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107036">
+ </A>
+<A NAME="marker=107140">
+ </A>
+ALIGN_CENTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107058">
+ </A>
+Set this keyword to align the new widget with the center of its parent base. To take effect, the parent must be a ROW or COLUMN base. In ROW bases, the new widget will be vertically centered. In COLUMN bases, the new widget will be horizontally centered.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107030">
+ </A>
+<A NAME="marker=107141">
+ </A>
+ALIGN_LEFT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107072">
+ </A>
+Set this keyword to align the new widget with the left side of its parent base. To take effect, the parent must be a COLUMN base.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107035">
+ </A>
+<A NAME="marker=107142">
+ </A>
+ALIGN_RIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107080">
+ </A>
+Set this keyword to align the new widget with the right side of its parent base. To take effect, the parent must be a COLUMN base.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107037">
+ </A>
+<A NAME="marker=107143">
+ </A>
+ALIGN_TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107087">
+ </A>
+Set this keyword to align the new widget with the top of its parent base. To take effect, the parent must be a ROW base.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=910166">
+ </A>
+<A NAME="marker=911153">
+ </A>
+<A NAME="17866">
+ </A>
+APP_MBAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911139">
+ </A>
+<A NAME="marker=911138">
+ </A>
+Set this keyword to a named variable that defines a widget application's menubar. On the Macintosh, the menubar defined by APP_MBAR becomes the system menubar (the menubar at the top of the Macintosh screen). On Motif platforms and under Microsoft Windows, the APP_MBAR is treated in exactly the same fashion as the menubar created with the MBAR keyword. See <A HREF="idl200.htm#29119" CLASS="XRef">
+MBAR</A>
+ for details on creating menubars.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=911144">
+ </A>
+You cannot specify both an APP_MBAR and an MBAR for the same top-level base widget. Doing so will cause an error.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=911701">
+ </A>
+To apply actions triggered by menu items to widgets other than the base that includes the menubar, use the <A HREF="idl200.htm#25404" CLASS="XRef">
+KBRD_FOCUS_EVENTS</A>
+ keyword to keep track of which widget has (or last had) the keyboard focus.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107046">
+ </A>
+<A NAME="marker=107144">
+ </A>
+BASE_ALIGN_BOTTOM</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107093">
+ </A>
+Set this keyword to make all children of the new base align themselves with the bottom of the base by default. To take effect, you must also set the ROW keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107047">
+ </A>
+<A NAME="marker=107138">
+ </A>
+BASE_ALIGN_CENTER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107127">
+ </A>
+Set this keyword to make all children of the new base align themselves with the center of the base by default. To take effect, you must also set the COLUMN or ROW keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created. In ROW bases, child widgets will be vertically centered. In COLUMN bases, child widgets will be horizontally centered.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107048">
+ </A>
+<A NAME="marker=107137">
+ </A>
+BASE_ALIGN_LEFT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107108">
+ </A>
+Set this keyword to make all children of the new base align themselves with the left side of the base by default. To take effect, you must also set the COLUMN keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107049">
+ </A>
+<A NAME="marker=107136">
+ </A>
+BASE_ALIGN_RIGHT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107114">
+ </A>
+Set this keyword to make all children of the new base align themselves with the right side of the base by default. To take effect, you must also set the COLUMN keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107050">
+ </A>
+<A NAME="marker=107135">
+ </A>
+BASE_ALIGN_TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=107101">
+ </A>
+Set this keyword to make all children of the new base align themselves with the top of the base by default. To take effect, you must also set the ROW keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=107029">
+ </A>
+<A NAME="marker=674303">
+ </A>
+<A NAME="37165">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679921">
+ </A>
+<A NAME="marker=674304">
+ </A>
+If this keyword is included, the base lays out its children in <A NAME="marker=907158">
+ </A>
+columns. The value of this keyword specifies the number of columns to be used. The number of child widgets in each column is calculated by dividing the number of child widgets created by the number of columns specified. When one column is filled, a new one is started.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911843">
+ </A>
+Specifying both the COLUMN and ROW keywords causes an error.</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=911826">
+ </A>
+Column Width</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911859">
+ </A>
+The width of each column is determined by the width of the widest widget in that column. If the GRID_LAYOUT keyword is set, all columns are as wide as the widest widget in the base.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=911858">
+ </A>
+Horizontal Size of Widgets</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911868">
+ </A>
+If any of the BASE_ALIGN_* keywords to WIDGET_BASE is set, each widget has its &quot;natural&quot; width, determined either by the value of the widget or by the XSIZE keyword. Similarly, if any of the child widgets specifies one of the ALIGN_* keywords, that widget will have its &quot;natural&quot; width. If none of the BASE_ALIGN_* or (ALIGN_*) keywords are set, all widgets in the base are as wide as their column.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=911866">
+ </A>
+Vertical Placement</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911837">
+ </A>
+Child widgets are placed vertically one below the other, with no extra space. If the GRID_LAYOUT keyword is set, each row is as high as its tallest member.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=917417">
+ </A>
+<A NAME="marker=917419">
+ </A>
+DISPLAY_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=917418">
+ </A>
+Set this keyword equal to a string that specifies the name of the X Windows display on which the base should be displayed. This keyword has no effect on Microsoft Windows and Macintosh platforms.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679923">
+ </A>
+<A NAME="marker=674305">
+ </A>
+<A NAME="EVENT_FUNC">
+ </A>
+EVENT_FUNC</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679924">
+ </A>
+A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679925">
+ </A>
+<A NAME="marker=674308">
+ </A>
+EVENT_PRO</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679926">
+ </A>
+A string containing the name of a procedure to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934630">
+ </A>
+If the base is a top-level base widget that is managed by the XMANAGER procedure, any value specified via the EVENT_PRO keyword is overridden by the value of the EVENT_HANDLER keyword to XMANAGER. Note also that in this situation, if EVENT_HANDLER is not specified in the call to XMANAGER, an event-handler name will be created by appending the string <CODE CLASS="Code">
+&quot;_event&quot;</CODE>
+ to the application name specified to XMANAGER. This means that there is no reason to specify this keyword for a top-level base that will be managed by the XMANAGER procedure.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679927">
+ </A>
+<A NAME="marker=674311">
+ </A>
+EXCLUSIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679928">
+ </A>
+<A NAME="marker=674312">
+ </A>
+Set this keyword to specify that the base can have only button-widget children and that only one button can be set at a time. These buttons, unlike normal button widgets, have two states--set and unset.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679929">
+ </A>
+When one exclusive button is pressed, any other exclusive buttons (in the same base) that are currently set are automatically released. Hence, only one button can ever be set at one time.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679930">
+ </A>
+This keyword can be used to create exclusive button menus. See the <A HREF="idl58.htm#73565" CLASS="XRef">
+CW_BGROUP</A>
+ and <A HREF="idl61.htm#62114" CLASS="XRef">
+CW_PDMENU</A>
+ functions for high-level menu-creation utilities.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=911154">
+ </A>
+<A NAME="marker=933227">
+ </A>
+<A NAME="38368">
+ </A>
+FLOATING</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911155">
+ </A>
+Set this keyword--along with the GROUP_LEADER keyword--to create a &quot;floating&quot; top-level base widget. If the windowing system provides Z-order control, floating base widgets appear above the base specified as their group leader.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911195">
+ </A>
+The iconizing, layering, and destruction behavior of floating bases and their group leaders is discussed in <A HREF="idl200.htm#37081" CLASS="XRef">
+Iconizing, Layering, and Destroying Groups of Top-Level Bases</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679931">
+ </A>
+<A NAME="marker=674313">
+ </A>
+FRAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679932">
+ </A>
+The value of this keyword specifies the width of a frame in units specified by the UNITS keyword (pixels are the default) to be drawn around the borders of the widget. Note that this keyword is only a hint to the toolkit, and may be ignored in some instances.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679933">
+ </A>
+<A NAME="marker=674314">
+ </A>
+FUNC_GET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679934">
+ </A>
+<A NAME="A string contianing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use th">
+ </A>
+A string containing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679935">
+ </A>
+<A NAME="marker=895917">
+ </A>
+GRID_LAYOUT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895916">
+ </A>
+Set this keyword to force the base to have a grid layout, in which all rows have the same height, and all columns have the same width. The row heights and column widths are taken from the largest child widget.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895915">
+ </A>
+<A NAME="marker=674317">
+ </A>
+<A NAME="33891">
+ </A>
+GROUP_LEADER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679936">
+ </A>
+The widget ID of an existing widget that serves as &quot;group leader&quot; for the newly-created widget. Widget application hierarchies are defined by group membership relationships between top-level widget bases. When a group leader is killed, for any reason, all widgets in the group are also destroyed. Iconizing and layering behavior is discussed in <A HREF="idl200.htm#37081" CLASS="XRef">
+Iconizing, Layering, and Destroying Groups of Top-Level Bases</A>
+. (This is not available on the Mac.)</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=911175">
+ </A>
+If you specify a floating base (created with the <A HREF="idl200.htm#38368" CLASS="XRef">
+FLOATING</A>
+ keyword) as a group leader, all member bases must also have either the FLOATING or MODAL keywords set. If you specify a modal base (created with the <A HREF="idl200.htm#30467" CLASS="XRef">
+MODAL</A>
+ keyword) as a group leader, all member bases must have the MODAL keyword set as well. </LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=679937">
+ </A>
+<A NAME="A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.">
+ </A>
+A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=912183">
+ </A>
+<A NAME="25404">
+ </A>
+KBR<A NAME="marker=912189">
+ </A>
+D_FOCUS_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911462">
+ </A>
+<A NAME="marker=911461">
+ </A>
+Set this keyword to make the base return keyboard focus events whenever the keyboard focus of the base changes. See the <A HREF="idl200.htm#14452" CLASS="XRef">
+Events</A>
+ section below for more information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679938">
+ </A>
+<A NAME="marker=674321">
+ </A>
+<A NAME="KILL_NOTIFY">
+ </A>
+KILL_NOTIFY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679939">
+ </A>
+Set this keyword<A NAME="marker=67567">
+ </A>
+ to a string that contains the name of a procedure to be called automatically when the specified widget dies. Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). Note that the procedure specified is used only if you are not using the XMANAGER procedure to manage your widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=108524">
+ </A>
+The callback routine is called with the widget identifier as its only argument. At that point, the widget identifier can only be used with the WIDGET_CONTROL procedure to get or set the user value. All other requests that require a widget ID are disallowed for the target widget. The callback is not issued until the WIDGET_EVENT function is called. </P>
+<P CLASS="Body">
+<A NAME="pgfId=158745">
+ </A>
+If you use the XMANAGER procedure to manage your widgets, the value of this keyword is overwritten. Use the CLEANUP keyword to XMANAGER to specify a procedure to be called when a managed widget dies.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=108526">
+ </A>
+<A NAME="marker=108525">
+ </A>
+MAP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679942">
+ </A>
+Once a widget hierarchy has been realized, it can be <A NAME="marker=674326">
+ </A>
+mapped (visible) or <A NAME="marker=674327">
+ </A>
+unmapped (invisible). This keyword specifies the initial map state for the given base and its descendants. Specifying a non-zero value indicates that the base should be mapped when realized (the default). A zero value indicates that the base should be unmapped initially.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679943">
+ </A>
+After the base is realized, its map state can be altered using the MAP keyword to the WIDGET_CONTROL procedure.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934559">
+ </A>
+Modal bases cannot be mapped and unmapped.</LI>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=934560">
+ </A>
+Under Microsoft Windows, when a hidden base is realized, then mapped, a Windows resize message is sent by the windowing system. This &quot;extra&quot; resize event is generated before any manipulation of the base widget by the user.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=934563">
+ </A>
+<A NAME="marker=934561">
+ </A>
+<A NAME="29119">
+ </A>
+MBAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67245">
+ </A>
+<A NAME="marker=67246">
+ </A>
+Set this keyword to a named variable to cause a menubar to be placed at the top of the base (the base must be a top-level base). The menubar is itself a special kind of base widget that can only have buttons as children. Upon return, the named variable contains the widget ID of the new menubar base. This widget ID can then be used to fill the menubar with pulldown menus. For example, the following widget creation commands first create a base with a menubar, then populate the menubar with a simple pulldown menu (CW_PDMENU could also have been used to construct the pulldown menu):</P>
+<P CLASS="Code">
+<A NAME="pgfId=67250">
+ </A>
+base = WIDGET_BASE(TITLE = 'Example', MBAR=bar)</P>
+<P CLASS="Code">
+<A NAME="pgfId=67252">
+ </A>
+file_menu = WIDGET_BUTTON(bar, VALUE='File', /MENU)</P>
+<P CLASS="Code">
+<A NAME="pgfId=67254">
+ </A>
+file_bttn1=WIDGET_BUTTON(file_menu, VALUE='Item 1',$</P>
+<P CLASS="Code">
+<A NAME="pgfId=67260">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UVALUE='FILE1')</P>
+<P CLASS="Code">
+<A NAME="pgfId=67255">
+ </A>
+file_bttn2=WIDGET_BUTTON(file_menu, VALUE='Item 2',$</P>
+<P CLASS="Code">
+<A NAME="pgfId=67261">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UVALUE='FILE2')</P>
+<P CLASS="Body">
+<A NAME="pgfId=106817">
+ </A>
+Note that to set X Window System resources for menubars created with this keyword, you must use the RNAME_MBAR keyword rather than the RESOURCE_NAME keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=894751">
+ </A>
+If you use <A HREF="idl61.htm#62114" CLASS="XRef">
+CW_PDMENU</A>
+ to create a menu for the menubar, be sure to set the MBAR keyword to that function as well.</P>
+<P CLASS="Body">
+<A NAME="pgfId=894789">
+ </A>
+Note also that the size returned by the <A HREF="idl206.htm#84447" CLASS="XRef">
+GEOMETRY</A>
+ keyword to WIDGET_INFO does not include the size of the menubar.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=911189">
+ </A>
+To control the system menubar on the Macintosh, use the <A HREF="idl200.htm#17866" CLASS="XRef">
+APP_MBAR</A>
+ keyword. On Windows and Motif platforms the MBAR and APP_MBAR keywords are equivalent.</LI>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=921474">
+ </A>
+You cannot specify both the MBAR and MODAL keywords for the same widget. Doing so will cause an error.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=911708">
+ </A>
+To apply actions triggered by menu items to widgets other than the base that includes the menubar, use the <A HREF="idl200.htm#25404" CLASS="XRef">
+KBRD_FOCUS_EVENTS</A>
+ keyword to keep track of which widget has (or last had) the keyboard focus.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=910174">
+ </A>
+<A NAME="marker=910737">
+ </A>
+<A NAME="30467">
+ </A>
+MODAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=910723">
+ </A>
+Set this keyword to create a modal dialog. Modal dialogs can have default and cancel buttons associated with them. Default buttons are highlighted by the window system and respond to a press on the &quot;Return&quot; or &quot;Enter&quot; keys as if they had been clicked on. Cancel buttons respond to a press on the &quot;Escape&quot; key as if they had been clicked on. See the <A HREF="idl202.htm#11067" CLASS="XRef">
+DEFAULT_BUTTON</A>
+ and <A HREF="idl202.htm#32221" CLASS="XRef">
+CANCEL_BUTTON</A>
+ keywords to <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ for details.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934609">
+ </A>
+Modal dialogs must have a group leader. Specify the group leader for a modal top-level base via the <A HREF="idl200.htm#33891" CLASS="XRef">
+GROUP_LEADER</A>
+ keyword.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=921471">
+ </A>
+Modal dialogs cannot be scrollable, nor can they support menubars. Setting the SCROLL, MBAR, or APP_MBAR keywords in conjunction with the MODAL keyword will cause an error. Modal dialogs cannot be mapped or unmapped. Setting the MAP keyword on a modal base will cause an error.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=934550">
+ </A>
+On Windows platforms, the group leader of a modal base must be realized before the modal base itself can be realized. If the group leader has not been realized, it will be realized automatically.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=911205">
+ </A>
+The iconizing, layering, and destruction behavior of modal bases and their group leaders is discussed in <A HREF="idl200.htm#37081" CLASS="XRef">
+Iconizing, Layering, and Destroying Groups of Top-Level Bases</A>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=106818">
+ </A>
+<A NAME="marker=108722">
+ </A>
+<A NAME="23906">
+ </A>
+NO_COPY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=106821">
+ </A>
+Usually, when setting or getting widget user values, either at widget creation or using the SET_UVALUE and GET_UVALUE keywords to WIDGET_CONTROL, IDL makes a second copy of the data being transferred. Although this technique is fine for small data, it can have a significant memory cost when the data being copied is large.</P>
+<P CLASS="Body">
+<A NAME="pgfId=913927">
+ </A>
+If the NO_COPY keyword is set, IDL handles these operations differently. Rather than copy the source data, it takes the data away from the source and attaches it directly to the destination. This feature can be used by compound widgets to obtain state information from a UVALUE without all the memory copying that would otherwise occur. However, it has the side effect of causing the source variable to become undefined. On a &quot;set&quot; operation (using the UVALUE keyword to WIDGET_BASE or the SET_UVALUE keyword to WIDGET_CONTROL), the variable passed as value becomes undefined. On a &quot;get&quot; operation (GET_UVALUE keyword to WIDGET_CONTROL), the user value of the widget in question becomes undefined.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679946">
+ </A>
+<A NAME="marker=674334">
+ </A>
+NONEXCLUSIVE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679947">
+ </A>
+<A NAME="marker=674335">
+ </A>
+Set this keyword to specify that the base can only have button widget children. These buttons, unlike normal button widgets, have two states--set and unset.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679948">
+ </A>
+Non-exclusive bases allow any number of the toggle buttons to be set at one time.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67508">
+ </A>
+<A NAME="marker=67510">
+ </A>
+<A NAME="97943">
+ </A>
+NOTIFY_REALIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67513">
+ </A>
+<A NAME="96358">
+ </A>
+Set this keyword to a string <A NAME="marker=67568">
+ </A>
+that contains the name of a procedure to be called automatically when the specified widget is realized. This callback occurs just once (because widgets are realized only once). Each widget is allowed a single such &quot;callback&quot; procedure. It can be removed by setting the routine to the null string (<CODE CLASS="Code">
+''</CODE>
+). The callback routine is called with the widget ID as its only argument.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679949">
+ </A>
+<A NAME="marker=674336">
+ </A>
+PRO_SET_VALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679950">
+ </A>
+<A NAME="A string contianing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to designate a routine that sets the value for a widget. Compound widgets use th">
+ </A>
+A string containing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to designate a routine that sets the value for a widget. Compound widgets use this ability to define their values transparently to the user.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=281150">
+ </A>
+<A NAME="marker=281245">
+ </A>
+<A NAME="71756">
+ </A>
+RESOURCE_NAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=281151">
+ </A>
+A string containing an X Window System resource name to be applied to the widget. Once defined, this name can be used in the user's <CODE CLASS="Code">
+.Xdefaults</CODE>
+<A NAME="marker=281312">
+ </A>
+ file to customize widget resources not directly supported via the IDL widget routines. This keyword is accepted by all widget creation routines. This keyword only works with the &quot;X&quot; device and is ignored on platforms that do not use the X Window System (i.e., <I CLASS="Italic">
+IDL for Windows, IDL for Macintosh</I>
+).</P>
+<P CLASS="Body">
+<A NAME="pgfId=281152">
+ </A>
+RESOURCE_NAME allows unrestricted access to the underlying Motif widgets within the following limitations:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=281153">
+ </A>
+Users must have the appropriate resources defined in their <CODE CLASS="Code">
+.Xdefaults</CODE>
+ or application default resource file, or IDL will not see the definitions and they will not take effect.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=281154">
+ </A>
+Motif resources are documented in the <I CLASS="Italic">
+OSF/Motif Programmer's Reference Manual</I>
+. To use them with RESOURCE_NAME, the IDL programmer must determine the type of widget being used by IDL, and then look up the resources that apply to them. Hence, RESOURCE_NAME requires some programmer-level familiarity with Motif.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=281155">
+ </A>
+Only resources that are not set within IDL can be modified using this mechanism. Although it is not an error to set resources also set by IDL, the IDL settings will silently override user settings. Research Systems does not document the resources used by IDL since the actual resources used may differ from release to release as the IDL widgets evolve. Therefore, you should set only those resources that are obviously not being set by IDL. Among the resources that are not being set by IDL are those that control colors, menu mnemonics, and accelerator keys.</LI>
+<LI CLASS="Example">
+<A NAME="pgfId=281156">
+ </A>
+The sample code below produces a pulldown menu named &quot;Menu&quot; with 2 entries named &quot;Item 1&quot; and &quot;Item 2&quot;.</LI>
+</UL>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=281276">
+ </A>
+Using the RESOURCE_NAME keyword in conjunction with X resource definitions, we can alter &quot;Item 1&quot; in several ways not possible through the standard IDL widgets interface. We'll give Item 1 a red background color. We'll also assign &quot;I&quot; as the keyboard mnemonic. Note that Motif automatically underlines the &quot;I&quot; in the title to indicate this. We'll also select Meta-F4 as the keyboard accelerator for selecting &quot;Item 1&quot;. If Meta-F4 is pressed while the pointer is anywhere over this application, the effect will be as if the menu was pulled down and &quot;Item 1&quot; was selected with the mouse.</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281159">
+ </A>
+PRO test_event, ev	<EM CLASS="Comment">;
+Simple event handler.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281249">
+ </A>
+HELP, /STRUCTURE, ev</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281250">
+ </A>
+END</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281160">
+ </A>
+PRO test	<EM CLASS="Comment">;
+Simple widget creation routine.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281252">
+ </A>
+a = WIDGET_BASE(RESOURCE_NAME = 'test')<BR>
+<EM CLASS="Comment">;
+The base gets the resource name &quot;test&quot;.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281254">
+ </A>
+b = WIDGET_BUTTON(a, VALUE='Menu', /MENU)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281256">
+ </A>
+c = WIDGET_BUTTON(b, VALUE='Item 1', $</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281284">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;RESOURCE_NAME='item1')	<EM CLASS="Comment">;
+Assign the Item 1 button the resource name &quot;item1&quot;.</EM>
+</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281258">
+ </A>
+c = WIDGET_BUTTON(b, VALUE='Item 2')</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281260">
+ </A>
+WIDGET_CONTROL, /REALIZE, a </P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281262">
+ </A>
+XMANAGER, 'test', a </P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281263">
+ </A>
+END</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=281161">
+ </A>
+Note that we gave the overall application the resource name &quot;test&quot;, and the &quot;Item 1&quot; button the resource name &quot;item1&quot;. Now we can use these names in the following <CODE CLASS="Code">
+.Xdefaults</CODE>
+ file entries:</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281162">
+ </A>
+Idl*test*item1*mnemonic: I</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281266">
+ </A>
+Idl*test*item1*accelerator: Meta&lt;Key&gt;F4</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281267">
+ </A>
+Idl*test*item1*acceleratorText: Meta-F4</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=281269">
+ </A>
+Idl*test*item1*background: red</P>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=927093">
+ </A>
+Note on Specifying Color <A NAME="marker=927108">
+ </A>
+Resources</H6>
+<P CLASS="Body">
+<A NAME="pgfId=927094">
+ </A>
+If you wish to specify unique colors for your widgets, it is generally a good idea to use a color name (&quot;red&quot; or &quot;lightblue&quot;, for example) rather than specifying an exact color match with a color string (such as &quot;#b1b122222020&quot;). If IDL is not able to allocate an exact color, the entire operation may fail. Specifying a named color implies &quot;closest color match,&quot; an operation that rarely fails.</P>
+<P CLASS="Body">
+<A NAME="pgfId=927101">
+ </A>
+If you need an exact color match and IDL fails to allocate the color, try modifying the <CODE CLASS="Code">
+Idl.colors</CODE>
+ resource in the <CODE CLASS="Code">
+$IDL_DIR/resource/X11/lib/app-defaults/Idl</CODE>
+ file.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=72437">
+ </A>
+<A NAME="marker=72446">
+ </A>
+RNAME_MBAR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=72441">
+ </A>
+A string containing an X Window System resource name to be applied to the menubar created by the MBAR keyword. This keyword is identical to the RESOURCE_NAME keyword except that the resource it specifies applies only to the menubar.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679951">
+ </A>
+<A NAME="marker=674339">
+ </A>
+ROW</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911814">
+ </A>
+If this keyword is included, the base lays out its children in <A NAME="marker=907157">
+ </A>
+rows. The value of this keyword specifies the number of rows to be used. The number of child widgets in each row is calculated by dividing the number of child widgets created by the number of rows specified. When one row is filled, a new one is started.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911810">
+ </A>
+Specifying both the COLUMN and ROW keywords causes an error.</P>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=911886">
+ </A>
+Row Height</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911887">
+ </A>
+The height of each row is determined by the height of the tallest widget in that row. If the GRID_LAYOUT keyword is set, all rows are as tall as the tallest widget in the base.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=911888">
+ </A>
+Vertical Size of Widgets</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911889">
+ </A>
+If any of the BASE_ALIGN_* keywords to WIDGET_BASE is set, each widget has its &quot;natural&quot; height, determined either by the value of the widget or by the YSIZE keyword. Similarly, if any of the child widgets specifies one of the ALIGN_* keywords, that widget will have its &quot;natural&quot; height. If none of the BASE_ALIGN_* or (ALIGN_*) keywords are set, all widgets in the base are as tall as their row.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=911890">
+ </A>
+Horizontal Placement</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911891">
+ </A>
+Child widgets are placed horizontally one next to the other, with no extra space. If the GRID_LAYOUT keyword is set, each column is as wide as its widest member.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58069">
+ </A>
+<A NAME="marker=58073">
+ </A>
+<A NAME="28305">
+ </A>
+SCR_XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58071">
+ </A>
+Set this keyword to the desired &quot;screen&quot; width of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the XSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58070">
+ </A>
+<A NAME="marker=58074">
+ </A>
+<A NAME="57777">
+ </A>
+SCR_YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58072">
+ </A>
+Set this keyword to the desired &quot;screen&quot; height of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the YSIZE keyword.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679954">
+ </A>
+<A NAME="marker=674340">
+ </A>
+SCROLL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=941356">
+ </A>
+Set this keyword to give the widget scroll bars that allow viewing portions of the widget contents that are not currently on the screen. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=941359">
+ </A>
+For the Macintosh, if you set XSIZE or YSIZE to a value less than 48, the base created with the SCROLL keyword will be a minumum of 48x48. If you have not specified values for XSIZE or YSIZE, the base will be set to a minumum of 66x66. If the base is resized, it will jump to the minimum size of 128x64.</LI>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=921478">
+ </A>
+You cannot specify both the SCROLL and MODAL keywords for the same widget. Doing so will cause an error.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679957">
+ </A>
+<A NAME="marker=674341">
+ </A>
+SPACE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679958">
+ </A>
+<A NAME="marker=674342">
+ </A>
+The space, in units specified by the UNITS keyword (pixels are the default), between children of a row or column major base. This keyword is ignored if either the EXCLUSIVE or NONEXCLUSIVE keyword is present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679959">
+ </A>
+<A NAME="marker=674343">
+ </A>
+TITLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679960">
+ </A>
+A string containing the title to be used for the widget. Base widgets use the title only if they are top-level widgets.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679961">
+ </A>
+Note that if the widget base is not wide enough to contain the specified title, the title may appear truncated. If you must be able to see the full title, you have several alternatives:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=679962">
+ </A>
+Rearrange the widgets in the base so that the base becomes naturally wide enough. This is the best solution.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=679963">
+ </A>
+Don't worry about this issue. If the user needs to see the entire label, they can resize the window using the mouse.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=679964">
+ </A>
+Create the base without using the COLUMN or ROW keywords. Instead, use the XSIZE keyword to explicitly set a usable width. This is an undesirable solution that can lead to strange-looking widget layouts.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=67692">
+ </A>
+<A NAME="marker=67694">
+ </A>
+TLB_FRAME_ATTR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=67693">
+ </A>
+Set this keyword to one of the values shown in the table below to suppress certain aspects of a top-level base's window frame. This keyword applies only to top-level bases. The settings are merely hints to the window system and may be ignored by some window managers. Valid settings are:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=67717">
+ </A>
+Valid Values for TLB_FRAME_ATTR Keyword</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=67701">
+ </A>
+Value</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=67703">
+ </A>
+Meaning</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67705">
+ </A>
+1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67707">
+ </A>
+Base cannot be resized, minimized, or maximized.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67709">
+ </A>
+2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67711">
+ </A>
+Suppress display of system menu.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67713">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67715">
+ </A>
+Suppress title bar. </P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67749">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67751">
+ </A>
+Base cannot be closed.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67745">
+ </A>
+16</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=67747">
+ </A>
+Base cannot be moved.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=67698">
+ </A>
+This keyword is set bitwise, so multiple effects can be set by adding values together. For example, to make a base that has no title bar (setting 4) and cannot be moved (setting 16), set the TLB_FRAME_ATTR keyword to <CODE CLASS="Code">
+4+16</CODE>
+, or 20.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=937449">
+ </A>
+For the Macintosh, you can not suppress the title bar; only modal dialogs use a window without a title bar. Any other use of a suppressed title bar would be contrary to Macintosh Human Interface Guidlines and would create an immovable window.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=192742">
+ </A>
+<A NAME="marker=192741">
+ </A>
+<A NAME="99529">
+ </A>
+TLB_KILL_REQUEST_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=192743">
+ </A>
+Set this keyword, usable only with top-level bases, to send the top-level base a <A NAME="marker=192744">
+ </A>
+WIDGET_KILL_REQUEST event if a user tries to destroy the widget using the window manager (by default, widgets are simply destroyed). See the <A HREF="idl200.htm#14452" CLASS="XRef">
+Events</A>
+ section below for more information.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911519">
+ </A>
+Use this keyword to perform complex actions before allowing a widget application to exit. Note that widgets that have this keyword set are responsible for killing themselves after receiving a WIDGET_KILL_REQUEST event--they cannot be destroyed using the usual window system controls.</P>
+<P CLASS="Body">
+<A NAME="pgfId=192746">
+ </A>
+Use a call to TAG_NAMES with the STRUCTURE_NAME keyword set to differentiate a WIDGET_KILL_REQUEST event from other types of widget events. For example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=192758">
+ </A>
+IF TAG_NAMES(event, /STRUCTURE_NAME) EQ $</P>
+<P CLASS="Code">
+<A NAME="pgfId=192759">
+ </A>
+&nbsp;&nbsp;&nbsp;'WIDGET_KILL_REQUEST' THEN ...</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679965">
+ </A>
+<A NAME="marker=674344">
+ </A>
+<A NAME="34589">
+ </A>
+TLB_SIZE_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679966">
+ </A>
+<A NAME="marker=674345">
+ </A>
+Set this keyword, when creating a top-level base, to make that base return an event when the base is resized by the user. See the <A HREF="idl200.htm#14452" CLASS="XRef">
+Events</A>
+ section below for more information.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58059">
+ </A>
+<A NAME="marker=58064">
+ </A>
+<A NAME="72083">
+ </A>
+TRACKING_EVENTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58063">
+ </A>
+<A NAME="marker=58068">
+ </A>
+Set this keyword to cause widget tracking events to be issued for the widget whenever the mouse pointer <I CLASS="Italic">
+enters</I>
+ or <I CLASS="Italic">
+leaves</I>
+ the region covered by that widget. Widget tracking events are returned as structures with the following definition:</P>
+<P CLASS="Code">
+<A NAME="pgfId=58065">
+ </A>
+{ WIDGET_TRACKING, ID:0L, TOP:0L, HANDLER:0L, ENTER:0 }</P>
+<P CLASS="Body">
+<A NAME="pgfId=58066">
+ </A>
+ID, TOP, and HANDLER are the standard fields found in every widget event. ENTER is 1 if the tracking event is an entry event, and 0 if it is an exit event.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=895507">
+ </A>
+<A NAME="marker=895506">
+ </A>
+UNITS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=895509">
+ </A>
+Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679967">
+ </A>
+<A NAME="marker=674346">
+ </A>
+UVALUE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679968">
+ </A>
+The &quot;user value&quot; to be assigned to the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679969">
+ </A>
+Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679970">
+ </A>
+If UVALUE is not present, the widget's initial user value is undefined.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679971">
+ </A>
+The user value for a widget can be accessed and modified at any time by using the GET_UVALUE and SET_UVALUE keywords to the WIDGET_CONTROL procedure.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679972">
+ </A>
+<A NAME="marker=674350">
+ </A>
+XOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679973">
+ </A>
+The horizontal offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679974">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget layout.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679975">
+ </A>
+<A NAME="marker=674351">
+ </A>
+XPAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679976">
+ </A>
+The horizontal space, in units specified by the UNITS keyword (pixels are the default), between child widgets and the edges of a row or column major base. The default value of XPAD is platform dependent. This keyword is ignored if either the EXCLUSIVE or NONEXCLUSIVE keyword is present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679977">
+ </A>
+<A NAME="marker=674352">
+ </A>
+XSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679978">
+ </A>
+The width of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679980">
+ </A>
+<A NAME="marker=674353">
+ </A>
+X_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679981">
+ </A>
+The XSIZE keyword always specifies the width of a widget. When the SCROLL keyword is specified, this size is not necessarily the same as the width of the visible area. The X_SCROLL_SIZE keyword allows you to set the width of the scrolling viewport independently of the actual width of the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=923667">
+ </A>
+Use of the X_SCROLL_SIZE keyword implies SCROLL. This means that scroll bars will be added in both the horizontal and vertical directions when X_SCROLL_SIZE is specified. Because the default size of the scrolling viewport may differ between platforms, it is best to specify Y_SCROLL_SIZE when specifying X_SCROLL_SIZE.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679983">
+ </A>
+<A NAME="marker=674354">
+ </A>
+YOFFSET</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679984">
+ </A>
+The vertical offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent. This offset is specified relative to the <I CLASS="Italic">
+upper left</I>
+ corner of the parent widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679985">
+ </A>
+Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget layout.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679986">
+ </A>
+<A NAME="marker=674355">
+ </A>
+YPAD</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679987">
+ </A>
+The vertical space, in units specified by the UNITS keyword (pixels are the default), between child widgets and the edges of a row or column major base. The default value of YPAD is platform-dependent. This keyword is ignored if either the EXCLUSIVE or NONEXCLUSIVE keyword is present.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679988">
+ </A>
+<A NAME="marker=674356">
+ </A>
+YSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679989">
+ </A>
+The height of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a &quot;hint&quot; to the toolkit and may be ignored in some situations.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679991">
+ </A>
+<A NAME="marker=674357">
+ </A>
+Y_SCROLL_SIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679992">
+ </A>
+The YSIZE keyword always specifies the height of a widget. When the SCROLL keyword is specified, this size is not necessarily the same as the height of the visible area. The Y_SCROLL_SIZE keyword allows you to set the height of the scrolling viewport independently of the actual height of the widget.</P>
+<P CLASS="Body">
+<A NAME="pgfId=923664">
+ </A>
+Use of the Y_SCROLL_SIZE keyword implies SCROLL. This means that scroll bars will be added in both the horizontal and vertical directions when Y_SCROLL_SIZE is specified. Because the default size of the scrolling viewport may differ between platforms, it is best to specify X_SCROLL_SIZE when specifying Y_SCROLL_SIZE.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=910816">
+ </A>
+Keywords to WIDGET_CONTROL</H3>
+<P CLASS="Body">
+<A NAME="pgfId=910850">
+ </A>
+A number of keywords to the <A HREF="idl202.htm#17837" CLASS="XRef">
+WIDGET_CONTROL</A>
+ procedure affect the behavior of base widgets. In addition to those keywords that affect all widgets, the following are particularly useful: <A HREF="idl202.htm#32221" CLASS="XRef">
+CANCEL_BUTTON</A>
+, <A HREF="idl202.htm#11067" CLASS="XRef">
+DEFAULT_BUTTON</A>
+, <A HREF="idl202.htm#22212" CLASS="XRef">
+KBRD_FOCUS_EVENTS</A>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=910799">
+ </A>
+Keywords to WIDGET_INFO</H3>
+<P CLASS="Body">
+<A NAME="pgfId=910803">
+ </A>
+A number of keywords to the <A HREF="idl206.htm#45547" CLASS="XRef">
+WIDGET_INFO</A>
+ function return information that applies specifically to base widgets. In addition to those keywords that apply to all widgets, the following are particularly useful: <A HREF="idl206.htm#21768" CLASS="XRef">
+KBRD_FOCUS_EVENTS</A>
+, <A HREF="idl206.htm#16353" CLASS="XRef">
+MODAL</A>
+, <A HREF="idl206.htm#33609" CLASS="XRef">
+TLB_KILL_REQUEST_EVENTS</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679994">
+ </A>
+Exclusive And Non-Exclusive Bases</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679995">
+ </A>
+<A NAME="marker=674358">
+ </A>
+If the EXCLUSIVE or NONEXCLUSIVE keywords are specified, the base only allows button widget children.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679996">
+ </A>
+<A NAME="38128">
+ </A>
+Positioning Child Widgets Within a Base</H3>
+<P CLASS="Body">
+<A NAME="pgfId=889641">
+ </A>
+<A NAME="marker=889658">
+ </A>
+The standard base widget does not impose any placement constraints on its child widgets. Children of a &quot;<A NAME="marker=907156">
+ </A>
+bulletin board&quot; base (a base that was created without setting the COLUMN or ROW keywords) have an offset of (0,0) unless an offset is explicitly specified via the XOFFSET or YOFFSET keywords. This means that if you do not specify any of COLUMN, ROW, XOFFSET, or YOFFSET keywords, child widgets will be placed one on top of the other in the upper left corner of the base.</P>
+<P CLASS="Body">
+<A NAME="pgfId=889635">
+ </A>
+However, laying out widgets using the XSIZE, YSIZE, XOFFSET, and YOFFSET keywords can be both tedious and error-prone. Also, if you want your widget application to display properly on different platforms, you should use the COLUMN and ROW keywords to influence child widget layouts instead of explicitly formatting your interfaces.</P>
+<P CLASS="Body">
+<A NAME="pgfId=679997">
+ </A>
+<A NAME="marker=674359">
+ </A>
+When the ROW or COLUMN keywords are specified, the base decides how to lay out its children, and any XOFFSET and YOFFSET keywords specified for such children are ignored.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679998">
+ </A>
+Positioning Top-Level Bases</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679999">
+ </A>
+<A NAME="marker=674360">
+ </A>
+When locating a new top level window, some window managers ignore the program's positioning requests and either choose a position or allow the user to choose. In such cases, the XOFFSET and YOFFSET keywords to WIDGET_BASE will not have an effect. The window manager may provide a way to disable this positioning style. The Motif window manager (mwm) can be told to honor positioning requests by placing the lines:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680000">
+ </A>
+Mwm*clientAutoPlace: False</P>
+<P CLASS="Code">
+<A NAME="pgfId=163546">
+ </A>
+Mwm*interactivePlacement: False</P>
+<P CLASS="Body">
+<A NAME="pgfId=680001">
+ </A>
+in your <CODE CLASS="Code">
+.Xdefaults</CODE>
+ file.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=911159">
+ </A>
+<A NAME="37081">
+ </A>
+Iconizing, Layering, and Destroying Groups of Top-Level Bases</H3>
+<P CLASS="Body">
+<A NAME="pgfId=911162">
+ </A>
+Group membership (defined via the GROUP_LEADER keyword) controls the way top-level base widgets are iconized, layered, and destroyed. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=911320">
+ </A>
+A group can contain sub-groups. Group behavior affects all members of a group and its sub-groups. For example, suppose we create three top-level base widgets with the following group hierarchy:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=911325">
+ </A>
+base1 = WIDGET_BASE()</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=911326">
+ </A>
+base2 = WIDGET_BASE(GROUP_LEADER=base1)</P>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=911329">
+ </A>
+base3 = WIDGET_BASE(GROUP_LEADER=base2)</P>
+<P CLASS="Body-Indent">
+<A NAME="pgfId=911323">
+ </A>
+Effectively, two groups are created. One group has <CODE CLASS="Code">
+base2</CODE>
+ as its leader and <CODE CLASS="Code">
+base3</CODE>
+ as its member. The other group has <CODE CLASS="Code">
+base1</CODE>
+ as its leader and both <CODE CLASS="Code">
+base2</CODE>
+ and <CODE CLASS="Code">
+base3</CODE>
+ as members. If <CODE CLASS="Code">
+base1</CODE>
+ is iconized, both <CODE CLASS="Code">
+base2</CODE>
+ and <CODE CLASS="Code">
+base3</CODE>
+ are iconized as well. If <CODE CLASS="Code">
+base2</CODE>
+ is iconized, <CODE CLASS="Code">
+base3</CODE>
+ is iconized but <CODE CLASS="Code">
+base1</CODE>
+ is not.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911242">
+ </A>
+Widgets behave slightly differently when displayed on different platforms, and depending on whether they are floating or modal bases. The following rules apply to groups of widgets within a group leader/member hierarchy. Widgets that do not belong to the same group hierarchy cannot influence each other.</P>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=911214">
+ </A>
+Iconization and Mapping</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911276">
+ </A>
+On Motif and Windows platforms, bases and groups of bases can be <EM CLASS="Emphasis">
+iconized</EM>
+ (or <EM CLASS="Emphasis">
+minimized</EM>
+) by clicking the system minimize control. Minimization has no meaning on the Macintosh. On all platforms, bases and groups of bases can be <I CLASS="Italic">
+mapped</I>
+ (made visible) and <I CLASS="Italic">
+unmapped</I>
+ (made invisible).</P>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911249">
+ </A>
+Motif</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911259">
+ </A>
+When a group leader is iconized or unmapped, all members of the group are iconized or unmapped as well. Similarly, when a group leader is restored, all members of the group are restored.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911258">
+ </A>
+Floating and modal bases cannot be iconized or unmapped independently. When the group leader of a floating or modal base is iconized, a single icon is created for both the group leader and the floating or modal base. When the group leader of a floating or modal base is unmapped, both the group leader and floating or modal base are made invisible.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911264">
+ </A>
+Windows</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911265">
+ </A>
+When a group leader is iconized or unmapped, all members of the group are iconized or unmapped as well. Similarly, when a group leader is restored, all members of the group are restored.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911266">
+ </A>
+When a floating base is iconized, its group leader is iconized as well and a single icon is created. When a floating base is unmapped, its group leader is unmapped as well.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911273">
+ </A>
+Modal bases cannot be iconized or unmapped. Other bases cannot be iconized or unmapped until the modal base is dismissed.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911254">
+ </A>
+Macintosh</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911257">
+ </A>
+On the Macintosh, iconization has no meaning.</P>
+<P CLASS="Body">
+<A NAME="pgfId=934690">
+ </A>
+When a floating base is unmapped, its group leader is unmapped as well.</P>
+<P CLASS="Body">
+<A NAME="pgfId=934691">
+ </A>
+Modal bases cannot be unmapped. Other bases cannot be unmapped until the modal base is dismissed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=911216">
+ </A>
+Layering</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911217">
+ </A>
+<EM CLASS="Emphasis">
+Layering</EM>
+ is the process by which groups of widgets seem to share the same plane on the display screen. Within a layer on the screen, widgets have a <EM CLASS="Emphasis">
+Z-order</EM>
+, or front-to-back order, that defines which widgets appear to be on top of other widgets.</P>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911282">
+ </A>
+Motif</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911283">
+ </A>
+All elements on the screen--widgets, the IDLDE, other Motif applications--share a single layer and have an arbitrary Z-order. There is no special layering of IDL widgets.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911294">
+ </A>
+Windows and Macintosh</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911295">
+ </A>
+All non-floating and non-modal widgets within a group hierarchy share the same layer--that is, when one group member has the input focus, all members of the group hierarchy are displayed in a layer that appears in front of all other groups or applications. Within the layer, the widgets can have an arbitrary Z-order.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911305">
+ </A>
+Widgets that are floating or modal always float above their group leaders.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=911218">
+ </A>
+Destruction</H4>
+<P CLASS="Body">
+<A NAME="pgfId=911219">
+ </A>
+When a group leader widget is destroyed, either programmatically or by clicking on the system &quot;close&quot; button, all members of the group and all sub-groups are destroyed as well.</P>
+<P CLASS="Body">
+<A NAME="pgfId=911319">
+ </A>
+If a modal base is on the display, it must be dismissed before any widget can be destroyed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=680002">
+ </A>
+<A NAME="14452">
+ </A>
+Events</H3>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=680003">
+ </A>
+Resize Events</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911493">
+ </A>
+<A NAME="marker=674361">
+ </A>
+Top-level widget bases return the following event structure only when they are resized by the user and the base was created with the <A HREF="idl200.htm#34589" CLASS="XRef">
+TLB_SIZE_EVENTS</A>
+ keyword set:</P>
+<P CLASS="Code">
+<A NAME="pgfId=680004">
+ </A>
+{ WIDGET_BASE, ID:0L, TOP:0L, HANDLER:0L, X:0, Y:0 }</P>
+<P CLASS="Body">
+<A NAME="pgfId=680005">
+ </A>
+ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. The X and Y fields return the new width of the base, not including any frame provided by the window manager.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911477">
+ </A>
+Keyboard Focus Events</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911494">
+ </A>
+Widget bases return the following event structure when the keyboard focus changes and the base was created with the <A HREF="idl200.htm#25404" CLASS="XRef">
+KBRD_FOCUS_EVENTS</A>
+ keyword set:</P>
+<P CLASS="Code">
+<A NAME="pgfId=911478">
+ </A>
+{ WIDGET_KBRD_FOCUS, ID:0L, TOP:0L, HANDLER:0L, ENTER:0 }</P>
+<P CLASS="Body">
+<A NAME="pgfId=911479">
+ </A>
+ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. The ENTER field returns 1 (one) if the base is gaining the keyboard focus, or 0 (zero) if the base is losing the keyboard focus.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=911475">
+ </A>
+Kill Request Events</H6>
+<P CLASS="Body">
+<A NAME="pgfId=911499">
+ </A>
+Top-level widget bases return the following event structure only when a user tries to destroy the widget using the window manager and the base was created with the <A HREF="idl200.htm#99529" CLASS="XRef">
+TLB_KILL_REQUEST_EVENTS</A>
+ keyword set:</P>
+<P CLASS="Code">
+<A NAME="pgfId=911501">
+ </A>
+{ WIDGET_KILL_REQUEST, ID:0L, TOP:0L, HANDLER:0L }</P>
+<P CLASS="Body">
+<A NAME="pgfId=911506">
+ </A>
+ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36281">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=36285">
+ </A>
+<A HREF="..html#36829" CLASS="XRef">
+Widgets</A>
+.</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,1585 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SLICER3</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1a5.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1a3.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=914845">
+ </A>
+<A NAME="19999">
+ </A>
+SLICER3</H2>
+<P CLASS="Body">
+<A NAME="pgfId=914850">
+ </A>
+The IDL <A NAME="marker=914848">
+ </A>
+SLICER3 is a widget-based application to visualize <A NAME="marker=914849">
+ </A>
+three-dimensional datasets. This program supersedes the SLICER program.</P>
+<P CLASS="Body">
+<A NAME="pgfId=914851">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+slicer3.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=914852">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=914853">
+ </A>
+ SLICER3 <EM CLASS="Emphasis">
+[, hData3D]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=914854">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=914855">
+ </A>
+hData3D</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914856">
+ </A>
+A pointer to a three-dimensional data array, or an array of pointers to multiple three-dimensional arrays. If multiple arrays are specified, they all must have the same X, Y, and Z dimensions. If <I CLASS="Italic">
+hData3D</I>
+ is not specified, SLICER3 creates a 2 x 2 x 2 array of byte data using the IDL BYTARR function. You can also load data interactively via the File menu of the SLICER3 application (see <A HREF="idl1a4.htm#26978" CLASS="XRef">
+Examples</A>
+ for details). </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=914860">
+ </A>
+If data are loaded in this fashion, any data passed to SLICER3 via a pointer (or pointers) is deleted, and the pointers become invalid.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=914861">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=914863">
+ </A>
+<A NAME="marker=914862">
+ </A>
+DATA_NAMES</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914864">
+ </A>
+Set this keyword equal to a string array of names for the data. The names appear on the droplist widget for the current data. If the number of elements of DATA_NAMES is less than the number of elements in <I CLASS="Italic">
+hData3D</I>
+ then default names will be generated for the unnamed data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=914866">
+ </A>
+<A NAME="marker=914865">
+ </A>
+DETACH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914867">
+ </A>
+Set this keyword to place the drawing area in a window that is detached from the SLICER3 control panel. The drawing area can only be detached if SLICER3 is not run as a modal application.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=914869">
+ </A>
+<A NAME="marker=914868">
+ </A>
+GROUP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914870">
+ </A>
+Set this keyword equal to the Widget ID of an existing widget that serves as the &quot;group leader&quot; for the SLICER3 graphical user interface. When a group leader is destroyed, all widgets in the group are also destroyed. If SLICER3 is started from a widget application, then GROUP should <I CLASS="Italic">
+always</I>
+ be specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=914872">
+ </A>
+<A NAME="marker=914871">
+ </A>
+MODAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914873">
+ </A>
+Set this keyword to block user interaction with all other widgets (and block the command line) until the SLICER3 exits. If SLICER3 is started from some other widget-based application, then it is usually advisable to run SLICER3 with the MODAL keyword set.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=914874">
+ </A>
+SLICER3 modifies the current color table, as well as various elements of the plotting system (i.e., the &quot;!X&quot;, &quot;!Y&quot;, &quot;!Z&quot;, and &quot;!P&quot; system variables). If the MODAL keyword is set (recommended), then SLICER3 will, upon exit, restore these system variables (and the color tables) to the values they had when SLICER3 was started. </LI>
+</UL>
+<DIV>
+<CENTER><IMG SRC="GRAPHICS/slicer3_1.gif" BORDER=0>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=914878">
+ </A>
+The SLICER3 Graphical User Interface</H3>
+<P CLASS="Body">
+<A NAME="pgfId=914881">
+ </A>
+The following options are available via SLICER3's graphical user interface.</P>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=914882">
+ </A>
+File Menu</H4>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914883">
+ </A>
+Load</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914884">
+ </A>
+Select this menu option to choose a file containing a 3D array (or arrays) to load into SLICER3. The file must have been written in the format specified by <A HREF="idl1a4.htm#30863" CLASS="XRef">
+SLICER3 Data File Structure</A>
+. For each data array in the file, the following values must be included. Note that the first six values are returned by the IDL SIZE function; see <A HREF="idl1a4.htm#26978" CLASS="XRef">
+Examples</A>
+ for an example of how to create a data file suitable for SLICER3 with just a few IDL commands.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=914951">
+ </A>
+<A NAME="30863">
+ </A>
+SLICER3 Data File Structure</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=914890">
+ </A>
+Data item</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=914892">
+ </A>
+Data Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=914894">
+ </A>
+Number of Bytes</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914896">
+ </A>
+Number of dimension in array. (Note: This is always 3 for valid SLICER3 data.)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914898">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914900">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914902">
+ </A>
+Size of first dimension.</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914904">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914906">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914908">
+ </A>
+Size of second dimension.</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914910">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914912">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914914">
+ </A>
+Size of third dimension.</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914916">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914918">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914920">
+ </A>
+Data type (Must be type 1 through 5. See <A HREF="idl1a1.htm#51745" CLASS="XRef">
+SIZE</A>
+ for a list of data types types.)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914922">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914924">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914926">
+ </A>
+Total number of elements (dimX, dimY, dimZ).</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914928">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914930">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914932">
+ </A>
+Number of characters in data name. (See <A HREF="idl1bd.htm#33905" CLASS="XRef">
+STRLEN</A>
+ for the easiest way to determine this number.)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914934">
+ </A>
+long</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914936">
+ </A>
+4</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914938">
+ </A>
+Data name</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914940">
+ </A>
+byte</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914942">
+ </A>
+strlen()</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914944">
+ </A>
+3D data array.</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914946">
+ </A>
+varies</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=914948">
+ </A>
+varies</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=914957">
+ </A>
+If multiple arrays are present in the file, they must all have the same dimensions. </P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=914961">
+ </A>
+Files saved by the &quot;Save Subset&quot; operation (see below) are suitable for input via the &quot;Load&quot; operation.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=914962">
+ </A>
+Data files that are moved from one platform to another may not load as expected, due to byte ordering differences. See the &quot;<A HREF="idl1f.htm#64112" CLASS="XRef">
+BYTEORDER</A>
+&quot; and &quot;<A HREF="idl1cb.htm#86774" CLASS="XRef">
+SWAP_ENDIAN</A>
+&quot; for details.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914963">
+ </A>
+Save/Save Subset</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914964">
+ </A>
+SLICER3 must be in BLOCK mode to for this option to be available.</P>
+<P CLASS="Body">
+<A NAME="pgfId=914965">
+ </A>
+Select this menu option to save a subset of the 3D data enclosed in the current block to the specified file. Subsets saved in this fashion are suitable for loading via the &quot;Load&quot; menu option. If multiple 3D arrays are available when this option is selected, multiple subsets are saved to the file.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914966">
+ </A>
+Save/Save Tiff Image</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914967">
+ </A>
+Select this menu option to save the contents of the current SLICER3 image window as a TIFF image in the specified file. When running in 8-bit mode, a &quot;Class P&quot; palette color TIFF file is created. In 24-bit mode, a &quot;Class R&quot; (interleaved by image) TIFF file is created.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914968">
+ </A>
+Quit</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914969">
+ </A>
+Select this menu option to exit SLICER3.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=914970">
+ </A>
+Tools Menu</H4>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914971">
+ </A>
+Erase</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914972">
+ </A>
+Select this menu option to erase the display window and delete all the objects in the display list.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914973">
+ </A>
+Delete/...</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914974">
+ </A>
+As graphical objects are created, they are added to the display list. Select this menu option to delete a specific object from the list. When an object is deleted, the screen is redrawn with the remaining objects.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914975">
+ </A>
+Colors/Reset Colors</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914976">
+ </A>
+Select this menu option to restore the original color scheme.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914977">
+ </A>
+Colors/Differential Shading</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914978">
+ </A>
+Use this menu option to change the percentage of differential shading applied to the X, Y, and Z slices.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914979">
+ </A>
+Colors/Slice/Block</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914980">
+ </A>
+Use this menu option to launch the XLOADCT application to modify the colors used for slices and blocks</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914981">
+ </A>
+Colors/Surface</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914982">
+ </A>
+Use this menu option to launch the XLOADCT application to modify the colors used for isosurfaces.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914983">
+ </A>
+Colors/Projection</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914984">
+ </A>
+Use this menu option to launch the XLOADCT application to modify the colors used for projections.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=914985">
+ </A>
+On some platforms, the selected colors may not become visible until after you exit the &quot;XLOADCT&quot; application.</LI>
+</UL>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914986">
+ </A>
+Options</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914987">
+ </A>
+Select this menu option to display a panel that allows you to set:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=914988">
+ </A>
+The axis visibility.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=914989">
+ </A>
+The wire-frame cube visibility.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=914990">
+ </A>
+The display window size.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=914991">
+ </A>
+About Menu</H4>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=914992">
+ </A>
+About Slicer</H6>
+<P CLASS="Body">
+<A NAME="pgfId=914993">
+ </A>
+Select this menu item to display a text file containing information about SLICER3.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=914994">
+ </A>
+Main Draw Window</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914995">
+ </A>
+Operations available in the Main Draw Window are dependent on the mode selected in the Mode Pulldown menu. In general, when coordinate input is required from the user, it is performed by clicking a mouse button on the &quot;surface&quot; of the wire-frame cube that surrounds the data. This 3D location is then used as the basis for whatever input is needed. In most cases, the &quot;front&quot; side of the cube is used. In a few cases, the coordinate input is on the &quot;back&quot; side of the cube.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=914996">
+ </A>
+Data Pulldown Menu</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914997">
+ </A>
+If multiple datasets are currently available in SLICER3, this menu allows you to select which data will be displayed in the Main Draw Window. Slices, blocks, iso-surfaces, etc. are created from the currently selected data. If only one dataset is loaded, this menu is inactive.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=914998">
+ </A>
+Mode Pulldown Menu</H4>
+<P CLASS="Body">
+<A NAME="pgfId=914999">
+ </A>
+This menu is used to select the current mode of operation.</P>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915005">
+ </A>
+Slice Mode<CENTER><IMG SRC="GRAPHICS/slicer3_2.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915006">
+ </A>
+To display a slice, click and drag the left mouse button on the wire-frame cube. When the button is released, a slice through the data will be drawn at that location.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915007">
+ </A>
+Draw Radio Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915008">
+ </A>
+When in Draw mode, new slices will be merged into the current Z-buffer contents.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915009">
+ </A>
+Expose Radio Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915010">
+ </A>
+When in Expose mode, new slices will be drawn in front of everything else.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915011">
+ </A>
+Orthogonal Radio Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915012">
+ </A>
+When in Orthogonal mode, use the left mouse button in the main draw window to position and draw an orthogonal slicing plane. Clicking the right mouse button in the main draw window (or any mouse button in the small window) will toggle the slicing plane orientation.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=915013">
+ </A>
+X/Y/Z Radio Buttons</H6>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=915014">
+ </A>
+X: This sets the orthogonal slicing plane orientation to be perpendicular to the X axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=915015">
+ </A>
+Y: This sets the orthogonal slicing plane orientation to be perpendicular to the Y axis.</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=915016">
+ </A>
+Z: This sets the orthogonal slicing plane orientation to be perpendicular to the Z axis.</LI>
+</UL>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915017">
+ </A>
+Oblique Radio Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915018">
+ </A>
+Clicking any mouse button in the small window will reset the oblique slicing plane to its default orientation.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915019">
+ </A>
+Normal Radio Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915020">
+ </A>
+When in this mode, click and drag the left mouse button in the big window to set the surface normal for the oblique slicing plane.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915021">
+ </A>
+Center Radio Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915022">
+ </A>
+When in this mode, click and drag the left mouse button in the big window to set the center point for the surface normal.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=915023">
+ </A>
+Display Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915024">
+ </A>
+Clicking this button will cause an oblique slicing plane to be drawn.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915030">
+ </A>
+Block Mode<CENTER><IMG SRC="GRAPHICS/slicer3_3.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915031">
+ </A>
+When in Block mode, use the left mouse button in the main draw window to set the location for the &quot;purple&quot; corner of the block. Use the right mouse button to locate the opposite &quot;blue&quot; corner of the block. When in Block mode, the &quot;Save Subset&quot; operation under the main &quot;File&quot; menu is available.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915032">
+ </A>
+Add</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915033">
+ </A>
+When in this mode, the block will be &quot;added&quot; to the current Z-buffer contents.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915034">
+ </A>
+Subtract</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915035">
+ </A>
+When in this mode, the block will be &quot;subtracted&quot; from the current Z-buffer contents. Subtract mode is only effective when the block intersects some other object in the display (such as an iso-surface).</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915036">
+ </A>
+Display Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915037">
+ </A>
+Clicking this button will cause the block to be drawn.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915043">
+ </A>
+Surface Mode<CENTER><IMG SRC="GRAPHICS/slicer3_4.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915044">
+ </A>
+In iso-surface is like a contour line on a contour map. On one side of the line, the elevation is higher than the contour level, and on the other side of the line, the elevation is lower than the contour level. An iso-surface, however, is a 3D surface that passes through the data such that the data values on one side of the surface are higher than the threshold value, and on the other side of the surface, the data values are lower than the threshold value.</P>
+<P CLASS="Body">
+<A NAME="pgfId=915045">
+ </A>
+When in Surface mode, a logarithmic histogram plot of the data is displayed in the small draw window. Click and drag a mouse button on this plot to set the iso-surface threshold value. This value is also shown in the text widget below the plot. The threshold value may also be set by typing a new value in this text widget. The histogram plot is affected by the current threshold settings. (See Threshold mode, below).</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915046">
+ </A>
+Low</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915047">
+ </A>
+Selecting this mode will cause the iso-surface polygon facing to face towards the lower data values. Usually, this is the mode to use when the iso-surface is desired to surround high data values.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915048">
+ </A>
+High</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915049">
+ </A>
+Selecting this mode will cause the iso-surface polygon facing to face towards the higher data values. Usually, this is the mode to use when the iso-surface is desired to surround low data values.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=915050">
+ </A>
+Shading pulldown menu</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915051">
+ </A>
+Iso-surfaces are normally rendered with light-source shading. If multiple datasets are currently loaded, then this menu allows the selection of a different 3D array for the source of the iso-surface shading values. If only one dataset is currently loaded, then this menu is inactive.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915052">
+ </A>
+Display Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915053">
+ </A>
+Clicking this button will cause the iso-surface to be created and drawn. Iso-surfaces often consist of tens of thousands of polygons, and can sometimes take considerable time to create and render.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915059">
+ </A>
+Projection Mode<CENTER><IMG SRC="GRAPHICS/slicer3_5.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915060">
+ </A>
+A &quot;voxel&quot; projection of a 3D array is the projection of the data values within that array onto a viewing plane. This is similar to taking an X-ray image of a 3D object.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915061">
+ </A>
+Max</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915062">
+ </A>
+Select this mode for a Maximum intensity projection.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915063">
+ </A>
+Avg</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915064">
+ </A>
+Select this mode for an Average intensity projection.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915065">
+ </A>
+Low</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915066">
+ </A>
+Select this mode for a Low resolution projection.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915067">
+ </A>
+Med</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915068">
+ </A>
+Select this mode for a Medium resolution projection.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915069">
+ </A>
+High</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915070">
+ </A>
+Select this mode for a High resolution projection.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915071">
+ </A>
+Depth Queue % Slider</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915072">
+ </A>
+Use the slider to set the depth queue percent. A value of 50, for example, indicates that the farthest part of the projection will be 50% as bright as the closest part of the projection.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915073">
+ </A>
+Display Button</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915074">
+ </A>
+Clicking this button will cause the projection to be calculated and drawn. Projections can sometimes take considerable time to display. Higher resolution projections take more computation time.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915080">
+ </A>
+Threshold Mode<CENTER><IMG SRC="GRAPHICS/slicer3_6.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915081">
+ </A>
+When in Threshold mode, a logarithmic histogram plot of the data is displayed in the small draw window. Click and drag the left mouse button on this plot to set the minimum and maximum threshold values. To expand a narrow range of data values into the full range of available colors, set the threshold range before displaying slices, blocks, or projections. The threshold settings also affect the histogram plot in &quot;Surface&quot; mode. The minimum and maximum threshold values are also shown in the text widgets below the histogram plot.</P>
+<P CLASS="Body">
+<A NAME="pgfId=915082">
+ </A>
+Click and drag the right mouse button on the histogram plot to set the transparency threshold. Portions of any slice, block, or projection that are less than the transparency value are not drawn (clear). Iso-surfaces are not affected by the transparency threshold. The transparency threshold value is also shown in a text widget below the histogram plot.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915083">
+ </A>
+Min</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915084">
+ </A>
+In this text widget, a minimum threshold value can be entered.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915085">
+ </A>
+Max</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915086">
+ </A>
+In this text widget, a maximum threshold value can be entered.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915087">
+ </A>
+Transp.</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915088">
+ </A>
+In this text widget, a transparency threshold value can be entered.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915094">
+ </A>
+Profile Mode<CENTER><IMG SRC="GRAPHICS/slicer3_7.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915095">
+ </A>
+In Profile mode, a plot is displayed showing the data values along a line. This line is also shown superimposed on the data in the main draw window. The bottom of the plot corresponds to the &quot;purple&quot; end of the line, and the top of the plot corresponds to the &quot;blue&quot; end of the line.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915096">
+ </A>
+Orthogonal</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915097">
+ </A>
+Click and drag the left mouse button to position the profile line, based upon a point on the &quot;front&quot; faces of the wire-frame cube. Click and drag the right mouse button to position the profile line, based upon a point on the &quot;back&quot; faces of the wire-frame cube. As the profile line is moved, The profile plot is dynamically updated.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915098">
+ </A>
+Oblique</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915099">
+ </A>
+Click and drag the left mouse button to position the &quot;purple&quot; end of the profile line on one of the &quot;front&quot; faces of the wire-frame cube. Click and drag the right mouse button to position the &quot;blue&quot; end of the profile line on one of the &quot;back&quot; faces of the wire-frame cube. As the profile line is moved, The profile plot is dynamically updated.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915105">
+ </A>
+Probe Mode<CENTER><IMG SRC="GRAPHICS/slicer3_8.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915106">
+ </A>
+In Probe mode, click and drag a mouse button over an object in the main draw window. The actual X-Y-Z location within the data volume is displayed in the three text widgets. Also, the data value at that 3D location is displayed in the status window, above the main draw window. If the cursor is inside the wire-frame cube, but not on any object, then the status window displays &quot;No data value&quot;, and the three text widgets are empty. If the cursor is outside the wire-frame cube, then the status window and text widgets are empty.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=915107">
+ </A>
+X</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915108">
+ </A>
+Use this text widget to enter the X coordinate for the probe.</P>
+<P CLASS="Body">
+<A NAME="pgfId=948781">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=915109">
+ </A>
+Y</P>
+<P CLASS="Body">
+<A NAME="pgfId=915110">
+ </A>
+Use this text widget to enter the Y coordinate for the probe.</P>
+<P CLASS="Body">
+<A NAME="pgfId=915111">
+ </A>
+Z</P>
+<P CLASS="Body">
+<A NAME="pgfId=915112">
+ </A>
+Use this text widget to enter the Z coordinate for the probe.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3">
+<A NAME="pgfId=915118">
+ </A>
+View Mode<CENTER><IMG SRC="GRAPHICS/slicer3_9.gif" ALIGN="RIGHT" BORDER=0>
+</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915119">
+ </A>
+In view mode, a small window shows the orientation of the data cube in the current view. As view parameters are changed, this window is dynamically updated. The main draw window is then updated when the user clicks on &quot;Display&quot;, or exits View mode.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R">
+<A NAME="pgfId=915120">
+ </A>
+Display</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915121">
+ </A>
+Clicking on this button will cause the objects in the main view window to be drawn in the new view. If any view parameters have been changed since the last time the main view was updated, the main view will be automatically redrawn when the user exits View mode.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915122">
+ </A>
+1st Rotation</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915123">
+ </A>
+Use this slider to set the angle of the first view rotation (in degrees). The droplist widget adjacent to the slider indicates which axis this rotation is about.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915124">
+ </A>
+2nd Rotation</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915125">
+ </A>
+Use this slider to set the angle of the second view rotation (in degrees). The droplist widget adjacent to the slider indicates which axis this rotation is about.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915126">
+ </A>
+Zoom % Slider</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915127">
+ </A>
+Use this slider to set the zoom factor percent. Depending upon the view rotations, SLICER3 may override this setting to ensure that all eight corners of the data cube are within the window.</P>
+</DIV>
+<DIV>
+<H6 CLASS="Heading-3R-Indent-1">
+<A NAME="pgfId=915128">
+ </A>
+Z % Slider</H6>
+<P CLASS="Body">
+<A NAME="pgfId=915129">
+ </A>
+Use this slider to set a scale factor for the Z axis (to compensate for the data's aspect ratio).</P>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=915130">
+ </A>
+Operational Details</H3>
+<P CLASS="Body">
+<A NAME="pgfId=915131">
+ </A>
+The SLICER3 procedure has the following side effects:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=915132">
+ </A>
+SLICER3 sets the position for the light source and enables back-facing polygons to be drawn (see the IDL &quot;SET_SHADING&quot; command).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=915133">
+ </A>
+SLICER3 overwrites the existing contents of the Z-buffer. Upon exiting SLICER3, the Z-buffer contents are the same as what was last displayed by SLICER3.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=915134">
+ </A>
+On 24-bit displays, SLICER3 sets the device to non-decomposed color mode (DEVICE, DECOMPOSED=0).</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=915135">
+ </A>
+SLICER3 breaks the color table into 6 &quot;bands&quot;, based upon the number of available colors (where <CODE CLASS="Code">
+max_color=!D.N_COLORS</CODE>
+ on 8-bit displays, and <CODE CLASS="Code">
+max_color=256</CODE>
+ on 24-bit displays and <CODE CLASS="Code">
+nColor = (max_color - 9) / 5</CODE>
+):</LI>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=915174">
+ </A>
+SLICER3 Band Start/End</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=915138">
+ </A>
+Band Start index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=915140">
+ </A>
+Band End index</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=915142">
+ </A>
+Used For</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915144">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915146">
+ </A>
+nColor-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915148">
+ </A>
+X Slices.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915150">
+ </A>
+nColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915152">
+ </A>
+(2*nColor)-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915154">
+ </A>
+Y Slices.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915156">
+ </A>
+2*nColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915158">
+ </A>
+(3*nColor)-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915160">
+ </A>
+Z Slices.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915162">
+ </A>
+3*nColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915164">
+ </A>
+(4*nColor)-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915166">
+ </A>
+Iso-surfaces</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915168">
+ </A>
+4*nColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915170">
+ </A>
+(5*nColor)-1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915172">
+ </A>
+Projections</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=915220">
+ </A>
+Annotation colors are the last &quot;band&quot;, and they are set up as shown in the table:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=915217">
+ </A>
+SLICER3 Color Bands</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=915181">
+ </A>
+Color index </P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=915183">
+ </A>
+Color</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915185">
+ </A>
+max_color - 1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915187">
+ </A>
+White</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915189">
+ </A>
+max_color - 2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915191">
+ </A>
+Yellow</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915193">
+ </A>
+max_color - 3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915195">
+ </A>
+Cyan</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915197">
+ </A>
+max_color - 4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915199">
+ </A>
+Purple</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915201">
+ </A>
+max_color - 5</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915203">
+ </A>
+Red</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915205">
+ </A>
+max_color - 6</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915207">
+ </A>
+Green</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915209">
+ </A>
+max_color - 7</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915211">
+ </A>
+Blue</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915213">
+ </A>
+max_color - 8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=915215">
+ </A>
+Black</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=915221">
+ </A>
+On 24-bit displays, you can often improve performance by running SLICER3 in 8-bit mode. This can be accomplished (on some platforms) by entering the following command at the start of the IDL session (before any windows are created):</P>
+<P CLASS="Code">
+<A NAME="pgfId=915222">
+ </A>
+Device, Pseudo_Color=8</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=915224">
+ </A>
+<A NAME="26978">
+ </A>
+Examples</H3>
+<P CLASS="Body">
+<A NAME="pgfId=915225">
+ </A>
+The following IDL commands open a data file from the IDL distribution and load it into SLICER3:</P>
+<P CLASS="Code">
+<A NAME="pgfId=915226">
+ </A>
+file=FILEPATH('head.dat', SUBDIR=['examples', 'data'])<BR>
+<EM CLASS="Comment">;
+Choose a data file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915227">
+ </A>
+OPENR, UNIT, file, /GET_LUN	<EM CLASS="Comment">;
+Open the data file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915228">
+ </A>
+data = BYTARR(80, 100, 57, /NOZERO)	<EM CLASS="Comment">;
+Create an array to hold the data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915229">
+ </A>
+READU, UNIT, data	<EM CLASS="Comment">;
+Read the data into the array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915230">
+ </A>
+CLOSE, UNIT	<EM CLASS="Comment">;
+Close the data file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915231">
+ </A>
+hData = PTR_NEW(data, /NO_COPY)	<EM CLASS="Comment">;
+Create a pointer to the data array.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915232">
+ </A>
+SLICER3, hdata, DATA_NAMES='Dave'	<EM CLASS="Comment">;
+Load the data into SLICER3.</EM>
+</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=915233">
+ </A>
+If data are loaded via the File menu after SLICER3 is launched with a pointer argument (as shown above), the pointer becomes invalid. You can use an IDL statement like the following to &quot;clean up&quot; after calling SLICER3 in this fashion:</LI>
+</UL>
+<P CLASS="Code-Indent">
+<A NAME="pgfId=915234">
+ </A>
+if PTR_VALID(hdata) then PTR_FREE, hdata</P>
+<P CLASS="Body">
+<A NAME="pgfId=915235">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=915236">
+ </A>
+Because we did not launch SLICER3 with the MODAL keyword, the last contents of the main draw window still reside in IDL's Z-buffer. To retrieve this image after exiting SLICER3, use the following IDL statements:</P>
+<P CLASS="Code">
+<A NAME="pgfId=915237">
+ </A>
+current_device = !D.Name	<EM CLASS="Comment">;
+Save the current graphics device.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915238">
+ </A>
+SET_PLOT, 'Z'	<EM CLASS="Comment">;
+Change to the Z-buffer device.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915239">
+ </A>
+image_buffer = TVRD()	<EM CLASS="Comment">;
+Read the image from the Z-buffer.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915240">
+ </A>
+SET_PLOT, current_device	<EM CLASS="Comment">;
+Return to the original graphics device.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915241">
+ </A>
+TV, image_buffer	<EM CLASS="Comment">;
+Display the image. </EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=915242">
+ </A>
+&nbsp;</P>
+<P CLASS="Body">
+<A NAME="pgfId=915243">
+ </A>
+The following IDL commands manually create a data save file suitable for dynamic loading into SLICER3. Note that if you load data into SLICER3 as shown above, you can also create save files by switching to BLOCK mode and using the Save Subset menu option.</P>
+<P CLASS="Code">
+<A NAME="pgfId=915244">
+ </A>
+data_1 = INDGEN(20,30,40)	<EM CLASS="Comment">;
+Store some 3D data in a variable called &quot;data_1&quot;.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915245">
+ </A>
+data_2 = FINDGEN(20,30,40)<EM CLASS="Comment">;
+	Store some 3D data in a variable called &quot;data_2&quot;.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915246">
+ </A>
+data_1_name ='Test Data 1'	</P>
+<P CLASS="Code">
+<A NAME="pgfId=915247">
+ </A>
+data_2_name ='Data 2'	<EM CLASS="Comment">;
+Define the names for the datasets. Their names will appear in the &quot;Data&quot; pulldown menu in SLICER3.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915248">
+ </A>
+dataFile = PICKFILE()	<EM CLASS="Comment">;
+Select a data file name.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915249">
+ </A>
+GET_LUN, lun	<EM CLASS="Comment">;
+Write the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=915250">
+ </A>
+OPENW, lun, dataFile</P>
+<P CLASS="Code">
+<A NAME="pgfId=915251">
+ </A>
+WRITEU, lun, SIZE(data_1)</P>
+<P CLASS="Code">
+<A NAME="pgfId=915252">
+ </A>
+WRITEU, lun, STRLEN(data_1_name)</P>
+<P CLASS="Code">
+<A NAME="pgfId=915253">
+ </A>
+WRITEU, lun, BYTE(data_1_name)</P>
+<P CLASS="Code">
+<A NAME="pgfId=915254">
+ </A>
+WRITEU, lun, data_1</P>
+<P CLASS="Code">
+<A NAME="pgfId=915255">
+ </A>
+WRITEU, lun, SIZE(data_2)</P>
+<P CLASS="Code">
+<A NAME="pgfId=915256">
+ </A>
+WRITEU, lun, STRLEN(data_2_name)</P>
+<P CLASS="Code">
+<A NAME="pgfId=915257">
+ </A>
+WRITEU, lun, BYTE(data_2_name)</P>
+<P CLASS="Code">
+<A NAME="pgfId=915258">
+ </A>
+WRITEU, lun, data_2</P>
+<P CLASS="Code">
+<A NAME="pgfId=915259">
+ </A>
+CLOSE, lun</P>
+<P CLASS="Code">
+<A NAME="pgfId=915260">
+ </A>
+FREE_LUN, lun</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=915261">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=915271">
+ </A>
+<A HREF="idlbd.htm#17743" CLASS="XRef">
+GRID3</A>
+, <A HREF="idl99.htm#75003" CLASS="XRef">
+EXTRACT_SLICE</A>
+, <A HREF="idl19a.htm#78379" CLASS="XRef">
+SHADE_VOLUME</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

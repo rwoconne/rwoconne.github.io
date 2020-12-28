@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> WRITE_NRIF</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl211.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl20f.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=756492">
+ </A>
+<A NAME="93174">
+ </A>
+WRITE_NRIF</H2>
+<P CLASS="Body">
+<A NAME="pgfId=756495">
+ </A>
+The <A NAME="marker=756493">
+ </A>
+WRITE_NRIF procedure writes an image and its color table vectors to an <A NAME="marker=756494">
+ </A>
+NCAR Raster Interchange Format (NRIF) rasterfile.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756496">
+ </A>
+WRITE_NRIF only writes 8- or 24-bit deep rasterfiles of types &quot;Indexed Color&quot; (8-bit) and &quot;Direct Color integrated&quot; (24-bit). The color map is included only for 8-bit files.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756497">
+ </A>
+See the document &quot;NCAR Raster Interchange Format and TAGS Raster Reference Manual,&quot; available from the Scientific Computing Division, National Center for Atmospheric Research, Boulder, CO, 80307-3000, for information on the structure of NRIF files.</P>
+<P CLASS="Body">
+<A NAME="pgfId=756498">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+write_nrif.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756499">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=756500">
+ </A>
+WRITE_NRIF, <EM CLASS="Emphasis">
+File, Image, [R, G, B]</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=756501">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756502">
+ </A>
+File</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756503">
+ </A>
+A scalar string containing the full path name of the NRIF file to write.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756504">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756505">
+ </A>
+The byte array to be written to the NRIF file. If <EM CLASS="Emphasis">
+Image</EM>
+ has the dimensions (<EM CLASS="Emphasis">
+n,m</EM>
+), an 8-bit NRIF file with color tables is created. If <EM CLASS="Emphasis">
+Image</EM>
+ has the dimensions (3,<EM CLASS="Emphasis">
+n,m</EM>
+), a 24-bit NRIF file is created, where each byte triple represents the red, green, and blue intensities at (<EM CLASS="Emphasis">
+n,m</EM>
+) on a scale from 0 to 255. The NRIF image will be rendered from bottom to top, in accordance with IDL standards.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=756506">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=756507">
+ </A>
+The Red, Green, and Blue color vectors to be used as a color table with 8-bit images. If color vectors are supplied, they are included in the output (8-bit images only). If <EM CLASS="Emphasis">
+R</EM>
+, <EM CLASS="Emphasis">
+G</EM>
+, <EM CLASS="Emphasis">
+B</EM>
+ values are not provided, the last color table established using LOADCT is included. If no color table has been established, WRITE_NRIF calls LOADCT to load the grayscale entry (table 0).</P>
+<P CLASS="Body">
+<A NAME="pgfId=756508">
+ </A>
+Note: WRITE_NRIF does not recognize color vectors loaded directly using TVLCT, so if a custom color table is desired and it is not convenient to use XPALETTE, include the R, G, and B vectors that were used to create the color table.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

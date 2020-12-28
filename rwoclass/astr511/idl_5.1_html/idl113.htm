@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> MEAN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl114.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl112.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=888300">
+ </A>
+<A NAME="18025">
+ </A>
+MEAN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=888305">
+ </A>
+The <A NAME="marker=888304">
+ </A>
+MEAN function computes the mean of a numeric vector. MEAN calls the IDL function MOMENT.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888306">
+ </A>
+Calling sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888307">
+ </A>
+Result = MEAN(<I CLASS="Italic">
+X</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888308">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888309">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888310">
+ </A>
+An <I CLASS="Italic">
+n</I>
+-element, integer, double-precision or floating-point vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888311">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888313">
+ </A>
+<A NAME="marker=888312">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888314">
+ </A>
+If this keyword is set, computations are done in double precision arithmetic.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=888316">
+ </A>
+<A NAME="marker=888315">
+ </A>
+NAN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=888317">
+ </A>
+Set this keyword to cause the routine to check for occurrences of the IEEE floating-point value NaN in the input data. Elements with the value NaN are treated as missing data. (See <A HREF="..html#29444" CLASS="XRef">
+Special Floating-Point Values</A>
+ for more information on IEEE floating-point values.)</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888321">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=888322">
+ </A>
+x = [65, 63, 67, 64, 68, 62, 70, 66, 68, 67, 69, 71, 66, 65, 70]<BR>
+<EM CLASS="Comment">;
+ Define the n-element vector of sample data.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=888323">
+ </A>
+result = MEAN(x)<EM CLASS="Comment">;
+	Compute the standard deviation.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=888324">
+ </A>
+PRINT, result	<EM CLASS="Comment">;
+Print the result.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=888325">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=888326">
+ </A>
+66.7333</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=888327">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=888346">
+ </A>
+<A HREF="routinesK-L.html#36156" CLASS="XRef">
+</A>
+, <A HREF="idl114.htm#22002" CLASS="XRef">
+MEANABSDEV</A>
+, <A HREF="idl11c.htm#59358" CLASS="XRef">
+MOMENT</A>
+, <A HREF="idl1b5.htm#11350" CLASS="XRef">
+STDDEV</A>
+, <A HREF="idl1a2.htm#38157" CLASS="XRef">
+SKEWNESS</A>
+, <A HREF="idl1f2.htm#16071" CLASS="XRef">
+VARIANCE</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> COLOR_QUAN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl38.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl36.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=676152">
+ </A>
+<A NAME="28741">
+ </A>
+COLOR_QUAN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=676153">
+ </A>
+The <A NAME="marker=672653">
+ </A>
+COLOR_QUAN <A NAME="marker=672654">
+ </A>
+function quantizes a <A NAME="marker=672655">
+ </A>
+true-color image and returns a <A NAME="marker=672656">
+ </A>
+pseudo-color image and palette to display the image on standard pseudo-color displays. The output image and palette can have from 2 to 256 colors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676154">
+ </A>
+COLOR_QUAN solves the general problem of accurately displaying decomposed, true-color images, that contain a palette of up to 2<SUP CLASS="Superscript">
+24</SUP>
+ colors, on pseudo-color displays that can only display 256 (or fewer) simultaneous colors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676155">
+ </A>
+One of two color quantization methods can be used:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=676156">
+ </A>
+Method 1 is a statistical method that attempts to find the N colors that most accurately represent the original color distribution. This algorithm uses a variation of the Median Cut Algorithm, described in &quot;Color Image Quantization for Frame Buffer Display&quot;, from <I CLASS="Italics">
+Computer Graphics</I>
+, Volume 16, Number 3 (July, 1982), Page 297. It repeatedly subdivides the color space into smaller and smaller rectangular boxes, until the requested number of colors are obtained.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=676157">
+ </A>
+The original colors are then mapped to the nearest output color, and the original image is resampled to the new palette with optional Floyd-Steinberg color dithering. The resulting pseudo-color image and palette are usually a good approximation of the original image.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676158">
+ </A>
+The number of colors in the output palette defaults to the number of colors supported by the currently-selected graphics output device. The number of colors can also be specified by the COLOR keyword parameter.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=676159">
+ </A>
+Method 2, selected by setting the keyword parameter CUBE, divides the three-dimensional color space into equal-volume cubes. Each color axis is divided into CUBE segments, resulting in CUBE<SUP CLASS="Superscript">
+3</SUP>
+ volumes. The original input image is sampled to this color space using Floyd-Steinberg dithering, which distributes the quantization error to adjacent pixels.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=676160">
+ </A>
+The CUBE method has the advantage that the color tables it produces are independent of the input image, so that multiple quantized images can be viewed simultaneously. The statistical method usually provides a better-looking result and a smaller global error.</P>
+<P CLASS="Body">
+<A NAME="pgfId=676161">
+ </A>
+COLOR_QUAN can use the same color mapping for a series of images. See the descriptions of the GET_TRANSLATION, MAP_ALL, and TRANSLATION keywords, below.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676162">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676163">
+ </A>
+Result = COLOR_QUAN(<I CLASS="Italics">
+Image_R, Image_G, Image_B, R, G, B</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=676164">
+ </A>
+or</P>
+<P CLASS="Body">
+<A NAME="pgfId=676165">
+ </A>
+Result = COLOR_QUAN(<I CLASS="Italics">
+Image, Dim, R, G, B</I>
+)</P>
+<P CLASS="Body">
+<A NAME="pgfId=676166">
+ </A>
+Note that the input image parameter can be passed as either three, separate color-component arrays (<I CLASS="Italics">
+Image_R</I>
+, <I CLASS="Italics">
+Image_G</I>
+, <I CLASS="Italics">
+Image_B</I>
+) or as a three-dimensional array containing all three components, <I CLASS="Italics">
+Image</I>
+, and a scalar, <I CLASS="Italics">
+Dim</I>
+, indicating the dimension over which the colors are interleaved.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676167">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676168">
+ </A>
+Image_R, Image_G, Image_B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676169">
+ </A>
+Arrays containing the red, green, and blue components of the decomposed true-color image. For best results, the input image(s) should be scaled to the range of 0 to 255.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676170">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676171">
+ </A>
+A three-dimensional array containing all three components of the true-color image.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676172">
+ </A>
+Dim</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676173">
+ </A>
+A scalar that indicates the method of color interleaving in the <I CLASS="Italics">
+Image</I>
+ parameter. A value of 1 indicates interleaving by pixel: (3, <I CLASS="Italics">
+n</I>
+,<I CLASS="Italics">
+ m</I>
+). A value of 2 indicates interleaving by row: (<I CLASS="Italics">
+n</I>
+, 3, <I CLASS="Italics">
+m</I>
+). A value of 3 indicates interleaving by image: (<I CLASS="Italics">
+n</I>
+, <I CLASS="Italics">
+m</I>
+, 3).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676174">
+ </A>
+R, G, B</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676175">
+ </A>
+Three output byte arrays containing the red, green, and blue components of the output palette.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676176">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676177">
+ </A>
+<A NAME="marker=672659">
+ </A>
+COLORS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676178">
+ </A>
+The number of colors in the output palette. This value must at least 2 and not greater than 256. The default is the number of colors supported by the current graphics output device.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676179">
+ </A>
+<A NAME="marker=672660">
+ </A>
+CUBE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676180">
+ </A>
+If this keyword is set, the color space is divided into CUBE<SUP CLASS="Superscript">
+3</SUP>
+ volumes, to which the input image is quantized. This result is always Floyd-Steinberg dithered. The value of CUBE can range from 2 to 6; providing from 2<SUP CLASS="Superscript">
+3</SUP>
+ = 8, to 6<SUP CLASS="Superscript">
+3</SUP>
+ = 216 output colors. If this keyword is set, the COLORS, DITHER, and ERROR keywords are ignored.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676181">
+ </A>
+<A NAME="marker=672664">
+ </A>
+DITHER</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676182">
+ </A>
+Set this keyword to dither the output image. Dithering can improve the appearance of the output image, especially when using relatively few colors.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676183">
+ </A>
+<A NAME="marker=672665">
+ </A>
+ERROR</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676184">
+ </A>
+Set this optional keyword to a named variable. A measure of the quantization error is returned. This error is proportional to the square of the Euclidean distance, in RGB space, between corresponding colors in the original and output images.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676185">
+ </A>
+<A NAME="marker=672666">
+ </A>
+GET_TRANSLATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676186">
+ </A>
+Set this keyword to a named variable in which the mapping between the original RGB triples (in the true-color image) and the resulting pseudo-color indices is returned as a vector. Do not use this keyword if CUBE is set.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676187">
+ </A>
+<A NAME="marker=672667">
+ </A>
+MAP_ALL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676188">
+ </A>
+Set this keyword to establish a mapping for all possible RGB triples into pseudo-color indices. Set this keyword only if GET_TRANSLATION is also present. Note that mapping all possible colors requires more compute time and slightly degrades the quality of the resultant color matching.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=676189">
+ </A>
+<A NAME="marker=672668">
+ </A>
+TRANSLATION</H4>
+<P CLASS="Body">
+<A NAME="pgfId=676190">
+ </A>
+Set this keyword to a vector of translation indices obtained by a previous call to COLOR_QUAN using the GET_TRANSLATION keyword. The resulting image is quantized using this vector.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=676191">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=676192">
+ </A>
+The following code segment reads a true-color, row interleaved, image from a disk file, and displays it on the current graphics display, using a palette of 128 colors:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676193">
+ </A>
+OPENR, unit, 'XXX.DAT', /GET_LUN	<EM CLASS="Comment">;
+Open an input file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676194">
+ </A>
+a = BYTARR(512, 3, 480)	<EM CLASS="Comment">;
+Dimensions of the input image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676195">
+ </A>
+READU, unit, a	<EM CLASS="Comment">;
+Read the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676196">
+ </A>
+FREE LUN, unit	<EM CLASS="Comment">;
+Close the file.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676197">
+ </A>
+TV, COLOR_QUAN(a, 2, r, g, b, COLORS=128)		<EM CLASS="Comment">;
+Show the quantized image. The 2 indicates that the colors are interleaved by row.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=676198">
+ </A>
+TVLCT, r, g, b	<EM CLASS="Comment">;
+Load the new palette.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=676199">
+ </A>
+To quantize the image into 216 equal-volume color cubes, replace the call to COLOR_QUAN with the following:</P>
+<P CLASS="Code">
+<A NAME="pgfId=676200">
+ </A>
+TV, COLOR_QUAN(a, 2, r, g, b, CUBE=6)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=35993">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=53173">
+ </A>
+<A HREF="idl152.htm#99086" CLASS="XRef">
+PSEUDO</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

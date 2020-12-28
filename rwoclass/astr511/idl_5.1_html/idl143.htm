@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> POLYFILLV</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl144.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl142.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=678285">
+ </A>
+<A NAME="19180">
+ </A>
+POLYFILLV</H2>
+<P CLASS="Body">
+<A NAME="pgfId=678286">
+ </A>
+The <A NAME="marker=673606">
+ </A>
+POLYFILLV function returns a vector containing the one-dimensional subscripts of the array elements contained inside a <A NAME="marker=673607">
+ </A>
+polygon defined by vectors <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=810268">
+ </A>
+If no points are contained within the polygon, a -1 is returned and an informational message is printed. The <I CLASS="Italic">
+X</I>
+ and <I CLASS="Italic">
+Y</I>
+ parameters are vectors that contain the subscripts of the vertices that define the polygon in the coordinate system of the two-dimensional <I CLASS="Italic">
+S</I>
+<SUB CLASS="Subscript">
+x</SUB>
+ by <I CLASS="Italic">
+S</I>
+<SUB CLASS="Subscript">
+y</SUB>
+ array. The <I CLASS="Italic">
+S</I>
+<SUB CLASS="Subscript">
+x</SUB>
+ and <I CLASS="Italic">
+S</I>
+<SUB CLASS="Subscript">
+y</SUB>
+ parameters define the number of columns and rows in the array enclosing the polygon. At least three points must be specified, and all points should lie within the limits: 0 <EM CLASS="Symbol">
+&#163;</EM>
+ X<EM CLASS="Emphasis">
+i</EM>
+ &lt; S<EM CLASS="Emphasis">
+x</EM>
+ and 0 <EM CLASS="Symbol">
+&#163;</EM>
+ Y<SUB CLASS="Subscript">
+i</SUB>
+ &lt; S<EM CLASS="Emphasis">
+y</EM>
+ <EM CLASS="Symbol">
+&quot;</EM>
+<EM CLASS="Emphasis">
+i</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=810272">
+ </A>
+As with the POLYFILL procedure, the polygon is defined by connecting each point with its successor and the last point with the first. This function is useful for defining, analyzing, and displaying regions of interest within a two-dimensional array.</P>
+<P CLASS="Body">
+<A NAME="pgfId=678288">
+ </A>
+The scan line coordinate system defined by Rogers in <I CLASS="Italic">
+Procedural Elements for Computer Graphics</I>
+, McGraw-Hill, 1985, page 71, is used. In this system, the scan lines are considered to pass through the center of each row of pixels. Pixels are activated if the center of the pixel is to the right of the intersection of the scan line and the polygon edge within the interval.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678289">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678290">
+ </A>
+Result = POLYFILLV(<I CLASS="Italic">
+X, Y, S</I>
+<SUB CLASS="Subscript">
+x</SUB>
+<I CLASS="Italic">
+, S</I>
+<SUB CLASS="Subscript">
+y</SUB>
+<I CLASS="Italic">
+ [, Run_Length]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678291">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678292">
+ </A>
+X</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678293">
+ </A>
+A vector containing the X subscripts of the vertices that define the polygon.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678294">
+ </A>
+Y</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678295">
+ </A>
+A vector containing the Y subscripts of the vertices that define the polygon.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678296">
+ </A>
+S<SUB CLASS="Subscript">
+x</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678297">
+ </A>
+The number of columns in the array surrounding the polygon.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678298">
+ </A>
+S<SUB CLASS="Subscript">
+y</SUB>
+</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678299">
+ </A>
+The number of rows in the array surrounding the polygon.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678300">
+ </A>
+Run_Length</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678301">
+ </A>
+Set this optional parameter to a nonzero value to make POLYFILLV return a vector of run lengths, rather than subscripts. For large polygons, a considerable savings in space results. When <A NAME="marker=673610">
+ </A>
+run-length encoded, each element with an even subscript result contains the length of the run, and the following element contains the starting index of the run.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678302">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678303">
+ </A>
+To determine the mean and standard deviation of the elements within a triangular region defined by the vertices at pixel coordinates (100, 100), (200, 300), and (300, 100), inside a 512 x 512 array called DATA, enter the commands:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678304">
+ </A>
+P = DATA(POLYFILLV([100,200,300], [100,300,100], 512, 512))<BR>
+<EM CLASS="Comment">;
+Get the subscripts of the elements inside the triangle.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=678305">
+ </A>
+STD = STDEV(P,MEAN)	<EM CLASS="Comment">;
+Use the STDEV function to obtain the mean and standard deviation of the selected elements.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=821460">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=821461">
+ </A>
+<A HREF="idl142.htm#92013" CLASS="XRef">
+POLYFILL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

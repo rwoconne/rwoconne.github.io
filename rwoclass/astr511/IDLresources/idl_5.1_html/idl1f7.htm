@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> VOIGT</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1f8.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1f6.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=890142">
+ </A>
+<A NAME="47165">
+ </A>
+VOIGT</H2>
+<P CLASS="Body">
+<A NAME="pgfId=890150">
+ </A>
+The <A NAME="marker=890149">
+ </A>
+VOIGT function returns the intensity of an atomic absorption line profile (also known as a VOIGT profile) based on the Voigt damping parameter <EM CLASS="Emphasis">
+a</EM>
+ and the frequency offset <I CLASS="Italic">
+u,</I>
+ in units of the <A NAME="marker=890151">
+ </A>
+Doppler width. The result is always floating-point and has the same structure as the arguments. Note that <I CLASS="Italic">
+a</I>
+ and <I CLASS="Italic">
+u</I>
+ should not both be vectors.</P>
+<P CLASS="Body">
+<A NAME="pgfId=142868">
+ </A>
+The returned line profile <EM CLASS="Symbol">
+f</EM>
+(<EM CLASS="Emphasis">
+a</EM>
+,<I CLASS="Italic">
+ u</I>
+) is defined as:</P>
+<DIV>
+<CENTER><IMG SRC="idl_114.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=890152">
+ </A>
+where <EM CLASS="Emphasis">
+H</EM>
+ is the classical Voigt function:</P>
+<DIV>
+<CENTER><IMG SRC="idl_115.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=890160">
+ </A>
+The Doppler width <EM CLASS="Symbol">
+D</EM>
+<I CLASS="Italic">
+v</I>
+<SUB CLASS="Subscript">
+D</SUB>
+ (assuming no turbulence), is defined as: </P>
+<DIV>
+<CENTER><IMG SRC="idl_116.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=890164">
+ </A>
+where <EM CLASS="Symbol">
+n</EM>
+<SUB CLASS="Subscript">
+0</SUB>
+ is the line center frequency. The dimensionless frequency offset <I CLASS="Italic">
+u</I>
+ and the damping parameter <I CLASS="Italic">
+a</I>
+ are determined by:</P>
+<DIV>
+<CENTER><IMG SRC="idl_117.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=890168">
+ </A>
+Here, <EM CLASS="Symbol">
+G</EM>
+ is the transition rate:</P>
+<DIV>
+<CENTER><IMG SRC="idl_118.gif" BORDER=0>
+</DIV>
+<P CLASS="Body">
+<A NAME="pgfId=890172">
+ </A>
+where <EM CLASS="Symbol">
+g</EM>
+ is the spontaneous decay rate, and <EM CLASS="Symbol">
+n</EM>
+<SUB CLASS="Subscript">
+col</SUB>
+ is the atomic collision rate. See <I CLASS="Italic">
+Radiative Processes in Astrophysics</I>
+ by G. B. Rybicki and A. P. Lightman (1979) p 291 for more information. The algorithm is from Armstrong, <I CLASS="Italic">
+JQSRT 7</I>
+, 85. (1967).</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679849">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679850">
+ </A>
+Result = VOIGT(<I CLASS="Italic">
+A, U</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679851">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679852">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679853">
+ </A>
+The Voigt damping<I CLASS="Italic">
+ </I>
+parameter.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679854">
+ </A>
+U</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679855">
+ </A>
+The dimensionless frequency offset in Doppler widths.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=36958">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=36959">
+ </A>
+<A HREF="idle7.htm#62710" CLASS="XRef">
+LEEFILT</A>
+, <A HREF="idl183.htm#79476" CLASS="XRef">
+ROBERTS</A>
+, <A HREF="idl1a7.htm#39966" CLASS="XRef">
+SOBEL</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

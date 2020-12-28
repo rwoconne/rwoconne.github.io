@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> PROFILE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl14d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl14b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=900521">
+ </A>
+<A NAME="97667">
+ </A>
+PROFILE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=900525">
+ </A>
+The <A NAME="marker=900523">
+ </A>
+PROFILE function extracts a profile from an <A NAME="marker=900524">
+ </A>
+image and returns a floating-point vector containing the values of the image along the profile line marked by the user.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757670">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+profile.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757671">
+ </A>
+Using PROFILE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757672">
+ </A>
+To mark a profile line after calling PROFILE, click in the image with the left mouse button to mark the beginning and ending points. The pixel coordinates of the selected points are displayed in the IDL command log.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757673">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757674">
+ </A>
+Result = PROFILE(<EM CLASS="Emphasis">
+Image [, XX, YY]</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757675">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757676">
+ </A>
+Image</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757677">
+ </A>
+The data array representing the image. This array can be of any type except complex.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757678">
+ </A>
+XX</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757679">
+ </A>
+A named variable that will contain the X coordinates of the points along the selected profile.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757680">
+ </A>
+YY</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757681">
+ </A>
+A named variable that will contain the Y coordinates of the points along the selected profile.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757682">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757684">
+ </A>
+<A NAME="marker=757683">
+ </A>
+NOMARK</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757685">
+ </A>
+Set this keyword to inhibit marking the image with the profile line.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757687">
+ </A>
+<A NAME="marker=757686">
+ </A>
+XSTART</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757688">
+ </A>
+The starting X location of the lower-left corner of <EM CLASS="Emphasis">
+Image</EM>
+. If this keyword is not specified, 0 is assumed.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757690">
+ </A>
+<A NAME="marker=757689">
+ </A>
+YSTART</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757691">
+ </A>
+The starting Y location of the lower-left corner of <EM CLASS="Emphasis">
+Image</EM>
+. If this keyword is not specified, 0 is assumed.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757692">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757693">
+ </A>
+Display an image, select a profile and plot that profile in a new window. </P>
+<P CLASS="Code">
+<A NAME="pgfId=757695">
+ </A>
+A = BYTSCL(DIST(256)) 	<EM CLASS="Comment">;
+Create an image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757696">
+ </A>
+TV, A	<EM CLASS="Comment">;
+Display the image.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=757698">
+ </A>
+R = PROFILE(A)	<EM CLASS="Comment">;
+Extract a profile from the image</EM>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757699">
+ </A>
+Mark two points on the image with the mouse.</P>
+<P CLASS="Code">
+<A NAME="pgfId=757700">
+ </A>
+WINDOW, /FREE 	<EM CLASS="Comment">;
+Create a new plotting window</EM>
+.</P>
+<P CLASS="Code">
+<A NAME="pgfId=757701">
+ </A>
+PLOT, R	<EM CLASS="Comment">;
+Plot the profile</EM>
+.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=757702">
+ </A>
+The PROFILES procedure is an interactive version of this routine.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757703">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757704">
+ </A>
+<A HREF="idl14e.htm#87460" CLASS="XRef">
+PROFILES</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

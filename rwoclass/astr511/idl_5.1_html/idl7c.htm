@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> DIGITAL_FILTER</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl7d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl7b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=877160">
+ </A>
+<A NAME="25464">
+ </A>
+DIGITAL_FILTER</H2>
+<P CLASS="Body">
+<A NAME="pgfId=757960">
+ </A>
+The <A NAME="marker=757959">
+ </A>
+DIGITAL_FILTER <A NAME="marker=811012">
+ </A>
+function returns the coefficients of a non-recursive, digital filter for evenly spaced data points. Frequencies are expressed in terms of the Nyquist frequency, 1/2T, where T is the time between data samples. Highpass, lowpass, bandpass and bandstop <A NAME="marker=788405">
+ </A>
+filters may be constructed with this function. The resulting vector of coefficients has (2 <EM CLASS="MathSymbol">
+&#165;</EM>
+ <EM CLASS="Emphasis">
+Nterms</EM>
+ + 1) elements.</P>
+<P CLASS="Body">
+<A NAME="pgfId=757961">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+digital_filter.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757962">
+ </A>
+Calling Sequence </H3>
+<P CLASS="Body">
+<A NAME="pgfId=757963">
+ </A>
+Result = DIGITAL_FILTER(<EM CLASS="Emphasis">
+Flow, Fhigh, A, Nterms</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757964">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757965">
+ </A>
+Flow</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757966">
+ </A>
+The lower frequency of the filter as a fraction of the Nyquist frequency</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757967">
+ </A>
+Fhigh</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757968">
+ </A>
+The upper frequency of the filter as a fraction of the Nyquist frequency. The following conditions are necessary for various types of filters:</P>
+<UL>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=757970">
+ </A>
+No Filtering:	<EM CLASS="Emphasis">
+Flow</EM>
+ = 0, <EM CLASS="Emphasis">
+Fhigh</EM>
+ = 1</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=757971">
+ </A>
+Low Pass:	<EM CLASS="Emphasis">
+Flow</EM>
+ = 0, 0 &lt; <EM CLASS="Emphasis">
+Fhigh</EM>
+ &lt; 1</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=757972">
+ </A>
+High Pass:	0 &lt; <EM CLASS="Emphasis">
+Flow</EM>
+ &lt; 1, <EM CLASS="Emphasis">
+Fhigh</EM>
+ =1</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=757973">
+ </A>
+Band Pass:	0 &lt; <EM CLASS="Emphasis">
+Flow</EM>
+ &lt; <EM CLASS="Emphasis">
+Fhigh</EM>
+ &lt; 1</LI>
+<LI CLASS="Body-Bullet-2">
+<A NAME="pgfId=757974">
+ </A>
+Band Stop:	0 &lt; <EM CLASS="Emphasis">
+Fhigh</EM>
+ &lt; <EM CLASS="Emphasis">
+Flow</EM>
+ &lt; 1</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757975">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757976">
+ </A>
+The size of Gibbs phenomenon wiggles in -db. 50 is a good choice.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=757977">
+ </A>
+Nterms</H4>
+<P CLASS="Body">
+<A NAME="pgfId=757978">
+ </A>
+The number of terms in the filter formula. The order of filter.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757979">
+ </A>
+Example</H3>
+<P CLASS="Code">
+<A NAME="pgfId=757980">
+ </A>
+Coeff = DIGITAL_FILTER(Flow, Fhigh, A, Nterms)	<EM CLASS="Comment">;
+To get coefficients.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=757981">
+ </A>
+Followed by:</P>
+<P CLASS="Code">
+<A NAME="pgfId=757982">
+ </A>
+Yout = CONVOL(Yin, Coeff)	<EM CLASS="Comment">;
+To apply the filter.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=757983">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=757984">
+ </A>
+<A HREF="idl43.htm#17663" CLASS="XRef">
+CONVOL</A>
+, <A HREF="idle7.htm#62710" CLASS="XRef">
+LEEFILT</A>
+, <A HREF="idl115.htm#23439" CLASS="XRef">
+MEDIAN</A>
+, <A HREF="idl1a6.htm#43465" CLASS="XRef">
+SMOOTH</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

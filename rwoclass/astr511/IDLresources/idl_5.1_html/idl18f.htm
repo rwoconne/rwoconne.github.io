@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SEARCH3D</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl190.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl18e.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758989">
+ </A>
+<A NAME="42474">
+ </A>
+SEARCH3D</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758992">
+ </A>
+The <A NAME="marker=758990">
+ </A>
+SEARCH3D function <A NAME="marker=758991">
+ </A>
+finds &quot;objects&quot; or regions of similar data values within a 3D array of data. Given a starting location and a range of values to search for, SEARCH3D finds all the cells within the volume that are within the specified range of values and have some path of connectivity through these cells to the starting location. In addition to searching for cells within a global range of data values, SEARCH3D can also search for adjacent cells whose values deviate from their neighbors within specified tolerances.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758993">
+ </A>
+SEARCH3D returns a longword array that contains a list of the array subscripts that define the selected object or region. The original X and Y indices of the array subscripts returned by SEARCH3D can be found with the following IDL code:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758994">
+ </A>
+S = SIZE(<I CLASS="Italic">
+Array</I>
+)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758995">
+ </A>
+index_z = <I CLASS="Italic">
+Result</I>
+ / (S[1] * S[2]) </P>
+<P CLASS="Code">
+<A NAME="pgfId=758996">
+ </A>
+index_y = (<I CLASS="Italic">
+Result</I>
+ - (index_z * S[1] * S[2])) / S[1]</P>
+<P CLASS="Code">
+<A NAME="pgfId=758997">
+ </A>
+index_x = (<I CLASS="Italic">
+Result</I>
+ - (index_z * S[1] * S[2])) - (index_y * S[1]) </P>
+<P CLASS="Body">
+<A NAME="pgfId=876320">
+ </A>
+where <I CLASS="Italic">
+Result</I>
+ is the array returned by SEARCH3D and <I CLASS="Italic">
+Array</I>
+ is the original input volume. The object within <I CLASS="Italic">
+Array</I>
+ can be subscripted as <CODE CLASS="Code">
+Array[Region]</CODE>
+ or <CODE CLASS="Code">
+Array[index_x, index_y, index_z]</CODE>
+. </P>
+<P CLASS="Body">
+<A NAME="pgfId=876321">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+search3d.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759000">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759001">
+ </A>
+Result = SEARCH3D(<I CLASS="Italic">
+Array, Xpos, Ypos, Zpos, Min_Val, Max_Val</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759002">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759003">
+ </A>
+Array</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759004">
+ </A>
+The three-dimensional array, of any data type except string, to be searched.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759005">
+ </A>
+Xpos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759006">
+ </A>
+The X coordinate (dimension 0 or <I CLASS="Italic">
+Array</I>
+) of the starting location.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759007">
+ </A>
+Ypos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759008">
+ </A>
+The Y coordinate (dimension 1 of <I CLASS="Italic">
+Array</I>
+) of the starting location.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759009">
+ </A>
+Zpos</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759010">
+ </A>
+The Z coordinate (dimension 2 of <I CLASS="Italic">
+Array</I>
+) of the starting location.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759011">
+ </A>
+Min_Val</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759012">
+ </A>
+The minimum data value for which to search. All array subscripts of all the cells that are connected to the starting cell, and have a value between <I CLASS="Italic">
+Min_Val</I>
+ and <I CLASS="Italic">
+Max_Val</I>
+ (inclusive) are returned.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759013">
+ </A>
+Max_Val</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759014">
+ </A>
+The maximum data value for which to search.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759015">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759017">
+ </A>
+<A NAME="marker=759016">
+ </A>
+DECREASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759018">
+ </A>
+This keyword and the INCREASE keyword allow you to compensate for changing intensities of data values within an object. An edge-enhanced copy of <I CLASS="Italic">
+Array</I>
+ is made and compared to the orginal array if this keyword is set. When DECREASE or INCREASE is set, any adjacent cells are found if their corresponding data values in the edge enhanced array are greater than DECREASE and less than INCREASE. In any case, the adjacent cells will never be selected if their data values are not between <I CLASS="Italic">
+Min_Val</I>
+ and <I CLASS="Italic">
+Max_Val</I>
+. The default for this keyword is 0.0 if INCREASE is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759020">
+ </A>
+<A NAME="marker=759019">
+ </A>
+INCREASE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759021">
+ </A>
+This keyword and the DECREASE keyword allow you to compensate for changing intensities of data values within an object. An edge-enhanced copy of <I CLASS="Italic">
+Array</I>
+ is made and compared to the orginal array if this keyword is set. When DECREASE or INCREASE is set, any adjacent cells are found if their corresponding data values in the edge enhanced array are greater than DECREASE and less than INCREASE. In any case, the adjacent cells will never be selected if their data values are not between <I CLASS="Italic">
+Min_Val</I>
+ and <I CLASS="Italic">
+Max_Val</I>
+. The default for this keyword is 0.0 if DECREASE is specified.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759023">
+ </A>
+<A NAME="marker=759022">
+ </A>
+LPF_BAND</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759024">
+ </A>
+Set this keyword to an integer value of 3 or greater to perform low-pass filtering on the edge-enhanced array. The value of LPF_BAND is used as the width of the smoothing window. This keyword is only effective when the DECREASE or INCREASE keywords are also specified. The default is no smoothing.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=759026">
+ </A>
+<A NAME="marker=759025">
+ </A>
+DIAGONAL</H4>
+<P CLASS="Body">
+<A NAME="pgfId=759027">
+ </A>
+Set this keyword to cause SEARCH3D to find cells meeting the search criteria whose surrounding cubes share a common corner or edge. Normally, cells are considered adjacent only when cubes surrounding the cells share a common edge. Setting this option requires more memory and execution time.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759028">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759029">
+ </A>
+Find all the indices corresponding to an object contained in a 3D array:</P>
+<P CLASS="Code">
+<A NAME="pgfId=759030">
+ </A>
+vol = RANDOMU(s, 40, 40, 40)	<EM CLASS="Comment">;
+Create some data. </EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=759031">
+ </A>
+vol[3:13, 1:15, 17:33] = 1.3 </P>
+<P CLASS="Code">
+<A NAME="pgfId=759032">
+ </A>
+vol[15:25, 5:25, 15:25] = 0.2</P>
+<P CLASS="Code">
+<A NAME="pgfId=759033">
+ </A>
+vol[5:30,17:38,7:28] = 1.3</P>
+<P CLASS="Code">
+<A NAME="pgfId=759034">
+ </A>
+vol[9:23, 16:27, 7:33] = 1.5</P>
+<P CLASS="Code">
+<A NAME="pgfId=759035">
+ </A>
+region = SEARCH3D(vol, 6, 22, 16, 1.2, 1.4, /DIAGONAL)<BR>
+<EM CLASS="Comment">;
+Search for an object starting at (6, 22, 16) whose data values are between (1.2) and (1.4).</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=759036">
+ </A>
+vol = BYTSCL(vol, TOP=127B)	<EM CLASS="Comment">;
+Scale the background cells into the range 0 to 127.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=759037">
+ </A>
+vol[Region] = 255B	<EM CLASS="Comment">;
+Highlight the object region by setting it to 255.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=168305">
+ </A>
+WINDOW, 0, XSIZE=640, YSIZE=512, RETAIN=2</P>
+<P CLASS="Code">
+<A NAME="pgfId=168306">
+ </A>
+CREATE_VIEW, XMAX=39, YMAX=39, ZMAX=39, AX=(-30), AZ=30, ZOOM=0.8<BR>
+S<EM CLASS="Comment">;
+et up a 3-D view. </EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=759042">
+ </A>
+TVSCL, PROJECT_VOL(vol, 64, 64, 40, DEPTH_Q=0.4)<BR>
+<EM CLASS="Comment">;
+Display the volume with the highlighted object in it.</EM>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=759043">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=759044">
+ </A>
+<A HREF="idl18e.htm#26448" CLASS="XRef">
+SEARCH2D</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

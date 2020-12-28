@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> HIST_EQUAL</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idlc9.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idlc7.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=758147">
+ </A>
+<A NAME="23334">
+ </A>
+HIST_EQUAL</H2>
+<P CLASS="Body">
+<A NAME="pgfId=758149">
+ </A>
+The <A NAME="marker=758148">
+ </A>
+HIST_EQUAL <A NAME="marker=811024">
+ </A>
+function returns a histogram-equalized byte array. The HISTOGRAM function is used to obtain the density <A NAME="marker=43550">
+ </A>
+distribution of the input array. The histogram is integrated to obtain the cumulative density-probability function and finally the lookup function is used to transform to the output image.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758150">
+ </A>
+The resulting array is always of byte type and is scaled from 0 to the value set by the TOP keyword.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758151">
+ </A>
+Note: Floating-point arrays should not have small ranges, (e.g., less than around 255) unless a binsize is specified.</P>
+<P CLASS="Body">
+<A NAME="pgfId=758152">
+ </A>
+This routine is written in the IDL language. Its source code can be found in the file <CODE CLASS="Code">
+hist_equal.pro</CODE>
+ in the <CODE CLASS="Code">
+lib</CODE>
+ subdirectory of the IDL distribution.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758153">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758154">
+ </A>
+Result = HIST_EQUAL(<EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758155">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758156">
+ </A>
+A</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758157">
+ </A>
+The array to be histogram-equalized.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758158">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758160">
+ </A>
+<A NAME="marker=758159">
+ </A>
+MINV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758161">
+ </A>
+The minimum value to consider. If this keyword is omitted, zero is used. Input elements less than or equal to MINV are output as zero. MINV should be greater than or equal to 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758163">
+ </A>
+<A NAME="marker=758162">
+ </A>
+MAXV</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758164">
+ </A>
+The maximum value to consider. If this keyword is omitted, the maximum element is used. Input elements greater than or equal to MAXV are output as 255.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758166">
+ </A>
+<A NAME="marker=758165">
+ </A>
+BINSIZE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758167">
+ </A>
+Size of bin to use. If this keyword is omitted, the value 1 is used. This parameter is ignored for byte type data.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=758169">
+ </A>
+<A NAME="marker=758168">
+ </A>
+TOP</H4>
+<P CLASS="Body">
+<A NAME="pgfId=758170">
+ </A>
+The maximum value to scale the output array. If this keyword is omitted, 255 is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758171">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=758172">
+ </A>
+Create a sample image using the DIST function and display it by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758173">
+ </A>
+image = DIST(100)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758174">
+ </A>
+TV, image</P>
+<P CLASS="Body">
+<A NAME="pgfId=758175">
+ </A>
+Create a histogram-equalized version of the byte array, <CODE CLASS="Code">
+image</CODE>
+, and display the new version. Use a minimum input value of 10, a maximum input value of 200, and limit the top value of the output array to 220. Enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=758176">
+ </A>
+new = HIST_EQUAL(image, MINV = 10, MAXV = 200, TOP = 220)</P>
+<P CLASS="Code">
+<A NAME="pgfId=758177">
+ </A>
+TV, new</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=758178">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=822679">
+ </A>
+<A HREF="idlbf.htm#52883" CLASS="XRef">
+H_EQ_CT</A>
+, <A HREF="idlc0.htm#94073" CLASS="XRef">
+H_EQ_INT</A>
+, <A HREF="idlc7.htm#87584" CLASS="XRef">
+HIST_2D</A>
+, <A HREF="idlc9.htm#31792" CLASS="XRef">
+HISTOGRAM</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

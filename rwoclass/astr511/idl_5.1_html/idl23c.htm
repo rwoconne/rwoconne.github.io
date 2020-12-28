@@ -1,0 +1,896 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> The X Windows Device</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl23d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl23b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Heading-1">
+<A NAME="pgfId=488321">
+ </A>
+<A NAME="95114">
+ </A>
+The <A NAME="marker=488319">
+ </A>
+X Windows Device</H2>
+<DIV>
+<H5 CLASS="Heading-3-Indent-1">
+<A NAME="pgfId=488327">
+ </A>
+Device Keywords Accepted by the X Device</H5>
+<P CLASS="DeviceList">
+<A NAME="pgfId=488340">
+ </A>
+<A HREF="idl22e.htm#98623" CLASS="XRef">
+BYPASS_TRANSLATION</A>
+, <A HREF="idl22e.htm#36137" CLASS="XRef">
+COPY</A>
+, <A HREF="idl22e.htm#69514" CLASS="XRef">
+CURSOR_CROSSHAIR</A>
+, <A HREF="idl22e.htm#38723" CLASS="XRef">
+CURSOR_IMAGE</A>
+, <A HREF="idl22e.htm#37523" CLASS="XRef">
+CURSOR_MASK</A>
+, <A HREF="idl22e.htm#18365" CLASS="XRef">
+CURSOR_ORIGINAL</A>
+, <A HREF="idl22e.htm#23530" CLASS="XRef">
+CURSOR_STANDARD</A>
+, <A HREF="idl22e.htm#36139" CLASS="XRef">
+CURSOR_XY</A>
+, <A HREF="idl22e.htm#43305" CLASS="XRef">
+DECOMPOSED</A>
+, <A HREF="idl22e.htm#92319" CLASS="XRef">
+DIRECT_COLOR</A>
+, <A HREF="idl22e.htm#51831" CLASS="XRef">
+FLOYD</A>
+, <A HREF="idl22e.htm#18728" CLASS="XRef">
+FONT</A>
+, <A HREF="idl22e.htm#10442" CLASS="XRef">
+GET_CURRENT_FONT</A>
+, <A HREF="idl22e.htm#99342" CLASS="XRef">
+GET_FONTNAMES</A>
+, <A HREF="idl22e.htm#68934" CLASS="XRef">
+GET_FONTNUM</A>
+, <A HREF="idl22e.htm#29131" CLASS="XRef">
+GET_GRAPHICS_FUNCTION</A>
+, <A HREF="idl22e.htm#27263" CLASS="XRef">
+GET_SCREEN_SIZE</A>
+, <A HREF="idl22e.htm#11984" CLASS="XRef">
+GET_VISUAL_NAME</A>
+, <A HREF="idl22e.htm#83739" CLASS="XRef">
+GET_WINDOW_POSITIONrf</A>
+, <A HREF="idl22e.htm#37885" CLASS="XRef">
+GET_WRITE_MASK</A>
+, <A HREF="idl22e.htm#17648" CLASS="XRef">
+ORDERED</A>
+, <A HREF="idl22e.htm#20501" CLASS="XRef">
+PSEUDO_COLOR</A>
+, <A HREF="idl22e.htm#88341" CLASS="XRef">
+RETAIN</A>
+, <A HREF="idl22e.htm#92172" CLASS="XRef">
+SET_CHARACTER_SIZE</A>
+, <A HREF="idl22e.htm#78342" CLASS="XRef">
+SET_GRAPHICS_FUNCTION</A>
+, <A HREF="idl22e.htm#53542" CLASS="XRef">
+SET_TRANSLATION</A>
+, <A HREF="idl22e.htm#32946" CLASS="XRef">
+SET_WRITE_MASK</A>
+, <A HREF="idl22e.htm#52885" CLASS="XRef">
+STATIC_COLOR</A>
+, <A HREF="idl22e.htm#15579" CLASS="XRef">
+STATIC_GRAY</A>
+, <A HREF="idl22e.htm#72570" CLASS="XRef">
+THRESHOLD</A>
+, <A HREF="idl22e.htm#29176" CLASS="XRef">
+TRUE_COLOR</A>
+, <A HREF="idl22e.htm#55523" CLASS="XRef">
+TTY</A>
+, <A HREF="idl22e.htm#86528" CLASS="XRef">
+WINDOW_STATE</A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=488322">
+ </A>
+X Windows is a network-based windowing system developed by MIT's project Athena. IDL uses the X System (often referred to simply as &quot;X&quot;), to provide an environment in which the user can create one or more independent windows, each of which can be used for the display of graphics and/or images.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144817">
+ </A>
+In the X system, there are two basic cooperating processes: <I CLASS="Italics">
+clients</I>
+ and <I CLASS="Italics">
+servers</I>
+. A server consists of a display, keyboard, and pointer (such as a mouse) as well as the software that controls them. Client processes (such as IDL) display graphics and text on the screen of a server by sending X protocol requests across the network to the server. Although in the most common case, the server and client reside on the same machine, this network based design allows much more elaborate configurations.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144818">
+ </A>
+To use X Windows as the current graphics device, issue the IDL command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144819">
+ </A>
+SET_PLOT, 'X'</P>
+<P CLASS="Body">
+<A NAME="pgfId=144820">
+ </A>
+This causes IDL to use the X Window System for producing graphical output. Once the X driver is enabled via SET_PLOT, the DEVICE procedure is used to control its actions, as described below.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144821">
+ </A>
+Use the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144822">
+ </A>
+HELP, /DEVICE</P>
+<P CLASS="Body">
+<A NAME="pgfId=144823">
+ </A>
+to view the current state of the X Windows driver.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144855">
+ </A>
+<A NAME="13349">
+ </A>
+<A NAME="marker=143289">
+ </A>
+X Windows Visuals</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144856">
+ </A>
+Visuals specify how the hardware deals with color. The X Window server (your display) may provide colors or only gray scale (black and white), or both. The color tables may be changeable from within IDL (read-write), or may be fixed (read-only). The value of each pixel value may be mapped to any color (Un-decomposed Colormap), or certain bits of each pixel are dedicated to the red, green, and blue primary colors (Decomposed Colormap).</P>
+<P CLASS="Body">
+<A NAME="pgfId=144857">
+ </A>
+There are six X Windows visual classes--read-write and read-only visuals for three types of displays: Gray Scale, Pseudo Color, and Decomposed Color. The names of the visuals are shown in <A HREF="idl23c.htm#90533" CLASS="XRef">
+X Windows Visual Classes</A>
+.</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=149124">
+ </A>
+<A NAME="90533">
+ </A>
+X Windows Visual Classes</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=149081">
+ </A>
+Visual Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=149083">
+ </A>
+Writable</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=149085">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149087">
+ </A>
+StaticGray</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149089">
+ </A>
+no</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149091">
+ </A>
+Gray scale</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149093">
+ </A>
+GrayScale</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149095">
+ </A>
+yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149097">
+ </A>
+Gray scale</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149099">
+ </A>
+StaticColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149101">
+ </A>
+no</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149103">
+ </A>
+Undecomposed color</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149105">
+ </A>
+PseudoColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149107">
+ </A>
+yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149109">
+ </A>
+Undecomposed color</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149111">
+ </A>
+TrueColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149113">
+ </A>
+no</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149115">
+ </A>
+Decomposed color</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149117">
+ </A>
+DirectColor</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149119">
+ </A>
+yes</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=149121">
+ </A>
+Decomposed color</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=148996">
+ </A>
+IDL supports all six types of visuals, although not at all possible depths. Unix X Window System users can use the command <EM CLASS="tt">
+xdpyinfo</EM>
+ to determine which visuals are supported by their systems.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144859">
+ </A>
+Each X Window server has a <A NAME="marker=143300">
+ </A>
+default visual class. Many servers may provide multiple visual classes. For example, a server with display hardware that supports an 8-bit-deep, un-decomposed, writable color map (PseudoColor), may also easily provide StaticColor, StaticGray, and GrayScale visuals. </P>
+<P CLASS="Body">
+<A NAME="pgfId=144860">
+ </A>
+You can select the visual used by IDL using the DEVICE procedure before a window is created, or by including the resource <EM CLASS="tt">
+idl.gr_visual</EM>
+ in your X defaults file, as explained in <A HREF="idl23c.htm#78888" CLASS="XRef">
+Setting the X Window Defaults</A>
+</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144861">
+ </A>
+How IDL Selects a Visual Class</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144862">
+ </A>
+When opening the display, IDL asks the display for the following visuals, in order, until a supported visual class is found:</P>
+<CENTER><TABLE BORDER="1">
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144110">
+ </A>
+DirectColor, 24-bit</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144111">
+ </A>
+TrueColor, 24-bit</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144112">
+ </A>
+PseudoColor, 8-bit, then 4-bit</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144113">
+ </A>
+StaticColor, 8-bit, then 4-bit</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144114">
+ </A>
+GrayScale, any depth</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144115">
+ </A>
+StaticGray, any depth</P>
+</TD>
+</TR>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=144863">
+ </A>
+You can override this behavior by using the DEVICE routine to specify the desired visual class and depth before you create a window. For example, if you are using a display that supports both the DirectColor, 24-bit-deep visual, and an 8-bit-deep PseudoColor visual, IDL will select the 24-bit-deep DirectColor visual. To instead use PseudoColor, issue the following command before creating a window:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144864">
+ </A>
+DEVICE, PSEUDO_COLOR = 8</P>
+<P CLASS="Body">
+<A NAME="pgfId=144865">
+ </A>
+The colormap/visual class combination is chosen when IDL first connects with the X Window server. Note that if you connect with the X server by creating a window or using the DEVICE keyword to the HELP procedure, the visual class will be set; it then cannot be changed until IDL is restarted. If you wish to use a visual class other than the default, be sure to set it with a call to the DEVICE procedure <EM CLASS="Emphasis">
+before</EM>
+ creating windows or otherwise connecting with the X Window server.</P>
+<P CLASS="Body">
+<A NAME="pgfId=417814">
+ </A>
+Windows are created in two ways:</P>
+<P CLASS="Body">
+<A NAME="pgfId=144866">
+ </A>
+1. Using the WINDOW procedure. WINDOW allows you to explicitly control many aspects of how the window is created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144867">
+ </A>
+2. If no windows exist and a graphics operation requiring a window is executed, IDL implicitly creates window 0 with the default characteristics.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144868">
+ </A>
+Once the visual class is selected, all subsequently-created windows share the same class and colormap. The number of simultaneous colors available is stored in the system variable !D.N_COLORS. The visual class and number of colors, once initialized, cannot be changed without first exiting IDL.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144869">
+ </A>
+How IDL Obtains a Colormap</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144870">
+ </A>
+IDL chooses the type of colormap in the following manner:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144871">
+ </A>
+By default, the shared colormap is used whenever possible (i.e., whenever IDL is using the default visual for the system). All available colors from the shared colormap are allocated for use by IDL. This is what happens when no window currently exists and a graphics operation causes IDL to implicitly create one.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144872">
+ </A>
+If the number of colors to use is explicitly specified using the COLORS keyword with the WINDOW procedure, IDL attempts to allocate the number of colors specified from the shared colormap using the default visual of the screen. If there aren't enough colors available, a private colormap with that number of colors is used instead.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144873">
+ </A>
+Specifying a negative value for the COLORS keyword to the WINDOW procedure causes IDL to attempt to use the shared colormap, allocating all but the specified number of colors. For example:</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=144874">
+ </A>
+WINDOW, COLORS = -8</P>
+<P CLASS="Body">
+<A NAME="pgfId=144875">
+ </A>
+allocates all but 8 of the currently available colors. This allows other applications that might need their own colors to run in tandem with IDL.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144876">
+ </A>
+If a visual type and depth is specified, via the DEVICE procedure, which does not match the default visual of the screen, a new, private, colormap is created.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144877">
+ </A>
+Using Color Under X</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144878">
+ </A>
+Colormaps define the mapping from color index to screen color. Two attributes of colormaps are important to the IDL user: they may be <I CLASS="Italics">
+private</I>
+ or <I CLASS="Italics">
+shared</I>
+; and they may be <I CLASS="Italics">
+static</I>
+ or <I CLASS="Italics">
+writable</I>
+. These different types of colormaps are described below.</P>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144879">
+ </A>
+<A NAME="81594">
+ </A>
+Shared Colormaps</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144880">
+ </A>
+The window manager creates a colormap when it is started. This is known as the default colormap, and can be shared by most applications using the display. When each application requires a colormap entry (i.e., a mapping from a color index to a color), it allocates one from this shared table. Advantages and disadvantages of shared colormaps include:</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144881">
+ </A>
+Using the shared colormap ensures that all applications share the available colors without conflict. A given application will not change a color that is allocated to a different application. In the case of IDL it means that IDL can change the colors it has allocated without changing the colors in use by the window manager or other applications.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144882">
+ </A>
+The window system interface routines must translate between the actual and allocated pixel values, significantly slowing the transfer of images.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144883">
+ </A>
+The shared colormap might not have enough colors available to perform the desired operations with IDL.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144884">
+ </A>
+The number of available colors in the shared colormap depends on the window manager in use and the demands of other applications. Thus, the number of available colors can vary.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144885">
+ </A>
+The allocated colors in a shared colormap do not generally start at zero and they are not necessarily contiguous. This makes it difficult to use the write mask for certain operations.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=536784">
+ </A>
+&nbsp;</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144886">
+ </A>
+Private Colormaps</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144887">
+ </A>
+An application can create its own private color map. Most hardware can only display a single colormap at a time, so these private colormaps are called virtual color maps, and only one at a time is actually in use and visible. When the window manager gives the color focus to a window with a private colormap, the X window system loads its virtual colormap into the hardware colormap.</P>
+<UL>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144888">
+ </A>
+Every color index supported by the hardware is available to IDL, improving the quality of images.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144889">
+ </A>
+Allocated colors always start at zero and are contiguous. This simplifies using the write mask.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144890">
+ </A>
+No translation between internal pixel values and the values required by the server is required, making the transfer of images more efficient.</LI>
+<LI CLASS="Body-Bullet">
+<A NAME="pgfId=144891">
+ </A>
+When the IDL colormap is loaded, other applications are displayed using the wrong colors. Furthermore, colors from the shared colormap are usually allocated from the lower end of the map first. These are the colors allocated by the window manager for such things as window borders, the color of text, and so forth. Since most IDL colormaps have very dark colors in the lower entries, the end effect with the IDL colormap loaded is that the non-IDL portions of the screen go blank.</LI>
+</UL>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144892">
+ </A>
+Static Colormaps</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144893">
+ </A>
+As mentioned above, the contents of static colormaps are determined outside of IDL and cannot be changed. When using a static colormap, the TVLCT procedure simulates writable colormaps by finding the closest RGB color entry in the colormap to the requested color. The colormap translation table is then set to map IDL color indices to those of the closest colors in the colormap.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144894">
+ </A>
+The colors present in the colormap may, and probably will, <I CLASS="Italics">
+not</I>
+ match the requested colors exactly. For example, with a typical static color map, loading the IDL standard color table number 0, which consists of 256 intensities of gray, results in only 8 or 16 distinct intensities.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144895">
+ </A>
+With static colormaps, loading a new color table does not affect the appearance of previously written objects. The internal translation tables are modified, which only affects objects that are subsequently written.</P>
+</DIV>
+<DIV>
+<H5 CLASS="Heading-3">
+<A NAME="pgfId=144896">
+ </A>
+<A NAME="29450">
+ </A>
+Color Translation</H5>
+<P CLASS="Body">
+<A NAME="pgfId=144897">
+ </A>
+As mentioned above, colors from the shared colormap do not necessarily start from index zero, and are not necessarily contiguous. IDL preserves the illusion of a zero based contiguous colormap by maintaining a translation table between user color indices, which range from 0 to !D.TABLE_SIZE, and the actual pixel values allocated from the X server. Normally, the user need not be concerned with this translation table, but it is available using the statement:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144898">
+ </A>
+DEVICE, TRANSLATION=T</P>
+<P CLASS="Body">
+<A NAME="pgfId=144899">
+ </A>
+This statement stores the current translation table, a 256 element byte vector, in the variable T. Element zero of the vector contains the value pixel allocated for the zeroth color in the IDL colormap, and so forth. In the case of a private colormap, each element of the translation vector contains it's own index value, because private colormaps start at zero and are contiguous.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144900">
+ </A>
+The translation table may be bypassed, allowing direct access to the display's color indices, by setting the BYPASS_TRANSLATION keyword in the DEVICE procedure. </P>
+<P CLASS="Code">
+<A NAME="pgfId=144901">
+ </A>
+DEVICE, /BYPASS_TRANSLATION</P>
+<P CLASS="Body">
+<A NAME="pgfId=144902">
+ </A>
+Translation can be reestablished by setting the keyword to zero:</P>
+<P CLASS="Code">
+<A NAME="pgfId=417833">
+ </A>
+DEVICE, BYPASS_TRANSLATION=0</P>
+<P CLASS="Body">
+<A NAME="pgfId=417832">
+ </A>
+When a private or static (read-only) color table is initialized, the bypass flag is cleared. It is set when initializing a shared color table.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144903">
+ </A>
+<A NAME="43527">
+ </A>
+Using Pixmaps</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144904">
+ </A>
+X Windows can direct graphics to <I CLASS="Italics">
+windows</I>
+ or <I CLASS="Italics">
+pixmaps</I>
+. Windows are the usual windows that appear on the screen and contain graphics. Pixmaps are invisible graphics memory contained in the server. Drawing to a window produces a viewable result, while drawing to a pixmap simply updates the pixmap memory.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144905">
+ </A>
+Pixmaps are useful because it is possible to write graphics to a pixmap and then copy the contents of the pixmap to a window where it can be viewed. Furthermore, this copy operation is very fast because it happens entirely within the server. Provided enough pixmap memory is available, this technique works very well for animating a series of images by placing the images into pixmap memory and then sequentially copying them to a visible window.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144906">
+ </A>
+To create a pixmap, use the PIXMAP keyword with the WINDOW procedure. For example, to create a square pixmap with 128 pixels per side as IDL window 1, use the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144907">
+ </A>
+WINDOW, 1, /PIXMAP, XSIZE=128, YSIZE=128</P>
+<P CLASS="Body">
+<A NAME="pgfId=144908">
+ </A>
+Once they are created, pixmaps are treated just like normal windows, although some operations (WSHOW for instance) don't do anything useful when applied to a pixmap.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144909">
+ </A>
+The following procedure shows how animation can be done using pixmap memory. It uses a series of 15 heart images taken from the file <EM CLASS="tt">
+abnorm.dat</EM>
+. This file is supplied with all IDL distributions in the <EM CLASS="tt">
+data</EM>
+ subdirectory of the images <EM CLASS="tt">
+examples</EM>
+ of the main IDL directory. It creates a pixmap and writes the heart images to it. It then uses the COPY keyword of the DEVICE procedure to copy the images to a visible window. Pressing any key causes the display process to halt:</P>
+<P CLASS="Code">
+<A NAME="pgfId=144910">
+ </A>
+PRO animate_heart	<EM CLASS="Comment">;
+Animate heart series.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144911">
+ </A>
+OPENR, u, FILEPATH('abnorm.dat', SUBDIR = ['examples','data']), $</P>
+<P CLASS="Code">
+<A NAME="pgfId=144669">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/GET_LUN<EM CLASS="Comment">;
+	Open the file containing the images.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144912">
+ </A>
+frame = ASSOC(u, BYTARR(64,64))<EM CLASS="Comment">;
+	Associate a file variable with the file. Each heart image is 64x64 pixels.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144913">
+ </A>
+WINDOW, pixwin, /PIXMAP, XSIZE = 512, YSIZE = 512, /FREE<BR>
+<EM CLASS="Comment">;
+Window pixwin is a pixmap which is 4 images tall and 4 images wide. The images will be placed in this pixmap.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144914">
+ </A>
+FOR i=0, 15-1 DO TV, REBIN(SMOOTH(frame[i],3), 128, 128),i<BR>
+<EM CLASS="Comment">;
+Write each image to the pixmap. SMOOTH is used to improve the appearance of each image and REBIN is used to enlarge/shrink each image to the final display size.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144915">
+ </A>
+FREE_LUN, u	<EM CLASS="Comment">;
+Close the image file and free the file unit.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144916">
+ </A>
+WINDOW, win, XSIZE = 128, YSIZE=128, TITLE='Heart', /FREE<BR>
+<EM CLASS="Comment">;
+Window win is a visible window. It will be used to display the animated heart cycle.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144917">
+ </A>
+i = 0L	<EM CLASS="Comment">;
+Current frame number.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144918">
+ </A>
+WHILE GET_KBRD(0) EQ '' DO BEGIN<EM CLASS="Comment">;
+	Display frames until any key is pressed.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144919">
+ </A>
+x = (i mod 4) * 128 &amp; y = 384 - (i/4) * 128<BR>
+<EM CLASS="Comment">;
+Compute x and y locations of pixmap image's lower left corner.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144920">
+ </A>
+DEVICE, COPY = [x, y, 128, 128, 0, 0, pixwin]<BR>
+<EM CLASS="Comment">;
+Copy the next image from the pixmap to the visible window.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144921">
+ </A>
+i = (i + 1) MOD 15	<EM CLASS="Comment">;
+Keep track of total frame count.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=144922">
+ </A>
+ENDWHILE</P>
+<P CLASS="Code">
+<A NAME="pgfId=144923">
+ </A>
+END</P>
+<P CLASS="Body">
+<A NAME="pgfId=144924">
+ </A>
+Animation sequences with more and/or larger images can be made. See the documentation for the XANIMATE procedure, which is a more generalized embodiment of the above procedure.</P>
+<P CLASS="Body">
+<A NAME="pgfId=144925">
+ </A>
+Note: Some X Windows servers will refuse to create a pixmap that is larger than the physical screen in either dimension.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-2">
+<A NAME="pgfId=144926">
+ </A>
+<A NAME="78888">
+ </A>
+Setting the X Window Defaults</H3>
+<P CLASS="Body">
+<A NAME="pgfId=144927">
+ </A>
+You can set the initial default value of the following parameters by setting resources in the file <EM CLASS="tt">
+.Xdefault</EM>
+s (Unix), or <EM CLASS="tt">
+DECW$SM_GENERAL.DAT</EM>
+ (VMS) in your home directory as follows:</P>
+<CENTER><TABLE BORDER="1">
+<CAPTION>
+<UL>
+<LI CLASS="Table">
+<A NAME="pgfId=144127">
+ </A>
+IDL/ X Window Defaults</LI>
+</UL>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=144117">
+ </A>
+Resource Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=144105">
+ </A>
+Description</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144119">
+ </A>
+idl.colors</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144116">
+ </A>
+The number of colors used by IDL.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144121">
+ </A>
+idl.gr_depth</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144118">
+ </A>
+The depth, in bits, of the visual used by IDL.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144123">
+ </A>
+idl.retain</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144120">
+ </A>
+The default setting for the <I CLASS="Italics">
+retain </I>
+parameter: 0=none, 1= by server, 2=by IDL.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144125">
+ </A>
+idl.gr_visual</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144122">
+ </A>
+The type of visual: StaticGray, GrayScale, StaticColor, PseudoColor, TrueColor, or DirectColor.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144699">
+ </A>
+idl.olh_text_width</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144700">
+ </A>
+The width for the online help window.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144703">
+ </A>
+idl.olh_text_height</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=144704">
+ </A>
+The height for the online help window.</P>
+</TD>
+</TR>
+</CAPTION>
+</TABLE></CENTER>
+<P CLASS="Body">
+<A NAME="pgfId=144928">
+ </A>
+For example, to set the default visual to PseudoColor, and to allocate 100 colors, insert the following lines in your defaults file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=145028">
+ </A>
+idl.gr_visual: PseudoColor</P>
+<P CLASS="Code">
+<A NAME="pgfId=145029">
+ </A>
+idl.colors: 100</P>
+</DIV>
+</BODY>
+</HTML>

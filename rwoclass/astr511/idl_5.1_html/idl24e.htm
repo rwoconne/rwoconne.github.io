@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> CDF_CREATE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl24f.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl24d.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Routine-Name">
+<A NAME="pgfId=997320">
+ </A>
+<A NAME="93139">
+ </A>
+CDF_CREATE</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997324">
+ </A>
+The <A NAME="marker=997322">
+ </A>
+CDF_CREATE function <A NAME="marker=997323">
+ </A>
+creates a new Common Data Format file with the given filename and dimensions. If successful, this function returns the CDF ID for the new file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997325">
+ </A>
+Note that when you create a CDF file, you must specify both encoding and decoding methods. Encoding specifies the method used to write data to the CDF file. Decoding specifies the method used to retrieve data from the CDF file and pass it to an application (IDL, for example). Encoding and decoding methods are specified by setting the <EM CLASS="Emphasis">
+XXX</EM>
+_ENCODING and <EM CLASS="Emphasis">
+XXX</EM>
+_DECODING keywords to CDF_CREATE. If no decoding method is specified, the decoding method is set to be the same as the encoding method.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997326">
+ </A>
+All CDF encoding and decodings can be written or read on all platforms, but matching the encoding with the architecture used provides the best performance. If you work in a single-platform environment most of the time, select HOST_ENCODING for maximum performance. If you know that the CDF file will be transported to a computer using another architecture, specify the encoding for the target architecture or specify NETWORK_ENCODING (the default). Specifying the target architecture provides maximum performance on that architecture; specifying NETWORK_ENCODING provides maximum flexibility.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997327">
+ </A>
+For more discussion on CDF encoding/decoding methods and combinations, see sections 2.2.7 (&quot;Encoding&quot;) and 2.2.8 (&quot;Decoding&quot;) of the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+.</P>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997328">
+ </A>
+Calling Sequence</H2>
+<P CLASS="Body">
+<A NAME="pgfId=997329">
+ </A>
+Result = CDF_CREATE(<I CLASS="Italics">
+Filename</I>
+, [<I CLASS="Italics">
+Dimensions</I>
+])</P>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997330">
+ </A>
+Arguments</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997331">
+ </A>
+Filename</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997332">
+ </A>
+A scalar string containing the name of the file to be created. Note that if the desired filename has a <CODE CLASS="Code">
+.cdf</CODE>
+ ending, you can omit the extension and specify just the first part of the filename. For example, specifying <CODE CLASS="Code">
+&quot;mydata&quot;</CODE>
+ would open the file <CODE CLASS="Code">
+mydata.cdf</CODE>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997333">
+ </A>
+Dimensions</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997334">
+ </A>
+A vector of values specifying size of each rVariable dimension. If no dimensions are specified, then the file will contain a single scalar per record (i.e., a 0-dimensional CDF).</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=997335">
+ </A>
+Keywords</H2>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997337">
+ </A>
+<A NAME="marker=997336">
+ </A>
+ALPHAOSF1_ENCODING<BR>
+ALPHAOSF1_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997338">
+ </A>
+Set this keyword to indicate DEC ALPHA/OSF1 data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997340">
+ </A>
+<A NAME="marker=997339">
+ </A>
+ALPHAVMSD_ENCODING<BR>
+ALPHAVMSD_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997341">
+ </A>
+Set this keyword to indicate DEC ALPHA/VMS data encoding/decoding using Digital's D_FLOAT representation.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997343">
+ </A>
+<A NAME="marker=997342">
+ </A>
+ALPHAVMSG_ENCODING<BR>
+ALPHAVMSG_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997344">
+ </A>
+Set this keyword to indicate DEC ALPHA/VMS data encoding/decoding using Digital's G_FLOAT representation.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=998774">
+ </A>
+<A NAME="marker=998773">
+ </A>
+CLOBBER</H3>
+<P CLASS="Body">
+<A NAME="pgfId=998775">
+ </A>
+Set this keyword to erase the existing file (if the file already exists) before creating the new version. Note that if the existing file has been corrupted, the CLOBBER operation may fail, causing IDL to display an error message. In this case you must manually delete the existing file from outside IDL.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997346">
+ </A>
+<A NAME="marker=997345">
+ </A>
+COL_MAJOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997347">
+ </A>
+Set this keyword to specify column major (IDL-like) array ordering for variable storage.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997349">
+ </A>
+<A NAME="marker=997348">
+ </A>
+HOST_ENCODING<BR>
+HOST_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997350">
+ </A>
+Set this keyword to select that the file will use native data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997352">
+ </A>
+<A NAME="marker=997351">
+ </A>
+HP_ENCODING<BR>
+HP_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997353">
+ </A>
+Set this keyword to select HP 9000 data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997355">
+ </A>
+<A NAME="marker=997354">
+ </A>
+IBMRS_ENCODING<BR>
+IBMRS_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997356">
+ </A>
+Set this keyword to select IBM RS/6000 series data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997358">
+ </A>
+<A NAME="marker=997357">
+ </A>
+IBMPC_ENCODING<BR>
+IBMPC_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997359">
+ </A>
+Set this keyword to select IBM PC data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997361">
+ </A>
+<A NAME="marker=997360">
+ </A>
+SGI_ENCODING<BR>
+SGI_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997362">
+ </A>
+Set this keyword to select SGI (MIPSEB) data encoding/decoding (Silicon Graphics Iris and Power series).</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997364">
+ </A>
+<A NAME="marker=997363">
+ </A>
+DECSTATION_ENCODING<BR>
+DECSTATION_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997365">
+ </A>
+Set this keyword to select Decstation (MIPSEL) data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997367">
+ </A>
+<A NAME="marker=997366">
+ </A>
+MAC_ENCODING<BR>
+MAC_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997368">
+ </A>
+Set this keyword to select Macintosh data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997369">
+ </A>
+MULTI_FILE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997370">
+ </A>
+Set this keyword to cause all CDF control information and attribute entry data to be placed in one <CODE CLASS="Code">
+.cdf</CODE>
+ file, with a separate file created for each defined variable. If the variable in an rVariable, then the variable files will have extensions of <CODE CLASS="Code">
+.v0</CODE>
+, <CODE CLASS="Code">
+.v1</CODE>
+, <EM CLASS="Emphasis">
+etc.</EM>
+; zVariables will be stored in files with extensions of <CODE CLASS="Code">
+.z0</CODE>
+, <CODE CLASS="Code">
+.z1</CODE>
+, <EM CLASS="Emphasis">
+etc.</EM>
+ This is the default format, and is usually more efficient than the SINGLE_FILE format. See section 2.2.7 (&quot;Format&quot;) in the version 2.6 <EM CLASS="Emphasis">
+CDF User's Guide</EM>
+ for more information. If both SINGLE_FILE and MULTI_FILE are set the file will be created in the MULTI_FILE format.</P>
+<P CLASS="Body">
+<A NAME="pgfId=997371">
+ </A>
+MULTI_FILE Example:</P>
+<P CLASS="Code">
+<A NAME="pgfId=997372">
+ </A>
+id=CDF_CREATE('multi', /MULTI_FILE)</P>
+<P CLASS="Code">
+<A NAME="pgfId=997373">
+ </A>
+CDF_CONTROL, id, GET_FORMAT=cdf_format</P>
+<P CLASS="Code">
+<A NAME="pgfId=997374">
+ </A>
+HELP, cdf_format</P>
+<P CLASS="Body">
+<A NAME="pgfId=997375">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=997376">
+ </A>
+CDF_FORMAT      STRING    = 'MULTI_FILE'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997378">
+ </A>
+<A NAME="marker=997377">
+ </A>
+NETWORK_ENCODING<BR>
+NETWORK_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997379">
+ </A>
+Set this keyword to select network-transportable data encoding/decoding (XDR). This is the default method.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997381">
+ </A>
+<A NAME="marker=997380">
+ </A>
+NEXT_ENCODING<BR>
+NEXT_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997382">
+ </A>
+Set this keyword to select NeXT data encoding/decoding.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997384">
+ </A>
+<A NAME="marker=997383">
+ </A>
+ROW_MAJOR</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997385">
+ </A>
+Set this keyword to specify row major (C-like) array ordering for variable storage. This is the default.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997387">
+ </A>
+<A NAME="marker=997386">
+ </A>
+SINGLE_FILE</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997388">
+ </A>
+Set this keyword to cause all CDF information (control information, attribute entry data, variable data, etc.) to be written to a single <CODE CLASS="Code">
+.cdf</CODE>
+ file. The default is to use the MULTI_FILE format where a separate file is created for each variable. See section 2.2.7 (&quot;Format&quot;) of the version 2.6 <I CLASS="Italics">
+CDF User's Guide</I>
+ for more information.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Argument">
+<A NAME="pgfId=997390">
+ </A>
+<A NAME="marker=997389">
+ </A>
+SUN_ENCODING<BR>
+SUN_DECODING</H3>
+<P CLASS="Body">
+<A NAME="pgfId=997391">
+ </A>
+Set this keyword to select SUN data encoding/decoding.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="Heading-1R">
+<A NAME="pgfId=998833">
+ </A>
+Example</H2>
+<P CLASS="Body">
+<A NAME="pgfId=998834">
+ </A>
+Use the following command to create a 10-element by 20-element CDF using network encoding and Sun decoding:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998859">
+ </A>
+id = CDF_CREATE('cdf_create.cdf', [10,20], /NETWORK_ENCODING, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998862">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/SUN_DECODING)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998848">
+ </A>
+.....	<EM CLASS="Comment">;
+other cdf commands.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998849">
+ </A>
+CDF_CLOSE, id	<EM CLASS="Comment">;
+close the file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998851">
+ </A>
+Now suppose that we decide to use HP_DECODING instead. We can use the CLOBBER keyword to delete the existing file when creating the new file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998854">
+ </A>
+id = CDF_CREATE('cdf_create.cdf', [10,20], /NETWORK_ENCODING, $</P>
+<P CLASS="Code">
+<A NAME="pgfId=998877">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;/HP_DECODING, /CLOBBER)</P>
+<P CLASS="Code">
+<A NAME="pgfId=998879">
+ </A>
+.....	<EM CLASS="Comment">;
+other cdf commands.</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=998880">
+ </A>
+CDF_CLOSE, id	<EM CLASS="Comment">;
+close the file.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=998797">
+ </A>
+The new file is written over the existing file. Use the following command to delete the file:</P>
+<P CLASS="Code">
+<A NAME="pgfId=998798">
+ </A>
+CDF_DELETE, id</P>
+</DIV>
+</BODY>
+</HTML>

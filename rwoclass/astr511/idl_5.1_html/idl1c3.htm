@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> STRTRIM</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1c4.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1c2.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=679167">
+ </A>
+<A NAME="95224">
+ </A>
+STRTRIM</H2>
+<P CLASS="Body">
+<A NAME="pgfId=679168">
+ </A>
+The <A NAME="marker=674051">
+ </A>
+STRTRIM function returns a copy of <I CLASS="Italic">
+String</I>
+ with leading and/or trailing blanks removed.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679169">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679170">
+ </A>
+Result = STRTRIM(<I CLASS="Italic">
+String, [Flag]</I>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679171">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679172">
+ </A>
+String</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679173">
+ </A>
+The string to have leading and/or trailing blanks removed. If this argument is not a string, it is converted using IDL's default formatting rules. If it is an array, the result is an array with the same structure where each element contains a trimmed copy of the corresponding element of <I CLASS="Italic">
+String</I>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=679174">
+ </A>
+Flag</H4>
+<P CLASS="Body">
+<A NAME="pgfId=679175">
+ </A>
+A value that controls the action of STRTRIM. If <I CLASS="Italic">
+Flag</I>
+ is zero or not present, trailing blanks are removed. Leading blanks are removed if it is equal to 1. Both are removed if it is equal to 2.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=679176">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=679177">
+ </A>
+Converting variables to string type often results in undesirable leading blanks. For example, the following command converts the integer 56 to string type:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679178">
+ </A>
+C = STRING(56)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679179">
+ </A>
+Entering the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679180">
+ </A>
+HELP, C</P>
+<P CLASS="Body">
+<A NAME="pgfId=679181">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679182">
+ </A>
+C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRING = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56'</P>
+<P CLASS="Body">
+<A NAME="pgfId=679183">
+ </A>
+which shows that there are six leading spaces before the characters 5 and 6. To remove these leading blanks, enter the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679184">
+ </A>
+C = STRTRIM(C, 1)</P>
+<P CLASS="Body">
+<A NAME="pgfId=679185">
+ </A>
+To confirm that the blanks were removed, enter:</P>
+<P CLASS="Code">
+<A NAME="pgfId=679186">
+ </A>
+HELP, C</P>
+<P CLASS="Body">
+<A NAME="pgfId=679187">
+ </A>
+IDL prints:</P>
+<P CLASS="Code-Result">
+<A NAME="pgfId=679188">
+ </A>
+C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRING = '56'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795950">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=842951">
+ </A>
+<A HREF="idl1b7.htm#45555" CLASS="XRef">
+STR_SEP</A>
+, <A HREF="idl1c0.htm#64169" CLASS="XRef">
+STRMID</A>
+, <A HREF="idl1c1.htm#37928" CLASS="XRef">
+STRPOS</A>
+, <A HREF="idl1c2.htm#64894" CLASS="XRef">
+STRPUT</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

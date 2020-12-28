@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> RESTORE</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl17d.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl17b.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=135743">
+ </A>
+<A NAME="85451">
+ </A>
+RESTORE</H2>
+<P CLASS="Body">
+<A NAME="pgfId=901256">
+ </A>
+The <A NAME="marker=901252">
+ </A>
+RESTORE procedure restores the IDL variables and routines saved in a file by the SAVE procedure.</P>
+<UL>
+<P CLASS="Caution"><b><FONT SIZE=+1>CAUTION: </FONT></b>
+<A NAME="pgfId=901146">
+ </A>
+While files containing IDL variables can be restored by any version of IDL that supports the data types of the variables (in particular, by any version of IDL later than the version that created the SAVE file), files containing IDL routines can only be restored by versions of IDL that share the same internal code representation. Since the internal code representation changes regularly, you should always archive the IDL language source files (<CODE CLASS="Code">
+.pro</CODE>
+ files) for routines you are placing in IDL SAVE files so you can recompile the code when a new version of IDL is released.</LI>
+</UL>
+<DIV>
+<H4 CLASS="Heading-2R">
+<A NAME="pgfId=901771">
+ </A>
+Note to VMS Users</H4>
+<P CLASS="Body">
+<A NAME="pgfId=901774">
+ </A>
+When reading older VMS format files, IDL knows that all floating-point values are in VAX format. These floating values are automatically converted to IEEE format. Only VMS/IDL is able to restore the native VMS format.</P>
+<UL>
+<P CLASS="Note"><b><FONT SIZE=+1>NOTE: </FONT></b>
+<A NAME="pgfId=901780">
+ </A>
+If you are restoring a file created with VAX IDL version 1, you <EM CLASS="Emphasis">
+must</EM>
+ restore on a machine running VMS.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=861975">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678563">
+ </A>
+RESTORE <I CLASS="Italic">
+[, Filename]</I>
+</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678564">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678565">
+ </A>
+Filename</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678566">
+ </A>
+A scalar string that contains the name of the file from which the IDL objects should be restored. If not present, the file <CODE CLASS="Code">
+idlsave.dat</CODE>
+ is used.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678567">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678568">
+ </A>
+<A NAME="marker=673739">
+ </A>
+FILENAME</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678569">
+ </A>
+The name of the file from which the IDL objects should be restored. If not present, the file <CODE CLASS="Code">
+idlsave.dat</CODE>
+ is used. This keyword serves exactly the same purpose as the <I CLASS="Italic">
+Filename</I>
+ argument--only one of them needs to be provided.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900571">
+ </A>
+<A NAME="marker=900689">
+ </A>
+RELAXED_STRUCTURE_ASSIGNMENT</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900572">
+ </A>
+Normally, RESTORE is unable to restore a structure variable if the definition of its type has changed since the SAVE file was written. A common case where this occurs is when objects are saved and the class structure of the objects change before they are restored in another IDL session. In such cases, RESTORE issues an error, skips the structure, and continues restoring the remainder of the SAVE file.</P>
+<P CLASS="Body">
+<A NAME="pgfId=900580">
+ </A>
+Setting the RELAXED_STRUCTURE_ASSIGNMENT keyword causes RESTORE to restore such incompatible values using &quot;<A NAME="marker=901145">
+ </A>
+relaxed structure assignment,&quot; in which all possible data are restored using a field-by-field copy. (See the description of the <A HREF="idl1c4.htm#15324" CLASS="XRef">
+STRUCT_ASSIGN</A>
+ procedure for additional details.)</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=900564">
+ </A>
+<A NAME="marker=900570">
+ </A>
+RESTORED_OBJECTS</H4>
+<P CLASS="Body">
+<A NAME="pgfId=900565">
+ </A>
+Set this keyword equal to a named variable that will contain an array of object references for any objects restored. The resulting list of objects is useful for programmatically calling the objects' restore methods. If no objects are restored, the variable will contain a null object reference. </P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=678570">
+ </A>
+<A NAME="marker=673743">
+ </A>
+VERBOSE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=678571">
+ </A>
+Set this keyword to have IDL print an informative message for each restored object.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=678572">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=678573">
+ </A>
+Suppose that you have saved all the variables from a previous IDL session with the command:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678574">
+ </A>
+SAVE, /VARIABLES, FILENAME = 'session1.sav'</P>
+<P CLASS="Body">
+<A NAME="pgfId=678575">
+ </A>
+The variables in the file <CODE CLASS="Code">
+session1.sav</CODE>
+ can be restored by entering:</P>
+<P CLASS="Code">
+<A NAME="pgfId=678576">
+ </A>
+RESTORE, 'session1.sav'</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=795747">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=795748">
+ </A>
+<A HREF="idldd.htm#47579" CLASS="XRef">
+JOURNAL</A>
+, <A HREF="idl18b.htm#30525" CLASS="XRef">
+SAVE</A>
+, <A HREF="idl1c4.htm#15324" CLASS="XRef">
+STRUCT_ASSIGN</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

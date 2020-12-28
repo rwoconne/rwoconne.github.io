@@ -1,0 +1,33 @@
+
+23 JUNE 2013:
+
+This "minimousse" directory contains IDL programs useful in the IDL
+Tutorial but which are NOT distributed as part of the "IDL Astronomy
+User's Library."  These are selected from the larger set of MOUSSE
+routines written by the UIT Team (GSFC).
+
+Redundant, obsolete, or overly specialized routines originally in the
+2003 "minimousse" distribution have been deleted.  All included
+routines are unchanged from their earlier distributions.
+
+The versions used are from 
+
+   http://idlastro.gsfc.nasa.gov/ftp/contrib/landsman/mousse
+
+Also included are the MAN.PRO and MPBASIC.PRO routines, written by
+Wayne Landsman but no longer available from the Astronomy User's
+Library. These will work in the simple mode described in the "Guide to
+IDL for Astronomers" and the IDL Tutorial to print header information
+on non-intrinsic IDL programs as long as the programs are in your IDL
+path.  I don't recommend trying to use the other options in the
+MAN.PRO routine.
+
+TVDBASE.PRO is included as an example of how to use the IDL database
+system designed by Don Lindler and Landsman, if it is installed on
+your server, to display information on screen.
+
+For completeness, the tarfile for the 2003 version of "minimousse" is
+also included here.  Use 2003 routines not in the 2013 distribution
+judiciously.
+
+

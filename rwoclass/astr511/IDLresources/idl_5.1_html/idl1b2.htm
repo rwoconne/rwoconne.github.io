@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> SPRSIN</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl1b3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl1b1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H2 CLASS="Routine-Name">
+<A NAME="pgfId=52019">
+ </A>
+<A NAME="41214">
+ </A>
+SPRSIN</H2>
+<P CLASS="Body">
+<A NAME="pgfId=52023">
+ </A>
+The <A NAME="marker=52021">
+ </A>
+SPRSIN function converts an array into a row-index <A NAME="marker=52022">
+ </A>
+sparse storage mode, retaining only elements with an absolute magnitude greater than or equal to the specified threshold.</P>
+<P CLASS="Body">
+<A NAME="pgfId=52024">
+ </A>
+The result is a row-indexed sparse array contained in structure form. The structure consists of two linear sparse storage vectors: SA, a vector of array values, and IJA, a vector of subscripts to the SA vector. The length of these vectors is equal to the number of diagonal elements of the array, plus the number of off-diagonal elements with an absolute magnitude greater that or equal to the threshold value. Diagonal elements of the array are always retained even if their absolute magnitude is less than the specified threshold. </P>
+<P CLASS="Body">
+<A NAME="pgfId=52025">
+ </A>
+SPRSIN is based on the routine <CODE CLASS="Code">
+sprsin</CODE>
+ described in section 2.7 of <I CLASS="Italic">
+Numerical Recipes in C: The Art of Scientific Computing</I>
+ (Second Edition), published by Cambridge University Press, and is used by permission.</P>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52026">
+ </A>
+Calling Sequence</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52027">
+ </A>
+Result = SPRSIN(<EM CLASS="Emphasis">
+A</EM>
+)</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52028">
+ </A>
+Arguments</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52029">
+ </A>
+A </H4>
+<P CLASS="Body">
+<A NAME="pgfId=52030">
+ </A>
+An <EM CLASS="Emphasis">
+n</EM>
+ by <EM CLASS="Emphasis">
+n</EM>
+ array of any type except string or complex. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52031">
+ </A>
+Keywords</H3>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=58754">
+ </A>
+<A NAME="marker=58753">
+ </A>
+COLUMN</H4>
+<P CLASS="Body">
+<A NAME="pgfId=58755">
+ </A>
+Set this keyword if the input array <EM CLASS="Emphasis">
+A</EM>
+ is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52033">
+ </A>
+<A NAME="marker=52032">
+ </A>
+DOUBLE</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52034">
+ </A>
+Set this keyword to convert the sparse array to double-precision.</P>
+</DIV>
+<DIV>
+<H4 CLASS="Argument">
+<A NAME="pgfId=52036">
+ </A>
+<A NAME="marker=52035">
+ </A>
+THRESH</H4>
+<P CLASS="Body">
+<A NAME="pgfId=52037">
+ </A>
+Use this keyword to set the criterion for deciding the absolute magnitude of the elements to be retained in sparse storage mode. For single-precision calculations, the default value is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-7</SUP>
+. For double-precision values, the default is 1.0&nbsp;<EM CLASS="Symbol">
+&#165;</EM>
+&nbsp;10<SUP CLASS="Superscript">
+-14</SUP>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52038">
+ </A>
+Example</H3>
+<P CLASS="Body">
+<A NAME="pgfId=52039">
+ </A>
+Suppose we wish to convert the following array to sparse storage format:</P>
+<P CLASS="Code">
+<A NAME="pgfId=52040">
+ </A>
+A = [[ 5.0, -0.2, 0.1], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52041">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3.0, -2.0, 0.3], $</P>
+<P CLASS="Code">
+<A NAME="pgfId=52042">
+ </A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 4.0, -1.0, 0.0]]</P>
+<P CLASS="Code">
+<A NAME="pgfId=52043">
+ </A>
+sparse = SPRSIN(A, THRESH = 0.5)	<EM CLASS="Comment">;
+Convert to sparse storage mode. All elements of the array A that have absolute values less than THRESH are set to zero.</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=52044">
+ </A>
+The variable SPARSE now contains a representation of A in structure form. See the description of FULSTR for an example that restores such a structure to full storage mode.</P>
+</DIV>
+<DIV>
+<H3 CLASS="Heading-1R">
+<A NAME="pgfId=52045">
+ </A>
+See Also</H3>
+<P CLASS="Body">
+<A NAME="pgfId=842889">
+ </A>
+<A HREF="idlac.htm#82247" CLASS="XRef">
+FULSTR</A>
+, <A HREF="idle8.htm#41659" CLASS="XRef">
+LINBCG</A>
+, <A HREF="idl1b0.htm#69406" CLASS="XRef">
+SPRSAB</A>
+, <A HREF="idl1b1.htm#31054" CLASS="XRef">
+SPRSAX</A>
+, <A HREF="idl169.htm#57482" CLASS="XRef">
+READ_SPR</A>
+, <A HREF="idl213.htm#23995" CLASS="XRef">
+WRITE_SPR</A>
+</P>
+</DIV>
+</BODY>
+</HTML>

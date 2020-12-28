@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<STYLE><!--
+H1         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H1.Chapter-Name    { font-size: 36pt }
+H2         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H3         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H4         { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+H5         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+H6         { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+             margin-top: -5.0pt ; font-size: 12pt }
+P          { font-family: Minion, Times, serif }
+P.api      { font-family: Courier ; font-weight: Bold }
+P.Code     { font-family: Courier, serif ; font-size: 10pt}
+P.Code-2   { font-family: Courier, serif ; font-size: 10pt}
+P.Code-Result   { font-family: Courier, serif ; font-size: 10pt ;
+                  font-weight: Bold}
+P.ChapTOC  { font-family: Stone Sans, Helvetica, Arial, sans-serif }
+P.Chapter-NameTOC   { font-family: Stone Sans, Helvetica, Arial, sans-serif ;
+		      font-size: 20pt; font-weight: Bold }
+P.Level2IX	{margin-left: 10pt }
+LI.Code-Numbered     { font-family: Courier, serif ; font-size: 10pt}
+LI.Code-Numbered-1   { font-family: Courier, serif ; font-size: 10pt}
+--></STYLE>
+
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+
+<TITLE> Network Common Data Format</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<DIV>
+<DIV><table width="100%" border=0 cellspacing=0 cellpadding=0> <TR>  <TD></TD>   <TD  bgcolor="#ffffff">     <IMG SRC = "idlmap.gif" USEMAP = "#idlmap.gif" BORDER = 0>   </TD> </TR></TABLE><MAP NAME = "idlmap.gif"><AREA SHAPE=RECT HREF="idl2d3.htm" COORDS="290, 29, 344, 43"><AREA SHAPE=RECT HREF="idl.htm" COORDS="139, 29, 239, 46"><AREA SHAPE=RECT HREF="idl2d1.htm" COORDS="0, 29, 98, 46"><AREA SHAPE=RECT HREF="idl.htm" COORDS="68, 0, 275, 18"></MAP></DIV><HR></DIV>
+<H1 CLASS="Chapter-Name">
+<A NAME="pgfId=997837">
+ </A>
+<A NAME="50736">
+ </A>
+Network Common Data Format</H1>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005425">
+</A>
+The following topics are covered in this chapter:</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005426">
+</A>
+&nbsp;</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005433">
+</A>
+<A HREF="idl2d3.htm" CLASS="XRef">
+Attributes, Dimensions, and Variables</A>
+ 	 <A HREF="idl2d3.htm" CLASS="XRef">
+Attributes, Dimensions, and Variables</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005440">
+</A>
+<A HREF="idl2d4.htm" CLASS="XRef">
+Creating NetCDF Files</A>
+ 	 <A HREF="idl2d4.htm" CLASS="XRef">
+Creating NetCDF Files</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005447">
+</A>
+<A HREF="idl2d7.htm" CLASS="XRef">
+String Data in NetCDF Files</A>
+ 	 <A HREF="idl2d7.htm" CLASS="XRef">
+String Data in NetCDF Files</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005454">
+</A>
+<A HREF="idl2d5.htm" CLASS="XRef">
+Type Conversion</A>
+ 	 <A HREF="idl2d5.htm" CLASS="XRef">
+Type Conversion</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005461">
+</A>
+<A HREF="idl2d6.htm" CLASS="XRef">
+Specifying Attributes and Variables</A>
+ 	 <A HREF="idl2d6.htm" CLASS="XRef">
+Specifying Attributes and Variables</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005465">
+</A>
+NetCDF Routines 	 <A HREF="idl2d8.htm" CLASS="XRef">
+NCDF_ATTCOPY</A>
+</P>
+<P CLASS="ChapTOC">
+<A NAME="pgfId=1005466">
+</A>
+&nbsp;</P>
+<P CLASS="Body---intro">
+<A NAME="pgfId=1002233">
+ </A>
+This chapter details the interface routines for the Network Common Data Format. General notes about the interface are presented below, followed by individual descriptions of the routines. This version of IDL supports netCDF 2.4.</P>
+<DIV>
+<H4 CLASS="Heading-2">
+<A NAME="pgfId=1002234">
+ </A>
+NetCDF Data Modes </H4>
+<P CLASS="Body---intro">
+<A NAME="pgfId=998544">
+ </A>
+<A NAME="marker=998543">
+ </A>
+There are two modes associated with accessing a netCDF file: <I CLASS="Italics">
+define</I>
+ mode and <I CLASS="Italics">
+data</I>
+ mode. In <I CLASS="Italics">
+define</I>
+ mode, dimensions, variables, and new attributes can be created but variable data cannot be read or written. In <I CLASS="Italics">
+data</I>
+ mode, data can be read or written and attributes can be changed, but new dimensions, variables, and attributes cannot be created.</P>
+<P CLASS="Body">
+<A NAME="pgfId=998545">
+ </A>
+IDL's NCDF_CONTROL routine can be used control the mode of a netCDF file. The only time it is not necessary to set the mode with NCDF_CONTROL is when using the NCDF_CREATE procedure to create a new file. NCDF_CREATE places the new netCDF file into define mode automatically.</P>
+</DIV>
+<P CLASS="ChapTOC">
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl2d3.htm#pgfId=998546" CLASS="Hypertext">
+Attributes, Dimensions, and Variables</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl2d4.htm#pgfId=998557" CLASS="Hypertext">
+Creating NetCDF Files</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl2d5.htm#pgfId=998628" CLASS="Hypertext">
+Type Conversion</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl2d6.htm#pgfId=998632" CLASS="Hypertext">
+Specifying Attributes and Variables</A>
+</H2>
+<H2 CLASS="Heading-1TOC">
+<A HREF="idl2d7.htm#pgfId=998637" CLASS="Hypertext">
+String Data in NetCDF Files</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2d8.htm#pgfId=997836" CLASS="Hypertext">
+NCDF_ATTCOPY</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2d9.htm#pgfId=996946" CLASS="Hypertext">
+NCDF_ATTDEL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2da.htm#pgfId=996978" CLASS="Hypertext">
+NCDF_ATTGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2db.htm#pgfId=997016" CLASS="Hypertext">
+NCDF_ATTINQ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2dc.htm#pgfId=997078" CLASS="Hypertext">
+NCDF_ATTNAME</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2dd.htm#pgfId=997098" CLASS="Hypertext">
+NCDF_ATTPUT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2de.htm#pgfId=997148" CLASS="Hypertext">
+NCDF_ATTRENAME</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2df.htm#pgfId=997170" CLASS="Hypertext">
+NCDF_CLOSE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e0.htm#pgfId=997182" CLASS="Hypertext">
+NCDF_CONTROL</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e1.htm#pgfId=997279" CLASS="Hypertext">
+NCDF_CREATE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e2.htm#pgfId=997317" CLASS="Hypertext">
+NCDF_DIMDEF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e3.htm#pgfId=997337" CLASS="Hypertext">
+NCDF_DIMID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e4.htm#pgfId=997351" CLASS="Hypertext">
+NCDF_DIMINQ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e5.htm#pgfId=997369" CLASS="Hypertext">
+NCDF_DIMRENAME</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e6.htm#pgfId=997385" CLASS="Hypertext">
+NCDF_EXISTS</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e7.htm#pgfId=997398" CLASS="Hypertext">
+NCDF_INQUIRE</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e8.htm#pgfId=997421" CLASS="Hypertext">
+NCDF_OPEN</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2e9.htm#pgfId=997441" CLASS="Hypertext">
+NCDF_VARDEF</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ea.htm#pgfId=997477" CLASS="Hypertext">
+NCDF_VARGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2eb.htm#pgfId=997529" CLASS="Hypertext">
+NCDF_VARGET</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ec.htm#pgfId=997570" CLASS="Hypertext">
+NCDF_VARID</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ed.htm#pgfId=997584" CLASS="Hypertext">
+NCDF_VARINQ</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ee.htm#pgfId=997611" CLASS="Hypertext">
+NCDF_VARPUT</A>
+</H2>
+<H2 CLASS="Routine-NameTOC">
+<A HREF="idl2ef.htm#pgfId=997676" CLASS="Hypertext">
+NCDF_VARRENAME</A>
+</H2>
+</BODY>
+</HTML>
