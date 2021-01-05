@@ -1,0 +1,1102 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1992-2019.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr1210 -->
+<!-- -->
+
+<!-- SOURCE: 
+
+%%% ASTR 121 Supplements 1,2, 3
+
+%%% Original material (typed version): ca. 1978.  Updated occasionally.
+%%% Scanned from older typed versions, 1/92;
+%%% Combined version created 3/96 (for ASTR 101)
+
+%%% TeX VERSIONS:  10/10/96--small correcs (not on printed version)
+%%%                10/1/96--added Doppler effect 
+%%%                4 Mar 96
+%%%                10 Mar 94 [Major update from 92 version]
+
+    Supplement 3 removed [2/98] and made separate PDF file [10/98].
+    Relabeled Supp 1, January 2004.
+
+    HTML VERSIONS:  21 Feb 98; 22 Feb; 23 Feb; 3 Mar 98;
+                    13 Oct 98; 14 Jan 99; 23 May 99; 23 Feb 2002;
+                    24 Feb [figures added, text partly re-ordered];
+                    25 Feb; 27 Feb; 23 Oct (Doppler Applet added); 
+                    Jan 2004: Supp 3 moved to lecture 1 and
+                       renamed Supp 1
+                    18 Feb 2004: renumber: 1 to 2, 2 to 3; updated
+                    19 Feb; 20 Feb; 23 Feb; 28 Feb; 
+                    20 Feb 2007: add css; minor mods; 2/27; 3/19; 10/7;
+                    10/10; 2/25/2008; 3/6/2009; 3/11; 12/14; 5/28/2010; 
+                    10/03; 6/2/2012--revised format & minor updates; 
+                    10/7; 10/8; 10/9; 2/23/2013; 2/25; 9/27; 10/30; 
+                    2/13/2014; 2/24; 2/25; 9/11/2015: new domain; 
+                    9/28; 10/31/16: make EM waves a sep section; 
+                    7/13/2018; 6/12/2019; 
+   -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1210, O'CONNELL.  SUPPLEMENTS 2 & 3 </TITLE>
+</head>
+<body>
+
+
+<h2 align="center"> ASTR 1210 (O'CONNELL) SUPPLEMENTS </h2>
+
+<hr noshade>
+
+There are three special supplements which are required reading for
+this class.  <a href="121supp1.pdf"><b>Supplement I</b></a> (a PDF
+file) contains reference material on units of measurement, powers of
+ten, nomenclature, and special symbols.  It should be <b>consulted as
+necessary</b> throughout the remainder of the course.</p>
+
+<b>Supplements II and III</b> are intended
+to <b>replace</b> the material in the textbook covering the basic
+properties of matter, the nature of forces, the electromagnetic
+spectrum, and how astronomers exploit the properties of the EM
+spectrum to deduce the physical nature of distant objects.  They also
+serve as the <a href="guideindex.html">Study Guides</a> for the
+lectures where this material is covered.  Most of the concepts
+presented in II and III should already be familiar to you.  These
+supplements are available in this HTML file. </p>
+
+<hr noshade>
+<p><br></p>
+
+<h1 align="center"> ASTRONOMY 1210:  SUPPLEMENT II
+</h1>
+
+<p><br></p>
+
+<h2>A.  Elementary Particles </h2>
+
+You should already be familiar with three elementary particles:
+the <b> electron</b>, the <b>proton</b>, and the <b>neutron</b>.
+These are the primary constituents of <b>atoms</b>.  Atoms were first
+proposed as the basic components of matter by Greek philosophers (e.g.
+Democritus, ca. 400 BC), and their reality was debated for thousands
+of years.  Their existence was proven beyond doubt in the 19th
+century.</p>
+
+Protons and neutrons are bound together in the <b>nucleus</b> of the atom, an
+object about 10<sup>-13</sup> centimeters in diameter. The electrons
+orbit the nucleus in a cloud which is 100,000 times larger,
+10<sup>-8</sup> cm in diameter.  There is a multitude of other
+elementary particles, most of which exist only for very short periods
+of time; most of these will not be discussed further in the course.</p>
+
+<center><img src="im/AtomLabeled.gif" border=2 width=25%></center></p>
+
+Two properties of elementary particles are relevant for us: their 
+<b>mass</b>  and   <b>charge</b>. </p>
+
+Roughly speaking, <b>mass</b> is the "amount of matter" in an object.
+Quantitatively, it is the <b> inertial mass</b> and measures the
+"resistance" of an object to an applied force (as expressed in Newton's
+Second Law). The larger the mass, the harder it is to move the object.
+ Mass is measured in grams:</p>
+
+
+<ul>
+
+<li>Mass of proton (or neutron) = 1.7 x 10<sup>-24</sup> grams </p>
+
+<li> Mass of electron = mass of proton/1800</p>
+
+</ul>
+
+<b>Charge</b> is a property of particles which determines their behavior 
+when acted on by <b> electromagnetic forces</b> . "EM" forces are described 
+in more detail in section B.</p>
+
+<ul>
+
+All elementary particles which have been isolated are found to have only 
+certain definite amounts of charge: none, exactly one positive unit 
+of charge, or exactly one negative unit.  (Protons and neutrons 
+are constructed of even more basic subunits 
+called "quarks", which have fractional charges. But these are strongly
+bound together inside protons and neutrons.  Free quarks 
+should rarely exist and have never been observed in the laboratory.)</p>
+
+<ul>
+
+<li> The neutron has zero charge </p>
+
+<li>The proton has a charge of +1 </p>
+
+<li>The electron has a charge of -1 </p>
+
+(Note: The + or - sign is simply a convention
+indicating that electrons and protons behave differently in EM force
+fields.)    </p>
+
+</ul></ul>
+
+Since the nucleus of an atom contains only protons and neutrons, it will have
+a positive charge. The basic property that distinguishes the various
+<b>elements</b>  from one another is the <b>number of protons</b> in their
+nuclei or, equivalently, the amount of positive charge on the nucleus.</p>
+
+There are <b>92 naturally occurring elements</b> on the earth, ranging from
+hydrogen (with only one proton in its nucleus and no neutrons) to
+uranium (with 92 protons and 146 neutrons).  [Other elements, e.g.
+plutonium, have been artificially produced, but all of these are
+unstable and have finite lifetimes.]  <b>All materials</b>, despite
+their myriad appearances, are made of these 92 types of atoms.  In
+fact, most everyday materials, including living things, are made of no
+more than <b>about 20 types</b> of atoms.  </p>
+
+<ul>
+
+Note: the abundances of elements on the Earth are very different from
+their  <b>cosmic abundances</b>  (i.e. those in the stars or the
+interstellar gas).  75% of the earth's crust is oxygen or
+silicon. However, in our galaxy, hydrogen makes up about 72% of the
+total mass, helium another 25%, and all other elements only 3%.</p>
+
+</ul>
+
+In their undisturbed or "neutral" state, atoms have as many electrons
+as protons and therefore have a <b> net</b> charge of <b>zero</b>. Under many
+circumstances, however, electrons can be stripped out of the cloud
+which surrounds the nucleus. The atom is then said to
+be <b>ionized</b> and is referred to as a "positive ion" since it has
+a net positive charge.
+</p>
+
+
+The last elementary particle we will discuss is the <b>photon</b>,
+which is not a "regular" particle at all.  It has zero mass
+and zero charge. Instead, the <b>photon is a packet of electromagnetic
+energy</b>.  The concept of the photon is a product of the <b>quantum
+theory</b>, which describes the behavior of elementary particles. The
+photon is the "particle" which transmits the electromagnetic force
+between charged particles. Light waves consist of photons, as do radio
+waves, and the discrete, particle-like impact of photons on special
+detectors can actually be readily demonstrated in the
+laboratory. Photons are discussed further in Supplement III.</p>
+
+
+<a name="forces"> </a>
+<h2> B.  Forces</h2>   </p>
+
+If particles did not exert forces on each other, there would be no
+organization in the universe: no planets, no stars, no people.
+Particles would move throughout space in random but unchanging paths,
+never altering their motion even when they passed through one
+another.</p>
+
+However, particles do exert forces on each other, and the
+nature of these forces depends on the mass, charge (and other
+"internal" properties we will not discuss), and state of motion of the
+particle.</p>
+
+Isaac <b>Newton</b> was the first to formulate a quantitative
+description of <b>how</b> matter responds to forces which are
+applied to it.  Historically, Newton's laws were a major stimulus
+for both the scientific revolution and the industrial revolution since
+they demonstrated that the universe is understandable through rational
+analysis.  His description is encapsulated in his <b>second law of
+motion</b> :</p>
+
+<ul>
+
+<b>F  =   m a </b> </p>
+
+</ul>
+
+where F is the force applied to an object, m is the 
+object's inertial mass, and a is the object's 
+acceleration.  </p>
+
+
+Newton's formulation is now known <b>not to apply on microscopic
+scales</b>, such as to sub-atomic particles.  On macroscopic
+scales, however, it is an excellent approximation and is the basis,
+for example, of structural, mechanical, and aeronautical engineering.</p>
+
+Acceleration is the <b>rate of change of velocity</b>.  An object is
+said to accelerate if <b>either its speed or
+direction of motion</b> changes.  It is the only one of the three
+parameters in the second law (force, mass and acceleration) which can
+be readily observed. So, it is useful to solve the equation for
+acceleration:</p>
+
+<ul>
+<b> a  =   F  /  m .</b></p>
+</ul>
+
+<ul>
+
+This expression implies that for a given mass, the larger the force
+the larger the acceleration.  Also, for a given force, the larger the
+mass the smaller the acceleration.  A boxcar is more massive than your
+little brother and is therefore harder to push around.</p>
+
+As the rate of
+change of a quantity (velocity), acceleration is the mathematical
+<b>derivative</b> of velocity (which is itself the derivative of
+position).  Also, the force may depend on position, velocity, and
+other properties of the system.  Thus, this expression is actually
+not a simple algebraic expression but instead is a <b>differential
+equation</b>.  In order to solve it, Newton was forced to develop
+<b>calculus</b>, one of the most powerful and valuable intellectual
+tools ever invented.  </p>
+
+</ul>
+
+Newton recognized only two kinds of force: (i) gravity, and (ii) the
+force produced by physical contact (e.g. you pull on something, a
+spring pushes something, the wind shifts something, etc.). We now
+realize that all varieties of this "physical contact" force are
+manifestations of <b>electromagnetic force</b>.  But this was not
+understood until over 150 years after Newton published his Second Law.
+Fortunately, it was not necessary to know how objects <b>produced</b>
+the forces they exerted on one another in order to predict how they
+would <b>move</b> in response to those forces.  </p>
+
+There are <b> three</b> categories of forces exerted by particles on
+each other that are now recognized: gravity, nuclear forces, and
+electromagnetic forces.  Forces can be characterized by their <b>
+strength</b>, their <b>range</b>, and their <b>coupling</b>
+(that is, which properties of particles determine the response to a
+particular force).  </p>
+
+<h3> Gravity</h3>  
+
+The gravitational force is an <b>attractive</b> force between any two
+objects containing <b>mass</b>. All particles in the universe attract
+each other; any pair of particles which start from rest will
+eventually move together (in the absence of other nearby particles).
+Gravity seems strong and inexorable in everyday life, but in fact it
+is by far the <b>weakest</b> of the known forces.  Gravity falls off
+with distance, but is a <b>long-range</b> force compared to the
+nuclear forces (e.g. it can act over intergalactic distances).</p>
+
+<ul>
+
+Newton was the first to develop a quantitative theory of gravity.  In
+Newton's formulation, gravitational force acts along the line
+connecting the two objects and is <b>proportional to the
+product of the masses</b> of the two objects but <b>inversely proportional to
+the distance between the two squared</b>.  That is,</p>
+
+<ul>
+
+<b>
+
+F<sub>grav</sub>  = G    M<sub>1</sub> x M<sub>2</sub> / R<sup>2</sup>
+</p>
+
+</b>
+</ul>
+
+where G is a numerical constant, M<sub>1</sub> and M<sub>2</sub> are
+the masses of the two objects, and R is the distance between the two.</p>
+
+Newton showed that, when combined with his second law, this force law
+correctly predicted the observed motions and orbits of the planets.
+In particular, the predictions were in <b>complete agreement
+with Kepler's Laws</b> of planetary motion, which had been derived
+from the extensive observations of <b>Tycho</b>.  See <a href="guide08.html">
+Study Guide 8</a> for more details.</p>
+
+</ul>
+Newton's theory was shown to be inadequate by Albert <b>Einstein</b>
+(1916) in the presence of large masses or over large distances, and
+has been replaced by the General Theory of Relativity in such
+situations.  Relativity theory profoundly changed our understanding of
+space and time.  But as a practical matter, Newton's theory is an
+entirely satisfactory description of "everyday" gravity.  Only very
+minor corrections to the Newtonian predictions are necessary, for
+example, to send spacecraft with high accuracy throughout the solar
+system.  </p>
+
+<h3>Nuclear Force</h3> 
+
+This is a <b>short range</b> force, acting
+over distances of only 10<sup>-13</sup> cm (i.e. about the size of an
+atomic nucleus). It has no direct influence over significantly larger
+distances.  (The longer range effects of nuclear materials, e.g. in
+radiation therapy, are produced by particles or photons ejected from
+atomic nuclei by the nuclear forces, not the forces themselves.)
+Because this is the case, the effects of nuclear force are described
+by the <b>quantum theory</b> and not Newton's Second Law. Technically,
+nuclear force is subdivided into the <b>strong</b> and
+<b>weak</b> forces (and hence you will often find references to the
+<b>"four forces"</b> of nature, rather than the three described here).</p>
+
+<ul>
+
+Inside the nucleus, nuclear forces are <b>very strong</b>, some
+10<sup>40</sup> times stronger than gravity(!), which is wholly
+negligible in nuclei. The nuclear forces bind protons and neutrons
+together in nuclei. They are responsible for nuclear power,
+radioactivity, and the explosive energy of nuclear bombs.</p>
+
+[Note that "atomic bomb" is really a misnomer, since it is not atoms
+that release the energy in a fission or fusion bomb but only their
+nuclei.  <b>Chemical</b> explosives (e.g. dynamite) are the real
+"atomic bombs" because their energy release originates from changes in
+the electron shells around the nuclei.]
+</p>
+
+</ul>
+
+<h3>Electromagnetic Force</h3> 
+
+The ubiquity of the effects of
+electromagnetic (EM) force make it the <b>most important in
+everyday life</b>. It is, of course, responsible for electricity
+and magnetism.  But it is also the source of combustion, solidity,
+friction, capillary action, etc. In short, it holds our everyday world
+together.  EM force is responsible for all <b>chemical reactions</b>,
+including those occurring in biological organisms.</p>
+<ul>
+
+The simplest form of EM force is the <b> electrostatic force</b> ,
+which acts between any two objects with <b>net charge</b> which are at
+rest.  If the two charges have the same sign (both + or both -), the
+force is repulsive and the objects tend to move apart. If the two
+charges are opposite, the force is attractive (like gravity).  The ES
+force is a <b>strong force</b>: the ES repulsion between two electrons
+is 10<sup>36</sup> times stronger than the corresponding gravitational
+attraction.  It is also in principle a <b>long range</b> force--but
+not in practice, since macroscopic objects tend to have zero net
+charge.</p>
+
+
+The <b>magnetic force</b> is more complicated. It acts in a complex
+manner on <b>moving</b> charged particles.  Two objects with zero net
+charge can interact magnetically if charges inside of them move in
+sufficiently organized patterns ("currents"). A bar magnet is an
+example of an object with zero net charge which can be affected by
+external magnetic fields.  The Sun, the Earth, and most other planets
+also have fairly strong magnetic fields, which affect the motion of
+particles near them.  On the Earth's surface the most familiar
+magnetic effect is found in the orientation of a compass needle to the
+Earth's "magnetic poles".  Magnetic forces are also <b>long
+range</b> but are much more important on galactic scales than are
+electrostatic forces because they are usually not self-shielding like
+ES forces. On such scales they are usually less important than
+gravity, however.</p>
+
+Notes:</p>
+
+<ul>
+
+We have never been able to identify any special interaction (e.g. a
+"life force") that is harbored only by living beings and governs their
+functioning, behavior, or mental processes.  EM forces control all biological
+phenomena, including
+<a href="http://www.consciousentities.com/crick.htm">consciousness</a>. </p>
+
+EM force is the only kind of interaction which could be fashioned into
+the mysterious "force fields" favored by science fiction writers or
+could be responsible for claimed borderline phenomena like
+telekinesis, extra-sensory channels of communcation, etc.</p>
+
+</ul>
+</ul>
+
+
+<b>Atoms</b> contain a nucleus with positive charges 
+and a surrounding electron cloud of negative charges.  It is
+the <b>EM forces between these charged particles that hold atoms
+together</b>.  Michael <b>Faraday's</b> (ca. 1830) investigations of the
+electrical properties of materials provided the first clues to this
+fundamental discovery, and incidentally made it possible to utilize
+electrical power as the basic tool of modern civilization (see
+<a href="guide09.html" >Study Guide 9</a>).  Nuclear
+forces do not play a major role on the scales corresponding to the
+sizes of atoms; they are important only inside the nucleus.  </p>
+
+<ul>
+
+When two atoms approach each other, their constituents feel a
+combination of attractive and repulsive forces, depending on the exact
+configuration of the nuclei and electrons.  Under the right
+circumstances, atoms can <b>bond</b> together---i.e. the attractive
+force overcomes the repulsive force---and create a stable system.
+This is called a <b>molecule</b>.  Most molecules are relatively
+simple, consisting of only a few atoms (water consists of only three),
+but organic molecules can be of enormous size, containing thousands to
+millions of individual atoms.</p>
+
+<b>Chemical energy</b> is released when the electronic configuration
+of molecules is altered through interactions between them.
+<b>Fire</b> is perhaps the most obvious everyday example of chemical
+energy release.  </p>
+
+<!-- This is true "atomic energy."  -->
+
+<!-- What people mean by "atomic
+energy" is really "nuclear energy" instead. --> 
+
+<center><img src="im/atoms-in-crystal.jpg" border=2 width=35% vspace=10></center>
+<center><small><em>Atoms in a crystal</em></small></center></p>
+
+<b>Solids</b>
+are formed when atoms and molecules are in a sufficiently dense
+material that their electron clouds interpenetrate and form a bond
+strong enough to keep their nuclei in an approximately rigid
+configuration.  In some solids, electrons are held tightly to their
+nuclei.  In others, electrons are free to move in response to external
+electromagnetic fields; these materials are called <b>conductors</b> of
+electricity.</p>
+
+</ul>
+
+<p><br></p>
+
+<hr noshade>
+
+<p><br></p>
+
+<a name="EMwaves"> </a>
+<h1 align="center"> ASTRONOMY 1210:  SUPPLEMENT III </h1></p>
+
+<p><br></p>
+
+<h2>A.  Electromagnetic Waves </h2></p>
+
+Based on the experimental studies of Faraday and others, especially
+Faraday's discovery of electromagnetic induction and his concept of a
+magnetic force field, James Clerk <b>Maxwell</b> managed to summarize
+(ca. 1865) all electromagnetic phenomena in a set of elegant and
+interconnected equations now known as <b>Maxwell's equations</b>.
+These represent the <b>third great generalized physical law</b>, the
+first two being Newton's equations of motion and his theory of
+gravity.</p>
+
+Maxwell was able to show that his equations implied that <b>electric and
+magnetic force fields can <a
+href="http://www.phy.ntnu.edu.tw/java/emWave/emWave.html" >
+propagate through space</a></b>. 
+A moving electron, for example,
+sends out a disturbance which can cause other electrons to move;
+"target" electrons at successively greater distances will feel the
+disturbance at successively later times. The propagating disturbance
+is similar to a water wave produced by a rock dropped into a pond and
+is therefore called an <b> electromagnetic wave.</b> </p>
+
+One of Maxwell's great discoveries was that he could use his equations
+to <b>predict the velocity of an EM wave</b> as it propagated through
+a vacuum. He found the velocity to be the same as the <b> speed of
+light</b>, which had already been determined with fair precision.  The
+immediate inference was that
+<b><a href="https://en.wikipedia.org/wiki/Light">light is one kind of
+electromagnetic wave.</a></b></p>
+
+Maxwell's theoretical prediction of EM waves was later
+confirmed experimentally by Heinrich <b>Hertz</b> (1887), who detected, for
+the first time, artificially generated <b>radio waves</b>.  Only a few years
+later in 1895, the physicist Wilhelm <b>R&ouml;ntgen</b> discovered high energy
+EM waves in the form of <b>X-rays</b> and simultaneously recognized their
+tremendous penetrating power and usefulness as medical diagnostics.  Maxwell's
+prediction of EM waves has had profound practical consequences.  </p>
+
+<a name="EMspec">
+
+<!-- 
+<center><img src="im/wavelength.gif" border=2 vspace=10></center>
+<center><em>Wave Disturbance With One Wavelength Marked</em></center>
+-->
+
+<center><img src="im/water-drops-waves.jpg" border=2 width=33%></center></p>
+
+<center><img src="im/wave-nomenclature-CM.jpg" border=2 vspace=10 width=50%></center>
+<center><small><em>Wave disturbances</em></small></center></p>
+
+
+EM waves are classified by their <b>wavelength</b> or <b>
+frequency</b>.  By analogy to water waves, the wavelength of an EM
+wave is the distance between crests (or places where the EM effects are
+strongest).  See the figure above.  The frequency is the number of
+crests passing the observer per second. If the waves move with a
+definite velocity, then it is easy to see that wavelength and
+frequency must be inversely related to each other.  The longer the
+wavelength, the lower the frequency; and the shorter the wavelength,
+the higher the frequency.  Wavelength is measured in whatever unit of
+length is most convenient:  from centimeters or millimeters at long
+wavelengths to &Aring;ngstroms (where 1 &Aring; = 10<sup>-8</sup> cm)
+for optical light.  Frequency is measured in cycles ("crests") per
+second or Hertz (1 Hz = 1 cps).</p>
+
+<p><br></p>
+
+<h2>B. The Electromagnetic Spectrum</h2>
+
+
+All frequencies from zero to infinity are possible for EM waves, and
+this total range is called the <b>electromagnetic spectrum</b>.  See
+the figure below; the textbook presents other illustrations and more
+information.  <b> Radio, television, microwaves, infrared, visible
+light, ultraviolet light, X-rays, and gamma rays are all forms of EM
+waves.</b> All of these waves travel at the <b>same speed</b> (at
+least in a vacuum): the speed of light, which is 300,000 kilometers
+per second (186,000 miles per second). </p>
+
+<center><img src="im/em-op-spectrum.gif" border=2 vspace=10 width=50%></center>
+
+<center><em>Full EM spectrum with visible spectrum enlarged<br> (Units marked
+are microns.  1 micron = 10,000 &Aring;)</em></center></p>
+
+The <b>human eye is directly sensitive only to a very small  range of
+wavelengths</b> in the EM spectrum. This is called the  <b>"visible"</b> or
+<b>"optical"</b>  region. It extends roughly from wavelengths of 4000
+&Aring; in the deep violet to 7000 &Aring; in the deep red. Green light has
+a wavelength around 5000 &Aring;, or about 0.0005 mm.</p>
+
+The wavelengths or visible light are far smaller than
+sizes encountered in everyday life.  Therefore,
+we are not conscious of light's wavelike character.
+However, radio waves are long enough that wave effects such as
+<b>diffraction</b> are obvious: the fact that radio waves can reach
+you even if the transmitter is hidden behind a building is a result of
+the waves diffracting around the building, just as water waves can
+move around a rock near the beach. (For more on diffraction, see
+<a href="guide14.html">Study Guide 14</a>.) </p>
+
+<ul>
+<a href="http://www.falstad.com/ripple" >
+<img src="im/film.gif">Applet.</a> Here
+is an interactive Java applet illustrating wave diffraction.
+</p>
+
+</ul>
+
+Although our eyes are not sensitive to most EM wavelengths, sensors in
+our skin can detect <b>infrared</b> EM waves (10,000-100,000 &Aring;), which
+we perceive as <b>radiant heat</b>. Shorter wavelengths in the
+<b>ultraviolet and X-ray</b> cannot be sensed directly by our bodies;
+but these can cause damage to cells. For instance, damage resulting
+from exposure to ultraviolet light appears as "sunburn".  
+Fortunately,
+most of this harmful cosmic X-ray and UV is screened out by the Earth's
+atmosphere and does not reach sea level. </p>
+
+
+In fact, the <b>Earth's atmosphere is opaque to most wavelengths</b>
+in the EM spectrum.  The chart below shows the ability of different
+wavelengths to penetrate the atmosphere.  The screening is protective
+for lifeforms on Earth's surface.  But obviously, it is not convenient
+for astronomers who want to monitor the universe across the full EM
+spectrum.  (This is the main motivation for <b>
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/UV-astron-f03.html">
+space astronomy</a></b>.)
+The atmosphere also absorbs large parts of the Earth's infrared
+spectrum, which leads to the atmospheric heating phenomenon known as
+the <b>"greenhouse effect"</b> (see <a href="guide15.html">Study
+Guides 15</a> and <a href="guide19.html">19</a>.)</p>
+
+  </p>
+
+<center><a href="im/emwindows-gsfcimagine-2x.gif" > <img src="im/emwindows-gsfcimagine.gif"
+border=2 width=55% vspace=10>
+</a></center>
+
+<center><small><em>Penetration depth in Earth's atmosphere<br> for
+different kinds of EM waves</em></small></center>
+
+
+Notes:  
+
+<ul>
+
+<b>Sound is not an EM wave</b>.  A sound wave is a
+<b>compressional</b> disturbance in a <b>medium</b> (air, water, etc.) and
+propagates far more slowly than EM waves.   Sound waves cannot
+exist in a vacuum, whereas EM waves can.</p>
+
+<ul> The difference in propagation speed between sound and light is
+vividly apparent during a thunderstorm.  The light of a lightning
+flash will reach you almost instantaneously, whereas the sound travels
+at a speed of only 1100 feet per second, so there will be an
+appreciable lapse between the flash and the sound of the corresponding
+thunder.  To estimate the distance of the lightning flash (in feet),
+simply multiply the number of seconds between the flash and the sound
+arrival time by 1100. A 5-second delay means the lightning strike
+was over a mile away.</p>
+
+</ul>
+
+Also, most <b>"atomic or nuclear radiation"</b> is not electromagnetic
+either.  Instead, it consists largely of highly energetic subatomic
+<b>particles</b>.  It is dangerous to living things because of its
+potential to <b>ionize</b> biological molecules, including those in
+genes.</p>
+
+EM waves are also often referred to as <b>"EM radiation."</b>  But it
+is important to distinguish long-wavelength EM waves (e.g. 
+from a computer terminal or microwave oven), which are
+almost never dangerous in everyday situations, from more threatening
+kinds of "radiation."  </p>
+
+</ul>
+
+<p><br></p>
+
+<h2>C. Photons</h2>
+
+Although EM radiation does have many wavelike properties, it is
+<b>not</b> simply a wavelike disturbance.    It is absorbed or
+emitted from particles in tiny packets, called  <b>photons</b> , which
+themselves behave more like particles than waves. The energy of a
+photon depends on its frequency (in the wave analogy): the higher the
+frequency, the larger the photon's energy. </p>
+
+Photons are created or destroyed by atoms through interactions
+with the charged particles within the atom.  According to the
+quantum theory, the internal energy states of an atom are  <b>
+discrete  or quantized</b>.  This means that the electron cloud
+around the nucleus of the atom can exist only in certain definite
+energy states.  Whenever the cloud changes its energy state, a certain
+definite amount of energy must be lost (if the energy drops) or gained
+(if the energy increases).  One of the most important ways in which
+atoms lose or gain energy is through photons.  The electron cloud can
+<b>spontaneously lose energy by  emitting a photon</b>,
+which then escapes from the atom.  Alternatively, it can  <b>absorb</b> 
+a photon which is near the atom, thereby gaining energy (and
+destroying the photon).  </p>
+
+<p><br></p>
+
+<h2>D.  Spectroscopy </h2></p>
+
+As a consequence of sponteneous photon creation by atoms, <b>all
+objects which are above a temperature of absolute zero emit
+electromagnetic waves</b>---even textbooks and ice cubes.  There is a
+great deal of information about the physical properties of the object
+contained in the distribution of wave energy as a function of
+wavelength or frequency in its electromagnetic spectrum.  For short,
+this distribution is called the object's <b> spectrum</b>.
+<b>"Spectroscopy"</b> is the study of EM spectra.</p>
+
+The spectrum of a <b>dense</b> object like the Earth or Lake
+Superior or the inner regions of the Sun is <b>smooth or
+"continuous"</b> and changes only slowly with wavelength.  You can
+think of the atoms and electrons in such an object as interacting so
+strongly that the individual signatures of each type of atom are
+blended away.  Such an object is said to be in <b>thermal
+equilibrium</b>, and the resulting spectrum is sensitive <b>only to
+its temperature</b>. This kind of spectrum is called a <b>blackbody
+spectrum</b>, named after ideal, laboratory sources which are purely
+self-luminous and reflect no light.  Such sources have a spectrum with
+a smooth, well-defined, characteristic shape, as shown in the figure
+below:  </p>
+
+<center><a href="im/frak-bbspecT-ex.gif"><img src="im/frak-bbspecT-ex.gif"
+border=2 vspace=10 width=55%></a></center><br>
+
+<center><small><em> This diagram shows how temperature affects the
+distribution of the emitted blackbody spectrum of a dense object.<br>
+(The wavelength scale is in nanometers.  500 nm on this scale
+corresponds to 5000 &Aring; or 0.5 microns.)  The colored bands show
+the "visible" part of the EM spectrum.</em></small></center></p>
+
+As shown here, <b>hotter</b> objects emit more energy at
+<b>shorter</b> wavelengths while cooler objects emit more energy at
+longer wavelengths.  Hence, <b>hot stars will look blue-white to the eye
+while cool stars look orange-red</b>. The spectrum of the Sun, with a
+surface temperature of almost 6000<sup>o</sup> Kelvin peaks at about 5000
+&Aring; --- i.e. in <b>yellow-green light</b>.  </p>
+
+<ul>
+
+Does this fact, combined with the principle of natural biological
+selection, suggest a reason why our eyes are most sensitive to
+yellow-green light? </p>
+
+An incandescent light bulb operates by using an electric current to
+heat a thin metal filament until it glows brightly, at about
+2500<sup>o</sup> Kelvin.  Higher temperatures would vaporize the
+filament.  Hence, incandescent light bulbs are redder than the Sun
+and, in fact, redder than any of the stars visible to the unaided eye,
+which all have temperatures above 3000<sup>o</sup> Kelvin.  </p>
+
+</ul>
+
+<!-- Earth temp values from Wikipedia, May 10.  5/28/10: long time,
+inexplicable error in peak output wavelength for Earth corrected; tens
+of thousands of people have read this page, but no one has ever
+pointed out the error to me!  Believe this was written hurriedly
+in 1998 and never reality-checked! -->
+
+On the other hand, the Earth, with an overall mean surface temperature
+of only 287<sup>o</sup> Kelvin (14<sup>o</sup> C), peaks at a
+wavelength of about 100,000 &Aring; (10 microns) in
+the <b>infrared</b> part of the spectrum.  Since our eyes are not
+sensitive at this wavelength, the Earth looks "dark".</p>
+
+<ul> Objects at room temperature (about 300<sup>o</sup> Kelvin) also
+emit their peak radiation in the infrared.  They
+are <b>self-luminous</b> at those wavelengths, but the light we can
+detect from them with our eyes is <b>not their own self-radiation</b>
+but rather
+<b>reflected light</b> from higher temperature sources (such as the
+Sun or incandescent light bulbs).</p>
+
+For instance, see the image below, which compares the visible-band
+(reflected light) with the "thermal-infrared" appearance of a cat
+(with a body temperature of about 312 Kelvin). </p>
+</ul>
+
+<center><a href="im/cat-visible-vs-thermal-IR.jpg">
+<img src="im/cat-visible-vs-thermal-IR.jpg" width=50% vspace=12></a>
+</center>
+
+
+<p>The <b>total</b> radiative output from a blackbody source (summed over
+all wavelengths) is a very strong function of its temperature and
+scales as the temperature (on the Kelvin scale) to the fourth power
+(T<sup>4</sup>). </p>
+
+<ul>
+<a href="http://www.mhhe.com/physsci/astronomy/applets/Blackbody/frame.html"
+>Here</a> is a Java demo of the effects of temperature on EM
+radiation.
+</ul>
+
+<!-- For a Java demo of the effects of temperature on EM radiation, see
+<a href="http://webphysics.davidson.edu/Applets/BlackBody/intro.html"
+>this Davidson Webphysics applet.</a>.  -->
+
+So far, we have discussed dense systems.  By contrast, in a dilute or
+<b>thin</b> gas---the outer atmosphere of the Sun or an interstellar
+gas cloud, for example---the atoms do not interact strongly, and if
+there is a large enough number of atoms of a given type (e.g. hydrogen
+or oxygen), they will impress their
+<b>individual signatures</b> on the emergent spectrum.  </p>
+
+<ul>
+
+If you could pump up a single atom to a high energy state and then
+observe it sitting quietly without further outside disturbance, you
+would find that it would emit a series of photons with <b>discrete</b>, but
+different, energies as it lost energy from its electron cloud.  Thus,
+its spectrum would consist of a series of sharp peaks: only certain
+frequencies or wavelengths would be included.  It would be faint (or
+dark) except at the peaks.  This is called an   <b> "emission line
+spectrum"</b>  because if you plotted the number of emitted photons versus
+their frequencies, it would resemble a picket fence. </p>
+
+If you imagine the same atom left in a low energy state but placed
+in front of a dense, glowing object, you would observe a spectrum which
+was the reverse of the atom's emission line spectrum.  Here, you
+would see light from the background glowing object at all frequencies
+<b>except</b>  where the object's photons could be absorbed by the electron
+cloud.  This is an   <b>"absorption line spectrum"</b>: dark at those
+discrete frequencies where the
+electron cloud can absorb energy but bright elsewhere.  
+The 3 general kinds of spectra are summarized in the illustration
+below:  </p>
+
+</ul>
+
+<center><img src="im/frak-emspec-types-ex.jpg" alt="EmSp Types" border=2 vspace=10
+width=72%>
+</center><br>
+
+The essential practical implication of these facts stems from the fact
+that <b> the spectrum of each type of atom is different because its
+electronic structure is different</b>.  A hydrogen atom has a
+different spectrum than a helium atom, and carbon atoms have a yet
+different spectrum.  Obviously, then, the emission or absorption line
+spectrum of a star or planet is related to its <b>chemical
+composition</b>.</p>
+
+<ul>
+
+It is, in fact, through analysis of such spectra that we know the
+chemical content of stars, the interstellar gas, and other galaxies
+<b>even though they are tremendously far away</b>. </p>
+
+For instance, the figure below shows part of the spectrum of the Sun
+at yellow wavelengths.  The dark lines are produced by atoms of
+magnesium, iron, titanium, and other elements in the cooler, outer
+layers of the Sun which are seen against the bright continuum produced
+by its hot inner regions.  Quantitative analysis of such spectra tells
+us the detailed chemical makeup of the Sun.  For example, the
+element <b>helium</b> (the second lightest after hydrogen) was
+discovered in the spectrum of the Sun <b>before</b> it was studied in
+an Earth-bound laboratory.  Click on the image for an enlarged
+spectrum of the Sun.</p>
+
+<center><a href="im/solar_spect_large.jpeg" ><img
+src="im/sunspec-frak-ex2.gif" alt="Solar Spec" border=2 width=55%></a> </center></p>
+
+
+<!-- gone 2/14: href="http://www.teravation.com/products/spectroscopy/" -->
+
+<!-- Inoperative 7/2018: <a href="http://jersey.uoregon.edu/vlab/elements/Elements.html" -->
+
+<a href="http://homework.uoregon.edu/run/elements/">
+Here</a> is a Java applet that
+allows you to see the optical spectrum of any element in the periodic
+table.</p> 
+
+
+In addition, spectra also contain information on the velocity,
+pressure or density, temperature, ionization state, magnetic field
+strength, and other physical parameters of the material which forms
+them.</p>
+
+</ul>
+
+
+Spectroscopy is therefore an exceedingly powerful tool.  It is
+the <b>source of most of the physical information we have about
+astronomical objects</b> which are too distant to sample directly with
+spacecraft (i.e. most of the universe).  </p>
+
+<ul>
+
+<em>Bad Philosophy Footnote</em>:  <a href="comte.html" >Click here</a> for
+a related description of one of the worst, but not one of the last,
+faulty prognostications about science by a philosopher.</p>
+
+</ul>
+
+
+<p><br></p>
+
+<h2>E.  Luminosity and Flux </h2></p>
+
+The <b>luminosity</b> of an object is defined to be the <b>total
+amount of electromagnetic energy radiated by the object in a given
+time</b>.  It may refer to the whole EM spectrum, in which case it is
+denoted a "bolometric" luminosity, or it may refer only to a limited
+part of the spectrum.  For example, the "visual" luminosity of a star
+refers to the total energy output in the visible part of the
+spectrum.  It is denoted L<sub>V</sub>.</p>
+
+
+Luminosity is an <b>intrinsic</b> property of the object; that is, it
+does not depend on how far away the observer is. "Intrinsic
+brightness" or "power" are synonyms for luminosity. In the cgs system,
+luminosity is measured in <b>ergs per second</b>. </p>
+
+The response produced by an object of given luminosity in a detector
+(for example the human eye) depends both on the luminosity and the
+ <b>distance</b> of the object. More distant objects produce smaller
+responses. The response of a detector to a given source of EM
+radiation is a function of the <b>flux</b> of radiation from the
+object. The flux is defined to be <b>the energy crossing a given area
+in a given time</b>.  It is measured in ergs per second per square cm
+(ergs/sec cm<sup>2</sup>) in the cgs system.  Flux is <b>not an
+intrinsic property</b> of the source because it depends on the observer's
+distance. The greater the flux, the greater the response of a given
+instrument. Flux can be defined with respect to part or all of the EM
+spectrum.</p>
+
+A little thought will lead you to realize that flux = (total energy
+output of source per unit time)/(area of sphere passing through observer with center
+on source). Or, </p>
+
+<ul>
+
+<b> F =   L / (4 x pi x R<sup>2</sup>)</b></p>
+
+</ul>
+
+where F is the flux from the source, L is its luminosity, and R is its
+distance from the observer.  Like the expression for Newtonian
+gravitational force, this is an "inverse square law".</p>
+
+ 
+<p><br></p>
+
+<h2>F.  The Doppler Effect </h2></p>
+
+
+The  <b>Doppler Effect</b>  is a <b>change in the apparent wavelength or
+frequency of an EM wave caused by the motion of the source</b> of the wave
+toward or away from the observer.  It also occurs with sound waves,
+where it is most familiar as the change in pitch of a police or
+ambulance siren as it passes you on the street.  When the siren is
+approaching you, the pitch is higher (i.e. the frequency is higher and
+the wavelength is shorter) than when it is receding from you (lower
+frequency, longer wavelength).</p>
+
+The Effect is explained by the fact that if a source is approaching you
+while emitting a wave of fixed wavelength, each successive crest of
+the wave starts from a position a bit closer to you than the preceding
+one.  But the crests still travel at the same velocity.  This means
+that the distance between successive crests (the wavelength) traveling
+in your direction will be smaller than if the source were stationary.
+The stream of crests moving in your direction is therefore more
+<b>"compressed"</b> than for a source at rest.  You will observe a signal
+with shorter wavelength (higher frequency) than that from the same
+source at rest.  Conversely, if the source moves away from you, the
+stream of crests is <b>"stretched"</b>, and you will observe a longer
+wavelength (lower frequency).  "Doppler radar" makes use of this
+phenomenon to measure the motion of air streams in the atmosphere or
+of automobiles on the highway (often in the hands of the state 
+police).  </p>
+
+<ul><ul>
+
+<a href="http://lectureonline.cl.msu.edu/~mmp/applist/doppler/d.htm"> 
+<img src="im/film.gif">Here</a>
+is a nice Java applet illustrating the Doppler Effect.  You can
+interactively adjust the velocity and direction of motion of the
+source.  Note how the propagating waves are compressed along
+the direction of motion but expanded along the opposite direction.
+The magnitude of the effect depends on the velocity of the source.
+If the source moves faster than the speed of propagation in
+the surrounding medium, a cone-like "shock wave" results; this is what
+produces a "sonic boom" from a supersonic jet plane in the atmosphere.
+However, since no source can move faster than the speed of light in a
+vacuum, this case doesn't apply to light waves emitted by objects
+moving in space.</p>
+
+</ul></ul>
+
+Applied to astronomical spectra, the Doppler Effect is particularly
+valuable, since it allows us to measure the <b>motion of distant
+objects toward us or away from us</b> --- i.e. what astronomers call the
+<b>"radial velocity."</b>  By measuring the exact wavelengths of spectral
+emission or absorption lines and comparing them to the expected values
+for atoms which are at rest, we can estimate the motion of objects
+along our line of sight (i.e. radially).  The method does not depend
+on the distance of the object.  Since the change in wavelength is
+toward the blue end of the spectrum if the object is approaching and
+toward the red end if it is receding, astronomers speak of <b>"blue
+shifts" and "red shifts."</b>  The <b>cosmic red shift</b>, observed
+in the spectra of distant galaxies, is the principal evidence that the
+<b>universe is expanding</b>.</p>
+
+
+<center><img src="im/dopp-shifts-spectra.jpg" border=2 width=50% vspace=12></center>
+<center><small><em>Effect of Doppler shift on spectral lines</em></small></center></p>
+
+
+The animation below shows how the Doppler Effect can be used to detect
+the motion of objects in orbit around one another.  This is the
+technique used to discover the existence of 
+<a href="guide11.html"><b>exoplanets</b></a> in orbit around other
+stars.  Hundreds of exoplanetary systems have been discovered with
+this method to date.  </p>
+
+<a name="doppleranim">
+<center>
+<img src="im/doppler-anim-mcCray.gif" alt="DopplerEffect" width=50%
+vspace=12> </center>
+</a>
+</p>
+
+<!--
+2/98:  DELETE Supplement III from HTML version.  Too many
+special symbols needed; pointless to
+convert here.   KEEP AS POSTSCRIPT/PDF.
+  --->
+
+
+<!--  -------- END OF MAIN TEXT --------  -->
+
+
+<p><br></p>
+<hr size=2>
+
+Reading for this lecture:</p>
+
+<ul>
+
+Supplements II and III</p>
+
+Optional reading:  Bennett textbook, Ch 5 </p>
+
+</ul>
+
+Reading for next lecture:</p>
+
+<ul>
+
+Study Guide 11 </p>
+
+Bennett textbook: Chapter 7 except pp. 202-212;  Chapter 8;  "Summary
+of Key Concepts" for Chapter 13. </p>
+
+</ul>
+
+<p><br></p>
+
+Web Links:
+
+<ul>
+
+<li><a href="121supp1.pdf">Supplement I: Powers of Ten/Special
+Symbols</a> (PDF) </p>
+
+<li><a href="http://imagine.gsfc.nasa.gov/docs/science/know_l1/emspectrum.html">
+Background info on electromagnetic waves</a><br>
+
+<li><a href="http://imagine.gsfc.nasa.gov/docs/science/how_l1/spectral.html">
+Background info on spectral analysis</a><br>
+
+<li><a href="http://stars.astro.illinois.edu/sow/spectra.html">Astronomical
+Spectroscopy</a> (Kaler, UILL)</p>
+
+</ul>
+
+
+<!--- REDIRECT BOX -->
+
+<hr size=2>
+<center>
+<Table width="70%">
+<tr>
+<td>
+<b><a href="guide09.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Guide</a></b> 
+</td>
+
+<td>
+<b><a href="guideindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Guide Index</a></b> 
+</td>
+
+<td>
+<b><a href="guide11.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Guide </a></b> 
+</td>
+</tr>
+</table>
+<hr size=2>
+
+<!-- END REDIRECT BOX -->
+
+<!-- START FOOTER -->
+
+<center>
+<small><i>Last modified
+    <b>June 2019</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+<small>Text copyright &copy 1978-2019 Robert W. O'Connell.  All
+rights reserved.  Illustrations of blackbody radiation, the 3 types of
+spectra, and the solar spectrum copyright &copy 2000 Harcourt, Inc.
+Doppler animation from Dick McCray, University of
+Colorado.  These notes are intended for the private, noncommercial use
+of students enrolled in Astronomy 1210 at the University of Virginia.
+</small></p> </center>
+
+<!-- END FOOTER -->
+
+</body>
+</html>
+				  
+
+     <!--   ----------- END OF GUIDE TEMPLATE ---------------   -->
+

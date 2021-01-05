@@ -1,0 +1,741 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2001-2015.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+
+<!-- ASTROPHYSICAL SOURCES
+
+  HISTORY: ASTR 511, F01, Lec 3; 8/23/01; ... 8/31; 9/1; 9/2; 9/4;
+  9/8 [Shift Rad Field Defs and Planck fcn to Lec 2]; 9/10; 9/21
+  (f_lam peak typo); 3/10/2003; 4/10; 4/14; 6/26; 6/28; 7/1 HTML
+  conversion; 7/2 use HTML symbol fonts--check displays; 7/3; 
+  7/14: substitute math gifs converted w/ l2html; 7/15; 7/17; 7/20; 7/24;
+  7/27; 7/29; many illustration links added 8/1; 8/5; 8/25; 9/1; 9/2; 9/7; 9/8; 
+  6/20/2007; 2/28/2008; 9/16/15: new domain; 
+
+-->
+
+<html>
+<head>
+<link rel=stylesheet href="class-1.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.  [Fall 2003]  Lecture Notes  </TITLE>
+</head>
+<body>
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="cyan"
+alink="red"> 
+
+ <body bgcolor="#FFFFF0" text="000000" link="#DC143C" vlink="#DC143C" alink="red">
+
+-->
+
+<basefont size=3>
+<font size=+0> 
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p><br></p>
+<hr>
+
+<center>
+<font size="+4" color="#bb11cc"><b>3.  ASTROPHYSICAL SOURCES
+   </b></font>
+</center>
+
+<p><br></p>
+
+<a name="sun">
+
+<center>
+<a href="im/sun-with-prom-lg.gif" target=show><img src="im/sun-with-prom-2.gif"
+vspace=6></a>
+</center>
+<p align="right"><font size=2><em><b>Sun in H-alpha showing active regions<br>and
+a flame-like "prominence."</b></em></font>
+
+<p><br></p>
+
+<b>
+
+
+<h2>I.  INTRODUCTION</h2>
+
+There are many distinct types of astrophysical sources:  stars, AGNs,
+planets, H II regions, synchrotron jets, hot intracluster gas, shocked
+gas (SNRs), etc </p>
+
+Main issues: </p>
+
+<ol><ol>
+
+<li> Generation of photons <br>
+
+<li> Transfer of photons to observer = <em>radiative transfer</em> <br>
+
+<li> Deduction of physical properties from emergent spectrum </p>
+
+</ol></ol>
+
+
+(1) <u>Photon generation</u>: </p>
+
+<ul>
+
+<li> Many different mechanisms</p>
+
+<li> Usually several types important in given source </p>
+
+<li> Mechanisms usually broad-band, but often dominate distinct bands </p>
+
+<li>  "Thermal" vs "non-thermal" </p>
+
+<ul>
+
+<li>  Thermal:  emitters/absorbers close to Boltzmann distribution ("thermal
+equilibrium" or TEQ)</p>
+
+<ul>
+
+<li> In many, not all, cases, radiation field is close to <img
+src="im/B-nu-e.gif" align=middle>, the Planck function </p>
+
+</ul>
+
+<li>  Non-Thermal:  emitters/absorbers/radiation far from TEQ </p>
+
+<ul>
+
+<li> Best example: <a href="im/crab_vlt.jpg" target=show>synchrotron
+	  sources</a> = continuum radiation from relativistic
+	  electrons with non-Maxwellian energy distribution moving in
+	  magnetic fields.  If e-energy distribution is a power law,
+	  so is emitted radiation.  </p>
+
+</ul></ul>
+
+<li> The underlying complexity of typical sources is emphasized by the
+image of the <a href="im/sun-with-prom-lg.gif" target=show>Sun</a> at
+the top of the page.  We are aware of the many different physical
+environments on the Sun's surface only by virtue of its proximity.</p>
+
+<!--  !!CHECK/ADD?? ---ADAF emission mechanisms: thermal sync inner,
+     bremsstrahlung outer.   -->
+
+</ul>
+
+
+(2) <u>Radiative Transfer</u>: </p>
+
+
+<ul>
+
+<li> Transfer is characterized by the <u>optical depth</u>, <img
+src="im/tau-nu-e.gif" align=middle></p>
+
+<li> Probability of escape from
+a given location in the source is <img src="im/sim-ett-e.gif"> </p>
+
+<li> <img src="im/tau-mlt-1-e.gif" align=middle>:  "optically thin".
+See <u>directly</u> to sources of photons. </p>
+
+<li> <img src="im/tau-gae-1-e.gif" align=middle>: "optically thick".
+Observed photon distribution has been <u>transformed</u> in <img
+src="im/nu-e.gif">, direction, and/or intensity.  </p>
+
+<ul>
+
+<li> NB:  "Thick" does <u>not</u>  mean "dark."  (The Sun is optically
+thick!)  Rather,  observable photons escape only from outermost
+~ 1 optical depth of source. </p>
+
+</ul>
+
+<li> Propagation of photon energy is described by
+<a href="lec4-f03.pdf">the "equation of transfer"</a> </p>
+
+</ul>
+
+(3) <u>Deduction of Physical Properties</u> </p>
+
+<ul>
+
+<li> How to relate observables to source physics?</p>
+
+</ul>
+
+<p><br></p>
+
+<h2>II.  COMPARISON OF  TWO CANONICAL SOURCE TYPES</h2>
+
+In this section, we discuss two canonical types of
+astrophysical sources:  <font color="#880099">STARS & AGNs</font> and compare them
+in the following characteristics: </p>
+
+<ul><ul>
+ 
+<li>    Structures <br>
+
+<li>    Spectra: Continua  <br> 
+
+<li>    Spectra: "Lines" (fine structure) <br>
+
+<li>    Information carried by their spectra </p>
+
+</ul></ul>
+
+<p><br></p>
+
+<table align=center width=90% border=2 cellpadding=3>
+
+<th> <font size=+1> <u>STRUCTURES</u></font>   </th>
+
+<tr><td bgcolor="$BBEEEE">
+
+<b>
+
+STARS:</p>
+
+<ul>
+
+<li> <a href="im/star-sections-v-MSmass-seeds.jpg" target=show>Dense
+spheres</a>, r ~ 10<sup>11-13</sup> cm </p>
+
+<li> Stars are dynamically stable, apart from convection and surface phenomena,
+throughout most of their lifetimes</p>
+
+<li>  <img src="im/sim-e.gif">Isotropic radiators. </p>
+
+<li> Nuclear reactions maintain high-temperature  (>10<sup>7</sup> K) core.  </p>
+
+<li> XR and GR radiation transferred slowly through high optical depth
+envelope.  Degraded to UVOIR band.  </p>
+
+<li> Observed radiation escapes from a <u>very thin</u> (300 km in Sun) layer
+= "photosphere" </p>
+
+<ul>
+
+NB:  photospheres (<img src="im/sim-e.gif">10<sup>17</sup>
+particles/cm<sup>3</sup> in the Sun) are DENSE by the standards of AGN
+emitting regions </p>
+
+</ul>
+
+<li> Subsidiary processes (e.g.
+driven by magnetic fields) radiate small amounts in non-UVOIR bands.</p>
+
+</ul>
+
+&nbsp;<br>
+</b>
+</td></tr>
+
+
+<tr><td bgcolor="#FFBBFF">
+
+<b>
+
+&nbsp;<br>
+
+AGNs  ("Active Galactic Nuclei"): </p>
+
+<ul>
+
+<li> Supermassive black hole (M ~ 10<sup>7-9</sup> M<sub>sun</sub>;
+&nbsp; R<sub>Schw</sub> ~ 3 x 10<sup>13</sup> M<sub>8</sub> cm) at
+center of an <a href="im/BH-accrdisk-seeds.jpg" target=show><em>accretion disk</em></a> with 
+r <img src="im/gae-e.gif" align=middle> 10<sup>16</sup> cm. </p>
+
+<!--  %%% (non-radiative)
+%%% M_sun = 1.47 km (geometrized units)
+%%% M_schw = 2 AU * M_8   -->
+
+<li> Accretion disk is fed by infalling material; matter is continuously
+transported through disk</p>
+
+<li> Dissipation and magnetic processes near center of disk generate
+relativistic particles, <img src="im/gam-sim-1000-e.gif"
+align=middle>.  These can generate relativistic jets. 
+</p>
+
+<li> Observed radiation emerges from a <u>large volume</u> with nonuniform
+properties</p>
+
+<li> Relativistic jets and disk confinement produce
+<u>anisotropic</u> radiation. </p>
+
+<li> Relativistic particles produce broad-band non-thermal synchrotron radiation,
+directly observed at radio wavelengths.</p>
+
+<li> Direct thermal radiation from denser, hot inner disk (UV). </p>
+
+<li>  Photon
+ boosting of low-energy photons by inverse Compton scattering to UV/XR
+ bands.  </p>
+
+<ul>
+
+Compton boost:  <img src="im/compt-boost-e.gif" align=middle></br>
+
+</ul>
+
+<li> Hard radiation field produces strong ionization of gas in a large,
+low-density volume around disk, ===> UVOIR, XR emission lines.</p>
+
+<li> Strong heating of surrounding dust grains ===> IR continuum &
+emission lines (3-500<big>&#181;</big>).  (But grains vaporized near
+center.)  </p>
+
+<li> Star-formation regions often associated with AGN in disk galaxies
+(chicken or egg?). </p>
+
+</ul>
+
+&nbsp;<br>
+
+</b>
+</td></tr></table>
+
+&nbsp;<br>
+&nbsp;<br>
+
+<table align=center width=90% border=2 cellpadding=3>
+
+<th><font size=+1> <u>CONTINUUM SPECTRA</u></font>   </th>
+
+<tr><td bgcolor="$BBEEEE">
+
+<b>
+
+STARS</p>
+
+<ul>
+
+<li>  Primary component is UVOIR radiation from photosphere. </p>
+
+<ul>
+
+<li>  Thermal source; emergent spectrum <img src="im/sim-e.gif"> Planck function</p>
+
+<li> Small spread of T around characteristic effective T<sub>e</sub>
+of photosphere, approximately depth where <img
+src="im/tau-sim-1-e.gif" align=bottom> at any wavelength. </p>
+
+<li> <img src="im/F-lam-e.gif" align=middle> peak at <img
+src="im/plank-lam-peak-e.gif" align=middle> &Aring;  </br>
+
+<li>  Photospheric temperatures <img src="im/sim-e.gif"> 1000-100000 K. </p>
+
+<li>  Strong time variation only in minority of cases </p>
+
+
+</ul>
+
+<!-- ADD: plots of Kurucz spectra -->
+
+
+<li><a href="im/K-SEDS-wideL.gif" target=show> <u>Strong
+concentration</u> to UVOIR</a>, with rise <img src="im/nu-fnu-3-e.gif"
+align=middle> to peak, then dropoff.  </p>
+
+<!-- Shape depends on T<sub>e</sub>.  -->
+
+<li> Spectral slope at higher <img src="im/nu-e.gif"> allows estimate of
+mean T<sub>e</sub>. </p>
+
+<li> Major <a href="im/K-SEDS-discons.gif" target=show>absorption
+discontinuities</a> from ionization edges of abundant ions (e.g. H:
+Lyman edge 912 &Aring;, Balmer edge 3646 &Aring).  </p>
+
+<li> Low level radiation in other bands from high temperature corona,
+synchrotron radiation, etc.  </p> 
+
+</ul>
+
+&nbsp;<br>
+
+</b>
+</td></tr>
+
+
+<tr><td bgcolor="FFBBFF">
+
+<b>
+
+&nbsp;<br>
+
+AGNs: </p>
+
+<ul>
+
+<!-- ADD full-EMsp of 3c273  -->
+
+<li> Primary component is 
+<a href="im/AGN-multiwaveSED-Wehrle.gif" target=show>
+very broad-band, nonthermal radiation</a> extending
+from radio to XR. </p>
+
+
+<li> Shape: <a href="im/3c273-fit-Perry.pdf" target=show>no
+simple parameterization</a>. </p>
+
+<!--    %% No strong peaks in $\nu f_\nu$ plane.   -->
+
+<li>  Thermal components in IR (dust grains) & UV ("UV bump" from inner
+accretion disk).  </p>
+
+<li> Continuum spectrum <u>depends on viewing angle</u> because of
+thick obscuring tori </p>
+
+<li> Strong time variation common</p>
+
+</ul>
+
+&nbsp;<br>
+
+</b>
+
+</td></tr></table>
+
+&nbsp;<br>
+&nbsp;<br>
+
+
+<table align=center width=90% border=2 cellpadding=3>
+
+<th> <font size=+1><u>LINE SPECTRA</u></font> </th>
+
+<tr><td bgcolor="$BBEEEE">
+
+<b>
+
+STARS: </p>
+
+<ul>
+
+<li> Complex, narrow, <u>absorption</u>  lines </p>
+
+<ul>
+
+<li> Produced by transitions in those atoms, ions, and molecules which
+are prevalent at characteristic T<sub>e</sub> and pressure.</p>
+
+<li> From thin layers of <a href="im/frak-emspec-types-ex.jpg" target=show>cooler
+gas projected against higher T continuum</a> of inner photosphere.  </p>
+
+</ul>
+
+<li> Doppler widths small (thermal), ~ few km s<sup>-1</sup> </p>
+
+<li> Line spectrum reflects physical state (composition,
+temperature, pressure) of photosphere  </p>
+
+<li> Lines and local continuum usually coupled (imply
+~ same T) </p>
+
+</ul>
+
+</b>
+</td></tr>
+
+&nbsp; &nbsp; &nbsp;
+
+<tr><td bgcolor="#FFBBFF">
+
+<b>
+
+&nbsp;<br>
+
+AGNs: </p>
+
+<ul>
+
+<li> <u>Emission</u> lines since generally <a
+href="im/frak-emspec-types-ex.jpg" target=show>not viewed against continuum
+source</a>.  </p>
+
+<li> Wide range of ionizations (e.g. neutral to Fe XIV) </p>
+
+<li> Wide range of Doppler widths in different galaxies, 
+to >10<sup>4</sup> km s<sup>-1</sup>  </p>
+
+<ul>
+
+</ul>
+
+<li> Lines and local continuum <u>decoupled</u> since originate in
+different volumes </p>
+
+<li> Doppler widths reflect kinematic motions of
+gas clouds </p>
+
+<ul>
+
+<li>  "Broad" lines from <img src="im/r-lae-e.gif" align=middle> 1 pc  <br>
+
+<li> "Narrow" lines to <img src="im/gae-e.gif" align=middle> 100 pc
+from BH <br>
+
+</ul>
+
+<li> Line spectrum depends on <a
+href="im/Sy1-2-unified-ARoy94.gif" target=show>viewing angle</a> (inner regions
+concealed by thick tori, dust clouds).  Polarization. </p>
+
+</ul>
+
+&nbsp;<br>
+
+</b>
+</td></tr></table>
+
+<!--  %%% ADD for 03+: "implications for observations..."
+%%%  faintness of source detection--- emiss line vs. contin
+%%%  point vs. extended
+ -->
+
+&nbsp;<br>
+&nbsp;<br>
+
+<table align=center width=90% border=2 cellpadding=3>
+
+<th><font size=+1> <u>DEDUCTIONS FROM OBSERVATIONS</u></font></th>
+
+<tr><td bgcolor="$BBEEEE">
+
+<b>
+
+
+<!--  %%% ADD! give examples of how determine abundances: Ca, Mg, Fe
+%%%  cite Majewski program, gE H-beta, Mg+Fe diag.
+%%%  Hard to get light elements: He hard exc v. hot stars;
+%%%  C, N, O hard except in hot stars, and as molecules
+%%%  CN, CH. 
+ -->
+
+STARS: </p>
+
+<ul>
+
+<li>  Continuum slope & structure: T  </p>
+
+<li>  Ionization edge discontinuities: pressure/gravity  </p>
+
+<li> Line widths: <a
+href="im/lum-effects-at-A0-Gray.gif" target=show>pressure/gravity</a>, rotation,
+outflows </p>
+
+<li>  Line strengths: T, pressure/gravity, chemical abundances.
+E.g.:  </p>
+
+<ul>
+
+<li> Classic <a
+href="im/stellspectypes-MBriley.jpg" target=show>"spectral-type"</a> sequence is a
+<a href="im/spectral-types-CM.jpg" target=show>T-sequence</a> </p>
+
+<!--  <a href="im/rwo73-Z-deltas.gif" target=show> -->
+
+<li> <a href="im/EMPstars-v-sun-Christlieb03.gif"
+target=show>Abundances</a>: selected species easy to measure: e.g.
+Ca/H, Mg/H, Fe/H.  
+  He/H  (hot stars only) </p>
+
+<li> Light element (e.g. C,N,O) abundances more difficult:  C IV (UV)
+in hot stars; various atomic lines in cool stars require high spec
+resol; molecules in cool stars (CH, CN, NH, etc) </p>
+
+<li> Ionization decreases with increasing gas pressure: e.g. use Mg I
+5175 &Aring; strength as <a href="im/rwo73-g-deltas.gif"
+target=show>dwarf/giant discriminant</a> for Galactic structure
+studies </p>
+
+<!-- add ID to 73 diagrams  -->
+
+<li>  NB: Derived abundances are sensitive to proper T,P estimation </p>
+
+</ul>
+
+<li> Integrated light of stars allows inferences concerning ages,
+abundances of distant stellar populations.  "Population synthesis": </p>
+
+<ul>
+
+<li> Fit full energy distribution with combinations of <a
+href="im/1Gyr-burst-sed-t.gif" target=show>single generation models</a> to
+determine star formation history & abundances </p>
+
+<li> Use selected lines for <a href="im/Hb-Mg-Fe-Trager99.gif"
+target=show>age-abundance separation</a>, e.g. <img
+src="im/H-beta-e.gif" align=middle>, Mg,Fe for old pops </p>
+
+</ul>
+</ul>
+
+<!-- 
+%%% ADD: line give gas kinematics---more interesting here than in
+%%%  stars; emission lines give abundances...but of DIFFERENT species
+%%%  than in stars, since elec cloud struc determines whether likely
+%%%  to have emission of absorption.  E.g.: no Mg; no Ca; no CH;
+%%%  Fe only in higher ioniz; but H, He, N, S, O.  Note: O hard for stars.  
+-->
+&nbsp;<br>
+
+</b>
+</td></tr>
+
+&nbsp;<br>
+&nbsp; <br>
+
+<tr><td bgcolor="#FFBBFF">
+
+<b>
+
+&nbsp;<br>
+
+AGNs: </p>
+
+<ul>
+
+<li>   Slope & structure of continuum related to energy distribution of
+electrons, importance of Compton scattering, accretion disk structure,
+dust emission/absorption, etc. </p>
+
+<ul> <li> Less definitive interpretation than stellar continua because
+of multiple components, complex generation mechanisms, absence of
+near-TEQ. </p>
+
+<li> One test for a <u>nonthermal source</u>: polarization.  Another:
+compare its mean surface brightness to the Planck function and
+derive corresponding T:</p>
+
+<ul><ul>
+
+<img src="im/bnu-fom-e.gif">
+
+</ul></ul>
+
+where f is the flux, B is
+Planck function and <img src="im/Omega2-e.gif"> is the angular area
+(or upper limit) of the source.  Is T "unphysically" high?  </p>
+
+</ul>
+
+<li> (Emission) line strengths yield electron temperature & gas density; </p>
+
+<li> <a href="im/O-N-H-ELdiagnostic-BMPeterson97.gif" target=show>Line ionization
+level</a> constrains far-UV continuum ("hardness" of ionizing radiation).
+</p>
+
+<!-- Show line diagnostic diagram.  Add comments on shocks  -->
+
+
+<li> <a href="im/3-Sy-spec-Osterbrock84.gif" target=show>Line widths</a>,
+positions probe kinematics of turbulent gas near BH, outflows, etc.
+</p>
+
+<li> Line strengths yield abundances  </p>
+
+<ul>
+
+<li>  ...although of <u>different</u>  species than in stars: e.g. O, N,
+He, S, Fe (uncommon)...but not Ca, Mg (unless UV access), etc.  </p>
+
+</ul>
+
+<li> ID's, Surveys: strong emission line sources (photons
+concentrated to narrow bands) easier to detect than pure continuum
+sources  </p>
+
+</ul>
+
+&nbsp;<br>
+
+</b></td></tr>
+</table>
+
+
+<!--- 7/03: Remainder of F01 version of Lec 3 (on Eqn of transfer) moved to
+separate file.  --> 
+
+
+<p><br></p>
+<p><br></p>
+
+<hr size=2>
+
+References: </p>
+
+<ul>
+
+  <li> Properties of stars: D. F. Gray (1992) "Observation & Analysis of
+  Stellar Photospheres" </p>
+
+  <li> Properties of AGNs:  B. M. Peterson (1997) "An Introduction to
+   Active Galactic Nuclei" </p>
+
+  <li> Spectroscopy:  LLM, Sec. 5.1 </p>
+
+</ul>
+
+
+</b>
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table width=75%>
+<tr>
+<td>
+<b><a href="lec2-f03.pdf">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="lec4-f03.pdf">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>September 2015 </b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<hr size=2>
+
+<b><small> 
+Text copyright &copy 2000-2015 Robert W. O'Connell.
+All rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 511 at the
+University of Virginia.  </small></b>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  
+

@@ -1,0 +1,698 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2019.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr1230 -->
+<!-- -->
+
+<!-- Created as "Lec 8 Astronom Instruments & Sky Surveys" by RWO:  2/25/2001; 
+              from F00 Lecture 6, moved
+	      instrumentation section to here.  F00 Lec 7 material on
+	      sky surveys added.  3/5; 3/8; F02: 9/3/2002; 
+              10/24; 10/25; 10/27; 10/28; 11/4; 10/31/2004 -- dropped as
+              separate Lec8 for schedule reasons & made an optional
+              subpage of Lec7; 3/27/2005; 10/17/2006; 
+              10/22/2008: had been titled "7.1--AstronInstrum"
+              use segments on imaging/surveys and make new lec7-f08.html;
+              delete segment on spectroscopy (later converted to subpage); 
+              delete former lecture 7 material on "Modern Observational
+              Astronomy" and make that an optional subpage; 10/25;   
+              10/26; 11/1; 4/26/2009; 6/21; 3/07/2010; 3/18; 3/21;
+              6/2; 9/12; 9/21; 10/22; 1/25/2011; 3/19; 5/01; 6/11; 
+              10/21; 10/24; 1/6/2013; 9/14/2015: new domain, dept links
+              updated; 2/20/2017; 5/24/2019: convert to ASTR 1210 format; 
+              5/25; 5/28; 
+    -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1230, O'CONNELL.  Lecture Notes  </TITLE>
+</head>
+<body>
+
+<h2 align="center">ASTR 1230 (O'Connell) Lecture Notes </h2>
+
+<p></p>
+<hr>
+
+<!-- <center> <font size="+4" color="#dd33ff"><b>7  ASTRONOMICAL
+IMAGING </b></font> </center>
+-->
+
+<h1 align="center">7. ASTRONOMICAL IMAGING</h1>
+
+<p><br></p>
+
+<!-- 
+<center> <img src="im/bubb-neb-ex.jpg"
+     alt="Bubble Nebula"
+     align="top" border="2">  </center> 
+<p align="right"><small><b><em>Bubble Nebula; image from the Hubble Space Telescope
+ </em></b></small></p>
+-->
+
+<center><a href="im/orion-mars-MonValley-WPacholka.jpg">
+	 <img src="im/orion-mars-MonValley-WPacholka-v2.jpg"
+	 alt="Orion/Mars/MonumentValley" width=75% vspace=12></a></center>
+
+<p align="right"><small><em>Orion and Mars over Monument Valley (Wally Pacholka)
+ </em></small></p>
+         
+
+<p><br></p>
+
+
+<h2>A. INTRODUCTION</h2>
+
+Astronomers have developed a wide array of ingenious instruments for
+attaching to telescopes in order to make measurements of the sky.  For
+270 years, the human eye was employed exclusively as the
+<b><em>detector</em></b> (more details on the performance of the
+eye can be found <a href="human-eye.html"
+>here</a>).  Modern instruments, however, almost
+exclusively use other kinds of detectors.  The kind of instruments
+used depend on the particular band of the EM spectrum for which they
+are designed.  Entirely different technologies are used in the radio
+region, for example, than in the optical band.  Here, we discuss the
+most widely-used kind of optical band equipment and detectors: imagers
+and CCDs.  </p>
+
+<!--- background on human eye: Birney, Ch. 6 -->
+
+<p><br></p>
+
+
+<h2>B. ASTRONOMICAL IMAGERS (CAMERAS)</h2>
+
+In order to convert a telescope into a camera, all you have to do is
+place a photosensitive detector (film or other) in the focal plane of
+the primary optics and add a shutter and filter wheel.  No eyepiece or
+other optical device is needed, although many professional cameras do
+employ <a href="http://www.cfa.harvard.edu/mmti/widefield.html"
+>additional optics</a> to produce better images over wide fields of
+view or to partially correct seeing blur, for instance.</p>
+
+
+<h3>PHOTOGRAPHY</h3>
+
+<a href="im/hubble-at-100-inch-lg.jpg"><img src="im/hubble-at-100in.gif" alt="HubbPhot" 
+align="right" width=25% vspace=10 hspace=10></a>
+
+<li> Although the human eye is a marvelously sensitive and adaptable
+instrument, even poor quality film easily outperforms
+it for astronomy.  The first astronomical photographs were made in
+the mid-19th century.  Photography offered revolutionary
+capabilities to astronomers: </p>
+
+<ul>
+
+(i) First, it provided <b>permanent records</b> of
+observations.</p>
+
+(ii) Second, it permitted <b>very long exposure times</b> and hence
+the detection of faint objects far beyond the capability of the human
+eye.  Under dark conditions, the eye integrates a light signal for at
+most a few tenths of a second.  Film can integrate the signal for
+<b>many hours</b> (even up to a week), allowing detection of
+sources thousands of times fainter than possible with the eye at
+the same telescope.</p>
+
+(iii)  A third important, if less basic,
+property is that film can be made sensitive to a <b>much wider range
+of EM wavelengths</b> than is the eye. </p>
+
+</ul>
+
+<!--  Gone (forever?)
+http://www.astro.virginia.edu/~rjp0i/museum/photography.html
+-->
+
+<li> As a consequence, the impact of photography on astronomy was <b>profound</b>.
+<a href="http://www.astrosurf.com/re/history_astrophotography_timeline.pdf"
+>Here</a> is a brief history of the use of photography
+in astronomy.  
+[The picture at the right, ca. 1930, shows Edwin Hubble guiding the
+camera at the Newtonian focus of the Mt. Wilson 100-in telescope, which
+he used to prove the existence of external galaxies.]</p>
+
+<!-- <a href="im/photoelec-effect-UColPhys2000-lg.jpg" >
+-->
+
+<li> All optical band detectors, including film, rely on the <a
+href="http://en.wikipedia.org/wiki/Photoelectric_effect">
+<b><em>photoelectric effect</em></b></a>.  This is the energy
+boost given to an electron in a photosensitive surface when struck by
+a light photon.  In the classical photoelectric effect, enough energy
+is imparted to eject the electron from the surface altogether.  The
+rate of electron ejection is proportional to the incident EM flux at
+the detector.  Hence, if you can trap and measure the ejected
+electrons somehow, you can estimate the incident photon flux.</p>
+
+<ul>The illustration below shows <b>electron ejection</b> from a metallic
+surface, but the effect is important and has different manifestations
+(e.g. "photo-conductivity") in a wide variety of materials.  The
+photoelectric effect provided definitive evidence for the existence of
+EM photons --- i.e. packets of EM energy that behave like particles,
+schematically shown in the illustration --- and Albert Einstein
+received the Nobel Prize for his interpretation of the effect.</p>
+</ul>
+
+
+<center><img src="im/photoelectric-effect-2.jpg" vspace=10 width=33%></center>
+
+<li>
+Film consists of a thin <b>photosensitive <em>emulsion</em></b> coated
+on a sheet of glass or plastic.  Ejected electrons are stored by
+crystals of silver bromide in the emulsion until the chemical
+reactions during development cause them to precipitate grains of
+silver, which form the permanent image.  Film used by astronomers came
+in a wide variety of resolutions and sensitizations for different
+wavelengths or speeds and in sizes up to 20x20-in glass plates.  </p>
+
+<li> Film was the detector of choice for astronomical imaging from
+around 1900 to 1980.  However, it had limitations with which
+astronomers had long struggled.  First, it was relatively insensitive
+in that it responded to <b>only about 1%</b> of the incident light.
+(We would say that film has a <b><em>quantum efficiency</em></b> of
+only 1%.)  Second, because the chemical processes that produce
+emulsions and develop images cannot be precisely controlled, it was
+very difficult to
+<b>calibrate</b> photographic signals quantitatively in terms of the amount
+of incident EM flux.  </p>
+
+<li> Visit <a href="http://www.sprawls.org/ppmi2/FILMSEN/" >this link</a>
+for more information on the photographic process.</p>
+
+<p><br></p>
+
+<!-- <center><img src="im/ccd_movie.gif" vspace=4></center>
+-->
+
+<center><img src="im/CCD-fullframearc-FSU.jpg" width=50% vspace=4></center>
+
+
+<h3>ELECTRONIC IMAGING AND CCDs</h3>
+
+
+<li> Astronomers began using various types of <b>electronic
+detectors</b> to supplement film in the 1920's.  World War II greatly
+accelerated these technologies, especially in the form of the <a
+href="im/photomultiplier.jpg" ><b><em>photomultiplier
+tube</em></b></a> which could amplify a single photon into an
+easily-detectable burst of millions of electrons.  These and similar
+devices were highly sensitive and very useful in many applcations.
+But none of them were easily converted into large format,
+<b>two-dimensional</b> detectors until <a href="
+https://en.wikipedia.org/wiki/Charge-coupled_device">
+<b><em>charge-coupled devices
+(CCDs)</em></b></a> were introduced in the 1970's.</p>
+
+<div>
+<a href="im/CCD-in-hand-2-med.jpg" ><img
+src="im/CCD-in-hand-2-med-smex.jpg" alt="CCD"align="right" width=15% vspace=10
+hspace=10></a>
+
+<li> A CCD is one example of a larger class of detectors called
+<b><em>solid-state, semiconductor arrays</em></b>.  It is a light-sensitive
+silicon wafer with built-in microcircuitry (see diagram above and
+picture at right; click for an enlargement).</p>
+
+<li> During an exposure,
+photoelectric interactions free electrons from their tight bonding to
+individual atoms, allowing them to move through the material.  A
+CCD is designed to trap the released electrons in small voltage wells
+or <b><em>pixels</em></b>.  After the exposure, the collected electrons are
+shifted rigidly across the CCD (so the image isn't smeared),
+amplified, and stored in a computer memory.  The smallest element in
+the stored image corresponds to the size of a pixel on the detector
+surface.  The cartoon below illustrates the electron shifting
+technique.</p>
+</div>
+
+
+<center>
+   <img src="im/CCD-readout-anim-CTremonti.gif" vspace=12 width=40%>
+</center>
+
+<li><a href="https://en.wikipedia.org/wiki/Active_pixel_sensor"><b>CMOS</b></a>
+array detectors use a different electronic design to read out and
+amplify the signal from each individual pixel without shifting.  They
+are less expensive to produce and have become the most widely
+available array devices, although they are less suitable for
+professional astronomy.</p>
+
+<li> CCD and CMOS array devices are very powerful and are the basis of
+modern digital and video cameras.  In regular cameras, single images
+are intended to be read out relatively slowly; in video cameras,
+images must be read out 24-60 times per second.  Obviously, this technology
+also requires the availability of compact, large capacity data storage
+devices. </p>
+
+<li>  For astronomers CCDs have the following key advantages: </p>
+
+<ul>
+
+(i) They are <a href="im/detector-QEs-FB.gif" ><b>highly
+sensitive</b></a>, with peak quantum efficiencies over 80%.  This means
+they can detect <a href="im/photo_vs_ccd-FB.gif" >much fainter
+sources</a> in a given exposure time than can film.</p>
+
+(ii) They are <b>highly linear</b>, meaning
+that their response is directly proportional to the EM flux deposited,
+and they can be accurately calibrated.</p>
+
+(iii) They immediately convert a scene into a <b>digitized computer
+image</b>, which can then be further analyzed by <b>image
+processing</b> software.</p>
+
+CCD's have now almost completely replaced film in professional
+astronomy. </p>
+
+</ul>
+
+<li> One complication for the low light levels important to
+astronomers is the presence of <b><em>dark current</em></b> in CCDs.  This is
+a residual electrical signal in the absence of incident light.  To
+suppress this, astronomers operate CCD cameras at low temperatures of
+about -100<sup>o</sup>C.  </p>
+
+<ul> The requirement for low dark current while making long exposures
+is the reason that inexpensive "snapshot" mass market digital cameras
+do not work well for most astronomical applications.  Better ones, e.g.
+single-lens reflex designs with large pixels and small dark currents,
+are more satisfactory.  The high-quality CCD detectors used in professional
+observatories typically cost over $100,000 and must be
+custom-fabricated.  </p>
+
+</ul>
+
+<li> The largest individual CCD (now routinely manufactured in sizes up to
+4000x4000 pixels) is still much smaller than typical photographic
+"plates."  To cover large fields, astronomers build <a
+href="im/MegaCam-CCDmosaic-CFHT-Scale.jpg"><b><em>mosaic CCD cameras</em></b>,
+</a>. where many individual CCD chips are tiled across a large area.
+The <a href="im/CCD-mosaic-LSST-1.jpg">largest CCD mosaic camera</a>,
+containing 201 CCD's, is being built for
+the <a href="https://www.lsst.org/">Large Synoptic Survey
+Telescope.</a>
+ </p>
+
+
+<h3> COLOR IMAGING</h3>
+
+<li> Array detectors have no inherent color resolution---i.e. their response to
+different EM wavelengths changes slowly over the optical band.  Your
+eye can sense color because there are three different types of <a
+href="human-eye.html" >cone cells</a> in your retina,
+each sensitive to a different wavelength range of the spectrum between
+4500 and 6000 &Aring;, corresponding to the sensations of blue, green, and red,
+respectively.
+</p>
+
+<li>To obtain color information, professional astronomers place
+different colored <b>filters</b> in front of a single CCD detector,
+take multiple images of a scene, and then combine the images with
+software.  The process is described in <a
+href="http://hubble.stsci.edu/gallery/behind_the_pictures"
+>this tutorial<a> by the Hubble Space Telescope staff.
+Each black and white image is assigned a color by the software, and
+these are combined together to make a full color version.  [Such <b>"color
+separation"</b> images are much easier to construct
+using CCD's than was the case with film because of their linearity and
+immediate conversion to digital format.]</p>
+
+<ul>
+
+<li>  The colors in the combined image
+do not necessarily correspond to what you would see with your eye; and
+they are often deliberately exaggerated (<b>"pseudo-color"</b>) to bring
+out fine shading or physically significant details.  </p>
+
+<!--
+The most prominent lines of hydrogen
+and oxygen have red and green colors, respectively.
+-->
+
+<li>One standard technique is to use narrow band filters to isolate
+certain <b><em>emission lines</em></b>, characteristic of hot atoms of
+certain elements (e.g. hydrogen, oxygen), to show the distribution of
+different phases of hot gas.   
+An example of the compositing process is shown 
+<a href="im/making-color-im-CatsEye-STScI.tiff">here</a>.
+</p> 
+
+
+<li> Below is an extract from a 3-color image of the Rosette Nebula
+taken at the Kitt Peak National Observatory with a mosaic CCD camera
+containing 8450x8450 pixels.  The image was derived from 3
+individual images with filters centered on emission lines of hydrogen
+(coded red), sulfur (blue), and oxygen (green).  Click for a
+full-frame version.  </p>
+
+<center><a href="im/rosette-col-noao-2048.jpg"
+><img src="im/rosette-col-noao-2048-ex2.jpg" alt="Rosette 3 Color"
+width=70% vspace=10></a>
+</center>
+
+</ul>
+
+<li> Studio-quality commercial video cameras use a similar
+color-separation technology but employ beam-splitting optics and
+three separate black and white arrays fed by red, green, and blue
+filters to take simultaneous 3-color images that preserve
+the spatial resolution delivered by the array pixels.   </p>
+
+<li> Less expensive consumer-grade color cameras instead make color
+images with a single array chip and single exposure.  The detector
+surface is covered by a <b><em>"Bayer array"</em></b> of color filters
+that makes each electronic pixel sensitive only to one color band (see
+below).  After readout, software creates full-color image pixels by
+combining a number of the electronic pixels together.  The spatial
+resolution of the resulting image is lower than the array can deliver,
+but the results can be beautiful.</p>
+
+<center><img src="im/bayer-array.jpg" vspace=12 hspace=10 width=33%></center>
+</p>
+
+
+<h2>C.  SKY SURVEYS</h2>
+
+
+<a href="im/hubble-at-48in.jpg" ><img src="im/hubble-at-48in-small.jpg"
+alt="48in" align="right" width=25% vspace=10 hspace=10 ></a>
+
+One of the most important tasks for astronomical imagers is simply to
+<b>map the sky</b>---i.e. to find out what's there.  Systematic,
+telescopic large-area surveys began over 200 years ago with, for
+example, the <b><em>New General Catalog (NGC)</em></b> of 7000 extended
+objects (star clusters, nebulae and galaxies) by Herschel and his sons
+(pre-photographic).  The photographic <b><em>Henry Draper Catalog</em></b> of
+objective prism spectra for 300,000 stars (ca. 1900) was immensely
+valuable in clarifying the physical nature of stars and stellar evolution.</p>
+
+With the development of large telescopes, astronomers realized they
+needed <b>very sensitive, all-sky imaging surveys,</b> made with
+specialized telescopes.  The modern prototype was the <a
+href="http://www.astro.caltech.edu/palomar/about/telescopes/oschin.html" >
+<b><em>Palomar Observatory Sky Survey (POSS)</em></b>,</a> completed in the
+1950's with a specialized wide-field photographic telescope,
+the <a href="im/48-in-schmidt-Porter-draw.jpg" >48-in Schmidt</a>.
+This obtained matched photographs with blue and red filters on large
+14-in plates with fields 6 degrees on a side.  It recorded stars to
+about 20th magnitude.  At right is a picture of Edwin Hubble guiding
+the 48-in Schmidt.  </p>
+
+Several follow-up surveys, also with large format photographic plates,
+were made.  The whole sky has now been mapped to about 20th
+magnitude.  All of this material has been converted to digital format
+for computerized retrieval.  </p>
+
+Emphasis has now shifted to <b>all-electronic surveys</b>, which
+instantly produce digital output.  All-sky maps have also been made to
+various depths in a number of other EM bands, from radio to gamma ray.
+Useful Web sites:</p>
+
+<a href="im/SDSS-ccdassy.gif" ><img src="im/SDSS-ccdassy-ex-TH.gif"
+align=right vspace=10 hspace=10 width=25%>
+
+
+<ul>
+
+<li><a href="http://skyview.gsfc.nasa.gov/cgi-bin/titlepage.pl" >
+The Skyview Virtual
+Observatory (retrieve images of sky in all EM bands from radio to X-ray)</a></p>
+
+<li> <a href="http://www.sdss.org/" >The Sloan Digital Sky Survey</a>.
+The prototype optical-band electronic survey, with a camera employing
+a total of <a
+href="http://www.astro.princeton.edu/PBOOK/camera/camera.htm" >54
+CCD</a> arrays, the most sophisticated CCD mosaic assembled to date.
+The camera layout is shown at right (click for enlargement).  The SDSS 
+has cataloged about <b>500 million cosmic objects</b> to magnitude 23 and
+obtained spectroscopy of about 1 million.</p>
+
+<li> <a href="http://www.ipac.caltech.edu/2mass/outreach/index.html">The
+2MASS All-Sky Infrared Survey</a>.  A survey of the entire sky (with 2
+telescopes) in the infrared bands between 1.0 and 2.5 microns
+wavelength.  Mike Skrutskie (UVa) was Principal Investigator for the
+survey.  See <a href="galactic.html#2MASS">Lecture 6</a> for an
+all-sky image created from the survey.
+</p>
+</ul>
+
+<b>Astronomical transient surveys:</b> Electronic detectors enable
+fast, precise evaluation of <b>changes</b> in the sky. A large number
+of surveys for transient sources have already been made or are under
+way, focussing on gravitational lensing events, supernova explosions,
+asteroid tracking, and (lately) neutron-star and black hole mergers.
+The most ambitious of these is the
+<a href="https://www.lsst.org/">Large Synoptic Survey
+Telescope</a>, scheduled to being operations in 2022.</p> 
+
+
+<h2>D. Amateur Astrophotography</h2>
+
+With modern digital equipment and software, amateur astronomers and
+landscape photographers have produced many magnificent pictures and
+videos of the night sky.  It is easy to get started if you are
+interested in trying this yourself.  There are many excellent websites
+offering tutorials on astrophotography or examples of images made with
+small telescopes and inexpensive CCD/CMOS cameras.  Some good ones are
+listed at the bottom of this page and on
+the <a href="1230links.html">ASTR 1230 Links page</a>.  Here's an
+example image of the "Horsehead" Nebula from Robert Gendler: </p>
+
+
+<center><img src="im/horsehead-RGendler.jpg" width=70% vspace=10></center>
+
+
+<p><br></p>
+
+<hr size=2>
+
+Assignment:
+
+<ul>
+
+<li> Download, print, and read the webnotes for this lecture. </p>
+
+<li> Optional reading: <a href="7.1-modern-astronomy.html">
+7.1 Modern Observational Astronomy</a> and <a href="7.2-spectroscopy.html">7.2
+Astronomical Spectroscopy</a>.</p>
+
+<li> Take the Review Quiz for week 8 on Collab.</p>
+
+<li> You should finish Lab 3 and move on to Lab 4 at the earliest opportunity.</p>
+
+<li> The <b>Midterm Exam</b> is Monday 10/31.  See the
+<a href="preprev.html">Exam Prep</a> page for helpful hints
+and a review of important topics.</p>
+
+<ul>For all interested students, there will be a REVIEW for the exam
+on Sunday, 10/30 at 4 PM in Astronomy 265.</p>
+</ul>
+
+
+</ul>
+
+Web links:</p>
+
+<ul>
+
+<a href="7.1-modern-astronomy.html">Lecture Supplement 7.1
+on Modern Observational Astronomy</a></p>
+
+<a href="7.2-spectroscopy.html">Lecture Supplement 7.2 on Astronomical
+Spectroscopy</a></p>
+
+<!-- 9/14/15: following link may not be active 
+
+<a href="http://www.astro.virginia.edu/~rjp0i/museum/photography.html">History
+of Photography in Astronomy</a> (McCormick Museum--R. Patterson)</p>
+
+-->
+
+
+<a href="astrophot-orientation-apr11.pdf">Orientation for ASTR 1230 Astrophotography
+Lab</a> (Abel Yang & Rachael Beaton)</p>
+
+
+Nice examples of astrophotography (telescopic and not): </p>
+
+<ul>
+
+<li><a href="http://antwrp.gsfc.nasa.gov/apod/astropix.html">Astronomy Picture
+of the Day</a>---best collection of professional and amateur images, a new
+one every day<br>
+
+<li><a href="http://www.twanight.org/newtwan/index.asp">The World
+At Night</a>---image and video compendium site<br>
+
+<li><a href="http://www.brightnightgallery.com/">AstroPics </a>---images
+by Wally Pacholka<br>
+
+<li><a href="http://www.robgendlerastropics.com/">The Universe in
+Color</a>---images by Robert Gendler<br>
+
+<!-- 
+Vanished:
+<li><a href="http://www.astrophys-assist.com/wilobs/index.htm">Mt. Wilson
+Virtual Observatory</a>---images by Colleen Gino<br>
+
+<li><a href="http://www.scienceandart.com">Science and
+Art</a>---images by Bill & Sally Fletcher<br>
+
+-->
+
+<li><a href="http://astrophoto.com/">Astrophoto.com</a> images
+by Tony & Daphne Hallas</a><br>
+
+<li> <a href="http://www.lincolnharrison.com/startrails">Star trail
+photos</a> by Lincoln Harrison<br>
+
+<li><a href="http://goldpaintphotography.com/">Brad Goldpaint
+Photography</a> (nightscapes)<br>
+
+<li><a href="http://www.deepskycolors.com/">Deep Sky Colors</a>
+(nightscapes and telescope imagery by R. B. Andreo)<br>
+
+<li><a href="http://www.damianpeach.com/index.htm">Views of the
+Solar System</a>---images by Damian Peach<br>
+
+<li><a href="http://www.astrosurf.com/cidadao/index.htm">Lunar and Planetary
+Observation with CCD Imaging</a>---images by Antonio Cidadao<br>
+
+<li><a href="http://www.elcielodecanarias.com/index.htm">El Cielo de
+Canarias</a>---Images & Time-Lapse Astro-Videos by Daniel Lopez<br>
+
+<!--
+<li><a href="http://www.aao.gov.au/images.html/">Anglo-Australian
+Observatory Images Page</a>--best site for professional ground-based pictures
+of astronomical objects<br>
+-->
+
+
+<li><a href="http://hubblesite.org/gallery/">Hubble Space
+Telescope Image Archive</a>---spectacular, widely-distributed images; site
+includes a tutorial on astronomical filter imaging</p>
+
+</ul>
+
+Background information on imaging & CCD's:</p>
+<ul>
+
+<a href="human-eye.html">The Human Eye as a Detector</a> (R. O'Connell)</p>
+
+
+<a
+href="http://www.faculty.virginia.edu/rwoclass/astr511/lec11-f03.html">Introduction
+to CCD's</a> UVa ASTR 5110 (R. O'Connell)<br>
+
+<a href="http://zebu.uoregon.edu/ccd.html">Introduction to CCD's</a>
+(G. Bothun, Univ. of Oregon)</a></p>
+
+<A HREF="http://www.astropix.com/index.html">Astrophotography</a> (Jerry Lodriguss)<br>
+
+<a href="http://www.cambridgeincolour.com/tutorials.htm">Cambridge in
+Colour (Digital Photography Tutorials)</a> (Sean McHugh)<br> 
+
+<a href="digital-astrophot-lit-DHaworth-09.pdf">Digital Astrophotography Bibliography</a>
+(David Haworth, 2009)<br>
+
+<!--  Gone 3/2010
+<a href="http://www.geocities.com/CapeCanaveral/Lab/6529/primer.html">
+Primer on Astrophotography</a> (Jim Pennington)</p>  -->
+
+<!--  <a href="http://www.astro.shoregalaxy.com/dslr_astro.htm">Digital SLR
+Astrophotography Tutorial</a> (Ray Shore)<br>   -->
+
+<!-- <a href="http://skyandtelescope.com/howto/imaging/">Astrophotography
+& CCD Imaging For Amateur Astronomers</a> (Sky & Telescope Magazine)<br> -->
+
+<a href="http://www.covingtoninnovations.com/dslr/index0.html">Digital SLR
+Notes</a> (Michael Covington)<br>
+
+
+<a href="http://skyserver.sdss3.org/dr8/en/proj/advanced/processing/">Tutorial
+on Astronomical Image Processing</a> using the "trillion-pixel" Sloan Digital
+Sky Survey dataset<br>
+
+<a href="http://www.youtube.com/watch?v=p5c1XoL1KFs">YouTube video showing how
+Hubble Space Telescope color images are processed</a></p>
+
+</ul>
+
+<!-- <a href="http://www.aa6g.org/astro.html">Astrophotography for Amateur
+Astronomers</a> (Chuck Vaughn)<br>  -->
+
+
+<a href="http://www.astronomynotes.com">Nick
+Strobel's Astronomy Pages</a> for background information on 
+electromagnetic radiation<br>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr1210/121supps2-3.html">
+More information on atomic physics & EM radiation</a> (ASTR 1210, R. O'Connell)</p>
+
+
+<!--
+<a href="http://www.eso.org/instruments/sinfoni/">Example of
+a state of the art spectrograph (SINFONI for the VLT)</a></p>
+--> 
+
+</ul>
+
+
+
+<!-- START FOOTER -->
+
+<hr size=2 >
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table width="70%">
+<tr>
+<td>
+<b><a href="galactic.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td> &nbsp; </td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+&nbsp;
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>May 2019</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<small><i> Rosette nebula image taken by T.A.Rector, B.Wolpa, and
+M.Hanna, with the KPNO 0.9-m Mosaic Camera (copyright &copy
+AURA/NOAO/NSF).  CCD transfer animation by C. Tremonti.  Horsehead
+Nebula image by R. Gendler. Text copyright &copy 2001-2019 Robert W.
+O'Connell.  All rights reserved.  These notes are intended for the
+private, noncommercial use of students enrolled in Astronomy 1230 at
+the University of Virginia.</i> </small>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  

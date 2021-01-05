@@ -1,0 +1,720 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2001-2017.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+<!-- HISTORY: RWO created as "Multi Object Spectroscopy" 10/21/01; 10/24; 
+              Major revision 10/13/2003; 10/14; 10/15; 10/16; 10/20; 8/21/2005; 
+              6/5/2007; 8/1/2010; 9/16/2015: new domain;  6/29/2017: new format; 
+              6/30; 7/1; 7/2;  7/19; 9/11; 9/13; 
+
+-->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.  Lecture Notes  </TITLE>
+</head>
+<body>
+
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p><br></p>
+<hr>
+
+<center>
+<font size="+4" color="cc22dd"><b>STATE OF THE ART SPECTROSCOPY </b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+
+<!-- 
+<center><img src="vimos-assy-from-telescope-sm.gif"
+         alt="VIMOS"
+         align="top" border="2" >
+</center>
+<p align="right"><small><b><em>VIMOS (VLT) viewed from telescope</em></b></small></p>
+-->			   
+
+
+<center> <a href="im/2dF-on-AAT-JPogson.jpg">
+     <img src="im/2dF-on-AAT-JPogson-smex.jpg" alt="2dF on AAT "
+     align="top" width=75% vspace=10 hspace=10 style="border:2px solid
+     black"></a> </center>
+
+<p align="right"><small><em>Two Degree Field Fiber-Fed Spectrograph<br> on the AAT
+(J. Pogson)</em></small></p>
+
+<p><br></p>
+
+
+In <a href="http://www.faculty.virginia.edu/rwoclass/astr511/lec8-f03.pdf">Lecture
+8</a> we discussed the design of optical spectrographs.  Here, we show
+some examples of state-of-the-art spectrographs, which come in a wide
+variety of forms.  Classical spectrograph designs employed circular or
+long-slit entrance apertures, intended for a single target or a 1-D
+slice through a single extended object.  But this is inefficient in
+the case of fields containing many comparable targets, and modern
+designs usually feature multiple entrance apertures to make full use
+of the spectrograph's focal plane.</p>
+
+Multi-object spectrographs are among the most sophisticated and
+expensive instrumentation used by astronomers today, costing upwards
+of $10M on a large ground-based telescope.  Their primary application
+has been to low-resolution spectroscopy of large samples of
+<a href="im/46000-QSOs-SDSS.jpg"><b>faint galaxies</b></a>.  At the other end
+of the design regime, the very high resolution, single-object
+spectrographs have been essential to the discovery and exploration of
+<a href="im/RV-curve-exop-HD46375.gif"><b>exoplanets</b></a>.  </p>
+
+<!-- gone! 8/10 <a href="http://www.aao.gov.au/2df/gg_first/"
+target=show>faint galaxies -->
+
+<p><br></p>
+
+
+<h2>FIBER-FED MULTI-OBJECT SPECTROGRAPHS</h2>
+
+Fiber-fed spectrographs use <b>bundles of optical fibers to transfer
+light</b> from arbitrary positions in the focal plane to the input of
+the spectrograph.  With care to minimize attenuation, fiber lengths
+can be up to 10's of meters -- in order to feed a bench spectrograph
+external to the telescope, for instance.  Fiber systems typically
+offer small (2-4 arcsec) entrance apertures, with a single fiber
+assigned to each target.  There is an "exclusion zone" around each
+fiber, within which another fiber cannot be placed.  Fibers must be
+repositioned with high precision for each new field.  This is usually
+done by mechanical robots. In most designs, individual fiber apertures
+are clamped magnetically on a flat focal-plane plate.  The Sloan
+Digital Sky Survey (SDSS) uses specially-drilled "plug plates," into
+which each fiber is inserted by hand.  Output of the fiber unit is
+usually a linear (slit-like) array at the spectrograph input, yielding
+a fixed position on the focal plane for each spectrum.</p>
+
+
+<ul>
+
+<li> <a href="http://adsabs.harvard.edu/abs/2002MNRAS.333..279L">2dF (AAT 4-m)</a></p>
+
+<ul>
+
+<a href="im/2dF-topend-schem.jpg">Prime focus instrument</a> (see
+picture at top of page).  Two spectrographs with 7 selectable gratings
+each for R = 500/2000 observations in the 3700-9000 &Aring; range.
+Tektronix 1024x1024 CCD detectors. </p>
+
+2 degree FOV, requiring a large corrector lens; a prism compensator is
+used to minimize light loss in fibers due to atmospheric dispersion at
+larger zenith angles. </p>
+
+400 fibers per field; <a href="im/2dF-fiber-buttons.gif">magnetically
+attached</a> to a field plate; positioned by a robot; 200 to each
+spectrograph.  Minimum fiber separation 30 arcsec. </p>
+
+Two fiber focal plane units (one undergoing fiber positioning while other
+observes; flip to replace)</p>
+
+</ul>
+</ul>
+
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -----------------------------    -->
+
+<table width=100%>
+<tr>
+<td width=70%>
+
+<font size="4">
+
+<ul>
+
+<li> <a href="https://www.cfa.harvard.edu/mmti/hectospec/hecto_software_manual.htm">
+Hectospec (MMT 6.5-m)</a></p>
+
+<ul>
+
+300 fibers arranged circumferentially, feeding a bench spectrograph (R
+~ 1000) with two gratings; 3650-9200 &Aring; </p>
+ 
+<a href="im/Hectospec-fiber-robots.jpg">Two robot fiber
+positioners</a>; placement time: 5 min</p>
+
+1 degree FOV</p>
+
+</font>
+</ul>
+</ul>
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+<center>
+
+  <!--  &nbsp;<br>  &nbsp;<br>   -->
+   &nbsp;<br>  &nbsp;<br>
+                                 
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/MMT-Hectospec-focal-surface.jpg">
+   <img src="im/MMT-Hectospec-focal-surface.jpg"  align="bottom" width=70%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>Hectospec Focal Surface</em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 ---------------------   -->
+
+<table width=100%>
+<tr>
+<td width=70%>
+<ul>
+
+<font size="4">
+
+<li> <a href="http://www.astro.princeton.edu/PBOOK/spectro/spectro.htm">SDSS-I
+Spectrograph (2.5-m)</a></p>
+
+<ul>
+
+Cassegrain mounting</p>
+
+Two moderate resolution (R ~ 2000) spectrographs.  Separate red and
+blue light cameras and detectors in each; incoming beam is split by a
+diagonal dichroic mirror (red light transmitted, blue reflected).
+2048x2048 CCD detectors. Wavelength coverage: 3800-9200 &Aring;. </p>
+
+640 fibers (320 for each spectrograph), 
+<a href="im/sdss-plugplate-2-DHolder.jpg">manually plugged</a> into precision
+drilled aperture plate covering a 3 degree FOV.  Minimum fiber
+separation is 55 arcsec.  Fiber diameter on sky: 3 arcsec. </p>
+
+</ul>
+</ul>
+
+</font>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+<center>
+
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+
+&nbsp;<br>  &nbsp;<br>
+&nbsp;<br>  &nbsp;<br>
+
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/SDSS-20fibercartridge-slitend.jpg">
+   <img src="im/SDSS-20fibercartridge-slitend.jpg" alt="SDSS Fibers" width=70%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+
+    <p><small><em>20-fiber cartridge, SDSS </em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 ----------------------------      -->
+
+<table width=100%>
+<tr>
+<td width=70%>
+
+<!--  TEXT HERE; can use ul indents, etc, as appropriate  -->
+<!--    Use as many lines as needed   -->
+
+<ul>
+
+<font size="4">
+
+<li> <a href="http://adsabs.harvard.edu/abs/2015arXiv150905420M">SDSS-III
+APOGEE Spectrograph (2.5-m)</a></p>
+
+<ul>
+UVa-designed, bench-mounted, R ~ 22,500, infrared (1.5-1.7 &#181;)
+spectrograph;  3-segment mosaic VPH grating; 3 2048x2048 HgCdTe 
+detectors. Intended to determine temperatures, gravities, and
+15 elemental abundances in a large sample (over 150,000) of Galactic
+stars with minimal interference from extinction from interstellar
+dust (which is small in the IR).   </p>
+
+Infrared operation requires a cryogenically-cooled, evacuated
+enclosure; significantly complicates design.</p>
+
+300 40-m long fibers run from plugplates at the SDSS telescope
+Cassegrain focus to a separate building holding the spectrograph.</p>
+
+</ul>
+</ul>
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+
+<center>
+
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/APOGEE-spec-cad-drawing-1.jpg">
+   <img src="im/APOGEE-spec-cad-drawing-1.jpg" alt="APOGEE" width=90%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>APOGEE Spectrograph</em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+<p><br></p>
+
+
+<!-- 
+
+<li>  <a href="http://www.noao.edu/kpno/manuals/hydraman/">HYDRA (NOAO/WIYN, 3.5-m)
+</a></p>
+
+<ul>
+Automated fiber positioning system using 100 fibers to feed a bench
+spectrograph; choice of gratings and cameras.  2048x2048 CCD
+detector.</p>
+
+1 degree FOV</p>
+
+</ul>
+
+-->
+
+<!-- VIMOS MOS is an aperture plate design.  ALso uses an IFU.  But
+does not use fibers for individual targets. 
+
+<li> <a href="http://www.eso.org/instruments/vimos/">VIMOS (VLT, 8.2-m)</a></p>
+
+-->
+
+
+<h2>APERTURE PLATE MULTI-OBJECT SPECTROGRAPHS</h2>
+
+Aperture-plate spectrographs use <b>small apertures in a focal-plane
+mask</b> at the spectrograph entrance to transmit light from selected
+targets.  Usually, computer-controlled devices (mechanical cutters,
+lasers) are used to cut apertures in a thin, shaped, metallic mask.
+Early designs used photographic masks.  The apertures can be of
+arbitrary shape and length within overall constraints set by the
+spectrograph focal plane, but they normally have small widths in the
+direction of spectral dispersion.  The distribution of spectra in the
+focal plane depends on the distribution of targets in the field.</p>
+
+The main operational problem is to avoid overlap of spectra and to
+maximize use of the detector area in a given field; this requires
+special optimizing software.  In principle, aperture plate designs
+should have better throughput, better sky background subtraction, and
+better flux calibration than fiber designs.  Fiber designs can
+accommodate more targets, however, because the output format on the
+detector is fixed and optimally packed. </p>
+
+
+<ul>
+
+<li> <a href="http://loen.ucolick.org/Deimos/deimos.html">DEIMOS (Keck 10-m)</a></p>
+
+<ul>
+
+<a href="im/DEIMOS-design-94.gif">Slitmasks: 85 slitlets x
+2 barrels;</a> field size 16 arcmin</p>
+
+2000x4000x8 CCD detectors</p>
+
+</ul>
+</ul>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -----------------------    -->
+
+<table width=100%>
+<tr>
+<td width=55%>
+
+<font size="4">
+
+<ul>
+
+<li> <a href="http://www.lco.cl/telescopes-information/magellan/instruments/imacs/">
+IMACS (Magellan, 6.5-m)</a></p>
+
+<ul>
+
+Laser-cut slit masks covering 27 arcmin FOV</p>
+
+Selectable grating or prism mode </p>
+
+8000x8000 CCD mosaic detectors</p>
+
+<a href="im/IMACS-first-multislit-sp.jpg">First spectrum
+(240 slits)</a></p>
+
+</font>
+
+</ul>
+</ul>
+</td>  <!-- END OF TEXT -->
+
+<td width=45%>
+<center>
+
+   <!--  &nbsp;<br>  &nbsp;<br>   -->
+
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/IMACS-example-prism-slitmask.jpg">
+   <img src="im/IMACS-example-prism-slitmask.jpg" width=90% align="bottom">
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>IMACS Prism Slit Mask</em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+
+
+
+<h2>INTEGRAL FIELD UNITS</h2>
+
+An integral field unit (IFU) produces distinct spectra for <b>many
+contiguous elements</b> in a given compact field.  Powerful for the study
+of extended objects like globular clusters or nearby galaxies.
+Relative aperture positions and sizes are fixed and generally cover a
+square/retangular area.  IFU's have been designed using fiber bundles,
+lenslet arrays, and configurable microaperture or micromirror arrays.
+</p>
+
+<ul>
+
+<li><a href="SAURON-spectrometer.pdf">
+SAURON</a></p>
+
+<ul>
+
+<a href="im/sauron-design-color.jpg">Design</a></p>
+
+Telescope image is focussed on
+an <a href="im/SAURON-lenslets-Bacon01.jpg"> array of microlenses</a>
+which break up the 40x33 arcsec field into 1 arcsec images.  </p>
+
+Grism disperser.  Spectral range limited to 4800-5400 &Aring;.</p>
+
+Slight rotation of dispersion direction with respect to lenslet array
+achieves cross-dispersion so spectra don't overlap; 
+spectral length is limited by using an interference filter</p>
+
+Intended for areal studies (kinematics, populations, emission lines,
+etc) of nearby galaxies.  Example SAURON
+science: <a href="http://adsabs.harvard.edu/abs/2006MNRAS.366.1126C">
+mass-to-light ratios and Fundamental Plane for early-type
+galaxies</a></p>
+
+</ul>
+
+<center>
+<a href="im/MaNGA-IFUs-Bundy-15.jpg"><img src="im/MaNGA-IFUs-Bundy-15.jpg"
+width=75% vspace=10>
+</center>
+
+<li> <a href="http://adsabs.harvard.edu/abs/2015ApJ...798....7B">SDSS-III
+MaNGA System</a></p>
+
+<ul>
+
+Uses the upgraded SDSS-III <a href="http://www.sdss3.org/instruments/boss_spectrograph.php">
+BOSS spectrographs</a> (3600-10300 &Aring;).</p>
+
+For each field, can deploy up to 17 fiber-based hexagonal IFU units,
+in sizes (see above) ranging from 19 up to 127 fibers (12-32" field
+diameters; 2" fiber cores), across the 3<sup>o</sup> field.  1423
+fibers total.  For more information on the MaNGA fiber system, see
+<a href="http://adsabs.harvard.edu/abs/2015AJ....149...77D">Drory
+(2015)</a>.</p>
+
+Intended for areal spectral studies of up to 10,000 galaxies</p>
+
+</ul>
+
+
+<li><a href="http://www.stsci.edu/ngst/instruments/nirspec/">JSWT NIRSpec</a></p>
+<ul>
+
+The Near Infrared Spectrograph on the
+6.5-m <a href="http://www.jwst.nasa.gov/index.html">James Webb Space
+Telescope</a>, scheduled for a 2018 launch, employs an IFU
+based on
+a <a href="http://www.jwst.nasa.gov/microshutters.html">microshutter
+array</a>.  The array contains over 62,000 cells (about 100x200
+microns each) that can be opened or closed by a magnetic controller to
+admit light to the spectrograph. </p>
+
+<a href="moseley-microshutters-JWST.pdf">More information on
+JWST microshutters (S.H. Moseley)</a></p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+<h2>GRISM FULL-FIELD SLITLESS SPECTROSCOPY</h2>
+
+A "grism" is a prism with a transmission grating mounted on its
+entrance face.  This combination produces a series of spectra of each
+source in the focal plane, with the first and second orders of most
+interest.  There is also a zeroth-order image of each source, which
+provides a means to determine the order positions and wavelength
+scales for that source.  Grisms are used only for <b>low resolution</b>
+spectroscopy.</p>
+
+Grisms can be deployed in the same way as a filter, without a
+collimator, ahead of the focal plane of an imaging camera.  Grism
+spectrographs are normally operated "slitlessly," without focal-plane
+apertures, so they image the entire field.  This <b>captures spectra of
+any object in the field</b>, which is their primary advantage.  The main
+operation/data-reduction complication is the <b>overlap</b> of spectra from
+different sources or even different parts of the same extended source.
+To mitigate overlap, spectra are typically taken with the spectrograph
+oriented in multiple (say up to 5) different position angles on the
+sky.  Even where there is no object overlap, the superposed spectrum of
+the background sky limits signal-to-noise.  Data reduction pipelines
+are complex (e.g. see
+<a href="http://adsabs.harvard.edu/abs/2017arXiv170602669P">Pirzkal
+2017)</a>.</p>
+
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+
+
+<tr>
+<td width=60%>
+
+<font size="4">
+
+<ul>
+<li> <a href="http://www.stsci.edu/hst/wfc3/analysis/grism_obs/wfc3-grism-resources.html">
+HST Wide Field Camera 3 IR Grism Spectroscopy</a></p>
+
+<ul>
+WFC3 carries two IR grisms, with wavelength ranges of 8000-11500 &Aring; and
+10750-17000 &Aring;, respectively.  Corresponding resolutions are
+210 and 130.  The imaging field is about 130 arcsec square.  The grism
+mode is mainly used to obtain spectral energy distributions of high redshift
+sources, where the information-rich UV/optical spectrum is shifted to the
+near-IR.  A sample data frame with high redshift emission line sources
+identified is shown at the right.  An important advantage of IR grisms used
+on space telescopes is that they <b>avoid the tremendously bright IR night
+sky emission lines</b> in the Earth's atmosphere. JWST will also carry
+grisms.</p>
+
+</ul>
+</ul>
+
+</font>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=40%>
+<center>
+
+   <a href="im/EL-glx-on-WFC3-grism-PMcC-10.jpg">
+   <img src="im/EL-glx-on-WFC3-grism-PMcC-10.jpg" width=80%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>WFC3 IR Grism Frame</em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+
+<p><br></p>
+
+
+<h2>HIGH PRECISION DOPPLER SHIFT SPECTROSCOPY (Planet Detection)</h2>
+
+<!-- QFC: why was technique not more vigorously pursued before 1995?  -->
+
+The most conspicuous use of high precision spectroscopy has been in
+the detection of extra-solar planets through <b>stellar reflex Doppler
+shifts</b>, where <b>velocity differences of order 5 m/s</b> must be
+measured.  Requires both high spectral resolution and great
+mechanical/optical stability.  Suitable designs employing digital
+detectors have been around since the late 1970's (e.g. 
+<a href="http://adsabs.harvard.edu/doi/10.1086/166608">Campbell et
+al. 1988</a>) but were not energetically exploited until the
+surprising detection of a Jupiter mass planet in a sub-AU orbit made
+in 1995 by
+<a href="http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1995Natur.378..355M&amp;db_key=AST&amp;data_type=HTML&amp;format=&amp;high=422df2388417592">
+Mayor & Queloz</a> at Haute-Provence
+Observatory. </p>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+<tr>
+<td width=60%>
+<font size="4">
+<ul>
+<li><a href="Butler-HiPrecDoppler-PASP-96.pdf">Marcy-Butler Technique</a></p>
+
+<ul>
+Cross-dispersed echelle spectrometer, R ~ 60000</p>
+
+Employs a gaseous iodine cell at the entrance slit to impress a
+calibration absorption spectrum on each stellar spectrum taken (see
+sample at right).  The dense molecular spectrum yields ~10 wavelength
+standard lines per &Aring; </p>
+
+The calibration signal passes through the optics in exactly the same
+way as stellar light and simultaneously with it </p>
+
+Users must perform a cross-correlation analysis on a <b>large number of
+spectral segments</b> of the star+iodine spectrum covering ~ 800 &Aring;
+to determine the wavelength shift of a target star</p>
+
+SNR ~ 200 in flux yields a velocity precision ~ 3 m/s.  Since
+world-class athletes can achieve ~ 10 m/s, we can now detect stars
+moving at a human pace.  </p>
+
+</ul>
+</font>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=40%>
+<center>
+
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/Butler-Marcy-data-sample.jpg">
+   <img src="im/Butler-Marcy-data-sample.jpg" width=75% align="top" >
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>Sample Hi-Res Iodine Cell Spectrum</em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+
+To date, <a href="im/exoplanet-P-R-classification-17.png">most
+exoplanets</a> have been first identified by the transit eclipse
+method, especially from the
+<a href="http://kepler.nasa.gov">Kepler mission</a> in space.  However,
+high resolution spectroscopy remains essential for verifying the
+identifications using the Doppler technique and for determining the
+physical characteristics of the planets and their parent stars.  </p>
+
+<ul>
+
+<li> <a href="im/51Peg_phase-MarcyButler.gif">
+Sample velocity curve (51 Peg)</a> (first normal exoplanet to be verified)</p>
+
+<li> <a href="http://exoplanets.org/">
+Exoplanet Database</a></p>
+
+</ul>
+</ul>
+<p><br></p>
+
+
+<u><h2>OTHER ILLUSTRATIONS</h2></u>
+
+<ul><ul>
+
+<li> <a href="im/Keck-hiresfig72.jpg">Keck Hi-Res Spectrograph Schematic</a></p>
+
+<li> <a href="im/Vogt-hamspectrum72.jpg">Keck Hi-Res Spectrum</a>
+
+</ul></ul>
+
+<p><br></p>
+
+<!-- END MAIN TEXT -->
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table width="75%">
+<tr>
+<td>
+<b><a href="lec8-f03.pdf">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="lec11-f03.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>September 2017</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<hr size=2>
+
+<small>
+Grism data frame from Pat McCarthy.   Text copyright &copy 2001-2017
+Robert W. O'Connell.  All rights reserved.  These notes are intended
+for the private, noncommercial use of students enrolled in Astronomy
+511 at the University of Virginia.  </small>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  

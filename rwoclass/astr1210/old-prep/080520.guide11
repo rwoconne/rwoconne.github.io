@@ -1,0 +1,1177 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr1210 -->
+<!-- -->
+
+<!-- SOURCE: S97 guide 4; 2/26/98; 10/15/98; 10/19; 2/27/99; 3/3; 3/9;
+  test version 11/21/01; 11/23; 11/24; 11/25; 11/28; 12/02; 2/23/02; 
+  2/24; 2/26; 2/27; 3/1; 3/4; 3/5; 4/9; 4/11; 6/6; 2/26/2003; 11/25;
+  2/26/2004;  3/3; 2/20/2007; 3/11; 3/12; 3/13; 3/14; 10/11; 10/12; 
+  10/15; 3/3/2008; 3/4; 3/8/2009; 3/11; 3/13; 2/22/2010; 3/27/2012;
+  6/11--new format; 6/12; 6/13; 6/17; 6/26; 10/8; 10/13; 2/28/2013;
+  3/1; 7/28; 9/27; 9/29; 10/3; 2/20/2014; 2/28; 3/3; 7/20; 7/24;
+  9/27; 11/07: update exop stats & add K186f; 1/7/2015; 2/26; 9/11:
+  new domain;  2/25/2017; 3/3; 3/9; 6/20; 9/3/2018; 9/5; 10/16;
+  1/02/2019; 8/5/2020: add viewport def; 
+    --> 
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1210, O'CONNELL.  Study Guide 11  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="">
+
+</head>
+<body>
+
+
+<h2 align="center">ASTR 1210 (O'Connell) Study Guide </h2>
+
+<p></p>
+<hr noshade>
+
+<center><font size=+4  color="#dd33ff"><b>
+11.  PLANETARY SYSTEMS: <br> OURS AND OTHERS</b></font>
+</center>
+
+<p><br></p>
+
+<a name="compare">
+<center> <a href="im/plan-comp1-shrp.gif"><img src="im/plan-comp1-shrp.gif"
+            align="top"  width=65% ></a>  </center>
+
+<p align="right"><small><i>Comparison of the planets, based on
+NASA images.<br>  Sizes are to scale, but separations are not.
+</i></small></p>
+ 
+<p><br></p>
+
+The four large satellites of Jupiter discovered by Galileo in 1610
+with his small telescope were the <b>first new members</b> of the Solar
+System identified in recorded history.  They instantly increased the
+known membership of the Solar System from 8 to 12.  Since that time,
+astronomers have identified <b>hundreds of thousands</b> of Solar System bodies
+(planets, satellites, and smaller rocky or icy objects) with telescopes
+and spacecraft. </p>
+
+Most remarkably, after thousands of years of speculation about other
+worlds like ours in the universe, astronomers have recently discovered planets
+in orbit around <b>other</b>
+stars---<b><em>exoplanets</em></b>.  </p>
+
+This lecture describes the general properties of our planetary system and
+those around other stars and how we believe these originated.</p>
+
+<p><br></p>
+
+
+<h2>A. Inventory of the Solar System</h2>
+
+By terrestrial standards, the density of matter in the Solar System is
+extremely <b>low</b>, and the planets are separated by enormous gaps.
+Other than the Sun, no solar system object is <b>self-luminous</b> at
+visible wavelengths, and all shine by <b>reflected sunlight</b>.  Seen
+from the Earth, the second and third-brightest celestial objects are
+Earth's Moon and Venus.</p>
+
+Contents of the Solar System: </p>
+
+<ul>
+
+<li> The <b>Sun</b> (99.8% of total mass)</p>
+
+<li> 4 "terrestrial" and 4 "Jovian" <b>planets</b> (0.1% of the mass).
+Jupiter's mass is greater than the masses of the other planets
+combined.</p>
+
+<li> Over 180 <b>satellites</b> of planets</p>
+
+<li> Hundreds of thousands of <b>smaller rocky or icy bodies</b>, ranging in
+size down to about 50 meters.  The largest of these, including Pluto,
+are now called <b>"dwarf planets."</b>  (We will postpone discussion
+of the controversy over the use of this terminology
+until <a href="guide20.html">Study Guide 20)</a>.
+ </p>
+
+<ul>
+Most of these are
+members of the <a href="http://nineplanets.org/asteroids.html"
+>asteroid belt</a> between Mars and Jupiter or the <a
+href="http://nineplanets.org/kboc.html">
+"Kuiper Belt"</a> in the outer solar system, beyond Neptune. </p>
+
+Objects smaller than dwarf planets but larger than about 50-m
+diameter are called <b>"asteroids"</b> if they are composed
+of rocky materials or <b>"comets"</b> if they are icy. </p>
+
+</ul>
+
+<li> <b>Meteoroids</b> (rocky or icy bodies smaller than
+50-m), <b>dust</b>, <b>gas</b></p>
+
+</ul>
+
+<!--  http://www.fourmilab.to/solar/solar.html   -->
+
+For a diagram of the current location of the planets, 
+click <a href="http://www.heavens-above.com/planets.aspx?lat=0&lng=0&loc=Unspecified&alt=0&tz=UCT" >
+here</a>.</p>
+
+<p><br></p>
+
+<center><a href="im/ss-orbs-2.jpg"><img src="im/ss-orbs-2.jpg" border=2 alt="Planetary Orbits" width=55% vspace=16></a>
+<p><small><em>An oblique view of the planetary orbits drawn to
+scale<br> (though the planet sizes shown are not to
+scale).</em></small>
+</center>
+
+
+<h2>B.  Systematics of Planet Orbits</h2>
+
+Systematic characteristics of the orbits of the terrestrial and Jovian
+planets:
+
+<ul>
+
+<li> Orbits for all lie <b>close to</b> the plane of the
+Earth's orbit (the <b>ecliptic plane</b>)</p>
+
+<ul>
+
+In the picture above, you can see the "cozy" inner solar system
+(Mercury through Mars) separated from the vast outer solar system by
+the asteroid belt. </p>
+
+For an edge-on plot of the orbits showing the near-coincidence of the
+orbital planes, click <a href="im/orbital-inclinations-FB.gif"
+>here</a>.</p>
+
+The orbits of the "dwarf planets," including Pluto, can be more highly
+inclined to the ecliptic plane.</p>
+
+</ul>
+
+<li> The orbits, though technically ellipses, are <b>nearly circular</b></p>
+
+<li> The <b>direction of revolution</b> of the planets in their orbits is the
+	<b>same</b> (counterclockwise from above Earth's N. pole); the direction of <b>spin</b>
+	on their rotation axis is the <b>same</b> for most.</p>
+
+<li> The orbits show <b>systematic spacing</b> (Bode's "Law"): the
+separation between orbits increases with orbit size from Mercury
+through Uranus.  This is apparent in the figure above.</p>
+
+</ul>
+
+It is important to understand that <b>none of the above is required by
+Newton's laws</b>. </p>
+
+<ul>
+
+For example: Newton's laws imply the orbit of a given planet will be in a
+fixed plane, but the orbits of other planets can be in different
+planes; revolution directions do not have to be the same;  orbits can
+be highly elliptical rather than nearly circular; etc.
+ </p>
+
+</ul>
+
+Instead, these systematics must be the product of <b>special
+physical conditions</b> prevailing during formation of the planets.  That is,
+<b>they provide clues to the process that forms planets.</b></p>
+
+<p><br></p>
+
+<h2>C. Segregation of Physical Properties</h2></p>
+
+The four <b>"inner" or "terrestrial"  planets</b> (Mercury, Venus,
+Earth Mars) show a striking dissimilarity from the four large
+<b>"outer" or "Jovian"  planets</b> (Jupiter, Saturn, Uranus, Neptune):
+</p>
+
+<center>
+
+<TABLE BORDER=5 bordercolor="#DD0055" WIDTH="70%" >
+<TR>
+<TH width=33%> </TH>
+<TH width=33%>INNER (TERRESTRIAL)</TH>
+<TH width=33%>OUTER (JOVIAN)</TH>
+</TR>
+
+
+<TR align=center>
+<TD width=33%>Size & Mass**</TD>
+<TD width=33%>Small</TD>
+<TD width=33%>Large</TD>
+</TR>
+
+
+<TR align=center>
+<TD width=33%>Density</TD>
+<TD width=33%>Large</TD>
+<TD width=33%>Small</TD>
+</TR>
+
+
+<TR align=center>
+<TD width=33%>Composition</TD>
+<TD width=33%>Si,O,Al,Mg,Fe<br>Rocky</TD>
+<TD width=33%>H,He<br>Gas Giants</TD>
+</TR>
+
+</TABLE>
+</center>
+
+<ul>
+
+**See the <a href="#compare">image</a> at the top of this page for a graphic comparison
+of planet sizes.</p>
+
+</ul>
+
+These differences constitute another <b>major clue</b> about the
+processes that formed the planetary system.</p>
+
+<ul>
+Note: we are deliberately omitting Pluto here, since it is not
+representative of either group. </p>
+</ul>
+
+<!-- Atmospheres & CO$_2$,O$_2$,N$_2$ & H$_2$,He \cr  -->
+
+<p><br></p>
+
+
+<h2>D.  Origin of the Solar System</h2></p>
+
+Since the time of Galileo, there have been many models for the origin
+of the solar system.  They all fall into two main categories:</p>
+
+<ul>
+
+<li> "<b>Catastrophic/tidal theory</b>": a passing star pulls material from Sun, which cools
+to form planets</p>
+
+<ul>
+
+This would imply planets are <b>rare</b>, since close encounters
+between stars are <b>extremely</b> rare.</p>
+
+The process is also physically unlikely: expelled solar material would
+be very hot and would diffuse quickly before it was able to
+condense.</p>
+
+</ul>
+
+<li> "<b>Nebular theory</b>": planets form from the cloud ("nebula")
+of cool debris surrounding a forming star.  The theory was first
+described in 1755 by philosopher Immanuel Kant.</p>
+
+<ul>
+
+This would imply planets are <b>common because they are byproducts
+of normal star formation</b>.</p>
+
+There is now <b>excellent supporting evidence</b> for the nebular theory,
+not least of which is <a href="#exop">item "G"</a> below </p>
+
+<p></p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+
+<h2>E.  The Interstellar Medium and Star Formation</h2>
+
+We know that <b>stars are forming
+continuously</b> out of the "<b><em>interstellar medium</em></b>"
+at a rate of about 1 solar mass per year throughout our Galaxy:</p>
+
+<ul>
+
+<li> The interstellar medium (ISM) is the dilute matter between stars.
+It constitutes a few % of the mass of our Galaxy</p>
+
+<li> Including the whole volume of the disk of the Galaxy, the average
+density of the ISM is about <b>1 atom per cubic centimeter</b>.</p>
+
+<li> Contents of the ISM:</p>
+
+<ul>
+
+<b>Gas</b> (atoms, molecules)</p>
+
+<ul>
+
+ Composition: hydrogen 71%; helium 27%; all other elements (C,N,O,Fe,
+ etc) only 2%.  When hot, or "ionized," this gas is visible as
+ <a href="im/orion-HST_mosaic-2006.jpg">"gaseous nebulae"</a>
+ (producing optical spectra containing, among other features, bright
+ emission lines of hydrogen, as discussed
+ in <a href="121supps2-3.html" >the Supplements</a>).  Where the gas
+ is cold, and in atomic or molecular form, we can detect it using
+ radio telescopes. </p>
+
+</ul>
+
+<b>"Dust"</b></p>
+
+<ul>
+
+ Very small <b>solid particles</b>
+ or <a href="im/dust-grain-draw-NS.gif">"dust grains"</a>, mostly
+ formed in the extended outer atmospheres of cool "red giant" stars
+ and ejected into interstellar space.  These are smoke-like.  They
+ absorb and redden light passing through them.  Absorption by
+ concentrations of dust creates
+ <a href="im/barnard72-snake-darkneb.jpg">"dark clouds"</a> seen
+ against bright background sources such as the Milky Way.  </p>
+
+ Dust plays the essential role of a <b>refrigerant</b> for
+ interstellar gas.  Parts of the ISM, if well shielded by dust grains
+ against heating by surrounding stars, can become very <b>dense and
+ cold</b> (reaching only about 10<sup>o</sup> K above absolute zero
+ temperature).  These are the regions which are primed to turn into
+ nurseries for newly born stars.  </p>
+
+</ul>
+</ul>
+</ul>
+
+A beautiful example of a likely stellar nursery is shown in
+the picture below:</p>
+
+<center><a href="im/M16Full.gif" ><img src="im/M16Full-ex.gif" vspace=16,
+alt="Eagle Nebula" width=70%></a></center>
+
+<center>
+<table width=70%>
+<tr><td><small> This is the "Eagle Nebula" imaged by the Hubble Space
+Telescope.  The extended, dark, sculpted "elephant trunk" running
+across the image is a cold, dusty region.  It is surrounded by hot gas
+(greenish-blue), which is evaporating the cold material away.  The
+small globules on the end of the finger-like protuberances are the
+densest regions of the cloud, possibly containing protostars with
+masses like the Sun.  Click on the image for a full view.  For more
+pictures and information, click <a href=
+"http://hubblesite.org/newscenter/archive/releases/1995/44/">here</a>.</p>
+</small></td></tr></table></center>
+
+<ul>
+
+<a href="http://hubblesite.org/video/100/news_release/1995-44" >
+<img src="im/film.gif"> here</a> is an MPEG video of a zoom into
+the Eagle Nebula.</p>
+
+For Hubble Space Telescope images of another spectacular star-forming
+region in the Carina
+Nebula, <a href="http://hubblesite.org/newscenter/archive/releases/2010/13/image/a/">click
+here</a>.</p>
+
+</ul>
+
+
+<p><br></p>
+
+
+<h2>F. Planet Formation in the Nebular Theory</h2> </p>
+
+
+Star formation out of the interstellar medium is an amazing process.
+The compression of the dilute ISM into the body of a star occurs
+because of the combined effects of gas cooling and relentless
+gravitational attraction.  The compression in volume is an astonishing
+factor of about 10<sup>24</sup>.  The mass that ultimately resides in
+a star like the Sun originally occupied a volume about 10 light years
+on a side, a factor of 100 million larger across.</p>
+
+We now have a good, general understanding of how stars and planets
+form.  The detailed physics and chemistry of the processes involved
+are still being worked out, but progress over the next decade or
+so should be rapid because of powerful new observational facilities like
+the <a href="  ">Atacama Large Millimeter Array</a> (ALMA, a radio
+telescope) and the
+<a href="https://www.jwst.nasa.gov/">James Webb Space Telescope</a>
+designed to attack these specific problems.  ALMA is operated by the
+National Radio Astronomy Observatory here in Charlottesville.  JWST,
+the successor to the Hubble Space Telescope, is expected to be
+launched in 2021.
+</p>
+
+Here is the sequence of steps in the formation of planets around
+newly born stars:</p>
+
+<ol>
+<li> Gas in the ISM cools down and slowly compresses.  After a certain
+point, a dense, cold cloud in the ISM will start to collapse faster
+under its own self-gravity:</p>
+
+<center>
+<table border=5 cellpadding=10 bgcolor="#ffffe0" width=600>
+<tr>
+<td><img src="im/nebhyp-1-UTn161.gif" width=250 height=250></td>
+<td><img src="im/nebhyp-2-UTn161.gif" width=350 height=250></td>
+</tr>
+</table>
+</center>
+<p><br><p>
+
+
+<li> As it collapses, the cloud spins up & flattens because of
+the <b>conservation of angular momentum</b> (first illustrated by
+Kepler's Second Law).</p>
+
+<ul>
+
+A <b>rotating, flattened "protoplanetary" disk</b> is a natural
+consequence of the collapse of the interstellar cloud and is expected
+to accompany star formation in all enviroments.  In the case of our
+solar system the disk is called the "solar nebula." </p>
+
+
+</ul>
+
+<center>
+<table border=5 cellpadding=10 bgcolor="#ffffe0" width=600>
+<tr>
+<td><img src="im/nebhyp-3-UTn161.gif" width=550 height=300 vspace=10></td>
+</tr>
+</table>
+</center>
+
+<center><p><small><em> Note!  The <u>scale</u> of this picture is much smaller, by
+several 1000x, than the scale of the previous picture.</em></small></p></center>
+
+<li>The dense concentration of material in the center of the disk is
+the <b>"protostar"</b> ("protosun" in the illustration here).  </p>
+
+<ul>
+
+The <b>protostar heats up</b>, first from energy released by
+gravitational collapse, and later, once its core reaches a critical
+density and pressure, by nuclear reactions.</p>
+
+</ul>
+
+<li>The protostar <b>heats the inner protoplanetary disk</b> to
+a higher temperature than the outer disk.  
+<a
+href="im/tempprofile-protodisk-CM.jpg">Here</a> is a typical
+temperature profile for the disk.
+</p>
+
+<li>The heating determines the kinds
+of <a href="im/solarneb-frostline-TSmith.jpg" ><b>solids</b></a> which
+can survive in a given part of the disk and generates
+the <b>segregation of planetary properties</b>: </p>
+
+<ul>
+
+Only <b>"refractory" (high melting point)</b> solids survive in
+the <b>inner disk</b>.  These tend to be heavy, rocky materials.  Only
+a <b>small fraction</b> of the total inner disk is in this form since
+heavy elements are not abundant.
+</p>
+
+<b>"Volatile"</b> materials are those with <b>low melting points</b>.
+They include the ices of water, methane, and ammonia (H<sub>2</sub>O,
+CH<sub>4</sub>, NH<sub>3</sub>).  These will be <b>vaporized</b> in
+the inner disk.</p>
+
+On the other hand, these ices <b>can persist in solid form</b> in the
+cool <b>outer disk</b>.  These are hydrogen-rich compounds, and ecause
+H is abundant, there is a <b>large amount</b> of such icy material in
+the outer disk.  </p>
+
+The innermost radius in the disk where icy materials can remain solid
+is called the <a href="im/solarneb-frostline-TSmith.jpg"
+><b>"frost line"</b></a>. </p>
+
+Solids in the outer nebula are <b>more similar</b> in chemical
+composition to the Sun than are inner nebula solids</p>
+
+</ul>
+
+<li> Larger bodies grow initially from the <b>solids, not from
+gas,</b> through collisions and sticking together
+(or <b>"accretion"</b>).  </p>
+
+<ul>
+
+Accretion produces solid bodies with a range of sizes in the sequence
+<b>grains ==> <em>"planetesimals"</em> ==> <em>"protoplanets</em>,"</b> where
+the distinction in size between the two latter classes is not firmly
+defined.  A protoplanet is an object over about 500 km in diameter.
+For larger protoplanets (about 15x the mass of the Earth),
+gravitational fields can rapidly attract gas from the nebula.</p>
+
+In the <b>inner disk</b>,  <b>small, rocky</b> proto-planets form.</p>
+
+In the <b>outer disk</b>, beyond the frost line, <b>large, "gas-giant"</b>
+proto-planets form.</p>
+
+</ul>
+
+<p><br></p>
+
+<center><img src="im/protoplandisk-LPL.gif" border=2 vspace=10><br>
+<small><em>Computer simulation of protoplanetary disk</em></small>
+</p></center>
+
+<li> Final assembly: the <b>violent infall of fragments heats</b>
+the protoplanets.  <a href="im/moonform-impact.jpg" >Collisions</a>
+between protoplanets and large fragments can have drastic effects,
+producing extensive melting/resurfacing in a merged protoplanet or
+even shattering the originals into smaller pieces.  </p>
+
+<li> The elapsed time for proto-planet formation is <b>short</b> by
+cosmic standards: probably a few million years (though under the right
+conditions it could occur <a href="boss-mechanism.html" >much
+faster).</a></p>
+
+<li> The interiors of proto-planets that are large enough are heated
+and <b>partially melted</b> by the violent accretion and by the
+decay of short-lived radioactive isotopes.  The melted interiors will
+<b><em>differentiate</em></b>, with <b>heavy metallic materials settling</b>
+to the center and lighter, <b>rocky materials rising</b> to the exterior.  </p> 
+
+<li> <b>Gravitational interactions</b> between planets, or between planets and
+the residual protoplanetary disk (as in the image above), can
+<b>drastically change the orbits</b> of the new planets, moving large
+planets inward, tossing small bodies outward, or pushing planets into
+more strongly elliptical orbits.</p>
+
+<li> <a href="im/evol-protoplan-disk-AW.jpg">Here</a> is a pictorial
+summary of the nebular model.</p>
+
+</ol>
+
+<center>
+<a href="im/pp-disks-labeled-2.jpg"><img src="im/pp-disks-labeled-2.jpg" width=75% vspace=16> </a>
+</center>
+
+
+<h3>Observational Support for the Nebular Model</h3>
+
+<ul>
+
+<!-- <img src="im/HH30-disk-th.jpg" align="right"> -->
+
+<li> The nebular model successfully <b>explains the systematics</b> in the orbital
+geometry, motions, and compositions listed in Sections B and C
+above.</p>
+
+<!-- <a href="http://subarutelescope.org/Pressrelease/2006/06/27/index.html">
+  -->
+
+<li>  We now
+have <b>direct detections of protoplanetary disks</b> around nearby
+stars by
+the <a href="http://hubblesite.org/images/year/1999?release_key=1999-05" >
+Hubble Space Telescope</a>,
+<a href="https://sphere.osug.fr/spip.php?rubrique6&lang=en">
+infrared telescopes</a>, and
+<a href="http://www.almaobservatory.org/en/press-release/almas-best-image-of-a-protoplanetary-disk/">ALMA</a>.
+A montage of disk images made in the far-infrared bands, where cool
+dust glows brightly, is shown above.</p>
+
+<!--  An HST image of a young planetary
+disk is shown at the right (this star is in a stage where it is
+producing a gas jet perpendicular to the disk). --> 
+
+<li> Yet stronger evidence, based on the expectation in the nebular
+theory that planets will be <b>common</b>, is found in the next
+section. </p>
+
+</ul>
+
+<p><br></p>
+
+<a name="exop">
+<h2>G.  Exoplanets </h2></a>
+
+Speculation about <b>planets around other stars</b> extends as far back in
+history as the ancient Greeks.  The philosophical implications of
+discovering other planetary systems for the context in which we should
+view the Earth and the human race have been widely discussed.  But
+for hundreds of years, despite much effort, no planetary companions
+to other stars were found. </p>
+
+Finally, extra-solar planets around other Sun-like stars were
+positively <b>detected in October 1995</b>.  ("Extra-solar" means
+planetary systems other than that around the Sun, now usually
+abbreveviated simply to <b><em>"exoplanets"</em></b>.)  We have not
+only detected exoplanets, but we have established that they
+are <b>relatively common</b> around Sun-like stars in the Galaxy.
+And, using special techniques and highly sensitive detectors, we have
+begun to probe the composition and structure---even the
+meteorology---of some exoplanets.  </p>
+
+<ul>
+<b>Awarding credit</b> for the discovery of exoplanets is, as in other
+famous cases in astronomy, complicated.  The first report of an
+exoplanet that was ultimately confirmed was made by Campbell, Walker
+and Yang in 1988.  But the confirmation did not come until 2002.  In
+1992, radio astronomers Wolszczan and Frail detected two exoplanets in
+orbit around a neutron star (whose pulsed radio emission allows high
+precision measures of stellar velocity).  Whether these are "normal"
+planets or the product the tremendous supernova explosion that
+produced the neutron star has yet to be established.  The detection by
+Mayor and Queloz of the first Jupiter-like exoplanet (51 Pegasi b)
+around a normal, "main sequence" star like the Sun was announced in
+1995. </p>
+
+Regrettably, the Nobel Prize, which is certainly justified in this
+case, can be awarded to a maximum of three scientists -- and
+in October 2019 it was won by Mayor and Queloz.</p>
+</ul>
+
+
+<h3>Detection Methods </h3>
+
+The initial detections of exoplanets were technically <b>very
+difficult</b> (or they would have been found sooner!).  </p>
+
+We cannot simply take a picture and <b>see</b> the planet.  The
+<b>images of the star and planet are blended together</b> in an
+ordinary telescope (see the discussion of telescope "resolution"
+in <a href="guide14.html">Study Guide 14</a>), and the feeble
+reflected light of the planet is
+<b>completely overwhelmed</b> by the bright star. </p>
+
+Instead, several sophisticated methods have been been developed for
+finding exoplanets
+(see <a href="http://en.wikipedia.org/wiki/Methods_of_detecting_extrasolar_planets">this article</a>).  We discuss below <b>only the two most widely used</b>
+of those.  The "Doppler method" is particularly important because it
+is the primary means by which we can obtain estimates of an
+exoplanet's
+<b>mass</b>.</p>
+
+Both of these techniques are <b>biased</b> in the sense they are much
+more sensitive to <b>larger planets at small distances</b> (say
+less than 1 AU) from a star.  
+
+<ul> 
+
+<b>Doppler Velocity Method</b></p>
+
+<ul>
+
+<a href="im/CM-motion-star-plan-anim.gif"><img align="right"
+src="im/CM-motion-star-plan-anim.gif" width=20% vspace=10 hspace=10>
+</a>
+
+<li> The Doppler method for finding exoplanets is based on
+detecting the <b>tiny changes in the star's
+motion</b> induced by the gravity of an orbiting planet.
+These amount to only a few times 10 meters/sec.
+</p>
+
+<ul>
+
+Recall that in Newtonian gravity, a planet exerts the <b>same force</b> on
+its parent star as the star exerts on the planet.  The star therefore
+<b>accelerates</b> in response, though the acceleration is <b>very
+small</b> because it is in inverse proportion to its mass.  The animation
+at right shows how their mutual gravity causes <b>both</b> the star
+and its planet to move around a common "center of gravity."  (The
+stellar motion in the animation is greatly exaggerated compared to the
+motion induced by normal planets.)</p>
+
+The motions can be detected by <b><em>the Doppler effect</em> on the
+spectrum of the star</b> (see
+the <a href="121supps2-3.html#doppleranim" >Supplements</a>),
+although <a href="im/keck-hires-spectrometer.jpg">special
+spectrographs</a>, with high sensitivity and stability, are
+required.</p>
+
+</ul>
+
+
+<a href="im/51Peg_phase-MarcyButler.gif"
+><img src="im/51Peg_phase-MarcyButler-ex.gif" vspace=10 hspace=10
+width=20%  align="right"></a>
+
+<li> Shown at the right is the Doppler-derived velocity curve
+(velocity plotted against time) for the parent star of the first
+extra-solar planet identified around a Sun-like star (by Mayor and
+Queloz).  Click for an enlargement.  The amplitude of the
+velocity change is +/-50 m/s, but the precision of the data is better
+than 10 meters/sec--- a velocity that can be achieved by a fast
+sprinter.  So <b>we can now detect stars moving at human
+speeds!</b></p>
+
+<li> The shape of the velocity curve allows us to determine the
+planet's <b>orbital shape</b>.  A markedly elliptical orbit
+will produce an asymmetrical curve. </p>
+
+<li> By applying Kepler's Third Law (see <a href="guide08.html">Study
+Guide 8)</a> to the observed orbital period and velocity amplitude, 
+this method provides an estimate for the <b>mimimum mass</b> of the
+planet.  (It is a minimum because we usually do not know the
+inclination of the plane of the planet's orbit to the line of sight; a
+tilt of this plane will reduce the observed radial velocities.) </p>
+
+</ul>
+
+<b>Transit Method</b></p>
+
+<ul>
+
+After a number of planets were detected by the Doppler technique,
+astronomers realized that they could also find them by searching
+for <b>planetary transits</b>, that is, the very tiny change in light
+from a star when a planet crosses its disk seen from our point of view
+(i.e. a <b>partial eclipse</b>).  In principle, astronomers could have
+detected these with many of the electronic devices available since the
+1950's---but they had never configured their observing techniques to
+look for effects this small.</p>
+
+<a href="im/ESplan-transit.gif"><img src="im/ESplan-transit.gif"
+align="right" hspace=10 vspace=10 width=25%></a>
+
+For a diagram showing the viewing configuration for a
+transit, <a href="im/transit-method-art.gif">click here</a>.</p>
+
+<!-- <img src="im/transit-method-art.gif"
+align="right" vspace=10 hspace=10 width=35%> -->
+
+The picture at the right shows a typical "light-curve" for a planetary
+transit --- i.e. the observed brightness plotted against time.  Note
+that the amplitude of the eclipse shown here is only 1.5% of the
+star's normal brightness.</p>
+
+This method can catch only the <b>small fraction of planets whose orbital
+planes have the right orientation</b> such that eclipses occur from the
+Earth's point of view.  However, with stable and sensitive digital
+cameras, it has proven possible to detect many transiting planets even
+with modest-sized telescopes.  Many groups around the world, including
+amateur astronomers, are now surveying the sky for planet transits.</p>
+
+Normally, a transiting detection is not counted as a confirmed planet
+until a corresponding Doppler detection is made.  However, in the case
+of systems with multiple transiting planets, the various phenomena
+that can lead to <b>false positives</b> can be confidently ignored,
+and the transiting objects are regarded as validated.</p>
+
+Aside from identifying new planets, the transit method is invaluable
+because, by determining the fraction of the parent star's surface that
+is occulted, it provides an estimate of the <b>radius</b> of the
+exoplanet.  (We know the sizes of stars based on our understanding of
+their internal and atmospheric physics.)  It also allows precision
+timing of exoplanet motions in their orbits and changes in those.</p>
+
+</ul>
+</ul>
+
+<a name="kepler"> </a>
+
+<h3>The Kepler Mission</h3> 
+
+<a href="im/kepler-FOV-in-MW.jpg"><img src="im/kepler-FOV-in-MW-ex.jpg" align="right"
+hspace=10 vspace=10 width=25%></a>
+
+<ul>
+
+<b>Kepler</b> was a small space telescope carrying a huge electronic
+camera (42 CCD detectors) which continuously monitored a single large patch
+of sky in the Milky way between Lyra and Cygnus searching
+for <b>planetary transits</b> in the tens of thousands of stars
+observable in the field.  Planetary systems identified here are very
+distant (typically over a thousand light years away), but the strength
+of the mission was that it could potentially find a large number of
+planets.  The Kepler survey field is shown at the right.</p>
+
+Kepler was launched in 2009 and identified thousands of
+planetary <b>"candidates"</b> --- but most of these must be
+confirmed by the Doppler velocity method before they are accepted as
+planet
+<b>detections</b>.   By 2017, Kepler had found 5011 candidate
+planets, 2512 of which had been confirmed.</p>
+
+
+<!--  By January 2015, Kepler had found
+4175 candidate planets, 1004 of which had been confirmed.</p>  -->
+
+<!-- Jan 2015 stats from AAS press release & news reports -->
+
+<!-- from kepler.nasa.gov, 11/07/14.  Confirmed K planets 989,
+candidates 4178.  -->
+
+By design, Kepler was able to detect the very tiny changes in starlight
+(0.01%) caused by eclipses by <b>Earth-sized planets</b>.  It 
+identified scores of candidates with sizes less than 3 Earth radii.</p>
+
+<!-- some of these in the habitable zone of their parent star. </p> -->
+
+In May 2013, Kepler lost a key component of its attitude-control
+system and its ability for precision pointing, regretfully just as it
+was exploring the Earth-like planetary regime around Sun-like stars in
+both size and orbital period.  However, some clever engineering
+innovations to stabilize the spacecraft made it possible to continue
+the mission while observing fields other than the original one.  Kepler
+made a number of additional exoplanet detections before it
+ran out of fuel in October 2018 and the mission had to be retired.</p>
+</ul>
+
+
+<h3>TESS</h3>
+
+<ul>
+
+The <b>Transiting Exoplanet Survey Mission</b> 
+<a href="https://www.nasa.gov/tess-transiting-exoplanet-survey-satellite">(TESS)</a>,
+an orbiting imaging telescope, was launched in April 2018 and will
+continue the space-based search for transiting exoplanets begun by
+Kepler.  It will survey most of the sky but only for periods of 27
+days per field.  It will emphasize study of about half a million
+nearby stars and especially types of stars significantly smaller than
+the Sun ("red dwarf" stars), where it is easier to find planets in
+the <a href="guide23.html">"habitable zone"</a>.  </p>
+
+
+<!-- 
+<a href="http://smsc.cnes.fr/COROT/" >COROT</a> was another space mission with
+goals similar to Kepler's.</p>
+-->
+
+</ul>
+
+<a name="exocount"> </a>
+
+<h3>Exoplanet Count</h3>
+
+<ul>
+
+<!-- stats from ESP Encyclopedia --> 
+
+As of 2020 we had found <b>over 4300 confirmed planets in over 3100 planetary
+systems.</b>  700 of these are multiple planet systems.  Over 3000 are
+transiting planets. 
+For a complete list, see the
+<a href="http://exoplanet.eu/">Extra Solar Planets Encyclopaedia</a>.
+  </p>
+
+<!--  <ul>
+Breaking News (2/28/14): the Kepler mission (see below) has just announced
+another 715 new planetary identifications.  All of these are in multiple
+planet systems where it is possible to use a statistical technique to
+reject the possibility of false-positive detections.  
+</ul> -->
+
+</ul>
+
+<h3>Properties of Important Types of Exoplanets</h3>
+
+<ul>
+<b>Hot Jupiters:</b> "Hot" Jupiters are gas giant planets (~ Saturn 
+mass or larger) in <b>very small orbits</b>---less than 0.4 AU,
+the radius of the orbit of Mercury.  The tightest orbits are
+less than 0.01 AU in radius.   Hot Jupiter  atmospheres are heated
+to high temperatures by their parent star; many are puffed-up
+or losing material.  Under some circumstances, the atmospheres
+may evaporate altogether.</p>
+
+<ul>
+
+This was the first class of exoplanets to be discovered around
+Sun-like stars because they produce large Doppler signals.  However,
+they were a <b>great surprise</b> because in our solar system the
+large planets are all at distances greater than 5 AU, and it is
+thought (see item F.6 above) that they <b>cannot form at small
+distances</b> from their parent star.  Probably, these planets do form
+at large distances but, because of gravitational interactions with the
+protoplanetary disk, they <b>migrate</b> over time nearer the
+star.</p>
+
+Because early planet searchers thought massive planets
+would always be distant from their parent stars, with long orbital
+periods, most did not look for short-period oscillations of the stars
+(until after the 1995 detection).  </p>
+
+[Note: objects with masses larger than 13 x Jupiter's are considered
+"brown dwarf" stars, not planets.]</p>
+
+</ul>
+
+<b>Super-Earths:</b> These are exoplanets with masses significantly
+larger than Earth's but smaller than 10 Earth masses.  They are
+smaller than Uranus or Neptune.  Scores of  these have been
+detected so far.  The exoplanet system Kepler-62 has four
+Super-Earths.  Some Super-Earths have masses and radii that suggest
+they are made of rocky materials, like Earth, or of ice/water.  A
+number are in or near their
+star's <b><a href="guide23.html#habzone">habitable zone</a></b>, where
+surface temperatures allow the presence of liquid water.  These would
+be excellent candidates for Earth-like biospheres, but we have
+no evidence to date that such exist.</p>
+
+<b>Earth-Like Planets:</b> 
+A number of <b>Earth-sized
+candidates</b> have been found by the Kepler mission.  In April
+2014, Kepler announced the confirmation of Kepler-186f, the <b>first
+Earth-sized planet in its star's habitable zone</b>.  K186f is 11%
+larger than Earth and orbits a so-called "M dwarf" star about 500
+light years away with a period of 130 days.  Because its star is
+fainter than the Sun, the small (0.4 AU) orbit of K186f places it
+within the habitable zone.</p>
+
+<img src="im/trappist-1-nature-cover.jpg" align="right" hspace=10
+vspace=10 width=20%>
+
+<ul>
+
+Another tantalizing Earth-mass exoplanet in the habitable zone
+is <a href="https://en.wikipedia.org/wiki/Proxima_Centauri_b"> Proxima
+Centauri b</a>, which was detected by the Doppler method in orbit
+around a small, red dwarf star.  In this case, however, it happens to
+be the <b>star nearest to the Sun</b> (only 4 light years away), so
+the planet instantly became a target for extensive exploration.
+(Proxima Centauri is part of the triple-star system Alpha
+Centauri -- the third brightest star in the sky.) </p>
+
+The champion system for Earth-like planets was announced in February
+2017, using transit data from the Spitzer Space Telescope and
+terrestrial telescopes.  It is
+<a href="https://en.wikipedia.org/wiki/TRAPPIST-1">"TRAPPIST-1"</a>, a
+very small, cool star, 36 light years away, which hosts a total
+of <b>seven Earthlike planets</b> in or near the habitable zone.  The
+orbital periods range from 1.5 to 20 days.  Spectroscopic searches for
+evidence of water in the atmospheres of the planets are already
+underway.</p>
+
+<!--
+  (Because the star is so
+cool, the habitable zone lies much closer to it than in the case of
+the Sun.)   -->
+
+</ul>
+</ul>
+
+<h3>How Many Planets in the Galaxy?</h3>
+
+<ul>
+
+Based on the excellent statistics from Kepler, astronomers estimate
+there are 100-400 billion planets in our Galaxy, though again most of
+these are not Earth-like nor in a terrestrial habitable zone.  There
+are probably <b>at least as many planets in the Galaxy as there are
+stars</b>.</p>
+
+<ul> Think about that the next time you look at the sky on a clear
+night or a deep image of a
+<a href="im/MK-with-MW-AHara.jpg">Milky Way star field</a>.</p>
+</ul>
+</ul>
+
+<h3> Exoplanet Art</h3>
+
+The discovery of exoplanets inspired an explosion of artists'
+impressions of exoplanet systems and surfaces.  Some nice ones are
+shown in the composite below.  Bear in mind that no telescope is
+powerful enough to produce images like this, so they are all entirely
+speculative.  Almost all contain some unphysical features (like
+showing the shape of other planets in the parent system). </p>
+
+<center>
+<a href="im/exo-art-mosaic-1.jpg"><img src="im/exo-art-mosaic-1.jpg"
+alt="Exoplanet Art" vspace=10 width=66%></a>
+</center>
+
+
+<!--
+<center>
+<img src="im/ESvis-51Peg-JWhatmough.jpg" alt="51 Peg b" border=2 vspace=10><br>
+<small><em>Artist's concept of an evaporating "Hot Jupiter"<br> in orbit around
+nearby star 51 Pegasi</em></small>
+</center>
+-->
+
+
+<!--  -------- END OF MAIN TEXT --------  -->
+
+
+<p><br></p>
+
+<hr size=2>
+
+Reading for this lecture:</p>
+
+<ul>
+
+Alert!  Most lectures from now on will cover more material in the text
+than has been the case up to now.  Try to keep up with the reading.</p>
+
+Study Guide 11 </p>
+
+Bennett textbook: Chapter 7 except pp. 202-212;  Chapter 8;  "Summary                                   of Key Concepts" for Chapter 13. </p>
+
+</ul>
+
+Reading for next lecture:</p>
+
+<ul>
+
+Bennett textbook:  Secs. 8.5, 9.1, 9.6</p>
+
+Study Guide 12</p>
+
+</ul>
+
+<hr size=2>
+
+Web Links:
+
+<ul>
+
+<a href="solar_system_exoplanets-s14.pptx">Slides shown in class</a></p>
+
+
+<a href="http://www.heavens-above.com/planetsummary.aspx?lat=38.02917&lng=-78.47694&loc=Charlottesville&alt=122&tz=EST">Current
+coordinates, distances, brightnesses of the planets</a> (Heavens
+Above)<br>
+
+<a href="http://nineplanets.org/overview.html">More
+information on systematics of the Solar System</a> (SEDS)<br>
+
+<a href="http://janus.astro.umd.edu/javadir/orbits/ssv.html">Java simulations
+of Solar System orbits</a> (UMd)<br>
+ 
+<a href="http://nineplanets.org/">Multimedia
+Tour of the Solar System</a></p>
+
+<a href="http://203.15.109.22/images/">Color images of
+interstellar gas and dust nebulae</a> (Anglo-Australian Observatory, David
+Malin)<br>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr1210/1210links.html">
+List of other good interstellar medium image sites</a></p>
+
+<!-- <a href="http://www.jach.hawaii.edu/JAClocal/News/dustydisks.html">
+Information on Protoplanetary Disks</a></p>
+-->
+
+<a href="https://www.theatlantic.com/science/archive/2018/04/planets-are-built-from-pebbles/558854/">Earth
+May Have Formed From Tiny Pebbles</a> (Alexandra Witze)</p>
+
+<a href="https://www.eso.org/public/images/potw1904a">DSHARP: images of
+protoplanetary disks</a> (from the Atacama Large Millimeter Array)</p>
+
+
+<a href="http://www.public.asu.edu/~sciref/exoplnt.htm">Tutorial on
+extraSolar planets</a> (ASU)<br>
+
+<!--  "http://www.asu.edu/lib/noble/space/exoplnt.htm"   -->
+
+<!--  <a href="http://exoplanets.org/">
+University of California Extra Solar Planets Search Page</a><br>   
+
+   This began as a list made by Paul Butler and hosted at UC.  But
+   transitioned to the address above at Penn State & maintained by
+   Jason Wright.  Last updates were made June 2018.
+   
+-->
+
+
+<a href="http://exoplanet.eu/">Extra Solar Planets Encyclopaedia</a><br>
+
+<a href="http://exoplanetarchive.ipac.caltech.edu/">NASA Exoplanet Archive</a></p>
+
+<a href="http://en.wikipedia.org/wiki/Methods_of_detecting_extrasolar_planets#Transit_method">Techniques
+for detection of extra solar planets</a><br>
+
+<a href="http://www.hao.ucar.edu/research/stare/stare.html">
+Detection of Extra Solar Planets by Transit Photometry</a> (STARE Project)<br>
+
+<!-- <a href="http://www.extrasolar.net/artwork.html">Extra Solar Visions</a> 
+(artwork by John Whatmough)<br>   -->
+
+<a href="http://janus.astro.umd.edu/javadir/orbits/ess.html">Java simulations
+of orbits for selected extra solar planets</a> (UMd)<br>
+
+<a href="https://www.cfa.harvard.edu/MEarth/Welcome.html">MEarth Project</a>
+(an automated transiting planet survey observatory)</p>
+
+<a href="http://kepler.nasa.gov">The
+Kepler Mission</a> (NASA)</p>
+
+<a href="https://www.nasa.gov/tess-transiting-exoplanet-survey-satellite">TESS -- The
+Transiting Exoplanet Survey Satellite</a> (NASA)</p>
+
+
+</ul>
+
+</b>
+
+<p><br></p>
+
+
+<!--- REDIRECT BOX -->
+
+<hr size=2>
+
+<center>
+<Table width="75%">
+<tr>
+<td>
+<b><a href="121supps2-3.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Guide</a></b> 
+</td>
+
+<td>
+<b><a href="guideindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Guide Index</a></b> 
+</td>
+
+<td>
+<b><a href="terrplan-intro.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Guide </a></b> 
+</td>
+</tr>
+
+</table>
+
+<hr size=2>
+
+<!-- END REDIRECT BOX -->
+
+<!-- START FOOTER -->
+
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>August 2020</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<small>Drawings of stages in the nebular theory from ASTR 161,
+University of Tennessee.  Computer simulation of protoplanetary disk
+by G. Bryden.  Velocity curve of 51 Peg from G. Marcy & P. Butler.
+Text copyright &copy 1998-2020 Robert W.  O'Connell.  All rights
+reserved.  These notes are intended for the private, noncommercial use
+of students enrolled in Astronomy 1210 at the University of
+Virginia.  </small>
+
+<!-- 
+Artwork of extra-solar planet from Extra
+Solar Visions, copyright &copy 1996 John Whatmough.
+-->
+
+
+<!-- END FOOTER -->
+
+</body>
+</html>
+				  
+
+     <!--   ----------- END OF GUIDE TEMPLATE ---------------   -->
+

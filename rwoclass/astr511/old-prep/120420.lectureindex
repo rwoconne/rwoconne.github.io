@@ -1,0 +1,286 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2001-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- -->
+
+<html>
+<head>
+<link rel=stylesheet href="classblack-3.css" type="text/css">
+<title> Astronomy 511 Lectures</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Lecture index for graduate intro course Astronomy
+511, Astronomical Techniques, at the University of
+Virginia.  Robert W. O'Connell."> 
+
+<meta name="keywords"
+content="astronomy, astrophysics, observational astronomy, astrophysical 
+sources, telescopes, astronomical instrumentation, IDL, image processing">
+
+
+</head>
+
+<!-- <body bgcolor="#000000" text="#ffffff" link="cyan" vlink="cyan" alink="red">
+-->
+
+
+<!-- History:  Template from RWO ASTR130; 8/16/01; 8/29; 9/3; 9/12; 
+9/17; 9/18; 9/23; 9/25; 9/26; 10/02; 10/03; 10/04; 10/22; 11/8; 
+11/13; 11/14; 11/27;  12/04; 12/05; 3/18/2003; 6/29; 8/26; 9/1;
+9/2; 9/8; 9/15; 9/17; 9/22; 9/24; 9/25; 9/29; 10/1; 10/7; 10/15; 
+10/20; 10/22; 10/23; 10/27; 10/29; 11/4; 11/6; 11/11; 11/12; 12/1;
+12/3; 12/9; 12/29; 2/18/2005; 8/21 add link to all-notes PDF; 8/23; 8/25;  
+6/10/2007; 8/10; 9/16/15: new domain; 6/18/17; 10/29/2019: add viewport def; 
+
+GHP version: 12/4/2020; 
+
+-->
+
+<p><br></p>
+<p><br></p>
+
+<center>
+<font size="7"><b>Astronomy 511 Lecture Materials </b></font>
+
+<!-- 
+<p>
+<h1>Fall 2003</h1>
+<p>
+   -->
+
+</center>
+
+<p><br></p>
+<p><br></p>
+
+<font size="4">
+
+<b>Web pages, viewgraphs, and  supporting material used in the lectures are
+posted here.  Most are in the form of HTML or PDF files.  
+</a></b></p>
+
+</font>
+
+<p><br></p>
+
+<center>
+<table width = 90%>
+<tr><td>
+<center>
+<font size="4">
+<b>The guides are designed to be displayed in a window with an aspect
+ratio matching<br> standard printer paper in "portrait" orientation: height:width =
+4:3.</b>
+</font>
+</center> </p>
+</td></tr></table>
+</center> 
+
+<p><br></p>
+<p><br></p>
+
+
+<table width=75% align=center border=5 bordercolor="magenta">
+
+<tr><td bgcolor="#888888" valign=center align=center>
+<a href="ALL-Lec.pdf">
+<b>Click here for a consolidated PDF file of all lecture notes (34 MB)</a><br>
+(note: links are inoperative)</b>
+</td></tr>
+</table></p>
+
+<p><br></p>
+<p><br></p>
+
+
+<ul>
+
+<li> <h2><a href="ObsProj.html">Introduction:  Observing Projects in
+the Context of ASTR 511</a> (HTML) </h2>
+
+<li> <h2><a href="lec1-f03.html">1. Observations in Astronomy</a> (HTML)</h2>
+
+<ul>
+
+<li> <a href="nonEMchannels.pdf"><b>1-A. Non-EM Channels</b></a></p>
+
+<li> <a href="tips-for-success.html"><b>1-B. Tips for Success</b></a>
+<font color="white"><b>(HTML)</b></font> 
+</p>
+
+</ul>
+
+<li> <h2><a href="lec2-f03.pdf">2.  The Electromagnetic Spectrum</a></h2>
+
+<ul> <li> <a href="EM-discov1.html"><b>2-A. EM Spectrum: Discovery &
+Diagnostics</b></a>
+<font color="white"><b>(HTML)</b></font> 
+</p>
+
+<li> <a href="Major-Facil-EM.html"> <b>2-B. Major Facilities (All
+Bands)</b></a><font color="white"> <b>(HTML)</b></font> </p>
+
+</ul>
+
+<li> <h2><a href="lec3-f03.html">3.  Astrophysical Sources</a> (HTML)</h2>
+
+<li> <h2><a href="lec4-f03.pdf">4.  Radiative Transfer & Simple Applications</a></h2>
+
+<li> <h2><a href="lec5-f03.html">5.  Interactive Computing & Image Processing</a> (HTML)</h2>
+
+<ul>
+<li><a href="demorun_class_17-22sep03.jnl"><b>Journal file for classroom IDL
+demonstrations</b></a></p>
+
+</ul>
+
+<li> <h2><a href="lec6-f03.pdf">6. Statistics of Observations</a></h2>
+
+<ul>
+
+ <li><a href="poisson-3.pdf"><b>Poisson Distribution (Mean 3)</b></a></p>
+
+ <li><a href="poiss-gauss-30.pdf"><b>Poisson & Gaussian Distributions
+ (Mean 30)</b></a></p>
+
+ <li><a href="sample-stats-demorun-24sep03.jnl"><b>Journal file for classroom
+ demo of sampling statistics</b></a></p>
+
+</ul>
+
+<li> <h2><a href="lec7-f03.pdf">7. UVOIR Flux Measurements and Signal-to-Noise
+Ratios</a></h2>
+
+<li> <h2><a href="lec8-f03.pdf">8. Spectroscopy</a></h2>
+
+<li><h2><a href="f03-crane-speclec/ASTR511-100603.html">
+9.  Fiber-Fed Spectrographs (Jeff Crane, guest lecture)
+</a> (HTML)</h2>
+
+<li><h2><a href="lec10-f03.html">10. State of the Art Spectrographs</a> (HTML)</h2>
+
+<li> <h2><a href="lec11-f03.html">11. CCD's in Astronomy</a> (HTML)</h2>
+
+<li><h2><a href="lec12-f03.pdf">12.  Exposure Time Estimation</a></h2>
+
+<li><h2><a href="lec13-f03.pdf">13.  Point Spread Functions</a></h2>
+
+<li><h2><a href="lec14-f03.pdf">14.  Magnitude and Color
+Systems</a></h2>
+
+<ul>
+
+<li> <a href="photbib-03.pdf"><b>Bibliography for Stellar Photometry &
+Spectroscopy</b></a></p>
+
+<li> <a href="Vega_SED.sav"><b>SED for Vega [IDL ASCII save file]</b></a></p>
+
+</ul>
+
+<li><h2><a href="lec15-f03.pdf">15. Multicolor Analysis of Stars & Galaxies</a></h2>
+
+
+<li><h2><a href="lec16-f03.html">16. Telescopes</a> (HTML)</h2>
+
+<ul>
+
+<li><a href="lec16-teloptics-f03.html"><b>16-A. Telescope Optical
+Design</b></a><font color="white"> <b>(HTML)</b></font></p>
+
+<li><a href=" https://rwoconne.github.io/rwoclass/LBT"><b>16-B. LBT Construction
+Images</b></a><font color="white"> <b>(HTML)</b></font></p>
+
+</ul>
+
+<li><h2><a href="mcdavid/astpolz.html">17.  Astronomical Polarimetry (David
+McDavid, guest lecture)</a> (HTML)</h2>
+
+<!-- 9/16/15: I have the HTML file of the MFS lecture but not the
+  supporting image files.  Will leave the link to ~/mfs4n
+  for now.   -->
+
+<!-- 
+<li><h2><a href="http://www.astro.virginia.edu/~mfs4n/ir/">18. Infrared Astronomy
+(Mike Skrutskie, guest lecture)</a> (HTML)</h2>
+
+ --- vanished with webserver crash, 6/2015 
+
+-->
+
+<li><h2><a href="http://people.virginia.edu/~mfs4n/"> 18. Infrared
+Astronomy (Mike Skrutskie, guest lecture)</a> (HTML)</h2>
+
+
+<li><h2><a href="UV-astron-f03.html">19. Ultraviolet (& Space) Astronomy</a> (HTML)</h2>
+
+<li><h2><a href=" https://rwoconne.github.io/rwoclass/UIT">20. 
+UIT and the Astro Missions</a> (HTML)</h2>
+
+<li><h2><a href="lec21-f03.html">21.  Atmospheric Degradation &
+Compensation</a> (HTML)</h2>
+
+
+<!-- 
+
+<li> <h2><a href="pstimes-sky1-1201.pdf">40-in Integration Times (V, Point Source)</a></h2>
+
+<li><h2><a href="AO">Atmospheric Image Degradation & Compensation</a></h2>
+
+
+-->
+
+
+<!-- 
+
+<li><h2><a
+href="http://www.faculty.virginia.edu/rwoclass/UIT">UIT/Astro-1 &
+Astro-2 Background & Pix</a></h2>
+
+<li><h2><a href="http://www.astro.virginia.edu/~mfs4n/ir">Infrared Astronomy (Mike
+Skrutskie, guest lecture) [HTML]</a></h2>
+
+<li><h2><a href="Nextgen.html">Next Generation Astronomy [HTML]</a></h2>
+
+-->
+
+</ul>
+
+<p><br></p>
+
+
+<hr>
+
+<center>
+<b><a href="index.html">
+<img src="im/bent-yel-arrw01a.gif"> Return to ASTR 511 Home Page </a></b> </p>
+</center>
+
+
+<!-- START STAN RWO FOOTER -->
+
+<hr>
+
+<font size=-1>
+
+<p><br></p>
+
+<center>
+
+<i>Last modified
+  <b>November 2020 </b> 
+  by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+
+  <p>Copyright &copy 2001-2020 Robert W. O'Connell.  All
+   rights reserved.
+
+</center>
+</font>
+
+<hr>
+
+<!-- END FOOTER -->
+</body>
+</html>
+     

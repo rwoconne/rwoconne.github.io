@@ -1,0 +1,343 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2015.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+<!-- HISTORY: RWO created 8/5/03; 8/6; 8/11; 8/12; 8/23; 8/25; 6/4/07; 
+     9/16/15: new domain; 
+    -->
+
+<html>
+<head>
+<TITLE> ASTR 511, O'CONNELL.  [Fall 2003]  Lecture Notes  </TITLE>
+</head>
+<body>
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="#00BEEB" alink="red"> -->
+
+<body bgcolor="#FFFFF0" text="000000" link="#DC143C" vlink="#DC143C" alink="red">
+
+<font face="Arial,Helvetica,Verdana">
+<basefont size=3>
+<font size=+0> 
+
+<b>
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p><br></p>
+<hr>
+
+<center> <font size="+4" color="bb11cc"><b>ASTRONOMICAL OBSERVING
+PROJECTS<br>IN CONTEXT OF ASTR 511</b></font> </center>
+
+<p><br></p>
+
+<a name=" ">
+
+<!-- 
+<center> <a href="im/vlt-1.jpg"  target=show>
+     <img src="im/vlt-1-ex2.jpg"
+     alt="VLT"	
+     align="top" border="2" vspace=10 hspace=10></a>  </center> 
+
+<p align="right"><small><b><em>The ESO Very Large Telescope
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+</em></b></small></p>
+
+-->
+
+<p><br></p>
+
+<b>
+
+<!-- QUOTE 
+<center><font size="5" color="bbbb88"><b><em>"
+"</em></b></font></center>
+-->
+
+
+<table align=center width=95% border=7 cellpadding=6 bordercolor="#0000ff">
+
+
+<tr>
+
+<th bgcolor="ffffc6"><font size=+1><b><u>OBSERVING PROJECT</u></b></font></th>
+
+<th bgcolor="ffffc6"><font size=+1><b><u>ASTR 511 TOPICS</u></b></font></th>
+
+</tr>
+
+<tr>  <!--- Rest of entry is a "one row" table  -->
+
+<td width=70%  bgcolor="cyan">  <!-- COLUMN 1  -->
+
+<!-- alt colors:   cyan, yellow ;;;  #bdbdff ,  #ffffb7   -->
+
+<b>
+
+<h2>1.  THE PROPOSAL<sup>*</sup> </h2>
+
+Award of observing time on major astronomical facilities is a
+competitive process, in which proposals for observing projects are
+reviewed and ranked by a Time Allocation Committee (TAC).</p>
+
+For almost
+all public, national facilities, competition is tough.</p>
+
+<ul>
+Ratio of requested to available time about 2:1 to >5:1.  </p>
+</ul>
+
+
+<!-- knowledge, taste, track record,     -->
+
+A compelling proposal must be clearly, persuasively, and consisely written
+and must demonstrate:</p>
+
+<ul>
+<li> An important/interesting problem/question</p>
+
+<li> Technical feasibility</p>
+
+<li> Provides definitive answer to question posed</p>
+
+</ul>
+
+<p><br></p>
+
+
+<h2>2. OBSERVING RUN PREPARATION</h2>
+
+Instrument documentation </p>
+
+Exposure estimation</p>
+
+Target selection:  coordinates & key properties</p>
+
+Calibration planning, select calibrators</p>
+
+Finding charts </p>
+
+Instrument configuration files</p>
+
+Observing strategy & sequences </p>
+
+<!-- General organization/planning  -->
+
+<p><br></p>
+
+<!-- Other software tools (multiobject, service observing,  -->
+
+<h2>3. MAKING OBSERVATIONS</h2>
+
+Prime & secondary targets </p>
+
+Calibration</p>
+
+On-line assessment </p>
+
+Assessment of sky & other interfering conditions </p>
+
+Documentation of observations </p>
+
+<p><br></p>
+
+
+<h2>4. DATA REDUCTION</h2>
+
+
+Removal of instrumental signatures </p>
+
+Correction for Earth's atmosphere, IS dust </p>
+
+Calibration </p>
+
+Conversion to fluxes, colors, positions, spectra, line strengths, etc. </p>
+
+<p><br></p>
+
+
+<h2>5. DATA ANALYSIS & INTERPRETATION<sup>*</sup></h2>
+
+Extract scientifically meaningful information from reduced data </p>
+
+Answer the questions you posed </p>
+
+Place in larger context</p>
+
+Be alert: anything new, unexpected? </p>
+
+<p><br></p>
+
+<h2>6. PUBLICATION</h2>
+
+<p><br></p>
+
+<h2>7. PUBLIC RELATIONS</h2>
+
+&nbsp;
+
+<hr>
+
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+<sup>*</sup>Most challenging phases
+
+&nbsp;
+
+</td>
+
+<!-- END TEXT IN COLUMN 1-->
+
+<!-- COLUMN 2  -->
+
+<td width=30% align=top bgcolor=" #ffffb7">
+<font size=-1>
+<b>
+
+
+&nbsp;</p>
+&nbsp;</p>
+&nbsp;</p>
+
+
+EM bands & phenomena</p>
+&nbsp;</p>
+
+UVOIR capabilities </p>
+&nbsp;</p>
+
+Nature of astrophysical sources</p>
+&nbsp;</p>
+
+ROMPS & SWAGS  </p>
+&nbsp;</p>
+
+Optics </p>
+&nbsp;</p>
+
+Available telescopes & instruments</p>
+&nbsp;</p>
+
+
+Exposure Time Calculators (ETCs) </p>
+&nbsp;</p>
+
+
+Sky surveys</p>
+&nbsp; </p>
+
+
+Databasing  </p>
+&nbsp;</p>
+
+
+Detectors </p>
+<ul>
+Emphasis: CCD's  </p>
+</ul>
+&nbsp;</p>
+
+
+Imaging</p>
+&nbsp;</p>
+
+Spectroscopy </p>
+&nbsp;</p>
+
+Flux calibration </p>
+&nbsp;</p>
+
+Statistics of observations </p>
+&nbsp;</p>
+
+Interactive computing  </p>
+&nbsp;</p>
+
+Image processing  </p>
+&nbsp;</p>
+
+Effects of IS dust</p>
+&nbsp;</p>
+
+Effects of Earth's atmosphere </p>
+&nbsp;</p>
+
+Multicolor analysis </p>
+
+&nbsp;</p>
+&nbsp;</p>
+&nbsp;</p>
+&nbsp;</p>
+&nbsp;</p>
+&nbsp;</p>
+&nbsp;</p>
+
+
+<!-- Know science background</p> 
+
+Quantitatively address exposure time/other feasibility </p>
+Schedule issues: lunar phase, weather, orbital location</p>
+Consider competition</p>
+
+-->
+
+</b></font>
+</td></tr>
+</table>
+
+<p><br></p>
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table  cellspacing=15>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="lec1-f03.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>September 2015</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<hr size=2>
+
+<b><small>
+Text copyright &copy 2000-2015 Robert W. O'Connell.
+All rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 511 at the
+University of Virginia.  </small></b>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  

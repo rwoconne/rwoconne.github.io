@@ -1,0 +1,465 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources  -->
+<!-- -->
+
+
+<HTML>
+<HEAD>
+<!-- <link rel=stylesheet href="class-3.css" type="text/css"> -->
+<TITLE>UVA ASTRONOMY IDL RESOURCES</TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="IDL resources">
+
+<style>
+     div.all {  max-width: 900px;}
+ </style>
+
+</HEAD>
+
+<!-- VERSION: Created, R. O'Connell: 4/6/2000; 4/7, 4/10, 4/11, 4/13;
+              4/17; 4/21; 7/9/01; 7/10; 7/30; 12/30; 12/1/2002; 
+              4/28/2003; 7/18 make links absolute, updated external links;  
+              11/30/03; 1/5/2004; 5/7; 5/16/2005; 9/18; 9/20; 9/27; 
+              3/15/2007; 8/6/2008; 11/18 updated links; 11/21; 4/14/2009; 4/20; 
+              5/27; 8/17; 8/26; 2/2/2010;  8/22/2013;  8/23;  8/24; 
+              9/18/2015: changed domain to 
+              www.faculty.virginia.edu/rwoclass;
+
+              GHP version: 12/15/2020; 
+
+ -->
+
+<!-- <body background="darkgrey-BG.gif" text="yellow" link="cyan" vlink="cyan" >
+vlink="#00FF00" 
+-->
+
+<body bgcolor="#202020" text="FFFFcc" link="cyan" vlink="cyan" alink="#FF0000" >
+
+<div class="all">
+
+<font face="Arial,Helvetica,Verdana">
+
+<!-- <basefont size="3">  -->
+
+<center><img src="IDL-resources-title2.gif"
+         alt="UVA Astronomy IDL Resources"
+         width=70%
+         hspace="12"
+         align="top" border="0">
+</center>
+
+<hr size=2>
+
+<p><br></p>
+
+
+<h2> Introductory Documents</h2>
+
+<ul>
+
+<li> <a href="IDLguide.html">Guide
+to Using IDL for Astronomers (2012, R.W. O'Connell)</a></p>
+
+<li> <a href="getting-started-IDL-v7.0.pdf">Getting
+Started with IDL (Exelis) [PDF]</a></p>
+
+
+<li> <a href="http://idlastro.gsfc.nasa.gov/other_url.html">Annotated List of Links to Primary Astronomy
+IDL Resources (GSFC)</a></p>
+
+<li> <a href="http://idlastro.gsfc.nasa.gov/contents.html">Functional List of
+IDL Astronomy User's Library Routines  (GSFC) </a></p>
+
+
+<!-- Not useful for beginners or astronomers.
+
+<li> <a href="image-processing-IDL-v7.0.pdf">Image Processing With IDL
+(Exelis) [PDF]</a></p>
+
+-->
+
+<!-- May 05: the IVsoft site is stale and probably ephemeral.  The snapshot next is probably the
+best we can do:  -->
+
+<li> <a href="idl-faq-ivsoft-v4.html">Basic IDL FAQ Archive (1999)</a></p>
+
+
+<li><a href="databasemanual-694.ps">Using IDL Databases (2001, W. Landsman) [PDF]</a></p>
+
+<ul>
+
+Introduction to using IDL databasing routines and to creating your own databases.
+You can download a number of pre-formatted IDL databases (including
+Hipparcos, HST, IRAS, RC3, etc) from <a href="http://idlastro.gsfc.nasa.gov/ftp/zdbase/">the
+IDL Astronomy User's Library</a>.</p>
+
+<!-- As of 4/2000, there were 95 public IDL databases available in UVA/Astronomy.</p>
+-->
+
+</ul>
+
+
+<!-- <li> <a href="/local/slides.html">Information on making color or
+black-and-white slides using IDL (1997)</a></p>    -->
+
+</ul>
+
+<p><br></p>
+
+<h2>Main UVa IDL Site</h2>
+
+<ul>
+<a href="http://its.virginia.edu/software/displayPackages.php?tId=3">ITS
+Web IDL Site</a></p> 
+</ul>
+
+<p><br></p>
+
+<h2>Demos</h2>
+
+<ul>
+
+<li> For a demonstration of IDL,
+type <font color="#00FF00"><b>idldemo</b></font> at the UNIX command line</p>
+
+<li> The fastest way to learn to use IDL efficiently is to study
+examples of user-written IDL programs.  You can display on your screen
+the code for any program (except for the proprietary built-in
+routines) by typing <font color="#00FF00"><b>.run -t [program
+name]</b></font>.  If you want a copy of the program written to your
+current directory, use the <font color="#00FF00"><b>getpro</b></font>
+routine.  </p>
+
+</ul>
+
+<p><br></p>
+
+<h2>Tutorials/Texts</h2>
+
+<ul>
+
+<li>
+
+<!--  <a href="https://rwoconne.github.io/rwoclass/astr511/IDLexercises/index.html">
+-->
+
+<a href="../IDLexercises/index.html">
+UVa IDL Tutorial (O'Connell) [HTML files]</a></p>
+
+<!-- Restructured Jan 2010: 
+
+<li> <a href="http://www.ugastro.berkeley.edu/tutorials/tutorials.html">Berkeley
+IDL/UNIX Tutorial (Heiles) [PS files]</a></p>
+
+-->
+
+<li> <a href="http://astro.berkeley.edu/~heiles/handouts/handouts.html">Berkeley
+IDL/UNIX Tutorial (Heiles) [PS files]</a></p>
+
+<!-- 8/2013: new address, no longer
+maintained? <li><a href="http://132.248.1.104/~morisset/idl_cours/IDL/index_local.htm">IDL
+CookBook (Morisset) [HTML files]</a></p> -->
+
+
+<li> Introductory textbook by Liam Gumley: <a href="http://www.gumley.com">Practical
+IDL Programming</a>  Purchase for $50.  Site has other useful links. 
+UVa call number: QA76.73 .I194 G86 2002. 
+</p>
+
+<li> Advanced textbook by David
+Fanning: <a href="http://www.idlcoyote.com/books/index.php">IDL
+Programming Techniques</a>.  Purchase PDF for $25.  Site lists related
+programming texts.  UVa call number: QA76.73 .I194 F36 2000.
+</p>
+
+<li> <a href="http://idlastro.gsfc.nasa.gov/other_url.html">Master list of
+tutorials and other IDL resources (GSFC)</a></p> 
+
+</ul>
+
+<p><br></p>
+
+
+<!-- <img src="new-flash-anim.gif">  -->
+
+<h2>ATV Image Display Tool</h2>
+
+<ul>
+
+<li> ATV is an IDL GUI image display program 
+that behaves like DS9 and SAOimage 
+<a href="atv-shot-2.jpg">(example
+here)</a>.  It was written by Aaron Barth.  It's an easy way
+of inspecting 2-D data and doing quick analysis like plotting
+image slices or getting FWHM's and brightnesses of sources.  Oriented
+toward CCD data.</p>
+
+<li> At UVa, ATV software is kept in /astro/idl/atv and is included by
+default in your IDL path.</p>
+
+
+<li> ATV Links</p>
+
+<ul>
+
+<!--  Old address (Dec 2002):  "http://www.astro.caltech.edu/~barth/atv/"
+Current address (May 2005) is ...   -->
+
+<a href="http://www.physics.uci.edu/~barth/atv/">General info (UCI)</a></p>
+
+<a href="http://www.physics.uci.edu/~barth/atv/instructions.html">Instructions on how
+to use ATV</a></p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+<h2>Best Links for Advice, Software Downloads</h2>
+
+<ul>
+
+<li><a href="http://idlastro.gsfc.nasa.gov/homepage.html">The IDL Astronomy
+User's Library</a> (GSFC, maintained by Wayne Landsman)</p>
+
+<ul>
+
+<u>First choice</u> for astronomy-related software.  </p>
+
+
+<a href="http://idlastro.gsfc.nasa.gov/other_url.html">Annotated links</a> to
+other IDL sites offering relevant software.</p>
+
+<a href="http://idlastro.gsfc.nasa.gov/ftp/contrib">Additional contributed
+software (mostly GSFC)</a></p>
+
+
+
+<!--  WL MOUSSE routines mostly obsolete now.  
+
+Landsman breakout of MOUSSE routines made 8/01
+
+<a href="http://idlastro.gsfc.nasa.gov/ftp/contrib/landsman/mousse/">Useful
+MOUSSE routines not included in the general Astronomy User's Library
+distribution</a></p>
+
+<ul>
+
+<a href="
+http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources/mousserou-063097.pdf">Functional
+List of MOUSSE Routines (1997, W. Landsman) [PDF]</a></p>
+
+</ul>
+
+<ul>
+This list is a useful, if dated, guide.  Includes a number of routines
+later transferred to the IDL Astronomy User's Library</p>
+</ul>
+
+  <a href="http://idlastro.gsfc.nasa.gov/ftp/contrib/landsman/help/">
+Useful HELP routines not included in the general Astronomy User's Library
+distribution</a></p>  No longer available, 2013.  
+
+ -->
+
+<a href="http://idlastro.gsfc.nasa.gov/idllibsrch.html">Searchable index of
+IDL routines (about 2300)</a></p>
+
+</ul>
+
+<li><a href="http://www.idlcoyote.com/">Coyote's Guide to IDL Programming</a>
+(David Fanning)</p>
+
+<ul>
+
+Excellent, semi-commercial site, oriented toward intermediate level
+programmers.  With annotated linklist, and...</p>
+
+<a href="http://www.idlcoyote.com/documents/tips.php">A good set of
+programing tips, including PostScript output and color display
+methods</a></p>
+
+<a href="http://www.idlcoyote.com/gallery/index.html">A large set of sample IDL
+graphics programs</a></p>
+
+</ul>
+
+<li> <a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/minimousse">Useful
+MOUSSE routines not included in the IDL Astronomy User's Library distribution</a></p>
+
+<li>
+<a href="http://groups.google.com/group/comp.lang.idl-pvwave/about?hl=en">IDL Usenet
+newsgroup (Google port)</a></p>
+
+<li><a href="http://www.exelisvis.com/Support/HelpArticles.aspx">Exelis IDL Tech Tips</a></p>
+
+<li><a href="http://www.astro.washington.edu/deutsch/idl">University of
+Washington IDL Page</a> (Eric Deutsch)</p>
+
+<ul>
+
+<a href="http://www.astro.washington.edu/deutsch/idl/htmlhelp/index.html">
+Searchable, browsable index to over 8000 IDL routines</a></p>
+
+</ul>
+
+<!--  Los Alamos site vanished, early 2002 
+
+<li><a href="http://nis-www.lanl.gov/~uk2/idl/">Los Alamos IDL Home Page</a></p>
+<ul>
+Contains a <a href="http://nis-www.lanl.gov/~uk2/idl/routines.html">list
+of over 1700 IDL routines</a>, including the RSI built-ins</p>
+</ul>
+
+--> 
+
+<!-- May 05: the IVsoft site is stale and probably ephemeral. Have eliminated 
+link here:  
+<li><a
+href="http://www.ivsoftware.com/fom/IDL/public/fom-serve/cache/1.html">Current
+FAQ List</a> (Interactive Visuals)</p>   -->
+
+
+<li> <a href="http://physics.mnstate.edu/craig/textoidl/">TeXtoIDL</a>
+(Matthew Craig).  Converts TeX typeset symbols for use with IDL graphics.</p>
+
+<li> <a href="http://www.physics.wisc.edu/~craigm/idl/">Curve
+Fitting & Function Optimization</a> (Craig Markwardt).  Improved least-squares
+curve & surface fitting routines.</p> 
+
+<li> (Optical) Spectral Analysis Software:</p>
+
+<ul> <li> <a
+href="http://www.astro.princeton.edu/~schlegel/code.html">SDSS Data
+Reduction/Analysis & General Utilities</a> (David Schlegel)<br>
+
+<li> <a href="http://howdy.physics.nyu.edu/index.php/Kcorrect">K-Corrections & Photometric
+Redshifts</a> (Mike Blanton)<br>
+
+<li> <a href="http://www.ucolick.org/~xavier/IDL/index.html">XIDL Utilities</a>
+(Jason Prochaska)</p>
+
+</ul>
+
+
+<li><a href="http://www2.astro.psu.edu/xray/docs/TARA/">TARA: tools for X-ray data analysis</a></p>
+
+<li> <a href="http://gbtidl.nrao.edu/">GBTIDL: data reduction package for the NRAO Green
+Bank Telescope</a></p>
+
+<li> <a href="http://www.gnu.org/software/emacs/manual/html_mono/idlwave.html">IDLWAVE</a>:
+GNU Emacs/XEmacs IDL software development environment. </p>
+
+</ul>
+
+
+<p><br></p>
+
+<h2>Help With IDL Programming and Routines</h2>
+
+<ul>
+
+<li> Exelis supplies documentation, interactively linked to your
+active session, with each IDL purchase.  The latest documentation can
+be found on the
+Exelis <a href="http://www.exelisvis.com/docs/home.html">IDL
+Documentation Page</a>.</p>
+
+<ul>
+
+<!--  Following works on UVA ASTSUN, 5/05; does not work on Gemini -->
+
+<li> To access IDL documentation from the UNIX command line, type <font
+color="#00FF00"><b>idlman</b></font> or <font
+color="#00FF00"><b>idlhelp</b></font>.</p>
+
+<!-- Gone!  4/09
+<li> Another source for IDL PDF documentation: <a
+href="http://gradea.uci.edu/idl-docs/onlguide.pdf">IDL Online Guide
+(UCI)</a></p>
+-->
+
+<li> To access documentation for IDL_5.1 in HTML with a browser, 
+<a
+href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources/idl_5.1_html/idl.htm">
+click here.</a></p>
+
+
+<li> To access hyper-help from within IDL, type <font
+color="#00FF00"><b>?</b></font> or <font color="#00FF00"><b>?[topic]</b></font>.</p>
+
+<!--  <ul> <font color="DDDDDD">Note: In some versions of IDL (e.g. v.6.0), the IDL
+hyper-help system has been badly conceived.
+You should upgrade if you find yourself
+frustrated by older help facilities.</font> </p> </ul>   -->
+
+</ul>
+
+<li> Most non-proprietary routines, e.g. those in the Astronomy User's
+Library, contain an internal documentation section written in a
+standard format.  This can be accessed by several different routines
+within IDL, such as <font color="#00FF00"><b>man</b></font>.  You can
+obtain the relevant programs from 
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLexercises/minimousse">this
+site</a>.  Many non-proprietary routines are coded such that if you
+simply type the name of the routine without arguments, it will print
+the parameter sequence expected (no special access software
+needed).</p>
+
+<!--   Disappeared, ca. 2010: Wayne Landsman's <a
+href="http://idlastro.gsfc.nasa.gov/ftp/contrib/landsman/help/"> help
+contrib library</a>.   -->
+
+<li> <a
+href="http://www.faculty.virginia.edu/rwoclass/astr511/IDLresources/idl-syntx-sterner.html">Guide
+to IDL Programming Syntax (Ray Sterner)</a></p>
+
+</ul>
+
+<p><br></p>
+
+<h2>Other Links</h2>
+
+<ul>
+
+<!-- <li> <a href="http://www.rsinc.com/idl">Main RSI IDL Site</a></p>
+<li> <a href="http://www.rsinc.com/whoweare/RSI_History.asp">Company history</a></p>
+
+-->
+
+<li><a href="http://www.exelisvis.com">Main IDL Site (Exelis Visual Information Solutions)</a></p>
+
+<!-- 
+<li> <a href="http://www.faculty.virginia.edu/rwoclass/astr511/lec5-f03.html">Lecture on IDL and history of computing in astronomy</a></p>
+
+-->
+
+
+</ul>
+
+
+<p><br></p>
+
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+
+<hr>
+
+<center> <small><i>Last content update
+   <b>August 2013</b> by <a href="mailto:rwo@virginia.edu"> R. W. O'Connell</a> </i>
+   </small> </center>
+
+<hr size=3>
+
+<!-- END FOOTER -->
+
+</font>
+
+</div>
+</BODY>
+</HTML>

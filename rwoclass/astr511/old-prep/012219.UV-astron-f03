@@ -1,0 +1,921 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2019, all rights reserved. -->
+<!-- contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511    -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+<!-- HISTORY: 93-97 notes. 3/16/00; 3/20; 3/21; 3/26; 3/27; 6/23;
+              5/18/01; 11/27/01; 3/16/2003; 6/30; 11/12; 11/24; 11/25;
+              12/1; 6/22/2004; 10/27; 8/31/2005; 10/11; 1/15/2006; 6/5/2007;
+              11/22/2009; 9/16/15: new domain & remove "target=show" & update
+              text; 9/21: because "nu" symbol renders as "v", use "lambda"
+              instead;  9/22: change to A1210 format; 9/24; 8/11/2016; 8/12; 
+              5/2/2017;  7/30;  11/1: add solar;  11/2;  11/3; 
+              1/22/2019; 
+    -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.  UV Astronomy  </TITLE>
+</head>
+<body>
+
+<h2 align="center">ASTR 511  [R. W. O'Connell] </h2>
+
+<hr noshade>
+
+<h1 align="center"> <u>INTRODUCTION TO ULTRAVIOLET ASTRONOMY</u> </h1>
+
+<p><br></p>
+
+<center><a href="im/payload-wow.jpg" ><img src="im/payload-wow-ex2.jpg"
+alt="Astro on orbit" border="3" vspace="2" width=70%></a></center>
+
+<p align="right"><small><i> Astro-2 UV observatory in Shuttle payload bay.
+</i></small>
+
+<p><br></p>
+
+<h2>A.  THE UV BANDS  </h2>
+
+<ul>
+
+<li> Earth's atmosphere is opaque below ~3200 &Aring;.</p>
+
+<li> The interstellar medium is opaque below 912 &Aring; (Lyman edge of H I)</p>
+
+<ul>
+
+But the optical depth ~ (&lambda;)<sup>3</sup> in the Lyman continuum, so
+the ISM becomes transparent again below 400 &Aring; </p>
+
+</ul>
+
+<li> Therefore, the easily accessible <b>"vacuum UV"</b> band from space lies
+in the range 
+912-3200 &Aring; </p>
+
+<ul>
+
+<li> <b>"Far-UV"</b>: 912-2000 &Aring;<br>
+
+<li> <b>"Mid-UV"</b>:  2000-3200 &Aring; (called the "Near-UV" by
+      some observers)</p>
+
+</ul>
+
+<li> With different technology: the  <b>"Extreme UV"</b> (70-912 &Aring;)</p>
+
+<li> The region 3200-4000 &Aring; is usually considered part of the
+"optical" band because Earth's atmosphere is reasonably transparent
+here, though opacity rises sharply in the shortest 200 &Aring;.  This
+is an important transition region containing many astrophysical
+diagnostics.  It is often called the
+ <b>"Near-UV"</b>.  This band is often compromised in instrument
+design by optical elements with poor reflectivity or transmission 
+(sometimes chosen deliberately in order to boost near-IR response).
+</p>
+
+</ul>
+
+<p><br></p>
+
+<h2>B.  MOTIVATION FOR UV OBSERVATIONS </h2>
+
+The UV contains
+the <a href="im/line-count-vs-wavelength-Jenkins-label.jpg"><b>highest
+density</b></a> (bits per unit wavelength) of astrophysical information on
+stars and gas.  The advantages of the UV include:
+
+<ol>
+
+<li><b> Sensitivity to hot continuum sources</b></p>
+
+<ul>
+
+<li> The stellar flux maximum (in F_lam units) occurs at ~ 2900
+&Aring;/T<sub>4</sub>.</p>
+
+<ul> 
+
+The energy distributions of hot stars (over 10,000 K) peak in the UV.</p>
+
+The most important UV-bright stars are <b>massive main sequence stars</b>
+over 3 M<sub>sun</sub>, which are responsible for most element synthesis,
+ionization, dissociation, and kinetic energy input to galaxies.  </p>
+
+For cooler stars (< 8000 K), the UV lies in the Wien limit, implying
+high sensitivity to temperature.  (E.g. This allows estimation of the
+main sequence turnoff and hence age in the integrated light of older
+stellar populations.)</p>
+
+</ul>
+
+
+<li> Hard nonthermal sources</p>
+
+
+<li> The "Big Blue Bump" in AGN produced by the inner accretion disk
+surrounding a supermassive black hole</p>
+
+<li> Large-scale surveys (space and ground) at wavelengths < 4000
+&Aring; have permitted identification of huge numbers of hot sources,
+e.g. white dwarfs, hot subdwarfs, massive stars in other galaxies,
+AGN's/QSO's;
+<a href="https://en.wikipedia.org/wiki/Markarian_galaxies">Markarian
+galaxies</a> and other systems dominated by very young stellar
+populations.</p>
+
+</ul>
+
+<li><b>Numerous atomic & molecular spectral features</b> </p>
+
+<ul>
+
+<li> Many strong (often <b>resonance</b>) transitions of important species
+occur in UV:</p>
+
+<ul>
+
+H, D, H<sub>2</sub>, He, C, N, O, Mg, Si, S, Fe, CN, OH, NH, O<sub>3</sub></p>
+
+</ul>
+
+<li> Uniquely valuable: </p>
+
+<ul>
+
+<li>The HI Lyman series and metallic features in stars, ISM, IGM;<br>
+
+<li>The Lyman-Werner bands of H<sub>2</sub>; the first detection of 
+interstellar H<sub>2</sub> was made in the UV<br>
+
+<li> Atomic deuterium (offset from the normal hydrogen features);<br>
+
+<li> Carbon abundances from C III, C IV;<br> 
+
+<li> O VI, C IV, N V (gas at 10<sup>5-6</sup> K);<br>
+
+<li> Highly ionized species at 10<sup>6-7</sup> K (e.g. Fe XV in
+solar active regions and corona);<br>
+
+<li> Lyman edge (rest wavelength 912 &Aring;) & continuum in high redshift
+galaxies;<br>
+
+<li> Strong MUV absorption features of MgI and MgII in cooler stars. <br>
+
+<li> MUV-NUV O<sub>3</sub> bands; possible bio-signatures in exoplanet
+atmospheres<br>
+
+<li> Near-UV: [O II], [Ne III], [Ne V], [Fe VII] plasma diagnostics;
+the Balmer jump, a diagnostic of stellar temperature and surface
+gravity; higher Balmer series; CN, NH, OH in cooler stars; H&K
+features of Ca II (stars and ISM).</p>
+
+</ul>
+
+</ul>
+
+<li> <b>Low sky background</b></p>
+
+<ul>
+
+There is a deep minimum in the night sky background from space for
+1600-2500
+&Aring;, <a href="im/sky-background-sp-ground-RWO87-fig1-v2.jpg"> the
+darkest in UV-optical-IR range</a> (40x below the best ground-based
+sky at any wavelength). </p>
+
+</ul>
+
+<li><b>Sensitivity to dust</b> </p>
+
+<ul>
+
+<li> The dust extinction law is <b>maximum</b> in the UV. A <a 
+href="im/extinction-v-wavl-SavMath79-v2.jpg" >
+local extinction peak at 2175 &Aring;</a> is an important & unique signature
+of the type of dust common in our Galaxy.</p>
+
+<li> High & variable UV extinction is an advantage for studying grain
+types in different environments, but it is simultaneously
+a <b>disadvantage</b> for studying things behind grain clouds.</p>
+
+<li> The sensitivity of the integrated FUV continuum of young stellar
+populations to extinction by dust has been used to study the heating
+of dust grains by absorbed UV photons and the subsequent emission
+of radiation in the Far-IR (the <b>"IRX" relation</b>). </p>
+
+</ul>
+
+<li> The UV allows ready <b>isolation of hot components</b> in the
+presence of dominant cool sources: e.g. stellar chromospheres or 
+<a href="im/UV-SF-in-ETGs-Salim12-fig4.gif">
+hot stars/AGNs in E galaxies</a>.</p>
+
+<li> The restframe UV is <b>shifted to the readily-observed optical
+window</b> in high redshift (z > 1) galaxies and AGN.
+E.g. <a href="im/restUV-SED-MS1512-Pettini00.gif" > "Lyman-break
+galaxies"</a>.  Proper interpretation of a wealth of diagnostics
+requires vacuum-UV observations of nearer systems.  </p>
+
+</ol>
+
+
+<p><br></p>
+
+<h2>C. KEY UV RESEARCH AREAS</h2>
+
+<ul>
+
+<li> Solar corona and active regions
+
+<li> Stellar chromospheres, winds
+
+<li> Mass exchange and accretion in binary systems (esp. WD, NS)
+
+<li> Magnetically-induced activity on stars (especially cool dwarfs)
+
+<li>Stellar radiation environment for exoplanet biospheres
+
+<li>Ozone signatures in exoplanet atmospheres
+
+<li>Signatures of terrestrial planet destruction (white dwarf stars)
+
+<li>Chemical abundances in stars & chemical evolution of Galaxy
+
+<li>Hot phases of advanced stellar evolution (horizontal branch, post-AGB)
+
+<li>Interstellar dust grains
+
+<li>Chemistry in diffuse interstellar clouds 
+
+<li>Hot ISM, galactic halos, fountains, winds
+
+<!-- Low surface brightness systems -->
+
+<li>Identification and interpretation of multiple populations in globular clusters
+
+<li>Ages and abundances of stellar populations (integrated light and CMDs)
+
+<li>Massive star formation and histories of galaxies
+
+<li>Extended, low surface-brightness star forming regions of galaxies
+
+<li>Circumgalactic gas and accretion from the IGM
+
+<li>AGN (accretion disks, near-nuclear plasmas, reverberation mapping)
+
+<li>Thermal flares from tidal disruption of stars by massive black holes
+
+<li>Deuterium abundances & Big Bang nucleosynthesis 
+
+<li>Proto/adolescent galaxies
+
+<li>Measures of the Lyman continuum during the z>6 "re-ionization era"
+
+<li>Cosmic star formation history, background light
+
+<li>Evolution of the intergalactic medium; baryon reservoirs</p>
+
+
+Examples: click on thumbnails for larger view
+
+
+<table align="center" width=95% border=0 cellpadding=2 >
+
+<tr>
+
+<td width=30% align=bottom>
+<a href="im/solar-disk-HeII-FeIX-SDO-apr10.jpg">
+<img src="im/solar-disk-HeII-FeIX-SDO-apr10-sm.jpg" alt="Sun in EUV"
+border="2" vspace=2 width=80%></a> </td>
+
+<td width=30% align=bottom>
+<a href="im/UV-op-CMD-OmCen-Bellini-2010-v2.jpg">
+<img src="im/UV-op-CMD-OmCen-Bellini-2010-v2.jpg" alt="Multipop UV CMD"
+border="2" vspace=2 width=80%></a></td>
+
+<td width=30% align=bottom>
+<a href="im/zeta-pup-FUV-spectrum-Morton77-Walborn85-v2.jpg">
+<img src="im/zeta-pup-FUV-spectrum-Morton77-Walborn85-v2.jpg"
+alt="UV abspec O-star" border="2" vspace=2 width=80%></a></td
+
+</tr>
+<tr>
+
+<td align=bottom width=30%>
+<a href="im/4151-HUTsp.gif" ><img src="im/4151-HUTsp.gif" 
+alt="HUT AGN spectrum" border="2" vspace=2 width=80% > </a>
+</td>
+
+<td width=30% align=bottom> 
+<a href="im/M81uvr.gif" ><img src="im/M81uvr.gif" alt="M81 from UIT &
+ground"  border="2" vspace=2  width=80%> </a>
+</td>
+
+<td width=30% align=bottom>
+<a href="im/BC-uvopsed-00-WonB-5.jpg"
+><img src="im/BC-uvopsed-00-WonB-5.jpg" alt="Pop spectra"
+border="2" vspace=2 width=80%></a>
+</td>
+
+</tr>
+</table>
+</ul>
+
+
+<h2>D. UV MISSIONS  </h2> 
+
+<ul>
+
+<!-- 
+<a href="http://www-obs.cnrs-mrs.fr/tricent/las/foca/foca.htm">
+-->
+
+<li> Sounding rockets, balloons
+ (e.g. <a href="http://www.aanda.org/articles/aa/full/2002/39/aa2498/aa2498.html"> SCAP/FOCA</a>), manned missions (Apollo, Skylab, ISS).  1947+ </p>
+
+<li> PI-class satellite missions: e.g. OAO-2, <a
+href="http://archive.stsci.edu/copernicus/" >Copernicus</a>.</p>
+
+<li> Space Shuttle sortie missions: e.g. 
+<a href="http://archive.stsci.edu/astro/" >Astro</a>,
+ORFEUS, FAUST</p>
+
+
+<li> Satellite observatories:  </p>
+
+<ul>
+
+<li> <a href="http://archive.stsci.edu/iue/" >International Ultraviolet Explorer (IUE)</a> </p>
+
+<ul>
+
+<li>1978-1996 (a record to that time; later exceeded by HST)
+
+<li>Medium/high-dispersion spectroscopy 1200-3200 &Aring;
+
+<li>Background information: <a
+ href="http://nssdc.gsfc.nasa.gov/database/MasterCatalog?sc=1978-012A" >
+ GSFC/NSSDC</a>; 
+ <a href="http://www.esa.int/Our_Activities/Space_Science/IUE_overview">ESA</a>.
+
+<!-- http://www.esa.int/Our_Activities/Space_Science/IUE_overview -->
+
+<li><a href="http://archive.stsci.edu/iue/">IUE data archive</a></p>
+					     
+</ul>
+
+<li> <a href="http://www.stsci.edu" >Hubble Space Telescope (HST)</a>.  Launched 1990.</p>
+
+<ul>
+
+<li>1200-22000 &Aring; 
+
+<li>High resolution (0.05 arcsec) imaging (FOC, WFPC2, STIS, ACS/SBC, ACS/HRC, WFC3)
+
+<li>Low-med-high resolution spectroscopy (GHRS, FOS, STIS, COS)
+
+<li>High speed photometry (HSP)
+
+<li><a href="http://archive.stsci.edu"> HST data archive</a></p>
+
+</ul>
+
+
+<li> <a href="http://archive.stsci.edu/euve/" > Extreme Ultraviolet
+Explorer (EUVE):</a> spectroscopy 70-760 &Aring;.  Launched 1992. </p>
+
+<li> <a href="https://sohowww.nascom.nasa.gov/">Solar and Heliospheric
+Observatory</a>, launched 1995,  and other solar missions with EUV/FUV
+spectroscopy and imaging.</p>
+
+<li> <a href="http://fuse.pha.jhu.edu/" >Far Ultraviolet
+Spectroscopic Explorer (FUSE):</a> High resolution spectroscopy
+900-1200 &Aring;.  Launched 1999. </p>
+
+<li> The X-ray/Gamma-ray satellites 
+<a href=
+"http://sci.esa.int/xmm-newton/31281-instruments/?fbodylongid=798">
+XMM</a> and <a href="http://www.swift.psu.edu/uvot/"
+>Swift</a> both carry moderate-field support telescopes
+which can be used for multiband UV/optical imaging longward of 1700 &Aring;.</p>
+
+<li> <a href="http://www.srl.caltech.edu/galex/" >GALEX</a>
+(the Galaxy Evolution Explorer Mission), launched in April 2003, was a
+50-cm, wide-field (1.2<sup>o</sup>) telescope imaging
+two broad UV bands centered at 1500 and 2300 &Aring;.  Microchannel plate
+detectors.  Grism for low-resolution spectroscopy.  </p>
+
+</p>
+
+</ul>
+
+</ul>
+
+Historical Gaps:</p>
+
+<ul>
+
+The historical emphasis in the UV was mainly on point-source
+spectroscopy, not imaging or extended faint sources such as galaxies. 
+</p>
+
+Through 2003, only shallow all-sky UV surveys were available.  FUV:
+TD-1, to 9th mag. EUV: ROSAT, EUVE, < 1000 bright sources.
+<a href="http://www.srl.caltech.edu/galex/" >GALEX</a>
+ surveys (to AB ~ 21 mag) have partially remedied this situation.
+ </p>
+
+</ul>
+</ul>
+
+
+
+<center><a href="im/hst-after-SM4-w-Earth-v2.jpg"><img src="im/hst-after-SM4-w-Earth-v2-smex.jpg"
+vspace=15 hspace=10 width=60%></a><p><small><em>The Hubble Space
+Telescope released to orbit after its last servicing mission, May
+2009</em></small></center>
+
+<p><br></p>
+
+
+<h2>E. UV INSTRUMENTATION </h2>
+
+<ul>
+
+<li> Optical materials: There are limited choices in the UV for good
+transmission or reflectivity; the challenge is greater for shorter
+wavelengths (below 1200 &Aring;).</p>
+
+<li> Cleanliness and contamination control are critical because many
+materials likely to be deposited on optics are UV-opaque. </p>
+
+<li> FUV, MUV optical designs are similar to those in the
+OIR-bands, but fewer surfaces are preferred.</p>
+
+<li> Filters used are similar to those designed for the optical but
+require good blocking of strong geocoronal and skyglow emission lines
+(especially Lyman-alpha 1216 &Aring;, O I 1302 &Aring;).  They also
+require excellent long-wave continuum blocking (see next).</p>
+
+<li> Ordinary materials absorb strongly in the EUV, so special
+mirror designs incorporating grazing incidence or 
+normal incidence multilayer coated surfaces are required. </p>
+
+</ul>
+
+<p><br></p>
+
+
+<h2>F.  UV DETECTORS </h2>
+
+<ul>
+
+<li> A major problem is the requirement for
+<b> long-wavelength rejection</b> in order to isolate UV photons.  The
+visible photon rate can be ~ 10<sup>6</sup> higher than the FUV rate
+in cool sources such as solar-type stars. </p>
+
+<li> Therefore one requires a so-called <b>"solar blind"</b> detection
+system.</p>
+
+<ul>
+
+<li> Photoconductors
+like <a href="http://www.faculty.virginia.edu/rwoclass/astr511/lec11-f03.html"
+> CCD's</a> have broad bandwidths, extending to the near-IR.  They are
+therefore <b>not</b> good choices for the UV unless excellent <b>"red
+leak" rejecting</b> optics are available.  Good rejection is difficult
+to achieve.  Silicon itself, out of which CCDs are fabricated, 
+has a large UV opacity, implying the need for special electronic
+designs.   Some CCD systems for UV applications employ downconversion
+coatings (UV ==> visible photons), but these have relatively poor
+performance (e.g. WFPC1/2 on HST). </p>
+
+<li> Photoemissive devices with large work functions have been
+preferred to date: photocathodes like CsI, CsTe, KrB have moderately
+good UV quantum efficiency but very low visible QE</p>
+
+<ul>
+
+The main technical problem for photoemissive devices is that a single
+emitted photoelectron must be converted into a measurable signal,
+while maintaining image quality.</p>
+
+UV photocathode quantum efficiencies are mostly well <b>below</b>
+visible-band QE's for CCD's (20-40% instead of ~90%).</p>
+
+</ul>
+</ul>
+
+<li> 2-D UV detectors: these are typically <b>hybrid</b> designs</p>
+
+<ul>
+
+<li>Stage 1: Photocathode</p>
+
+<ul>
+
+<li>Manufacture of large formats with good uniformity and modulation
+transfer functions is difficult.</p>
+
+</ul>
+
+<li>Stage 2: Amplification/acceleration and image transfer </p>
+
+<ul>
+
+<li>Image Tubes: high voltage (10-30 kV) photoelectron acceleration, electric or
+magnetic focussing
+
+<li>Microchannel Plates: electron multiplication in rigid channels,
+proximity focussing</p>
+
+</ul>
+
+<li>Stage 3: Detection/readout/storage</p>
+
+<ul>
+
+<li>Phosphor plus film
+(e.g. <a href="http://www.faculty.virginia.edu/rwoclass/UIT">Astro/UIT</a>)
+
+<li>Phosphor plus CCD or diode arrays (e.g. Astro/HUT)
+
+<li>TV (scanning) readout  (e.g. IUE, HST/FOC)
+
+<li>Electron bombarded diodes (e.g. HST/FOS, HST/GHRS)
+
+<li>Electron bombarded anode arrays (e.g. HST/STIS, HST/COS, FUSE, GALEX)</p>
+
+<!-- <p><br></p> -->
+
+<li>A key feature of most successful systems: 
+<b>event counting with centroiding</b> of the
+photoelectron-induced pulse x,y position. </p>
+
+<a href="im/timothy-mama.gif" ><img src="im/timothy-mama.gif" alt="MAMA" align="right"
+border="2" width=32%></a>
+
+
+</ul></ul>
+
+<li>  Examples</p>
+
+<ul>  
+
+<li><a
+href="http://www.stsci.edu/hst/stis/documents/handbooks/currentIHB/c07_performance5.html"
+>STIS/COS MAMA</a>:  Multi Anode Microchannel Array (at right)
+
+<!-- 
+<a href="http://fuse.pha.jhu.edu/photos/detector.html">
+-->
+
+<li><a href="siegmund-FUSE-detector-system-97.pdf">FUSE detector</a>:
+microchannel plate plus double delay line readout
+
+<li><a href="http://www.galex.caltech.edu/researcher/techdoc-ch1.html#2">GALEX
+detector</a>: stacked microchannel plates plus 2-D delay-line readout</p>
+
+
+</ul>
+
+<li> References:</p>
+
+Timothy, <a
+href="http://adsbit.harvard.edu/cgi-bin/nph-iarticle_query?bibcode=1983PASP...95..810T"
+>PASP 95, 810, 1983</a>;<br> 
+Joseph, <a
+href="http://www.physics.rutgers.edu/~cjoseph/workshop.ps"
+>UV Technology Overview</a>, in "From X-rays to X-Band", an
+STScI Workshop, 2000.</p>
+
+<!--  Joseph, Exp. Astron, 6, 97, 1995.   -->
+
+</ul>
+
+<p><br></p>
+
+<h2>G.  SPACE ASTRONOMY: SPECIAL TECHNICAL REQUIREMENTS</h2>
+
+
+<img src="im/columbia-launch-anim.gif" alt="Columbia" align="right" width=25% vspace=12
+hspace=12>
+
+<ul>
+
+<li>  Launcher with a finite payload</p>
+
+<ul>
+
+<li> The Space Shuttle (at right), probably the most complex system
+ever built by humans, served as the heaviest launch vehicle for
+30 years.    Total cost per launch about $400M (90%
+personnel).</p>
+
+<ul>
+ But, with a payload of 24,000 kg to an altitude of 200 km, the
+Shuttle's capacity was 5x smaller (!) than that of the
+1960's <a href="im/rockets-compared.jpg" >Saturn V</a>. </p>
+</ul>
+
+<!-- SatV payload to LEO 118,000 kg to 185 km; SS 24,400 kg to 204 km
+    ---from google search 11/27/01;  
+
+2017: Space-X Falcon 9 (full thrust): 13,000 kg to LEO;  
+              Falcon Heavy:  68,800 kg to LEO  (2017 first flight?)
+      ESA's Ariane 5:  16,000 kg to LEO 
+         [JWST mass: 6,500 kg]
+      Orbital ATK/Pegasus:   443 kg to LEO 
+      Orbital ATK/Minotaur-C: 1350 kg to LEO 
+      Orbital ATK/Antares: 6,120 kg to LEO    
+      ULA Delta IV Heavy:  29,000 kg to LEO 
+      ULA Atlas V:  19,000 kg max to LEO 
+-->
+
+<li> Currently available launch vehicles include the 
+<a href="https://en.wikipedia.org/wiki/Ariane_5">ESA Ariane 5</a>,
+the 
+<a href="https://en.wikipedia.org/wiki/SpaceX">Space X Falcon</a>,
+the 
+<a href="https://en.wikipedia.org/wiki/Antares_(rocket)">Orbital ATK Antares</a>,
+and the 
+<a href="https://en.wikipedia.org/wiki/Delta_IV_Heavy">ULA Delta IV Heavy</a>.
+However, none of these approach the Saturn V in payload capacity. </p>
+
+</ul>
+
+<li>  Power </p>
+
+<ul>
+
+<li>Solar panels, batteries, radioactive sources, fuel cells
+
+<li>Explorer class experiment ~300 W; HST ~2000 W</p>
+
+</ul>
+
+<li> Thermal control </p>
+
+<ul>
+
+<li>Large temperature gradients prevail in space: e.g. on Earth
+darkside: 273K facing Earth, 3K facing space
+
+<li>Thermal control required for structural and electrical stability
+
+<li>Optics/electronics: in optical/UV telescopes, typically maintain
+~68 F by active heating, passive cooling to space
+
+<li>In IR telescopes, cryogens and shielded cooling to space are used
+to keep most of the optical train at low temperatures.
+
+<li>Detectors: usually require active cooling (thermoelectric, cryogens)
+
+<li>Issues: orbital dependence, materials (e.g. graphite-epoxy), insulation, heat pipes,
+radiators, shields</p>
+
+</ul>
+
+<li> Pointing control & stability</p>
+
+<ul>
+
+<li>Gyros: provide 3D mechanical attitude reference
+
+<li>Auxiliary telescopes: star trackers, guiders: 1 arcsec-few arcmin
+
+<li>Focal plane trackers: e.g. HST: 0.007 arcsec RMS</p>
+
+</ul>
+
+<li> Scattered light rejection</p>
+
+<ul>
+
+<li>Important to enable use of sunlit orbit
+
+<li>Sun, moon, bright Earth, bright stars,  spacecraft structures, zodiacal light must
+all be considered
+
+<li>Complicated baffling, special coatings & materials needed</p>
+
+</ul>
+
+<li> Environmental protection needed against...</p>
+
+<ul>
+
+<li>Radiation: high energy electrons, protons </p>
+
+<ul>
+
+<li>"South Atlantic Anomaly" (R < 1000 mi)
+
+<li>Van Allen Radiation Belts (R < 25000 mi)</p>
+
+
+<ul>
+Shielding is difficult given weight constraints.  Use rad-resistant
+equipment, special operations strategies instead.</p>
+
+An example of damage produced by radiation:
+<a href="http://www.stsci.edu/hst/wfc3/ins_performance/CTE/"> reduced "charge
+transfer efficiency"</a> in HST CCD cameras.</p>
+
+</ul>
+</ul>
+
+<li>Residual atmosphere (free oxygen), especially in ram direction
+
+<li>Orbital debris</p>
+
+</ul>
+
+<li> Communications & telemetry</p>
+
+<ul>
+
+<li>Command & control
+
+<li>Housekeeping/health 
+
+<li>Data
+
+<li>Ground stations offer only partial coverage (except for
+geostationary orbits)
+
+<li>Relay satellites: TDRSS 200 Mbps, but limited access </p>
+
+</ul>
+
+<li>  Launch protection/survival: "space qualification" </p>
+
+<ul>
+
+<li>Temperature
+
+<li>Acoustic vibration
+
+<li>Acceleration
+
+<li>Cleanliness: contamination control before launch, outgassing suppression
+in space</p>
+
+</ul>
+
+<li> Reliability</p>
+
+<ul>
+
+<li>Repair or upgrade is impossible for all except HST. 
+
+<li>Must predict and mitigate all possible failure modes
+
+<li>Reliability is the <b>principal cost driver</b> of space
+missions:</p>
+
+<ul>
+
+<li>95% reliable: $N
+
+<li>98% reliable: $5N</p>
+
+</ul>
+
+<li>Complete documentation is essential: "PAPER IS OUR MOST IMPORTANT PRODUCT"</p>
+
+</ul>
+
+<li> ====> <b>Space missions are expensive!</b></p>
+
+<ul>
+
+<li> The list above is the reason that space experiments cost up to several 100x
+more than ground-based facilities of the same size.  One must weigh the unique
+science return from space missions vs. their much larger cost.  </p>
+
+<li><em><font color="green">"Faster, Cheaper, Better"</font></em>?
+NASA Administrator Dan Goldin (1992-2001) famously promoted this motto
+for NASA missions.  Knowledgeable NASA engineers responded
+(privately): "Pick two out of three," and they were right. </p>
+
+</ul>
+</ul>
+
+<!--  END OF MAIN TEXT -->
+
+<p><br></p>
+
+
+
+<hr size=1 noshade>
+
+General references:
+
+<ul>
+
+<li> <em>Exploring the Universe with the IUE Satellite</em>, ed. Y.
+Kondo et al., (Dordrecht: Reidel), 1987. 
+
+<li><em>Astrophysics in the Extreme Ultraviolet</em>, ed. S. Bowyer &
+R. F. Malina, (Dordrecht: Kluwer), 1995. 
+
+<li> <em>The Ultraviolet Universe at Low and High Redshift</em>, ed. W. Waller
+et al., (Woodbury, NY: AIP), 1997.
+
+<li><em> Ultraviolet-Optical Space Astronomy Beyond HST</em>, eds. J. A.
+Morse et al., (San Francisco, ASP), 1999.</p>
+
+</ul>
+
+
+Web links:  </p>  
+
+<ul>
+
+
+<li> <a href="http://www.faculty.virginia.edu/rwoclass/UIT" 2> 
+Ultraviolet Imaging Telescope/Astro-1 & Astro-2 Background & Pix</a></p>
+
+
+<li><a href="http://spider.seds.org/oaos/oaos.html" >List of 
+all Orbital Astronomy Missions</a><br>
+
+<li><a href="http://science.nasa.gov/missions/" >List of NASA Missions</a>
+(all types)</p>
+
+<li> <a href="http://science.nasa.gov/missions/iue/" >International
+Ultraviolet Explorer (IUE)</a><br>
+
+<!--  <ul>
+
+ <a href="http://nssdc.gsfc.nasa.gov/cgi-bin/database/www-nmc?78-012A">
+Background Information at GSFC/NSSDC</a></p>
+
+ <a href="http://www.vilspa.esa.es/iue/iue.html">ESA IUE Home Page,</a> including
+<a href="http://iuearc.vilspa.esa.es/IUE/about_IUE.shtml">science highlights.</a></p>
+
+ <a href="http://archive.stsci.edu/iue/">Data Archive (STScI MAST)</a></p>
+</ul>
+
+-->
+
+<li><a href="http://archive.stsci.edu/euve/" > Extreme Ultraviolet
+Explorer (EUVE)</a><br>
+
+<li> <a href="http://fuse.pha.jhu.edu/" >Far Ultraviolet Spectroscopic
+Explorer (FUSE)</a><br>
+
+<li><a href="http://www.swift.psu.edu/uvot/">UVOT on Swift</a><br>
+
+<li><a href="http://sci.esa.int/xmm-newton/31281-instruments/?fbodylongid=798">OM on XMM</a><br>
+
+<li> <a href="http://www.srl.caltech.edu/galex/">GALEX</a></p>
+
+<li> <a href="http://www.stsci.edu/portal/hst" >Hubble Space Telescope</a><br>
+
+<li>  <a href="http://archive.stsci.edu/" >HST Multimission Data Archive</a>
+(includes data for many UV missions)</p>
+
+<li><a href="http://www.hdstvision.org/report">Concept study for a future 12-m
+UVOIR space telescope (AURA)</a></p>
+
+<li> <a href="http://www.faculty.virginia.edu/rwoclass/astr511">ASTR 511
+Home Page</a></p>
+
+</ul>
+
+
+<p><br></p>
+
+<!-- START FOOTER -->
+
+<hr size=2 noshade>
+
+<p align="center"> <small><i>Last modified
+    <b>January 2019</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+
+<hr size=2 noshade>
+
+<center>
+<small> Text copyright &copy 2000-2019 Robert W. O'Connell.  Images
+are in the public domain.  All rights reserved.  These notes are
+intended for the private, noncommercial use of students enrolled in
+Astronomy 511 at the University of Virginia.</small>
+</center>
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  
+
+<!--  ----------- END OF TEMPLATE ---------------     -->
+

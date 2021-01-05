@@ -1,0 +1,1113 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2001-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- -->
+
+<!--   ADD: background-induced selection --- very faint dwarf galaxies  -->
+
+<!-- INTRODUCTION TO UVOIR ASTRONOMY
+
+HISTORY: RWO, LaTeX/PDF version: ASTR 511 F01; Lec 0-1:  9/5/01;
+4/3/03; HTML version: 6/18; 6/19; 6/21; 6/22; 6/26; 6/29; 6/30; 7/1;
+7/3; revise format to BonW; 7/4; 7/5 add e-gifs; 7/6; 7/15; 7/18;
+7/19; 7/20; major updates begin, many illustration links added 7/22;
+7/24; 7/25; 7/28; 8/2; 8/5; 8/6; 8/12; 8/14; 8/15; 8/20; 8/23; 8/26;
+8/27; 8/15/04; 7/18/05; 10/30; 6/5/07; 6/29/10; 9/16/15: new domain
+& replace "target=show" & update text; 9/18; variable-width images
+& test updates;  
+
+GHP version: 12/4/2020: change css to A1210 format; 12/5; 12/6; 12/7; 
+   12/15; 
+
+  -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.   Lecture Notes [Fall 2003]  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+
+<style>
+div.all { max-width: 900px; }
+</style>
+
+</head>
+<body>
+
+<div class="all">
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p><br></p>
+<hr>
+
+<center>
+
+<font size="+4" color="#bb11cc"><b>1: INTRODUCTION TO <br>UVOIR ASTRONOMY</b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+
+<center> <a href="im/MW-ctio-lg.jpg"><img src="im/MW-ctio-exH.jpg"
+     alt="Milky Way from CTIO"
+     align="top" width = 75%  ></a>  </center> 
+
+<p align="right"><small><b><em>Southern Milky Way from CTIO
+</em></b></small></p>
+
+<p><br></p>
+
+
+
+
+<h2> I.  WHY UVOIR?  </h2>
+
+<h3>A.  Definition</h3>
+
+<ul>
+
+<b>UVOIR</b> = the <b>"UV, Optical, Near-Infrared"</b> region of the EM spectrum</p>
+
+<ul>
+
+<li> Shortest wavelength:  912 &Aring; (91.2 nm) --- the Lyman edge of H I;
+	the <b>interstellar medium</b> is opaque for hundreds of
+        &Aring below this point</p>
+
+<li> Longest wavelength:  ~3 <big>&#181;</big>
+	(3000 nm) --- serious H<sub>2</sub>O absorption in <b>Earth's
+	atmosphere</b> above this point.  </p>
+
+
+</ul>
+</ul>
+
+<h3>B.  Uniqueness</h3>
+
+<ul>
+
+<li>  Best developed instrumentation; best understood  astrophysically<br>
+
+<li>  <b>Highest density</b>  of astrophysical information <br>
+
+<li> Most of the important features of the universe, from planets and
+      stars to the interstellar medium, dark matter, and clusters of
+      galaxies, were
+      <a href="EM-discov1.html">first recognized</a> in the UVOIR bands.
+
+<li> The UVOIR provides prime diagnostics on most astrophysical
+      phenomena but especially on the <b>two most important physical
+      tracers</b>:</p>
+</ul>
+
+
+<!-- 2 COLUMN TEXT-PIC INSERT  -->
+
+<!-- <table  style="max-width:900px">  -->
+
+ <table width=100%> 
+<tr>
+<td align="center" width=50%>
+
+<a href="im/jewel-box-cluster.jpg"><b>STARS</b></a></p>
+
+   <a href="im/solar-SED.jpg"  >
+   <img src="im/solar-SED-sm.jpg" alt="Solar SED" width = 80%  >
+   </a>
+
+&nbsp;<br>  
+</td>  
+
+<td align="center" width=50%>
+
+
+<!--  substituted Hourglass for Subaru M82 pic -->
+
+  <a href="im/hourglass-PN-HST-lg-ex.jpg" ><b>PLASMAS</b> (to 10<sup>5</sup>K)</a></p>
+
+   <a href="im/composite-QSO-sp.jpg" >
+   <img src="im/composite-QSO-sp-sm.jpg" alt="Composite QSO" width = 80% >
+   </a>
+
+&nbsp;<br>
+
+</td>
+</tr>
+
+</table>
+<p><br></p>
+
+
+<center>
+<table bgcolor="yellow" width="500" border=4 cellpadding=8>
+<tr><td align="center">
+
+<font size="+1">
+ ===> UVOIR observations/identifications are almost always
+       <b>prerequisites</b> to a thorough understanding of cosmic
+       sources in other EM bands.
+</font>
+
+</td></tr></table>
+</center>
+
+</ul></ul>
+
+<p><br></p>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+
+
+<!-- <table width=100%> -->
+
+<table style="max-width:900px">
+<tr>
+<td width=70%>
+
+<ul><ul>
+
+<font size="+1">
+
+<li> <b>Stars</b> are the basic building blocks of the universe (even
+      if not the most important by mass).   For instance, stars establish
+      fundamental cosmic <b>age</b> and <b>distance</b> scales</p>
+
+<ul>
+
+<li> Ages: e.g. star cluster <a href="im/HRevolve-anim-schombert.gif"
+>turnoff temperatures/luminosities</a></p>
+
+<li> Distances: e.g. Cepheid variations, supernovae, photometric redshifts
+     from integrated starlight</p>
+</ul>
+
+<li> <b>Example:  Gamma Ray Burst</b> sources were first detected in the
+       1970's, but they were physically interpreted only after optical
+       identifications made in 1997 showed they were associated with
+       distant galaxies.</p>
+
+<li> 
+
+
+</font> 
+
+</ul></ul>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+
+<center>
+
+&nbsp;<br>
+
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/grb-1297-keck.jpg"  >
+   <img src="im/grb-1297-keck-ex.jpg" alt="12/97 GRB" width=75% >
+   </a>
+
+   <!-- PIC CAPTION (optional; can be multi-line) -->
+   <p><b><small><em>First identification of a GRB source.<br>Click for details.
+   </em></small></b> </p>
+
+</center>
+
+</td>
+</tr>
+
+</table>
+<p><br></p>
+
+
+<h2> II. KINDS OF UVOIR OBSERVATIONS </h2>
+
+<ul>
+
+<li> <b>Imaging</b>:  distribution of EM energy on the celestial sphere<br>
+
+<li> <b>Astrometry</b> : a sub-class of imaging:  precision
+		      measures of positions & motions <br>
+
+<li> <b>Spectral Energy Distributions (SEDs)</b>:  distribution of EM
+energy with frequency<br>
+
+<ul>
+
+<li>  Photometry (low resolution)<br>
+
+<li>  Spectroscopy (higher resolution)<br>
+
+</ul>
+			
+<li>  <b>Variability</b><br>
+
+<li>  <b>Polarimetry</b></p>
+
+</ul>
+
+
+<!-- OTHERS? ask  -->
+
+
+<p><br></p>
+
+<h2> III.  PRIORITY OF OBSERVATIONS IN ASTRONOMY</h2>
+
+ Astronomy is driven more by <b>new observational discoveries</b> than
+       by fundamental interpretive insights (i.e. <b>theory</b>).  The
+       development of astrophysics has been shaped by observations in
+       about 3/4 of instances.</p>
+
+<!-- add link to page listing in chronological order? no--Harwit does not
+list chronlogically & his categorization of discoveries is a little
+convoluted  -->
+
+<!-- 
+<ul>
+ For a master list of key astronomical discoveries, with analysis, see <em>Cosmic Discovery</em>
+ by Martin Harwit. </p>
+</ul>
+
+-->
+
+Few important astronomical discoveries were predicted; many 
+      were actually <b>accidental</b> </p>
+
+Examples of accidental discoveries: (the technique/original motivation
+is given in <em>parentheses</em>)</p>
+
+<ul>
+
+<li> Uranus (<em>visual telescopic sky-scan</em>)<br>
+
+<li> Expansion of the universe (<em>faint galaxy spectroscopic survey</em>)<br>
+
+<li> Pulsars (<em>radio scintillation observations</em>)<br>
+ 
+<li> Supermassive black holes/AGN's (<em>radio surveys, optical spectroscopic surveys</em>)<br>
+<ul><font size="-1">Although nuclear activity had been recognized since
+the 1940's (Seyfert), its prevalence and significance was not understood until
+radio observations in the 1950's-60's, especially of the compact
+Quasi Stellar Objects.
+</font><br></ul>
+
+<!-- BH's a theoretical concept since 1916 (Schwarzschild
+           solution to GRT eqns for spherical obj) but receiving
+          little interest until 1960's.  Seemed UNTESTABLE before
+          that.  Then QSO's discovered, and this revitalized study
+          of BH's
+
+           Note that the "active galaxy nuclei" AGN phenomenon was
+           known since 1940's (Seyfert), recognition of importance and
+           scope of phenom. needed new RADIO observations in 1950-60's
+           AND identification of some of these with OPTICAL STARLIKE
+           sources, leading to discovery of Quasi Stellar Objects
+           (QSO's) that generated enormous amounts of energy in
+           compact regions.
+
+          Even now (1997), after 30 years of fairly intensive work on
+	  BH CANDIDATES the question of their existence is still not
+	  quite resolved, and rests NOT on subtleties of theoretical
+	  calcuations, but instead simple estimates based on orbit
+	  theory in binary stars and galaxy nuclei---i.e. the
+	  theoretical part of problem goes back to Newton!
+
+-->
+
+<li> Large scale structure (<em>redshift surveys aimed at measuring the galaxy luminosity function</em>) <br>
+
+<li> Dark matter in spiral galaxies: <a href="im/flatrotcurves-Rubinetal78.gif" >flat rotation curves</a>
+(<em>optical/radio spectroscopy</em>)<br>
+
+<li> X-ray emitting gas in clusters of galaxies (<em>early X-ray sky surveys</em>)<br>
+
+<li> <a href="im/grb-1297-keck.jpg" >Gamma ray bursts</a> (<em>military satellites looking for clandestine nuclear tests</em>)<br>
+
+<li>  Extra-solar planets (<em>optical spectroscopic monitoring</em>)<br>
+
+<ul><font size="-1">There was a general expectation that these existed,
+based on the Copernican Principle, for example.  But theoreticians
+predicted that massive planets could exist only at large distances
+from parent stars, implying 5-year or longer survey periods.  The
+first planetary-sized bodies orbiting another star were found
+accidentally by radio observations of a pulsar (Wolszczan & Frail,
+1992).  More normal exoplanets were first securely identified through
+optical Doppler-shift surveys of bright stars (Mayor & Queloz,
+1995).</font><br> </ul>
+
+<li> <a href="https://hubblesite.org/contents/media/images/2012/37/3098-Image.html" >High redshift
+evolution of galaxies</a>: e.g. "the Butcher-Oemler effect"; discovery of
+"cosmic noon" 
+(<em>deep optical imaging</em>)<br> <ul><font size="-1"> HST
+contributions in this area---e.g. the Hubble Deep Field (1996)---were
+actually hindered by theoretical prejudice that distant galaxies would
+be too faint to detect.  The HDF deep pencil-beam survey
+was delayed by 5 years.   </font><br> </ul>
+
+
+
+<!-- In this instance, theoreticians actually INHIBITED plans to take deep
+     HST images of distant galaxies; no real theoretical basis/guidance
+     for predicting what should see in early universe.  Most predictions
+     made 1970-95 were WRONG.  Expected formation/assembly activity
+     only at much higher redshifts.   Predicted surface brightnesses
+     would be too low for HST detection. 
+
+     another example:  H_2O in the ISM  -->
+
+<li><a href="im/accel-universe-Sci-cov-Einstein.gif">Dark energy</a>
+ (<em>deep supernova surveys to study cosmic curvature</em>)</p>
+
+</ul>
+
+Counterexamples:  theory-driven discoveries</p>
+
+<ul>
+
+<li>  Neptune  (<em>Leverrier, Adams predictions from Newtonian dynamics</em>)  <br>
+<li>  General relativistic distortion of space-time near Sun (<em>Eddington expedition, 1919</em>)  <br>
+
+<li>  21 cm line of HI (<em>Van de Hulst 1944; Ewen & Purcell 1951</em>)<bf>
+
+<li>  Helioseismology<br>
+
+<li> Cosmic microwave background <br>
+
+<ul> <font size="-1">Predicted in 1948 by Gamow, Alpher, & Herman.
+The actual discovery by Penzias & Wilson 16 years later was
+accidental, but a second team led by Dicke was preparing a deliberate
+search and would have been successful.</font><br> </ul>
+
+<li>Gravitational waves (<em>predicted 1916 by Einstein from his
+general theory of relativity</em>): indirect detection was made in a
+binary pulsar system by Hulse and Taylor (1974); direct detection
+extraordinarily difficult but accomplished by LIGO in 2015.)</p>
+
+</ul>
+
+The priority of observations means that all astronomers, observers
+or not, must know how to <b>interpret and critically evaluate</b>
+them and must stay alert for the <b>new opportunities</b> they present.</p>
+
+<!-- ADD? cultivated skepticism   -->
+
+
+<ul> What's meaningful? What's not?  What's real vs. what's noise?
+How big are systematic errors?  
+What's interesting?  What's right?  </p> 
+
+<!-- How well determined are measured quantities? -->
+
+<ul><ul>
+
+<!-- 
+
+Translation: file names changed to prevent giveaway name
+appearance at top of browser display page.
+
+<a href="im/rosette-col-noao-2048.jpg" >Example 1</a><br>
+<a href="im/Carina-CMD-SmeckerHane.gif" >Example 2</a><br>
+<a href="im/m82-2IRcolor-Cheung03.gif" >Example 3</a><br>
+<a href="im/hubble-first-DV-diag-2x.jpg" >Example 4</a><br>
+<a href="im/mars-lowell-map.gif" >Example 5</a><br>
+<a href="im/perlmutter-SN-99-fig2B.jpg" >Example 6</a></p>
+
+ ADD: LIST the 5 examples??  No.
+
+   Rosette Neb, full color
+   CMD --- e.g. Carina
+   2 color IR pixel plot for M82 (Cheung)
+   First Hubble diagram
+   Canals on Mars
+   Hi-z SN plot; Perlmutter
+
+9/17/15 note: removed symbolic links in /im/ directory and
+copied originals images to exN.* files.  
+
+-->
+
+<a href="im/ex1.jpg" >Example 1</a>: what is this?  how was it made?
+  what do the colors mean?<br>
+<a href="im/ex2.gif" >Example 2</a>: what does this diagram test? what
+  important physical implications?<br>
+<a href="im/ex3.gif" >Example 3</a>: what causes the scatter in this
+  diagram?<br>
+<a href="im/ex4.jpg" >Example 4</a>: is there a statistically meaningful
+  result here?  what is it? <br>
+<a href="im/ex5.gif" >Example 5</a>: classic example of systematic error<br>
+<a href="im/ex6.jpg" >Example 6</a>: discovery of the year or statistical fluke?</p>
+
+</ul></ul>
+
+</ul>
+
+<!-- Proprietary vs. public.  
+ Some interesting fields opened up when large scopes FIRST went
+ public:  e.g. Butcher-Oemler effect, faint blue galaxies, ...  -->
+
+
+<p><br></p>
+
+NB: The champion "discoverer" of the 20th century
+was <a href="im/Zwicky-2.jpg" >Fritz Zwicky</a>.  He discovered dark
+matter; inaugurated research on <a href="im/Zwicky-at-18in.gif"
+>supernovae</a> and clusters of galaxies; and predicted neutron stars and
+gravitational lenses.  </p>
+
+
+
+<p><br></p>
+
+<h2>IV.  HISTORICAL LESSON: TECHNOLOGY DRIVES DISCOVERY </h2>
+
+Most groundbreaking discoveries are enabled by <b>new observational
+capabilities</b>. </p>
+
+<!-- HEMT = high electron mobility transistor   -->
+
+<ul>
+<li> Local example: High Electron Mobility Transistor detectors from
+the NRAO Central Development Lab enabled the current generation of CMB
+microwave experiments </p>
+</ul>
+
+Key <b>technology milestones</b> for UVOIR astronomy:<br>
+
+
+<table style="max-width:900px">
+
+<tr>
+<td width=50% align=top>
+
+<font size="+1">
+<ul>
+<li>  17<sup>th</sup> century:  telescopes</p>
+
+<li>  19<sup>th</sup> century: spectroscopy, photography, quality lens making,
+large structure engineering</p>
+
+<li> 20<sup>th</sup> century:  large mirror fabrication, electronic
+ detectors, digital computers, space astronomy </p>
+
+<li>  Since 1980:  array detectors</p>
+
+<li> 21<sup>st</sup> century: adaptive optics </p>
+
+ &nbsp;<br>
+ &nbsp;<br>
+
+</ul>
+
+</font>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=50%>
+
+   &nbsp;<br>  
+   &nbsp;<br>
+
+<center>
+
+<a href="im/100-in-full.jpg" ><img src="im/100-in-sm.jpg" alt="Mt.
+Wilson 100-in" width = 75% > </a>
+
+   <p><b><small><em>Mt. Wilson 100-in. Discovered external<br> galaxies,
+   the expanding universe.</em></small></b> </p>
+
+</center>
+
+</td>
+</tr>
+</table>
+
+<b>Telescope size</b>:  determines ultimate sensitivity<br>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table style="max-width:900px">
+
+<tr>
+<td width=50%>
+
+<font size="+1">
+
+<ul>
+<li> Diameter doubling time ~45 years</p>
+
+<li> Largest scopes now 8-10m diam</p>
+
+<ul>
+
+Collecting area of a 10-m is 4&#215;10<sup>6</sup> that of the
+dark-adapted eye</p>
+
+</ul>
+
+<li> In planning/construction: 20-m to 40-m</p>
+
+<li>  For a given technology, cost scales as <img src="im/d26-e.gif">  </p>
+
+<!--  ~ D<sup>2.6</sup></p>  -->
+
+<ul>
+
+Cost is roughly proportional to <b>mass</b>.  Even using new technologies,
+the next generation of large ground-based telescopes will cross the $1
+billion threshold.</p>
+
+</ul>
+
+&nbsp;<br>  &nbsp;<br>
+
+</ul>
+
+</font>
+</td>
+
+<td width=50%>
+
+<center>
+
+   <a href="im/Telsize-v-date-LLM.jpg" >
+   <img src="im/Telsize-v-date-LLM-sm.jpg" alt="Growth in TelDia" width = 80% >
+   </a>
+
+</center>
+
+</td>
+</tr>
+</table>
+
+
+Other key technical developments:  </p>
+
+<ul>
+
+<li> <b>Sky surveys</b></p>
+
+<ul> 
+
+<li> First: Hipparchus, 130 BC.  Thousands since, many of them enabled
+   by special purpose telescopes.</p>
+
+<li> Two most important in 20<sup>th</sup> century: </p>
+<ul>
+
+<li> <a href="http://en.wikipedia.org/wiki/Henry_Draper_Catalog"
+>Henry Draper Catalog [HD]</a> (all-sky, stellar spectra) ===>
+stellar astrophysics. </p>
+
+<li> <a href="im/48in-color.jpg" >Palomar 48-in Schmidt</a>
+Sky Survey [POSS] & southern counterparts (all-sky, deep imaging) ===>
+source for identification of all types of stars, clusters, nebulae,
+and extragalactic systems.  Online version:  <a
+href="http://stdatu.stsci.edu/dss/">Digitized Sky Survey</a>.</p>
+
+</ul>
+
+<li> Large format, 2-D array detectors, coupled with the ability to
+store and manipulate huge digital data sets on computers, are driving
+the current explosion in imaging/spectroscopic sky surveys (e.g. 2dF,
+SDSS, PanSTARRS, 2MASS, LSST, and many others, often with cutie-pie names)</p>
+
+</ul>
+
+<li>  <b>Classification systems</b> (e.g. HD stellar spectral
+classification, ca. 1890; Hubble galaxy classification, ca. 1920)</p>
+
+</ul>
+
+
+<p><br></p>
+
+
+<h2>V.  FLUX MEASUREMENTS IN ASTRONOMY</h2>
+
+<h3>A.  Signal-to-Noise Ratio</h3>
+
+<ul>
+
+<li> "Sensitivity"---i.e. the faintest source measurable---is not simply a matter
+of the size of the photon collector.</p>
+
+<li> It is instead a
+<a href="im/m101simsA-3pan.gif" ><b>signal-to-noise</b></a> issue:</p>
+
+<ul>
+
+<li>  SNR (or "S/N") &nbsp;  = &nbsp; value measured / uncertainty in measure</p>
+
+<li>  Depends on structure of source (point vs. extended), nature
+of the luminous background & surroundings, foreground absorption, telescope &
+instrument throughput, characteristics of detectors (quantum efficiency, noise)</p>
+
+<li>  Fundamental limits are from <b>photon statistics</b>  </p>
+
+<ul>
+<img src="im/sn-lt-rootn-e.gif" align=middle>, &nbsp; where N is number of detected source photons</p>
+</ul>
+
+<!--  SNR < sqrt(N),  -->
+
+</ul>
+
+</ul>
+
+<h3>B. Typical SNR's in Astronomy:</h3>
+
+<ul>
+<li>  Some things are known exactly (SNR is infinite)</p>
+<ul>
+
+<li>  The sun is a star<br>
+<li>  Only one star interior to Earth's orbit<br>
+<li>  No new elements are possible with fewer protons than uranium</p>
+
+</ul>
+
+<li>  High precision measures: e.g. length of the AU; period
+of pulsars.  SNR > 10<sup>9</sup>.  </p>
+
+<!--  cf. D'Amico et al. ApJL astro-ph/0010272.  Pulsar periods
+ measured to ~1 part in 10^7-8.   -->
+
+
+<li>  Measures of astronomical EM fluxes:</p>
+
+
+<ul>
+<li> Best precision (Kepler and TESS exoplanet transit missions): SNR
+> 10000 </p>
+
+<ul>
+ <b>Modest</b>  by lab standards!  Problems: difficulty of 
+instrument calibration in the "field"; faintness of interesting sources.  </p>
+</ul>
+
+<li>   Typical "good" measures:  SNR ~ 20-100</p>
+
+<li>   Threshold detections:   SNR ~ 5-10</p>
+
+</ul>
+</ul>
+
+<h3>C.  The Magnitude System</h3>
+<ul>
+
+ <li> "Magnitudes" are a conventional way of describing source
+brightnesses in UVOIR astronomy but one which is confusing for
+newcomers because of differing definitions and hence conversion to
+physical energy units.  See Lectures <a href="lec2-f03.pdf" >2</a>
+and <a href="lec14-f03.pdf">14</a>.</p>
+
+<!-- MOVED section on mags to  LECTURE 2. -->
+
+</ul>
+
+<h3>D.  Backgrounds</h3>
+
+<ul>
+
+<li>Even when source fluxes are appreciable, detection can be inhibited
+by luminous backgrounds, which reduce SNR.  
+These become important when:</p>
+</p> 
+
+<ul>
+
+(Background flux)<sub>resol-element</sub> &nbsp;  ~ &nbsp; (Source flux)<sub>resol-element</sub>
+</p>
+
+</ul>
+
+
+<li><a href="im/sky-background-allwave-Leinert.gif" >Diffuse backgrounds</a>, examples:</p>
+
+<ul>
+
+<a href="im/U-K-skybrite-MK-CELT-tab.gif" >UVOIR</a>:
+artificial light pollution + Earth's atmosphere + ecliptic scattered
+sunlight + scattered Galactic light</p>
+
+Far IR:  Earth's atmosphere + warm dust in the solar system and
+<a href="im/DIRBE-allsky-dustmap-Schlegel98.gif"
+>interstellar "cirrus"</a></p>
+
+Radio:  Cosmic Microwave Background</p>
+
+All:  additional background generated by telescope or instruments</p>
+
+</ul>
+
+<li>Discrete source backgrounds, examples:</p>
+
+<ul>
+Exclusion zone around bright stars caused by scattered light within instrument 
+</p>
+
+Source "confusion" caused by diffractive blending of multiple faint sources,
+e.g. in <a href="m13-color.gif" >star clusters</a> or for faint,
+distant <a href="im/faint-radgals-HDFFl-Richards98.gif" >radio galaxies</a>.</p>
+
+</ul>
+
+<!-- 
+<li>   Background source confusion: e.g. importance of AGN's
+first recognized in radio bands, since there is less source confusion at relevant levels there 
+than in optical</p>
+
+-->
+
+</ul>
+</ul>
+
+<p><br></p>
+
+<h2>VI.  LIMITS OF OBSERVATIONAL CAPABILITY</h2>
+
+
+<h3>A.  EM Wavelength Coverage </h3>
+
+<ul>
+
+<li> There has been <a href="im/EMcoverage-v-date-LLM.jpg">rapid
+expansion since 1950</a>, facilitated by development of many different
+electronic detector technologies and space astronomy.</p>
+
+<li>  The entire EM spectrum except for the extremes
+is now accessible at some level to astronomers.</p>
+
+</ul>
+
+<h3>B.  Point Source Sensitivity </h3>
+
+<ul>
+ Faintest UVOIR point source detected:</p>
+
+<ul>
+
+<li>  Naked eye: &nbsp;  &nbsp; 5-6 mag<br>
+
+<li>  Galileo telescope (1610):  &nbsp;  &nbsp; 8-9 mag <br>
+
+<li>  Palomar 5-m (1948):  &nbsp;  &nbsp;21-22 mag (pg),<br>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;  &nbsp; &nbsp;25-26 mag (CCD) <br> 
+
+<li>   Keck 10-m (1992):  &nbsp; &nbsp; &nbsp;27-28 mag<br>
+
+<li>  HST (2.4-m in space, 1990):  &nbsp;  &nbsp; 29-31 mag</p>
+
+
+</ul>
+
+<!-- ADD: WF3 diagram of instrumental limits? --No hold for lecture on EM spec -->
+
+<!-- Faintest surface areas detected(?)  -->
+
+NB: current optical detectors have ~ 100% quantum efficiency.
+Therefore, we can't improve sensitivity via detector development.  In
+the UV and IR there is room for detector improvement.</p>
+
+</ul>
+
+
+<h3>C.  Spatial Resolution  </h3>
+
+<ul>
+
+<li> The fundamental limit is governed by <b>diffraction</b> in
+telescopes and instruments: the minimum image diameter is given by:</p>
+
+
+<ul><ul>
+<img src="im/airy-diam-e.gif" align=middle> &nbsp; radians</p>
+</ul></ul>
+
+where D is the diameter of the optics aperture </p>
+
+<li> At 5500 &Aring;, 
+<img src="im/airy-dcm-e.gif" align=middle> <br>
+
+
+<li> Inside Earth's atmosphere, <b>turbulence</b>  strongly affects image diameter.</p>
+
+<ul>
+
+The resulting <a href="im/seeing-movie.gif" >image blur & motion</a>
+is called "seeing", and typically yields:</p>
+
+<ul>
+<img src="im/thet-atm-e.gif" align=middle> 
+</ul>
+
+... i.e. spatial resolution in most instances is governed by the <b>atmosphere</b>,
+not the telescope. (Much effort is now aimed at turbulence control near
+telescopes.)</p>
+
+</ul>
+
+<li> Best UVOIR images:  HST, ~ 0.06" (~ a quarter at 90 km) </p>
+
+<li> Ground-based (8-m) single-aperture "adaptive optics"
+systems yield  0.05" over limited fields (in the near infra-red, but not for <
+1 &#181;) </p>
+
+   <!-- K band diffraction limit for 8-m, from MAXAT Workshop 98. -->
+
+<li> Anticipated UVOIR interferometers: 0.001" </p>
+
+<li> Best overall resolution: very long baseline radio
+interferometry -- but limited to rare, high surface brightness radio
+sources.  Best resolution to date (about 0.000020" at 1.3 mm
+wavelength) was achieved by
+the <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">Event
+Horizon Telescope</a> (2019-20). </p>
+
+</ul>
+
+
+<h3>D. Spectral Resolution</h3>
+
+<ul>
+
+<li> The theoretical maximum resolution is governed by diffraction in
+optical components, but the practical limit is set by photon rates.
+High resolution devices in astronomy are typically <b>photon-starved</b> (except
+for observations of the Sun).</p>
+
+<li> Source identification, surveys, and classification are typically
+done at <b>low resolution</b> (10-5000
+&Aring;)</p>
+
+<li> Physical analysis is done at <b>moderate-to-high</b>  resolution
+(0.01-10 &Aring;)  </p>
+
+<li> Highest to date:  ~ 0.001 &Aring; </p>
+
+</ul>
+
+
+<h3>E. Other Properties: e.g. polarization, variability</h3>
+
+<ul>
+Based on the new technologies supporting wide-field sky surveys for
+variable or transient sources, "time domain astronomy" has become a
+major specialty in the last twenty years.  Examples are
+Pan-STARRS, the Zwicky Transient Facility, and (in the coming decade)
+the LSST.</p>
+
+</ul>
+
+
+<h3>F. Examples of Background-Induced Selection Effects</h3>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+<tr>
+<td width=60%>
+
+<font size="+1">
+<ul>
+<b>Galaxy surface-brightness selection</b>, shown
+in the "Arp Diagram" 
+<a href="http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1965ApJ...142..402A&amp;db_key=AST&amp;data_type=HTML&amp;format=&amp;high=4148b308dd14723" >
+(Arp 1965)</a>: </p>
+
+<ul>
+<li>The diagram shows that identified galaxies occupy a relatively
+small range of parameter space, bounded by the night sky surface
+brightness on one side and the spatial resolution of survey telescopes
+on the other.</p>
+
+<li>Examples of previously-concealed classes of galaxies: <a
+href="im/UCD-v-dE-drinkwater-03.gif" >"ultracompact dwarf
+galaxies"</a> and <a href="im/ultra-diffuse-glx-Coma-vdk.png">
+"ultra diffuse galaxies"</a></p>
+
+
+<!--  <a
+href="http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=2003Natur.423..519D&db_key=AST&high=3f0de0c5a113549">  -->
+
+
+</ul>
+</ul>
+</font>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=40%>
+
+<center>
+
+   <a href="im/Arp-LDdiag-65.gif" >
+   <img src="im/Arp-LDdiag-65-sm.gif" alt="" width=55%>
+   </a>
+</center>
+
+</td>
+</tr>
+
+
+<tr>
+<td width=60%>
+
+<font size="+1">
+<ul>
+<b>Brown dwarf companions</b> to bright stars</p>
+
+<ul><li> Brown dwarf companions can be 10<sup>3</sup> to 10<sup>6</sup>
+times fainter than their primary stars.  Scattered light from the
+primary star inhibits searches.  For detection by direct imaging, we
+require a scattered light suppression technique.  The same problem,
+much worse, affects the search by direct imaging for Earthlike planets
+in orbit around nearby stars.</p>
+
+</ul>
+</ul>
+</font>
+</td>
+
+<td width=40%>
+
+&nbsp;
+&nbsp;
+
+<center>
+
+<a href="im/brown-dwarf-G229B.jpg">
+<img src="im/brown-dwarf-G229B-ex.jpg"  alt="G229B" width=55% >
+</a>
+</center>
+
+</td>
+</tr>
+
+</table>
+<p><br></p>
+
+
+
+<h2>VII.  NON-EM CONVEYORS OF COSMIC INFORMATION</h2>
+
+Most astrophysical information is derived
+from the study of <b>electromagnetic waves</b> propagating over significant
+distances.  However, there are several niches where important
+information is, or could be, conveyed by other means.  
+For a list, <a href="nonEMchannels-2020.pdf">click here.</a></p>
+
+<p><br></p>
+
+
+<hr>
+
+Related pages:</p>
+
+<ul>
+
+<a href="nonEMchannels-2020.pdf">Non-EM channels for astrophysical information</a></p>
+
+<a href="tips-for-success.html">Tips for success in observational astronomy</a></p>
+
+</ul>
+
+References:</p>
+
+<ul>
+
+<li>   LLM, Chapter 1 </p>
+
+<li>   Harwit, <em>Cosmic Discovery</em> [QB43.2.H37]</p>
+
+<li>   "99 Things About the Last 100 Years of Astronomy," V. Trimble,
+         Mercury, Nov-Dec 99, p. 17.</p>
+
+</ul>
+
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<table width=50%>
+<tr>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+&nbsp;
+</td>
+
+<td>
+<b><a href="lec2-f03.pdf">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>December 2020</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<hr size=2>
+
+<small>
+Text copyright &copy 2000-2020 Robert W. O'Connell.
+All rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 511 at the
+University of Virginia.  </small>
+
+
+<!-- END FOOTER -->
+
+</div>
+</body>
+</html>
+
+<!-- SHIFT TO LEC 2: SHROUDED PLANET QUESTION: what would we know
+about universe if atmosphere was opaque (like Venus') at optical/IR
+wavelengths and hand to depend on radio observations to determine
+nature of cosmic sources?  
+
+Sun, Moon apparent from diffuse glow.
+
+Where would science have gotten by now w/o optical astronomy?
+
+Navigation, timekeeping, calendar keeping? 
+
+Tho could see, e.g. HI redshifts, we wouldn't even know that H was the
+predominant chemical building block of universe, since wouldn't have
+spectra of stars---tho could get spectrum of Sun.  
+
+A brief version of this point was added to the "EM Spectrum - Discovery-2"
+page ca. 2003.  
+
+-->
+

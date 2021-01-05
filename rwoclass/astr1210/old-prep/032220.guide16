@@ -1,0 +1,751 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr1210 -->
+<!-- -->
+
+<!-- History: Guide 5, S97; with first part of Guide 6, S97 (omits
+WoW, UFO, Outer Plan.)  Converted to HTML:  3/23/98; 3/24; 3/25; 3/26;
+3/29; 3/30; 11/3/98; 11/4; 11/5; 11/9; 11/10; 3/26/99; 12/02/01; 3/16/2002;
+3/18; 3/23; 3/25; 3/26; 3/27; 3/28; 3/29;  5/02;  2/15/2003; 2/20; 3/7/2004; 
+3/20; 3/26; 3/28;  10/08/2006; 3/23/2007; 3/25; 3/26; 3/27; 4/1; 4/19;
+10/12; 11/2; 11/17;  3/4/2008; 3/22 [65!];  3/30; 3/22/2009; 3/27; 3/28; 
+3/29; 4/5; 11/23/2010; 5/29/2012: discover had removed refs to Mars Odyssey
+ca. 2007. Why? Add back, since still active!  Update format w/ only small
+content mods. 7/26; 10/31; 11/3; 3/26/2013; 4/19; 5/5; 10/28; 11/5; 11/6;
+3/14/2014; 8/3; 3/9/2015; 9/11: new domain; 6/20/2016; 4/29/2017; 
+11/6; 11/13;  6/17/2019;  12/16: def. viewport; 3/21/2020;     -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1210, O'CONNELL. Study Guide 16</TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="Mars, Percival Lowell, canals, canals on Mars,
+optical illusions, Martian topography, missions to Mars, water on Mars">
+
+</head>
+<body>
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan"
+vlink="#00BEEB" alink="red"> -->
+
+
+<center>
+<h1>ASTR 1210 (O'Connell) Study Guide 16 </h1>
+</center>
+
+<hr>
+
+<p><br></p>
+
+<center> <img src="im/mars-title-2.jpg"
+       alt="MarsTitle"
+       align="top" vspace="8"  width=65%>
+ </center>
+
+<p align="right"><small> <i>Crescent Mars during Viking 2 approach 1976.<br>
+      Clouds trail downwind of volcano Ascraeus Mons.
+    </i></small></p>
+		    
+<p><br></p>
+
+
+Mars is the most intriguing planet.  From Earth, it exhibits the
+<b>largest brightness variations</b> of any planet and has the <b>most
+distinctive color</b> (red/pink).  Telescopes have revealed it to be
+the <b>most Earth-like planet</b>, with a transparent atmosphere,
+varied terrain, polar caps, and seasonal changes.</p>
+
+Although Mars is smaller than Earth, it has no oceans, so its <b>land
+area is comparable to Earth's</b>.  Space missions have revealed fantastic
+topography, including the largest canyon and the largest mountain in
+the solar system.  </p>
+
+Finally, for over 100 years, Mars has been the <b>favorite candidate
+for another biosphere</b>.  Claims by some astronomers that there were
+artificial <b>"canals"</b> on Mars had tremendous impact on popular
+culture.  <b>The canals were optical illusions</b>, but recent
+evidence for possible fossil lifeforms and for abundant water on its
+surface in the past finally have given real credence to speculations
+about life on Mars.  Consequently, Mars is now under intense scrutiny
+by spacecraft for evidence of a favorable habitat (now or in the
+past).
+ </p>
+
+<p><br></p>
+
+<h2>A. Mars: Introduction </h2>
+
+<b>Size</b>:  A small planet: 50% Diam(Earth); 10% Mass(Earth)</p>
+
+<!--  <a href="im/mars-at-oppos-HST-diag.jpg"  ><img src="im/marsorbit.gif"
+border=2 align="right"></a>   -->
+
+<a href="im/mars-opps-2012-25.gif"><img src="im/mars-opps-2012-25.gif"
+align=right width="30%" hspace=10 vspace=10></a>
+
+
+<b>Orbit</b>:  Semi-major axis 1.5 AU.  Orbital period 1.88 yr.</p>
+
+<ul>
+<a href="guide15.html#configs"><b>"Oppositions"</b></a> occur every 2.1
+years</p>
+
+<ul>
+
+<li> Mars' distance & brightness at opposition (closest approach to
+Earth) vary significantly because of its large orbital ellipticity
+(10%). See the diagram at the right.
+</p>
+
+<li> When brightest, Mars is a very conspicuous, red-pink object --
+hence its association with the God of War.  Mars can be brighter than
+Jupiter.</p>
+
+</ul></ul>
+
+<b>Atmosphere</b>: thin.  Mass ~1% Earth's.  Mainly CO<sub>2</sub>;
+some H<sub>2</sub>O vapor.</p>
+
+<b>Surface</b>: easily visible since CO<sub>2</sub> is transparent.  Has been
+explored in ever increasing detail by Earth-bound telescopes and by
+spacecraft, including orbiters, landers and rovers. </p>
+ 
+<ul>
+
+<li> Mars' red color is caused by <b>iron oxide compounds</b> such as
+<em>hematite</em> on its surface.  This is equivalent to rust(!). Other
+conspicuous markings include white polar caps and large dark areas,
+some appearing greenish to the eye in a telescope.  </p>
+
+<li> Mars is distant enough even at opposition that telescopes on
+Earth yield relatively poor resolution.  This led to a <b>long and
+controversial history</b> over whether or not there was evidence for
+"canals" or other artificial features on its surface.  (See 
+<a href="#canals">Section C</a> below.)</p>
+
+<li> The image below was taken from Earth orbit by the <a
+href="http://www.stsci.edu/hst">Hubble Space Telescope</a> and shows the
+main kinds of features visible from Earth.</p>
+
+<ul>
+<li>
+<a href="im/mars-HST-rotanim.mpg" >
+<img src="im/film.gif"> Click here to see a global Mars video composited from multiple
+HST data frames.</a></p>
+
+</ul>
+</ul>
+</ul>
+
+
+<center><a href="im/mars-hst-295opp.gif" ><img
+src="im/mars-hst-295opp-sm.gif" ></a></center>
+
+
+
+<!-- <a href="http://www.bbc.co.uk/cult/xfiles/" >  -->
+
+
+<p><br></p>
+
+<h2>B.  Major Spacecraft Missions to Mars</h2>
+
+
+Mars has been the target of over <a
+href="https://en.wikipedia.org/wiki/List_of_missions_to_Mars">40
+robotic spacecraft missions</a>, many of which, especially the USSR's, failed
+(wow! incompetence or 
+<a href="im/x-files-mulder-scully.jpg">conspiracy??</a>).  Four types
+have been undertaken: <b>flybys, orbiters, landers, rovers</b>.
+Successful missions have mapped nearly its entire surface and have
+sampled its atmosphere and soil and even subsurface layers using
+special techniques.  </p>
+
+Important Earlier Missions:</p>
+
+<ul>
+
+<li><a href="http://marsprogram.jpl.nasa.gov/programmissions/missions/past/" >Mariner
+Missions:</a> 3 flybys, 1 orbiter, 1964-71; preliminary imaging
+reconnaissance of Martian surface</p>
+
+<li><a href="http://nssdc.gsfc.nasa.gov/planetary/viking.html">Viking
+Missions:</a> 2 orbiters/2 landers.  1976.  Sampled soil and searched
+for chemical signatures of lifeforms.</p>
+
+<li> <a href="http://marsprogram.jpl.nasa.gov/MPF/">Mars
+Pathfinder:</a> a lander with the first rover.  Sampled soil and
+rocks.  1997.</p>
+
+<li> <a href="http://marsprogram.jpl.nasa.gov/mgs/" >
+Mars Global Surveyor:</a> orbiter.   Mapped surface at high
+resolution with a camera and the MOLA laser altimeter. 1998--2006. </p>
+
+<li> <a href="https://mars.jpl.nasa.gov/mer/index.cfm" >Mars
+Exploration Rovers Mission:</a> orbiter plus two landers and rovers
+("Spirit" and "Opportunity"), placed on opposite sides of the planet
+in areas thought to be associated with large water flows in the past.  The
+rovers traveled a combined distance of over 33 miles on Mars' surface.
+2004-2018. </p>
+
+
+</ul>
+
+Current Missions:</p>
+
+<ul>
+
+<!-- 
+<li> [After 3 failures in a row...and rolling heads at NASA.]  </p>  -->
+
+<li> <a href="http://mars.jpl.nasa.gov/odyssey/" >2001 Mars
+Odyssey:</a> orbiter.  Studying mineralogy, elemental abundances
+(including hydrogen, a water tracer).  2001-- .  </p>
+
+<li> <a
+href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=9"
+>Mars Express:</a> first European mission to Mars.  Lander
+failed (2003), orbiter (2004-- ) studying surface features,
+mineralogy, atmosphere.  Carries a stereoscopic camera and the MARSIS
+radar instrument for probing subsurface materials.</p>
+
+<li> <a href="http://marsprogram.jpl.nasa.gov/mro" >Mars
+Reconnaissance Orbiter:</a> Entered Mars orbit in March 2006.
+Instrumentation includes the HIRISE camera for high resolution (3 ft on
+the Martian surface) imaging and experiments for mineral mapping and
+subsurface analysis by radar. </p>
+
+<!-- 
+<li> <a href="http://phoenix.lpl.arizona.edu/" >Phoenix Mars
+Lander Mission</a>:  Landed on the northern polar plains of Mars
+(thought to be rich in water ice) in May 2008.  It carried a soil
+sampler and a variety of test equipment to analyze the samples.
+ Shut down in November 2008 when
+the Sun dropped too low to maintain solar power system.</p>
+-->
+
+
+<li>The <a href="http://marsprogram.jpl.nasa.gov/msl/">Mars Science
+Laboratory</a>, successfully landed its "Curiosity" rover in August
+2012 in
+<a href="http://en.wikipedia.org/wiki/Gale_Crater">Gale Crater</a>, a
+large, ancient impact crater which contains a mountain of sedimentary
+deposits. </p>
+
+
+<li><a href="https://mars.nasa.gov/insight/">Mars InSight Mission</a>
+successfully landed on Elysium Planitia in November 2018.  InSight is
+a non-rover mission intended to examine the deep interior of Mars
+using seismometers.</p>
+
+</ul>
+<p><br></p>
+
+
+<a name="canals"> </a> 
+<h2>C.  Percival Lowell and Canals on Mars</h2>
+
+<center><table width=65%><tr><td>
+<font color="green" size=+1><b><em>"What goes on upon all those distant globes? Are they
+worlds, or are they mere masses of matter? Are physical forces alone
+at work there, or has evolution begotten something more complex,
+something not unakin to what we know on Earth as life? It is in this
+that lies the peculiar interest of Mars."</em>
+--- Percival Lowell (1895)</p></b>
+</font></td></tr></table> </center>
+
+
+<a href="im/mars-lowell-map.gif" ><img
+src="im/mars-lowell-map.gif" align="right" hspace=10
+vspace=10  width=22%></a>
+
+<a href="im/p-lowell-atscope.jpg"><img src="im/p-lowell-atscope.jpg" align="left"
+hspace=10 vspace=10 width=22%></a>
+
+Astronomer <a href="http://en.wikipedia.org/wiki/Percival_Lowell" ><b>Percival
+Lowell</b></a> devoted his career and his observatory (ca. 1890-1915) to
+the study of dark features on Mars' surface that he believed to be 
+<b>artificial canals</b> engineered by an advanced civilization for
+survival on a desert planet.  He made numerous sketches using a
+medium-sized telescope (at left).  An example of a Lowell sketch is at
+right and shows the long, linear features he called canals.  Another, much
+more detailed, Lowell map can be
+seen <a href="im/map-of-mars-Lowell.gif" >here</a>.  </p>
+
+Lowell
+was <a href="https://en.wikipedia.org/wiki/Martian_canal">not
+the only astronomer</a> claiming to have seen the canals.  The visibility
+of any such features is strongly affected by the blurring effects
+("seeing"---see <a href="guide14.html" >Study Guide 14</a>) of Earth's
+atmosphere.  The canal enthusiasts claimed to have seen the sharp,
+straight-line features crossing the planet's face emerge during brief
+moments of atmospheric stability.  They believed they saw systematic
+changes that implied the Martians were improving their canal system
+and greening of the surface indicating vegetation spreading in the
+springtime.  However, many careful observers were never able to see
+the canals at all.</p>
+
+<!-- href="http://www.bibliomania.com/NonFiction/Lowell/Mars" 
+ <a href="http://www.bibliomania.com/2/1/69/116/"> 
+  -->
+
+Lowell's efforts to popularize the idea of civilizations on Mars (see
+his article proclaiming
+<a href="im/martians-building-canals-Lowell-article.gif">
+"Martians Build Two Immense Canals in Two Years"</a>) had a great
+impact on the public imagination.  They were the stimulus for H.
+G. Wells' novel <a href="guide18.html" ><b><em>War of the
+Worlds</em></b></a>, the archetypal story of an alien invasion, and a
+tidal wave of subsequent science fiction and fantasy stories
+(see <a href="guide18.html"> Study Guide 18</a>). </p>
+
+<!-- But skeptics had well-founded doubts about the canals.  It is
+easy to show that to be detectable in Lowell's telescope, they would
+have had to be at least 40-50 miles across -- compared to the 100 feet
+or so for most canals on Earth.  Why would Martians build canals so
+wide that their water would mostly evaporate before it reached its
+destination?</p>  -- would claim vegetation along borders.  -->
+
+<center>
+<a href="im/martian-chronicles-image-xlrg.jpg"><img 
+src="im/martian-chronicles-image-lrg.jpg" width=60% vspace=15>
+</a></center>
+<center><small><em>A civilization on Mars as it might have been
+envisioned by Lowell.<br>  From cover art by Michael Whelan for an
+edition of "The Martian Chronicles" by Ray
+Bradbury.</em></small></p></center>
+
+
+But the canals
+are <a href="https://en.wikipedia.org/wiki/Optical_illusion"><b>optical
+illusions!</b></a>, created by the tendency of the human brain to <b>link
+threshold markings together</b>.  "Pattern recognition" by the eye-brain
+system is an important survival adaptation for human beings: those who
+could see the tiger lurking in the forest shadows survived longer than
+those who could not.  However, in many situations (e.g. at the
+telescope or in sudden emergencies) it can produce misleading memories
+of what was seen.  The <b>canals were never photographed</b> even with the
+largest Earth-bound telescopes (see comparison below).</p>
+
+<center><a href="im/mars-HST-v-Antoniadi.jpg" ><img
+src="im/mars-photo-drawing.jpg"  vspace=8 width=50%></a></center>
+<center><small><em>A photograph (left) and drawing of Mars made on the
+same night.<br><a href="im/mars-HST-v-Antoniadi.jpg">Click</a> for an
+enlarged comparison of an HST image to classical drawings.</em>
+</small></center>
+
+<ul>
+
+<li>Beginning in the 1960's, close-up images from spacecraft proved
+there to be <b>no artificial structures</b> on Mars.</p>
+
+<li> "Green" markings are likewise an optical illusion, produced by the <b>color
+contrast</b> between reddish and grey-brown areas.  </p>
+
+</ul>
+
+The "canals" are an object lesson in dealing with marginal evidence,
+a not uncommon situation in science:</p>
+
+<ul>
+
+There is a great temptation to <b>overinterpret marginal data</b> and
+to try to force them to conform to preconceived ideas.  This is a
+major factor in many "pseudo-scientific" phenomena (see the discussion
+of these in <a href="guide18.html">Guide 18</a>.) Good scientists will
+resist this.  They will honestly assess the uncertainties in the
+situation and will withhold judgement until the evidence improves.</p>
+
+</ul>
+
+It turns out that few of the <b>real</b> topological features on
+Mars---such as the enormous mountains, canyons, and craters revealed
+by spacecraft imaging---are even visible in Earth-based telescopes
+despite their scale.   Instead, the patterns conspicuous from Earth
+are <b>large-scale differences in albedo</b> (reflectivity) caused by
+surface dust and mineral deposits.  The pink/orange dust is very fine.
+Winds carry it easily across the surface, causing continuous small
+changes in appearance. </p>
+
+<ul>
+An example of the best maps of Mars produced by Earth-based telescopes
+before the first spacecraft imaging was obtained in the 1960's is
+shown <a href="im/BW-mars-map.jpg" >here</a>.  It bears little
+resemblance to <a href="marsImages.html">modern topographic maps</a>
+produced by orbiting spacecraft (and it shows no evidence of the
+multiple canals claimed by Lowell). </p>
+</ul>
+
+There <b>is</b> good evidence for water and possibly primitive
+lifeforms on Mars in the distant past (discussed below and in 
+<a href="guide17.html">Guide 17</a>)---but not for
+civilizations. </p>
+
+
+<p><br></p>
+
+<center>
+<a href="im/MOLA-w-IDs-seeds.jpg"><img src="im/MOLA-w-IDs-seeds.jpg" width = 70%
+vspace=8></a>
+<p><small><em>Topographic charts of Mars, color-coded for altitude, 
+with<br> main features identified (from the MGS MOLA Altimiter)</em></small>
+</center> 
+
+
+
+<h2>D. Martian Topography</h2>
+
+<a href="im/marsatmo.jpg" ><img src="im/marsatmo-ex.jpg"
+align="right" hspace=8 vspace=8 width=38% ></a>
+
+Mars features an <b>amazing landscape</b>. Martian topography has been
+surveyed by many spacecraft (see above), now reaching an accuracy
+of about one meter.  </p>
+
+<a href="marsImages.html" 2><img src="im/rd_star.gif"><b>ASTR
+1210 Mars Images Page</b>.</a> For illustrations, click here or on
+highlighted items below.</p>
+
+<ul> 
+
+<li> The dual-hemisphere image above shows the main topographic
+features of Mars.</p>
+
+<li> The image at right illustrates the red color, craters, mountains,
+plains, and dust-laden atmosphere of Mars.  Click for a larger
+view.</p>
+
+<li> <b>Impact Craters</b>: are widely distributed with more in the
+southern hemisphere, which is therefore older.  Craters are weathered
+and often partially dust-filled.  The <a href="marsImages.html#hellas"
+2>Hellas Basin</a> is the largest impact crater.</p>
+
+<li> <b>Volcanos</b>: There are 5 large
+"shield" <a href="marsImages.html#tharsis-chryse">volcanos</a> plus a
+number of smaller ones. All are <b>dormant</b> now.</p>
+
+<ul>
+
+<li>  <a
+href="marsImages.html#olymp" 2><b>Olympus Mons</b></a> is the
+largest mountain in the solar system (85,000 ft altitude).  </p>
+
+
+<li> Olympus Mons and the other volcanos in its vicinity are thought
+to have originated from the upwelling of a <b>warm mantle
+<a href="marsImages.html#plume">plume,</a></b> 1-2 Byr ago </p>
+
+<li> The plume's effect was concentrated into a huge uplift region
+(the <a href="marsImages.html#tharsis-chryse"><b>"Tharsis bulge"</b></a>)
+because there was minimal motion of the crust past the plume.
+</p>
+
+<li> This qualifies as proto-tectonic activity.  But Mars' <b>surface
+is not broken into tectonic plates</b>, and mantle activity has been
+dormant for most of the last 1 Byr.  </p>
+
+<li> So, <b>neither Mars nor Venus have widespread tectonic plate
+structures</b> like those on Earth.  Mars, however, has not
+experienced a violent resurfacing episode like that 500 Myr ago on
+Venus.</p>
+
+</ul>
+
+<li> <a href="marsImages.html#valles" 2><b>Valles Marineris</b></a> is
+the largest canyon in solar system. It was <b>not</b> produced by
+water (though some "tributary" canyons may have been).  Instead, VM is
+a <b>surface rift</b>, like
+the <a href="http://en.wikipedia.org/wiki/African_Rift_Valley">African
+Rift Valley</a>, created during the Tharsis upwelling.  </p>
+
+<li> <a href="marsImages.html#polar"><b>Polar caps</b></a>: the caps
+in winter are a mixture of <b>frozen CO<sub>2</sub> and H<sub>2</sub>O</b>.
+They melt and refreeze with seasonal change.  Water ice melts at a
+higher temperature than CO<sub>2</sub> ice, so any ice visible
+between the two melting points must be water ice. </p>
+
+</ul>
+
+<p><br></p>
+
+<a name="water">
+
+<h2>E. Evidence for Water on Mars</h2> 
+
+<a href="marsImages.html" 2><img src="im/rd_star.gif">
+Click for illustrations.</a></p>
+
+There are no open bodies of water on Mars now, but there is extensive
+evidence for the presence of frozen water at the poles and in the soil
+and for liquid water on the surface in the past: </p>
+
+<ul>
+
+<li> Water ice has long been known to be present at the poles.  There
+is a trace of water vapor in the atmosphere [30 times smaller than on
+Earth, in percentage, but much larger than on Venus]</p>
+
+<li> By mapping gamma-ray
+emission, <a href="http://mars.jpl.nasa.gov/odyssey/">Mars Odyssey</a>
+(2001+) provided evidence for widespread deposition of
+(frozen) <a href="marsImages.html#odyssey">water molecules</a> in the
+upper 1-meter of the surface, especially the poles.</p>
+
+<li> <a href="marsImages.html#layers">Layered terrain</a> is 
+evidence for sedimentary rocks, deposited by lakes and oceans. </p>
+
+<li> <a href="marsImages.html#ravi">Erosion channels</a> are evidence of
+<b>massive floods</b> at some time in the past.  </p>
+
+<ul>
+
+The largest Martian flow channels
+are <a href="im/mars-v-earth-flood-channel-scales.jpg"><b>much
+larger</b></a> than on Earth.  They imply <b> floods 100-10,000 times the
+outflow of the Amazon River</b> at some time in the past.</p>
+
+</ul>
+
+<li> Evidence for a <a href="marsImages.html#oceans">huge ocean
+basin</a> in the northern lowlands.</p>
+
+<!-- <li> SNC meteorites <a href="guide17.html" >(Guide
+17)</a></p>    -->
+
+<li> Radar evidence for <a href="marsImages.html#radar"
+2>water ice layers</a> buried thousands of feet deep under
+the Martian poles.</p>
+
+<li> Lander missions (6 to date, see <a href="guide17.html" > Study
+Guide 17</a>) have found extensive evidence for water molecules bound
+within Martian minerals.  The 
+<a href="http://phoenix.lpl.arizona.edu/">Phoenix lander</a> (2008),
+with a soil-sampling scoop, detected subsurface ice crystals; its
+images of changing droplets are possible evidence for liquid (saline)
+water.  Data from
+the <a href="http://mars.jpl.nasa.gov/msl/">Curiosity lander</a>
+(2013) indicate that the mean water content of soil minerals on Mars
+is about 2%, or (if extracted) 2 pints of water per cubic foot of
+soil.
+</p>
+
+<li> All the evidence points to <b>large amounts of liquid water in
+the past, perhaps one billion years ago</b>.  Water ice is widely
+distributed in the soil and rocks now.  It is likely that there are
+large permafrost reservoirs of water under the surface.  In the past,
+these could have been melted by volcanic activity, inducing
+widespread, possibly cyclic, floods.</p>
+
+<li> Independent sources of evidence concerning water are the
+SNC meteorites (see <a href="guide17.html" >Guide
+17</a>).</p> 
+
+</ul>
+
+<!--  END OF MAIN TEXT for guide16.  Mars continues in Guide 17 -->
+
+<p><br></p>
+
+<hr>
+
+
+<!-- <img src="im/right-yel-arrw01e.gif" hspace=10>  -->
+
+<center>
+<h3>Discussion of Mars is continued on <a href="guide17.html">
+Study Guide 17. </a></h3> </center> </p>
+
+<hr size=2>
+
+Reading for this lecture:</p>
+
+<ul>
+
+Study Guide 16</p>
+
+Bennett textbook,  p. 206, Sec. 9.4.</p>
+
+</ul>
+
+Reading for next lecture:</p>
+
+<ul>
+
+Study Guide 17</p>
+
+Bennett textbook,  p. 206, Sec. 9.4.</p>
+
+</ul>
+
+<hr>
+
+<p>Web Links:</p>
+
+<ul>
+
+<!--    Use this site to view Viking data of any region on the planet.<br>  -->
+
+
+<!--  6/2019: UAPress site offers purchase only now.  
+a href="http://www.uapress.arizona.edu/onlinebks/MARS/CONTENTS.HTM"  -->
+
+<a href="https://archive.org/details/planetmarshisto00shee">
+The
+Planet Mars: A History of Observation and Discovery</a> (by
+W. Sheehan)<br>
+
+<!-- not accessible 6/2019: 
+<a href="http://www.bibliomania.com/2/1/69/116/">Text of "Mars" by
+Percival Lowell</a><br> -->
+
+<a href="https://www.gutenberg.org/files/47015/47015-h/47015-h.htm">Text
+of "Mars And Its Canals" by Percival Lowell</a><br>
+
+
+<a href="Mars-Chronology-Catling.html">Mars Scientific & Cultural Chronology</a> (Karol & Catling)<br>
+
+<a href="mars-in-popular-culture.html">Mars in Literature & Film</a> (Catling)</p>
+
+
+<a href="marsImages.html">Selected Mars Images For ASTR 1210</a> (O'Connell)<br>
+
+<a href="https://www.google.com/maps/space/mars/@0,-95.677068,22963938m/data=!3m1!1e3">3D
+Viewing of Mars on Google Earth</a></p>
+
+<a href="http://www.solarviews.com/eng/mars.htm">Mars Info at Views of the Solar System</a><br>
+<a href="http://www.nineplanets.org/mars.html">Mars Info at The Nine Planets</a><br>
+
+<a href="http://geoinfo.amu.edu.pl/wpk/rst/rst/Sect19/Sect19_10.html">Mars Geology
+</a> (Remote Sensing Tutorial)</p>
+
+
+<!--  GONE 6/19 
+<a href="http://www.fas.org/irp/imint/docs/rst/Sect19/Sect19_10.html">Mars Geology Tutorial at FAS</a>  -->
+
+<!-- GONE
+3/09.  <a href="http://www-pdsimage.wr.usgs.gov/PDS/public/mapmaker">The
+Mars Explorer Armchair Astronaut</a><br> -->
+
+<a href="http://astrogeology.usgs.gov/Projects/MarsPDSExplorer/">Mars Map-A-Planet (USGS)</a><br>
+
+<!-- "Mars Open Directory" changed name 6/19 -->
+<a href="http://www.marsnews.com">MarsNews.com</a><br>
+
+<!-- GONE!  3/09 
+<a href="http://cmex-www.arc.nasa.gov">Center for Mars Exploration</a><br> -->
+
+<a href="http://marsoweb.nas.nasa.gov/landingsites/index.html">MarsoWeb (NASA)</a><br>
+
+<!-- GONE!  3/09
+<a href="http://www.reston.com/astro/mars/catalog.html">Whole Mars Catalog</a><br> 
+
+ 6/19: Moved & changed name/layout? <a href="http://www.marstoday.com/">Whole
+Mars Catalog</a></p>  -->
+
+<a href="http://spaceref.com/mars/">Curiousmars</a> (Spaceref.com)</p>
+
+
+<!-- 
+
+<a href="mars-in-popular-culture.html">Mars in Literature, Film, etc</a> (David Catling)</p>
+Literature section is extracted in the astrobio.net site. 
+
+ "http://www.astrobio.net/news/article1626.html">Mars in Radio  
+
+Following disappeared ca. 2005; 3/2007: retrieved from Wayback Machine; 
+
+<a href="http://humbabe.arc.nasa.gov/mgcm/fun/mars_chro.html">Chronology of
+Mars Science</a><br>
+<a href="http://humbabe.arc.nasa.gov/mgcm/fun/pop.html">Mars in Literature,
+Film, etc</a> </p>
+
+Following gone 5/2012: <a href="http://www.astrobio.net/news/article1625.html">Mars in Pop Culture: Literature</a></p>
+
+-->
+
+<a href="https://en.wikipedia.org/wiki/Water_on_Mars">Water
+on Mars</a> (Wikipedia article)</p>
+
+
+Mars Missions:</p>
+<ul>
+
+<!-- <a href="http://www.solarviews.com/eng/craft2.htm#mars">Historical list
+with links</a><br>  -->
+
+<a href="https://en.wikipedia.org/wiki/List_of_missions_to_Mars">Historical List</a><br>
+<a href="http://nssdc.gsfc.nasa.gov/planetary/viking.html">Viking</a><br>
+<a href="http://marsprogram.jpl.nasa.gov/MPF/">Pathfinder</a><br>
+<a href="http://marsprogram.jpl.nasa.gov/mgs/">Global Surveyor</a><br>
+<a href="http://mars.jpl.nasa.gov/odyssey/">Odyssey</a><br> 
+<a href="https://mars.jpl.nasa.gov/mer/index.cfm">Mars Rovers</a><br>
+<a href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=9">Mars Express<br>
+<a href="http://phoenix.lpl.arizona.edu/">Phoenix Mars Lander<br>
+<a href="http://mars.jpl.nasa.gov/msl/">Mars Science Laboratory/Curiosity</a><br>
+<a href="https://mars.nasa.gov/insight/">Mars InSight Mission</a></p>
+
+<a href="https://blogs.agu.org/martianchronicles/">Martian Chronicles</a> - a blog
+covering ongoing science from Mars missions.</p>
+
+<!-- <a href="http://mpfwww.jpl.nasa.gov">Current & Planned Mars Missions</a><br>
+  -->
+
+</ul>
+</ul>
+
+<!--- REDIRECT BOX -->
+
+<hr size=2>
+<center>
+<Table width="75%">
+<tr>
+<td>
+<b><a href="guide15.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Guide</a></b> 
+</td>
+
+<td>
+<b><a href="guideindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Guide Index</a></b> 
+</td>
+
+<td>
+<b><a href="guide17.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Guide </a></b> 
+</td>
+</tr>
+</table>
+
+<hr size=2>
+
+<!-- END REDIRECT BOX -->
+
+<!-- START FOOTER -->
+
+
+<center>
+<small><i>Last modified
+    <b>March 2020</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+<small> "Red Mars" image copyright &copy 1997 by Calvin J. Hamilton.  "Martian
+Chronicles" cover art copyright &copy 1990 Michael Whelan.  Text
+copyright &copy 1998-2020 Robert W.  O'Connell.  All rights reserved.
+These notes are intended for the private, noncommercial use of
+students enrolled in Astronomy 1210 at the University of
+Virginia. </small></p>
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  
+
+<!-- <<<<<<<<<<<<<<<<<< END OF GUIDE TEMPLATE <<<<<<<<<<<<<<<<<<<  -->

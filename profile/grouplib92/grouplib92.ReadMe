@@ -1,0 +1,313 @@
+J/ApJS/82/197    Mean UV Spectra of Stellar Groups   (Fanelli+ 1992)
+====================================================================
+Spectral Synthesis in the Ultraviolet IV.  A Library of Mean
+  Stellar Groups
+        Fanelli M.N., O'Connell R.W., Burstein D.,  Wu C.-C.,
+        <Astrophys. J. Suppl. Ser. 82, 197 (1992)>
+        =1992ApJS...82..197F
+
+A Database for Galaxy Evolution Modeling
+        Leitherer C., et al.
+        <PASP 108, 996 (1996)>
+        =1996PASP..108..996L
+====================================================================
+ADC_Keywords:  Spectra, ultraviolet; Stars, normal; 
+Mission_Name:  IUE
+
+Description:
+
+We present a library of mean ultraviolet stellar energy distributions
+derived from International Ultraviolet Explorer (IUE) low-resolution
+spectrophotometry of 216 stars.  The library is intended to facilitate
+interpretation of the composite UV light of stellar populations such
+as star clusters and galaxies.  The spectra cover 1205-3185 Angstroms
+with a spectral resolution of approximately 6 A. The individual
+stellar spectra were corrected for interstellar extinction (using the
+Savage-Mathis law), converted to a common flux scale, and interpolated
+to a common wavelength scale. Stars were combined into standard groups
+according to their intrinsic continuum colors, observed UV spectral
+morphology, MK luminosity class, and metal abundance.  The library
+consists of 56 groups: 21 dwarf (V), 8 subgiant (IV), 16 giant (III),
+and 11 supergiant (I+II) groups, covering O3-M4 spectral types.  A
+metal-poor sequence is included, containing four dwarf and two giant
+groups, as is a metal-enhanced sequence with a single dwarf, subgiant,
+and giant group.  More information on the library compilation and
+descriptions of the behavior of spectral indices characterizing the
+continuum and strong absorption features are given in Fanelli et al.
+(1992).  The spectra themselves (in the uvgroups.fit file) were
+previously released in the AAS CD-ROM Series Volume VII (1996); see
+Leitherer et al. (1996). 
+
+Introduction:
+
+Each mean group spectral energy distribution (SED) is a weighted
+average of good quality, extinction-corrected, normalized IUE spectra
+for a number of stars (ranging from 2 to 12).  Assignments to groups
+were based on actual UV SED properties, rather than optical-band
+spectral classifications, and were adjusted to minimize the dispersion
+within a group and maximize the difference with adjacent groups.  The
+SEDs are given in units of flux per unit wavelength normalized to the
+V band, i.e. F_lam(lam) / <F_lam(V)>, where the mean V-band flux in
+units of (ergs/s cm^2 A) was derived from <F_lam(V)> =
+dex[-0.4*(V+21.175)].
+
+The mean group SEDs are presented in a FITS image file named
+uvgroups.fit.  This contains a single data array with 57 rows and 1245
+columns.  The first row contains the 1245 element wavelength vector.
+The remaining 56 rows contain the individual group SEDs in the order
+listed in the Group Library Contents (Table 1) below.  The S/N for
+stars cooler than about 8000 K usually becomes very low in the far-UV
+in the available spectra.  Shortward of a cutoff wavelength (listed in
+Table 5 of Fanelli et al. 1992), which depends on temperature, we have
+entered the dummy value 1.0e-20 in the data vectors.  Flux measures
+for cool stars just longward of this range are often of low quality,
+as will be apparent from increased flux scatter; in a few cases,
+negative flux values occur in this region.
+
+We also present two files containing values for the spectral indices
+measuring lines and continuum structure which were defined in Fanelli
+et al. (1992).  Definitions for these indices are given in Table 2
+below.  The values in the files are updated from those in Table 7 of
+Fanelli et al. (1992) in two ways.  First, we have used an improved
+integration scheme to average fluxes in bands; second, we have
+corrected an error in the tabulation of the continuum colors 2600-V
+and 3000-V.  Owing to a transcription error, the original published
+values were for narrow bands centered in the continuum windows rather
+than for averages over them.  Because of the rapid changes of flux
+with wavelength in the UV, the new values are often very different
+from the original ones.  
+
+
+File Summary:                                               
+------------------------------------------------------------
+  FileName    Lrecl    Records   Explanations                
+------------------------------------------------------------ 
+ ReadMe         80       .       This file                  
+ uvgroups.fit    .      57       Group wavelengths, fluxes in
+                                    [1245x57] image format.
+                                    Floating point.
+ fuvind.dat    162      56       Far-UV spectral indices
+ muvind.dat    142      56       Mid-UV spectral indices      
+----------------------------------------------------------- 
+
+
+Table 1:  UV Group Library Contents
+------------------------------------------------------------------------
+Entry    Name        #       M_V    Mass   [Fe/H]    B-V     U-B 
+ (1)      (2)       (3)      (4)     (5)     (6)     (7)     (8)
+------------------------------------------------------------------------
+
+ 1    [Wavelengths]
+ 2     O3-6 V        5      -5.50   50.00    0.00   -0.33   -1.19
+ 3     O7-B0 V       4      -4.50   20.00    0.00   -0.31   -1.12
+ 4     B1-1.5 V      3      -3.00   13.00    0.00   -0.26   -0.95
+ 5     B2-4 V        5      -1.80    8.00    0.00   -0.21   -0.73
+ 6     B5-8 V        6      -0.70    5.00    0.00   -0.14   -0.46
+ 7     B9-9.5 V      3       0.30    3.30    0.00   -0.05   -0.17
+ 8     A0-2 V        5       1.00    2.70    0.00    0.02   -0.01
+ 9     A5-8 V        4       2.15    1.80    0.00    0.19    0.09
+10     A9-F3 V       4       2.95    1.50    0.00    0.33    0.03
+11     F5-7 V        7       3.60    1.30    0.00    0.45    0.00
+12     F8-9 V        7       4.10    1.15    0.05    0.55    0.06
+13     F5-6 V MP     2       3.60    1.30   -0.68    0.44   -0.13
+14     F7-9 V MP     4       4.10    1.15   -0.47    0.54   -0.04
+15     G0-5 V       12       4.75    1.00    0.03    0.61    0.11
+16     G0-2 V MP     6       4.75    1.00   -0.50    0.60    0.03
+17     G0-5 V MR     3       4.75    1.00    0.28    0.69    0.24
+18     G6-9 V        5       5.50    0.85    0.11    0.77    0.35
+19     G8 V MP       3       5.50    0.85   -0.43    0.72    0.20
+20     K0-1 V        4       6.05    0.80    0.11    0.88    0.59
+21     K2-3 V        2       6.70    0.72   -0.10    0.94    0.74
+22     K5-7 V        2       8.10    0.58   -0.11    1.27    1.17
+23     O9-B0 IV      2      -5.00   20.00    0.00   -0.30   -1.10
+24     B2-5 IV       5      -2.40    7.00    0.00   -0.20   -0.73
+25     B8-9 IV       2      -0.45    4.00    0.00   -0.09   -0.27
+26     A7-F0 IV      2       2.00    1.80    0.00    0.26    0.07
+27     F2-7 IV       3       2.50    1.40   -0.21    0.42    0.04
+28     G0-2 IV       2       3.00    1.20    0.00    0.64    0.16
+29     G5-8 IV MR    3       3.10    1.20    0.30    0.79    0.44
+30     G8-K1 IV      5       3.10    1.20    0.04    1.01    0.85
+31     O5-6 III      2      -6.00   50.00    0.00   -0.32   -1.18
+32     B0-2 III      5      -4.40   20.00    0.00   -0.26   -0.96
+33     B3-6 III      5      -2.40    8.00    0.00   -0.17   -0.62
+34     B7-9 III      3      -1.10    5.00    0.00   -0.10   -0.32
+35     A3-6 III      2       0.70    3.00    0.00    0.13    0.11
+36     A9-F6 III     5       1.50    1.70    0.00    0.36    0.08
+37     F6 III MP     1       1.50    1.70   -0.40    0.44   -0.01
+38     G0-5 III      3       0.95    1.20    0.00    0.75    0.33
+39     G5-K0 III     6       0.80    1.20    0.10    0.98    0.82
+40     K0-2 III      4       0.60    1.20    0.00    1.08    1.01
+41     K0-2 III MP   3       0.60    1.20   -0.45    1.10    0.95
+42     K2 III        3       0.50    1.20    0.10    1.20    1.30
+43     K3 III        3       0.30    1.20    0.00    1.34    1.50
+44     K2-3 III MR   4       0.40    1.20    0.31    1.23    1.34
+45     K4-5 III      3      -0.10    1.20   -0.15    1.52    1.87
+46     K7-M3 III     4      -0.50    1.20    0.00    1.57    1.86
+47     O4-9 I        4      -6.80   50.00    0.00   -0.30   -1.15
+48     B0-2 I        7      -6.50   25.00    0.00   -0.22   -1.02
+49     B3-5 I        5      -6.50   20.00    0.00   -0.11   -0.71
+50     B6-9 I        3      -6.50   20.00    0.00   -0.04   -0.46
+51     A0-2 I        3      -6.50   15.00    0.00    0.03   -0.25
+52     A5-F0 I       2      -6.50   15.00    0.00    0.13    0.04
+53     F2-8 I        3      -6.50   15.00    0.00    0.38    0.30
+54     G0-3 I        5      -6.50   15.00    0.00    0.84    0.60
+55     G5-8  I       2      -6.20   15.00    0.00    1.09    0.82
+56     K2-3 I        2      -6.00   15.00    0.00    1.35    1.30
+57     K5-M4 I       4      -5.70   15.00    0.00    1.64    1.87
+
+-----------------------------------------------------------------------
+Notes to Table 1:
+
+  Col (1) -- Row number in uvgroups.fit data array.
+  Col (2) -- Assigned group name based on the range of stellar types 
+             in each group. 
+  Col (3) -- The number of stars used to construct the group. 
+  Col (4) -- Adopted absolute visual magnitude derived from
+	     Schmidt-Kaler (1982) and Humphreys & McElroy (1984).
+  Col (5) -- Adopted mass in solar units determined from the same
+             sources.
+  Col (6) -- Mean group metallicity. The average is derived from all
+	     group members with a measured abundance. Since abundance
+	     information is complete for only a few groups, these
+	     values are only indicative of the true mean group
+	     metallicity.  Entries of 0.00 indicate that the stars are
+	     probably near solar abundance but that individual
+	     estimates are not available.  
+  Col (7) -- Adopted intrinsic (B-V) color. For stellar types O3 to F3, V-III
+	     and all supergiants this value is the mean intrinsic
+	     color tabluated by Schmidt-Kaler (1982).  For types F5 to
+	     M3, V-III the given value is the mean observed (B-V)
+	     color, averaged over all members of the group.  No
+	     extinction corrections are applied to the latter SEDs. 
+  Col (8) -- Adopted U-B color, derived as for B-V.
+----------------------------------------------------------------------------
+
+
+Table 2:  Band Definitions for UV Spectral Indices
+-----------------------------------------------------------------------------
+Index Name     Band 1       Band 2       Band 3      Line Feature
+    (1)          (2)          (3)          (4)           (5)     
+-----------------------------------------------------------------------------
+
+                              FAR-UV
+                            ----------
+
+1400         1330,1530                              (Continuum)
+1700         1580,1780                              (Continuum)
+BL 1302      1270,1290    1345,1365    1292,1312    Si III, Si II, O I
+Si IV 1397   1345,1365    1475,1495    1387,1407    Si IV (1393.8,1402.8)
+BL 1425      1345,1365    1475,1495    1415,1435    C II, Si III, Fe IV, Fe V
+Fe V 1453    1345,1365    1475,1495    1440,1466    Fe V
+C IV 1540    1500,1520    1577,1597    1530,1550    C IV (1548.2,1550.8) absorp
+C IV 1550    1500,1520    1577,1597    1540,1560    C IV center
+C IV 1560    1500,1520    1577,1597    1550,1570    C IV emiss
+C IV PCyg    1530,1550    1550,1570                 C IV absorp/emiss
+BL 1617      1577,1597    1685,1705    1604,1630    Fe IV
+BL 1664      1577,1597    1685,1705    1651,1677    C I, Al II
+BL 1719      1685,1705    1803,1823    1709,1729    N IV, Si IV, Al II
+BL 1853      1803,1823    1885,1915    1838,1868    Al II, Al III, Fe II, Fe III
+
+                              MID-UV
+                            ---------
+
+2600         2470,2670                              (Continuum)
+3000         2930,3130                              (Continuum)
+BR 26        2596,2623    2647,2673                 2600 A spectral break
+BR 29        2818,2838    2906,2936                 2900 A spectral break
+Fe II 2402   2285,2325    2432,2458    2382,2422    Fe II
+BL 2538      2432,2458    2562,2588    2520,2556    Fe I? 
+Fe II 2609   2562,2588    2647,2673    2596,2622    Fe II
+Mg II 2800   2762,2782    2818,2838    2784,2814    Mg II (2795.5,2802.7)
+Mg I 2852    2818,2838    2906,2936    2839,2865    Mg I 
+Mg Wide      2470,2670    2930,3130    2670,2870    Mg I + Mg II
+Fe I 3000    2906,2936    3031,3051    2965,3025    Fe I
+BL 3096      3031,3051    3115,3155    3086,3106    Al I, Fe I, Ni I?
+
+-----------------------------------------------------------------------------
+Notes to Table 2:
+
+Note 1:  The wavelength pairs in Cols. (2), (3), and (4) are the
+         shortest and longest wavelengths, respectively, in the band.
+         Bandwidths vary.   Units: Angstroms.
+
+Note 2:  Definition of spectral indices (all expressed in magnitudes)
+
+   If all three bands are present, the spectral index measures an
+      emission or absorption feature in Band 3 and is defined as:
+
+       I = -2.5*log_10(F3/FC), where F3 is the mean flux in
+                                Band 3 and FC is a pseudocontinuum
+                                flux at Band 3 linearly interpolated
+                                between Bands 1 and 2.
+
+   If only Band 1 and Band 2 are present, the spectral index measures
+      a continuum "break" between the bands and is defined as:
+
+       I = -2.5*log_10(F1/F2), where F1 and F2 are the mean fluxes
+                               in Bands 1 and 2, respectively.
+
+   If only Band 1 is present, the spectral index is a UV-V color index
+      defined as
+
+       I = -2.5*log_10(F1), where F1 is the mean flux in Band 1 
+                            (already normalized to the V-band in
+                            the mean group spectra)
+      
+Note 3: "BL" stands for a "blanketing" index---i.e. where several species
+   contribute comparably to the absorption in the feature band 
+
+Note 4: The fuvind.dat and muvind.dat files contain entries of -99 
+   for indices where any band contains a low quality flux measurement.
+   This occurs mainly for cooler stars at shorter wavelengths.
+
+---------------------------------------------------------------------------
+
+
+Byte-By-Byte Description of File: fuvind.dat
+---------------------------------------------------------------------------
+   Bytes    Format    Units    Label         Explanations
+
+   1-12      A12               ID           Group Name
+  16-22      F7.3      Mags    B-V          Optical broad-band color  
+  26-32      F7.3      Mags    14-V         1400-V UV-optical color
+  36-42      F7.3      Mags    17-V         1700-V UV-optical color
+  46-52      F7.3      Mags    BL1302       BL 1302 line index
+  56-62      F7.3      Mags    Si1397       Si IV 1397 line index
+  66-72      F7.3      Mags    BL1425       BL 1425 line index
+  76-82      F7.3      Mags    Fe1453       Fe V 1453 line index
+  86-92      F7.3      Mags    C1540        C IV 1540 abs line index
+  96-102     F7.3      Mags    C1550        C IV 1550 cent line index
+ 106-112     F7.3      Mags    C1560        C IV 1560 emiss line index
+ 116-122     F7.3      Mags    CPcyg        C IV PCyg line index
+ 126-132     F7.3      Mags    BL1627       BL 1627 line index
+ 136-142     F7.3      Mags    BL1664       BL 1664 line index
+ 146-152     F7.3      Mags    BL1719       BL 1719 line index
+ 156-162     F7.3      Mags    BL1853       BL 1853 line index
+---------------------------------------------------------------------------
+
+Byte-By-Byte Description of File: muvind.dat
+---------------------------------------------------------------------------
+   Bytes    Format    Units    Label         Explanations
+    
+   1-12      A12               ID            Group Name
+  16-22      F7.3      Mags    B-V           Optical broad-band color
+  26-32      F7.3      Mags    26-V          2600-V UV-optical color
+  36-42      F7.3      Mags    30-V          3000-V UV-optical color
+  46-52      F7.3      Mags    BR26          2600 A spectral break index
+  56-62      F7.3      Mags    BR29          2900 A spectral break index
+  66-72      F7.3      Mags    Fe2402        Fe II 2402 line index
+  76-82      F7.3      Mags    BL2538        BL 2538 line index
+  86-92      F7.3      Mags    Fe2609        Fe II 2609 line index
+  96-102     F7.3      Mags    MgII          Mg II 2800 line index
+ 106-112     F7.3      Mags    MgI           Mg I 2852 line index
+ 116-122     F7.3      Mags    MgW           Mg Wide (MgI + Mg II) line index
+ 126-132     F7.3      Mags    Fe3000        Fe I 3000 line index
+ 136-142     F7.3      Mags    BL3096        BL 3096 line index
+----------------------------------------------------------------------------
+			   
+References:
+
+Humphreys R.M., &  McElroy D.B., 1984, ApJ, 284, 565
+Schmidt-Kaler T., 1982, "Numerical Data and Functional
+    Relationships In Science and Technology" Group VI, Vol. 2b, ed. K.
+    Schaifers &  H. H. Voigt (Berlin: Springer-Verlag)           

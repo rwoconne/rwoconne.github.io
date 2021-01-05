@@ -1,0 +1,531 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2003-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
+<!-- -->
+
+<!-- HISTORY:  One-off lecture for ASTR 174; R. W. O'Connell;
+    1/31/2003; 2/2; 2/3; 2/4; 10/23/2004; 10/16/2006; 
+    3/20/2010 link update;  3/10/2011 (page formatting changed to css; update
+    text & images);  9/14/2015: new domain;  
+   
+    GHP version: 12/21/2020: change to A1210 format;  12/22: begin major
+    revision;  12/24; 12/28; 12/31; 
+
+  -->
+
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> STELLAR POPULATIONS AND THE HISTORY OF THE UNIVERSE</TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="">
+
+<style>
+     div.all {  max-width: 900px;}
+ </style>
+
+</head>
+<body>
+
+<div class="all"> 
+
+<h2 align="center"> ASTR 1230 (O'Connell) </h2>
+
+<hr>
+
+
+<h1 align="center"> STELLAR POPULATIONS AND THE<br>
+HISTORY OF THE UNIVERSE </h1>
+
+<p><br></p>
+
+Stars are the building blocks of galaxies.  Research on <b><em>stellar populations</em></b>
+is the study of the different generations of stars which make up a galaxy.
+This is the principal way in which we determine the life history of galaxies.</p>
+
+Astronomers use the term "stellar population" to refer to a <b>single generation</b>
+of stars characterized by a common <b>age</b> and <b>chemical composition</b>.
+A galaxy can be composed of a large number of individual populations, or
+it can be dominated by a single generation.    </p>
+
+We can analyze stellar populations in two main ways:</p>
+
+<ul>
+
+<li> By studying the properties of the <b>individual stars</b> in a
+galaxy</p>
+
+
+<ul> ...but this is limited only to <b>nearby galaxies</b> where we
+can detect individual stars.</p>
+</ul>
+
+<li> By studying the <b><em>integrated light</em></b> (the combined
+light output) of the stars in a galaxy</p>
+
+<ul>...this is less definitive, but we can apply this approach to 
+<b>any galaxy</b> in the observable universe.</p>
+</ul>
+
+</ul>
+
+This lecture describes how
+astronomers are able to use integrated light to analyze galaxy histories.  </p>
+
+
+<p><br></p>
+<h2>A. MOTIVATION: GALAXIES IN THE DISTANT UNIVERSE </h2>
+
+
+Large telescopes have provided images of thousands of galaxies at
+distances over 5 billion light years.  The 
+<a href="HDF.html">Hubble Ultra Deep Field</a> is the best example of
+a deep galaxy survey -- made by combining many day's worth of exposure
+time with the Hubble Space Telescope.  The extract from the HUDF below
+shows the strange kinds of galaxies that inhabit the distant universe.
+Click on the image to see the whole HUDF. </p>
+
+
+<a name="hudf">
+<center>
+<a href="im/HUDF-fullcolor-2014.jpg"><img src="im/HUDF-fullcolor-2014-ex1.jpg"
+width=80% vspace=12></a>
+</center>
+
+<!--
+<center><img src="im/HDF-WF4-ex.gif" border=2></center>
+<p><br></p>
+
+<center><img src="im/blue-gal-pic1-ex.gif" border=2></center>
+<p><br></p>
+-->
+
+<p><br></p>
+
+A major goal of studying very distant galaxies like these is to determine the
+<b>star formation history of the universe</b> going back as far in
+time as is possible. These galaxies are much too far away to detect
+individual stars.  But we can discover some of the characteristics of
+the stars which make them up by analyzing their integrated light.
+</p>
+
+
+<p><br></p>
+<h2>B. THE ELECTROMAGNETIC SPECTRA OF STARS </h2>
+
+<ul>
+
+<li> Stars radiate mainly in a small region of the EM spectrum:
+the <b><em>ultraviolet-optical-infrared</em></b> region. </p>
+
+<li> <b>Hotter</b> stars are <b>bluer</b>; they emit more of their light at
+<b>short</b> EM wavelengths. </p>
+
+<li> <b>Cooler</b> stars are <b>redder</b>; they emit more of their light
+at <b>long</b> EM wavelengths.</p>
+
+</ul>
+
+<table width=90%>
+<tr>
+<td align="center">
+<a href="im/em-op-spectrum.gif"><img src="im/em-op-spectrum.gif" width=85%></a></td>
+<td align="center">
+<a href="im/BB-3-temps-visible.jpg"><img
+src="im/BB-3-temps-visible-sm.jpg" width=85%></a></td>
+</tr>
+</table>
+
+<p><br></p>
+
+<h2>C.  THE EVOLUTION OF STARS  </h2>
+
+Stars are formed <b>continuously</b> in some galaxies, and mainly
+in <b>bursts</b> in others.  In our galaxy the <b>star formation
+rate</b> (the total mass of gas converted into stars per year)
+is about 1 solar mass per year.  On the other hand, some
+starbursts can reach over 1000 solar masses per year. </p>
+
+The combined light output of a stellar generation depends on the
+<b>temperature distribution</b> of its stars and how that changes with
+age.</p>
+
+The <em>Hertzsprung-Russell (HR) diagram</em> is the basic tool for
+analyzing the temperature distributions of evolving stellar systems.</p>
+
+<ul>
+
+<li> In the HR diagram, we plot stellar <b>temperature</b> (increasing
+to the <b>left</b>) against instrinsic stellar brightness or
+<b>luminosity</b> (increasing upward).</p>
+
+
+<li> Most stars fall on the <em>main sequence</em> (MS), which runs
+diagonally across the HRD.  The Sun is an MS star (yellow in the
+diagram).  More massive stars on the MS are brighter and hotter (hence
+bluer).  </p>
+
+
+<center><img src="im/HRD-col-sizes.jpg" width=60% vspace=12></center>
+<p><br></p>
+
+
+<li> The main sequence phase of evolution is long-lived.  MS stars
+maintain themselves by burning hydrogen in their cores.  For a star
+like the Sun, that can continue for about 10 billion years because
+there are huge reserves of hydrogen in all MS stars.  But eventually,
+those run out.  When they run out of H fuel, stars <b>evolve off the
+MS</b> (to the right, or toward <b>lower</b> temperatures, in the
+diagram).  The Sun will move toward the region marked "red giants"
+in the diagram.</p>
+
+<li>More massive stars evolve <b>faster</b>. Even though they contain
+more hydrogen. they burn it much faster than lower mass stars.</p>
+
+<li> The stars born in a given generation will have a large range in
+mass.  The HR diagram of that generation will change quickly as its
+more massive stars evolve.  Its main sequence will sequentially "burn
+down" as the generation ages and the most massive stars peel off to
+cooler temperatures.  The mass of the stars near the
+MS <b>"turnoff"</b> become systematically smaller with age.</p>
+
+<li>  The
+following animation shows how the distribution of stars in the HR
+diagram changes with time.  Labels by the dots indicate the masses of
+individual stars (in solar units).  The three panels at the right show
+the structure at a given time of three stars of different mass: 2.6,
+1.0, and 0.7 times the solar mass.   The age is listed in billions of
+years.   You can see how the mass of the stars at the "turnoff" point
+decreases in lockstep with the age of the generation.</p>
+
+</ul>
+
+
+<center><a href="im/HRevolve-anim-schombert.gif"><img
+src="im/HRevolve-anim-schombert.gif" width=70% vspace=12></a></center> <p><br></p>
+
+
+
+<h2>D. THE INTEGRATED SED/COLOR OF STELLAR POPULATIONS</h2>
+
+From the HR diagram for a generation of stars at different ages, we
+can predict what its combined <b><em>spectral energy distribution</em></b>
+(SED) will be.  The SED is simply the distribution of light energy
+over wavelength, or color in the EM spectrum.  </p>
+
+
+
+<!-- The animation below shows how the color of a generation changes with
+time in the HR diagram.  As the population ages, the main sequence
+"burns down," and the remaining stars become concentrated to the right
+hand (<b>redder</b>) part of the diagram. </p>
+
+<center><a href="im/evolvCMD-col-anim-schombert.gif"><img
+src="im/evolvCMD-col-anim-schombert.gif" ></a></center> <p><br></p>
+
+-->
+
+To predict the integrated SED of a generation at any time, we simply
+<b>add up</b> the light of all the stars in the HR diagram, keeping
+track, of course, of the fact that stars at the top of the diagram are
+much brighter than those at the bottom. </p> 
+
+A predicted SED for ages between 10 million years and 15 billion years
+is shown in the animation below.  The HRD of the single generation
+population is shown in the lower left panel, while its integrated SED
+is shown for the wavelength range 3000 to 7500 &Aring; in the top
+panel.  The colored regions in the top panel show the responses for
+three standard filters used by astronomers to determine the colors of
+stars.  The "V" filter corresponds roughly to the response of the
+human eye.  The lower right panel shows how the colors change
+with time (blue colors in lower left, red in upper right).  </p>
+
+
+<center>
+<a href="im ssp-evol-3panel-Mihos-anim.gif"><img src="im/ssp-evol-3panel-Mihos-anim.gif"
+width=80%, vspace=12></a></center>
+
+
+The dramatic change in the shape of the integrated SED with age is
+obvious in the animation.</p>
+
+<ul>
+
+<li> A "young" (less than 100 million years age) population contains
+massive MS stars.  These are hot and generate much <b>blue light</b>.
+The short wavelength SED even goes off the scale of the plot.  Even
+though they may contain many cool stars, young populations are blue in
+integrated light </p>
+
+
+
+<li> As age increases, the SED flattens.  An "old" (more than 3
+billion years age) population contains no massive, hot stars, only
+<b>cool</b> low-mass stars on the main sequence and red giants.  It is
+therefore <b>yellow-red</b> in color.</p>
+
+
+<a href="im/M51-Ha-color-CFHT.jpg"><img src="im/M51-Ha-color-CFHT.jpg"
+align="right" width=25% hspace=12 vspace=12></a>
+
+<li> A "very young" generation (less than 10 million years age)
+produces much <b><em>ionizing radiation</em></b> in the extreme
+ultraviolet region of the SED (not shown).  This creates regions in
+the surrounding gas whose spectra contain strong <b>emission
+lines</b> of hydrogen and other ionized gases.  We call these "H II"
+(meaning "ionized hydrogen") regions.  The dominant emission line of
+hydrogen (H-alpha) has a deep red color.  The combination of this
+with the generally blue light of young stars produces a
+characteristic <b>pinkish tint</b> in color images of HII regions.
+.</p>
+
+<ul>
+The image of the "Whirlpool" galaxy (Messier 51) at the right
+shows the pink HII regions strung out along the spiral arms.</p>
+
+</ul>
+
+<li> The sharp dips evident in the integrated SEDs are produced by
+absorption by 
+<a href="https://rwoconne.github.io/astr1210/121supps2-3.html#spectroscopy"><b>individual
+chemical species</b></a> -- e.g. atomic hydrogen, calcium, sodium and iron
+or molecules like CN and TiO.  The abundances of these species can be
+determined from the integrated SED.  </p>
+
+</ul>
+
+The plot below contrasts two snapshots of the SED history: one of a
+very young population and another of an old one, but now plotted
+over a larger range of wavelength, extended into the ultraviolet band
+down to 1000 &Aring;.  The <b>discriminatory power of the
+ultraviolet</b> for study of the SED, especially of young populations,
+is exceptional, but because the Earth's atmosphere is opaque below
+about 3200 &Aring;, this can only be exploited by telescopes in
+space.  </p>
+
+
+<center><img src="im/BC-youngold-SED-mor99.gif" vspace=12></center>
+
+Thus, we can use <b>the integrated color of a stellar population to
+estimate its age</b>, regardless of how distant its host galaxy might
+be.  With suitable spectral resolution, we can also determine
+<b>elemental abundances</b> for  the population.</p>
+
+We can also estimate the <b>current star formation rate (SFR)</b> of a
+galaxy by using the amount of blue light it generates or the strength
+of its ionized hydrogen emission lines.  We do that by estimating the
+total mass in young stars and dividing by their age; the result is
+expressed in units of solar masses per year of new stars
+being formed.  </p>
+
+
+<p><br></p>
+
+
+<h2> E. THE STAR FORMATION HISTORY OF THE UNIVERSE</h2>
+
+The SED analysis techniques we've described were developed in studies
+of nearby galaxies.  After the <a href="#hudf">amazing images</a> of
+the distant universe were obtained by the Hubble Space Telescope,
+those techniques could be applied to the galaxies detected there in
+wholesale fashion.  </p>
+
+Before that could be done, it was necessary to correct the SEDs
+for the effects of the <b>redshift</b> caused by the expansion of
+the universe.  The more distant a galaxy is, the faster it is
+moving away from us.  Because of the 
+<a href="https://rwoconne.github.io/rwoclass/astr1210/121supps2-3html#doppleranim">
+<b>Doppler Effect</b></a> on the spectrum of receding objects, the SED
+of a distant galaxy is shifted to longer (redder) wavelengths.  The
+amount of the shift, and hence the distance of the galaxy, can be
+determined by the observed SED, and its colors can then be corrected
+for the shift.</p>
+
+Since 1996 many studies have been made of distant galaxies, using a
+combination of data from the HST, other space telescopes, and
+ground-based telescopes.  We now have an solid understanding of the
+gross star formation history of the universe.  That's displayed in the
+diagram below:</p>
+
+<center>
+<a href="im/cosmic-SFRD-z0-8-madau-rev14-fig9-label.jpg">
+<img src="im/cosmic-SFRD-z0-8-madau-rev14-fig9-label.jpg"
+width=65% vspace=12></a>
+</center>
+
+This shows the estimated average rate of star formation per unit
+volume on the vertical axis as a function of redshift on the
+horizontal axis.  The scatter of the plotted points gives a measure of
+the uncertainty in the SFR determinations.  The vertical scale is
+logarithmic, so it is greatly compressed.  The upper
+horizontal scale is labeled
+in <a href="galactic.html#lookback"><b>lookback time</b></a> -- that
+is, the time it took light to reach us from each redshift epoch.  Zero
+on the upper scale corresponds to the present time.  </p>
+
+We see that the peak in the star formation density in the universe
+occurred at a redshift near 2 or at an <b>epoch 10 billion years ago</b>.
+Star formation has dropped smoothly, by a factor of 10, since that
+time.  The earlier history is still sketchy because of the difficulty
+of detecting galaxies at redshifts above 4, but it's clear the SFR
+density was falling off above that point.</p>
+
+According to our best estimate, the universe is 13.7 billion years
+old, so the peak in the SFR density (sometimes called <b>"cosmic
+noon"</b>) occurred some <b>3.7 billion years after the Big Bang</b>.
+Much of the stellar mass that makes up the present-day universe was
+therefore formed relatively early but over an extended period rather
+than all at once in an intense, concentrated burst.  Most galaxies
+formed their initial populations at that early time, but almost all,
+including ours, have continued to form stars, at a slower rate, since
+then.  </p>
+
+It is astonishing that in the space of a few centuries, out of the
+200,000 year history of <em>Home sapiens</em>, we've gone from
+first recognizing the stars for what they are to understanding
+how they formed throughout the full course of cosmic history.</p>
+
+
+<!--      ======  OLD VERSION, DELETED 12/2020  ======
+
+Other terminology:</p>
+
+<ul>
+
+<li> "Star formation rate":  the total mass of gas converted into stars per year
+(typically measured in solar masses per year).</p>
+
+<li> "Star formation history":  a complete description  of the star formation rate
+over the lifetime of a galaxy (extending roughly 10 billion years into the
+past). </p>
+
+</ul>
+
+<p><br></p>
+
+<h2>E.  NEARBY GALAXIES IN COLOR </h2>
+
+
+<center><img src="im/m31-color-GGreaney-landsc.jpg" border=2></center>
+<p><br></p>
+
+<center><img src="im/n1232-vlt-ex.jpg" border=2></center>
+<p><br></p>
+
+<center><a href="im/m51-HST-GendlerM.jpg"><img
+src="im/m51-HST-GendlerM-sm.jpg" border=2></a></center> <p><br></p>
+
+<center><a href="im/n6822-noao-ex.jpg"> <img
+src="im/n6822-noao-smex.jpg" border=2></a></center> <p><br></p>
+
+<center><a href="im/30dor-wfc3-a-xlarge.jpg"> <img
+src="im/30dor-wfc3-a-xlarge-smex2.jpg" border=2></a></center><p><br></p>
+
+<center><a href="im/n604-M33-HST.jpg"><img
+src="im/n604-M33-HST-smex.jpg" border=2></a></center> <p><br></p>
+
+<center><a href="im/m82-Subaru-col.jpg"> <img
+src="im/m82-Subaru-col-smex.jpg" border=2></a></center><p><br></p>
+
+<center><a href="im/Abell_1689-gravlens-hires.jpg"><img
+src="im/Abell_1689-gravlens-hires-smex.jpg" border=2></a></center>
+<p><br></p>
+
+
+
+<h2>F.  DISTANT GALAXIES CLOSE-UP WITH HST</h2>
+
+Here are some high-resolution pictures of distant galaxies taken
+with the Hubble Space Telescope:  </p>
+
+<center><a href="im/blue-gal-pic2.gif"><img src="im/blue-gal-pic2-sm.gif"
+border=2></a></center> <p><br></p>
+
+<center><a href="im/abr-hizgalim-899-v2.jpg"><img
+src="im/abr-hizgalim-899-v2-sm.jpg" border=2></a></center> 
+<p><br></p>
+
+
+<p><br></p>
+<h2>G. SPECTRAL "LINES" AND CHEMICAL ABUNDANCES</h2>
+
+The gross color characteristics of galaxies, evident in the
+filtered images shown above, provide some information on their
+histories---but much more information is present in the
+high-spectral-resolution SED's (called "spectra"), which carry
+the signatures of individual types of atoms, ions, and molecules.</p>
+
+Studying these <em>line spectra</em> is how we gain much of 
+our astrophysical insight into galaxies, especially
+their chemical abundances: </p>
+
+<center><img src="im/spectra-3types-2-UTenn.gif" border=2></center>
+<p><br></p>
+
+-- <center><img src="im/spec-3types-UTenn.gif" border=2></center>
+<p><br></p>   --
+
+<center><a href="im/stellspectypes-MBriley.jpg"><img
+src="im/stellspectypes-MBriley-ex.jpg"></a></center></p>
+
+
+             ===== END DELETED TEXT =====
+
+-->
+
+
+<!--  -------- END OF MAIN TEXT --------  -->
+
+
+<p><br></p>
+<hr size=2>
+
+Web Links:
+
+<ul>
+
+<a href="https://rwoconne.github.io/rwoclass/astr1210/121supps1-2.html">
+Background information on atomic physics and astronomical spectra (ASTR 1210)</a></p>
+
+<a href="stellar.html">
+Background information on stellar properties and evolution (ASTR 1230)</a></p>
+
+<a href="HDF.html">Information
+on the Hubble Deep Fields </a><br>
+
+</ul>
+
+
+
+<hr size=2>
+
+<!-- START FOOTER -->
+
+<p><br></p>
+
+<center>
+<small><i>Last modified
+    December 2020 by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+<small>Text copyright &copy 2003-2020 Robert W. O'Connell.  All
+rights reserved.  HR diagram animation copyright &copy by James
+Schombert (U. Oregon).  Integrated SED animation copyright &copy by
+Chris Mihos (Case Western University).  Cosmic SFR history from Piero
+Madau and Mark Dickinson (2014, ARAA, 52, 415).  These notes are
+intended for the private, noncommercial use of students enrolled in
+Astronomy courses at the University of
+Virginia.  </b></small></p> </center>
+
+<!-- END FOOTER -->
+
+</div> 
+</body>
+</html>
+				  
+
+<!-- <<<<<<<<<<<<<<<<<< END OF GUIDE TEMPLATE <<<<<<<<<<<<<<<<<<<  -->

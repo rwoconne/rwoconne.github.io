@@ -1,0 +1,405 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2000-2019.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+
+<!-- HISTORY: RWO 
+TeX version from "IRIS" presentation, September 1997.  Updated for 511, 7/2001.
+7/2/2003: converted to HTML; 7/7; 7/13; 7/27 transferred to "Facil"; 7/29; 
+8/11; 8/12; 9/3; trans to "teloptics" 11/11;   text updates 8/25/2005; 8/26; 8/29;
+7/6/2007; 9/16/15: new domain;  6/15/2017: Trial new format; 6/19; 6/20; 
+11/18/2019: add viewport def; 
+ -->
+
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL. Lecture Notes  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p><br></p>
+<hr>
+
+<center>
+<font size="+4" color="cc22dd"><b>TELESCOPE OPTICAL DESIGN </b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+<center> <a href="im/hevelius-140ft-tel.gif">
+     <img src="im/hevelius-140ft-tel.gif"
+     alt=" "
+     align="top" width=60%></a>  </center> 
+
+<p align="right"><small><em>Hevelius 140-foot Telescope (ca. 1675)
+</em></small></p>
+
+<p><br></p>
+
+
+
+<!-- QUOTE 
+<center><font size="5" color="bbbb88"><b><em>"
+"</em></b></font></center>
+-->
+
+Telescope optical design is covered in detail in ASTR 512, so we give only
+a flavor of what is involved here.  </p>
+
+
+<h2>A.  Overview</h2>
+
+The usual goal of telescope optics design is to bring all light rays,
+arriving at the primary element from a large range of field angles, to
+a sharp focus in a flat focal plane.  The image should be a faithful
+one-to-one reproduction of the angular distribution of light in the
+source with minimal geometric distortion and image blur.  The image
+representation should be independent of the wavelength of the light
+rays (i.e. <em>achromatic</em>). </p>
+
+But it is <b>not possible to accomplish this</b>.  One can never build
+a perfect optical device.  Any realized design is always a compromise
+because it is not possible to control for all <em>optical
+aberrations</em> at will.    </p>
+
+Therefore, modern telescope design is essentially a process of
+successive approximations in <b>aberration control in 3
+dimensions</b>.  Fortunately, a number of highly capable software packages
+are now available to mitigate the pain of doing this.  In the case of
+large mirrors or multiple-mirror designs, continual mechanical surface
+correction and alignment devices must be included.
+ </p>
+
+The picture at the top of this page shows how early telescope builders
+tried to control for two major aberrations in crude lenses:  (1) 
+<b><em>chromatic aberration</em></b> and (2) 
+<b><em>spherical aberration</em></b>.  The effects of both of these
+aberrations diminish with focal length....hence the extraordinarily
+long focal length of Hevelius' telescope. </p>
+
+The modern solution to chromatic aberration in refractive optics is to
+use <b>mirrors rather than lenses</b>, and most large telescopes employ
+mirrors as their primary optics.  However, most optical instruments
+must also include refractive elements in order to achieve wavelength
+selection or wide-field images, so chromatic aberration is still
+almost always an issue.</p>
+
+The modern solution to spherical aberration (the fact that parallel
+light rays striking the surface of a sphere do not come to a single
+focus) is to use <b>non-spherical optics</b> -- e.g. paraboloids and
+hyperboloids.  Rays parallel to the axis of a parabolic reflector come
+to a perfect focus.  Unfortunately, off-axis rays do not, and this
+leads to a comet-shaped aberration known as <b><em>coma</em></b>,
+which becomes worse with field angle. </p>
+
+<ul>
+
+<li> Coma can be reduced by using a <b>refractive corrector</b> near the
+focal plane of a parabolic primary.  </p>
+
+<li> A widely-used alternative is the
+<b>Ritchey-Chretien</b> design, a Cassegrain system that employs two
+hyperbolic mirrors yielding zero first-order coma and spherical
+aberration.  RC's are affected, however, by third-order coma,
+astigmatism, and field curvature (at larger field angles).  </p>
+
+<li> Another famous alternative for control of spherical aberration over a
+wide field with a spherical primary is to use a special full-aperture
+refractive correcting plate called a <b>Schmidt corrector</b>.  The
+Schmidt sky-survey telescopes employ these.</p>
+
+</ul>
+<p><br></p>
+
+<h2>B.  Sample Ray Traces</h2>
+
+<!-- <img src="im/rd_star.gif">  -->
+
+Click below for illustrations of ray traces for spherical and
+parabolic reflectors.  These show light paths for parallel incoming
+rays in a plane containing the symmetry axis of the mirror.  They are
+for fast optical systems (small f/ ratios, where f/ = Focal
+Length/Diameter), so that aberrations are larger than for typical
+designs.  You can see that, except for the case of a parabola and
+paraxial rays, it is not possible to find a good focal point anywhere
+in these systems.</p>
+
+<ul>
+<ul>
+<ul>
+
+<a href="im/spherical-aberration-paraxial.gif"><li> Spherical mirror, paraxial rays</a><br>
+<a href="im/spherical-aberration-5deg-offaxis.gif"><li> Spherical mirror, rays 5<sup>o</sup> off-axis</a><br>
+<a href="im/paraboloid-paraxial.gif"><li> Parabolic mirror, paraxial rays</a><br>
+<a href="im/paraboloid-3deg-offaxis-coma-in-out.gif"><li> Parabolic mirror, inner/outer
+rays 3<sup>o</sup> off-axis</a><br>
+<a href="im/paraboloid-5deg-offaxis-coma.gif"><li> Parabolic mirror, rays 5<sup>o</sup>
+off-axis</a></p>
+
+</ul>
+</ul>
+</ul>
+
+<p><br></p>
+<hr size=2>
+<p><br></p>
+
+<center>
+<font size="+3" color="#cc22dd"><b>STANDARD TELESCOPE OPTICAL CONFIGURATIONS</b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+
+<table width="700" align="center" cellpadding=7 border=5>
+
+<tr>
+
+<th><font color="green">TYPE</font></th>
+
+<th><font color="green">PRIMARY MIRROR</font></th>
+
+<th><font color="green">SECONDARY MIRROR</font></th>
+
+<th><font color="green">COMMENTS</font></th>
+
+</tr>
+
+<tr>
+
+<td><b>
+<font color="blue">PRIME FOCUS</font>
+</b></td>
+
+<td><b>
+Parabola
+</b></td>
+
+<td><b>
+ &nbsp;
+</b></td>
+
+
+<td><b>
+Focus inside telescope.<br>
+Add refractive corrector for
+wide field.
+</b></td>
+
+</tr>
+
+<tr>
+<td><b>
+<font color="blue">NEWTONIAN</font>
+</b></td>
+
+<td><b>
+Parabola
+</b></td>
+
+<td><b>
+Flat
+</b></td>
+
+<td><b>
+Focus at side/top of telescope.
+</b></td>
+
+</tr>
+
+<tr>
+<td><b>
+<font color="blue">CASSEGRAIN</font>
+</b></td>
+
+<td><b>
+Parabola
+</b></td>
+
+<td><b>
+Hyperbola (convex)
+</b></td>
+
+<td><b>
+Focus below primary.
+</b></td>
+
+</tr>
+
+
+<tr>
+<td><b>
+<font color="blue">GREGORIAN</font>
+</b></td>
+
+<td><b>
+Parabola
+</b></td>
+
+<td><b>
+Ellipse (concave)
+</b></td>
+
+<td><b>
+Primary mirror focus before secondary. Focus below primary.
+</b></td>
+
+</tr>
+
+
+<tr>
+<td><b>
+<font color="blue">RITCHEY-<br>CHRETIEN</font>
+</b></td>
+
+<td><b>
+Hyperbola
+</b></td>
+
+<td><b>
+Hyperbola (convex)
+</b></td>
+
+<td><b>
+Focus below primary.
+Zero coma & spherical aberration.
+</b></td>
+
+</tr>
+
+
+<tr>
+<td><b>
+<font color="blue">COUDE</font>
+</b></td>
+
+<td><b>
+Various
+</b></td>
+
+<td><b>
+Various
+</b></td>
+
+<td><b>
+Tertiary flat directs light
+to fixed focus below polar
+axis.
+
+</b></td>
+
+</tr>
+
+
+<tr>
+<td><b>
+<font color="blue">NAYSMITH</font>
+</b></td>
+
+<td><b>
+Various
+</b></td>
+
+<td><b>
+Various
+</b></td>
+
+<td><b>
+(Alt-Az): Tertiary flat directs light
+to focus outside altitude axis.
+
+</b></td>
+
+</tr>
+
+<tr>
+<td><b>
+<font color="blue">SCHMIDT</font>
+</b></td>
+
+<td><b>
+Spherical
+</b></td>
+
+<td><b>
+&nbsp;
+</b></td>
+
+<td><b>
+Catadioptric: Uses refractive corrector to provide wide field without
+spherical aberration.  Focus inside telescope body.
+</b></td>
+
+</tr>
+
+</table>
+
+
+<font size=3>
+
+<p><br></p>
+
+<center>
+<img src="im/reflect-tel-types-JS.gif">
+</center>
+
+<p><br></p>
+
+<hr size=2>
+
+
+<!-- START FOOTER -->
+
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table>
+<tr>
+<td>
+<b><a href="lec16-f03.html">
+<img src="im/left-yel-arrw01d.gif">
+Back to Lecture 16</a></b> 
+</td>
+</tr>
+</table>
+</center>
+
+<p><br></p>
+
+<p align="center"> <small><i>Last modified
+    <b>November 2019</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+
+<center> 
+<small> <i>Copyright &copy 2000-2019 Robert W. O'Connell.
+All rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 511 at the
+University of Virginia.  </i>
+</small>
+</center>
+
+<hr size=2>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+
+

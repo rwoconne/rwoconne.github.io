@@ -1,0 +1,206 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2008-2019.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr1230 -->
+<!-- -->
+
+<!-- CREATED: by RWO 9/15/2008 as part of Lec 3/ObsTechniques;
+             updated 9/08 -- 6/2010; 9/3/2010: moved to separate
+             file to be kept under Lecture 1; 9/4/2011; 9/19; 
+             7/22/2012; 9/14/2015: new domain; 9/14: fix bad
+             links; 8/10/2018: update link; 4/19/2019: change to
+             A1210 format (non-boldface text); add Slovak transl
+             link; 
+ -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1230, O'CONNELL:  Lecture Notes  </TITLE>
+</head>
+<body>
+
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="cyan" alink="red">
+-->
+
+<h2 align="center">ASTR 1230 (O'Connell) Lecture Notes </h2>
+
+<p></p>
+<hr>
+
+<h1 align="center">THE HUMAN EYE AS A DETECTOR </h1> 
+
+<p><br></p>
+
+<center><a href="im/human-eye-crossec.jpg" target=show><img
+src="im/human-eye-crossec.jpg" alt="Eye Cross-Section" width="48%"
+ vspace=15> </a></center>
+
+
+<h2>Structure and Function of the Eye</h2>
+
+<a name="eye">
+With or without optical aid, the only <em><b>light detector</b></em> most of
+you will use in this course is the <b>human eye</b>.  Although we take
+its operation for granted, the eye is, in fact, a remarkably capable
+<b>optical instrument</b> (an auto-focus, auto-exposure, electrical
+camera), and it is important to understand some aspects of its
+behavior.  </p>
+
+<ul>
+
+<li> The eye operates like a <b>camera</b>, with a <em><b>lens</b></em>, an
+<em><b>iris</b></em>, and
+a <em><b>retina</b></em>.</p>
+
+<!-- <a href="#lens">refractive lens</a>  -->
+
+<li> The refractive lens is filled with fluid, and its <b>shape can be
+adjusted</b> by the surrounding muscles so that a sharp ("in focus")
+image is produced on the retina over a range of distances to objects
+being viewed.  Limitations in the ability to adjust the lens produce
+the phenomena of "near-sightedness" and "far-sightedness."  The
+angular <a href="telescopes.html#resolve"><em><b>resolution</b></em></a>
+of the lens-plus-detector system of the eye is typically 1-2 minutes
+of arc. </p>
+
+<li> The iris automatically adjusts the eye's input aperture (<b>"pupil"</b>)
+diameter according to the prevailing light level.  This provides a <a
+href="telescopes.html#fratio">focal-ratio</a> for the eye
+in the range f/3 to f/8 (approximately).  The largest aperture size,
+under very dark conditions, is about 5-7mm. </p>
+
+<li> The retina is a complex photo-detection system.  Light falling
+on retinal cells triggers chemical changes that produce an electrical
+signal which is sent down the optic nerve to the brain. </p>
+
+<ul> There are two kinds
+of <a href="im/retinal-rods-cones-PE.jpg">photo-receptor cells</a> in
+the retina: <em><b>rods</b></em> and
+<em><b>cones</b></em>.  The cones are less numerous and operate only at
+high light levels, where they provide information on <b>color</b>
+as well as the brightness of scenes.  The rods are more sensitive,
+so they operate best at low light levels; but they produce only a 
+"grey-scale" image without elements of color.  </p>
+
+</ul>
+
+
+<li> <em><b>Dynamic range</b></em>: in a given scene, the eye can
+distinguish levels of illumination that have a brightness range of
+about 100:1, so it is said to have a dynamic range of 100.  The
+maximum range of brightnesses detectable by the eye, after adjustments
+such as dark adaptation, is a remarkable 1,000,000:1. </p>
+
+<!-- This must mean without saturation.  The range of astronomical
+source brightnesses between the Sun and the faintest visual star
+is 10^12!   -->
+
+<li> <em><b>Integration time</b></em>: the eye automatically adjusts the time
+interval during which it accumulates light energy before sending an
+image to the brain.  This interval is called the "integration time"
+and is typically 0.1 sec; it increases to perhaps 0.2 sec for
+low-light levels.  The reason that astronomical images show so
+much more detail than you can see with your eye is mainly due to
+the fact that cameras can have very <b>long</b> integration times, up
+to hours if necessary.</p>
+
+</ul>
+
+<h2>Dark Adaptation</h2>
+
+Under the very low light conditions you will typically encounter when
+observing faint sources through a telescope, the rods slowly become
+more sensitive.  It takes over 20 minutes to achieve highest
+sensitivity, or "<b>full dark adaptation</b>," but reasonable
+sensitivity is present in about <b>5 minutes</b>.  You must avoid looking at
+bright lights to become and stay dark-adapted.  Because the rods are less
+sensitive to red light, using a <b>red</b> flashlight helps to preserve
+night vision.  </p>
+
+
+<h2>Averted Vision</h2>
+
+ The rods are preferentially distributed toward the edge of the
+retina, which is therefore more sensitive to faint sources.  This is
+the basis for the "<b>averted vision</b>" observing technique:
+stare at a point about <b>20 degrees away</b> from the object of interest
+but focus your attention on the target.</p>
+
+<p><br></p>
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+Web Links:
+
+<ul>
+
+<a href="https://www.zoobio.fr/edu/2019/04/18/ludske-oko-ako-detektor/">Slovak
+translation of this page</a></p>
+
+<a href="http://webvision.med.utah.edu/">WEBVISION</a> (technical
+description of retina/visual system)</p>
+
+
+<a href="http://moreisdifferent.com/2010/01/08/naked-eye-observing-techniques/">Visual
+Observing Techniques</a> (Dan Elton)</p>
+
+<a href="http://www.faculty.virginia.edu/rwoclass/astr1230/imaging.html">Astronomical
+Imaging</a> (O'Connell, Lecture 7)</p>
+
+
+</ul>
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table>
+<tr>
+<td>
+<b><a href="constellations.html">
+<img src="im/left-yel-arrw01d.gif">
+Back to Lecture 1</a></b> 
+</td>
+
+<td>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>April 2019</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<p align="center"><small> Copyright &copy 2008-2019 Robert W. O'Connell.
+All rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 1230 at the
+University of Virginia.  </small>
+</p>
+
+
+
+<!-- END FOOTER -->
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2006.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.astro.virginia.edu/class/oconnell/astr130  -->
+<!-- -->
+
+<!-- Created by RWO:  2/25/2001; from F00 Lecture 6, moved
+	      instrumentation section to here.  F00 Lec 7 material on
+	      sky surveys added.  3/5; 3/8; F02: 9/3/2002; 
+              10/24; 10/25; 10/27; 10/28; 11/4; 10/31/2004; 3/27/2005; 
+              10/17/2006; 
+    -->
+
+<html>
+<head>
+<TITLE> ASTR 130, O'CONNELL.  [Fall 2006]  Lecture Notes  </TITLE>
+</head>
+<body>
+
+<body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="#00BEEB" alink="red">
+
+<h2 align="center">ASTR 130 (O'Connell) Optional Lecture Notes </h2>
+
+<p></p>
+<hr>
+
+<center> <font size="+4" color="#dd33ff"><b>7.1  ASTRONOMICAL
+INSTRUMENTS<br> AND SKY SURVEYS </b></font> </center>
+
+
+<p><br></p>
+
+<center> <img src="im/bubb-neb-ex.jpg"
+     alt="Bubble Nebula"
+     align="top" border="2">  </center> 
+
+<p align="right"><small><b><em>Bubble Nebula; image from the Hubble Space Telescope
+ </em></b></small></p>
+
+<p><br></p>
+
+<b>
+
+<h2>A. INTRODUCTION</h2>
+
+Astronomers have developed a wide array of ingenious instruments for
+attaching to telescopes in order to make measurements of the sky.
+Historically, the human eye was employed exclusively as the
+<em>detector</em>.  Modern instruments, however, almost exclusively
+use other kinds of detectors.  The kind of instruments used depend on
+the particular band of the EM spectrum for which they are designed.
+Entirely different technologies are used in the radio region, for
+example, than in the optical band.  Here, we discuss the two most
+powerful types of optical band equipment: imagers (cameras) and
+spectrographs.</p>
+
+<!--- background on human eye: Birney, Ch. 6 -->
+
+<p><br></p>
+
+<h2>B. IMAGING</h2>
+
+
+<u>PHOTOGRAPHY</u></p>
+
+<ul>
+
+<li> Although the human eye is a marvelously sensitive and adaptable
+instrument, even poor quality film easily outperforms
+it for astronomy.  The first astronomical photographs were made late
+in the 19th century.  Photography offered revolutionary
+capabilities to astronomers: </p>
+
+<img src="im/hubble-at-100in.gif" alt="HubbPhot" border=2 align="right"
+vspace=4 hspace=4>
+
+<ul>
+
+(i) First, it provided <u>permanent records</u> of
+observations.</p>
+
+(ii)  Second, it permitted <u>very long exposure times</u>
+and hence the detection of faint objects far beyond the capability of
+the human eye.  Under dark conditions, the eye integrates a light
+signal for a few tenths of a second.  Film can integrate the signal
+for <u>many hours</u> (even up to a week), providing a detectability thousands of
+times fainter than the eye.</p>
+
+(iii)  A third important, if less basic,
+property is that film can be made sensitive to a <u>much wider range
+of EM wavelengths</u> than is the eye. </p>
+
+</ul>
+
+As a consequence, the impact of photography on astronomy was
+profound.</p>
+
+<li> All optical band detectors, including film, rely on the
+<a href="im/photoelec-effect-UColPhys2000-lg.jpg" target=show>
+<u>photoelectric effect</u></a>.  This is the ejection of an electron
+from a photosensitive surface when struck by a photon of EM energy.
+In the case of film, the electrons are stored by crystals in an
+<em>emulsion</em> until the chemical reactions during development
+cause them to precipitate grains of silver, which form the permanent
+image. </p>
+
+<li> Film was the detector of choice in astronomy from around 1900 to
+1985.  [The picture above right shows Edwin Hubble guiding the camera
+on the Mt. Wilson 100" telescope ca. 1930.]  However, it had
+limitations with which astronomers had long struggled.  First, it was
+relatively insensitive in that it responded to <u>only about 1%</u> of the
+incident light.  (We would say that film has a <em>quantum
+efficiency</em> of only 1%.)  Second, it was very difficult to
+<u>calibrate</u> photographic signals quantitatively in terms of the amount
+of incident EM flux.  </p>
+
+</ul>
+
+<p><br></p>
+
+<center><img src="im/ccd_movie.gif" vspace=4></center>
+
+
+<u>ELECTRONIC IMAGING</u></p>
+
+<img src="im/CCD.gif" alt="CCD" border=2 align="right" vspace=4 hspace=4>
+
+<ul>
+
+<li>Starting in the 1920's, astronomers began using various types of
+<u>electronic detectors</u> to supplement film.  World War II greatly
+accelerated these technologies, especially in the form of the <a
+href="im/photomultiplier.jpg" target=show><em>photomultiplier tube</em></a> which could
+amplify a single photon into a large burst of electrons.  </p>
+
+<li> These devices were highly sensitive and very useful in many
+applcations.  But none of them were easily converted into large format,
+two-dimensional detectors until <u><em>charge-coupled devices (CCD's)</em></u>
+were introduced in the 1970's.  A CCD is a light-sensitive silicon
+wafer with built-in microcircuitry (see picture at right).  During
+an exposure, it traps the released electrons in small voltage wells.
+After the exposure, the collected electrons are rigidly shifted across
+the CCD (so the image isn't smeared), amplified, and stored in a
+computer memory.  The cartoon above illustrates the electron shifting
+technique.</p>
+
+
+<li> CCD's are very powerful devices and are the basis of most modern
+digital and video cameras.  For astronomers they have the following key
+advantages: </p>
+
+<ul>
+
+(i) They are <a href="im/detector-QEs-FB.gif" target=show><u>highly
+sensitive</u></a>, with quantum efficiencies over 80%.  This means
+they can detect <a href="im/photo_vs_ccd-FB.gif" target=show>much fainter
+sources</a> in a given exposure time than can film.</p>
+
+(ii) They are <u>highly linear</u>, meaning
+that their response is directly proportional to the EM flux deposited;</p>
+
+(iii) They immediately convert a scene into a <u>digitized computer
+image</u>, which can then be further analyzed by <u>image
+processing</u> software.  CCD's have now virtually replaced film in
+professional astronomy. </p>
+
+</ul>
+
+<li> One
+complication for the low light levels important to astronomers is the
+presence of <em>dark current</em> in CCD's (a residual signal in the
+absence of incident light), which requires that they be operated at
+low temperatures of about -100<sup>o</sup>C.  </p>
+
+<ul>
+The requirement for low temperatures while making long exposures is
+the reason that mass market digital cameras do not work well
+for most astronomical applications.</p>
+</ul>
+
+<li> The largest CCD is still much smaller than typical photographic
+"plates."  To cover large fields, astronomers have built <a
+href="im/SDSS-CCDcam.gif" target=show> <em>mosaic CCD cameras</em></a> containing
+many individual CCD chips.  Below is an extract from a 3-color image
+of the Rosette Nebula taken at the Kitt Peak National Observatory with
+a mosaic CCD camera containing 8450x8450 pixels.  The image below was derived
+from 3 individual images with filters centered on <a href="#emissline">emission lines</a> of
+hydrogen (coded red), sulfur (blue), and oxygen (green). 
+[Color separation
+images of astronomical objects are much easier to construct using
+CCD's than was the case with film because of their linearity and
+immediate conversion to digital format.]  Click for a
+full-screen version.  </p>
+
+<center><a href="im/rosette-col-noao-2048.jpg" target=show><img 
+src="im/rosette-col-noao-2048-ex.jpg" 
+alt="Rosette 3 Color" 
+border=2></a>
+</center>
+
+</ul>
+
+<p><br></p>
+
+<h2>C.  SKY SURVEYS</h2>
+
+
+<a href="im/hubble-at-48in.jpg" target=show><img src="im/hubble-at-48in-small.jpg"
+alt="48in" border=2 align="right" vspace=4 hspace=4 ></a>
+
+One of the most important tasks for astronomical imagers is simply to
+<u>map</u> the sky---i.e.  to find out what's there.  Systematic,
+all-sky surveys began over 200 years ago with, for example, the
+<em>New General Catalog (NGC)</em> of 7000 diffuse objects (nebulae
+and galaxies) by Herschel and his sons (pre-photographic).  The
+photographic <em>Henry Draper Catalog</em> of 300,000 stars (ca. 1900)
+was immensely valuable in clarifying stellar evolution.</p>
+
+With the development of large telescopes, astronomers realized
+they needed <u>very sensitive, all-sky imaging surveys,</u> made with
+specialized telescopes.  The modern prototype was the <a
+href="http://www.astro.caltech.edu/~wws/poss2.html" target=show> <em>Palomar
+Observatory Sky Survey (POSS)</em>,</a> completed in the 1950's with a
+specialized wide-field photographic telescope, the 
+<a href="im/48-in-schmidt-Porter-draw.jpg" target=show>48-in Schmidt</a>.  This took
+matched photographs with blue and red filters on large plates with
+fields 6 degrees on a side.  It reached about 20th magnitude.  At
+right is a picture of Edwin Hubble guiding the 48-in Schmidt.  </p>
+
+Several follow-up surveys, also with large format photographic plates,
+have been made or are in progress.  The whole sky has now been mapped
+to about 20th magnitude.  All of this material is being converted to
+digital format for computerized retrieval.</p>
+
+Emphasis is now shifting
+to all-electronic surveys, which instantly produce digital
+output.  All-sky maps have also been made to varioius depths in a
+number of other EM bands, from radio to gamma ray.  Useful Web
+sites:</p>
+
+<a href="im/SDSS-ccdassy.gif" target=show><img src="im/SDSS-ccdassy-TH.gif"
+align=right vspace=4 hspace=4>
+
+
+<ul>
+
+<li><a href="http://skyview.gsfc.nasa.gov/cgi-bin/titlepage.pl" target=show>
+The Skyview Virtual
+Observatory (retrieve images of sky in all EM bands from radio to X-ray)</a></p>
+
+<li> <a href="http://www.sdss.org/" target=show>The Sloan Digital Sky Survey</a>.
+The prototype optical-band electronic survey, with a camera employing
+a total of <a
+href="http://www.astro.princeton.edu/PBOOK/camera/camera.htm" target=show>54
+CCD</a> arrays, the most sophisticated CCD mosaic assembled to date.
+The camera layout is shown at right (click for enlargement).  The SDSS will
+catalog about <u>100 million cosmic objects</u> to magnitude 23 and
+obtain spectroscopy of about 1 million individual galaxies.</p>
+
+<li> <a href="http://www.ipac.caltech.edu/2mass/outreach/index.html" target=show>The
+2MASS All-Sky Infrared Survey</a>.  A recently completed survey of the
+entire sky (with 2 telescopes) in the infrared bands between 1.0 and
+2.5 microns wavelength.  Mike Skrutskie (UVa) was Principal Investigator
+for the survey. 
+See <a href="lec6-s05.html">Lecture 6</a> for an all-sky image created from the survey. 
+</p>
+
+</ul>
+
+<p><br></p>
+
+<h2>D.  SPECTROSCOPY</h2>
+
+Spectroscopy is the study of the <u>distribution with wavelength</u>
+(or the  <em>"spectrum"</em>) of the EM energy released by a cosmic source. 
+Typical astronomical spectrographs use <u>prisms</u> or <u>diffraction
+gratings</u> to <em>disperse</em> light according to its wavelength.  The drawing
+below illustrates a prism spectrograph:</p>
+
+<center><a href="im/prismrefrac-JFA.jpg" target=show><img
+src="im/prismrefrac-JFA-sm.jpg" alt="PrismSpec" vspace=4></a></center>
+
+<p><br></p>
+
+How is this useful?</p>  
+
+<ul>
+
+<li> We already saw in <a href="lec5-f06.html" target=show>
+Lecture 5</a> that the shape and peak wavelength of the EM spectrum of
+a star are related to its <u>temperature.</u> </p>
+
+<li> This is true of any <u>self-luminous, dense</u> object: its EM
+spectrum is smooth or <u>continuous</u> and changes only slowly with
+wavelength.  You can think of the atoms and electrons in such an
+object as interacting so strongly that the individual signatures of
+each type of atom are blended away. </p>
+
+<li> On the other hand, in a dilute or <u>thin</u> gas---the
+atmosphere of the Sun, for example---the atoms do not interact
+strongly, and if there are enough atoms of a given type, they will
+impress their individual signatures on the emergent spectrum.  The
+internal electronic structure of each type of atom consists of
+<u>discrete energy states,</u> and these states are <u>unique</u>
+to that type.</p>
+
+<li>   In the spectrum of a dilute gas, the states appear as
+sharp features called "spectral lines."  They are seen either in
+<a name="emissline"><em>emission</em></a> (if the gas is observed in isolation) or
+<em>absorption</em> (if it is observed against a continuous source).
+The 3 general kinds of spectra are summarized in the illustration
+below:  </p>
+
+<center><img src="im/frak-emspec-types-ex.jpg" alt="EmSp Types" border=2>
+</center><br>
+
+<li> Because each type of atom produces a unique spectrum, the
+<u>chemical composition</u> of cosmic objects can be deduced from
+their spectra even though they may be millions of light years away.
+The figure below shows the (wrapped) optical-band spectrum of the Sun
+extending from near-ultraviolet to near-infrared wavelengths.  The
+dark lines are produced by atoms of hydrogen, calcium, magnesium,
+iron, titanium, and other elements.   Quantitative analysis of such
+spectra tells us the detailed chemical makeup of the Sun and other
+stars.  For example, the element <em>helium</em> (the second lightest
+after hydrogen) was discovered in the spectrum of the Sun
+<u>before</u> it was studied in an Earth-bound laboratory.</p>
+
+<!--  <center><img src="im/sunspec-frak-ex2.gif" alt="Solar Spec" border=2>
+</center><br>  -->
+
+<center><a href="im/Arcturus-spectrum-NOAO.jpg" target=show><img
+src="im/Solar-spectrum-NOAO.jpg" alt="Solar Spec" border=2></a>
+</center> <br>
+<center> <small><b><em>The solar spectrum.  Click on the
+figure for an enlargement of the spectrum of the red giant star
+Arcturus.  </em></b></small></center>
+
+<p><br></p>
+
+<li> In addition, spectra also contain information on the velocity,
+pressure, density, temperature, ionization state, magnetic field
+strength, and other physical characteristics of cosmic objects.
+Spectroscopy is therefore an exceedingly powerful tool.  It is the
+<u>source of much of the astrophysical information</u> we have about the
+universe.</p>
+
+</ul>
+
+<hr size=2>
+
+Web links:</p>
+
+<ul>
+
+<a href="http://www.aao.gov.au/images.html/">Anglo-Australian
+Observatory Images Page</a>--best site for ground-based pictures
+of astronomical objects</p>
+
+
+Background information on imaging & CCD's:</p>
+<ul>
+
+<A HREF="http://www.astropix.com/index.html">Astrophotography</a> (J. Lodriguss)<br>
+
+<a href="http://www.geocities.com/CapeCanaveral/Lab/6529/primer.html">
+Primer on Astrophotography</a> (J. Pennington)<br>
+
+<a
+href="http://www.astro.virginia.edu/class/oconnell/astr511/lec11-f03.html">Introduction
+to CCD's</a> UVa ASTR 511 (R. O'Connell)<br>
+
+<a href="http://zebu.uoregon.edu/ccd.html">Introduction to CCD's</a>
+(G. Bothun, Univ. of Oregon)</a><br>
+
+<a href="http://skyandtelescope.com/howto/imaging/">Astrophotography
+& CCD Imaging For Amateur Astronomers</a> (Sky & Telescope Magazine)</p>
+
+</ul>
+
+<!-- <a href="http://www.aa6g.org/astro.html">Astrophotography for Amateur
+Astronomers</a> (Chuck Vaughn)<br>  -->
+
+
+<a href="http://www.astronomynotes.com">Nick
+Strobel's Astronomy Pages</a> for background information on 
+electromagnetic radiation and spectroscopy</p>
+
+<a href="http://www.astro.virginia.edu/class/oconnell/astr121/121supps2-3.html">
+More information on atomic physics & spectrosopy</a> (ASTR 121)</p>
+
+<a href="http://www.eso.org/instruments/sinfoni/">Example of
+a state of the art spectrograph (SINFONI for the VLT)</a></p>
+
+
+</ul>
+
+</b>
+
+<!-- START FOOTER -->
+
+<hr size=2 >
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table>
+<tr>
+<td>
+<b><a href="lec7-f06.html">
+<img src="im/left-yel-arrw01d.gif">
+Lecture 7</a></b> 
+</td>
+
+<td> &nbsp; </td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+&nbsp;
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>October 2006</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p><br></p>
+
+<small><i><b>Images of EM spectra copyright &copy 2000 Harcourt, Inc..
+Rosette nebula image
+taken by T.A.Rector, B.Wolpa, and M.Hanna, with the KPNO 0.9-m Mosaic
+Camera (copyright &copy AURA/NOAO/NSF).  Solar spectrum copyright &copy by
+the National Optical Astronomy Observatory.  Text copyright &copy 2001-2006
+Robert W.  O'Connell.  All rights reserved.  These notes are intended
+for the private, noncommercial use of students enrolled in Astronomy
+130 at the University of Virginia.</b></i> </small>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  

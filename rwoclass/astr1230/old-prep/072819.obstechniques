@@ -1,0 +1,638 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2019.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr1230 -->
+<!-- -->
+
+<!-- CREATED: by RWO from ASTR 121/s99/guide3.  9/15/00; 9/16; 9/17;
+             2/2/01; 2/4 9/5/2002; 9/8; 9/15; 11/4; 9/26/2004; 9/27;
+             10/1; 1/23/2005; 2/9; 2/21; 5/9; 8/31/2006; 9/11; 9/12;
+             9/15; 9/30; 10/30; 9/15/2008: begin major mod in
+             content--shift motions/coords to supplement file, move
+             secs on eye and obs forms from Lec2 to here, add other
+             technique topics; 9/19;/ 9/20; 9/22; 10/25; 4/2/2009;
+             10/4; 2/5/2010; 2/9; 2/14; 2/15; 2/16; 3/28; 6/3; 6/16;
+             9/3; (move "human eye" sec to separate file kept under
+             lecture 1); 9/15; 9/18; 9/20; 2/10/2011; 9/18; 9/19;
+             10/30; 9/14/2015: new domain; 9/14: update Messier links;
+             5/4/2019: convert to 1210 format; 5/5; 5/6; 7/27: define
+             viewport; 7/28; 
+ -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1230, O'CONNELL Lecture Notes  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="amateur astronomy, astronomical observation, finding
+charts, celestial coordinates">
+</head>
+<body>
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="cyan" alink="red">
+-->
+
+<h2 align="center">ASTR 1230 (O'Connell) Lecture Notes </h2>
+
+<p></p>
+<hr>
+
+
+<h1 align="center"> 3.  OBSERVING TECHNIQUES</h1> 
+
+<center><a href="im/tombraider-at-scope.jpg"><img
+src="im/tombraider-at-scope-enl.jpg" alt="Tomb Raider" width="35%" vspace=10></a></center>
+<p align="right"><small><i>Lara Croft, the Tomb Raider, at her telescope
+</i></small> </p>
+
+<p><br></p>
+
+In this lecture, we cover a number of aspects of <b>preparing for and
+making observations</b> with small telescopes, oriented toward the main
+telescope labs (3 & 4).  The more difficult or complicated your
+telescope is to use, the more important is good planning.  For a
+famous historical example of a telescope that demanded <b>really good
+planning</b> to use successfully,
+see <a href="im/rosse-reflector-drawing.jpg">this picture</a>.</p>
+
+<p><br></p>
+
+
+<h2>A. PREDICTING GOOD WEATHER</h2>
+
+Astronomers need good weather.  Ideal conditions are <b>cloudless,
+windless, low humidity, and stable</b>.  Even high altitude, thin "cirrus"
+clouds (see picture below) that TV weather forecasters would
+ignore can seriously hamper many kinds of astronomical observations.
+On the other hand, less critical observations can be made through gaps
+in lower level clouds as they pass over.  </p>
+
+<center><a href="im/cloud-types-alts.jpg">
+<img src="im/cloud-types-alts.jpg" width="e70%" vspace=15
+hspace=10></a></center>
+
+Thanks to weather satellites, it is possible to track weather
+conditions and make fairly accurate predictions of observing weather
+for the next several days at any place in the US.  Satellites identify
+water vapor over a given location by using infrared-sensitive
+cameras.   Here are some of the more useful websites related to weather:</p>
+
+<!-- Has declined over 10 years to a pitiful 2-3: There is also now a
+ network of sky webcams at various observing sites around the world
+ that can provide additional information.
+-->
+
+<ul>
+
+<li> <a href="http://www.cleardarksky.com/c/CharvilVAkey.html?1">www.cleardarksky.com</a>:  
+Gives predictions of local
+observing conditions for next 48 hours, based on forecast maps from
+the Canadian Meteorological Center.  An example chart is shown below.
+In the first four rows, <b>dark blue coding indicates the best
+conditions</b>.  You can click on any bin to see the large-scale map on
+which the forecast is based. The site also includes links to Sun/Moon
+rise/set information, star maps, and other items. </p>
+
+<center><a href="im/example-cleardarksky-chart.jpg">
+<img src="im/example-cleardarksky-chart.jpg" width="80%" hspace=10
+vspace=15><a/>
+</center>
+
+<li><a href="https://forecast.weather.gov/MapClick.php?CityName=Charlottesville&state=VA&site=LWX&textField1=38.0374&textField2=-78.4857&e=0">7
+Day US Weather Service Forecast for Charlottesville</a></p>
+
+<li><a href="https://www.wunderground.com/maps/satellite/regional-infrared">
+Infrared-visible satellite maps of cloud cover (Weather Underground)</a></p>
+
+<!-- two of these services are discontinued at of 5/2019 
+<li><a href="http://weather.unisys.com/satellite/infrared_enh.php">
+Enhanced Infrared Satellite Images (UNISYS)</a>: shows past twelve hours of
+cloud cover over US.  Also see the <a href="http://www.wunderground.com/satellite/vis/1k/US/VA/Charlottesville-albemarle.html">Weather Underground
+version</a>.</p>
+
+<li><a href="http://www.intellicast.com/National/Outdoors/Sky.aspx">
+Sky Watch Forecast (Intellicast)</a></p>
+
+-->
+
+<li><a href="http://weather.rap.ucar.edu/">NCAR Real Time Weather Data</a></p>
+
+<!-- 
+<li><a href="http://nightskylive.net/index.php">Night Sky Live</a>:
+connects to continuous skycams around the world.</p>
+-->
+
+</ul>
+
+Weather maps often quote time of day using Greenwich Mean Time (GMT),
+which is 5 hours ahead of Eastern Standard Time (4 hours ahead of
+Eastern Daylight Time).  The notation "Z" ("zulu") denotes GMT.</p>
+
+<a href="im/100in-snow-shoveling.gif">This</a> is why
+professional astronomers are cautious about observing even in good
+weather after a snowstorm.</p>
+
+
+<center><a href="im/noctilucent-clouds-P-MHeden-smex.jpg">
+<img src="im/noctilucent-clouds-P-MHeden-smex.jpg" width="80%" vspace=15>
+</a></center>
+
+
+<h2>B. JUDGING SKY CONDITIONS</h2>
+
+Even when weather is reasonably good, it is important to learn how to
+evaluate prevailing conditions at the telescope.  The main
+determinants are the following:</p>
+
+<ul>
+
+<li><font color="blue"><b>Residual Sunlight</b></font>: The sun illuminates
+the sky for a considerable period after sunset.  The end of
+<b><em>astronomical twilight</em></b> is defined to be the first time
+after sunset (or last time before sunrise) when there is no trace of
+sunlight measurable in the sky.  (This is a more restrictive definition
+than <b>"civil twilight."</b>)  The sun must be at least <b>18 degrees</b> below the
+horizon for full darkness. You can find tables of the times of
+astronomical twilight on the Web.  <a
+href="im/astronomical-twilight-times-CV-USNO.html">Here</a> is an annual
+table of evening/morning twilight for Charlottesville (times are EST;
+add one hour for EDT).</p>
+
+<li><font color="blue"><b>Transparency</b></font>: means an absence of
+clouds, haze, or fog that would absorb or scatter starlight.  Although
+low-altitude clouds are the most obvious, high-altitude cirrus clouds
+are more commonly a problem.  Transparency predictions for
+Charlottesville are included on
+the <a href="http://www.cleardarksky.com/c/CharvilVAkey.html?1">cleardarksky.com</a>
+displays.  </p>
+
+<ul> 
+
+A quantitative measure of transparency is given by the
+<b>magnitude of the faintest star</b> you can see with the naked eye.
+The bowl of the "Little Dipper" provides a convenient set of standard
+stars, with approximate magnitudes of 2,3,4,5.  See <a
+href="im/ursaminor_mag_scale.gif">this image</a>.</p>
+
+More elaborate techniques for estimating limiting magnitude are given
+at <a href="http://obs.nineplanets.org/lm/rjm.html">obs.nineplanets.org.</a></p>
+
+More information on the magnitude scale is given on
+the <a href="stellar.html#mags">Stellar Astronomy</a> page.</p> 
+
+</ul>
+
+<li><font color="blue"><b>Seeing</b></font>: "Seeing" is defined to be the
+<b>diameter</b> of star images (measured in seconds of arc) caused by
+<b>turbulence in the atmosphere</b>.  See the discussion in <a
+href="telescopes.html#seeing">Lecture 2</a>.  "Twinkling" of stars is a
+sign of an unstable atmosphere, which will probably produce bad
+seeing.  But you can only actually determine the seeing <b>through a
+telescope</b>.  One technique you will use in Lab 3 is to measure the
+diameter of the components of a <a href="im/seeing_measurement.jpg">binary star</a> 
+of known separation. </p>
+
+<li><font color="blue"><b>Other Atmospheric Effects</b></font>: See these
+pages for additional background on effects of the atmosphere:</p>
+
+<ul>
+<a href="http://www.atoptics.co.uk/">Atmospheric Optics</a></p>
+
+<a href="http://spiff.rit.edu/classes/phys445/lectures/atmos/atmos.html#seeing">Atmospheric
+Extinction and Seeing</a></p>
+</ul>
+
+<li><font color="blue"><b>Moonlight</b></font>: If the moon is in the
+sky and more than "half-full" (astronomers would say
+"between <em>first quarter</em> and <em>last quarter</em>"), moonlight
+scattered by the atmosphere can easily obscure fainter telescopic
+targets (like nebulae and galaxies).  Astronomers divide each month
+into <b>"bright time" and "dark time"</b> according to the phase of
+the moon (bright time is the period between first and last quarter
+phase).  Of course, only near its full phase is the moon in the sky
+all night long, so parts of "bright time" nights can still be dark.
+Judge effects by the faintest stars you can see.  </p>
+
+<li><font color="blue"><b>Light Pollution</b></font>: a growing problem
+everywhere and certainly here in Charlottesville.  Terrible when the
+Stadium lights are on.  Impact will vary with the amount of low-level
+dust or mist in the atmosphere.  Again, judge effects by the faintest
+stars you can see.</p>
+
+<ul>
+
+<a href="im/USA-light-pollution-1950-2025.jpg">
+Here are nighttime
+satellite images</a> of the USA showing the extent of light
+pollution.</p>
+
+Also
+see <a href="http://www.inquinamentoluminoso.it/worldatlas/pages/fig1.htm">The
+World Atlas of Artifical Night Sky Brightness</a>.</p>
+
+For more information on light pollution and how to control it,
+see the <a href="http://www.darksky.org">International
+Dark Sky Association</a> website.</p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+<h2>C. OBSERVING LISTS AND FINDING CHARTS</h2>
+
+Before you come to the observatory, you need to know <b>what objects
+you intend to observe and how to find them</b>.  In some cases, the
+target list for a lab is specified in advance; in others, you are
+free to choose from many possibilities. </p>
+
+Primary lists of potential targets, with brief descriptions and
+sometimes observing hints, can be found in the <em>ASTR 1230 Lab
+Manual</em> (see <a href="im/lab4-Fall_Targ_List.gif ">semesterly</a> and 
+<a href="im/lab4-DeepSkyList.gif">all-sky</a> lists in Lab 4) and
+the <em>Mag 5 Star Atlas</em>.  It is probably best to choose targets
+first by <b>astrophysical category</b> (e.g. star cluster, nebula,
+galaxy) and then rank candidates in order of <b>location in the
+sky</b> and
+<b>brightness</b>.  </p>
+
+<ul>
+
+Familiarity with the constellations and use of your Sky Wheels will
+help locate the brighter targets (e.g. stars) that have names associated
+with constellations.  However, for many targets (e.g. Messier objects),
+you will need to use their <b>coordinates</b> to locate them.  
+These are discussed in the  <a href="#location">next section</a>.</p>
+
+Brightnesses are measured
+in <a href="stellar.html#mags"><b><em>magnitudes</em></b></a>.  Stars
+up to magnitude 11-12 are visible in the 8-in telescopes.  However,
+more diffuse objects can be considerably more difficult to see than
+stars of the same magnitude.  </p>
+
+</ul>
+
+Here are some useful websites for obtaining information on potential
+targets for small telescopes:
+
+<ul>
+
+<li> <a href="http://www.heavens-above.com/?Loc=Charlottesville&Lat=38.029&Lng=-78.477&Alt=122&TZ=EST">
+Heavens Above</a>: very useful reference giving current positions for
+solar system objects (including comets & asteroids), star charts,
+bright star lists for each constellation, predictions of Earth
+satellite passages (including Iridium flares and the International
+Space Station), and other info.  This link provides listings specific
+to Charlottesville.</p>
+
+<li> <a href="http://www.usno.navy.mil/USNO/astronomical-applications/data-services">US
+Naval Observatory</a>: detailed information on solar system objects
+and bright stars for any date</p>
+
+<!-- <li> <a href="http://www.skyandtelescope.com/observing/objects/javascript/3305541.html">Sky
+& Telescope Almanac</a>: sun, moon, and planet information for any
+date.</p>
+-->
+
+<li><a href="http://messier.seds.org/">The Messier
+Catalog of Deep-Sky Objects (SEDS)</a> The Messier Catalog (compiled
+by <a href="http://messier.seds.org/xtra/history/CMessier.html">Charles
+Messier</a> in 1781) is the primary list of (110) brighter northern
+hemisphere non-stellar objects: star clusters, nebulae, and
+galaxies.  <a href="http://messier.seds.org/map/map.html">This
+site</a> has finding charts for the Messier and brighter NGC objects
+in each constellation.</p>
+
+<li><a href="http://en.wikipedia.org/wiki/Caldwell_catalogue">The
+Caldwell Catalog of Deep-Sky Objects (Wikipedia)</a>: updated list of
+brighter non-stellar objects, including the southern hemisphere.</p>
+
+</ul>
+
+<a href="im/yoursky-chart-for-M31.jpg"><img src="im/yoursky-chart-for-M31.jpg"
+align="right" width="35%" hspace=10 vspace=10></a>
+
+For fainter targets, you may want to make <b>finding charts</b>, which
+show their immediate vicinity, as an aid to locating them.  Here are
+some sites providing sky or finding charts:</p>
+
+<ul>
+
+<li> <a href="http://www.heavens-above.com/?Loc=Charlottesville&Lat=38.029&Lng=-78.477&Alt=122&TZ=EST"> Heavens Above</a></p>
+
+<li><a href="http://www.fourmilab.ch/yoursky/" >Your
+Sky</a>: an "interactive planetarium" which can produce standard
+wide-angle bright star charts or "virtual telescope" charts near given
+targets to a range of magnitude.  A YourSky chart for the region near
+the Andromeda and Triangulum galaxies (M31 and M33) is shown at the
+right.  </p>
+
+<li><a href="http://skyview.gsfc.nasa.gov/cgi-bin/titlepage.pl" >
+Skyview</a>: the "Internet's Virtual Telescope," which can produce
+images of any part of the sky to high resolution from a large
+database.  Includes the optical-band Digital Sky Survey and data in
+other bands from radio to gamma ray.  Skyview is a research tool as
+well as a key resource for planning observations.</p>
+
+
+<li> <a href="http://www.google.com/sky/">Google Sky</a> and
+<a href="http://wikisky.org/">WikiSky</a> provide sky viewers based
+on a multiplicity of image sources.  These are still in development. </p> 
+</ul>
+
+<p><br></p>
+
+<a name="location">
+<h2>D.  TARGET COORDINATES AND SKY LOCATION</h2>
+
+For best viewing, objects should be <b>as high in the sky</b> (as far from
+the horizon) as possible during the time you will be observing.  Sky
+location is determined by an object's <b>astronomical coordinates, the
+time of night, and the date</b>.  Unless there is no alternative, you
+should avoid observing any object at an altitude of less than
+30 degrees above the horizon.</p>
+
+The most important questions you need to answer in planning
+observations are:</p>
+
+<ul>
+
+<font color="magenta"><b>
+
+<li> At what times of night is a target above the horizon?<br> 
+
+<li> At a given time, approximately where is a target (e.g. which
+quadrant: SE, SW, NE, NW)?<br>
+
+<li> What is the maximum altitude a given target can have from the horizon?</p>
+
+</b></font>
+</ul>
+
+For brighter objects in Labs 2 through 4, you can usually answer these
+questions satisfactorily by using your <b>Sky Wheels</b>.  For other
+objects, you will be able to use the <b>automated target finding</b>
+software in the Celestron telescopes, which is capable of placing any
+target into the telescope field of view (once you have calibrated the
+pointing control system for that particular night). </p>
+
+The basic considerations in locating targets in the sky are described
+in detail in the <a href="motions-coords.html" >
+Supplement on Astronomical Motions and Coordinates</a>.  You should
+skim this material, half of which is also covered in ASTR 1210, but you
+aren't required to know it in detail.  Here is a brief summary:</p>
+
+<ul>
+
+<li>  Astronomical objects are located in the sky by their <b><em>Right
+Ascension</em></b> and <b><em>Declination</em> (RA and DEC)</b>, which correspond
+to longitude and latitude, respectively, on the celestial sphere.  DEC is
+measured in angular degrees, just as is latitude on Earth.  But RA is measured in
+units of <b>time</b>; see the <a href="motions-coords.html">Supplement</a>
+for details.</p>
+
+<li> <b>Your zenith will always fall at a DEC equal to your terrestrial
+latitude</b>.  That is 38 degrees for Charlottesville.  Stars with DECs
+smaller than 38 degrees will always cross your meridian south of the zenith,
+while stars with larger DECs will always cross north of the zenith. </p>
+
+<a href="im/HA-DEC-RA-ST.gif"><img src="im/HA-DEC-RA-ST.gif"
+align="right" width="40%" hspace=10 vspace=10></a>
+
+<li>  The celestial sphere rotates around the Earth in 23 hours 56 minutes,
+<b>not</b> 24 hours.  This means that a given point on the sphere returns to the
+same location in your local sky <b>4 minutes earlier each night</b>.  You must
+take this systematic shift in the sphere's orientation into account in
+locating targets.</p>
+
+<li> The <b><em>sidereal time</em> (ST)</b> describes the location of the
+"zero-point" of the RA system on the celestial sphere and hence the
+<b>current east-west orientation of the celestial sphere</b>.  ST is
+numerically equal to the amount of time that has elapsed since the
+point where RA = 0 (which is the <b><em>vernal equinox</em></b>) last
+crossed your local meridian.  ST at a given solar time (clock time) is
+equal to the RA of an object that lies on your local meridian at that
+time.  The sidereal time at a given clock time increases by about 4
+minutes in 24 hours.  That amounts to a <b>2 hour increase</b> in the
+ST at a given clock time <b>every month</b>. </p>
+
+A handy sidereal time calculator can be found <a
+href="http://tycho.usno.navy.mil/sidereal.html" >here</a>.
+Just enter the longitude of Charlottesville (78 degrees 30 minutes
+west), and the calculator will show you the <b>current</b> ST.  You
+can then estimate the ST for any later time over the next few hours
+(but remember that the ST will change with respect to local time by an
+additional 4 minutes after a lapse of 24 EST hours).</p>
+
+<li> By knowing the ST and the RA for any object, you can determine
+<b>how far east or west</b> it is from your local meridian (in units of
+time).  That is, how long it has been since it crossed your meridian
+(if it is now west) or how long it will be until it crosses (if it is
+now east).  This time is called the <b><em>hour angle</em> (HA)</b> of an object.
+It is, of course, <b>continuously changing</b>.  </p>
+
+<li> <b>By knowing both the HA and the DEC of an object, you can
+locate it precisely in the sky</b>.  This requires dealing with the
+special geometry of the celestial sphere. </p>
+
+<ul>
+
+For a given target, <b> HA = ST - RA</b>.  A positive HA means the
+target is west of the meridian; a negative HA means it is east of
+the meridian.  </p>
+
+In using HA to estimate the location of an object in the sky, you must
+take account of the fact that because of the convergence of lines of
+constant RA toward the poles, a given E-W distance in time converts to
+different distances in angle depending on the DEC of the object.  </p>
+
+In using DEC you must take account of the fact that the celestial
+sphere is <b>tilted</b> with respect to your local horizon (unless you
+are observing from the N or S pole). </p>
+
+<ul>
+
+That implies that stars with certain declinations (below -52 degrees)
+will <b>never</b> be visible from Charlottesville.</p>
+
+Other stars, however, (above +52 degrees) will
+<b>always</b> be above your horizon; these are called
+<b><em>circumpolar</em></b>, and they never set.  </p>
+
+
+You can quickly determine which stars are circumpolar by rotating
+your Sky Wheels through 24 hours.  Circumpolar stars never go below
+the horizon edges.</p>
+</ul>
+
+Once calibrated, the Celestron automated target finding software
+is able to determine the sidereal time, look up the RA and DEC of each target,
+and then point at the correct HA and DEC to find your target.  It will
+work with or without the equatorial wedge.
+</p>
+
+</ul>
+
+<li> The <b>altitude</b> of an object is its angular distance from
+the nearest point on the horizon.  By knowing the DEC of a target and
+your latitude (38 degrees) for Charlottesville, you can easily
+determine the <b>maximum altitude</b> of any target.  This occurs when it
+crosses your local meridian or
+<b><em>"transits"</em></b>.  For Charlottesville, the altitude of a
+transiting object from the southern horizon is equal to <b>DEC + 52
+degrees</b>.  This implies, for instance, that the celestial equator
+crosses the meridian at an altitude of 52 degrees.</p>
+
+<li> You can use your <b>Sky Wheels</b> to roughly locate objects with
+given coordinates in the sky.  RA and DEC coordinate ticks are marked
+along the equator and along lines of constant RA at 3 hour intervals.
+You can use these to determine approximately the maximum altitude of
+objects with given coordinates or the quadrants in which they will
+appear at a given time of night.  You can also get an approximate
+value for the ST on any date and clock time by reading off the RA of an
+object on the meridian at a given time.  </p>
+
+</ul>
+
+<p><br></p>
+
+<h2>E. LAB REPORTS & OBSERVING FORMS</h2></p>
+
+<ul>
+
+<li> Appendices D and E in the ASTR 1230 Lab Manual describe how you
+are expected to use the <b>standard observing forms</b> to record
+observations with binoculars or telescopes and how to write up your
+lab reports.  <b>Read these sections carefully.</b></p>
+
+<li> It is strongly recommended that you fill out the "prep" part of each
+form <b>before</b> going to the Observatory.</p>
+
+<li> To keep forms neat, fill out all sections in pencil and erase
+as necessary.</p>
+
+<li> Blank observing forms and a sample, filled-out form can be found
+<a
+href="http://www.faculty.virginia.edu/rwoclass/astr1230/sampobsform.html" >here.</a>
+</p>
+
+</ul>
+
+<p><br></p>
+
+
+<hr size=1>
+
+<a name="homework">
+<h3>Assignment</h3></a>
+
+<ul>
+
+<li> Download, print, and read the notes for Lecture 3.</p>
+
+<li> Take the Review Quiz for Week 4 on the Collab site.</p>
+
+<li>  Read Appendices A and B in the ASTR 1230 Manual</p>
+
+<li> Review the material in the "motions and coordinates" supplement
+to this lecture (link given below). </p>
+
+<li> Start Lab 3 at the earliest opportunity.</p>
+
+
+</ul>
+
+<p><br></p>
+
+<h3>Related Web links</h3>
+
+<ul>
+
+See links to useful sites included in the text above.</p>
+
+<a href="motions-coords.html">Lecture Supplement on Astronomical
+Motions and Coordinates</a></p>
+
+<a href="http://www.astronomynotes.com/nakedeye/s1.htm">Astronomy
+Without a Telescope</a> (introduction to naked-eye astronomy by Nick
+Strobel)<br>
+
+ <a href="http://www.stargazing.net/David/index.html">Observational Astronomy
+for Amateur Astronomers (David Haworth)</a><br>
+
+<a href="http://www.fourmilab.ch/earthview/vplanet.html">Interactive
+Earth & Moon Viewer</a> (includes software & add'l links)</p>
+
+<a href="https://www.amazon.com/Nortons-Star-Atlas-Reference-Handbook/dp/0582356555">
+Norton's Star Atlas and Reference Handbook (Amazon)</a> (a standard reference
+for all serious amateur astronomers)</p>
+
+<a href="http://www.twanight.org/newtwan/index.asp">The World At Night</a>
+(nice collection of nighttime images and videos)</p>
+
+</ul>
+
+
+<!-- START FOOTER -->
+
+<hr size=2 >
+
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table width="70%">
+<tr>
+<td>
+<b><a href="telescopes.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="solsys.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    July 2019 by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<hr size=2 >
+
+<small> Text copyright &copy 1998-2019 Robert W. O'Connell.  All rights
+reserved.  Noctilucent cloud image copyright &copy P-M. Heden.  These
+notes are intended for the private, noncommercial use of students
+enrolled in Astronomy 1230 at the University of Virginia.
+
+</small>
+
+
+<!-- END FOOTER -->
+</body>
+</html>
+				  
+
+<!--      -->
+

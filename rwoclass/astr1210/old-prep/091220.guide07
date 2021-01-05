@@ -1,0 +1,1128 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210/  -->
+<!-- Original URL: http://www.astro.virginia.edu/class/oconnell/astr1210 --> 
+<!-- -->
+
+<!-- HISTORY: Source: S97 guide.  Orig released vers: 2/9/98.  Revised 3/16/98;
+9/23: dark ages & copernicus moved to Guide 6; 9/27; 9/28; 9/29; 9/30;
+2/9/99; 11/24/01; 2/5/02; 2/6; 2/8; 2/10; 2/11; 2/17; 3/4; 4/26; 11/5;
+2/26/2003; 9/2; 12/30;  1/1/2004; 1/10; 1/25; 2/1; 2/8; 2/9; 2/10; 2/15; 
+3/3; 2/1/2007; 2/10; 2/12; 2/13; 2/19; 3/1; 9/19; 10/1; 2/11/2008; 
+3/13;  2/14/2009;  3/16; 5/29; 6/27/2010; 5/8/2012--new format; 5/9; 5/13; 
+5/17; 5/26; 6/04; 6/05; 6/07; 6/09 (move some orbit prediction material
+to guide08); 7/08; 7/09; 7/13; 7/15; 9/21; 9/25; 9/27; 2/11/2013; 2/17; 
+9/2; 9/19;  2/1/2014; 2/13; 6/19; 7/10 add new intro section; 7/11; 
+7/12; 8/3; 9/8; 1/25/2015; 3/6; 3/9; 6/1; 9/8: new domain, update
+Marslab link;  11/21;  8/6/2016; 8/8; 12/13; 3/21/2017; 5/27; 5/30; 6/7; 
+8/2; 8/29;  1/02/2018; 1/19; 4/13; 7/23; 10/14; 12/12; 6/19/2019; 6/23; 
+6/24; 7/13; define viewport;  11/29; 12/11; 03/05/2020; 5/26; 7/23; 
+9/12; -->
+
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1210, O'CONNELL. Study Guide 7  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+<h2 align="center">ASTR 1210 (O'Connell) Study Guide </h2>
+
+<p><br></p>
+<hr>
+
+<h1 align="center"> 7. THE DISCOVERY OF GRAVITY </h1>
+
+<p><br></p>
+
+<center><a href="im/digges-universe.gif">
+<img src="im/digges-universe-v5-ex.jpg" width=70%></a></center>
+
+<p align="right"><small> <i>Thomas Digges' version of the<br> Copernican Universe (1576)
+   </i></small></p>
+
+<h2>A. Expanding Horizons</h2>
+			      
+Copernicus' conception of a heliocentric universe sparked immediate
+controversy because it contradicted both the scientific and religious
+conventions of the times.  It was hotly debated in the 150 years
+following publication of <em>De revolutionibus</em>, the most famous
+episode being
+the <a href="http://en.wikipedia.org/wiki/Galileo_affair">recantation
+of heliocentrism</a> forced upon
+<a href="#gal">Galileo</a> by the Catholic Church (1633). </p>
+
+But a number of thinkers quickly and enthusiastically embraced the
+Copernican model,
+including <a href="http://en.wikipedia.org/wiki/Thomas_Digges"><b>Thomas
+Digges</b></a> (d. 1595) in England
+and <a href="http://en.wikipedia.org/wiki/Giordano_Bruno"><b>Giordano
+Bruno</b></a> (d. 1600) in Italy.  Even though Copernicus himself had pictured
+the stars as lying in a shell at a fixed distance from Earth, both
+Digges and Bruno realized that the model allowed the stars to be
+arbitrarily far away. In the first published description of
+heliocentrism in English, Digges drew the <b>stars as stretching away
+to infinity</b> (see the picture at the top of this page), and his
+inscription (<font color="green"><em><b> "This orb of stars fixed infinitely
+up extendeth itself in altitude spherically...with perpetual shining
+glorious lights innumerable...replenished with perfect endless
+joy..."</em></b></font>) shows that he was thrilled by this prospect.  His
+concrete depiction of an infinite universe had lasting influence on
+later English scientists.</p>
+
+Bruno emphasized the possibility that the stars were other Suns and
+that an unbounded universe was filled with inhabited planets orbiting
+other stars (a <b>"plurality of worlds"</b>):</p>
+
+
+<center>
+<table border=0 width=75%>
+<tr><td>
+<font color="green"><em><b> "There are countless suns and countless
+earths all rotating round their suns in exactly the same way as the
+seven planets of our system. We see only the suns because they are the
+largest bodies and are luminous, but their planets remain invisible to
+us because they are smaller and non-luminous. The countless worlds in
+the universe are no worse and no less inhabited than our earth...The
+unnumbered worlds in the universe are all similar in form and rank and
+subject to the same forces and the same laws."</em></p>
+</b></font>
+<tr><td><align = "center">
+<font color="green"><b>
+           
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+             --- Giordano Bruno (1584)</p>
+</b></font>
+</td></tr></table>
+</center>
+
+
+The <a href="guide06.html#parallax">parallax technique</a> introduced
+by the heliocentric model provided, for the first time, a practical
+method to <b>estimate the distances to stars by triangulation</b> and
+hence their intrinsic brightnesses.  Well before the first actual
+measurement of a stellar parallax, the improving lower limits on
+stellar distances made by successive attempts to measure parallax with
+telescopes demonstrated that stars might well be, as Bruno and others
+believed, as bright intrinsically as the Sun.  The case that
+the <b>Sun is a star </b> gradually grew stronger. </p>
+
+After 1600, scientific discoveries about the natural world progressed
+rapidly, at least by earlier standards.  Scientific discoveries and
+the protocols of the "scientific method" were quickly disseminated by
+<a href="https://en.wikipedia.org/wiki/Printing_press"><b>printed
+books</b></a>.</p>
+
+The next key development for physics and astronomy was the discovery
+that what we call "<b>gravity</b>" is really only the local
+manifestation of a <b>universal force</b> between all forms of matter.
+Here, we describe the work of four astronomers/physicists whose work
+was pivotal in understanding and quantifying gravity -- a watershed
+for all of science.  This period includes the <b>first use of
+telescopes</b> in astronomy (1609).  The telescope was the first of
+the major pieces of instrumentation that would become the foundation
+of modern scientific research.  The timeline chart below will help you
+keep track of who's who and when.  Click for a larger version.</p>
+
+<center>
+<a href="im/1500-1800-chart-Wads.gif"><img src="im/1500-1800-chart-Wads-ex.jpg"
+width=45% vspace=12></a></center>
+   
+
+<!-- <img src="im/tycho-stamp.jpg" alt="Tycho" align="right"> -->
+
+
+<h2>B. Tycho (d. 1601)</h2>
+
+<li> A Danish astronomer, Tycho Brahe was an observer -- the greatest
+before the invention of telescopes -- with
+a <a href="https://en.wikipedia.org/wiki/Tycho_Brahe">flamboyant
+personality and lifestyle</a>.  See his picture
+<a href="im/tycho-1590engrav.gif" >here</a>.</p>
+
+
+<a href="im/tycho-obs-2-lg.gif" ><img src="im/tycho-obs-2-lg.gif" width=25%
+align="right" hspace=10 vspace=10></a></p>
+
+<li> His observations of the <a
+href="im/Tycho-supernova1572-drawing-ex.jpg" ><b>"supernova"
+of 1572</b></a> (an exploding star)  demolish the Aristotlean doctrine of
+heavenly perfection & permanence.  </p>
+
+<ul>
+
+<li> Tycho uses a version of the <a href="im/parallax.gif" >parallax
+technique</a>, based on observations taken 6-8 hours apart, to show
+that the supernova is <b>more distant than Saturn</b> and therefore
+must reside in the cosmic region the Greeks believed to be
+unchanging.</p>
+
+<li> Similarly, Tycho showed that the bright <a
+href="http://galileo.rice.edu/sci/observations/comets.html"
+> comet of 1577</a> lay <b>beyond the Moon</b>.  Previously, it
+was assumed that comets (obviously changing from day to day) had to be
+phenomena inside Earth's atmosphere.  </p>
+
+<li> The idea that there were <b>changes in the distant cosmos</b>
+other than the serene circular motions favored by astronomers up to
+this time was startling.  Not only did this fatally damage the cozy
+medieval picture of a tranquil, eternal universe beyond Earth, but it
+obviously made the distant universe of <b>much greater intellectual
+interest</b> than it may have been before.  </p>
+
+</ul>
+
+
+<li> At his magnificent, state-sponsored observatory (see picture at
+right), Tycho compiled a massive set of unprecedentedly accurate
+(uncertainties less than about <b>1 arc-minute</b>) data on planetary
+motions, later analyzed by his assistant, <a href="#kep">Kepler</a>.
+The accuracy of Tycho's data was the <b>best possible</b> without
+optical instruments. </p>
+
+<li> Although Tycho died before he was able to analyze his data, he
+favored a <a href="im/Tychonic-cosmology.jpg">geocentric universe</a>
+(albeit one in which the Earth spun on its axis and all the other planets
+orbited the Sun).</p>
+
+<ul>
+
+<li> Primary reason?  Because he did not believe the stars could be so
+distant that he <b>could not measure their parallaxes</b>.  This is a
+sound scientific argument and a major obstacle to earlier acceptance
+of the Copernican model.  </p>
+
+<li> If Tycho could have measured stellar parallaxes, he 
+would have instantly become a Copernican.  But the distances between
+stars would have had to be about <b>100 times smaller</b> than they
+are for that to be possible without telescopes.  (Interestingly, that
+would have been the case had the Earth been situated in the central
+core of our Galaxy rather than in its outskirts.) </p>
+
+<li><a href="http://www.astro.ubc.ca/~scharein/a311/Sim/new-parallax/Parallax.html"
+><img src="im/film.gif">Here</a> is an animation of the
+stellar parallax effect as it would be observed with a modern telescope.</p>
+
+</ul> 
+
+<p><br></p>
+
+<center><a href="im/galileo-notes-JupSat-col.jpg"
+><img src="im/galileo-notes-JupSat-col-ex.jpg" width=63%></a>
+<p><small> <i>Galileo's notes on the discovery of the
+       satellites of Jupiter.
+          </i></small></p></center>
+
+<a name="gal">
+<h2>C. Galileo (d. 1642)</h2>
+
+<a href="im/galileo-leoni-sketch.gif"><img src="im/galileo-leoni-sketch-ex.gif"
+align="right" width=20% hspace=12 vspace=12></a>
+
+
+<li> The Italian
+scientist <a href="https://en.wikipedia.org/wiki/Galileo_Galilei">Galileo
+Galilei</a> (pictured at the right) played a pivotal role in the
+transition from medieval to modern science.  He made fundamental
+contributions in three separate areas: experimental physics,
+astronomy, and popularizing science.  Ironically, it was his success
+as a popularizer, more than as a scientist, that embroiled him
+in <a href="http://famous-trials.com/legacyftrials/galileo/galileo.html">political
+difficulties</a> with Church authorities.</p>
+
+<ul>
+
+Galileo gave <b>experiment and observation explicit precedence over
+authority</b>.  (Recall the discussion of the role of authority in
+modern science in <a href="guide01.html">Guide 1</a>.)  His many
+amazing discoveries made with small telescopes were a resounding
+demonstration of the superiority of <b>empiricism</b> in learning
+about nature.  His disdain for a reliance on authority and his
+devotion to mathematical empiricism are often expressed in his
+writings: </p>
+
+</ul>
+
+<center>
+<table border=0 width=75%>
+<tr><td>
+<font color="green"><em><b>
+"You must read the book of Nature...  In other words, observe and do
+experiments. This is against the medieval idea of scholasticism--that
+all wisdom and knowledge are best found in ancient authorities."</p>
+
+"Truth cannot be found in the book of Aristotle but in the book of
+Nature; and the book of Nature is written in the language of
+mathematics."  </p>
+
+"...without [mathematics] we are wandering in vain through a dark
+labyrinth."</p>
+
+</em></b></font>
+</td></tr></table>
+</center>
+
+
+<li> As a physicist:</p>
+
+<ul>
+
+<li> <b>Experimentally</b>, he demonstrates that objects falling in
+response to gravity <em><b>accelerate</b></em>---that is, increase
+their velocity---in a highly systematic way (directly proportional to
+time) and that their acceleration is <b>independent of their
+mass</b>. </p>
+
+<ul>
+Among other things, this means that two objects if dropped
+simultaneously from any height will hit the ground at the same time
+(ignoring extraneous effects like atmospheric drag) no matter how much
+they differ in mass.</p>
+</ul>
+
+<li> He realizes that these results, and those of many other of his
+experiments, <b>flatly contradict the principles of Aristotlean
+physics</b>.  Aristotle had naively assumed, as do most people, that
+heavier objects fall faster than lighter ones and that downward
+velocities are constant.  Owing to the Greek distrust of experiment,
+Aristotle's assumptions had not been subjected to empirical tests, nor
+had most of the other details of
+his <a href="https://en.wikipedia.org/wiki/Aristotelian_physics">writings
+on physics</a>.
+</p>
+
+<ul> 
+
+Isn't it amazing that you, if you did
+the <a href="guide06.html#pisadrop">"object drop"
+assignment in Guide 6</a>, were able to make a very simple experiment
+in your dorm room that invalidates the claims of one of the most
+famous philosphers in history and that were assumed for be true for
+1900 years?  That's the power of empirical exploration of the real
+world.</p>
+
+At least one Greek scientist, Strato, was aware of gravitational
+acceleration: he had observed the increasing separation between
+water droplets as they fall from a spout.  But as in the case
+of Aristarchus, this important insight was submerged by the
+overwhelming influence of Aristotle on later thinking.</p> 
+
+</ul>
+</ul>
+
+<li> As an astronomer:</p>
+
+<ul>
+
+<li> Galileo made the first astronomical use of a
+<b><a
+href="http://galileo.rice.edu/sci/instruments/telescope.html" >
+telescope</a></b> in 1609.  He had learned of the invention of telescopes
+by <a href="http://en.wikipedia.org/wiki/Hans_Lippershey">Lippershey</a>
+in Holland and quickly decided to make his own.  </p>
+
+<center> 
+
+<table width=90%>
+<tr>
+<td width=45%>
+<a
+href="http://galileo.rice.edu/sci/instruments/telescope.html" ><img
+src="im/galileo-telescope-2.jpg" align="center" width=90%></a></p>
+ <center><i>One of Galileo's telescopes. (Click for details.)</i></center></p>
+</td>
+<td width=45%>
+<a href="im/galileo-expounding-on-scope-to-Donato.jpg">
+<img src="im/galileo-expounding-on-scope-to-Donato-ex.jpg"
+align="center" width=90%></a></p>
+<center><i>Galileo demonstrating telescope to his
+patrons</i></center></p>&nbsp;</p>
+</td></tr>
+</table>
+</center>
+
+<ul>
+
+<li> Galileo's telescopes were small (above), with relatively crude lenses
+only a few inches in diameter.  But they yielded the first
+fundamentally new astronomical insights in over 1500 years.  They <b>utterly
+transformed</b> astronomy.  They allowed Galileo to discover:</p>
+
+<ul>
+<li> <a
+href="http://galileo.rice.edu/sci/observations/moon.html"
+><b>Mountains and craters on the Moon</b>.</a> </p>
+
+<li>
+That <a href="im/galileo-sunspot-drawings-1613.jpg"><b>spots</b></a>
+first observed by others on the Sun were features on the solar surface
+(not intervening material, for instance) and showed that the Sun
+rotated on an axis.</p>
+
+<li> The existence of <a
+href="im/MW-field-color.jpg" ><b>thousands of stars</b></a> fainter than the eye
+can see.   The "Milky Way" was revealed to be made up of a myriad of stars.</p>
+
+<li> That stars and planets are <b>different</b> kinds of objects:
+planets show perceptible disks, but stars are points of light, which
+implies they are probably very far away. </p>
+
+<li> <a href="im/jup-n-4moons-KGleason.jpg" ><b>Four satellites in
+orbit around Jupiter</b></a> (the "Galilean" satellites).  These were
+the <b>first new planetary bodies</b> discovered in recorded history.
+They are the four brightest of the (now known) 79 satellites of the
+planet. </p>
+
+<li> <a href="im/venus-phases-2002-CProctor.jpg"><b>The phases of Venus</b></a></p>
+
+</ul></ul>
+
+<li> These discoveries <b>strongly support the Copernican interpretation</b>,
+ though they don't actually prove it: </p>
+
+<ul>
+
+<li> The craters on the Moon and spots on the Sun contradict the
+claims of the Greeks and the Catholic Church about the
+<b>perfection</b> of the heavenly bodies, which then cast doubt
+on their other pronouncements.  </p>
+
+<li> The rotation of the Sun demonstrates that <b>celestial bodies can
+spin</b>, which supports Copernicus' assumption that the Earth spins
+on its axis. </p>
+
+<li> Copernicus' assumption that the Earth is a planet meant that
+the other planets <b>should share some of Earth's characteristics</b>:
+they should be round, they should shine by reflected Sunlight, and
+they should show surface features.  All of these "predictions" were
+verified by Galileo's observations.</p>
+
+<li> The fact that Venus displays an almost full range of phases from
+"crescent" to nearly "full" <b>proves that Venus orbits the Sun</b>,
+not the Earth.  In Ptolemy's model, the epicycles of both Mercury and
+Venus lie between Earth and the Sun, so Venus can never appear in
+other than a <b>crescent</b> phase.  See <a href="im/venus_phase-JAF.gif"
+>this illustration</a> of the difference between the Copernican and
+Ptolemaic interpretation.  </p>
+
+<li> <a href="http://galileo.rice.edu/sci/observations/jupiter_satellites.html"
+> Jupiter's satellites</a> show the existence of a <b>second "center
+of motion"</b> in the solar system.  This ruins the symmetry of the
+geocentric model, in which the Earth lies at the only center of motion
+in the universe.  Galileo's observations also showed that planets can
+move without "losing" their satellites.  It had been argued that if
+the Earth moved around the Sun, the Moon would be left behind.  Not
+so.</p>
+
+</ul>
+
+<li> In another blow to conventional wisdom, the discovery of vast
+numbers of previously invisible stars shows that the stars are not
+simply some kind of celestial decoration, "put there" for the benefit
+or instruction of human beings.  This is the first evidence of a <b>huge
+physical system of stars</b> surrounding the Sun (confirming the
+speculations of Digges and Bruno) and the most important contribution
+to that time to the argument that the Sun itself is a star.</p>
+
+<li> The telescope is sufficiently cheap and easy to build
+that <b>anyone</b> can test claims made about the nature of
+astronomical objects.  The availability of printed books and simple
+instruments like telescopes, somewhat like the <b>Internet</b> in our
+time, encouraged the questioning of traditional authorities.</p>
+
+<ul>
+
+<li> The subsequent history of astronomy was revolutionized at
+intervals by the advent of <a href="guide14.html">new
+telescope designs</a> and auxiliary equipment. </p>
+
+</ul>
+</ul>
+
+
+<p><br></p>
+
+<a name="kep">
+
+<h2>D. Kepler (d. 1630)</h2>
+
+<a href="im/Kepler.gif"><img src="im/Kepler.gif" align="right" width=25%
+vspace=10 hspace=10></a>
+
+<li> <a href="https://en.wikipedia.org/wiki/Johannes_Kepler">Johannes
+Kepler</a> was a German mathematician.  His picture is at the right.</p>
+
+<li>  He analyzes Tycho's data, all obtained <b>without telescopes</b>
+but much more accurate than any previous.   He adopts the Copernican
+interpretation (that the Earth is a planet in orbit around the
+Sun) as the basis of his model for the planetary system. </p>
+
+<li> Without any deliberate intent, Kepler introduces
+the <b>conceptual foundation of modern empirical science</b>: </p>
+
+<ul>
+
+<li> Because of his great respect for Tycho's precise observational technique,
+Kepler insisted that <b>interpretive models agree with the observations 
+within observational uncertainty or "error."</b>  Where there is a disagreement,
+it is the <b>model</b>, not the data, that must be revised.   Empirical
+data takes precedence.</p>
+
+<li> This is the basis of modern empiricism.  Today, this
+requirement for acceptable interpretations is taken to extend to
+<b>all</b> relevant data.  It is a demand for consistency with all 
+interpreted phenomena and established physical principles.  This is the 
+<b>"cumulative"</b> aspect of science described in <a href="guide01.html">Study Guide
+1</a>.</p>
+
+<li> The term <b><em>"error"</em></b> used in this context does not
+imply some kind of mistake.  Instead, it refers to
+the <b>uncertainties that are inherent in any measuring process</b>,
+no matter how careful.  An essential part of a scientist's job is
+always to make good estimates of the uncertainty in any published
+data.</p>
+
+</ul>
+
+<li> In analyzing Tycho's observations of <b>Mars</b>, Kepler quickly
+discovers that models based on pure circular motions could <b>not
+fit</b> the data.</p>
+
+<ul> 
+
+<li> He works eight years to resolve an 8 arc-min discrepancy between
+the models and data.  
+(The discrepancy was <b>8 times</b>
+the observational uncertainty of Tycho's data.)</p>
+
+<li> He finally realizes that Mars' orbit is an <b><em>ellipse</em></b>, <b>not a
+circle</b></p>
+
+<!--  Lab info was removed(!) from dept home page 8/2015 
+
+<li> The methods Kepler used to achieve this breakthrough are
+re-created in the <a
+href="http://www.astro.virginia.edu/class/labs/marslab.pdf"
+>ASTR 1210 optional laboratory</a> on the Orbit of Mars.</p>
+
+-->
+
+<ul>
+
+Ellipses are perfectly well-defined geometrical figures, studied by
+the ancient Greek mathematicians.  But because they are less
+symmetrical than circles, Ptolemy did not attempt to incorporate them
+in his cosmological model.</p>
+
+Other than Mercury, Mars has the most eccentric (non-circular) orbit
+of the five planets then known -- but Mercury is harder to observe and
+had less extensive coverage in Tycho's data sets.  That is why the
+data for Mars was critical to Kepler's discoveries.</p>
+
+</ul>
+
+
+<li> The methods Kepler used to achieve this breakthrough are
+re-created in the <a href="marslab-04.pdf">ASTR 1210 optional
+laboratory</a> on the Orbit of Mars.</p>
+
+
+</ul>
+
+<li> Kepler reinterprets the data for all planets and condenses his conclusions
+to three "Laws of Planetary Motion."   </p>
+
+
+<h3>Kepler's Laws</h3>
+
+<ol>
+
+<li> <b>Planetary orbits are <em>ellipses</em> with the Sun at one focus</b>
+</p>
+
+<center><a href="im/ellipse-geom-NS.gif">
+<img src="im/ellipse-geom-NS.gif" alt="Ellipse Geom"></a></p>
+</center>
+
+<ul> 
+
+<li> Note that the Sun is <b>not at the center</b> of the ellipse and
+that there is <b>nothing</b> there or at the second focus of the
+orbital ellipse.  The distance between any planet and the Sun will
+vary as it moves around its orbit.
+</p>
+
+<li> The Sun is in the <b>same plane</b> as the ellipse for a given
+planet, but the orbits of different planets lie in <b>different</b>
+planes.  </p>
+
+<ul>
+The fact that the planes of the orbits of the other planets always
+include the Sun but do not include the Earth is a simple but important
+objection to geocentric interpretations of the Solar System.</p>
+</ul>
+
+<li> The planetary orbits are not very elliptical, which is why
+<b>circles are fair approximations</b>, as in Copernicus' model.  </p>
+
+</ul>
+
+
+<a name="second">&nbsp;</a>
+<li> For a given planet, <b>a line joining the planet as it moves and the
+Sun sweeps out equal areas in the orbital plane in equal times</b></a>.
+</p>
+
+<center> <a href="im/kepler-2ndanim-NS.gif" ><img
+src="im/kepler-2nd-NS.gif" alt="Kepler 2nd Law"></a></p>
+<small><i>Kepler's Second Law -- Click for
+animation.</i></small></p> </center>
+
+<ul>
+
+This implies a given planet moves <b>faster when it is nearer the
+Sun</b>, with a specific (inverse) relationship between its sideways
+motion and its distance.</p>
+
+</p>
+
+[This behavior is also the first hint of a universal physical principle
+not recognized until after Newton: 
+the <b>conservation of angular momentum</b>.]</p> 
+
+</ul>
+
+<a name="third">&nbsp;</a>
+
+<li> <b>The squares of the orbital periods of different planets are
+proportional to the cubes of the orbital sizes</b> (<em><b>semi-major
+axes</b></em> -- see the illustration of Kepler's First Law
+above). </p>
+
+<a href="im/SS-orbvelocities-Bennett.jpg"><img src="im/SS-orbvelocities-Bennett.jpg"
+align="right" width=30% alt="Orbital Velocities" hspace=10
+vspace=10></a>
+
+<ul> 
+
+In equation form, P<sup>2</sup> = K a<sup>3</sup>, where <em>P</em> is
+the period, <em>a</em> is the semi-major axis, and K is a constant.</p>
+
+The time P taken to complete one orbit is therefore proportional to (a x
+a<sup>1/2</sup>) and grows <b>more than in direct
+proportion</b> to orbital size. </p>
+
+<ul>
+
+A planet with an orbital diameter 5 times the Earth's will
+require 11 Earth years to complete an orbit.</p>
+
+</ul>
+
+The easiest way to think about the Third Law is that it
+implies that the <b>velocities of planets in larger orbits are
+slower</b> than for planets nearer the Sun:</p>
+
+<ul>
+
+A planet's mean velocity in its orbit is equal to the circumference
+of the orbit divided by its orbital period.  Since the circumference
+of an orbit increases in <b>direct proportion</b> to its semi-major axis, but
+the period increases <b>more</b> than in direct proportion, the mean
+velocity of planets in larger orbits is slower.  See graph above right.</p>
+</ul>
+
+</ul>
+</ol>
+
+<li> Java illustrations of Kepler's three laws are available
+at <a href= "http://www.surendranath.org/Applets.html">this web
+site</a>.  </p>
+
+<!--  Central Valley Christian --- gone 6/12;
+More illustrations are
+available <a href="http://home.cvc.org/science/kepler.htm">here.</a> </p>
+-->
+
+<!-- delighted and intrigued -->
+
+<li> Net result: <b>A tremendous simplification</b>.  Tens of thousands of
+individual observations have been reduced to
+a <a href="http://janus.astro.umd.edu/javadir/orbits/ssv.html" >small
+set of simple geometric and arithmetic relationships</a>.  All the
+arbitrary complexity ("wheels within wheels") of Ptolemy has vanished.
+So, too, however, has the perfection of uniform, circular motion and
+the beautiful symmetry so admired by the Greeks. </p>
+
+<ul>
+The complexities such as <b>epicycles</b> in Ptolemy's model were
+needed because of <b>three</b> principal factors: the fact that the
+Earth moves, whereas Ptolemy assumed it to be stationary; the fact
+that actual orbits are elliptical, whereas he assumed them to be
+circular; and the fact that the velocity of a planet in its orbit
+varies, whereas he assumed constant circular velocities.  </p>
+</ul>
+
+<li> Note that Kepler's Laws were derived <b>empirically</b> from
+Tycho's data.  They are not "theoretical."  They simply <b>summarize</b> the 
+central observational facts in a concise mathematical form.</p>
+
+<li> Kepler was a very smart person, but his breakthrough was entirely
+dependent on the <b>large</b> body of <b>highly accurate</b> data compiled
+by Tycho.  </p>
+
+
+<h3> Kepler's laws and the concept of <em>force</em></h3>
+
+<ul>
+
+<li> In the early Greek cosmologies, there was <b>no need for a
+special "force"</b> to control the motions of planets in their orbits,
+since all the cosmic bodies were thought to be affixed to crystalline
+spheres, and the tendency of things to fall downward was thought to be
+the product of Earth's <b>special location</b> at the center of the
+universe, not something caused by the Earth itself.  </p>
+
+<li> But in the real world revealed by Kepler's work, there are no
+ crystalline spheres; rather, the <b>Sun is the key</b> to the
+ planetary motions.  It is not just the center of the solar system but
+ is also directly linked to the <b>geometry</b> of planetary orbits
+ and to <b>motions</b> within those orbits by precise but
+ non-intuitive mathematical relations.  Kepler therefore postulated
+ that the <b>Sun exerts a force</b> on the planets---e.g. one which
+ either pulls or pushes planets along their orbits.  Another kind of
+ force was required in order to keep the Moon and the satellites of
+ Jupiter bound to their parent planets as they moved around the Sun.
+ Although Kepler was unable to formulate this idea properly, 
+ <a href="#newt">Newton</a>  did so with phenomenal success.  </p>
+
+</ul>
+
+<h3> Kepler's laws  and the speed of light</h3>
+
+<ul>
+
+<a href="im/Roemer-telescope-2.jpg"><img src="im/Roemer-telescope-2.jpg"
+align="right" width=25% hspace=12 vspace=12></a> 
+
+<li> By the late-17th century, an avalanche of observations had shown
+that planetary motions obey Kepler's laws with remarkable precision.
+The laws were even extended to the motion of the <b>four Galilean
+moons</b> in orbit around Jupiter.  The laws allowed astronomers to
+predict the <b>eclipses</b> of the moons by the body of Jupiter.
+However, measurements over about a decade showed that there were
+worrisome systematic discrepancies from the predicted Keplerian timing
+of eclipses.  These were not understood, but it did emerge that they
+depended on the Earth's distance from Jupiter (which, due to their
+relative orbital sizes, varies from 4 to 6.5 AU's). </p>
+
+<li> In 1676 Danish
+astronomer <a href="https://en.wikipedia.org/wiki/R%C3%B8mer%27s_determination_of_the_speed_of_light">
+Ole Romer</a> interpreted the discrepancies as the consequence of
+a <b>finite value for the speed of light</b>: light took longer to
+reach the Earth from Jupiter when the two planets were farther apart.
+Allowing for this delay confirmed the predictions from Kepler's Laws.
+This was the first evidence that light has a finite propagation speed.
+Romer's value for the speed of light was about 25% smaller than modern
+determinations, but this was an extraordinary achievement for his
+time.</p>
+
+</ul>
+<p><br></p>
+
+<a name="newt"></a>
+
+<h2>E.  Newton (d. 1727) </h2>
+
+<a href="im/Newton-on-pound-seeds.jpg"><img src="im/Newton-on-pound-seeds-ex.jpg"
+align="right" width=40% hspace=10 vspace=10></a>
+
+<li> <a href="https://en.wikipedia.org/wiki/Isaac_Newton">Isaac
+Newton</a> was an English mathematician and physicist and ranks among
+a handful of the most consequential people in human history because of
+the profound influence of his work on all later science and
+technology.  His picture on the British Pound note is shown at the
+right.
+</p>
+
+<li> Attempting to understand Kepler's Laws, Newton develops the basic
+principles of <b><i>dynamics</i></b>---i.e. the methods needed
+to <b>predict</b> how objects move in response to applied forces.
+He first published his ideas in <em>The Mathematical
+Principles of Natural Philosophy</em> in 1687.
+</p>
+
+<li> He starts his formulation of dynamics with several basic
+postulates ("laws of motion") that are drawn directly from
+Galileo's experiments.</p>
+
+<ul>
+
+<font color="blue"><b>Newton's First Law of Motion</b></font></p>
+
+<ul>
+
+  <li> In the absence of a (net) force, an object will <b>remain at
+rest or in straight-line motion with no change in velocity</b>.</p>
+
+
+<li> The presence of a net force produces a 
+<b>change</b> in velocity (i.e. an <b><i>acceleration</i></b>).</p>
+
+<li> This law directly contradicts Aristotle, who believed that objects
+cannot move at all <b>unless</b> subjected to a continuous force.  Newton
+argues that continuous, uniform motion only occurs in the <b>absence</b> of a
+force.  </p>
+
+</ul>
+
+
+<font color="blue"><b>Newton's Second Law of Motion</b></font></p>
+
+<ul>
+
+<li> The quantitative <b>relationship between applied force and resulting
+acceleration</b> is</p>
+
+<ul>
+
+<b> (Force) = (Mass) x (Acceleration) </b> </p>
+
+Or, solving for the acceleration:  <b>(Acceleration) = (Force)/(Mass)</b></p>
+
+There is a <b>directionality</b> inherent in this formulation.  Mass has
+no "direction," but forces do.  The Second Law implies that the acceleration
+will occur in the <b>same direction</b> as the applied force.</p>
+
+</ul>
+
+<li> The second law is covered in more detail in <a href="guide08.html"
+>Guide 8</a> and in <a href="121supps2-3.html" >
+the Supplements</a>.</p>
+
+</ul>
+</ul>
+
+<font color="blue"><b>Gravity</b></font></p>
+
+<ul>
+
+<a href="im/newton-appleanim.gif">
+<img src="im/newton-appleanim.gif" alt="AppleInspiration" align="right">
+</a>
+
+<li> Kepler had introduced the idea of a special force, exerted by the
+Sun on the planets to keep them moving in their elliptical orbits.
+Newton brilliantly adapted this concept, realizing that <b>all bodies
+could exert a force on one another</b>.  In particular,
+the <b>Earth</b> could exert a force on the <b>Moon</b> to keep it in
+its orbit around the Earth.  But in that case the Earth should <b>also</b>
+exert a force on objects near the Earth's surface.</p>
+
+<li> Newton argued that our everday experience of <b>"gravity"</b>
+(our sense of a downward pull or the downward acceleration of falling
+objects) was a manifestation of exactly the
+<b>same kind</b> of force, exerted by the Earth, that kept the Moon in
+its orbit.  He sought a formulation that would <b>simultaneously
+explain local gravity and planetary orbits</b>.</p>
+
+<li> So Newton postulated the existence of a <b><em>universal
+gravitational force</em></b> in the following form: 
+Every object with mass exerts an <b>attractive force</b> on every
+other object with mass, and the force declines with distance.
+Quantitatively: 
+ </p>
+
+<ul>
+
+ <b> F<sub>grav</sub> =  G M<sub>1</sub> M<sub>2</sub> / R<sup>2</sup> </b> </p>
+
+   where G is a universal constant, the M's are the masses of the two
+   objects, and R is the distance between the two masses </p>
+
+   The same expression applies to the Earth's influence on a falling
+   apple, to the Earth's influence on the Moon, to the Sun's influence on
+   the Earth, and so on.</p>
+
+   The gravitational force <b>diminishes rapidly with distance</b>.
+   Quantitatively, it is an <b>"inverse square law"</b>, with the
+   force declining as the square of the distance between the two
+   masses.  The Sun's gravitational force on two identical planets,
+   one of which is 1 AU from the Sun and the other of which is 5 AU
+   distant would differ by a factor of 5<sup>2</sup> or 25.  </p>
+
+   Importantly, however, the force only becomes very small with
+   distance, it <b>never actually vanishes</b> (or goes to zero).  So,
+   all the stars in our Galaxy, for example, combine gravitationally
+   to determine the motion of the Sun around the Galaxy, despite their
+   being, on average, tens of thousands of light years away.</p>
+
+   Also, by its formulation, the strength of the gravitational force
+   is the <b>same</b> on both masses and differs only in direction.
+   <b>Both</b> masses will move in response to the force -- but the
+   motion is inversely proportional to mass, so the smaller
+   mass moves faster (see <a href="guide08.html">Guide 8</a>).</p>
+
+
+</ul>
+
+<li> Gravity <b>acts along the (radial) line</b> connecting the two bodies.
+It therefore does <b>not</b> (as Kepler thought) necessarily act to
+"push" or "pull" objects along their current directions of motion.  In
+fact, for a circular orbit, the gravitational force acts 
+<b>perpendicular</b> to the direction of motion. </p>
+
+<li> Newton's formulation of gravity would have been <b>conceptually
+impossible</b> without the elimination by Copernicus of the assumption of
+the special, central location of the Earth.  </p>
+
+<ul>
+And conversely, the geocentric, circular-motion universe becomes
+<b>impossible</b> if one accepts the reality of Newtonian gravity.</p>
+</ul>
+
+<!-- could add comment on infinite range of gravity. Done.  --> 
+
+<li> [Modern footnote: Gravity was only the <b>first universal
+force</b> to be recognized.  Physics now recognizes <b>four</b> types
+of force, the other three all much stronger than gravity but having
+much shorter ranges in practice.
+See <a href="121supps2-3.html">Supplements 2 & 3</a>.]
+
+</ul>
+
+<font color="blue"><b>Predictions</b></font></p>
+
+<ul>
+
+<li> Newton combined his gravitational force law with his Second Law
+of motion in order to <b>predict the motion</b> of an object in an external
+gravitational field.  To solve the equations, Newton had to
+invent <a href="http://www.maths.tcd.ie/pub/HistMath/People/Newton/Principia/Bk2Lem2/PrBk2Lm2.html"
+><b> <i>calculus</i></b></a>. </p>
+
+<li>For two gravitating objects (e.g. one planet and the Sun) the predicted 
+orbit <b>satisfies all three of Kepler's Laws</b>.  Details are given
+in  <a href="guide08.html" >Study Guide 8</a>.</p>
+
+<li> Newton's theory explained <b>all</b> the known properties of the
+planetary orbits and also the motion of objects (like apples, bullets,
+and pendulums) moving in Earth's gravity.</p>
+
+<ul> 
+
+      Remarkably, it was quickly extended to determine the orbit
+      of <a href="guide21.html#halley"><b>Halley's Comet</b></a>
+      (which was correctly predicted
+      to <a href="im/halley-1759-return-painting.jpg">return in
+      1759</a>) and to explain the ocean <b>tides</b>, the
+      Earth's <b>precession</b>, the Earth's
+      <b>oblate shape</b>, and many other formerly mysterious phenomena.</p>
+
+</ul>
+
+
+<li> In 1846 Newton's theory was used to correctly predict the
+location of a <a href="guide20.html"><b>new planet, Neptune</b></a>,
+based on unexpected residuals in the orbit of the planet Uranus.  This
+was regarded as the
+<b>"greatest triumph"</b> of Newtonian mechanics. </p>
+
+</ul>
+
+<font color="blue"><b>Newton's Legacy</b></font></p>
+
+<ul>
+
+Newton's Laws and theory of gravity were <b>complete, quantitative,
+and predictive</b>.  They were profoundly clarifying, and their
+importance extended vastly beyond their original frame of reference.
+They represent the first generalized physical laws.  From them emerged
+modern physics, mathematics, and engineering.  They became the
+cornerstone of the <b>"Scientific Revolution."</b></p>
+
+</ul>
+
+ <!--  END OF MAIN TEXT -->
+
+
+<hr size=2>
+
+Reading for this lecture:
+
+<ul>
+
+Bennett textbook: Ch. 3.3 (Copernicus, Tycho, Kepler, Galileo)  </p>
+
+Study Guide 7</p>
+
+Further optional reading: Arthur Koestler, <i>The Sleepwalkers</i>; Timothy
+Ferris, <i>Coming of Age in the Milky Way</i>; J. L. E. Dreyer,
+<i>A History of Astronomy from Thales to Kepler</i>; Richard
+S. Westfall, <i>Never at Rest: A Biography of Isaac Newton</i>.</p>
+
+<!--  F13: the falling body puzzlah was given in Lec 6.
+-->
+
+
+</ul>
+
+Reading for next lecture:
+
+<ul>
+Bennett textbook: Ch. 4.1, 4.2, 4.3, 4.4 (Newtonian dynamics & gravitational orbits)</p>
+
+Study Guide 8</p>
+
+</ul>
+
+<hr>
+
+Web links:
+
+<ul>
+
+<a href="discovery_of_gravity-s14.pptx">Slides shown in lecture</a></p>
+
+
+<!-- Note:  Rice University Galileo Project pages change names between
+2004 and 2007.  Old links take you to a main page which seems
+to link only to itself.  -->
+
+<a href="https://path-to.org/newton.html">The Path to Newton</a>
+(Summarizes in text and graphical form the key conceptual<br> developments
+leading to Newton's laws of motion and gravity)</p>
+
+<a href="http://galileo.rice.edu/sci/brahe.html">
+More information on Tycho</a><br>
+
+<!-- <a href="http://www.nada.kth.se/~fred/tycho/index.html">A Tycho home
+page</a><br>  Gone 12/2018.  -->
+
+<a href="http://www.mhs.ox.ac.uk/tycho/index.htm">Images of Tycho</a>
+(Oxford University exhibition)</p>
+
+
+<a href="http://galileo.rice.edu/index.html">The
+Galileo Project.</a> (elaborate
+site devoted to Galileo and his times)<br>
+
+<a href="http://famous-trials.com/legacyftrials/galileo/galileo.html">The
+Trial of Galileo</a> (the most famous collision between science and
+religion)</p>
+
+
+<a href="guide14.html">More information on telescopes</a> (Study Guide 14)</p>
+
+<a href="http://www.phys.virginia.edu/classes/109N/1995/lectures/kepler.html">
+Biography of Kepler</a> (Mike Fowler, PHYS 109)<br>
+
+<a href="http://www-groups.dcs.st-and.ac.uk/~history/Mathematicians/Kepler.html">
+Biography of Kepler</a> (MacTutor Archive)<br>
+
+<!-- <a href="http://csep10.phys.utk.edu/astr161/lect/history/kepler.html">More
+information on Kepler's Laws</a> (U.Tenn)<br>.  Gone 12/2018.  --> 
+
+<a href="https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion">
+More information on Kepler's Laws</a> (Wikipedia)<br>
+
+<a href="http://www.keplersdiscovery.com">Kepler's Discovery</a> (background on Kepler
+and his science)</p>
+
+<a href="http://galileoandeinstein.physics.virginia.edu/more_stuff/flashlets/kepler6.htm">
+Flashlet Interactive Simulation of Kepler's Laws</a> (Mike Fowler)<br>
+
+<a href="http://janus.astro.umd.edu/javadir/orbits/ssv.html" >Java Simulation
+of Solar System Orbits</a> Shows shapes and orbital speeds. (UMd)<br>
+
+<a href="https://hypnagogic.net/sim/Sim/new-parallax/Parallax.html">Java
+Simulation of Parallax</a> (UBC)</p>
+
+<a href="http://www.newton.cam.ac.uk/newton.html">Directory of 
+links for Isaac Newton</a><br>
+
+<a href="http://scienceworld.wolfram.com/biography/Newton.html">Biography
+and Contributions of Newton,</a> with many supporting links (Weisstein)<br>
+
+<!-- Vanished, Feb 02:
+<a href="http://newton.gws.uky.edu/">A Sir Isaac Newton home page</a><br> 
+-->
+
+<a href="http://www.fordham.edu/halsall/mod/1778voltaire-newton.html">Voltaire's
+comments on Newton</a> (at a distance of 100 years)<br>
+
+<a href="121supps2-3.html">More information on Newton's Laws</a> (Study Guide 10/Supplements
+II and III)<br>
+
+<!-- <a href="http://csep10.phys.utk.edu/astr161/lect/history/newton.html">More
+information on Newton's Laws</a> (U.Tenn)<br>.  Gone 12/2018.  -->
+
+<a href="http://www.jpl.nasa.gov/basics/">JPL Notes on Gravitation
+& Mechanics (Kepler's & Newton's laws & applications to spaceflight)</a><br>
+
+</ul>
+
+<p><br></p>
+
+
+<!--- REDIRECT BOX -->
+
+<hr size=2>
+<center>
+<Table width="75%">
+<tr>
+<td>
+<b><a href="guide06.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Guide</a></b> 
+</td>
+
+<td>
+<b><a href="guideindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Guide Index</a></b> 
+</td>
+
+<td>
+<b><a href="guide08.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Guide </a></b> 
+</td>
+</tr>
+</table>
+<hr size=2>
+
+<!-- END REDIRECT BOX -->
+
+<!-- START FOOTER -->
+
+
+<center>
+<small><i>Last modified
+    <b>July 2020</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+<small>Text copyright &copy 1998-2020 Robert W. O'Connell.  All rights
+reserved.  Timeline chart copyright &copy by Cengage Learning, Inc. .
+Illustrations of Kepler's laws
+by <a href="http://www.astronomynotes.com/">Nick Strobel</a>.  Falling
+apple animation from ASTR 161 UTenn at Knoxville.  These notes are
+intended for the private, noncommercial use of students enrolled in
+Astronomy 1210 at the University of Virginia.</small></p> </center>
+
+<!-- END FOOTER -->
+
+</body>
+</html>
+				  
+
+     <!--   ----------- END OF GUIDE TEMPLATE ---------------   -->
+
+

@@ -1,0 +1,30 @@
+body        { color: #000000; background: #FFFFdd;
+              font-family: Arial,Helvetica,Verdana;  }
+
+a:link      { font-weight: bold;  color: #077A17 }
+
+a:visited   { font-weight: bold;  color: #055805 }
+
+a:active    { color: lime }
+
+H1          { font-size: xx-large; color: #8800aa; font-weight: bold}
+
+H2          { font-size: x-large; color: blue; font-weight:bold}
+
+H3          { font-size: large; color: blue }
+
+/* Updated defs for publications 10/10/09 so can easily switch to BW */
+
+pub         { font-style: italic; color: blue }
+
+emp         { color: purple }
+
+th          { font-family: Arial,Helvetica,Verdana;
+              font-weight: bold }
+
+td          { font-family: Arial,Helvetica,Verdana }
+
+pre         { font-family: Courier, CourierNew }
+
+kbd         { font-family: monospace; font-size: 125%; font-weight: bold; 
+              color:red}

@@ -1,0 +1,265 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 2001-2019.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- Original Home URL: http://www.astro.virginia.edu/class/oconnell/astr511 -->
+<!-- -->
+
+<!-- HISTORY: RWO -- 
+TeX version from "IRIS" presentation, September 1997.  Updated for 511, 7/2001.
+7/2/2003: converted to HTML; 7/7; 7/13; 7/27 transferred to "Facil"; 7/29; 
+8/11; 8/12; 9/3; 6/10/2007; 9/16/15: new domain; 10/29/2019: add viewport def,
+update entries;    -->
+
+
+<html>
+<head>
+<link rel=stylesheet href="classblack-1.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL. Lecture Notes  </TITLE>
+</head>
+<body>
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="#00BEEB" vlink="#00BEEB" alink="red">
+-->
+
+<!-- <body bgcolor="#FFFFF0" text="000000" link="#DC143C" vlink="#0000EB" >
+-->
+
+<basefont size=4>
+
+<font size=+0> 
+
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<hr>
+<p><br></p>
+
+<center>
+<font size="+3" color="#dd33ff"><b>MAJOR FACILITIES BY EM BAND<br> 1990-2020 </b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+
+<table width="700" align="center" cellpadding=7 border=5>
+
+<tr>
+
+<th><font color="yellow">EM REGION</font></th>
+
+<th><font color="yellow">RELATIVE<br>WAVELENGTH</font></th>
+
+<th><font color="yellow">FACILITIES</font></th>
+
+<th><font color="yellow">SURVEYS</font></th>
+
+</tr>
+
+<tr>
+
+<td><b>
+<font color="ffcc00">RADIO</font>
+</b></td>
+
+<td><b>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  10<sup>6</sup>
+</b></td>
+
+<td><b>
+VLA, GBT, Arecibo, <br> MPIfR, WSRT,
+ATNF, <br> VLBA, Merlin, BIMA, IRAM,<br>
+Nobeyama, CARMA, <br> JCMT, OVRO, CSO, ALMA, 
+FAST, LOFAR, ASKAP, MeerKAT
+</b></td>
+
+<td><b>
+VLA/NVSS, VLA/FIRST, CHIME<br>
+<font color="lime">COBE, WMAP, Planck</font> <br>
+</b></td>
+
+</tr>
+
+<tr>
+<td><b>
+<font color="ffcc00">IR</font>
+</b></td>
+
+<td><b>
+&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 100
+</b></td>
+
+<td><b>
+
+IRTF, UKIRT<br>
+<font color="lime">ISO, HST, SST, Herschel,
+SOFIA</font> <br>
+</b></td>
+
+<td><b>
+2MASS, VISTA, SCUBA<br>
+<font color="lime">WISE</font>
+</b></td>
+</tr>
+
+<tr>
+<td><b>
+<font color="ffcc00">OPTICAL</font>
+</b></td>
+
+<td><b>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.0
+</b></td>
+
+
+<td><b> VLT, Keck, GTC, LBT, HET,
+SALT, Subaru, Gemini, Magellan, MMT, Palomar<br>
+ <font color="lime">HST, Kepler, TESS</font></b></td>
+
+
+<td><b> POSS II, SDSS, 2dF, OGLE, PanSTARRS, PTF, ZTF, DES
+<font color="lime">Hipparcos, Gaia</font> </b></td>
+
+</tr>
+
+<tr>
+<td><b>
+<font color="ffcc00">UV</font>
+</b></td>
+
+<td><b>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0.1
+</b></td>
+
+<td><b>
+<font color="lime">IUE, Astro, HST, 
+EUVE, FUSE, GALEX, Swift-UVOT, UVIT </font>
+</b></td>
+
+<td><b>
+<font color="lime">GALEX</font>
+</b></td>
+
+</tr>
+
+
+<td><b>
+<font color="ffcc00">X-RAY</font>
+</b></td>
+
+<td><b>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10<sup>-4</sup>
+</b></td>
+
+<td><b> <font color="lime">ASCA, ROSAT, RXTE, BeppoSAX, Chandra,
+XMM, NuSTAR, Astrosat</font> <br> </b></td>
+
+<td><b>
+<font color="lime">ROSAT</font>
+</b></td>
+
+</tr>
+
+<tr>
+<td><b>
+<font color="ffcc00">GAMMA RAY</font>
+</b></td>
+
+<td><b>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10<sup>-6</sup>
+</b></td>
+
+<td><b>
+<font color="lime">
+HETE, 
+INTEGRAL, Swift</font>
+</b></td>
+
+<td><b>
+<font color="lime">CGRO, Fermi</font>
+</b></td>
+</tr>
+</table>
+
+<center><p><br></p> <font size=-1><b>Entries
+in <font color="lime">green</font> are <font color="lime">space-based.</font>
+For a graphic comparison of optical telescope mirror sizes,
+see <a href="im/large-op-mirrors-compared-2015.png">this
+illustration.</a></b>.
+</center>
+
+
+<p><br></p>
+
+
+<font size=3>
+
+<hr size=2>
+
+<ul>
+<b>You can find links to most of these facilities at one of the following
+sites:</b></p>
+<ul><ul>
+
+<!-- out of date!
+
+<li><a href="http://astro.nineplanets.org/bigeyes.htm">Large Optical Telescopes
+Links</a><br>
+<li><a href="http://spider.seds.org/oaos/oaos.html">Orbital Telescopes
+Links</a><br>
+<li><a href="http://www.faqs.org/faqs/astronomy/faq/part2/section-4.html">Large
+Telescope FAQ</a></p>
+
+-->
+
+<!-- <li><a href="https://en.wikipedia.org/wiki/List_of_largest_optical_reflecting_telescopes">
+Large Optical Telescopes</a><br> -->
+
+<b>
+
+<li><a href="https://nineplanets.org/the-worlds-largest-optical-telescopes/">
+Large Optical Telescopes</a><br>
+
+<li><a href="https://en.wikipedia.org/wiki/List_of_radio_telescopes">Large
+Radio Telescopes</a><br> 
+
+<li><a href="http://spider.seds.org/oaos/oaos.html">Orbital Telescopes</a></p>
+
+</b>
+
+</ul>
+</ul>
+</ul>
+
+</font>
+
+<hr size=2>
+
+
+<!-- START FOOTER -->
+
+
+<!-- 
+<p><br></p>
+
+<p align="center"> <small><i>Last modified
+    <b>October 2019</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+<center> 
+<small> <i>Copyright &copy 2000-2019 Robert W. O'Connell.  All rights
+reserved.  These notes are intended for the private, noncommercial use
+of students enrolled in Astronomy 511 at the University of
+Virginia.  </i>
+</small>
+</center>
+
+<hr size=2>
+
+-->
+
+<!-- END FOOTER -->
+</body>
+</html>
