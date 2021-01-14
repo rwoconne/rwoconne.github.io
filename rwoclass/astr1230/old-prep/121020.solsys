@@ -1,0 +1,988 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
+<!-- -->
+
+
+<!-- CREATED: by RWO from A121/S99 Guides 4 & 5; 9/22/00; 9/23; 9/24;
+9/25; 10/23; 10/30; 11/6; 2/12/01; 3/29; 7/12/2002; 9/20; 9/21; 9/22;
+9/25; 9/30; 10/04; 11/4; 12/17; 2/27/2003; 5/3; 10/06; 1/5/2004; 4/6;
+10/1: material on precession and eclipses extracted for separate
+pages; 10/2; 10/3; 10/4; 10/12; 10/17; 2/16/2005; 2/20; 3/14;
+8/20/2006; 9/12; 9/19; 9/22; 9/25; 9/29; 10/23; 10/24; 9/28/2008;
+9/29; 10/6; 6/17/2008; 2/9/2010; 2/16; 2/18; 3/10; 9/22; 9/23; 9/24;
+2/27/2011; 9/18; 9/22; 3/13/2012; 9/14/2015: new domain; 5/21/2019:
+convert to A1210 format; 5/22; 5/28: reduce lunar phases, precession,
+eclipse coverage & link instead to A1210 lunar motions page; 5/29; 
+
+GHP version:  12/10/2020; 
+
+-->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1230, O'CONNELL.  Lecture Notes  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="">
+
+<style>
+     div.all {  max-width: 900px;}
+ </style>
+
+</head>
+<body>
+
+<div class="all"> 
+
+
+<h2 align="center">ASTR 1230 (O'Connell) Lecture Notes </h2>
+
+<p></p>
+<hr>
+
+ <h1 align="center"> 4.  SOLAR SYSTEM ASTRONOMY  </h1>   
+
+
+<p><br></p>
+
+<a name="sat"> </a>
+
+<!-- 
+<center><a href="im/sat-irfalse.jpg"> <img src="im/sat-irfalse-ex-sm.jpg"
+     alt="Saturn"
+     align="top" border="2"></a>  </center> 
+
+<p align="right"><small><b><em>Pseudo-color infrared image of
+Saturn (HST)</em></b></small></p>
+-->
+
+<center><a href="im/saturn-best-DPeach.jpg"> <img src="im/saturn-best-DPeach.jpg"
+     alt="Saturn"
+          align="top" width="70%" hspace=10></a>  </center>
+  <p align="right"><small><em>Saturn imaged with a 14-in amateur telescope
+        <br>by Damian Peach</em></small></p>
+	   
+
+<p><br></p>
+
+
+<h2>A.  INTRODUCTION</h2>
+
+The Solar System consists of the Sun, 8 planets, a number of "dwarf
+planets," over 160 satellites, and a thin scattering of
+rocky or icy planetoids, comets, dust, and gas.  The Sun is the
+dominant object, being 1000 times more massive than the next largest
+(Jupiter).  By terrestrial standards, the density of matter in
+the Solar System is <b>extremely low</b>, and the planets are
+separated by enormous gaps.</p>
+
+Other than the Sun, no solar system object is self-luminous (at
+visible wavelengths), and all shine by <b>reflected sunlight</b>.
+From the Earth, the second and third-brightest Solar System objects
+are the Moon and Venus.  Other than the Sun, the Moon, and some
+comets, no Solar System object is resolvable with the naked eye---all
+appear instead to be <b>point sources</b> of light.  So, real exploration of
+the nature of the planets and interplanetary denizens required the use
+of <b>telescopes</b>.</p>
+
+Many interesting features of the Solar System can be observed with the
+naked eye, binoculars, and small telescopes, and this lecture is 
+aimed at exploring some of these.  </p>
+
+
+<h2> B. SOLAR SYSTEM MOTIONS</h2>
+
+For most of human history, "astronomy" consisted mainly of naked-eye
+studies of the <b>motions</b> of solar system bodies.  We will use
+the <a href="http://www.starrynight.com" >Starry Night</a> planetarium
+software to simulate the appearance of the sky over many years and
+illustrate the <b><em>apparent motions</em></b> of the Sun, Moon, and
+planets.  We call these <em>"apparent"</em> motions, because they can
+be produced by motions of the <b>Earth</b>, which carries the
+observers (us), as well as by the intrinsic motions of the objects
+themselves.</p>
+
+<ul>
+
+<li> The stars constitute the backdrop, or <b>"reference frame,"</b>
+against which we judge motions of other objects. </p>
+
+<li> The <b>Sun</b> moves about <b>1 degree eastward</b> each day with
+respect to the stars and takes 365.25 days to come back to
+the same position against the stars.</p>
+
+<ul>
+
+The Sun's annual path through the stars
+is always the same and is called the <b><em>ecliptic</em></b>.  The set of
+constellations through which the ecliptic passes is called the
+<b><em>Zodiac</em></b> (see notes
+for <a href="constellations.html#constell">Lecture 1</a>).</p>
+
+The ecliptic path is <b>tilted 23.5 degrees</b> with respect to the
+celestial equator, so the Sun's distance from the equator ranges from
+0 degrees to 23.5 degrees throughout the year
+(illustrated <a href="im/Dec-of-Sun-v-Date.jpg" >here</a>).  Thus, the
+Sun's maximum range in altitude from the southern horizon at transit
+(i.e. local noon) is <b>47 degrees</b>.  The consequent large change
+in the daily solar heat input at a given latitude drives
+the <b>"seasons"</b>
+(see <a href="im/sunangle-annual-change-Wadsworth.gif" > this
+example</a>).</p>
+
+The times of the year when the Sun crosses the equator are
+called <b><em>equinoxes</em></b> and times when the Sun is at maximum
+distance from the equator are called <b><em>solstices</em></b>.</p>
+
+<ul>  At the equinoxes, the hours of daytime
+(when the Sun is above the horizon) and nighttime are <b>12 hours each</b>
+for all latitudes on Earth.  The vernal and autumnal equinoxes occur
+at about March 21 and September 21, respectively.</p>
+
+At the solstices, we have the longest periods of daytime/nighttime,
+and the most extreme dependence of sunlit time on latitude.  The
+summer and winter solstices occur at about June 21 and December 21,
+respectively.  (The labeling here is based on the seasons in the
+northern hemisphere; seasons are, of course, <b>reversed</b> in the southern
+hemisphere.)  </p>
+
+</ul>
+</ul>
+
+<li> The <b>Moon</b> moves about <b>13 degrees eastward</b> each day with
+respect to the stars and takes 27.3 days to come back to the same
+position against the stars.  On average, the rise/set times of the
+Moon advance by about 50 minutes each day.  The Moon's path is <b>tilted 5
+degrees from the ecliptic.</b></p>
+
+<li> There are <b>five</b> easily visible objects in the sky other
+than the Sun and Moon which exhibit significant motions with respect
+to the stars.  These are the brighter <b>planets</b> (the others were
+telescopic discoveries).  Although not as fast as the solar and lunar
+motions. their motions are considerably <b>more complex</b>:</p>
+
+<ul>
+
+<li> The general motion of the planets with respect to the stars is
+<b>eastward</b> in the sky, measured over a period of weeks to months.</p>
+
+<li> The <b>speed</b> of the motions depends on the planet, decreasing from
+rapid to slow in the order: Mercury, Venus, Mars, Jupiter, Saturn.  It
+takes Saturn over 29 years to return to the same place in the sky.</p>
+
+<li> Mercury and Venus never move very far from the Sun and appear
+to move back and forth in front of/behind it.  The other planets can
+appear up to 180<sup>o</sup> from the Sun. </p>
+
+<li> At least once per year, each of the planets halts its eastward
+motion and <b>loops backward</b> to the west for a brief period before
+starting to move eastward again.  This backward loop is
+called <b><em>retrograde motion</em></b>.</p>
+
+<!--
+<li> The planets are confined to a relatively <b>narrow band</b> on
+the sky that is roughly <b>centered on the ecliptic</b> but not
+coincident with it.  The planets are always to be found in
+the <b>Zodiacal constellations</b>. </p>
+-->
+
+</ul>
+</ul>
+
+<p><br></p>
+
+<h2>C. GEOMETRY OF THE EARTH'S ORBIT</h2>
+
+The apparent annual motion of the Sun is caused by the fact that we
+are observing it from the Earth, which  is a <b>planet moving in
+orbit</b> around the Sun. </p>
+
+<ul>
+
+<li> Earth's orbit is <b>nearly circular</b> (the distance to the Sun
+varies only 3.4%), with a mean radius of 150,000,000 km or 93,000,000
+miles.  The mean radius of Earth's orbit is defined to be
+the <b><em>Astronomical Unit</em> (AU)</b>.</p>
+
+<li> Its orbit lies in a <b>plane</b> (i.e. seen edge-on it would look like
+a thin line), and it orbits the Sun in <b>365.25 days (one year)</b>.
+Its motion is <b>counterclockwise</b> as seen from above the N pole.</p>
+
+</ul>
+
+<center><img src="im/zodiac-may-NS.gif" border=0 alt="Earth Orb May" width="55%"
+vspace=10 ></center>
+<hr>
+<center><img src="im/zodiac-nov-NS.gif" border=0 alt="Earth Orb Nov" width="55%"
+vspace=12></center></p>
+
+<ul>
+
+<li> The stars visible at night are those "opposite" the Sun.  See
+figures above (warning! these are <b>grossly distorted</b> in scale!).
+The night side of Earth is that opposite the Sun.  So, in May, the
+constellation Scorpio will be prominent in the night sky, while in
+November, Taurus is prominent whereas Scorpio lies in the
+direction of the Sun and therefore is not visible because of the
+atmospheric glare.</p>
+
+<li> The Earth's motion around the Sun is <b>counterclockwise</b> in the drawings
+above.  This produces an apparent <b>eastward</b> angular displacement
+or "motion" of the Sun against the stellar reference frame as seen
+from the Earth.</p>
+
+<li> The effects of Earth's motions on the apparent motions of the Moon
+and planets are described below.
+</p>
+
+
+</ul>
+
+<center><a href="im/earthmo2.gif" ><img src="im/earthmo2.gif"
+width="45%" vspace=10 ></a></center> <center><small><em>Earth and
+Moon seen together<br> from a spacecraft (click for an enlargement).
+</em></small></center>
+
+
+<h2> D. THE MOON</h2>
+
+The Moon is the Earth's only natural satellite.  Although it has only 1/4
+the diameter of Earth, it is the largest satellite with respect to its
+primary of any in the Solar System except for Pluto's moon Charon.  </p>
+
+<h3>PHASES OF THE MOON</h3>
+
+<ul>
+
+<a href="im/moon-phases-lrg-cidadao.jpg"><img src="im/moon-phases-lrg-cidadao-sm.jpg"
+align="right" width=25% hspace=12 vspace=12></a>
+
+<li> Although it seems bright, the Moon's surface is actually very
+<b>un</b>reflective (see the image above comparing the Earth and
+Moon).  Its reflectivity, or <b><em>"albedo,"</em></b> is only about 10%.
+Nonetheless, it is close enough to us to produce a large amount of
+light, and it is the second brightest object in the sky after the Sun.
+</p>
+
+<li> During the Moon's monthly circuit, its bright area exhibits
+drastic changes in apparent <b>shape</b>, from crescent to round and
+back.  The shapes are called <b><em>phases</em></b> of the Moon. The
+phases repeat after a period of 29.5 days.  This is longer than the
+time it takes the Moon to circle the Earth once against the stars
+because of the continual motion of the Earth around the Sun (explained
+<a href=" https://rwoconne.github.io/rwoclass/astr1210/lunar-motions.html">here</a>). A
+montage of photographs of the lunar phases during a month is shown at
+the right.  Click for an enlargement. </p>
+
+<li> Lunar phases had considerable practical consequences in
+pre-industrial societies that had to rely on the Moon for nighttime
+illumination.  They still have dominant effects on astronomical
+observations because of the tremendous <b>brightening of the night sky</b>
+produced by scattered light near full Moon (called <b>"bright time"</b>
+by astronomers).  </p>
+
+<li> The phases of the Moon are a <b>shadow effect</b> originating
+from the facts that it is a <b>sphere, half-illuminated from the direction of
+the Sun</b> which we view from 
+<a href="im/moon-phases-NS.gif">different perspectives</a> as it moves
+in its orbit around Earth. </p>
+
+<li> The lunar phases as well as two other important phenomena
+associated with the Moon -- <b><em>polar precession</em></b>
+and <b><em>eclipses</em></b> -- are explained in detail on
+<a href="https://rwoconne.github.io/rwoclass/astr1210/lunar-motions.html">
+this supplementary page from ASTR 1210</a>.</p>
+
+</ul>
+
+<center><a href="im/composite-full.jpg"><img
+src="im/composite-full-ex.jpg" width="85%" hspace=10 vspace=15></a></p></center>
+<center><small><em>Full Moon (an extract from a composite
+exposure).<br>  Click for full image.</em></small></center></p>
+
+
+<h3>SURFACE OF THE MOON</h3>
+
+The Moon is the only "planetary" surface that can be examined
+in detail through a small telescope, and it is a fascinating
+study.  Galileo's small telescopes (1609) first revealed the Moon's
+remarkable terrain.  </p>
+
+<img src="im/moon-drawing-1.jpg" align="right" width="30%">
+
+<ul>
+
+<li> The Moon has <b>no atmosphere</b>, so there is no obscuration of its
+surface features.  More importantly, these are <b>not subject to
+weathering</b>.  The Moon's surface has been shaped over 4.5 billion years
+by the relentless infall of asteroids, meteoroids, and smaller
+interplanetary debris.  Almost all of its geology is related to
+these <b>impacts</b>.  </p>
+
+<li> The numerous <b>craters</b> (up to 150 mi diameter) are the best
+indicators of impacts.  Unlike on the Earth, almost none of these are
+related to volcanic activity.  In fact, the Moon's interior has been
+too cool to sustain surface volcanic activity for over a billion years.
+The <b>mountains</b> on the Moon (casting shadows in the drawing at
+right), which range up to 25,000 feet, are also impact effects, not
+the products of plate tectonics as on Earth.  Similar scars from
+impacts cover the other solid surfaces in the solar system (Earth and
+a few outer planet satellites excepted). </p>
+
+<li>The rounded, dark grey areas (part of the "man in the Moon" face)
+are called <b><em>maria</em></b> ("seas"), even though we now know
+they contain no water.  They are the products of ancient massive
+impacts by asteroidal bodies which were later filled in by dark lava.
+They have relatively smooth surfaces except for a few craters.  These
+regions are younger than the lighter grey, rougher <b>"highland"</b>
+regions.  Ages can be estimated by the crater density (fewer craters
+implies younger regions).</p>
+
+<li> <a
+href="https://rwoconne.github.io/rwoclass/astr1210/moontop.html"
+><img src="im/rd_star.gif"> More
+illustrations and descriptions of lunar topography. </a></p>
+
+</ul>
+
+<p><br></p>
+
+<center><img src="im/ss-orbs-2.jpg" border=2 alt="Plan Orbits" width="60%"
+hspace=10></center>
+
+
+<p><br></p>
+
+
+<h2>E. PLANETARY ORBITS</h2>
+
+<ul>
+
+<li> The planets accumulated from the flattened band of solid debris
+that surrounded the Sun as it formed.  Their orbits consequently lie
+in almost, but not quite, the <b>same plane</b> in 3-dimensional
+plane.  </p>
+
+<li> The picture above shows an oblique view
+of the planetary orbits to scale (though the planet sizes shown are
+not to scale).  <a href="im/orbital-inclinations-FB.gif" >Here is an
+edge-on plot</a> of the orbits showing the near-coincidence of the
+orbital planes.</p>
+
+<li> The plane of the Earth's orbit defines the ecliptic path we see
+on the sky.  Because most planetary orbits are only slightly inclined
+with respect to Earth's, they will always be observed in
+a <b>relatively narrow band in the sky, centered on the ecliptic</b>.
+They therefore move through the <b>Zodiacal constellations</b>.  </p>
+
+<li> The apparent motions of the planets in the sky are determined by
+orbital geometry and are a <b>combination</b> of the intrinsic motion of the
+planets <b>and</b> the motion of the Earth.
+</p>
+
+<center><img src="im/plan-configs-FB.gif" width="90%" hspace=12></center></p>
+
+ 
+<li> See the illustration above.  All planets move in the <b>same
+direction</b> around the Sun (counterclockwise as seen from above the
+Earth's North Pole).  Planets <b>nearer</b> the Sun move <b>faster</b>
+in their orbits and have shorter orbital periods. (Historically, this
+was an important clue to the nature of gravity as deduced by Newton.)
+</p>
+
+<ul>
+
+Right panel: As viewed from the Earth, the two planets inside the
+Earth's orbit (so-called <b><em>"inferior"</em></b> planets) can
+<b>never appear at large angles from the Sun.</b>  Mercury and Venus always
+stay within 27<sup>o</sup> and 48<sup>o</sup>, respectively, of the
+Sun.  </p>
+
+
+Left panel: The planets outside Earth's orbit
+(<b><em>"superior"</em></b> planets), starting with Mars, can be seen
+at up to 180<sup>o</sup> from the Sun.  When they are exactly at that
+point they transit at midnight and are said to be
+at <b><em>"opposition"</em></b> with respect to the Sun.  As the
+figure shows, planets at opposition are also <b>nearest</b> the Earth
+then and are therefore brightest.  </p>
+
+These angular relationships are called the <a
+href="im/planet-configurations.gif" > <em>planetary
+configurations</em></a>. </p>
+
+</ul>
+
+<li> The planetarium simulation in the image below shows the
+concentration of the planetary orbits to the ecliptic, as seen from
+Earth. </p>
+
+<center><a href="im/retro-motion-plantarsim.jpg"><img src="im/retro-motion-plantarsim.jpg"
+width="50%" hspace=12></a></p></center>
+<center><small><em>
+Time lapse exposure of a planetarium simulation<br> of several years
+of planetary motions as seen from Earth.</em></small></center></p>
+
+
+<li> The "retrograde loops" in the trajectories in the image above are
+caused <b>not by the planet's motion</b> but by the <b>Earth's annual
+motion</b> around the Sun.  
+<a href="im/retrograde-anim-UTK.gif" >Here</a> is an animation showing
+how retrograde motion is produced by the change in perspective for
+Earthbound observers as the Earth moves in its orbit.  The retrograde
+motion for a superior planet is greatest at opposition.
+  </p>
+
+</ul>
+
+<p><br></p> 
+
+<center> <img src="im/plan-comp1-shrp.gif"
+      alt="Planets"
+      align="top"  width="70%" hspace=12>  </center>
+<center><small><em>Spacecraft images of the planets to correct<br>
+relative scale (though not separation)</em></small></center></p>
+
+
+<h2>F.  OBSERVING THE PLANETS</h2>
+
+<font color="blue"><b>Three Kinds of Planets:</b></font> What a mess!
+In the summer of 2006 astronomers held a debate over the meaning of
+the term "planet"---specifically whether or not Pluto and the several
+other newly discovered distant objects that are similar to Pluto
+should be placed in a separate category.  In the end, the
+International Astronomical Union voted to create a new category
+of <a href="http://en.wikipedia.org/wiki/Dwarf_planet" >"dwarf
+planet"</a> for these latter objects.  All this was handled very
+clumsily; and it generated needless controversy, especially among the
+many who were fond of planet Pluto, since it was demoted. </p>
+
+Including this new category, there are <b>three</b> types of planets:
+<b><em>terrestrial planets</em>, <em>Jovian planets</em>, and <em>dwarf
+planets</em></b>:
+
+<ul> <li> <b>Terrestrial Planets</b> (archetype Earth; Mercury, Venus, Mars):
+These are relatively small planets with solid, <b>rocky</b> bodies and
+<b>thin</b> or absent atmospheres.  The rocky material is made mainly of
+silicon, oxygen, iron and similar elements.  Even though Venus'
+atmosphere is 100 times thicker than Earth's, this still counts as
+"thin."</p>
+
+<li> <b>Jovian Planets</b> (archetype Jupiter; Saturn, Uranus, Neptune):
+Also called "giant" planets, these are primarily made of <b>hydrogen and
+helium</b>, with a thin smattering of heavier elements.  They are much
+larger than Earth.  They have <b>enormous atmospheres</b>
+with denser but slushy interiors. They may have rocky or
+icy cores, similar in size to the Earth, but there is no well defined
+boundary between their atmospheres and their interiors.</p>
+
+<li> <b>Dwarf Planets</b> (archetypes Ceres, Pluto; dozens of others):
+any other object in orbit around the Sun and massive enough for
+self-gravity to make it roughly spherical.  Ceres is in the asteroid
+belt, but no other asteroids qualify as dwarf planets.  The other
+dwarfs are all in
+the <a href="https://en.wikipedia.org/wiki/Kuiper_belt">Kuiper
+Belt</a>, in the outer solar system.  Pluto-like dwarfs are primarily
+made of <b>ices</b>, with additional rocky material; Ceres contains a
+larger fraction of rocky material.  There are probably thousands of
+Pluto-like dwarfs in the outer solar system. </p>
+
+</ul>
+
+All the non-dwarf planets except Uranus and Neptune are easily visible
+to the naked eye.  With your 8-in telescopes, you can also observe
+Uranus (5.5 mag) and Neptune (7.8 mag).  Pluto is 14.9 mag, and is
+visible only in larger telescopes.  Ceres is a relatively easy target
+for your telescopes (even though it is smaller than Pluto and other
+ice dwarfs, it is much nearer).   Venus and Mercury can be
+observed in daylight.</p>
+
+Click <a href="im/planets-telappearance-RASC.jpg" >
+here</a> for sketches of the appearance of the planets in small
+telescopes. </p>
+
+
+<font color="blue"><b>MERCURY</b></font>:  Hard to observe only because
+it is always near the Sun and never very far from the horizon at
+night.  Surface features are too subtle to be detected in a small
+telescope.  Like Venus, shows phases.</p>
+
+<b><font color="blue">VENUS</font></b>:  Dazzling white in the sky.  Can
+be astonishingly bright and is the source of more UFO reports than any
+other astronomical object.</p>
+
+<ul>
+
+<a href="im/phases-of-venus-2004.jpg">
+<img src="im/phases-of-venus-2004.jpg" align="right" width="30%"
+vspace=10  hspace=10></a>
+
+<li> UFO Reality check:  Watch for 5 minutes; is
+the "UFO" stationary with respect to the stars?  Is it within about
+40<sup>o</sup> of the western or eastern horizon?  Is it in a Zodiacal
+constellation?  If yes, then it's probably Venus.</p>
+
+<li>Venus is the planet nearest Earth and has the orbital period most
+closely matching Earth's.  Consequently, it can "linger" near the
+horizon before sunrise or after sunset, undergoing
+a complex set of motions over several month's time.  See
+our <em><a href="http://www.starrynight.com" > Starry Night</a></em>
+demonstration.  </p>
+
+<li>  The <b>carbon dioxide</b> which makes up the bulk of Venus' atmosphere
+would be transparent, but unfortunately it is filled with
+<b>dense clouds</b> (made of sulfuric acid droplets!), which shroud
+the surface.  However, Venus does show pronounced <b><em>phases</em></b>,
+like the Moon's (see illustration at right) as it orbits the Sun.  The
+geometry is shown <a href="im/venus-phases-huffman.gif" >here</a>.
+Neither Venus nor Mercury have satellites.</p>
+
+</ul>
+
+ <font color="blue"><b>MARS</b></font>: Undergoes large changes in
+distance, and consequently apparent size & brightness, from Earth.
+Brightest at opposition (once every 2.1 years); but because of its
+relatively elliptical orbit, its distance at opposition can vary by a
+factor of two (see diagram).</p>
+
+<ul>
+
+<!-- Following 3 images: vspace specification removed so that window
+width can be larger before displacement of adjacent images begins. -->
+
+<a href="im/mars-opps-2012-25.gif"><img src="im/mars-opps-2012-25.gif"
+align=right width="30%" hspace=10 ></a>
+
+<li> Click <a href="http://jersey.uoregon.edu/vlab/kepler/Kepler.html"
+> here</a> for a Java animation of the relative motion of Earth and
+Mars.  At opposition, it can be brighter than Jupiter.  In August
+2003, Mars was closer to Earth than at any time since 57,617 BC
+(34,646,418 miles distant). The opposition in July 2018 was also very
+favorable, and the one in October 2020 will be only slightly less so.
+Click on the chart at the right for a diagram of upcoming oppositions. </p>
+
+
+<li> Mars' atmosphere is primarily <b>carbon dioxide</b> and is
+<b>transparent</b>.  Its surface color is conspicuously red-pink
+(hence its association with the God of War), caused by <b>iron oxide
+compounds = rust</b> on its surface.  Mars has been explored with ever
+increasing resolution by Earthbound telescopes, orbiting spacecraft,
+and lander spacecraft.  Use the links below to reach the large and
+beautiful set of spacecraft images of Mars.  </p>
+
+<!--
+<a href="im/mars-hst-295opp.gif" ><img
+src="im/mars-hst-295opp-sm.gif" align="right" border=2 hspace=8
+vspace=8 ></a>
+-->
+
+<a href="im/mars_aug03_10inMeade-ACidadao.gif"><img src="im/mars_aug03_10inMeade-ACidadao.gif"align="right"
+width="30%" hspace=10 ></a>
+
+<li> Mars is distant enough that even at opposition telescopes on
+Earth yield relatively poor resolution (especially since they must
+contend with seeing), and this led to a long controversy over whether
+or not there was evidence for "canals" or other artificial features on
+its surface.  (More details given <a
+href="https://rwoconne.github.io/rwoclass/astr1210/guide16.html"
+> here</a>.)  </p>
+
+<li> However, under good conditions with an 8-in telescope, you can
+easily see the <b>polar caps</b> (some water but mainly frozen
+CO<sub>2</sub>) and <a href="im/mars-drawings-2012-McKim.jpg"
+><b>extensive markings</b></a> on the surface.  Monitoring these
+features over several months will reveal slow changes, including
+growth or shrinking of the caps with the seasons and effects of dust
+storms on the surface, especially in the Martian spring.  The image at
+the right was taken by amateur astronomer Antonio Cidadao with a 10-in
+telescope.  </p>
+
+<li> Mars has two small moons, Phobos and Deimos, with orbital periods
+of about 8 and 30 hours, respectively.  Unlike Earth's Moon, they did
+not form in orbit around their parent; instead, they are captured
+asteroids.   With apparent magnitudes of 12-13 even during an
+opposition of Mars, they are at the limit of what could be detected
+in an 8-inch telescope. </p>
+
+</ul>
+
+
+<font color="blue"><b>JUPITER</b></font>: A very bright, yellowish
+object, normally the fourth brightest in the sky (after the Sun, Moon,
+and Venus).  Its celestial motion is much slower than any of the planets
+already discussed.</p>
+
+<ul>
+
+<a href="im/J-rspot-p21732.gif"><img src="im/J-rspot-p21732.gif"
+align="right" width="30%"  hspace=12></a>
+
+
+<li> Unlike the four terrestrial planets, Jupiter, Saturn, Uranus, and
+Neptune are <b><em>gas giants</em></b> and probably have no sharp boundary between
+interior and atmosphere.  Through your telescopes, what you will see
+is the <b>top of their cloud layers</b>.</p>
+
+<li> The <b>banded structures</b> in Jupiter's atmosphere, called
+"belts" (dark) and "zones" (light), are multiple cloud layers shaped
+by powerful winds moving parallel to the equator.  An 8-in telescope
+can reveal beautiful details.  The
+<b><em>red spot</em></b> is an oval-shaped, perpetual cyclone in the
+atmosphere, about 3 times the diameter of Earth (seen near the 
+limb in the picture at right).  Because Jupiter rotates in only
+10 hours, you get to see a variety of features in just a few hours.</p>
+
+<li> Jupiter has an extensive <b>satellite system,</b> consisting of
+79 known moons, mostly small and not visible in small telescopes.  The
+four largest of these (<b>Io, Europa, Ganymeade, Callisto</b>) were
+discovered by Galileo and are known as
+the <a href="im/jup-n-4moons-KGleason.jpg" ><b> <em>Galilean
+satellites</em></b></a>.  They are easy to see in a small telescope,
+and their relatively rapid orbital motions around Jupiter can be
+readily tracked.
+NASA's <a href="http://voyager.jpl.nasa.gov/">Voyager </a>
+and <a href="http://www.jpl.nasa.gov/galileo">Galileo</a> missions
+revealed astonishing differences in surface constitution among the
+four.  Europa hides warm interior oceans beneath a smooth, icy
+exterior; this is one of the most promising sites in the solar system
+to explore for extraterrestrial life.  In small telescopes,
+unfortunately, no surface details are apparent.</p>
+
+</ul>
+
+ <font color="blue"><b>SATURN</b></font>: Famous as the <b>ringed planet</b>,
+though all four gas giants actually have rings. </p>
+
+<ul>
+
+<li> Its cloud layers are deeper within its atmosphere than are Jupiter's,
+so it typically shows only faint surface banding and subtle
+features. </p>
+
+<li> The rings are <a href="im/sat-ring-particles.jpg" ><b> orbiting
+chunks of rock and ice</b></a> and lie exactly in the equatorial plane
+of the planet.  The bright rings extend 85000 miles from the center of
+the planet.  They are spectacular in small scopes, and a fair amount
+of substructure, especially the dark <b>"Cassini Division"</b> seen in
+the <a href="#sat">image at the top of this page</a>, is visible.
+Spacecraft images reveal <a href="im/satrings-false-lg.gif" > hundreds
+of ringlets</a>.  A beautiful mosaic of the rings from the Cassini
+orbiter is available
+at <a href="http://photojournal.jpl.nasa.gov/catalog/PIA06175" > this
+web site</a>.
+ </p>
+
+<li> Six of Saturn's 62 satellites would be visible in an 8-in telescope.
+<b>Titan</b>, Saturn's largest moon, is the only moon to have its own
+atmosphere.  It was one of the principal targets for
+the <a href="http://saturn.jpl.nasa.gov/home/index.cfm" >
+Cassini-Huygens Mission</a>, which made observations from orbit around
+Saturn for 13 years.  The Huygens probe made a successful soft landing
+on Titan in January 2005.  Images of Titan and Saturn are continually
+updated on the Cassini site.
+</p>
+
+</ul>
+
+
+<font color="blue"><b>URANUS</b> and <b>NEPTUNE</b></font>: All of the
+above planets were known to naked eye astronomers.  The others are
+products of the telescopic age (Uranus was discovered in 1781).
+Uranus and Neptune are distant enough that they show only small
+blue-green disks in an 8-in telescope, without further details being
+visible (they have very low contrast atmospheres even seen close up).
+You will need a finding chart to locate them.  Their satellites are
+too faint for detection in the 8-in scopes.</p>
+
+<p><br></p>
+
+
+<h2>G.  INTERPLANETARY MATTER</h2>
+
+Although only a trace constituent of the Solar System, the material
+between the planets provides a number of interesting, even
+spectacular, observational phenomena.  These are all
+"leftovers"---debris from the formation of the solar system.  The
+larger chunks (comets,
+asteroids) <a href="https://rwoconne.github.io/rwoclass/astr1210/guide22.html">pose
+significant dangers to the Earth.</a></p>
+
+<a href="im/HB-308B.jpg" ><img src="im/HB-308B-comp.jpg"
+alt="Hale-Bopp" align="right" width="30%" hspace=10 vspace=10></a>
+
+<font color="blue"><b>COMETS</b></font>: are large chunks
+of <b>ice</b> which start to evaporate when they get within several
+Astronomical Units of the Sun (one AU = the distance between Sun and
+Earth), producing a gaseous
+<b><em>coma</em></b> and sometimes a <b><em>tail</em></b>.  The Solar
+System contains billions of comet nuclei, but most are beyond the
+orbit of Neptune.  Most
+have <a href="http://janus.astro.umd.edu/orbits/outerSS.html" > very
+elongated orbits</a> and reach small distances from the Sun only
+infrequently.  Some, however, are gravitationally deflected by Jupiter
+into orbits with shorter periods (< 100 years); these are called
+"periodic" comets.  Most are faint.</p>
+
+<ul>
+
+<li>  <b>Halley's</b> is an exception as a bright periodic comet (75
+years), with observed visits to the inner solar system traced back 
+to at least 240 BC.
+The most spectacular comets, like
+<b><em>Hale-Bopp</em></b> (1997; at right), are usually first-time
+visitors to the inner Solar System.
+Click <a href="http://www.jpl.nasa.gov/comet" >here</a> for more
+information on Hale-Bopp.</p>
+
+<li> There are always several
+faint comets available to observe in the sky; but bright ones are
+rare: once a decade or so.  If you are interested
+in <b>name-recognition immortality</b>, consider searching for new
+comets, because they are the only astronomical objects traditionally
+named for their discoverers. </p>
+
+</ul>
+
+<!-- 
+<ul>
+<a href="http://skyandtelescope.com/observing/objects/comets/article_1396_1.asp"
+>Comet Machholz</a> is visible during the first part
+of the Spring 2005 semester.</p>
+</ul>
+-->
+
+
+<font color="blue"><b>METEORS</b></font>: are the incandescent trails
+of tiny pieces of rocky or icy debris burning up at high altitudes in
+the Earth's atmosphere.  Up to about 10 per hour can be seen on dark
+nights at any time of the year.  Most will be 2-4 magnitude, but
+"fireballs" can be much brighter.  Debris left behind by comets along
+their orbits can produce concentrated <b><em>meteor showers</em></b>
+with much higher rates, up to 1000's of meteors per hour in rare
+instances.  The Earth passes through these debris streams at regular
+times each year.  The best showers are the Perseids (Aug 12-13),
+Orionids (Oct 21-22), Leonids (Nov 17-18), and the Geminids (Dec
+14-15).  The Leonids have been known to
+produce <a href="im/leonids-1833-village-lg.jpg"> spectacular
+showers</a>, but none are expected in the near future.</p>
+
+
+<!-- Click <a href="Leonid-infopage.html"> here</a> for plans for
+observing this semester's shower.</p>
+  -->
+
+<font color="blue"><b>ASTEROIDS</b></font>: Asteroids, traditionally
+called "minor planets," are large rocky or metallic chunks ranging
+from less than a few meters to hundreds of kilometers in diameter.
+They move in their own orbits around the Sun.
+<b>Ceres</b>, 1000 km in diameter, was the first discovered (1801).
+It is estimated there are about 750,000 asteroids larger than 1 km in
+diameter, and over 500,000 have now had their orbits determined(!)  Most
+orbits are concentrated between Mars and Jupiter, but many cross the
+Earth's orbit.  </p>
+
+<ul>
+
+<li> <a
+href="http://cfa-www.harvard.edu/iau/lists/InnerPlot.html" >
+<img src="im/rd_star.gif"> Here</a> is
+a snapshot plot of the location of asteroids in the inner Solar
+System.</p>
+
+<li> Many asteroids are detectable with an 8-in telescope, but you
+need updated coordinates and finding charts.  Their signature is a
+fairly rapid motion with respect to the background stars. 
+The <a href="https://www.astroleague.org/al/obsclubs/asteroid/astrcobs.html">Astronomical League</a> provides advice on observing asteroids.
+ </p>
+
+<li> <a href="im/garradd-eros.mpg" ><img
+src="im/film.gif"></a> Here is a video of the asteroid Eros
+taken by amateur astronomer Gordon Garradd. </p>
+
+<!--
+<li> <a href="http://en.wikipedia.org/wiki/4_Vesta">Vesta</a>, the
+brightest and second most massive asteroid, will be readily visible
+in your telescopes this semester at magnitude 6.1 as it goes through
+opposition in Leo and passes close to the double star Gamma Leonis
+on February 16.</p>
+-->
+
+</ul>
+</ul>
+
+<hr size=2 >
+
+<!-- Observing Notes for October:</p>    -->
+
+<h3>Assignment</h3>
+
+<ul>
+
+<li> Download, print, and read the notes for Lecture 4.</p> 
+
+<li>  Complete the Review Quiz for Week 5 on the Collab site.</p>
+
+<li> Consult the <em>Edmund Star Atlas</em> for additional
+information on Solar System observations, as needed.  You are not
+required to know all the material there.  </p>
+
+<li> Optional
+reading: <a href="https://rwoconne.github.io/rwoclass/astr1210/lunar-motions.html">
+Lunar Motions and Their Consequences</a> (R. O'Connell, ASTR 1210)</p>
+
+<li> Do Lab 2 at the earliest opportunity.</p>
+
+
+</ul>
+
+<h3>Web links</h3>
+
+<ul>
+
+<!--  <a href="4.1-precession.html">Supplement 4.1: Precession</a><br>
+<a href="4.2-eclipses.html">Supplement 4.2: Eclipses</a></p>
+-->
+
+
+<a href="https://www.moongiant.com/phase/today/">Lunar Phase Now</a><br>
+
+<a href="http://solar-center.stanford.edu/observe/">Tips on observing
+the Sun</a> (Stanford Solar Center)</p>
+
+<a href="https://nineplanets.org/the-moon/">Lunar Info for Amateur
+Astronomers</a> ("The Nine Planets")<br>
+
+<a href="http://www.astrosurf.com/cidadao/moon_obs.htm">Guide to Lunar Observing
+</a>(A. Cidadao)<br>
+
+<a href="http://www.mreclipse.com/">Espenak's
+Eclipse Home Page</a>: everything you could possibly want to know
+about eclipses.<br>
+
+<a
+href="https://rwoconne.github.io/rwoclass/astr1210/moontop.html">Selected
+Moon Images</a> (R. O'Connell)</p>
+
+<!-- 
+<a href="http://seds.lpl.arizona.edu/billa/tnp/">Information on the
+Planets ("The Nine Planets") </a><br>
+  --> 
+
+
+<a href="https://nineplanets.org/">Information on the Planets</a> ("The Nine Planets")
+<br>
+
+<a href="http://www.solarviews.com/eng/homepage.htm">Information on the
+Planets</a> ("Views of the Solar System")<br>
+
+<!-- <a href="http://www.marsnews.com/directory/">Mars Open Directory</a><br> 
+-->
+
+<a href="https://rwoconne.github.io/rwoclass/astr1210/marsImages.html">Selected
+Mars Images</a> (R. O'Connell)</p>
+
+<!-- <a href="http://www.skypub.com/sights/moonplanets/9904marsback.html">Observing
+Mars this year.</a><br>  -->
+
+
+Modern equipment allows amateur astronomers to take extraordinary images
+of the planets.  For samples, see:</p>
+
+<ul>
+<a href="http://www.damianpeach.com/index.htm">Damian Peach's Astrophotography Page</a><br>
+<a href="http://www.astrosurf.com/cidadao/index.htm">Antonio Cidadao's Astrophotography Page</a></p>
+</ul>
+
+
+<a href="http://janus.astro.umd.edu/AW/awtools.html#orbits">
+   Java Simulator of Comet & Asteroid Orbits</a> (UMd)<br>
+
+<a href="http://echo.jpl.nasa.gov/links.html">JPL Asteroid Home Page</a><br>
+
+<!-- GONE! Fall 2006
+<a href="http://www.skypub.com/sights/comets/comets.html">Sky & Telescope
+Comet Page</a> <br>
+<a href="http://encke.jpl.nasa.gov">JPL Comet Home Observation Page</a><br>
+-->
+
+<a href="http://www.nightskyhunter.com/An%20Observing%20Guide%20To%20Comets.html">
+An Observing Guide to Comets</a> (Martin McKenna)<br>
+
+<!-- <a href="http://cometography.com/index.html">Comet Information</a><br>
+-->
+
+<a href="http://www.amsmeteors.org/">American Meteor
+Society</a> (includes lists of showers)</p>
+
+
+<!--
+<a href="http://www.arm.ac.uk/leonid/index.html">Information on the Leonid
+Meteor Shower</a><br>
+
+ <a href="Leonid-infopage.html">Local Plans for Observing the 2002 
+Leonid Shower</a></p>   
+-->
+
+</ul>
+
+</b>
+
+<!-- START FOOTER -->
+
+<hr size=2 >
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table width="70%">
+<tr>
+<td>
+<b><a href="obstechniques.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="stellar.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr size=2 >
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>December 2020</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+ <small> Moon phase and Earth orbit drawings copyright &copy
+by <a href="http://www.astronomynotes.com">Nick Strobel</a>.  Text
+copyright &copy 2000-2020 Robert W. O'Connell.  All rights reserved.
+These notes are intended for the private, noncommercial use of
+students enrolled in Astronomy 1230 at the University of
+Virginia.  </small>
+
+
+<!-- END FOOTER -->
+
+</div>
+</body>
+</html>
+				  

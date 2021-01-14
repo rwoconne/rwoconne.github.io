@@ -1,0 +1,849 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- -->
+
+<!-- Derived from 130/Lec7 [10/13/00-10/27/02].  Conversion for 511: 7/24/2003; 
+     7/25; 7/27; 8/4; 8/6; 8/13; 8/24; 11/10; 11/11; 11/12; 12/29; 10/14/2004; 
+     8/15/2005;  8/25; 8/31; 7/5/2007; 7/6; 9/15/2015: new domain & remove
+     "target=show" elements & correct external links; 6/15/2017: add link
+     to Estonian translation, make image widths adjustable, update text
+     and links; 6/19: convert to new format; 6/20; 7/27/2018; 
+     11/03/2019: add viewport & update text; 
+
+     GHP version: 12/8/2020; 
+
+ -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.   Lecture Notes  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="telescopes, astronomical telescopes, history
+of telescopes">
+
+<style>
+    div.all {  max-width: 900px;}
+  </style>
+
+</head>
+<body>
+
+<div class="all">
+
+<!-- <body bgcolor="#000000" text="#FFFFFF" link="cyan" vlink="cyan" alink="red">
+-->
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p></p>
+<hr>
+
+<center>
+<font size="+4" color="#dd33ff"><b>PRINCIPAL UVOIR TELESCOPES</b></font>
+</center>
+
+<p><br></p>
+
+<center><a href="im/MK-view.jpg"><img src="im/MK-view-ex.jpg"
+alt="Mauna Kea" align=top  width=85%></a></center>
+<p align="right"><small> <i>Summit of Mauna Kea, Hawaii</i></small></p>
+
+<p><br></p>
+
+<a href="https://www.espertoautoricambi.it/science/2017/05/14/peamine-uvoir-teleskoobid/">
+<b>Estonian translation</b></a></p>
+
+<p><br></p>
+
+
+<h2>I.  INTRODUCTION </h2>
+
+The human imagination has never been a match for the universe.  That
+is why astronomy, more than any other science, has been regularly
+revolutionized by <b>new observational discoveries</b>.  Since 1610, these
+have depended on telescopes.  When telescope technology developed
+slowly, as in the early 19th century, progress was slow.  When
+technology surged, as in the late 20th century, progress was
+explosive.     </p>
+
+This page surveys the principal UVOIR telescopes available in this
+decade together with a review of the milestones of the last 100
+years.  A hallmark of the major telescopes in this era is the
+remarkable variety of clever innovations, many of which have even more
+distant historical roots.  There is very little in current telescope
+design that was not thought of long ago, though converting good ideas
+into realizable technologies is a different matter.</p>
+
+A key historical lesson is that to build an instrument at the frontier
+of performance is <b>always costly in terms of brains and money</b>.
+Thus, progress has coupled new technology, visionary astronomical
+pioneers, and the generosity of wealthy private donors or the
+financial strength of governments.</p>
+
+Note: we will not discuss <b>telescope optics</b> except briefly in
+this course  (see <a href="lec16-teloptics-f03.html">this page</a>.)
+That topic and the detailed properties of detectors and instruments
+are covered
+in <a href="http://www.astro.virginia.edu/class/skrutskie/astr5120"
+>Astronomy 512</a>.</p>
+
+<p><br> </p>
+
+<center><a href="im/100-in-full.jpg" ><img src="im/100-in.gif" alt="Mt.
+Wilson 100-in" width=60%> </a></center>
+
+<p align="center"><small><em>The Mt. Wilson 100-in Reflector</em></small>
+</p>
+
+
+<h2>II.  AMERICAN OBSERVATORIES 1880-1970</h2>
+
+
+<h3>A. BACKGROUND</h3>
+
+
+Optical and mechanical technology in the last few decades of the 19th
+century had advanced to the point that the construction of large
+telescopes was feasible.  Success with large telescopes demands that
+a large set of disparate requirements be met simultaneously:  quality glass for
+optical elements, high precision shaping/polishing of optical surfaces,
+precision mechanical support systems, excellent control systems,
+excellent instrumentation, and good observing sites.  Any such project
+is a major engineering undertaking.</p>
+
+Most of the large telescopes through 1960 were associated with
+universities. They were costly and required substantial private
+donations.  Because of an abundance of industrial expertise, excellent
+observing sites, and wealthy contributors, the US became the world's
+leader in building large telescopes.  </p>
+
+
+<b>Refractors vs Reflectors:</b></p>
+
+<table border=0 width=80% align="center">
+
+<tr><td>
+<font size="3">
+
+The large telescopes of the late 1800's were mainly <b>refractors</b>.  These were
+simple optically and featured good stability for astrometry, for
+instance.   Through the mid-1800's, most <b>reflectors</b> had used metal
+mirrors and were of generally poor optical quality.  However, the invention
+of high reflectivity thin metallic coatings for glass (initially silver)
+around 1850 made possible the use of <b>glass mirrors</b>.  These were immediately
+competitive with refractors in terms of quality.</p>
+
+This, together with a host of other reasons dictated that instruments
+larger than the Yerkes 40-in refractor were all reflectors:</p>
+
+
+<ol>
+<li> Lenses (even achromats)
+produce chromatic aberration, limiting the bandwidth usable for
+imaging & spectroscopy.
+
+<li> Lenses must be figured on two sides (per
+element), whereas mirrors need be figured only on one. 
+
+<li>Mirrors are
+easy to support accurately from behind, whereas lenses require support
+at their edges and will sag; it is harder to support heavy lenses
+mechanically at the top end of a telescope tube than a mirror at
+bottom end.  
+
+<li> The beam-folding action of primary and secondary mirrors means
+that reflector tubes are much shorter than in a "straight through"
+refracting design, easing mechanical design and reducing dome size.
+</ol>
+
+</p>
+
+<li> <a href="lec16-teloptics-f03.html" >Brief description of
+standard reflector telescope designs</a></p>
+
+</font>
+</td></tr></table>
+
+<b>Optical Figuring Tolerance:</b></p>
+
+<table border=0 width=80% align="center">
+
+<tr><td>
+<font size="3">
+
+To maintain a good image, a single reflecting surface must be figured
+to within <b>1/4 wavelength</b> of its intended design.  For optical
+telescopes, this is 10<sup>-5</sup> cm---very demanding.  Good
+polishing/test techniques capable of reaching this precision were not
+developed until the late 19th century.  When there are several
+reflecting surfaces, the tolerances must be tighter.  Specifications
+for state-of-the-art telescopes are for 1/10-1/20 wave optics.  The
+most precise large mirror yet made was the HST 2.4-m, which was
+figured to about 1/50 wave (of its test wavelength of 6328
+&Aring;). </p>
+
+Scale comparison:  if a 320-in (8-m) diameter telescope mirror were
+scaled up to the size of the <b>continental United States</b>, i.e. about
+3000 miles diameter, then the maximum size of a ripple allowed in its
+polishing would be less than <b>2 inches</b>!  [You should be asking yourself
+how it is possible to determine the figure of a large mirror to that
+precision without the use of very expensive metrology equipment.]  </p>
+
+</font>
+</td></tr></table>
+
+<p><br></p>
+
+
+
+<h3>B. IMPORTANT MILESTONES</h3>
+
+
+<a href="im/yerkes-40in-color-lrg.jpg" ><img
+src="im/yerkes-40in-KC-col.jpg" alt="40-in" align="right"
+vspace=5 hspace=8 width=25%>
+</a>
+
+
+<ul>
+
+<li> <a
+href="http://faculty.virginia.edu/mccormick-observatory/"
+> Leander McCormick Observatory 26-in refractor</a> (UVa,
+1885).  Largest in the US when dedicated.  Optics figured by 
+<a href="http://www.famousamericans.net/alvanclark/" >Alvan Clark</a>;
+32-ft length.</p>
+
+
+<li><a href="https://www.ucolick.org/public/telescopes/36-inch.html"
+>
+Lick Observatory 36-in refractor</a> (U Calif., 1888), the
+first mountaintop observatory (4200 ft).  Optics figured by Alvan Clark; 
+58-ft length.</p>  
+
+</ul>
+
+
+<a href="https://www.mtwilson.edu/george-ellery-hale/"
+><em>George Ellery Hale</em></a> was the premier American
+telescope founder.  He planned, successively, the four largest
+telescopes of their era and lived to build the first three of these.
+He also built several major solar telescopes. Hale had a great facility
+for obtaining private financing, from Carnegie and Rockefeller, among
+others.  The four major Hale telescopes were</p>
+
+<!-- <br clear=right>   -->
+
+<ul>
+
+<li> 
+<a href="http://astro.uchicago.edu/yerkes/" >
+The Yerkes Observatory 40-in refractor</a> (Univ. of Chicago, 1897).
+The largest refractor ever built (picture above right).  Lens
+originally intended by USC for a Mount Wilson site. Optics figured
+by Alvan Clark; f/19; 63-ft length.   
+</p>
+
+
+
+<li> The <a href="im/60-in.jpg" >Mt. Wilson 60-in
+reflector</a> (1908), the <a
+href="https://www.mtwilson.edu/building-the-60-inch-telescope/"
+>first major reflector in the US.</a>  Fork mount.  Optics
+figured by <a
+href="https://en.wikipedia.org/wiki/George_Willis_Ritchey"
+>George W. Ritchey</a>.  f/5 Newtonian, bent-Cassegrain. First
+to have a coude focus.  Early optical coatings were silver.  Mt. Wilson
+Observatory was operated by the Carnegie Institution.</p>
+
+
+<a href="im/200in-dedication.jpg" ><img align="right"
+src="im/200in-dedication-sm.jpg"  alt="200in" vspace=5 hspace=8
+ width=25%></a>
+
+
+<li> <a href="https://www.mtwilson.edu/building-the-100-inch-telescope/">
+The Mount Wilson 100-in reflector</a> (1917), the most important
+telescope of the 20th century (<a href="im/100-in-full.jpg" >photo</a>
+at beginning of this section).  Optical figuring by George Ritchey
+(with reluctance, because
+of <a href="im/100-inch-mirror-bubbles-GGant.jpg">bubbles</a> in
+the mirror blank below the surface).  English yoke mount on mercury flotation
+bearings (exclusion zone near pole).  Three main
+foci: <a href="im/hubble-at-100in.gif" >Newtonian (f/5; reachable by
+dome-mounted platform)</a>, bent-Cassegrain, and coude.  </p>
+
+<li> <a href="http://www.astro.caltech.edu/palomar/index.html"
+>
+The Palomar Observatory 200-in (5-m) reflector</a> (Caltech, 1948), the largest
+working telescope until 1992.  The 20-year process of planning &
+building the 200-in is described in a photo-history <a
+href="http://www.astro.caltech.edu/palomar/about/history.html">here</a>.
+Placed at Palomar because, even by 1920, Mt. Wilson was suffering serious
+<a href="im/LAnite-fr-MWO-1911.gif">light pollution</a> from Los
+Angeles.  Above right is a photo of the 200-in dedication in 1948. A
+diagram of the telescope is
+shown <a href="im/200in-cutaway-diag-CM.jpg">here</a>.  Yoke-mounted,
+with a <a href="im/Porter-200in-north_bearing.jpg" >horseshoe-shaped,
+oil pressure supported north bearing</a>.  First telescope with
+a <a href="im/Porter-200in-prime_focus.jpg"> prime-focus (f/3.3)
+"cage"</a> capable of carrying an astronomer.  Other foci: Cassegrain,
+coude. </p>
+
+</ul>
+
+Also of note:
+
+<ul>
+
+<li> 
+
+At the urging of <a href="http://discovermagazine.com/2009/jan/30-the-father-of-dark-matter-still-gets-no-respect">Fritz Zwicky</a>, 
+among others, Caltech commissioned
+the <a href="im/48in-color.jpg" >48-in Schmidt telescope</a> as a
+wide-field survey instrument to support the 200-in.  Based on
+the <a href="im/48-in-schmidt-Porter-draw.jpg" >design</a> of Bernhard
+Schmidt this <b><em>catadioptric</em></b> telescope uses a spherical mirror
+together with a thin refractive corrector lens to eliminate spherical
+aberration over a wide field of view (6<sup>o</sup> diameter in this
+case).  The 14-in square focal plane is inside the body of the
+telescope; it is convex and required that photographic plates be
+curved under pressure to match.  The 48-in Schmidt made the multiband
+photographic "POSS" surveys and today, with the substitution of a
+large-format CCD mosaic camera, is undertaking the
+<a href="http://www.ptf.caltech.edu/ztf">Zwicky Transient
+Survey</a>. </p>
+
+
+<li> In the 1970's, NOAO developed a <a href="im/kpno-4m-med.jpg"
+>4-m telescope design</a> based on the 200-in, and
+this has been reproduced, more or less closely, in multiple versions,
+sizes 3.5-4.2m, around the world (e.g. KPNO 4-m, CTIO 4-m, AAT,
+CFHT).  </p>
+
+</ul> 
+</ul>
+
+<p><br></p>
+
+
+<center><a href="im/GemN-primary-man.gif" >
+   <img src="im/GemN-primary-man.gif" alt="8-m Mirror"
+    vspace=3 width=69%></a></center>
+<p align="center"> <small><em>Polished & coated 8-m (315-in)
+   mirror for the Gemini project, 1999.</em></small></p>
+ 
+
+<h2>III. NEW TECHNOLOGIES 1970-2020</h2>
+
+Telescope technologies steadily improved throughout the first half of
+the 20th century, with much progress in mechanical design (e.g. the
+oil pressure bearing of the 200-in), structural materials, optical
+figuring, electrical control systems (e.g. analog computers), and
+astronomical instruments to attach to telescopes.  However, until
+about 1975, big telescope design was still based largely on the
+concepts used for the Mt. Wilson and Palomar reflectors (designed
+1900-30).  Unfortunately, the cost of extending such designs to sizes
+larger than 200-in was prohibitive.  For a given design, <b>cost scales
+roughly as the mass</b> of the telescope or the <b>cube</b> of the
+diameter.</p>
+
+<!-- ----Cite Volumes/Conferences on new technologies</p> -->
+
+In the early 1980's a series of innovations was introduced that made
+yet larger telescopes affordable, mainly by <b>reducing the total
+weight, including the dome</b>, per unit optical collecting area.
+These included:</p>
+
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100% border=0 cellpadding=4>
+
+<tr>
+<td width=70%>
+
+
+<ul>
+
+<font size="3">
+
+<li> Shorter focal length optics, < f/2 (permitting smaller domes)<br>
+<li> Lightweight structural materials<br>
+<li> Lightweight monolithic mirrors (thinner designs and/or honeycombed)<br>
+
+<li> Spin-cast glass mirrors
+(<a href="https://www.as.arizona.edu/people/faculty/j-roger-p-angel">Roger
+Angel</a>, UAz; method originally developed by Robert Leighton,
+Caltech, for mid-size epoxy IR mirrors).<br>
+
+<li> Multiple-mirror or segmented-mirror designs (modern implmentation
+by military; first large astronomical design
+by <a href="http://www.tmt.org/news-center/astronomer-jerry-nelson-pioneering-designer-large-telescopes-dies-age-73">Jerry
+Nelson</a>, UCal)<br>
+
+<li> Alt-azimuth mounts (simpler weight-bearing design is less costly
+than equatorial)<br>
+<li> Naysmith foci (light beam exits along altitude axis) allow use of massive
+instruments without stress on telescope tube<br>
+
+<!--<li> Common azimuth bearing for both dome and telescope; <a
+href="im/vlt_unit_telescope2.gif"  >dome & telescope move
+together</a><br>  -->
+
+<li> Common azimuth bearing for both dome and telescope;
+<a href="https://youtu.be/yRX7f4jNMgg">dome & telescope move together</a><br>
+<li> High performance computer control for
+active figure correction of thin mirrors and precision orientation
+of alt-az mounts<br>
+<li> Thorough and rapid ventilation of domes and mirror cells to keep
+nighttime temperatures uniform (within ~1<sup>o</sup> C) and therefore
+improve seeing.<br>
+<li>
+Sophisticated <a href="https://en.wikipedia.org/wiki/Adaptive_optics">active
+and adaptive optics</a> systems for obtaining near-diffraction-limited
+performance in the near infrared.</p>
+
+</p>
+
+</font>
+</ul>
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+
+<center>
+
+<a href="im/gemini-telescope-sketch-mr.gif" ><img
+src="im/gemini-telescope-sketch-mr.gif" width=80%></a>
+
+ <!--  <p><small><em>Sketch of Gemini 8-m</em></small> -->
+
+</center>
+</td>
+</tr>
+</table>
+
+
+Various combinations of these innovations were first incorporated in a
+number of 4-m class telescopes (e.g. ESO NTT, WIYN, ARC), but their
+main impact was on 6-m and larger telescopes.</p>
+
+Important related issues:</p>
+
+
+<table border=0 width=80% align="center">
+<tr><td>
+<font size="3">
+
+<b>Site selection</b> was recognized as critical.  For best
+transparency at infrared wavelengths, high, dry sites, over 8,000
+ft, became preferred.   The summit of <a href="im/MK-summit-aerial.jpg"
+>Mauna Kea</a>, on the big island of Hawaii, is at 13,800 feet and 
+is the premier telescope site in the northern hemisphere.</p>
+
+The <b>financing</b> yo-yo:</p>
+
+<!-- of major projects underwent several changes.  -->
+
+<ul>
+
+After 1950, public funding from NSF had almost completely replaced the
+private financing responsible for the large telescopes prior to World
+War II.  But NSF's budget failed to keep pace with the rapidly
+increasing number of astronomers and the expanding observational
+opportunities enabled by the new technologies.  By 1985, US
+astronomers began turning again to private benefactors to finance
+large ground-based telescopes.  </p>
+
+<!--  (e.g. <a href="http://celt.ucolick.org/" >CELT</a>)
+-->
+
+The twin Keck 10-m telescopes were supported by a private gift of $120
+million to Caltech, with a comparable contribution of state funds in
+the form of operating costs from the University of California.  Other
+large facilities with a significant private component include the
+Magellan telescopes, the MMT, and the LBT.  By contrast, the European
+VLT was financed with public funds (about $800 million) secured
+through international treaties by the European Southern Observatory.
+Because of the rapidly escalating costs, US planning for the next
+generation of telescopes in the 20-50 meter class
+(e.g. <a href="http://www.tmt.org/">TMT</a>, <a href="https://www.gmto.org">GMT</a>)
+is based on public/private partnerships. </p>
+
+</ul>
+</font>
+</td></tr></table>
+
+<!-- 
+<a href="im/kpno-4m-sunrise.jpg" ><img
+src="im/kpno-4m-sunrise-sm-2.jpg" border=2 align="right"> </a>
+-->
+
+<center><a href="im/vlt-1.jpg"><img src="im/vlt-1-ex2.jpg"
+width=70%></a></center>
+
+<p align="center"><small><i> The European Southern Observatory Very
+Large Telescope.</i></small></p>
+
+
+<h2>IV.  STATE OF THE ART TELESCOPES</h2>
+
+As of 2018, there were 16 ground-based telescopes operating with
+diameters of 6.5-m or larger.  A list with links is available
+<a href="http://astro.nineplanets.org/bigeyes.html">here</a>, and a
+nice graphical comparison of the collecting areas of large telescopes
+through 2025 is shown <a href="im/large-telescope-areas-to-2026.png">
+here</a>.</p>
+
+
+<ul>
+
+<li>The European Southern
+Observatory <a href="http://www.eso.org/public/teles-instr/paranal-observatory/vlt/"
+> Very Large Telescope</a>: four 8.2-m telescopes on a very
+dry <a href="im/vlt-site.jpg" >site in northern Chile</a>, now has the
+largest total collecting area in the world (211 square meters),
+although the telescopes are normally operated separately.  The
+monolithic primary mirrors are spin-cast Schott Zerodur (very low CTE)
+in a meniscus shape (46:1 aspect ratio).  Shape is actively controlled
+with 150 actuators.  The four telescopes can be combined to operate as
+an interferometer and have well developed adaptive optics (AO)
+systems. </p>
+
+<li>  <a
+href="http://www.keckobservatory.org/" >The Keck Observatory</a></p>
+
+
+<a href="im/keck-mirror-ex.jpg" ><img
+src="im/keck-mirror-ex-sm.jpg" align="right" border=2 vspace=5 hspace=8 width=25%></a>
+
+<ul>
+
+Twin 10-m diameter telescopes based on a
+<a href="im/keck-diagram.jpg">segmented primary design</a> (picture at
+right).  Each contains 36 stress-polished and cut 36-in hexagonal mirror
+segments, with a total collecting area of 76 square meters and
+a focal ratio of 1.75.  The optical system is a Ritchey-Chretien
+design. </p>
+
+The Keck mirror figure control system is a remarkable technical
+achievement, although image quality is not quite as good as for a
+monolithic mirror.  With its AO system, Keck can deliver <a
+href="im/KeckI-firstAOim.jpg" >a resolution of 0.05 arcsec</a> at
+IR wavelengths.  (Ground-based seeing becomes worse
+at shorter wavelengths, and AO systems do not work well at
+wavelengths below 1 &#181; or over fields larger than ~30 arcsec.)
+Principal foci: Naysmith, Cassegrain.  Interferometric combination of
+beams from the two telescopes was implemented until 2012.  </p> 
+
+</ul>
+
+<li><a href="https://en.wikipedia.org/wiki/Gran_Telescopio_Canarias">Gran
+Telescopio Canarias</a>, on La Palma island, is operated by a consortium
+led by Spain and Mexico.  It has a segmented-primary design similar to
+each Keck telescope but with slightly larger segments and a collecting area
+of 78 square meters. </p>
+
+<li> <a href="http://www.as.utexas.edu/mcdonald/het/het.html"
+>Hobby-Eberly Telescope</a>, operated by a consortium led by UTex and
+PennSt.  An "optical Arecibo" with a large (9.2-m) mirror made of
+spherical segments.  Fixed in altitude (55 degrees).  Less successful
+figure control than Keck.  Intended for spectroscopy of faint sources.
+A twin was constructed in South Africa
+(<a href="https://en.wikipedia.org/wiki/Southern_African_Large_Telescope">SALT</a>).</p>
+
+<li> <a href ="http://www.us-gemini.noao.edu/" >The Gemini
+Observatories</a>: two telescopes (Mauna Kea, Hawaii & Paranal, Chile)
+operated by an international consortium, including the US. 8.1-m,
+20-cm thick Corning ULE meniscus mirrors with 120 figure control
+actuators.  IR-optimized, using silver coatings.  Total operations
+cost, about $45,000 per night (2015). </p>
+
+<li> <a href="http://www.naoj.org/" >Subaru</a>: 8.2-m optical/IR
+telescope on Mauna Kea similar to Gemini; operated by the National
+Astronomical Observatory of Japan..</p>
+
+<li> 6.5-meter class: <a href="https://www.mmto.org/">MMT</a>
+(Mt. Hopkins, AZ), <a href="http://www.lco.cl/" >Magellan I, Magellan
+II</a> (Las Campanas, Chile).  All use Arizona Mirror Lab spin-cast,
+borosilicate mirrors.  </p>
+
+
+<!-- SHOULD ADD: 
+
+<li>Interferometers: GaState,etc. </p>
+
+-->
+
+<li> <a href="http://www.stsci.edu/hst">The Hubble Space
+Telescope</a></p>
+
+<ul> First proposed
+by <a href="spitzer-astron-advan-space-obs-1946-1990.pdf"> Lyman
+Spitzer</a> in 1946 but launched in 1990.  HST orbits at 300 mi altitude,
+where the deleterious effects of the Earth's atmosphere (seeing,
+absorption, light emission and scattering) are eliminated.  Serviced 5
+times by Space Shuttle crews (HST is the only scientific satellite
+capable of human servicing).  Instrument and spacecraft upgrades were
+essential for its long lifetime (29 years to date) and outstanding
+performance.
+</p>
+
+HST has a small (2.4-m) but very high precision mirror in a
+conventional Ritchey-Chretien Cassegrain configuration.  The primary
+mirror shape was inaccurate, however, owing to miscalibrated testing
+tools, with an edge about 2 &#181; too low.  This produced large
+<a href="http://www.faculty.virginia.edu/rwoclass/astr511/im/spherical-aberration-paraxial.gif">spherical
+aberration</a> (a 38 mm difference in focal length between the inner
+and outer mirror areas).  That was correctable, however, with small
+additional optical elements in each instrument.  The first servicing
+mission in 1993 carried correcting optics, and HST achieved its design
+goals thereafter. </p>
+
+<!-- Add link to before/after images -->
+
+HST carries up to 6 instruments (imagers, spectrographs, interferometers)
+covering the band 1100-22500 &Aring;.  Owing to its outstanding
+instrumental stability, optical precision, excellent pointing, and the
+absence of atmospheric blurring, HST has produced the 
+<a href="im/HST-bestpix-composite.jpg">
+highest
+resolution UV-optical images ever</a> (0.05 arcsec).  It has produced the
+deepest images yet made, to m ~ 30 mag (<b>4 billion times fainter</b>
+than the naked eye limit). </p>
+
+</ul>
+
+<li>Special Survey Telescopes: 
+<a href="https://panstarrs.ifa.hawaii.edu/pswww/">Pan-STARRS</a> (transient
+or moving sources),
+<a href="http://www.sdss.org">Sloan
+Digital Sky Survey</a> (galaxies, imaging & spectroscopy), 
+<a href="http://www.ipac.caltech.edu/2mass/">2MASS All-Sky
+Infrared Survey</a> (stars and galaxies, imaging):
+see <a href="http://www.faculty.virginia.edu/rwoclass/astr511/lec15-f03.pdf"
+>Lecture 15</a>.</p>
+
+</ul>
+<p><br></p>
+
+<center>
+<a href="im/LBT-exter-mirrors-08.jpg"><img src="im/LBT-exter-mirrors-08-ex-sm.jpg"
+width=66%></a></center>
+<p align="center"><small><i>The Large Binocular Telescope</i></small></p>
+
+
+<h2>V. THE LARGE BINOCULAR TELESCOPE</h2>
+
+The <a href="http://www.lbto.org/">Large Binocular Telescope</a>
+currently has the largest collecting area of any single telescope.
+UVa is a member of the LBT consortium of universities.  First
+binocular light was achieved in March, 2008.</p>
+
+<ul>
+
+<li> The LBT consists of two
+8.4-m diameter mirrors on a single alt-azimuth mount.  It carries
+6 pairs of focal stations. </p>
+
+<!-- (corresponding to the light collecting area of 3,500 8-in Meade
+telescopes).   -->
+
+<li> It can operate as two separate telescopes (pointing at the same
+target), or it can combine the beams of the two mirrors to act as an
+interferometer yielding the effective optical resolution of a 23-m
+diameter telescope (about 20 mas at 2 &#181;).  The combined
+collecting area of the two mirrors is 111 square meters, corresponding
+to a single 11.8-meter (460-in) diameter mirror.  </p>
+
+<li> Spin-cast, honeycombed, lightweight borosilicate mirrors, with
+active ventilation thermal control system.</p>
+
+<li> Active control of secondary mirror for compensation of
+mirror figure changes and suppression of atmospheric
+seeing.  Multiple laser guide-star adaptive optics system. </p>
+
+<li> <a href="https://rwoconne.github.io/rwoclass/LBT/index.html">Click
+here</a> for pictures of LBT construction.</p>  
+
+</ul>
+
+<p><br></p>
+
+
+<h2>VI. THE NEXT GENERATION</h2>
+
+
+<a href="im/GMT-artists-3.jpg"><img src="im/GMT-artists-3-ex.jpg"
+align="right" width=25% vspace=10 hspace=10></a>
+ 
+Two very large telescopes based on the segmented-mirror concept
+of Keck have been designed:  
+the <a href="http://www.tmt.org/">
+Thirty Meter Telescope</a>
+ and the
+<a href="http://www.eso.org/public/usa/teles-instr/elt/">European
+Extremely Large Telescope</a> (39-meters or 1530-in).  The ELT is now
+under construction in Chile, but the TMT is embroiled in a dispute
+over environmental and cultural impacts at its preferred Mauna Kea
+site.  The
+<a href="http://www.gmto.org/">Giant Magellan Telescope</a>
+(at right), also
+under construction in Chile, is a multiple-mirror design with
+7 8.4-meter spin-cast mirrors and an equivalent collecting area
+of a single 22-meter mirror.  The combined primary mirror
+surface is parabolic, and the six off-axis segments are
+asymmetrically aspheric and difficult to figure. </p>
+
+Another large telescope with a very different design and operations
+mode is the <a href="http://www.lsst.org">Rubin Observatory Large Synoptic Survey
+Telescope</a>.  To achieve a wide field of view (3.5<sup>o</sup>) it
+employs a <a href="im/LSST-optical-design.png">unique 3-mirror
+design</a> in which the primary and tertiary mirrors have been figured
+on a single piece of spin-cast glass 8.4-meters in diameter.  The
+telescope is intended to repeatedly image the entire usable sky every
+three nights, searching for transient or moving targets while building
+up an ultra-deep combined image of the sky.  Continuous output from
+its 189 imaging CCDs will generate an unprecedented data volume (15
+TB/night).  Under construction in Chile, LSST should begin full
+operations in 2022.  </p>
+
+The <a href="https://www.jwst.nasa.gov/">James Webb Space
+Telescope</a> is the follow-on to HST.  It features a 6.5-m diameter
+primary mirror (a 25 square meter collecting area, 5.5 times that of
+HST) composed of 18 hexagonal segments that must be deployed on-orbit.
+JWST carries four imaging and spectroscopic instruments and is
+optimized for the near-infrared (1-30 &#181;).  It will achieve the
+same spatial resolution in the NIR as HST does in the UV-optical band.
+A large sunshield permits a low overall structural operating
+temperature through cooling to space.  JWST will orbit around the
+Earth-Sun L<sub>2</sub> point, about 900,000 km from Earth.
+Instrument and main optics testing has been completed, but integration
+of the telescope with its spacecraft encountered quality-control
+problems in 2018.  Launch is now scheduled for 2021. </p>
+
+<hr size=2>
+
+
+
+<h3>Related pages</h3>
+
+<ul>
+
+<li> <a href="lec16-teloptics-f03.html">Telescope Optical Design</a><br>
+
+<li> <a
+href="https://rwoconne.github.io/rwoclass/LBT/index.html">LBT Design & Construction</a></b>
+
+</ul>
+
+<h3>Additional References and  Web links</h3>
+
+<ul>
+
+<li> LLM text, Chapter 4<br>
+
+<li>Henry King, <em>History of the Telescope</em> (through 1950).  Well illustrated.<br>
+
+<li>Allan Sandage, <a href="http://nedwww.ipac.caltech.edu/level5/araa_sandage.html">The
+First 50 Years at Palomar</a> (ARAA, 37, 445, 1999)<br>
+
+<li>Daniel Schroeder, <em>Astronomical Optics</em>.  Standard textbook
+for telescope optical design.<br>
+
+<li>Pierre Bely, <em>The Design and Construction of Large Optical
+Telescopes</em><br>
+
+<li><a href="http://astron.berkeley.edu/~jrg/CELT/ay250.html">Giant Astronomical
+Telescopes for the 21st Century</a> (UCB course with full technical coverage
+of large telescope design)<br>
+
+<!-- 
+<li><a href="http://www.seds.org/billa/bigeyes.html">List of Largest Optical Telescopes</a><br>
+-->
+
+<li><a href="http://astro.nineplanets.org/bigeyes.html">List
+ of Largest Optical Telescopes</a><br>
+ 
+<!--  Site out of date
+ 
+<li><a href="http://www.faqs.org/faqs/astronomy/faq/part2/section-4.html">List of 
+Major Telescopes, All EM Bands</a><br>
+-->
+
+<!--  This site vanished, mid-2002: 
+<li>
+<a href="http://www.futureframe.de/astro/instr/index.html">List of Major Telescopes, All
+EM Bands</a></p>   -->
+
+<!--
+<li><a href="http://www.seds.org/~spider/oaos/oaos.html">List of
+Telescopes in Orbit</a></p>
+-->
+
+<li><a href="http://spider.seds.org/oaos/oaos.html">List of
+Telescopes in Orbit</a></p>
+
+</ul>
+
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<Table width=75%>
+<tr>
+<td>
+<b><a href="lec15-f03.pdf">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="mcdavid/astpolz.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+
+</table>
+
+<!-- END REDIRECT BOX -->
+
+
+<hr size=2>
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    November 2020 by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<small><i>Images from observatory public sites.  Text copyright &copy
+2000-2020 Robert W.  O'Connell.  All rights reserved.  These notes are
+intended for the private, noncommercial use of students enrolled in
+Astronomy 511 at the University of Virginia.</i></small>
+
+
+<!-- END FOOTER -->
+
+</div>
+</body>
+</html>
+				  
