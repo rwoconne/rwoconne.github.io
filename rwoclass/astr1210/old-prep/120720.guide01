@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -23,7 +23,7 @@
 1/13/2019; 7/29: define viewport;  3/29/2020;  8/18; 9/7;  
 
 GHP version: 11/17/2020; 11/24: test link of large image to uvaCreate; 
-             12/7: add width-limit; 5/13/2021; 5/16; 
+             12/7: add width-limit; 
 
  -->
 
@@ -183,7 +183,7 @@ atmospheres of some of the other bodies in the solar system.  </p>
 <ul> Scientific ideas are <b>not</b> claimed to be <b>absolute</b>
 truths.  They are always <b>provisional</b>, to a greater or lesser
 degree.  They are regarded as <b>approximations</b> to the truth,
-  subject to revision as new evidence emerges.  They <b>systematically
+subject to revision as new evidence emerges.  They <b>systematically
 improve</b> with time, by discarding older, less successful
 interpretations.</p>
 </ul>
@@ -243,13 +243,13 @@ including astronomy, mathematics is an essential technical ingredient
 in interpretation.  Large swaths of modern biology and medical
 science, based on interpretation of the structures of huge nucleic
 acid and protein molecules, are likewise highly quantitative.
-Mathematics is needed in the design and analysis of experiments.  For
-example, it is used to determine how the inevitable uncertainty in any
-measurement affects the reliability of scientific inferences,
-especially since these often depend on combining measurements of
-dozens of different quantities, each with its own limitations.  But
-even where complicated mathematics is not required, the rules of
-logic, as elaborated by mathematics, are still essential.</p>
+Mathematics is needed, for example, to determine how the inevitable
+uncertainty in any measurement affects the reliability of scientific
+inferences, especially since these often depend on combining
+measurements of dozens of different quantities, each with its own
+limitations.  But even where complicated mathematics is not required,
+the rules of logic, as elaborated by mathematics, are still
+essential.</p>
 
 It is actually surprising that mathematics, developed for the most
 part in the abstract, is capable of describing the real, empirical
@@ -701,7 +701,6 @@ improve</b> by discarding older, less successful interpretations.
 You can picture the progress of science as an <b>inward spiral toward
 the truth</b> as better evidence accumulates.
 </p>
-
 </ul>
 
 At any given time, some scientific results are much less well
@@ -713,9 +712,9 @@ scientific literature.
 <ul>
 Among science that is less well established are many "interesting"
 results in areas like human <b>psychology</b> and the influence
-of <b>lifestyle on health</b> (especially diet).  Unfortunately, these
+of <b>lifestyle</b> on health (especially diet).  Unfortunately, these
 tend to get wide publicity (isn't it great to hear that chocolate is
-good for your heart?).  And when contrary studies appear later, this
+good for your health?).  And when contrary studies appear, this
 diminishes confidence in science overall.</p>
 
 Difficulties in these areas arise because it isn't ethical to
@@ -723,11 +722,10 @@ experiment on human subjects in ways that might produce more
 definitive conclusions.  Large samples are often hard to gather, but
 small samples yield large experimental scatter and also prevent
 assessment of the effects of the huge range of personal
-characteristics.  And in the absence of hard statistics, investigators
-are sometimes swayed by random variations in ambiguous data sets that
-seem to confirm their hypotheses.  You shouldn't judge the reliability
-of basic scientific conclusions by the <b>muddled impression</b>
-emerging from the popular press.
+characteristics.  And investigators are sometimes swayed by random
+variations in ambiguous data sets that seem to confirm their
+hypotheses.  You shouldn't judge the reliability of basic scientific
+conclusions by the <b>muddled impression</b> emerging from the popular press.
 </p>
 
 </ul>
@@ -741,27 +739,8 @@ If our scientific understanding of nature was seriously flawed, then
 most of <b>our technology would simply not work</b>.  The validity of
 ideas like Newton's laws of motion or Maxwell's theory of
 electromagnetism or the germ theory of disease is <b>tested
-continuously</b> in every automobile, cell phone, and hospital in the
-world.  </p>
-
-<ul>
-By the way, this is also the best answer to the <b>"cultural
-constructivist"</b> notion popular with some philosophers and social
-scientists that prevailing scientific theories are more a product of
-social conventions or political currents than objective data from the
-real world.  Scientists emphatically reject this argument.  They
-accept that they are subject to all the same social pressures,
-foibles, and character flaws as other people.  They make mistakes,
-exercise bad judgement, and can have strongly subjective biases
-(mostly in favor of their own ideas).  However, the difference in
-terms of the results of science is that empirical verification
-provides an <b>external standard</b> for determining which ideas
-have merit, and this ultimately produces robust interpretations of
-nature.</p>
-</ul>
-
-
-<!--     -->
+continuously</b> in every assembly line, automobile, cell phone, and
+hospital in the world.  </p>
 
 Keep this success in mind when evaluating debates over scientific
 results in the public arena.  The same analytic procedures and
@@ -780,8 +759,7 @@ groups. </p>
 As a new mode of thinking about the natural world, <b>science succeeded
 brilliantly</b>.  It demonstrated that humans can solve many problems
 that at first seemed intractable: e.g. questions like <em>"what causes
-bubonic plague?"</em>  or <em>"what are the stars?"</em> 
-or <em>"how old is the Earth?"</em> </p>
+bubonic plague?"</em>  or <em>"what are the stars?"</em> </p>
 
 <ul> Success in science has been a great source of <b>optimism</b>
 in human cultures.  This was a major wellspring for the Enlightenment
@@ -917,8 +895,7 @@ Despite our impression, the atmosphere represents only a tiny fraction
 (one part in 1600) of the Earth's diameter.
 See <a href="im/himalayas-from-orbit-limb.jpg">this image</a> taken
 from a spacecraft, showing the atmosphere as a thin blue line on the
-horizon. (The dark ridge of snow-capped mountains running diagonally
-across the Earth's surface is the Himalayas, the world's highest.)</p>
+horizon.</p>
 
 In fact, <b>you can actually walk out of Earth's atmosphere</b>.
 Anyone who has been above 26,000 feet altitude (and there are 14
@@ -934,10 +911,10 @@ height"</a> definition of the atmosphere's thickness.</p>
 
 <ul>
 
-<li> The age of the Sun is about <b>5 billion years</b>, a middling
-age for an older star.  Suppose we wanted to use the run of all
-the <b>letters in our textbook</b> to represent this span of time.
-How many years would we have to assign to each letter? </p>
+<li> The age of the Sun is <b>5 billion years</b>, a middling age for
+an older star.  Suppose we wanted to use the run of all the <b>letters in
+our textbook</b> to represent this span of time.  How many years would we
+have to assign to each letter? </p>
 
 <ul>
 
@@ -957,7 +934,7 @@ Sun.)</p/>
 first two pages of our textbook with the beginning of this
 time-scale model superposed.</p>
 
-The Earth is almost the same age as the Sun, so our scale model
+The Earth is only about 10% younger than the Sun, so our scale model
 graphically illustrates the vast span of time over which the surface,
 atmosphere, and biosphere of our planet have been shaped into their
 present form. </p>
@@ -1149,10 +1126,10 @@ Next Guide </a></b>
 <center>
 
 <small><i>Last modified
-    <b>May 2021</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>December 2020</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
-<small>Text copyright &copy 1998-2021 Robert W. O'Connell.  All
+<small>Text copyright &copy 1998-2020 Robert W. O'Connell.  All
 rights reserved.  Twilight image of Moon and Venus over Mt. Shasta by
 Jane English.  These notes are intended for
 the private, noncommercial use of students enrolled in Astronomy 1210
