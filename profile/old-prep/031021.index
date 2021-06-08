@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1997-2021, all rights reserved. -->
+<!-- All contents copyright (C) 1997-2020, all rights reserved. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original URL: http://www.people.virginia.edu/~rwo -->
 <!--        -->
@@ -21,8 +21,7 @@
      7/22; 1/8/2020; 
 
      GHP version:  11/8/2020: change link to big M83 image; 11/9; 
-     12/21: add maxwidth spec; 12/31; 1/4/2021; 1/5; 3/10; 6/8:
-     fix last date error in ADS pubs link; 
+     12/21: add maxwidth spec; 12/31; 1/4/2021; 1/5; 3/10; 
 
 -->
 
@@ -1055,8 +1054,7 @@ MNRAS, 482.3426M, 2019</a>.
 <p><br></p>
 
 <b>Complete publications list: <a href="oconnell-publications-jan19.pdf">here (text)</a> or
-<a href="https://ui.adsabs.harvard.edu/search/?q=database%3Aastronomy%20author%3A%28%22oconnell%2C\
-%20r%20w%20%22%29%20pubdate%3A%5B1968-01%20TO%209999-12%5D&sort=date%20desc&rows=100">
+<a href="https://ui.adsabs.harvard.edu/search/filter_database_fq_database=AND&filter_database_fq_database=database%3A%22astronomy%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3A%22astronomy%22)&q=pubdate%3A[1968-01%20TO%202019-12]%20author%3A(%22oconnell%2C%20r%20%20w%22)&sort=date%20desc%2C%20bibcode%20desc&p_=1">
 here (NASA Astrophysics Data System)</a></b></p>
 
 <p><br></p>
