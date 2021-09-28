@@ -22,8 +22,7 @@
 
      GHP version:  11/8/2020: change link to big M83 image; 11/9; 
      12/21: add maxwidth spec; 12/31; 1/4/2021; 1/5; 3/10; 6/8:
-     fix last date error in ADS pubs link; 7/27; 8/17: pix width
-     increased; ; 
+     fix last date error in ADS pubs link; 
 
 -->
 
@@ -42,7 +41,7 @@
   <meta name="description" content="Brief professional biography, scientific interests, bibliography of Robert W. O'Connell, John Downman Hamilton Professor at the University of Virginia">
 
 <style>
-    div.all {  max-width: 960px;}
+    div.all {  max-width: 900px;}
 </style>
 
 </head>
@@ -111,7 +110,7 @@ Hubble Space Telescope Wide Field Camera 3</a>, 1998-2010.
 Digital Sky Survey III & IV</a>, 2007-2020. 
 <li> John Downman Hamilton Professor Emeritus, 2014-- .
 </p>
-<li><a href="oconnell-publications.pdf">Publications List</a>
+<li><a href="oconnell-publications-jan19.pdf">Publications List</a>
 </b></p>
 
 <!--  <li><a href="RWO-publist.pdf">Publications List</a> -->
@@ -237,22 +236,16 @@ The Saga of Servicing Mission 4:</p>
 nearly cancelled in 2000 in order to shift funds to the James Webb
 Space Telescope, then struggling with budget overruns.  The mission
 was formally cancelled in 2004 in the wake of the Columbia accident.
-The science, instrument, and engineering teams were kept intact,
-however, and continued work in hopes of a reassessment.  A study was
-made of possible robotic servicing options (feasible but expensive).
-After a thorough safety review, the mission was re-approved by
-Administrator Griffin in October 2006, with a tentative date of
-September 2008.  The ultimate mission plan included installation of
-WFC3 and the Cosmic Origins Spectrograph, repair of ACS and STIS, and
-replacement of essential hardware, such as batteries and gyros, so
-that HST can continue operations will a full instrument complement for
-as long as possible.  The intended mission duration was 5 years,
-through 2014.  (As of 2021, the instruments are still fully
-operational.)  Major disruptions, such as those experienced by HST,
-turn out to be common programmatic features of important space
-missions.  Some are unavoidable, but others arise because of the
-haphazard and consequently inefficient US budgeting process for
-science.
+After a thorough safety review, it was re-approved by Administrator
+Griffin in October 2006, with a tentative date of September 2008.  The
+ultimate mission plan included installation of WFC3 and the Cosmic
+Origins Spectrograph, repair of ACS and STIS, and replacement of
+essential hardware, such as batteries and gyros, so that HST can
+continue operations will a full instrument complement for as long as
+possible.  The intended mission duration was 5 years, through 2014.
+Major disruptions, such as these, in important science missions turn
+out to be common programmatic features of the haphazard and
+consequently inefficient US budgeting process for science.
  </p>
 
 <li> <a href="rwo-To-JNB-Comm.txt">Letter to HST/JWST Transition Panel (July 2003)</a>
@@ -409,17 +402,6 @@ List of Publications from the SOC Early Release Science Programs:</p>
 <a href="http://archive.stsci.edu/proposal_search.php?mission=hst&id=11360">ERS-1: Star Formation in Nearby Galaxies</a></p>
 
 <a href="http://archive.stsci.edu/proposal_search.php?mission=hst&id=11359">ERS-2:  High Redshift Deep Field</a></p>
-
-</ul>
-
-<p>&nbsp;</p>
-
-Other Sites:</p>
-
-<ul>
-
-<a href="https://www.nasa.gov/content/hubbles-30th-anniversary">30 Years
-of Exploration (HST 30th Anniversary Site)</a></p>
 
 </ul>
 
@@ -644,16 +626,9 @@ IDL Resources Page</a> for more information and lists of useful IDL
 links.  </p>
 
 The <a href="http://www.galex.caltech.edu/">GALEX Mission</a> was a
-later (2003-2012) long-duration, free-flying UV telescope that
+later (2003-2012) long-lived, free-flying UV telescope that
 investigated further many of the scientific topics explored by
 UIT.</p>
-
-The UV telescope hardware from the Astro missions is being retrieved
-and refurbished by
-the <a href="https://www.astrorestorationproject.org/">Astro
-Restoration Project</a> and will be placed on display at the US Space
-& Rocket Center in Huntsville, AL and later at the Smithsonian
-National Air and Space Museum.</p>
 
 <hr size=3 noshade>
 
@@ -1079,7 +1054,7 @@ MNRAS, 482.3426M, 2019</a>.
 
 <p><br></p>
 
-<b>Complete publications list: <a href="oconnell-publications.pdf">here (text)</a> or
+<b>Complete publications list: <a href="oconnell-publications-jan19.pdf">here (text)</a> or
 <a href="https://ui.adsabs.harvard.edu/search/?q=database%3Aastronomy%20author%3A%28%22oconnell%2C\
 %20r%20w%20%22%29%20pubdate%3A%5B1968-01%20TO%209999-12%5D&sort=date%20desc&rows=100">
 here (NASA Astrophysics Data System)</a></b></p>
