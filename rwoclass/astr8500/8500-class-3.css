@@ -7,6 +7,8 @@
 /*                     : replace underlines with bold for emphasis;   */
 /*                     : use bold plus italics for new terms;   */ 
 /*  Change link style for 8500 "presents" page. 5/23/16  */
+/*  2/16/2022: add H4   */
+
 
 
 body        { font-size: large; color: #000000; background: #FFFFdd;
@@ -23,6 +25,8 @@ H1          { font-size: xx-large; color: #bb11dd; font-weight: bold}
 H2          { font-size: x-large; color: blue; font-weight:bold}
 
 H3          { font-size: large; color: blue; font-weight:bold }
+
+H4          { font-size: large; color: black; font-weight:bold }  
 
 th          { font-family: Arial,Helvetica,Verdana;
               font-weight: bold }
