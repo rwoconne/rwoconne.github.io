@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2022.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -23,7 +23,7 @@
 1/13/2019; 7/29: define viewport;  3/29/2020;  8/18; 9/7;  
 
 GHP version: 11/17/2020; 11/24: test link of large image to uvaCreate; 
-             12/7: add width-limit; 5/13/2021; 5/16; 3/7/2022; 4/7; 
+             12/7: add width-limit; 5/13/2021; 5/16; 
 
  -->
 
@@ -34,12 +34,13 @@ GHP version: 11/17/2020; 11/24: test link of large image to uvaCreate;
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="keywords" content="science, what is science, technology, scientific methods, empiricism, idealism, pseudo-science, science and religion, common-sense
+<meta name="keywords" content="science, technology, scientific methods, empiricism,
+idealism, pseudo-science, science and religion, common-sense
 perspective, cosmic perspective, authority in science, skepticism,
 astronomy, scientific validity, scale models of universe">
 
 <style>
-     div.all {  max-width: 960px;}
+     div.all {  max-width: 900px;}
 </style>
 
 
@@ -58,7 +59,7 @@ astronomy, scientific validity, scale models of universe">
 
 <p><br></p>
 
-<center><a href="im/vlt-1.jpg"><img src="im/vlt-1-ex-3.jpg" width=75%></a></center>
+<center><a href="im/vlt-1.jpg"><img src="im/vlt-1-ex-3.jpg" width=66%></a></center>
 
 <p align="right"><small><i> The European Southern Observatory Very
 Large Telescope, Chile.</i></small>
@@ -85,7 +86,7 @@ astronomical research.</p>
 <ul>
 
  <b>Science is the systematic understanding of empirical
-  phenomena</b>.  </p>
+  natural phenomena</b>.  </p>
 
 "<b><em>Empirical</em></b>" =  experienced or observed </p>
 
@@ -108,10 +109,9 @@ history, starting ca. 1500 AD.  </p>
 
 <ul>
 
- New interpretations are required to be <b>consistent with all
- established facts</b>.<br>  Given all that we now know about nature,
- this is a <b><a href="im/library-books-1.jpg">tremendously
- challenging</a></b> requirement!</p>
+ New interpretations are required to be <b>consistent with all established
+ facts</b>.<br>
+ Given all that we now know about nature, this is a <b><a href="im/library-books-1.jpg">tremendously challenging</a></b> requirement!</p>
 
 </ul>
 </ul>
@@ -450,7 +450,8 @@ as <a href="http://www.youtube.com/watch?v=HMGIbOGu8q0&feature=related">homeopat
 in which the active therapeutic ingredients are diluted to the point
 where not a single molecule remains).</p>
 
-<a href="https://www.washingtonpost.com/news/acts-of-faith/wp/2017/08/24/accused-of-satanism-they-spent-21-years-in-prison-they-were-just-declared-innocent-and-were-paid-millions/?tid=hybrid_experimentrandom_3_na&utm_term=.b0fc7e4044ee">False
+<a href="https:
+www.washingtonpost.com/news/acts-of-faith/wp/2017/08/24/accused-of-satanism-they-spent-21-years-in-prison-they-were-just-declared-innocent-and-were-paid-millions/?tid=hybrid_experimentrandom_3_na&utm_term=.b0fc7e4044ee">False
 criminal prosecutions</a> (murder, child abuse, satanic rituals, etc.)
 based on erroneous psychotherapy (e.g.
 <a href="im/recovered-memory-alien-Doonesbury.gif">
@@ -566,7 +567,7 @@ technology</em></small></center>
 Although science and modern technology are often intertwined, they have
 different goals and value systems; and we need to clarify the
 distinctions between them.  Science and technology are <b>symbiotic
-but distinct</b>:</p>
+but distinct</b></p>
 
 <ul>
 
@@ -744,7 +745,7 @@ continuously</b> in every automobile, cell phone, and hospital in the
 world.  </p>
 
 <ul>
-By the way, this is also the best answer to the <b>"social
+By the way, this is also the best answer to the <b>"cultural
 constructivist"</b> notion popular with some philosophers and social
 scientists that prevailing scientific theories are more a product of
 social conventions or political currents than objective data from the
@@ -753,10 +754,10 @@ accept that they are subject to all the same social pressures,
 foibles, and character flaws as other people.  They make mistakes,
 exercise bad judgement, and can have strongly subjective biases
 (mostly in favor of their own ideas).  However, the difference in
-terms of the results of science is that the demand for empirical
-verification provides an <b>external standard</b> for determining
-which ideas have merit, and this ultimately produces robust
-interpretations of nature.</p>
+terms of the results of science is that empirical verification
+provides an <b>external standard</b> for determining which ideas
+have merit, and this ultimately produces robust interpretations of
+nature.</p>
 </ul>
 
 
@@ -1148,10 +1149,10 @@ Next Guide </a></b>
 <center>
 
 <small><i>Last modified
-    <b>April 2022</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>May 2021</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
-<small>Text copyright &copy 1998-2022 Robert W. O'Connell.  All
+<small>Text copyright &copy 1998-2021 Robert W. O'Connell.  All
 rights reserved.  Twilight image of Moon and Venus over Mt. Shasta by
 Jane English.  These notes are intended for
 the private, noncommercial use of students enrolled in Astronomy 1210
