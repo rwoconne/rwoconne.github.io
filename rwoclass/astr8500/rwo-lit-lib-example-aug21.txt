@@ -1,0 +1,120 @@
+
+O'Connell  August 2021 
+======================
+
+
+               SIMPLE UNIX "ASCII LITERATURE LIBRARY" 
+
+METHOD: 
+
+   1)  Sign up for daily mailings of newly submitted abstracts from
+       arXiv.org
+
+   2)  arXiv sends a single composite ASCII (text) file of abstracts
+       received during the last 24 hours (M-F).  You can read it from
+       your mailer or save it to your computer to read later.
+
+   3)  Copy individual abstracts of interest and paste each into an
+       ASCII file with a title containing the lead author's name, a
+       compressed description, and the year.  I use a ".abs" suffix
+       for clarity.
+
+       Optionally do light editing on the abstract: e.g. breaking the
+       usual indigestible block of text into separate paragraphs or
+       capitalizing key items.
+
+   4)  Store files in topic-oriented directories.  In some cases, it's
+       useful to cross-index files by storing them under several
+       topics.  You could also use soft links to do that.  
+
+   5)  You can read, annotate, search, list, rename, grep, sort,
+       combine, or hardcopy files with simple UNIX commands using the
+       Terminal.  The "more" command to display content doesn't care
+       about an ASCII file's suffix.  Terminal display and
+       manipulation of files is faster and cleaner than dealing with
+       PDF, Word, or other proprietary formats.
+    
+   6)  Download full PDF versions only of papers that appear
+       particularly relevant or important.  The URL for the PDF is
+       contained in the abstract file.
+
+   7)  If you don't want to be bothered with daily mailings, you can
+       use the same technique directly on the arXiv.org listings as
+       viewed in a browser, although this is less convenient, more
+       time consuming, and requires you to take the initiative.
+       
+   8)  This method allows you to search/organize literature files by
+       author, date, and title.  You can add additional special
+       keywords to files to help find or organize them in the form of
+       "tags."  Most popular operating systems support the use of
+       arbitrary tags.  MacOS offers a robust system.  The content of
+       files is not changed: instead, tags are associated with them as
+       metadata by the file management system.  One problem with this
+       feature is that although the files themselves are portable,
+       metadata may not survive a migration to another computer or
+       operating system.
+
+   9)  You can embed BibTex-like entries in the files, but that
+       involves an extra step. 
+
+
+EXAMPLE: 
+
+/Users/rwo/lit/spops ls -lt *
+
+-rw-r--r--     1 rwo  staff            2065 Jul 20 15:24 sharda-origin-bottom-heavy-IMFs-21.abs
+-rw-r--r--     1 rwo  staff            2355 Jul 19 15:31 kauffmann-popgrads-faceon-disks-MANGA-21.abs
+-rw-r--r--     1 rwo  staff            2059 Jul 19 15:28 kauffmann-flatter-central-IMF-in-MANGA-disks-21.abs
+-rw-r--r--     1 rwo  staff            2101 Jul  8 08:50 lonoce-IMF-M89-spectral-index-bias-21.abs
+-rw-r--r--@    1 rwo  staff        25676369 Jul  5 16:10 greene-resolved-EA-galaxies-MANGA-21.pdf
+-rw-r--r--     1 rwo  staff            1975 Jul  5 16:06 greene-resolved-EA-galaxies-MANGA-21.abs
+-rw-r--r--     1 rwo  staff            2487 Jul  5 15:59 fielder-MW-UV-to-IR-SED-21.abs
+-rw-r--r--     1 rwo  staff            2176 Jun 29 11:26 chandar-SFH-PSB-glx-from-clusters-21.abs
+-rw-r--r--     1 rwo  staff            2387 Jun 29 10:57 sedgwick-SFR-in-Eglx-from-SNe-21.abs
+-rw-r--r--     1 rwo  staff            2052 Jun 28 12:04 bravo-glx-color-evol-no-green-pop-21.abs
+...
+
+/Users/rwo/lit/spops more greene-resolved-EA-galaxies-MANGA-21.abs
+
+\\
+arXiv:2106.15613
+Date: Tue, 29 Jun 2021 17:58:26 GMT   (29720kb,D)
+
+Title: Refining the E+A Galaxy: A Spatially Resolved Spectrophotometric Sample
+       of Nearby Post-starburst Systems in SDSS-IV MaNGA (MPL-5)
+Authors: Olivia A. Greene, Miguel R. Anderson, Mariarosa Marinelli, Kelly
+  Holley-Bockelmann, Lauren E. P. Campbell, and Charles T. Liu
+Categories: astro-ph.GA
+Comments: 11 pages, 2 tables, 8 figures and a complete sample appendix
+Journal-ref: ApJ, 910, 162 (2021)
+DOI: 10.3847/1538-4357/abe4d1
+\\
+
+Post-starburst galaxies are crucial to disentangling the effect of
+star formation and quenching on galaxy demographics. They comprise,
+however, a heterogeneous population of objects, described in numerous
+ways. To obtain a well-defined and uncontaminated sample, we take
+advantage of spatially resolved spectroscopy to construct an
+unambiguous sample of E + A galaxies - post-starburst systems with no
+observed ongoing star formation.  Using data from the Mapping Nearby
+Galaxies at Apache Point Observatory (MaNGA) Survey, in the fourth
+generation of the Sloan Digital Sky Survey (SDSS-IV), we have
+identified 30 E + A galaxies that lie within the green valley of
+color-stellar mass space.  
+
+We first identified E + A candidates by their central, single-fiber
+spectra and (u-r) color from SDSS DR15, and then further required each
+galaxy to exhibit E + A properties throughout the entirety of the
+system to three effective radii.  We describe our selection criteria
+in detail, note common pitfalls in E + A identification, and introduce
+the basic characteristics of the sample. We will use this E + A
+sample, which has been assembled with stringent criteria and thus
+re-establishes a well-defined subpopulation within the broader
+category of post-starburst galaxies, to study the evolution of
+galaxies and their stellar populations in the time just after star
+formation within them is fully quenched.
+
+\\ ( https://arxiv.org/abs/2106.15613 ,  29720kb)
+--------
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
