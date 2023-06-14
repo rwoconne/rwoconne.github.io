@@ -1,0 +1,1073 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
+<!-- -->
+
+<!-- HISTORY: guides s97; s98; 10/04/98; 10/05; 2/18/99; 2/21; 2/22; 
+            9/23; 4/20/01; 11/30/01; 2/16/2002; 2/17; 2/18; 2/19; 2/28; 3/4; 
+            3/18; 2/9/2004: was guide 9, moved to guide 8; 2/12; 2/16; 
+            2/1/2007;  2/13; 2/14; 2/16; 2/18; 2/19; 9/19; 9/25; 2/3/2008; 
+            2/14; 2/17; 2/27; 2/18/2009; 3/9/2010; 12/28; 1/04/2011; 2/9;
+            6/4/2012--new format, maj revisions started; 6/5; 6/6; 6/7; 6/8;
+            6/9; 6/10; 6/13; 6/14; 6/27; 7/12; 7/13; 7/14; 7/16; 7/26;
+            9/25; 9/27; 9/30; 2/11/2013; 2/17; 8/26; 9/02; 9/22; 9/25;
+            2/8/2014; 2/13; 1/25/2015; 3/9; 6/1; 9/8: new domain, update
+            JupLab link; 11/21; 11/23; 2/28/2016; 8/28; 9/2; 9/4; 9/15; 
+            12/14; 1/24/2017; 3/21; 3/22; 4/13; 6/10; 8/6; 1/21/2018; 
+            4/10; 4/22; 5/2; 6/12/2019; 6/13; 6/19; 7/18 define viewport;  
+            10/28;  9/12/2020; 
+
+      GHP version: 11/26/2020; 11/29: link to *.mp4 Astro-2 videos and
+            UVaCreate repository for Shuttle prep video; 12/13; 
+
+
+     -->
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1210, O'CONNELL.  Study Guide 8 </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="NASA, Apollo, astronomy, space program, Moon, Newton, Newtonian physics, gravity, orbits, gravitational orbits, planetary orbits, Kepler's laws, Kepler's third law, rockets, space flight">
+
+<style>
+     div.all {  max-width: 900px;}
+ </style>
+
+</head>
+<body>
+
+<div class="all">
+
+
+<h2 align="center">ASTR 1210 (O'Connell) Study Guide </h2>
+
+<p><br></p>
+<hr>
+
+<p><br></p>
+
+<h1 align="center">8.  GRAVITATIONAL ORBITS AND SPACE FLIGHT</h1>
+
+<p><br></p>
+
+<center><a href="im/STS-105-launch-lg.jpg"><img src="im/STS-105-launch-smex.jpg"
+alt="STS-105 Launch" width=85% vspace=10></a></center>
+<p align="right"><small><em>Space Shuttle Discovery launches on <br> a mission
+to the Space Station, 2001</em></small></p>
+
+
+<center>
+<table width=75%>
+<tr><td>
+<font size="+1"color="green"><b><em>"There will certainly be no lack of human pioneers when we have
+mastered the art of [space] flight....Let us create vessels and sails adjusted
+to the heavenly ether, and there will be plenty of people unafraid of
+the empty wastes. In the meantime we shall prepare, for the brave
+sky-travelers, maps of the celestial bodies."  </em><br>
+<center>  ---- Johannes Kepler (1610)</b> </center>
+</font></p>
+</td></tr></table>
+</center>
+
+
+<p><br></p>
+
+Kepler was right about the multitudes of people eager to travel into
+space, but it took another 350 years of technological development to
+build the "vessels" needed to carry them.  Space travel is difficult.
+However, the theoretical key to space flight was discovered by
+Newton only 80 years after Kepler's work.</p>
+
+Newton's theories of dynamics and gravity provided a complete
+understanding of the interaction between gravitating bodies and the
+resulting orbits for planets and satellites.  This guide first
+describes the  <b>nature of possible gravitational orbits</b>
+and some implications of those. </p>
+
+Two hundred and fifty years after he died, Newton's work became the
+foundation of <b>space technology</b>, which is introduced in the
+second part of the guide.  Space technology---rockets, the Space
+Shuttle, scores of robot spacecraft, the human space program---has
+provided most of our present knowledge of the Solar System and most of
+the material we will discuss in the rest of this course.  Commercial
+space technology (e.g. GPS, communications, and remote observing
+satellites) is already an integral part of modern life.</p>
+
+The mid-20th century was the first time humans had ever sent machines
+beyond the Earth's atmosphere.  <b>By 2015, we had explored every
+large body in the Solar System out to the orbit of Pluto.</b>  Even
+such far-sighted thinkers as Galileo and Newton himself would never
+have thought that possible in the mere 400 years that had elapsed
+since Kepler's Laws were formulated.  This was an amazing
+accomplishment, <b>the greatest exploratory feat of humanity to
+date</b>. </p> 
+
+
+<p><br></p>
+
+<h2>A. Newtonian Orbit Theory</h2></p>
+
+<h3>Orbital Dynamics</h3>
+
+Newton's theory can accurately predict gravitational orbits 
+because it allows us to determine the <b>acceleration</b> of an object
+in a gravitational field.</p>  
+
+<ul>
+
+Acceleration is the <b>rate of change</b> 
+of an object's <b>velocity</b>. </p>
+
+If we know the
+<b>initial position and velocity</b> of an object, knowing its <b>acceleration</b>
+at all later times is enough to <b>completely determine its later path of
+motion</b>.</p>
+
+To predict the path, we simply substitute Newton's expression
+for <b>F<sub>grav</sub></b> for the force term in his 
+<a href="121supps2-3.html#forces"><b>Second
+Law</b></a> and solve for acceleration:  </p>
+
+<ul>
+
+<b> a = F<sub>grav</sub>/m </b></p>
+
+But there are major complications.  The Second Law is <b>not a simple
+algebraic expression</b>.  Both velocity and acceleration are <b>rates of
+change</b> (of position and velocity, respectively).  Mathematically,
+they are <b>derivatives</b>.  The gravitational force also changes with
+position.  Finally, velocity, acceleration and the gravitational force
+all have a
+<b>directionality</b> as well as a magnitude associated with
+them. That is, they are <b>"vectors"</b>.</p>
+
+So the Second Law is really a <b><em>differential vector
+equation</em></b>.  To solve it, Newton had to
+invent <a href="http://en.wikipedia.org/wiki/Calculus">
+<b> <em>calculus</em></b></a>. </p>
+
+<!--  
+"http://www.mats.tcd.ie/pub/HistMath/People/Newton/Principia/Bk2Lem2/PrBk2Lm2.html"
+-->
+
+</ul>
+
+We don't need to know the mathematical details in order to
+understand the basic interaction that shapes Newtonian orbits.  Take
+as an example the <b>orbit of the Earth around the Sun</b>.
+</p>
+
+<ul>
+
+Pick <b>any location</b> on the Earth's orbit.  Represent its velocity at that
+location as an <b>arrow</b> (a <b>vector</b>) showing the direction and magnitude
+of its motion.    </p> 
+
+<!-- We can take a step-wise approach and ask where
+the Moon will be an hour later.  -->
+
+An essential element of Newtonian theory is that <b>changes</b> in
+the <b>magnitude</b> of the velocity vector (the <b>speed</b>) <b>or</b> in
+the <b>direction</b> of motion are <b>both</b> considered to be
+"accelerations."  In the following drawings, the red arrows represent
+the Earth's velocity vector and the blue arrows represent the applied
+gravitational force.  According to Newton's Second Law, <b>the change
+in the velocity vector</b> (a speed-up in the first case or a
+deflection of the direction of motion in the second) <b>is in the
+direction of the applied force</b>. </p>
+
+<center>
+<table border=0 cellpadding=15 width=70%>
+<tr>
+<td align="left"><img src="im/velvec-1.jpg" width=270>
+</td>
+<td align="left"><img src="im/velvec-2.jpg" width=160>
+</td>
+</tr>
+</table>
+</center>
+
+
+Starting from any location, the instantaneous velocity vector and the
+rate of change of that vector (the acceleration) combine to determine
+where the Earth will be at the next moment of time.  <b>Adding up the
+motion from one moment to the next traces out the orbital path</b>.
+</p>
+
+<!--  Newton discovered that, for his gravitational force law, the paths
+would always be one of the four kinds of "conic sections" described 
+below. -->
+
+In Newtonian gravity, the gravitational force acts
+<b>radially</b> --- i.e. along the line connecting the Earth and the
+Sun.  Accordingly, both the
+<b>acceleration</b> and the <b>change in the Earth's velocity
+vector</b> from one moment in time to the next will also always be in
+the <b>radial direction</b>.</p>
+
+
+<a href="im/ellip-orbit-vel-accel-JSwift-anim.gif"><img 
+src="im/ellip-orbit-vel-accel-JSwift-anim.gif"
+align="right" hspace=10 vspace=10 width=35%></a>
+
+You might think that if the acceleration is always toward the Sun,
+then the Earth should fall faster and faster on a radial trajectory
+until it crashes into the Sun.  That's exactly what would
+happen <b>if</b> the Earth were ever <b>stationary</b> in its orbit.
+In that case, the situation in the left hand drawing above (straight-line
+acceleration toward the Sun) would prevail.</p>
+
+But if the Earth's velocity vector has a component which is <b>perpendicular</b>
+to the radial direction, then in any interval in time, it will move
+<b>"sideways"</b> at the same time as it accelerates toward the Sun.
+If the <b>combination of sideways motion and distance</b> from the Sun is
+correct, the Earth will avoid collision with the Sun, and it will
+<b>stay in permanent orbit</b>.  The animation at the right shows the
+situation for the Earth's (exaggerated) elliptical orbit around the
+Sun (here, the blue line is the velocity vector, the green line is the
+acceleration;
+<a href="im/ellip-orbit-vel-accel-JSwift-anim.gif">click</a> for an
+enlargement).  Note that where
+the Earth is nearest the Sun, the gravitational force and inward acceleration
+are greatest, but the sideways motion is <b>also</b> greatest, which prevents us
+from colliding with the Sun.  That motion is in accordance with 
+<a href="guide07.html#second"><b>Kepler's
+second law</b></a>.</p>
+
+Therefore, all permanently orbiting bodies are <b>perpetually
+falling</b> toward the source of gravity but have enough <b>sideways
+motion</b> to avoid a collision.</p>
+
+</ul>
+</ul>
+
+
+<h3>Kinds of Gravitational Orbits</h3>
+
+In the case of two gravitating objects (for example, the Earth and the
+Moon, the Sun and a planet, or the Earth and an artificial satellite),
+Newton found that the full solutions of his equations give the
+following results:</p>
+
+<a href="im/conicsections-UTK161.gif">
+<img src="im/conicsections-UTK161.gif" align="right" width=22%
+hspace=10 vspace=10></a> 
+
+<ul>
+
+<li> The relative orbit is confined to a <b>geometric plane</b> which
+contains both objects.</p>
+
+<li> The shape of the orbit within the plane is a <b>"conic section"</b>,
+of which there are only <b>four types</b>.  </p>
+
+<ul>
+
+<li>  A circle <br>
+<li>  An ellipse <br>
+<li>  A parabola <br>
+<li>  A hyperbola</p>
+
+See the illustration at the right.</p>
+
+</ul>
+
+<li> The orbital type is determined by the
+initial <b>distance</b>, <b>speed</b> (V) and
+<b>direction of motion</b> of the orbiting object, as follows:</p>
+
+<ul>
+
+<li>  Define the <b>"escape velocity"</b> at a given
+distance:  V<sub>esc</sub>(R) = &radic;(2GM/R), where R
+is the separation between the two objects and M is
+the mass of the primary object.</p>
+
+<ul>
+V<sub>esc</sub> for the Earth at the Earth's surface is 25,000 mph (or 11 km/s).
+  V<sub>esc</sub> for the Sun at the Earth's 1 AU distance from the Sun 
+is 94,000 mph (42 km/s).  </p>
+
+</ul>
+</ul>
+
+
+<a href="im/gravorbits-conics-UTK161.gif"><img
+src="im/gravorbits-conics-UTK161.gif" align="right" width=28%
+hspace=10 vspace=10></a>
+
+
+<li> If V < V<sub>esc</sub>, the orbit is an <b>ellipse</b>
+or <b>circle</b>.  It is said to be <b>"closed"</b> or
+<b>"bound"</b>.   The smaller object will permanently 
+repeat its orbital motion. </p>
+
+<li> If V &ge; V<sub>esc</sub>, the orbit is a <b>parabola</b> or
+<b>hyperbola</b>.  It is said to be <b>"open"</b> or <b>"unbound"</b>.
+The smaller object escapes and does not return.</p>
+
+<li> Only <b>specific values of velocity</b> will yield <b>circular</b> or 
+<b>parabolic</b>
+orbits.  An object moving exactly at escape velocity will move on a
+parabola.  To achieve a circular orbit an object must move at 71% of
+the escape velocity, and its velocity must be exactly
+perpendicular to the radial direction.  Other combinations of 
+velocity or direction lead to elliptical or hyperbolic orbits.</p>
+
+<li> As noted earlier, shapes and motions within the "closed" orbits
+for the planets <b>satisfy all three of Kepler's Laws</b> of planetary
+motion.</p>
+
+</ul>
+</ul>
+
+You can interactively explore the relation between the orbit and the
+initial velocity vector using the Flash animation
+<a href="http://www.lri.fr/~dragice/gravity/">Gravity Chaos.</a>  </p>
+
+
+<p><br></p>
+
+<h3>Newton's Mountain</h3>
+
+Newton illustrated orbital behavior for a simple idealized situation
+where a powerful cannon is fixed in position on top of a high mountain
+on the Earth's equator.  It is allowed to fire only with its barrel
+parallel to the Earth's surface (see the illustration below).  Since
+both the distance from Earth's center and the direction of initial
+flight are fixed, the cannonball follows an orbit that depends <b>only
+on the muzzle velocity</b> of the cannon as shown below.</p>
+
+<ul>
+
+The gravitational force of a spherical body like the Earth acts as
+though it <b>originates from the center of the sphere</b>, so
+elliptical orbits of the cannonball will have the center of the Earth
+at one focus.  The center of the Earth lies directly under the red
+dot in the picture below.  </p>
+
+(For simplicity, the diagram omits showing "orbits" where the muzzle
+velocity is far enough below the circular orbit velocity that the
+cannonball hits the surface of the Earth.  Needless to say, that is
+the situation for all real-life cannons; but the flight paths taken 
+before the collision do have elliptical shapes.)</p>
+
+</ul>
+
+<center><a href="im/newton-cannon-orbital-types-Seeds.jpg"
+><img src="im/newton-cannon-orbital-types-Seeds-smex.jpg"
+alt="Orb-types" vspace=10 width=60%></a>
+<p> <small><i>"Newton's Mountain": orbit type depends on 
+initial velocity.<br>From lower to higher velocities, orbit shapes are:
+ellipse, circle, ellipse, parabola, hyperbola.<br> "Escape velocity" (which
+is 25,000 mph at Earth's surface) produces
+a parabolic orbit.</i></small></p></center>
+
+<p><br></p>
+<h3>General Relativity</h3>
+
+Much later (1915), Newton's theory was shown by Albert <b>Einstein</b>
+to be inadequate in the presence of large masses or over large
+distances and has been replaced by
+the <a href="https://en.wikipedia.org/wiki/General_relativity">General
+Theory of Relativity</a> in such situations.  Relativity
+theory <b>profoundly changed our understanding of space and time</b>,
+for example by demonstrating that mass and energy can affect the
+structure of space and time, something that Newton never contemplated.
+It is much more complicated mathematically than Newton's formulation.
+But as a practical matter, <b>Newton's theory is an entirely
+satisfactory description</b> of "everyday" gravity.  Only very minor
+corrections to the Newtonian predictions are necessary, for example,
+to send spacecraft with high accuracy throughout the solar
+system.  </p>
+
+<ul>
+General Relativity predicted important phenomena that were not foreseen in
+Newtonian physics,
+including <a href="https://en.wikipedia.org/wiki/Black_hole">black
+holes</a> (closed regions of space-time around massive, compact
+objects)
+and <a href="https://en.wikipedia.org/wiki/Gravitational_wave">
+gravitational waves</a> (propagating disturbances in the structure of
+space-time).</p>
+
+The first detection of cosmic gravitational waves, generated by the
+merger of two very distant black holes, was announced by
+<a href="https://www.ligo.caltech.edu/">LIGO</a> (the Laser
+Interferometer Gravitational-Wave Observatory) in February of 2016.
+This was one of the most difficult scientific experiments ever
+attempted as well as a brilliant confirmation of the validity
+of General Relativity.</p>
+
+</ul>
+<p><br></p>
+
+
+<h2>B.  Important Implications of Newtonian Orbits</h2>
+
+
+<a name="freefall"></a>
+<h3>"Free-Fall" Orbits</h3>
+
+<ul>
+
+Free motion in response to gravity (in the absence of other forces) is
+called <b>"free-fall"</b> motion.  <b>Conic section</b>
+orbits are all "free-fall orbits."  </p>
+
+<ul>
+Remember that <b>motion is normal</b> in free-fall.  For instance, 
+rocket engines do <b>not</b> have to be on in order for spacecraft to
+move through space on a free-fall orbit.  Spacecraft will "coast" forever on
+such an orbit, just as do the planets in orbit around the Sun.</p>
+
+Note also that free-fall orbits will <b>depart from simple conic
+sections</b> if an object is under the influence of
+<b>more than one</b> gravitating body.  For instance, comets
+are often deflected from their Sun-dominated simple conic orbits by
+Jupiter's gravity (see <a href="guide21.html">Guide 21</a>),
+and spacecraft traveling between the Earth and the Moon will not
+follow simple conic paths.  </p>
+
+</ul>
+
+Free-fall orbits are <b>independent of the mass of the orbiting object</b>.</p>
+
+<ul>
+
+Another way of stating this is to say that the <b>acceleration of all
+objects is the same</b> in a given gravity field (e.g. at a given
+distance from the Sun or near the Earth's surface), regardless of
+their masses.  This was first demonstrated experimentally
+by <a href="http://galileo.rice.edu/sci/theories/on_motion.html">Galileo</a>
+and was the subject of our "object drop" Puzzlah (see
+<a href="guide07.html" >Study Guide 7</a>).</p>
+
+The mass of the orbiting body always 
+<b>cancels out</b> of the expression for acceleration under gravity.
+For instance, in the case of a planet orbiting the Sun, the
+gravitational force on the planet is <b>directly</b> proportional to
+the planet's mass;  but, according to Newton's Second Law, the resulting
+acceleration is <b>inversely</b> proportional to its mass.  Hence,
+mass <b>drops out</b> of the expression for acceleration.   </p> 
+
+This is true for all orbits under gravity.  Hence, a <b>tennis ball</b> in
+space, if it were moving with the same speed and direction as the
+Earth at any point, would follow exactly the same orbital path as the
+Earth around the Sun.</p>
+
+<b><a href="guide07.html#third">
+Kepler's Third Law</a></b> (that the orbital period of a planet around the Sun
+depends only on its orbital <b>size</b>, not on the mass of the planet) is another
+manifestation of this fact.</p>
+
+</ul>
+
+<a href="im/ewhite-first-Am-spacewalk.jpg"><img align="right"
+src="im/ewhite-first-Am-spacewalk-smex.jpg" width=28% hspace=10
+vspace=10></a>
+
+A more familiar manifestation of "free fall" these days is the
+phenomenon of <b>"floating" astronauts</b> on space missions.  Even
+though the spacecraft is much more massive, <b>both</b> the astronauts
+and the spacecraft have <b>identical accelerations</b> under the
+external gravitational fields. They are moving on <b>parallel</b>
+free-fall orbits, so the astronauts appear to be floating and
+stationary with respect to the spacecraft, even though in near-Earth
+orbit they are actually both moving at over ten thousand miles per
+hour.  </p>
+
+<ul>
+
+<img src="im/film.gif"> Here are some brief videos of free-fall on the Space
+Shuttle during the <a href="http://www.americaspace.com/?p=77798">Astro-2
+UV observatory mission</a> in 1995: 
+<a href="im/flying-camera.mp4">camera toss</a>;
+<a href="im/flip-at-dinnertime.mp4">dinner flip</a>; 
+<a href="im/flying-tortilla-nohands.mp4">tortilla catch</a>.</p>
+
+</ul>
+
+
+<!-- if accel were proportional to mass, for instance, would
+always find astronauts pinned against walls of spacecraft.  -->
+
+Turning on a <b>rocket engine</b> breaks its free-fall path.  Rocket
+engines are described under (C) below.  You can think of a rocket
+engine in the abstract as a device for
+<b>changing from one free-fall orbit to another by applying a
+non-gravitational force</b>.
+</p>
+
+<ul>
+
+With its <b>engine turned off</b>, the motion of any
+spacecraft is a <b>free-fall orbit</b>. 
+If the engine is <b>on</b>, the craft is
+<b>not</b> in free fall.  For instance, the orbit of the Space Shuttle
+launching from the Earth will depart from a conic section until its
+engines turn off.  An example of using a rocket engine to change from
+one free-fall orbit to another
+is <a href="im/transfer-orbit-3CC-15.jpg">shown here</a>.</p>
+
+</ul>
+</ul>
+
+
+
+<center><a href="im/STS-63.Mir.Against.Horizon-lrg.jpg">
+<img src="im/STS-63.Mir.Against.Horizon-ex.gif" width=55%></a>
+<p><small><em>The Russian "Mir" space station (1986-2001) orbiting
+Earth in free-fall at an altitude of 200 miles with a velocity of 17,000
+mph</em></small>
+</center>
+
+
+<h3>Geosynchronous Orbits</h3>
+
+<ul>
+According to <a href="guide07.html#third">Kepler's Third Law</a>, the
+orbital period of a satellite will
+<b>increase</b> as its orbital size increases.  We have exploited that
+fact in developing one of the most important <b>practical
+applications</b> of space technology: geosynchronous satellites.</p>
+
+<ul>  
+
+<li>Spacecraft in <b>"low" Earth orbits</b> (less than about 500 mi),
+like the Mir space station (seen above) or the Space Shuttle, all
+orbit Earth in about <b>90 minutes</b>, at 17,000 miles per hour,
+regardless of their mass.  As seen from a given point on Earth's
+surface, they travel quickly across the sky and never spend more
+than about 10 minutes above the local horizon.  </p>
+
+<center>
+<img src="im/geostationary-anim.gif" width=40%>
+</center></p>
+
+
+<!--   (at a velocity of about 25,000 miles per hour)  -->
+
+<li> However, the orbital period of a spacecraft in a
+<b>larger orbit</b> will be <b>longer</b>.  For an orbit of radius
+about <b>26,000 mi</b>, the period will be <b>24 hours</b>---the same
+as the rotation period of the Earth.  Spacecraft here, if they are
+moving in the right direction, will appear to <b>"hover"</b>
+permanently over a given point on the Earth's surface.  These orbits
+are therefore called <em><b>geosynchronous</b></em> or
+"geostationary."  See the animation above.  This is the ideal location
+for placing <b>communications satellites</b>. </p>
+
+[The concept of geosynchronous communications satellites was first
+proposed by science fiction
+writer <a href="http://en.wikipedia.org/wiki/Arthur_C._Clarke">Arthur
+C. Clarke</a>.  He deliberately did not patent his idea, which became
+the basis of a trillion-dollar industry.]</p>
+
+</ul>
+</ul>
+
+
+<h3>Applications of Kepler's Third Law</h3>
+
+<ul>
+
+Newton's theory verified <a href="guide07.html#third"><b>Kepler's
+Third Law</b></a> (described in Guide 7) and provided a physical
+interpretation of it.  Newton found, as did Kepler, that for the
+planets in the Solar System, P<sup>2</sup> = K a<sup>3</sup>,
+where <em>P</em> is the period of a planet in its orbit, <em>a</em> is
+the semi-major axis of the orbit, and K is a constant.  But his
+gravitational theory allowed him to show that the value of K is K =
+4&#960;<sup>2</sup>/GM, where M is the mass of the Sun.  
+ </p>
+
+More generally, K is inversely proportional to the <b>mass of the
+primary body</b> (i.e. the Sun in the case of the planetary orbits but
+the Earth in the case of orbiting spacecraft).  The <b>larger</b> the
+mass of the primary, the <b>shorter</b> the period for a <b>given</b>
+orbital size.</p>
+
+<ul>
+<li> The Third Law therefore has an <b>invaluable astrophysical
+application</b>: once the value of the "G" constant has been determined
+(in the laboratory), the <b>motions of orbiting objects can be used to
+determine the mass of the primary</b>.  This is true no matter how far
+from us the objects are (as long as the orbital motion and size can be
+measured). </p>
+
+<li> In the Solar System, the Third Law allows us to <b>determine the
+mass of the Sun</b> from the size and periods of the planetary orbits.
+It allows us to determine the <b>mass of other planets</b> from the
+orbits of their satellites.  In the case of Jupiter, for example, the
+periods and sizes of the orbits of the Galilean satellites can be used
+to determine Jupiter's mass, as
+in <a href="juplab.intro.31jan2003.pdf"> Optional Lab 3</a>.  </p>
+
+<ul>
+Remember that free-fall orbits are <a href="#freefall">independent</a>
+of the mass of the orbiting body.  This means that the mass of a given
+planet <b>cannot</b> be determined from its motion or orbital size
+around the Sun.</p>
+</ul>
+
+<li> The Third Law was critical in determining the <b>masses of other
+stars</b>, using their orbits in binary star systems, and hence to
+deducing the physical processes that
+control <a href="https://rwoconne.github.io/rwoclass/astr1230/stellar.html"><b>
+stellar structure and evolution</b></a>, one of the great accomplishments
+of 20th-century physics.</p>
+
+<li> The Third Law is applied today to such diverse astronomical
+problems as measuring the <b>masses of "exoplanets"</b> around other
+stars (see <a href="guide11.html">Study Guide 11</a>) and establishing
+the existence of <a href="http://en.wikipedia.org/wiki/Dark_matter"
+><b>"Dark Matter"</b></a> in distant galaxies. </p>
+
+</ul>
+</ul>
+
+<p><br></p> 
+
+<center>
+<a href="im/rocket-engine-liquid-1.gif"><img src="im/rocket-engine-liquid-1-ex.gif"
+alt="Liquid Rocket Engine" vspace=10 width=60%></a>
+<p><small><em>Schematic diagram of a liquid-fueled rocket engine.
+Rockets carry both fuel and an oxidizer,<br> which allows the fuel to burn
+even in the absence of an oxygen-rich atmosphere.<br> The thrust of the
+engine is proportional to the velocity of the exhaust gases
+(V<sub>e</sub>).</em></small></center>
+
+<h2>C. Space Flight</h2>
+
+If the primary technology enabling space flight is Newtonian
+orbit theory, the second most important technology is the
+<b>rocket engine</b>.</p>
+
+<img src="im/columbia-launch-anim.gif" align="right" width=20% vspace=10 hspace=10>
+
+<ul>
+
+<li> In a rocket engine such as that shown in the diagram above, fuel
+combined with oxidizer is burned rapidly in a combustion chamber and
+converted into a large quantity of hot gas.  The gas creates <b>high
+pressure</b>, which causes it to be expelled out a nozzle at very high
+velocity.</p>
+
+<ul>  The exhaust pressure
+simultaneously forces the body of the rocket forward.  You can think
+of the rocket as <b>"pushing off" from the moving molecules of exhaust
+gas</b>.  The higher the exhaust velocity, the higher the thrust.</p>
+
+<ul>
+Note: rockets do <b>not</b> "push off" against the air or against the
+Earth's surface.  Rather, it is the <b>"reaction force"</b> between the
+expelled exhaust and the rocket that impells the rocket forward.</p>
+</ul>
+
+Designers work to achieve the highest possible exhaust velocity per
+gram of fuel.  Newton's second law of motion and various elaborations
+of it are essential for understanding and designing rocket motors.
+</p>
+
+<!--  
+Rockets always carry their own supply of oxidizer (as seen in the
+diagram above).  This distinguishes them from ordinary aircraft
+engines (propellor or "jet"), which use oxygen from the Earth's
+atmosphere as an oxidizer.  Obviously, there aren't any handy
+oxidizers in the vacuum of space.</p>
+-->
+
+
+</ul>
+
+<li> The main challenge to spaceflight is obtaining the power needed to
+<b>reach escape velocity</b>.    For Earth, this is 11 km/sec or <b>25,000 mph</b>.</p>
+
+<ul>
+
+The first successful launch of a
+spacecraft, <a href="https://en.wikipedia.org/wiki/Sputnik_1">the
+USSR's Sputnik-1</a>, reached only 18,000 mph, but that was sufficient to
+place this "artificial satellite" into an elliptical orbit around
+Earth at several hundred miles altitude.</p>
+
+Modern "standard" rocket engines are designed for launching commercial
+payloads to synchronous orbit or delivering intercontinental ballistic
+missles---neither of which involve reaching escape velocity from
+Earth.  Therefore, most scientific spacecraft for planetary missions
+are relatively small (i.e. low mass) in order that standard engines
+can propel them past Earth escape velocity.  This means that many
+clever strategies are needed to pack high performance into small,
+light packages.</p>
+
+<ul> Example: The <a href="http://pluto.jhuapl.edu/" >New Horizons</a>
+spacecraft, launched on a super-high velocity trajectory to Pluto in
+2006, has a mass of only 1050 lbs; its launching rocket weighed
+1,260,000 lbs, over <b>1000 times more</b>!  New Horizons flew past
+Pluto in July 2015, traveling at over 34,000 mph, and has delivered a
+treasure-trove of images and other data on this most distant (3
+billion miles from Earth at the encounter) of the classical
+planets. </p>
+
+A rocket launched at exactly escape velocity from a given parent body
+will eventually, at very large distances, slow to exactly zero
+velocity with respect to that body (ignoring the effect of other
+gravitating bodies).</p>
+
+</ul>
+
+The <a href="guide13.html#apollo"><b>Apollo program</b></a> used the extremely
+powerful <a href="im/rockets-compared.jpg"><b>Saturn V</b></a> rockets to
+launch payloads with masses up to <b>100,000 pounds</b> (including 3 crew
+members) to the Moon.  This technology was, however, retired in the
+mid-1970's because it was thought, erroneously, that the next
+generation of "reusable" Space Shuttle vehicles would be cheaper to
+operate.  A big mistake, because the reusable parts required 
+extensive (and expensive) refurbishing for each new flight. </p>
+
+<!-- <a href="http://www.nasa.gov/mission_pages/constellation/main/index.html"
+> -->
+
+The <a href="http://en.wikipedia.org/wiki/Space_shuttle"
+>Space Shuttle</a> (shown above) was fueled by high energy
+liquid oxygen and liquid hydrogen plus solid-rocket boosters.  But it
+was so massive compared to the power of its engines that it
+<b>could not reach escape velocity</b> from Earth.  Its maximum
+altitude is only about 300 miles.  That is why NASA and the private
+sector are
+developing <a href="http://en.wikipedia.org/wiki/Space_Launch_System">new
+"heavy lift" rocket technologies</a> to replace the Shuttle, the most
+successful to date being
+the <a href="im/falcon-heavy-launch.jpg">SpaceX Falcon and Dragon
+spacecraft</a>.  </p>
+
+<ul>
+Modern rocket engines are remarkably
+complicated.  <a href="im/SSME-RS24-engine-schematic-2.jpg">Here</a>
+is a simplified schematic of the Space Shuttle main engines.</p>
+</ul>
+
+</ul></ul>
+
+<p><br></p>
+
+<h2>D. Interplanetary Space Missions </h2>
+
+Beginning in the early 1960's, NASA and
+foreign space agencies developed a series of ever-more sophisticated
+<b>robot probes</b> to study the Sun, Moon, planets, and the
+interplanetary medium.  These included <b>flyby spacecraft,
+orbiters, landers, rovers, and sample-return vehicles.</b></p>
+
+
+<a href="im/cassini-spacecraft-at-saturn-2.jpg"><img align="right"
+src="im/cassini-spacecraft-at-saturn-2-smex.jpg" vspace=10 hspace=10
+width=28%></a>
+
+<ul>
+
+As of 2015, only 58 years after the first successful satellite launch
+(Sputnik, in 1957), we had flown at close range past every planet
+including Pluto; had placed robotic observatories into orbit around
+the Moon, Mercury, Venus, Mars, Jupiter, Saturn, three asteroids, and
+one comet; had sent probes into a comet nucleus and the atmosphere of
+Jupiter; had soft-landed on the Moon, Venus, Mars, Saturn's moon
+Titan, and the comet Churyumov-Gerasimenko; and had returned to Earth
+samples obtained from the coma of the comet Wild 2 and from a
+soft-landing on the asteroid Itokawa.  And in 2013, the first human
+spacecraft left the Solar System altogether and <b>entered interstellar
+space</b>.  At right is an artist's concept painting of the Cassini
+mission in orbit around Saturn.</p>
+
+</ul>
+
+We also put a number of highly capable <b>remote-controlled observatories</b>
+for studying the Solar System and the distant universe (such as the
+Hubble Space Telescope and the Chandra X-Ray Observatory) into orbit
+around the Earth and the Sun.</p>
+
+Of course, the Apollo program in the 1960's
+also <a href="guide13.html#apollo"><b>sent human beings to the Moon</b></a>.
+But, by far, <b>most</b> of what we know about the denizens of the
+Solar System has come from our powerful <b>robot</b> missions and
+observatories, most of which were not even in development by the
+end of the Apollo program in 1972.</p>
+
+<!-- This was a triumph of human courage, skill, and organization and was
+very fruitful in learning about lunar geology and surface history. -->
+
+
+For a list of these missions and additional
+links, <a href="https://science.nasa.gov/missions-page?field_division_tid=All&field_phase_tid=All"
+>click here</a>.</p>
+
+For a nice, prospective view of what <b>human expansion</b> over the next
+couple centuries into the deep space of our Solar System might
+look like, see this <a href="http://vimeo.com/108650530">video</a>,
+based on Carl Sagan's writings.  </p>
+
+
+<p><br></p>
+
+<h2>E. The Cost of Space Missions </h2>
+
+Ever wonder why space flight is so expensive?  It's
+because <b>thousands of people</b> are involved in almost any space
+endeavor, and it takes anywhere from <b>5 to 30 years</b> to prepare a
+space mission. </p>
+
+Spacecraft require not only their own launching and maneuvering
+engines but also command and control systems, power supplies, thermal
+control, pointing and stabilization systems, protection from a harsh
+environment, sensors and scientific instruments, data taking and
+storage systems, communications systems, and more -- all of these
+subject to stringent weight and volume constraints -- plus extensive
+Earth-based infrastructure to monitor and operate them.  All those
+people are required in order to design and build these myriad
+components and then certify that they will be at least 95% reliable
+after launch --- because, with very few exceptions, no repair is
+possible.  They must identify and mitigate all possible failure
+modes.  <b>Reliability is the principal cost driver</b> of space
+missions.  Needless to say, because of the demands of human safety,
+the cost of crewed missions greatly exceeds that of comparably-scaled
+robot missions. </p>
+
+<a name="apollocost"></a>
+
+
+Two examples:
+
+<ul>
+
+<li> Wikipedia reports that "The
+<a href="https://en.wikipedia.org/wiki/Gemini_9A">Gemini 9A
+mission</a> (a 1966, 3-day, low Earth orbit test flight with two astronauts)
+was supported by 11,301 personnel, 92 aircraft and 15 ships from the
+U.S. Department of Defense" -- not to mention thousands of NASA and
+private sector personnel.</p>
+
+<li> The <a href="guide13.html#apollo"><b>Apollo Moon program</b></a>
+involved a total of 410,000 people and 20,000 companies.  Its $150
+billion budget (in 2019 dollars) supported about 1,200,000
+person-years of effort over 10 elapsed years -- the largest
+non-military project in history.  For a modern overview of the scope
+and complexity of the Apollo program, see the recent book
+<a href="https://www.amazon.com/One-Giant-Leap-Untold-Story/dp/1501106295"><em>"One
+Giant Leap"</em></a> by Charles Fishman.  NASA's overall budget
+history is shown <a href="im/nasa-budget-61-to18.jpg">here</a>. At its
+peak, the Apollo program accounted for over 4% of the total US federal
+budget.</p>
+
+</ul>
+
+The overall unique scientific, commercial or exploratory value of a
+space mission must be weighed carefully against its projected
+cost.</p>
+
+
+To get a feel for the scale of effort involved in preparing and
+launching major spacecraft, watch this:
+</p>
+
+<!-- Ap11 link to 1/21/18:  a href="http://www.youtube.com/watch?v=wvWHnK2FiCk" -->
+
+<ul> <a href="https://www.youtube.com/watch?v=4cOhZy7dhTo">Apollo 11
+Launch Video</a> (ultra slo-mo, up-close-and-personal view of 
+a Saturn V launch)
+</p> 
+
+or this:</p>
+
+<!-- Replaced: "http://www.airspacemag.com/space-exploration/Shuttle-Time-Lapse.html#"
+-->
+
+<!-- Inactive 4/10/18.  Replace with downloaded version. 
+<a href="http://www.airspacemag.com/space/space-shuttle-the-time-lapse-movie-238913/">
+Shuttle Discovery Prep to Launch</a> (remarkable time-lapse video)</p>
+-->
+
+<a href="http://rwoconne.uvacreate.virginia.edu/shuttle-discovery-timelapse-col-2010.mp4">
+Shuttle Discovery Prep to Launch</a> (remarkable time-lapse video)</p>
+
+</ul>
+
+<p><br></p>
+
+<center>
+<a href="im/hst-after-SM4-w-Earth-v2.jpg">
+<img src="im/hst-after-SM4-w-Earth-v2-ex2.jpg" alt="HST on orbit"
+vspace=12 width=80%></a>
+<p><small><em>The Hubble Space Telescope on orbit 300 miles above Earth
+</em></small></center>
+
+
+<!--  END OF MAIN TEXT -->
+
+<hr size=2>
+
+
+Reading for this lecture:
+
+<ul> Bennett textbook: Ch. 4.1-4.4 (Newtonian dynamics &
+gravitational orbits)</p>
+
+Study Guide 8</p>
+
+</ul>
+
+Reading for next lecture: </p>
+
+<ul>
+Study Guide 9 (this material is not covered in the text)</p>
+</ul>
+
+<hr size=2>
+
+Web links:
+
+<ul>
+
+Recommended interactive sites illustrating orbits:</p>
+
+<ul>
+
+<a href="http://galileoandeinstein.physics.virginia.edu/more_stuff/flashlets/NewtMtn/home.html">
+Newton's Mountain (Java animation)</a>, from Mike Fowler's UVa Physics
+course.<br>
+
+
+<a href="http://www.lri.fr/~dragice/gravity/">Gravity Chaos (Flash
+animation)</a>--try to build multi-planet systems that don't self-destruct. </p>
+
+</ul>
+
+<a href="http://en.wikipedia.org/wiki/Planetary_orbit">Orbits and Newton's Laws</a>
+(Wikipedia)<br>
+
+<a href="http://www.allstar.fiu.edu/aero/rocket1.htm">Newton's Laws & Rockets.</a>
+(Also see other pages on aeronautics at this site.)</br>
+
+<!--  <a href="http://csep10.phys.utk.edu/astr161/lect/history/newtonkepler.html">
+Newton's Explanation of Kepler's Laws</a> (U. Tenn)<br>
+-->
+
+
+<!-- address changed between 5/09 and 12/10; then again in 2016;  -->
+<a href="http://solarsystem.nasa.gov/basics/">JPL Notes on Basics
+of Space Flight</a></p>
+
+<!-- <a href="http://solar.rtd.utk.edu/~mwade/spaceflt.htm">Wade's
+Encyclopedia of Astronautics</a><br>   -->
+
+<a href="http://abyss.uoregon.edu/~js/space/">History of Space Flight</a> (James
+Schombert, Univ. of Oregon)<br>
+
+<a href="http://www.astronautix.com">Wade's
+Encyclopedia of Astronautics</a><br>
+
+<!-- <a href="http://www.calweb.com/~ccorway/saturn-v/saturn-v.htm">Saturn V Home Page</a>
+(the Apollo Moon rocket, the most powerful ever)<br> -->
+
+<!-- <a href="http://www.thebest.net/jduncan/index.html">The Saturn Moon rockets (most
+powerful ever)</a><br>  -->
+
+<!-- address changed between 5/09 and 12/10 -->
+<a href="http://science.nasa.gov/missions/">Complete list
+of current, planned, and past NASA science missions
+</a><br>
+
+<a href="https://www.nasa.gov/centers/johnson/gallery/index.html">NASA/Johnson Space Center Digital Image Collection</a></p>
+
+
+
+<a
+href="http://nytimes.com/indexes/2007/09/24/science/space/index.html">Retrospective
+articles on 50 Years of the Space Race (New York Times)</a><br>
+
+<!-- <a href="http://www.apollosaturn.com"> -->
+
+<a href="https://en.wikipedia.org/wiki/Saturn_V">The Apollo/Saturn V Moon
+rockets</a> (the most powerful ever)<br>
+
+<a href="https://www.youtube.com/watch?v=mucb4Ttt1oY&index=1&list=PLTu8nanTJo7GvulBxz9JT9JcXeXimM1Vr">"Moon
+Machines - The Saturn V Rocket"</a> documentary video</p>
+
+
+<a href="https://rwoconne.github.io/rwoclass/astr511/UV-astron-f03.html">Introduction
+to UV and Space Astronomy</a> (O'Connell)<br>
+
+<a href="https://rwoconne.github.io/rwoclass/UIT/index.html">The Astro/Ultraviolet
+Imaging Telescope Missions</a>(O'Connell)<br>
+
+<a href="http://rwoconne.uvacreate.virginia.edu/post-space-obs-oconnell-a1610-s19.pdf">Lecture
+on space observatories</a> (O'Connell)</p>
+
+
+</ul>
+</ul>
+
+
+<!--- REDIRECT BOX -->
+
+<hr size=2>
+<center>
+<Table width="75%">
+<tr>
+<td>
+<b><a href="guide07.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Guide</a></b>
+</td>
+
+<td>
+<b><a href="guideindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Guide Index</a></b>
+</td>
+
+<td>
+
+<!-- <b><a href="outline-lec09.html">  -->
+<b><a href="guide09.html">  
+<img src="im/right-yel-arrw01e.gif">
+Next Guide </a></b>
+</td>
+</tr>
+</table>
+<hr size=2>
+
+<!-- END REDIRECT BOX -->
+
+<!-- START FOOTER -->
+
+<center>
+<small><i>Last modified
+    <b>December 2020</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+     </small></p>
+ <small>Text copyright &copy 1998-2020 Robert W. O'Connell.  All
+     rights reserved.  Orbital animation copyright &copy Jim Swift,
+     Northern Arizona University.  Conic section drawings from ASTR
+     161, University of Tennessee at Knoxville.  Newton's Mountain
+     drawing copyright &copy Brooks/Cole-Thomson.  These notes are
+     intended for the private, noncommercial use of students enrolled
+     in Astronomy 1210 at the University of Virginia.
+ </small></p>
+
+</center>
+
+<!-- END FOOTER -->
+
+</div>
+</body>
+</html>
+
+
+<!--   ----------- END OF GUIDE TEMPLATE ---------------   -->
+
+					    

@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1989-2022.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1989-2023.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
 <!-- -->
@@ -21,6 +21,7 @@
                  text updates; 10/1; 10/3; 10/14; 10/15; 10/27; 
 
  GHP version:  12/7/2020; 12/20; 1/13/2021; 12/14; 1/23/2022; 
+               4/17/2023; 4/19; 4/21; 
 
 -->
 
@@ -118,17 +119,20 @@ Situ CCD Testing"</a><br>
  "http://www.not.iac.es/\char126tabbott/CCD/docs/cookbook/top.html"  -->
 
 
-<li> Massey, <a href="http://ircamera.as.arizona.edu/Astr_518/irafguid.pdf">A User's Guide to CCD
+<li> Massey, <a href="massey-CCD-reduction-guide-IRAF-97.pdf">A User's Guide to CCD
 Reductions with IRAF (1997)</a> <br>
 
+<li> Craig & Chambers
+(Astropy),  <a href="http://www.astropy.org/ccd-reduction-and-photometry-guide/v/dev/notebooks/00-00-Preface.html">CCD
+Data Reduction Guide (Python)</a><br>
 
 <li> <a href="http://adsabs.harvard.edu/abs/1986JOSAA...3.2131T">Tyson,
   JOSAA, 3, 2131, 1986</a>: high precision technique<br>
 
 
 <li>
-Fruchter, <a href="http://www-int.stsci.edu/~fruchter/dither/dither.html">"Imaging
-Dithering and CR Rejection in Undersampled HST Data"</a>; also see
+Hook & Fruchter, <a href="http://www.aspbooks.org/a/volumes/article_details/?paper_id=20721">"Dithering, Sampling and Image Reconstruction"</a>;
+also see
 the <a href="http://www.stsci.edu/files/live/sites/www/files/home/scientific-community/software/drizzlepac/_documents/drizzlepac-handbook.pdf">HST
 DrizzlePak Handbook</a>.<br>
 
@@ -1238,7 +1242,9 @@ individual photons, rather than CCD's.  </p>
 <li><b>FULL WELL CONSTRAINTS</b>: Bright sources which over-fill
 pixels can produce "blooming" or "bleeding" along columns, making
 parts of the chip useless even far from the source.  The best solution is
-operational.</p>
+operational: e.g. by simply excluding overbright sources or by
+breaking a long exposure into a series of shorter ones such that
+saturation is avoided -- and then combining/stacking the result.</p>
 
 </ul>
 
@@ -1757,8 +1763,8 @@ Mike Skrutskie and in ASTR 512 (Spring 2004).</p>  -->
 
 <!--  <a href="http://www.not.iac.es/CCD-world/" target=show>  -->
 
-<a href="http://www.ctio.noao.edu/mailman/listinfo/ccd-world">CCD-World</a> (forum for
-discussions about CCDs and their use in astronomy)</p>
+<a href="https://groups.google.com/a/noirlab.edu/g/ccd-world/about">CCD-World</a>
+(forum for discussions about CCDs and their use in astronomy)</p>
 
 Basics: </p>
 
@@ -1769,13 +1775,13 @@ Imaging/CCD Tutorial at Molecular Expressions</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (thorough, elaborate
 illustrations, but aimed at microscopy)<br>
 
-<a href="http://www.britneyspears.ac/physics/basics/basics.htm">
+<a href="http://www.britneyspears.ac/physics/basics/basics.html">
 Britney's Guide to Semiconductor Physics</a> (decorative tutorial)<br>
 
 <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">Semiconductor
 physics at HyperPhysics</a> (succinct, with many illustrations)<br>
 
-<a href="http://www.qucam.com/index.html">Simon
+<a href="https://www.ing.iac.es/~eng/detectors/CCD_Info/CCD_Primer.htm">Simon
 Tulloch Primers on Astronomical Detectors </a> (aimed at advanced amateurs)</p> 
 
 </ul>
@@ -1788,11 +1794,10 @@ Example Systems & Development Efforts:</p>
  <a href="http://www.astro.princeton.edu/PBOOK/camera/camera.htm">
 Sloan Digital Sky Survey CCD Camera</a><br>
 
-<a href="http://www.noao.edu/kpno/mosaic/manual/index.html">
-NOAO CCD Mosaic Camera Manual</a><br>
+<a href="https://noirlab.edu/science/documents/scidoc0111">
+NOIRLab CCD Mosaic Camera Manual</a><br>
 
-<a href="http://www.ctio.noao.edu/noao/content/dark-energy-camera-decam">CTIO
-Dark Energy Camera Manual</a><br>
+<a href="https://noirlab.edu/science/programs/ctio/instruments/Dark-Energy-Camera/User-Guide">NOIRLab Dark Energy Camera User Guide</a><br>
 
 <a href="http://www.eso.org/projects/odt/index.html">ESO Optical
 Detector Homepage</a><br>
@@ -1813,7 +1818,10 @@ Development</a> (Steve Holland, LBNL, 2012)<br>
 <a href="http://hdl.handle.net/2014/39764">   --->
 
 <a href="https://arxiv.org/pdf/1701.02733.pdf">
-JPL CCD ``Delta-Doping'' Project</a> (for high UV QE)</p>
+JPL CCD ``Delta-Doping'' Project</a> (for high UV QE)<br>
+
+<a href="https://arxiv.org/abs/2302.03700">Scientific CMOS Sensors in
+Astronomy</a> (Alarcon et al. 2023)</p>
 
 </ul>
 
@@ -1852,7 +1860,7 @@ Next Lecture </a></b>
 
 <p></p>
 <p align="center"> <small><i>Last modified
-    <b>January 2022</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+    <b>April 2023</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
  </small></p>
 
 <p></p>
@@ -1863,7 +1871,7 @@ Next Lecture </a></b>
 MOS capacitor illustration from Molecular Expressions.  Bucket brigade
 animation and front/back illumination drawing by C. Tremonti (UWisc).
 CCD design drawings from C. MacKay, Annual Reviews (1986).  Most other
-images from public observatory sites.  Text copyright &copy 1989-2022
+images from public observatory sites.  Text copyright &copy 1989-2023
 Robert W. O'Connell.  All rights reserved.  These notes are intended
 for the private, noncommercial use of students enrolled in Astronomy
 511 at the University of Virginia.  </small>

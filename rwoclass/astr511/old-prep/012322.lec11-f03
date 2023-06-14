@@ -1,0 +1,1878 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1989-2022.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr511  -->
+<!-- -->
+
+
+<!-- CCD WEB PAGE.  HISTORY: RWO 
+
+ Original version: Plain TEX file, 1989 as handout; 
+ Fall 1993 UPDATE, MAKE VG version
+ REVISED: 8/30/01; 9/22; 9/23; new pages/reshuffling 9/25; 10/1; 
+          4/29/2003; 7/13; 10/11 -- partial Latex conversion; 
+ HTML Version: conversion started 10/15; 10/16; 10/17; 10/18; 10/19;
+                 10/20; 10/21; 10/22; 10/27; 10/30; 12/29; 9/12/2004; 
+                 10/29; 7/11/2005; 7/12; 7/13; 7/18; 7/21; 7/27; 8/19 
+                 (HTML error); 6/5/2007; 8/14; 11/23/2009; 5/4/2013;  
+                 6/27; 8/29/2014: trial new format; 10/18; 6/15/2017:
+                 continue update to format; 6/16; 6/17; 6/18; 6/19; 
+                 6/20; 4/30/2018; 9/26/2019: define viewport, make
+                 text updates; 10/1; 10/3; 10/14; 10/15; 10/27; 
+
+ GHP version:  12/7/2020; 12/20; 1/13/2021; 12/14; 1/23/2022; 
+
+-->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 511, O'CONNELL.  Lecture Notes  </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="ccd's,solid-state arrays, astronomical imaging, astronomical photography, astronomical detectors, ccd applications">
+
+<style>
+   div.all {  max-width: 960px;}
+ </style>
+
+
+</head>
+<body>
+
+<div class="all">
+
+<h2 align="center">ASTR 511 (O'Connell) Lecture Notes </h2>
+
+<p><br></p>
+<hr>
+
+<center>
+<font size="+4" color="aa00bb"><b>CCD'S IN ASTRONOMY </b></font>
+</center>
+
+<p><br></p>
+
+<a name=" ">
+
+<center><img src="im/hama-mos-8x2x4k.jpg"
+         alt="Subaru Mosaic"
+         align="top" border="2" width=65%>
+  </center>
+  <p align="right"><small><em>Subaru CCD Mosaic 8 x (2k x 4k)</em></small></p>
+
+<p><br></p>
+
+Charged coupled devices (CCD's) have been used in astronomy since the
+late 1970's.  They represent the third of the three most important
+technical innovations for observational UVOIR astronomy in the second
+half of the 20<sup>th</sup> century (the others being space telescopes
+and interactive computing).  They are now nearly ubiquitous in
+observations made at wavelengths between the near-IR (~1 &#181;) and
+the X-ray.  
+</p> 
+
+Sensitive 2-D area detectors like CCD's are critical not just for
+astronomical imaging and photometry but for many other
+state-of-the-art applications, including high precision astrometry
+with <a href="https://en.wikipedia.org/wiki/Gaia_(spacecraft)">Gaia</a>
+and large-scale, multi-object spectroscopic surveys (such as
+the <a href="https://www.sdss.org/"> Sloan Digital Sky Survey</a>).
+They have transformed the way astronomy is done.
+</p>
+
+
+<p><br></p>
+
+<h2>I.  REFERENCES FOR CCD'S </h2>
+
+<h3> General </h3></p> 
+
+<ul><ul>
+
+<li>  Buil,  <em> CCD Astronomy </em> <br>
+<li>  Howell,  <em> Handbook of CCD Astronomy  </em><br>
+<li>  Kitchin,  <em> Astrophysical Techniques </em><br>
+<li>  Rieke,  <em> Detection of Light</em> : general introduction to detector physics<br>
+<li>  LLM Sec. 7.3.3. <br>
+<li>  <a href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?bibcode=1986ARA%26A..24..255M&db_key=AST&link_type=ABSTRACT&high=4148b308dd16462">
+MacKay, Ann Rev Astr Ap, 24, 255, 1986</a> "CCDs in Astronomy" (review)<br>
+<li>  <a href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?bibcode=1983PASP...95..810T&db_key=AST&link_type=ABSTRACT&high=4148b308dd15861">
+ Timothy, PASP, 95, 810, 1983</a>: discussion of many detector types</p> 
+
+</ul></ul>
+
+<!-- %% <li>  Janesick et al., SPIE, 50
+%%  From the Ultraviolet to the Submillimeter 
+-->
+
+<h3> CCD Data Reduction and Applications </h3></p> 
+
+<ul><ul>
+
+<li>
+Abbott, <a href="abbott-in-situ-CCD-testing-95.pdf">"In
+Situ CCD Testing"</a><br>
+
+ <!-- this site gone, 10/03, as are most other copies of it
+ "http://www.not.iac.es/\char126tabbott/CCD/docs/cookbook/top.html"  -->
+
+
+<li> Massey, <a href="http://ircamera.as.arizona.edu/Astr_518/irafguid.pdf">A User's Guide to CCD
+Reductions with IRAF (1997)</a> <br>
+
+
+<li> <a href="http://adsabs.harvard.edu/abs/1986JOSAA...3.2131T">Tyson,
+  JOSAA, 3, 2131, 1986</a>: high precision technique<br>
+
+
+<li>
+Fruchter, <a href="http://www-int.stsci.edu/~fruchter/dither/dither.html">"Imaging
+Dithering and CR Rejection in Undersampled HST Data"</a>; also see
+the <a href="http://www.stsci.edu/files/live/sites/www/files/home/scientific-community/software/drizzlepac/_documents/drizzlepac-handbook.pdf">HST
+DrizzlePak Handbook</a>.<br>
+
+<li> <a href="http://adsabs.harvard.edu/abs/1994PASP..106..250S">Stetson,
+PASP, 106, 250, 1994</a> and references therein.  Widely-used ALLFRAME
+and DAOPHOT point-source CCD photometry programs.<br>
+
+<li>  <a href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?bibcode=1989AJ.....98..538F&db_key=AST&link_type=ABSTRACT&high=4148b308dd16991">
+Franx et al.  AJ, 98, 538, 1989</a>: sample application to
+ surface photometry<br>
+
+<li> <a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">
+Bertin & Arnouts, A&AS, 317, 393, 1996</a> SExtractor---source
+ID and extraction software for digital images.  Obtain software
+<a href="http://www.astromatic.net/software/sextractor">here</a>.</p> 
+
+</ul></ul>
+
+<p><br></p>
+
+<h2>II.  GENERAL DETECTOR CHARACTERIZATION</h2>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+
+<tr>
+<td width=60%>
+
+<!--  TEXT HERE; can use ul indents, etc, as appropriate  -->
+<!--    Use as many lines as needed   -->
+
+<font size="4">
+
+<ul>
+
+<h3>QUANTUM EFFICIENCY</h3> 
+
+<ul>
+
+<li><b>QE</b> = <b>percentage of photons</b> incident on detector that produce
+measurable signals</p> 
+
+<li> Strong wavelength dependence (e.g. threshold cutoffs set
+by work function/band gap)</p> 
+
+<li><b>Typical peak values</b>:</p> 
+
+<ul>
+
+<li>  Eye:  1-2%<br> 
+
+<li>  Photographic plate (Pg):  1-2%<br> 
+
+<!-- surprising is so low?  and comparable to eye.  Reason became
+so valuable was that could INTEGRATE FOR LONG PERIODS---hours, days,
+weeks in necessary.  -->
+
+<li>  Photomultiplier tube (PMT): 20-30%<br>
+
+<li>  CCD: 70-90%<br>
+
+<li>  IR array [HgCdTe]: 30-50%</p>
+
+</ul>
+</ul>
+</ul>
+</font> 
+
+</td>  <!-- END OF TEXT -->
+
+<td width=40%>
+
+<center>
+
+&nbsp;<br>
+&nbsp;<br>
+
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+
+   <a href="im/QEcurves-vardetec.jpg">
+   <img src="im/QEcurves-vardetec.jpg" alt="QE Curves" width=100%>
+   </a>
+
+   <!-- PIC CAPTION (optional; can be multi-line) -->
+   <p><small><em>Schematic QE curves for various classes of
+   detector </em></small> </p>
+
+</center>
+
+</td>
+</tr>
+</table>
+
+<ul><ul>
+
+<li> <b>"Detective quantum efficiency"</b> is defined to be
+      [(SNR<sub>out</sub>)/(SNR<sub>in</sub>)]<sup>2</sup>, where SNR
+      is the signal-to-noise ratio and "in" and "out" refer to the
+      input and output signals to/from the detector, respectively.
+      DQE combines basic QE with the noise introduced by the detector.
+      This quantity is really what matters in comparing detectors, but
+      it is so dependent on specific details of
+      operations/applications that it is rarely used.</p>
+
+</ul>
+
+
+<h3>SPECTRAL RANGE</h3> 
+
+<ul>
+
+<li>  Wavelength region over which QE is
+      sufficient for operation</p> 
+</ul>
+
+
+<h3>DYNAMIC RANGE</h3> 
+
+<ul>
+
+<li> Definition: ratio of maximum to minimum measurable signal </p> 
+
+<ul>
+
+<li> E.g.  maximum number of events in a CCD pixel is determined by
+  photoelectron "full well" capacity or digitization maximum (typically 2 bytes);
+  minimum is determined by dark current/readout noise</p> 
+
+</ul>
+
+<li>  Applies to a <b>single exposure</b>; effective dynamic range
+can be increased with multiple exposures</p> 
+
+
+<li> Typical values:  100 (Pg); 10<sup>4</sup> (CCD); 10<sup>5</sup> (PMT) </p> 
+
+
+<li> Related concepts:</p> 
+
+<ul>
+
+<li><b>Linear Range</b>:  range of signals for which [Output] = k x [Input],
+where k is a constant. Generally smaller than the <b>calibrateable</b> range</p> 
+
+<li><b>Threshold</b>: minimum measurable signal.  Influenced by detector
+noise or other intrinsic characteristics (e.g. fog on Pg plates)</p> 
+
+<li><b>Saturation point</b>:  level where detector response ceases to
+increase with the signal</p> 
+
+</ul>
+</ul>
+
+
+<h3>NOISE CHARACTERISTICS</h3> 
+
+
+<ul>
+
+See discussion of various types of detector noise in
+<a href="lec7-f03.pdf">Lecture 7 notes</a></p>
+
+<!-- %%% ADD? type I and type II detectors; DQE =/ QE, etc.   -->
+
+</ul>
+
+<!-- <big>&#181;</big>  -->
+
+
+<h3>RESOLUTION</h3> 
+
+<ul>
+
+<li> <b>Temporal</b></p> 
+
+<ul>
+
+<li>  PMT:  ~0.0001 ms<br>
+
+<li>  CCD:  ~10 ms per pixel</p>
+
+</ul>
+
+<li> <b>Spatial</b> (array detectors)</p> 
+
+<ul>
+
+<li> <b>Pixel</b> = minimum measureable area of detector surface.  Typically
+10-50 &#181; on Pg or semiconductor types.  Pixels are not
+necessarily independent of one another. </p> 
+
+<li> Resolution cell:  according to the <em><b>Nyquist criterion</b></em>, the
+resolution cell is  2x the size of the minimum
+<b>independent</b> measurable area.  For proper sampling of an image,
+we need at least 2 pixels per resolution cell, but in practice there
+may be many more.  A lower pixel density implies "undersampled"
+imaging.  A significantly higher pixel density does not provide more
+information and is a waste of pixels. </p>
+
+<ul>
+
+For best pixel matching in an imaging application, the Nyquist
+criterion implies that 1 pixel should span ~ (FWHM)/2, where FWHM is
+the full width half maximum of the point spread function.</p>
+
+</ul>
+</ul>
+
+<li><b>Spectral</b></p>
+
+<ul>
+
+<li> Most UVOIR detectors are <b>broad-band</b> and have inherently
+poor spectral resolution.  One must use external elements (filters,
+gratings, photonics) to provide spectral resolution</p>
+
+<li>  Exception: superconducting "3D" detectors, which measure photon energy
+as well as position; current spectral resolution is 
+R ~ 100</p> 
+
+</ul>
+</ul>
+</ul>
+
+<!-- ---------------------------------------------------------------- -->
+
+
+<p><br></p>
+
+<h2>III.  BRIEF HISTORY OF ASTRONOMICAL DETECTORS </h2>
+
+<h3>PHOTOGRAPHIC ASTRONOMY:</h3>
+
+<ul> 
+
+<b>Photographic emulsions</b> work by storing in AgBr crystals the
+photoelectrons ejected following absorption of photons during exposure
+to light.  Chemical reactions during development cause the crystals to
+precipitate <b>grains of silver</b>, which form a permanent image.</p>
+
+Film was the detector of choice for most applications in astronomy
+from around 1900 to 1950 and for imaging until about 1980.  It is
+impossible to exaggerate its importance to the development of modern
+astronomy.  Even with relatively low QE, photographic plates
+offered <b>decisive advantages</b> over visual observations: </p>
+
+<ol> 
+
+<li> Very long exposure times (up to a week in early applications),
+meaning limiting fluxes thousands of times fainter<br>
+<li> A permanent,
+objective record of astronomical images and spectra<br>
+<li> Geometric stability -- important for astrometry and morphology<br>
+<li> Large formats for wide field surveys<br>
+<li> Extension of observations to EM bands beyond the
+"visual" band.  The classic "photographic" band is centered around 4500
+&Aring;.  Astronomical photography ultimately covered the range
+ 3200-10000 &Aring;. </p> 
+
+</ol>
+
+However, the photographic emulsion had <b>serious limitations</b> with which
+astronomers had long struggled: </p>
+
+<ol>
+
+<li> It is relatively insensitive,
+with  QE ~ 1%. <br>
+
+<li> Pg materials have non-negligible thresholds (a minimum of ~4
+photoelectrons per grain).  "Reciprocity failure" refers to the fact
+that the threshold exposure must be delivered within a certain
+critical time period or the photoelectrons on a grain will be
+lost.<br>
+
+<li> Pg materials have a strongly non-linear response function,
+and limited dynamic range.  <br>
+
+<li> These properties plus the use of
+hard-to-control chemical processes for emulsion deposition &
+development makes them very difficult to calibrate
+quantitatively. <br>
+
+<li> Each individual plate (or at the best, each co-processed "batch" of
+plates) has different response characteristics.<br>
+
+<li>
+Conversion of data to quantitative form (e.g. with microdensitometers) is
+slow and cumbersome.  </p>
+
+</ol>
+
+For details on astronomical photography at low light levels, see 
+<a href="http://adsabs.harvard.edu/abs/1979ARA%26A..17...43S">Smith & Hoag
+1979, ARAA, 17, 43</a>.</p>
+
+</ul>
+
+<h3>PHOTOELECTRIC ASTRONOMY TO 1980:</h3>
+
+<ul>
+
+In 1907, <a href="im/Stebbins-w-phot.gif">Joel
+Stebbins</a> (UIll, UWisc) began testing various types
+of <b>photoelectronic detectors</b>.  These, such as selenium
+phototubes, were largely experimental and temperamental, but use of PE
+devices spread after the 1920's.  World War II greatly accelerated
+these technologies, with mass production of high quality vacuum tubes
+and sensitive electronics for detection of faint signals.  </p>
+
+The key design for astronomy was the 
+<a href="https://en.wikipedia.org/wiki/Photomultiplier"><b>photomultiplier
+tube (PMT)</b></a>, the first widely used example of which was the RCA
+1P21.  The initial detector in a PMT is a <b>photo-emissive
+cathode</b> surface, made from alkali metal compounds, which ejects a
+single electron in response to a photon absorption.  A series of other
+"secondary electron emissive" surfaces (the "dynode chain") amplifies
+this into a burst of ~10<sup>6-7</sup> electrons and deposits this on
+an anode.  (See illustration below.) </p>
+
+<center><img src="im/PMT.gif"
+align="top" border="2" vspace=10 hspace=6></center>
+
+PMT's require cooling to suppress dark current and were typically
+operated at dry-ice temperatures (-78C). The photocathode QE's of
+PMT's in the optical region reached 20-40% by the 1960's, with very
+wide acceptance bands. </p>
+
+Although PMT's were initially operated in a "direct current" mode,
+where the average induced current was measured, the pulse-like
+character of PMT output led to the adoption in astronomy of the same
+kinds of high speed digital electronics that had been developed
+earlier for accelerator and nuclear physics.  This kind of
+<b>"pulse-counting"</b> operation offers excellent noise rejection and
+permits the detection of <b>individual photons</b> from cosmic
+sources.  </p>
+
+For more details on PMT's and PMT-based photometers, see the articles
+by Lallemand and Johnson in <em>Astronomical Techniques</em>, ed. W. A. Hiltner
+(Stars & Stellar Systems Vol II).</p>
+
+PMT's became the workhorses of multicolor photometry and
+spectrophotometry after 1950, e.g. the Johnson & Morgan broad-band UBV
+system (see <a href="lec14-f03.pdf">Lecture 14</a> for details).  They
+featured excellent linearity and stability, which implied an
+unprecedented capacity for <b>accurate calibration</b> of photometric
+measurements.  PMT filter photometry routinely reached the 1% level
+for flux calibration.  In turn, this was responsible for an explosion
+in <b>quantitative astrophysics</b>. </p>
+
+Despite their excellent performance and their broad wavelength
+response, PMT's were <b>single element devices</b>.  They were not
+easily adaptable to 1-D, let alone 2-D, applications (such as
+imaging), despite heroic efforts such as the
+33-channel <a href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?bibcode=1969PASP...81...11O&db_key=AST&link_type=ABSTRACT&high=4148b308dd16687">Palomar
+Multichannel Photoelectric Spectrometer (Oke, 1969)</a>.</p>
+
+Around 1960, a plethora of efforts began to develop robust 
+<b>1-D and 2-D electronic devices</b> suitable for astronomy.  A dozen
+or so of these produced practical systems (e.g.  the
+electronographic film camera, the Secondary Electron Conduction
+Vidicon, the Intensified Dissector Scanner, the Intensified Reticon
+Scanner, the Image Photon Counting System, and the Multi-Anode
+Microchannel Array detector). </p>
+
+<ul> Most of these employ some type
+of <a href="https://en.wikipedia.org/wiki/Image_intensifier"><b>image
+intensifier</b></a> vacuum tube as a key element. This technology was
+developed for military night vision systems. Intensifiers produce
+easily detectable light pulses in a 2-D image field from individual
+incident photons by accelerating the photo-electrons to high energies
+and/or producing a cascade of electrons, then focussing these on a
+luminescent output screen.  Disadvantages include the frequent use of
+high voltages (e.g. 25 kV) and serious image blur which, however, can
+be reduced by the use of <b>pulse centroiding</b> electronics.  Fiber
+optic input/output plates were commonly used with intensifiers after
+1970.  <a href="https://en.wikipedia.org/wiki/Microchannel_plate_detector">
+<b>Microchannel
+plate</b></a> (MCP) intensifiers have often been used in space astronomy
+missions (including HST, GALEX, and FUSE).
+</p>
+
+</ul>
+</ul>
+
+
+<h3>SOLID STATE ARRAY DETECTORS</h3>
+
+
+   <a href="im/CCDs-wafer-Phillips.jpg">
+   <img src="im/CCDs-wafer-Phillips-sm.jpg" alt="Wafer" align="right"
+     width=25%>
+   </a>
+
+<ul>
+
+But by far the most successful 2-D devices for astronomy emerging in
+the last 50 years have been <b>solid
+state, semiconductor arrays</b>.  These are based on
+<b>photo-conductive</b> materials fabricated with embedded
+microelectronic integrated circuits on thin wafers
+by <a href="http://www.britneyspears.ac/physics/fabrication/photolithography.htm"
+>photolithography</a>.
+Although lower quality devices can be mass-produced by microchip
+"foundries," professional grade detectors still need to be
+custom-processed. </p>
+
+The image at the right shows a wafer containing a number
+of co-fabricated CCDs and other devices.</p>
+
+Solid state arrays are now employed as astronomical detectors from the
+X-ray to the far-infrared.  The most widely used is
+the <a href="https://en.wikipedia.org/wiki/Charge-coupled_device"><b>Charge-Coupled
+Device (CCD)</b></a>, which operates at wavelengths from the X-ray to
+~1 &#181;.  CCD's were invented at Bell Labs in 1969 by G. Smith and
+W. Boyle (Nobel Prize, 2009).  By the mid-70's, CCDs were being tested
+as astronomical detectors.  They did not come into widespread use
+until ca. 1980, following extensive development efforts associated
+with
+the <a href="http://www.stsci.edu/files/live/sites/www/files/home/hst/instrumentation/legacy/_documents/handbooks/HST_WFPC_Instrument_Handbook.pdf">
+Wide Field & Planetary Camera on the Hubble Space Telescope</a>, led
+by J. Westphal, J. Gunn, and C. R. Lynds.  </p>
+
+</ul>
+
+
+<p><br></p>
+
+<h2>IV. SEMICONDUCTORS</h2>
+
+Semiconductors are crystalline materials which are not
+normally good conductors of electricity but which can be made to
+conduct under certain circumstances.  The central useful property of
+semiconductors employed in astronomy is that their <b>electrical
+properties change significantly after absorption of photons</b>.  </p>
+
+
+<a href="im/solids-bands-Britney.jpg">
+<img src="im/solids-bands-Britney.jpg" align="right" width=22%>
+</a>
+
+
+<font color="blue"><b>BAND GAPS</b></font>: The properties of semiconductors are manipulated by
+changing the structure of their internal energy levels, which are
+spread out into "bands" by the proximity of the component atoms of the
+solid.  The "valence" band, corresponding to the outermost electrons in
+a normal, unexcited atom, is the lowest energy band where electrons
+are able to move between ions.  However, no net conduction occurs as
+long as the band is full.  Above this lie the "conduction" bands,
+which are not filled, and where electrons will move freely in response
+to external EM fields.  The separation between the valence and first conduction band
+is called the "band gap energy", E<sub>g</sub>.  </p>
+
+Different materials have a wide range of band gaps.  "Conductors" have
+a zero gap, meaning that electrons are always available to transfer
+charge.  "Insulators" have very large gaps, implying zero conduction
+except under extreme circumstances.  "Semiconductors" have
+intermediate gaps.  </p>
+
+Absorption of a photon can push a valence electron into the conduction
+band and produce a potential electrical signal.  The photon energy
+must exceed E<sub>g</sub>, which implies that there is a <b>maximum
+wavelength</b> for excitation given by: </p>
+
+<center> Lam<sub>max</sub> = 12,400 &Aring;/E<sub>g</sub>(eV) </center></p>
+
+Obviously, materials with band gaps in the few eV range are of interest
+as potential UVOIR detectors.  Band gaps and max wavelengths for some
+important materials are given in the following table:</p>
+
+<a name="gaps"></a>
+
+<table  align="center" width="300" border=3 cellpadding=4>
+
+<tr>
+
+<th><font color="green">Material</font></th>
+<th><font color="green">E<sub>g</sub>(eV)</font></th>
+<th><font color="green">Lam<sub>max</sub> (&Aring;)</font></th>
+
+</tr>
+
+<tr>
+<td>Pure Si </td>
+<td>1.1   </td>
+<td>11,300  </td>
+</tr>
+
+<tr>
+<td>GaAs  </td>
+<td>1.43  </td>
+<td>8,670 </td>
+</tr>
+
+<tr>
+<td>InSb  </td>
+<td>0.36 </td>
+<td>34,400 </td>
+</tr>
+
+<tr>
+<td>Hg<sub>1-x</sub>Cd<sub>x</sub>Te </td>
+<td>1.55x </td>
+<td>8,000/x </td>
+</tr>
+
+</table>
+
+<p><br></p>
+
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+
+<tr>
+<td width=70%>
+
+
+<!--  TEXT HERE; can use ul indents, etc, as appropriate  -->
+<!--    Use as many lines as needed   -->
+
+<font size="4">
+
+<font color="blue"><b>DOPING</b></font>: The "elemental"
+semiconductors are those elements in group IVa of
+the <a href="http://periodic.lanl.gov/index.shtml">Periodic Table</a>
+(including Si and Ge).  These have four electrons in their valence
+shells, half the maximum allowed.  These are shared among the ions in
+"co-valent bonds."  There are many other types of "compound"
+semiconductors, however, composed for instance of atoms from group
+IIIa and Va of the Table; two of these are listed in the table
+above.  </p>
+
+The electrical properties of pure semiconductors can be dramatically
+altered by adding ("doping with") small amounts (~1 part in
+10<sup>6</sup>) of an impurity.  The result is called an "extrinsic"
+semiconductor.  </p>
+
+<ul>
+
+<li> <b>n-type</b>: a material with more than 4 valence electrons is added
+(As, from group Va, in the illustration).  The extra electrons
+cannot be accommodated in the valence band and so occupy the conduction
+band.  They represent a persistent set of negative carriers</p>
+
+<li> <b>p-type</b>: a material with fewer than 4 valence electrons is
+added (e.g. B, from group IIIa).  This has one fewer electron than normal
+and creates a small "vacuum" in the electron sea of the valence band. 
+This is called a "hole."  As valence electrons shift to fill it, the
+hole propagates like a positive charge in the opposite direction.  
+The holes represent a persistent set of positive carriers.</p>
+
+<li> In pure semiconductors, conduction electrons and holes can also
+exist, if electrons are excited by thermal effects, for instance.  But
+they always occur in pairs.  Electrons and holes in n- and p-type
+materials, respectively, have no counterparts.  Extrinsic material is
+electrically neutral but is more responsive than pure materials to a
+difference in electrical potential.
+
+<!--   If a negative voltage is applied at one side of n-type material, the
+carrier electrons will move away but 
+The additional electrons or holes will move in response
+to a difference in electrical potential.     -->
+
+</ul>
+
+By adjusting the amount of doping, the band gap of the semiconductor
+(donor/acceptor levels in diagram at right) can be customized.  By
+layering n/p regions, the response to applied potentials can be adjusted
+to create a large variety of electronic devices.  </p>
+
+</font>
+
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+
+
+<center>
+
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/Si-As-doping-JFA.jpg">
+   <img src="im/Si-As-doping-JFA.jpg" alt="" width=65%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>n-type doping  </em></small> </p>
+
+   <a href="im/Si-B-doping-JFA.jpg">
+   <img src="im/Si-B-doping-JFA.jpg" alt="" width=65%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>p-type doping  </em></small> </p>
+
+
+   <a href="im/SC-dandas-Britney.gif">
+   <img src="im/SC-dandas-Britney.gif" alt="" width=65%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>Doping affects energy levels </em></small> </p>
+
+</center>
+</td>
+</tr>
+</table>
+
+
+Photons are primarily absorbed by electrons in the valence band.
+For photon energies above E<sub>g</sub>, the electron is boosted
+to the conduction band, leaving a hole behind.  If a positive
+voltage is applied at one side of the semiconductor, the electron
+will be attracted toward it while the hole will be repelled. </p>
+
+<p><br></p>
+
+
+<h2>V.  BASIC CCD DESIGN</h2>
+
+Apart from <b>sensitivity</b>, the key design issues for solid state arrays
+are to <b>localize</b> photon-produced charges on their surfaces and then
+arrange to <b>amplify and read them out</b> without distorting the image or
+introducing unacceptable amounts of noise.</p>
+
+A CCD is a <b>charge-transfer device</b>.  Its storage, transfer, and
+amplification electronics are all fabricated on a single piece of
+silicon.  During an exposure, it traps released photoelectrons in
+small voltage wells.  After the exposure, the electrons are shifted in
+a series of "charge-coupled" steps across the CCD surface, amplified,
+read out of the CCD, and stored in a computer memory.  This
+is <b>"destructive readout"</b> --i.e.  one cannot read the same
+signal again (unlike other array architectures, where each pixel is
+coupled to a separate amplifier).  </p>
+
+<center> <a href="im/MOS-capacitor-FSU.jpg"><img src="im/MOS-capacitor-FSU.jpg"
+alt="MOS capacitor" width=40% vspace=16></a>
+</center>
+
+
+<font color="blue"><b>BASIC STRUCTURAL ELEMENT</b></font>: The basic
+element in a CCD design is a
+<b>"Metal-Oxide-Semiconductor" capacitor</b>.  See the illustration
+above.  This serves both to store photoelectrons and to shift them
+wholesale.  The bulk material is p-silicon on which an insulating
+layer of silicon-oxide has been grown.  P-silicon can be made to have
+very few free electrons ("high resistivity") before exposure to light;
+this is important for best performance.  A set of thin conducting
+electrodes of semitransparent "polysilicon" are applied.</p>
+
+Before exposure, the central electrode is set to a positive bias while
+the two flanking electrodes are set negative.  This creates a
+<b>"depletion" region</b> under the central electrode containing no
+holes but a deep potential well to trap electrons.  The region shown
+is about 10 &#181; thick.</p>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+<tr>
+<td width=70%>
+
+<font size="4">
+
+<!--  TEXT HERE; can use ul indents, etc, as appropriate  -->
+
+<font color="blue"><b>OPERATION SEQUENCE</b></font>: During exposure
+(controlled by a separate shutter), light enters through the
+"front-side" electrodes.  Photoelectrons generated under the central
+electrode will be attracted toward the electrode and held below it.
+The corresponding holes will be swept away into the bulk silicon.
+Good performance requires little diffusion of electrons away from the
+potential well.  </p>
+
+<ul>
+
+The surface of the CCD is covered with MOS capactitors in a pattern
+like that at the right.  In this particular design, there are three
+electrodes per pixel.  A single pixel is shown shaded in the diagram.
+Typical pixel sizes are 10-40 &#181;. The <b>"parallel
+shift"</b> registers are shown as rows running across the whole face
+of the CCD.  These are separated by insulating "channel stops." </p>
+
+At one end of the CCD is a column of <b>"serial shift"</b> electronics
+and an output amplifier.  There is only one amplifier in the design
+shown.  Contemporary large chip designs involve several amplifiers
+(but always many fewer than the number of pixels!).  </p>
+
+At the end of the exposure, readout of the collected electrons is
+accomplished by cycling (<b>"clocking"</b>) the voltages on the
+electrodes such that the charge is <b>shifted bodily</b> along the
+rows toward the serial shift column.  The figure at the right shows
+how this is done.  Good performance depends on <b>near-100%
+transfer</b> of the electrons to/from each electrode with no smearing
+or generation of spurious electrons.  </p>
+
+Each parallel transfer places the contents of one pixel from each row
+into the serial register column.  This column is then shifted out
+vertically through the output amplifier and into computer memory
+before the next parallel transfer occurs.  </p>
+
+</ul>
+</font>
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+<center>
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/CCD-3phase-layout-McKay88.jpg">
+   <img src="im/CCD-3phase-layout-McKay88.jpg" alt="" width=98%>
+   </a></p>
+
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+
+   <a href="im/CCD-3phasetransfer-McKay88.jpg">
+   <img src="im/CCD-3phasetransfer-McKay88.jpg" alt="" width=85%>
+   </a>
+
+</center>
+</td>
+</tr>
+</table>  <!-- -------------------- -->
+
+
+<font color="blue"><b>"BUCKET BRIGADE"</b></font>: The resulting
+transfer and readout process is illustrated in the animation
+below: </p>
+
+<center>
+   <img src="im/CCD-readout-anim-CTremonti.gif" width=40%>
+</center></p>
+
+
+<font color="blue"><b>ADU CONVERSION</b></font>: For storage in
+memory, the electrical signal generated by the amplifier must be
+digitized.  This is done by an
+<b>"analog-to-digital converter"</b>.  This is normally adjusted
+such that one digital unit corresponds to <b>more</b> than one
+photo-electron.  Typical values of this conversion are 2 to 8
+electrons per stored digital unit. </p>
+
+The stored values are called <b>"ADU's"</b>, for
+analog-to-digital-unit.  The corresponding constant of transformation,
+normally quoted in units of "electrons per ADU", is often called the
+"Gain" (although this is confusing nomenclature because a larger Gain
+results in reduced ADU values).  </p>
+
+Note that the use of such a conversion importantly affects the
+<b>statistical properties</b> of the recorded signal.  If x is the
+recorded signal in ADU's,  y is the original signal in photo-electrons,
+and G is the gain, then from
+<a href="lec8-f03.pdf">Lecture 8</a> we see  that:</p>
+
+<center>
+Var(x) = Var(y)/G<sup>2</sup>  </p>
+</center>
+
+<p><br></p>
+
+<h2>VI.  CCD DESIGN ISSUES</h2>
+
+CCDs have undergone a long optimization process since 1980.
+Contemporary designs have excellent performance but still require
+careful calibration in order to overcome inherent limitations.  There
+is also only a handful of reliable manufacturers of
+professional-grade chips.  </p>
+
+Here are some of the issues affecting electronic design and
+manufacture of CCDs:</p>
+
+<ul>
+
+<li> <b>INTRINSICALLY LOW BLUE RESPONSE (< 4500 &Aring;)</b>: </p>
+
+
+Caused by absorption in bulk Si and by electrode structures in
+<b>"Frontside-Illuminated"</b> chips.</p>
+
+Mitigation: </p>
+
+<img src="im/CCD-backside-illum.jpg"  alt="Front/Backside" width=30%
+hspace=10 align="right">
+
+<ul>
+
+<li> Use special thin, polysilicon material for electrodes; but these cannot
+be completely transparent.</p>
+
+<li> <b>Special Coatings</b>:  "Anti-reflection" coatings trap
+photons, causing multiple reflections as in Fabry-Perot etalons, and therefore
+enhance absorption.  "Downconverter" coatings are phosphors which
+absorb blue photons but emit green photons at wavelengths where the
+CCD QE is higher (e.g. "mouse milk," coronene, lumogen). </p>
+
+<li> <b>"Thinned, Backside-Illuminated"</b> chips: shave off silicon
+subtrate, leaving only a ~10 &#181; deep unit and illuminate from
+backside; greatly improves blue response.  The technique was pioneered
+by <a href="http://adsabs.harvard.edu/abs/1990ASPC....8...65L">Mike
+Lesser</a> at the University of Arizona.
+ </p>
+
+</ul>
+
+Difficulties with thinned chips:</p>
+
+<ul>
+
+<li>   Fragile<br>
+
+<li>   Non-uniform thinning <br>
+
+<li>   Surface trapping by SiO<sub>2</sub> layer of photo-electrons produced
+nearby (shorter wavelengths) <br>
+
+<li> Interference effects if wavelength ~ chip thickness (i.e. in IR).
+Produce strong spatial modulation of response or <b>"Fringing"</b>.
+Especially serious for terrestrial night sky emission lines.  Can be
+well calibrated for narrow-band filters or for broad-band filters.
+Harder for intermediate band filters.<br>
+
+<li>  Thinning reduces red response.  For good response
+at 5000-10000 &Aring;,  <b>thick</b> (~500 &#181;)
+front-illuminated chips are preferred. </p>
+
+</ul>
+
+<li> <b>CHARGE TRANSFER EFFICIENCY (CTE)</b></p>
+
+<ul>
+
+<li>CTE can be better than 99.999% per transfer from one pixel to the
+next, but it <u>has to be</u>, since the throughput of a chip with
+2048 required shifts = CTE<sup>2048</sup>. </p>
+
+<li> It is possible to mitigate the effects of CTE reduction by revising 
+the technical design of a CCD (changing the number of phases or clocking
+cycles; adding "minichannels") or operationally by adding a pedestal
+background signal (see below).</p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+
+<h2> VII.    ADVANTAGES OF CCD DETECTORS 
+</h2>
+
+
+<ul>
+
+<li><b>HIGH QUANTUM EFFICIENCY</b>: Reaching peak values of 80-90% in
+the optical band. Much effort was expended to reach these high levels.
+Sample response curves for three CCD's from ESO are shown below
+right.  </p>
+
+<a href="im/ESO-ccdQEs.gif">
+ <img src="im/ESO-ccdQEs.gif" alt="ESO CCDs" align="right" width=38%></a>
+
+<ul>
+
+<li> This had <b>tremendous impact</b> on astronomical imaging &
+spectroscopy.  It meant the detection threshold with any instrument
+was extended <b>4-5 magnitudes</b> over film and that therefore a 1-m
+telescope could now pursue the kind of science previously possible
+only with 4-m class telescopes.  </p>
+
+<li> A key corollary: since we are already near 100% QE, at least in
+the optical region, achieving significantly lower threshold detections
+requires <b>larger telescopes</b> rather than better detectors.  This
+was an important factor in the post-1980 rush to build ever larger
+telescopes. </p>
+
+NB: "Quantum yield" can be over 100% for far-UV and X-ray photons 
+-- i.e. more than one photoelectron can be generated but 
+fewer than 100% of photons produce responses. 
+</p>
+
+</ul>
+
+<li><b>LINEAR RESPONSE</b> across the whole range of operation until an
+exposure approaches full-well capacity (typically 200,000 e/pixel).
+This allows much improved flux calibrations and much higher precision
+for flux measurements at all levels than other 2-D systems.</p>
+ 
+<li><b>EXCELLENT DYNAMIC RANGE</b>:  Typically 10<sup>4</sup>.</p>
+
+<li><b>WIDE WAVELENGTH RESPONSE</b>: Intrinsically sensitive from
+X-ray to ~1 &#181;.  Arrays based on other materials
+(e.g. InSb<sub>2</sub>, HgCdTe) with similar architectures are usable
+in the IR. </p>
+ 
+<li><b>GEOMETRICALLY STABLE</b>: excellent for astrometry</p>
+
+<li><b>ONLY LOW VOLTAGES REQUIRED</b> (~5-15 v)</p>
+
+<li><b>RELATIVELY CHEAP, AVAILABLE, SIMPLE</b> compared to other
+digital 2-D systems.  Standard chips cost ~$2-200 K. </p>
+
+<li><b>RELATIVELY LOW NOISE</b> compared to many other classes of
+astronomical detectors, e.g. Pg plates, Reticons, SEC vidicons, etc.
+Dark current is largely suppressed by cooling.  But noise is not
+negligible.  Typical equivalent read noise now is 2-10 e/pixel, </p>
+
+<li><b>SMALL PIXELS</b>: typically 10-30 &#181;.  Usually an advantage
+in devising instrument/detector combinations, but designers should match pixel
+size to 1/2 of smallest resolvable picture element in the optical
+system. </p>
+
+<li><b>SPECIAL FORMAT/READOUT DESIGNS</b>:  By changing electrode structure
+and clocking cycles, one can arrange for many different integrate/readout
+modes.</p>
+
+<ul>
+
+<b>Rapid clocking/video</b>: inherent in CCDs intended for TV
+applications and useful in some astronomical applications
+(e.g. speckle interferometry).  For bright sources, readout rates of
+100 MHz are possible.</p>
+
+<b>Drift Scanning:</b> </p>
+
+<ul>
+
+The basic drift-scanning technique
+(<a href="http://adsabs.harvard.edu/abs/1994AJ....107.1245S">Schneider 
+et al. 1994</a>) is to clock the chip slowly along its
+parallel registers while moving the telescope to keep a target
+centered on the moving electron cloud as it builds up.  The chip is
+continuously read out to produce a strip-image of the sky.  The
+integration time is set by the drift time across the chip.  </p>
+
+The simplest approach is to align the CCD parallel registers
+east-west, keep the telescope fixed on the sky, and clock the chip
+westward at the sidereal rate.  A sample application of drift scanning
+is
+described <a href="http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1996PASP..108..104Z&db_key=AST&data_type=HTML&format=&high=4148b308dd07303">here</a>.  </p>
+
+Drift-scanning is now a standard method for wide-field CCD sky
+surveys, most notably the <a href="http://www.sdss.org/">Sloan Digital
+Sky Survey</a></p>
+
+</ul>
+  
+<b>"Nod and Shuffle"</b>: <a href="GDDS-nod-shuffle.pdf">this
+technique</a> takes advantage of the capability to shift an image
+wholesale on the CCD without reading it out to obtain much better sky
+subtraction (e.g. in the near-IR where atmospheric OH emission is very
+bright and variable).  </p>
+
+<b>On-chip binning</b> is possible by changing clocking to combine
+electrons from several pixels together before reading out.
+E.g. combine a 2x2 pixel region on the chip into a single
+output pixel.  This suppresses the effect of amplifier readout noise on
+each pixel in the final data and also reduces memory and storage
+requirements.  It adds considerable practical flexibility to CCD
+systems.  Obviously, however, binning reduces the resolution of the
+output image.  Binning is useful for applications such as imagery of
+very faint, extended sources (e.g. galaxy halos), low spatial
+resolution spectroscopy, photometry of point sources under poor seeing
+conditions, etc. </p>
+
+</ul>
+
+<li><b>UBIQUITY</b>: CCDs and other solid-state array devices are now
+almost universally used in astronomy (amateur & pro).  Photographic
+materials and older electronic detectors have been phased out, except
+for specialized applications.</p>
+
+<li><b>IMMEDIATE DIGITAL CONVERSION OF DATA</b>: The other advantages
+of array detectors notwithstanding, it is the immediate conversion of
+astronomical signals into a form capable of computer storage/analysis
+that has so <b>dramatically transformed UVOIR astronomy</b> since
+1980. The practice, pace, & scope of UVOIR astronomy are entirely
+different now than in the "photographic" era that preceded widespread
+use of CCDs and other array devices.  Digital conversion of images and
+spectra has enabled quantitative analysis of observations on a scale
+not possible before.</p>
+
+<!-- Note that radio astronomy was digital from early on, as was
+all satellite astronomy [e.g. X-ray, IUE, planetary probes, etc].
+But these represented a smaller fraction of observational astronomy
+than UVOIR.   -->
+
+<ul>
+
+Among other things, rapid digital processing allows near-real-time
+assessment of data and hence much improved use of observing
+time---notably in surveys (e.g. for variable sources in MACHO and
+supernova searches; moving targets such as asteroids/Kuiper Belt
+objects; or combined imaging/spectroscopic surveys such as SDSS,
+2dF).</p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+<h2>VIII. LIMITATIONS/DISADVANTAGES OF CCD'S </h2>
+
+<ul>
+
+<li><b>SMALL SIZE</b>: Individual chips typically are less than 7 cm
+square.  They cover only a small fraction of the high quality imaging
+field on typical modern telescopes.  Device size is limited by the small
+fabrication yield of large, defect-free chips.  The largest routinely
+available chips are 4096x2048.
+</p>
+
+<ul>
+
+<li> However, <b>mosaicking</b> technology is now well developed.  Typical
+mosaics are now constructed from 4096x2048 chips.  </p>
+
+<li> The <a href="im/CCD-mosaic-LSST-1.jpg">largest CCD mosaic camera</a>,
+containing 201 CCD's, is being built for
+the <a href="https://www.lsst.org/">Large Synoptic Survey
+Telescope</a></p>
+
+
+<li>Other examples: (click on images below for enlargements):  </p>  
+
+<ul> 
+
+<li>Sloan Digital Sky Survey:   54 chip mosaic for drift scanning in 5 bands simultaneously</p>
+
+<li>Canada-France-Hawaii-Telescope MegaPrime mosaic:  40 4096x2048 chips covering
+1 degree FOV</p>
+
+ <!-- 48-in Schmidt camera (2003) -->
+
+</ul>
+</ul>
+
+<table align="center" width=95% border=0 cellpadding=2 >
+
+<tr>
+<td align=center width=30%>
+<a href="im/SDSS-CCDcam.gif"><img src="im/SDSS-CCDcam-TH.gif"
+alt="SDSS CCDcam"  vspace=2 width=80%> </a>
+</td>
+
+<td width=30% align=center>
+<a href="im/SDSS-ccdassy.gif"><img src="im/SDSS-ccdassy.gif" alt="SDSS CCD Assembly"
+ vspace=2 width=65%></a></td>
+
+<td width=30% align=center> <a
+href="im/MegaCam-CCDmosaic-CFHT-Scale.jpg"><img
+src="im/MegaCam-CCDmosaic-CFHT-Scale-TH.jpg" alt="MegaPrime Mosaic"
+ vspace=2 width=80%></a> </td>
+</tr>
+
+<tr>
+<td align=center width=30%>
+<font color="black"> <em>Sloan DSS Camera</em></font>
+</td>
+
+<td width=30% align=center>
+<font color="black"><em> Sloan DSS Camera</em></font>
+</td>
+
+<td width=30% align=center>
+<font color="black"><em>CFHT MegaPrime Mosaic</em></font><br>
+&nbsp;
+</td>
+</tr>
+</table> 
+
+
+<li><b>CRYOGENIC COOLING REQUIRED</b>: To reduce dark noise, cooling
+to below -100 C is necessary.  Thermoelectric coolers are usually not
+adequate, so cryogens (e.g. liquid N<sub>2</sub>) are required.
+Introduces many practical complications.  Chips with excellent low-T
+performance differ from commercial types used at room temperature in
+digital cameras, cellphones, etc.</p>
+
+<li><b>READOUT NOISE</b>: Produced by variations in amplifier gain.
+There has been much effort to reduce readout noise, which is now
+typically equivalent to 2-10 e/pix.  </p>
+
+<ul>
+
+Even at these very low levels, RON can
+compromise some types of observations (spectroscopy, surface
+photometry), see <a href="lec7-f03.pdf">Lecture 7</a>.
+What matters is not the noise per pixel but rather the total noise per
+<b>image area</b>, which can extend over many pixels, depending
+on the application.</p>
+
+RON effects in some applications can be reduced by using on-chip
+binning (see above).  In some cases, it may be more advantageous to
+use "pulse counting" detectors, which can unambiguously detect
+individual photons, rather than CCD's.  </p>
+
+</ul>
+
+
+<li><b>FULL WELL CONSTRAINTS</b>: Bright sources which over-fill
+pixels can produce "blooming" or "bleeding" along columns, making
+parts of the chip useless even far from the source.  The best solution is
+operational.</p>
+
+</ul>
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+
+<tr>
+<td width=70%>
+
+
+<!--  TEXT HERE; can use ul indents, etc, as appropriate  -->
+<!--    Use as many lines as needed   -->
+
+<ul>
+
+<font size="4">
+
+<li><b>RESPONSE NONUNIFORMITIES ("FLAT FIELD" EFFECTS)</b>: Caused by
+small variations in masks used to manufacture chips, deposition
+irregularities, thinning variations, etc.  Typically 5%
+pixel-to-pixel.  Color-dependent.  Requires extensive calibration,
+with color-matching to targets.  Use special exposures ("dome flats"
+or "twilight flats").  Special observing procedures to suppress flat
+field effects include:</p>
+
+<ul>
+
+<li> <b>Drift Scanning</b>: see above.</p>
+
+
+<li> <b>Multiple Offset</b>: Break exposure into 4-5 parts, offset ~50
+pixels between exposures.  Combine exposures during data reduction.
+"Dithering" is a related technique involving smaller offsets to
+achieve sub-pixel spatial resolution (see below).  These methods
+result in reduced field of view because not all parts of the original
+field will have uniform exposures. </p>
+
+</ul>
+
+<li><b>FRINGING</b>: see above.  Caused by interference effects within
+chip.   </p>
+
+
+<li><b>SENSITIVITY TO COSMIC RAYS</b>: High energy particles produce
+strong, localized signals in CCDs, especially in thick chips.  Their
+effects must be removed during processing.  CR's are a <b>major
+problem for spacecraft detectors</b> (e.g. on HST).  Mitigation
+requires that exposures be broken into multiple parts (called
+"CRSPLITs" on HST) so that CR events can be identified.  CR hits can be
+removed from processed data frames, but this always leaves "holes"
+which have less exposure than other parts of the image. </p>
+
+<li><b>SENSITIVITY TO X-RAYS</b>: An advantage for X-ray astronomy,
+but X-rays from some materials in the vicinity of CCD's, e.g. special
+glasses used for windows, can produce a diffuse background 
+which adds noise to observations.</p>
+
+</font>
+
+</ul>
+</td>  <!-- END OF TEXT -->
+
+<td width=30%>
+<center>
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/AAO-TEK-flatfield.gif">
+   <img src="im/AAO-TEK-flatfield-TH.gif" alt="Flatfield" width=90%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+  <p> <small><em>CCD Flatfield Frame (AAO)  </em></small></p> 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<a href="im/drizz-before-2400s-ex.gif">
+   <img src="im/drizz-before-2400s-ex.gif" alt="Flatfield" width=80%>
+      </a>
+
+      <!--  PIC CAPTION (optional; can be multi-line)  -->
+    <p><small><em>CR's on HST/WFPC2 2400 sec exposure</em></small></p>
+
+ </center>
+	     
+</td>
+</tr>
+</table>
+
+<ul>
+
+<li><b>CHARGE TRANSFER EFFICIENCY</b>: Because of "traps" within the
+CCD's, good CTE is often possible only for signal levels above a
+threshold of ~10-50 e/pix.  For good efficiency at low light levels,
+this requires adding a <b>"fat zero"</b> (typically 1000 e/pix)
+electronically or by "preflash" from a diffuse light source.
+Unfortunately, this also creates added noise (10-30 e/pix).  Long-term
+exposure of CCD's to radiation in space on missions like HST
+systematically increases the trap density, meaning that CTE reduction
+is a
+<a href="http://www.stsci.edu/hst/wfc3/documents/ISRs/WFC3-2015-03.pdf">
+serious problem</a> there</p>.
+
+
+<li><b>AVAILABILITY HOSTAGE TO COMMERCIAL MARKET</b>: CCD availability
+has always been driven more by commercial and military applications
+than science.  Scientific CCD manufacture represents only a few
+percent of the overall $18B array detector market.  A serious issue,
+since
+<a href="https://en.wikipedia.org/wiki/Active_pixel_sensor">
+"active pixel sensors" </a> (e.g. CMOS devices), a different
+technology with amplifiers incorporated in each pixel, now dominate
+the larger imaging array industry.  Requirements for good performance
+at low (astronomical) light levels are considerably different than for
+room-temperature, short-exposure, mass-produced equipment.</p>
+
+<li><b>DATA GLUT!</b>  CCDs typically produce 2 x N<sub>pix</sub>
+bytes of data per readout, where N<sub>pix</sub> is the number of
+pixels.  For a 8096x8096 mosaic, this is 130 MB.  Data
+storage/manipulation was a serious problem when CCD's were first
+introduced, and this influenced the style of data processing systems
+such as IRAF.  Disk and solid-state storage are now much improved, but
+long-term stability of
+the <a href="im/DEC-pic-vs-WandP-PStetson-apr18-v2.jpg">massive
+amounts of data</a> now being produced by array detectors is a
+non-trivial issue.
+Cf. the <a href="https://www.lsst.org/">LSST</a>. </p>
+
+<!--  [All that data is
+really, really important and worth saving...isn't it?] -->
+
+</ul> 
+<p><br></p>
+
+<h2>IX.  EXAMPLE CCD SYSTEMS </h2>
+
+<ul>
+
+<li><b>HST WIDE FIELD PLANETARY CAMERA 2 (1992)</b></p>
+
+<ul>
+
+<li>  4 CCD's, optically mosaicked with beam-splitter<br>
+
+<li>  Loral 800x800, 15 &#181;  pixel chips<br>
+
+<li>  Front-illuminated, lumogen phosphor coating for UV response<br>
+
+<li>  RON 5 e/px; QE (6000 &Aring;) 35% </p>
+
+</ul>
+
+
+<li><b>SLOAN DIGITAL SKY SURVEY (1997)</b></p>
+
+<ul>
+
+<li>  Drift scanning mosaic (not contiguous) containing 54 chips<br>
+
+<li> Tektronix/SITe 2048x2048, 24 &#181; pixel chips in 5x6
+array; for simultaneous broad-band photometry.  Both frontside and
+thinned backside with AR coating.  QE (6000 &Aring;) ~60%; RON < 5
+e/px <br>
+
+<li>  Tektronix/SITe 2048x400, 24 &#181; pixel chips; for
+astrometry & focus check.  Frontside illuminated, RON < 15 e/px. </p>
+
+</ul>
+
+
+<li><b>HST WIDE FIELD CAMERA 3 (2001)</b></p>
+
+<ul>
+
+<li>  2 CCD's, physically mosaicked, contiguous<br>
+
+<li>  Marconi 4096x2048, 15 &#181; pixel chips<br>
+
+<li>  Thinned, back-illuminated; anti-reflection coating for enhanced  blue/UV
+response<br>
+
+<li>  Minichannel for improved CTE<br>
+
+<li>  RON 3 e/px; QE (6000 &Aring;) 70% </p>
+
+</ul>
+
+
+<li><b><a href="http://rwoconne.uvacreate.virginia.edu/313-511-obs-manual-2007.pdf">FAN
+MOUNTAIN CCD SYSTEM (Gen II)</a></b></p>
+
+</ul>
+
+<p><br></p>
+
+<h2>X. CCD HIGH PRECISION CALIBRATION PROCEDURE </h2>
+
+<!-- %%% 4/29/03:  MODS for F03:
+%%%  Change/recombine to add section on DATA TAKING: how many
+%%%    bias, flat field, etc. frames.  Time spent on calibr.
+%%%    Always more than one frame in given filter for reality
+%%%    check, cosmic rays, error estimate.  
+
+-->
+
+<h3>A.  DATA REQUIRED</h3>
+
+<font color="green">
+
+<ul>
+
+<li> Bias frames<br>
+<li> Dark frames (optional)<br>
+<li> Flat field frames <br>
+<li> Sky flat/fringe frames (optional)<br>
+<li> Flux calibrator fields<br>
+<li> Target frames</p>
+
+</ul>
+
+</font>
+
+<h3>B. REDUCTION AND DATA-TAKING PROCEDURES</h3>
+
+<ul>
+
+<li><b>SUBTRACT BIAS FRAME</b>: Bias frames (zero exposure time) are
+taken with the chip unexposed to light.  These measure the electronic
+pedestal of the chip.  For high precision, average many bias frames,
+before and after observations.  Check for bias drift during the night.
+With some chips, you can determine the electronic bias level from the
+"overscan" region on the chip.  </p>
+
+<!-- For optical "fat zero" subtract
+average of many frames. -->
+
+<ul>
+
+<li> Optional:  <b>SUBTRACT DARK FRAME</b>:  Median filter many long (~30
+min) dark exposures; note possible LED activity of CCD electrodes.
+Scale result to integration time of each data frame before subtracting.
+</p> </ul>
+
+<li> <b>DIVIDE BY TWILIGHT OR DOME FLAT FIELD</b>: This removes the
+residual pixel-to-pixel variations (typical 5%).  Make exposures of
+the twilight sky (good diffuse source, but tricky to get exposure level
+right; only 2 chances per night).  Or make many exposures of diffusely
+illuminated screen in dome (disadvantage: often not uniformly
+illuminated).  Must be done for <b>each</b> filter used because of
+color sensitive effects.</p>
+
+<ul>
+[Note:  photon statistics must yield a SNR significantly in excess of
+the final desired SNR -- i.e. if you want SNR = 100, the net
+flat field image must contain well over 10,000
+photons per pixel.]</p>
+</ul>
+
+<ul>
+
+<li> Optional: <b>SUBTRACT SKY FLAT/FRINGE FRAME</b>: Remove night sky
+emission line fringing effects (worse in near-IR) by observing an
+uncrowded field in the night sky.  Take several exposures, moving
+telescope by, say, 25 arc-sec between them. Use the "adaptive modal
+filter" technique to zap star images and create a mean sky frame.
+Scale to target frames and subtract. Resulting flat field as good as
+0.1% can result.  A sky flat determined this way is needed for each
+filter.</p>
+
+</ul>
+
+<li><b>TARGET FRAMES: USE MULTIPLE OFFSETS, DITHERING OR DRIFT
+SCANNING</b>: For faintest possible photometry, use the 
+multiple-offset exposure technique -- e.g. 500 sec exposures shifted by
+about 20 arc-sec each -- to reduce flat field errors and
+identify cosmic rays.  
+You <b>always</b> want more than one exposure anyway for "reality
+checks" and empirical determination of photometric errors and
+transient effects. 
+</p>
+
+<li> <b>REGISTER AND COMBINE TARGET FRAMES</b>: Re-register the offset
+frames to sub-pixel accuracy (using, e.g., "Drizzle" softare),
+creating an image "stack." </p>
+
+<li><b>REMOVE COSMIC RAY EVENTS</b>: Median filter the signals in each
+pixel in the stack.   Outlying signals caused by cosmic rays and
+other transients are thereby rejected from the combined image.  You
+must track the remaining "good" exposure time for each pixel.  </p>
+
+<li> <b>COSMETIC TREATMENT</b>: trim off the "lost" parts of the
+image.  Depending on the application, you can interpolate over or mask
+out bad pixels.</p>
+ 
+<li><b>CALIBRATE FLUX SCALE</b>: Observe "standard stars" in
+recommended CCD calibrator fields (e.g. star clusters) to determine
+nightly atmospheric extinction and telescope throughput. No need to
+take on non-photometric nights (e.g. variable clouds), but no flux
+calibration for those, either.  Calibrator stars should overlap
+targets of interest in color.  These frames are reduced exactly like
+target frames, apparent fluxes extracted, and the multiplicative
+factors needed to convert to true fluxes of targets are obtained.  </p>
+
+<li> <b>APPLY GOOD PHOTOMETRIC REDUCTION SOFTWARE</b>: for source IDs,
+flux measurements (point or extended source).  </p>
+
+
+<center> <b> =====> RESULT :  PHOTOMETRIC CALIBRATION
+GOOD TO 0.005 MAG </b>
+</center></p>
+
+</ul>
+
+<p><br></p>
+
+<h2>XI. EXAMPLE SCIENTIFIC APPLICATIONS OF HIGH PERFORMANCE CCDs</h2>
+
+<ul>
+
+<li> <b>Deep imaging using subpixel registration</b>.  This example
+employs dithered HST imaging and A. Fruchter's "drizzling" technique.
+See the image pair below.  On the left is one original frame (I-band, 2400
+sec exposure).  Most of the "features" in this image are cosmic ray
+tracks, not cosmic objects.  On the right is the result of drizzled
+processing of 12 such frames.  The combined image has a limiting
+magnitude of I ~ 28.  It would be impossible to reach such levels with
+photographic plates or other less-stable and calibrateable systems..
+</p>
+
+</ul>
+
+<center>
+<a href="im/drizzle-F814W-2imcompare-Fruchter.gif">
+<img src="im/drizzle-F814W-2imcompare-Fruchter.gif" alt="Drizzle" width=50%>
+</a>
+</center>
+
+<ul>
+
+<li> <b>Color-magnitude diagrams.</b> An example of the improvement
+offered by CCD's over photographic photometry in a CMD for the
+globular star cluster 47 Tuc is shown below.  On the left is a 1977
+state-of-the-art CMD based on widefield photographic images with
+photoelectric calibrations (Hesser & Hartwick, 1977).  On the right is
+a 1987 CMD derived from 4-m CCD photometry (Hesser et al. 1987).  The
+greatly improved photometric precision reveals new features of
+astrophysical interest: e.g.  the thinness of the main sequence near
+turnoff, which places strong limits on the range of ages present in
+the cluster, and the shape of the subgiant and asymptotic giant branches.
+(Later, yet higher precision, CCD imaging with HST in the
+near-ultraviolet bands revealed the existence of multiple populations
+with similar ages but different metal and He abundances in many
+globular clusters.)
+</p> 
+
+<!-- 2 COLUMN TEXT-PIC INSERT 70:30 -->
+
+<table width=100%>
+<tr>
+<td width=50%>
+<center>
+
+   <a href="im/Pg-CMD-47Tuc-Hesser-77.jpg">
+   <img src="im/Pg-CMD-47Tuc-Hesser-77.jpg" alt=""width=70%>
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>Photographic CMD </em></small> </p>
+
+<center>
+<td width=50%>
+<center>
+   <!-- &nbsp;<br>  &nbsp;<br> -->  <!-- use as 1-line vertical spacers to match image
+                                      to text -->
+   <!-- PIC --- remove link if unused  -->
+
+   <a href="im/CCD-CMD-47Tuc-Hesser-87.jpg">
+   <img src="im/CCD-CMD-47Tuc-Hesser-87.jpg" alt="" width=60% > 
+   </a>
+
+   <!--  PIC CAPTION (optional; can be multi-line)  -->
+   <p><small><em>CCD CMD</em></small> </p>
+</center>
+</td>
+</tr>
+</table>
+
+<li> <b>High precision stellar photometry with Kepler</b>.  The Kepler
+spacecraft searched for exoplanet transits of 10-16 magnitude stars
+using a 42-chip CCD mosaic camera.  To reach exoplanets of Earth size,
+the transit method requires extremely high precision photometry, which
+is possible in space given the absence of atmospheric interference.
+Kepler reached a photometric precision of ~30 parts per million at
+12th magnitude --- the best ever achieved in astronomy to that time.
+A sample light curve is shown below (note the flux scale):</p>
+
+<center>
+<a href="im/eclipse-Kep13Ab-lightcurve-labeled.jpg"><img src="im/eclipse-Kep13Ab-lightcurve-labeled.jpg"
+ width = 45% vspace=15 alt="K13Ab light curve"></a>
+</center>
+
+
+<li> <b> Multi-object spectroscopy.</b>  CCD's are widely used as
+detectors in spectrographs.  They were the basis for the flourishing
+of multi-object spectroscopy, which now extends to the simultaneous
+observation of hundreds of sources in a given field.  Examples of
+these powerful systems are described
+in <a href="lec10-f03.html">Lecture 10</a>.  A sample stack of 46,000
+QSO spectra from the first Sloan Digital Sky Survey is shown below.
+It would be wholly infeasible to collect such large samples of
+astronomical spectra without the powerful capabilities of area
+detectors like CCDs.</p>
+
+<center>
+<a href="im/46000-QSOs-SDSS.jpg"><img src="im/46000-QSOs-SDSS.jpg"
+width=50% vspace=20 alt="QSO Spectrum Stack"></a>
+</center> 
+
+
+<li><b> High precision astrometry with Gaia</b>.  The Gaia space
+astrometry mission employs a focal plane with 106 specially-designed
+CCDs fed by two telescopes with different lines of sight and operated
+in drift-scan mode.  To reach its intended limit of ~20 mag, it uses
+the full 3300-10500 &Aring; band available to the CCDs.  It reads data
+only for selected targets in each field, and each of these is
+identified by on-board software from a special set of pre-scan mapping
+CCDs.  Gaia achieves an unprecedented precision of about 30
+micro-arc-seconds for parallaxes of stars of 15th magnitude.</p>
+
+</ul>
+
+<p><br></p>
+
+
+<h2>XII. NON-UVOIR USE OF CCD & RELATED DEVICES </h2>
+
+
+<h3>A.  X-RAY: CHANDRA/ACIS DETECTOR</h3>
+
+<ul>
+
+ACIS is a 10-CCD (1024x1024 chips) <a href="im/ACIS-flight-focal-plane-lrg.png">
+focal plane array</a> used on Chandra for both imaging
+and spectroscopy.  It uses both back-illuminated and front-illuminated
+versions.  </p>
+
+It is operated in a <b>pulse-detection</b> mode, unlike the standard 
+procedure at UVOIR wavelengths.</p>
+
+Each X-ray photon releases <u>more</u> than one electron in the
+CCD, in fact, the mean number released is ~ E<sub>XR</sub>/3.7 eV.
+Since Chandra operates at ~ 5 keV, the average electron cloud
+corresponding to one photon has ~ 1000 electrons.</p>
+
+The standard operation sequence is to expose for 3.2 seconds, then
+rapidly read out the array in 40 ms.  The resulting image is
+analyzed by on-board software to catalogue the x,y position and
+the pulse amplitude of each valid photon pulse.  </p>
+
+Because the pulse amplitude is proportional to the photon energy, ACIS
+offers an intrinsic spectral resolution of R ~ 10-50.  </p>
+
+A difficulty with the ACIS design is that if more than one photon
+strikes the same pixel during the exposure time, the counting
+analysis becomes distorted, and the photon flux is underestimated.
+This is called "pileup."  Fortunately, most X-ray sources are faint
+enough that this is not a problem.  </p>
+
+</ul>
+
+<h3>B.  INFRARED ARRAYS</h3>
+
+<ul>
+
+The <a href="#gaps">table in Sec. IV</a> above shows that pure silicon
+photoconductor arrays will not work at infrared wavelengths because of
+their large band-gaps, but there are a number of other materials that
+will.  </p>
+
+There are many varieties of IR detectors in use today.  Some of
+these are monolithic, i.e. fabricated on single subtrates like
+CCD's, and some are
+<a href="im/hybrid-IRarray-NICMOS.jpg">
+ <u>hybrids</u></a> in which the readout electronics
+are fabricated separately from the photon-detection devices.  </p>
+
+Hybrids typically use silicon wafers for the readout electronics.
+Some actually use CCD-type architecture.  The readout is connected to
+the photon-sensing material using conducting "bump-bonded" indium
+studs.  If the wafers ultimately produce readout though a small number
+of output amplifiers, they are called "multiplexers" or "MUX's". </p>
+
+<a href="im/NICMOS-detector-crossec.jpg">Here</a> is
+a cross-section of the HST/NICMOS infrared detector, which uses
+a HgCdTe ("mercad-telluride") photon detector.  </p>
+
+<!-- IR arrays will be discussed further in the guest lecture by
+Mike Skrutskie and in ASTR 512 (Spring 2004).</p>  -->
+
+</ul>
+
+<!-- END MAIN TEXT -->
+
+<hr size=2>
+
+<center><img src="im/ccd_movie.gif" vspace=4></center></p>
+
+<hr size=2>
+
+<p><br></p>
+
+<h3>ADDITIONAL WEB LINKS</h3>
+
+
+<!--  <a href="http://www.not.iac.es/CCD-world/" target=show>  -->
+
+<a href="http://www.ctio.noao.edu/mailman/listinfo/ccd-world">CCD-World</a> (forum for
+discussions about CCDs and their use in astronomy)</p>
+
+Basics: </p>
+
+<ul>
+
+<a href="http://micro.magnet.fsu.edu/primer/digitalimaging/concepts/concepts.html">Digital
+Imaging/CCD Tutorial at Molecular Expressions</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (thorough, elaborate
+illustrations, but aimed at microscopy)<br>
+
+<a href="http://www.britneyspears.ac/physics/basics/basics.htm">
+Britney's Guide to Semiconductor Physics</a> (decorative tutorial)<br>
+
+<a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">Semiconductor
+physics at HyperPhysics</a> (succinct, with many illustrations)<br>
+
+<a href="http://www.qucam.com/index.html">Simon
+Tulloch Primers on Astronomical Detectors </a> (aimed at advanced amateurs)</p> 
+
+</ul>
+
+
+Example Systems & Development Efforts:</p>
+
+<ul>
+
+ <a href="http://www.astro.princeton.edu/PBOOK/camera/camera.htm">
+Sloan Digital Sky Survey CCD Camera</a><br>
+
+<a href="http://www.noao.edu/kpno/mosaic/manual/index.html">
+NOAO CCD Mosaic Camera Manual</a><br>
+
+<a href="http://www.ctio.noao.edu/noao/content/dark-energy-camera-decam">CTIO
+Dark Energy Camera Manual</a><br>
+
+<a href="http://www.eso.org/projects/odt/index.html">ESO Optical
+Detector Homepage</a><br>
+
+<!--  <a href="http://www.aao.gov.au/astro/instrum.html">AAO
+Instrumentation Page.</a><br>  
+<ul>
+Good, detailed descriptions of performance 
+characteristics of individual CCDs.<br> 
+</ul>
+  -->
+
+<a href="holland-status-CCD-development-2012.pdf">Status of CCD
+Development</a> (Steve Holland, LBNL, 2012)<br>
+
+<!-- <a href="http://csmt.jpl.nasa.gov/csmtpages/Technologies/Delta-Doped.html" target=show> 
+
+<a href="http://hdl.handle.net/2014/39764">   --->
+
+<a href="https://arxiv.org/pdf/1701.02733.pdf">
+JPL CCD ``Delta-Doping'' Project</a> (for high UV QE)</p>
+
+</ul>
+
+<!-- START FOOTER -->
+
+<hr size=2>
+
+<!--- REDIRECT BOX -->
+
+<center>
+<table width="75%">
+<tr>
+<td>
+<b><a href="lec10-f03.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Lecture</a></b> 
+</td>
+
+<td>
+<b><a href="lectureindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Lecture Index</a></b> 
+</td>
+
+<td>
+<b><a href="lec12-f03.pdf">
+<img src="im/right-yel-arrw01e.gif">
+Next Lecture </a></b> 
+</td>
+</tr>
+</table>
+
+<!-- END REDIRECT BOX -->
+
+<hr>
+
+<p></p>
+<p align="center"> <small><i>Last modified
+    <b>January 2022</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+ </small></p>
+
+<p></p>
+
+<hr size=2>
+
+<small> Bandgap images from Britney's Guide to Semiconductors.
+MOS capacitor illustration from Molecular Expressions.  Bucket brigade
+animation and front/back illumination drawing by C. Tremonti (UWisc).
+CCD design drawings from C. MacKay, Annual Reviews (1986).  Most other
+images from public observatory sites.  Text copyright &copy 1989-2022
+Robert W. O'Connell.  All rights reserved.  These notes are intended
+for the private, noncommercial use of students enrolled in Astronomy
+511 at the University of Virginia.  </small>
+
+
+<!-- END FOOTER -->
+</font>
+
+</div>
+</body>
+</html>
+				  

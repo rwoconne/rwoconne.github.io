@@ -1,0 +1,896 @@
+<!-- University of Virginia Department of Astronomy -->
+<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
+<!-- Contact: rwo@virginia.edu -->
+<!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
+<!-- -->
+
+<html>
+<head>
+<link rel=stylesheet href="class-3.css" type="text/css">
+<TITLE> ASTR 1210, O'CONNELL. Study Guide 14 </TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="">
+
+<style>
+     div.all {  max-width: 900px;}
+ </style>
+
+</head>
+
+<body>
+
+<div class="all"> 
+
+<!-- SOURCE: S97 Guide 4; 3/2; 3/11/98; 10/19/98; 10/21; 2/27/99
+             9/23; 2/27/2002; 3/2; 3/4; 3/5; 3/7; 3/19; 3/27; 4/25/03; 
+             3/3/2004; 3/7; 3/8; 3/11; 3/03/2007; numbering changed to
+             Guide14 3/15; 3/19; 3/20; 10/12; 10/22; 10/23; 3/13/2008; 
+             3/16/2009; 3/22; 5/20; 5/29; 7/26; 12/14; 5/17/2010; 
+             6/3; 5/24/2012 new-format; 10/26: guide made optional reading
+             for F2012; 10/31; 3/14/2013; 10/21; 10/23; 10/30; 3/13/2014;
+             6/19; 9/11/2015: new domain; 9/12/2016; 9/14; 10/1; 11/10; 
+             2/20/2017; 5/22;  7/16/2018;     
+
+             GHP version:  12/3/2020; 12/13; 1/12/2021; 
+
+  -->
+
+<h2 align="center">ASTR 1210 (O'Connell) Study Guide </h2>
+
+<hr>
+
+<center>
+<font size=+4  color="#dd33ff"><b>14.  TELESCOPES  </b></font>
+</center>
+
+<p><br></p>
+
+<center><a href="im/MK-view.jpg" target=show><img src="im/MK-view-ex.jpg"
+width=88%></a></center>
+
+<p align="right"><small> <i>Summit of Mauna Kea, Hawaii</i></small></p>
+
+
+
+<!-- <h3>For Spring 2014 this guide is optional reading only</h3> -->
+
+
+The telescope is the <b>single most important invention for astronomy</b>.
+It is a beautiful example of the interplay between technology
+(fabrication of quality glass, optics design, polishing techniques,
+large mechanical structures, computers) and basic science. </p>
+
+This lecture describes the main features of <em><b>optical-band</b></em>
+telescopes---i.e. those which operate in or near the part of the EM
+spectrum to which our eyes are sensitive.  This is the only kind of
+telescope which was in widespread use before 1950.</p>
+
+Since that time, astronomers have developed other types of
+"telescopes" to exploit a large part of
+the <b><a href="121supps2-3.html#EMspec">whole electromagnetic
+spectrum</a></b>.  Cosmic sources produce radiation across the entire
+range of this spectrum.  Some telescopes for other spectral bands
+(e.g. the ultraviolet and near-infrared) are quite similar to optical
+telescopes.  Others (e.g. for the radio and gamma-ray bands) use
+very different technologies.</p>
+
+<p><br></p>
+
+
+<h2>A. Introduction</h2>
+
+<p></p>
+
+
+<a href="im/yerkes-40in-color-lrg.jpg"><img src="im/yerkes-40in-color-lrg.jpg"
+align="right" width="30%" hspace=12 vspace=12></a>
+
+The telescope was <b>invented in 1608</b>  by Lipperhey in Holland. </p>
+
+<ul> 
+
+Although lenses had been used in eyeglasses for several centuries,
+realization of higher precision optical devices suitable for viewing
+distant objects depended on improvements in <b>lens-grinding
+technology</b>.  Details of the early work of Lipperhey, Galileo, and
+others are
+given <a href="http://galileo.rice.edu/sci/instruments/telescope.html"
+> here</a>.</p>
+
+
+Note: the <b>microscope</b> was invented around 1620, also in Holland,
+and was responsible for opening up a second kind of "invisible world."
+Modern medicine would not exist without the microscope.</p>
+
+</ul>
+
+The first astronomical use of a telescope was by
+<a href="http://galileo.rice.edu/" ><b>Galileo</b></a>, in Italy in 1609.
+<b>The telescope instantly and utterly transformed astronomy</b>
+(see <a href="guide07.html" >Study Guide 7</a>).</p>
+
+Galileo's lenses were only about one inch in diameter and of relatively
+poor quality.  But telescope technology had advanced over the
+subsequent 300 years to the point where the largest operating telescope
+in the year 1900 was the Yerkes Observatory 40-inch telescope shown
+at the right.</p>
+
+
+
+<h3>Purposes</h3>
+
+<ol>
+
+<li> <b>Collect more light:</b> in order to detect fainter objects.  This is the
+<b>most important function</b> of telescopes.</p>
+
+<ul>
+
+<li> Light gathering power depends on the telescope 
+<b> diameter<sup>2</sup></b> </p>
+
+<li> Thus, a 10-in diameter telescope collects (10/5)<sup>2</sup> =
+2<sup>2</sup> = 4 times as much light as a 5-in telescope.</p>
+
+<li> An 8-in telescope (widely used by amateur astronomers) collects
+1600x more light than the human eye.  Because there are many more faint
+stars than bright ones, an <b>8-in scope can detect over 2000x as many
+stars</b> (10 million compared to 5000) as the unaided eye. </p> 
+
+</ul>
+
+<li> <b><em>Resolve</em> sources better:</b> provide <b>sharper</b>
+images, permit seeing more detail.  Resolution depends on both the
+diameter of the telescope and its optical quality</p>
+
+<li> <b>Magnify sources:</b> make the images of distance objects
+larger for easier study</p>
+
+</ol>
+
+<p><br></p>
+
+<h2>B. Designs</h2></p>
+
+<h3>Basic principle</h3>
+
+<ul>
+
+<li> An <em><b>objective</b></em> or <em>"primary"</em> optical
+element forms an <em><b>image</b></em> (i.e. an accurate
+representation of the original scene) at a
+usable <em><b>focus</b></em>, where it can be studied by eye, recorded
+by film or other detectors (as in a camera), or fed into yet other
+instruments </p>
+
+The objective element can be either a <b>lens</b> or a <b>mirror</b>.
+
+</ul>
+
+<h3>Types of telescopes</h3>
+
+There are therefore <b>two basic types</b> of telescopes: </p>
+
+<ul>
+
+<li><b><i>Refracting telescopes</i></b>: the objective is
+a <b>lens</b> (shaped, transparent glass)
+which <b><em>refracts</em></b> (or bends) incoming light rays to a
+common focus.  The image at the left below shows how a flat glass
+surface bends light rays.  In this case, two flat surfaces at a angle
+have been combined to make a <em>prism</em>.  The shorter the
+wavelength of the light, the stronger the bending. </p>
+
+<ul>
+
+The image at the right below shows how a glass surface can be
+<b>continuously curved</b> to bring all the light rays passing through
+it from a given point on a distant object to a common <b><em>focal
+point</em></b>. </p>
+
+The largest refractor ever built was the
+<a href="im/yerkes-40in-color-lrg.jpg">
+Yerkes Observatory 40-in telescope</a> (1896).</p>
+
+</ul>
+
+<center>
+<table border=0 cellpadding=15 width=70%>
+<tr>
+<td align=center><a href="im/prism_anim-UTenn.gif" ><img src="im/prism-anim.gif"
+width=150></a>
+</td>
+<td align=center><img src="im/convexlens-FP-JFA.jpg" width=325 border=2>
+</td>
+</tr>
+
+<tr>
+<td align=center>
+<small><em>Refraction of Light By a Prism<br> (<b>click</b> for a descriptive animation)</em></small>
+</td>
+<td  align=center>
+<small><em>Shaped Convex Lens</em></small>
+</td>
+</tr>
+
+</table>
+</center>
+
+<ul>
+
+Because refraction is stronger for shorter wavelengths, all lenses produce
+<b>chromatic aberration</b>, in which light of different wavelengths comes
+to a focus at different positions.  Compound lens designs can reduce but
+never eliminate the flaws in images that result.  </p>
+</ul>
+
+<p><br></p>
+
+
+<li><b><i>Reflecting telescopes</i></b>: the objective is a
+shaped <b>mirror</b> coated with a metallic film,
+which <b>reflects</b> light rays off its front surface to a common
+focus. See the picture below.  Invented by Gregory (1663); improved by
+Newton (1669). </p>
+
+<ul> 
+
+Many early reflecting telescopes employed
+metal mirrors, but almost all modern designs use glass mirrors.</p>
+
+At first sight, a reflecting design is counterintuitive because the
+focus is in a position where placing equipment would interfere with
+the incoming light beam.  This is true, but the effects, both in terms
+of blocking the light and diminishing the image quality, are small if
+the mirror is large enough.  Most reflecting telescopes  use a
+<a href="im/reflect-tel-types.gif">
+ "secondary" mirror </a> to <b>redirect</b> the light beam outside the main
+body of the telescope.  There are many different 
+<a href="im/reflect-tel-types.gif">designs</a> for reflecting systems, each
+with its own advantages and disadvantages.</p>
+
+Reflecting designs have a number of advantages over refractors:  There
+is no chromatic aberration.  The mirror is easy to support from
+behind, unlike a lens which must be supported from its edges and tends
+to sag.  Mirrors are figured on only one side, whereas lenses must be
+figured on both.  It is harder to support heavy lenses mechanically at
+the top end of a telescope tube than a mirror at the bottom end.
+Multiple mirrors can be used to fold the light beam and reduce the
+length of a telescope tube.</p>  
+
+<b>All large telescopes are therefore reflectors</b>.  The largest
+fully steerable reflector is the <a href="im/GTC-MGarcia.jpg">Gran
+Telescopio Canarias</a> (409-in in diameter: built 2009).
+A telescope 1550-in (39.3-m) in diameter is
+now under construction at the 
+<a href="https://www.eso.org/public/usa/teles-instr/elt/">
+European Southern Observatory</a>.  </p>
+</ul>
+
+
+<center><img src="im/reflect-tel-PF.gif" width=45% vspace=10></center>
+<center><small><em>Reflection of Light by a Figured Mirror</em></small></center>
+
+
+<li>
+<a href="http://lectureonline.cl.msu.edu/~mmp/kap13/cd372.htm" ><img
+src="im/film.gif">Applet.</a> Here is a Java applet illustrating the
+differences between refraction, reflection, and diffraction.</p>
+
+<!-- vanished! f02.   Click here for background information on <a
+href="http://covis.atmos.uiuc.edu/guide/optics/html/refraction.html" >refraction,</a>
+<a href="http://covis.atmos.uiuc.edu/guide/optics/html/reflection.html" >
+reflection,</a> -->
+
+
+</ul>
+
+<p><br></p>
+
+<center><img src="im/refracting-scope2.gif" border=2 vspace=10></center>
+
+
+<h3>Focal plane</h3>
+
+<ul>
+
+<li> For distant objects (including all astronomical objects), the
+incoming rays are <b>parallel</b> to one another.  Such rays are focussed in a
+plane which is <b><em>one focal length</em></b> from the objective.  This is
+called the <b><em>"focal plane."</em></b>  Click on
+the button below for a Java applet illustrating image formation for objects
+at different distances.</p>
+
+<ul>
+
+<center>
+
+<a href="http://www.phys.hawaii.edu/~teb/optics/java/clens/" >
+<img src="im/film.gif">Applet</a>
+</p>
+</center>
+
+</ul>
+
+<li> In the focal plane, the light rays from a distant object form a
+one-to-one representation of the distant scene which is called an
+<b><em>image</em></b>.</p>
+
+<li> Ordinarily, a camera or other instrument in placed at the focal
+plane.  For "visual" use of a telescope, an <b><em>eyepiece</em></b>
+(a smaller lens or combination of lenses) can be used to magnify the
+focal plane image so it can be viewed by the eye.  See the
+illustration above.  The <b>magnification</b> of the image seen
+through the eyepiece is equal to the ratio of the focal length
+of the objective to the focal length of the eyepiece. </p>
+
+</ul>
+
+<p><br></p>
+
+<h2>C.  Image Quality</h2>
+
+The crispness of images made by a telescope depends on several factors:  fabrication
+of the optics, the size of the telescope compared to the wavelength of light,
+and the Earth's atmosphere.</p>
+
+The <b>"resolution"</b> of a telescope image is quantitatively defined to be
+the <b>smallest measurable detail</b> in an image (in seconds of arc).</p>
+
+<h3>Optical Figuring</h3>
+
+<ul>
+
+<li>Light is a <b>wave</b>.  In order to produce a good image,
+telescope optics must be figured to a minimum tolerance of about
+<b>1/4 of the wavelength</b> (distance between crests) of the light they
+are intended to focus.  For optical telescopes, this is about
+10<sup>-5</sup> cm. </p>
+
+<li> The intended shape of an optical surface, e.g. the curve in the convex
+lenses shown above, must be reproduced to <b>high precision</b> in order to
+obtain good image quality.</p>
+
+<li> Scale comparison:  if a 320-in (8-m) diameter telescope mirror were
+scaled up to the size of the continental United States, i.e. about
+<b>3000 miles diameter</b>, then the maximum ripple allowed in its polishing
+would be only about <b>2 inches</b>!  </p>
+
+</ul>
+
+
+<center><img src="im/diffrac-aper.gif" border=2 width=33% vspace=10></center> 
+<center><small><em>Diffraction of light waves</em></small></center>
+
+
+<h3> Diffraction</h3>
+
+<ul>
+
+<li> A fundamental limit on resolution is set by the physics of light.
+Since it is a <a href="121supps2-3.html#EMspec" >wave phenomenon</a>,
+light spreads out or <b><em>diffracts</em></b> when it passes through
+an aperture (like ocean waves around a breakwater).  This smears
+out images.  </p>
+
+<ul>
+<a href="http://www.falstad.com/ripple/" >
+<img src="im/film.gif">Applet.</a> Here
+is a nice interactive Java applet illustrating diffraction.</p>
+</ul>
+
+<li> Diffraction is worse the <b>longer</b> the wavelength of light and the
+<b>smaller</b> the telescope aperture. Click 
+<a href="im/binstar-resolution-4scopes-NStrobel.gif" >here</a>
+for an illustration of how telescope size affects resolution.</p>
+
+<li>A 10-in diameter telescope with perfect optics can resolve 1
+arc-sec at optical wavelengths.  A 100-in diameter telescope could
+resolve 0.1 arc-sec. </p>
+
+<li>Note that almost all stars are so distant that they are smaller in
+angular size than 0.1 arc-sec and therefore appear as <b><em>point
+sources</em></b> in such a telescope.  Only a handful of stars can be
+resolved by even the largest telescopes.</p>
+
+</ul>
+
+
+<center><a href="im/seeing-movie.gif"
+><img src="im/seeing-movie-ex.gif" width=30%
+vspace=10></a> <p><small><em>"Seeing" Produced by Earth's
+Atmosphere</em></small></center>
+
+
+<h3>"Seeing"</h3>
+
+<ul>
+
+<li> The Earth's atmosphere also <b>refracts light</b>; and
+because it is constantly moving, there is always a <b>blurring and
+jittering</b> of images in a telescope.  Astronomers call this "seeing."
+<b>Seeing actually dominates diffraction</b> in most cases and usually limits
+telescope resolution in practice to 0.5-2 arc-seconds. </p>
+
+<li>Above is an enlarged image of the bright star Betelgeuse seen
+though a large telescope.  It is a large blob, broken up into smaller
+near point-like units.  Click on the image for a
+<a href="im/seeing-movie.gif" >video</a> of the seeing effects.  In
+the absence of the atmosphere, the image would be steady with all of
+the light concentrated into one of those point-like structures.  </p>
+
+<li> To overcome seeing effects, special equipment such as
+<b><em>adaptive optics</em></b>, which can sense and partially correct
+for atmospheric blurring, can be used.  Or, telescopes can be placed
+in <b>space</b> (where there's no atmosphere), though this is much
+more costly.  </p>
+
+</ul>
+
+<h3> Sky Background</h3>
+
+<ul>
+
+The natural nighttime sky in directions away from bright sources is
+not totally dark.  
+There are several kinds of pervasive, <b>diffuse
+"background" light</b>: scattered sunlight or moonlight in the Earth's
+atmosphere, <a href="https://en.wikipedia.org/wiki/Airglow">airglow</a>
+emission from the atmosphere's upper layers, scattered light from dust
+in the <a href="guide21.html">interplanetary</a> and interstellar
+medium, and faint stars and galaxies.</p>
+
+Sky background light does not blur images, but it certainly interferes
+with detection and study of faint sources (and there are many more
+faint sources than bright ones).</p>
+
+Compounding the natural background is
+manmade <a href="https://www.darksky.org/light-pollution/"><b> light
+pollution</b></a>, a problem with which astronomers have wrestled for
+centuries.  Initially, telescopes were built adjacent to universities,
+usually in or near cities.  However, the 
+<a href="im/USA-light-pollution-1950-2025.jpg">growth</a> of
+artificial light pollution drove telescope construction to ever more
+remote sites, first in the southwestern US (e.g. California, Texas,
+Arizona), and finally to high mountains like
+<a href="im/MK-view.jpg"> 
+Mauna Kea</a> in Hawaii or the northern deserts of Chile.</p>
+
+Ultimately, astronomers have placed telescopes in space to escape the
+effects of atmospheric backgrounds altogether (see next
+section).  </p>
+
+</ul>
+
+<p><br></p>
+
+
+<center><a href="im/LBT-84m-blank.jpg" >
+<img src="im/LBT-84m-blank-sm2.jpg"
+         alt="LBT 8.4-m Mirror Blank" width=70%></a>
+<p><small><em>Mirror blank for one of the two mirrors of the Large
+Binocular Telescope.<br>  Click for enlargement.</em></small></center>
+
+
+<h2>D. Current Telescope Milestones</h2></p>
+
+<!---
+
+%%<li> 40-in refractor 1896
+% <li> 100-in reflector 1917 
+%%<li> 200-in reflector 1948      -->
+
+<a href="http://hubblesite.org/"><b>The Hubble Space
+Telescope</b></a>: 94-in reflector in orbit around the Earth (launched
+1990)</p>
+
+<ul> HST is not a large telescope by modern standards.  But it has
+produced the <a href="im/m83-PR-nov09-hs-2009-29-b-print-labeled.jpg"
+><b>highest resolution images yet obtained</b></a> at visible
+wavelengths, with blur sizes of only about 0.05 arc-seconds.  This is
+because of its high quality optics <b>and</b> the fact that it
+is <b>outside the Earth's atmosphere</b>, so it does not have to
+contend with seeing or absorption or scattering by atmospheric
+constituents.  Its high resolution and the absence of the <b>natural
+and artificial atmospheric background</b> also allows it to
+detect <a href="im/hs-2010-01-b-print.jpg" ><b>very faint</b></a>
+sources.
+</p>
+
+<a href="im/HST-bestpix-composite.jpg">Here</a> is a composite
+version of some of HST's best images.</p>
+
+</ul>
+
+<a href="im/keck-mirror-ex.jpg" ><img src="im/keck-mirror-ex-sm.jpg"
+align="right" vspace=10 hspace=10 width=22%></a>
+
+
+<a href="http://www.keckobservatory.org/"><b>Keck Observatory</b></a>:
+Two 400-in "segmented mirror" telescopes (1993, Hawaii).  The
+collecting area of each consists of 36 independent 36-in hexagonal
+mirrors.  See image at right and <a href="im/keck-diagram.jpg">
+this diagram.</a> </p>
+
+<a href="im/vlt-1.jpg" ><b>The Very Large Telescope (VLT)</b></a>: Four 
+320-in monolithic mirror telescopes (2001, Chile)</p>
+
+<!-- <a href="https://rwoconne.github.io/rwoclass/LBT"> -->
+
+<a href="https://www.lbto.org/">
+<b>The Large Binocular Telescope</b></a>: two 330-in (8.4-m) diameter
+monolithic mirrors on a common mount, providing the largest existing
+collecting area.  One of the mirrors is shown above.  UVa is a partner
+in this project.  </p>
+
+See this  
+<a href="im/large-telescope-areas-to-2026.png">
+graphical comparison</a> of the collecting areas of the largest
+existing and planned telescopes.  </p>
+
+<h3>Large mirror technology</h3>
+
+<ul>
+Here (from
+the <a href="http://obs.carnegiescience.edu/Magellan/">Magellan
+Observatory</a>) is a brief description of how the latest
+generation of huge telescope mirrors are manufactured:</p>
+
+<ul>
+<font size="-1">
+The Magellan main mirrors are f/1.25 paraboloids and a radical
+departure from the nearly solid-glass mirrors of the past. Each is
+21,000 pounds of borosilicate glass with a lightweight honeycomb
+structure inside. It took 6 months to build the mold for each mirror,
+2 days to fill it with chunks of glass, 1 week to melt the glass and
+spin it into shape (in a specially designed rotating oven), and 3
+months for the glass to cool. Each was then polished for 8 months
+while its surface was constantly tested for accuracy. Relative to
+their size, the main mirrors are about as thin as a dime.
+The aluminum surface of each mirror is a mere four-millionths of an
+inch (0.1 micron) thick. Each also sits in a "cell" that peforms two
+important functions. First, the cell's thermal control systems prevent
+warping from thermal expansion and contraction. Second, the support
+systems in the cells maintain the mirrors in their proper shape, so
+there is no distortion or cracking. The actual shape of the mirror
+surface is controlled to within two-millionths of an inch (0.05
+microns).</p>
+</font>
+</ul>
+</ul>
+
+
+<h3>Other EM spectral bands</h3></p>
+
+<ul> The telescopes we've discussed so far operate only in the optical
+(or "visible") and adjacent spectral bands, but astronomers now
+exploit most of the 
+<a href="121supps2-3.html#EMwaves">
+<b>full electromagnetic spectrum</b></a> to observe the cosmos.  The
+first instruments outside the visible range were radio telescopes
+(1950's).  Now astronomers operate not only radio telescopes
+(e.g.the <a href="http://www.nrao.edu" >National Radio Astronomy
+Observatory</a>, with headquarters in Charlottesville) but also
+<b>microwave, infrared, ultraviolet, X-ray, and gamma-ray telescopes</b>.
+All of the devices for detecting EM waves are called
+"telescopes," even though some (e.g. radio antennas) look nothing like
+classical optical telescopes.</p> 
+
+Because the Earth's atmosphere <b>screens out many parts of the the EM
+spectrum</b> (see <a href="121supps2-3.html#EMspec" >Study Guide 10</a>),
+telescopes for the gamma-ray, X-ray, ultraviolet, and parts of the
+infrared and microwave spectrum must be placed on <b>spacecraft outside
+the atmosphere</b>.</p>
+
+</ul>
+
+<p><br></p>
+
+
+<h2>E. Next Generation Telescopes</h2>
+
+
+<a href="im/GMT-artists-3.jpg"><img src="im/GMT-artists-3-ex.jpg"
+align="right" width=20% vspace=10 hspace=10></a>
+ 
+Two very large telescopes based on the segmented-mirror concept
+of Keck have been designed:  
+the <a href="http://www.tmt.org/">
+Thirty Meter Telescope</a>
+ and the
+<a href="http://www.eso.org/public/usa/teles-instr/elt/">European
+Extremely Large Telescope</a> (39-meters or 1550-in).  The ELT is now
+under construction in Chile, but the TMT is embroiled in a dispute
+over environmental and cultural impacts at its preferred Mauna Kea
+site.  The
+<a href="http://www.gmto.org/">Giant Magellan Telescope</a>
+(at right), also
+under construction in Chile, is a multiple-mirror design with
+7 8.4-meter spin-cast mirrors and an equivalent collecting area
+of a single 22-meter mirror.  The six off-axis segments are
+challenging to figure to the correct surface shape.</p>
+
+Another large telescope with a very different design and operations
+mode is the <a href="http://www.lsst.org">Large Synoptic Survey
+Telescope</a> of the Vera C. Rubin Observatory.  To achieve a wide
+field of view (3.5<sup>o</sup>) it employs a unique 3-mirror design in
+which the primary and tertiary mirrors have been figured on a single
+piece of spin-cast glass 8.4-meters in diameter.  The telescope is
+intended to repeatedly image the entire usable sky every three nights,
+searching for transient or moving targets (including near-Earth
+asteroids) while building up an ultra-deep combined image of the sky.
+Continuous output from its 189 imaging CCDs (see below) will generate
+an unprecedented data volume (15 TB/night).  Under construction in
+Chile, LSST should be in operation by 2021.  </p>
+
+The <a href="https://www.jwst.nasa.gov/">James Webb Space
+Telescope</a>, expected to be launched in 2021, is the follow-on to
+HST.  It features a 6.5-m diameter primary mirror (a 25 square meter
+collecting area, 5.5 times that of HST) composed of 18 hexagonal
+segments that must be deployed on-orbit.  JWST carries four imaging
+and spectroscopic instruments and is optimized for the near-infrared
+spectral region.  A large sunshield permits a low overall structural
+operating temperature through cooling to space.  JWST will orbit
+around the Earth-Sun L<sub>2</sub> point, about 900,000 km
+from Earth.</p>
+
+
+
+<p><br></p>
+
+<h2>F.  Detectors</h2></p>
+
+The <a href="https://rwoconne.github.io/rwoclass/astr1230/human-eye.html">human
+eye</a> is a sophisticated, auto-focus, auto-exposure, electrical
+camera system.  However, for all its versatility and importance to us
+in everyday life, it is a seriously limited astronomical detector: it
+is small, its maximum integration time is only about 0.1 sec, and it
+has low sensitivity.  Astronomers have long sought more capable
+detectors to use with telescopes.  Descriptions of the two most
+important kind of imaging detectors are given next: </p>
+
+<h3>Photographic Film</h3></p>
+
+<ul>
+
+<li> Film was the main astronomical detector used between 1900 and 1980.<br>
+
+<li> It detects only 1-2% of incident photons (not much better than
+the eye) but allows <b>long</b> integrations (hours) </br>
+
+<li> Requires <b>chemical development</b> of image after exposure, a
+serious complication.<br>
+
+<li> Provides <b>permanent storage</b> of image information---a tremendous
+benefit.  But information on film is not in digital form, which makes
+quantitative analysis difficult. <br>
+
+<li> Extends the observable <b>EM wavelength range</b> to regions (the
+near-UV and near-IR) where the eye is not sensitive<br>
+
+<li> <b>Large</b> formats are possible (up to 20-in square for astronomy)<br>
+
+<li>  Nonlinear, nonuniform response makes quantitative measures of incident
+light energy difficult</p>
+
+</ul>
+
+<center>
+<img src="im/CCD-fullframearc-FSU.jpg" vspace=5 hspace=10 width=40%>
+<p><small><em>Charge-Coupled Device Architecture</em></small>
+</center>
+
+<h3>"Charge-Coupled-Devices" (CCD's)</h3> </p>
+
+<ul>
+
+<li> CCD detectors are a type of <b>solid state electronics</b>, using
+a light-sensitive silicon wafer fabricated with embedded
+microelectronic integrated circuits
+by <a href="http://www.britneyspears.ac/physics/fabrication/photolithography.htm">photolithography</a>.
+
+.<br>
+
+<li> See image above. The CCD surface is composed of millions of
+independent, light-sensitive <em><b>pixels</b></em>.<br>
+
+<li>  After exposure, pixel
+contents are <a href="im/CCD-readout-anim-CTremonti.gif"
+>shifted</a> in 2 dimensions across the surface to an output
+amplifier and storage device.  <br>
+
+<li> Astronomical applications were pioneered during development of
+the Hubble Space Telescope (1974-85). <br>
+
+<li> CCDs work well at both very short (TV) and very long (astronomy)
+exposure times.<br>
+
+<li>  They are <a href="im/photo_vs_ccd-FB.gif" ><b>50-100x more
+sensitive</b></a> than film<br>
+
+<li> They provide <b>digital image storage</b> for immediate computer
+processing<br>
+
+<li> Determination of incident light energy is easier<br>
+
+<li> Only <a href="im/ccd-in-hand-2AE1.jpg" >small
+formats</a> are available (2-in typical); but one can <a
+href="im/MegaCam-CCDmosaic-CFHT-Scale.jpg" >"mosaic"</a>
+CCDs to create a large area detector surface<br>
+
+<ul>The <a href="im/CCD-mosaic-LSST-1.jpg">largest CCD mosaic camera</a>,
+containing 201 CCD's, 
+is being built for the <a href="https://www.lsst.org/">Large
+Synoptic Survey Telescope</a> (see above).<br>
+</ul>
+
+<li> CCDs are now the standard detectors used in optical-band astronomy.</p>
+
+</ul>
+
+CMOS solid state detectors, with characteristics similar to CCDs, are
+employed in commercial still and video cameras and cell phones.  These
+are mass-produced in quantities of billions.  They are significantly
+less well suited to astronomical use (being harder to calibrate,
+for example), but astronomical applications are now being
+explored.  </p>
+
+Many other types of electronic detectors are now used in the UV, IR,
+and X-Ray bands of the astronomical EM spectrum.</p>
+
+
+<hr>
+
+<center><a href="im/WHT-sunset1-NSzymanek.jpg"><img src="im/WHT-sunset1-NSzymanek-smex.jpg" width=60% vspace=10></a>
+<p><small><i>Sunset over the William Herschel Telescope (La Palma,
+Spain; N. Szymanek)</i></small></center>
+
+<!--  -------- END OF MAIN TEXT --------  -->
+
+<hr size=2>
+
+Reading for this lecture:</p>
+
+<ul>
+
+Study Guide 14</p>
+
+Bennett textbook Chapter 6</p>
+
+</ul>
+
+Reading for next lecture:</p>
+
+<ul>
+
+<!-- 5th edition  assignment included pp 215-216 of Bennett; must
+check current location of that material -->
+
+Bennett textbook: pp. 203-204;  Secs. 9.3, 9.5.  </p>
+
+Study Guide 15</p>
+
+</ul>
+
+<hr size=2>
+
+
+Web Links:
+
+<ul>
+
+<!-- March 07: of the 8 following links, **5** had changed since
+2004 (or had ceased to be updated). --> 
+
+<!--
+<a href="http://www.pbs.org/soptv/400years/">PBS Documentary: "400 Years
+of the Telescope"</a></p>  -->
+
+<a href="https://www.amazon.com/Years-Telescope-Neil-deGrasse-Tyson/dp/B001UW59JY">PBS Documentary: "400 Years of the Telescope"</a></p>
+
+<!-- 
+<a href="http://galileo.rice.edu/sci/instruments/telescope.html">
+Early history of telescopes, with references.</a><br>
+-->
+
+<a href="https://en.wikipedia.org/wiki/History_of_the_telescope">
+History of the telescope</a><br>
+
+<a href="http://www.astronomynotes.com/telescop/s1.htm">
+More detailed notes on telescopes (Nick Strobel).</a><br>
+
+<a
+href="https://rwoconne.github.io/rwoclass/astr1230/7.1-modern-astronomy.html">
+More on telescopes and modern observational astronomy (ASTR
+1230)</a></p>
+
+<a href="http://www.stsci.edu/hst/">Hubble Space Telescope</a> <br>
+
+<ul>
+
+<a href="http://hubblesite.org/gallery/">
+HST Image Gallery</a><br>
+
+</ul>
+
+<a href="http://www.lbto.org/">Large Binocular
+Telescope</a><br>
+
+<a href="http://www.keckobservatory.org/">
+Keck Observatory</a> <br>
+
+<a href="http://www.eso.org/paranal/">
+ESO Very Large Telescope (VLT)</a></p>
+
+<a href="http://www.nrao.edu/">National Radio Astronomy
+Observatory, Charlottesville</a></p>
+
+
+<a href="https://rwoconne.github.io/rwoclass/astr1230/imaging.html">More
+on detectors and astronomical color imaging (ASTR 1230)</a></p>
+
+<a
+href="https://rwoconne.github.io/rwoclass/astr511/lec11-f03.html">Technical
+introduction to CCDs in astronomy (ASTR 5110)</a></p>
+
+<a href="https://rwoconne.github.io/rwoclass/astr511/UV-astron-f03.html">
+Introduction to space astronomy (ASTR 5110)</a></p>
+
+</ul>
+</ul>
+
+<p><br></p>
+
+
+<!--- REDIRECT BOX -->
+
+<hr size=2>
+<center>
+<Table width="75%">
+<tr>
+<td>
+<b><a href="guide13.html">
+<img src="im/left-yel-arrw01d.gif">
+Previous Guide</a></b> 
+</td>
+
+<td>
+<b><a href="guideindex.html">
+<img src="im/bent-yel-arrw01a.gif">
+Guide Index</a></b> 
+</td>
+
+<td>
+<b><a href="guide15.html">
+<img src="im/right-yel-arrw01e.gif">
+Next Guide </a></b> 
+</td>
+</tr>
+</table>
+<hr size=2>
+
+<!-- END REDIRECT BOX -->
+
+<!-- START FOOTER -->
+
+<center>
+<small><i>Last modified
+    <b>January 2021</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+ </small></p>
+
+<small>Text copyright &copy 1998-2021 Robert W. O'Connell.  All
+rights reserved.  These notes are intended for the private,
+noncommercial use of students enrolled in Astronomy 1210 at the
+University of Virginia. </small></p> </center>
+
+<!-- END FOOTER -->
+
+</div>
+</body>
+</html>
+				  
+
+     <!--   ----------- END OF GUIDE TEMPLATE ---------------   -->
+
