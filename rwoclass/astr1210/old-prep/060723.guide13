@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2024.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2020.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -18,7 +18,7 @@
    3/26/2018; 3/31; 4/1; 4/2; 4/8; 5/2; 7/10; 7/11; 7/15; 1/2/2019; 
    6/13; 6/16; 7/13: define viewport, add keywords; ; 
 
-   GHP-version: 12/3/2020; 12/13; 9/19/2024; 
+   GHP-version: 12/3/2020; 12/13; 
 
   -->
 
@@ -80,7 +80,7 @@ Consequences</a> we described several of the important phenomena
 associated with the Moon that are easily visible without telescopes in
 the sky.  In this Guide, we consider the physical nature of the Moon
 itself and what we have learned about its history.  We also describe
-another phenomenon -- <b>the tides</b> -- familiar to humans since
+another phenomenon -- the tides -- familiar to humans since
 prehistoric times, whose association with the Moon was not explained
 until the work of Issac Newton in the 17th century. </p>
 
@@ -138,10 +138,9 @@ revealed a complex topography, including <b>mountains, craters, "maria,"
 visible because the Moon has no perceptible atmosphere.
 </p>
 
-<li><b>Atmosphere</b>: ~<b>none</b>.  Lunar gravity is too small to
-retain atmospheric gases, so
-these <a href="guide19.html#escape"><b>escape to space</b></a>, except for
-a tiny residual. </p>
+<li><b>Atmosphere</b>: ~<b>none</b>.  Lunar gravity is too small to retain
+atmospheric gases, so these <b>escape to space</b>, except for a 
+tiny residual. </p>
 
 <li> <b>Surface reflectivity</b>: Despite its appearance in our night sky,
 the Moon's surface is actually <b>very dark</b>.  A good comparison of
@@ -154,8 +153,7 @@ powdery fragments from impacts, a few meters deep.
 
 
 <li>For a large selection of <b>maps</b> and other data on the Moon's
-surface, see
-the <a href="https://astrogeology.usgs.gov/search?target=Moon&system=&p=1&accscope=&geoform=&mapprojn=&missikey=&searchBar=Moon"
+surface, see the <a href="http://astrogeology.usgs.gov/SolarSystem/Earth/Moon/"
 >USGS Moon Information Page</a>.</p>
 
 </ul>
@@ -309,7 +307,7 @@ the full image.
 <li> Preserved:  no weathering by rain, wind</p>
 
 <li> <b>Craters</b>: On Earth, we find craters mostly on volcanic
-terrain.  On the Moon, craters are everywhere.  Lunar craters
+mountaintops.  On the Moon, craters are everywhere.  Lunar craters
 were produced by impacts, not volcanic activity.  Scales range from
 millimeters to over 180 miles diameter.  The circular shapes, raised
 rims, and ejecta blankets are typical of impact events. In the
@@ -318,7 +316,7 @@ others. </p>
 
 <li> <b>Maria</b>: Large, roughly round basins; produced by major
 impacts after the lunar surface had solidified, and subsequently filled by
-dense, dark lava welling up from the interior.  Maria exhibit relatively
+dense, dark lava flows from the interior.  Maria exhibit relatively
 few craters. </p>
 
 <li> <b>Mountains</b>: Altitudes to 25,000 feet.  All are related to
@@ -361,15 +359,10 @@ more sophisticated missions, based on
 <a href="im/1960s-rockets-compared-labeled.jpg">successively more capable
 rockets</a> leading to the
 <a href="im/SatV-schematic.jpg"><b>Saturn V</b></a>, the most powerful
-built to that time.  The Saturn V had a payload capacity twice 
-that of the current-day 
+ever built (with a payload capacity 9 times larger than the
+current-day Space-X Falcon 9 and twice that of the 
 <a href="im/falcon-heavy-launch.jpg">
-Falcon Heavy</a>.
-The <a href="https://en.wikipedia.org/wiki/SpaceX_Starship">SpaceX
-Starship</a>, now under development, will be the first to match or
-exceed the Saturn V in lifting power. </p>
-
-
+<b>Falcon Heavy</b></a>).
 Astronaut training, including
 <a href="im/gemini-EVA.jpg">extra-vehicular excursions</a>, took place
 in carefully planned phases of one-, two-, and three-person low Earth
@@ -393,7 +386,7 @@ of the Moon.</p>
 <a href="https://en.wikipedia.org/wiki/Apollo_11"><b>Apollo 11</b></a>
 achieved the <b>first human landing</b> on the Moon on July 20, 1969,
 at
-a <a href="https://science.nasa.gov/resource/apollo-11-landing-site/">
+a <a href="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cc/A_New_Look_at_the_Apollo_11_Landing_Site.ogv/A_New_Look_at_the_Apollo_11_Landing_Site.ogv.480p.webm">
 site</a> in the mare named the "Sea of Tranquility."  Over the next 3
 years, 5 additional Apollo flights explored a variety of lunar terrain
 (see
@@ -421,11 +414,11 @@ and telescopes. </p> -->
 
 After 1976, there were no further spacecraft studies (human or
 robotic) of the Moon until the 1990's.
-NASA's new <a href="https://en.wikipedia.org/wiki/Artemis_program">
-Artemis Program</a>, intended to send humans back to the Moon and
-beyond into deep space, has revived US scientific investigations of
-the Moon, and other nations (including Japan, India, and China) have
-recently begun lunar exploration.
+A <a href="http://www.nasa.gov/mission_pages/exploration/mmb/index.html"
+>new NASA program</a> intended to send humans back into deep space
+revived US scientific investigations of the Moon, and other nations
+(including Japan, India, and China) have recently begun lunar
+exploration.
 <a href="http://www.lpi.usra.edu/lunar/missions/">
 This site</a> provides a complete summary of spacecraft sent to the
 Moon.
@@ -758,7 +751,7 @@ in lecture</a> (pptx)</p>
 
 <a href="moondust.html">Lunar soil samples</a> (O'Connell)</p>
 
-<a href="lunar-motions.html">Motions and Phases
+<a href="lunar-motions.html">Phases
 of the Moon</a> (O'Connell)</p>
 
 <a href="http://www.google.com/moon/">Google Moon</a> (interactive Moon viewing)</p> 
@@ -809,7 +802,7 @@ Gone 4/17;
 the Moon</a> (robot and human missions to the Moon; LPI)<br>
 
 <a href="http://www.apollosaturn.com">The Saturn Moon rockets</a> (the most
-powerful built before 2022)<br>
+powerful ever)<br>
 
 <a href="http://www.astronautix.com/n/n1.html">The (failed) USSR N1 Moon rocket
 program<br>
@@ -817,21 +810,17 @@ program<br>
 <a href="http://nssdc.gsfc.nasa.gov/planetary/">
 Lunar Exploration</a> (history, photos, other data; NASA, NSSDC)<br>
 
-<!-- Gone, for some reason, as of 9/2024!
 <a href="http://astrogeology.usgs.gov/Projects/LunarAtlas/">Apollo Mission Gallery</a>
-(3D images, panoramas, maps; by USGS)<br>  -->
-
-<a href="https://www.flickr.com/photos/projectapolloarchive/">Project
-Apollo Photo Archive</a> (Flickr)<br>
+(3D images, panoramas, maps; by USGS)<br>
 
 <!-- <a href="http://cass.jsc.nasa.gov/expmoon/apollo_landings.html">The
 Apollo Program</a><br>  -->
 
-<a href="https://www.nasa.gov/wp-content/uploads/2023/03/sp-4205.pdf">
-<em>Chariots for Apollo</em></a> (description of Apollo Program spacecraft; NASA)<br>
+<a href="http://www.hq.nasa.gov/office/pao/History/SP-4205/cover.html">
+Chariots for Apollo</a> (description of Apollo Program spacecraft; NASA)<br>
 
-<a href="https://www.hq.nasa.gov/pao/History/SP-362/contents.htm">
-Apollo Over the Moon</a> (photographs from the Apollo mission orbiters)<br>
+<a href="http://www.hq.nasa.gov/office/pao/History/SP-362/contents.htm">
+<em>Apollo Over the Moon</em></a> (photographs from the Apollo mission orbiters)<br>
 
 
 <a href="http://www.apolloarchive.com/apollo_archive.html">The Project Apollo
@@ -849,11 +838,10 @@ recommended books on Apollo program</a></p>
 -->
 
 
-<a href="http://lro.gsfc.nasa.gov/">Lunar Reconnaissance Orbiter Mission</a></p>
+<a href="http://lro.gsfc.nasa.gov/">Lunar Reconnaissance Orbiter Mission</a><br>
 
-<!-- appears defunct -- was a GHW Bush initiative? 
 <a href="http://www.nasa.gov/mission_pages/exploration/mmb/index.html">The
-Moon, Mars, and Beyond Project</a></p>  -->
+Moon, Mars, and Beyond Project</a></p>
 
 <a href="http://www.badastronomy.com/bad/tv/foxapollo.html">Apollo
 Moon Hoax</a>---response from "Bad Astronomy" to the people who have
@@ -955,13 +943,13 @@ Next Guide </a></b>
 
 <center>
 <small><i>Last modified
-    <b>September 2024</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>December 2020</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
 <small>Cratering rate drawing by Barbara Cohen (Univ. of Tennessee) .
 Lunar formation drawing by Toby Smith (Univ. of Washington).  Tide
 diagram &copy 2006 by Encyclopedia Britannica.  Text copyright &copy
-1998-2024 Robert W. O'Connell.  All rights reserved.  These notes are
+1998-2020 Robert W. O'Connell.  All rights reserved.  These notes are
 intended for the private, noncommercial use of students enrolled in
 Astronomy 1210 at the University of Virginia.  </small></p> </center>
 
