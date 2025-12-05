@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2025.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2023.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -26,7 +26,7 @@ GHP version: 11/17/2020; 11/24: test link of large image to uvaCreate;
              12/7: add width-limit; 5/13/2021; 5/16; 3/7/2022; 4/7; 
              9/5; 11/22; 3/02/2023; 6/14: pare down pseudoscience
              section & transfer parts to Guide18; 8/16; 9/6; 10/1; 
-             10/26; 1/21/2024; 11/30/2025; 
+             10/26; 1/21/2024; 
  -->
 
 <html>
@@ -155,8 +155,8 @@ some individual or group.  Rather, they <b>emerged</b> over a period of several
 centuries as the set of analytical techniques that <b>proved most
 successful</b> in the struggle to understand nature. </p>
 
-The usual formalized statement of "<b><i>The</i> Scientific Method</b>"
-(Hypothesis ===> Prediction ===> Experiment ===> Interpretation
+The usual formalized statement of "<b><i>The</i></b> Scientific Method"
+(e.g. Hypothesis ===> Prediction ===> Experiment ===> Interpretation
 ===> Repeat) is misleading: </p>
 
 <ul>
@@ -188,16 +188,7 @@ degree.  They are regarded as <b>approximations</b> to the truth,
   subject to revision as new evidence emerges.  They <b>systematically
 improve</b> with time, by discarding older, less successful
 interpretations.</p>
-
-On the other hand, scientific conclusions have a much larger
-edifice of validated evidence behind them than alternatives based on
-non-scientific standards of truth (e.g. personal experience or 
-popular anecdotes).  </p>
-
 </ul>
-
-
-
 
 <h3>Science and "Common Sense"</h3>
 
@@ -218,10 +209,9 @@ The <b>subjects and conclusions</b> of science, however, often
 that we intuitively develop in our everyday lives.  The familiar
 structures that surround us (e.g. trees, rivers, mountains) are
 utterly different from those that characterize spatial scales only a
-couple of orders of magnitude (i.e. a couple of factors of ten)
-removed, either larger or smaller.  And nature comprises an almost
-unimaginable range of physical scales, as illustrated at the
-right.</p>
+couple of orders of magnitude removed, either larger or smaller.  And
+nature comprises an almost unimaginable range of physical scales, as
+illustrated at the right.</p>
 
 Humans directly experience only a <b>minuscule range</b> of the
 distances, timescales, masses, densities, velocities, and energy
@@ -236,7 +226,7 @@ painstaking observations, experiments, and measurements.</p>
 
 <ul>  One of the difficulties in
 communicating science to others is leading the audience to
-appreciate this <b>real but invisible landscape</b>.</p>
+appreciate this real but invisible landscape.</p>
 </ul>
 
 
@@ -261,7 +251,7 @@ measurement affects the reliability of scientific inferences,
 especially since these often depend on combining measurements of
 dozens of different quantities, each with its own limitations.  But
 even where complicated mathematics is not required, the rules of
-logic, as elaborated by mathematics, are still essential to science.</p>
+logic, as elaborated by mathematics, are still essential.</p>
 
 It is actually surprising that mathematics, developed for the most
 part in the abstract, is capable of describing the real, empirical
@@ -271,18 +261,13 @@ effectiveness" of mathematics has been the subject of
 
 The symbiosis between science and mathematics is evident even in the
 historical context.  The first society to develop a scientific outlook
-was <a href="guide06.html">ancient Greece</a> (ca. 300 BC), whose
-thinkers were simultaneously laying the foundations of mathematics.
-And
-<a href="guide07.html">Galileo</a>, the Italian scientist 
+was <a href="guide06.html">ancient Greece</a>, whose thinkers were
+simultaneously laying the foundations of mathematics.  And 
+<a href="guide07.html">Galileo</a>,
 whose 17th century experiments were the breakthrough that ignited
-modern physics, believed that without mathematics <font color="green">"we are wandering in
-vain through a dark labyrinth"</font> --- i.e. that the clarifying insights
+modern physics, believed that without mathematics "we are wandering in
+vain through a dark labyrinth" --- i.e. that the clarifying insights
 of mathematics are essential to understanding the universe.</p>
-
-And, needless to say, the algorithms behind all the computerized
-applications that seem to run our world today are mathematical.
-"Artificial Intelligence" is applied mathematics on a grand scale.</p>
 
 </ul>
 
@@ -333,8 +318,8 @@ largely unintelligible world.  </p>
 </ul>
 
 When revelation was the dominant means of trying to understand the
-world there might have been as many <b>different interpretations</b>
-of a given phenomenon as there were religious traditions.  By applying
+world there might have been as many different interpretations of a
+given phenomenon as there were religious traditions.  By applying
 empirical tests, science replaced this confusion with a <b>unified,
 pan-cultural</b> vision of the universe.</p>
 
@@ -422,7 +407,7 @@ Advocates of pseudo-scientific investigations apply <b>some, but not
 all, of the established methods of science</b>.  These <b>fall
 short</b> of the basic criteria listed above in important ways.  They
 always involve a <b>lack of adequate evidence</b> and frequently
-<b>contradict validated principles of science</b>.  But they have credibility
+contradict validated principles of science.  But they have credibility
 for many people because they <b>resemble science</b>, and this opens a
 large arena for human folly.  </p>
 
@@ -495,8 +480,6 @@ based on erroneous psychotherapy (e.g.
 
 </ul> </ul> 
 
-   --- END OF MATERIAL MOVED TO GUIDE 18 --- 
-
 -->
 
 </ul>
@@ -542,24 +525,24 @@ Don't confuse healthy scientific skepticism with the <b>activist
 dispute the scientific consensus on evolution, global warming,
 vaccination against disease, tobacco-induced illness, and other
 politically or religiously sensitive subjects.  These advocacy groups
-mostly do not care about the quality of the evidence or hold their
-judgement in suspension -- rather they have a <b>committed belief in a
-contrary view or a financial stake in opposing the consensus</b>.
-This kind of <b>agenda-driven</b> "skepticism" is now sometimes called
+mostly do not care about the evidence or hold their judgement in
+suspension -- rather they have a <b>committed belief in a contrary
+view or a financial stake in opposing the consensus</b>.  This kind
+of <b>agenda-driven</b> "skepticism" is now sometimes called
 <a href="https://en.wikipedia.org/wiki/Denialism"><b>denialism</b></a>. </p>
 
 </ul>
 
 Skepticism based on facts is <b>not</b> an established element in many
-other modes of human thinking.  In fact, <b>most people
-are uncomfortable with skepticism</b> and instead see virtue in
+other modes of human thinking.  In fact, most people
+are <b>uncomfortable</b> with skepticism and instead see virtue in
 conviction, certainty, and strong beliefs.</p>
 
 <ul>
 
 As <a href="http://www.mcmaster.ca/russdocs/russell.htm">Bertrand
-Russell</a> remarked, and as we can see daily in news reports
-(especially about politics), this may be the
+Russell</a> remarked, and as we can see daily in news reports, this
+may be the
 <font color=#007700><em> "fundamental cause of trouble in the world
 today</em>."</font> </p>
 
@@ -684,7 +667,7 @@ underlying principles would have sounded absurd to them.</p>
 
 <li> The Earth is a <b>planet</b><br>
 
-<li> Genetic information is transmitted to new generations by <b>DNA molecules</b><br>
+<li> Genetic information is transmitted by <b>DNA molecules</b><br>
 
 <li> Most communicable diseases are caused by <b>microorganisms</b><br>
 
@@ -699,7 +682,7 @@ underlying principles would have sounded absurd to them.</p>
 
 <ul>
 
-<b>Very few</b> of the important results of science had recognizable
+Very <b>few</b> of the important results of science had recognizable
 precedents in modes of thought prior to 1500 AD. </p>
 
 <!-- As one important example, The Bible is almost devoid of valid scientific
@@ -771,8 +754,8 @@ characteristics.  And in the absence of hard statistics, investigators
 are sometimes swayed by random variations in ambiguous data sets that
 seem to confirm their hypotheses and are reluctant to publish studies
 that contradict those.  You shouldn't judge the reliability of basic
-scientific conclusions by the <b>muddled impression emerging from
-popular media</b>.
+scientific conclusions by the <b>muddled impression</b> emerging from
+the popular press.
 </p>
 
 </ul>
@@ -794,10 +777,10 @@ world.  </p>
 
 Keep this success in mind when evaluating debates over scientific
 results in the public arena.  The same analytic procedures and
-standards of evidence that produced the technologies we absolutely
-depend on in our daily lives are behind the scientific consensus in
-areas like biological evolution, the value of vaccines, or global
-warming that are disputed by activist groups. </p>
+standards of evidence that produced the technologies we depend on in
+our daily lives are behind the scientific consensus in areas like
+biological evolution, the value of vaccines, or global warming that
+are disputed by activist groups. </p>
 
 </ul>
 </ul>
@@ -821,9 +804,9 @@ Western democracy.  </p>
 
 Science provides a <b>demonstrably reliable and powerful
 understanding</b> of the physical and biological world.  Over the past two
-centuries it has transformed human societies.  <b>It is now the basis of
+centuries it has transformed human societies.  It is now the basis of
 most of our technology, our wealth, and our collective and individual
-well-being.</b>  The impact of science on our society is discussed further
+well-being.  The impact of science on our society is discussed further
 in <a href="guide09.html">Study Guide 9</a>.</p>
 
 </ul>
@@ -1181,10 +1164,10 @@ Next Guide </a></b>
 <center>
 
 <small><i>Last modified
-    <b>November 2025</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>October 2023</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
-<small>Text copyright &copy 1998-2025 Robert W. O'Connell.  All
+<small>Text copyright &copy 1998-2023 Robert W. O'Connell.  All
 rights reserved.  Twilight image of Moon and Venus over Mt. Shasta by
 Jane English.  These notes are intended for
 the private, noncommercial use of students enrolled in Astronomy 1210

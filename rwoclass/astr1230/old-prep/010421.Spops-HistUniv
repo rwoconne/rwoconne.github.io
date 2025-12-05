@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 2003-2025.  All rights reserved to author. -->
+<!-- All contents copyright (C) 2003-2020.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
 <!-- -->
@@ -10,7 +10,7 @@
     text & images);  9/14/2015: new domain;  
    
     GHP version: 12/21/2020: change to A1210 format;  12/22: begin major
-    revision;  12/24; 12/28; 12/31; 1/04/2021; 10/15/2025; 
+    revision;  12/24; 12/28; 12/31; 1/04/2021; 
 
   -->
 
@@ -25,7 +25,7 @@
 <meta name="keywords" content="">
 
 <style>
-     div.all {  max-width: 960px;}
+     div.all {  max-width: 900px;}
  </style>
 
 </head>
@@ -61,8 +61,7 @@ galaxy</p>
 
 
 <ul> ...but this is limited only to <b>nearby galaxies</b> where we
-can detect individual stars.  At larger distances, individual stars
-are too faint and too confused with neighbors to be studied.</p>
+can detect individual stars.</p>
 </ul>
 
 <li> By studying the <b><em>integrated light</em></b> (the combined
@@ -145,11 +144,11 @@ src="im/BB-3-temps-visible-sm.jpg" width=85%></a></td>
 
 <h2>C.  THE EVOLUTION OF STARS  </h2>
 
-Stars are formed <b>continuously</b> in some galaxies and mainly
+Stars are formed <b>continuously</b> in some galaxies, and mainly
 in <b>bursts</b> in others.  In our galaxy the <b>star formation
-rate</b> (the total mass of gas converted into stars per year) is now
-about 1 solar mass per year.  On the other hand, some starbursts can
-reach over 1000 solar masses per year. </p>
+rate</b> (the total mass of gas converted into stars per year)
+is about 1 solar mass per year.  On the other hand, some
+starbursts can reach over 1000 solar masses per year. </p>
 
 The combined light output of a stellar generation depends on the
 <b>temperature distribution</b> of its stars and how that changes with
@@ -160,9 +159,9 @@ analyzing the temperature distributions of evolving stellar systems.</p>
 
 <ul>
 
-<li> In the HR diagram, we plot the <b>temperature</b> (increasing
-to the <b>left</b>) against the instrinsic brightness or
-<b>luminosity</b> (increasing upward) of individual stars.</p>
+<li> In the HR diagram, we plot stellar <b>temperature</b> (increasing
+to the <b>left</b>) against instrinsic stellar brightness or
+<b>luminosity</b> (increasing upward).</p>
 
 
 <li> Most stars fall on the <em>main sequence</em> (MS), which runs
@@ -292,10 +291,10 @@ shows the pink HII regions strung out along the spiral arms.</p>
 
 <li> The sharp dips evident in the integrated SEDs are produced by
 absorption by 
-<a href="https://rwoconne.github.io/rwoclass/astr1210/121supps1-2.html#spectroscopy"><b>individual
-chemical species</b></a> -- e.g. atomic hydrogen, calcium, sodium and
-iron or molecules like CN and TiO.  The abundances of these species
-can be determined from the integrated SED.  </p>
+<a href="https://rwoconne.github.io/astr1210/121supps2-3.html#spectroscopy"><b>individual
+chemical species</b></a> -- e.g. atomic hydrogen, calcium, sodium and iron
+or molecules like CN and TiO.  The abundances of these species can be
+determined from the integrated SED.  </p>
 
 </ul>
 
@@ -339,7 +338,7 @@ Before that could be done, it was necessary to correct the SEDs
 for the effects of the <b>redshift</b> caused by the expansion of
 the universe.  The more distant a galaxy is, the faster it is
 moving away from us.  Because of the 
-<a href="https://rwoconne.github.io/rwoclass/astr1210/121supps1-2.html#doppleranim">
+<a href="https://rwoconne.github.io/rwoclass/astr1210/121supps2-3html#doppleranim">
 <b>Doppler Effect</b></a> on the spectrum of receding objects, the SED
 of a distant galaxy is shifted to longer (redder) wavelengths.  The
 amount of the shift, and hence the distance of the galaxy, can be
@@ -349,8 +348,8 @@ for the shift.</p>
 Since 1996 many studies have been made of distant galaxies, using a
 combination of data from the HST, other space telescopes, and
 ground-based telescopes.  We now have an solid understanding of the
-gross star formation history of the universe going back over 12
-billion years.  That's displayed in the diagram below:</p>
+gross star formation history of the universe.  That's displayed in the
+diagram below:</p>
 
 <center>
 <a href="im/cosmic-SFRD-z0-8-madau-rev14-fig9-label.jpg">
@@ -373,10 +372,7 @@ occurred at a redshift near 2 or at an <b>epoch 10 billion years ago</b>.
 Star formation has dropped smoothly, by a factor of 10, since that
 time.  The earlier history is still sketchy because of the difficulty
 of detecting galaxies at redshifts above 4, but it's clear the SFR
-density was falling off above that point.  Recent observations with the 
-<a href="https://www.jwst.nasa.gov/">James Webb Space Telescope</a> are
-rapidly filling in this part of the diagram.
-</p>
+density was falling off above that point.</p>
 
 According to our best estimate, the universe is 13.7 billion years
 old, so the peak in the SFR density (sometimes called <b>"cosmic
@@ -391,7 +387,7 @@ then.  </p>
 It's amazing to realize that we have gone from not knowing that
 galaxies existed to being able to detect the first ones being
 formed --- probing distances of over 12 billion light years --- in
-only 100 years.</p>
+only 80 years.</p>
 
 
 
@@ -514,10 +510,10 @@ on the Hubble Deep Fields </a><br>
 
 <center>
 <small><i>Last modified
-    October 2025 by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    December 2020 by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
-<small>Text copyright &copy 2003-2025 Robert W. O'Connell.  All
+<small>Text copyright &copy 2003-2020 Robert W. O'Connell.  All
 rights reserved.  HR diagram animation copyright &copy by James
 Schombert (U. Oregon).  Integrated SED animation copyright &copy by
 Chris Mihos (Case Western University).  Cosmic SFR history from Piero

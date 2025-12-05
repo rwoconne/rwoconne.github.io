@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2025.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -13,8 +13,7 @@ WoW, UFO, Outer Plan.)  Converted to HTML:  3/23; 3/24; 3/25; 3/29;
 10/28; 11/5;  4/1/2014; 8/3; 9/11/2015: new domain; 6/20/2016; 
 2/4/2017; 4/29;  
 
-GHP version:  12/14/2020; 2/19/2021; 6/7/2023; 9/2/2025; 12/3: update
-  Perseverance; 12/4; 
+GHP version:  12/14/2020; 2/19/2021; 
 
  -->
 
@@ -270,17 +269,15 @@ struts.</p>
 
 <ul>
 
-<li>The MSL
-rover <a href="https://science.nasa.gov/mission/msl-curiosity/">Curiosity</a>,
-which successfully landed in August 2012, is a one-ton roving
-laboratory, the <b>most elaborate experiment</b> sent to Mars by that
-time.  Getting it safely to ground involved
+<li>The MSL rover Curiosity, which successfully landed in August 2012,
+is a one-ton roving laboratory, the <b>most elaborate experiment</b>
+sent to Mars by that time.  Getting it safely to ground involved
 a <a href="im/curiosity-landing-sequence.jpg">complex set of equipment
 and maneuvers</a>.</p>
 
 <li> Curiosity carries the most elaborate set
 of <a href="im/curiosity-instruments-labeled-2.jpg">diagnostic
-equipment</a> yet sent to Mars before 2021 to study the geology and
+equipment</a> yet sent to Mars to study the geology and
 environment.  </p>
 
 <li>Curiosity landed in Gale Crater and will study the <b>sedimentary
@@ -295,7 +292,7 @@ weathering by winds, which left a sedimentary mountain 18,000 feet
 high in its center.</p>
 </ul>
 
-<li> In its early explorations, Curiosity used a drill to remove
+<li> In its early explorations, Curiosity has used a drill to remove
 samples from inside a Martian rock lying in a ancient stream bed.
 Analysis with its on-board laboratory detected the presence of
 clays, sulfates, and other materials favorable to primitive lifeforms.
@@ -304,64 +301,16 @@ is substantial.  Curiosity has ruled out a significant component
 of methane (CH<sub>4</sub>) in the Martian atmosphere, which
 would be expected if certain types of bacteria thrived in the soil. </p>
 
-</ul>
-
-
-<!--  ***MODS NEEDED NEXT*** Make a new section.  Transfer text from
-guide 16 to here and move this text to guide16.  Update text for
-accomplishments...include Helicopter. Done.</p> 
-
 <li> The <a href="https://mars.nasa.gov/mars2020/">Mars Perseverance
 Mission</a>, a yet more ambitious rover vehicle in the style of
 Curiosity, made a successful landing in Jezero Crater on Mars on
 February 18, 2021 and is beginning its survey of sediments looking
-for biological markers. </p>  -->
+for biological markers. </p>
 
-
-
-<h2>K.  Mars 2020: Perseverance Rover and Ingenuity Helicopter (2021)</h2>
-
-<ul>
-
-<li> The <a href="https://mars.nasa.gov/mars2020/">Mars 2020
-Mission</a> made a successful landing in Jezero Crater, near the
-equator, on Mars on February 18, 2021.  The most ambitious rover
-mission yet, Perseverence is nuclear-powered for a longer lifetime and
-is intended to search for evidence of (microbial) life on Mars.  It is
-exploring the sediments on the bed of an ancient lake that filled the
-crater and might have been life-bearing in the first billion years or
-so after Mars formed.  </p>
-
-<li> By 2025, the Perseverance rover had driven a total of over 24
-miles across the Martian
-surface.  <a href="https://www.youtube.com/watch?v=sCgwxizcpo0">Here</a>
-is a high resolution video panorama of the area surrounding the rover
-after about 16 months of exploration.  It includes a view of the
-extended "delta" region at the end of an ancient river that flowed
-into the crater.</p>
-
-<li> As it traverses the crater floor, Perserverance regularly stores
-samples, most drilled from rocks, for later return to Earth by the
-planned <a href="https://en.wikipedia.org/wiki/Mars_sample-return_mission">Mars
-Sample Return Mission</a>.  Over 30 sample tubes have been filled so far. </p>
-
-<li> Perseverance also carried the first aircraft ever taken to
-another planet, the mini-helicopter Ingenuity.  Intended as an
-experiment, it had to be specially designed to fly in the very thin
-Martian atmosphere.  However, it was a great success, flying
-autonomously over 70 times and serving as a pathfinder for the
-rover.</p>
 
 </ul>
 
-<center>
-<a href="im/perseverance-and-ingenuity-on-surface.jpg"><img src="im/perseverance-and-ingenuity-on-surface-sm.png"
-vspace=10 width=60%></a>
-<p><small><em>Perseverance and helicopter Ingenuity on Mars</em></small>
-</center>
-
-
-<h2>L. "SNC" Meteorites: an unexpected window on Mars</h2>
+<h2>K. "SNC" Meteorites: an unexpected window on Mars</h2>
 
 <ul>
 
@@ -400,7 +349,7 @@ evidence for massive water flows in the past on Mars.  </p>
 <a href="im/rite-tubules.gif" ><img src="im/rite-tubules-ex.jpg" 
 align="right" hspace=10 vspace=10 width=16%></a>
 
-<h2>M. Microscopic Life on Mars??</h2>
+<h2>L. Microscopic Life on Mars??</h2>
 
 <ul>
 
@@ -436,7 +385,7 @@ discussing various sides of the debate.  </p>
 
 <p><br></p>
 
-<h2>N. Martian Satellites</h2>
+<h2>M. Martian Satellites</h2>
 
 <ul>
 
@@ -452,7 +401,7 @@ are compared <a href="im/phobos-deimos-compared.jpg">here</a>.</p>
 
 <p><br></p>
 
-<h2>O. Expeditions to Mars</h2>
+<h2>N. Expeditions to Mars</h2>
 
 <ul>
 
@@ -545,31 +494,26 @@ Study Guide 18</p>
 
 <ul>
 
-<!--  By 2025, all references to NASA nssdc sites have vanished without
-      forwarding links.  Overall, the evanescence of links on this subject
-      is shameful.   -->
-
 <a href="guide16.html"> Study Guide 16 (Mars I, including general links)</a></p>
 
-<a href="marsImages.html">Selected Mars Images and Evidence for Water
-(O'Connell)</a></p>
+<a href="marsImages.html">Selected Mars Images (O'Connell)</a></p> 
 
-<a href="https://science.nasa.gov/mission/viking/">Viking Mission</a></p>
+<a href="http://nssdc.gsfc.nasa.gov/planetary/viking.html">Viking Mission</a></p>
 
 <ul>
 <a href="https://www.washingtonpost.com/national/health-science/nasas-1976-viking-mission-to-mars-did-everything-right--except-find-martians/2016/06/18/749701f6-2c15-11e6-9b37-42985f6a265c_story.html">A 40-year perspective on the Viking landers</a> (Joel Achenbach, June 2016)</p>
 </ul>
 
 
-<a href="https://science.nasa.gov/mission/mars-pathfinder/">Pathfinder Mission</a><br>
+<a href="http://nssdc.gsfc.nasa.gov/planetary/mesur.html">Pathfinder Mission</a><br>
 <a href="http://marsrovers.jpl.nasa.gov/home/index.html">Mars
 Exploration Rover Mission</a><br>
-<a href="https://science.nasa.gov/mission/mars-phoenix/">Phoenix Mars Mission</a>
+<a href="http://phoenix.lpl.arizona.edu/index.php">Phoenix Mars Mission</a>
 </p>
 
 
-<a href="http://mars.jpl.nasa.gov/msl/">Mars Science Laboratory/Curiosity Rover Mission</a>
-</p>
+<a href="http://mars.jpl.nasa.gov/msl/">Mars Science Laboratory/Curiosity</a>
+Latest rover mission on Mars</p>
 
 <ul>
 
@@ -578,14 +522,9 @@ showing risky landing sequence of Curiosity, successfully executed in August 201
 
 </ul>
 
-<a href="https://science.nasa.gov/mission/msl-curiosity">Mars 2020
-Mission</a> with the Perseverence rover and the Ingenuity helicopter</p>
 
-<!-- Gone 12/2025
 <a href="http://astro.uchicago.edu/cosmus/projects/marsstereo/">3-D Images
 of the Martian Surface from Lander Missions</a></p>
--->
-
 
 <!-- Nov07: Changed site! <a href="http://www-curator.jsc.nasa.gov/curator/antmet/marsmets/Text.htm">Meteorites
 from Mars</a> (NASA/JSC) -->
@@ -600,15 +539,9 @@ on Mars" site</a><br>    -->
 <!-- Changed site! <a
 href="http://cass.jsc.nasa.gov/lpi/meteorites/mars_meteorite.html"> -->
 
-<!-- GONE 12/2025
+
 <a href="http://www.imca.cc/mars/martian-meteorites.htm">SNC Meteorites, Overview</a> (Tony Irving)<br>
 <a href="http://www.jpl.nasa.gov/snc">SNC Meteorites Links Page</a> (JPL)<br>
--->
-
-
-<a href="https://www.nhm.ac.uk/discover/martian-meteorites-rare-visitors-from-the-red-planet.html">Martian
-(SNC) Meteorites, Overview</a> (UK Natural History Museum)<br>
-
 <a href="http://scienceworld.wolfram.com/astronomy/SNCMeteorites.html">SNC
 Meteorite Analysis</a> (Eric Weisstein)<br>
 <a href="http://www.lpi.usra.edu/lpi/meteorites/mars_meteorite.html">Critical
@@ -622,7 +555,7 @@ Links to Sites Discussing Mars Colonies & Terraforming</a></p>
 <a href="http://www.redcolony.com/">Red Colony</a>, one
 of many websites devoted to space colonization<br>
 
-<a href="https://marspedia.org/Mars_Homestead_Project">The Mars Homestead Project</a>, another
+<a href="http://marshome.org/">The Mars Homestead</a>, another
 colonization site.<br>
 
 <a href="http://en.wikipedia.org/wiki/Terraforming">Discussion of Terraforming</a>
@@ -674,10 +607,10 @@ Next Guide </a></b>
 
 <center>
 <small><i>Last modified
-    <b>December 2025</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>February 2021</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
-<small>Text copyright &copy 1998-2025 Robert W. O'Connell.  All
+<small>Text copyright &copy 1998-2021 Robert W. O'Connell.  All
 rights reserved.  These notes are intended for the private,
 noncommercial use of students enrolled in Astronomy 1210 at the
 University of Virginia. </small></p> </center>

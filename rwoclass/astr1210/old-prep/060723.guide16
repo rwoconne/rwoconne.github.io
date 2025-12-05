@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2025.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -17,8 +17,7 @@ content mods. 7/26; 10/31; 11/3; 3/26/2013; 4/19; 5/5; 10/28; 11/5; 11/6;
 11/6; 11/13;  6/17/2019;  12/16: def. viewport; 3/21/2020; 8/16; 
 
 GHP version: 12/14/2020; 2/19/2021: updated to match 8/16/20 version,
-which had been skipped, add Perseverence; 3/10; 12/3/2025: revise
-Perseverence entry; 12/4; 
+which had been skipped, add Perseverence; 3/10; 
 
     -->
 
@@ -30,8 +29,7 @@ Perseverence entry; 12/4;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="keywords" content="Mars, Percival Lowell, canals, canals on Mars,
-life on Mars, optical illusions, Martian topography, missions to Mars,
-water on Mars">
+optical illusions, Martian topography, missions to Mars, water on Mars">
 
 <style>
      div.all {  max-width: 960px;}
@@ -66,9 +64,7 @@ Mars is the most intriguing planet.  From Earth, it exhibits the
 <b>largest brightness variations</b> of any planet and has the <b>most
 distinctive color</b> (red/pink).  Telescopes have revealed it to be
 the <b>most Earth-like planet</b>, with a transparent atmosphere,
-varied terrain, polar caps, and seasonal changes.  Mars is the
-outermost terrestrial planet, but it is very unlike Venus or
-Mercury.  </p>
+varied terrain, polar caps, and seasonal changes.</p>
 
 Although Mars is smaller than Earth, it has no oceans, so its <b>land
 area is comparable to Earth's</b>.  Space missions have revealed fantastic
@@ -121,10 +117,9 @@ Jupiter.</p>
 <b>Atmosphere</b>: thin.  Mass ~1% Earth's.  Mainly CO<sub>2</sub>;
 some H<sub>2</sub>O vapor.</p>
 
-<b>Surface</b>: The surface of Mars is <b>easily visible</b> since
-CO<sub>2</sub> is transparent.  It has been explored in ever increasing
-detail by Earth-bound telescopes and by spacecraft, including
-orbiters, landers and rovers. </p>
+<b>Surface</b>: easily visible since CO<sub>2</sub> is transparent.  Has been
+explored in ever increasing detail by Earth-bound telescopes and by
+spacecraft, including orbiters, landers and rovers. </p>
  
 <ul>
 
@@ -167,15 +162,15 @@ src="im/mars-hst-295opp-sm.gif" ></a></center>
 <h2>B.  Major Spacecraft Missions to Mars</h2>
 
 
-Mars has been the target of
-over <a href="https://en.wikipedia.org/wiki/List_of_missions_to_Mars">40
-robotic spacecraft missions</a>, many of which, especially the
-USSR's, <b>failed</b> (wow! incompetence or
-<a href="im/x-files-mulder-scully.jpg">conspiracy??</a>).  Five types
-have been undertaken: <b>flybys, orbiters, landers, rovers, and one
-helicopter</b>.  Successful missions have mapped nearly its entire
-surface and have sampled its atmosphere and soil and even subsurface
-layers using special techniques.  </p>
+Mars has been the target of over <a
+href="https://en.wikipedia.org/wiki/List_of_missions_to_Mars">40
+robotic spacecraft missions</a>, many of which, especially the USSR's, failed
+(wow! incompetence or 
+<a href="im/x-files-mulder-scully.jpg">conspiracy??</a>).  Four types
+have been undertaken: <b>flybys, orbiters, landers, rovers</b>.
+Successful missions have mapped nearly its entire surface and have
+sampled its atmosphere and soil and even subsurface layers using
+special techniques.  </p>
 
 Important Earlier Missions:</p>
 
@@ -205,12 +200,6 @@ rovers traveled a combined distance of over 33 miles on Mars' surface.
 2004-2018. </p>
 
 
-<li> <a href="https://mars.nasa.gov/insight/">Mars InSight Mission</a>
-successfully landed on Elysium Planitia in November 2018.  InSight was
-a non-rover mission intended to examine the deep interior of Mars
-using seismometers.  Lost communications with Earth in 2022.</p>
-
-
 </ul>
 
 Current Missions:</p>
@@ -227,7 +216,7 @@ Odyssey:</a> orbiter.  Studying mineralogy, elemental abundances
 <li> <a
 href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=9"
 >Mars Express:</a> first European mission to Mars.  Lander
-failed (2003), orbiter (2004-- ) is studying surface features,
+failed (2003), orbiter (2004-- ) studying surface features,
 mineralogy, atmosphere.  Carries a stereoscopic camera and the MARSIS
 radar instrument for probing subsurface materials.</p>
 
@@ -255,17 +244,10 @@ large, ancient impact crater which contains an interior mountain of
 sedimentary deposits. </p>
 
 
-<!-- Following moved from original version on Guide17 -->
-
-<li> The <a href="https://mars.nasa.gov/mars2020/">Mars 2020
-Mission</a>, which carries a yet more ambitious rover vehicle
-(Perseverance) in the style of Curiosity, made a successful landing
-in Jezero Crater on Mars on February 18, 2021.  It also carried the
-first-ever aircraft sent to another planet, the Ingenuity
-helicopter.  Its goal is to survey the sediments of the crater looking
-for biological markers. </p>
-
-<!-- Paragraph moved to Guide17... 
+<li>  The <a href="https://mars.nasa.gov/insight/">Mars InSight Mission</a>
+successfully landed on Elysium Planitia in November 2018.  InSight is
+a non-rover mission intended to examine the deep interior of Mars
+using seismometers.</p>
 
 <li> The <a href="https://mars.nasa.gov/mars2020/">Mars Perseverance
 Mission</a> made a successful landing in Jezero Crater on Mars on
@@ -275,7 +257,7 @@ exploring the sediments of an ancient lake bed that might have been
 life-bearing in the first billion years or so after Mars formed. 
 It will store soil samples in special containers that can be 
 retrieved and returned to Earth by the next NASA Mars mission.</p>
--->
+
 
 </ul>
 <p><br></p>
@@ -654,35 +636,16 @@ of "Mars And Its Canals" by Percival Lowell</a><br>
 <a href="mars-in-popular-culture.html">Mars in Literature & Film</a> (Catling)</p>
 
 
-<a href="https://www.amazon.com/Martians-Captured-Turn-Century-America/dp/1324090669/ref=sr_\
-1_1?crid=10610WDVPIO0X&dib=eyJ2IjoiMSJ9.bipR6kEb9Mp5eKcDfxYL73rIYnnfALp3dkG4w0zmhTsubjP4iP0n\
-LKmjNQrgGA0Zr3HTskHFhedyI38g1mDYoDTdjNwJ8vKLoYG8bC4O7sQ.A1eLrb_gmzSateUQuitgUerKaJeoPPPl2Ujp\
-qkCqdVI&dib_tag=se&keywords=david+baron+%22the+martians%22&qid=1756870466&sprefix=david+baro\
-n+the+martian%2Caps%2C1289&sr=8-1">
-<em>The Martians: The True Story of an Alien Craze that Captured
-Turn-of-the-Century America
-</em></a>, (David Baron, 2025).  Complete coverage of the remarkable
-legacy of Percival Lowell.</p>
-
-
-
-
 <a href="marsImages.html">Selected Mars Images For ASTR 1210</a> (O'Connell)<br>
 
 <a href="https://www.google.com/maps/space/mars/@0,-95.677068,22963938m/data=!3m1!1e3">3D
 Viewing of Mars on Google Earth</a></p>
 
-<a href="https://en.wikipedia.org/wiki/Exploration_of_Mars"> Overview of
-Spacecraft Exploration of Mars</a> (Wikipedia) </p>
-
-
 <a href="http://www.solarviews.com/eng/mars.htm">Mars Info at Views of the Solar System</a><br>
 <a href="http://www.nineplanets.org/mars.html">Mars Info at The Nine Planets</a><br>
 
 <a href="http://geoinfo.amu.edu.pl/wpk/rst/rst/Sect19/Sect19_10.html">Mars Geology
-</a> (Remote Sensing Tutorial)<br>
-
-<a href="http://marsoweb.nas.nasa.gov/landingsites/index.html">MarsoWeb (NASA)</a></p>
+</a> (Remote Sensing Tutorial)</p>
 
 
 <!--  GONE 6/19 
@@ -692,14 +655,15 @@ Spacecraft Exploration of Mars</a> (Wikipedia) </p>
 3/09.  <a href="http://www-pdsimage.wr.usgs.gov/PDS/public/mapmaker">The
 Mars Explorer Armchair Astronaut</a><br> -->
 
-<!-- GONE 12/25
 <a href="http://astrogeology.usgs.gov/Projects/MarsPDSExplorer/">Mars Map-A-Planet (USGS)</a><br>
 
-[ "Mars Open Directory" changed name 6/19 ]
-<a href="http://www.marsnews.com">MarsNews.com</a><br>  -->
+<!-- "Mars Open Directory" changed name 6/19 -->
+<a href="http://www.marsnews.com">MarsNews.com</a><br>
 
 <!-- GONE!  3/09 
 <a href="http://cmex-www.arc.nasa.gov">Center for Mars Exploration</a><br> -->
+
+<a href="http://marsoweb.nas.nasa.gov/landingsites/index.html">MarsoWeb (NASA)</a><br>
 
 <!-- GONE!  3/09
 <a href="http://www.reston.com/astro/mars/catalog.html">Whole Mars Catalog</a><br> 
@@ -707,8 +671,7 @@ Mars Explorer Armchair Astronaut</a><br> -->
  6/19: Moved & changed name/layout? <a href="http://www.marstoday.com/">Whole
 Mars Catalog</a></p>  -->
 
-<!-- GONE 12/25
-<a href="http://spaceref.com/mars/">Curiousmars</a> (Spaceref.com)</p>  -->
+<a href="http://spaceref.com/mars/">Curiousmars</a> (Spaceref.com)</p>
 
 
 <!-- 
@@ -749,15 +712,12 @@ with links</a><br>  -->
 <a href="http://phoenix.lpl.arizona.edu/">Phoenix Mars Lander<br>
 <a href="http://mars.jpl.nasa.gov/msl/">Mars Science Laboratory/Curiosity</a><br>
 <a href="https://mars.nasa.gov/insight/">Mars InSight Mission</a><br>
-<a href="https://mars.nasa.gov/mars2020/">Mars 2020</a></p>
+<a href="https://mars.nasa.gov/mars2020/">Mars Perseverance</a></p>
 
 
-<!-- AGU website states has been "archived" but no forwarding link given.
 
 <a href="https://blogs.agu.org/martianchronicles/">Martian Chronicles</a> - a blog
 covering ongoing science from Mars missions.</p>
-
--->
 
 <!-- <a href="http://mpfwww.jpl.nasa.gov">Current & Planned Mars Missions</a><br>
   -->
@@ -800,12 +760,12 @@ Next Guide </a></b>
 
 <center>
 <small><i>Last modified
-    <b>December 2025</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>March 2021</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
 <small> "Red Mars" image copyright &copy 1997 by Calvin J. Hamilton.  "Martian
 Chronicles" cover art copyright &copy 1990 Michael Whelan.  Text
-copyright &copy 1998-2025 Robert W.  O'Connell.  All rights reserved.
+copyright &copy 1998-2021 Robert W.  O'Connell.  All rights reserved.
 These notes are intended for the private, noncommercial use of
 students enrolled in Astronomy 1210 at the University of
 Virginia. </small></p>

@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2025.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2024.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -24,7 +24,7 @@ page; 7/2; 7/4; 7/5; 7/7; 7/8: reduce Maya pic column width; 7/23;
 
 GHP version: 11/23/20; 11/25; 12/14; 11/09/22: add intro to astron.
 history; 11/16; 12/15; 12/16; 6/6/2023; 6/20; 8/16; 8/21; 7/6/2024; 
-11/27; 8/3/2025; 8/13; 8/27; 
+
  -->
 
 <html>
@@ -130,7 +130,7 @@ astronomy.</p>
 
 <b>Stonehenge</b>, the striking arrangement of massive stone monoliths
 in southern England from before 1500 BC, encodes astronomical
-knowledge.  But its builders left no written records, so we have no
+knowledge, but its builders left no written records, so we have no
 idea how they acquired that or how they perceived the universe around
 them.</p>
 
@@ -151,17 +151,12 @@ behavior.</p>
 
 <h2>A. Motions of the Planets on the Sky</h2>
 
-What properties of the sky could be studied by ancient cultures
-without access to modern telescopes and other instruments?  The most
-prominent, of course, are the changes in the positions of the Sun and
-Moon as described in <a href="guide04.html">Guide 4</a>.</p>
-
-Another conspicuous feature of the naked-eye sky in the planetarium
-simulations shown in class was the motion of the <b>five bright
-planets</b>.  Although not as fast as the diurnal, solar, and lunar
-motions, the planetary motions are considerably more <b>complex</b>
-and placed greater demands on the abilities of ancient
-astronomers.  </p>
+A conspicuous feature of the naked-eye sky in the planetarium
+simulations shown in <a href="guide04.html">Lecture 4</a> was the
+motion of the <b>five bright planets</b>.   Although not
+as fast as the diurnal, solar, and lunar motions, the planetary
+motions are considerably more <b>complex</b> and placed greater
+demands on the abilities of ancient astronomers.  </p>
 
 <ul>
  [Recall that these
@@ -172,13 +167,12 @@ the <b>background patterns of the stars</b> on the sky.]</p>
 <!--   Disentangling the two types of effects took astronomers a long
 time (roughly from 500 BC to 1500 AD).  </p>  -->
 
-As discussed in <a href="guide04.html">Guide 4</a>, these motions are
-a <b>combination</b> of (a) the effects of observing from a <b>moving
-platform</b> and (b)
+As discussed in Lecture 4, these motions are a <b>combination</b> of
+(a) the effects of observing from a <b>moving platform</b> and (b)
 <b>intrinsic movement</b> of the planets themselves in their orbits
-around the Sun.  We will not try to describe the detailed intrinsic
-motions now but instead will review a <b>few key facts</b> about the
-motions revealed by our Starry Night simulator:</p>
+around the Sun.  We will not try to separate these now but instead
+will simply review a <b>few key facts</b> about the motions revealed by our
+Starry Night simulator:</p>
 
 <ul>
 
@@ -227,16 +221,6 @@ N/S positions are <b>28.5 degrees</b> from the equator.
 5 degrees may sound small, but it is <b>10 times</b> the angular
 diameter of the Moon, so it is easy to distinguish on the sky.
 </p>
-
-<ul>
-
-The <b>phases</b> of the Moon (i.e. the change in its apparent shape
-in the sky) are caused by the fact that we view different fractions of
-its Sun-illuminated half as it moves in its orbit during a month.
-See <a href="lunar-motions.html">Lunar Motions and Their
-Consequences</a>.</p>
-
-</ul>
 
 <li> The orbit of each planet has a <b>different inclination</b> with respect
 to the ecliptic.  A planet's observed N/S extremes are affected both by its
@@ -503,8 +487,8 @@ shows Stonehenge as it might have appeared in the period 2000-1550 BC.</p>
 To put Stonehenge in its historical context, 
 <a href="im/civilization-timeline-2.jpg">here</a> is a timeline
 showing other contemporaneous cultural developments.  The construction
-of Stonehenge started about <b>500 years before the Egyptians began
-building pyramids</b>, but the Stonehenge people never reached the 
+of Stonehenge started about <b>500 years before</b> the Egyptians began
+building pyramids, but the Stonehenge people never reached the 
 level of sophistication of the Egyptians.  </p>
 </ul>
 
@@ -640,11 +624,6 @@ looked ca. 700 AD</i></small>
 
 <h2>E.  Maya Astronomy</h2>
 
-People began migrating from Asia to the Western Hemisphere at least
-20,000 years ago, and they relatively quickly occupied parts of
-both North and South America.  Traces of <a href="https://en.wikipedia.org/wiki/List_of_pre-Columbian_cultures">scores of cultures</a> from the period
-up to 2000 years ago have been discovered by archaeologists.</p>
-
 The Maya were the most advanced ancient astronomers in the Western
 hemisphere.  They represented the pinnacle of a 2000-year
 "Mesoamerican" cultural tradition, preceded by the Olmecs and Zapotecs
@@ -698,7 +677,7 @@ literacy vanished.</p>
 </ul></ul>
 
 Not only did the Maya empire collapse, but most of their fabulous cities
-were abandoned and almost completely forgotten -- becoming crumbled
+were abandoned and almost completely forgotten---becoming crumbled
 mounds swamped by jungle vegetation and known only to local people.  They
 were only rediscovered in the 1840's by American
 explorer <a href="http://en.wikipedia.org/wiki/John_Lloyd_Stephens"
@@ -946,14 +925,14 @@ accomplishments of almost all the Eurasian civilizations at a
 comparable level of development. </p>
 
 It is something of a shock to realize that for all their
-sophistication, the Maya and Aztecs, as well as all the other
-indigeneous groups of the Americas, were literally <b>Stone Age
-people</b>.  They did not make extensive use of metals: for instance,
-they never developed even bronze weaponry, let alone steel.  They did
-not use the wheel for travel, commerce, or the military.  They did not
-have seagoing vessels.  They did not have guns or gunpowder.  They did
-not have horses or draft animals like oxen because those species were
-not present in the Western Hemisphere.</p>
+sophistication, the Maya, as well as all the other indigeneous groups
+of the Americas, were literally <b>Stone Age people</b>.  They did not
+make extensive use of metals: for instance, they never developed even
+bronze weaponry, let alone steel.  They did not use the wheel for
+travel, commerce, or the military.  They did not have seagoing
+vessels.  They did not have guns or gunpowder.  They did not have
+horses or draft animals like oxen because those species were not
+present in the Western Hemisphere.</p>
 
 When Hernan Cortes and his Spanish Conquistadors landed on the eastern
 shore of Mexico in 1519, he was facing a determined, warlike
@@ -1163,6 +1142,7 @@ Introduction to Maya Astronomy</a><br>
 <a href="http://www.hermetic.ch/cal_stud/maya/cont.htm">The Maya Calendar</a>
 (Meyer)<br>
 
+
 <!-- 09/08/15: Chevalier pages not back on public web yet; 
 
 <a href="http://www.astro.virginia.edu/class/chevalier/astr341/maya.html">Brief notes on the
@@ -1184,9 +1164,7 @@ interpretation of the Maya inscriptions for decades.<br>
 <a href="el-caracol.html">El Caracol, A Maya Observatory</a> (O'Connell)</p>
 
 <a href="http://science.sciencemag.org/content/361/6401/498">Evidence
-that a massive drought caused the Maya collapse (2018)</a><br>
-<a href="https://www.youtube.com/watch?v=5ZYb5jPtG9Q&ab_channel=NOVAPBSOfficial">A NOVA documentary</a> updating our understanding of the Maya collapse (2022)</p>
-
+that a massive drought caused the Maya collapse (2018)</a></p>
 
 <a href="azcalImages.html">The Aztec Calendar Stone</a> (O'Connell)</p>
 
@@ -1249,10 +1227,10 @@ Next Guide </a></b>
 
 <center>
 <small><i>Last modified
-    <b>August 2025</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>July 2024</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
-<small>Text copyright &copy 1998-2025 Robert W. O'Connell.  All rights
+<small>Text copyright &copy 1998-2024 Robert W. O'Connell.  All rights
 reserved.  Megalithic and Maya images from various public sources.
 These notes are intended for the private, noncommercial use of
 students enrolled in Astronomy 1210 at the University of

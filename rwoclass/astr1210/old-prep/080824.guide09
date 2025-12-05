@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2025.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2024.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -28,7 +28,7 @@ GHP-version: 11/26/2020; 11/29; 11/30; 12/7: add width limit;
     9/13: replace exp fcn pic; 9/17; 9/19; 11/24; 11/29; 6/20/2023;
     8/16; 8/21: begin add'l adds of elements from the STS essay;
     8/23; 8/25; 8/26; 8/27; 8/28; 8/29; 9/1; 9/6; 10/26; 11/3; 
-    6/16/2024; 7/24; 7/27; 8/7; 10/7/2025; 10/25; 10/30; 
+    6/16/2024; 7/24; 7/27; 8/7; 
  -->
 
 <html>
@@ -172,7 +172,7 @@ in <a href="guide14.html">Study Guide 14</a>.  </p>
 fire, stone tools, cloth, ceramics, metalworking, glass), which were
 developed through trial and error, building on intuition drawn from
 everyday personal and societal experience.  Trial and error certainly
-still figures in technology development, but the essential
+still features in technology development, but the essential
 foundations for experimentation since about 1800 have come from
 science.  </p>  </ul>
 
@@ -232,15 +232,6 @@ applications,  are misguided --- and may even inhibit progress. </p>
 </em>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ---- <small>
 Nathan Myhrvold, Chief Technology Officer, Microsoft Corporation
-</small></b></font></p>
-
-
-<font size="+1" color="green"><b><em>"There are two possible outcomes [of
-an experiment]:
-If the result confirms the hypothesis, then you’ve made a
-discovery. If the result is contrary to the hypothesis, then you’ve
-made a discovery."<br></em>  
-&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; ---- <small> Enrico Fermi, nuclear physicist
 </small></b></font></p>
 
 
@@ -350,24 +341,19 @@ by laborious manual writing and copying and some scattered
 experiments with printed material. However, only the advent of
 <b>mass-produced printed books</b> based
 on <a href="https://en.wikipedia.org/wiki/Johannes_Gutenberg">Gutenberg's</a>
-design of printing presses using metallic movable type (ca. 1440)
-opened the doors to the information revolution.  Within 150 years, an
-amazing 200 million volumes had been printed.</p>
+design of printing presses using movable type (ca. 1440) opened the
+doors to the information revolution.  Within 150 years, an amazing 200
+million volumes had been printed.</p>
 
 Books ushered in the modern age. Science depended on them.
 Universities flourished because the ability to deal with large amounts
-of specialized information in books became essential to society.
+of specialized information in books became essential to society.  
 Beginning in the mid 19th century, information transfer proliferated
 thanks to the automated rotary press and inventions like the telephone
-and the linotype machine.  In the last 30 years, the Internet and
-other electronic technologies have accelerated the spread and creation
-of information.  Their societal impact has not yet matched the
-monumental watershed established by the printed book, but the related
-looming prospect of
-<a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence">
-artificial general intelligence</a> would do so.  </p>
-
-
+and the linotype machine.  In the last quarter century, the Internet
+and other electronic technologies have accelerated the spread and
+creation of information, but their societal impact has not yet matched
+the monumental watershed established by the printed book.
 </ul>
 
 
@@ -747,7 +733,7 @@ rarely occurred in a period shorter than a human life.</p>
 is <a href="im/market-growth-time-5-examples.jpg "><b>much
 faster</b></a> and therefore more obvious.  The best recent example:
 <a href="https://en.wikipedia.org/wiki/Smartphone"><b>smartphones</b></a>,
-introduced less than 20 years ago, have already dramatically changed the
+introduced only 15 years ago, have already dramatically changed the
 daily behaviour of billions of people.  </p>
 
 <li> It is hard to visualize  <b>how rapidly modern technology has
@@ -827,7 +813,7 @@ dystopian fiction.  Some examples: </p>
 </ul>
 
 <center>
-<img src="im/4-panel-tech-threats-v2.jpg" alt="mosaic of scifi frames" vspace=15 hspace=15 width=60%>
+<img src="im/4-panel-tech-threats-v2.jpg" vspace=15 hspace=15 width=60%>
 </center>
 
 
@@ -877,7 +863,7 @@ introduction of antibiotics to animal feed and by massive applications
 of pesticides and herbicides.  </p>
 
 <li> An important unintended technological threat, one which played a
-central role in recent presidential elections but which was
+central role in the 2016 presidential election but which was
 unrecognized by most voters, is the
 widening <a href="https://en.wikipedia.org/wiki/Technological_unemployment"><b>displacement
 of human labor by machines and computers</b></a>.  Although these
@@ -943,12 +929,12 @@ modern societies. </p>
 than the clearly emerging negative social and political consequences
 of wildly popular
 <a href="https://www.amazon.com/Antisocial-Media-Disconnects-Undermines-Democracy/dp/0190841168"><b>social
-media Internet sites</b></a>, which provide huge audiences for
+media</b></a> Internet sites, which provide huge audiences for
 unfiltered human expression.  The vast anonymous user base on social
 media is a font of the most irresponsible behavior imaginable.  On the
 other hand, it's a terrific psychological experiment in cataloging the
-depths of human stupidity and depravity.  The digital environment today,
-especially in conjunction with artificial intelligence, bears some
+depths of human stupidity and depravity.  The Internet today bears
+some
 <a href="return-of-the-krell-machine-SHarris-02.pdf">
 unpleasant similarities</a> to the fictional
 <a href="im/forbidden-krell-cavern-7.jpg">
@@ -960,12 +946,12 @@ in the 1956 movie
 
 </ul></ul>
 
-These are all examples of recognized technological problems.  But the
-hazards of technology and our ability to control them are often <b>not
-objectively assessed</b>.  There are many cases
+These are all examples of appropriately recognized technological
+problems.  But the hazards of technology and our ability to control
+them are often <b>not objectively assessed</b>.  There are many cases
 where <b>overreactions</b> by the media, the government, or activist
 groups needlessly alarmed the public -- for example: asbestos, Alar,
-power transmission lines or WiFi, breast implants, and infant vaccinations.
+power transmission lines, breast implants, or infant vaccinations.
 Public concern in such areas was out of proportion to the actual
 danger.  It became counterproductive and diverted attention from more
 serious problems. </p>
@@ -1239,10 +1225,6 @@ on the:
 <a href="https://www.census.gov/popclock/"> US Census
 Bureau POPClock</a>.</p>
 
-<!-- Alt site from 10/2025: https://www.worldometers.info/world-population/
-  -- this has the "popup" as opposed to the "speedometer rollover" style
-      of the Census Bureau site. -->  
-
 </ul>
 
 
@@ -1295,7 +1277,7 @@ population that is compatible with easy resource sustainability.  </p>
 The <a href="https://en.wikipedia.org/wiki/Green_Revolution">"Green
 Agricultural Revolution"</a> has allowed us to stave off the
 widespread famines that would have been inevitable if we had been
-limited to 1950's technology over the past six decades.  Nonetheless,
+limited to 1950's technology over the past four decades.  Nonetheless,
 demand from the growing human population has <b>already crossed
 critical local resource thresholds</b> in many areas, as attested by
 famines and other privations scattered around the world.</p>
@@ -1458,8 +1440,8 @@ ignore it in product development.  QED. </p>
 <li> In the early 21st century we are entering an era of technological
 transformation, similar to that produced by physics and chemistry in the
 20th century, based on <b>molecular biology, hyper-scale
-information processing, artificial intelligence,
-nanotechnology, and bio-electronics</b>.  Few, if any,
+information processing</b>, <b>artificial intelligence</b>,
+<b>nanotechnology</b>, and <b>bio-electronics</b>.  Few, if any,
 scientists, government officials, or corporate leaders are perceptive
 enough to accurately forecast what this will bring only 25 years from
 now.  As always, both benefits and risks have the potential to be
@@ -1610,9 +1592,6 @@ Basic Science?"</a> (article by C. H. Llewellyn Smith, former director of CERN)<
 <a href="Technological-Prediction.html">1937 NRC Study Technological
 Predictions vs. Reality</a></p> 
 
-<a href="https://www.worldometers.info/world-population">World Population
-Clock</a> (worldometer)<br>
-
 <a href="https://www.npg.org/specialreports/bartlett_index.htm">Fundamentals
 of Population Growth and Resource Exhaustion</a> (A. Bartlett)<br>
 
@@ -1680,8 +1659,7 @@ century: "we live in exponential times." </p>
 
 <a href="https://www.youtube.com/watch?v=1uIzS1uCOcE">
 "The Coming Singularity"</a> -- a talk by Ray Kurzweil that explores the
-implications of exponential growth in high technology and artificial
-intelligence</p>
+implications of exponential growth in high technology</p>
 
 
 
@@ -1727,10 +1705,10 @@ Next Guide </a></b>
 <center>
 
 <small><i>Last modified
-    <b>October 2025</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>August 2024</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
      </small></p>
 
-     <small>Text copyright &copy 1998-2025 Robert W. O'Connell.  All
+     <small>Text copyright &copy 1998-2024 Robert W. O'Connell.  All
      rights reserved.  These notes are intended for the private,
      noncommercial use of students enrolled in Astronomy 1210 at the
      University of Virginia. </small></p>
