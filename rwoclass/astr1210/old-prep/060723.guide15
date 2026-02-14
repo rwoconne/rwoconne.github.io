@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2026.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2023.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1210  -->
 <!-- -->
@@ -13,7 +13,7 @@
              3/2/2015; 9/11: new domain;  5/22/2017; 10/04; 11/3; 11/4; 
              6/13/2020; 
             
-             GHP version:  12/13/2020; 1/13/2023; 2/10/2026; 2/15; 
+             GHP version:  12/13/2020; 1/13/2023; 
 
     -->
 
@@ -166,7 +166,7 @@ view of Mercury from Mariner 10 (1974).
 
 <ul>
 
- <a href="https://science.nasa.gov/mission/messenger/">MESSENGER</a> was an
+ <a href="http://messenger.jhuapl.edu/index.html">MESSENGER</a> was an
 elaborate mission (ending in 2015) to study Mercury at close range in
 3 <a href="im/MESSENGER_trajectory.svg.jpg" >flybys</a> followed by
 long-term in-orbit observations.
@@ -248,9 +248,7 @@ missions (1962-72) showed that Venus' <b>surface temperature was almost
 500<sup>o</sup> C (900<sup>o</sup> F) and the lower atmosphere
 was crushingly dense</b>. </p>
 
-The several USSR landers that survived to operate briefly on the
-surface returned images of a <b>bleak, lava-covered
-landscape</b>: </p>
+Landers returned images of a <b>bleak, lava-covered surface</b>: </p>
 
 <center><a href="im/vener13r-surfimage.jpg" ><img
 src="im/vener13r-surfimage-sm.jpg"  alt="Ven13Surf" width=70% vspace=10></a></p>
@@ -275,7 +273,7 @@ use <b><em>radar</em></b> to penetrate the thick clouds.</p>
 
 <ul>
 
-<a href="https://en.wikipedia.org/wiki/Radar"
+<a href="http://www.jpl.nasa.gov/magellan/guide5.html"
 >Radar systems</a> emit a short <b>burst of radio waves</b>
 and then detect the <b>reflected</b> burst to determine a target's distance
 and (through the Doppler effect) motion.</p>
@@ -298,7 +296,7 @@ Bottom: Radar map of Venus with main features labeled. (Pioneer Mission,
 
 The image above is a relief map of Venus derived from radar
 observations with the Pioneer mission.  Best mapping coverage was from
-the <a href="https://science.nasa.gov/mission/magellan/" >Magellan
+the <a href="http://www2.jpl.nasa.gov/magellan/mgn.html" >Magellan
 Mission</a> (radar orbiter, 1990-94).</p>
 
 The overall topography is flatter than Earth's.  There are <b>only two "continent"-like
@@ -644,7 +642,7 @@ Web links:  </p>
 <a href="http://www.solarviews.com/eng/mercury.htm"> Mercury
 Info at Views of the Solar System</a>  <br> 
 
-<a href="https://science.nasa.gov/mission/messenger/">Mercury MESSENGER
+<a href="http://messenger.jhuapl.edu/the_mission/index.html">Mercury MESSENGER
 Mission</a></p>
 
 
@@ -652,12 +650,7 @@ Mission</a></p>
 Views of the Solar System</a> (includes many images, animations,
 links) <br> 
 
-<a href="https://www.youtube.com/watch?v=-N2PhuRQYM0"> What have
-we seen on Venus' surface?</a> (video describing the challenges
-of building landers than can survive the hellish Venusian atmosphere)<br>
-
-<a href="https://science.nasa.gov/mission/magellan">The Venus Magellan
-Mission</a><br>
+<a href="http://www.jpl.nasa.gov/magellan">The Venus Magellan Mission</a><br>
 
 <a href="https://apod.nasa.gov/apod/ap200603.html">Animation of Venus
 rotation and orbital motion</a></p>
@@ -708,12 +701,12 @@ Next Guide </a></b>
 
 <center>
 <small><i>Last modified
-    <b>February 2026</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
+    <b>January 2023</b> by <a href="mailto:rwo@virginia.edu">rwo</a> </i>
  </small></p>
 
 <small>Venus images copyright &copy 1997, Calvin J. Hamilton.
 Atmosphere profile copyright &copy Harcourt, Inc.  Greenhouse effect
-drawing copyright &copy Toby Smith.  Text copyright &copy 1998-2026
+drawing copyright &copy Toby Smith.  Text copyright &copy 1998-2023
 Robert W. O'Connell.  All rights reserved.  These notes are intended
 for the private, noncommercial use of students enrolled in Astronomy
 1210 at the University of Virginia. </small></p> </center>
