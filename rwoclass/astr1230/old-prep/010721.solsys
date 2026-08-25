@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2026.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
 <!-- -->
@@ -16,7 +16,7 @@ pages; 10/2; 10/3; 10/4; 10/12; 10/17; 2/16/2005; 2/20; 3/14;
 convert to A1210 format; 5/22; 5/28: reduce lunar phases, precession,
 eclipse coverage & link instead to A1210 lunar motions page; 5/29; 
 
-GHP version:  12/10/2020; 1/7/2021; 8/24/2026; 
+GHP version:  12/10/2020; 1/7/2021; 
 
 -->
 
@@ -560,17 +560,15 @@ align=right width="30%" hspace=10 ></a>
 
 <!-- stale page 1/2021; http://jersey.uoregon.edu/vlab/kepler/Kepler.html --> 
 
-<!-- site vanished as of 8/2026 
+<li>
 Click <a href="https://physics.unm.edu/Courses/Rand/applets/retrograde.html">
 here</a> for a Java animation of the relative motion of Earth and
-Mars.    -->
-
-<li>
-At opposition, Mars can be brighter than Jupiter.  In August 2003,
-Mars was closer to Earth than at any time since 57,617 BC (34,646,418
-miles distant). The oppositions in July 2018 and October 2020 were
-also very favorable.  Click on the chart at the right for a diagram of
-upcoming oppositions. </p>
+Mars.  At opposition, it can be brighter than Jupiter.  In August
+2003, Mars was closer to Earth than at any time since 57,617 BC
+(34,646,418 miles distant). The opposition in July 2018 was also very
+favorable, and the one in October 2020 will be only slightly less so.
+Click on the chart at the right for a diagram of upcoming
+oppositions. </p>
 
 
 <li> Mars' atmosphere is primarily <b>carbon dioxide</b> and is
@@ -651,8 +649,8 @@ the <a href="https://en.wikipedia.org/wiki/Galilean_moons"
 ><b> <em>Galilean satellites</em></b></a>.  They are easy to see in a
 small telescope, and their relatively rapid orbital motions around
 Jupiter can be readily tracked.
-NASA's <a href="https://science.nasa.gov/mission/voyager/">Voyager </a>
-and <a href="https://science.nasa.gov/mission/galileo/">Galileo</a> missions
+NASA's <a href="http://voyager.jpl.nasa.gov/">Voyager </a>
+and <a href="http://www.jpl.nasa.gov/galileo">Galileo</a> missions
 revealed astonishing differences in surface constitution among the
 four.  Europa hides warm interior oceans beneath a smooth, icy
 exterior; this is one of the most promising sites in the solar system
@@ -686,7 +684,7 @@ web site</a>.
 <li> Six of Saturn's 62 satellites would be visible in an 8-in telescope.
 <b>Titan</b>, Saturn's largest moon, is the only moon to have its own
 atmosphere.  It was one of the principal targets for
-the <a href="https://science.nasa.gov/mission/cassini/" >
+the <a href="http://saturn.jpl.nasa.gov/home/index.cfm" >
 Cassini-Huygens Mission</a>, which made observations from orbit around
 Saturn for 13 years.  The Huygens probe made a successful soft landing
 on Titan in January 2005.  Images of Titan and Saturn are continually
@@ -742,14 +740,9 @@ years), with observed visits to the inner solar system traced back
 to at least 240 BC.
 The most spectacular comets, like
 <b><em>Hale-Bopp</em></b> (1997; at right), are usually first-time
-visitors to the inner Solar System.  Click
-<a href="https://en.wikipedia.org/wiki/Comet_Hale%E2%80%93Bopp">here</a>
-for more information on Hale-Bopp.</p>
-
-
-<!-- Click <a href="http://www.jpl.nasa.gov/comet" >here</a> for more
-information on Hale-Bopp.</p>  Link gone, ca. 2011. -->
-
+visitors to the inner Solar System.
+Click <a href="http://www.jpl.nasa.gov/comet" >here</a> for more
+information on Hale-Bopp.</p>
 
 <li> There are always several
 faint comets available to observe in the sky; but bright ones are
@@ -801,16 +794,15 @@ Earth's orbit.  </p>
 <ul>
 
 <li> <a
-href="https://rwoconne.github.io/rwoclass/astr1210/im/asteroid-snapshot-innerSS-jun19.gif" >
+href="http://cfa-www.harvard.edu/iau/lists/InnerPlot.html" >
 <img src="im/rd_star.gif"> Here</a> is
 a snapshot plot of the location of asteroids in the inner Solar
 System.</p>
 
 <li> Many asteroids are detectable with an 8-in telescope, but you
 need updated coordinates and finding charts.  Their signature is a
-fairly rapid motion with respect to the background stars.
-The <a href="https://www.astroleague.org/asteroid-observing-program/">Astronomical
-League</a> provides advice on observing asteroids.
+fairly rapid motion with respect to the background stars. 
+The <a href="https://www.astroleague.org/al/obsclubs/asteroid/astrcobs.html">Astronomical League</a> provides advice on observing asteroids.
  </p>
 
 <li> <a href="im/garradd-eros.mpg" ><img
@@ -915,8 +907,7 @@ of the planets.  For samples, see:</p>
 <a href="http://janus.astro.umd.edu/AW/awtools.html#orbits">
    Java Simulator of Comet & Asteroid Orbits</a> (UMd)<br>
 
-<a href="https://eyes.nasa.gov/apps/asteroids/#/home">NASA Eyes on
-Asteroids page</a><br>
+<a href="http://echo.jpl.nasa.gov/links.html">JPL Asteroid Home Page</a><br>
 
 <!-- GONE! Fall 2006
 <a href="http://www.skypub.com/sights/comets/comets.html">Sky & Telescope
@@ -982,14 +973,14 @@ Next Lecture </a></b>
 
 <p></p>
 <p align="center"> <small><i>Last modified
-    <b>August 2026</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+    <b>January 2021</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
  </small></p>
 
 <p></p>
 
  <small> Moon phase and Earth orbit drawings copyright &copy
 by <a href="http://www.astronomynotes.com">Nick Strobel</a>.  Text
-copyright &copy 2000-2026 Robert W. O'Connell.  All rights reserved.
+copyright &copy 2000-2021 Robert W. O'Connell.  All rights reserved.
 These notes are intended for the private, noncommercial use of
 students enrolled in Astronomy 1230 at the University of
 Virginia.  </small>

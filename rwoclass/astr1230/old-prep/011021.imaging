@@ -1,5 +1,5 @@
 <!-- University of Virginia Department of Astronomy -->
-<!-- All contents copyright (C) 1998-2026.  All rights reserved to author. -->
+<!-- All contents copyright (C) 1998-2021.  All rights reserved to author. -->
 <!-- Contact: rwo@virginia.edu -->
 <!-- Original Home URL: http://www.faculty.virginia.edu/rwoclass/astr1230  -->
 <!-- -->
@@ -22,7 +22,7 @@
               updated; 2/20/2017; 5/24/2019: convert to ASTR 1210 format; 
               5/25; 5/28; 
 
-              GHP version: 12/20/2020;  1/10/2021; 8/24/26; 
+              GHP version: 12/20/2020;  1/10/2021; 
     -->
 
 <html>
@@ -303,9 +303,10 @@ custom-fabricated.  </p>
 href="im/MegaCam-CCDmosaic-CFHT-Scale.jpg"><b><em>mosaic CCD cameras</em></b>,
 </a>. where many individual CCD chips are tiled across a large area.
 The <a href="im/CCD-mosaic-LSST-1.jpg">largest CCD mosaic camera</a>,
-containing 201 CCD's, is in operation at
-the <a href="https://rubinobservatory.org/">Vera C. Rubin
-Observatory</a> for its Legacy Survey of Space and Time. </p>
+containing 201 CCD's, is being built for
+the <a href="https://www.lsst.org/">Large Synoptic Survey
+Telescope.</a>
+ </p>
 
 
 <h3> COLOR IMAGING</h3>
@@ -322,12 +323,9 @@ respectively.
 <li>To obtain color information, professional astronomers place
 different colored <b>filters</b> in front of a single CCD detector,
 take multiple images of a scene, and then combine the images with
-software.  The process is described in 
-
-<!-- href="http://hubble.stsci.edu/gallery/behind_the_pictures"  gone? -->
-
-<a href="https://svs.gsfc.nasa.gov/14250">
-this video<a> made by the Hubble Space Telescope staff.
+software.  The process is described in <a
+href="http://hubble.stsci.edu/gallery/behind_the_pictures"
+>this tutorial<a> by the Hubble Space Telescope staff.
 Each black and white image is assigned a color by the software, and
 these are combined together to make a full color version.  [Such <b>"color
 separation"</b> images are much easier to construct
@@ -459,8 +457,8 @@ of surveys for transient sources have already been made or are under
 way, focussing on gravitational lensing events, supernova explosions,
 asteroid tracking, and (lately) neutron-star and black hole mergers.
 The most ambitious of these is the
-<a href="https://rubinobservatory.org/">Rubin Observatory Legacy
-Survey of Space and Time</a>, which started operations in 2025.</p>
+<a href="https://www.lsst.org/">Large Synoptic Survey
+Telescope</a>, scheduled to being operations in 2022.</p> 
 
 
 <h2>D. Amateur Astrophotography</h2>
@@ -538,7 +536,7 @@ one every day<br>
 <li><a href="https://twanight.org">The World
 At Night</a>---image and video compendium site<br>
 
-<li><a href="https://www.astropics.com/">AstroPics </a>---images
+<li><a href="http://www.brightnightgallery.com/">AstroPics </a>---images
 by Wally Pacholka<br>
 
 <li><a href="http://www.robgendlerastropics.com/">The Universe in
@@ -581,29 +579,24 @@ Observatory Images Page</a>--best site for professional ground-based pictures
 of astronomical objects<br>
 -->
 
-<!-- HST image gallery address changed ca. 2022  -->
 
-<li><a href="https://science.nasa.gov/mission/hubble/multimedia/hubble-images/">Hubble
-Space Telescope Image Archive</a>---spectacular, widely-distributed
-images</p>
+<li><a href="http://hubblesite.org/gallery/">Hubble Space
+Telescope Image Archive</a>---spectacular, widely-distributed images; site
+includes a tutorial on astronomical filter imaging</p>
 
 </ul>
 
 Background information on imaging & CCD's:</p>
 <ul>
 
-<a href="human-eye.html">The Human Eye as a Detector</a> (R. O'Connell)<br>
+<a href="human-eye.html">The Human Eye as a Detector</a> (R. O'Connell)</p>
 
 <a
 href="https://rwoconne.github.io/rwoclass/astr511/lec11-f03.html">Introduction
-to CCD's</a> UVa ASTR 5110 (R. O'Connell)</p>
-
-
-<!--  8/2026: can't locate. Not even on extensive list of pubs
-    at https://darkwing.uoregon.edu/~dkmatter/  
+to CCD's</a> UVa ASTR 5110 (R. O'Connell)<br>
 
 <a href="http://zebu.uoregon.edu/ccd.html">Introduction to CCD's</a>
-(G. Bothun, Univ. of Oregon)</a></p>  -->
+(G. Bothun, Univ. of Oregon)</a></p>
 
 <A HREF="http://www.astropix.com/index.html">Astrophotography</a> (Jerry Lodriguss)<br>
 
@@ -630,7 +623,7 @@ Notes</a> (Michael Covington)<br>
 on Astronomical Image Processing</a> using the "trillion-pixel" Sloan Digital
 Sky Survey dataset<br>
 
-<a href="https://svs.gsfc.nasa.gov/14250">Video showing how
+<a href="http://www.youtube.com/watch?v=p5c1XoL1KFs">YouTube video showing how
 Hubble Space Telescope color images are processed</a></p>
 
 </ul>
@@ -690,13 +683,13 @@ Lecture Index</a></b>
 
 <p></p>
 <p align="center"> <small><i>Last modified
-    <b>August 2026</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
+    <b>January 2021</b> by <a href="mailto:rwo@virginia.edu"> rwo</a> </i>
  </small></p>
 
 <small>Rosette nebula image taken by T.A.Rector, B.Wolpa, and
 M.Hanna, with the KPNO 0.9-m Mosaic Camera (copyright &copy
 AURA/NOAO/NSF).  CCD transfer animation by C. Tremonti.  Horsehead
-Nebula image by R. Gendler. Text copyright &copy 2001-2026 Robert W.
+Nebula image by R. Gendler. Text copyright &copy 2001-2021 Robert W.
 O'Connell.  All rights reserved.  These notes are intended for the
 private, noncommercial use of students enrolled in Astronomy 1230 at
 the University of Virginia. </small>
